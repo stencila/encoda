@@ -9,7 +9,7 @@ import {
   texBlock,
   texFragment,
   texString,
-  texBlockString
+  texBlockString,
 } from '../../__fixtures__/math/kitchen-sink'
 
 const tex = new TexCodec()

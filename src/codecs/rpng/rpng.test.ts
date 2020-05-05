@@ -2,11 +2,11 @@ import fs from 'fs-extra'
 import {
   pythonCodeChunk,
   rCodeExpression,
-  rCodeExpressionNoOutput
+  rCodeExpressionNoOutput,
 } from '../../__fixtures__/code/kitchen-sink'
 import {
   asciimathFragment,
-  texBlock
+  texBlock,
 } from '../../__fixtures__/math/kitchen-sink'
 import { snapshot } from '../../__tests__/helpers'
 import { PngCodec } from '../png'
@@ -43,7 +43,7 @@ describe('encode+decode', () => {
     ['tex-block', texBlock],
     ['r-code-expression', rCodeExpression],
     ['r-code-expression-no-output', rCodeExpressionNoOutput],
-    ['python-code-chunk', pythonCodeChunk]
+    ['python-code-chunk', pythonCodeChunk],
   ])('%s', async (name, node) => {
     const file = snapshot(name + '.png')
     await rpngCodec.write(node, file)
@@ -55,10 +55,10 @@ describe('encode+decode', () => {
       content: [
         'Here is an image: ',
         schema.imageObject({
-          contentUrl: pngPath
+          contentUrl: pngPath,
         }),
-        '.'
-      ]
+        '.',
+      ],
     })
     const file = await rpngCodec.encode(inp)
 
@@ -75,9 +75,9 @@ describe('encode+decode', () => {
       text: 'plot(1,1)',
       outputs: [
         schema.imageObject({
-          contentUrl: pngPath
-        })
-      ]
+          contentUrl: pngPath,
+        }),
+      ],
     })
     const file = await rpngCodec.encode(inp)
 
@@ -94,7 +94,7 @@ describe('encoding of extended character sets', () => {
   const keyword = 'MyChunkKeyword'
   const content = 'An emoji: 🎉'
 
-  test.each(['tEXt', 'zTXt'])('%s', async type => {
+  test.each(['tEXt', 'zTXt'])('%s', async (type) => {
     let image = await fs.readFile(rpngPath)
     image = insert(content, image, keyword, type as 'tEXt' | 'zTXt')
     expect(has(image, keyword)).toBe(true)

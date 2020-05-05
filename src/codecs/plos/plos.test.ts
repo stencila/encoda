@@ -45,31 +45,31 @@ test('sniff', async () => {
 test('decodeIdentifier', async () => {
   expect(await decodeIdentifier('10.1371/journal.pbio.3000349')).toEqual({
     journal: 'plosbiology',
-    doi: '10.1371/journal.pbio.3000349'
+    doi: '10.1371/journal.pbio.3000349',
   })
   expect(await decodeIdentifier('10.1371/journal.pcbi.1007273')).toEqual({
     journal: 'ploscompbiol',
-    doi: '10.1371/journal.pcbi.1007273'
+    doi: '10.1371/journal.pcbi.1007273',
   })
   expect(await decodeIdentifier('10.1371/journal.pgen.1008133')).toEqual({
     journal: 'plosgenetics',
-    doi: '10.1371/journal.pgen.1008133'
+    doi: '10.1371/journal.pgen.1008133',
   })
   expect(await decodeIdentifier('10.1371/journal.pmed.1002858')).toEqual({
     journal: 'plosmedicine',
-    doi: '10.1371/journal.pmed.1002858'
+    doi: '10.1371/journal.pmed.1002858',
   })
   expect(await decodeIdentifier('10.1371/journal.pntd.0007469')).toEqual({
     journal: 'plosntds',
-    doi: '10.1371/journal.pntd.0007469'
+    doi: '10.1371/journal.pntd.0007469',
   })
   expect(await decodeIdentifier('10.1371/journal.pone.0216012')).toEqual({
     journal: 'plosone',
-    doi: '10.1371/journal.pone.0216012'
+    doi: '10.1371/journal.pone.0216012',
   })
   expect(await decodeIdentifier('10.1371/journal.ppat.1007958')).toEqual({
     journal: 'plospathogens',
-    doi: '10.1371/journal.ppat.1007958'
+    doi: '10.1371/journal.ppat.1007958',
   })
 })
 

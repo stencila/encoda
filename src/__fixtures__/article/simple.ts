@@ -7,21 +7,21 @@ export default article({
   content: [
     heading({
       depth: 1,
-      content: ['Heading one']
+      content: ['Heading one'],
     }),
     heading({
       depth: 2,
-      content: ['Heading two']
+      content: ['Heading two'],
     }),
     paragraph({
-      content: ['Paragraph one.']
+      content: ['Paragraph one.'],
     }),
     heading({
       depth: 3,
-      content: ['Heading three']
+      content: ['Heading three'],
     }),
     paragraph({
-      content: ['Paragraph two.']
-    })
-  ]
+      content: ['Paragraph two.'],
+    }),
+  ],
 })

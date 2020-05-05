@@ -19,7 +19,7 @@ import stencila, {
   isListItem,
   nodeIs,
   nodeType,
-  TypeMapGeneric
+  TypeMapGeneric,
 } from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
@@ -112,7 +112,7 @@ export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   list: 'list',
   paragraph: 'paragraph',
   table: 'table',
-  thematicBreak: 'thematicBreak'
+  thematicBreak: 'thematicBreak',
 }
 
 export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> = {
@@ -128,7 +128,7 @@ export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> = 
   link: 'link',
   linkReference: 'linkReference',
   strong: 'strong',
-  text: 'text'
+  text: 'text',
 }
 
 const isMdastBlockContent = nodeIs(mdastBlockContentTypes)
@@ -163,7 +163,7 @@ const GENERIC_EXTENSIONS = [
   'boolean',
   'number',
   'array',
-  'object'
+  'object',
 ]
 const extensionHandlers: { [key: string]: any } = {}
 for (const ext of GENERIC_EXTENSIONS) {
@@ -219,14 +219,14 @@ export function encodeMarkdown(node: stencila.Node): string {
  * async calls.
  */
 async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
-  return transform(node, async node => {
+  return transform(node, async (node) => {
     if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
       if (node.mathLanguage !== 'tex') {
         const text = await texCodec.dump(node)
         return {
           ...node,
           mathLanguage: 'tex',
-          text
+          text,
         }
       }
     }
@@ -458,7 +458,7 @@ function decodeArticle(root: MDAST.Root): stencila.Article {
   return stencila.article({
     title,
     ...meta,
-    content
+    content,
   })
 }
 
@@ -474,7 +474,7 @@ function decodeArticle(root: MDAST.Root): stencila.Article {
 function encodeArticle(article: stencila.Article): MDAST.Root {
   const root: MDAST.Root = {
     type: 'root',
-    children: []
+    children: [],
   }
 
   // Encode the article body
@@ -492,7 +492,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
   if (Object.keys(frontmatter).length) {
     const yamlNode: MDAST.YAML = {
       type: 'yaml',
-      value: yaml.safeDump(frontmatter, { skipInvalid: true }).trim()
+      value: yaml.safeDump(frontmatter, { skipInvalid: true }).trim(),
     }
     root.children.unshift(yamlNode)
   }
@@ -506,7 +506,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 function decodeInclude(ext: Extension): stencila.Include {
   const include: stencila.Include = {
     type: 'Include',
-    source: ext.argument ?? ''
+    source: ext.argument ?? '',
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
@@ -525,7 +525,7 @@ function encodeInclude(include: stencila.Include): Extension {
     type: 'block-extension',
     name: 'include',
     argument: source,
-    content: md
+    content: md,
   }
 }
 
@@ -536,7 +536,7 @@ function decodeHeading(heading: MDAST.Heading): stencila.Heading {
   return {
     type: 'Heading',
     depth: heading.depth,
-    content: heading.children.map(decodePhrasingContent)
+    content: heading.children.map(decodePhrasingContent),
   }
 }
 
@@ -547,7 +547,7 @@ function encodeHeading(heading: stencila.Heading): MDAST.Heading {
   return {
     type: 'heading',
     depth: heading.depth as 1 | 2 | 3 | 4 | 5 | 6,
-    children: heading.content.map(encodeInlineContent)
+    children: heading.content.map(encodeInlineContent),
   }
 }
 
@@ -557,7 +557,7 @@ function encodeHeading(heading: stencila.Heading): MDAST.Heading {
 function decodeParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
   return {
     type: 'Paragraph',
-    content: paragraph.children.map(decodePhrasingContent)
+    content: paragraph.children.map(decodePhrasingContent),
   }
 }
 
@@ -581,7 +581,7 @@ function encodeParagraph(
   } else {
     return {
       type: 'paragraph',
-      children: content.map(encodeInlineContent)
+      children: content.map(encodeInlineContent),
     }
   }
 }
@@ -592,7 +592,7 @@ function encodeParagraph(
 function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
-    content: block.children.map(decodeBlockContent)
+    content: block.children.map(decodeBlockContent),
   }
 }
 
@@ -602,7 +602,7 @@ function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
 function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
   return {
     type: 'blockquote',
-    children: block.content.map(encodeBlockContent)
+    children: block.content.map(encodeBlockContent),
   }
 }
 
@@ -623,7 +623,7 @@ function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
 function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
   const codeBlock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    text: code.value
+    text: code.value,
   }
   if (code.lang) codeBlock.programmingLanguage = code.lang
   // The `remark-attrs` plugin parses metadata from the info string
@@ -647,7 +647,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
     type: 'code',
     lang: programmingLanguage,
     meta: meta !== undefined ? stringifyMeta(meta) : '',
-    value: text.trimRight()
+    value: text.trimRight(),
   }
 }
 
@@ -673,7 +673,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
 
   const outputs: stencila.Node[] = []
   if (nodes.length > 1) {
-    const pushOutputs = function(outputNodes: stencila.Node[]) {
+    const pushOutputs = function (outputNodes: stencila.Node[]) {
       if (outputNodes.length === 1) {
         const node = outputNodes[0]
         if (stencila.isA('Paragraph', node) && node.content.length === 1) {
@@ -708,7 +708,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     text,
     programmingLanguage,
     meta,
-    outputs: outputs.length > 0 ? outputs : undefined
+    outputs: outputs.length > 0 ? outputs : undefined,
   })
 }
 
@@ -724,7 +724,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
     stencila.codeBlock({
       text,
       programmingLanguage,
-      meta
+      meta,
     })
   )
 
@@ -751,7 +751,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   return {
     type: 'block-extension',
     name: 'chunk',
-    content: md
+    content: md,
   }
 }
 
@@ -762,7 +762,7 @@ function decodeList(list: MDAST.List): stencila.List {
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children.map(decodeNode).filter(isListItem)
+    items: list.children.map(decodeNode).filter(isListItem),
   }
 }
 
@@ -773,7 +773,7 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
-    children: list.items.filter(isListItem).map(encodeListItem)
+    children: list.items.filter(isListItem).map(encodeListItem),
   }
 }
 
@@ -784,14 +784,14 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
   const { isChecked, content = [] } = listItem
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
-    children: content.map(child => {
+    children: content.map((child) => {
       const mdast = encodeNode(child)
       if (isMdastBlockContent(mdast)) return mdast
       if (isMdastPhrasingContent(mdast))
         return { type: 'paragraph', children: [mdast] }
       log.warn(`Unhandled list item MDAST type ${mdast?.type}`)
       return { type: 'paragraph', children: [] }
-    })
+    }),
   }
   return isChecked !== undefined
     ? { ..._listItem, checked: isChecked }
@@ -804,7 +804,7 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
 function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
   const _listItem: stencila.ListItem = {
     type: 'ListItem',
-    content: listItem.children.map(decodeNode).filter(isBlockContent)
+    content: listItem.children.map(decodeNode).filter(isBlockContent),
   }
   return listItem.checked === true || listItem.checked === false
     ? { ..._listItem, isChecked: listItem.checked || false }
@@ -825,13 +825,13 @@ function decodeTable(table: MDAST.Table): stencila.Table {
             (cell: MDAST.TableCell): stencila.TableCell => {
               return {
                 type: 'TableCell',
-                content: cell.children.map(decodePhrasingContent)
+                content: cell.children.map(decodePhrasingContent),
               }
             }
-          )
+          ),
         }
       }
-    )
+    ),
   }
 }
 
@@ -851,13 +851,13 @@ function encodeTable(table: stencila.Table): MDAST.Table {
                 type: 'tableCell',
                 children: cell.content
                   .filter(isInlineContent)
-                  .map(encodeInlineContent)
+                  .map(encodeInlineContent),
               }
             }
-          )
+          ),
         }
       }
-    )
+    ),
   }
 }
 
@@ -866,7 +866,7 @@ function encodeTable(table: stencila.Table): MDAST.Table {
  */
 function decodeThematicBreak(): stencila.ThematicBreak {
   return {
-    type: 'ThematicBreak'
+    type: 'ThematicBreak',
   }
 }
 
@@ -875,7 +875,7 @@ function decodeThematicBreak(): stencila.ThematicBreak {
  */
 function encodeThematicBreak(): MDAST.ThematicBreak {
   return {
-    type: 'thematicBreak'
+    type: 'thematicBreak',
   }
 }
 
@@ -886,7 +886,7 @@ function decodeLink(link: MDAST.Link): stencila.Link {
   const link_: stencila.Link = {
     type: 'Link',
     target: link.url,
-    content: link.children.map(decodePhrasingContent)
+    content: link.children.map(decodePhrasingContent),
   }
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = (link.data && link.data.hProperties) as {
@@ -904,7 +904,7 @@ function decodeLink(link: MDAST.Link): stencila.Link {
 function encodeCite(cite: stencila.Cite): MDAST.Text {
   return {
     type: 'text',
-    value: `@${cite.target}`
+    value: `@${cite.target}`,
   }
 }
 
@@ -918,9 +918,9 @@ function encodeLink(link: stencila.Link): MDAST.Link {
     url: link.target,
     title: link.title,
     children: link.content.map(
-      node => encodeInlineContent(node) as MDAST.StaticPhrasingContent
+      (node) => encodeInlineContent(node) as MDAST.StaticPhrasingContent
     ),
-    data
+    data,
   }
 }
 
@@ -930,7 +930,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
 function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
   return {
     type: 'Emphasis',
-    content: emphasis.children.map(decodePhrasingContent)
+    content: emphasis.children.map(decodePhrasingContent),
   }
 }
 
@@ -940,7 +940,7 @@ function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
 function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
   return {
     type: 'emphasis',
-    children: emphasis.content.map(encodeInlineContent)
+    children: emphasis.content.map(encodeInlineContent),
   }
 }
 
@@ -950,7 +950,7 @@ function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
 function decodeStrong(strong: MDAST.Strong): stencila.Strong {
   return {
     type: 'Strong',
-    content: strong.children.map(decodePhrasingContent)
+    content: strong.children.map(decodePhrasingContent),
   }
 }
 
@@ -960,7 +960,7 @@ function decodeStrong(strong: MDAST.Strong): stencila.Strong {
 function encodeStrong(strong: stencila.Strong): MDAST.Strong {
   return {
     type: 'strong',
-    children: strong.content.map(encodeInlineContent)
+    children: strong.content.map(encodeInlineContent),
   }
 }
 
@@ -970,7 +970,7 @@ function encodeStrong(strong: stencila.Strong): MDAST.Strong {
 function decodeDelete(delet: MDAST.Delete): stencila.Delete {
   return {
     type: 'Delete',
-    content: delet.children.map(decodePhrasingContent)
+    content: delet.children.map(decodePhrasingContent),
   }
 }
 
@@ -980,7 +980,7 @@ function decodeDelete(delet: MDAST.Delete): stencila.Delete {
 function encodeDelete(delet: stencila.Delete): MDAST.Delete {
   return {
     type: 'delete',
-    children: delet.content.map(encodeInlineContent)
+    children: delet.content.map(encodeInlineContent),
   }
 }
 
@@ -989,9 +989,9 @@ function encodeDelete(delet: stencila.Delete): MDAST.Delete {
  */
 const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
   return stencila.subscript({
-    content: sub.children.map(node =>
+    content: sub.children.map((node) =>
       decodePhrasingContent(node as MDAST.PhrasingContent)
-    )
+    ),
   })
 }
 
@@ -1003,7 +1003,7 @@ const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
 const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `~${TxtCodec.stringify(sub)}~`
+    value: `~${TxtCodec.stringify(sub)}~`,
   }
 }
 
@@ -1012,9 +1012,9 @@ const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
  */
 const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
   return stencila.superscript({
-    content: sup.children.map(node =>
+    content: sup.children.map((node) =>
       decodePhrasingContent(node as MDAST.PhrasingContent)
-    )
+    ),
   })
 }
 
@@ -1026,7 +1026,7 @@ const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
 const encodeSuperscript = (sup: stencila.Superscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `^${TxtCodec.stringify(sup)}^`
+    value: `^${TxtCodec.stringify(sup)}^`,
   }
 }
 
@@ -1042,7 +1042,7 @@ function decodeQuote(ext: Extension): stencila.Quote {
   const quote: stencila.Quote = {
     type: 'Quote',
     // TODO: possibly decode the ext.content as Markdown?
-    content: ext.content ? [ext.content] : []
+    content: ext.content ? [ext.content] : [],
   }
   const cite = ext.argument
   if (cite) quote.cite = cite
@@ -1058,7 +1058,7 @@ function encodeQuote(quote: stencila.Quote): Extension {
     name: 'quote',
     // TODO: Handle cases where content is more than one string
     content: quote.content[0] as string,
-    argument: quote.cite as string
+    argument: quote.cite as string,
   }
 }
 
@@ -1072,7 +1072,7 @@ function decodeMath(
   const { type, value } = math
   return (type === 'inlineMath' ? stencila.mathFragment : stencila.mathBlock)({
     mathLanguage: 'tex',
-    text: value
+    text: value,
   })
 }
 
@@ -1088,7 +1088,7 @@ function encodeMath(math: stencila.Math): MDAST.HTML {
     log.warn(`Math node contains unhandled math language: ${mathLanguage}`)
   return {
     type: 'html',
-    value: `${begin}${text.trim()}${end}`
+    value: `${begin}${text.trim()}${end}`,
   }
 }
 
@@ -1131,7 +1131,7 @@ function encodeCodeFragment(code: stencila.CodeFragment): MDAST.InlineCode {
   return {
     type: 'inlineCode',
     data: { hProperties: attrs },
-    value: code.text
+    value: code.text,
   }
 }
 
@@ -1145,7 +1145,7 @@ function encodeCodeExpression(
   const attrs: { [key: string]: any } = {
     type: 'expr',
     lang: codeExpr.programmingLanguage,
-    ...codeExpr.meta
+    ...codeExpr.meta,
   }
 
   if (codeExpr.output)
@@ -1154,7 +1154,7 @@ function encodeCodeExpression(
   return {
     type: 'inlineCode',
     data: { hProperties: attrs },
-    value: codeExpr.text || ''
+    value: codeExpr.text || '',
   }
 }
 
@@ -1164,7 +1164,7 @@ function encodeCodeExpression(
 function decodeImage(image: MDAST.Image): stencila.ImageObject {
   const imageObject: stencila.ImageObject = {
     type: 'ImageObject',
-    contentUrl: image.url
+    contentUrl: image.url,
   }
   if (image.title) imageObject.title = image.title
   if (image.alt) imageObject.text = image.alt
@@ -1181,7 +1181,7 @@ function decodeImage(image: MDAST.Image): stencila.ImageObject {
 function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
   const image: MDAST.Image = {
     type: 'image',
-    url: imageObject.contentUrl || ''
+    url: imageObject.contentUrl || '',
   }
   if (imageObject.title) image.title = TxtCodec.stringify(imageObject.title)
   if (imageObject.text) image.alt = imageObject.text
@@ -1206,7 +1206,7 @@ function decodeText(text: MDAST.Text): string {
 function encodeString(value: string): MDAST.Text {
   return {
     type: 'text',
-    value: value.replace(whiteSpaceRegEx, '$1 ')
+    value: value.replace(whiteSpaceRegEx, '$1 '),
   }
 }
 
@@ -1277,7 +1277,7 @@ function encodeNumber(value: number): Extension {
   return {
     type: 'inline-extension',
     name: 'number',
-    argument: value.toString()
+    argument: value.toString(),
   }
 }
 

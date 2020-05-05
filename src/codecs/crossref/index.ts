@@ -23,8 +23,8 @@ export class CrossrefCodec extends Codec implements Codec {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
       query: {
-        'query.bibliographic': content
-      }
+        'query.bibliographic': content,
+      },
     })
     if (response.statusCode === 200 && response.body.length > 0) {
       const data = JSON.parse(response.body)
@@ -41,7 +41,7 @@ export class CrossrefCodec extends Codec implements Codec {
         'journal-article': 'article-journal',
         'book-chapter': 'chapter',
         'posted-content': 'manuscript',
-        'proceedings-article': 'paper-conference'
+        'proceedings-article': 'paper-conference',
       }
       csl.type = replacers[csl.type] ?? csl.type
 

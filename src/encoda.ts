@@ -3,7 +3,7 @@ import {
   cli,
   Listener,
   Server,
-  StdioServer
+  StdioServer,
 } from '@stencila/executa'
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
@@ -21,7 +21,7 @@ const log = getLogger('encoda')
 export class Encoda extends Listener {
   constructor(
     servers: Server[] = [
-      new StdioServer({ command: 'node', args: [__filename, 'start'] })
+      new StdioServer({ command: 'node', args: [__filename, 'start'] }),
     ]
   ) {
     super('en', servers)
@@ -40,22 +40,22 @@ export class Encoda extends Listener {
         required: ['source'],
         properties: {
           source: {
-            type: 'string'
+            type: 'string',
           },
           format: {
-            enum: codecList
-          }
-        }
+            enum: codecList,
+          },
+        },
       },
       encode: {
         required: ['node'],
         properties: {
           node: true,
           format: {
-            enum: codecList
-          }
-        }
-      }
+            enum: codecList,
+          },
+        },
+      },
     })
   }
 
@@ -83,7 +83,7 @@ export class Encoda extends Listener {
     const encoding = await encode(node, {
       ...commonEncodeDefaults,
       format,
-      filePath: dest
+      filePath: dest,
     })
     if (dest !== undefined) {
       await vfile.write(encoding, dest)
@@ -96,4 +96,4 @@ export class Encoda extends Listener {
 
 // istanbul ignore next
 if (require.main === module)
-  cli.main(new Encoda()).catch(error => log.error(error))
+  cli.main(new Encoda()).catch((error) => log.error(error))

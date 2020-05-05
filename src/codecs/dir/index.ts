@@ -79,14 +79,14 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   ): Promise<stencila.Collection> => {
     let {
       patterns = ['**/*'],
-      mainNames = ['main', 'index', 'README']
+      mainNames = ['main', 'index', 'README'],
     } = options
     if (typeof patterns === 'string') patterns = patterns.split(/\s+/)
     if (typeof mainNames === 'string') mainNames = mainNames.split(/\s+/)
 
     const root: stencila.Collection = {
       type: 'Collection',
-      parts: []
+      parts: [],
     }
 
     const dirPath = file.path
@@ -106,13 +106,13 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
 
     // Get a list of matching files
     const filePaths = await globby(patterns, {
-      cwd: dirPath
+      cwd: dirPath,
     })
 
     // Decompose file paths into parts so that they
     // can be sorted by depth AND name
     const routes = filePaths
-      .map(filePath => unixify(filePath).split('/'))
+      .map((filePath) => unixify(filePath).split('/'))
       .sort((a, b) => {
         return (
           a.length - b.length || a[a.length - 1].localeCompare(b[b.length - 1])
@@ -122,7 +122,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     // Read files into nodes in parallel
     const nodes = (
       await Promise.all(
-        routes.map(async route => {
+        routes.map(async (route) => {
           const node = await read(path.join(dirPath, ...route))
           if (isCreativeWork(node)) {
             const { name } = path.parse(route[route.length - 1])
@@ -132,8 +132,8 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
               node: {
                 name,
                 ...node,
-                meta: { ...node.meta, depth }
-              }
+                meta: { ...node.meta, depth },
+              },
             }
           }
         })
@@ -162,7 +162,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
           collection = {
             type: 'Collection',
             name: route[depth],
-            parts: []
+            parts: [],
           }
           collections.set(level, collection)
           parent.parts.push(collection)
@@ -178,16 +178,16 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       const rankings = collection.parts
         .map((node, index) => ({
           which: index,
-          rank: mainNames.indexOf(node.name ?? '')
+          rank: mainNames.indexOf(node.name ?? ''),
         }))
-        .filter(item => item.rank > -1)
+        .filter((item) => item.rank > -1)
         .sort((a, b) => b.rank - a.rank)
       const first = rankings[0]
       if (first) {
         const node = collection.parts[first.which]
         node.meta = {
           ...node.meta,
-          main: true
+          main: true,
         }
       }
     }
@@ -222,14 +222,14 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     }[] {
       if (stencila.isA('Collection', node)) {
         return node.parts
-          .map(child => walk(child, [...route, node.name ?? '']))
+          .map((child) => walk(child, [...route, node.name ?? '']))
           .reduce((prev, curr) => [...prev, ...curr], [])
       } else {
         return [
           {
             route: [...route, node.name ?? 'unnamed'],
-            node
-          }
+            node,
+          },
         ]
       }
     }
@@ -254,7 +254,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       if (stencila.isA('Collection', node)) {
         return {
           ...node,
-          parts: node.parts.map(child => strip(child))
+          parts: node.parts.map((child) => strip(child)),
         }
       } else {
         const { content, ...rest } = node

@@ -10,7 +10,7 @@ import {
   mathmlString,
   texBlock,
   texFragment,
-  texString
+  texString,
 } from '../../__fixtures__/math/kitchen-sink'
 
 const mathml = new MathMLCodec()

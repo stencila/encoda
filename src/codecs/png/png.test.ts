@@ -25,7 +25,7 @@ describe('encode', () => {
 
   it('respects the theme option', async () => {
     await png.write(kitchenSink, snapshot('kitchen-sink-wilmore.png'), {
-      theme: 'wilmore'
+      theme: 'wilmore',
     })
   })
 
@@ -33,8 +33,8 @@ describe('encode', () => {
     await png.write(kitchenSink, snapshot('kitchen-sink-800x500.png'), {
       size: {
         width: 800,
-        height: 500
-      }
+        height: 500,
+      },
     })
   })
 })

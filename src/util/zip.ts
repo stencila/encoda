@@ -30,7 +30,7 @@ export const create = async (
     zip.file(path.relative(dir, file), fs.createReadStream(file))
   }
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     zip
       .generateNodeStream({ type: 'nodebuffer', streamFiles: true })
       .pipe(fs.createWriteStream(zipPath))

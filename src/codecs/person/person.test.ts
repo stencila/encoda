@@ -25,8 +25,8 @@ const joe = {
   node: {
     type: 'Person',
     givenNames: ['Joe'],
-    familyNames: ['Jones']
-  }
+    familyNames: ['Jones'],
+  },
 }
 
 const jane = {
@@ -35,8 +35,8 @@ const jane = {
     type: 'Person',
     givenNames: ['Jane', 'Jennifer'],
     familyNames: ['Jones'],
-    emails: ['jane@example.com']
-  }
+    emails: ['jane@example.com'],
+  },
 }
 
 const jill = {
@@ -48,8 +48,8 @@ const jill = {
     emails: ['jill@example.com'],
     url: 'http://example.com/jill',
     honorificPrefix: 'Dr',
-    honorificSuffix: 'PhD'
-  }
+    honorificSuffix: 'PhD',
+  },
 }
 
 describe('decode', () => {
@@ -115,7 +115,7 @@ describe('validate', () => {
       validate(
         {
           type: 'Person',
-          emails: ['pete@example.com', 'pete_at_example_com']
+          emails: ['pete@example.com', 'pete_at_example_com'],
         },
         'Person'
       )
@@ -136,9 +136,9 @@ describe('coerce', () => {
           affiliations: [
             {
               type: 'Organization',
-              name: 'University of Beep, Boop'
-            }
-          ]
+              name: 'University of Beep, Boop',
+            },
+          ],
         },
         'Person'
       )
@@ -149,9 +149,9 @@ describe('coerce', () => {
       affiliations: [
         {
           type: 'Organization',
-          name: 'University of Beep, Boop'
-        }
-      ]
+          name: 'University of Beep, Boop',
+        },
+      ],
     })
   })
 
@@ -160,28 +160,28 @@ describe('coerce', () => {
       await coerce(
         {
           firstNames: 'John Tom',
-          lastName: 'Smith'
+          lastName: 'Smith',
         },
         'Person'
       )
     ).toEqual({
       type: 'Person',
       givenNames: ['John Tom'],
-      familyNames: ['Smith']
+      familyNames: ['Smith'],
     })
 
     expect(
       await coerce(
         {
           givenName: 'Jane',
-          surnames: 'Doe Smith'
+          surnames: 'Doe Smith',
         },
         'Person'
       )
     ).toEqual({
       type: 'Person',
       givenNames: ['Jane'],
-      familyNames: ['Doe Smith']
+      familyNames: ['Doe Smith'],
     })
   })
 
@@ -193,8 +193,8 @@ describe('coerce', () => {
           authors: [
             'John Smith',
             'Dr Jane Jones PhD <jane@example.com>',
-            'Jones, Jack (http://example.com/jack)'
-          ]
+            'Jones, Jack (http://example.com/jack)',
+          ],
         },
         'CreativeWork'
       )
@@ -204,7 +204,7 @@ describe('coerce', () => {
         {
           type: 'Person',
           givenNames: ['John'],
-          familyNames: ['Smith']
+          familyNames: ['Smith'],
         },
         {
           type: 'Person',
@@ -212,15 +212,15 @@ describe('coerce', () => {
           givenNames: ['Jane'],
           familyNames: ['Jones'],
           honorificSuffix: 'PhD',
-          emails: ['jane@example.com']
+          emails: ['jane@example.com'],
         },
         {
           type: 'Person',
           givenNames: ['Jack'],
           familyNames: ['Jones'],
-          url: 'http://example.com/jack'
-        }
-      ]
+          url: 'http://example.com/jack',
+        },
+      ],
     })
   })
 })

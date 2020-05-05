@@ -4,8 +4,8 @@ module.exports = {
     '**/__tests__/**/*',
     '**/__fixtures__/**/*',
     '**/__mocks__/**/*',
-    '**/**/*.test.ts'
+    '**/**/*.test.ts',
   ],
   out: './docs/api',
-  readme: 'README.md'
+  readme: 'README.md',
 }

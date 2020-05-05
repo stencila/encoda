@@ -113,7 +113,7 @@ export class RpngCodec extends Codec implements Codec {
     // (which sill contains images) and get it as a `Buffer`
     const png = await pngCodec.encode(node, {
       ...options,
-      theme: 'rpng'
+      theme: 'rpng',
     })
     const buffer = await vfile.dump(png, 'buffer')
 
@@ -132,9 +132,9 @@ export class RpngCodec extends Codec implements Codec {
             outputs: [
               schema.imageObject({
                 contentUrl: 'data:self',
-                ...other
-              })
-            ]
+                ...other,
+              }),
+            ],
           })
         }
       }
@@ -164,13 +164,13 @@ export class RpngCodec extends Codec implements Codec {
  */
 async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
   const root = await jsonLdCodec.load(jsonLd)
-  return transformSync(root, node => {
+  return transformSync(root, (node) => {
     if (schema.isA('ImageObject', node)) {
       const { contentUrl } = node
       if (contentUrl === 'data:self') {
         return {
           ...node,
-          contentUrl: `data:image/png;base64,${buffer.toString('base64')}`
+          contentUrl: `data:image/png;base64,${buffer.toString('base64')}`,
         }
       }
     }
@@ -268,8 +268,8 @@ function ztxtEncode(
     data: Buffer.concat([
       Buffer.from(keyword, 'utf8'),
       Buffer.alloc(2), // separator and compression
-      Buffer.from(content, 'utf8')
-    ])
+      Buffer.from(content, 'utf8'),
+    ]),
   }
 }
 

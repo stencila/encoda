@@ -63,7 +63,7 @@ export class XmdCodec extends Codec implements Codec {
             text:
               programmingLanguage !== undefined
                 ? `${programmingLanguage} ${text}`
-                : text
+                : text,
           })
         }
         if (stencila.isA('CodeChunk', node)) {
@@ -103,7 +103,7 @@ export class XmdCodec extends Codec implements Codec {
             ...optionsArray,
             ...Object.entries(optionsMap).map(
               ([name, value]) => `${name}=${value}`
-            )
+            ),
           ]
           xmd += ' ' + optionsArray.join(', ')
         }

@@ -8,7 +8,7 @@ describe('orderProperties', () => {
     await expect(orderProperties({ b: 1, c: 2, a: 3 })).toEqual({
       b: 1,
       c: 2,
-      a: 3
+      a: 3,
     })
   })
 
@@ -17,12 +17,12 @@ describe('orderProperties', () => {
       Object.keys(
         orderProperties({
           meta: {
-            foo: 'bar'
+            foo: 'bar',
           },
           content: 'First heading',
           id: 'some-id',
           depth: 1,
-          type: 'Heading'
+          type: 'Heading',
         }) as object
       )
     ).toEqual(['type', 'id', 'depth', 'meta', 'content'])
@@ -33,14 +33,14 @@ describe('orderProperties', () => {
       b: {
         b: 2,
         type: 'Foo',
-        a: 1
+        a: 1,
       },
       a: {
         content: [],
         id: 'id',
-        type: 'Foo'
+        type: 'Foo',
       },
-      type: 'Foo'
+      type: 'Foo',
     }) as any
     await expect(Object.keys(result)).toEqual(['type', 'a', 'b'])
     await expect(Object.keys(result.a)).toEqual(['type', 'id', 'content'])

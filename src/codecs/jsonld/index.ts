@@ -37,7 +37,7 @@ const documentLoader = async (url: string): Promise<any> => {
   // Obtain from in-memory cache if possible
   if (url in contexts) {
     return {
-      document: contexts[url]
+      document: contexts[url],
     }
   }
   // Use on-disk Stencila Schema context if possible
@@ -51,8 +51,8 @@ const documentLoader = async (url: string): Promise<any> => {
   try {
     response = await http.get(url, {
       headers: {
-        Accept: 'application/ld+json, application/json, */*'
-      }
+        Accept: 'application/ld+json, application/json, */*',
+      },
     })
   } catch (error) {
     log.error(error)
@@ -78,7 +78,7 @@ export class JsonLdCodec extends Codec implements Codec {
     // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
     const compacted = await jsonld.compact(expanded, schema.jsonLdContext(), {
-      documentLoader
+      documentLoader,
     })
 
     // Remove `@context` and other JSON-LD keywords
@@ -86,7 +86,7 @@ export class JsonLdCodec extends Codec implements Codec {
     const { '@context': context, '@reverse': reverse, ...rest } = compacted
 
     // Transform tree to better match Stencila schema
-    const transformed = transformSync(rest, node => {
+    const transformed = transformSync(rest, (node) => {
       if (!schema.isPrimitive(node)) {
         const type = schema.nodeType(node)
         if (type === 'Date') {
@@ -131,13 +131,13 @@ export class JsonLdCodec extends Codec implements Codec {
       ? (orderProperties(node) as schema.Entity)
       : {
           type: 'PropertyValue',
-          value: node
+          value: node,
         }
 
     const jsonld = JSON.stringify(
       {
         '@context': schema.jsonLdUrl(),
-        ...content
+        ...content,
       },
       null,
       '  '

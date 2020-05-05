@@ -49,7 +49,7 @@ describe('encode', () => {
       'manifest.xml',
       'one.jats.xml',
       'three.jats.xml',
-      'two.jats.xml'
+      'two.jats.xml',
     ])
     expect(await manifest(dir)).toMatchSnapshot()
   })
@@ -63,7 +63,7 @@ describe('encode', () => {
       'manifest.xml',
       'one.jats.xml',
       'three.jats.xml',
-      'two.csv'
+      'two.csv',
     ])
     expect(await manifest(dir)).toMatchSnapshot()
   })
@@ -78,13 +78,13 @@ describe('encode', () => {
           {
             type: 'MediaObject',
             contentUrl:
-              'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
+              'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==',
           },
           {
             type: 'MediaObject',
-            contentUrl: path.join(__dirname, '__fixtures__', 'red-dot.png')
-          }
-        ]
+            contentUrl: path.join(__dirname, '__fixtures__', 'red-dot.png'),
+          },
+        ],
       },
       { filePath: dir }
     )

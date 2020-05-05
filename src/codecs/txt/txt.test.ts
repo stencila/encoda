@@ -80,7 +80,7 @@ describe('stringify', () => {
         stencila.emphasis({ content: ['emphasis'] }),
         stencila.strong({ content: ['strong'] }),
         stencila.subscript({ content: ['sub'] }),
-        stencila.superscript({ content: ['sup'] })
+        stencila.superscript({ content: ['sup'] }),
       ])
     ).toEqual('emphasis strong sub sup')
   })
@@ -94,9 +94,9 @@ describe('stringify', () => {
             stencila.strong({ content: ['strong'] }),
             ' and ',
             stencila.strong({
-              content: [stencila.superscript({ content: ['super strong'] })]
-            })
-          ]
+              content: [stencila.superscript({ content: ['super strong'] })],
+            }),
+          ],
         })
       )
     ).toEqual('A paragraph with strong and super strong')
@@ -127,15 +127,15 @@ const article: stencila.Article = {
     {
       type: 'Person',
       givenNames: ['Peter'],
-      familyNames: ['Pan']
-    }
+      familyNames: ['Pan'],
+    },
   ],
   content: [
     {
       type: 'Paragraph',
-      content: ['My first paragraph.']
-    }
-  ]
+      content: ['My first paragraph.'],
+    },
+  ],
 }
 
 const articleString = 'My first paragraph.'

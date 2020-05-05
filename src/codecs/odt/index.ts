@@ -18,7 +18,7 @@ export class ODTCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     return pandoc.decode(file, options, {
       pandocFormat: InputFormat.odt,
-      pandocArgs: [`--extract-media=${file.path}.media`]
+      pandocArgs: [`--extract-media=${file.path}.media`],
     })
   }
 
@@ -28,7 +28,7 @@ export class ODTCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, options, {
       pandocFormat: OutputFormat.odt,
-      ensureFile: true
+      ensureFile: true,
     })
   }
 }

@@ -18,7 +18,7 @@ describe('decode', () => {
     nock('http://example.org')
       .get('/data.json')
       .reply(200, '{"type": "Person", "name": "Jane"}', {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       })
 
     const node1 = await decode(await load('http://example.org/data.json'))

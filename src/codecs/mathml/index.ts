@@ -62,7 +62,7 @@ export class MathMLCodec extends Codec implements Codec {
     const display = xml.attr(xml.child(mathml, 'math'), 'display')
     return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
       mathLanguage: 'mathml',
-      text: xml.dump(mathml)
+      text: xml.dump(mathml),
     })
   }
 
@@ -92,7 +92,7 @@ export class MathMLCodec extends Codec implements Codec {
       const result = await MathJax.typeset({
         math: text,
         format: format === 'tex' ? 'TeX' : 'AsciiMath',
-        mml: true
+        mml: true,
       })
       mathml = result.mml
     } else {

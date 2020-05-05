@@ -31,7 +31,7 @@ const validators = new Ajv({
   // For better error reporting
   jsonPointers: true,
   // Function to asynchronously load the schemas on demand
-  loadSchema
+  loadSchema,
 })
 
 /**
@@ -53,7 +53,7 @@ const coercers = new Ajv({
   // data to an array with one element and vice versa, as needed.
   coerceTypes: 'array',
   // Function to asynchronously load the schemas on demand
-  loadSchema
+  loadSchema,
 })
 
 const schemasPath = path.dirname(require.resolve('@stencila/schema'))
@@ -173,11 +173,11 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
         dataPath: dataPath ?? '',
         schemaPath: '',
         params: {
-          keyword: 'codec'
+          keyword: 'codec',
         },
         message: msg,
-        data: data
-      }
+        data: data,
+      },
     ])
   }
 
@@ -210,7 +210,7 @@ coercers.addKeyword('codec', {
   type: 'string',
   modifying: true,
   async: true,
-  validate: codecCoerce
+  validate: codecCoerce,
 })
 
 /**
@@ -226,14 +226,16 @@ export function getErrorMessage(
   try {
     details = betterAjvErrors(validator.schema, node, errors, {
       format,
-      indent: 2
+      indent: 2,
     })
   } catch {
-    return errors.map(error => `${error.dataPath}: ${error.message}`).join('\n')
+    return errors
+      .map((error) => `${error.dataPath}: ${error.message}`)
+      .join('\n')
   }
   if (format === 'js') {
     return ((details as unknown) as betterAjvErrors.IOutputError[])
-      .map(error => `${error.error}`)
+      .map((error) => `${error.error}`)
       .join(';')
   } else {
     return (details as unknown) as string

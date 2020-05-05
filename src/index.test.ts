@@ -68,7 +68,7 @@ test('handle', async () => {
 
 const simpleThing = {
   type: 'Thing',
-  name: 'Simple thing'
+  name: 'Simple thing',
 }
 
 const simpleThingJson = JSON.stringify(simpleThing, null, '  ')
@@ -158,7 +158,7 @@ describe('convert', () => {
       // tslint:disable-next-line: no-unnecessary-type-assertion
       const result = (await convert(inp, out, {
         from: 'md',
-        to: 'docx'
+        to: 'docx',
       })) as string
 
       expect(result).toEqual(out)

@@ -26,15 +26,15 @@ const simple = {
       {
         type: 'DatatableColumn',
         name: 'A',
-        values: ['a', 'b', 'c']
+        values: ['a', 'b', 'c'],
       },
       {
         type: 'DatatableColumn',
         name: 'B',
-        values: [1, 2, 3]
-      }
-    ]
-  }
+        values: [1, 2, 3],
+      },
+    ],
+  },
 }
 
 const table = {
@@ -49,14 +49,14 @@ const table = {
           {
             type: 'TableCell',
             name: 'A1',
-            content: ['A']
+            content: ['A'],
           },
           {
             type: 'TableCell',
             name: 'B1',
-            content: ['B']
-          }
-        ]
+            content: ['B'],
+          },
+        ],
       },
       {
         type: 'TableRow',
@@ -64,14 +64,14 @@ const table = {
           {
             type: 'TableCell',
             name: 'A2',
-            content: ['a']
+            content: ['a'],
           },
           {
             type: 'TableCell',
             name: 'B2',
-            content: [1]
-          }
-        ]
+            content: [1],
+          },
+        ],
       },
       {
         type: 'TableRow',
@@ -79,14 +79,14 @@ const table = {
           {
             type: 'TableCell',
             name: 'A3',
-            content: ['b']
+            content: ['b'],
           },
           {
             type: 'TableCell',
             name: 'B3',
-            content: [2]
-          }
-        ]
+            content: [2],
+          },
+        ],
       },
       {
         type: 'TableRow',
@@ -94,7 +94,7 @@ const table = {
           {
             type: 'TableCell',
             name: 'A4',
-            content: ['c']
+            content: ['c'],
           },
           {
             type: 'TableCell',
@@ -104,14 +104,14 @@ const table = {
                 type: 'CodeExpression',
                 programmingLanguage: 'excel',
                 text: 'SUM(B2:B3)^3',
-                output: 27
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                output: 27,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }
 
 const collection: {
@@ -132,24 +132,24 @@ const collection: {
           {
             type: 'DatatableColumn',
             name: 'species',
-            values: ['a', 'b', 'a', 'a', 'b', 'c']
+            values: ['a', 'b', 'a', 'a', 'b', 'c'],
           },
           {
             type: 'DatatableColumn',
             name: 'height',
-            values: [1, 2, 3, 4, 5, 6]
+            values: [1, 2, 3, 4, 5, 6],
           },
           {
             type: 'DatatableColumn',
             name: 'weight',
-            values: [3, 2, 1, 3, 4, 3]
+            values: [3, 2, 1, 3, 4, 3],
           },
           {
             type: 'DatatableColumn',
             name: 'date',
-            values: [-322135, -322070, -322005, -321940, -321875, -321810]
-          }
-        ]
+            values: [-322135, -322070, -322005, -321940, -321875, -321810],
+          },
+        ],
       },
       {
         type: 'Table',
@@ -161,7 +161,7 @@ const collection: {
               {
                 type: 'TableCell',
                 name: 'A1',
-                content: ['mean height']
+                content: ['mean height'],
               },
               {
                 type: 'TableCell',
@@ -171,11 +171,11 @@ const collection: {
                     type: 'CodeExpression',
                     programmingLanguage: 'excel',
                     text: 'AVERAGE(data!B2:B7)',
-                    output: 3.5
-                  }
-                ]
-              }
-            ]
+                    output: 3.5,
+                  },
+                ],
+              },
+            ],
           },
           {
             type: 'TableRow',
@@ -183,7 +183,7 @@ const collection: {
               {
                 type: 'TableCell',
                 name: 'A2',
-                content: ['mean weight']
+                content: ['mean weight'],
               },
               {
                 type: 'TableCell',
@@ -193,16 +193,16 @@ const collection: {
                     type: 'CodeExpression',
                     programmingLanguage: 'excel',
                     text: 'AVERAGE(data!C2:C7)',
-                    output: 2.66666666666667
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                    output: 2.66666666666667,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }
 
 describe('decode', () => {

@@ -92,7 +92,7 @@ export const encodeDoc = async (
   const stencila = xml.elem(
     'stencila',
     {
-      xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml`
+      xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml`,
     },
     root
   )
@@ -104,11 +104,11 @@ export const encodeDoc = async (
           declaration: {
             attributes: {
               version: '1.0',
-              encoding: 'utf-8'
-            }
-          }
+              encoding: 'utf-8',
+            },
+          },
         }
-      : {})
+      : {}),
   }
 }
 
@@ -135,7 +135,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
         const key = xml.attr(curr, 'key') ?? ''
         return {
           ...prev,
-          [key]: decodeElem(curr)
+          [key]: decodeElem(curr),
         }
       }, {})
       return name === 'Object' ? node : { type: name, ...node }
@@ -162,7 +162,7 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
   }
   if (type === 'Array') {
     const array = node as stencila.Node[]
-    const items = array.map(node => encodeNode(node))
+    const items = array.map((node) => encodeNode(node))
     return xml.elem(type, { key }, ...items)
   }
   const props = Object.entries(node)

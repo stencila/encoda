@@ -41,14 +41,14 @@ test('metadata', async () => {
     object: { a: true, b: 'two' },
     inlines: {
       type: 'Paragraph',
-      content: ['Hello']
+      content: ['Hello'],
     },
     blocks: [
       {
         type: 'Paragraph',
-        content: ['World']
-      }
-    ]
+        content: ['World'],
+      },
+    ],
   }
   const pmeta: Pandoc.Meta = {
     null: { t: 'MetaString', c: '!!null' },
@@ -59,39 +59,39 @@ test('metadata', async () => {
       c: [
         {
           c: '1',
-          t: 'MetaString'
+          t: 'MetaString',
         },
         {
           c: '2',
-          t: 'MetaString'
+          t: 'MetaString',
         },
         {
           c: '!!number 3.14',
-          t: 'MetaString'
-        }
-      ]
+          t: 'MetaString',
+        },
+      ],
     },
     object: {
       t: 'MetaMap',
       c: {
         a: {
           c: true,
-          t: 'MetaBool'
+          t: 'MetaBool',
         },
         b: {
           c: 'two',
-          t: 'MetaString'
-        }
-      }
+          t: 'MetaString',
+        },
+      },
     },
     inlines: {
       t: 'MetaInlines',
-      c: [{ t: 'Str', c: 'Hello' }]
+      c: [{ t: 'Str', c: 'Hello' }],
     },
     blocks: {
       t: 'MetaList',
-      c: [{ t: 'MetaInlines', c: [{ t: 'Str', c: 'World' }] }]
-    }
+      c: [{ t: 'MetaInlines', c: [{ t: 'Str', c: 'World' }] }],
+    },
   }
 
   const encoded = await encodeMeta(meta)
@@ -138,11 +138,11 @@ describe('math', () => {
         content: [
           'Some inline math ',
           stencila.mathFragment({ text: 'a' }),
-          '. And some block math:'
-        ]
+          '. And some block math:',
+        ],
       }),
-      stencila.mathBlock({ text: 'e = mc^2' })
-    ]
+      stencila.mathBlock({ text: 'e = mc^2' }),
+    ],
   })
 
   test('decoding', async () => {
@@ -171,7 +171,7 @@ const kitchenSink: testCase = {
     meta: {
       title: {
         t: 'MetaString',
-        c: 'The title'
+        c: 'The title',
       },
       authors: {
         t: 'MetaList',
@@ -182,29 +182,29 @@ const kitchenSink: testCase = {
               type: { t: 'MetaString', c: 'Person' },
               givenNames: {
                 t: 'MetaList',
-                c: [{ t: 'MetaString', c: 'Jane' }]
+                c: [{ t: 'MetaString', c: 'Jane' }],
               },
               familyNames: {
                 t: 'MetaList',
-                c: [{ t: 'MetaString', c: 'Jones' }]
-              }
-            }
-          }
-        ]
+                c: [{ t: 'MetaString', c: 'Jones' }],
+              },
+            },
+          },
+        ],
       },
       references: {
         t: 'MetaList',
-        c: []
-      }
+        c: [],
+      },
     },
     blocks: [
       {
         t: 'Header',
-        c: [1, emptyAttrs, [str('Heading one')]]
+        c: [1, emptyAttrs, [str('Heading one')]],
       },
       {
         t: 'Header',
-        c: [2, emptyAttrs, [str('Heading two')]]
+        c: [2, emptyAttrs, [str('Heading two')]],
       },
       {
         t: 'Para',
@@ -218,7 +218,7 @@ const kitchenSink: testCase = {
           str(' and '),
           {
             t: 'Quoted',
-            c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quote')]]
+            c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quote')]],
           },
           str(' and '),
           { t: 'Code', c: [['', ['r'], []], 'code'] },
@@ -230,26 +230,26 @@ const kitchenSink: testCase = {
             c: [
               emptyAttrs,
               [str('alt text')],
-              ['http://example.org/image.png', 'title']
-            ]
+              ['http://example.org/image.png', 'title'],
+            ],
           },
-          str('.')
-        ]
+          str('.'),
+        ],
       },
       {
         t: 'BlockQuote',
-        c: [{ t: 'Para', c: [str('A blockquote')] }]
+        c: [{ t: 'Para', c: [str('A blockquote')] }],
       },
       {
         t: 'CodeBlock',
-        c: [['', ['python'], []], '# A code block']
+        c: [['', ['python'], []], '# A code block'],
       },
       {
         t: 'BulletList',
         c: [
           [{ t: 'Para', c: [str('Item one')] }],
-          [{ t: 'Para', c: [str('Item two')] }]
-        ]
+          [{ t: 'Para', c: [str('Item two')] }],
+        ],
       },
       {
         t: 'OrderedList',
@@ -257,13 +257,13 @@ const kitchenSink: testCase = {
           [
             1,
             { t: Pandoc.ListNumberStyle.DefaultStyle },
-            { t: Pandoc.ListNumberDelim.DefaultDelim }
+            { t: Pandoc.ListNumberDelim.DefaultDelim },
           ],
           [
             [{ t: 'Para', c: [str('First item')] }],
-            [{ t: 'Para', c: [str('Second item')] }]
-          ]
-        ]
+            [{ t: 'Para', c: [str('Second item')] }],
+          ],
+        ],
       },
       {
         t: 'Table',
@@ -271,40 +271,40 @@ const kitchenSink: testCase = {
           [],
           [
             {
-              t: Pandoc.Alignment.AlignDefault
+              t: Pandoc.Alignment.AlignDefault,
             },
             {
-              t: Pandoc.Alignment.AlignDefault
+              t: Pandoc.Alignment.AlignDefault,
             },
             {
-              t: Pandoc.Alignment.AlignDefault
-            }
+              t: Pandoc.Alignment.AlignDefault,
+            },
           ],
           [0, 0, 0],
           [
             [{ t: 'Para', c: [{ t: 'Str', c: 'A' }] }],
             [{ t: 'Para', c: [{ t: 'Str', c: 'B' }] }],
-            [{ t: 'Para', c: [{ t: 'Str', c: 'C' }] }]
+            [{ t: 'Para', c: [{ t: 'Str', c: 'C' }] }],
           ],
           [
             [
               [{ t: 'Para', c: [{ t: 'Str', c: '1' }] }],
               [{ t: 'Para', c: [{ t: 'Str', c: '2' }] }],
-              [{ t: 'Para', c: [{ t: 'Str', c: '3' }] }]
+              [{ t: 'Para', c: [{ t: 'Str', c: '3' }] }],
             ],
             [
               [{ t: 'Para', c: [{ t: 'Str', c: '4' }] }],
               [{ t: 'Para', c: [{ t: 'Str', c: '5' }] }],
-              [{ t: 'Para', c: [{ t: 'Str', c: '6' }] }]
-            ]
-          ]
-        ]
+              [{ t: 'Para', c: [{ t: 'Str', c: '6' }] }],
+            ],
+          ],
+        ],
       },
       {
         t: 'HorizontalRule',
-        c: undefined
-      }
-    ]
+        c: undefined,
+      },
+    ],
   },
   node: {
     type: 'Article',
@@ -313,20 +313,20 @@ const kitchenSink: testCase = {
       {
         type: 'Person',
         givenNames: ['Jane'],
-        familyNames: ['Jones']
-      }
+        familyNames: ['Jones'],
+      },
     ],
     references: [],
     content: [
       {
         type: 'Heading',
         depth: 1,
-        content: ['Heading one']
+        content: ['Heading one'],
       },
       {
         type: 'Heading',
         depth: 2,
-        content: ['Heading two']
+        content: ['Heading two'],
       },
       {
         type: 'Paragraph',
@@ -346,31 +346,31 @@ const kitchenSink: testCase = {
             type: 'Link',
             content: [],
             title: 'title',
-            target: 'url'
+            target: 'url',
           },
           ' and ',
           {
             type: 'ImageObject',
             contentUrl: 'http://example.org/image.png',
             title: 'title',
-            text: 'alt text'
+            text: 'alt text',
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'QuoteBlock',
         content: [
           {
             type: 'Paragraph',
-            content: ['A blockquote']
-          }
-        ]
+            content: ['A blockquote'],
+          },
+        ],
       },
       {
         type: 'CodeBlock',
         programmingLanguage: 'python',
-        text: '# A code block'
+        text: '# A code block',
       },
       {
         type: 'List',
@@ -378,13 +378,13 @@ const kitchenSink: testCase = {
         items: [
           {
             type: 'ListItem',
-            content: [{ type: 'Paragraph', content: ['Item one'] }]
+            content: [{ type: 'Paragraph', content: ['Item one'] }],
           },
           {
             type: 'ListItem',
-            content: [{ type: 'Paragraph', content: ['Item two'] }]
-          }
-        ]
+            content: [{ type: 'Paragraph', content: ['Item two'] }],
+          },
+        ],
       },
       {
         type: 'List',
@@ -392,13 +392,13 @@ const kitchenSink: testCase = {
         items: [
           {
             type: 'ListItem',
-            content: [{ type: 'Paragraph', content: ['First item'] }]
+            content: [{ type: 'Paragraph', content: ['First item'] }],
           },
           {
             type: 'ListItem',
-            content: [{ type: 'Paragraph', content: ['Second item'] }]
-          }
-        ]
+            content: [{ type: 'Paragraph', content: ['Second item'] }],
+          },
+        ],
       },
       {
         type: 'Table',
@@ -408,59 +408,59 @@ const kitchenSink: testCase = {
             cells: [
               {
                 content: ['A'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['B'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['C'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['1'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['2'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['3'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['4'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['5'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['6'],
-                type: 'TableCell'
-              }
-            ]
-          }
-        ]
+                type: 'TableCell',
+              },
+            ],
+          },
+        ],
       },
       {
-        type: 'ThematicBreak'
-      }
-    ]
-  }
+        type: 'ThematicBreak',
+      },
+    ],
+  },
 }
 
 // Check that adjacent `Str` and `Space` elements are collapsed
@@ -482,10 +482,10 @@ const collapseSpaces: testCase = {
           space(),
           { t: 'Strong', c: [str('Strong then space')] },
           space(),
-          str('.')
-        ]
-      }
-    ]
+          str('.'),
+        ],
+      },
+    ],
   },
   node: {
     type: 'Article',
@@ -495,11 +495,11 @@ const collapseSpaces: testCase = {
         content: [
           'One two three  four. ',
           { type: 'Strong', content: ['Strong then space'] },
-          ' .'
-        ]
-      }
-    ]
-  }
+          ' .',
+        ],
+      },
+    ],
+  },
 }
 
 // Test that where necessary Pandoc inline nodes are decoded to strings
@@ -518,31 +518,31 @@ const imageInlinesToString: testCase = {
               [
                 {
                   t: 'Emph',
-                  c: [str('emphasis')]
+                  c: [str('emphasis')],
                 },
                 {
                   t: 'Space',
-                  c: undefined
+                  c: undefined,
                 },
                 {
                   t: 'Strong',
-                  c: [str('strong')]
+                  c: [str('strong')],
                 },
                 {
                   t: 'Space',
-                  c: undefined
+                  c: undefined,
                 },
                 {
                   t: 'Quoted',
-                  c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quoted')]]
-                }
+                  c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quoted')]],
+                },
               ],
-              ['http://example.org/image.png', 'title']
-            ]
-          }
-        ]
-      }
-    ]
+              ['http://example.org/image.png', 'title'],
+            ],
+          },
+        ],
+      },
+    ],
   },
   node: {
     type: 'Article',
@@ -554,19 +554,19 @@ const imageInlinesToString: testCase = {
             type: 'ImageObject',
             contentUrl: 'http://example.org/image.png',
             title: 'title',
-            text: 'emphasis strong quoted'
-          }
-        ]
-      }
-    ]
-  }
+            text: 'emphasis strong quoted',
+          },
+        ],
+      },
+    ],
+  },
 }
 
 // A very simple test of the approach to typing Pandoc nodes
 test('types', () => {
   const str: Pandoc.Str = {
     t: 'Str',
-    c: 'A string'
+    c: 'A string',
   }
 
   let para: Pandoc.Para = {
@@ -575,9 +575,9 @@ test('types', () => {
       str,
       {
         t: 'Str',
-        c: ' and another.'
-      }
-    ]
+        c: ' and another.',
+      },
+    ],
   }
 
   // Should create error: Property 'c' is missing in type '{ t: "Para"; }' but required in type....
@@ -589,18 +589,18 @@ test('types', () => {
       c: [
         {
           t: 'MetaBool',
-          c: true
-        }
-      ]
-    }
+          c: true,
+        },
+      ],
+    },
   }
 
   const blocks: Pandoc.Block[] = [
     para,
     {
       t: 'BlockQuote',
-      c: []
-    }
+      c: [],
+    },
     // Should create error: Type '"Str"' is not assignable to type '"Para" ...
     // {t: 'Str'}
   ]
@@ -608,6 +608,6 @@ test('types', () => {
   const doc: Pandoc.Document = {
     'pandoc-api-version': Pandoc.Version,
     meta,
-    blocks
+    blocks,
   }
 })

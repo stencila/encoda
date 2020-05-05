@@ -27,19 +27,19 @@ describe('decode', () => {
     expect(
       nodes(
         await codec.read(shallow, {
-          patterns: ['**/README.*']
+          patterns: ['**/README.*'],
         })
       ).sort()
     ).toMatchObject([
       'shallow/a/README',
       'shallow/b/README',
-      'shallow/c/README'
+      'shallow/c/README',
     ])
 
     expect(
       nodes(
         await codec.read(shallow, {
-          patterns: ['**/a/*']
+          patterns: ['**/a/*'],
         })
       ).sort()
     ).toMatchObject(['shallow/a/README', 'shallow/a/index', 'shallow/a/main'])
@@ -49,7 +49,7 @@ describe('decode', () => {
     expect(
       mains(
         await codec.read(shallow, {
-          mainNames: []
+          mainNames: [],
         })
       )
     ).toMatchObject([])
@@ -57,7 +57,7 @@ describe('decode', () => {
     expect(
       mains(
         await codec.read(shallow, {
-          mainNames: ['index']
+          mainNames: ['index'],
         })
       )
     ).toMatchObject(['shallow/a/index', 'shallow/b/index'])
@@ -65,13 +65,13 @@ describe('decode', () => {
     expect(
       mains(
         await codec.read(shallow, {
-          mainNames: ['README', 'index']
+          mainNames: ['README', 'index'],
         })
       )
     ).toMatchObject([
       'shallow/a/README',
       'shallow/b/README',
-      'shallow/c/README'
+      'shallow/c/README',
     ])
   })
 
@@ -103,7 +103,7 @@ describe('encode', () => {
       'b/README.html',
       'b/index.html',
       'c/index.html',
-      'root.json'
+      'root.json',
     ])
   })
 })
@@ -117,21 +117,21 @@ const flatNode: stencila.Collection = {
       type: 'Article',
       name: '1',
       meta: { depth: 0 },
-      title: 'One'
+      title: 'One',
     },
     {
       type: 'Article',
       name: '2',
       meta: { depth: 0 },
-      title: 'Two'
+      title: 'Two',
     },
     {
       type: 'Article',
       name: '3',
       meta: { depth: 0 },
-      title: 'Three'
-    }
-  ]
+      title: 'Three',
+    },
+  ],
 }
 
 const shallow = path.join(__dirname, '__fixtures__', 'shallow')
@@ -147,24 +147,24 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'README',
           meta: { depth: 1 },
-          content: [{ type: 'Paragraph', content: ['README'] }]
+          content: [{ type: 'Paragraph', content: ['README'] }],
         },
         {
           type: 'Article',
           name: 'index',
           meta: { depth: 1 },
-          content: [{ type: 'Paragraph', content: ['Index'] }]
+          content: [{ type: 'Paragraph', content: ['Index'] }],
         },
         {
           type: 'Article',
           name: 'main',
           meta: {
             main: true,
-            depth: 1
+            depth: 1,
           },
-          content: [{ type: 'Paragraph', content: ['Main'] }]
-        }
-      ]
+          content: [{ type: 'Paragraph', content: ['Main'] }],
+        },
+      ],
     },
     {
       type: 'Collection',
@@ -174,18 +174,18 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'README',
           meta: { depth: 1 },
-          content: [{ type: 'Paragraph', content: ['README'] }]
+          content: [{ type: 'Paragraph', content: ['README'] }],
         },
         {
           type: 'Article',
           name: 'index',
           meta: {
             main: true,
-            depth: 1
+            depth: 1,
           },
-          content: [{ type: 'Paragraph', content: ['Index'] }]
-        }
-      ]
+          content: [{ type: 'Paragraph', content: ['Index'] }],
+        },
+      ],
     },
     {
       type: 'Collection',
@@ -196,13 +196,13 @@ const shallowNode: stencila.Collection = {
           name: 'README',
           meta: {
             main: true,
-            depth: 1
+            depth: 1,
           },
-          content: [{ type: 'Paragraph', content: ['README'] }]
-        }
-      ]
-    }
-  ]
+          content: [{ type: 'Paragraph', content: ['README'] }],
+        },
+      ],
+    },
+  ],
 }
 
 const deep = path.join(__dirname, '__fixtures__', 'deep')
@@ -223,21 +223,21 @@ const deepTree = {
             '2',
             {
               name: 'a',
-              parts: ['1', '2']
-            }
-          ]
+              parts: ['1', '2'],
+            },
+          ],
         },
         {
           name: 'b',
-          parts: ['1', '2']
-        }
-      ]
+          parts: ['1', '2'],
+        },
+      ],
     },
     {
       name: 'b',
-      parts: ['1', '2']
-    }
-  ]
+      parts: ['1', '2'],
+    },
+  ],
 }
 
 /**
@@ -285,7 +285,7 @@ function tree(work: stencila.CreativeWork): any {
     const coll = work as stencila.Collection
     return {
       name: coll.name,
-      parts: coll.parts.map(tree)
+      parts: coll.parts.map(tree),
     }
   } else {
     return work.name

@@ -53,14 +53,14 @@ export class PdfCodec extends Codec {
       authors,
       keywords,
       dateCreated,
-      dateModified
+      dateModified,
     } = await decodeMetadata(meta)
     return stencila.creativeWork({
       authors,
       title,
       keywords,
       dateCreated,
-      dateModified
+      dateModified,
     })
   }
 
@@ -82,7 +82,7 @@ export class PdfCodec extends Codec {
     const html = await htmlCodec.dump(node, {
       ...options,
       isStandalone: true,
-      isBundle: true
+      isBundle: true,
     })
 
     // Render the PDF in the browser
@@ -95,7 +95,7 @@ export class PdfCodec extends Codec {
       stencila-code-chunk stencila-action-menu {
         display: none !important;
       }
-    `
+    `,
     })
     const buffer = await page.pdf({
       format: 'A4',
@@ -105,8 +105,8 @@ export class PdfCodec extends Codec {
         top: '2.54cm',
         bottom: '2.54cm',
         left: '2.54cm',
-        right: '2.54cm'
-      }
+        right: '2.54cm',
+      },
     })
     await page.close()
 
@@ -143,7 +143,7 @@ const decodeMetadata = async (
   if (authors !== undefined) {
     people = await Promise.all(
       authors.map(
-        async author => load(author, 'person') as Promise<stencila.Person>
+        async (author) => load(author, 'person') as Promise<stencila.Person>
       )
     )
   }
@@ -158,7 +158,7 @@ const decodeMetadata = async (
     dateModified:
       dateModified !== undefined
         ? stencila.date({ value: dateModified.toISOString() })
-        : undefined
+        : undefined,
   })
 }
 
@@ -183,7 +183,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
 
   if (authors !== undefined) {
     authors = await Promise.all(
-      authors.map(author => {
+      authors.map((author) => {
         if (stencila.isA('Person', author)) return dump(author, 'person')
         else return author.name ?? author.legalName ?? ''
       })
@@ -209,7 +209,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
     keywords,
     dateCreated,
     dateModified,
-    dateCurrent
+    dateCurrent,
   }
 }
 
@@ -262,7 +262,7 @@ async function encodeXmp(
     keywords,
     dateCreated,
     dateModified,
-    dateCurrent
+    dateCurrent,
   } = meta
 
   // Dump the entire node as an XML document to put into XMP
@@ -289,7 +289,7 @@ async function encodeXmp(
                 : `<dc:creator>
               <rdf:Seq>
                 ${authors
-                  .map(author => `<rdf:li>${author}</rdf:li>`)
+                  .map((author) => `<rdf:li>${author}</rdf:li>`)
                   .join('\n')}
               </rdf:Seq>
             </dc:creator>`
@@ -305,7 +305,7 @@ async function encodeXmp(
                 : `<dc:subject>
               <rdf:Bag>
                 ${keywords
-                  .map(keyword => `<rdf:li>${keyword}</rdf:li>`)
+                  .map((keyword) => `<rdf:li>${keyword}</rdf:li>`)
                   .join('\n')}
               </rdf:Bag>
             </dc:subject>`
@@ -329,7 +329,7 @@ async function encodeXmp(
   const metadataStream = pdf.context.stream(metadataXML, {
     Type: 'Metadata',
     Subtype: 'XML',
-    Length: metadataXML.length
+    Length: metadataXML.length,
   })
   const metadataStreamRef = pdf.context.register(metadataStream)
   pdf.catalog.set(PDFName.of('Metadata'), metadataStreamRef)
@@ -370,7 +370,7 @@ function decodeInfoDict(pdf: PDFDocument): PdfMetadata {
     authors: authors !== undefined ? authors.split(',') : undefined,
     keywords: keywords !== undefined ? keywords.split(/\s+/) : undefined,
     dateCreated,
-    dateModified
+    dateModified,
   }
 }
 

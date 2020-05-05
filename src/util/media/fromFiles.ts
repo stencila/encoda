@@ -29,7 +29,7 @@ export async function fromFiles(node: schema.Node): Promise<schema.Node> {
           const data = await dataUri.fromFile(contentUrl)
           return {
             ...rest,
-            contentUrl: data.dataUri
+            contentUrl: data.dataUri,
           }
         }
       }

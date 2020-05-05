@@ -8,8 +8,8 @@ test('issue 183: conversion of lists to Markdown fails', async () => {
         items: [
           { type: 'ListItem', content: ['Item One'] },
           { type: 'ListItem', content: ['Item Two'] },
-          { type: 'ListItem', content: ['Item Three'] }
-        ]
+          { type: 'ListItem', content: ['Item Three'] },
+        ],
       },
       'md'
     )
@@ -33,13 +33,13 @@ test('issue 183: conversion of lists to Markdown fails', async () => {
                 items: [
                   { type: 'ListItem', content: ['Nested Item One'] },
                   { type: 'ListItem', content: ['Nested Item Two'] },
-                  { type: 'ListItem', content: ['Nested Item Three'] }
-                ]
-              }
-            ]
+                  { type: 'ListItem', content: ['Nested Item Three'] },
+                ],
+              },
+            ],
           },
-          { type: 'ListItem', content: ['Item Three'] }
-        ]
+          { type: 'ListItem', content: ['Item Three'] },
+        ],
       },
       'md'
     )
@@ -59,14 +59,14 @@ test('issue 183: conversion of lists to Markdown fails', async () => {
           {
             type: 'ListItem',
             isChecked: false,
-            content: ['Todo item']
+            content: ['Todo item'],
           },
           {
             type: 'ListItem',
             isChecked: true,
-            content: ['Completed todo item']
-          }
-        ]
+            content: ['Completed todo item'],
+          },
+        ],
       },
       'md'
     )

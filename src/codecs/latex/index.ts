@@ -19,7 +19,7 @@ export class LatexCodec extends Codec implements Codec {
     options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
     return pandoc.decode(file, options, {
-      pandocFormat: InputFormat.latex
+      pandocFormat: InputFormat.latex,
     })
   }
 
@@ -28,7 +28,7 @@ export class LatexCodec extends Codec implements Codec {
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, options, {
-      pandocFormat: OutputFormat.latex
+      pandocFormat: OutputFormat.latex,
     })
   }
 }

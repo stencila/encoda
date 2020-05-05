@@ -20,6 +20,6 @@ test('issue 408: decoding / encoding of <code> within <p> elements in JATS', asy
   ).toEqual([
     schema.paragraph({ content: ['A paragraph with some '] }),
     schema.codeBlock({ text: 'fancy computer code' }),
-    schema.paragraph({ content: [' in it.'] })
+    schema.paragraph({ content: [' in it.'] }),
   ])
 })

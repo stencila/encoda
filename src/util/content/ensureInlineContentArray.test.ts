@@ -17,7 +17,7 @@ describe('Ensures an array of inline content', () => {
     expect(ensureInlineContentArray([quoteBlock, 'three'])).toEqual([
       emph,
       quote,
-      'three'
+      'three',
     ])
   })
 
@@ -25,7 +25,7 @@ describe('Ensures an array of inline content', () => {
     expect(
       ensureInlineContentArray([
         schema.thematicBreak(),
-        schema.codeBlock({ text: 'Some code' })
+        schema.codeBlock({ text: 'Some code' }),
       ])
     ).toEqual(['', 'Some code'])
   })

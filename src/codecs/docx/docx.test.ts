@@ -27,7 +27,7 @@ const articles = [
   ['math-article', mathArticle, false],
   ['math-article', mathArticle, false],
   ['elife-50356', 'article/journal/elife/50356.json', false],
-  ['plosone-0229075', 'article/journal/plosone/0229075.json', false]
+  ['plosone-0229075', 'article/journal/plosone/0229075.json', false],
 ]
 describe('encode+decode', () => {
   test.each(articles)('%s', async (name, article, decode) => {
@@ -51,7 +51,7 @@ describe('encode+decode', () => {
   test('logs have expected warnings only', () => {
     expect(logMessages).toEqual([
       'Unhandled block node type when encoding: Text',
-      'Unhandled block node type when encoding: MediaObject'
+      'Unhandled block node type when encoding: MediaObject',
     ])
   })
 })

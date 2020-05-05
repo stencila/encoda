@@ -12,7 +12,7 @@ test('issue 95: extra bullet in blockquote', async () => {
       {
         type: 'Heading',
         depth: 2,
-        content: ['Prerequisites']
+        content: ['Prerequisites'],
       },
       {
         type: 'QuoteBlock',
@@ -32,18 +32,18 @@ test('issue 95: extra bullet in blockquote', async () => {
                         type: 'Link',
                         content: ['Before we start'],
                         target:
-                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
+                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html',
                       },
-                      ' for installation instructions)'
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                      ' for installation instructions)',
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   }
 
   const expectedFromDocx: stencila.Article = {
@@ -52,7 +52,7 @@ test('issue 95: extra bullet in blockquote', async () => {
       {
         type: 'Heading',
         depth: 2,
-        content: ['Prerequisites']
+        content: ['Prerequisites'],
       },
       {
         // The child-parent relationship between QuoteBlock and List is inverted.
@@ -75,18 +75,18 @@ test('issue 95: extra bullet in blockquote', async () => {
                         type: 'Link',
                         content: ['Before we start'],
                         target:
-                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
+                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html',
                       },
-                      ' for installation instructions)'
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                      ' for installation instructions)',
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   }
 
   // Check that the loaded Markdown doesn't have an extra bullet

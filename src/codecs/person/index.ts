@@ -74,7 +74,7 @@ export class PersonCodec extends Codec implements Codec {
       honorificPrefix: title.length > 0 ? title : undefined,
       honorificSuffix: suffix.length > 0 ? suffix : undefined,
       emails: email !== undefined ? [email] : undefined,
-      url: url
+      url: url,
     })
   }
 

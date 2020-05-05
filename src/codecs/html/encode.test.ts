@@ -24,7 +24,7 @@ import rNotebookSimple from '../../__fixtures__/article/r-notebook-simple'
 import {
   pythonCodeChunk,
   rCodeExpression,
-  rCodeChunkImageOutput
+  rCodeChunkImageOutput,
 } from '../../__fixtures__/code/kitchen-sink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
@@ -38,7 +38,7 @@ const articles: [string, string | schema.Article, number][] = [
   ['jupyter-notebook-simple', jupyterNotebookSimple, 1],
   ['r-notebook-simple', rNotebookSimple, 1],
   ['elife-50356', 'article/journal/elife/50356.json', 2],
-  ['plosone-0229075', 'article/journal/plosone/0229075.json', 2]
+  ['plosone-0229075', 'article/journal/plosone/0229075.json', 2],
 ]
 describe('Articles', () => {
   test.each(articles)(
@@ -56,7 +56,7 @@ describe('Articles', () => {
         // tests such as `color-contrast`. We can test without a theme but
         // still get failures on such tests and the generated snapshots files
         // are not pleasant / realistic for visual checking by humans.
-        theme: 'stencila'
+        theme: 'stencila',
       })
       const file = snapshot(`${name}.html`)
 
@@ -73,7 +73,7 @@ describe('Articles', () => {
           level > 1
             ? [
                 { type, test: 'Article[*].author[0].affiliation' },
-                { type, test: 'Article[*].citation' }
+                { type, test: 'Article[*].citation' },
               ]
             : []
         await structuredDataTest(html, {
@@ -81,12 +81,12 @@ describe('Articles', () => {
           // See https://developers.google.com/search/docs/data-types/article
           presets: [ArticlePreset],
           // Additional tests beyond what Google expects
-          tests
+          tests,
         })
       } catch (error) {
         if (error.type === 'VALIDATION_FAILED') {
           const {
-            res: { failed }
+            res: { failed },
           } = error
           failed.forEach((test: any) => fail(test.error.message))
         } else throw error
@@ -106,7 +106,7 @@ describe('Articles', () => {
         // Skip color contrast related checks (will probably have
         // these checks in Thema)
         'color-contrast',
-        'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail'
+        'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail',
       ]
       // Temporarily skip Web Component structure (not controlled by this repo)
       // See https://github.com/stencila/designa/issues/37
@@ -129,7 +129,7 @@ describe('Articles', () => {
 const nodes: [string, schema.Node][] = [
   ['python-code-chunk', pythonCodeChunk],
   ['r-code-expression', rCodeExpression],
-  ['r-code-chunk-image-output', rCodeChunkImageOutput]
+  ['r-code-chunk-image-output', rCodeChunkImageOutput],
 ]
 describe('General nodes', () => {
   test.each(nodes)('%s', async (name: string, node: schema.Node) => {
@@ -137,7 +137,7 @@ describe('General nodes', () => {
     const html = await htmlCodec.dump(await unlinkFiles(node), {
       // Standalone so get complete HTML doc with <head> etc
       // for checking rendering of Web Components for these nodes.
-      isStandalone: true
+      isStandalone: true,
     })
     const file = snapshot(`${name}.html`)
     expect(html).toMatchFile(file)

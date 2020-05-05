@@ -25,8 +25,8 @@ const http = got.extend({
   cache,
   headers: {
     'user-agent': `encoda (https://github.com/stencila/encoda)`,
-    'accept-encoding': 'gzip, deflate'
-  }
+    'accept-encoding': 'gzip, deflate',
+  },
 })
 
 /**

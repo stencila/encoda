@@ -30,7 +30,7 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
   const outPath = path.join(__dirname, '__outputs__', fileName)
   await fs.ensureDir(path.dirname(outPath))
   const file = await codec.encode(node, {
-    filePath: outPath
+    filePath: outPath,
   })
   const nodeDecoded = await codec.decode(file)
   try {
@@ -47,14 +47,14 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
         else extra = `\n\nthe generated content was: ${file.contents}`
         return error.message + extra
       },
-      pass: false
+      pass: false,
     }
   }
   // Clean up
   await fs.remove(outPath)
   return {
     message: () => 'ok!',
-    pass: true
+    pass: true,
   }
 }
 
@@ -91,14 +91,14 @@ const toEqualStringContent = (
           : '') +
         `Received value with compressed whitespace:\n` +
         `  ${printReceived(compressedReceived)}`,
-      pass: true
+      pass: true,
     }
   } else {
     return {
       message: () => {
         // `expected ${received} to match string ${expected}`,
         const diffString = diff(compressedExpected, compressedReceived, {
-          expand: true
+          expand: true,
         })
 
         return (
@@ -119,7 +119,7 @@ const toEqualStringContent = (
           }`
         )
       },
-      pass: false
+      pass: false,
     }
   }
 }

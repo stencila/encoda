@@ -3,7 +3,7 @@ import {
   codeChunk,
   heading,
   paragraph,
-  person
+  person,
 } from '@stencila/schema'
 
 /**
@@ -15,59 +15,59 @@ export default article({
   title: 'Jupyter notebook title',
   authors: [
     person({
-      name: 'A. Jovian'
-    })
+      name: 'A. Jovian',
+    }),
   ],
   datePublished: '2020-04-01',
   meta: {
     kernelspec: {
       display_name: 'Python 3',
       language: 'python',
-      name: 'python3'
+      name: 'python3',
     },
     language_info: {
       codemirror_mode: {
         name: 'ipython',
-        version: 3
+        version: 3,
       },
       file_extension: '.py',
       mimetype: 'text/x-python',
       name: 'python',
       nbconvert_exporter: 'python',
       pygments_lexer: 'ipython3',
-      version: '3.6.4'
+      version: '3.6.4',
     },
-    orig_nbformat: 1
+    orig_nbformat: 1,
   },
   content: [
     heading({
       depth: 1,
-      content: ['Heading 1']
+      content: ['Heading 1'],
     }),
     paragraph({
-      content: ['A markdown cell with some text.']
+      content: ['A markdown cell with some text.'],
     }),
     codeChunk({
       meta: {
-        execution_count: 4
+        execution_count: 4,
       },
       programmingLanguage: 'python',
-      text: "greeting = 'Hello from Python'"
+      text: "greeting = 'Hello from Python'",
     }),
     heading({
       depth: 2,
-      content: ['Heading 1.1']
+      content: ['Heading 1.1'],
     }),
     paragraph({
-      content: ['An other markdown cell.']
+      content: ['An other markdown cell.'],
     }),
     codeChunk({
       meta: {
-        execution_count: 6
+        execution_count: 6,
       },
       programmingLanguage: 'python',
       text: "import sys\nprint(greeting + ' ' + str(sys.version_info[0]))",
-      outputs: ['Hello from Python 3']
-    })
-  ]
+      outputs: ['Hello from Python 3'],
+    }),
+  ],
 })

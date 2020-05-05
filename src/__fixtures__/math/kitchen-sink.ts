@@ -6,12 +6,12 @@ export const asciimathString = 'E = mc^2'
 
 export const asciimathBlock = mathBlock({
   mathLanguage: 'asciimath',
-  text: asciimathString
+  text: asciimathString,
 })
 
 export const asciimathFragment = mathFragment({
   mathLanguage: 'asciimath',
-  text: asciimathString
+  text: asciimathString,
 })
 
 // MathML
@@ -21,7 +21,7 @@ export const mathmlString =
 
 export const mathmlBlock = mathBlock({
   mathLanguage: 'mathml',
-  text: mathmlString
+  text: mathmlString,
 })
 
 export const mathmlBlockString = mathmlString.replace(
@@ -31,7 +31,7 @@ export const mathmlBlockString = mathmlString.replace(
 
 export const mathmlFragment = mathFragment({
   mathLanguage: 'mathml',
-  text: mathmlString
+  text: mathmlString,
 })
 
 export const mathmlInlineString = mathmlString.replace(
@@ -47,10 +47,10 @@ export const texBlockString = `\\displaystyle ${texString}`
 
 export const texBlock = mathBlock({
   mathLanguage: 'tex',
-  text: texString
+  text: texString,
 })
 
 export const texFragment = mathFragment({
   mathLanguage: 'tex',
-  text: texString
+  text: texString,
 })

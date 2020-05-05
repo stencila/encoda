@@ -24,7 +24,7 @@ export function unlinkFiles(node: schema.Node): schema.Node {
         if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
           return {
             ...rest,
-            contentUrl: ''
+            contentUrl: '',
           }
         }
       }

@@ -22,19 +22,19 @@ test('issue 20: empty cells ignored during conversion', async () => {
       {
         type: 'DatatableColumn',
         name: 'A',
-        values: [1, 4, 6, null, 7, 8, null, 11, null]
+        values: [1, 4, 6, null, 7, 8, null, 11, null],
       },
       {
         type: 'DatatableColumn',
         name: 'B',
-        values: [2, null, null, null, null, 9, null, null, null]
+        values: [2, null, null, null, null, 9, null, null, null],
       },
       {
         type: 'DatatableColumn',
         name: 'C',
-        values: [3, 5, null, null, null, 10, null, null, null]
-      }
-    ]
+        values: [3, 5, null, null, null, 10, null, null, null],
+      },
+    ],
   }
 
   expect(await decode(await vfile.load(csv))).toEqual(dt)

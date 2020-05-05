@@ -11,7 +11,7 @@ declare module 'png-chunks-extract' {
     name: string
     data: Uint8Array | Buffer
   }
-  export default function(data: Uint8Array | Buffer): Chunk[]
+  export default function (data: Uint8Array | Buffer): Chunk[]
 }
 
 declare module 'png-chunks-encode' {
@@ -19,7 +19,7 @@ declare module 'png-chunks-encode' {
     name: string
     data: Uint8Array | Buffer
   }
-  export default function(chunks: Chunk[]): Uint8Array
+  export default function (chunks: Chunk[]): Uint8Array
 }
 
 declare module 'png-chunk-text' {

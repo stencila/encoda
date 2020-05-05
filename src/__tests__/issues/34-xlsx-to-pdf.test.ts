@@ -29,14 +29,14 @@ describe('issue 34: XLSX to PDF conversion fails', () => {
         {
           type: 'DatatableColumn',
           name: '# Monkeys',
-          values: [10, 30, 28]
+          values: [10, 30, 28],
         },
         {
           type: 'DatatableColumn',
           name: 'Tame?',
-          values: ['Partly', 'Completely', 'Utterly intransigent']
-        }
-      ]
+          values: ['Partly', 'Completely', 'Utterly intransigent'],
+        },
+      ],
     }
     expect(datatable).toEqual(expected)
   })

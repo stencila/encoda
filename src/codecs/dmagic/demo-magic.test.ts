@@ -26,12 +26,12 @@ const node: stencila.Article = {
     {
       type: 'Heading',
       depth: 1,
-      content: ['Heading one']
+      content: ['Heading one'],
     },
     {
       type: 'Heading',
       depth: 2,
-      content: ['Heading two']
+      content: ['Heading two'],
     },
     {
       type: 'Paragraph',
@@ -39,39 +39,39 @@ const node: stencila.Article = {
         'A paragraph with ',
         {
           type: 'Strong',
-          content: ['strong']
+          content: ['strong'],
         },
         ' and ',
         {
           type: 'CodeFragment',
-          text: 'code'
-        }
-      ]
+          text: 'code',
+        },
+      ],
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'bash',
-      text: 'date'
+      text: 'date',
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'bash',
       text: 'date --utc',
       meta: {
-        pause: 2
-      }
+        pause: 2,
+      },
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'sh',
-      text: 'date -u'
+      text: 'date -u',
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'foo',
-      value: 'ignored'
-    }
-  ]
+      value: 'ignored',
+    },
+  ],
 }
 
 const bash = `h 1 "# Heading one"

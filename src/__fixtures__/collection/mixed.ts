@@ -12,7 +12,7 @@ export default collection({
       name: 'one',
       title: 'Article one',
       authors: [],
-      content: [{ type: 'Heading', depth: 1, content: ['One'] }]
+      content: [{ type: 'Heading', depth: 1, content: ['One'] }],
     },
     {
       type: 'Datatable',
@@ -21,21 +21,21 @@ export default collection({
         {
           type: 'DatatableColumn',
           name: 'A',
-          values: [1, 2, 3]
+          values: [1, 2, 3],
         },
         {
           type: 'DatatableColumn',
           name: 'B',
-          values: [4, 5, 6]
-        }
-      ]
+          values: [4, 5, 6],
+        },
+      ],
     },
     {
       type: 'Article',
       name: 'three',
       title: 'Article three',
       authors: [],
-      content: [{ type: 'Heading', depth: 1, content: ['Three'] }]
-    }
-  ]
+      content: [{ type: 'Heading', depth: 1, content: ['Three'] }],
+    },
+  ],
 })

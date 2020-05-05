@@ -56,10 +56,7 @@ export class HTTPCodec extends Codec implements Codec {
     // Note that if extension does not match any of the codecs then
     // the `match()` function will defaul to the `plain `txt` codec anyway.
     if (format === 'text/plain') {
-      const extname = path
-        .extname(url)
-        .substring(1)
-        .toLowerCase()
+      const extname = path.extname(url).substring(1).toLowerCase()
       if (extname.length > 1) format = extname
     }
 

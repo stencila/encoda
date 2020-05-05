@@ -48,7 +48,7 @@ export default async function transform(
       return transformed.reduce(
         async (prev, child) => [
           ...(await prev),
-          await walk(child, transformed)
+          await walk(child, transformed),
         ],
         Promise.resolve([])
       )
@@ -56,7 +56,7 @@ export default async function transform(
     return Object.entries(transformed).reduce(
       async (prev, [key, child]) => ({
         ...(await prev),
-        [key]: await walk(child, transformed)
+        [key]: await walk(child, transformed),
       }),
       Promise.resolve({})
     )
@@ -89,7 +89,7 @@ export function transformSync(
       return trans !== undefined
         ? {
             ...prev,
-            [key]: trans
+            [key]: trans,
           }
         : prev
     }, {})

@@ -4,11 +4,9 @@ import { get, cacheDelete } from './http'
 
 describe('get', () => {
   it('will cache responses if caching headers are set', async () => {
-    nock('https://example.org')
-      .get('/cached')
-      .reply(200, 'OK', {
-        'cache-control': 'max-age=60'
-      })
+    nock('https://example.org').get('/cached').reply(200, 'OK', {
+      'cache-control': 'max-age=60',
+    })
 
     // Ensure that there is no cached value from a
     // previous test run
@@ -22,10 +20,7 @@ describe('get', () => {
   })
 
   it('will not cache responses if no caching headers are set', async () => {
-    nock('https://example.org')
-      .get('/not-cached')
-      .reply(200, 'OK')
-      .persist() // Persist so that this can be called twice
+    nock('https://example.org').get('/not-cached').reply(200, 'OK').persist() // Persist so that this can be called twice
 
     let response = await get('https://example.org/not-cached')
     expect(response.isFromCache).toBe(false)

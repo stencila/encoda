@@ -11,7 +11,7 @@ const xlsx = new XlsxCodec()
 
 export class ODSCodec extends Codec implements Codec {
   public readonly mediaTypes = [
-    'application/vnd.oasis.opendocument.spreadsheet'
+    'application/vnd.oasis.opendocument.spreadsheet',
   ]
 
   public readonly decode = async (

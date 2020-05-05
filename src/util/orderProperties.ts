@@ -30,7 +30,7 @@ export default function orderProperties(node: stencila.Node): stencila.Node {
         // Meta data can be long
         ...(meta === undefined ? {} : { meta }),
         // Content is often long and heavily nested so always last
-        ...(content === undefined ? {} : { content })
+        ...(content === undefined ? {} : { content }),
       }
     }
   )

@@ -4,7 +4,7 @@ import stencila, {
   heading,
   imageObject,
   link,
-  paragraph
+  paragraph,
 } from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
@@ -55,8 +55,8 @@ followed by more paragraphs`)
           paragraph({ content: ['some paragraphs'] }),
           '',
           paragraph({ content: [link({ content: ['My link'], target: '#' })] }),
-          paragraph({ content: ['followed by more paragraphs'] })
-        ]
+          paragraph({ content: ['followed by more paragraphs'] }),
+        ],
       })
     )
   })
@@ -79,11 +79,11 @@ followed by more paragraphs`)
               'An inline element in MD ',
               imageObject({ contentUrl: '#' }),
               imageObject({ contentUrl: '#2' }),
-              ', like this image'
-            ]
+              ', like this image',
+            ],
           }),
-          paragraph({ content: ['followed by more paragraphs'] })
-        ]
+          paragraph({ content: ['followed by more paragraphs'] }),
+        ],
       })
     )
   })
@@ -108,11 +108,11 @@ followed by more paragraphs`)
           paragraph({
             content: [
               'With some nested HTML, and a ',
-              cite({ target: 'like-this' })
-            ]
+              cite({ target: 'like-this' }),
+            ],
           }),
-          paragraph({ content: ['followed by more paragraphs'] })
-        ]
+          paragraph({ content: ['followed by more paragraphs'] }),
+        ],
       })
     )
   })
@@ -143,11 +143,11 @@ followed by more paragraphs`)
           paragraph({
             content: [
               'With some nested HTML, and a ',
-              cite({ target: 'like-this' })
-            ]
+              cite({ target: 'like-this' }),
+            ],
           }),
-          paragraph({ content: ['followed by more paragraphs'] })
-        ]
+          paragraph({ content: ['followed by more paragraphs'] }),
+        ],
       })
     )
   })
@@ -185,17 +185,17 @@ And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
           paragraph({
             content: [
               'With some nested HTML, and a ',
-              cite({ target: 'like-this' })
-            ]
+              cite({ target: 'like-this' }),
+            ],
           }),
           paragraph({ content: ['followed by more paragraphs'] }),
           paragraph({
             content: [
               'And now more HTML, and a ',
-              cite({ target: 'like-this-two' })
-            ]
-          })
-        ]
+              cite({ target: 'like-this-two' }),
+            ],
+          }),
+        ],
       })
     )
   })
@@ -222,11 +222,11 @@ followed by more paragraphs`)
               'An inline element in MD ',
               imageObject({ contentUrl: '#' }),
               ', like this image ',
-              imageObject({ contentUrl: '#2' })
-            ]
+              imageObject({ contentUrl: '#2' }),
+            ],
           }),
-          paragraph({ content: ['followed by more paragraphs'] })
-        ]
+          paragraph({ content: ['followed by more paragraphs'] }),
+        ],
       })
     )
   })
@@ -235,7 +235,7 @@ followed by more paragraphs`)
 describe('decode: fixtures', () => {
   const mdToJson = async (file: string) =>
     jsonCodec.dump(await mdCodec.read(fixture(file)))
-  test.each(['math.md'])('%s', async file => {
+  test.each(['math.md'])('%s', async (file) => {
     expect(await mdToJson(file)).toMatchFile(snapshot(file + '.json'))
   })
 })
@@ -272,53 +272,53 @@ describe('encode', () => {
           cells: [
             {
               content: ['A'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['B'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['C'],
-              type: 'TableCell'
-            }
-          ]
+              type: 'TableCell',
+            },
+          ],
         },
         {
           type: 'TableRow',
           cells: [
             {
               content: ['1'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['Some content\n split accross multiple rows'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['3'],
-              type: 'TableCell'
-            }
-          ]
+              type: 'TableCell',
+            },
+          ],
         },
         {
           type: 'TableRow',
           cells: [
             {
               content: ['4'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               type: 'TableCell',
-              content: ['Some content\n split\naccross\nmultiple\nrows']
+              content: ['Some content\n split\naccross\nmultiple\nrows'],
             },
             {
               content: ['6'],
-              type: 'TableCell'
-            }
-          ]
-        }
-      ]
+              type: 'TableCell',
+            },
+          ],
+        },
+      ],
     }
 
     const expected = `| A | B                                        | C |
@@ -447,31 +447,31 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         type: 'Person',
         givenNames: ['Joe'],
         familyNames: ['James'],
-        emails: ['joe@example.com']
+        emails: ['joe@example.com'],
       },
       {
         type: 'Person',
         honorificPrefix: 'Dr',
         givenNames: ['Jill'],
         familyNames: ['Jones'],
-        honorificSuffix: 'PhD'
-      }
+        honorificSuffix: 'PhD',
+      },
     ],
     content: [
       {
         type: 'Heading',
         depth: 1,
-        content: ['Heading one']
+        content: ['Heading one'],
       },
       {
         type: 'Heading',
         depth: 2,
-        content: ['Heading two']
+        content: ['Heading two'],
       },
       {
         type: 'Heading',
         depth: 3,
-        content: ['Heading three']
+        content: ['Heading three'],
       },
       {
         type: 'Paragraph',
@@ -479,25 +479,25 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           'A paragraph with ',
           {
             type: 'Emphasis',
-            content: ['emphasis']
+            content: ['emphasis'],
           },
           ', ',
           {
             type: 'Strong',
-            content: ['strong']
+            content: ['strong'],
           },
           ', ',
           {
             type: 'Delete',
-            content: ['delete']
+            content: ['delete'],
           },
           ' and ',
           {
             type: 'CodeFragment',
-            text: 'code'
+            text: 'code',
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -510,13 +510,13 @@ No output \`a = 1 + 1\`{type=expr lang=python}
               'a ',
               {
                 type: 'Emphasis',
-                content: ['rich']
+                content: ['rich'],
               },
-              ' link'
-            ]
+              ' link',
+            ],
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -525,10 +525,10 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           {
             type: 'Quote',
             cite: 'https://example.org',
-            content: ['quote']
+            content: ['quote'],
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -538,14 +538,20 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             type: 'ImageObject',
             contentUrl: 'https://example.org/image.png',
             title: 'title',
-            text: 'alt text'
+            text: 'alt text',
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
-        content: ['A paragraph with ', true, ' and ', false, ' boolean values.']
+        content: [
+          'A paragraph with ',
+          true,
+          ' and ',
+          false,
+          ' boolean values.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -558,17 +564,17 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           [1, 2],
           ', and an ',
           { a: '1', b: 'two' },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'QuoteBlock',
         content: [
           {
             type: 'Paragraph',
-            content: ['A block quote']
-          }
-        ]
+            content: ['A block quote'],
+          },
+        ],
       },
       {
         type: 'CodeBlock',
@@ -577,9 +583,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           meta1: '',
           meta2: 'foo',
           meta3: 'bar baz',
-          meta4: 'qux'
+          meta4: 'qux',
         },
-        text: '# A code block\nx = {}'
+        text: '# A code block\nx = {}',
       },
       {
         type: 'CodeChunk',
@@ -592,10 +598,10 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           "'And some text output!'",
           [
             { type: 'Paragraph', content: ['This is some longer output,'] },
-            { type: 'Paragraph', content: ['it has lots of lines.'] }
+            { type: 'Paragraph', content: ['it has lots of lines.'] },
           ],
-          'Unquoted text.'
-        ]
+          'Unquoted text.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -605,9 +611,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             type: 'CodeExpression',
             programmingLanguage: 'python',
             text: 'some_var',
-            output: 43
-          }
-        ]
+            output: 43,
+          },
+        ],
       },
       {
         type: 'Paragraph',
@@ -619,10 +625,10 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             text: 'some_object',
             output: {
               type: 'Paragraph',
-              content: ['This was generated from code!']
-            }
-          }
-        ]
+              content: ['This was generated from code!'],
+            },
+          },
+        ],
       },
       {
         type: 'Paragraph',
@@ -631,9 +637,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           {
             type: 'CodeExpression',
             programmingLanguage: 'python',
-            text: 'a = 1 + 1'
-          }
-        ]
+            text: 'a = 1 + 1',
+          },
+        ],
       },
       {
         type: 'List',
@@ -644,29 +650,29 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Unordered list item one']
-              }
-            ]
+                content: ['Unordered list item one'],
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 type: 'Paragraph',
-                content: ['Unordered list item two']
-              }
-            ]
+                content: ['Unordered list item two'],
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 type: 'Paragraph',
-                content: ['Unordered list item three']
-              }
-            ]
-          }
-        ]
+                content: ['Unordered list item three'],
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'List',
@@ -677,29 +683,29 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Ordered list item one']
-              }
-            ]
+                content: ['Ordered list item one'],
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 type: 'Paragraph',
-                content: ['Ordered list item two']
-              }
-            ]
+                content: ['Ordered list item two'],
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 type: 'Paragraph',
-                content: ['Ordered list item three']
-              }
-            ]
-          }
-        ]
+                content: ['Ordered list item three'],
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'List',
@@ -711,9 +717,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['First item']
-              }
-            ]
+                content: ['First item'],
+              },
+            ],
           },
           {
             type: 'ListItem',
@@ -721,9 +727,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Done']
-              }
-            ]
+                content: ['Done'],
+              },
+            ],
           },
           {
             type: 'ListItem',
@@ -731,11 +737,11 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Not done']
-              }
-            ]
-          }
-        ]
+                content: ['Not done'],
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'List',
@@ -747,9 +753,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['One']
-              }
-            ]
+                content: ['One'],
+              },
+            ],
           },
           {
             type: 'ListItem',
@@ -757,9 +763,9 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Two']
-              }
-            ]
+                content: ['Two'],
+              },
+            ],
           },
           {
             type: 'ListItem',
@@ -767,11 +773,11 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             content: [
               {
                 type: 'Paragraph',
-                content: ['Three']
-              }
-            ]
-          }
-        ]
+                content: ['Three'],
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'Table',
@@ -781,59 +787,59 @@ No output \`a = 1 + 1\`{type=expr lang=python}
             cells: [
               {
                 content: ['A'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['B'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['C'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['1'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['2'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['3'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['4'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['5'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['6'],
-                type: 'TableCell'
-              }
-            ]
-          }
-        ]
+                type: 'TableCell',
+              },
+            ],
+          },
+        ],
       },
       {
-        type: 'ThematicBreak'
-      }
-    ]
-  }
+        type: 'ThematicBreak',
+      },
+    ],
+  },
 }
 
 /**
@@ -867,12 +873,12 @@ A \`code\`{lang=r}.
             meta: {
               attr1: 'foo',
               attr2: 'bar baz',
-              attr3: ''
+              attr3: '',
             },
-            content: ['link']
+            content: ['link'],
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -881,10 +887,10 @@ A \`code\`{lang=r}.
           {
             type: 'CodeFragment',
             programmingLanguage: 'r',
-            text: 'code'
+            text: 'code',
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'CodeBlock',
@@ -892,12 +898,12 @@ A \`code\`{lang=r}.
         meta: {
           attr1: 'foo',
           attr2: 'bar baz',
-          attr3: ''
+          attr3: '',
         },
-        text: '# A code block'
-      }
-    ]
-  }
+        text: '# A code block',
+      },
+    ],
+  },
 }
 
 /**
@@ -921,18 +927,18 @@ A subscript H~2~O. A superscript E = mc^2^.
           'A subscript H',
           {
             type: 'Subscript',
-            content: ['2']
+            content: ['2'],
           },
           'O. A superscript E = mc',
           {
             type: 'Superscript',
-            content: ['2']
+            content: ['2'],
           },
-          '.'
-        ]
-      }
-    ]
-  }
+          '.',
+        ],
+      },
+    ],
+  },
 }
 
 // Example for testing that empty paragraphs
@@ -949,30 +955,30 @@ Paragraph five.
     content: [
       {
         type: 'Paragraph',
-        content: ['Paragraph one.']
+        content: ['Paragraph one.'],
       },
       {
         type: 'Paragraph',
-        content: []
+        content: [],
       },
       {
         type: 'Paragraph',
-        content: ['Paragraph three.']
+        content: ['Paragraph three.'],
       },
       {
         type: 'Paragraph',
-        content: ['']
+        content: [''],
       },
       {
         type: 'Paragraph',
-        content: ['Paragraph five.']
+        content: ['Paragraph five.'],
       },
       {
         type: 'Paragraph',
-        content: ['\n']
-      }
-    ]
-  }
+        content: ['\n'],
+      },
+    ],
+  },
 }
 
 // Example for testing that paragraphs that are split
@@ -985,10 +991,10 @@ const splitParas = {
     content: [
       {
         type: 'Paragraph',
-        content: ['Line1 line2 line3']
-      }
-    ]
-  }
+        content: ['Line1 line2 line3'],
+      },
+    ],
+  },
 }
 
 // Example for testing that paragraphs that are split
@@ -1014,15 +1020,15 @@ const references = {
           {
             content: ['al', { type: 'Strong', content: ['ph'] }, 'a'],
             target: 'http://example.com/alpha',
-            type: 'Link'
+            type: 'Link',
           },
           ' ',
           {
             content: ['Bravo'],
             target: 'http://example.com/bravo',
-            type: 'Link'
-          }
-        ]
+            type: 'Link',
+          },
+        ],
       },
       {
         type: 'Paragraph',
@@ -1030,16 +1036,16 @@ const references = {
           {
             contentUrl: 'http://example.com/alpha',
             text: 'alpha',
-            type: 'ImageObject'
+            type: 'ImageObject',
           },
           ' ',
           {
             contentUrl: 'http://example.com/bravo',
             text: 'Bravo',
-            type: 'ImageObject'
-          }
-        ]
-      }
-    ]
-  }
+            type: 'ImageObject',
+          },
+        ],
+      },
+    ],
+  },
 }

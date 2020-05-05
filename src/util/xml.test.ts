@@ -5,14 +5,14 @@ test('elem', () => {
     type: 'element',
     name: 'tag',
     attributes: {},
-    elements: []
+    elements: [],
   })
 
   expect(elem('tag', { foo: 'bar' })).toEqual({
     type: 'element',
     name: 'tag',
     attributes: { foo: 'bar' },
-    elements: []
+    elements: [],
   })
 
   expect(elem('parent', elem('child'))).toEqual({
@@ -24,9 +24,9 @@ test('elem', () => {
         type: 'element',
         name: 'child',
         attributes: {},
-        elements: []
-      }
-    ]
+        elements: [],
+      },
+    ],
   })
 
   expect(elem('parent', 'foo')).toEqual({
@@ -36,9 +36,9 @@ test('elem', () => {
     elements: [
       {
         type: 'text',
-        text: 'foo'
-      }
-    ]
+        text: 'foo',
+      },
+    ],
   })
 })
 

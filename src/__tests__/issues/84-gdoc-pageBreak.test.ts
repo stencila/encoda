@@ -12,15 +12,15 @@ test('issue 84: that a pageBreak in a GDoc gets decoded without error', async ()
   expect(article.content).toEqual([
     {
       type: 'Paragraph',
-      content: ['Page 1']
+      content: ['Page 1'],
     },
     {
       type: 'Paragraph',
-      content: ['* * *', '']
+      content: ['* * *', ''],
     },
     {
       type: 'Paragraph',
-      content: ['Page 2']
-    }
+      content: ['Page 2'],
+    },
   ])
 })

@@ -11,20 +11,20 @@ export default collection({
       parts: [
         article({
           name: 'index',
-          content: [paragraph({ content: ['Index'] })]
+          content: [paragraph({ content: ['Index'] })],
         }),
         article({
           name: 'main',
           meta: {
-            main: true
+            main: true,
           },
-          content: [paragraph({ content: ['Main'] })]
+          content: [paragraph({ content: ['Main'] })],
         }),
         article({
           name: 'README',
-          content: [paragraph({ content: ['README'] })]
-        })
-      ]
+          content: [paragraph({ content: ['README'] })],
+        }),
+      ],
     }),
     collection({
       name: 'b',
@@ -32,15 +32,15 @@ export default collection({
         article({
           name: 'index',
           meta: {
-            main: true
+            main: true,
           },
-          content: [paragraph({ content: ['Index'] })]
+          content: [paragraph({ content: ['Index'] })],
         }),
         article({
           name: 'README',
-          content: [paragraph({ content: ['README'] })]
-        })
-      ]
+          content: [paragraph({ content: ['README'] })],
+        }),
+      ],
     }),
     collection({
       name: 'c',
@@ -48,11 +48,11 @@ export default collection({
         article({
           name: 'README',
           meta: {
-            main: true
+            main: true,
           },
-          content: [paragraph({ content: ['README'] })]
-        })
-      ]
-    })
-  ]
+          content: [paragraph({ content: ['README'] })],
+        }),
+      ],
+    }),
+  ],
 })

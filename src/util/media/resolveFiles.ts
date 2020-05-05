@@ -23,7 +23,7 @@ export function resolveFiles(node: schema.Node, docPath: string): schema.Node {
         if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
           return {
             ...rest,
-            contentUrl: path.resolve(path.dirname(docPath), contentUrl)
+            contentUrl: path.resolve(path.dirname(docPath), contentUrl),
           }
         }
       }

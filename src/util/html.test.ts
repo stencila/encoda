@@ -55,7 +55,7 @@ describe('Resolve theme arguments', () => {
   // Filter out RPNG themes as it does not contain semantic selectors
   test.each(themaThemes.filter(([theme]) => theme !== 'rpng'))(
     'Bundle theme contents by Thema name - %s',
-    async themeKey => {
+    async (themeKey) => {
       const theme = await getThemeAssets(themeKey, true)
 
       expect(theme.scripts[0]).toMatch('!function')

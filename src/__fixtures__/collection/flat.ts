@@ -10,17 +10,17 @@ export default collection({
     article({
       name: 'one',
       title: 'Article one',
-      content: [heading({ depth: 1, content: ['One'] })]
+      content: [heading({ depth: 1, content: ['One'] })],
     }),
     article({
       name: 'two',
       title: 'Article two',
-      content: [heading({ depth: 1, content: ['Two'] })]
+      content: [heading({ depth: 1, content: ['Two'] })],
     }),
     article({
       name: 'three',
       title: 'Article three',
-      content: [heading({ depth: 1, content: ['Three'] })]
-    })
-  ]
+      content: [heading({ depth: 1, content: ['Three'] })],
+    }),
+  ],
 })

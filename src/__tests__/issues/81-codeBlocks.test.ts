@@ -11,26 +11,26 @@ describe('issue 77', () => {
       content: [
         {
           type: 'CodeBlock',
-          text: 'date'
+          text: 'date',
         },
         {
           type: 'CodeBlock',
-          text: 'date -u'
+          text: 'date -u',
         },
         {
           type: 'CodeBlock',
           text: 'date --utc',
-          programmingLanguage: 'sh'
+          programmingLanguage: 'sh',
         },
         {
           type: 'CodeBlock',
           programmingLanguage: 'bash',
           meta: {
-            pause: '2'
+            pause: '2',
           },
-          text: 'date --help'
-        }
-      ]
+          text: 'date --help',
+        },
+      ],
     })
   })
 })

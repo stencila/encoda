@@ -28,19 +28,19 @@ const article: stencila.Article = {
               items: [
                 {
                   type: 'ListItem',
-                  content: [{ type: 'Paragraph', content: ['Apple'] }]
+                  content: [{ type: 'Paragraph', content: ['Apple'] }],
                 },
                 {
                   type: 'ListItem',
-                  content: [{ type: 'Paragraph', content: ['Orange'] }]
+                  content: [{ type: 'Paragraph', content: ['Orange'] }],
                 },
                 {
                   type: 'ListItem',
-                  content: [{ type: 'Paragraph', content: ['Banana'] }]
-                }
-              ]
-            }
-          ]
+                  content: [{ type: 'Paragraph', content: ['Banana'] }],
+                },
+              ],
+            },
+          ],
         },
         {
           type: 'ListItem',
@@ -52,19 +52,19 @@ const article: stencila.Article = {
               items: [
                 {
                   type: 'ListItem',
-                  content: [{ type: 'Paragraph', content: ['Milk'] }]
+                  content: [{ type: 'Paragraph', content: ['Milk'] }],
                 },
                 {
                   type: 'ListItem',
-                  content: [{ type: 'Paragraph', content: ['Cheese'] }]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+                  content: [{ type: 'Paragraph', content: ['Cheese'] }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 describe('Markdown', () => {

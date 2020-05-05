@@ -89,11 +89,7 @@ class FetchToFile {
   private requests: Promise<void>[] = []
 
   public get(url: string, ext = ''): string {
-    const filePath =
-      crypto
-        .createHash('md5')
-        .update(url)
-        .digest('hex') + ext
+    const filePath = crypto.createHash('md5').update(url).digest('hex') + ext
     this.requests.push(http.download(url, filePath))
     return filePath
   }
@@ -177,7 +173,7 @@ async function decodeDocument(
           log.warn(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
       })
-      .filter(node => node !== undefined) as stencila.Node[]
+      .filter((node) => node !== undefined) as stencila.Node[]
   }
 
   // Resolve the fetched resources
@@ -185,7 +181,7 @@ async function decodeDocument(
 
   return stencila.article({
     title: title ?? undefined,
-    content: content.length > 0 ? content : undefined
+    content: content.length > 0 ? content : undefined,
   })
 }
 
@@ -196,10 +192,10 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
   const gdoc: GDocT.Schema$Document = {
     title: 'Untitled',
     body: {
-      content: [{ sectionBreak: {} }]
+      content: [{ sectionBreak: {} }],
     },
     lists: {},
-    inlineObjects: {}
+    inlineObjects: {},
   }
   encodingGDoc = gdoc
 
@@ -231,7 +227,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
       const para: stencila.Paragraph = {
         type: 'Paragraph',
         // TODO: avoid this use of `as`
-        content: [node as stencila.InlineContent]
+        content: [node as stencila.InlineContent],
       }
       content = [para]
     }
@@ -286,7 +282,7 @@ function decodeParagraph(
   // See if the content is a single block content node, and if
   // so return that. Filtering is necessary to remove empty strings that
   // are sometimes created during decoding.
-  const visibleContent = content.filter(node => node !== '')
+  const visibleContent = content.filter((node) => node !== '')
   if (
     visibleContent.length === 1 &&
     stencila.isBlockContent(visibleContent[0])
@@ -304,7 +300,7 @@ function decodeParagraph(
       if (match) {
         return stencila.heading({
           content: inlineContent,
-          depth: parseInt(match[1], 10)
+          depth: parseInt(match[1], 10),
         })
       }
     }
@@ -323,10 +319,10 @@ function encodeHeading(
 ): GDocT.Schema$StructuralElement {
   const elem = encodeParagraph({
     type: 'Paragraph',
-    content: heading.content
+    content: heading.content,
   })
   assertDefined(elem.paragraph).paragraphStyle = {
-    namedStyleType: `HEADING_${heading.depth}`
+    namedStyleType: `HEADING_${heading.depth}`,
   }
   return elem
 }
@@ -339,8 +335,8 @@ function encodeParagraph(
 ): GDocT.Schema$StructuralElement {
   return {
     paragraph: {
-      elements: para.content.map(encodeInlineContent)
-    }
+      elements: para.content.map(encodeInlineContent),
+    },
   }
 }
 
@@ -355,11 +351,11 @@ function encodeCodeBlock(
       elements: [
         {
           textRun: {
-            content: block.text
-          }
-        }
-      ]
-    }
+            content: block.text,
+          },
+        },
+      ],
+    },
   }
 }
 
@@ -383,7 +379,7 @@ function decodeListItem(
 
   // The item to add to a list
   const listItem = stencila.listItem({
-    content: [stencila.paragraph({ content })]
+    content: [stencila.paragraph({ content })],
   })
 
   // If we have jumped up a level then it means that the
@@ -444,15 +440,15 @@ function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
     listProperties: {
       nestingLevels: [
         {
-          glyphType: list.order === 'ascending' ? '%0' : undefined
-        }
-      ]
-    }
+          glyphType: list.order === 'ascending' ? '%0' : undefined,
+        },
+      ],
+    },
   }
 
   // Create the GDoc paragraphs with a bullet with the id
-  return list.items.map(listItem => ({
-    paragraph: encodeListItem(listItem, listId)
+  return list.items.map((listItem) => ({
+    paragraph: encodeListItem(listItem, listId),
   }))
 }
 
@@ -470,16 +466,16 @@ const encodeListItem = (
     return {
       elements: head.content.map(encodeInlineContent),
       bullet: {
-        listId
-      }
+        listId,
+      },
     }
   }
 
   return {
     elements: content.filter(stencila.isInlineContent).map(encodeInlineContent),
     bullet: {
-      listId
-    }
+      listId,
+    },
   }
 }
 
@@ -514,13 +510,13 @@ function decodeTable(table: GDocT.Schema$Table): stencila.Table {
                     )
                     return ''
                   }
-                )
+                ),
               }
             }
-          )
+          ),
         }
       }
-    )
+    ),
   }
 }
 
@@ -542,18 +538,18 @@ function encodeTable(table: stencila.Table): GDocT.Schema$StructuralElement {
                     ): GDocT.Schema$StructuralElement => {
                       return {
                         paragraph: {
-                          elements: [encodeInlineContent(node)]
-                        }
+                          elements: [encodeInlineContent(node)],
+                        },
                       }
                     }
-                  )
+                  ),
                 }
               }
-            )
+            ),
           }
         }
-      )
-    }
+      ),
+    },
   }
 }
 
@@ -569,7 +565,7 @@ function decodeSectionBreak(): stencila.ThematicBreak {
  */
 function encodeThematicBreak(): GDocT.Schema$StructuralElement {
   return {
-    sectionBreak: {}
+    sectionBreak: {},
   }
 }
 
@@ -708,9 +704,9 @@ function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
     textRun: {
       content: TxtCodec.stringify(em),
       textStyle: {
-        italic: true
-      }
-    }
+        italic: true,
+      },
+    },
   }
 }
 
@@ -722,9 +718,9 @@ function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
     textRun: {
       content: TxtCodec.stringify(strong),
       textStyle: {
-        bold: true
-      }
-    }
+        bold: true,
+      },
+    },
   }
 }
 
@@ -736,9 +732,9 @@ function encodeDelete(node: stencila.Delete): GDocT.Schema$ParagraphElement {
     textRun: {
       content: TxtCodec.stringify(node),
       textStyle: {
-        strikethrough: true
-      }
-    }
+        strikethrough: true,
+      },
+    },
   }
 }
 
@@ -752,9 +748,9 @@ function encodeSuperscript(
     textRun: {
       content: TxtCodec.stringify(node),
       textStyle: {
-        baselineOffset: 'SUPERSCRIPT'
-      }
-    }
+        baselineOffset: 'SUPERSCRIPT',
+      },
+    },
   }
 }
 
@@ -769,9 +765,9 @@ function encodeSubscript(
     textRun: {
       content: TxtCodec.stringify(node),
       textStyle: {
-        baselineOffset: 'SUBSCRIPT'
-      }
-    }
+        baselineOffset: 'SUBSCRIPT',
+      },
+    },
   }
 }
 
@@ -784,10 +780,10 @@ function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
       content: TxtCodec.stringify(link),
       textStyle: {
         link: {
-          url: link.target
-        }
-      }
-    }
+          url: link.target,
+        },
+      },
+    },
   }
 }
 
@@ -828,7 +824,7 @@ function decodeImage(
   return stencila.imageObject({
     contentUrl,
     title,
-    text: description
+    text: description,
   })
 }
 
@@ -845,17 +841,17 @@ function encodeImageObject(
     inlineObjectProperties: {
       embeddedObject: {
         imageProperties: {
-          contentUri: imageObject.contentUrl
+          contentUri: imageObject.contentUrl,
         },
         title: TxtCodec.stringify(imageObject.title ?? ''),
-        description: imageObject.text
-      }
-    }
+        description: imageObject.text,
+      },
+    },
   }
   return {
     inlineObjectElement: {
-      inlineObjectId
-    }
+      inlineObjectId,
+    },
   }
 }
 
@@ -865,7 +861,7 @@ function encodeImageObject(
 function encodeString(value: string): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: value
-    }
+      content: value,
+    },
   }
 }

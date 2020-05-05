@@ -27,7 +27,7 @@ export class CsvCodec extends Codec implements Codec {
       // We detect ourselves whether a header is present below
       header: false,
       // Turn on dynamic typing so that booleans and numbers are coerced
-      dynamicTyping: true
+      dynamicTyping: true,
     })
 
     for (const error of errors) {
@@ -64,10 +64,10 @@ export class CsvCodec extends Codec implements Codec {
     const rowNum = data.length - (headerRow ? 1 : 0)
 
     // Create columns with pre-allocated array of correct length
-    const columns = columnNames.map(name => {
+    const columns = columnNames.map((name) => {
       return stencila.datatableColumn({
         name,
-        values: Array(rowNum)
+        values: Array(rowNum),
       })
     })
 
@@ -106,7 +106,7 @@ export class CsvCodec extends Codec implements Codec {
       }
     }
 
-    const fields = node.columns.map(column => column.name)
+    const fields = node.columns.map((column) => column.name)
     const csv = papaparse.unparse({ fields, data })
 
     return Promise.resolve(vfile.load(csv))

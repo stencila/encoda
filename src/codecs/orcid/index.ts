@@ -35,7 +35,7 @@ export class OrcidCodec extends Codec implements Codec {
         const response = await http.get(
           `https://pub.orcid.org/${OrcidCodec.apiVersion}/${orcid}`,
           {
-            headers: { Accept: 'application/ld+json' }
+            headers: { Accept: 'application/ld+json' },
           }
         )
         if (response.statusCode === 200 && response.body.length > 0)

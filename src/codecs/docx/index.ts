@@ -15,7 +15,7 @@ const pandoc = new PandocCodec()
 
 export class DocxCodec extends Codec implements Codec {
   public readonly mediaTypes = [
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   ]
 
   public readonly decode = async (
@@ -25,7 +25,7 @@ export class DocxCodec extends Codec implements Codec {
     return pandoc.decode(file, options, {
       pandocFormat: InputFormat.docx,
       pandocArgs: [`--extract-media=${file.path}.media`],
-      ensureFile: true
+      ensureFile: true,
     })
   }
 
@@ -56,7 +56,7 @@ export class DocxCodec extends Codec implements Codec {
       pandocFormat: OutputFormat.docx,
       pandocArgs,
       ensureFile: true,
-      useCiteproc
+      useCiteproc,
     })
   }
 

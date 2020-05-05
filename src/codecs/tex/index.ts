@@ -41,7 +41,7 @@ export class TexCodec extends Codec implements Codec {
     const display = /^\s*\\displaystyle/.test(tex)
     return (display ? stencila.mathBlock : stencila.mathFragment)({
       mathLanguage: 'tex',
-      text: tex
+      text: tex,
     })
   }
 
@@ -78,7 +78,7 @@ export class TexCodec extends Codec implements Codec {
         const ns = 'http://www.w3.org/1998/Math/MathML'
         mathmlProcessor = await xslt.Processor.create(stylesheet, {
           '': ns,
-          mml: ns
+          mml: ns,
         })
       }
       tex = await mathmlProcessor.transform(text)

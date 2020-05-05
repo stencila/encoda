@@ -48,7 +48,7 @@ export function elem(
       (attrs.type === 'element' || attrs.type === 'text'))
   const attributes = (notAttrs ? {} : attrs) as Attributes
   const elements = [...(attrs && notAttrs ? [attrs] : []), ...children]
-    .map(elem =>
+    .map((elem) =>
       typeof elem === 'string' ? { type: 'text', text: elem } : elem
     )
     .reduce((prev: Element[], curr) => (curr ? [...prev, curr] : prev), [])
@@ -56,7 +56,7 @@ export function elem(
     type: 'element',
     name: name,
     attributes,
-    elements
+    elements,
   }
 }
 
@@ -164,7 +164,7 @@ export function children(
   attributes: Attributes = {}
 ): Element[] {
   return elem?.elements
-    ? elem.elements.filter(child => matches(child, name, attributes))
+    ? elem.elements.filter((child) => matches(child, name, attributes))
     : []
 }
 
@@ -199,10 +199,10 @@ export function all(
 ): Element[] {
   if (elem?.elements) {
     return [
-      ...elem.elements.filter(child => matches(child, name, attributes)),
+      ...elem.elements.filter((child) => matches(child, name, attributes)),
       ...elem.elements
-        .map(child => all(child, name, attributes))
-        .reduce((prev, curr) => [...prev, ...curr])
+        .map((child) => all(child, name, attributes))
+        .reduce((prev, curr) => [...prev, ...curr]),
     ]
   }
   return []

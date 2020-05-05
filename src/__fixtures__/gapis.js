@@ -26,7 +26,7 @@ const { load, dump, read, write } = require('../../dist')
 // If modifying these scopes, delete .gapi-token.json.
 const SCOPES = [
   'https://www.googleapis.com/auth/drive.file',
-  'https://www.googleapis.com/auth/documents'
+  'https://www.googleapis.com/auth/documents',
 ]
 
 // The file token.json stores the user's access and refresh tokens, and is
@@ -50,7 +50,7 @@ async function authorize() {
         const {
           client_secret,
           client_id,
-          redirect_uris
+          redirect_uris,
         } = credentials.installed
         const oAuth2Client = new google.auth.OAuth2(
           client_id,
@@ -63,21 +63,21 @@ async function authorize() {
           if (err) {
             const authUrl = oAuth2Client.generateAuthUrl({
               access_type: 'offline',
-              scope: SCOPES
+              scope: SCOPES,
             })
             console.log('Authorize this app by visiting this url:', authUrl)
             const rl = readline.createInterface({
               input: process.stdin,
-              output: process.stdout
+              output: process.stdout,
             })
-            rl.question('Enter the code from that page here: ', code => {
+            rl.question('Enter the code from that page here: ', (code) => {
               rl.close()
               oAuth2Client.getToken(code, (err, token) => {
                 if (err)
                   return console.error('Error retrieving access token', err)
                 oAuth2Client.setCredentials(token)
                 // Store the token to disk for later program executions
-                fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
+                fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
                   if (err) console.error(err)
                   console.log('Token stored to', TOKEN_PATH)
                 })
@@ -124,12 +124,12 @@ async function docsCreate(filePath) {
   const result = await (await drive()).files.create({
     resource: {
       name: node.title || 'Untitled',
-      mimeType: 'application/vnd.google-apps.document'
+      mimeType: 'application/vnd.google-apps.document',
     },
     media: {
       mimeType: 'text/html',
-      body: stream
-    }
+      body: stream,
+    },
   })
   const gdoc = result.data
   return `GDoc created from ${filePath} at https://docs.google.com/document/d/${gdoc.id}`
@@ -157,8 +157,8 @@ async function docsGet(documentId, filePath, raw) {
 const commands = {
   docs: {
     create: docsCreate,
-    get: docsGet
-  }
+    get: docsGet,
+  },
 }
 
 const argv = process.argv.slice(2)

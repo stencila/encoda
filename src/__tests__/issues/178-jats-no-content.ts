@@ -15,9 +15,9 @@ test('issue 178: encoding should not fail if no article content', async () => {
             honorificPrefix: 'Dr',
             givenNames: ['Marie', 'Skłodowska'],
             familyNames: ['Curie'],
-            honorificSuffix: 'PhD'
-          }
-        ]
+            honorificSuffix: 'PhD',
+          },
+        ],
       })
     )
   ).toMatchFile(snapshot('178-jats-no-content.jats.xml'))

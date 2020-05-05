@@ -17,7 +17,7 @@ import {
   microdataType,
   nodeType,
   thematicBreak,
-  microdataProperty
+  microdataProperty,
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import collapse from 'collapse-whitespace'
@@ -240,7 +240,7 @@ export class HTMLCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     const { isStandalone, isBundle, theme } = {
       ...this.commonEncodeDefaults,
-      ...options
+      ...options,
     }
 
     // Reset the slugger to avoid unnecessarily adding numbers to ids
@@ -283,7 +283,7 @@ export const beautify = (html: string): string =>
     indent_size: 2,
     indent_inner_html: true, // Indent <head> and <body> sections
     wrap_line_length: 100,
-    preserve_newlines: false // Preserve existing line-breaks
+    preserve_newlines: false, // Preserve existing line-breaks
   })
 /* eslint-enable @typescript-eslint/camelcase */
 
@@ -301,7 +301,7 @@ const decodeNodes = (nodes: Node[]): stencila.Node[] =>
     .reduce(
       (prev: Node[], curr) => [
         ...prev,
-        ...(Array.isArray(curr) ? curr : [curr])
+        ...(Array.isArray(curr) ? curr : [curr]),
       ],
       []
     )
@@ -310,12 +310,12 @@ const decodeChildNodes = (node: Node): stencila.Node[] =>
   decodeNodes([...node.childNodes])
 
 const decodeBlockChildNodes = (node: Node): stencila.BlockContent[] =>
-  decodeChildNodes(node).map(n => n as stencila.BlockContent)
+  decodeChildNodes(node).map((n) => n as stencila.BlockContent)
 
 const decodeInlineChildNodes = (node: Node): stencila.InlineContent[] =>
   decodeChildNodes(node)
-    .map(n => n as stencila.InlineContent)
-    .filter(n => n !== '')
+    .map((n) => n as stencila.InlineContent)
+    .filter((n) => n !== '')
 
 function decodeNode(node: Node): stencila.Node | stencila.Node[] {
   // TODO: Avoid the following use of `@ts-ignore` and `as`
@@ -621,29 +621,29 @@ async function generateHtmlElement(
     const { styles, scripts } = await getThemeAssets(theme, isBundle)
     if (isBundle) {
       // Bundle the theme into the document
-      themeCss = styles.map(style =>
+      themeCss = styles.map((style) =>
         h('style', {
-          innerHTML: style
+          innerHTML: style,
         })
       )
 
-      themeJs = scripts.map(src =>
+      themeJs = scripts.map((src) =>
         h('script', {
-          innerHTML: src
+          innerHTML: src,
         })
       )
     } else {
-      themeCss = styles.map(style =>
+      themeCss = styles.map((style) =>
         h('link', {
           href: style,
-          rel: 'stylesheet'
+          rel: 'stylesheet',
         })
       )
 
-      themeJs = scripts.map(src =>
+      themeJs = scripts.map((src) =>
         h('script', {
           src: src,
-          type: 'text/javascript'
+          type: 'text/javascript',
         })
       )
     }
@@ -658,7 +658,7 @@ async function generateHtmlElement(
       h('meta', { charset: 'utf-8' }),
       h('meta', {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1.0'
+        content: 'width=device-width, initial-scale=1.0',
       }),
       h('meta', { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' }),
       ...themeCss,
@@ -666,13 +666,13 @@ async function generateHtmlElement(
       h('script', {
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.esm.js',
-        type: 'module'
+        type: 'module',
       }),
       h('script', {
         nomodule: '',
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
-        type: 'text/javascript'
+        type: 'text/javascript',
       })
     ),
     h('body', h('main', { attrs: { role: 'main' } }, root))
@@ -702,7 +702,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
   return stencila.article({
     title,
     references: isNonEmpty(refItems) ? refItems : undefined,
-    content: decodeChildNodes(element)
+    content: decodeChildNodes(element),
   })
 }
 
@@ -729,13 +729,13 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     encodeAttrs(article),
     encodeTitleProperty(title),
     encodeImageProperty(article),
-    encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
+    encodeMaybe(authors, (authors) => encodeAuthorsProperty(authors)),
     encodePublisherProperty(publisher),
-    encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+    encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeIdentifiersProperty(identifiers),
-    encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
+    encodeMaybe(description, (desc) => encodeDescriptionProperty(desc)),
     ...encodeNodes(content),
-    encodeMaybe(references, refs => encodeReferencesProperty(refs))
+    encodeMaybe(references, (refs) => encodeReferencesProperty(refs))
   )
 }
 
@@ -764,7 +764,7 @@ function encodePublisherProperty(
   if (logo === undefined) {
     logoTag = 'meta'
     logo = stencila.imageObject({
-      contentUrl: placeholderImg(name, 600, 60)
+      contentUrl: placeholderImg(name, 600, 60),
     })
   } else if (typeof logo === 'string')
     logo = stencila.imageObject({ contentUrl: logo })
@@ -782,8 +782,8 @@ function encodePublisherProperty(
         attrs: {
           itemprop: 'url',
           content: logo.contentUrl,
-          ...(logoTag === 'img' ? { src: logo.contentUrl } : {})
-        }
+          ...(logoTag === 'img' ? { src: logo.contentUrl } : {}),
+        },
       })
     )
   )
@@ -808,8 +808,8 @@ function encodeTitleProperty(
     {
       attrs: {
         ...microdata(title, 'title'),
-        ...(content !== title ? { content } : {})
-      }
+        ...(content !== title ? { content } : {}),
+      },
     },
     typeof title === 'string' ? title : encodeNodes(title)
   )
@@ -823,7 +823,7 @@ function encodeTitleProperty(
  * and uses that. If no images in the article then uses a placeholder.
  */
 function encodeImageProperty(article: stencila.Article): HTMLElement {
-  const img = article.content?.find(node => isA('ImageObject', node))
+  const img = article.content?.find((node) => isA('ImageObject', node))
   const headline = typeof article.title === 'string' ? article.title : ''
   const fallback = placeholderImg(headline, 1200, 714)
   const contentUrl = isA('ImageObject', img) ? img.contentUrl : fallback
@@ -842,7 +842,7 @@ function encodeAuthorsProperty(
 ): HTMLElement[] {
   const init: { [key: string]: [number, stencila.Organization] } = {}
   const orgs = authors
-    .map(author =>
+    .map((author) =>
       stencila.isA('Person', author) && author.affiliations !== undefined
         ? author.affiliations
         : []
@@ -864,9 +864,9 @@ function encodeAuthorsProperty(
                * this will break links between entities. See https://moz.com/blog/search-marketers-guide-to-itemref-itemid
                * for more.
                */
-              itemid: `#author-organization-${index}`
-            }
-          }
+              itemid: `#author-organization-${index}`,
+            },
+          },
         ]
       }
       return prev
@@ -877,10 +877,10 @@ function encodeAuthorsProperty(
       'ol',
       {
         attrs: {
-          [stencilaItemProp]: 'authors'
-        }
+          [stencilaItemProp]: 'authors',
+        },
       },
-      ...authors.map(author =>
+      ...authors.map((author) =>
         author.type === 'Person'
           ? encodePerson(author, 'authors', orgs, 'li')
           : encodeOrganization(author, 'authors', 'li')
@@ -895,9 +895,9 @@ function encodeAuthorsProperty(
               // Do not give a property since these are linked.
               encodeOrganization(org, undefined, 'li')
             )
-          )
+          ),
         ]
-      : [])
+      : []),
   ]
 }
 
@@ -925,7 +925,7 @@ function encodeIsPartOfProperty(
     return h(
       tag,
       md,
-      encodeMaybe(issueNumber, issueNumber =>
+      encodeMaybe(issueNumber, (issueNumber) =>
         h('span', microdata(issueNumber, 'issueNumber'), issueNumber)
       ),
       encodeIsPartOfProperty(isPartOf)
@@ -935,7 +935,7 @@ function encodeIsPartOfProperty(
     return h(
       tag,
       md,
-      encodeMaybe(volumeNumber, volumeNumber =>
+      encodeMaybe(volumeNumber, (volumeNumber) =>
         h('span', microdata(volumeNumber, 'volumeNumber'), volumeNumber)
       ),
       encodeIsPartOfProperty(isPartOf)
@@ -945,7 +945,7 @@ function encodeIsPartOfProperty(
     return h(
       tag,
       md,
-      encodeMaybe(name, name => h('span', microdata(name, 'name'), name))
+      encodeMaybe(name, (name) => h('span', microdata(name, 'name'), name))
     )
   }
 }
@@ -965,7 +965,7 @@ function endodePaginationProperties(
       : undefined,
     pageEnd !== undefined
       ? h('span', microdata(pageEnd, 'pageEnd'), pageEnd)
-      : undefined
+      : undefined,
   ]
 }
 
@@ -981,7 +981,7 @@ function encodeIdentifiersProperty(
   return h(
     'ul',
     microdata(identifiers, 'identifiers', 'array'),
-    identifiers.map(identifier => {
+    identifiers.map((identifier) => {
       const md = microdata(identifier, 'identifiers', 'item')
 
       if (typeof identifier === 'string')
@@ -993,14 +993,16 @@ function encodeIdentifiersProperty(
       return h(
         'li',
         { attrs: md },
-        encodeMaybe(propertyID, propertyID =>
+        encodeMaybe(propertyID, (propertyID) =>
           h('meta', {
             ...microdata(propertyID, 'propertyID'),
-            content: propertyID
+            content: propertyID,
           })
         ),
-        encodeMaybe(name, name => h('span', microdata(name, 'name'), name)),
-        encodeMaybe(value, value => h('span', microdata(value, 'value'), value))
+        encodeMaybe(name, (name) => h('span', microdata(name, 'name'), name)),
+        encodeMaybe(value, (value) =>
+          h('span', microdata(value, 'value'), value)
+        )
       )
     })
   )
@@ -1032,7 +1034,7 @@ function encodeDescriptionProperty(
     h('h2', { [stencilaItemType]: microdataItemtype('Heading') }, 'Abstract'),
     h('meta', {
       itemprop: 'description',
-      content: TxtCodec.stringify(desc)
+      content: TxtCodec.stringify(desc),
     }),
     encodeNodes(typeof desc === 'string' ? [desc] : desc)
   )
@@ -1047,7 +1049,7 @@ function encodeReferencesProperty(
     h('h2', { [stencilaItemType]: microdataItemtype('Heading') }, 'References'),
     h(
       'ol',
-      references.map(ref => {
+      references.map((ref) => {
         const md = microdata(ref, 'references', 'item')
         if (typeof ref === 'string') return h('li', md, ref)
         const {
@@ -1056,13 +1058,15 @@ function encodeReferencesProperty(
           title,
           url,
           isPartOf,
-          publisher
+          publisher,
         } = ref
         return h(
           'li',
           { attrs: { ...md, id: ref.id } },
           encodeAuthorsProperty(authors),
-          encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+          encodeMaybe(datePublished, (date) =>
+            encodeDate(date, 'datePublished')
+          ),
           encodeTitleProperty(title, 'span'),
           encodeIsPartOfProperty(isPartOf),
           stencila.isArticle(ref) ? endodePaginationProperties(ref) : undefined,
@@ -1081,7 +1085,7 @@ interface CreativeWorkOptions {
 }
 
 const defaultCreativeWorkOptions: CreativeWorkOptions = {
-  attrs: {}
+  attrs: {},
 }
 
 type CreativeWorkTagMap = {
@@ -1103,7 +1107,7 @@ const creativeWorkTagMap: CreativeWorkTagMap = {
   SoftwareApplication: 'div',
   SoftwareSourceCode: 'div',
   Table: 'div',
-  VideoObject: 'video'
+  VideoObject: 'video',
 }
 
 function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
@@ -1118,7 +1122,7 @@ function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
     funders: workSelectorAll('funder').map(decodePerson),
     editors: workSelectorAll('editor').map(decodePerson),
     url: url?.getAttribute('href') ?? undefined,
-    ...propsToValues(work)(['dateCreated', 'dateModified', 'datePublished'])
+    ...propsToValues(work)(['dateCreated', 'dateModified', 'datePublished']),
   })
 }
 
@@ -1132,7 +1136,7 @@ function encodeCreativeWork(
     authors = [],
     publisher,
     datePublished,
-    content = []
+    content = [],
   } = work
   return h(
     as ?? creativeWorkTagMap[work.type] ?? 'div',
@@ -1142,7 +1146,7 @@ function encodeCreativeWork(
     encodeTitleProperty(title, 'span'),
     isA('Article', work) ? encodeImageProperty(work) : [],
     encodeAuthorsProperty(authors),
-    encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+    encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
     encodeNodes(content)
   )
@@ -1156,7 +1160,7 @@ function decodePerson(person: HTMLElement): stencila.Person {
   return stencila.person({
     url: href ?? undefined,
     familyNames: [personProps('familyName')].filter(isDefined),
-    givenNames: [personProps('givenName')].filter(isDefined)
+    givenNames: [personProps('givenName')].filter(isDefined),
   })
 }
 
@@ -1211,7 +1215,7 @@ function encodePerson(
       ? h(
           'span',
           microdata(givenNames, 'givenNames', 'array'),
-          givenNames.map(givenName =>
+          givenNames.map((givenName) =>
             h('span', microdata(givenName, 'givenNames', 'item'), givenName)
           )
         )
@@ -1222,7 +1226,7 @@ function encodePerson(
       ? h(
           'span',
           microdata(familyNames, 'familyNames', 'array'),
-          familyNames.map(familyName =>
+          familyNames.map((familyName) =>
             h('span', microdata(familyName, 'familyNames', 'item'), familyName)
           )
         )
@@ -1233,12 +1237,12 @@ function encodePerson(
       ? h(
           'span',
           microdata(emails, 'emails', 'array'),
-          emails.map(email =>
+          emails.map((email) =>
             h(
               'a',
               {
                 ...microdata(email, 'emails', 'item'),
-                href: `mailto:${email}`
+                href: `mailto:${email}`,
               },
               email
             )
@@ -1251,7 +1255,7 @@ function encodePerson(
       ? h(
           'span',
           microdata(affiliations, 'affiliations', 'array'),
-          affiliations.map(affiliation => {
+          affiliations.map((affiliation) => {
             const entry = organizations[affiliation.name ?? '']
             if (entry !== undefined) {
               const [index, org] = entry
@@ -1259,7 +1263,7 @@ function encodePerson(
                 'a',
                 {
                   ...microdata(affiliation, 'affiliations', 'item'),
-                  href: org?.meta?.itemid
+                  href: org?.meta?.itemid,
                 },
                 index
               )
@@ -1298,10 +1302,10 @@ function encodeOrganization(
     encodeAttrs(org, {
       itemid: meta?.itemid,
       id: meta?.itemid.replace(/^#/, '') ?? id,
-      ...(property !== undefined ? microdataProperty(property) : {})
+      ...(property !== undefined ? microdataProperty(property) : {}),
     }),
     linkElem,
-    encodeMaybe(parentOrganization, org =>
+    encodeMaybe(parentOrganization, (org) =>
       encodeOrganization(org, 'parentOrganization')
     ),
     encodeAddressProperty(address)
@@ -1340,7 +1344,7 @@ function encodeAddressProperty(
     streetAddress,
     addressLocality,
     addressRegion,
-    addressCountry
+    addressCountry,
   }
 
   return h(
@@ -1381,7 +1385,7 @@ function decodeHeading(
 ): stencila.Heading {
   return stencila.heading({
     depth: Math.max(1, depth - 1),
-    content: decodeInlineChildNodes(heading)
+    content: decodeInlineChildNodes(heading),
   })
 }
 
@@ -1433,7 +1437,7 @@ function encodeParagraph(para: stencila.Paragraph): HTMLParagraphElement {
 function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
   return stencila.quoteBlock({
     content: decodeBlockChildNodes(elem),
-    cite: elem.getAttribute('cite') ?? undefined
+    cite: elem.getAttribute('cite') ?? undefined,
   })
 }
 
@@ -1474,7 +1478,7 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
   return stencila.cite({
     target: decodeHref(target?.getAttribute('href') ?? '#'),
     prefix: isDefined(prefix) ? prefix.textContent ?? undefined : undefined,
-    suffix: isDefined(suffix) ? suffix.textContent ?? undefined : undefined
+    suffix: isDefined(suffix) ? suffix.textContent ?? undefined : undefined,
   })
 }
 
@@ -1499,7 +1503,7 @@ function encodeCite(cite: stencila.Cite): HTMLElement {
  */
 function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
   return stencila.citeGroup({
-    items: [...citeGroup.querySelectorAll<HTMLElement>('cite')].map(decodeCite)
+    items: [...citeGroup.querySelectorAll<HTMLElement>('cite')].map(decodeCite),
   })
 }
 
@@ -1515,7 +1519,9 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
  */
 function decodeFigure(elem: HTMLElement): stencila.Figure {
   const content = decodeNodes(
-    [...elem.childNodes].filter(n => n.nodeName.toLowerCase() !== 'figcaption')
+    [...elem.childNodes].filter(
+      (n) => n.nodeName.toLowerCase() !== 'figcaption'
+    )
   )
 
   const caption = elem.querySelector('figcaption')
@@ -1523,7 +1529,7 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
   return stencila.figure({
     id: elem.getAttribute('id') ?? undefined,
     content,
-    caption: caption !== null ? decodeFigCaption(caption) : undefined
+    caption: caption !== null ? decodeFigCaption(caption) : undefined,
   })
 }
 
@@ -1549,7 +1555,7 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
         'figcaption',
         typeof caption === 'string' ? caption : caption.map(encodeNode)
       )
-    )
+    ),
   ])
 }
 
@@ -1570,7 +1576,7 @@ function encodeCollection(collection: stencila.Collection): HTMLOListElement {
   return h(
     'ol',
     encodeAttrs(collection),
-    collection.parts.map(entry => h('li', encodeNode(entry)))
+    collection.parts.map((entry) => h('li', encodeNode(entry)))
   )
 }
 
@@ -1604,7 +1610,7 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
   const { text, programmingLanguage } = codeFrag
 
   const outputElems = chunk.querySelectorAll('[slot="outputs"] > *')
-  const outputs = Array.from(outputElems).map(elem =>
+  const outputs = Array.from(outputElems).map((elem) =>
     decodeCodeOutput(elem as HTMLElement)
   )
 
@@ -1622,13 +1628,13 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   )
   codeElem.setAttribute('slot', 'text')
 
-  const outputsElem = encodeMaybe(outputs, outputs =>
+  const outputsElem = encodeMaybe(outputs, (outputs) =>
     h(
       'figure',
       {
         attrs: {
-          slot: 'outputs'
-        }
+          slot: 'outputs',
+        },
       },
       outputs.map(encodeCodeOutput)
     )
@@ -1681,11 +1687,11 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   return h(
     'stencila-code-expression',
     {
-      attrs: { ...attrs, ...microdata(expr) }
+      attrs: { ...attrs, ...microdata(expr) },
     },
     [
       h('code', { class: programmingLanguage, attrs: { slot: 'text' } }, text),
-      h('output', { attrs: { slot: 'output' } }, outputElem)
+      h('output', { attrs: { slot: 'output' } }, outputElem),
     ]
   )
 }
@@ -1724,7 +1730,7 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
   const order = list.tagName === 'UL' ? 'unordered' : 'ascending'
   return stencila.list({
     order,
-    items: [...list.querySelectorAll('li')].map(decodeListItem)
+    items: [...list.querySelectorAll('li')].map(decodeListItem),
   })
 }
 
@@ -1742,7 +1748,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
     list.items.map((item, index) =>
       encodeNode({
         position: item.position ?? index + 1,
-        ...item
+        ...item,
       })
     )
   )
@@ -1789,7 +1795,7 @@ function encodeListItem(
 function decodeTable(table: HTMLTableElement): stencila.Table {
   return stencila.table({
     id: table.getAttribute('id') ?? undefined,
-    rows: Array.from(table.querySelectorAll('tr')).map(decodeTableRow)
+    rows: Array.from(table.querySelectorAll('tr')).map(decodeTableRow),
   })
 }
 
@@ -1809,7 +1815,7 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
  */
 function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
   return stencila.tableRow({
-    cells: Array.from(row.querySelectorAll('td')).map(decodeTableCell)
+    cells: Array.from(row.querySelectorAll('td')).map(decodeTableCell),
   })
 }
 
@@ -1825,7 +1831,7 @@ function encodeTableRow(row: stencila.TableRow): HTMLTableRowElement {
  */
 function decodeTableCell(cell: HTMLTableDataCellElement): stencila.TableCell {
   return stencila.tableCell({
-    content: decodeInlineChildNodes(cell)
+    content: decodeInlineChildNodes(cell),
   })
 }
 
@@ -1851,7 +1857,7 @@ function decodeDatatable(elem: HTMLElement): stencila.Datatable {
           const name = th?.innerText ?? columnIndexToName(index)
           return stencila.datatableColumn({
             name,
-            values: []
+            values: [],
           })
         }
       )
@@ -1943,7 +1949,7 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
   return stencila.link({
     target: elem.getAttribute('href') ?? '#',
     content: decodeInlineChildNodes(elem),
-    meta: decodeDataAttrs(elem)
+    meta: decodeDataAttrs(elem),
   })
 }
 
@@ -1954,7 +1960,7 @@ function encodeLink(link: stencila.Link): HTMLAnchorElement {
   const attrs = {
     ...encodeDataAttrs(link.meta ?? {}),
     href: link.target,
-    attrs: microdata(link)
+    attrs: microdata(link),
   }
   return h('a', attrs, link.content.map(encodeNode))
 }
@@ -1965,7 +1971,7 @@ function encodeLink(link: stencila.Link): HTMLAnchorElement {
 function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
   return stencila.quote({
     content: [elem.innerHTML],
-    cite: elem.getAttribute('cite') ?? undefined
+    cite: elem.getAttribute('cite') ?? undefined,
   })
 }
 
@@ -2009,7 +2015,7 @@ function encodeCode(
       class:
         programmingLanguage !== undefined
           ? `language-${programmingLanguage}`
-          : undefined
+          : undefined,
     },
     children
   )
@@ -2033,7 +2039,7 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
   return stencila.imageObject({
     contentUrl: src,
     title: title.length > 0 ? title : undefined,
-    text: alt.length > 0 ? alt : undefined
+    text: alt.length > 0 ? alt : undefined,
   })
 }
 
@@ -2053,7 +2059,7 @@ function encodeImageObject(
     attrs: microdata(image, property),
     src,
     title: titleString,
-    alt: text ?? titleString ?? property ?? ''
+    alt: text ?? titleString ?? property ?? '',
   })
 }
 
@@ -2075,7 +2081,7 @@ function decodeMath(elem: HTMLElement): stencila.Math {
   const display = elem.getAttribute('display')
   return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
     text,
-    mathLanguage
+    mathLanguage,
   })
 }
 
@@ -2095,8 +2101,8 @@ function encodeMath(math: stencila.Math): HTMLElement {
   const format = mathLanguage?.toLowerCase()
   const elem = h('span', {
     attrs: {
-      ...microdata(math)
-    }
+      ...microdata(math),
+    },
   })
   mathJaxTypeset(elem, {
     math: text,
@@ -2110,7 +2116,7 @@ function encodeMath(math: stencila.Math): HTMLElement {
         : 'TeX',
 
     html: true,
-    css: true
+    css: true,
   })
   return elem
 }
@@ -2198,7 +2204,7 @@ function decodeEntity(elem: HTMLElement): stencila.Entity {
     const { stack } = error
     log.error({
       message: `Error parsing JSON: ${json}`,
-      stack
+      stack,
     })
     return stencila.entity()
   }
@@ -2244,8 +2250,8 @@ function encodeAttrs(
   return {
     attrs: {
       ...microdata(node, property),
-      ...encodeDataAttrs(extras ?? {})
-    }
+      ...encodeDataAttrs(extras ?? {}),
+    },
   }
 }
 
@@ -2258,8 +2264,8 @@ function decodeDataAttrs(
 ): Record<string, string> | undefined {
   const dict: Record<string, string> = {}
   Array.from(elem.attributes)
-    .filter(attr => attr.name.startsWith('data-'))
-    .forEach(attr => (dict[attr.name.slice(5)] = attr.value))
+    .filter((attr) => attr.name.startsWith('data-'))
+    .forEach((attr) => (dict[attr.name.slice(5)] = attr.value))
   return Object.keys(dict).length > 0 ? dict : undefined
 }
 
@@ -2273,7 +2279,7 @@ const reservedAttrs = [
   'itemtype',
   'itemid',
   'itemprop',
-  'itemref'
+  'itemref',
 ]
 
 /**
@@ -2288,7 +2294,7 @@ function encodeDataAttrs(
       value !== undefined
         ? {
             ...attrs,
-            [reservedAttrs.includes(key) ? key : `data-${key}`]: value
+            [reservedAttrs.includes(key) ? key : `data-${key}`]: value,
           }
         : attrs,
     {}

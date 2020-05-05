@@ -10,7 +10,7 @@ describe('encode', () => {
         depth: 1,
         content: ['Heading number one'],
         type: 'Heading',
-        id: 'heading-1'
+        id: 'heading-1',
       })
     ).toEqual(
       `type: Heading

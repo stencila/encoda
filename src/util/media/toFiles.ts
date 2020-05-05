@@ -50,7 +50,7 @@ export async function toFiles(
         await toFile(contentUrl, filePath)
         return {
           ...rest,
-          contentUrl: path.relative(docDir, filePath)
+          contentUrl: path.relative(docDir, filePath),
         }
       }
       return node

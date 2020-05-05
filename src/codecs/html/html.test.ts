@@ -45,7 +45,7 @@ import stencila, {
   Types,
   thematicBreak,
   videoObject,
-  microdataItemtype
+  microdataItemtype,
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
@@ -91,7 +91,7 @@ describe('String escaping', () => {
   test('Convert HTML entities back', async () => {
     expect(await d('<p>&lt;em&gt;&lt;strong&gt;</p>')).toEqual({
       type: 'Paragraph',
-      content: ['<em><strong>']
+      content: ['<em><strong>'],
     })
   })
 })
@@ -107,9 +107,9 @@ describe('Decode container elements', () => {
       content: [
         {
           type: 'Strong',
-          content: ['Stroonnng']
-        }
-      ]
+          content: ['Stroonnng'],
+        },
+      ],
     })
   })
 })
@@ -160,7 +160,7 @@ describe('Encode & Decode CodeExpression nodes', () => {
   const codeExpressionNode = codeExpression({
     text: 'x * 2',
     output: '42',
-    programmingLanguage: 'python'
+    programmingLanguage: 'python',
   })
   const codeExpressionHTML = `
     <stencila-code-expression
@@ -228,17 +228,17 @@ describe.skip('Encode & Decode references', () => {
           person({
             givenNames: ['B'],
             familyNames: ['Aigouy'],
-            url: 'https://scholar.google.com/scholar?q=%22author:B+Aigouy%22'
+            url: 'https://scholar.google.com/scholar?q=%22author:B+Aigouy%22',
           }),
           person({
             givenNames: ['R'],
             familyNames: ['Farhadifar'],
             url:
-              'https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22'
-          })
-        ]
-      })
-    ]
+              'https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22',
+          }),
+        ],
+      }),
+    ],
   })
 
   const schemaNodeCiteGroups = {
@@ -248,8 +248,8 @@ describe.skip('Encode & Decode references', () => {
       {
         type: 'Person',
         givenNames: ['Joe'],
-        familyNames: ['Bloggs']
-      }
+        familyNames: ['Bloggs'],
+      },
     ],
     content: [
       {
@@ -261,12 +261,12 @@ describe.skip('Encode & Decode references', () => {
             items: [
               { type: 'Cite', target: 'some-one-else-1991' },
               { type: 'Cite', target: 'updated-works-2009' },
-              { type: 'Cite', target: 'https://www.fullUrl.com' }
-            ]
+              { type: 'Cite', target: 'https://www.fullUrl.com' },
+            ],
           },
-          '.'
-        ]
-      }
+          '.',
+        ],
+      },
     ],
     references: [
       {
@@ -277,10 +277,10 @@ describe.skip('Encode & Decode references', () => {
           {
             type: 'Person',
             givenNames: ['Some', 'One'],
-            familyNames: ['Else']
-          }
+            familyNames: ['Else'],
+          },
         ],
-        datePublished: '1991'
+        datePublished: '1991',
       },
       {
         type: 'Article',
@@ -290,12 +290,12 @@ describe.skip('Encode & Decode references', () => {
           {
             type: 'Person',
             givenNames: ['Some', 'Better'],
-            familyNames: ['Person']
-          }
+            familyNames: ['Person'],
+          },
         ],
-        datePublished: '2009'
-      }
-    ]
+        datePublished: '2009',
+      },
+    ],
   }
 
   const articleRefs = `<article>
@@ -384,8 +384,8 @@ describe('Encode & Decode figure nodes', () => {
           label,
           caption: [
             'This is a test image. It has a ',
-            link({ content: ['link'], target: '#' })
-          ]
+            link({ content: ['link'], target: '#' }),
+          ],
         })
       )
     )
@@ -405,8 +405,8 @@ describe('Encode & Decode figure nodes', () => {
       content: [imageObject({ contentUrl: 'someImage' })],
       caption: [
         'This is a test image. It has a ',
-        link({ content: ['link'], target: '#' })
-      ]
+        link({ content: ['link'], target: '#' }),
+      ],
     })
 
     const htmlNode = `<figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>`
@@ -421,7 +421,7 @@ const nodes: [string, Entity][] = [
   ['Cite', cite({ target: '#id1' })],
   [
     'CiteGroup',
-    citeGroup({ items: [cite({ target: '#id1' }), cite({ target: '#id2' })] })
+    citeGroup({ items: [cite({ target: '#id1' }), cite({ target: '#id2' })] }),
   ],
   ['CodeBlock', codeBlock({ text: 'a + b' })],
   ['CodeChunk', codeChunk({ text: 'a + b' })],
@@ -433,7 +433,7 @@ const nodes: [string, Entity][] = [
   ['CreativeWork', creativeWork()],
   [
     'Datatable',
-    datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
+    datatable({ columns: [datatableColumn({ name: 'A', values: [] })] }),
   ],
   // [
   //   'DatatableColumn',
@@ -474,16 +474,16 @@ const nodes: [string, Entity][] = [
   // Otherwise the beautification step will strip the free-floating cells and rows.
   [
     'TableCell',
-    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] }),
   ],
   [
     'TableRow',
-    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] }),
   ],
   ['ThematicBreak', thematicBreak()],
   // ['Thing', thing()],
   // ['Variable', variable({ name: '' })],
-  ['VideoObject', videoObject({ contentUrl: '' })]
+  ['VideoObject', videoObject({ contentUrl: '' })],
 ]
 
 describe('Encode with Microdata', () => {
@@ -510,13 +510,13 @@ describe('Encode & Decode Collections', () => {
         content: [imageObject({ contentUrl: 'someImage' })],
         caption: [
           'This is a test image. It has a ',
-          link({ content: ['link'], target: '#' })
-        ]
+          link({ content: ['link'], target: '#' }),
+        ],
       }),
       figure({
-        content: [imageObject({ contentUrl: 'figure2' })]
-      })
-    ]
+        content: [imageObject({ contentUrl: 'figure2' })],
+      }),
+    ],
   })
 
   const htmlNode = `
@@ -550,7 +550,7 @@ describe('Encode & Decode Collections', () => {
 
 test('encode with different themes - default theme', async () => {
   let html = await htmlCodec.dump(stencila.article(), {
-    isStandalone: true
+    isStandalone: true,
   })
 
   expect(html).toMatch(
@@ -565,7 +565,7 @@ test('encode with different themes - default theme', async () => {
 test('encode with different themes - stencila', async () => {
   const html = await htmlCodec.dump(stencila.article(), {
     theme: 'stencila',
-    isStandalone: true
+    isStandalone: true,
   })
 
   expect(html).toMatch(
@@ -580,7 +580,7 @@ test('encode with different themes - stencila', async () => {
 test('encode with different themes - stencila', async () => {
   const html = await htmlCodec.dump(stencila.article(), {
     theme: 'eLife',
-    isStandalone: true
+    isStandalone: true,
   })
 
   expect(html).toMatch(
@@ -611,7 +611,7 @@ test('encode with bundling', async () => {
     await htmlCodec.dump(stencila.article(), {
       theme: 'eLife',
       isStandalone: true,
-      isBundle: true
+      isBundle: true,
     })
   )
 
@@ -633,7 +633,7 @@ test('encode add heading ids', async () => {
       await e({
         type: 'Heading',
         depth: 1,
-        content: ['One']
+        content: ['One'],
       })
     ).querySelector('h2')?.id
   ).toBe('one')
@@ -643,7 +643,7 @@ test('encode add heading ids', async () => {
       await e({
         type: 'Heading',
         depth: 2,
-        content: ['foo 123 $#% 🐶 bar']
+        content: ['foo 123 $#% 🐶 bar'],
       })
     ).querySelector('h3')?.id
   ).toEqual('foo-123---bar')
@@ -656,20 +656,20 @@ test('encode add heading ids', async () => {
         {
           type: 'Heading',
           depth: 1,
-          content: ['duplicated']
+          content: ['duplicated'],
         },
         {
           type: 'Heading',
           depth: 1,
-          content: ['duplicated']
-        }
-      ]
+          content: ['duplicated'],
+        },
+      ],
     })
   ).querySelectorAll('h2')
 
   const ids: string[] = []
 
-  headingItems.forEach(item => {
+  headingItems.forEach((item) => {
     if (item.id) {
       ids.push(item.id)
     }
@@ -687,7 +687,7 @@ describe('handle decoding HTML comments', () => {
 
   const schema = {
     type: 'Paragraph',
-    content: ['A paragraph with ', 'a nested comment']
+    content: ['A paragraph with ', 'a nested comment'],
   }
 
   // test('encode', async () => {
@@ -721,21 +721,21 @@ const attrs = {
         meta: {
           attr1: 'foo',
           attr2: 'bar baz',
-          attr3: ''
+          attr3: '',
         },
-        content: ['link']
+        content: ['link'],
       },
       ' and ',
       {
         type: 'CodeFragment',
         meta: {
-          attr1: 'foo'
+          attr1: 'foo',
         },
-        text: 'da code'
+        text: 'da code',
       },
-      '.'
-    ]
-  }
+      '.',
+    ],
+  },
 }
 
 /**
@@ -747,14 +747,14 @@ const dtNode: stencila.Datatable = {
     {
       type: 'DatatableColumn',
       name: 'A',
-      values: ['1', '2', '3']
+      values: ['1', '2', '3'],
     },
     {
       type: 'DatatableColumn',
       name: 'B',
-      values: ['4', '5', '6']
-    }
-  ]
+      values: ['4', '5', '6'],
+    },
+  ],
 }
 const dt = {
   html: `<div itemtype="${microdataItemtype('Datatable')}">
@@ -781,7 +781,7 @@ const dt = {
     </tbody>
   </table>
 </div>`,
-  node: dtNode
+  node: dtNode,
 }
 
 describe('encode/decode href attributes', () => {

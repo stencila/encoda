@@ -20,7 +20,7 @@ export class JatsPandocCodec extends Codec implements Codec {
     options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
     return pandoc.decode(file, options, {
-      pandocFormat: InputFormat.jats
+      pandocFormat: InputFormat.jats,
     })
   }
 
@@ -30,7 +30,7 @@ export class JatsPandocCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, options, {
       pandocFormat: OutputFormat.jats,
-      pandocArgs: [`--template=jats-template.xml`]
+      pandocArgs: [`--template=jats-template.xml`],
     })
   }
 }

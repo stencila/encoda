@@ -70,7 +70,7 @@ export default async function process(
             meta.to || code.programmingLanguage,
             {
               ...commonEncodeDefaults,
-              isStandalone: false
+              isStandalone: false,
             }
           )
         }

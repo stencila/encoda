@@ -46,7 +46,7 @@ export class PngCodec extends Codec implements Codec {
       await vfile.write(file, filePath)
     }
     return schema.imageObject({
-      contentUrl: filePath
+      contentUrl: filePath,
     })
   }
 
@@ -81,7 +81,7 @@ export class PngCodec extends Codec implements Codec {
     const html = await htmlCodec.dump(node, {
       ...options,
       isStandalone: true,
-      isBundle: true
+      isBundle: true,
     })
 
     // Capture screenshot
@@ -89,7 +89,7 @@ export class PngCodec extends Codec implements Codec {
     if (size !== undefined)
       await page.setViewport({
         width: size.width,
-        height: size.height
+        height: size.height,
       })
 
     await page.setContent(html, { waitUntil: 'networkidle0' })
@@ -98,7 +98,7 @@ export class PngCodec extends Codec implements Codec {
     if (isStandalone) {
       buffer = await page.screenshot({
         encoding: 'binary',
-        fullPage: size === undefined
+        fullPage: size === undefined,
       })
     } else {
       const [key, value] = Object.entries(schema.microdataRoot())[0]
@@ -115,10 +115,10 @@ export class PngCodec extends Codec implements Codec {
                 x: boundingBox.x,
                 y: boundingBox.y,
                 width: Math.min(boundingBox.width, viewPort.width),
-                height: Math.min(boundingBox.height, viewPort.height)
-              }
+                height: Math.min(boundingBox.height, viewPort.height),
+              },
             }
-          : {})
+          : {}),
       })
     }
 

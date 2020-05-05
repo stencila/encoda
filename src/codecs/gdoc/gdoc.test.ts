@@ -32,7 +32,7 @@ describe('decode:title', () => {
   test('use the title string property', async () => {
     expect(
       await gdoc2node({
-        title: 'Title'
+        title: 'Title',
       })
     ).toEqual(stencila.article({ title: 'Title' }))
   })
@@ -46,15 +46,15 @@ describe('decode:title', () => {
             {
               paragraph: {
                 elements: [{ textRun: { content: 'The actual title!' } }],
-                paragraphStyle: { namedStyleType: 'TITLE' }
-              }
-            }
-          ]
-        }
+                paragraphStyle: { namedStyleType: 'TITLE' },
+              },
+            },
+          ],
+        },
       })
     ).toEqual(
       stencila.article({
-        title: [stencila.paragraph({ content: ['The actual title!'] })]
+        title: [stencila.paragraph({ content: ['The actual title!'] })],
       })
     )
   })
@@ -82,21 +82,21 @@ const kitchenSink = {
       content: [
         // The first element is always a section break
         {
-          sectionBreak: {}
+          sectionBreak: {},
         },
         // Heading 1
         {
           paragraph: {
             elements: [{ textRun: { content: 'Heading one' } }],
-            paragraphStyle: { namedStyleType: 'HEADING_1' }
-          }
+            paragraphStyle: { namedStyleType: 'HEADING_1' },
+          },
         },
         // Heading 2
         {
           paragraph: {
             elements: [{ textRun: { content: 'Heading two' } }],
-            paragraphStyle: { namedStyleType: 'HEADING_2' }
-          }
+            paragraphStyle: { namedStyleType: 'HEADING_2' },
+          },
         },
         // Paragraph
         {
@@ -106,47 +106,47 @@ const kitchenSink = {
               {
                 textRun: {
                   content: 'emphasis',
-                  textStyle: { italic: true }
-                }
+                  textStyle: { italic: true },
+                },
               },
               { textRun: { content: ' and ' } },
               {
                 textRun: {
                   content: 'strong',
-                  textStyle: { bold: true }
-                }
+                  textStyle: { bold: true },
+                },
               },
               { textRun: { content: ' and ' } },
               {
                 textRun: {
                   content: 'delete',
-                  textStyle: { strikethrough: true }
-                }
+                  textStyle: { strikethrough: true },
+                },
               },
               { textRun: { content: ' and ' } },
               {
                 textRun: {
                   content: 'superscript',
-                  textStyle: { baselineOffset: 'SUPERSCRIPT' }
-                }
+                  textStyle: { baselineOffset: 'SUPERSCRIPT' },
+                },
               },
               { textRun: { content: ' and ' } },
               {
                 textRun: {
                   content: 'subscript',
-                  textStyle: { baselineOffset: 'SUBSCRIPT' }
-                }
+                  textStyle: { baselineOffset: 'SUBSCRIPT' },
+                },
               },
               { textRun: { content: ' and ' } },
               {
                 textRun: {
                   content: 'a link',
-                  textStyle: { link: { url: 'http://example.com' } }
-                }
+                  textStyle: { link: { url: 'http://example.com' } },
+                },
               },
-              { textRun: { content: '.' } }
-            ]
-          }
+              { textRun: { content: '.' } },
+            ],
+          },
         },
         // Image
         {
@@ -154,49 +154,49 @@ const kitchenSink = {
             elements: [
               {
                 inlineObjectElement: {
-                  inlineObjectId: 'kix.inlineobj0'
-                }
-              }
-            ]
-          }
+                  inlineObjectId: 'kix.inlineobj0',
+                },
+              },
+            ],
+          },
         },
         // Unordered list
         {
           paragraph: {
             elements: [{ textRun: { content: 'One' } }],
-            bullet: { listId: 'kix.list0' }
-          }
+            bullet: { listId: 'kix.list0' },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Two' } }],
-            bullet: { listId: 'kix.list0' }
-          }
+            bullet: { listId: 'kix.list0' },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Three' } }],
-            bullet: { listId: 'kix.list0' }
-          }
+            bullet: { listId: 'kix.list0' },
+          },
         },
         // Ordered list
         {
           paragraph: {
             elements: [{ textRun: { content: 'First' } }],
-            bullet: { listId: 'kix.list1' }
-          }
+            bullet: { listId: 'kix.list1' },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Second' } }],
-            bullet: { listId: 'kix.list1' }
-          }
+            bullet: { listId: 'kix.list1' },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Third' } }],
-            bullet: { listId: 'kix.list1' }
-          }
+            bullet: { listId: 'kix.list1' },
+          },
         },
         // Table
         {
@@ -208,30 +208,30 @@ const kitchenSink = {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: 'A' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: 'A' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: 'B' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: 'B' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: 'C' } }]
-                        }
-                      }
-                    ]
-                  }
-                ]
+                          elements: [{ textRun: { content: 'C' } }],
+                        },
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 tableCells: [
@@ -239,30 +239,30 @@ const kitchenSink = {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '1' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: '1' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '2' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: '2' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '3' } }]
-                        }
-                      }
-                    ]
-                  }
-                ]
+                          elements: [{ textRun: { content: '3' } }],
+                        },
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 tableCells: [
@@ -270,39 +270,39 @@ const kitchenSink = {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '4' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: '4' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '5' } }]
-                        }
-                      }
-                    ]
+                          elements: [{ textRun: { content: '5' } }],
+                        },
+                      },
+                    ],
                   },
                   {
                     content: [
                       {
                         paragraph: {
-                          elements: [{ textRun: { content: '6' } }]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+                          elements: [{ textRun: { content: '6' } }],
+                        },
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
         },
         // ThematicBreak
         {
-          sectionBreak: {}
-        }
-      ]
+          sectionBreak: {},
+        },
+      ],
     },
     lists: {
       'kix.list0': {
@@ -310,15 +310,15 @@ const kitchenSink = {
           nestingLevels: [
             {
               // Unordered lists do not have a `glyphType`
-            }
-          ]
-        }
+            },
+          ],
+        },
       },
       'kix.list1': {
         listProperties: {
-          nestingLevels: [{ glyphType: '%0' }]
-        }
-      }
+          nestingLevels: [{ glyphType: '%0' }],
+        },
+      },
     },
     inlineObjects: {
       'kix.inlineobj0': {
@@ -327,12 +327,12 @@ const kitchenSink = {
             title: 'The title',
             description: 'The description',
             imageProperties: {
-              contentUri: 'https://lh3.googleusercontent.com/just-an-example'
-            }
-          }
-        }
-      }
-    }
+              contentUri: 'https://lh3.googleusercontent.com/just-an-example',
+            },
+          },
+        },
+      },
+    },
   },
 
   node: {
@@ -342,12 +342,12 @@ const kitchenSink = {
       {
         type: 'Heading',
         depth: 1,
-        content: ['Heading one']
+        content: ['Heading one'],
       },
       {
         type: 'Heading',
         depth: 2,
-        content: ['Heading two']
+        content: ['Heading two'],
       },
       {
         type: 'Paragraph',
@@ -355,36 +355,36 @@ const kitchenSink = {
           'A paragraph with ',
           {
             type: 'Emphasis',
-            content: ['emphasis']
+            content: ['emphasis'],
           },
           ' and ',
           {
             type: 'Strong',
-            content: ['strong']
+            content: ['strong'],
           },
           ' and ',
           {
             type: 'Delete',
-            content: ['delete']
+            content: ['delete'],
           },
           ' and ',
           {
             type: 'Superscript',
-            content: ['superscript']
+            content: ['superscript'],
           },
           ' and ',
           {
             type: 'Subscript',
-            content: ['subscript']
+            content: ['subscript'],
           },
           ' and ',
           {
             type: 'Link',
             content: ['a link'],
-            target: 'http://example.com'
+            target: 'http://example.com',
           },
-          '.'
-        ]
+          '.',
+        ],
       },
       {
         type: 'Paragraph',
@@ -393,9 +393,9 @@ const kitchenSink = {
             type: 'ImageObject',
             contentUrl: 'https://lh3.googleusercontent.com/just-an-example',
             title: 'The title',
-            text: 'The description'
-          }
-        ]
+            text: 'The description',
+          },
+        ],
       },
       {
         type: 'List',
@@ -406,29 +406,29 @@ const kitchenSink = {
             content: [
               {
                 content: ['One'],
-                type: 'Paragraph'
-              }
-            ]
+                type: 'Paragraph',
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 content: ['Two'],
-                type: 'Paragraph'
-              }
-            ]
+                type: 'Paragraph',
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 content: ['Three'],
-                type: 'Paragraph'
-              }
-            ]
-          }
-        ]
+                type: 'Paragraph',
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'List',
@@ -439,29 +439,29 @@ const kitchenSink = {
             content: [
               {
                 content: ['First'],
-                type: 'Paragraph'
-              }
-            ]
+                type: 'Paragraph',
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 content: ['Second'],
-                type: 'Paragraph'
-              }
-            ]
+                type: 'Paragraph',
+              },
+            ],
           },
           {
             type: 'ListItem',
             content: [
               {
                 content: ['Third'],
-                type: 'Paragraph'
-              }
-            ]
-          }
-        ]
+                type: 'Paragraph',
+              },
+            ],
+          },
+        ],
       },
       {
         type: 'Table',
@@ -471,59 +471,59 @@ const kitchenSink = {
             cells: [
               {
                 content: ['A'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['B'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['C'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['1'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['2'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['3'],
-                type: 'TableCell'
-              }
-            ]
+                type: 'TableCell',
+              },
+            ],
           },
           {
             type: 'TableRow',
             cells: [
               {
                 content: ['4'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['5'],
-                type: 'TableCell'
+                type: 'TableCell',
               },
               {
                 content: ['6'],
-                type: 'TableCell'
-              }
-            ]
-          }
-        ]
+                type: 'TableCell',
+              },
+            ],
+          },
+        ],
       },
       {
-        type: 'ThematicBreak'
-      }
-    ]
-  }
+        type: 'ThematicBreak',
+      },
+    ],
+  },
 }
 
 const nestedList = {
@@ -533,42 +533,42 @@ const nestedList = {
         {
           paragraph: {
             elements: [{ textRun: { content: 'Parent' } }],
-            bullet: { listId: 'kix.list0' }
-          }
+            bullet: { listId: 'kix.list0' },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Child A' } }],
-            bullet: { listId: 'kix.list0', nestingLevel: 1 }
-          }
+            bullet: { listId: 'kix.list0', nestingLevel: 1 },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Grandchild 1' } }],
-            bullet: { listId: 'kix.list0', nestingLevel: 2 }
-          }
+            bullet: { listId: 'kix.list0', nestingLevel: 2 },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Child B' } }],
-            bullet: { listId: 'kix.list0', nestingLevel: 1 }
-          }
+            bullet: { listId: 'kix.list0', nestingLevel: 1 },
+          },
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Grandchild 2' } }],
-            bullet: { listId: 'kix.list0', nestingLevel: 2 }
-          }
-        }
-      ]
+            bullet: { listId: 'kix.list0', nestingLevel: 2 },
+          },
+        },
+      ],
     },
     lists: {
       'kix.list0': {
         listProperties: {
-          nestingLevels: [{}, { glyphType: '%0' }, {}]
-        }
-      }
-    }
+          nestingLevels: [{}, { glyphType: '%0' }, {}],
+        },
+      },
+    },
   },
 
   node: {
@@ -583,7 +583,7 @@ const nestedList = {
             content: [
               {
                 type: 'Paragraph',
-                content: ['Parent']
+                content: ['Parent'],
               },
               {
                 type: 'List',
@@ -594,7 +594,7 @@ const nestedList = {
                     content: [
                       {
                         type: 'Paragraph',
-                        content: ['Child A']
+                        content: ['Child A'],
                       },
                       {
                         type: 'List',
@@ -605,20 +605,20 @@ const nestedList = {
                             content: [
                               {
                                 type: 'Paragraph',
-                                content: ['Grandchild 1']
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                                content: ['Grandchild 1'],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
                   },
                   {
                     type: 'ListItem',
                     content: [
                       {
                         type: 'Paragraph',
-                        content: ['Child B']
+                        content: ['Child B'],
                       },
                       {
                         type: 'List',
@@ -629,20 +629,20 @@ const nestedList = {
                             content: [
                               {
                                 type: 'Paragraph',
-                                content: ['Grandchild 2']
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                                content: ['Grandchild 2'],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }

@@ -8,25 +8,25 @@ export default article({
   authors: [
     person({
       givenNames: ['Jim', 'J'],
-      familyNames: ['Jones']
-    })
+      familyNames: ['Jones'],
+    }),
   ],
   datePublished: date({ value: '2020-03-13' }),
   content: [
     {
       type: 'Heading',
       depth: 1,
-      content: ['Heading one']
+      content: ['Heading one'],
     },
     {
       type: 'Heading',
       depth: 2,
-      content: ['Heading two']
+      content: ['Heading two'],
     },
     {
       type: 'Heading',
       depth: 3,
-      content: ['Heading three']
+      content: ['Heading three'],
     },
     {
       type: 'Paragraph',
@@ -34,20 +34,20 @@ export default article({
         'A paragraph with ',
         {
           type: 'Emphasis',
-          content: ['emphasis']
+          content: ['emphasis'],
         },
         ', ',
         {
           type: 'Strong',
-          content: ['strong']
+          content: ['strong'],
         },
         ', ',
         {
           type: 'Delete',
-          content: ['delete']
+          content: ['delete'],
         },
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'Paragraph',
@@ -57,19 +57,19 @@ export default article({
           type: 'Link',
           target: 'https://example.org',
           meta: {
-            attr: 'foo'
+            attr: 'foo',
           },
           content: [
             'a ',
             {
               type: 'Emphasis',
-              content: ['rich']
+              content: ['rich'],
             },
-            ' link'
-          ]
+            ' link',
+          ],
         },
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'Paragraph',
@@ -78,10 +78,10 @@ export default article({
         {
           type: 'Quote',
           cite: 'https://example.org',
-          content: ['quote']
+          content: ['quote'],
         },
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'Paragraph',
@@ -90,10 +90,10 @@ export default article({
         {
           type: 'CodeFragment',
           programmingLanguage: 'python',
-          text: '# code'
+          text: '# code',
         },
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'Paragraph',
@@ -103,14 +103,14 @@ export default article({
           type: 'ImageObject',
           contentUrl: 'https://via.placeholder.com/10',
           title: 'title',
-          text: 'alt text'
+          text: 'alt text',
         },
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'Paragraph',
-      content: ['Paragraph with a ', true, ' and a ', false, '.']
+      content: ['Paragraph with a ', true, ' and a ', false, '.'],
     },
     {
       type: 'Paragraph',
@@ -121,23 +121,23 @@ export default article({
         3.14,
         ', and a ',
         [1, 2],
-        '.'
-      ]
+        '.',
+      ],
     },
     {
       type: 'QuoteBlock',
       cite: 'https://example.org',
-      content: ['A blockquote']
+      content: ['A blockquote'],
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'r',
-      text: '# Some R code\nx <- c(1,2)'
+      text: '# Some R code\nx <- c(1,2)',
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'js',
-      text: '// Some Javascript code\nconst inc = (n) => n + 1'
+      text: '// Some Javascript code\nconst inc = (n) => n + 1',
     },
     {
       type: 'List',
@@ -145,8 +145,8 @@ export default article({
       items: [
         { type: 'ListItem', content: ['One'] },
         { type: 'ListItem', content: ['Two'] },
-        { type: 'ListItem', content: ['Three'] }
-      ]
+        { type: 'ListItem', content: ['Three'] },
+      ],
     },
     {
       type: 'List',
@@ -154,8 +154,8 @@ export default article({
       items: [
         { type: 'ListItem', content: ['First'] },
         { type: 'ListItem', content: ['Second'] },
-        { type: 'ListItem', content: ['Third'] }
-      ]
+        { type: 'ListItem', content: ['Third'] },
+      ],
     },
     {
       type: 'Table',
@@ -165,56 +165,56 @@ export default article({
           cells: [
             {
               content: ['A'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['B'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['C'],
-              type: 'TableCell'
-            }
-          ]
+              type: 'TableCell',
+            },
+          ],
         },
         {
           type: 'TableRow',
           cells: [
             {
               content: ['1'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['2'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['3'],
-              type: 'TableCell'
-            }
-          ]
+              type: 'TableCell',
+            },
+          ],
         },
         {
           type: 'TableRow',
           cells: [
             {
               content: ['4'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['5'],
-              type: 'TableCell'
+              type: 'TableCell',
             },
             {
               content: ['6'],
-              type: 'TableCell'
-            }
-          ]
-        }
-      ]
+              type: 'TableCell',
+            },
+          ],
+        },
+      ],
     },
     {
-      type: 'ThematicBreak'
-    }
-  ]
+      type: 'ThematicBreak',
+    },
+  ],
 })

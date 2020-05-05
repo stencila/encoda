@@ -11,20 +11,20 @@ const simple = {
       {
         type: 'DatatableColumn',
         name: 'A',
-        values: [1, 2, 3]
+        values: [1, 2, 3],
       },
       {
         type: 'DatatableColumn',
         name: 'B',
-        values: [2, 5, 8]
+        values: [2, 5, 8],
       },
       {
         type: 'DatatableColumn',
         name: 'C',
-        values: [3, 6, 9]
-      }
-    ]
-  }
+        values: [3, 6, 9],
+      },
+    ],
+  },
 }
 
 const named = {
@@ -35,20 +35,20 @@ const named = {
       {
         type: 'DatatableColumn',
         name: 'code',
-        values: ['a', 'b', 'c']
+        values: ['a', 'b', 'c'],
       },
       {
         type: 'DatatableColumn',
         name: 'height',
-        values: [2, 5, 8]
+        values: [2, 5, 8],
       },
       {
         type: 'DatatableColumn',
         name: 'width',
-        values: [3, 6, 9]
-      }
-    ]
-  }
+        values: [3, 6, 9],
+      },
+    ],
+  },
 }
 
 test('decode', async () => {
@@ -57,7 +57,7 @@ test('decode', async () => {
 })
 
 describe('encode', () => {
-  const normalizeNewline = function(actual: string) {
+  const normalizeNewline = function (actual: string) {
     let normalized = actual.replace(/\r\n/g, '\n')
     if (!normalized.endsWith('\n')) normalized += '\n'
     return normalized

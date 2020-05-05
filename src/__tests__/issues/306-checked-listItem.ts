@@ -15,17 +15,17 @@ test('checked list items in Markdown are decoded and redndered to HTML', async (
     items: [
       schema.listItem({
         isChecked: true,
-        content: [schema.paragraph({ content: ['Invent the universe'] })]
+        content: [schema.paragraph({ content: ['Invent the universe'] })],
       }),
       schema.listItem({
         isChecked: false,
-        content: [schema.paragraph({ content: ['Make apple pie'] })]
+        content: [schema.paragraph({ content: ['Make apple pie'] })],
       }),
       schema.listItem({
         isChecked: false,
-        content: [schema.paragraph({ content: ['Invite friends'] })]
-      })
-    ]
+        content: [schema.paragraph({ content: ['Invite friends'] })],
+      }),
+    ],
   })
 
   expect(await new MdCodec().load(md, { isStandalone: false })).toEqual([list])

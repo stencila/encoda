@@ -33,7 +33,7 @@ export class CSLCodec extends Codec implements Codec {
   ): Promise<schema.Node> => {
     const { format = '@csl/object' } = {
       ...this.commonDecodeDefaults,
-      ...options
+      ...options,
     }
 
     const content: string = await vfile.dump(file)
@@ -119,18 +119,18 @@ export async function decodeCsl(
     let isPartOf
     if (containerTitle !== undefined) {
       isPartOf = schema.periodical({
-        title: containerTitle
+        title: containerTitle,
       })
       if (volume !== undefined) {
         isPartOf = schema.publicationVolume({
           volumeNumber: volume,
-          isPartOf
+          isPartOf,
         })
       }
       if (issue !== undefined) {
         isPartOf = schema.publicationIssue({
           issueNumber: issue,
-          isPartOf
+          isPartOf,
         })
       }
     }
@@ -140,7 +140,7 @@ export async function decodeCsl(
       title,
       id,
       datePublished,
-      isPartOf
+      isPartOf,
     })
   } else {
     logWarnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
@@ -192,7 +192,7 @@ export const encodeCreativeWork = (
     title: TxtCodec.stringify(title),
     author: authors.map(encodeAuthor),
     issued: date !== undefined ? encodeDate(date) : undefined,
-    ...encodeIsPartOf(isPartOf)
+    ...encodeIsPartOf(isPartOf),
   }
 }
 
@@ -211,7 +211,7 @@ export const encodeArticle = (article: schema.Article): Csl.Data => {
 
   return {
     ...encodeCreativeWork(rest, 'article-journal'),
-    page
+    page,
   }
 }
 
@@ -236,7 +236,7 @@ const decodeAuthor = (author: Csl.Person): Promise<schema.Person> => {
     schema.person({
       familyNames: family !== undefined ? [family] : undefined,
       givenNames: given !== undefined ? [given] : undefined,
-      honorificSuffix: suffix
+      honorificSuffix: suffix,
     })
   )
 }
@@ -262,7 +262,7 @@ const encodePerson = (person: schema.Person): Csl.Person => {
   return {
     given: givenNames.join(' '),
     family: familyNames.join(' '),
-    suffix: honorificSuffix
+    suffix: honorificSuffix,
   }
 }
 
@@ -277,7 +277,7 @@ const encodeOrganization = (org: schema.Organization): Csl.Person => {
   logWarnLoss('csl', 'encode', 'Does not support organizations as authors')
 
   return {
-    literal: name
+    literal: name,
   }
 }
 
@@ -304,7 +304,7 @@ const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
     date = new Date(iso + ' UTC')
   }
   return {
-    'date-parts': [[date.getFullYear(), date.getMonth() + 1, date.getDate()]]
+    'date-parts': [[date.getFullYear(), date.getMonth() + 1, date.getDate()]],
   }
 }
 
@@ -325,7 +325,7 @@ const encodeIsPartOf = (
       ...(isPartOf !== undefined
         ? encodeIsPartOf(isPartOf)
         : encodeContainerTitle(name, title)),
-      issue: issueNumber
+      issue: issueNumber,
     }
   } else if (schema.isA('PublicationVolume', work)) {
     const { name, title, volumeNumber, isPartOf, ...lost } = work
@@ -335,7 +335,7 @@ const encodeIsPartOf = (
       ...(isPartOf !== undefined
         ? encodeIsPartOf(isPartOf)
         : encodeContainerTitle(name, title)),
-      volume: volumeNumber
+      volume: volumeNumber,
     }
   } else if (schema.isA('Periodical', work)) {
     const { name, title, ...lost } = work
@@ -364,5 +364,5 @@ const encodeContainerTitle = (
       ? name
       : title !== undefined
       ? TxtCodec.stringify(title)
-      : 'Untitled'
+      : 'Untitled',
 })

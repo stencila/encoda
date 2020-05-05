@@ -23,19 +23,19 @@ test('issue 66: csv codec properly escapes strings', async () => {
       {
         type: 'DatatableColumn',
         name: 'header1',
-        values: ['text']
+        values: ['text'],
       },
       {
         type: 'DatatableColumn',
         name: 'header2',
-        values: ['some text, it contains a comma']
+        values: ['some text, it contains a comma'],
       },
       {
         type: 'DatatableColumn',
         name: 'header3',
-        values: ['another text']
-      }
-    ]
+        values: ['another text'],
+      },
+    ],
   })
 
   expect(await vfile.dump(await encode(datatable))).toEqual(csv)

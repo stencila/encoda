@@ -37,7 +37,7 @@ export const commonEncodeDefaults: CommonEncodeDefaults = {
   isStandalone: false,
   isBundle: false,
   shouldZip: 'no',
-  theme: 'stencila'
+  theme: 'stencila',
 }
 
 /**
@@ -89,7 +89,7 @@ type CommonDecodeDefaults = Required<Pick<CommonDecodeOptions, 'isStandalone'>>
 export const commonDecodeDefaults: CommonDecodeDefaults = {
   // To avoid breaking changes this is true, but may be changed to
   // false for consistency with default for encoding (false)
-  isStandalone: true
+  isStandalone: true,
 }
 
 /**
@@ -307,7 +307,7 @@ export abstract class Codec<
     return vfile.write(
       await this.encode(await this.preWrite(node, filePath, options), {
         filePath,
-        ...options
+        ...options,
       } as EncodeOptions),
       filePath
     )

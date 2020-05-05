@@ -3,7 +3,7 @@ import {
   paragraph,
   mathFragment,
   mathBlock,
-  person
+  person,
 } from '@stencila/schema'
 
 /**
@@ -13,8 +13,8 @@ export default article({
   title: 'A little article with some math in it',
   authors: [
     person({
-      name: 'Janet J Johns'
-    })
+      name: 'Janet J Johns',
+    }),
   ],
   datePublished: 'Friday 13 March, 2020',
   content: [
@@ -27,14 +27,14 @@ export default article({
         ' and ',
         mathFragment({
           mathLanguage: 'mathml',
-          text: '<math><mrow><mi>&pi;</mi></mrow></math>'
+          text: '<math><mrow><mi>&pi;</mi></mrow></math>',
         }),
-        '.'
-      ]
+        '.',
+      ],
     }),
     mathBlock({
       mathLanguage: 'asciimath',
-      text: 'sum_(i=1)^n i^3=((n(n+1))/2)^2'
-    })
-  ]
+      text: 'sum_(i=1)^n i^3=((n(n+1))/2)^2',
+    }),
+  ],
 })

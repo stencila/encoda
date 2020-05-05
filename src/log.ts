@@ -20,8 +20,8 @@ export const configure = (debug = false): void => {
       throttle: {
         // Do not repeat the same message within 5s
         signature: `${data.tag}${data.level}${data.message}`,
-        duration: 5000
-      }
+        duration: 5000,
+      },
     })
   })
 }
@@ -76,7 +76,7 @@ export const logWarnLossIfAny = (
       `${codec} Properties of \`${stencila.nodeType(
         node
       )}\` not supported by ${op}: ${properties
-        .map(prop => `\`${prop}\``)
+        .map((prop) => `\`${prop}\``)
         .join(', ')}`
     )
   }

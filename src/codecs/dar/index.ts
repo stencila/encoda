@@ -100,12 +100,12 @@ export class DarCodec extends Codec implements Codec {
             curr.document !== null
               ? [...prev.documents, curr.document]
               : prev.documents,
-          assets: [...prev.assets, ...curr.assets]
+          assets: [...prev.assets, ...curr.assets],
         }
       },
       {
         documents: [],
-        assets: []
+        assets: [],
       }
     )
 
@@ -180,7 +180,7 @@ async function encodeDocumentAssets(
         assets.push(asset)
         return {
           ...mediaObject,
-          contentUrl
+          contentUrl,
         }
       }
     }

@@ -13,7 +13,7 @@ import {
   isTheme,
   styleEntry,
   scriptEntry,
-  ThemaAssets
+  ThemaAssets,
 } from '@stencila/thema'
 import fs from 'fs'
 import jsdom from 'jsdom'
@@ -93,7 +93,7 @@ export const allName = (elem: HTMLElement | null, name: string): Node[] => {
       ...(node.nodeName === name ? [node] : []),
       ...(node.nodeType === node.ELEMENT_NODE
         ? allName(node as HTMLElement, name)
-        : [])
+        : []),
     ]
   }, [])
 }
@@ -103,7 +103,7 @@ const themeNotFound = (themeName: string): ThemaAssets => {
 
   return {
     styles: [],
-    scripts: []
+    scripts: [],
   }
 }
 
@@ -116,8 +116,8 @@ const themeNotFound = (themeName: string): ThemaAssets => {
  */
 const fetchAssets = async (assets: string[]): Promise<string[]> =>
   Promise.all(
-    assets.map(asset =>
-      toFile(asset).then(file => fs.readFileSync(file.filePath).toString())
+    assets.map((asset) =>
+      toFile(asset).then((file) => fs.readFileSync(file.filePath).toString())
     )
   )
 
@@ -165,7 +165,7 @@ export const getThemeAssets = async (
 
     resolvedTheme = {
       styles: [`${url}/${styleEntry}`],
-      scripts: [`${url}/${scriptEntry}`]
+      scripts: [`${url}/${scriptEntry}`],
     }
   }
 
@@ -177,7 +177,7 @@ export const getThemeAssets = async (
   ) {
     resolvedTheme = {
       styles: [getThemePath(theme, styleEntry)],
-      scripts: [getThemePath(theme, scriptEntry)]
+      scripts: [getThemePath(theme, scriptEntry)],
     }
   }
 
@@ -196,6 +196,6 @@ export const getThemeAssets = async (
 
   return {
     styles,
-    scripts
+    scripts,
   }
 }

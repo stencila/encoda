@@ -3,7 +3,7 @@ import {
   codeChunk,
   heading,
   paragraph,
-  person
+  person,
 } from '@stencila/schema'
 
 /**
@@ -16,18 +16,18 @@ export default article({
   authors: [
     person({
       givenNames: ['Jane'],
-      familyNames: ['Jones']
-    })
+      familyNames: ['Jones'],
+    }),
   ],
   datePublished: '2020-04-01',
   content: [
     codeChunk({
       text: 'x <- 3.14',
-      programmingLanguage: 'r'
+      programmingLanguage: 'r',
     }),
     heading({
       depth: 1,
-      content: ['A heading']
+      content: ['A heading'],
     }),
     paragraph({
       content: [
@@ -35,34 +35,34 @@ export default article({
         {
           text: 'x * 2.2',
           type: 'CodeExpression',
-          programmingLanguage: 'r'
+          programmingLanguage: 'r',
         },
-        '.'
-      ]
+        '.',
+      ],
     }),
     paragraph({
       content: [
         'Plain inline code ',
         {
           text: 'x * 6',
-          type: 'CodeFragment'
+          type: 'CodeFragment',
         },
-        '.'
-      ]
+        '.',
+      ],
     }),
     heading({
       depth: 2,
-      content: ['Another heading']
+      content: ['Another heading'],
     }),
     paragraph({
-      content: ['A block code chunk']
+      content: ['A block code chunk'],
     }),
     codeChunk({
       text: '# A comment\nsum(1:10)',
-      programmingLanguage: 'r'
+      programmingLanguage: 'r',
     }),
     paragraph({
-      content: ['A block code chunk with name and options']
+      content: ['A block code chunk with name and options'],
     }),
     codeChunk({
       text: 'plot(1:10)',
@@ -70,8 +70,8 @@ export default article({
       meta: {
         label: 'my_plot',
         'fig.height': '7',
-        'fig.width': '8'
-      }
-    })
-  ]
+        'fig.width': '8',
+      },
+    }),
+  ],
 })

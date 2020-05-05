@@ -4,19 +4,19 @@ import { coerce } from './coerce'
 describe('coerce', () => {
   it('will add type property', async () => {
     expect(await coerce({}, 'Person')).toEqual({
-      type: 'Person'
+      type: 'Person',
     })
     expect(
       await coerce(
         {
           type: 'Foo',
-          name: 'John'
+          name: 'John',
         },
         'Person'
       )
     ).toEqual({
       type: 'Person',
-      name: 'John'
+      name: 'John',
     })
   })
 
@@ -24,25 +24,25 @@ describe('coerce', () => {
     expect(
       await coerce(
         {
-          name: 42
+          name: 42,
         },
         'Person'
       )
     ).toEqual({
       type: 'Person',
-      name: '42'
+      name: '42',
     })
 
     expect(
       await coerce(
         {
-          name: null
+          name: null,
         },
         'Person'
       )
     ).toEqual({
       type: 'Person',
-      name: ''
+      name: '',
     })
   })
 
@@ -51,12 +51,12 @@ describe('coerce', () => {
       await coerce({
         type: 'Person',
         givenName: 'John', // An alias defined on Person
-        alternateName: 'Jono' // An alias inherited from Thing
+        alternateName: 'Jono', // An alias inherited from Thing
       })
     ).toEqual({
       type: 'Person',
       givenNames: ['John'],
-      alternateNames: ['Jono']
+      alternateNames: ['Jono'],
     })
   })
 
@@ -71,14 +71,14 @@ describe('coerce', () => {
         // A variant of a property alias `alternate name` -> `alternateName` -> `alternateNames`
         'alternate name': 'Jono',
         // A variant of a property alias
-        'telephone-number': '939393'
+        'telephone-number': '939393',
       })
     ).toEqual({
       type: 'Person',
       givenNames: ['John'],
       familyNames: ['Jones'],
       alternateNames: ['Jono'],
-      telephoneNumbers: ['939393']
+      telephoneNumbers: ['939393'],
     })
   })
 
@@ -92,9 +92,9 @@ describe('coerce', () => {
           {
             type: 'Organization',
             name: 'Acme PLC',
-            beep: 'boop'
-          }
-        ]
+            beep: 'boop',
+          },
+        ],
       })
     ).toEqual({
       type: 'Person',
@@ -102,20 +102,20 @@ describe('coerce', () => {
       affiliations: [
         {
           type: 'Organization',
-          name: 'Acme PLC'
-        }
-      ]
+          name: 'Acme PLC',
+        },
+      ],
     })
 
     expect(
       await coerce(
         {
-          favoriteColour: 'pink'
+          favoriteColour: 'pink',
         },
         'Person'
       )
     ).toEqual({
-      type: 'Person'
+      type: 'Person',
     })
   })
 
@@ -123,21 +123,21 @@ describe('coerce', () => {
     expect(
       await coerce({
         type: 'Person',
-        name: [42]
+        name: [42],
       })
     ).toEqual({
       type: 'Person',
-      name: '42'
+      name: '42',
     })
 
     expect(
       await coerce({
         type: 'Person',
-        name: ['First', 'Second']
+        name: ['First', 'Second'],
       })
     ).toEqual({
       type: 'Person',
-      name: 'First'
+      name: 'First',
     })
   })
 
@@ -145,11 +145,11 @@ describe('coerce', () => {
     expect(
       await coerce({
         type: 'Person',
-        givenNames: 'Jane'
+        givenNames: 'Jane',
       })
     ).toEqual({
       type: 'Person',
-      givenNames: ['Jane']
+      givenNames: ['Jane'],
     })
 
     // e.g. person only affiliated with one organisation
@@ -157,16 +157,16 @@ describe('coerce', () => {
       await coerce({
         type: 'Person',
         affiliation: {
-          type: 'Organization'
-        }
+          type: 'Organization',
+        },
       })
     ).toEqual({
       type: 'Person',
       affiliations: [
         {
-          type: 'Organization'
-        }
-      ]
+          type: 'Organization',
+        },
+      ],
     })
 
     // e.g. article only has one author, with one affiliation
@@ -177,9 +177,9 @@ describe('coerce', () => {
         author: {
           type: 'Person',
           affiliation: {
-            type: 'Organization'
-          }
-        }
+            type: 'Organization',
+          },
+        },
       })
     ).toEqual({
       type: 'Article',
@@ -189,29 +189,29 @@ describe('coerce', () => {
           type: 'Person',
           affiliations: [
             {
-              type: 'Organization'
-            }
-          ]
-        }
-      ]
+              type: 'Organization',
+            },
+          ],
+        },
+      ],
     })
   })
 
   it('will add default values for missing properties', async () => {
     expect(
       await coerce({
-        type: 'Heading'
+        type: 'Heading',
       })
     ).toEqual({
       type: 'Heading',
-      content: []
+      content: [],
     })
   })
 
   it('will apply codecs', async () => {
     const article = await coerce(
       {
-        author: 'Mr Joe Doe'
+        author: 'Mr Joe Doe',
       },
       'Article'
     )
@@ -220,7 +220,7 @@ describe('coerce', () => {
       type: 'Person',
       givenNames: ['Joe'],
       familyNames: ['Doe'],
-      honorificPrefix: 'Mr'
+      honorificPrefix: 'Mr',
     })
   })
 
@@ -234,15 +234,15 @@ describe('coerce', () => {
             givenNames: 'Joe',
             affiliation: {
               type: 'Organization',
-              name: ['Acme Ltd']
-            }
+              name: ['Acme Ltd'],
+            },
           },
           {
             type: 'Person',
             firstNames: ['Jane', 'Jill'],
-            lastNames: 'Jones'
-          }
-        ]
+            lastNames: 'Jones',
+          },
+        ],
       },
       'Article'
     )
@@ -261,7 +261,7 @@ describe('coerce', () => {
     await expect(
       coerce(
         {
-          name: {}
+          name: {},
         },
         'Person'
       )
@@ -270,7 +270,7 @@ describe('coerce', () => {
     await expect(
       coerce(
         {
-          url: 'foo'
+          url: 'foo',
         },
         'Person'
       )
@@ -288,7 +288,7 @@ describe('coerce', () => {
     const inp: any = {
       name: 42,
       title: 'Untitled',
-      authors: [{ type: 'Person', givenNames: 'Jane' }]
+      authors: [{ type: 'Person', givenNames: 'Jane' }],
     }
     const out = await coerce(inp, 'Article')
 

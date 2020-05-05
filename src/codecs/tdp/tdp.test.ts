@@ -14,8 +14,8 @@ const periodic = {
         type: 'CreativeWork',
         name: 'CC0-1.0',
         alternateNames: ['CC0 1.0'],
-        url: 'https://creativecommons.org/publicdomain/zero/1.0/'
-      }
+        url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+      },
     ],
     columns: [
       {
@@ -26,10 +26,10 @@ const periodic = {
           items: {
             type: 'integer',
             minimum: 1,
-            maximum: 10
-          }
+            maximum: 10,
+          },
         },
-        values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       },
       {
         type: 'DatatableColumn',
@@ -39,11 +39,11 @@ const periodic = {
           items: {
             type: 'string',
             minLength: 1,
-            maxLength: 2
+            maxLength: 2,
           },
-          uniqueItems: true
+          uniqueItems: true,
         },
-        values: ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne']
+        values: ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne'],
       },
       {
         type: 'DatatableColumn',
@@ -54,8 +54,8 @@ const periodic = {
             type: 'string',
             minLength: 1,
             maxLength: 50,
-            pattern: '[A-Z][a-z]+'
-          }
+            pattern: '[A-Z][a-z]+',
+          },
         },
         values: [
           'Hydrogen',
@@ -67,8 +67,8 @@ const periodic = {
           'Nitrogen',
           'Oxygen',
           'Fluorine',
-          'Neon'
-        ]
+          'Neon',
+        ],
       },
       {
         type: 'DatatableColumn',
@@ -79,13 +79,13 @@ const periodic = {
             anyOf: [
               {
                 type: 'number',
-                minimum: 1
+                minimum: 1,
               },
               {
-                type: 'null'
-              }
-            ]
-          }
+                type: 'null',
+              },
+            ],
+          },
         },
         values: [
           1.00794,
@@ -97,8 +97,8 @@ const periodic = {
           14.0067,
           15.9994,
           18.9984032,
-          20.1797
-        ]
+          20.1797,
+        ],
       },
       {
         type: 'DatatableColumn',
@@ -113,9 +113,9 @@ const periodic = {
               'alkali metal',
               'alkaline earth metal',
               'metalloid',
-              'halogen'
-            ]
-          }
+              'halogen',
+            ],
+          },
         },
         values: [
           'nonmetal',
@@ -127,11 +127,11 @@ const periodic = {
           'nonmetal',
           'nonmetal',
           'halogen',
-          'noble gas'
-        ]
-      }
-    ]
-  }
+          'noble gas',
+        ],
+      },
+    ],
+  },
 }
 
 // TODO: Fix and enable this test

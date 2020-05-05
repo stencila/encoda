@@ -127,7 +127,7 @@ export function isBlock(elem: unknown): elem is Block {
       'HorizontalRule',
       'Table',
       'Div',
-      'Null'
+      'Null',
     ]
       // @ts-ignore
       .includes(elem.t)
@@ -202,7 +202,7 @@ export enum ListNumberStyle {
   LowerRoman = 'LowerRoman',
   UpperRoman = 'UpperRoman',
   LowerAlpha = 'LowerAlpha',
-  UpperAlpha = 'UpperAlpha'
+  UpperAlpha = 'UpperAlpha',
 }
 
 /**
@@ -212,7 +212,7 @@ export enum ListNumberDelim {
   DefaultDelim = 'DefaultDelim',
   Period = 'Period',
   OneParen = 'OneParen',
-  TwoParen = 'TwoParen'
+  TwoParen = 'TwoParen',
 }
 
 /**
@@ -262,7 +262,7 @@ export const enum Alignment {
   AlignLeft = 'AlignLeft',
   AlignRight = 'AlignRight',
   AlignCenter = 'AlignCenter',
-  AlignDefault = 'AlignDefault'
+  AlignDefault = 'AlignDefault',
 }
 
 /**
@@ -334,7 +334,7 @@ export function isInline(elem: unknown): elem is Inline {
       'Link',
       'Image',
       'Note',
-      'Span'
+      'Span',
     ]
       // @ts-ignore
       .includes(elem.t)
@@ -406,7 +406,7 @@ export interface Quoted {
  */
 export enum QuoteType {
   SingleQuote = 'SingleQuote',
-  DoubleQuote = 'DoubleQuote'
+  DoubleQuote = 'DoubleQuote',
 }
 
 /**
@@ -543,7 +543,7 @@ export enum InputFormat {
   textile = 'textile',
   tikiwiki = 'tikiwiki',
   twiki = 'twiki',
-  vimwiki = 'vimwiki'
+  vimwiki = 'vimwiki',
 }
 
 /**
@@ -602,5 +602,5 @@ export enum OutputFormat {
   texinfo = 'texinfo',
   textile = 'textile',
   xwiki = 'xwiki',
-  zimwiki = 'zimwiki'
+  zimwiki = 'zimwiki',
 }

@@ -25,7 +25,7 @@ const logger = getLogger('encoda')
 export class TDPCodec extends Codec implements Codec {
   public readonly mediaTypes = [
     // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
-    'application/vnd.datapackage+json'
+    'application/vnd.datapackage+json',
   ]
 
   public readonly fileNames = ['datapackage.json']
@@ -33,7 +33,7 @@ export class TDPCodec extends Codec implements Codec {
   public readonly extNames = [
     // To be able to refer to this codec since the `mime` package
     // does not have registered extension names for the above media type
-    'tdp'
+    'tdp',
   ]
 
   public readonly decode = async (
@@ -92,7 +92,7 @@ export class TDPCodec extends Codec implements Codec {
     const desc: { [key: string]: any } = {
       profile: 'tabular-data-package',
       // Name is the only required property
-      name: cw.name ?? 'Unnamed'
+      name: cw.name ?? 'Unnamed',
     }
     const title = cw.alternateNames && cw.alternateNames[0]
     if (title) desc.title = title
@@ -132,7 +132,7 @@ export class TDPCodec extends Codec implements Codec {
       resources.push(encodeCreativeWork(cw))
     }
     desc.resources = await Promise.all(
-      resources.map(async resource => (await resource).descriptor)
+      resources.map(async (resource) => (await resource).descriptor)
     )
 
     const pkg = await datapackage.Package.load(desc, undefined, true)
@@ -208,7 +208,7 @@ async function encodeCreativeWork(
   const datatable = cw as stencila.Datatable
 
   const schema = {
-    fields: datatable.columns.map(encodeDatatableColumn)
+    fields: datatable.columns.map(encodeDatatableColumn),
   }
   const desc = {
     profile: 'tabular-data-resource',
@@ -219,7 +219,7 @@ async function encodeCreativeWork(
     mediatype: 'text/csv',
     encoding: 'utf-8',
 
-    schema
+    schema,
   }
   return datapackage.Resource.load(desc, undefined, true)
 }
@@ -374,7 +374,7 @@ export function decodeFieldConstraints(constraints: {
   } else {
     // If not required, then allow for null values
     return {
-      anyOf: [items, { type: 'null' }]
+      anyOf: [items, { type: 'null' }],
     }
   }
 }
@@ -398,7 +398,7 @@ function encodeDatatableColumnValidator(
     return {
       type: undefined,
       format: undefined,
-      constraints: {}
+      constraints: {},
     }
 
   const constraints: { [key: string]: any } = {}

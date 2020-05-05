@@ -19,12 +19,12 @@ import { DirCodec } from './src/codecs/dir'
       'src/**/README.*',
       '!**/__fixtures__',
       '!**/__outputs__',
-      '!**/__tests__'
-    ]
+      '!**/__tests__',
+    ],
   })
 
   await dir.write(docs, 'docs', {
     isStandalone: true,
-    theme: 'stencila'
+    theme: 'stencila',
   })
 })()

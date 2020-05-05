@@ -55,8 +55,8 @@ async function cli(): Promise<void> {
       bundle: false,
       theme: themes.stencila,
       zip: 'no',
-      debug: false
-    }
+      debug: false,
+    },
   })
   const command = _[0] ?? ''
   const args = _.slice(1)
@@ -76,8 +76,8 @@ async function cli(): Promise<void> {
           isBundle: bundle,
           shouldZip: zip,
           theme,
-          ...rest
-        }
+          ...rest,
+        },
       })
     } else if (['process', 'coerce', 'validate'].includes(command)) {
       const input = args[0]
@@ -98,7 +98,7 @@ async function cli(): Promise<void> {
         isBundle: bundle,
         shouldZip: zip,
         theme,
-        ...rest
+        ...rest,
       })
     } else {
       log.warn(`Ignored unknown command "${command}"`)

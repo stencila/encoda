@@ -15,7 +15,7 @@ describe('decode', () => {
       'Test reading meta data from an externally created PDF'
     )
     expect(authors).toEqual([
-      stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] })
+      stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] }),
     ])
     expect(keywords).toEqual(['test', 'pdf', 'externally', 'created'])
     expect(dateCreated).toEqual(

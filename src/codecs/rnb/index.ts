@@ -127,7 +127,7 @@ export class RnbCodec extends Codec implements Codec {
             begin,
             end: begin + chunk.length,
             source,
-            output
+            output,
           })
           found = true
 
@@ -162,7 +162,7 @@ export class RnbCodec extends Codec implements Codec {
       // So join all the source code into one `<pre><code>` element
       const sourceElems = all(chunkElem, 'rnb-source')
       const source = sourceElems
-        .map(elem => {
+        .map((elem) => {
           const code = text(elem)
           elem.remove()
           return code !== null ? code.trimLeft() : ''
@@ -181,7 +181,7 @@ export class RnbCodec extends Codec implements Codec {
       chunkElem.appendChild(
         elem('figure', { slot: 'outputs' }, ...outputs.map(transformOutput))
       )
-      outputs.forEach(output => output.remove())
+      outputs.forEach((output) => output.remove())
     }
 
     // Decode the HTML fragment into Stencila `Node`s

@@ -8,7 +8,7 @@ import {
   commonDecodeDefaults,
   CommonDecodeOptions,
   commonEncodeDefaults,
-  CommonEncodeOptions
+  CommonEncodeOptions,
 } from './codecs/types'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
@@ -79,7 +79,7 @@ export const codecList: string[] = [
   'json5',
   'jsonld',
   'json',
-  'xml'
+  'xml',
 ]
 
 /**
@@ -112,10 +112,7 @@ export async function match(
   // If the content is a path then begin with derived values
   if (content !== undefined && (vfile.isPath(content) || isOutput)) {
     fileName = path.basename(content)
-    extName = path
-      .extname(content)
-      .slice(1)
-      .toLowerCase()
+    extName = path.extname(content).slice(1).toLowerCase()
     mediaType = mime.getType(content) ?? undefined
   }
 

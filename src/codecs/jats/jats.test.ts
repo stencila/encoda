@@ -6,7 +6,7 @@ import {
   asciimathFragment,
   texFragment,
   mathmlFragment,
-  texBlock
+  texBlock,
 } from '../../__fixtures__/math/kitchen-sink'
 import { YamlCodec } from '../yaml'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
@@ -80,15 +80,15 @@ test.each([
   'f1000-8-1394-v1',
   'plosone-0091296',
   'plosone-0093988',
-  'plosone-0178565'
-])('decode + encode : %s', async article => {
+  'plosone-0178565',
+])('decode + encode : %s', async (article) => {
   const node = await unlinkFiles(await jats.read(fixture(article)))
 
   expect(await yaml.dump(node)).toMatchFile(snapshot(`${article}.yaml`))
 
   expect(
     await jats.dump(node, {
-      isStandalone: true
+      isStandalone: true,
     })
   ).toMatchFile(snapshot(`${article}.jats.xml`))
 })

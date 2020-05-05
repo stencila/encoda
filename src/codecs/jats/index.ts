@@ -35,7 +35,7 @@ import {
   intOrUndefined,
   splitTextOrUndefined,
   text,
-  textOrUndefined
+  textOrUndefined,
 } from '../../util/xml'
 import { MathMLCodec } from '../mathml'
 import { Codec, CommonEncodeOptions } from '../types'
@@ -120,21 +120,21 @@ export class JatsCodec extends Codec implements Codec {
           declaration: {
             attributes: {
               version: '1.0',
-              encoding: 'utf-8'
-            }
+              encoding: 'utf-8',
+            },
           },
           elements: [
             {
               type: 'doctype',
-              doctype: DOCTYPE
+              doctype: DOCTYPE,
             },
             encodeArticle(
               (await encodePrepare(ensureArticle(node))) as stencila.Article
-            )
-          ]
+            ),
+          ],
         }
       : {
-          elements: encodeNode(await encodePrepare(node), initialEncodeState())
+          elements: encodeNode(await encodePrepare(node), initialEncodeState()),
         }
     const jats = xml.dump(doc, { spaces: 4 })
     return vfile.load(jats)
@@ -171,14 +171,14 @@ function decodeDocument(doc: xml.Element): stencila.Article | Content[] {
  * async calls.
  */
 async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
-  return transform(node, async node => {
+  return transform(node, async (node) => {
     if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
       if (node.mathLanguage !== 'mathml' && node.mathLanguage !== 'tex') {
         const text = await mathml.dump(node)
         return {
           ...node,
           mathLanguage: 'mathml',
-          text
+          text,
         }
       }
     }
@@ -225,7 +225,7 @@ const initialDecodeState = (article: xml.Element): DecodeState => ({
   article,
   ancestorElem: article,
   sectionId: '',
-  sectionDepth: 0
+  sectionDepth: 0,
 })
 
 /**
@@ -264,7 +264,7 @@ interface EncodeState {
 const initialEncodeState = (): EncodeState => ({
   tables: 0,
   citations: {},
-  references: {}
+  references: {},
 })
 
 /**
@@ -308,7 +308,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
     authors = [],
     description,
     content = [],
-    references
+    references,
   } = article
 
   const front = elem(
@@ -330,7 +330,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
     'article',
     {
       'xmlns:xlink': 'http://www.w3.org/1999/xlink',
-      'article-type': 'research-article'
+      'article-type': 'research-article',
     },
     front,
     body,
@@ -374,7 +374,7 @@ function decodeFront(
         keywords: decodeKeywords(front),
         identifiers: decodeIdentifiers(front),
         fundedBy: decodeFunding(front),
-        meta: decodeMetaFront(front)
+        meta: decodeMetaFront(front),
       }
 }
 
@@ -482,11 +482,9 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
   if (journal === null) return undefined
 
   const title = textOrUndefined(first(journal, 'journal-title'))
-  const issns = all(journal, 'issn')
-    .map(textOrUndefined)
-    .filter(isDefined)
+  const issns = all(journal, 'issn').map(textOrUndefined).filter(isDefined)
   const identifiers = all(journal, 'journal-id')
-    .map(elem => {
+    .map((elem) => {
       const name = attr(elem, 'journal-id-type') ?? undefined
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
@@ -505,8 +503,8 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
       publisher:
         publisher !== undefined
           ? stencila.organization({ name: publisher })
-          : undefined
-    })
+          : undefined,
+    }),
   })
 }
 
@@ -549,7 +547,7 @@ function decodeIdentifiers(
   front: xml.Element
 ): stencila.Article['identifiers'] {
   return [
-    ...all(front, 'article-id').map(elem => {
+    ...all(front, 'article-id').map((elem) => {
       const name = attr(elem, 'pub-id-type') ?? undefined
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
@@ -557,10 +555,10 @@ function decodeIdentifiers(
         return stencila.propertyValue({
           name,
           propertyID,
-          value
+          value,
         })
     }),
-    ...all(front, 'elocation-id').map(elem => {
+    ...all(front, 'elocation-id').map((elem) => {
       const name = 'elocation-id'
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
@@ -568,9 +566,9 @@ function decodeIdentifiers(
         return stencila.propertyValue({
           name,
           propertyID,
-          value
+          value,
         })
-    })
+    }),
   ].filter(isDefined)
 }
 
@@ -582,9 +580,9 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
   const awards = all(funding, 'award-group')
   if (awards.length === 0) return undefined
 
-  return awards.map(award => {
+  return awards.map((award) => {
     const identifiers = all(award, 'award-id')
-      .map(id => {
+      .map((id) => {
         const value = textOrUndefined(id)
         if (value !== undefined) return stencila.propertyValue({ value })
       })
@@ -607,7 +605,7 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
 
     return stencila.monetaryGrant({
       identifiers,
-      funders
+      funders,
     })
   })
 }
@@ -627,7 +625,7 @@ function decodeHistory(
     dateAccepted: decodeMaybe<stencila.Date>(
       child(history, 'date', { 'date-type': 'accepted' }),
       decodeDate
-    )
+    ),
   }
 }
 
@@ -641,7 +639,7 @@ function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
     .filter(isDefined)
 
   return {
-    authorNotes: authorNotes.length > 0 ? authorNotes : undefined
+    authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
   }
 }
 
@@ -655,7 +653,7 @@ function decodeAuthors(
 ): stencila.Article['authors'] {
   const authors = all(front, 'contrib', { 'contrib-type': 'author' })
   return authors.length > 0
-    ? authors.map(author => decodeContrib(author, state))
+    ? authors.map((author) => decodeContrib(author, state))
     : undefined
 }
 
@@ -666,13 +664,13 @@ function decodeAuthors(
 function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
   const init: { auths: xml.Element[]; affs: xml.Element[] } = {
     auths: [],
-    affs: []
+    affs: [],
   }
   const { auths, affs } =
     authors?.map(encodeAuthor).reduce(
       (prev, curr) => ({
         auths: [...prev.auths, curr.auth],
-        affs: [...prev.affs, ...curr.affs]
+        affs: [...prev.affs, ...curr.affs],
       }),
       init
     ) ?? init
@@ -689,7 +687,7 @@ function decodeEditors(
 ): stencila.Article['editors'] {
   const editors = all(front, 'contrib', { 'contrib-type': 'editor' })
   return editors.length > 0
-    ? editors.map(author => decodeContrib(author, state))
+    ? editors.map((author) => decodeContrib(author, state))
     : undefined
 }
 
@@ -721,7 +719,7 @@ function decodeContrib(
     affiliations = [
       ...affiliations,
       ...affRefs
-        .map(ref => {
+        .map((ref) => {
           const id = ref.attributes && ref.attributes.rid
           const aff = first(state.article, 'aff', { id: id })
           if (!aff) {
@@ -734,7 +732,7 @@ function decodeContrib(
           (prev: stencila.Organization[], curr) =>
             curr ? [...prev, curr] : prev,
           []
-        )
+        ),
     ]
   }
 
@@ -759,7 +757,7 @@ function encodeAuthor(
   if (author.type === 'Person') {
     name = encodeName(author)
     if (author.affiliations) {
-      affs = author.affiliations.map(org =>
+      affs = author.affiliations.map((org) =>
         elem(
           'aff',
           { id: crypto.randomBytes(16).toString('hex') },
@@ -771,10 +769,10 @@ function encodeAuthor(
     name = elem('string-name', author.legalName ?? author.name ?? '')
   }
 
-  const affRefs = affs.map(aff =>
+  const affRefs = affs.map((aff) =>
     elem('xref', {
       'ref-type': 'aff',
-      rid: aff.attributes && aff.attributes.id
+      rid: aff.attributes && aff.attributes.id,
     })
   )
   const auth = elem('contrib', { 'contrib-type': 'author' }, name, ...affRefs)
@@ -790,7 +788,7 @@ function decodeName(name: xml.Element): stencila.Person {
     givenNames: splitTextOrUndefined(child(name, 'given-names'), /\s+/),
     familyNames: splitTextOrUndefined(child(name, 'surname'), /\s+/),
     honorificPrefix: textOrUndefined(child(name, 'prefix')),
-    honorificSuffix: textOrUndefined(child(name, 'suffix'))
+    honorificSuffix: textOrUndefined(child(name, 'suffix')),
   })
 }
 
@@ -833,7 +831,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
     'city',
     'state',
     'country',
-    'postal-code'
+    'postal-code',
   ])
   const url = textOrUndefined(child(aff, 'uri'))
 
@@ -859,7 +857,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
       city: 'addressLocality',
       state: 'addressRegion',
       country: 'addressCountry',
-      'postal-code': 'postalCode'
+      'postal-code': 'postalCode',
     }
     const property = mapping[curr.name ?? '']
     return { ...prev, [property]: textOrUndefined(curr) }
@@ -880,7 +878,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
     name,
     parentOrganization,
     url,
-    address
+    address,
   })
 }
 
@@ -908,7 +906,7 @@ function decodeReferences(
 
   const refs = all(elem, 'ref')
   return refs
-    .map(ref => {
+    .map((ref) => {
       const citation = child(ref, ['element-citation', 'mixed-citation'])
       return citation ? decodeReference(citation, attr(ref, 'id')) : null
     })
@@ -935,8 +933,8 @@ function encodeReferences(
         elem(
           'ref-list',
           elem('title', 'References'),
-          ...references.map(ref => encodeReference(ref, state))
-        )
+          ...references.map((ref) => encodeReference(ref, state))
+        ),
       ]
 }
 
@@ -973,7 +971,7 @@ function decodeReference(
     datePublished,
     pageStart,
     pageEnd,
-    isPartOf
+    isPartOf,
   })
 }
 
@@ -1022,7 +1020,7 @@ function encodeReference(
             'iso-8601-date':
               typeof datePublished === 'string'
                 ? datePublished
-                : datePublished.value
+                : datePublished.value,
           },
           datePublished
         )
@@ -1066,7 +1064,7 @@ function encodeCitationText(work: stencila.CreativeWork): string {
   let citeText = ''
 
   if (authors?.length) {
-    const people = authors.filter(p => stencila.isA('Person', p))
+    const people = authors.filter((p) => stencila.isA('Person', p))
 
     if (people.length) {
       const firstPerson = people[0] as stencila.Person
@@ -1279,7 +1277,7 @@ function decodeElements(
   state: DecodeState
 ): stencila.Node[] {
   return elems
-    .map(child => decodeElement(child, state))
+    .map((child) => decodeElement(child, state))
     .reduce((prev, curr) => [...prev, ...curr], [])
 }
 
@@ -1324,7 +1322,7 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
     ...rest,
     ancestorElem: elem,
     sectionId,
-    sectionDepth: sectionDepth + 1
+    sectionDepth: sectionDepth + 1,
   })
 }
 
@@ -1350,8 +1348,8 @@ function decodeHeading(
     stencila.heading({
       content: decodeInlineContent(elem.elements ?? [], state),
       depth,
-      id
-    })
+      id,
+    }),
   ]
 }
 
@@ -1412,8 +1410,8 @@ function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeInlineContent(elem.elements ?? [], state),
-      target: attr(elem, 'xlink:href') ?? ''
-    })
+      target: attr(elem, 'xlink:href') ?? '',
+    }),
   ]
 }
 
@@ -1426,10 +1424,10 @@ function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {
       'ext-link',
       {
         'ext-link-type': 'uri',
-        'xlink:href': node.target
+        'xlink:href': node.target,
       },
       ...encodeNodes(node.content, state)
-    )
+    ),
   ]
 }
 
@@ -1473,8 +1471,8 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
     stencila.link({
       content: decodeInlineContent(elem.elements ?? [], state),
       target: `#${decodeInternalId(attr(elem, 'rid'))}`,
-      relation: attrOrUndefined(elem, 'ref-type')
-    })
+      relation: attrOrUndefined(elem, 'ref-type'),
+    }),
   ]
 }
 
@@ -1489,8 +1487,8 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
   return [
     stencila.cite({
       content: decodeInlineContent(elem.elements ?? [], state),
-      target: decodeInternalId(attr(elem, 'rid')) ?? ''
-    })
+      target: decodeInternalId(attr(elem, 'rid')) ?? '',
+    }),
   ]
 }
 
@@ -1547,8 +1545,8 @@ function decodeMark<Type extends keyof typeof stencila.markTypes>(
   return [
     {
       type: type,
-      content: decodeInlineContent(elem.elements ?? [], state)
-    }
+      content: decodeInlineContent(elem.elements ?? [], state),
+    },
   ]
 }
 
@@ -1573,7 +1571,7 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
       return stencila.listItem({
-        content: decodeElements(item.elements ?? [], state)
+        content: decodeElements(item.elements ?? [], state),
       })
     }
   )
@@ -1585,9 +1583,9 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
  */
 function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
   const attrs = {
-    'list-type': node.order === 'unordered' ? 'bullet' : 'order'
+    'list-type': node.order === 'unordered' ? 'bullet' : 'order',
   }
-  const items = node.items.map(item => {
+  const items = node.items.map((item) => {
     const { content = [] } = item
     return elem('list-item', ...encodeNodes(content, state))
   })
@@ -1612,13 +1610,13 @@ function decodeTableWrap(
   const trs = all(elem, 'tr')
   const rows =
     trs.length > 0
-      ? trs.map(row => {
+      ? trs.map((row) => {
           return stencila.tableRow({
-            cells: all(row, ['td', 'th']).map(cell => {
+            cells: all(row, ['td', 'th']).map((cell) => {
               return stencila.tableCell({
-                content: decodeInlineContent(cell.elements ?? [], state)
+                content: decodeInlineContent(cell.elements ?? [], state),
               })
-            })
+            }),
           })
         })
       : []
@@ -1628,8 +1626,8 @@ function decodeTableWrap(
       id: decodeInternalId(attr(elem, 'id')),
       label: textOrUndefined(child(elem, 'label')),
       caption,
-      rows
-    })
+      rows,
+    }),
   ]
 }
 
@@ -1648,10 +1646,10 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
     ...(node.caption ? encodeNodes(node.caption) : [])
   )
 
-  const rows = node.rows.map(row => {
+  const rows = node.rows.map((row) => {
     return elem(
       'tr',
-      ...row.cells.map(cell => {
+      ...row.cells.map((cell) => {
         return encodeDefault('tr', cell.content, state)
       })
     )
@@ -1671,11 +1669,11 @@ function decodeFigGroup(
 ): [stencila.Collection] {
   return [
     stencila.collection({
-      parts: all(elem, 'fig').map(figEl => {
+      parts: all(elem, 'fig').map((figEl) => {
         return decodeFigure(figEl, state)[0]
       }),
-      meta: { usage: 'figGroup' }
-    })
+      meta: { usage: 'figGroup' },
+    }),
   ]
 }
 
@@ -1691,8 +1689,8 @@ function encodeFigGroup(
       'fig-group',
       ...figGroup.parts
         .filter(stencila.isType('Figure'))
-        .map(figure => encodeFigure(figure, state)[0])
-    )
+        .map((figure) => encodeFigure(figure, state)[0])
+    ),
   ]
 }
 
@@ -1730,7 +1728,7 @@ function decodeFigure(
       'code',
       'graphic',
       'media',
-      'preformat'
+      'preformat',
     ])
     content = item !== null ? decodeElement(item, state) : undefined
   }
@@ -1742,8 +1740,8 @@ function decodeFigure(
       caption: caption?.elements?.length
         ? decodeElements(caption.elements, state)
         : undefined,
-      content
-    })
+      content,
+    }),
   ]
 }
 
@@ -1771,7 +1769,7 @@ function encodeFigure(
         : children.length === 1
         ? children[0]
         : elem('alternatives', ...children)
-    )
+    ),
   ]
 }
 
@@ -1800,8 +1798,8 @@ function decodeSupplementaryMaterial(
       id,
       contentUrl,
       content,
-      text
-    })
+      text,
+    }),
   ]
 }
 
@@ -1831,8 +1829,8 @@ function decodeMath(
   return [
     (inline ? stencila.mathFragment : stencila.mathBlock)({
       mathLanguage: 'mathml',
-      text
-    })
+      text,
+    }),
   ]
 }
 
@@ -1859,7 +1857,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
     elem(
       math.type === 'MathFragment' ? 'inline-formula' : 'display-formula',
       inner
-    )
+    ),
   ]
 }
 
@@ -1923,7 +1921,7 @@ function splitMimetype(mimetype: string): JatsContentType {
 
   return {
     mimetype: splitType[0].length ? splitType[0] : undefined,
-    mimeSubtype: splitType.length > 1 ? splitType[1] : undefined
+    mimeSubtype: splitType.length > 1 ? splitType[1] : undefined,
   }
 }
 
@@ -1947,8 +1945,8 @@ function decodeGraphic(
     stencila.imageObject({
       contentUrl: attr(elem, 'xlink:href') ?? '',
       format: extractMimetype(elem),
-      meta: meta
-    })
+      meta: meta,
+    }),
   ]
 }
 
@@ -1959,8 +1957,8 @@ function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
   return [
     stencila.mediaObject({
       contentUrl: attr(elem, 'xlink:href') ?? '',
-      format: extractMimetype(elem)
-    })
+      format: extractMimetype(elem),
+    }),
   ]
 }
 
@@ -1972,7 +1970,7 @@ function encodeMedia(
   elementName: string
 ): [xml.Element] {
   const attrs: Attributes = {
-    'xlink:href': media.contentUrl
+    'xlink:href': media.contentUrl,
   }
 
   if (media.meta && media.meta.usage) {
@@ -1995,8 +1993,8 @@ function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
   return [
     stencila.codeBlock({
       text: text(elem),
-      programmingLanguage: attr(elem, 'language') ?? undefined
-    })
+      programmingLanguage: attr(elem, 'language') ?? undefined,
+    }),
   ]
 }
 

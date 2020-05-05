@@ -25,7 +25,7 @@ const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 export class XlsxCodec extends Codec implements Codec {
   public readonly mediaTypes = [
     // spell-checker: disable
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     // spell-checker: enable
   ]
 
@@ -44,7 +44,7 @@ export class XlsxCodec extends Codec implements Codec {
     const workbook = encodeNode(node)
     const buffer = xlsx.write(workbook, {
       type: format === 'csv' ? 'string' : 'buffer',
-      bookType: format as xlsx.BookType
+      bookType: format as xlsx.BookType,
     })
     return Promise.resolve(vfile.load(buffer))
   }
@@ -83,7 +83,7 @@ function decodeWorkbook(
 
   const collection: stencila.Collection = {
     type: 'Collection',
-    parts
+    parts,
   }
   return collection
 }
@@ -118,7 +118,7 @@ function encodeNode(node: stencila.Node): xlsx.WorkBook {
 
   const workbook: xlsx.WorkBook = {
     SheetNames: sheetNames,
-    Sheets: sheets
+    Sheets: sheets,
   }
   return workbook
 }
@@ -160,9 +160,9 @@ const cellMapToRowMap = (cells: CellMap): RowMap =>
           ...(rowMap[num] || {}),
           [alpha]: {
             name: alpha + num.toString(),
-            ...xlsxCelltoStencilaCell(cell)
-          }
-        }
+            ...xlsxCelltoStencilaCell(cell),
+          },
+        },
       }
     } else {
       return rowMap
@@ -176,9 +176,9 @@ const cellMapToRowMap = (cells: CellMap): RowMap =>
  * @returns {stencila.TableRow[]}
  */
 const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] => {
-  return Object.values(rowMap).map(row => ({
+  return Object.values(rowMap).map((row) => ({
     type: 'TableRow',
-    cells: Object.values(row)
+    cells: Object.values(row),
   }))
 }
 
@@ -189,7 +189,7 @@ const decodeTable = (
 ): stencila.Table => ({
   type: 'Table',
   name,
-  rows: pipe(cells, cellMapToRowMap, rowMapToTableRows)
+  rows: pipe(cells, cellMapToRowMap, rowMapToTableRows),
 })
 
 const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
@@ -220,8 +220,8 @@ function decodeDatatable(
   const rows = rang.e.r
 
   // Convert the list of cells to a list of columns with values
-  const columns: any[] = range(0, cols).map(col =>
-    range(0, rows).map(row => {
+  const columns: any[] = range(0, cols).map((col) =>
+    range(0, rows).map((row) => {
       const name = cellPositionToName([col, row])
       const cell = cells[name]
       return cell === undefined ? null : decodeCell(cell)
@@ -250,13 +250,13 @@ function decodeDatatable(
   const datatable: stencila.Datatable = {
     type: 'Datatable',
     name,
-    columns: columns.map(function(column, index): stencila.DatatableColumn {
+    columns: columns.map(function (column, index): stencila.DatatableColumn {
       return {
         type: 'DatatableColumn',
         name: names[index],
-        values: column
+        values: column,
       }
-    })
+    }),
   }
   return datatable
 }
@@ -304,7 +304,7 @@ function decodeCell(
     return codeExpression({
       text: cell.f.trim(),
       programmingLanguage: 'excel',
-      output: value
+      output: value,
     })
   } else {
     return value ?? null
@@ -346,7 +346,7 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
  */
 const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
   type: 'TableCell',
-  content: [decodeCell(cell)]
+  content: [decodeCell(cell)],
 })
 
 /**
@@ -431,7 +431,7 @@ const calcSheetRange = (coords: string[]): string => {
 
       return {
         cols: cellMap.cols.add(col),
-        rows: cellMap.rows.add(row.toString())
+        rows: cellMap.rows.add(row.toString()),
       }
     },
     { cols: new Set('A'), rows: new Set('1') }

@@ -19,7 +19,7 @@ const selfClosingTags = [
   'param',
   'source',
   'track',
-  'wbr'
+  'wbr',
 ]
 
 const parentNodeGuard = (n: Node): n is Parent => Array.isArray(n.children)
@@ -57,7 +57,7 @@ const getTags = (html: string): string[] =>
 // Helper function for wrapping HTML string content in a custom MDAST style object
 const fullHtmlNode = (value: string): Literal => ({
   type: 'html',
-  value
+  value,
 })
 
 const getClosingTagIdx = (tree: Node[]): O.Option<number> => {
