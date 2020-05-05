@@ -39,7 +39,7 @@ export class HTTPCodec extends Codec implements Codec {
     if (response.statusCode !== 200) {
       log.warn(`When fetching ${url} got status: "${response.statusMessage}"`)
     }
-    if (response.fromCache) {
+    if (response.isFromCache) {
       log.debug(`Fetched from cache "${url}"`)
     }
 
