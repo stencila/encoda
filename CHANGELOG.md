@@ -1,3 +1,24 @@
+## [0.93.8](https://github.com/stencila/encoda/compare/v0.93.7...v0.93.8) (2020-05-05)
+
+
+### Bug Fixes
+
+* **Build:** Include Tex .xsl files in build ([b04f0a3](https://github.com/stencila/encoda/commit/b04f0a3395034a4902a68bb37d1bbaa2122197d9))
+* **dependencies:** update dependency @stencila/executa to ^1.11.2 ([3566bee](https://github.com/stencila/encoda/commit/3566beec6744ae716531a73820975402d2f3d637))
+* **dependencies:** update dependency @stencila/logga to ^2.2.0 ([b06aae7](https://github.com/stencila/encoda/commit/b06aae7235561c1965450a97e18ca8ae8e0d8d99))
+* **dependencies:** update dependency @stencila/schema to ^0.43.0 ([1151dfc](https://github.com/stencila/encoda/commit/1151dfc6a240c90a11336d19b98d64f666940b4b))
+* **dependencies:** update dependency @stencila/thema to v2.7.0 ([33a23cd](https://github.com/stencila/encoda/commit/33a23cdcd57d78c6bfdc583cc19223e6af320ad1))
+* **dependencies:** update dependency ajv to ^6.12.2 ([caff592](https://github.com/stencila/encoda/commit/caff592437857084e82b4a352cfd29141d1901f7))
+* **dependencies:** update dependency fp-ts to ^2.5.4 ([8c9ba95](https://github.com/stencila/encoda/commit/8c9ba9553edebee6f3f7ea92d79857a5fbd53983))
+* **dependencies:** update dependency got to v11 ([972d307](https://github.com/stencila/encoda/commit/972d30700a8b3bec6a7863377da8d8f0193c5302))
+* **dependencies:** update dependency jsonld to ^3.1.0 ([b9800cf](https://github.com/stencila/encoda/commit/b9800cfba809ef0a9d9ceea437095810e51544c3))
+* **dependencies:** update dependency jszip to ^3.4.0 ([310b2ff](https://github.com/stencila/encoda/commit/310b2ffc15ef388b0ad807d66b434349c6319624))
+* **dependencies:** update dependency pdf-lib to ^1.5.0 ([5dd850a](https://github.com/stencila/encoda/commit/5dd850a1a0c6b08fc225dd0cb15a9a301e77e1b8))
+* **dependencies:** update dependency remark-parse to ^8.0.2 ([a167688](https://github.com/stencila/encoda/commit/a167688ba680fd80194a9d1b2b3a9e416d2e7f4b))
+* **Deps:** Revert to Got v10 ([bba925c](https://github.com/stencila/encoda/commit/bba925c2a01784feae78e3d43a6341e4497965b8))
+* **Deps:** Update ([f56bc8e](https://github.com/stencila/encoda/commit/f56bc8e737b817a63a8856aa4794a4b985fc4914))
+* **HTTP:** Use new property name ([08b1fec](https://github.com/stencila/encoda/commit/08b1fec07ccae32a00ff199e2d28e351f3542982))
+
 ## [0.93.7](https://github.com/stencila/encoda/compare/v0.93.6...v0.93.7) (2020-04-15)
 
 
