@@ -57,7 +57,7 @@
     "citation-js": "^0.5.0-alpha.5",
     "collapse-whitespace": "^1.1.7",
     "content-type": "^1.0.4",
-    "datapackage": "^1.1.8",
+    "datapackage": "^1.1.9",
     "escape-html": "^1.0.3",
     "fp-ts": "^2.5.4",
     "fs-extra": "^9.0.0",
@@ -76,7 +76,7 @@
     "keyv": "^4.0.0",
     "mathjax-node": "^2.1.1",
     "mdast-util-compact": "^2.0.1",
-    "mime": "^2.4.4",
+    "mime": "^2.4.5",
     "minimist": "^1.2.5",
     "papaparse": "^5.2.0",
     "parse-author": "^2.0.0",
@@ -102,7 +102,7 @@
     "unist-util-select": "^3.0.1",
     "unixify": "^1.0.0",
     "vfile": "^4.1.0",
-    "xlsx": "^0.15.6",
+    "xlsx": "^0.16.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
