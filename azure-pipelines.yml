@@ -9,23 +9,23 @@ jobs:
   - job: test
     strategy:
       matrix:
-        linux_node_12:
+        linux_node_14:
           # Primary test with latest Node LTS and Nock in 'wild' mode
           # so that it makes HTTP requests as a way of testing whether
           # there have been changes in any API we are using
           image_name: ubuntu-latest
-          node_version: 12.x
+          node_version: 14.x
           nock_mode: wild
-        linux_node_10:
+        linux_node_12:
           image_name: ubuntu-latest
-          node_version: 10.x
+          node_version: 12.x
           nock_mode: dryrun
         mac:
-          node_version: 12.x
+          node_version: 14.x
           image_name: macOS-latest
           nock_mode: dryrun
         windows:
-          node_version: 12.x
+          node_version: 14.x
           image_name: windows-latest
           nock_mode: dryrun
     pool:
@@ -99,7 +99,7 @@ jobs:
     steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: 12.x
+          versionSpec: 14.x
         displayName: 'Install Node.js'
 
       - script: |
