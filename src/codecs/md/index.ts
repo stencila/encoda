@@ -155,6 +155,7 @@ const GENERIC_EXTENSIONS = [
   'quote',
   'expr',
   'chunk',
+  'figure',
   'include',
 
   'null',
@@ -202,7 +203,7 @@ export function encodeMarkdown(node: stencila.Node): string {
     encoded,
     // @ts-ignore
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'
-  )  as UNIST.Node
+  ) as UNIST.Node
   mdast = stringifyExtensions(mdast)
   mdast = stringifyAttrs(mdast)
 
@@ -282,6 +283,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       switch (ext.name) {
         case 'chunk':
           return decodeCodeChunk(ext)
+        case 'figure':
+          return decodeFigure(ext)
         case 'quote':
           return decodeQuote(ext)
         case 'include':
@@ -347,6 +350,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeListItem(node as stencila.ListItem)
     case 'Table':
       return encodeTable(node as stencila.Table)
+    case 'Figure':
+      return encodeFigure(node as stencila.Figure)
     case 'ThematicBreak':
       return encodeThematicBreak()
 
@@ -752,6 +757,51 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
     type: 'block-extension',
     name: 'chunk',
     content: md,
+  }
+}
+
+/**
+ * Decode a `figure:` block extension to a `stencila.Figure`.
+ *
+ * The first node of the extension is the `content` property
+ * of the `Figure`. Subsequent nodes are the `caption` property.
+ * The extension's `argument` becomes the figure's `label`.
+ */
+function decodeFigure(ext: Extension): stencila.Figure {
+  if (ext.content === undefined) {
+    log.warn(`Figure has no content`)
+    return stencila.figure()
+  }
+  const article = decodeMarkdown(ext.content) as stencila.Article
+  const nodes = (article.content && article.content) || []
+
+  return stencila.figure({
+    content: nodes.slice(0, 1),
+    caption: nodes.slice(1),
+    label: ext.argument,
+  })
+}
+
+/**
+ * Encode a `stencila.Figure` to a `figure:` block extension
+ *
+ * The `content` of the figure e.g. a `ImageObject` or `CodeChunk` will be the
+ * first node of the extension's content. The `caption` is the remainder.
+ *
+ * In the future, if there is more than one content node then we
+ * may use a `ThematicBreak` to separate content from caption.
+ */
+function encodeFigure(figure: stencila.Figure): Extension {
+  const { content, caption, label } = figure
+
+  const nodes = [...(content ?? []), ...(caption ?? [])]
+  const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
+
+  return {
+    type: 'block-extension',
+    name: 'figure',
+    content: md,
+    argument: label,
   }
 }
 
