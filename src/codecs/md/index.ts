@@ -202,7 +202,7 @@ export function encodeMarkdown(node: stencila.Node): string {
     encoded,
     // @ts-ignore
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'
-  )
+  )  as UNIST.Node
   mdast = stringifyExtensions(mdast)
   mdast = stringifyAttrs(mdast)
 
@@ -1392,7 +1392,7 @@ function decodeExtension(
   type: 'inline-extension' | 'block-extension',
   element: Extension
 ) {
-  return { type, ...element }
+  return { ...element, type }
 }
 
 // These `stringify*` functions are for MDAST nodes that do not
@@ -1527,5 +1527,5 @@ function resolveReferences(tree: UNIST.Node): UNIST.Node {
     }),
     // @ts-ignore
     (node: UNIST.Node) => node.type !== 'definition'
-  )
+  ) as UNIST.Node
 }
