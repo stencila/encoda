@@ -1,3 +1,19 @@
+## [0.93.9](https://github.com/stencila/encoda/compare/v0.93.8...v0.93.9) (2020-05-18)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to v2.8.0 ([bff6cf6](https://github.com/stencila/encoda/commit/bff6cf6ecd7381b5b13e72e22c7c2b9c9e98ede8))
+* **dependencies:** update dependency async-lock to ^1.2.4 ([e8063a0](https://github.com/stencila/encoda/commit/e8063a09e390ed0f27764df6dfac7bca8db7071a))
+* **dependencies:** update dependency fp-ts to ^2.6.1 ([228517f](https://github.com/stencila/encoda/commit/228517febe38dc29b093223dba7404c6cee96417))
+* **dependencies:** update dependency get-stdin to v8 ([4dcdd86](https://github.com/stencila/encoda/commit/4dcdd86b6a4a4e3df12bf27db4ab946ca93659c7))
+* **dependencies:** update dependency immer to ^6.0.5 ([b324acd](https://github.com/stencila/encoda/commit/b324acdd053fa60765dc6dbf53a3058695a22390))
+* **dependencies:** update dependency keyv to ^4.0.1 ([e3ea65d](https://github.com/stencila/encoda/commit/e3ea65dae41b355925c7265d4bc5d989d0f3fa68))
+* **dependencies:** update dependency puppeteer to v3 ([d1e7dac](https://github.com/stencila/encoda/commit/d1e7dac06a12b9756a0601811ac6986103f2a9c7))
+* **dependencies:** update dependency remark-attr to ^0.11.1 ([6b913bc](https://github.com/stencila/encoda/commit/6b913bc3a7ef008306e6b0a325815b726ca24674))
+* **Deps:** Support Node 14; drop support for Node 10 ([417de0c](https://github.com/stencila/encoda/commit/417de0cb4924b395164123dbc1beb4daa3d7c65f))
+* **Markdown:** Typing fixes. ([3c662f0](https://github.com/stencila/encoda/commit/3c662f07f65556ec7c44c409a6ff1435d3e4f83b))
+
 ## [0.93.8](https://github.com/stencila/encoda/compare/v0.93.7...v0.93.8) (2020-05-05)
 
 
