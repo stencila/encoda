@@ -1,5 +1,10 @@
 import * as schema from '@stencila/schema'
 import kitchenSink from '../../__fixtures__/article/kitchen-sink'
+import {
+  pythonCodeChunk,
+  rCodeChunkImageOutput,
+  rCodeChunkNoOutput,
+} from '../../__fixtures__/code/kitchen-sink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { PngCodec } from './'
 
@@ -36,5 +41,27 @@ describe('encode', () => {
         height: 500,
       },
     })
+  })
+
+  it('encodes a code chunk', async () => {
+    await png.write(pythonCodeChunk, snapshot('python-code-chunk.png'), {
+      theme: 'rpng',
+    })
+
+    await png.write(
+      rCodeChunkImageOutput,
+      snapshot('r-code-chunk-image-output.png'),
+      {
+        theme: 'rpng',
+      }
+    )
+
+    await png.write(
+      rCodeChunkNoOutput,
+      snapshot('r-code-chunk-no-output.png'),
+      {
+        theme: 'rpng',
+      }
+    )
   })
 })

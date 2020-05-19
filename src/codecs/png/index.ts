@@ -74,6 +74,15 @@ export class PngCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     const { isStandalone, size } = { ...this.commonEncodeDefaults, ...options }
 
+    // If the node is not a creative work then wrap
+    // it in one. This is done because themes usually assume that
+    // nodes such as `Paragraph`, `CodeChunk` etc are not the root
+    // node but are instead nested within another node that is the root.
+    // See https://github.com/stencila/encoda/issues/545#issuecomment-630564742
+    if (!schema.isCreativeWork(node)) {
+      node = schema.creativeWork({ content: [node] })
+    }
+
     // Generate HTML for the node.
     // Standalone: so that the theme option is respected.
     // Bundle: because Puppeteer will not load local (e.g. `/tmp`) files.

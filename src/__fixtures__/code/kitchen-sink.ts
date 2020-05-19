@@ -27,3 +27,8 @@ export const rCodeChunkImageOutput = codeChunk({
     }),
   ],
 })
+
+export const rCodeChunkNoOutput = codeChunk({
+  programmingLanguage: 'r',
+  text: '# Just a comment\n',
+})
