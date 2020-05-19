@@ -1544,11 +1544,10 @@ function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
  * Encode a `stencila.Figure` element to a `<figure>`.
  */
 function encodeFigure(figure: stencila.Figure): HTMLElement {
-  const { id, label: title, caption = [], content = [] } = figure
-  return h('figure', encodeAttrs(figure, { id, title }), [
+  const { id, label, caption = [], content = [] } = figure
+  return h('figure', encodeAttrs(figure, { id, title: label }), [
+    encodeMaybe(label, h('label', microdataProperty('label'), label)),
     ...encodeNodes(content),
-    // TODO: determine best placement of figure label
-    // encodeMaybe(label, h('label', label)),
     encodeMaybe(
       caption,
       h(
@@ -1801,12 +1800,30 @@ function decodeTable(table: HTMLTableElement): stencila.Table {
 
 /**
  * Encode a `stencila.Table` to a `<table>` element.
+ *
+ * The `label` property must be nested within the `<caption>`
+ * element (it can't be directly under `<table>`).
  */
 function encodeTable(table: stencila.Table): HTMLTableElement {
+  const { id, label, caption, rows } = table
   return h(
     'table',
-    { id: table.id, attrs: microdata(table) },
-    h('tbody', table.rows.map(encodeTableRow))
+    { id, attrs: microdata(table) },
+    encodeMaybe(
+      label ?? caption,
+      h(
+        'caption',
+        encodeMaybe(label, h('label', microdataProperty('label'), label)),
+        encodeMaybe(caption, (caption) => {
+          return h(
+            'div',
+            microdataProperty('caption'),
+            typeof caption === 'string' ? caption : encodeNodes(caption)
+          )
+        })
+      )
+    ),
+    h('tbody', rows.map(encodeTableRow))
   )
 }
 
