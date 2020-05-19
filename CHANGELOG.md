@@ -1,3 +1,16 @@
+## [0.93.10](https://github.com/stencila/encoda/compare/v0.93.9...v0.93.10) (2020-05-19)
+
+
+### Bug Fixes
+
+* **HTML:** Encode Figure and Table labels and captions. ([33575c5](https://github.com/stencila/encoda/commit/33575c53a127655ebac42eb0e68b1dd8370a1e2d)), closes [#551](https://github.com/stencila/encoda/issues/551)
+* **PNG:** Wrap non-creative work nodes ([c20ff08](https://github.com/stencila/encoda/commit/c20ff08f822275257053e18603c3730f87f283f7)), closes [#545](https://github.com/stencila/encoda/issues/545)
+
+
+### Features
+
+* **Markdown:** Add encoding and decoding of figures [skip release] ([a25626f](https://github.com/stencila/encoda/commit/a25626f238172c2b3326fd1128ca7a90227444d4)), closes [#544](https://github.com/stencila/encoda/issues/544)
+
 ## [0.93.9](https://github.com/stencila/encoda/compare/v0.93.8...v0.93.9) (2020-05-18)
 
 
