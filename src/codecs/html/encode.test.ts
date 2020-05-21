@@ -107,7 +107,7 @@ describe('Articles', () => {
         // these checks in Thema)
         'color-contrast',
         'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail',
-        'WCAG2AA.Principle1.Guideline1_3.1_3_1.H39.3.LayoutTable'
+        'WCAG2AA.Principle1.Guideline1_3.1_3_1.H39.3.LayoutTable',
       ]
       // Temporarily skip Web Component structure (not controlled by this repo)
       // See https://github.com/stencila/designa/issues/37
