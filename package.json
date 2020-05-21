@@ -107,16 +107,16 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@stencila/dev-config": "1.4.36",
-    "@testing-library/dom": "7.5.6",
-    "@testing-library/jest-dom": "5.7.0",
+    "@stencila/dev-config": "1.4.39",
+    "@testing-library/dom": "7.5.7",
+    "@testing-library/jest-dom": "5.8.0",
     "@types/async-lock": "1.1.2",
     "@types/content-type": "1.1.3",
     "@types/escape-html": "1.0.0",
-    "@types/fs-extra": "9.0.0",
+    "@types/fs-extra": "9.0.1",
     "@types/hyperscript": "0.0.4",
-    "@types/jest": "25.2.2",
-    "@types/js-beautify": "1.8.2",
+    "@types/jest": "25.2.3",
+    "@types/js-beautify": "1.11.0",
     "@types/js-yaml": "3.12.4",
     "@types/jsdom": "16.2.3",
     "@types/json5": "0.0.30",
@@ -126,7 +126,7 @@
     "@types/mdast": "3.0.3",
     "@types/mime": "2.0.2",
     "@types/minimist": "1.2.0",
-    "@types/node": "14.0.1",
+    "@types/node": "14.0.4",
     "@types/papaparse": "5.0.3",
     "@types/parse-author": "2.0.0",
     "@types/parse5": "5.0.3",
@@ -148,7 +148,7 @@
     "ts-jest": "26.0.0",
     "ts-node": "8.10.1",
     "typedoc": "0.17.7",
-    "typescript": "3.9.2"
+    "typescript": "3.9.3"
   },
   "commitlint": {
     "extends": [
