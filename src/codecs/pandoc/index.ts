@@ -170,7 +170,7 @@ export class PandocCodec extends Codec implements Codec {
  * For performance, only filter using `pandoc-citeproc` is necessary.
  */
 export function run(
-  input: string | Buffer,
+  input: string | Buffer | Uint8Array,
   args: string[],
   useCiteproc = false
 ): Promise<string> {
