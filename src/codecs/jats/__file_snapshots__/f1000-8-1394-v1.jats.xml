@@ -187,23 +187,23 @@
                 </sup> (0.020 g NaCl + 0.032 g pepsin + 0.8 mL HCl (1 mol/L), filled up to 10 mL with water). As pure CBD was available only in methanolic solution, the final experimental setups contained 0.08 mol/L HCl and 1% methanol due to dilution.
             </p>
             <table-wrap id="T1">
-                <label>Table 1.</label>
+                <label>Table 1. </label>
                 <caption>
                     <title>Cannabidiol (CBD) stability experiments under various storage conditions.</title>
                 </caption>
                 <table>
-                    <tbody>
-                        <tr>
-                            <tr>Experiment</tr>
-                            <tr>Temperature (°C)</tr>
-                            <tr>Light
-                                     exposure</tr>
-                            <tr>Storage
-                                     time</tr>
-                            <tr>Storage medium</tr>
-                            <tr>CDB concentration in medium
-                                     (µg/L)</tr>
-                            <tr>Δ
+                    <thead>
+                        <th>
+                            <th>Experiment</th>
+                            <th>Temperature (°C)</th>
+                            <th>Light
+                                     exposure</th>
+                            <th>Storage
+                                     time</th>
+                            <th>Storage medium</th>
+                            <th>CDB concentration in medium
+                                     (µg/L)</th>
+                            <th>Δ
                                     
                                 <sup>9</sup>-THC
                                      formation
@@ -211,180 +211,182 @@
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN1">1</ext-link>
                                 </sup>
-                            </tr>
+                            </th>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Negative control</td>
+                            <td>-18</td>
+                            <td>None</td>
+                            <td>14 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>Negative control</tr>
-                            <tr>-18</tr>
-                            <tr>None</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>Light</td>
+                            <td>20</td>
+                            <td>None</td>
+                            <td>3 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>Light</tr>
-                            <tr>20</tr>
-                            <tr>None</tr>
-                            <tr>3 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>None</td>
+                            <td>14 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>None</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>Daylight</td>
+                            <td>3 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>Daylight</tr>
-                            <tr>3 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>Daylight</td>
+                            <td>14 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>Daylight</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>UVA</td>
+                            <td>1 h</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>UVA</tr>
-                            <tr>1 h</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>UVA</td>
+                            <td>3 h</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>UVA</tr>
-                            <tr>3 h</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>Temperature</td>
+                            <td>20</td>
+                            <td>None</td>
+                            <td>5 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>Temperature</tr>
-                            <tr>20</tr>
-                            <tr>None</tr>
-                            <tr>5 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>20</td>
+                            <td>None</td>
+                            <td>14 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>20</tr>
-                            <tr>None</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>8</td>
+                            <td>None</td>
+                            <td>5 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>8</tr>
-                            <tr>None</tr>
-                            <tr>5 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>8</td>
+                            <td>None</td>
+                            <td>14 days</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>8</tr>
-                            <tr>None</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>3 h</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>3 h</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>60</td>
+                            <td>None</td>
+                            <td>1 h</td>
+                            <td>Methanol</td>
+                            <td>1000</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>60</tr>
-                            <tr>None</tr>
-                            <tr>1 h</tr>
-                            <tr>Methanol</tr>
-                            <tr>1000</tr>
-                            <tr>0%</tr>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>1 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>200</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>1 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>200</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>2 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>200</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>2 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>200</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>3 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>200</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>3 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>200</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>1 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>400</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>1 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>400</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>2 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>400</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>2 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>400</tr>
-                            <tr>0%</tr>
+                            <td>37</td>
+                            <td>None</td>
+                            <td>3 h</td>
+                            <td>Simulated gastric
+                                     juice</td>
+                            <td>400</td>
+                            <td>0%</td>
                         </tr>
                         <tr>
-                            <tr>37</tr>
-                            <tr>None</tr>
-                            <tr>3 h</tr>
-                            <tr>Simulated gastric
-                                     juice</tr>
-                            <tr>400</tr>
-                            <tr>0%</tr>
-                        </tr>
-                        <tr>
-                            <tr>Positive control</tr>
-                            <tr>20</tr>
-                            <tr>None</tr>
-                            <tr>14 days</tr>
-                            <tr>Methanol / 1 mol/L
-                                     HCl (50:50)</tr>
-                            <tr>500</tr>
-                            <tr>27%</tr>
+                            <td>Positive control</td>
+                            <td>20</td>
+                            <td>None</td>
+                            <td>14 days</td>
+                            <td>Methanol / 1 mol/L
+                                     HCl (50:50)</td>
+                            <td>500</td>
+                            <td>27%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -427,447 +429,449 @@
                 </sup>.
             </p>
             <table-wrap id="T2">
-                <label>Table 2.</label>
+                <label>Table 2. </label>
                 <caption>
                     <title>Results of THC analysis in commercial products based on hemp extracts from the German market (2018–2019).</title>
                 </caption>
                 <table>
-                    <tbody>
-                        <tr>
-                            <tr>Sample ID</tr>
-                            <tr>Product</tr>
-                            <tr>CBD [mg/day]
-                                     (labelling)</tr>
-                            <tr>CBD [mg/day]
+                    <thead>
+                        <th>
+                            <th>Sample ID</th>
+                            <th>Product</th>
+                            <th>CBD [mg/day]
+                                     (labelling)</th>
+                            <th>CBD [mg/day]
                                      (analysis)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN2">1</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC [mg/day]
+                            </th>
+                            <th>THC [mg/day]
                                      (analysis)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN2">1</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>Toxicity assessment
+                            </th>
+                            <th>Toxicity assessment
                                      according to Ref. 
                                     
                                 <xref rid="ref-2" ref-type="bibr">Lachenmeier et al., 2019</xref>
-                            </tr>
-                        </tr>
+                            </th>
+                        </th>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <tr>180630663</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>200</tr>
-                            <tr>-
+                            <td>180630663</td>
+                            <td>CBD oil supplement</td>
+                            <td>200</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>9</tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>9</td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180776480</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>74</tr>
-                            <tr>51</tr>
-                            <tr>4</tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            <td>180776480</td>
+                            <td>CBD oil supplement</td>
+                            <td>74</td>
+                            <td>51</td>
+                            <td>4</td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190203194</tr>
-                            <tr>CBD pollen</tr>
-                            <tr>-
+                            <td>190203194</td>
+                            <td>CBD pollen</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>2.6</tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>2.6</td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190267605</tr>
-                            <tr>CBD oil</tr>
-                            <tr>2000</tr>
-                            <tr>3140</tr>
-                            <tr>30</tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            <td>190267605</td>
+                            <td>CBD oil</td>
+                            <td>2000</td>
+                            <td>3140</td>
+                            <td>30</td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180198245</tr>
-                            <tr>CBD buds (hemp flowers &amp;
-                                     leaves)</tr>
-                            <tr>-
+                            <td>180198245</td>
+                            <td>CBD buds (hemp flowers &amp;
+                                     leaves)</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>(1.3)
+                            </td>
+                            <td>(1.3)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180198246</tr>
-                            <tr>CBD buds (hemp flowers &amp;
-                                     leaves)</tr>
-                            <tr>-
+                            <td>180198246</td>
+                            <td>CBD buds (hemp flowers &amp;
+                                     leaves)</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>(1.3)
+                            </td>
+                            <td>(1.3)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180598182</tr>
-                            <tr>CBD hemp flower supplement</tr>
-                            <tr>500</tr>
-                            <tr>-
+                            <td>180598182</td>
+                            <td>CBD hemp flower supplement</td>
+                            <td>500</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>(2.3)
+                            </td>
+                            <td>(2.3)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180598187</tr>
-                            <tr>CBD hemp flower supplement</tr>
-                            <tr>250</tr>
-                            <tr>-
+                            <td>180598187</td>
+                            <td>CBD hemp flower supplement</td>
+                            <td>250</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>(1.3)
+                            </td>
+                            <td>(1.3)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180781746</tr>
-                            <tr>CBD chewing gum</tr>
-                            <tr>15</tr>
-                            <tr>30</tr>
-                            <tr>(1.5)
+                            <td>180781746</td>
+                            <td>CBD chewing gum</td>
+                            <td>15</td>
+                            <td>30</td>
+                            <td>(1.5)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190203193</tr>
-                            <tr>CBD wax</tr>
-                            <tr>660</tr>
-                            <tr>860</tr>
-                            <tr>(1.7)
+                            <td>190203193</td>
+                            <td>CBD wax</td>
+                            <td>660</td>
+                            <td>860</td>
+                            <td>(1.7)
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN5">4</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>THC &gt; LOAEL</tr>
+                            </td>
+                            <td>THC &gt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180565755</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>24</tr>
-                            <tr>18</tr>
-                            <tr>0.2</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            <td>180565755</td>
+                            <td>CBD oil supplement</td>
+                            <td>24</td>
+                            <td>18</td>
+                            <td>0.2</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>180565756</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>12</tr>
-                            <tr>9</tr>
-                            <tr>0.2</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            <td>180565756</td>
+                            <td>CBD oil supplement</td>
+                            <td>12</td>
+                            <td>9</td>
+                            <td>0.2</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190080916</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190080916</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.1</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.1</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190080917</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190080917</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>4</tr>
-                            <tr>0.1</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>4</td>
+                            <td>0.1</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190141197</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>22.32</tr>
-                            <tr>-
+                            <td>190141197</td>
+                            <td>CBD oil supplement</td>
+                            <td>22.32</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>1.6</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>1.6</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190199739</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190199739</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>34</tr>
-                            <tr>0.5</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>34</td>
+                            <td>0.5</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190203189</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190203189</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.2</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.2</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190203191</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190203191</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.7</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.7</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190207787</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>67.5</tr>
-                            <tr>95</tr>
-                            <tr>0.4</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            <td>190207787</td>
+                            <td>CBD oil supplement</td>
+                            <td>67.5</td>
+                            <td>95</td>
+                            <td>0.4</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190332551</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>42</tr>
-                            <tr>-
+                            <td>190332551</td>
+                            <td>CBD oil supplement</td>
+                            <td>42</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.3</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.3</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190332552</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>84</tr>
-                            <tr>-
+                            <td>190332552</td>
+                            <td>CBD oil supplement</td>
+                            <td>84</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.3</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.3</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190332553</tr>
-                            <tr>CBD oil supplement</tr>
-                            <tr>166</tr>
-                            <tr>-
+                            <td>190332553</td>
+                            <td>CBD oil supplement</td>
+                            <td>166</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.3</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.3</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190303096</tr>
-                            <tr>CBD chewing gum</tr>
-                            <tr>5</tr>
-                            <tr>-
+                            <td>190303096</td>
+                            <td>CBD chewing gum</td>
+                            <td>5</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.1</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.1</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190304229</tr>
-                            <tr>CBD chewing gum</tr>
-                            <tr>5</tr>
-                            <tr>-
+                            <td>190304229</td>
+                            <td>CBD chewing gum</td>
+                            <td>5</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.1</tr>
-                            <tr>ARfD &lt; THC &lt; LOAEL</tr>
+                            </td>
+                            <td>0.1</td>
+                            <td>ARfD &lt; THC &lt; LOAEL</td>
                         </tr>
                         <tr>
-                            <tr>190304228</tr>
-                            <tr>CBD supplement</tr>
-                            <tr>20</tr>
-                            <tr>-
+                            <td>190304228</td>
+                            <td>CBD supplement</td>
+                            <td>20</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.05</tr>
-                            <tr>THC &gt; German guideline
+                            </td>
+                            <td>0.05</td>
+                            <td>THC &gt; German guideline
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN6">5</ext-link>
                                 </sup> THC &lt; ARfD
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>190203192</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190203192</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN4">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>0.07</tr>
-                            <tr>THC &gt; German guideline
+                            </td>
+                            <td>0.07</td>
+                            <td>THC &gt; German guideline
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN6">5</ext-link>
                                 </sup> THC &lt; ARfD
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>190272024</tr>
-                            <tr>CBD oil</tr>
-                            <tr>27</tr>
-                            <tr>38</tr>
-                            <tr>0.01</tr>
-                            <tr>THC &gt; German guideline
+                            <td>190272024</td>
+                            <td>CBD oil</td>
+                            <td>27</td>
+                            <td>38</td>
+                            <td>0.01</td>
+                            <td>THC &gt; German guideline
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN6">5</ext-link>
                                 </sup> THC &lt; ARfD
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>190203186</tr>
-                            <tr>Supplement with hemp extract</tr>
-                            <tr>-
+                            <td>190203186</td>
+                            <td>Supplement with hemp extract</td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">3</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>-
+                            </td>
+                            <td>-
                                     
                                 <sup>
                                     <ext-link ext-link-type="uri" xlink:href="#FN3">2</ext-link>
                                 </sup>
-                            </tr>
-                            <tr>Not detectable</tr>
-                            <tr>-</tr>
+                            </td>
+                            <td>Not detectable</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>

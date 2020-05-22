@@ -756,145 +756,147 @@
                     <title>Possible chemotherapeutic combinations for G4-stabilising ligands with clinically relevant pharmacological drugs</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Gene</th>
+                            <th>Oncogene/tumour suppressor</th>
+                            <th>Combinatorial/single agent</th>
+                            <th>Available drug treatments</th>
+                            <th>Cancer association  summary</th>
+                            <th>Reference</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Gene</tr>
-                            <tr>Oncogene/tumour suppressor</tr>
-                            <tr>Combinatorial/single agent</tr>
-                            <tr>Available drug treatments</tr>
-                            <tr>Cancer association  summary</tr>
-                            <tr>Reference</tr>
-                        </tr>
-                        <tr>
-                            <tr>BRCA1/2</tr>
-                            <tr>Tumour suppressor</tr>
-                            <tr>Single agent</tr>
-                            <tr>Olaparib CX-5461</tr>
-                            <tr>Deficient in ovarian,breast and colorectal cancer.</tr>
-                            <tr>
+                            <td>BRCA1/2</td>
+                            <td>Tumour suppressor</td>
+                            <td>Single agent</td>
+                            <td>Olaparib CX-5461</td>
+                            <td>Deficient in ovarian,breast and colorectal cancer.</td>
+                            <td>
                                 <xref rid="bib72" ref-type="bibr">Lee et al., 2014</xref>;  
                                 <xref rid="bib130" ref-type="bibr">Xu et al., 2017</xref>; 
                                 <xref rid="bib83" ref-type="bibr">McLuckie et al., 2013</xref>; 
                                 <xref rid="bib137" ref-type="bibr">Zimmer et al., 2016</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>CCDC6</tr>
-                            <tr>Tumour suppressor</tr>
-                            <tr>Single agent</tr>
-                            <tr>Olaparib</tr>
-                            <tr>Inactivated in thyroid and lung cancers. CCDC6-deficient tumours are cisplatin-resistant but olaparib sensitive.</tr>
-                            <tr>
+                            <td>CCDC6</td>
+                            <td>Tumour suppressor</td>
+                            <td>Single agent</td>
+                            <td>Olaparib</td>
+                            <td>Inactivated in thyroid and lung cancers. CCDC6-deficient tumours are cisplatin-resistant but olaparib sensitive.</td>
+                            <td>
                                 <xref rid="bib97" ref-type="bibr">Puxeddu et al., 2005</xref>; 
                                 <xref rid="bib86" ref-type="bibr">Morra et al., 2015</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>CDK12</tr>
-                            <tr>Oncogene</tr>
-                            <tr>Combinatorial</tr>
-                            <tr>Dinaclib (SCH77965)</tr>
-                            <tr>High-grade serous ovariancancer, often exhibits gain-of-function CDK12.</tr>
-                            <tr>
+                            <td>CDK12</td>
+                            <td>Oncogene</td>
+                            <td>Combinatorial</td>
+                            <td>Dinaclib (SCH77965)</td>
+                            <td>High-grade serous ovariancancer, often exhibits gain-of-function CDK12.</td>
+                            <td>
                                 <xref rid="bib96" ref-type="bibr">Parry et al., 2010</xref>; 
                                 <xref rid="bib6" ref-type="bibr">Bajrami et al., 2014</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>KEAP1</tr>
-                            <tr>Oncogene/Tumour suppressor</tr>
-                            <tr>Combinatorial/single agent</tr>
-                            <tr>CDDO-Me CPUY192018</tr>
-                            <tr>KEAP1 inactivated in multiple cancers including thoracic and endometrial; also hasoncogenic role, CDDO-Me used forleukaemia and sold tumours.</tr>
-                            <tr>
+                            <td>KEAP1</td>
+                            <td>Oncogene/Tumour suppressor</td>
+                            <td>Combinatorial/single agent</td>
+                            <td>CDDO-Me CPUY192018</td>
+                            <td>KEAP1 inactivated in multiple cancers including thoracic and endometrial; also hasoncogenic role, CDDO-Me used forleukaemia and sold tumours.</td>
+                            <td>
                                 <xref rid="bib104" ref-type="bibr">Sanchez-Vega et al., 2018</xref>; 
                                 <xref rid="bib1" ref-type="bibr">Abed et al., 2015</xref>; 
                                 <xref rid="bib77" ref-type="bibr">Lu et al., 2016</xref>; 
                                 <xref rid="bib122" ref-type="bibr">Wang et al., 2014</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>PSMC2</tr>
-                            <tr>Oncogene</tr>
-                            <tr>Combinatorial</tr>
-                            <tr>Proteosome inhibitors: Bortezomib CEP187710 Carfizomib</tr>
-                            <tr>Ubiquitin is emerging aschemotherapeutic target, and general proteasome inhibitors clinically are used against multiple myeloma.</tr>
-                            <tr>
+                            <td>PSMC2</td>
+                            <td>Oncogene</td>
+                            <td>Combinatorial</td>
+                            <td>Proteosome inhibitors: Bortezomib CEP187710 Carfizomib</td>
+                            <td>Ubiquitin is emerging aschemotherapeutic target, and general proteasome inhibitors clinically are used against multiple myeloma.</td>
+                            <td>
                                 <xref rid="bib25" ref-type="bibr">Chen et al., 2011a</xref>; 
                                 <xref rid="bib81" ref-type="bibr">Mattern et al., 2012</xref>; 
                                 <xref rid="bib40" ref-type="bibr">Edelmann et al., 2011</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>SMAD4</tr>
-                            <tr>Tumour suppressor</tr>
-                            <tr>Single agent</tr>
-                            <tr>GSKi: NCT01632306 NCT01214603 NCT01287520</tr>
-                            <tr>Inactivated in 50% of pancreatic adenocarcinomas. Negativelyregulated by GSK, GSKis in clinical trials for metastatic pancreatic cancer and acute leukaemia.</tr>
-                            <tr>
+                            <td>SMAD4</td>
+                            <td>Tumour suppressor</td>
+                            <td>Single agent</td>
+                            <td>GSKi: NCT01632306 NCT01214603 NCT01287520</td>
+                            <td>Inactivated in 50% of pancreatic adenocarcinomas. Negativelyregulated by GSK, GSKis in clinical trials for metastatic pancreatic cancer and acute leukaemia.</td>
+                            <td>
                                 <xref rid="bib106" ref-type="bibr">Schutte et al., 1996</xref>; 
                                 <xref rid="bib52" ref-type="bibr">Hahn et al., 1996</xref>; 
                                 <xref rid="bib36" ref-type="bibr">Demagnyand De Robertis, 2016</xref>; 
                                 <xref rid="bib82" ref-type="bibr">McCubrey et al., 2014</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>SRSF10</tr>
-                            <tr>Oncogene</tr>
-                            <tr>Combinatorial</tr>
-                            <tr>E7107 1C8</tr>
-                            <tr>Over-expressed in colon cancer. 1C8 inhibits SRSF10 and impairs HIV replication. FUS interactingprotein. E7107 is a splicinginhibitor preventing spliceosome assembly.</tr>
-                            <tr>
+                            <td>SRSF10</td>
+                            <td>Oncogene</td>
+                            <td>Combinatorial</td>
+                            <td>E7107 1C8</td>
+                            <td>Over-expressed in colon cancer. 1C8 inhibits SRSF10 and impairs HIV replication. FUS interactingprotein. E7107 is a splicinginhibitor preventing spliceosome assembly.</td>
+                            <td>
                                 <xref rid="bib136" ref-type="bibr">Zhou et al., 2014</xref>; 
                                 <xref rid="bib111" ref-type="bibr">Shkreta et al., 2017</xref>; 
                                 <xref rid="bib28" ref-type="bibr">Cheung et al., 2016</xref>; 
                                 <xref rid="bib67" ref-type="bibr">Kotake et al., 2007</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>UBA3</tr>
-                            <tr>Oncogene</tr>
-                            <tr>Combinatorial</tr>
-                            <tr>MLN4924</tr>
-                            <tr>Upregulated in AML and multiple solid cancers. MLN4924 is in Phase Iclinical trials.</tr>
-                            <tr>
+                            <td>UBA3</td>
+                            <td>Oncogene</td>
+                            <td>Combinatorial</td>
+                            <td>MLN4924</td>
+                            <td>Upregulated in AML and multiple solid cancers. MLN4924 is in Phase Iclinical trials.</td>
+                            <td>
                                 <xref rid="bib113" ref-type="bibr">Soucy et al., 2009</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>USP1</tr>
-                            <tr>Oncogene/Tumour suppressor</tr>
-                            <tr>Combinatorial/single agent</tr>
-                            <tr>Pimozide</tr>
-                            <tr>Over-expressed inmelanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma. Pimozide is a potent USP1-targeting drug.</tr>
-                            <tr>
+                            <td>USP1</td>
+                            <td>Oncogene/Tumour suppressor</td>
+                            <td>Combinatorial/single agent</td>
+                            <td>Pimozide</td>
+                            <td>Over-expressed inmelanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma. Pimozide is a potent USP1-targeting drug.</td>
+                            <td>
                                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>;  
                                 <xref rid="bib26" ref-type="bibr">Chen et al., 2011b</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>WEE1</tr>
-                            <tr>Oncogene/Tumour suppressor</tr>
-                            <tr>Combinatorial/single agent</tr>
-                            <tr>AZDMK1775</tr>
-                            <tr>Over-expressed in several cancers, some NSCLC are deficient.</tr>
-                            <tr>
+                            <td>WEE1</td>
+                            <td>Oncogene/Tumour suppressor</td>
+                            <td>Combinatorial/single agent</td>
+                            <td>AZDMK1775</td>
+                            <td>Over-expressed in several cancers, some NSCLC are deficient.</td>
+                            <td>
                                 <xref rid="bib80" ref-type="bibr">Matheson et al., 2016</xref>; 
                                 <xref rid="bib100" ref-type="bibr">Richer et al., 2017</xref>; 
                                 <xref rid="bib5" ref-type="bibr">Backert et al., 1999</xref>; 
                                 <xref rid="bib134" ref-type="bibr">Yoshida et al., 2004</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>WHSC1</tr>
-                            <tr>Oncogene</tr>
-                            <tr>Combinatorial</tr>
-                            <tr>DA3003-1 PF-03882845 Chaetocin TC-LPA5-4 ABT-199</tr>
-                            <tr>Over-expressed in prostate cancer, multiple myeloma and mantle cell lymphoma. five potent candidate inhibitors.</tr>
-                            <tr>
+                            <td>WHSC1</td>
+                            <td>Oncogene</td>
+                            <td>Combinatorial</td>
+                            <td>DA3003-1 PF-03882845 Chaetocin TC-LPA5-4 ABT-199</td>
+                            <td>Over-expressed in prostate cancer, multiple myeloma and mantle cell lymphoma. five potent candidate inhibitors.</td>
+                            <td>
                                 <xref rid="bib29" ref-type="bibr">Coussens et al., 2017</xref>; 
                                 <xref rid="bib9" ref-type="bibr">Bennett et al., 2017</xref>
-                            </tr>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -905,130 +907,132 @@
                     <title>Examples of cancer-associated genetic vulnerabilities to G4 ligands.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Gene category</th>
+                            <th>Gene name</th>
+                            <th>Function/pathway Summary</th>
+                            <th>Cancer  association summary</th>
+                            <th>References</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Gene category</tr>
-                            <tr>Gene name</tr>
-                            <tr>Function/pathway Summary</tr>
-                            <tr>Cancer  association summary</tr>
-                            <tr>References</tr>
-                        </tr>
-                        <tr>
-                            <tr>DNA damage repair</tr>
-                            <tr>PALB2</tr>
-                            <tr>Homologous recombination; binds BRCA2</tr>
-                            <tr>Inactivating mutations predispose patients to  myeloid leukaemia, Wilm’s tumour  and Fanconi anaemia.</tr>
-                            <tr>
+                            <td>DNA damage repair</td>
+                            <td>PALB2</td>
+                            <td>Homologous recombination; binds BRCA2</td>
+                            <td>Inactivating mutations predispose patients to  myeloid leukaemia, Wilm’s tumour  and Fanconi anaemia.</td>
+                            <td>
                                 <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>;  
                                 <xref rid="bib91" ref-type="bibr">Nepomuceno et al., 2017</xref>     
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr> BAP1</tr>
-                            <tr>Homologous recombination; binds BRCA1, deubiquitinase for Histone 2A and tumour suppressor HCFC-1</tr>
-                            <tr>Inactivating mutations foundin uveal melanoma and mesotheliomas.</tr>
-                            <tr>
+                            <td> BAP1</td>
+                            <td>Homologous recombination; binds BRCA1, deubiquitinase for Histone 2A and tumour suppressor HCFC-1</td>
+                            <td>Inactivating mutations foundin uveal melanoma and mesotheliomas.</td>
+                            <td>
                                 <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>; 
                                 <xref rid="bib21" ref-type="bibr">Carbone et al., 2013</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr> USP1</tr>
-                            <tr>Fanconi anaemia and translesion synthesis DDR; deubiquitinase required for FANCD2, FANCI and PCNA localisation to sites of DNA  damage</tr>
-                            <tr>USP1 mRNA over-expressed in melanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma.</tr>
-                            <tr>
+                            <td> USP1</td>
+                            <td>Fanconi anaemia and translesion synthesis DDR; deubiquitinase required for FANCD2, FANCI and PCNA localisation to sites of DNA  damage</td>
+                            <td>USP1 mRNA over-expressed in melanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma.</td>
+                            <td>
                                 <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>;  
                                 <xref rid="bib92" ref-type="bibr">Nijman et al., 2005</xref>;  
                                 <xref rid="bib58" ref-type="bibr">Huang et al., 2006</xref>;  
                                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr> TOP1</tr>
-                            <tr>Relieves torsional stress during DNA replication; suppresses genomic instability at actively transcribed exogenous G4-forming sequences</tr>
-                            <tr>Common cancer target, to  induces DNA damage following pharmacological inhibition, lethal to cells.</tr>
-                            <tr>
+                            <td> TOP1</td>
+                            <td>Relieves torsional stress during DNA replication; suppresses genomic instability at actively transcribed exogenous G4-forming sequences</td>
+                            <td>Common cancer target, to  induces DNA damage following pharmacological inhibition, lethal to cells.</td>
+                            <td>
                                 <xref rid="bib131" ref-type="bibr">Yadav et al., 2014</xref>;  
                                 <xref rid="bib121" ref-type="bibr">Wang, 2002</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Helicase activity</tr>
-                            <tr>RECQL4 RTEL1</tr>
-                            <tr>Previously identified G4-helicases</tr>
-                            <tr>RECQL4 (Rothmund-Thomsun syndrome) and RTEL1 (Hoyeraal-Hreidarsson Syndrome), deficiencies impart increased risks of cancer cancer, autoimmunity and premature ageing.</tr>
-                            <tr>
+                            <td>Helicase activity</td>
+                            <td>RECQL4 RTEL1</td>
+                            <td>Previously identified G4-helicases</td>
+                            <td>RECQL4 (Rothmund-Thomsun syndrome) and RTEL1 (Hoyeraal-Hreidarsson Syndrome), deficiencies impart increased risks of cancer cancer, autoimmunity and premature ageing.</td>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Brosh, 2013</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Chromatin remodellers</tr>
-                            <tr>ANKRD11</tr>
-                            <tr>Transcription factor; Recruits histone deacetylases</tr>
-                            <tr>Tumour suppressor epigenetically silenced in breast cancers.</tr>
-                            <tr>
+                            <td>Chromatin remodellers</td>
+                            <td>ANKRD11</td>
+                            <td>Transcription factor; Recruits histone deacetylases</td>
+                            <td>Tumour suppressor epigenetically silenced in breast cancers.</td>
+                            <td>
                                 <xref rid="bib73" ref-type="bibr">Lim et al., 2012</xref> 
                                 <xref rid="bib90" ref-type="bibr">Neilsen et al., 2008</xref> 
                                 <xref rid="bib94" ref-type="bibr">Noll et al., 2012</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>MLL4</tr>
-                            <tr>H3K4 lysine methyl transferase</tr>
-                            <tr>Frequently inactivated in several cancers.</tr>
-                            <tr>
+                            <td>MLL4</td>
+                            <td>H3K4 lysine methyl transferase</td>
+                            <td>Frequently inactivated in several cancers.</td>
+                            <td>
                                 <xref rid="bib44" ref-type="bibr">Froimchuk et al., 2017</xref>
                                 <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>;  
                                 <xref rid="bib98" ref-type="bibr">Raoand Dou, 2015</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>SMARCA4 SMARCB1 SMARCE1</tr>
-                            <tr>SWI/SNF ATP-dependent chromatin remodellers</tr>
-                            <tr>Mutated in 20% of human cancers; doxorubicin resistant triple-negative breast cancer is associated with loss of SMARCB1, SMARCA4, or KEAP1 (a BRCA1 interactor).</tr>
-                            <tr>
+                            <td>SMARCA4 SMARCB1 SMARCE1</td>
+                            <td>SWI/SNF ATP-dependent chromatin remodellers</td>
+                            <td>Mutated in 20% of human cancers; doxorubicin resistant triple-negative breast cancer is associated with loss of SMARCB1, SMARCA4, or KEAP1 (a BRCA1 interactor).</td>
+                            <td>
                                 <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>;  
                                 <xref rid="bib108" ref-type="bibr">Shainand Pollack, 2013</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Ubiquitin</tr>
-                            <tr>USP37</tr>
-                            <tr>Deubiquitinating enzyme which stabilises MYC</tr>
-                            <tr>Upregulated in lung cancer.</tr>
-                            <tr>
+                            <td>Ubiquitin</td>
+                            <td>USP37</td>
+                            <td>Deubiquitinating enzyme which stabilises MYC</td>
+                            <td>Upregulated in lung cancer.</td>
+                            <td>
                                 <xref rid="bib95" ref-type="bibr">Pan et al., 2015</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>NEDD4L</tr>
-                            <tr>E3 ubiquitin ligase</tr>
-                            <tr>Expression correlates with poor patient outcome in hepatocellular and gastric carcinomas.</tr>
-                            <tr>
+                            <td>NEDD4L</td>
+                            <td>E3 ubiquitin ligase</td>
+                            <td>Expression correlates with poor patient outcome in hepatocellular and gastric carcinomas.</td>
+                            <td>
                                 <xref rid="bib135" ref-type="bibr">Zhao et al., 2018</xref>;  
                                 <xref rid="bib45" ref-type="bibr">Gao et al., 2012</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>RNF20</tr>
-                            <tr>E3 ubiquitin ligase; chromatin remodelling and DDR</tr>
-                            <tr>Tumour supressor down-regulated in several cancers. Deletion is main contributor to chromosomal instability in colorectal cancer.</tr>
-                            <tr>
+                            <td>RNF20</td>
+                            <td>E3 ubiquitin ligase; chromatin remodelling and DDR</td>
+                            <td>Tumour supressor down-regulated in several cancers. Deletion is main contributor to chromosomal instability in colorectal cancer.</td>
+                            <td>
                                 <xref rid="bib87" ref-type="bibr">Moyal et al., 2011</xref>;  
                                 <xref rid="bib110" ref-type="bibr">Shema et al., 2008</xref>;  
                                 <xref rid="bib8" ref-type="bibr">Barber et al., 2008</xref>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Splicing</tr>
-                            <tr>FUS</tr>
-                            <tr>Splicing component and known G4-interactor</tr>
-                            <tr>Over-expressed in colon, breast and liposarcoma cancers, respectively.</tr>
-                            <tr>
+                            <td>Splicing</td>
+                            <td>FUS</td>
+                            <td>Splicing component and known G4-interactor</td>
+                            <td>Over-expressed in colon, breast and liposarcoma cancers, respectively.</td>
+                            <td>
                                 <xref rid="bib31" ref-type="bibr">Crozat et al., 1993</xref>;  
                                 <xref rid="bib39" ref-type="bibr">Dvinge et al., 2016</xref>; 
                                 <xref rid="bib116" ref-type="bibr">Takahama et al., 2013</xref>
-                            </tr>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1093,513 +1097,515 @@
         <sec>
             <title>Materials and methods</title>
             <table-wrap id="keyresource">
-                <label>Table 3.</label>
+                <label>Key resources table</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Reagent type  (species) or  resource</th>
+                            <th>Designation</th>
+                            <th>Source or reference</th>
+                            <th>Identifiers</th>
+                            <th>Additional  information</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Reagent type  (species) or  resource</tr>
-                            <tr>Designation</tr>
-                            <tr>Source or reference</tr>
-                            <tr>Identifiers</tr>
-                            <tr>Additional  information</tr>
-                        </tr>
-                        <tr>
-                            <tr>Cell line (
+                            <td>Cell line (
                                 <italic>H. Sapiens</italic>)
-                            </tr>
-                            <tr>A375</tr>
-                            <tr>ATCC</tr>
-                            <tr>Cat# CRL-1619, RRID:
+                            </td>
+                            <td>A375</td>
+                            <td>ATCC</td>
+                            <td>Cat# CRL-1619, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/CVCL_0132">CVCL_0132</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Cell line (
+                            <td>Cell line (
                                 <italic>H. Sapiens</italic>)
-                            </tr>
-                            <tr>HT1080</tr>
-                            <tr>ATCC</tr>
-                            <tr>Cat# CCL-121, RRID:
+                            </td>
+                            <td>HT1080</td>
+                            <td>ATCC</td>
+                            <td>Cat# CCL-121, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/CVCL_0317">CVCL_0317</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Cell line (
+                            <td>Cell line (
                                 <italic>H. Sapiens</italic>)
-                            </tr>
-                            <tr>Plat-A</tr>
-                            <tr>Cell Biolabs Inc</tr>
-                            <tr>Cat# RV-102, RRID:
+                            </td>
+                            <td>Plat-A</td>
+                            <td>Cell Biolabs Inc</td>
+                            <td>Cat# RV-102, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/CVCL_B489">CVCL_B489</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Mouse monoclonal anti-Beta Actin</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# A5441, RRID:
+                            <td>Antibody</td>
+                            <td>Mouse monoclonal anti-Beta Actin</td>
+                            <td>Merck</td>
+                            <td>Cat# A5441, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_476744">AB_476744</ext-link>
-                            </tr>
-                            <tr>WB (1:250)</tr>
+                            </td>
+                            <td>WB (1:250)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Mouse polyclonal anti-DDX42</tr>
-                            <tr>Abcam</tr>
-                            <tr>Cat# ab80975, RRID:
+                            <td>Antibody</td>
+                            <td>Mouse polyclonal anti-DDX42</td>
+                            <td>Abcam</td>
+                            <td>Cat# ab80975, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_2041042">AB_2041042</ext-link>
-                            </tr>
-                            <tr>WB (1:250)</tr>
+                            </td>
+                            <td>WB (1:250)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit monoclonal anti-Beta Actin</tr>
-                            <tr>Cell Signalling Technology</tr>
-                            <tr>Cat# 4970, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit monoclonal anti-Beta Actin</td>
+                            <td>Cell Signalling Technology</td>
+                            <td>Cat# 4970, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_2223172">AB_2223172</ext-link>
-                            </tr>
-                            <tr>WB (1:500)</tr>
+                            </td>
+                            <td>WB (1:500)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit polyclonal anti-BRCA1</tr>
-                            <tr>Cell Signalling Technology</tr>
-                            <tr>Cat# 9010, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit polyclonal anti-BRCA1</td>
+                            <td>Cell Signalling Technology</td>
+                            <td>Cat# 9010, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_2228244">AB_2228244</ext-link>
-                            </tr>
-                            <tr>WB (1:50)</tr>
+                            </td>
+                            <td>WB (1:50)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit monoclonal anti-GAPDH</tr>
-                            <tr>Cell Signalling Technology</tr>
-                            <tr>Cat# 5174, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit monoclonal anti-GAPDH</td>
+                            <td>Cell Signalling Technology</td>
+                            <td>Cat# 5174, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_10622025">AB_10622025</ext-link>
-                            </tr>
-                            <tr>WB (1:50)</tr>
+                            </td>
+                            <td>WB (1:50)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit polyclonal anti-GAR1</tr>
-                            <tr>NovusBio</tr>
-                            <tr>Cat# NBP2-31742, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit polyclonal anti-GAR1</td>
+                            <td>NovusBio</td>
+                            <td>Cat# NBP2-31742, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_2801566">AB_2801566</ext-link>
-                            </tr>
-                            <tr>WB (1:100)</tr>
+                            </td>
+                            <td>WB (1:100)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit polyclonal anti-GST, HRP-conjugated</tr>
-                            <tr>Abcam</tr>
-                            <tr>Cat# ab3416, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit polyclonal anti-GST, HRP-conjugated</td>
+                            <td>Abcam</td>
+                            <td>Cat# ab3416, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_30378">AB_30378</ext-link>
-                            </tr>
-                            <tr>ELISA (1:10,000)</tr>
+                            </td>
+                            <td>ELISA (1:10,000)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit monoclonal anti-LaminB1</tr>
-                            <tr>Cell Signalling Technology</tr>
-                            <tr>Cat# 12586, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit monoclonal anti-LaminB1</td>
+                            <td>Cell Signalling Technology</td>
+                            <td>Cat# 12586, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_2650517">AB_2650517</ext-link>
-                            </tr>
-                            <tr>WB (1:250)</tr>
+                            </td>
+                            <td>WB (1:250)</td>
                         </tr>
                         <tr>
-                            <tr>Antibody</tr>
-                            <tr>Rabbit monoclonal anti-TOP1</tr>
-                            <tr>Abcam</tr>
-                            <tr>Cat# ab109374, RRID:
+                            <td>Antibody</td>
+                            <td>Rabbit monoclonal anti-TOP1</td>
+                            <td>Abcam</td>
+                            <td>Cat# ab109374, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_10861978">AB_10861978</ext-link>
-                            </tr>
-                            <tr>WB (1:250)</tr>
+                            </td>
+                            <td>WB (1:250)</td>
                         </tr>
                         <tr>
-                            <tr>Recombinant DNA reagent</tr>
-                            <tr>pCMV-VSV-G plasmid</tr>
-                            <tr>Addgene</tr>
-                            <tr>Cat # 8454, RRID:
+                            <td>Recombinant DNA reagent</td>
+                            <td>pCMV-VSV-G plasmid</td>
+                            <td>Addgene</td>
+                            <td>Cat # 8454, RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/Addgene_8454">Addgene_8454</ext-link>
-                            </tr>
-                            <tr>plasmid</tr>
+                            </td>
+                            <td>plasmid</td>
                         </tr>
                         <tr>
-                            <tr>Recombinant DNA reagent</tr>
-                            <tr>G-quadruplex focused shRNA plasmid library</tr>
-                            <tr>transOMIC technologies, this paper</tr>
-                            <tr/>
-                            <tr>supplied as a glycerol stock, Materials and methods subsection: ‘Composition and recombinant DNA reproduction of shRNA libraries’</tr>
+                            <td>Recombinant DNA reagent</td>
+                            <td>G-quadruplex focused shRNA plasmid library</td>
+                            <td>transOMIC technologies, this paper</td>
+                            <td/>
+                            <td>supplied as a glycerol stock, Materials and methods subsection: ‘Composition and recombinant DNA reproduction of shRNA libraries’</td>
                         </tr>
                         <tr>
-                            <tr>Recombinant DNA reagent</tr>
-                            <tr>transOMIC LMN genome-wide shRNA plasmid library</tr>
-                            <tr>transOMIC technologies</tr>
-                            <tr/>
-                            <tr>supplied as multiple glycerol stocks</tr>
+                            <td>Recombinant DNA reagent</td>
+                            <td>transOMIC LMN genome-wide shRNA plasmid library</td>
+                            <td>transOMIC technologies</td>
+                            <td/>
+                            <td>supplied as multiple glycerol stocks</td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>Biotinylated oligonucleotides</tr>
-                            <tr>
+                            <td>Sequence-based reagent</td>
+                            <td>Biotinylated oligonucleotides</td>
+                            <td>
                                 <xref rid="bib11" ref-type="bibr">Biffi et al., 2013</xref>, 
                                 <xref rid="bib57" ref-type="bibr">Herdy et al., 2018</xref>, this paper
-                            </tr>
-                            <tr/>
-                            <tr>Materials andmethods subsection ‘Oligonucleotide annealing’</tr>
+                            </td>
+                            <td/>
+                            <td>Materials andmethods subsection ‘Oligonucleotide annealing’</td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>Genomic qPCR primers</tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>Materials and methods subsection ‘Barcode recovery, adapter ligation and sequencing’</tr>
+                            <td>Sequence-based reagent</td>
+                            <td>Genomic qPCR primers</td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>Materials and methods subsection ‘Barcode recovery, adapter ligation and sequencing’</td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>Pasha/DGCR8 siRNA</tr>
-                            <tr>Qiagen</tr>
-                            <tr>Cat# 1027423</tr>
-                            <tr/>
+                            <td>Sequence-based reagent</td>
+                            <td>Pasha/DGCR8 siRNA</td>
+                            <td>Qiagen</td>
+                            <td>Cat# 1027423</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>siRNAs</tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>Materials and methods subsection ‘siRNA validation experiments – transfection, experimental outline, immunoblotting’</tr>
+                            <td>Sequence-based reagent</td>
+                            <td>siRNAs</td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>Materials and methods subsection ‘siRNA validation experiments – transfection, experimental outline, immunoblotting’</td>
                         </tr>
                         <tr>
-                            <tr>Peptide, recombinant protein</tr>
-                            <tr>Recombinant human DDX42</tr>
-                            <tr>NovusBio</tr>
-                            <tr>Cat# H0001325-P01</tr>
-                            <tr/>
+                            <td>Peptide, recombinant protein</td>
+                            <td>Recombinant human DDX42</td>
+                            <td>NovusBio</td>
+                            <td>Cat# H0001325-P01</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>BluePippin 2% Internal Standard Marker Kit</tr>
-                            <tr>Sage Science</tr>
-                            <tr>Cat# BDF2010</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>BluePippin 2% Internal Standard Marker Kit</td>
+                            <td>Sage Science</td>
+                            <td>Cat# BDF2010</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>CellTitre-Glo One Solution Assay Reagent</tr>
-                            <tr>Promega</tr>
-                            <tr>Cat# G8461</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>CellTitre-Glo One Solution Assay Reagent</td>
+                            <td>Promega</td>
+                            <td>Cat# G8461</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>KAPA library quantification kit for Illumina platforms</tr>
-                            <tr>Kapa Biosystems</tr>
-                            <tr>Cat# 07960140001</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>KAPA library quantification kit for Illumina platforms</td>
+                            <td>Kapa Biosystems</td>
+                            <td>Cat# 07960140001</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>KOD Hot Start DNA polymerase</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# 710864</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>KOD Hot Start DNA polymerase</td>
+                            <td>Merck</td>
+                            <td>Cat# 710864</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>Lipofectamine RNAiMAX</tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Cat# 13778150</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>Lipofectamine RNAiMAX</td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Cat# 13778150</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>Muse Count and Viability kit</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# MCH600103</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>Muse Count and Viability kit</td>
+                            <td>Merck</td>
+                            <td>Cat# MCH600103</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>QIAmp DNA Blood Maxi Kit</tr>
-                            <tr>Qiagen</tr>
-                            <tr>Cat# 51194</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>QIAmp DNA Blood Maxi Kit</td>
+                            <td>Qiagen</td>
+                            <td>Cat# 51194</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>QIAquick PCR purification kit</tr>
-                            <tr>Qiagen</tr>
-                            <tr>Cat# 28104</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>QIAquick PCR purification kit</td>
+                            <td>Qiagen</td>
+                            <td>Cat# 28104</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>Qubit dsDNA HS assay kit</tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Cat# Q32851</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>Qubit dsDNA HS assay kit</td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Cat# Q32851</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>RIPA lysis buffer</tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Cat# 8990</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>RIPA lysis buffer</td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Cat# 8990</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>ZR GigaPrep Kit</tr>
-                            <tr>Zymo Research</tr>
-                            <tr>Cat# D4057</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>ZR GigaPrep Kit</td>
+                            <td>Zymo Research</td>
+                            <td>Cat# D4057</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Ampicillin</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# A5354</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>Ampicillin</td>
+                            <td>Merck</td>
+                            <td>Cat# A5354</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Chloroquine diphosphate</tr>
-                            <tr>Acros organics</tr>
-                            <tr>Cat# 455240250</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>Chloroquine diphosphate</td>
+                            <td>Acros organics</td>
+                            <td>Cat# 455240250</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>cOmplete mini protease inhibitor</tr>
-                            <tr>Roche</tr>
-                            <tr>Cat# 11836153001</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>cOmplete mini protease inhibitor</td>
+                            <td>Roche</td>
+                            <td>Cat# 11836153001</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>DMSO</tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Cat# 20688</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>DMSO</td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Cat# 20688</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Geneticin</tr>
-                            <tr>Gibco</tr>
-                            <tr>Cat# 10131035</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>Geneticin</td>
+                            <td>Gibco</td>
+                            <td>Cat# 10131035</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>MK1775</tr>
-                            <tr>Cambridge Bioscience</tr>
-                            <tr>Cat# CAY21266</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>MK1775</td>
+                            <td>Cambridge Bioscience</td>
+                            <td>Cat# CAY21266</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>PenStrep</tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Cat# 1507063</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>PenStrep</td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Cat# 1507063</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>PhenDC3</tr>
-                            <tr>In-house synthesis</tr>
-                            <tr>
+                            <td>Chemical compound, drug</td>
+                            <td>PhenDC3</td>
+                            <td>In-house synthesis</td>
+                            <td>
                                 <xref rid="bib34" ref-type="bibr">De Cian et al., 2007a</xref>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Pimozide</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# P1793-500MG</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>Pimozide</td>
+                            <td>Merck</td>
+                            <td>Cat# P1793-500MG</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Pyridostatin (PDS)</tr>
-                            <tr>In-house synthesis</tr>
-                            <tr>
+                            <td>Chemical compound, drug</td>
+                            <td>Pyridostatin (PDS)</td>
+                            <td>In-house synthesis</td>
+                            <td>
                                 <xref rid="bib102" ref-type="bibr">Rodriguez et al., 2008</xref>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>Sodium Butyrate</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# 303410</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>Sodium Butyrate</td>
+                            <td>Merck</td>
+                            <td>Cat# 303410</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>TMB substrate</tr>
-                            <tr>Merck</tr>
-                            <tr>Cat# T4444</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>TMB substrate</td>
+                            <td>Merck</td>
+                            <td>Cat# T4444</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Bowtie 2 v2.2.6</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>Bowtie 2 v2.2.6</td>
+                            <td>
                                 <xref rid="bib70" ref-type="bibr">Langmeadand Salzberg, 2012</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">http://bowtie-bio.sourceforge.net/bowtie2/index.shtml</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>ClueGO v3.5.1</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>ClueGO v3.5.1</td>
+                            <td>
                                 <xref rid="bib13" ref-type="bibr">Bindea et al., 2009</xref>;  
                                 <xref rid="bib14" ref-type="bibr">Bindea et al., 2013</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://www.ici.upmc.fr/cluego/cluegoDownload.shtml">http://www.ici.upmc.fr/cluego/cluegoDownload.shtml</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>ColonyArea</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>ColonyArea</td>
+                            <td>
                                 <xref rid="bib51" ref-type="bibr">Guzmán et al., 2014</xref>
-                            </tr>
-                            <tr>Image J plugin</tr>
-                            <tr/>
+                            </td>
+                            <td>Image J plugin</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Code used for shRNA screen data analysis</tr>
-                            <tr>This paper</tr>
-                            <tr>All scripts are available at: 
+                            <td>Software, algorithm</td>
+                            <td>Code used for shRNA screen data analysis</td>
+                            <td>This paper</td>
+                            <td>All scripts are available at: 
                                 <ext-link ext-link-type="uri" xlink:href="https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity">https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Combenefit</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>Combenefit</td>
+                            <td>
                                 <xref rid="bib37" ref-type="bibr">Di Veroli et al., 2016</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://sourceforge.net/projects/combenefit/">https://sourceforge.net/projects/combenefit/</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Cytoscape v3.6.0</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>Cytoscape v3.6.0</td>
+                            <td>
                                 <xref rid="bib109" ref-type="bibr">Shannon et al., 2003</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://www.cytoscape.org/">http://www.cytoscape.org/</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>edgeR v3.6</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>edgeR v3.6</td>
+                            <td>
                                 <xref rid="bib101" ref-type="bibr">Robinson et al., 2010</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://bioconductor.org/packages/release/bioc/html/edgeR.html">http://bioconductor.org/packages/release/bioc/html/edgeR.html</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>DAVID</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>DAVID</td>
+                            <td>
                                 <xref rid="bib59" ref-type="bibr">Huang et al., 2009a</xref>, 
                                 <xref rid="bib60" ref-type="bibr">Huang et al., 2009b</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://david.ncifcrf.gov">https://david.ncifcrf.gov</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>FastQC v0.11.3</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>FastQC v0.11.3</td>
+                            <td>
                                 <xref rid="bib2" ref-type="bibr">Andrews, 2010</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc">http://www.bioinformatics.babraham.ac.uk/projects/fastqc</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>FASTX-Toolkit v0.0.14</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>FASTX-Toolkit v0.0.14</td>
+                            <td>
                                 <xref rid="bib49" ref-type="bibr">Gordonand Hannon, 2010</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://hannonlab.cshl.edu/fastx_toolkit.html">http://hannonlab.cshl.edu/fastx_toolkit.html</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Graphpad Prism</tr>
-                            <tr>GraphPad Prism (
+                            <td>Software, algorithm</td>
+                            <td>Graphpad Prism</td>
+                            <td>GraphPad Prism (
                                 <ext-link ext-link-type="uri" xlink:href="https://graphpad.com">https://graphpad.com</ext-link>)
-                            </tr>
-                            <tr>RRID:
+                            </td>
+                            <td>RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_015807">SCR_015807</ext-link>
-                            </tr>
-                            <tr>Version 6</tr>
+                            </td>
+                            <td>Version 6</td>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>PolySearch2</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>PolySearch2</td>
+                            <td>
                                 <xref rid="bib74" ref-type="bibr">Liu et al., 2015a</xref>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://polysearch.cs.ualberta.ca/">http://polysearch.cs.ualberta.ca/</ext-link>
-                            </tr>
-                            <tr/>
+                            </td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Python programming language v2.7.10</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>Python programming language v2.7.10</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.python.org">https://www.python.org</ext-link>
-                            </tr>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>R programming language v3.2.1</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>R programming language v3.2.1</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://cran.r-project.org/">https://cran.r-project.org/</ext-link>
-                            </tr>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Unix tools (cat, cut, awk, sort and uniq)</tr>
-                            <tr>
+                            <td>Software, algorithm</td>
+                            <td>Unix tools (cat, cut, awk, sort and uniq)</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://opengroup.org/unix">https://opengroup.org/unix</ext-link>
-                            </tr>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
                         </tr>
                     </tbody>
                 </table>
@@ -1676,38 +1682,40 @@
                 <label>Table 4.</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Oligo name</th>
+                            <th>Description</th>
+                            <th>Sequence 5’−3’</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Oligo name</tr>
-                            <tr>Description</tr>
-                            <tr>Sequence 5’−3’</tr>
+                            <td>Mir5-F</td>
+                            <td>Primary PCR Forward Primer</td>
+                            <td>5’-CAGAATCGTTGCCTGCACATCTTGGAAAC- 3’</td>
                         </tr>
                         <tr>
-                            <tr>Mir5-F</tr>
-                            <tr>Primary PCR Forward Primer</tr>
-                            <tr>5’-CAGAATCGTTGCCTGCACATCTTGGAAAC- 3’</tr>
+                            <td>PGKpro-R</td>
+                            <td>Primary PCR Reverse Primer</td>
+                            <td>5’ -CTGCTAAA GCGCATGCTCCAGACTGC- 3’</td>
                         </tr>
                         <tr>
-                            <tr>PGKpro-R</tr>
-                            <tr>Primary PCR Reverse Primer</tr>
-                            <tr>5’ -CTGCTAAA GCGCATGCTCCAGACTGC- 3’</tr>
+                            <td>P5-Seq-P-Mir-Loop</td>
+                            <td>Secondary PCR forward Primer</td>
+                            <td>5’-AATGATACGGCGACCACCGAGATCTACACT AGCCTGCGCACGTAGTGAAGCCACAGATGTA-3’</td>
                         </tr>
                         <tr>
-                            <tr>P5-Seq-P-Mir-Loop</tr>
-                            <tr>Secondary PCR forward Primer</tr>
-                            <tr>5’-AATGATACGGCGACCACCGAGATCTACACT AGCCTGCGCACGTAGTGAAGCCACAGATGTA-3’</tr>
-                        </tr>
-                        <tr>
-                            <tr>P7-Index-n-Truseq-PGKpro-R</tr>
-                            <tr>Secondary PCR barcoded reverse primer</tr>
-                            <tr>5’-CAAGCAGAAGACGGCATACGAGAT 
+                            <td>P7-Index-n-Truseq-PGKpro-R</td>
+                            <td>Secondary PCR barcoded reverse primer</td>
+                            <td>5’-CAAGCAGAAGACGGCATACGAGAT 
                                 <bold>nnnnnn</bold>GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTCTGCTAAAGCGCATGCTCCAGACTGC – 3’
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>SeqPrimer MirLoop</tr>
-                            <tr>Custom sequencing primer</tr>
-                            <tr>5’-TAGCCTGCGCACGTAGTGAAGCCACAGATGTA-3</tr>
+                            <td>SeqPrimer MirLoop</td>
+                            <td>Custom sequencing primer</td>
+                            <td>5’-TAGCCTGCGCACGTAGTGAAGCCACAGATGTA-3</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1749,100 +1757,102 @@
                 <label>Table 5.</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>GO id</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Link</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>GO id</tr>
-                            <tr>Name</tr>
-                            <tr>Type</tr>
-                            <tr>Link</tr>
-                        </tr>
-                        <tr>
-                            <tr>GO:0051880</tr>
-                            <tr>G-quadruplex DNA binding</tr>
-                            <tr>Molecular function</tr>
-                            <tr>
+                            <td>GO:0051880</td>
+                            <td>G-quadruplex DNA binding</td>
+                            <td>Molecular function</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:0051880">https://www.ebi.ac.uk/QuickGO/term/GO:0051880</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:0002151</tr>
-                            <tr>G-quadruplex RNA binding</tr>
-                            <tr>Molecular function</tr>
-                            <tr>
+                            <td>GO:0002151</td>
+                            <td>G-quadruplex RNA binding</td>
+                            <td>Molecular function</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:0002151">https://www.ebi.ac.uk/QuickGO/term/GO:0002151</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:0061849</tr>
-                            <tr>telomeric G-quadruplex DNA binding</tr>
-                            <tr>Molecular function</tr>
-                            <tr>
+                            <td>GO:0061849</td>
+                            <td>telomeric G-quadruplex DNA binding</td>
+                            <td>Molecular function</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:0061849">https://www.ebi.ac.uk/QuickGO/term/GO:0061849</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:0071919</tr>
-                            <tr>G-quadruplex DNA formation</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:0071919</td>
+                            <td>G-quadruplex DNA formation</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:0071919">https://www.ebi.ac.uk/QuickGO/term/GO:0071919</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:0044806</tr>
-                            <tr>G-quadruplex DNA unwinding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:0044806</td>
+                            <td>G-quadruplex DNA unwinding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:0044806">https://www.ebi.ac.uk/QuickGO/term/GO:0044806</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905493</tr>
-                            <tr>regulation of G-quadruplex DNA binding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905493</td>
+                            <td>regulation of G-quadruplex DNA binding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905493">https://www.ebi.ac.uk/QuickGO/term/GO:1905493</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905494</tr>
-                            <tr>negative regulation of G-quadruplex DNA binding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905494</td>
+                            <td>negative regulation of G-quadruplex DNA binding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905494">https://www.ebi.ac.uk/QuickGO/term/GO:1905494</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905495</tr>
-                            <tr>positive regulation of G-quadruplex DNA binding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905495</td>
+                            <td>positive regulation of G-quadruplex DNA binding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905495">https://www.ebi.ac.uk/QuickGO/term/GO:1905495</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905465</tr>
-                            <tr>regulation of G-quadruplex DNA unwinding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905465</td>
+                            <td>regulation of G-quadruplex DNA unwinding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905465">https://www.ebi.ac.uk/QuickGO/term/GO:1905465</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905466</tr>
-                            <tr>negative regulation of G-quadruplex DNA unwinding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905466</td>
+                            <td>negative regulation of G-quadruplex DNA unwinding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905466">https://www.ebi.ac.uk/QuickGO/term/GO:1905466</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>GO:1905467</tr>
-                            <tr>positive regulation of G-quadruplex DNA unwinding</tr>
-                            <tr>Biological process</tr>
-                            <tr>
+                            <td>GO:1905467</td>
+                            <td>positive regulation of G-quadruplex DNA unwinding</td>
+                            <td>Biological process</td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/QuickGO/term/GO:1905467">https://www.ebi.ac.uk/QuickGO/term/GO:1905467</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1881,41 +1891,43 @@
                 <label>Table 6.</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>siRNA</th>
+                            <th>Catalogue number</th>
+                            <th>Sequence 5’−3’</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>siRNA</tr>
-                            <tr>Catalogue number</tr>
-                            <tr>Sequence 5’−3’</tr>
+                            <td>Non-targeting 2</td>
+                            <td>D-001810-02-05</td>
+                            <td>UGGUUUACAUGUUGUGUGA</td>
                         </tr>
                         <tr>
-                            <tr>Non-targeting 2</tr>
-                            <tr>D-001810-02-05</tr>
-                            <tr>UGGUUUACAUGUUGUGUGA</tr>
+                            <td>BRCA1 (A375)</td>
+                            <td>J-003461–09</td>
+                            <td>CAACAUGCCCACAGAUCAA</td>
                         </tr>
                         <tr>
-                            <tr>BRCA1 (A375)</tr>
-                            <tr>J-003461–09</tr>
-                            <tr>CAACAUGCCCACAGAUCAA</tr>
+                            <td>BRCA1 (HT1080)</td>
+                            <td>J-003461–12</td>
+                            <td>GAAGGAGCUUUCAUCAUUUC</td>
                         </tr>
                         <tr>
-                            <tr>BRCA1 (HT1080)</tr>
-                            <tr>J-003461–12</tr>
-                            <tr>GAAGGAGCUUUCAUCAUUUC</tr>
+                            <td>TOP1 (both cell lines)</td>
+                            <td>J-005278–08</td>
+                            <td>CGAAGAAGGUAGUAGAGUC</td>
                         </tr>
                         <tr>
-                            <tr>TOP1 (both cell lines)</tr>
-                            <tr>J-005278–08</tr>
-                            <tr>CGAAGAAGGUAGUAGAGUC</tr>
+                            <td>DDX42 (both cell lines)</td>
+                            <td>J-012393–11</td>
+                            <td>GGAGAUCGACUAACGGCAA</td>
                         </tr>
                         <tr>
-                            <tr>DDX42 (both cell lines)</tr>
-                            <tr>J-012393–11</tr>
-                            <tr>GGAGAUCGACUAACGGCAA</tr>
-                        </tr>
-                        <tr>
-                            <tr>GAR1 (both cell lines)</tr>
-                            <tr>J-013386–06</tr>
-                            <tr>UCCAGAACGUGUAGUCUUA</tr>
+                            <td>GAR1 (both cell lines)</td>
+                            <td>J-013386–06</td>
+                            <td>UCCAGAACGUGUAGUCUUA</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1943,36 +1955,38 @@
                 <label>Table 7.</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Oligo</th>
+                            <th>Rna/DNA</th>
+                            <th>Sequence</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Oligo</tr>
-                            <tr>Rna/DNA</tr>
-                            <tr>Sequence</tr>
+                            <td>NRAS G4</td>
+                            <td>RNA</td>
+                            <td>5’ [Btn] UGU GGG AGG GGC GGG UCU GGG UGC 3’</td>
                         </tr>
                         <tr>
-                            <tr>NRAS G4</tr>
-                            <tr>RNA</tr>
-                            <tr>5’ [Btn] UGU GGG AGG GGC GGG UCU GGG UGC 3’</tr>
+                            <td>NRAS mut</td>
+                            <td>RNA</td>
+                            <td>5’ [Btn] UGU AGA AAG AGC AGA UCU AGA UG 3’</td>
                         </tr>
                         <tr>
-                            <tr>NRAS mut</tr>
-                            <tr>RNA</tr>
-                            <tr>5’ [Btn] UGU AGA AAG AGC AGA UCU AGA UG 3’</tr>
+                            <td>Stem loop</td>
+                            <td>RNA</td>
+                            <td>5’ [Btn] ACA GGG CUC CGC GAU GGC GGA GCC CAA 3’</td>
                         </tr>
                         <tr>
-                            <tr>Stem loop</tr>
-                            <tr>RNA</tr>
-                            <tr>5’ [Btn] ACA GGG CUC CGC GAU GGC GGA GCC CAA 3’</tr>
+                            <td>Myc G4</td>
+                            <td>DNA</td>
+                            <td>5’ [Btn] TGA GGG T GGG TA GGG T GGG TAA 3’</td>
                         </tr>
                         <tr>
-                            <tr>Myc G4</tr>
-                            <tr>DNA</tr>
-                            <tr>5’ [Btn] TGA GGG T GGG TA GGG T GGG TAA 3’</tr>
-                        </tr>
-                        <tr>
-                            <tr>Myc mut</tr>
-                            <tr>DNA</tr>
-                            <tr>5’ [Btn] TGA GAG T GAG TA GAG T GAG TAA 3’</tr>
+                            <td>Myc mut</td>
+                            <td>DNA</td>
+                            <td>5’ [Btn] TGA GAG T GAG TA GAG T GAG TAA 3’</td>
                         </tr>
                     </tbody>
                 </table>

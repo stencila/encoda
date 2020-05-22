@@ -318,170 +318,172 @@
                     <title>Confirmatory statistical tests.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Genes</th>
+                            <th>Comparison</th>
+                            <th>Study</th>
+                            <th>Z value</th>
+                            <th>P value</th>
+                            <th>Sample size (n)</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Genes</tr>
-                            <tr>Comparison</tr>
-                            <tr>Study</tr>
-                            <tr>Z value</tr>
-                            <tr>P value</tr>
-                            <tr>Sample size (n)</tr>
+                            <td>Active</td>
+                            <td>0 hr vs 1 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>14.86</td>
+                            <td>1.36e-55</td>
+                            <td>708</td>
                         </tr>
                         <tr>
-                            <tr>Active</tr>
-                            <tr>0 hr vs 1 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>14.86</tr>
-                            <tr>1.36e-55</tr>
-                            <tr>708</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>11.83</td>
+                            <td>2.83e-34</td>
+                            <td>719</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>11.83</tr>
-                            <tr>2.83e-34</tr>
-                            <tr>719</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>21.17</tr>
-                            <tr>1.05e-130</tr>
-                            <tr>755</tr>
+                            </td>
+                            <td>21.17</td>
+                            <td>1.05e-130</td>
+                            <td>755</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>0 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>9.922</tr>
-                            <tr>3.67e-24</tr>
-                            <tr>708</tr>
+                            <td/>
+                            <td>0 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>9.922</td>
+                            <td>3.67e-24</td>
+                            <td>708</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>12.77</tr>
-                            <tr>3.77e-40</tr>
-                            <tr>719</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>12.77</td>
+                            <td>3.77e-40</td>
+                            <td>719</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>23.26</tr>
-                            <tr>3.33e-184</tr>
-                            <tr>755</tr>
+                            </td>
+                            <td>23.26</td>
+                            <td>3.33e-184</td>
+                            <td>755</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>1 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>4.742</tr>
-                            <tr>1.92e-06</tr>
-                            <tr>708</tr>
+                            <td/>
+                            <td>1 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>4.742</td>
+                            <td>1.92e-06</td>
+                            <td>708</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>10.04</tr>
-                            <tr>9.91e-25</tr>
-                            <tr>719</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>10.04</td>
+                            <td>9.91e-25</td>
+                            <td>719</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>23.26</tr>
-                            <tr>3.33e-184</tr>
-                            <tr>755</tr>
+                            </td>
+                            <td>23.26</td>
+                            <td>3.33e-184</td>
+                            <td>755</td>
                         </tr>
                         <tr>
-                            <tr>Silent</tr>
-                            <tr>0 hr vs 1 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>12.61</tr>
-                            <tr>7.11e-40</tr>
-                            <tr>580</tr>
+                            <td>Silent</td>
+                            <td>0 hr vs 1 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>12.61</td>
+                            <td>7.11e-40</td>
+                            <td>580</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>7.05</tr>
-                            <tr>9.29e-13</tr>
-                            <tr>572</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>7.05</td>
+                            <td>9.29e-13</td>
+                            <td>572</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>−1.998</tr>
-                            <tr>0.0457</tr>
-                            <tr>274</tr>
+                            </td>
+                            <td>−1.998</td>
+                            <td>0.0457</td>
+                            <td>274</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>0 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>8.328</tr>
-                            <tr>2.22e-17</tr>
-                            <tr>579</tr>
+                            <td/>
+                            <td>0 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>8.328</td>
+                            <td>2.22e-17</td>
+                            <td>579</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>8.156</tr>
-                            <tr>1.03e-16</tr>
-                            <tr>572</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>8.156</td>
+                            <td>1.03e-16</td>
+                            <td>572</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>3.179</tr>
-                            <tr>0.00144</tr>
-                            <tr>276</tr>
+                            </td>
+                            <td>3.179</td>
+                            <td>0.00144</td>
+                            <td>276</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>1 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>0.6853</tr>
-                            <tr>0.493</tr>
-                            <tr>580</tr>
+                            <td/>
+                            <td>1 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>0.6853</td>
+                            <td>0.493</td>
+                            <td>580</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>4.436</tr>
-                            <tr>8.35e-06</tr>
-                            <tr>573</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>4.436</td>
+                            <td>8.35e-06</td>
+                            <td>573</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>5.806</tr>
-                            <tr>4.11e-09</tr>
-                            <tr>236</tr>
+                            </td>
+                            <td>5.806</td>
+                            <td>4.11e-09</td>
+                            <td>236</td>
                         </tr>
                     </tbody>
                 </table>
@@ -492,170 +494,172 @@
                     <title>Exploratory statistical tests.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Genes</th>
+                            <th>Comparison</th>
+                            <th>Study</th>
+                            <th>W value</th>
+                            <th>P value</th>
+                            <th>Sample size (n)</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Genes</tr>
-                            <tr>Comparison</tr>
-                            <tr>Study</tr>
-                            <tr>W value</tr>
-                            <tr>P value</tr>
-                            <tr>Sample size (n)</tr>
+                            <td>Active</td>
+                            <td>0 hr vs 1 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>270378</td>
+                            <td>0.0103</td>
+                            <td>1416</td>
                         </tr>
                         <tr>
-                            <tr>Active</tr>
-                            <tr>0 hr vs 1 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>270378</tr>
-                            <tr>0.0103</tr>
-                            <tr>1416</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>274696</td>
+                            <td>0.0395</td>
+                            <td>1438</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>274696</tr>
-                            <tr>0.0395</tr>
-                            <tr>1438</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>318799</tr>
-                            <tr>6.67e-05</tr>
-                            <tr>1510</tr>
+                            </td>
+                            <td>318799</td>
+                            <td>6.67e-05</td>
+                            <td>1510</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>0 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>300774</tr>
-                            <tr>7.16e-11</tr>
-                            <tr>1416</tr>
+                            <td/>
+                            <td>0 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>300774</td>
+                            <td>7.16e-11</td>
+                            <td>1416</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>324564</tr>
-                            <tr>4.74e-17</tr>
-                            <tr>1438</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>324564</td>
+                            <td>4.74e-17</td>
+                            <td>1438</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>400999</tr>
-                            <tr>1.16e-42</tr>
-                            <tr>1510</tr>
+                            </td>
+                            <td>400999</td>
+                            <td>1.16e-42</td>
+                            <td>1510</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>1 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>281679</tr>
-                            <tr>5.45e-05</tr>
-                            <tr>1416</tr>
+                            <td/>
+                            <td>1 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>281679</td>
+                            <td>5.45e-05</td>
+                            <td>1416</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>308954</tr>
-                            <tr>1.45e-10</tr>
-                            <tr>1438</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>308954</td>
+                            <td>1.45e-10</td>
+                            <td>1438</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>372714</tr>
-                            <tr>4.11e-25</tr>
-                            <tr>1510</tr>
+                            </td>
+                            <td>372714</td>
+                            <td>4.11e-25</td>
+                            <td>1510</td>
                         </tr>
                         <tr>
-                            <tr>Silent</tr>
-                            <tr>0 hr vs 1 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>187682</tr>
-                            <tr>0.000638</tr>
-                            <tr>1160</tr>
+                            <td>Silent</td>
+                            <td>0 hr vs 1 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>187682</td>
+                            <td>0.000638</td>
+                            <td>1160</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>174695</tr>
-                            <tr>0.0602</tr>
-                            <tr>1146</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>174695</td>
+                            <td>0.0602</td>
+                            <td>1146</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>127104</tr>
-                            <tr>0.236</tr>
-                            <tr>1028</tr>
+                            </td>
+                            <td>127104</td>
+                            <td>0.236</td>
+                            <td>1028</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>0 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>185804</tr>
-                            <tr>0.00203</tr>
-                            <tr>1160</tr>
+                            <td/>
+                            <td>0 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>185804</td>
+                            <td>0.00203</td>
+                            <td>1160</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>184470</tr>
-                            <tr>0.000289</tr>
-                            <tr>1146</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>184470</td>
+                            <td>0.000289</td>
+                            <td>1146</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>132082</tr>
-                            <tr>0.997</tr>
-                            <tr>1028</tr>
+                            </td>
+                            <td>132082</td>
+                            <td>0.997</td>
+                            <td>1028</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>1 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>166122</tr>
-                            <tr>0.716</tr>
-                            <tr>1160</tr>
+                            <td/>
+                            <td>1 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>166122</td>
+                            <td>0.716</td>
+                            <td>1160</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>173608</tr>
-                            <tr>0.0918</tr>
-                            <tr>1146</tr>
+                            <td/>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>173608</td>
+                            <td>0.0918</td>
+                            <td>1146</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>136443</tr>
-                            <tr>0.295</tr>
-                            <tr>1028</tr>
+                            </td>
+                            <td>136443</td>
+                            <td>0.295</td>
+                            <td>1028</td>
                         </tr>
                     </tbody>
                 </table>
@@ -671,82 +675,84 @@
                     <title>Exploratory statistical tests.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Comparison</th>
+                            <th>Study</th>
+                            <th>W value</th>
+                            <th>P value</th>
+                            <th>Sample size (n)</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Comparison</tr>
-                            <tr>Study</tr>
-                            <tr>W value</tr>
-                            <tr>P value</tr>
-                            <tr>Sample size (n)</tr>
+                            <td>0 hr vs 1 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>303897</td>
+                            <td>7.78e-50</td>
+                            <td>1288</td>
                         </tr>
                         <tr>
-                            <tr>0 hr vs 1 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>303897</tr>
-                            <tr>7.78e-50</tr>
-                            <tr>1288</tr>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>278646</td>
+                            <td>1.1e-27</td>
+                            <td>1292</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>278646</tr>
-                            <tr>1.1e-27</tr>
-                            <tr>1292</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>349351</tr>
-                            <tr>1.27e-130</tr>
-                            <tr>1269</tr>
+                            </td>
+                            <td>349351</td>
+                            <td>1.27e-130</td>
+                            <td>1269</td>
                         </tr>
                         <tr>
-                            <tr>0 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>272441</tr>
-                            <tr>5.18e-24</tr>
-                            <tr>1288</tr>
+                            <td>0 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>272441</td>
+                            <td>5.18e-24</td>
+                            <td>1288</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>292865</tr>
-                            <tr>7.4e-39</tr>
-                            <tr>1292</tr>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>292865</td>
+                            <td>7.4e-39</td>
+                            <td>1292</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>368182</tr>
-                            <tr>1.14e-163</tr>
-                            <tr>1269</tr>
+                            </td>
+                            <td>368182</td>
+                            <td>1.14e-163</td>
+                            <td>1269</td>
                         </tr>
                         <tr>
-                            <tr>1 hr vs 24 hr</tr>
-                            <tr>RP:CB Lot 1</tr>
-                            <tr>235077</tr>
-                            <tr>7.45e-06</tr>
-                            <tr>1288</tr>
+                            <td>1 hr vs 24 hr</td>
+                            <td>RP:CB Lot 1</td>
+                            <td>235077</td>
+                            <td>7.45e-06</td>
+                            <td>1288</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>RP:CB Lot 2</tr>
-                            <tr>272028</tr>
-                            <tr>3.73e-23</tr>
-                            <tr>1292</tr>
+                            <td/>
+                            <td>RP:CB Lot 2</td>
+                            <td>272028</td>
+                            <td>3.73e-23</td>
+                            <td>1292</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>
-                            </tr>
-                            <tr>332069</tr>
-                            <tr>5.72e-104</tr>
-                            <tr>1269</tr>
+                            </td>
+                            <td>332069</td>
+                            <td>5.72e-104</td>
+                            <td>1269</td>
                         </tr>
                     </tbody>
                 </table>

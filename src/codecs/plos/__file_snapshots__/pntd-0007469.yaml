@@ -6421,6 +6421,7 @@ content:
                 target: '#t001fn001'
                 content:
                   - '*'
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

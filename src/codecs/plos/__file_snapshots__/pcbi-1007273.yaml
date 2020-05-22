@@ -3383,6 +3383,7 @@ content:
           - type: TableCell
             content:
               - Inter-contig pairs
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3734,6 +3735,7 @@ content:
           - type: TableCell
             content:
               - Chimeric Errors
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

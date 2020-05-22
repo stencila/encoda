@@ -3,9 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-// eslint-disable-next-line import/no-duplicates
-import * as stencila from '@stencila/schema'
-import {
+import stencila, {
   isA,
   isArticle,
   isCreativeWork,
@@ -13,16 +11,15 @@ import {
   markTypes,
   microdata,
   microdataItemtype,
+  microdataProperty,
   microdataRoot,
   microdataType,
   nodeType,
   thematicBreak,
-  microdataProperty,
-  // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
-import { flatten, isNonEmpty } from 'fp-ts/lib/Array'
+import { dropLeft, flatten, isNonEmpty, takeLeftWhile } from 'fp-ts/lib/Array'
 // @ts-ignore
 import GithubSlugger from 'github-slugger'
 import h from 'hyperscript'
@@ -374,11 +371,11 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'Table':
       return decodeTable(node as HTMLTableElement)
 
-    case 'th':
     case 'tr':
     case 'TableRow':
       return decodeTableRow(node as HTMLTableRowElement)
 
+    case 'th':
     case 'td':
     case 'TableCell':
       return decodeTableCell(node as HTMLTableCellElement)
@@ -1806,6 +1803,13 @@ function decodeTable(table: HTMLTableElement): stencila.Table {
  */
 function encodeTable(table: stencila.Table): HTMLTableElement {
   const { id, label, caption, rows } = table
+
+  const headerRows = takeLeftWhile(
+    (row: stencila.TableRow) => row.rowType === 'header'
+  )(rows)
+
+  const bodyRows: stencila.TableRow[] = dropLeft(headerRows.length)(rows)
+
   return h(
     'table',
     { id, attrs: microdata(table) },
@@ -1823,7 +1827,8 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
         })
       )
     ),
-    h('tbody', rows.map(encodeTableRow))
+    encodeMaybe(headerRows, h('thead', headerRows.map(encodeTableRow))),
+    h('tbody', bodyRows.map(encodeTableRow))
   )
 }
 
@@ -1831,8 +1836,14 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
  * Decode a `<tr>` element to a `stencila.TableRow`.
  */
 function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
+  const parent = row.parentElement?.nodeName.toLowerCase()
   return stencila.tableRow({
-    cells: Array.from(row.querySelectorAll('td')).map(decodeTableCell),
+    rowType: parent === 'thead' ? 'header' : undefined,
+    cells: Array.from(
+      row.querySelectorAll<HTMLTableHeaderCellElement | HTMLTableCellElement>(
+        'th, td'
+      )
+    ).map(decodeTableCell),
   })
 }
 
@@ -1840,7 +1851,12 @@ function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
  * Encode a `stencila.TableRow` to a `<tr>` element.
  */
 function encodeTableRow(row: stencila.TableRow): HTMLTableRowElement {
-  return h('tr', { attrs: microdata(row) }, row.cells.map(encodeTableCell))
+  const cellTag = row.rowType === 'header' ? 'th' : 'td'
+  return h(
+    'tr',
+    { attrs: microdata(row) },
+    row.cells.map((cell) => encodeTableCell(cell, cellTag))
+  )
 }
 
 /**
@@ -1853,10 +1869,13 @@ function decodeTableCell(cell: HTMLTableDataCellElement): stencila.TableCell {
 }
 
 /**
- * Encode a `stencila.TableCell` to a `<td>` element.
+ * Encode a `stencila.TableCell` to a `<td>` or a `<th>` element.
  */
-function encodeTableCell(cell: stencila.TableCell): HTMLTableDataCellElement {
-  return h('td', { attrs: microdata(cell) }, cell.content.map(encodeNode))
+function encodeTableCell(
+  cell: stencila.TableCell,
+  tag: 'td' | 'th' = 'td'
+): HTMLTableDataCellElement {
+  return h(tag, { attrs: microdata(cell) }, cell.content.map(encodeNode))
 }
 
 /**

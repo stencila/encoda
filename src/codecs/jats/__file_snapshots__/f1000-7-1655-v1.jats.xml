@@ -364,31 +364,33 @@
                 <ext-link ext-link-type="uri" xlink:href="#T1">Table 1</ext-link>.
             </p>
             <table-wrap id="T1">
-                <label>Table 1.</label>
+                <label>Table 1. </label>
                 <caption>
                     <title>Article-type attributes.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Attribute (as per Crossref schema)</th>
+                            <th>Corresponding term in this document</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Attribute (as per Crossref schema)</tr>
-                            <tr>Corresponding term in this document</tr>
+                            <td>referee-report</td>
+                            <td>Peer review</td>
                         </tr>
                         <tr>
-                            <tr>referee-report</tr>
-                            <tr>Peer review</tr>
+                            <td>editor-report</td>
+                            <td>Decision Letter</td>
                         </tr>
                         <tr>
-                            <tr>editor-report</tr>
-                            <tr>Decision Letter</tr>
+                            <td>author-comment</td>
+                            <td>Author Response/Rebuttal</td>
                         </tr>
                         <tr>
-                            <tr>author-comment</tr>
-                            <tr>Author Response/Rebuttal</tr>
-                        </tr>
-                        <tr>
-                            <tr>aggregated-review-documents</tr>
-                            <tr>Collected Review Documents</tr>
+                            <td>aggregated-review-documents</td>
+                            <td>Collected Review Documents</td>
                         </tr>
                     </tbody>
                 </table>

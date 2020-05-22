@@ -826,6 +826,7 @@ content:
           - type: TableCell
             content:
               - Corresponding term in this document
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

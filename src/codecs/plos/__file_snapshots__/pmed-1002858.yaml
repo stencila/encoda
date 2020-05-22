@@ -2871,6 +2871,7 @@ content:
           - type: TableCell
             content:
               - References
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

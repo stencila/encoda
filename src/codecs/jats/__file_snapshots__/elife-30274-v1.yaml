@@ -3160,6 +3160,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3539,6 +3540,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3950,6 +3952,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

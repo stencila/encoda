@@ -11,7 +11,6 @@ import stencila, {
   creativeWork,
   datatable,
   datatableColumn,
-  date,
   del,
   emphasis,
   Entity,
@@ -47,8 +46,7 @@ import stencila, {
   videoObject,
   microdataItemtype,
 } from '@stencila/schema'
-import { getByText } from '@testing-library/dom'
-import '@testing-library/jest-dom/extend-expect'
+import { getAllByRole, getByText } from '@testing-library/dom'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
@@ -783,6 +781,90 @@ const dt = {
 </div>`,
   node: dtNode,
 }
+
+describe('Table Nodes', () => {
+  const tableNodes = table({
+    rows: [
+      tableRow({
+        rowType: 'header',
+        cells: [tableCell({ content: ['A'] }), tableCell({ content: ['B'] })],
+      }),
+      tableRow({
+        cells: [tableCell({ content: ['1'] }), tableCell({ content: ['2'] })],
+      }),
+    ],
+  })
+
+  let tableHTML: HTMLElement
+  beforeAll(async () => {
+    tableHTML = doc(await e(tableNodes))
+  })
+
+  describe('encode', () => {
+    it('encodes "rowType: header" as <th> elements', () => {
+      expect(getAllByRole(tableHTML, 'columnheader')).toHaveLength(2)
+    })
+
+    it('encodes "tableRows" without a "rowtype" as <td> elements by default', () => {
+      expect(getAllByRole(tableHTML, 'cell')).toHaveLength(2)
+    })
+
+    it('places <th> elements inside a <thead>', () => {
+      const thead = tableHTML.querySelector('thead')
+      expect(thead).toBeInTheDocument()
+      expect(getAllByRole(thead!, 'columnheader')).toHaveLength(2)
+    })
+
+    it('does not create a <thead> element if no "rowType: header" rows are present', async () => {
+      const headlessTable = doc(
+        await e(
+          table({
+            rows: [
+              tableRow({
+                cells: [
+                  tableCell({ content: ['A'] }),
+                  tableCell({ content: ['B'] }),
+                ],
+              }),
+              tableRow({
+                cells: [
+                  tableCell({ content: ['1'] }),
+                  tableCell({ content: ['2'] }),
+                ],
+              }),
+            ],
+          })
+        )
+      )
+
+      const thead = headlessTable.querySelector('thead')
+      expect(thead).not.toBeInTheDocument()
+      expect(getAllByRole(headlessTable, 'cell')).toHaveLength(4)
+    })
+  })
+
+  describe('decode', () => {
+    it('decodes <tr> elements inside a <thead> as "rowType: header"', async () => {
+      const tableWithHead = `
+        <table>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      `
+      expect(await d(tableWithHead)).toEqual(tableNodes)
+    })
+  })
+})
 
 describe('encode/decode href attributes', () => {
   describe('decode', () => {

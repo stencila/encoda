@@ -3144,6 +3144,7 @@ content:
           - type: TableCell
             content:
               - Serum CK
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
