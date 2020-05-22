@@ -371,11 +371,11 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'Table':
       return decodeTable(node as HTMLTableElement)
 
-    case 'th':
     case 'tr':
     case 'TableRow':
       return decodeTableRow(node as HTMLTableRowElement)
 
+    case 'th':
     case 'td':
     case 'TableCell':
       return decodeTableCell(node as HTMLTableCellElement)
@@ -1836,8 +1836,14 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
  * Decode a `<tr>` element to a `stencila.TableRow`.
  */
 function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
+  const parent = row.parentElement?.nodeName.toLowerCase()
   return stencila.tableRow({
-    cells: Array.from(row.querySelectorAll('td')).map(decodeTableCell),
+    rowType: parent === 'thead' ? 'header' : undefined,
+    cells: Array.from(
+      row.querySelectorAll<HTMLTableHeaderCellElement | HTMLTableCellElement>(
+        'th, td'
+      )
+    ).map(decodeTableCell),
   })
 }
 

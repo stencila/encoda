@@ -842,6 +842,28 @@ describe('Table Nodes', () => {
       expect(getAllByRole(headlessTable, 'cell')).toHaveLength(4)
     })
   })
+
+  describe('decode', () => {
+    it('decodes <tr> elements inside a <thead> as "rowType: header"', async () => {
+      const tableWithHead = `
+        <table>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      `
+      expect(await d(tableWithHead)).toEqual(tableNodes)
+    })
+  })
 })
 
 describe('encode/decode href attributes', () => {
