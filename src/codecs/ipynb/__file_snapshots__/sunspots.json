@@ -96,7 +96,25 @@
           "rows": [
             {
               "type": "TableRow",
-              "cells": []
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": []
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "YEAR"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "SUNACTIVITY"
+                  ]
+                }
+              ],
+              "rowType": "header"
             },
             {
               "type": "TableRow",
@@ -255,7 +273,25 @@
           "rows": [
             {
               "type": "TableRow",
-              "cells": []
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": []
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "YEAR"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "SUNACTIVITY"
+                  ]
+                }
+              ],
+              "rowType": "header"
             },
             {
               "type": "TableRow",
