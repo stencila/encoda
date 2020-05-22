@@ -15,7 +15,7 @@ jobs:
           # there have been changes in any API we are using
           image_name: ubuntu-latest
           node_version: 14.x
-          nock_mode: wild
+          nock_mode: dryrun
         linux_node_12:
           image_name: ubuntu-latest
           node_version: 12.x
