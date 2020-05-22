@@ -1,3 +1,19 @@
+## [0.93.11](https://github.com/stencila/encoda/compare/v0.93.10...v0.93.11) (2020-05-22)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.11.5 ([f3eb0a9](https://github.com/stencila/encoda/commit/f3eb0a9cb5e83b0d40caf07668cb29d9c46f0d51))
+* **dependencies:** update dependency pdf-lib to ^1.6.0 ([8ac6d0a](https://github.com/stencila/encoda/commit/8ac6d0ac45f7e6ec1d25b54b4f71fb0c3e4e139b))
+* **dependencies:** update dependency puppeteer to ^3.1.0 ([bb26c21](https://github.com/stencila/encoda/commit/bb26c215af8522b54d2aad345b26b1a23ba754ce))
+* **dependencies:** update dependency vfile to ^4.1.1 ([be4902b](https://github.com/stencila/encoda/commit/be4902b59aec9d136cea463af289de1bcf52689b))
+* **dependencies:** update dependency xlsx to ^0.16.1 ([1857d66](https://github.com/stencila/encoda/commit/1857d668094a89aac2e57fa355237aca52d5be2a))
+* **Deps:** Change repo for asciimath2tex ([5020b09](https://github.com/stencila/encoda/commit/5020b09a8537bdf14d48b78ab9671fe3c1c4c40a)), closes [#552](https://github.com/stencila/encoda/issues/552)
+* **HTML:** Decode thead > tr elements as "rowType: header" nodes ([07b4c89](https://github.com/stencila/encoda/commit/07b4c894bb7b13a734091bacb4b4d32ad9f915ab))
+* **HTML:** Encode header TableRows inside a <thead> and cells in <th> ([9629157](https://github.com/stencila/encoda/commit/9629157f8f92d2efeb054a41e41be07a77c3b8a3))
+* **JATS:** Decode and encode table headers ([1c661dc](https://github.com/stencila/encoda/commit/1c661dc5b8751aa1a2711dd581f5410396d36197))
+* **Pandoc:** Expanded vfile content type ([fda0d13](https://github.com/stencila/encoda/commit/fda0d13b686360a992779d9bbbac86df07617bbb))
+
 ## [0.93.10](https://github.com/stencila/encoda/compare/v0.93.9...v0.93.10) (2020-05-19)
 
 
