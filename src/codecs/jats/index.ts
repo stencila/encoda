@@ -39,6 +39,7 @@ import {
 } from '../../util/xml'
 import { MathMLCodec } from '../mathml'
 import { Codec, CommonEncodeOptions } from '../types'
+import { takeLeftWhile, dropLeft } from 'fp-ts/lib/Array'
 
 const log = getLogger('encoda:jats')
 const mathml = new MathMLCodec()
@@ -1607,12 +1608,29 @@ function decodeTableWrap(
       ? decodeElements(cap.elements, state)
       : undefined
 
-  const trs = all(elem, 'tr')
-  const rows =
-    trs.length > 0
-      ? trs.map((row) => {
+  const thead = first(elem, 'thead')
+  const theadTrs = all(thead, 'tr')
+  const headerRows =
+    theadTrs.length > 0
+      ? theadTrs.map((row) => {
           return stencila.tableRow({
-            cells: all(row, ['td', 'th']).map((cell) => {
+            rowType: 'header',
+            cells: all(row, 'th').map((cell) => {
+              return stencila.tableCell({
+                content: decodeInlineContent(cell.elements ?? [], state),
+              })
+            }),
+          })
+        })
+      : []
+
+  const tbody = first(elem, 'tbody')
+  const tbodyTrs = all(tbody, 'tr')
+  const bodyRows =
+    tbodyTrs.length > 0
+      ? tbodyTrs.map((row) => {
+          return stencila.tableRow({
+            cells: all(row, 'td').map((cell) => {
               return stencila.tableCell({
                 content: decodeInlineContent(cell.elements ?? [], state),
               })
@@ -1626,7 +1644,7 @@ function decodeTableWrap(
       id: decodeInternalId(attr(elem, 'id')),
       label: textOrUndefined(child(elem, 'label')),
       caption,
-      rows,
+      rows: [...headerRows, ...bodyRows],
     }),
   ]
 }
@@ -1634,30 +1652,50 @@ function decodeTableWrap(
 /**
  * Encode a Stencila `Table` node as a JATS `<table-wrap>` element.
  */
-function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
+function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
   state.tables += 1
 
-  const attrs = node.id ? { id: node.id } : {}
+  const { id, label, caption, rows } = table
 
-  const label = elem('label', `Table ${state.tables}.`)
+  const headerRows = takeLeftWhile(
+    (row: stencila.TableRow) => row.rowType === 'header'
+  )(rows)
 
-  const caption = elem(
-    'caption',
-    ...(node.caption ? encodeNodes(node.caption) : [])
-  )
+  const bodyRows = dropLeft(headerRows.length)(rows)
 
-  const rows = node.rows.map((row) => {
-    return elem(
-      'tr',
-      ...row.cells.map((cell) => {
-        return encodeDefault('tr', cell.content, state)
-      })
-    )
-  })
-
-  const table = elem('table', elem('tbody', ...rows))
-
-  return [elem('table-wrap', attrs, label, caption, table)]
+  return [
+    elem(
+      'table-wrap',
+      id ? { id } : {},
+      elem('label', label ?? `Table ${state.tables}.`),
+      elem('caption', ...(caption ? encodeNodes(caption) : [])),
+      elem(
+        'table',
+        elem(
+          'thead',
+          ...headerRows.map((row) => {
+            return elem(
+              'th',
+              ...row.cells.map((cell) => {
+                return encodeDefault('th', cell.content, state)
+              })
+            )
+          })
+        ),
+        elem(
+          'tbody',
+          ...bodyRows.map((row) => {
+            return elem(
+              'tr',
+              ...row.cells.map((cell) => {
+                return encodeDefault('td', cell.content, state)
+              })
+            )
+          })
+        )
+      )
+    ),
+  ]
 }
 
 /**

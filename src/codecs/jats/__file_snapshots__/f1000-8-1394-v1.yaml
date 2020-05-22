@@ -1172,6 +1172,7 @@ content:
                     target: '#FN1'
                     content:
                       - '1'
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -1814,6 +1815,7 @@ content:
                 target: ref-2
                 content:
                   - '2'
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

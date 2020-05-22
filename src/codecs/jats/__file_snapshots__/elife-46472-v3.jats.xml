@@ -531,62 +531,64 @@
                     </title>
                 </caption>
                 <table>
-                    <tbody>
-                        <tr>
-                            <tr>
+                    <thead>
+                        <th>
+                            <th>
                                 <italic>Taar1</italic>/
                                 <italic>Oprm1</italic> genotype  combination
-                            </tr>
-                            <tr>MA intake</tr>
-                            <tr>MA-induced change  in body temperature</tr>
-                        </tr>
+                            </th>
+                            <th>MA intake</th>
+                            <th>MA-induced change  in body temperature</th>
+                        </th>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>
                                     <italic>Taar1
                                         <sup>+/+</sup>/Oprm1
                                         <sup>B6/B6</sup>
                                     </italic>
                                 </bold>
-                            </tr>
-                            <tr>BXD 154, 184, 196, 212, 218</tr>
-                            <tr>BXD 154, 184, 196, 218</tr>
+                            </td>
+                            <td>BXD 154, 184, 196, 212, 218</td>
+                            <td>BXD 154, 184, 196, 218</td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>
                                     <italic>Taar1
                                         <sup>m1J/m1J</sup>/Oprm1
                                         <sup>B6/B6</sup>
                                     </italic>
                                 </bold>
-                            </tr>
-                            <tr>BXD 113, 160, 171, 194</tr>
-                            <tr>BXD 113, 160, 171, 194</tr>
+                            </td>
+                            <td>BXD 113, 160, 171, 194</td>
+                            <td>BXD 113, 160, 171, 194</td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>
                                     <italic>Taar1
                                         <sup>+/+</sup>/Oprm1
                                         <sup>D2/D2</sup>
                                     </italic>
                                 </bold>
-                            </tr>
-                            <tr>BXD 161, 199, 205, 215</tr>
-                            <tr>BXD 161, 199, 205</tr>
+                            </td>
+                            <td>BXD 161, 199, 205, 215</td>
+                            <td>BXD 161, 199, 205</td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>
                                     <italic>Taar1
                                         <sup>m1J/m1J</sup>/Oprm1
                                         <sup>D2/D2</sup>
                                     </italic>
                                 </bold>
-                            </tr>
-                            <tr>BXD 178, 186, 204, 210, 216</tr>
-                            <tr>BXD 178, 186, 210, 216</tr>
+                            </td>
+                            <td>BXD 178, 186, 204, 210, 216</td>
+                            <td>BXD 178, 186, 210, 216</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1230,213 +1232,215 @@
         <sec>
             <title>Materials and methods</title>
             <table-wrap id="keyresource">
-                <label>Table 2.</label>
+                <label>Key resources table</label>
                 <caption/>
                 <table>
+                    <thead>
+                        <th>
+                            <th>Reagent type  (species) or  resource</th>
+                            <th>Designation</th>
+                            <th>Source or  reference</th>
+                            <th>Identifiers</th>
+                            <th>Additional  information</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Reagent type  (species) or  resource</tr>
-                            <tr>Designation</tr>
-                            <tr>Source or  reference</tr>
-                            <tr>Identifiers</tr>
-                            <tr>Additional  information</tr>
-                        </tr>
-                        <tr>
-                            <tr>Strain, strain background (
+                            <td>Strain, strain background (
                                 <italic>Mus musculus</italic>, females)
-                            </tr>
-                            <tr>CD1/NCrl</tr>
-                            <tr>Charles River</tr>
-                            <tr>Strain code: 022</tr>
-                            <tr>foster dams for generation of knock-in mice</tr>
+                            </td>
+                            <td>CD1/NCrl</td>
+                            <td>Charles River</td>
+                            <td>Strain code: 022</td>
+                            <td>foster dams for generation of knock-in mice</td>
                         </tr>
                         <tr>
-                            <tr>Strain, strain background (
+                            <td>Strain, strain background (
                                 <italic>Mus musculus</italic>, females and males)
-                            </tr>
-                            <tr>BXD recombinant inbred strains</tr>
-                            <tr>University of Tennessee Health Sciences Center</tr>
-                            <tr/>
-                            <tr>original breeders from Dr. Robert Williams; offspring for research produced by Dr. Tamara Phillips at VA Portland Health Care System (VAPORHCS)</tr>
+                            </td>
+                            <td>BXD recombinant inbred strains</td>
+                            <td>University of Tennessee Health Sciences Center</td>
+                            <td/>
+                            <td>original breeders from Dr. Robert Williams; offspring for research produced by Dr. Tamara Phillips at VA Portland Health Care System (VAPORHCS)</td>
                         </tr>
                         <tr>
-                            <tr>Genetic reagent (
+                            <td>Genetic reagent (
                                 <italic>Mus musculus</italic>, females)
-                            </tr>
-                            <tr>MAHDR</tr>
-                            <tr>VAPORHCS</tr>
-                            <tr/>
-                            <tr>methamphetamine high drinking mice; created by Dr. Tamara Phillips; all are homozygous for SNP rs33645709</tr>
+                            </td>
+                            <td>MAHDR</td>
+                            <td>VAPORHCS</td>
+                            <td/>
+                            <td>methamphetamine high drinking mice; created by Dr. Tamara Phillips; all are homozygous for SNP rs33645709</td>
                         </tr>
                         <tr>
-                            <tr>Genetic reagent (
+                            <td>Genetic reagent (
                                 <italic>Mus musculus</italic>, females and males)
-                            </tr>
-                            <tr>MAHDR-
+                            </td>
+                            <td>MAHDR-
                                 <italic>Taar1
                                     <sup>m1J/m1J</sup>
                                 </italic> control
-                            </tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>created by Oregon Health &amp; Science University Transgenic Mouse Models Shared Resource; offspring for research produced by Dr. Tamara Phillips at VAPORHCS</tr>
+                            </td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>created by Oregon Health &amp; Science University Transgenic Mouse Models Shared Resource; offspring for research produced by Dr. Tamara Phillips at VAPORHCS</td>
                         </tr>
                         <tr>
-                            <tr>Genetic reagent (
+                            <td>Genetic reagent (
                                 <italic>Mus musculus</italic>, females and males)
-                            </tr>
-                            <tr>MAHDR-
+                            </td>
+                            <td>MAHDR-
                                 <italic>Taar1
                                     <sup>+/+</sup>
                                 </italic> knock-in
-                            </tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>created by Oregon Health &amp; Science University Transgenic Mouse Models Shared Resource; offspring for research produced by Dr. Tamara Phillips at VAPORHCS</tr>
+                            </td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>created by Oregon Health &amp; Science University Transgenic Mouse Models Shared Resource; offspring for research produced by Dr. Tamara Phillips at VAPORHCS</td>
                         </tr>
                         <tr>
-                            <tr>Biological sample (
+                            <td>Biological sample (
                                 <italic>Mus musculus</italic>)
-                            </tr>
-                            <tr>tail snip</tr>
-                            <tr>other</tr>
-                            <tr/>
-                            <tr>obtained from breeders and research animals to determine genotype</tr>
+                            </td>
+                            <td>tail snip</td>
+                            <td>other</td>
+                            <td/>
+                            <td>obtained from breeders and research animals to determine genotype</td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>
+                            <td>Sequence-based reagent</td>
+                            <td>
                                 <italic>Taar1</italic> gRNA
-                            </tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>designed by ThermoFisher Scientific; reagent for generation of knock-in mice (
+                            </td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>designed by ThermoFisher Scientific; reagent for generation of knock-in mice (
                                 <italic>Mus musculus</italic>)
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>100b oligo single strand DNA for 
+                            <td>Sequence-based reagent</td>
+                            <td>100b oligo single strand DNA for 
                                 <italic>Taar1
                                     <sup>+</sup>
                                 </italic> (ossDNA)
-                            </tr>
-                            <tr>this paper</tr>
-                            <tr>MGI:MGI2148258</tr>
-                            <tr>synthesized by ThermoFisher Scientific; reagent for generation of knock-in mice (
+                            </td>
+                            <td>this paper</td>
+                            <td>MGI:MGI2148258</td>
+                            <td>synthesized by ThermoFisher Scientific; reagent for generation of knock-in mice (
                                 <italic>Mus musculus</italic>)
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>Cas9 mRNA</tr>
-                            <tr>TriLink</tr>
-                            <tr>Catalog number: L-7606</tr>
-                            <tr>reagent for generation of knock-in mice (
+                            <td>Sequence-based reagent</td>
+                            <td>Cas9 mRNA</td>
+                            <td>TriLink</td>
+                            <td>Catalog number: L-7606</td>
+                            <td>reagent for generation of knock-in mice (
                                 <italic>Mus musculus</italic>)
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>primers for genotyping 
+                            <td>Sequence-based reagent</td>
+                            <td>primers for genotyping 
                                 <italic>Oprm1</italic>
-                            </tr>
-                            <tr>this paper</tr>
-                            <tr/>
-                            <tr>original reference for these primers: 
+                            </td>
+                            <td>this paper</td>
+                            <td/>
+                            <td>original reference for these primers: 
                                 <xref rid="bib24" ref-type="bibr">Ferraro et al., 2005</xref>; based on 
                                 <italic>Oprm1</italic> sequence NM_001304955 (
                                 <italic>Mus musculus</italic>)
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Sequence-based reagent</tr>
-                            <tr>
+                            <td>Sequence-based reagent</td>
+                            <td>
                                 <italic>DdeI</italic> restriction enzyme
-                            </tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Catalog number: ER1882</tr>
-                            <tr>reagent for 
+                            </td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Catalog number: ER1882</td>
+                            <td>reagent for 
                                 <italic>Oprm1</italic> genotyping (
                                 <italic>Helicobacter pylori,</italic> RFL3)
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>QuickExtract DNA Extraction Solution</tr>
-                            <tr>Lucigen</tr>
-                            <tr>Catalog number: QE09050</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>QuickExtract DNA Extraction Solution</td>
+                            <td>Lucigen</td>
+                            <td>Catalog number: QE09050</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>Hotstart DNA Polymerase Kit</tr>
-                            <tr>Qiagen</tr>
-                            <tr>Catalog number: 203205</tr>
-                            <tr/>
+                            <td>Commercial assay or kit</td>
+                            <td>Hotstart DNA Polymerase Kit</td>
+                            <td>Qiagen</td>
+                            <td>Catalog number: 203205</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Commercial assay or kit</tr>
-                            <tr>Taqman kit for determining 
+                            <td>Commercial assay or kit</td>
+                            <td>Taqman kit for determining 
                                 <italic>Taar1</italic> alleles
-                            </tr>
-                            <tr>ThermoFisher Scientific</tr>
-                            <tr>Custom order</tr>
-                            <tr>probes based on 
+                            </td>
+                            <td>ThermoFisher Scientific</td>
+                            <td>Custom order</td>
+                            <td>probes based on 
                                 <italic>Taar1</italic> sequence: NM_053205.1; SNP rs33645709
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>ethidium bromide</tr>
-                            <tr>Sigma Aldrich</tr>
-                            <tr>Catalog number: E1510</tr>
-                            <tr>reagent for 
+                            <td>Chemical compound, drug</td>
+                            <td>ethidium bromide</td>
+                            <td>Sigma Aldrich</td>
+                            <td>Catalog number: E1510</td>
+                            <td>reagent for 
                                 <italic>Oprm1</italic> genotyping
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>(+)-methamphetamine hydrochloride</tr>
-                            <tr>Sigma Aldrich</tr>
-                            <tr>Catalog number: M8750</tr>
-                            <tr/>
+                            <td>Chemical compound, drug</td>
+                            <td>(+)-methamphetamine hydrochloride</td>
+                            <td>Sigma Aldrich</td>
+                            <td>Catalog number: M8750</td>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Chemical compound, drug</tr>
-                            <tr>sterile 0.9% saline</tr>
-                            <tr>Baxter Healthcare Corporation</tr>
-                            <tr>Catalog number: 2F7124</tr>
-                            <tr>vehicle for methamphetamine</tr>
+                            <td>Chemical compound, drug</td>
+                            <td>sterile 0.9% saline</td>
+                            <td>Baxter Healthcare Corporation</td>
+                            <td>Catalog number: 2F7124</td>
+                            <td>vehicle for methamphetamine</td>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>Statistica</tr>
-                            <tr>TIBCO Software Inc</tr>
-                            <tr/>
-                            <tr/>
+                            <td>Software, algorithm</td>
+                            <td>Statistica</td>
+                            <td>TIBCO Software Inc</td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>GeneNetwork</tr>
-                            <tr>University of Tennessee</tr>
-                            <tr>RRID:
+                            <td>Software, algorithm</td>
+                            <td>GeneNetwork</td>
+                            <td>University of Tennessee</td>
+                            <td>RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_002388">SCR_002388</ext-link>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://www.genenetwork.org">www.genenetwork.org</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Software, algorithm</tr>
-                            <tr>R</tr>
-                            <tr>The R Foundation for Statistical Computing</tr>
-                            <tr>RRID:
+                            <td>Software, algorithm</td>
+                            <td>R</td>
+                            <td>The R Foundation for Statistical Computing</td>
+                            <td>RRID:
                                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_001905">SCR_001905</ext-link>
-                            </tr>
-                            <tr>
+                            </td>
+                            <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://www.r-project.org">www.r-project.org</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

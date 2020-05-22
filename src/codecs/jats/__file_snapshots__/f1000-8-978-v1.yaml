@@ -2219,6 +2219,7 @@ content:
           - type: TableCell
             content:
               - Percent contribution
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2236,6 +2237,7 @@ content:
               - type: Emphasis
                 content:
                   - Ziziphus spinachristi
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

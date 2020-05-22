@@ -361,88 +361,90 @@ where,
                 <xref rid="pone-0178565-ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] have called this set the stable core.
             </p>
             <table-wrap id="pone-0178565-t001">
-                <label>Table 1.</label>
+                <label>Table 1</label>
                 <caption>
                     <title>List of representatives of the conserved genes in our analysis.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>UniProt IDs of Query Proteins</th>
+                            <th>Protein Name</th>
+                            <th>Gene Name</th>
+                            <th>GO (Biological Process)</th>
+                            <th>Pathway</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>UniProt IDs of Query Proteins</tr>
-                            <tr>Protein Name</tr>
-                            <tr>Gene Name</tr>
-                            <tr>GO (Biological Process)</tr>
-                            <tr>Pathway</tr>
+                            <td>B1XP79</td>
+                            <td>Aconitate hydratase B</td>
+                            <td>acnB  SYNPCC7002_A1683</td>
+                            <td>tricarboxylic acid cycle [GO:0006099]</td>
+                            <td>Carbohydrate metabolism; tricarboxylic acid cycle.</td>
                         </tr>
                         <tr>
-                            <tr>B1XP79</tr>
-                            <tr>Aconitate hydratase B</tr>
-                            <tr>acnB  SYNPCC7002_A1683</tr>
-                            <tr>tricarboxylic acid cycle [GO:0006099]</tr>
-                            <tr>Carbohydrate metabolism; tricarboxylic acid cycle.</tr>
+                            <td>D7DZP2</td>
+                            <td>Cytochrome c oxidase, subunit I</td>
+                            <td>Aazo_2640</td>
+                            <td>aerobic respiration [GO:0009060]; electron transport chain [GO:0022900]; oxidative phosphorylation [GO:0006119]</td>
+                            <td>Energy metabolism; oxidative phosphorylation.</td>
                         </tr>
                         <tr>
-                            <tr>D7DZP2</tr>
-                            <tr>Cytochrome c oxidase, subunit I</tr>
-                            <tr>Aazo_2640</tr>
-                            <tr>aerobic respiration [GO:0009060]; electron transport chain [GO:0022900]; oxidative phosphorylation [GO:0006119]</tr>
-                            <tr>Energy metabolism; oxidative phosphorylation.</tr>
+                            <td>Q93UM1</td>
+                            <td>Enoyl-[acyl-carrier-protein] reductase [NADH]</td>
+                            <td>envM  SYNPCC7002_A1676</td>
+                            <td>fatty acid biosynthetic process [GO:0006633]</td>
+                            <td>Lipid metabolism; fatty acid biosynthesis.</td>
                         </tr>
                         <tr>
-                            <tr>Q93UM1</tr>
-                            <tr>Enoyl-[acyl-carrier-protein] reductase [NADH]</tr>
-                            <tr>envM  SYNPCC7002_A1676</tr>
-                            <tr>fatty acid biosynthetic process [GO:0006633]</tr>
-                            <tr>Lipid metabolism; fatty acid biosynthesis.</tr>
+                            <td>B1XN91</td>
+                            <td>GDP-L-fucose synthase</td>
+                            <td>fcl  SYNPCC7002_A2832</td>
+                            <td>'de novo' GDP-L-fucose biosynthetic process [GO:0042351]</td>
+                            <td>Nucleotide-sugar biosynthesis; GDP-L-fucose biosynthesis via de novo pathway.</td>
                         </tr>
                         <tr>
-                            <tr>B1XN91</tr>
-                            <tr>GDP-L-fucose synthase</tr>
-                            <tr>fcl  SYNPCC7002_A2832</tr>
-                            <tr>'de novo' GDP-L-fucose biosynthetic process [GO:0042351]</tr>
-                            <tr>Nucleotide-sugar biosynthesis; GDP-L-fucose biosynthesis via de novo pathway.</tr>
+                            <td>B1XLQ9</td>
+                            <td>2-isopropylmalate synthase</td>
+                            <td>leuA  SYNPCC7002_A1356</td>
+                            <td>leucine biosynthetic process [GO:0009098]</td>
+                            <td>Amino-acid biosynthesis; L-leucine biosynthesis.</td>
                         </tr>
                         <tr>
-                            <tr>B1XLQ9</tr>
-                            <tr>2-isopropylmalate synthase</tr>
-                            <tr>leuA  SYNPCC7002_A1356</tr>
-                            <tr>leucine biosynthetic process [GO:0009098]</tr>
-                            <tr>Amino-acid biosynthesis; L-leucine biosynthesis.</tr>
+                            <td>B1XQ71</td>
+                            <td>1,4-alpha-glucan branching enzyme</td>
+                            <td>glgB  SYNPCC7002_A1865</td>
+                            <td>glycogen biosynthetic process [GO:0005978]</td>
+                            <td>Glycan biosynthesis; glycogen biosynthesis.</td>
                         </tr>
                         <tr>
-                            <tr>B1XQ71</tr>
-                            <tr>1,4-alpha-glucan branching enzyme</tr>
-                            <tr>glgB  SYNPCC7002_A1865</tr>
-                            <tr>glycogen biosynthetic process [GO:0005978]</tr>
-                            <tr>Glycan biosynthesis; glycogen biosynthesis.</tr>
+                            <td>B1XNE1</td>
+                            <td>Biotin synthase</td>
+                            <td>bioB  SYNPCC7002_A0309</td>
+                            <td>biotin biosynthetic process [GO:0009102]</td>
+                            <td>Cofactor biosynthesis; biotin biosynthesis.</td>
                         </tr>
                         <tr>
-                            <tr>B1XNE1</tr>
-                            <tr>Biotin synthase</tr>
-                            <tr>bioB  SYNPCC7002_A0309</tr>
-                            <tr>biotin biosynthetic process [GO:0009102]</tr>
-                            <tr>Cofactor biosynthesis; biotin biosynthesis.</tr>
+                            <td>B1XJ16</td>
+                            <td>30S ribosomal protein S1</td>
+                            <td>rpsA  SYNPCC7002_A0955</td>
+                            <td>translation [GO:0006412]</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <tr>B1XJ16</tr>
-                            <tr>30S ribosomal protein S1</tr>
-                            <tr>rpsA  SYNPCC7002_A0955</tr>
-                            <tr>translation [GO:0006412]</tr>
-                            <tr>-</tr>
+                            <td>B1XPW9</td>
+                            <td>Arsenical resistance operon repressor, ArsR family</td>
+                            <td>SYNPCC7002_A0590</td>
+                            <td>transcription, DNA-templated [GO:0006351]</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <tr>B1XPW9</tr>
-                            <tr>Arsenical resistance operon repressor, ArsR family</tr>
-                            <tr>SYNPCC7002_A0590</tr>
-                            <tr>transcription, DNA-templated [GO:0006351]</tr>
-                            <tr>-</tr>
-                        </tr>
-                        <tr>
-                            <tr>B1XNN3</tr>
-                            <tr>DNA polymerase III, delta subunit</tr>
-                            <tr>holA SYNPCC7002_A1567</tr>
-                            <tr>DNA replication [GO:0006260]</tr>
-                            <tr>-</tr>
+                            <td>B1XNN3</td>
+                            <td>DNA polymerase III, delta subunit</td>
+                            <td>holA SYNPCC7002_A1567</td>
+                            <td>DNA replication [GO:0006260]</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -500,39 +502,41 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone-0178565-t002">Table 2</ext-link>). We hypothesize that conserved genes code for core functions and may be essential. This may have attracted the attention of the scientific community toward these genes. On the other extreme, only 24% of the unique genes are functionally annotated. These proteins are typically unique to specific genera which may not have been well studied. At the intermediate level, around 47% of the semi-conserved genes are functionally annotated.
             </p>
             <table-wrap id="pone-0178565-t002">
-                <label>Table 2.</label>
+                <label>Table 2</label>
                 <caption>
                     <title>The number of annotated and unannotated genes in the three conservation categories.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th/>
+                            <th>Conservation Categories</th>
+                        </th>
+                        <th>
+                            <th/>
+                            <th>Conserved (≥ 95%)</th>
+                            <th>Semi-conserved (10–94%)</th>
+                            <th>Unique (less than 10%)</th>
+                        </th>
+                        <th>
+                            <th/>
+                            <th>Annotated</th>
+                            <th>Unannotated</th>
+                            <th>Annotated</th>
+                            <th>Unannotated</th>
+                            <th>Annotated</th>
+                            <th>Unannotated</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr/>
-                            <tr>Conservation Categories</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>Conserved (≥ 95%)</tr>
-                            <tr>Semi-conserved (10–94%)</tr>
-                            <tr>Unique (less than 10%)</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>Annotated</tr>
-                            <tr>Unannotated</tr>
-                            <tr>Annotated</tr>
-                            <tr>Unannotated</tr>
-                            <tr>Annotated</tr>
-                            <tr>Unannotated</tr>
-                        </tr>
-                        <tr>
-                            <tr>Number of genes</tr>
-                            <tr>891</tr>
-                            <tr>102</tr>
-                            <tr>4,413</tr>
-                            <tr>3,867</tr>
-                            <tr>3,505</tr>
-                            <tr>10,865</tr>
+                            <td>Number of genes</td>
+                            <td>891</td>
+                            <td>102</td>
+                            <td>4,413</td>
+                            <td>3,867</td>
+                            <td>3,505</td>
+                            <td>10,865</td>
                         </tr>
                     </tbody>
                 </table>
@@ -565,29 +569,31 @@ where,
                 <xref rid="pone-0178565-ref018" ref-type="bibr">Rubin et al., 2015</xref>]. This may be due to the fact that the PPP pathway may be used under certain stress conditions that are not accounted for in the experimental studies on gene essentiality.
             </p>
             <table-wrap id="pone-0178565-t003">
-                <label>Table 3.</label>
+                <label>Table 3</label>
                 <caption>
                     <title>Essentiality of genes in each conservation category.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th/>
+                            <th>Conserved</th>
+                            <th>Semi-Conserved</th>
+                            <th>Unique</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr/>
-                            <tr>Conserved</tr>
-                            <tr>Semi-Conserved</tr>
-                            <tr>Unique</tr>
+                            <td>Essential</td>
+                            <td>494</td>
+                            <td>242</td>
+                            <td>14</td>
                         </tr>
                         <tr>
-                            <tr>Essential</tr>
-                            <tr>494</tr>
-                            <tr>242</tr>
-                            <tr>14</tr>
-                        </tr>
-                        <tr>
-                            <tr>Non-Essential</tr>
-                            <tr>374</tr>
-                            <tr>1089</tr>
-                            <tr>88</tr>
+                            <td>Non-Essential</td>
+                            <td>374</td>
+                            <td>1089</td>
+                            <td>88</td>
                         </tr>
                     </tbody>
                 </table>
@@ -613,388 +619,390 @@ where,
                 <xref rid="pone-0178565-ref018" ref-type="bibr">Rubin et al., 2015</xref>].
             </p>
             <table-wrap id="pone-0178565-t004">
-                <label>Table 4.</label>
+                <label>Table 4</label>
                 <caption>
                     <title>Comparison of enzymes in central metabolic pathways with the essential and conserved genes of other datasets.</title>
                 </caption>
                 <table>
-                    <tbody>
-                        <tr>
-                            <tr>Pathway</tr>
-                            <tr>Gene Name</tr>
-                            <tr>Protein Name</tr>
-                            <tr>GCI
+                    <thead>
+                        <th>
+                            <th>Pathway</th>
+                            <th>Gene Name</th>
+                            <th>Protein Name</th>
+                            <th>GCI
                                 <ext-link ext-link-type="uri" xlink:href="#t004fn001">
                                     <sup>a</sup>
                                 </ext-link>
-                            </tr>
-                            <tr>Essentiality
+                            </th>
+                            <th>Essentiality
                                 <ext-link ext-link-type="uri" xlink:href="#t004fn002">
                                     <sup>b</sup>
                                 </ext-link>
-                            </tr>
-                            <tr>Core Set
+                            </th>
+                            <th>Core Set
                                 <ext-link ext-link-type="uri" xlink:href="#t004fn003">
                                     <sup>c</sup>
                                 </ext-link>
-                            </tr>
-                            <tr>Structural Gene
+                            </th>
+                            <th>Structural Gene
                                 <ext-link ext-link-type="uri" xlink:href="#t004fn004">
                                     <sup>d</sup>
                                 </ext-link>
-                            </tr>
-                        </tr>
+                            </th>
+                        </th>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>Glycolysis</bold>
-                            </tr>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>glk</italic>
-                            </tr>
-                            <tr>Glucokinase</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Glucokinase</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>pgi</italic>
-                            </tr>
-                            <tr>Glucose-6-phosphate isomerase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Glucose-6-phosphate isomerase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>pfkA</italic>
-                            </tr>
-                            <tr>6-phosphofructokinase</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>6-phosphofructokinase</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>fbaB</italic>
-                            </tr>
-                            <tr>fructose-bisphosphate aldolase class I</tr>
-                            <tr>II</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>fructose-bisphosphate aldolase class I</td>
+                            <td>II</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>tpiA</italic>
-                            </tr>
-                            <tr>triosephosphate isomerase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>triosephosphate isomerase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>gap</italic>
-                            </tr>
-                            <tr>glyceraldehyde-3-phosphate dehydrogenase</tr>
-                            <tr>I</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>glyceraldehyde-3-phosphate dehydrogenase</td>
+                            <td>I</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>pgk</italic>
-                            </tr>
-                            <tr>phosphoglycerate kinase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>phosphoglycerate kinase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>gpm</italic>
-                            </tr>
-                            <tr>phosphoglycerate mutase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>phosphoglycerate mutase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>eno</italic>
-                            </tr>
-                            <tr>enolase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>enolase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>pyk</italic>
-                            </tr>
-                            <tr>pyruvate kinase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>pyruvate kinase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>TCA Cycle</bold>
-                            </tr>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>Cs</italic>
-                            </tr>
-                            <tr>Citrate synthase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Citrate synthase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>acnB</italic>
-                            </tr>
-                            <tr>aconitate hydratase</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>aconitate hydratase</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>icd</italic>
-                            </tr>
-                            <tr>isocitrate dehydrogenase</tr>
-                            <tr>II</tr>
-                            <tr>E</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>isocitrate dehydrogenase</td>
+                            <td>II</td>
+                            <td>E</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>sucD</italic>
-                            </tr>
-                            <tr>succinyl-CoA synthetase, alpha chain</tr>
-                            <tr>II</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
+                            </td>
+                            <td>succinyl-CoA synthetase, alpha chain</td>
+                            <td>II</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>hdrB</italic>
-                            </tr>
-                            <tr>Heterodisulfide reductase, subunit B</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Heterodisulfide reductase, subunit B</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>frdA</italic>
-                            </tr>
-                            <tr>Succinate dehydrogenase flavoprotein subunit</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Succinate dehydrogenase flavoprotein subunit</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>sdhB</italic>
-                            </tr>
-                            <tr>Succinate dehydrogenase iron-sulfur protein subunit</tr>
-                            <tr>II</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Succinate dehydrogenase iron-sulfur protein subunit</td>
+                            <td>II</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>mdh</italic>
-                            </tr>
-                            <tr>malate dehydrogenase</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>malate dehydrogenase</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <bold>PS I</bold>
-                            </tr>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaB</italic>
-                            </tr>
-                            <tr>photosystem I P700 chlorophyll a apoprotein A2</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>photosystem I P700 chlorophyll a apoprotein A2</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaC</italic>
-                            </tr>
-                            <tr>Photosystem I iron-sulfur center</tr>
-                            <tr>II</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>Y</tr>
+                            </td>
+                            <td>Photosystem I iron-sulfur center</td>
+                            <td>II</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>Y</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaD</italic>
-                            </tr>
-                            <tr>Photosystem I subunit II</tr>
-                            <tr>I</tr>
-                            <tr>E</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Photosystem I subunit II</td>
+                            <td>I</td>
+                            <td>E</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaE</italic>
-                            </tr>
-                            <tr>Photosystem I reaction center subunit IV</tr>
-                            <tr>I</tr>
-                            <tr>NE</tr>
-                            <tr>Y</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Photosystem I reaction center subunit IV</td>
+                            <td>I</td>
+                            <td>NE</td>
+                            <td>Y</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaF</italic>
-                            </tr>
-                            <tr>Photosystem I reaction center subunit III</tr>
-                            <tr>I</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Photosystem I reaction center subunit III</td>
+                            <td>I</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaI</italic>
-                            </tr>
-                            <tr>photosystem I subunit VIII</tr>
-                            <tr>II</tr>
-                            <tr>Ambiguous</tr>
-                            <tr>N</tr>
-                            <tr>-</tr>
+                            </td>
+                            <td>photosystem I subunit VIII</td>
+                            <td>II</td>
+                            <td>Ambiguous</td>
+                            <td>N</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaJ</italic>
-                            </tr>
-                            <tr>Photosystem I reaction center subunit IX</tr>
-                            <tr>II</tr>
-                            <tr>E</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Photosystem I reaction center subunit IX</td>
+                            <td>II</td>
+                            <td>E</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaK</italic>
-                            </tr>
-                            <tr>photosystem I reaction center subunit X</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>photosystem I reaction center subunit X</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaL</italic>
-                            </tr>
-                            <tr>Photosystem I reaction center subunit XI</tr>
-                            <tr>I</tr>
-                            <tr>Beneficial</tr>
-                            <tr>N</tr>
-                            <tr>Y</tr>
+                            </td>
+                            <td>Photosystem I reaction center subunit XI</td>
+                            <td>I</td>
+                            <td>Beneficial</td>
+                            <td>N</td>
+                            <td>Y</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaM</italic>
-                            </tr>
-                            <tr>Photosystem I reaction center subunit XII</tr>
-                            <tr>II</tr>
-                            <tr>NE</tr>
-                            <tr>N</tr>
-                            <tr>N</tr>
+                            </td>
+                            <td>Photosystem I reaction center subunit XII</td>
+                            <td>II</td>
+                            <td>NE</td>
+                            <td>N</td>
+                            <td>N</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>
+                            <td/>
+                            <td>
                                 <italic>psaX</italic>
-                            </tr>
-                            <tr>photosystem I 4.8kDa protein</tr>
-                            <tr>II</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
-                            <tr>-</tr>
+                            </td>
+                            <td>photosystem I 4.8kDa protein</td>
+                            <td>II</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1027,42 +1035,44 @@ where,
                 <graphic xlink:href="" xlink:type="simple" mimetype="image"/>
             </fig>
             <table-wrap id="pone-0178565-t005">
-                <label>Table 5.</label>
+                <label>Table 5</label>
                 <caption>
                     <title>Genes in the cluster one of CCG.</title>
                     <p>Column A to C describes various identifiers and attributes of the genes used. Column D describes the gene conservation index.</p>
                 </caption>
                 <table>
+                    <thead>
+                        <th>
+                            <th>UniProt IDs</th>
+                            <th>Protein Name</th>
+                            <th>Gene Name</th>
+                            <th>GCI</th>
+                        </th>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>UniProt IDs</tr>
-                            <tr>Protein Name</tr>
-                            <tr>Gene Name</tr>
-                            <tr>GCI</tr>
+                            <td>D8FUL0</td>
+                            <td>Putative uncharacterized protein</td>
+                            <td>OSCI_520004</td>
+                            <td>17.8</td>
                         </tr>
                         <tr>
-                            <tr>D8FUL0</tr>
-                            <tr>Putative uncharacterized protein</tr>
-                            <tr>OSCI_520004</tr>
-                            <tr>17.8</tr>
+                            <td>K9PKC1</td>
+                            <td>CRISPR-associated helicase, Cas3 family</td>
+                            <td>Cal7507_2972</td>
+                            <td>15.1</td>
                         </tr>
                         <tr>
-                            <tr>K9PKC1</tr>
-                            <tr>CRISPR-associated helicase, Cas3 family</tr>
-                            <tr>Cal7507_2972</tr>
-                            <tr>15.1</tr>
+                            <td>K9PKV0</td>
+                            <td>CRISPR-associated protein Csc3</td>
+                            <td>Cal7507_2975</td>
+                            <td>15.1</td>
                         </tr>
                         <tr>
-                            <tr>K9PKV0</tr>
-                            <tr>CRISPR-associated protein Csc3</tr>
-                            <tr>Cal7507_2975</tr>
-                            <tr>15.1</tr>
-                        </tr>
-                        <tr>
-                            <tr>K9PLJ5</tr>
-                            <tr>CRISPR-associated protein Csc1</tr>
-                            <tr>Cal7507_2973</tr>
-                            <tr>15.1</tr>
+                            <td>K9PLJ5</td>
+                            <td>CRISPR-associated protein Csc1</td>
+                            <td>Cal7507_2973</td>
+                            <td>15.1</td>
                         </tr>
                     </tbody>
                 </table>

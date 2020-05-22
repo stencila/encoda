@@ -2,14 +2,15 @@
     <label>Table 1.</label>
     <caption/>
     <table>
+        <thead/>
         <tbody>
             <tr>
-                <tr>1</tr>
-                <tr>2</tr>
+                <td>1</td>
+                <td>2</td>
             </tr>
             <tr>
-                <tr>1</tr>
-                <tr>2</tr>
+                <td>1</td>
+                <td>2</td>
             </tr>
         </tbody>
     </table>

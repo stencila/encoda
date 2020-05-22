@@ -156,21 +156,20 @@
                 <ext-link ext-link-type="uri" xlink:href="#pone-0091296-t001">Table 1</ext-link>).
             </p>
             <table-wrap id="pone-0091296-t001">
-                <label>Table 1.</label>
+                <label>Table 1</label>
                 <caption>
                     <title>Evidence on aggregating behaviour of study species.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th/>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Species</tr>
-                            <tr>Aggregating behaviour</tr>
-                        </tr>
-                        <tr>
-                            <tr>
+                            <td>
                                 <italic>Epinephelus fuscoguttatus</italic>
-                            </tr>
-                            <tr>Primarily solitary and territorial; form large aggregations for spawning
+                            </td>
+                            <td>Primarily solitary and territorial; form large aggregations for spawning
                                 <ext-link ext-link-type="uri" xlink:href="#nt101">a</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt102">b</ext-link>
@@ -178,13 +177,13 @@
                                 <ext-link ext-link-type="uri" xlink:href="#nt103">c</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt104">d</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <italic>Plectropomus areolatus</italic>
-                            </tr>
-                            <tr>Primarily solitary and territorial; form large aggregations for spawning
+                            </td>
+                            <td>Primarily solitary and territorial; form large aggregations for spawning
                                 <ext-link ext-link-type="uri" xlink:href="#nt101">a</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt102">b</ext-link>
@@ -192,37 +191,37 @@
                                 <ext-link ext-link-type="uri" xlink:href="#nt103">c</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt105">e</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <italic>Lutjanus gibbus</italic>
-                            </tr>
-                            <tr>Primarily schooling; forms large aggregations for spawning
+                            </td>
+                            <td>Primarily schooling; forms large aggregations for spawning
                                 <ext-link ext-link-type="uri" xlink:href="#nt101">a</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt102">b</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt103">c</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <italic>Lutjanus fulviflamma</italic>
-                            </tr>
-                            <tr>Primarily schooling; spawning aggregation formation not verified
+                            </td>
+                            <td>Primarily schooling; spawning aggregation formation not verified
                                 <ext-link ext-link-type="uri" xlink:href="#nt101">a</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt103">c</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt106">f</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <italic>Lethrinus lentjan</italic>
-                            </tr>
-                            <tr>Primarily solitary as adults; spawning aggregation formation suspected but not verified
+                            </td>
+                            <td>Primarily solitary as adults; spawning aggregation formation suspected but not verified
                                 <ext-link ext-link-type="uri" xlink:href="#nt101">a</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt102">b</ext-link>
@@ -230,17 +229,17 @@
                                 <ext-link ext-link-type="uri" xlink:href="#nt103">c</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt107">g</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>
+                            <td>
                                 <italic>Lethrinus harak</italic>
-                            </tr>
-                            <tr>Primarily solitary or forms small groups (&lt;10 fish); spawning aggregation formation suspected but not verified
+                            </td>
+                            <td>Primarily solitary or forms small groups (&lt;10 fish); spawning aggregation formation suspected but not verified
                                 <ext-link ext-link-type="uri" xlink:href="#nt107">g</ext-link>
                                 <sup>, </sup>
                                 <ext-link ext-link-type="uri" xlink:href="#nt108">h</ext-link>
-                            </tr>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -257,85 +256,82 @@
                 <italic>L. gibbus</italic>) increased with spawning.
             </p>
             <table-wrap id="pone-0091296-t002">
-                <label>Table 2.</label>
+                <label>Table 2</label>
                 <caption>
                     <title>Scoring of aggregation attributes based on fisher knowledge of aggregating behaviour.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th/>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Attribute</tr>
-                            <tr>Scoring
-                                <ext-link ext-link-type="uri" xlink:href="#nt109">a</ext-link>
-                            </tr>
+                            <td>Aggregation size</td>
+                            <td>1 = solitary or pairing</td>
                         </tr>
                         <tr>
-                            <tr>Aggregation size</tr>
-                            <tr>1 = solitary or pairing</tr>
+                            <td/>
+                            <td>2 = aggregations of 3–10 fish</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = aggregations of 3–10 fish</tr>
+                            <td/>
+                            <td>3 = aggregations of 10–100 fish</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>3 = aggregations of 10–100 fish</tr>
+                            <td/>
+                            <td>4 = aggregations of 100–500 fish</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>4 = aggregations of 100–500 fish</tr>
+                            <td/>
+                            <td>5 = aggregations larger than 500 fish</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>5 = aggregations larger than 500 fish</tr>
+                            <td>Aggregation location</td>
+                            <td>1 = aggregation location is unknown or variable</td>
                         </tr>
                         <tr>
-                            <tr>Aggregation location</tr>
-                            <tr>1 = aggregation location is unknown or variable</tr>
+                            <td/>
+                            <td>2 = aggregations form in specific areas of the reef</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = aggregations form in specific areas of the reef</tr>
+                            <td>Home range</td>
+                            <td>1 = species of high mobility and occupying large home range</td>
                         </tr>
                         <tr>
-                            <tr>Home range</tr>
-                            <tr>1 = species of high mobility and occupying large home range</tr>
+                            <td/>
+                            <td>2 = species of low mobility and occupying small home range</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = species of low mobility and occupying small home range</tr>
+                            <td>Spawning</td>
+                            <td>1 = aggregation formation not associated with spawning (eggs/milt absent)</td>
                         </tr>
                         <tr>
-                            <tr>Spawning</tr>
-                            <tr>1 = aggregation formation not associated with spawning (eggs/milt absent)</tr>
+                            <td/>
+                            <td>2 = aggregation formation associated with spawning (eggs/milt present)</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = aggregation formation associated with spawning (eggs/milt present)</tr>
+                            <td>Diel</td>
+                            <td>1 = aggregation formation not aligned with time of day</td>
                         </tr>
                         <tr>
-                            <tr>Diel</tr>
-                            <tr>1 = aggregation formation not aligned with time of day</tr>
+                            <td/>
+                            <td>2 = aggregation formation aligned with particular time of day</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = aggregation formation aligned with particular time of day</tr>
+                            <td>Lunar</td>
+                            <td>1 = aggregation formation not aligned with lunar phase</td>
                         </tr>
                         <tr>
-                            <tr>Lunar</tr>
-                            <tr>1 = aggregation formation not aligned with lunar phase</tr>
+                            <td/>
+                            <td>2 = aggregation formation aligned with particular lunar phase</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>2 = aggregation formation aligned with particular lunar phase</tr>
+                            <td>Seasonal</td>
+                            <td>1 = aggregation formation not aligned with month or season</td>
                         </tr>
                         <tr>
-                            <tr>Seasonal</tr>
-                            <tr>1 = aggregation formation not aligned with month or season</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>2 = aggregation formation aligned with particular month or season</tr>
+                            <td/>
+                            <td>2 = aggregation formation aligned with particular month or season</td>
                         </tr>
                     </tbody>
                 </table>
@@ -353,83 +349,80 @@
                 <ext-link ext-link-type="uri" xlink:href="#pone-0091296-t003">Table 3</ext-link>).
             </p>
             <table-wrap id="pone-0091296-t003">
-                <label>Table 3.</label>
+                <label>Table 3</label>
                 <caption>
                     <title>Socioeconomic indicators used in redundancy analysis (RDA) to identify sources of variation in fisher knowledge of aggregating behaviour.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th/>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Factor</tr>
-                            <tr>Measurement level or category</tr>
-                            <tr>Ahus</tr>
-                            <tr>Karkar</tr>
+                            <td>Fisher gender</td>
+                            <td>Male</td>
+                            <td>12</td>
+                            <td>15</td>
                         </tr>
                         <tr>
-                            <tr>Fisher gender</tr>
-                            <tr>Male</tr>
-                            <tr>12</tr>
-                            <tr>15</tr>
+                            <td/>
+                            <td>Female</td>
+                            <td>4</td>
+                            <td>1</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Female</tr>
-                            <tr>4</tr>
-                            <tr>1</tr>
+                            <td>Fisher access to habitat</td>
+                            <td>Lagoon only</td>
+                            <td>5</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                            <tr>Fisher access to habitat</tr>
-                            <tr>Lagoon only</tr>
-                            <tr>5</tr>
-                            <tr>0</tr>
+                            <td/>
+                            <td>Outer reefs only</td>
+                            <td>4</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Outer reefs only</tr>
-                            <tr>4</tr>
-                            <tr>0</tr>
+                            <td/>
+                            <td>All habitats</td>
+                            <td>7</td>
+                            <td>16</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>All habitats</tr>
-                            <tr>7</tr>
-                            <tr>16</tr>
+                            <td>Primary gear type</td>
+                            <td>Line</td>
+                            <td>9</td>
+                            <td>13</td>
                         </tr>
                         <tr>
-                            <tr>Primary gear type</tr>
-                            <tr>Line</tr>
-                            <tr>9</tr>
-                            <tr>13</tr>
+                            <td/>
+                            <td>Speargun</td>
+                            <td>6</td>
+                            <td>2</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Speargun</tr>
-                            <tr>6</tr>
-                            <tr>2</tr>
+                            <td/>
+                            <td>Net</td>
+                            <td>1</td>
+                            <td>1</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Net</tr>
-                            <tr>1</tr>
-                            <tr>1</tr>
+                            <td>Dependency on fishing</td>
+                            <td>Primary</td>
+                            <td>13</td>
+                            <td>2</td>
                         </tr>
                         <tr>
-                            <tr>Dependency on fishing</tr>
-                            <tr>Primary</tr>
-                            <tr>13</tr>
-                            <tr>2</tr>
+                            <td/>
+                            <td>Secondary</td>
+                            <td>2</td>
+                            <td>7</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Secondary</tr>
-                            <tr>2</tr>
-                            <tr>7</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>Tertiary</tr>
-                            <tr>1</tr>
-                            <tr>7</tr>
+                            <td/>
+                            <td>Tertiary</td>
+                            <td>1</td>
+                            <td>7</td>
                         </tr>
                     </tbody>
                 </table>
@@ -445,98 +438,96 @@
                 <xref rid="pone-0091296-Patrick1" ref-type="bibr">Patrick et al., 2010</xref>. Fecundity was subsequently omitted from the index since data were lacking for the study species.
             </p>
             <table-wrap id="pone-0091296-t004">
-                <label>Table 4.</label>
+                <label>Table 4</label>
                 <caption>
                     <title>Attributes and their scoring system employed for productivity-susceptibility analysis (PSA).</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th/>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr>Category</tr>
-                            <tr>Attribute</tr>
-                            <tr>Scoring</tr>
+                            <td>Productivity</td>
+                            <td>Average age at maturity</td>
+                            <td>1: &lt;2 years; 2: 2–4 years; 3: &gt;4 years</td>
                         </tr>
                         <tr>
-                            <tr>Productivity</tr>
-                            <tr>Average age at maturity</tr>
-                            <tr>1: &lt;2 years; 2: 2–4 years; 3: &gt;4 years</tr>
+                            <td/>
+                            <td>Average maximum age</td>
+                            <td>1: &lt;10 years; 2: 10–30 years; 3: &gt;30 years</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Average maximum age</tr>
-                            <tr>1: &lt;10 years; 2: 10–30 years; 3: &gt;30 years</tr>
+                            <td/>
+                            <td>Average size at maturity</td>
+                            <td>1: &lt;30 cm; 2: 30–50 cm; 3: &gt;50 cm</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Average size at maturity</tr>
-                            <tr>1: &lt;30 cm; 2: 30–50 cm; 3: &gt;50 cm</tr>
+                            <td/>
+                            <td>Average maximum size</td>
+                            <td>1: &lt;60 cm; 2: 60–150 cm; 3: &gt;150 cm</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Average maximum size</tr>
-                            <tr>1: &lt;60 cm; 2: 60–150 cm; 3: &gt;150 cm</tr>
+                            <td/>
+                            <td>Reproductive strategy</td>
+                            <td>1: broadcast spawner; 2: demersal egg layer; 3: live bearer</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Reproductive strategy</tr>
-                            <tr>1: broadcast spawner; 2: demersal egg layer; 3: live bearer</tr>
+                            <td/>
+                            <td>Trophic level</td>
+                            <td>1: &lt;2.5; 2: 2.5–3.5; 3: &gt;3.5</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Trophic level</tr>
-                            <tr>1: &lt;2.5; 2: 2.5–3.5; 3: &gt;3.5</tr>
+                            <td>Catchability</td>
+                            <td>Fisher knowledge index</td>
+                            <td>1: index scores 1–6; 2 :index scores 7–12; 3: index scores 13–17</td>
                         </tr>
                         <tr>
-                            <tr>Catchability</tr>
-                            <tr>Fisher knowledge index</tr>
-                            <tr>1: index scores 1–6; 2 :index scores 7–12; 3: index scores 13–17</tr>
+                            <td/>
+                            <td>Availability</td>
+                            <td>Proportion of fisher's effort allocated in aggregation habitat, 1: none; 2: some; 3: all</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Availability</tr>
-                            <tr>Proportion of fisher's effort allocated in aggregation habitat, 1: none; 2: some; 3: all</tr>
+                            <td/>
+                            <td>Encounterability</td>
+                            <td>Species occurrence in fisher's catch, 1: never; 2:infrequently; 3: frequently</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Encounterability</tr>
-                            <tr>Species occurrence in fisher's catch, 1: never; 2:infrequently; 3: frequently</tr>
+                            <td/>
+                            <td>Selectivity</td>
+                            <td>1: gears unselective for species; 2: uses one of the two most selective gears; 3: uses both of the two most selective gears</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Selectivity</tr>
-                            <tr>1: gears unselective for species; 2: uses one of the two most selective gears; 3: uses both of the two most selective gears</tr>
+                            <td>Socio-economics</td>
+                            <td>Habitat impact of gear</td>
+                            <td>1: fisher uses spear guns and/or hook-and-line; 2: fisher uses gill nets; 3: fisher uses scare lines</td>
                         </tr>
                         <tr>
-                            <tr>Socio-economics</tr>
-                            <tr>Habitat impact of gear</tr>
-                            <tr>1: fisher uses spear guns and/or hook-and-line; 2: fisher uses gill nets; 3: fisher uses scare lines</tr>
+                            <td/>
+                            <td>Fishing effort</td>
+                            <td>1: 10–50 hrs/month; 2: 75–120 hrs/month; 3: 145–265 hrs/month</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Fishing effort</tr>
-                            <tr>1: 10–50 hrs/month; 2: 75–120 hrs/month; 3: 145–265 hrs/month</tr>
+                            <td/>
+                            <td>Preference</td>
+                            <td>1: low and medium preference spp.; 2: high preference spp.; 3: very high preference spp.</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Preference</tr>
-                            <tr>1: low and medium preference spp.; 2: high preference spp.; 3: very high preference spp.</tr>
+                            <td/>
+                            <td>Dependency on fishing</td>
+                            <td>Importance of fishing as an occupation, 1: tertiary; 2: secondary; 3: primary</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Dependency on fishing</tr>
-                            <tr>Importance of fishing as an occupation, 1: tertiary; 2: secondary; 3: primary</tr>
+                            <td/>
+                            <td>Management strategy</td>
+                            <td>Ownership rights and conservation measures (i.e. closures), 1: both exist; 2: one or the other exists; 3: none exist at study location</td>
                         </tr>
                         <tr>
-                            <tr/>
-                            <tr>Management strategy</tr>
-                            <tr>Ownership rights and conservation measures (i.e. closures), 1: both exist; 2: one or the other exists; 3: none exist at study location</tr>
-                        </tr>
-                        <tr>
-                            <tr/>
-                            <tr>Access to markets
+                            <td/>
+                            <td>Access to markets
                                 <ext-link ext-link-type="uri" xlink:href="#nt112">*</ext-link>
-                            </tr>
-                            <tr>1: Sell/barter catch in village; 2: sell/barter catch in neighbouring villages; 3: sell/barter catch in provincial capital markets.</tr>
+                            </td>
+                            <td>1: Sell/barter catch in village; 2: sell/barter catch in neighbouring villages; 3: sell/barter catch in provincial capital markets.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -688,112 +679,100 @@
                 <graphic xlink:href="" xlink:type="simple" mimetype="image"/>
             </fig>
             <table-wrap id="pone-0091296-t005">
-                <label>Table 5.</label>
+                <label>Table 5</label>
                 <caption>
                     <title>Variation in fisher knowledge of aggregating behaviour explained by socioeconomic indicators.</title>
                 </caption>
                 <table>
+                    <thead>
+                        <th/>
+                        <th/>
+                    </thead>
                     <tbody>
                         <tr>
-                            <tr/>
-                            <tr>Ahus</tr>
-                            <tr>Karkar</tr>
-                        </tr>
-                        <tr>
-                            <tr>Factor: factor level</tr>
-                            <tr>Explains (%)</tr>
-                            <tr>
-                                <italic>P</italic>
-                            </tr>
-                            <tr>Explains (%)</tr>
-                            <tr>
-                                <italic>P</italic>
-                            </tr>
-                        </tr>
-                        <tr>
-                            <tr>Fisher gender: male</tr>
-                            <tr>31.4</tr>
-                            <tr>
+                            <td>Fisher gender: male</td>
+                            <td>31.4</td>
+                            <td>
                                 <bold>0.004</bold>
-                            </tr>
-                            <tr>4.8</tr>
-                            <tr>0.582</tr>
+                            </td>
+                            <td>4.8</td>
+                            <td>0.582</td>
                         </tr>
                         <tr>
-                            <tr>Fisher gender: female</tr>
-                            <tr>31.4</tr>
-                            <tr>
+                            <td>Fisher gender: female</td>
+                            <td>31.4</td>
+                            <td>
                                 <bold>0.008</bold>
-                            </tr>
-                            <tr>4.8</tr>
-                            <tr>0.534</tr>
+                            </td>
+                            <td>4.8</td>
+                            <td>0.534</td>
                         </tr>
                         <tr>
-                            <tr>Access to habitat: lagoon only</tr>
-                            <tr>43.1</tr>
-                            <tr>
+                            <td>Access to habitat: lagoon only</td>
+                            <td>43.1</td>
+                            <td>
                                 <bold>0.002</bold>
-                            </tr>
-                            <tr/>
-                            <tr/>
+                            </td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Access to habitat: outer reefs only</tr>
-                            <tr>11.6</tr>
-                            <tr>0.128</tr>
-                            <tr/>
-                            <tr/>
+                            <td>Access to habitat: outer reefs only</td>
+                            <td>11.6</td>
+                            <td>0.128</td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Access to habitat: all habitats</tr>
-                            <tr>13.8</tr>
-                            <tr>0.084</tr>
-                            <tr/>
-                            <tr/>
+                            <td>Access to habitat: all habitats</td>
+                            <td>13.8</td>
+                            <td>0.084</td>
+                            <td/>
+                            <td/>
                         </tr>
                         <tr>
-                            <tr>Primary gear type: line</tr>
-                            <tr>8.9</tr>
-                            <tr>0.266</tr>
-                            <tr>10.2</tr>
-                            <tr>0.124</tr>
+                            <td>Primary gear type: line</td>
+                            <td>8.9</td>
+                            <td>0.266</td>
+                            <td>10.2</td>
+                            <td>0.124</td>
                         </tr>
                         <tr>
-                            <tr>Primary gear type: speargun</tr>
-                            <tr>4.8</tr>
-                            <tr>0.542</tr>
-                            <tr>20.3</tr>
-                            <tr>
+                            <td>Primary gear type: speargun</td>
+                            <td>4.8</td>
+                            <td>0.542</td>
+                            <td>20.3</td>
+                            <td>
                                 <bold>0.026</bold>
-                            </tr>
+                            </td>
                         </tr>
                         <tr>
-                            <tr>Primary gear type: net</tr>
-                            <tr>6.7</tr>
-                            <tr>0.472</tr>
-                            <tr>5.2</tr>
-                            <tr>0.494</tr>
+                            <td>Primary gear type: net</td>
+                            <td>6.7</td>
+                            <td>0.472</td>
+                            <td>5.2</td>
+                            <td>0.494</td>
                         </tr>
                         <tr>
-                            <tr>Dependency on fishing: primary</tr>
-                            <tr>3.3</tr>
-                            <tr>0.662</tr>
-                            <tr>4.4</tr>
-                            <tr>0.644</tr>
+                            <td>Dependency on fishing: primary</td>
+                            <td>3.3</td>
+                            <td>0.662</td>
+                            <td>4.4</td>
+                            <td>0.644</td>
                         </tr>
                         <tr>
-                            <tr>Dependency on fishing: secondary</tr>
-                            <tr>6.5</tr>
-                            <tr>0.532</tr>
-                            <tr>8.9</tr>
-                            <tr>0.27</tr>
+                            <td>Dependency on fishing: secondary</td>
+                            <td>6.5</td>
+                            <td>0.532</td>
+                            <td>8.9</td>
+                            <td>0.27</td>
                         </tr>
                         <tr>
-                            <tr>Dependency on fishing: tertiary</tr>
-                            <tr>1.1</tr>
-                            <tr>0.89</tr>
-                            <tr>12.4</tr>
-                            <tr>0.084</tr>
+                            <td>Dependency on fishing: tertiary</td>
+                            <td>1.1</td>
+                            <td>0.89</td>
+                            <td>12.4</td>
+                            <td>0.084</td>
                         </tr>
                     </tbody>
                 </table>

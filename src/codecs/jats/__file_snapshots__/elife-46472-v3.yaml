@@ -5027,6 +5027,7 @@ content:
               - 'MA-induced change '
               - ' '
               - in body temperature
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -7400,6 +7401,7 @@ content:
               - 'Additional '
               - ' '
               - information
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

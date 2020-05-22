@@ -2688,6 +2688,7 @@ content:
           - type: TableCell
             content:
               - Pathway
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3128,6 +3129,7 @@ content:
           - type: TableCell
             content:
               - Conservation Categories
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3141,6 +3143,7 @@ content:
           - type: TableCell
             content:
               - Unique (less than 10%)
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3163,6 +3166,7 @@ content:
           - type: TableCell
             content:
               - Unannotated
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3338,6 +3342,7 @@ content:
           - type: TableCell
             content:
               - Unique
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3516,6 +3521,7 @@ content:
                   - type: Superscript
                     content:
                       - d
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -4433,6 +4439,7 @@ content:
           - type: TableCell
             content:
               - GCI
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

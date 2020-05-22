@@ -10404,6 +10404,7 @@ content:
           - type: TableCell
             content:
               - Reference
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -10815,6 +10816,7 @@ content:
           - type: TableCell
             content:
               - References
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -11481,6 +11483,7 @@ content:
               - 'Additional '
               - ' '
               - information
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -12833,6 +12836,7 @@ content:
           - type: TableCell
             content:
               - Sequence 5’−3’
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -13051,6 +13055,7 @@ content:
           - type: TableCell
             content:
               - Link
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -13391,6 +13396,7 @@ content:
           - type: TableCell
             content:
               - Sequence 5’−3’
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -13575,6 +13581,7 @@ content:
           - type: TableCell
             content:
               - Sequence
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell

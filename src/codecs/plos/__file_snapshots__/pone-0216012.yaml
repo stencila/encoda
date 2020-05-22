@@ -4491,6 +4491,7 @@ content:
               - ' C'
               - urrent
               - Laws
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -5053,6 +5054,7 @@ content:
               - onstitutive
               - ' R'
               - elations
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -8115,6 +8117,7 @@ content:
             content:
               - S
               - ource
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -8740,6 +8743,7 @@ content:
               - imulation
               - ' C'
               - onditions
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -9337,6 +9341,7 @@ content:
               - odel
               - ' P'
               - arameters
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -11301,6 +11306,7 @@ content:
             content:
               - B
               - aseline values
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
@@ -11323,6 +11329,7 @@ content:
                 content:
                   - −1
               - )
+        rowType: header
       - type: TableRow
         cells:
           - type: TableCell
