@@ -1,3 +1,11 @@
+## [0.93.14](https://github.com/stencila/encoda/compare/v0.93.13...v0.93.14) (2020-05-27)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency fp-ts to ^2.6.2 ([9aebc57](https://github.com/stencila/encoda/commit/9aebc57735743aa8d751f150dc7454686b9cfd4e))
+* **dependencies:** update dependency immer to ^6.0.9 ([90f5064](https://github.com/stencila/encoda/commit/90f506461c349ee339e3bca9142c5ff05996d328))
+
 ## [0.93.13](https://github.com/stencila/encoda/compare/v0.93.12...v0.93.13) (2020-05-27)
 
 
