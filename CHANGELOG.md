@@ -1,3 +1,11 @@
+## [0.93.12](https://github.com/stencila/encoda/compare/v0.93.11...v0.93.12) (2020-05-27)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.11.6 ([92fdd02](https://github.com/stencila/encoda/commit/92fdd020dd7b9af5db3ac70f75ec4a76652a1e8e))
+* **dependencies:** update dependency @stencila/schema to ^0.43.1 ([16f0af9](https://github.com/stencila/encoda/commit/16f0af90a2f2dea7781542dde724d967c856913a))
+
 ## [0.93.11](https://github.com/stencila/encoda/compare/v0.93.10...v0.93.11) (2020-05-22)
 
 
