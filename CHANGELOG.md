@@ -1,3 +1,11 @@
+## [0.93.13](https://github.com/stencila/encoda/compare/v0.93.12...v0.93.13) (2020-05-27)
+
+
+### Bug Fixes
+
+* **Deps:** Update deps ([90bbb74](https://github.com/stencila/encoda/commit/90bbb747322732dae7e4c11ef4f829f0fff4dfc3))
+* **Deps:** Upgrade got ([b7dc20a](https://github.com/stencila/encoda/commit/b7dc20ad32c4b0ad8be3815e500c515964f1e801))
+
 ## [0.93.12](https://github.com/stencila/encoda/compare/v0.93.11...v0.93.12) (2020-05-27)
 
 
