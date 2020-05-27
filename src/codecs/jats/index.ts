@@ -13,8 +13,9 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import stencila, { isA } from '@stencila/schema'
 import crypto from 'crypto'
+import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
@@ -39,7 +40,6 @@ import {
 } from '../../util/xml'
 import { MathMLCodec } from '../mathml'
 import { Codec, CommonEncodeOptions } from '../types'
-import { takeLeftWhile, dropLeft } from 'fp-ts/lib/Array'
 
 const log = getLogger('encoda:jats')
 const mathml = new MathMLCodec()
@@ -688,7 +688,10 @@ function decodeEditors(
 ): stencila.Article['editors'] {
   const editors = all(front, 'contrib', { 'contrib-type': 'editor' })
   return editors.length > 0
-    ? editors.map((author) => decodeContrib(author, state))
+    ? editors.reduce((allEditors: stencila.Person[], editor) => {
+        const author = decodeContrib(editor, state)
+        return isA('Person', author) ? [...allEditors, author] : allEditors
+      }, [])
     : undefined
 }
 
@@ -701,12 +704,32 @@ function decodeEditors(
 function decodeContrib(
   contrib: xml.Element,
   state: DecodeState
-): stencila.Person {
-  const name = child(contrib, ['name', 'string-name'])
-  const person = name ? decodeName(name) : stencila.person()
+): stencila.Person | stencila.Organization {
+  let contributor: stencila.Person | stencila.Organization
+  let contributorEl: xml.Element | null = contrib
 
-  const emails = all(contrib, 'email')
-  if (emails.length) person.emails = emails.map(text)
+  const isCollaborative = child(contrib, ['collab']) !== null
+  if (isCollaborative) {
+    const collab = child(contrib, ['collab'])
+    contributor = stencila.organization({
+      name: text(xml.firstByType(collab, 'text')),
+    })
+    contributorEl = first(contrib, ['contrib-group'])
+  } else {
+    const name = child(contrib, ['name', 'string-name'])
+    contributor = name ? decodeName(name) : stencila.person()
+  }
+
+  const emails = all(isCollaborative ? contrib : contributorEl, 'email')
+  if (emails.length) {
+    if (isA('Organization', contributor)) {
+      contributor.contactPoints = [
+        stencila.contactPoint({ emails: emails.map(text) }),
+      ]
+    } else {
+      contributor.emails = emails.map(text)
+    }
+  }
 
   let affiliations: stencila.Organization[] = []
 
@@ -737,9 +760,10 @@ function decodeContrib(
     ]
   }
 
-  if (affiliations.length > 0) person.affiliations = affiliations
+  if (affiliations.length > 0 && isA('Person', contributor))
+    contributor.affiliations = affiliations
 
-  return person
+  return contributor
 }
 
 /**

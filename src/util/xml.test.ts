@@ -1,4 +1,4 @@
-import { elem, dump, Element } from './xml'
+import { elem, dump, Element, firstByType, load } from './xml'
 
 test('elem', () => {
   expect(elem('tag')).toEqual({
@@ -54,4 +54,32 @@ test('dump', () => {
   expect(frag(elem('parent', { foo: 'bar' }, elem('child')))).toEqual(
     `<parent foo="bar"><child/></parent>`
   )
+})
+
+describe('firstByType', () => {
+  const xml = load(`
+  <contrib contrib-type="author" corresp="yes">
+    <email>some@email.io</email>
+    <email>another@email.com</email>
+    <collab>This is an Org name
+      <contrib-group>
+        <contrib>
+          <name>
+            <surname>Test</surname>
+            <given-names>Name</given-names>
+          </name>
+        </contrib>
+      </contrib-group>
+    </collab>
+  </contrib>`)
+
+  it('gets an element', () => {
+    expect(firstByType(xml, 'element')).toEqual(xml.elements![0])
+  })
+
+  it('gets a text element', () => {
+    const match = firstByType(xml, 'text')
+    expect(match).toHaveProperty('type', 'text')
+    expect(match).toHaveProperty('text', 'some@email.io')
+  })
 })
