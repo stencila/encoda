@@ -28,30 +28,25 @@ import * as MDAST from 'mdast'
 import compact from 'mdast-util-compact'
 // @ts-ignore
 import attrs from 'remark-attr'
-// @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import genericExtensions from 'remark-generic-extensions'
 // @ts-ignore
 import math from 'remark-math'
-// @ts-ignore
 import parser from 'remark-parse'
-// @ts-ignore
 import stringifier from 'remark-stringify'
 // @ts-ignore
 import subSuper from 'remark-sub-super'
 import unified from 'unified'
 import * as UNIST from 'unist'
-// @ts-ignore
 import filter from 'unist-util-filter'
-// @ts-ignore
 import map from 'unist-util-map'
-// @ts-ignore
 import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
 import { HTMLCodec } from '../html'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions } from '../types'
+import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
 import { TexCodec } from '../tex'
 import transform from '../../util/transform'
@@ -184,6 +179,7 @@ export function decodeMarkdown(
     .use(attrs, ATTR_OPTIONS)
     .use(subSuper)
     .use(math)
+    .use(citePlugin)
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
@@ -265,6 +261,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeStrong(node as MDAST.Strong)
     case 'delete':
       return decodeDelete(node as MDAST.Delete)
+    case 'cite':
+      return decodeCite(node as MDAST.Literal)
     case 'sub':
       return decodeSubscript(node as MDAST.Parent)
     case 'sup':
@@ -956,6 +954,15 @@ function encodeCite(cite: stencila.Cite): MDAST.Text {
     type: 'text',
     value: `@${cite.target}`,
   }
+}
+
+/**
+ * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations e.g. `@smith04` to a Stencila `Cite` node.
+ */
+function decodeCite(cite: MDAST.Literal): stencila.Cite {
+  return stencila.cite({
+    target: cite.value,
+  })
 }
 
 /**
