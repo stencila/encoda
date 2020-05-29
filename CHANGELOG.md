@@ -1,3 +1,11 @@
+# [0.94.0](https://github.com/stencila/encoda/compare/v0.93.14...v0.94.0) (2020-05-29)
+
+
+### Features
+
+* **JATS:** Decode <collab> Article authors as an Org ([6eb2bf9](https://github.com/stencila/encoda/commit/6eb2bf940bfa8bc365feadcf7a0ee7dd11ce475d))
+* **MD:** Decode Pandoc style text citations ([2971d58](https://github.com/stencila/encoda/commit/2971d5863675566541d998a7a7f5ca21b8d4102c)), closes [#543](https://github.com/stencila/encoda/issues/543)
+
 ## [0.93.14](https://github.com/stencila/encoda/compare/v0.93.13...v0.93.14) (2020-05-27)
 
 
