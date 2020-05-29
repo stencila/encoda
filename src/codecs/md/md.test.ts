@@ -15,9 +15,9 @@ const mdCodec = new MdCodec()
 const { decode, encode } = mdCodec
 const jsonCodec = new JsonCodec()
 
-describe('decode', () => {
-  const d = async (md: string) => await decode(await load(md))
+const d = async (md: string) => await decode(await load(md))
 
+describe('decode', () => {
   test('Kitchen Sink', async () => {
     expect(await d(kitchenSink.md)).toEqual(kitchenSink.node)
   })
@@ -240,9 +240,9 @@ describe('decode: fixtures', () => {
   })
 })
 
-describe('encode', () => {
-  const e = async (node: stencila.Node) => await dump(await encode(node))
+const e = async (node: stencila.Node) => await dump(await encode(node))
 
+describe('encode', () => {
   test('Kitchen Sink', async () => {
     expect(await e(kitchenSink.node)).toEqual(kitchenSink.md)
   })
@@ -1049,3 +1049,92 @@ const references = {
     ],
   },
 }
+
+describe('Citations', () => {
+  const reference = '@simple'
+  const referenceNode = cite({ target: reference.replace('@', '') })
+
+  const complexReference = '@like-this'
+  const complexReferenceNode = cite({
+    target: complexReference.replace('@', ''),
+  })
+
+  const complexReference2 = '@like-this_underscore'
+  const complexReferenceNode2 = cite({
+    target: complexReference2.replace('@', ''),
+  })
+
+  const alphaNumReference = '@alpha1234num'
+  const alphaNumReferenceNode = cite({
+    target: alphaNumReference.replace('@', ''),
+  })
+
+  it('encodes a cite node to markdown', async () => {
+    expect(await e(referenceNode)).toEqual(reference)
+  })
+
+  it('decodes a simple citation', async () => {
+    const ast = await d(reference)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(referenceNode)])
+    )
+  })
+
+  it('decodes a simple citation', async () => {
+    const ast = await d(reference)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(referenceNode)])
+    )
+  })
+
+  it('decodes a complex citation', async () => {
+    const ast = await d(complexReference)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(complexReferenceNode)])
+    )
+  })
+
+  it('decodes a citation with underscores', async () => {
+    const ast = await d(complexReference2)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(complexReferenceNode2)])
+    )
+  })
+
+  it('decodes an alphanumeric citation', async () => {
+    const ast = await d(alphaNumReference)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(alphaNumReferenceNode)])
+    )
+  })
+
+  it('decodes a complex paragraph', async () => {
+    const article = `# Cite test
+
+Some paragraph with a citation (${reference}) inside a paragraph.
+
+Followed by more text
+`
+
+    const ast = await d(article)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(referenceNode)])
+    )
+  })
+
+  // TODO: Encode a chain of citations into a `CiteGroup`
+  it.skip('encodes a citeGroup node to markdown', async () => {
+    const citeGroup = `some text with (@cite-group-cite1, @cite-group-cite-another) a cite`
+    const citeGroupNode = cite({
+      target: complexReference.replace('@', ''),
+    })
+
+    expect(await d(citeGroup)).toEqual(citeGroupNode)
+  })
+})
