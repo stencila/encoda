@@ -10,6 +10,7 @@ import {
 } from '../../__fixtures__/math/kitchen-sink'
 import { YamlCodec } from '../yaml'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
+import { Article, organization, contactPoint } from '@stencila/schema'
 
 const jats = new JatsCodec()
 const yaml = new YamlCodec()
@@ -82,7 +83,7 @@ test.each([
   'plosone-0093988',
   'plosone-0178565',
 ])('decode + encode : %s', async (article) => {
-  const node = await unlinkFiles(await jats.read(fixture(article)))
+  const node = unlinkFiles(await jats.read(fixture(article)))
 
   expect(await yaml.dump(node)).toMatchFile(snapshot(`${article}.yaml`))
 
@@ -91,4 +92,27 @@ test.each([
       isStandalone: true,
     })
   ).toMatchFile(snapshot(`${article}.jats.xml`))
+})
+
+describe('authors', () => {
+  test('decode collaborators', async () => {
+    const { authors } = unlinkFiles(
+      await jats.read(fixture('elife-30274-v1'))
+    ) as Article
+
+    expect(authors).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(
+          organization({
+            name: 'Reproducibility Project: Cancer Biology',
+            contactPoints: [
+              contactPoint({
+                emails: ['tim@cos.io', 'nicole@scienceexchange.com'],
+              }),
+            ],
+          })
+        ),
+      ])
+    )
+  })
 })

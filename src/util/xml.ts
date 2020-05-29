@@ -190,6 +190,28 @@ export function first(
 }
 
 /**
+ * Get the first descendent element of a specific type
+ */
+export function firstByType(
+  elem: Element | null,
+  type: string | null
+): Element | null {
+  if (!elem || !type || !elem.elements) return null
+  if (elem.type === type) return elem
+
+  for (const child of elem.elements) {
+    if (child.type === type) return child
+  }
+
+  for (const child of elem.elements) {
+    const result = firstByType(child, type)
+    if (result) return result
+  }
+
+  return null
+}
+
+/**
  * Get all descendent elements that match name/s and attributes
  */
 export function all(

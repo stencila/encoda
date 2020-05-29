@@ -83,41 +83,13 @@ authors:
       - Blum
     givenNames:
       - David
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Charlottesville
-        name: Center for Open Science
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Charlottesville
-        name: Center for Open Science
-    emails:
-      - tim@cos.io
-      - nicole@scienceexchange.com
+  - type: Organization
+    contactPoints:
+      - type: ContactPoint
+        emails:
+          - tim@cos.io
+          - nicole@scienceexchange.com
+    name: 'Reproducibility Project: Cancer Biology'
   - type: Person
     affiliations:
       - type: Organization
