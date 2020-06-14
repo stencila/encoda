@@ -5,7 +5,7 @@
 import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
 import * as papaparse from 'papaparse'
-import { range, head } from 'fp-ts/lib/Array'
+import { range } from 'fp-ts/lib/Array'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import { columnIndexToName } from '../xlsx'
@@ -23,7 +23,7 @@ export class CsvCodec extends Codec implements Codec {
     // Trim trailing newline
     const csvTrimmed = csv.replace(/(\r|\n)*$/g, '')
 
-    const { data, errors } = papaparse.parse(csvTrimmed, {
+    const { data, errors } = papaparse.parse<string>(csvTrimmed, {
       // We detect ourselves whether a header is present below
       header: false,
       // Turn on dynamic typing so that booleans and numbers are coerced
