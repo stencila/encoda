@@ -258,7 +258,10 @@ async function decodeMetadata(
   meta: { [key: string]: unknown }
 }> {
   // Extract handled properties
-  const { title = 'Untitled', authors = [], ...rest } = metadata
+  const { title = 'Untitled', authors = [], ...rest } = metadata as {
+    title: string
+    authors: []
+  }
 
   // Decode authors to `Person` nodes
   const people = authors.map(
