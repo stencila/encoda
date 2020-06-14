@@ -1,5 +1,5 @@
 /* Generated from nbformat-v4.schema.json. Do not edit. See nbformat.js. */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable camelcase, @typescript-eslint/no-explicit-any */
 
 export type Cell = RawCell | MarkdownCell | CodeCell
 export type Output = ExecuteResult | DisplayData | Stream | Error
@@ -24,7 +24,7 @@ export interface Notebook {
        * Name to display in UI.
        */
       display_name: string
-      [k: string]: any
+      [k: string]: unknown
     }
     /**
      * Kernel information.
@@ -40,7 +40,7 @@ export interface Notebook {
       codemirror_mode?:
         | string
         | {
-            [k: string]: any
+            [k: string]: unknown
           }
       /**
        * The file extension for files in this language.
@@ -54,7 +54,7 @@ export interface Notebook {
        * The pygments lexer to use for code in this language.
        */
       pygments_lexer?: string
-      [k: string]: any
+      [k: string]: unknown
     }
     /**
      * Original notebook format (major number) before converting the notebook between versions. This should never be written to a file.
@@ -67,8 +67,8 @@ export interface Notebook {
     /**
      * The author(s) of the notebook document
      */
-    authors?: any[]
-    [k: string]: any
+    authors?: unknown[]
+    [k: string]: unknown
   }
   /**
    * Notebook format (minor number). Incremented for backward compatible changes to the notebook format.
@@ -103,7 +103,7 @@ export interface RawCell {
      * Official Jupyter Metadata for Raw Cells
      */
     jupyter?: {
-      [k: string]: any
+      [k: string]: unknown
     }
     /**
      * The cell's name. If present, must be a non-empty string. Cell names are expected to be unique across all the cells in a given notebook. This criterion cannot be checked by the json schema and must be established by an additional check.
@@ -113,7 +113,7 @@ export interface RawCell {
      * The cell's tags. Tags must be unique, and must not contain commas.
      */
     tags?: string[]
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Media attachments (e.g. inline images), stored as mimebundle keyed by filename.
@@ -161,9 +161,9 @@ export interface MarkdownCell {
      * Official Jupyter Metadata for Markdown Cells
      */
     jupyter?: {
-      [k: string]: any
+      [k: string]: unknown
     }
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Media attachments (e.g. inline images), stored as mimebundle keyed by filename.
@@ -203,7 +203,7 @@ export interface CodeCell {
      * Official Jupyter Metadata for Code Cells
      */
     jupyter?: {
-      [k: string]: any
+      [k: string]: unknown
     }
     /**
      * Whether the cell's output is collapsed/expanded.
@@ -221,7 +221,7 @@ export interface CodeCell {
      * The cell's tags. Tags must be unique, and must not contain commas.
      */
     tags?: string[]
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Contents of the cell, represented as an array of lines.
@@ -261,7 +261,7 @@ export interface ExecuteResult {
    * Cell output metadata.
    */
   metadata: {
-    [k: string]: any
+    [k: string]: unknown
   }
 }
 /**
@@ -285,7 +285,7 @@ export interface DisplayData {
    * Cell output metadata.
    */
   metadata: {
-    [k: string]: any
+    [k: string]: unknown
   }
 }
 /**

@@ -70,7 +70,6 @@ export class Processor {
 `)
     /* istanbul ignore next */
     await page.evaluate(function (stylesheet: string) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore properties set on window inside Puppeteer page context
       const { xsltProcessor, domParser } = window
       xsltProcessor.importStylesheet(
@@ -94,7 +93,6 @@ export class Processor {
     /* istanbul ignore next */
     return this.page.evaluate(
       function (xml, xmlns) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore properties set on window inside Puppeteer page context
         const { xsltProcessor, domParser, xmlSerializer } = window
 

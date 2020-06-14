@@ -305,9 +305,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
           if (ext.name) {
             log.warn(`Unhandled generic extension "${ext.name}"`)
           } else {
-            log.warn(
-              `Unregistered generic extension "${node.data && node.data.hName}"`
-            )
+            log.warn(`Unregistered generic extension "${node.data?.hName}"`)
           }
           return ''
       }
@@ -937,7 +935,7 @@ function decodeLink(link: MDAST.Link): stencila.Link {
     content: link.children.map(decodePhrasingContent),
   }
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
-  const meta = (link.data && link.data.hProperties) as {
+  const meta = link.data?.hProperties as {
     [key: string]: string
   }
   if (meta) link_.meta = meta

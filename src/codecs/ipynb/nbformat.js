@@ -22,7 +22,7 @@ const { compile } = require('json-schema-to-typescript')
     const source = `nbformat-${version}.schema.json`
     const schema = await fs.readJSON(source)
     let ts = await compile(schema, 'Notebook', {
-      bannerComment: `/* Generated from ${source}. Do not edit. See nbformat.js. */\n/* eslint-disable @typescript-eslint/no-explicit-any */\n`,
+      bannerComment: `/* Generated from ${source}. Do not edit. See nbformat.js. */\n/* eslint-disable camelcase, @typescript-eslint/no-explicit-any */\n`,
       style: { semi: false, singleQuote: true },
     })
     if (version === 'v3') {

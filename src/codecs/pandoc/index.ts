@@ -1519,7 +1519,7 @@ export const emptyAttrs: Pandoc.Attr = ['', [], []]
 function decodeAttrs(node: Pandoc.Attr): { [key: string]: string } | undefined {
   const attrs: { [key: string]: string } = {}
   if (node[0]) attrs.id = node[0]
-  if (node[1] && node[1].length) attrs.classes = node[1].join(' ')
+  if (node[1]?.length) attrs.classes = node[1].join(' ')
   for (const attr of node[2]) attrs[attr[0]] = attr[1]
   return Object.keys(attrs).length ? attrs : undefined
 }

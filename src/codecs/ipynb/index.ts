@@ -14,7 +14,7 @@
 
 // These eslint-disable are necessary due to automatically generated nbformat type
 // definitions
-/* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
+/* eslint-disable camelcase, @typescript-eslint/no-namespace */
 
 import { getLogger } from '@stencila/logga'
 import stencila, { isEntity, nodeType } from '@stencila/schema'

@@ -744,7 +744,7 @@ function decodeContrib(
       ...affiliations,
       ...affRefs
         .map((ref) => {
-          const id = ref.attributes && ref.attributes.rid
+          const id = ref.attributes?.rid
           const aff = first(state.article, 'aff', { id: id })
           if (!aff) {
             log.warn(`Could not find <aff id=${id}>`)
@@ -797,7 +797,7 @@ function encodeAuthor(
   const affRefs = affs.map((aff) =>
     elem('xref', {
       'ref-type': 'aff',
-      rid: aff.attributes && aff.attributes.id,
+      rid: aff.attributes?.id,
     })
   )
   const auth = elem('contrib', { 'contrib-type': 'author' }, name, ...affRefs)
@@ -1242,10 +1242,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeFigure(node as stencila.Figure, state)
     case 'ImageObject': {
       const im = node as stencila.ImageObject
-      return encodeMedia(
-        im,
-        im.meta && im.meta.inline ? 'inline-graphic' : 'graphic'
-      )
+      return encodeMedia(im, im.meta?.inline ? 'inline-graphic' : 'graphic')
     }
     case 'MediaObject':
       return encodeMedia(node as stencila.ImageObject, 'media')
@@ -2035,11 +2032,11 @@ function encodeMedia(
     'xlink:href': media.contentUrl,
   }
 
-  if (media.meta && media.meta.usage) {
+  if (media.meta?.usage) {
     attrs['specific-use'] = media.meta.usage
   }
 
-  if (media.meta && media.meta.linkType) {
+  if (media.meta?.linkType) {
     attrs['xlink:type'] = media.meta.linkType
   }
 

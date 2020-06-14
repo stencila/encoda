@@ -504,7 +504,7 @@ export interface Span {
   c: [Attr, Inline[]]
 }
 
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 
 /**
  * List of valid input formats. Generated using:

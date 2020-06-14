@@ -267,9 +267,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     await Promise.all(
       parts.map(async ({ route, node }) => {
         const fileName =
-          (node.meta && node.meta.main ? 'index' : route[route.length - 1]) +
-          '.' +
-          format
+          (node.meta?.main ? 'index' : route[route.length - 1]) + '.' + format
         const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
         return write(node, filePath, { ...options, format })
       })

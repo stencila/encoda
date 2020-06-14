@@ -92,7 +92,7 @@ export class PersonCodec extends Codec implements Codec {
       if (node.givenNames) content += ' ' + node.givenNames.join(' ')
       if (node.familyNames) content += ' ' + node.familyNames.join(' ')
       if (node.honorificSuffix) content += ' ' + node.honorificSuffix
-      if (node.emails && node.emails[0]) content += ` <${node.emails[0]}>`
+      if (node.emails?.[0]) content += ` <${node.emails[0]}>`
       if (node.url) content += ` (${node.url})`
       content = content.trim()
     } else {

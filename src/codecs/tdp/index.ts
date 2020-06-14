@@ -94,7 +94,7 @@ export class TDPCodec extends Codec implements Codec {
       // Name is the only required property
       name: cw.name ?? 'Unnamed',
     }
-    const title = cw.alternateNames && cw.alternateNames[0]
+    const title = cw.alternateNames?.[0]
     if (title) desc.title = title
     if (cw.description) desc.description = cw.description
     if (cw.licenses) {
@@ -107,7 +107,7 @@ export class TDPCodec extends Codec implements Codec {
           const object: { [key: string]: any } = {}
           if (license.name) object.name = license.name
           if (license.url) object.path = license.url
-          const title = license.alternateNames && license.alternateNames[0]
+          const title = license.alternateNames?.[0]
           if (title) object.title = title
           return object
         }
@@ -248,7 +248,7 @@ function decodeField(
     field.format || 'default'
   )
   if (type) {
-    const itemsSchema = (items.anyOf && items.anyOf[0]) || items
+    const itemsSchema = items.anyOf?.[0] || items
     itemsSchema.type = type
     if (type === 'string' && format) {
       itemsSchema.format = format

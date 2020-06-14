@@ -275,14 +275,14 @@ export class HTMLCodec extends Codec implements Codec {
 }
 
 export const beautify = (html: string): string =>
-  /* eslint-disable @typescript-eslint/camelcase */
+  /* eslint-disable camelcase */
   beautifyHtml(html, {
     indent_size: 2,
     indent_inner_html: true, // Indent <head> and <body> sections
     wrap_line_length: 100,
     preserve_newlines: false, // Preserve existing line-breaks
   })
-/* eslint-enable @typescript-eslint/camelcase */
+/* eslint-enable camelcase */
 
 const getArticleMetaData = (
   node: stencila.Node

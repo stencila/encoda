@@ -149,7 +149,7 @@ async function decodeDocument(
   // Decode the content, if any
   let content: stencila.Node[] = []
   const lists: { [key: string]: stencila.List[] } = {}
-  if (doc.body && doc.body.content) {
+  if (doc.body?.content) {
     content = doc.body.content
       .map((elem: GDocT.Schema$StructuralElement, index: number) => {
         if (elem.paragraph) {
@@ -390,7 +390,7 @@ function decodeListItem(
   decodingGDoc.listDepth = listLevel
 
   // If there is already a list with this id and level then add the item to it
-  const existingList = lists[listId] && lists[listId][listLevel]
+  const existingList = lists[listId]?.[listLevel]
   if (existingList) {
     existingList.items.push(listItem)
     return undefined

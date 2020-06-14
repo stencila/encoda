@@ -1,5 +1,5 @@
 /* Generated from nbformat-v3.schema.json. Do not edit. See nbformat.js. */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable camelcase, @typescript-eslint/no-explicit-any */
 
 export type Output = Pyout | DisplayData | Stream | Pyerr
 
@@ -27,13 +27,13 @@ export interface Notebook {
        * The codemirror mode to use for code in this language.
        */
       codemirror_mode?: string
-      [k: string]: any
+      [k: string]: unknown
     }
     /**
      * Hash of the notebook.
      */
     signature?: string
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Notebook format (minor number). Incremented for backward compatible changes to the notebook format.
@@ -65,7 +65,7 @@ export interface Worksheet {
    * metadata of the current worksheet
    */
   metadata?: {
-    [k: string]: any
+    [k: string]: unknown
   }
 }
 /**
@@ -92,7 +92,7 @@ export interface RawCell {
      * The cell's tags. Tags must be unique, and must not contain commas.
      */
     tags?: string[]
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Contents of the cell, represented as an array of lines.
@@ -119,7 +119,7 @@ export interface MarkdownCell {
      * The cell's tags. Tags must be unique, and must not contain commas.
      */
     tags?: string[]
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Contents of the cell, represented as an array of lines.
@@ -138,7 +138,7 @@ export interface HeadingCell {
    * Cell-level metadata.
    */
   metadata?: {
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Contents of the cell, represented as an array of lines.
@@ -169,7 +169,7 @@ export interface CodeCell {
    * Cell-level metadata.
    */
   metadata?: {
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * Contents of the cell, represented as an array of lines.
@@ -209,7 +209,7 @@ export interface Pyout {
    * Cell output metadata.
    */
   metadata?: {
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * mimetype output (e.g. text/plain), represented as either an array of strings or a string.
@@ -240,7 +240,7 @@ export interface DisplayData {
    * Cell output metadata.
    */
   metadata?: {
-    [k: string]: any
+    [k: string]: unknown
   }
   /**
    * mimetype output (e.g. text/plain), represented as either an array of strings or a string.
