@@ -1,3 +1,11 @@
+## [0.94.2](https://github.com/stencila/encoda/compare/v0.94.1...v0.94.2) (2020-06-15)
+
+
+### Bug Fixes
+
+* **Markdown:** Encode all parts of a figure collection ([34772a2](https://github.com/stencila/encoda/commit/34772a209f21d5f9f0cc3ad4c6dc77fd93121291)), closes [#544](https://github.com/stencila/encoda/issues/544)
+* **RMarkdown:** Encode figure captions using a ref ([1953bac](https://github.com/stencila/encoda/commit/1953bac8b9ad43ae5a0fc186d6cfe6781309ee3b)), closes [#590](https://github.com/stencila/encoda/issues/590)
+
 ## [0.94.1](https://github.com/stencila/encoda/compare/v0.94.0...v0.94.1) (2020-06-15)
 
 
