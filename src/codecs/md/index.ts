@@ -192,11 +192,11 @@ export function decodeMarkdown(
  * Encode a Stencila `Node` to a Markdown `string`.
  */
 export function encodeMarkdown(node: stencila.Node): string {
-  const encoded = encodeNode(node)
-  if (encoded === undefined) return ''
+  const encoded = encodeNode(node).flat()
+  if (encoded.length === 0) return ''
 
   let mdast = filter(
-    encoded,
+    encoded[0],
     // @ts-ignore
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'
   ) as UNIST.Node
@@ -319,85 +319,88 @@ function decodeNode(node: UNIST.Node): stencila.Node {
   }
 }
 
-function encodeNode(node: stencila.Node): UNIST.Node | undefined {
+function encodeNode(node: stencila.Node): UNIST.Node[] {
   const type_ = nodeType(node)
   switch (type_) {
     case 'Article':
-      return encodeArticle(node as stencila.Article)
+      return [encodeArticle(node as stencila.Article)]
 
     case 'Include':
-      return encodeInclude(node as stencila.Include)
+      return [encodeInclude(node as stencila.Include)]
 
     case 'Heading':
-      return encodeHeading(node as stencila.Heading)
+      return [encodeHeading(node as stencila.Heading)]
     case 'Paragraph':
       return encodeParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
-      return encodeQuoteBlock(node as stencila.QuoteBlock)
+      return [encodeQuoteBlock(node as stencila.QuoteBlock)]
     case 'MathBlock':
-      return encodeMath(node as stencila.MathBlock)
+      return [encodeMath(node as stencila.MathBlock)]
     case 'CodeBlock':
-      return encodeCodeBlock(node as stencila.CodeBlock)
+      return [encodeCodeBlock(node as stencila.CodeBlock)]
     case 'CodeChunk':
-      return encodeCodeChunk(node as stencila.CodeChunk)
+      return [encodeCodeChunk(node as stencila.CodeChunk)]
     case 'List':
-      return encodeList(node as stencila.List)
+      return [encodeList(node as stencila.List)]
     case 'ListItem':
-      return encodeListItem(node as stencila.ListItem)
+      return [encodeListItem(node as stencila.ListItem)]
     case 'Table':
-      return encodeTable(node as stencila.Table)
+      return [encodeTable(node as stencila.Table)]
     case 'Figure':
-      return encodeFigure(node as stencila.Figure)
+      return [encodeFigure(node as stencila.Figure)]
     case 'ThematicBreak':
-      return encodeThematicBreak()
+      return [encodeThematicBreak()]
 
     case 'Cite':
-      return encodeCite(node as stencila.Cite)
+      return [encodeCite(node as stencila.Cite)]
     case 'Link':
-      return encodeLink(node as stencila.Link)
+      return [encodeLink(node as stencila.Link)]
     case 'Emphasis':
-      return encodeEmphasis(node as stencila.Emphasis)
+      return [encodeEmphasis(node as stencila.Emphasis)]
     case 'Strong':
-      return encodeStrong(node as stencila.Strong)
+      return [encodeStrong(node as stencila.Strong)]
     case 'Delete':
-      return encodeDelete(node as stencila.Delete)
+      return [encodeDelete(node as stencila.Delete)]
     case 'Subscript':
-      return encodeSubscript(node as stencila.Subscript)
+      return [encodeSubscript(node as stencila.Subscript)]
     case 'Superscript':
-      return encodeSuperscript(node as stencila.Superscript)
+      return [encodeSuperscript(node as stencila.Superscript)]
 
     case 'Quote':
-      return encodeQuote(node as stencila.Quote)
+      return [encodeQuote(node as stencila.Quote)]
     case 'MathFragment':
-      return encodeMath(node as stencila.MathFragment)
+      return [encodeMath(node as stencila.MathFragment)]
     case 'CodeFragment':
-      return encodeCodeFragment(node as stencila.CodeFragment)
+      return [encodeCodeFragment(node as stencila.CodeFragment)]
     case 'CodeExpression':
-      return encodeCodeExpression(node as stencila.CodeExpression)
+      return [encodeCodeExpression(node as stencila.CodeExpression)]
     case 'ImageObject':
-      return encodeImageObject(node as stencila.ImageObject)
+      return [encodeImageObject(node as stencila.ImageObject)]
+
+    case 'Collection':
+      return encodeCollection(node as stencila.Collection)
 
     case 'Text':
-      return encodeString(node as string)
+      return [encodeString(node as string)]
     case 'Null':
-      return encodeNull()
+      return [encodeNull()]
     case 'Boolean':
-      return encodeBoolean(node as boolean)
+      return [encodeBoolean(node as boolean)]
     case 'Number':
-      return encodeNumber(node as number)
+      return [encodeNumber(node as number)]
     case 'Array':
-      return encodeArray(node as any[])
+      return [encodeArray(node as any[])]
     case 'Object':
-      return encodeObject(node as object)
+      return [encodeObject(node as object)]
 
     default:
       log.warn(`No Markdown encoder for Stencila node type "${type_}"`)
-      return encodeString('')
+      return [encodeString('')]
   }
 }
 
-function encodeContent(node: stencila.Node): MDAST.Content {
-  return encodeNode(node) as MDAST.Content
+function encodeContent(node: stencila.Node): MDAST.Content[] {
+  return encodeNode(node) as MDAST.Content[]
 }
 
 function decodePhrasingContent(
@@ -408,16 +411,16 @@ function decodePhrasingContent(
 
 function encodeInlineContent(
   node: stencila.InlineContent
-): MDAST.PhrasingContent {
-  return encodeNode(node) as MDAST.PhrasingContent
+): MDAST.PhrasingContent[] {
+  return encodeNode(node) as MDAST.PhrasingContent[]
 }
 
 function decodeBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
   return decodeNode(node) as stencila.BlockContent
 }
 
-function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
-  return encodeNode(node) as MDAST.BlockContent
+function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent[] {
+  return encodeNode(node) as MDAST.BlockContent[]
 }
 
 /**
@@ -480,7 +483,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 
   // Encode the article body
   if (article.content) {
-    root.children = article.content.map(encodeContent)
+    root.children = article.content.map(encodeContent).flat()
   }
 
   // Add other properties as frontmatter
@@ -548,7 +551,7 @@ function encodeHeading(heading: stencila.Heading): MDAST.Heading {
   return {
     type: 'heading',
     depth: heading.depth as 1 | 2 | 3 | 4 | 5 | 6,
-    children: heading.content.map(encodeInlineContent),
+    children: heading.content.map(encodeInlineContent).flat(),
   }
 }
 
@@ -568,9 +571,7 @@ function decodeParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
  * Returns `undefined` (i.e skip this node) if the paragraph
  * is empty (not content, or only whitespace)
  */
-function encodeParagraph(
-  paragraph: stencila.Paragraph
-): MDAST.Paragraph | undefined {
+function encodeParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph[] {
   const content = paragraph.content
   if (
     content.length === 0 ||
@@ -578,12 +579,14 @@ function encodeParagraph(
       nodeType(content[0]) === 'Text' &&
       (content[0] as string).trim().length === 0)
   ) {
-    return undefined
+    return []
   } else {
-    return {
-      type: 'paragraph',
-      children: content.map(encodeInlineContent),
-    }
+    return [
+      {
+        type: 'paragraph',
+        children: content.map(encodeInlineContent).flat(),
+      },
+    ]
   }
 }
 
@@ -603,7 +606,7 @@ function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
 function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
   return {
     type: 'blockquote',
-    children: block.content.map(encodeBlockContent),
+    children: block.content.map(encodeBlockContent).flat(),
   }
 }
 
@@ -831,7 +834,7 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
     children: content.map((child) => {
-      const mdast = encodeNode(child)
+      const mdast = encodeNode(child)[0]
       if (isMdastBlockContent(mdast)) return mdast
       if (isMdastPhrasingContent(mdast))
         return { type: 'paragraph', children: [mdast] }
@@ -897,7 +900,8 @@ function encodeTable(table: stencila.Table): MDAST.Table {
                 type: 'tableCell',
                 children: cell.content
                   .filter(isInlineContent)
-                  .map(encodeInlineContent),
+                  .map(encodeInlineContent)
+                  .flat(),
               }
             }
           ),
@@ -972,9 +976,9 @@ function encodeLink(link: stencila.Link): MDAST.Link {
     type: 'link',
     url: link.target,
     title: link.title,
-    children: link.content.map(
-      (node) => encodeInlineContent(node) as MDAST.StaticPhrasingContent
-    ),
+    children: link.content
+      .map((node) => encodeInlineContent(node) as MDAST.StaticPhrasingContent[])
+      .flat(),
     data,
   }
 }
@@ -995,7 +999,7 @@ function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
 function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
   return {
     type: 'emphasis',
-    children: emphasis.content.map(encodeInlineContent),
+    children: emphasis.content.map(encodeInlineContent).flat(),
   }
 }
 
@@ -1015,7 +1019,7 @@ function decodeStrong(strong: MDAST.Strong): stencila.Strong {
 function encodeStrong(strong: stencila.Strong): MDAST.Strong {
   return {
     type: 'strong',
-    children: strong.content.map(encodeInlineContent),
+    children: strong.content.map(encodeInlineContent).flat(),
   }
 }
 
@@ -1035,7 +1039,7 @@ function decodeDelete(delet: MDAST.Delete): stencila.Delete {
 function encodeDelete(delet: stencila.Delete): MDAST.Delete {
   return {
     type: 'delete',
-    children: delet.content.map(encodeInlineContent),
+    children: delet.content.map(encodeInlineContent).flat(),
   }
 }
 
@@ -1242,6 +1246,20 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
   if (imageObject.text) image.alt = imageObject.text
   if (imageObject.meta) image.data = { hProperties: imageObject.meta }
   return image
+}
+
+/**
+ * Encode a Stencila `Collection` to an array of `MDAST`
+ *
+ * Collection nodes are sometimes used in the content of an article to
+ * represent grouped nodes e.g. a figure group. This function simply
+ * encodes each of the nodes within ther collection (i.e. it is lossy)
+ * since Markdown does not have a good way to represent such grouping / nesting.
+ */
+function encodeCollection(collection: stencila.Collection): UNIST.Node[] {
+  return collection.parts
+    .map((part) => encodeBlockContent(part as stencila.BlockContent))
+    .flat()
 }
 
 /**
