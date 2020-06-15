@@ -1559,20 +1559,25 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
  * Decode a `<ol itemtype="https://schema.stenci.la/Collection">` element to a `stencila.Collection`.
  */
 function decodeCollection(collection: HTMLOListElement): stencila.Collection {
+  const meta = decodeDataAttrs(collection)
   const parts = flatten(
     [...collection.childNodes].map(decodeChildNodes)
   ).filter(isCreativeWork)
-  return stencila.collection({ parts })
+  return stencila.collection({ meta, parts })
 }
 
 /**
  * Encode a `stencila.Collection` node to a `<ol itemtype="https://schema.stenci.la/Collection">` element.
+ *
+ * Adds the `usage` meta property, if it exists, as a `data-usage` attribute (since it is
+ * not an official property of the Schema, it shouldn't be added as a `itemprop` or `data-itemprop`)
  */
 function encodeCollection(collection: stencila.Collection): HTMLOListElement {
+  const { meta, parts } = collection
   return h(
     'ol',
-    encodeAttrs(collection),
-    collection.parts.map((entry) => h('li', encodeNode(entry)))
+    encodeAttrs(collection, meta),
+    parts.map((entry) => h('li', encodeNode(entry)))
   )
 }
 
