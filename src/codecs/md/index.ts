@@ -50,6 +50,7 @@ import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
 import { TexCodec } from '../tex'
 import transform from '../../util/transform'
+import { isContentArray } from '../../util/content/isContentArray'
 
 const texCodec = new TexCodec()
 
@@ -389,7 +390,9 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
     case 'Number':
       return [encodeNumber(node as number)]
     case 'Array':
-      return [encodeArray(node as any[])]
+      if (Array.isArray(node) && isContentArray(node))
+        return node.map(encodeNode).flat()
+      else return [encodeArray(node as any[])]
     case 'Object':
       return [encodeObject(node as object)]
 
@@ -1238,13 +1241,19 @@ function decodeImage(image: MDAST.Image): stencila.ImageObject {
  * Encode a `stencila.ImageObject` to a `MDAST.Image`
  */
 function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
+  const { title, text, meta, contentUrl } = imageObject
+
   const image: MDAST.Image = {
     type: 'image',
-    url: imageObject.contentUrl || '',
+    url: contentUrl || '',
   }
-  if (imageObject.title) image.title = TxtCodec.stringify(imageObject.title)
-  if (imageObject.text) image.alt = imageObject.text
-  if (imageObject.meta) image.data = { hProperties: imageObject.meta }
+  if (title) image.title = TxtCodec.stringify(title)
+  if (text) image.alt = text
+  if (meta) {
+    // Remove the redundant `inline` attribute if it exits
+    const { inline, ...rest } = meta
+    if (Object.keys(rest).length > 0) image.data = { hProperties: rest }
+  }
   return image
 }
 

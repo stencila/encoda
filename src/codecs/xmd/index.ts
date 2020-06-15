@@ -3,10 +3,12 @@
  */
 
 import * as stencila from '@stencila/schema'
+import crypto from 'crypto'
 import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import { transformSync } from '../../util/transform'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
@@ -69,6 +71,45 @@ export class XmdCodec extends Codec implements Codec {
         if (stencila.isA('CodeChunk', node)) {
           const { text, programmingLanguage, meta } = node
           return stencila.codeBlock({ text, programmingLanguage, meta })
+        }
+        // Figures are not represented as per usual in Markdown (block extensions)
+        // but rather as an image and a text reference
+        // See https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references
+        if (stencila.isA('Figure', node)) {
+          let { label, caption, content } = node
+          let title
+          let rest: stencila.InlineContent[] = []
+          if (typeof caption === 'string')
+            title = stencila.strong({ content: [caption] })
+          else if (Array.isArray(caption)) {
+            const [first] = caption
+            if (stencila.isA('Heading', first)) {
+              title = stencila.strong({ content: first.content })
+              if (caption.length > 1)
+                rest = ensureInlineContentArray(caption.slice(1))
+            } else {
+              rest = ensureInlineContentArray(caption)
+            }
+          }
+          const id =
+            label !== undefined
+              ? label.toLowerCase().replace(/[^a-z0-9]/g, '')
+              : crypto.randomBytes(8).toString('hex')
+
+          if (label?.endsWith('.')) label += ' '
+          else if (!label?.endsWith('. ')) label += '. '
+
+          return [
+            ...(content ?? []),
+            stencila.paragraph({
+              content: [
+                `(ref:${id}) `,
+                ...(label !== undefined ? [label] : []),
+                ...(title ? [title, ' '] : []),
+                ...rest,
+              ],
+            }),
+          ]
         }
         return node
       }

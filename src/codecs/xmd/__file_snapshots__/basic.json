@@ -1,15 +1,16 @@
 {
-  "title": "Untitled",
+  "type": "Article",
   "output": "html_document",
+  "title": "Untitled",
   "content": [
     {
-      "text": "knitr::opts_chunk$set(echo = TRUE)",
+      "type": "CodeChunk",
       "programmingLanguage": "r",
+      "text": "knitr::opts_chunk$set(echo = TRUE)",
       "meta": {
         "setup,": "",
         "include": "FALSE"
-      },
-      "type": "CodeChunk"
+      }
     },
     {
       "type": "Heading",
@@ -54,12 +55,12 @@
       ]
     },
     {
-      "text": "summary(cars)",
+      "type": "CodeChunk",
       "programmingLanguage": "r",
+      "text": "summary(cars)",
       "meta": {
         "cars": ""
-      },
-      "type": "CodeChunk"
+      }
     },
     {
       "type": "Heading",
@@ -75,25 +76,24 @@
       ]
     },
     {
-      "text": "plot(pressure)",
+      "type": "CodeChunk",
       "programmingLanguage": "r",
+      "text": "plot(pressure)",
       "meta": {
         "pressure,": "",
         "echo": "FALSE"
-      },
-      "type": "CodeChunk"
+      }
     },
     {
       "type": "Paragraph",
       "content": [
         "Note that the ",
         {
-          "text": "echo = FALSE",
-          "type": "CodeFragment"
+          "type": "CodeFragment",
+          "text": "echo = FALSE"
         },
         " parameter was added to the code chunk to prevent printing of the R code that generated the plot."
       ]
     }
-  ],
-  "type": "Article"
+  ]
 }

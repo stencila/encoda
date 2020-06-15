@@ -1,27 +1,42 @@
-import { XmdCodec } from './'
 import notebook from '../../__fixtures__/article/r-notebook-simple'
-import { snapshot, fixtureToJson, nodeToString } from '../../__tests__/helpers'
+import { fixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json'
+import { XmdCodec } from './'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 
-const { decode, encode } = new XmdCodec()
+const jsonCodec = new JsonCodec()
+const xmdCodec = new XmdCodec()
 
 describe('decode', () => {
-  const toJson = fixtureToJson(decode)
+  const xmdToJson = async (filename: string) =>
+    await jsonCodec.dump(await xmdCodec.read(filename))
 
   test('basic.Rmd', async () => {
-    expect(await toJson('basic.Rmd')).toMatchFile(snapshot('basic.json'))
+    expect(await xmdToJson(fixture('basic.Rmd'))).toMatchFile(
+      snapshot('basic.json')
+    )
   })
 
   test('kitchensink.Rmd', async () => {
-    expect(await toJson('kitchensink.Rmd')).toMatchFile(
+    expect(await xmdToJson(fixture('kitchensink.Rmd'))).toMatchFile(
       snapshot('kitchensink.json')
     )
   })
 })
 
 describe('encode', () => {
-  const toXmd = nodeToString(encode)
-
   test('r-notebook-simple', async () => {
-    expect(await toXmd(notebook)).toMatchFile(snapshot('r-notebook-simple.Rmd'))
+    expect(await xmdCodec.dump(notebook)).toMatchFile(
+      snapshot('r-notebook-simple.Rmd')
+    )
+  })
+  test('r-notebook-simple', async () => {
+    expect(
+      await xmdCodec.dump(
+        await unlinkFiles(
+          await jsonCodec.read(fixture('article/journal/elife/50356.json'))
+        )
+      )
+    ).toMatchFile(snapshot('elife-50356.Rmd'))
   })
 })
