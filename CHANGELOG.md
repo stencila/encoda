@@ -1,3 +1,20 @@
+## [0.94.1](https://github.com/stencila/encoda/compare/v0.94.0...v0.94.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* **CSV:** Update for new papaparse typings ([728a52d](https://github.com/stencila/encoda/commit/728a52d4c4fe7ab46eb05d37d274f658106d0840))
+* **dependencies:** update dependency @stencila/thema to v2.10.2 ([601e349](https://github.com/stencila/encoda/commit/601e3497bd4a020ea5bc62bcfee4a2b8b95b3d09))
+* **dependencies:** update dependency fp-ts to ^2.6.5 ([033096e](https://github.com/stencila/encoda/commit/033096eb4afac8d09ff12c844b728da05e7ad677))
+* **dependencies:** update dependency fs-extra to ^9.0.1 ([c473408](https://github.com/stencila/encoda/commit/c473408b17e9331e04c3384590ed17a9d3231848))
+* **dependencies:** update dependency globby to ^11.0.1 ([28ad04b](https://github.com/stencila/encoda/commit/28ad04b591474a5f491f0619dd42744bd649339d))
+* **dependencies:** update dependency got to ^11.3.0 ([0c8a115](https://github.com/stencila/encoda/commit/0c8a115d5192b7d33a020f816f61d26ee385380c))
+* **dependencies:** update dependency mime to ^2.4.6 ([cc01de9](https://github.com/stencila/encoda/commit/cc01de9ebb8430af5aebd5b4c231dc3ffb633017))
+* **dependencies:** update dependency pdf-lib to ^1.7.0 ([3c83cd3](https://github.com/stencila/encoda/commit/3c83cd349d8ee7748971553a283f2ae852c22b97))
+* **dependencies:** update dependency puppeteer to ^3.3.0 ([fc92248](https://github.com/stencila/encoda/commit/fc9224864be67ff9b1bb295a7987213094f80bf1))
+* **dependencies:** update dependency remark-stringify to ^8.1.0 ([1cc9f62](https://github.com/stencila/encoda/commit/1cc9f62009efe595d0f62cfe307434e3aecc451e))
+* **dependencies:** update dependency xlsx to ^0.16.2 ([f532091](https://github.com/stencila/encoda/commit/f532091b51769c1c82c3b25e6c3bc7e5c23590b0))
+
 # [0.94.0](https://github.com/stencila/encoda/compare/v0.93.14...v0.94.0) (2020-05-29)
 
 
