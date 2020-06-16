@@ -1,3 +1,10 @@
+# [0.95.0](https://github.com/stencila/encoda/compare/v0.94.2...v0.95.0) (2020-06-16)
+
+
+### Features
+
+* **HTML:** Encode the usage of a collection ([6700d86](https://github.com/stencila/encoda/commit/6700d8611ddb6a9906bd02eec887abf5e8bdd4d6))
+
 ## [0.94.2](https://github.com/stencila/encoda/compare/v0.94.1...v0.94.2) (2020-06-15)
 
 
