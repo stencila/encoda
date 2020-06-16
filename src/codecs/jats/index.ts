@@ -20,6 +20,7 @@ import fs from 'fs-extra'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
+import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
@@ -1078,45 +1079,6 @@ function encodeReference(
 
     return elem('ref', { id: rid }, elem('element-citation', null, ...children))
   }
-}
-
-/**
- * Create text used to cite a Stencila `CreativeWork` within
- * the content of an `Article`.
- */
-function encodeCitationText(work: stencila.CreativeWork): string {
-  const { authors, datePublished } = work
-  let citeText = ''
-
-  if (authors?.length) {
-    const people = authors.filter((p) => stencila.isA('Person', p))
-
-    if (people.length) {
-      const firstPerson = people[0] as stencila.Person
-      let secondPerson
-
-      if (firstPerson.familyNames) {
-        citeText += firstPerson.familyNames.join(' ')
-
-        if (people.length === 2) {
-          secondPerson = people[1] as stencila.Person
-          if (secondPerson.familyNames)
-            citeText += 'and ' + secondPerson.familyNames.join(' ')
-        } else if (people.length > 2) {
-          citeText += ' et al.'
-        }
-      }
-    }
-  }
-
-  if (datePublished !== undefined) {
-    const date =
-      typeof datePublished === 'string' ? datePublished : datePublished.value
-    const publishedYear = date.split('-')[0]
-    citeText += `, ${publishedYear}`
-  }
-
-  return citeText
 }
 
 // Functions for decoding / encoding content in article body
