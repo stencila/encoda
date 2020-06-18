@@ -1,3 +1,19 @@
+# [0.96.0](https://github.com/stencila/encoda/compare/v0.95.0...v0.96.0) (2020-06-18)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency fp-ts to ^2.6.6 ([902c9b5](https://github.com/stencila/encoda/commit/902c9b5357d99a1535b43c643d1b120a7b32e959))
+* **dependencies:** update dependency immer to v7 ([9f979e6](https://github.com/stencila/encoda/commit/9f979e684e2bc25bc6dc28ef2ebdecc4ca05c204))
+* **dependencies:** update dependency jszip to ^3.5.0 ([a667d65](https://github.com/stencila/encoda/commit/a667d65c6310051e4454a8c3be611dbbb79f46b4))
+* **dependencies:** update dependency puppeteer to v4 ([dc8d851](https://github.com/stencila/encoda/commit/dc8d851bfc373eaa6257b4895a4bd48d8370d3fd))
+
+
+### Features
+
+* **MD:** Decode citation node content from MD frontmatter ([9febb4d](https://github.com/stencila/encoda/commit/9febb4dbb39464539eadb691f94a3e671089f60a))
+* **XMD:** Decode Bookdown style figure references to Block Extensions ([093eac8](https://github.com/stencila/encoda/commit/093eac85b99da2d59f59feb88454c5212838ac54))
+
 # [0.95.0](https://github.com/stencila/encoda/compare/v0.94.2...v0.95.0) (2020-06-16)
 
 
