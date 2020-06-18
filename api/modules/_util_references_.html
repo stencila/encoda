@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SmallCaps | @stencila/encoda</title>
+	<title>&quot;util/references&quot; | @stencila/encoda</title>
 	<meta name="description" content="Documentation for @stencila/encoda">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,75 +56,59 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
-				</li>
-				<li>
-					<a href="_codecs_pandoc_types_.smallcaps.html">SmallCaps</a>
+					<a href="_util_references_.html">&quot;util/references&quot;</a>
 				</li>
 			</ul>
-			<h1>Interface SmallCaps</h1>
+			<h1>Module &quot;util/references&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Small caps text (list of inlines)</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<a href="_codecs_pandoc_types_.inlinelist.html" class="tsd-signature-type">InlineList</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">SmallCaps</span>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_codecs_pandoc_types_.smallcaps.html#c" class="tsd-kind-icon">c</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_pandoc_types_.smallcaps.html#t" class="tsd-kind-icon">t</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_references_.html#encodecitationtext" class="tsd-kind-icon">encode<wbr>Citation<wbr>Text</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="c" class="tsd-anchor"></a>
-					<h3>c</h3>
-					<div class="tsd-signature tsd-kind-icon">c<span class="tsd-signature-symbol">:</span> <a href="../modules/_codecs_pandoc_types_.html#inline" class="tsd-signature-type">Inline</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_codecs_pandoc_types_.inlinelist.html">InlineList</a>.<a href="_codecs_pandoc_types_.inlinelist.html#c">c</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/4762fa19/src/codecs/pandoc/types.ts#L351">src/codecs/pandoc/types.ts:351</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="t" class="tsd-anchor"></a>
-					<h3>t</h3>
-					<div class="tsd-signature tsd-kind-icon">t<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"SmallCaps"</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/4762fa19/src/codecs/pandoc/types.ts#L393">src/codecs/pandoc/types.ts:393</a></li>
-						</ul>
-					</aside>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="encodecitationtext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Citation<wbr>Text</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Citation<wbr>Text<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/4762fa19/src/util/references.ts#L8">src/util/references.ts:8</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create text used to cite a Stencila <code>CreativeWork</code> within
+									the content of an <code>Article</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>work: <span class="tsd-signature-type">CreativeWork</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -135,27 +119,15 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
+						<a href="_util_references_.html">&quot;util/references&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_codecs_pandoc_types_.smallcaps.html" class="tsd-kind-icon">Small<wbr>Caps</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="_codecs_pandoc_types_.smallcaps.html#c" class="tsd-kind-icon">c</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_pandoc_types_.smallcaps.html#t" class="tsd-kind-icon">t</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_util_references_.html#encodecitationtext" class="tsd-kind-icon">encode<wbr>Citation<wbr>Text</a>
 					</li>
-				</ul>
-				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>
@@ -176,7 +148,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
