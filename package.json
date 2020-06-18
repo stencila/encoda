@@ -107,8 +107,8 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@stencila/dev-config": "1.4.47",
-    "@testing-library/dom": "7.14.3",
+    "@stencila/dev-config": "1.4.49",
+    "@testing-library/dom": "7.16.2",
     "@testing-library/jest-dom": "5.10.1",
     "@types/async-lock": "1.1.2",
     "@types/content-type": "1.1.3",
