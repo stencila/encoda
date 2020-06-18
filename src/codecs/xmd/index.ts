@@ -10,6 +10,44 @@ import { Codec } from '../types'
 import { transformSync } from '../../util/transform'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
+/**
+ * Converts the Bookdown style figure reference into Markdown Block Extension format.
+ * Figures are not represented as per usual in Markdown (block extensions)
+ * but rather as an image and a text reference.
+ * @see https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references
+ */
+export const decodeFigure = (contents: string): string => {
+  const figRegEx = /(```{(\w+).*fig\.cap=['"]\(ref:([\w-]+)\)['"].*}\n([^```]*)\n?```)\n/g
+
+  return contents.replace(
+    figRegEx,
+    (_match, _figBlock, lang?: string, refId?: string, code?: string) => {
+      const figRefRegEx = new RegExp(
+        `\\(ref:${
+          refId ?? ''
+        }\\) ((?:Fig(?:ure)?|Table) \\d+[.;]) (\\*\\*.*?\\*\\*)?\\s*(.*)`,
+        'g'
+      )
+
+      const [, label, heading, caption] = figRefRegEx.exec(contents) ?? []
+
+      let figure = `
+figure: ${label ?? refId}
+:::
+\`\`\`${lang ?? 'r'}`
+
+      figure += code === undefined ? '' : `\n${code}\`\`\`\n`
+      figure += heading === undefined ? '' : `\n${heading}`
+      figure += heading === undefined && caption === undefined ? '' : `\n`
+      figure += caption === undefined ? '' : `\n${caption}\n`
+
+      figure += '\n:::\n'
+
+      return figure
+    }
+  )
+}
+
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
 
@@ -24,13 +62,16 @@ export class XmdCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
-    const xmd = await vfile.dump(file)
+    let xmd = await vfile.dump(file)
     // Inline code chunks are replaced with special inline nodes
     // The negative look behind at the start prevents matching block code chunks
     let cmd = xmd.replace(
       /(?<!``)`(r|py|python)\s+([^`]*)`/g,
-      (match, lang, text): string => `\`${text}\`{type=expr lang=${lang}}`
+      (_match, lang, text): string => `\`${text}\`{type=expr lang=${lang}}`
     )
+
+    xmd = decodeFigure(xmd)
+
     // Block code chunks are replaced with a `chunk` block extension
     cmd = cmd.replace(
       /```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,

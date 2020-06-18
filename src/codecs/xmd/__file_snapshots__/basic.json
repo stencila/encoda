@@ -94,6 +94,72 @@
         },
         " parameter was added to the code chunk to prevent printing of the R code that generated the plot."
       ]
+    },
+    {
+      "type": "Heading",
+      "depth": 2,
+      "content": [
+        "With a figure"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "# R code here",
+      "meta": {
+        "figure3,": "",
+        "fig.cap": "(ref:figure-3)"
+      }
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Some intermediary content"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "# R code here but non-existent figure reference",
+      "meta": {
+        "figure4,": "",
+        "fig.cap": "(ref:figure-4)"
+      }
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "And follow up with a duplicate figure reference"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "# R code here",
+      "meta": {
+        "figure3,": "",
+        "fig.cap": "(ref:figure-3)"
+      }
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "(ref:figure-3) Figure 3. ",
+        {
+          "type": "Strong",
+          "content": [
+            "Distinct and dorsoventrally organized properties of layer 2 stellate cells."
+          ]
+        },
+        "(",
+        {
+          "type": "Strong",
+          "content": [
+            "A"
+          ]
+        },
+        ") Representative action potential after hyperpolarization waveforms from a SC (left), a pyramidal cell (middle) and an unidentified cell (right). The pyramidal and unidentified cells were..."
+      ]
     }
   ]
 }
