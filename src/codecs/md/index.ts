@@ -42,15 +42,16 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 import { selectAll } from 'unist-util-select'
+import { isContentArray } from '../../util/content/isContentArray'
+import { encodeCitationText } from '../../util/references'
+import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { HTMLCodec } from '../html'
+import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions } from '../types'
 import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
-import { TexCodec } from '../tex'
-import transform from '../../util/transform'
-import { isContentArray } from '../../util/content/isContentArray'
 
 const texCodec = new TexCodec()
 
@@ -167,6 +168,10 @@ for (const ext of GENERIC_EXTENSIONS) {
   extensionHandlers[ext] = { replace: decodeExtension }
 }
 
+interface DecodeContext {
+  frontmatter: Partial<Exclude<stencila.CreativeWork, 'content'>>
+}
+
 /**
  * Decode a string of Markdown content to a Stencila `Node`
  */
@@ -186,7 +191,21 @@ export function decodeMarkdown(
   compact(mdast, true)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
 
-  return isStandalone ? decodeArticle(root) : root.children.map(decodeNode)
+  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
+  const [frontmatterYaml] = root.children.filter(
+    (child) => child.type === 'yaml'
+  )
+
+  const context: DecodeContext = {
+    frontmatter:
+      yaml.safeLoad(
+        typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
+      ) ?? {},
+  }
+
+  return isStandalone
+    ? decodeArticle(root, context)
+    : root.children.map((child) => decodeNode(child, context))
 }
 
 /**
@@ -232,42 +251,42 @@ async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
   })
 }
 
-function decodeNode(node: UNIST.Node): stencila.Node {
+function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
   const type = node.type
   switch (type) {
     case 'heading':
-      return decodeHeading(node as MDAST.Heading)
+      return decodeHeading(node as MDAST.Heading, context)
     case 'paragraph':
-      return decodeParagraph(node as MDAST.Paragraph)
+      return decodeParagraph(node as MDAST.Paragraph, context)
     case 'blockquote':
-      return decodeBlockquote(node as MDAST.Blockquote)
+      return decodeBlockquote(node as MDAST.Blockquote, context)
     case 'math':
       return decodeMath(node as MDAST.Literal)
     case 'code':
       return decodeCodeblock(node as MDAST.Code)
     case 'list':
-      return decodeList(node as MDAST.List)
+      return decodeList(node as MDAST.List, context)
     case 'listItem':
-      return decodeListItem(node as MDAST.ListItem)
+      return decodeListItem(node as MDAST.ListItem, context)
     case 'table':
-      return decodeTable(node as MDAST.Table)
+      return decodeTable(node as MDAST.Table, context)
     case 'thematicBreak':
       return decodeThematicBreak()
 
     case 'link':
-      return decodeLink(node as MDAST.Link)
+      return decodeLink(node as MDAST.Link, context)
     case 'emphasis':
-      return decodeEmphasis(node as MDAST.Emphasis)
+      return decodeEmphasis(node as MDAST.Emphasis, context)
     case 'strong':
-      return decodeStrong(node as MDAST.Strong)
+      return decodeStrong(node as MDAST.Strong, context)
     case 'delete':
-      return decodeDelete(node as MDAST.Delete)
+      return decodeDelete(node as MDAST.Delete, context)
     case 'cite':
-      return decodeCite(node as MDAST.Literal)
+      return decodeCite(node as MDAST.Literal, context)
     case 'sub':
-      return decodeSubscript(node as MDAST.Parent)
+      return decodeSubscript(node as MDAST.Parent, context)
     case 'sup':
-      return decodeSuperscript(node as MDAST.Parent)
+      return decodeSuperscript(node as MDAST.Parent, context)
     case 'inlineMath':
       return decodeMath(node as MDAST.Literal)
     case 'inlineCode':
@@ -407,9 +426,10 @@ function encodeContent(node: stencila.Node): MDAST.Content[] {
 }
 
 function decodePhrasingContent(
-  node: MDAST.PhrasingContent
+  node: MDAST.PhrasingContent,
+  context: DecodeContext
 ): stencila.InlineContent {
-  return decodeNode(node) as stencila.InlineContent
+  return decodeNode(node, context) as stencila.InlineContent
 }
 
 function encodeInlineContent(
@@ -418,8 +438,11 @@ function encodeInlineContent(
   return encodeNode(node) as MDAST.PhrasingContent[]
 }
 
-function decodeBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
-  return decodeNode(node) as stencila.BlockContent
+function decodeBlockContent(
+  node: MDAST.BlockContent,
+  context: DecodeContext
+): stencila.BlockContent {
+  return decodeNode(node, context) as stencila.BlockContent
 }
 
 function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent[] {
@@ -438,7 +461,10 @@ function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent[] {
  *
  * @param root The MDAST root to decode
  */
-function decodeArticle(root: MDAST.Root): stencila.Article {
+function decodeArticle(
+  root: MDAST.Root,
+  context: DecodeContext
+): stencila.Article {
   let title
   let meta
   const content: stencila.Node[] = []
@@ -452,13 +478,13 @@ function decodeArticle(root: MDAST.Root): stencila.Article {
       child.type === 'heading' &&
       child.depth === 1
     ) {
-      const content = child.children.map(decodeNode)
+      const content = child.children.map((child) => decodeNode(child, context))
       title =
         content.length === 1 && typeof content[0] === 'string'
           ? content[0]
           : content
     } else {
-      content.push(decodeNode(child))
+      content.push(decodeNode(child, context))
     }
   }
 
@@ -539,11 +565,16 @@ function encodeInclude(include: stencila.Include): Extension {
 /**
  * Decode a `MDAST.Heading` to a `stencila.Heading`
  */
-function decodeHeading(heading: MDAST.Heading): stencila.Heading {
+function decodeHeading(
+  heading: MDAST.Heading,
+  context: DecodeContext
+): stencila.Heading {
   return {
     type: 'Heading',
     depth: heading.depth,
-    content: heading.children.map(decodePhrasingContent),
+    content: heading.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
 }
 
@@ -561,10 +592,15 @@ function encodeHeading(heading: stencila.Heading): MDAST.Heading {
 /**
  * Decode a `MDAST.Paragraph` to a `stencila.Paragraph`
  */
-function decodeParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
+function decodeParagraph(
+  paragraph: MDAST.Paragraph,
+  context: DecodeContext
+): stencila.Paragraph {
   return {
     type: 'Paragraph',
-    content: paragraph.children.map(decodePhrasingContent),
+    content: paragraph.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
 }
 
@@ -596,10 +632,13 @@ function encodeParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph[] {
 /**
  * Decode a `MDAST.Blockquote` to a `stencila.QuoteBlock`
  */
-function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
+function decodeBlockquote(
+  block: MDAST.Blockquote,
+  context: DecodeContext
+): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
-    content: block.children.map(decodeBlockContent),
+    content: block.children.map((child) => decodeBlockContent(child, context)),
   }
 }
 
@@ -810,11 +849,13 @@ function encodeFigure(figure: stencila.Figure): Extension {
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
-function decodeList(list: MDAST.List): stencila.List {
+function decodeList(list: MDAST.List, context: DecodeContext): stencila.List {
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children.map(decodeNode).filter(isListItem),
+    items: list.children
+      .map((child) => decodeNode(child, context))
+      .filter(isListItem),
   }
 }
 
@@ -853,10 +894,15 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
-function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
+function decodeListItem(
+  listItem: MDAST.ListItem,
+  context: DecodeContext
+): stencila.ListItem {
   const _listItem: stencila.ListItem = {
     type: 'ListItem',
-    content: listItem.children.map(decodeNode).filter(isBlockContent),
+    content: listItem.children
+      .map((child) => decodeNode(child, context))
+      .filter(isBlockContent),
   }
   return listItem.checked === true || listItem.checked === false
     ? { ..._listItem, isChecked: listItem.checked || false }
@@ -866,7 +912,10 @@ function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
 /**
  * Decode a `MDAST.Table` to a `stencila.Table`
  */
-function decodeTable(table: MDAST.Table): stencila.Table {
+function decodeTable(
+  table: MDAST.Table,
+  context: DecodeContext
+): stencila.Table {
   return {
     type: 'Table',
     rows: table.children.map(
@@ -877,7 +926,9 @@ function decodeTable(table: MDAST.Table): stencila.Table {
             (cell: MDAST.TableCell): stencila.TableCell => {
               return {
                 type: 'TableCell',
-                content: cell.children.map(decodePhrasingContent),
+                content: cell.children.map((child) =>
+                  decodePhrasingContent(child, context)
+                ),
               }
             }
           ),
@@ -935,11 +986,13 @@ function encodeThematicBreak(): MDAST.ThematicBreak {
 /**
  * Decode a `MDAST.Link` to a `stencila.Link`
  */
-function decodeLink(link: MDAST.Link): stencila.Link {
+function decodeLink(link: MDAST.Link, context: DecodeContext): stencila.Link {
   const link_: stencila.Link = {
     type: 'Link',
     target: link.url,
-    content: link.children.map(decodePhrasingContent),
+    content: link.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = link.data?.hProperties as {
@@ -964,9 +1017,24 @@ function encodeCite(cite: stencila.Cite): MDAST.Text {
 /**
  * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations e.g. `@smith04` to a Stencila `Cite` node.
  */
-function decodeCite(cite: MDAST.Literal): stencila.Cite {
+function decodeCite(
+  cite: MDAST.Literal,
+  context: DecodeContext
+): stencila.Cite {
+  const ref: string | stencila.CreativeWorkTypes =
+    context.frontmatter.references?.find((ref) =>
+      typeof ref === 'string' ? false : ref.id === cite.value
+    ) ?? cite.value
+
+  let value = cite.value
+  // if the reference is a `CreativeWork` node, summaraize it into a citation format such as `Smith et al (1990)`
+  if (stencila.isCreativeWork(ref)) {
+    value = encodeCitationText(ref)
+  }
+
   return stencila.cite({
     target: cite.value,
+    content: [value],
   })
 }
 
@@ -989,10 +1057,15 @@ function encodeLink(link: stencila.Link): MDAST.Link {
 /**
  * Decode a `MDAST.Emphasis` to a `stencila.Emphasis`
  */
-function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
+function decodeEmphasis(
+  emphasis: MDAST.Emphasis,
+  context: DecodeContext
+): stencila.Emphasis {
   return {
     type: 'Emphasis',
-    content: emphasis.children.map(decodePhrasingContent),
+    content: emphasis.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
 }
 
@@ -1009,10 +1082,15 @@ function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
 /**
  * Decode a `MDAST.Strong` to a `stencila.Strong`
  */
-function decodeStrong(strong: MDAST.Strong): stencila.Strong {
+function decodeStrong(
+  strong: MDAST.Strong,
+  context: DecodeContext
+): stencila.Strong {
   return {
     type: 'Strong',
-    content: strong.children.map(decodePhrasingContent),
+    content: strong.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
 }
 
@@ -1029,10 +1107,15 @@ function encodeStrong(strong: stencila.Strong): MDAST.Strong {
 /**
  * Decode a `MDAST.Delete` to a `stencila.Delete`
  */
-function decodeDelete(delet: MDAST.Delete): stencila.Delete {
+function decodeDelete(
+  delet: MDAST.Delete,
+  context: DecodeContext
+): stencila.Delete {
   return {
     type: 'Delete',
-    content: delet.children.map(decodePhrasingContent),
+    content: delet.children.map((child) =>
+      decodePhrasingContent(child, context)
+    ),
   }
 }
 
@@ -1049,10 +1132,13 @@ function encodeDelete(delet: stencila.Delete): MDAST.Delete {
 /**
  * Decode a MDAST `sub` node to a Stencila `Subscript` node.
  */
-const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
+const decodeSubscript = (
+  sub: MDAST.Parent,
+  context: DecodeContext
+): stencila.Subscript => {
   return stencila.subscript({
     content: sub.children.map((node) =>
-      decodePhrasingContent(node as MDAST.PhrasingContent)
+      decodePhrasingContent(node as MDAST.PhrasingContent, context)
     ),
   })
 }
@@ -1072,10 +1158,13 @@ const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
 /**
  * Decode a MDAST `sup` node to a Stencila `Superscript` node.
  */
-const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
+const decodeSuperscript = (
+  sup: MDAST.Parent,
+  context: DecodeContext
+): stencila.Superscript => {
   return stencila.superscript({
     content: sup.children.map((node) =>
-      decodePhrasingContent(node as MDAST.PhrasingContent)
+      decodePhrasingContent(node as MDAST.PhrasingContent, context)
     ),
   })
 }
