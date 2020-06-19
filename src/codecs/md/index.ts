@@ -15,6 +15,7 @@
 import { getLogger } from '@stencila/logga'
 import stencila, {
   isBlockContent,
+  isCreativeWork,
   isInlineContent,
   isListItem,
   nodeIs,
@@ -26,6 +27,7 @@ import JSON5 from 'json5'
 import * as MDAST from 'mdast'
 // @ts-ignore
 import compact from 'mdast-util-compact'
+import path from 'path'
 // @ts-ignore
 import attrs from 'remark-attr'
 import frontmatter from 'remark-frontmatter'
@@ -46,14 +48,16 @@ import { isContentArray } from '../../util/content/isContentArray'
 import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
+import { BibCodec } from '../bib'
 import { HTMLCodec } from '../html'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
-import { Codec, CommonDecodeOptions } from '../types'
+import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
 
 const texCodec = new TexCodec()
+const bibCodec = new BibCodec()
 
 export const log = getLogger('encoda:md')
 
@@ -72,7 +76,7 @@ export class MdCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const { isStandalone } = options
     const md = await vfile.dump(file)
-    return decodeMarkdown(md, isStandalone)
+    return decodeRootArticle(md, isStandalone)
   }
 
   /**
@@ -82,9 +86,10 @@ export class MdCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = async (
-    node: stencila.Node
+    node: stencila.Node,
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const prepared = await encodePrepare(node)
+    const prepared = await encodePrepare(node, options)
     const md = encodeMarkdown(prepared)
     return Promise.resolve(vfile.load(md))
   }
@@ -168,17 +173,10 @@ for (const ext of GENERIC_EXTENSIONS) {
   extensionHandlers[ext] = { replace: decodeExtension }
 }
 
-interface DecodeContext {
-  frontmatter: Partial<Exclude<stencila.CreativeWork, 'content'>>
-}
-
 /**
- * Decode a string of Markdown content to a Stencila `Node`
+ * Decode a string of Markdown content to a `UNIST.Node`
  */
-export function decodeMarkdown(
-  md: string,
-  isStandalone = true
-): stencila.Article | stencila.Node[] {
+export function stringToMdast(content: string): UNIST.Node {
   const mdast = unified()
     .use(parser, { commonmark: true })
     .use(frontmatter, FRONTMATTER_OPTIONS)
@@ -187,8 +185,24 @@ export function decodeMarkdown(
     .use(math)
     .use(citePlugin)
     .use(genericExtensions, { elements: extensionHandlers })
-    .parse(md)
+    .parse(content)
+
   compact(mdast, true)
+
+  return mdast
+}
+
+type Frontmatter = Record<string | number, unknown>
+
+interface DecodeContext {
+  frontmatter: Partial<Exclude<stencila.CreativeWork, 'content'>>
+}
+
+/**
+ * Decode a string of Markdown content to a Stencila `Node`
+ */
+export function decodeMarkdown(md: string): stencila.Article | stencila.Node[] {
+  const mdast = stringToMdast(md)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
 
   // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
@@ -201,6 +215,38 @@ export function decodeMarkdown(
       yaml.safeLoad(
         typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
       ) ?? {},
+  }
+
+  return decodeArticle(root, context)
+}
+
+/**
+ * An async variant of `decodeMarkdown` specialized to decoding the top-level `Article` Markdown contents.
+ * During the decoding checks the frontmatter for a `references` key pointing to a separate bibliographic file.
+ * If it exsists, reads in the file to populate the decoding `context`.
+ */
+async function decodeRootArticle(
+  content: string,
+  isStandalone = true
+): Promise<stencila.Article | stencila.Node[]> {
+  const mdast = stringToMdast(content)
+  const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
+
+  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
+  const [frontmatterYaml] = root.children.filter(
+    (child) => child.type === 'yaml'
+  )
+
+  const loadedFrontmatter: Frontmatter =
+    yaml.safeLoad(
+      typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
+    ) ?? {}
+
+  const context: DecodeContext = {
+    frontmatter: {
+      ...loadedFrontmatter,
+      references: await loadExtractedReferences(loadedFrontmatter),
+    },
   }
 
   return isStandalone
@@ -230,13 +276,83 @@ export function encodeMarkdown(node: stencila.Node): string {
 }
 
 /**
+ * Given an article's frontmatter object, will return the article's references list, reading from the filesystem if
+ * necessary.
+ */
+async function loadExtractedReferences(
+  frontmatter: Frontmatter
+): Promise<stencila.CreativeWork['references']> {
+  return typeof frontmatter.references === 'string'
+    ? await inlineReferences(frontmatter.references)
+    : Array.isArray(frontmatter.references)
+    ? frontmatter.references
+    : undefined
+}
+
+/**
+ * Given a filepath to a bibliography file in a BibTeX format, attempst to read it into an array of `CreativeWork`s.
+ */
+async function inlineReferences(
+  bibFilePath: string
+): Promise<stencila.Article['references']> {
+  if (vfile.isPath(bibFilePath)) {
+    const refs = await bibCodec.read(bibFilePath)
+    if (Array.isArray(refs)) {
+      return refs.filter(isCreativeWork)
+    }
+  }
+
+  return undefined
+}
+
+/**
+ * Given an `Article` node, will check if it contains a large number of references, and if so extracts the references
+ * into an external BibTeX file.
+ */
+async function extractReferences(
+  article: stencila.Article,
+  options: CommonEncodeOptions
+): Promise<stencila.Article> {
+  // Article doesn't contain references, so terminate early
+  if (!article.references || article.references.length === 0) return article
+
+  // If article only contains a handful of references, keep them in the MD file
+  const referenceExtractionThreshold = 5
+  if (article.references.length <= referenceExtractionThreshold) return article
+
+  // If the encoding target is being written to disk, extract references to a separate file
+  if (options.filePath) {
+    const targetPath = path.parse(options.filePath)
+    targetPath.ext = '.references.bib'
+    delete targetPath.base
+    const bibPath = path.format(targetPath)
+    await bibCodec.write(article.references, bibPath)
+
+    return {
+      ...article,
+      meta: {
+        references: bibPath,
+      },
+    }
+  }
+
+  return article
+}
+
+/**
  * Do any async operations necessary on the node tree before encoding it.
  *
  * This avoids having to "taint" the whole decode function call stack with
  * async calls.
  */
-async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
-  return transform(node, async (node) => {
+async function encodePrepare(
+  rootNode: stencila.Node,
+  options: CommonEncodeOptions
+): Promise<stencila.Node> {
+  return transform(rootNode, async (node) => {
+    if (stencila.isArticle(node)) {
+      return await extractReferences(node, options)
+    }
     if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
       if (node.mathLanguage !== 'tex') {
         const text = await texCodec.dump(node)
@@ -411,9 +527,9 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
     case 'Array':
       if (Array.isArray(node) && isContentArray(node))
         return node.map(encodeNode).flat()
-      else return [encodeArray(node as any[])]
+      else return [encodeArray(node as unknown[])]
     case 'Object':
-      return [encodeObject(node as object)]
+      return [encodeObject(node as Record<string | number, unknown>)]
 
     default:
       log.warn(`No Markdown encoder for Stencila node type "${type_}"`)
@@ -465,14 +581,11 @@ function decodeArticle(
   root: MDAST.Root,
   context: DecodeContext
 ): stencila.Article {
-  let title
-  let meta
+  let title = context.frontmatter.title
   const content: stencila.Node[] = []
   for (const child of root.children) {
     if (child.type === 'yaml') {
-      const frontmatter = yaml.safeLoad(child.value)
-      if ('title' in frontmatter) title = frontmatter.title
-      meta = frontmatter
+      // The YAML frontmatter has already been parsed into a JS Object in the `decodeMarkdown` function
     } else if (
       title === undefined &&
       child.type === 'heading' &&
@@ -489,8 +602,9 @@ function decodeArticle(
   }
 
   return stencila.article({
+    ...context.frontmatter,
     title,
-    ...meta,
+    references: context.frontmatter.references,
     content,
   })
 }
@@ -516,12 +630,45 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
   }
 
   // Add other properties as frontmatter
-  const frontmatter: { [key: string]: any } = {}
+  const frontmatter: Frontmatter = {}
   for (const [key, value] of Object.entries(article)) {
     if (!['type', 'content'].includes(key)) {
       frontmatter[key] = value
     }
   }
+
+  const referenceGuard = (o: unknown): o is { references: string } => {
+    return (
+      typeof o === 'object' &&
+      o !== null &&
+      Object.keys(o).includes('references')
+    )
+  }
+
+  // If the Article references have been extracted into a separate file, move the file references from the `meta` object
+  // to the top-level `Article#references`.
+  // Note that this is a Markdown format specific approach, and needs to be handled when decoding the frontmatter.
+  if (
+    article.meta?.references &&
+    typeof article.meta.references === 'string' &&
+    vfile.isPath(article.meta.references)
+  ) {
+    // Store the bibliography file path on the `references` key
+    frontmatter.references = article.meta.references
+
+    // Clean up the frontmatter objet to avoid duplicating reference content
+    if (typeof frontmatter.meta === 'object' && frontmatter.meta !== null) {
+      if (referenceGuard(frontmatter.meta)) {
+        delete frontmatter.meta.references
+      }
+
+      // If the `meta` object only contained the `reference` file path, remove the `meta` attribute altogether.
+      if (Object.keys(frontmatter.meta).length === 0) {
+        delete frontmatter.meta
+      }
+    }
+  }
+
   if (Object.keys(frontmatter).length) {
     const yamlNode: MDAST.YAML = {
       type: 'yaml',
@@ -1487,7 +1634,7 @@ function encodeArray(value: any[]): Extension {
  *   - `!object` (decoded to `{}`)
  *   - `!object["key":"value", ...]`
  */
-function decodeObject(ext: Extension): object {
+function decodeObject(ext: Extension): Record<string, unknown> {
   if (ext.properties) {
     // Extension properties always contain `className` and `id`, which may
     // be undefined, so drop them.
@@ -1504,7 +1651,7 @@ function decodeObject(ext: Extension): object {
 /**
  * Encode an `object` to a `!object` inline extension
  */
-function encodeObject(value: object): Extension {
+function encodeObject(value: Record<string | number, unknown>): Extension {
   const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'object', argument }
 }
@@ -1562,7 +1709,7 @@ interface Extension extends UNIST.Node {
 function decodeExtension(
   type: 'inline-extension' | 'block-extension',
   element: Extension
-) {
+): UNIST.Node {
   return { ...element, type }
 }
 
@@ -1580,7 +1727,7 @@ function decodeExtension(
  *
  * The `remark-generic-extensions` plugin does not do this stringifying for us.
  */
-function stringifyExtensions(tree: UNIST.Node) {
+function stringifyExtensions(tree: UNIST.Node): UNIST.Node {
   return map(tree, (node: any) => {
     if (node.type === 'inline-extension' || node.type === 'block-extension') {
       const props = Object.entries(node.properties || {})
@@ -1625,10 +1772,10 @@ function decodeHTML(html: MDAST.HTML): stencila.Node {
  * The `remark-attr` plugin does not do this stringifying for us
  * (it only works with `rehype`).
  */
-function stringifyAttrs(tree: UNIST.Node) {
+function stringifyAttrs(tree: UNIST.Node): UNIST.Node {
   const types = ['heading', 'code', 'link', 'inlineCode', 'image']
   const codec = unified().use(stringifier)
-  const md = (node: UNIST.Node) => codec.stringify(node)
+  const md = (node: UNIST.Node): string => codec.stringify(node)
   return map(tree, (node: UNIST.Node) => {
     if (types.includes(node.type) && node.data && node.data.hProperties) {
       const meta = stringifyMeta(
@@ -1647,7 +1794,7 @@ function stringifyAttrs(tree: UNIST.Node) {
  * Stringify a dictionary of meta data to be used as a code
  * block "infoString" or in bracketed attributes.
  */
-function stringifyMeta(meta: { [key: string]: string }) {
+function stringifyMeta(meta: { [key: string]: string }): string {
   return Object.entries(meta)
     .map(([key, value]) => {
       let repr = key

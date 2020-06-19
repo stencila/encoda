@@ -38,7 +38,7 @@ export class CSLCodec extends Codec implements Codec {
 
     const content: string = await vfile.dump(file)
 
-    let csls
+    let csls: Csl.Data[]
     try {
       csls = await Cite.inputAsync(content, { forceType: format })
     } catch (error) {
@@ -47,10 +47,13 @@ export class CSLCodec extends Codec implements Codec {
       )
     }
 
-    // TODO: work out what to return when more than one work e.g. a bibtex file
-    const csl = csls[0]
+    const nodes = []
+    for (const data of csls) {
+      const node = await decodeCsl(data)
+      nodes.push(node)
+    }
 
-    return decodeCsl(csl)
+    return nodes
   }
 
   /**
@@ -66,21 +69,36 @@ export class CSLCodec extends Codec implements Codec {
     const { format = 'json' } = options
 
     let content = ''
-    if (schema.isCreativeWork(node)) {
-      const csl = encodeCsl(node)
-      const cite = new Cite([csl])
-      if (format === 'json') {
-        const { _graph, ...rest } = cite.data[0]
-        content = JSON.stringify(rest, null, 2)
-      } else {
-        content = cite.format(format)
-      }
+    if (Array.isArray(node)) {
+      content = node.reduce(
+        (ns: string, n: schema.Node) => ns + encode(n, format),
+        ''
+      )
     } else {
-      logErrorNodeType('csl', 'encode', 'CreativeWork', node)
+      content = encode(node, format)
     }
 
     return Promise.resolve(vfile.load(content))
   }
+}
+
+function encode(node: schema.Node, format: string): string {
+  let content = ''
+  if (schema.isCreativeWork(node)) {
+    const csl = encodeCsl(node)
+    const cite = new Cite([csl])
+
+    if (format === 'json') {
+      const { _graph, ...rest } = cite.data[0]
+      content = JSON.stringify(rest, null, 2)
+    } else {
+      content = cite.format(format)
+    }
+  } else {
+    logErrorNodeType('csl', 'encode', 'CreativeWork', node)
+  }
+
+  return content
 }
 
 /**
@@ -174,7 +192,7 @@ export const encodeCreativeWork = (
   type: Csl.ItemType
 ): Csl.Data => {
   const {
-    id,
+    id = crypto.randomBytes(16).toString('hex'),
     title = 'Untitled',
     authors = [],
     datePublished,
@@ -186,9 +204,11 @@ export const encodeCreativeWork = (
   logWarnLossIfAny('csl', 'encode', work, lost)
 
   const date = datePublished ?? dateModified ?? dateCreated ?? undefined
+
   return {
     type,
-    id: id !== undefined ? id : crypto.randomBytes(16).toString('hex'),
+    id,
+    'citation-label': id,
     title: TxtCodec.stringify(title),
     author: authors.map(encodeAuthor),
     issued: date !== undefined ? encodeDate(date) : undefined,
