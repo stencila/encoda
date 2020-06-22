@@ -55,6 +55,7 @@ import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
+import { STDIO_PATH } from '../..'
 
 const texCodec = new TexCodec()
 const bibCodec = new BibCodec()
@@ -321,7 +322,7 @@ async function extractReferences(
   if (article.references.length <= referenceExtractionThreshold) return article
 
   // If the encoding target is being written to disk, extract references to a separate file
-  if (options.filePath) {
+  if (options.filePath && options.filePath !== STDIO_PATH) {
     const targetPath = path.parse(options.filePath)
     targetPath.ext = '.references.bib'
     delete targetPath.base
