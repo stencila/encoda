@@ -19,6 +19,12 @@ const log = getLogger('encoda')
 type VFile = vfile.VFile
 
 /**
+ * To read or write from the STDIO a special `filePath` value of `-` can
+ * be used with several of the encode/decode functions.
+ */
+export const STDIO_PATH = '-'
+
+/**
  * A list of all codecs.
  *
  * Note that order is of importance for matching. More "generic"
@@ -347,7 +353,7 @@ export async function convert(
 
   const node = await read(input, from, decodeOptions)
 
-  if (outputPaths === undefined) outputPaths = ['-']
+  if (outputPaths === undefined) outputPaths = [STDIO_PATH]
   else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
@@ -359,7 +365,7 @@ export async function convert(
     // This avoids calling `preWrite` which may create files
     // which we don't if outputting to stdout. Instead `preDump`
     // will get called which bundles media files etc.
-    if (outputPath === '-') {
+    if (outputPath === STDIO_PATH) {
       const content = await dump(node, to ?? 'txt', encodeOptions)
       console.log(content)
       if (outputPaths.length > 0) return content

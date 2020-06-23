@@ -6,6 +6,8 @@ import stencila, {
   link,
   paragraph,
 } from '@stencila/schema'
+import fs from 'fs'
+import path from 'path'
 import { dump, load } from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
@@ -15,7 +17,8 @@ const mdCodec = new MdCodec()
 const { decode, encode } = mdCodec
 const jsonCodec = new JsonCodec()
 
-const d = async (md: string) => await decode(await load(md))
+const e = async (node: stencila.Node) => await dump(await encode(node))
+const d = async (md: string) => await decode(load(md))
 
 describe('decode', () => {
   test('Kitchen Sink', async () => {
@@ -240,8 +243,6 @@ describe('decode: fixtures', () => {
   })
 })
 
-const e = async (node: stencila.Node) => await dump(await encode(node))
-
 describe('encode', () => {
   test('Kitchen Sink', async () => {
     expect(await e(kitchenSink.node)).toEqual(kitchenSink.md)
@@ -257,10 +258,6 @@ describe('encode', () => {
 
   test('Split Paragraphs', async () => {
     expect(await e(emptyParas.node)).toEqual(emptyParas.to)
-  })
-
-  test('References', async () => {
-    expect(await e(references.node)).toEqual(references.to)
   })
 
   it('Strip newlines from tables', async () => {
@@ -1136,5 +1133,68 @@ Followed by more text
     })
 
     expect(await d(citeGroup)).toEqual(citeGroupNode)
+  })
+})
+
+describe.only('References', () => {
+  const relativeSnapshot = (filepath: string): string =>
+    path.relative(path.join(__dirname, '..', '..', '..'), snapshot(filepath))
+
+  const articleWithRefs = article({
+    title: 'MD Reference Test',
+    content: [paragraph({ content: ['This is only a test'] })],
+    references: [
+      article({ title: 'Test article 1', id: '1', authors: [] }),
+      article({ title: 'Test article 2', id: '2', authors: [] }),
+      article({ title: 'Test article 3', id: '3', authors: [] }),
+      article({ title: 'Test article 4', id: '4', authors: [] }),
+      article({ title: 'Test article 5', id: '5', authors: [] }),
+      article({ title: 'Test article 6', id: '6', authors: [] }),
+    ],
+  })
+
+  const mdWithRefs = `---
+title: MD Reference Test
+references: ${relativeSnapshot('mdReferences.references.bib')}
+---
+
+This is only a test
+`
+
+  test('encode', async () => {
+    expect(await e(references.node)).toEqual(references.to)
+  })
+
+  test('extract references', async () => {
+    const mdFile = relativeSnapshot('mdReferences.md')
+    await mdCodec.write(articleWithRefs, mdFile)
+    const contents = fs.readFileSync(mdFile).toString()
+    const bibFile = fs
+      .readFileSync(relativeSnapshot('mdReferences.references.bib'))
+      .toString()
+
+    expect(contents).toEqual(mdWithRefs)
+    expect(bibFile).toMatchFile(fixture('mdReferences.references.bib'))
+  })
+
+  test('inline references', async () => {
+    expect(await d(mdWithRefs)).toEqual(articleWithRefs)
+  })
+
+  test('preserve references if less than 5', async () => {
+    const articleWithRefs = article({
+      title: 'MD Reference Test',
+      content: [paragraph({ content: ['This is only a test'] })],
+      references: [
+        article({ title: 'Test article 1', id: '1', authors: [] }),
+        article({ title: 'Test article 2', id: '2', authors: [] }),
+        article({ title: 'Test article 3', id: '3', authors: [] }),
+        article({ title: 'Test article 4', id: '4', authors: [] }),
+      ],
+    })
+
+    expect(await e(articleWithRefs)).toMatch(
+      /references:\n\s+- title: Test article 1/
+    )
   })
 })

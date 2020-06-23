@@ -1,19 +1,19 @@
-type: Article
-id: articleid
-authors:
-  - type: Person
-    familyNames:
-      - Einstein
-    givenNames:
-      - Albert
-datePublished: '1924'
-isPartOf:
-  type: PublicationIssue
+- type: Article
+  id: articleid
+  authors:
+    - type: Person
+      familyNames:
+        - Einstein
+      givenNames:
+        - Albert
+  datePublished: '1924'
   isPartOf:
-    type: PublicationVolume
+    type: PublicationIssue
     isPartOf:
-      type: Periodical
-      title: The journal of small papers
-    volumeNumber: '10'
-  issueNumber: '9'
-title: A small paper
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        title: The journal of small papers
+      volumeNumber: '10'
+    issueNumber: '9'
+  title: A small paper
