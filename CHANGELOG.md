@@ -1,3 +1,10 @@
+# [0.97.0](https://github.com/stencila/encoda/compare/v0.96.0...v0.97.0) (2020-06-23)
+
+
+### Features
+
+* **MD:** Encode references in a separate file ([665e959](https://github.com/stencila/encoda/commit/665e959dc9d35bf9eaabdce10aedd03d68677574)), closes [#589](https://github.com/stencila/encoda/issues/589)
+
 # [0.96.0](https://github.com/stencila/encoda/compare/v0.95.0...v0.96.0) (2020-06-18)
 
 
