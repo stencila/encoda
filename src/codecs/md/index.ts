@@ -197,7 +197,9 @@ export function stringToMdast(content: string): UNIST.Node {
 type Frontmatter = Record<string | number, unknown>
 
 interface DecodeContext {
-  frontmatter: Partial<Exclude<stencila.CreativeWork, 'content'>>
+  frontmatter: Partial<
+    Exclude<stencila.CreativeWork, 'content'> & { bibliography: string }
+  >
 }
 
 /**
@@ -214,7 +216,7 @@ export function decodeMarkdown(md: string): stencila.Article | stencila.Node[] {
 
 /**
  * An async variant of `decodeMarkdown` specialized to decoding the top-level `Article` Markdown contents.
- * During the decoding checks the frontmatter for a `references` key pointing to a separate bibliographic file.
+ * During the decoding checks the frontmatter for a `bibliography` key pointing to a separate bibliographic file.
  * If it exsists, reads in the file to populate the decoding `context`.
  */
 async function decodeRootArticle(
@@ -224,18 +226,23 @@ async function decodeRootArticle(
   const mdast = stringToMdast(content)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
   const loadedFrontmatter = loadFrontmatter(root)
+
   const context: DecodeContext = {
     frontmatter: {
       ...loadedFrontmatter,
       references: await loadExtractedReferences(loadedFrontmatter),
     },
   }
+
+  // Remove the reference to the bibliography file as it has been inlined to the `references` key by this point
+  delete context.frontmatter.bibliography
+
   return isStandalone
     ? decodeArticle(root, context)
     : root.children.map((child) => decodeNode(child, context))
 }
 
-function loadFrontmatter(root: MDAST.Root) {
+function loadFrontmatter(root: MDAST.Root): Frontmatter {
   // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
   const [frontmatterYaml] = root.children.filter(
     (child) => child.type === 'yaml'
@@ -278,8 +285,8 @@ export function encodeMarkdown(node: stencila.Node): string {
 async function loadExtractedReferences(
   frontmatter: Frontmatter
 ): Promise<stencila.CreativeWork['references']> {
-  return typeof frontmatter.references === 'string'
-    ? await inlineReferences(frontmatter.references)
+  return typeof frontmatter.bibliography === 'string'
+    ? await inlineReferences(frontmatter.bibliography)
     : Array.isArray(frontmatter.references)
     ? frontmatter.references
     : undefined
@@ -656,8 +663,9 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
     typeof article.meta.references === 'string' &&
     vfile.isPath(article.meta.references)
   ) {
-    // Store the bibliography file path on the `references` key
-    frontmatter.references = article.meta.references
+    // Store the bibliography file path on the `bibliography` key
+    frontmatter.bibliography = article.meta.references
+    delete frontmatter.references
 
     // Clean up the frontmatter object to avoid duplicating reference content
     if (typeof frontmatter.meta === 'object' && frontmatter.meta !== null) {
