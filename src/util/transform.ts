@@ -19,12 +19,12 @@ import * as stencila from '@stencila/schema'
  * But in some cases it may be better to use a different function e.g. in
  * cases where you wish to traverse all nodes but the order does not matter.
  *
- * @param node The node to transform
+ * @param rootNode The node to transform
  * @param transformer The transforming function. Should return the transformed node.
  * @param recurse If a node is transformed, should transformation be performed on its children?
  */
 export default async function transform(
-  node: stencila.Node,
+  rootNode: stencila.Node,
   transformer: (
     node: stencila.Node,
     parent?: stencila.Node
@@ -61,7 +61,7 @@ export default async function transform(
       Promise.resolve({})
     )
   }
-  return walk(node)
+  return walk(rootNode)
 }
 
 /**

@@ -350,22 +350,29 @@ async function encodePrepare(
   rootNode: stencila.Node,
   options: CommonEncodeOptions
 ): Promise<stencila.Node> {
-  return transform(rootNode, async (node) => {
-    if (stencila.isArticle(node)) {
-      return await extractReferences(node, options)
-    }
-    if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
-      if (node.mathLanguage !== 'tex') {
-        const text = await texCodec.dump(node)
-        return {
-          ...node,
-          mathLanguage: 'tex',
-          text,
+  return transform(
+    rootNode,
+    async (node) => {
+      if (stencila.isArticle(node)) {
+        return await extractReferences(node, options)
+      }
+      if (
+        stencila.isA('MathFragment', node) ||
+        stencila.isA('MathBlock', node)
+      ) {
+        if (node.mathLanguage !== 'tex') {
+          const text = await texCodec.dump(node)
+          return {
+            ...node,
+            mathLanguage: 'tex',
+            text,
+          }
         }
       }
-    }
-    return node
-  })
+      return node
+    },
+    true
+  )
 }
 
 function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {

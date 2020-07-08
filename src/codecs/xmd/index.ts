@@ -6,7 +6,7 @@ import * as stencila from '@stencila/schema'
 import crypto from 'crypto'
 import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 import { transformSync } from '../../util/transform'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
@@ -95,7 +95,8 @@ export class XmdCodec extends Codec implements Codec {
    * @param node The Stencila node to encode
    */
   public readonly encode = async (
-    node: stencila.Node
+    node: stencila.Node,
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const transformed = transformSync(
       node,
@@ -156,7 +157,7 @@ export class XmdCodec extends Codec implements Codec {
       }
     )
 
-    const cmd = await dump(transformed, 'md')
+    const cmd = await dump(transformed, 'md', options)
 
     // Replace Commonmark "info string" with R Markdown curly brace
     // enclosed options. This requires parsing the options so that
