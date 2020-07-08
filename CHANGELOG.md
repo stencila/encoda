@@ -1,3 +1,13 @@
+## [0.97.1](https://github.com/stencila/encoda/compare/v0.97.0...v0.97.1) (2020-07-08)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency ajv to ^6.12.3 ([245e3bf](https://github.com/stencila/encoda/commit/245e3bfa6ce36582f402e038c8293a6e229609d8))
+* **dependencies:** update dependency immer to ^7.0.5 ([784ef8b](https://github.com/stencila/encoda/commit/784ef8b05129efba1d7283742618f1861e527304))
+* **dependencies:** update dependency puppeteer to v5 ([a556645](https://github.com/stencila/encoda/commit/a556645a7e624b1e0214560dec9a429aa0f57641))
+* **dependencies:** update dependency xlsx to ^0.16.3 ([693aae9](https://github.com/stencila/encoda/commit/693aae9e1d21dd9579ec54a20e009ed7216528e4))
+
 # [0.97.0](https://github.com/stencila/encoda/compare/v0.96.0...v0.97.0) (2020-06-23)
 
 
