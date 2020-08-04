@@ -24,8 +24,8 @@ import mathArticle from '../../__fixtures__/article/math'
 import rNotebookSimple from '../../__fixtures__/article/r-notebook-simple'
 import {
   pythonCodeChunk,
-
-  rCodeChunkImageOutput, rCodeExpression
+  rCodeChunkImageOutput,
+  rCodeExpression,
 } from '../../__fixtures__/code/kitchen-sink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
