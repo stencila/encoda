@@ -137,7 +137,7 @@ export async function decodeCsl(
     let isPartOf
     if (containerTitle !== undefined) {
       isPartOf = schema.periodical({
-        title: containerTitle,
+        name: containerTitle,
       })
       if (volume !== undefined) {
         isPartOf = schema.publicationVolume({
@@ -153,12 +153,26 @@ export async function decodeCsl(
       }
     }
 
+    let pageStart
+    let pageEnd
+    let pagination
+    if (page !== undefined) {
+      const match = /\s*(\d+)\s*-\s*(\d+)\s*/.exec(page)
+      if (match) {
+        pageStart = match[1]
+        pageEnd = match[2]
+      } else pagination = page
+    }
+
     return schema.article({
       authors,
       title,
       id,
       datePublished,
       isPartOf,
+      pageStart,
+      pageEnd,
+      pagination,
     })
   } else {
     logWarnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
