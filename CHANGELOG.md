@@ -1,3 +1,19 @@
+## [0.97.3](https://github.com/stencila/encoda/compare/v0.97.2...v0.97.3) (2020-08-04)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/schema to ^0.43.3 ([7fd2e6f](https://github.com/stencila/encoda/commit/7fd2e6f1f0f415771b0778b9f0a32456890df5d5))
+* **dependencies:** update dependency @stencila/thema to v2.15.0 ([0e091b2](https://github.com/stencila/encoda/commit/0e091b259dc1668fc72d4e7af1a3f8d94343a869))
+* **dependencies:** update dependency fp-ts to ^2.8.1 ([15c1818](https://github.com/stencila/encoda/commit/15c1818da37c940ccfe24a14bf6cd078f44e7ba7))
+* **dependencies:** update dependency got to ^11.5.1 ([509f090](https://github.com/stencila/encoda/commit/509f0900341dc4adf53f5a88586c0fb1f09bb3cf))
+* **dependencies:** update dependency jsdom to ^16.3.0 ([8be8800](https://github.com/stencila/encoda/commit/8be8800610a1308d38d222feae2de76ee9fab7de))
+* **dependencies:** update dependency puppeteer to ^5.2.1 ([04dd12f](https://github.com/stencila/encoda/commit/04dd12f00b7118bf8069ae1c5a9d493d70fc0b4d))
+* **dependencies:** update dependency tempy to ^0.6.0 ([5bf9746](https://github.com/stencila/encoda/commit/5bf9746cf721cd9f07323df91a6acdfb3ca36c31))
+* **dependencies:** update dependency unified to ^9.1.0 ([5344d93](https://github.com/stencila/encoda/commit/5344d9371398304497fc9d14997d1dbf833d7cfe))
+* **dependencies:** update dependency xlsx to ^0.16.5 ([2c9fe7e](https://github.com/stencila/encoda/commit/2c9fe7ec3d75a7868560fa992865e0a8eb0907a0))
+* **dependencies:** update remark monorepo ([da24a01](https://github.com/stencila/encoda/commit/da24a01a04677694829d1f38a80e76fe7f749d44))
+
 ## [0.97.2](https://github.com/stencila/encoda/compare/v0.97.1...v0.97.2) (2020-08-04)
 
 
