@@ -317,14 +317,20 @@ const decodeDate = (date: Csl.Date): string => {
 
 /**
  * Encode a Stencila `Date` as a `Csl.Date`.
+ *
+ * If the date is 1 January then only encode the year (not
+ * the month and day).
  */
 const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
   if (!(date instanceof Date)) {
     const iso = schema.isA('Date', date) ? date.value : date
     date = new Date(iso + ' UTC')
   }
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
   return {
-    'date-parts': [[date.getFullYear(), date.getMonth() + 1, date.getDate()]],
+    'date-parts': month === 1 && day === 1 ? [[year]] : [[year, month, day]],
   }
 }
 
