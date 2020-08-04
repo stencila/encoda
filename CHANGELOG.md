@@ -1,3 +1,17 @@
+## [0.97.2](https://github.com/stencila/encoda/compare/v0.97.1...v0.97.2) (2020-08-04)
+
+
+### Bug Fixes
+
+* **CSL:** Decode page into pageStart, pageEnd or pagination; use name for Periodical ([9e1bf68](https://github.com/stencila/encoda/commit/9e1bf68d655f3b40dcdf76e65ee11dd4c8841524))
+* **CSL:** Only encode the year date part if 1 January ([15f0fe4](https://github.com/stencila/encoda/commit/15f0fe46cabcb7124506b1e3cb7cb0201f347e65))
+* **dependencies:** update dependency @stencila/thema to v2.12.0 ([b6f4f28](https://github.com/stencila/encoda/commit/b6f4f2855a7413cafd4f70025da76676f25003f5))
+* **dependencies:** update dependency citation-js to ^0.5.0-alpha.6 ([3333677](https://github.com/stencila/encoda/commit/33336771aa6567ed89d6fdd5fe4a701ed715f929))
+* **dependencies:** update dependency fp-ts to ^2.7.0 ([bf3bd28](https://github.com/stencila/encoda/commit/bf3bd2899948e66a8b33c0849a110624e3b38bd3))
+* **dependencies:** update dependency got to ^11.5.0 ([a93baa1](https://github.com/stencila/encoda/commit/a93baa157c58169b2b1910973e7d30d98e15fe3d))
+* **dependencies:** update dependency pdf-lib to ^1.9.0 ([23f2f08](https://github.com/stencila/encoda/commit/23f2f087c535764c0f54f34eb3a3ea8de313c33e))
+* **RMD:** Extract bibliography to separate file ([4faad29](https://github.com/stencila/encoda/commit/4faad29ec0e02dcc4a0ff4234d562ab8f4526a2c))
+
 ## [0.97.1](https://github.com/stencila/encoda/compare/v0.97.0...v0.97.1) (2020-07-08)
 
 
