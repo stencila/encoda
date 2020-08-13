@@ -1,3 +1,21 @@
+# [0.98.0](https://github.com/stencila/encoda/compare/v0.97.3...v0.98.0) (2020-08-13)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.12.0 ([7347c7a](https://github.com/stencila/encoda/commit/7347c7a8ab6c2323a4791278d8208a3c9ccdf5a5))
+* **dependencies:** update dependency @stencila/executa to ^1.13.0 ([e2533ca](https://github.com/stencila/encoda/commit/e2533ca4c85d589f9738c2c77e21bc9f1b7a8963))
+* **dependencies:** update dependency @stencila/thema to v2.15.2 ([c308bc2](https://github.com/stencila/encoda/commit/c308bc2a3a83bb18f62cc881084193d573ed0130))
+* **dependencies:** update dependency vfile to ^4.2.0 ([09fb62a](https://github.com/stencila/encoda/commit/09fb62a361ee0d41aefe6d8d484563076bc38591))
+* **Deps:** npm audit fix ([a741c91](https://github.com/stencila/encoda/commit/a741c915aa94a0c334faad3a52775bc36bc61d3e))
+* **Markdown:** Unwrap image; use id from extension properties ([dd3d1ea](https://github.com/stencila/encoda/commit/dd3d1eaec4ca60077b7734261ba7358c3f4bc286))
+* **Markdown, YAML:** Updates for updated typing ([d8b5845](https://github.com/stencila/encoda/commit/d8b584571ea10d8f90779bef6d76d44ee7354d49))
+
+
+### Features
+
+* **Markdown:** Add chunkfigure extension ([5df6858](https://github.com/stencila/encoda/commit/5df6858bc1c107641ad336d0f9c7394a8cc5fade))
+
 ## [0.97.3](https://github.com/stencila/encoda/compare/v0.97.2...v0.97.3) (2020-08-04)
 
 
