@@ -15,7 +15,7 @@ export class YamlCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const yml = await vfile.dump(file)
-    return yaml.safeLoad(yml)
+    return yaml.safeLoad(yml) ?? null
   }
 
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {

@@ -205,19 +205,9 @@ interface DecodeContext {
 export function decodeMarkdown(md: string): stencila.Article | stencila.Node[] {
   const mdast = stringToMdast(md)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
-
-  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
-  const [frontmatterYaml] = root.children.filter(
-    (child) => child.type === 'yaml'
-  )
-
   const context: DecodeContext = {
-    frontmatter:
-      yaml.safeLoad(
-        typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
-      ) ?? {},
+    frontmatter: loadFrontmatter(root),
   }
-
   return decodeArticle(root, context)
 }
 
@@ -232,27 +222,31 @@ async function decodeRootArticle(
 ): Promise<stencila.Article | stencila.Node[]> {
   const mdast = stringToMdast(content)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
-
-  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
-  const [frontmatterYaml] = root.children.filter(
-    (child) => child.type === 'yaml'
-  )
-
-  const loadedFrontmatter: Frontmatter =
-    yaml.safeLoad(
-      typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
-    ) ?? {}
-
+  const loadedFrontmatter = loadFrontmatter(root)
   const context: DecodeContext = {
     frontmatter: {
       ...loadedFrontmatter,
       references: await loadExtractedReferences(loadedFrontmatter),
     },
   }
-
   return isStandalone
     ? decodeArticle(root, context)
     : root.children.map((child) => decodeNode(child, context))
+}
+
+function loadFrontmatter(root: MDAST.Root) {
+  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
+  const [frontmatterYaml] = root.children.filter(
+    (child) => child.type === 'yaml'
+  )
+  const parsedFrontmatter = yaml.safeLoad(
+    typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
+  )
+  const loadedFrontmatter: Frontmatter =
+    typeof parsedFrontmatter === 'object'
+      ? (parsedFrontmatter as Frontmatter)
+      : {}
+  return loadedFrontmatter
 }
 
 /**
