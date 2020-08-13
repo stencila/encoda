@@ -106,6 +106,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_encoda_.encoda.html#servers" class="tsd-kind-icon">servers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#timelimit" class="tsd-kind-icon">timelimit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#timeout" class="tsd-kind-icon">timeout</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -119,12 +121,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_encoda_.encoda.html#capabilities" class="tsd-kind-icon">capabilities</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="_encoda_.encoda.html#compile" class="tsd-kind-icon">compile</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_encoda_.encoda.html#decode" class="tsd-kind-icon">decode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_encoda_.encoda.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_encoda_.encoda.html#encode" class="tsd-kind-icon">encode</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="_encoda_.encoda.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="_encoda_.encoda.html#execute" class="tsd-kind-icon">execute</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#manifest" class="tsd-kind-icon">manifest</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#notified" class="tsd-kind-icon">notified</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_encoda_.encoda.html#notified" class="tsd-kind-icon">notified</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_encoda_.encoda.html#notify" class="tsd-kind-icon">notify</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#pipe" class="tsd-kind-icon">pipe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_encoda_.encoda.html#query" class="tsd-kind-icon">query</a></li>
@@ -150,7 +152,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Listener.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/6d71c66a/src/encoda.ts#L21">src/encoda.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/5df6858b/src/encoda.ts#L21">src/encoda.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,6 +204,39 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="timelimit" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> timelimit</h3>
+					<div class="tsd-signature tsd-kind-icon">timelimit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#timelimit">timelimit</a></p>
+						<ul>
+							<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:26</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Maximum time that the process will run.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#timeout">timeout</a></p>
+						<ul>
+							<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:22</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Seconds of inactivity after which the listener
+							stops.</p>
+						</div>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
@@ -217,7 +252,7 @@
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#addresses">addresses</a></p>
 								<p>Overrides Executor.addresses</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:25</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:43</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +456,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.capabilities</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/6d71c66a/src/encoda.ts#L34">src/encoda.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/5df6858b/src/encoda.ts#L34">src/encoda.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,7 +521,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.decode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/6d71c66a/src/encoda.ts#L65">src/encoda.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/5df6858b/src/encoda.ts#L65">src/encoda.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -509,30 +544,28 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="dispatch" class="tsd-anchor"></a>
 					<h3>dispatch</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">dispatch<span class="tsd-signature-symbol">(</span>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Method</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Params</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#dispatch">dispatch</a></p>
+								<p>Overrides Executor.dispatch</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Executor.d.ts:241</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:48</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Dispatch a call to one of the above methods.</p>
-								</div>
-								<p>This method does run time dispatching. It is used
-									by classes such as <code>Server</code> (to fulfil and JSON-RPC request),
-									<code>Queuer</code> (to remove calls from a queue) and elsewhere for
-								running the <code>pipe</code> method.</p>
-								<p>It does runtime checking for the method name and
-								required parameters.</p>
+								<dl class="tsd-comment-tags">
+									<dt>override</dt>
+									<dd><p>Override of {@link Executor.dispatch} to
+										update heartbeat with current time.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -558,7 +591,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.encode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/6d71c66a/src/encoda.ts#L78">src/encoda.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/5df6858b/src/encoda.ts#L78">src/encoda.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -722,44 +755,39 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="notified" class="tsd-anchor"></a>
 					<h3>notified</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">notified<span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, node<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#notified">notified</a></p>
+								<p>Overrides Executor.notified</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Executor.d.ts:274</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:60</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Receive a notification</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>override</dt>
+									<dd><p>Override of {@link Executor.notify} to
+										update heartbeat with current time.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>level: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The notification level e.g. <code>info</code>, <code>error</code></p>
-									</div>
 								</li>
 								<li>
 									<h5>message: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The notification message</p>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> node: <span class="tsd-signature-type">schema.Node</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The node to which this notification relates e.g. a <code>SoftwareSession</code></p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -778,7 +806,7 @@
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#notify">notify</a></p>
 								<p>Overrides Executor.notify</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:32</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:55</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -813,7 +841,7 @@
 					<a name="pipe" class="tsd-anchor"></a>
 					<h3>pipe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">pipe<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span>, calls<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">manifest</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">decode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">encode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">query</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">compile</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">build</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">execute</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">begin</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">end</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">pipe</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">cancel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Method</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">pipe<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span>, calls<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">manifest</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">decode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">encode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">query</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">compile</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">build</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">execute</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">begin</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">end</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">pipe</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">cancel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Method</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Params</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -841,7 +869,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>calls: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">manifest</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">decode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">encode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">query</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">compile</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">build</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">execute</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">begin</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">end</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">pipe</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">cancel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Method</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>calls: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">manifest</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">decode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">encode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">query</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">compile</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">build</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">execute</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">begin</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">end</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">pipe</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">cancel</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Method</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Params</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A list of method, parameters tuples to pipe the node through</p>
 									</div>
@@ -903,7 +931,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#register">register</a></p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:57</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:86</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -928,14 +956,15 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#run">run</a></p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:50</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:79</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Run this executor</p>
 								</div>
-								<p>Starts listening with graceful shutdown on <code>SIGINT</code> or <code>SIGTERM</code>.</p>
+								<p>Starts listening with graceful shutdown on <code>SIGINT</code> or <code>SIGTERM</code>,
+								and checking for timeout (if set).</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p>{@link Server.run}</p>
@@ -958,7 +987,7 @@
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#start">start</a></p>
 								<p>Overrides Executor.start</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:38</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:66</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -991,7 +1020,7 @@
 								<p>Inherited from <a href="_encoda_.encoda.html">Encoda</a>.<a href="_encoda_.encoda.html#stop">stop</a></p>
 								<p>Overrides Executor.stop</p>
 								<ul>
-									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:42</li>
+									<li>Defined in node_modules/@stencila/executa/dist/lib/base/Listener.d.ts:70</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1032,6 +1061,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_encoda_.encoda.html#servers" class="tsd-kind-icon">servers</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_encoda_.encoda.html#timelimit" class="tsd-kind-icon">timelimit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_encoda_.encoda.html#timeout" class="tsd-kind-icon">timeout</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="_encoda_.encoda.html#addresses" class="tsd-kind-icon">addresses</a>
 							</li>
@@ -1056,7 +1091,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_encoda_.encoda.html#decode" class="tsd-kind-icon">decode</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="_encoda_.encoda.html#dispatch" class="tsd-kind-icon">dispatch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
@@ -1071,7 +1106,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_encoda_.encoda.html#manifest" class="tsd-kind-icon">manifest</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="_encoda_.encoda.html#notified" class="tsd-kind-icon">notified</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
@@ -1144,6 +1179,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

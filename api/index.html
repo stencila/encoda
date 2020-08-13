@@ -466,7 +466,7 @@
 				<p>Several of the codecs in Encoda, deal with fetching content from a particular publisher. For example, to get an eLife article and read it in Markdown:</p>
 				<pre><code class="language-bash">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
 				<p>Some of these publisher codecs deal with meta data. e.g.</p>
-				<pre><code class="language-bash">stencila convert <span class="hljs-string">"Watson and Crick 1953"</span> - --from crossref --to yaml</code></pre>
+				<pre><code class="language-bash">stencila convert <span class="hljs-string">&quot;Watson and Crick 1953&quot;</span> - --from crossref --to yaml</code></pre>
 				<pre><code class="language-yaml"><span class="hljs-attr">type:</span> <span class="hljs-string">Article</span>
 <span class="hljs-attr">title:</span> <span class="hljs-string">Genetical</span> <span class="hljs-string">Implications</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">Structure</span> <span class="hljs-string">of</span> <span class="hljs-string">Deoxyribonucleic</span> <span class="hljs-string">Acid</span>
 <span class="hljs-attr">authors:</span>
@@ -480,11 +480,11 @@
     <span class="hljs-attr">givenNames:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">F.</span> <span class="hljs-string">H.</span> <span class="hljs-string">C.</span>
     <span class="hljs-attr">type:</span> <span class="hljs-string">Person</span>
-<span class="hljs-attr">datePublished:</span> <span class="hljs-string">'1953,5'</span>
+<span class="hljs-attr">datePublished:</span> <span class="hljs-string">&#x27;1953,5&#x27;</span>
 <span class="hljs-attr">isPartOf:</span>
-  <span class="hljs-attr">issueNumber:</span> <span class="hljs-string">'4361'</span>
+  <span class="hljs-attr">issueNumber:</span> <span class="hljs-string">&#x27;4361&#x27;</span>
   <span class="hljs-attr">isPartOf:</span>
-    <span class="hljs-attr">volumeNumber:</span> <span class="hljs-string">'171'</span>
+    <span class="hljs-attr">volumeNumber:</span> <span class="hljs-string">&#x27;171&#x27;</span>
     <span class="hljs-attr">isPartOf:</span>
       <span class="hljs-attr">title:</span> <span class="hljs-string">Nature</span>
       <span class="hljs-attr">type:</span> <span class="hljs-string">Periodical</span>
@@ -603,12 +603,12 @@
 					<h3>Converting folders</h3>
 				</a>
 				<p>You can decode an entire directory into a <code>Collection</code>. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the <code>Collection</code> using the <code>dir</code> codec into a tree of HTML files e.g.</p>
-				<pre><code class="language-bash">encoda convert myproject myproject-published --to dir --pattern <span class="hljs-string">'**/*.{rmd, csv}'</span></code></pre>
+				<pre><code class="language-bash">encoda convert myproject myproject-published --to dir --pattern <span class="hljs-string">&#x27;**/*.{rmd, csv}&#x27;</span></code></pre>
 				<a href="#converting-command-line-input" id="converting-command-line-input" style="color: inherit; text-decoration: none;">
 					<h3>Converting command line input</h3>
 				</a>
 				<p>You can also read content from the first argument. In that case, you&#39;ll need to specifying the <code>--from</code> format e.g.</p>
-				<pre><code class="language-bash">encoda convert <span class="hljs-string">"{type: 'Paragraph', content: ['Hello world!']}"</span> --from json5 paragraph.md</code></pre>
+				<pre><code class="language-bash">encoda convert <span class="hljs-string">&quot;{type: &#x27;Paragraph&#x27;, content: [&#x27;Hello world!&#x27;]}&quot;</span> --from json5 paragraph.md</code></pre>
 				<p>You can send output to the console by using <code>-</code> as the second argument and specifying the <code>--to</code> format e.g.</p>
 				<pre><code class="language-bash">encoda convert paragraph.md - --to yaml</code></pre>
 				<a href="#creating-zip-archives" id="creating-zip-archives" style="color: inherit; text-decoration: none;">
@@ -650,10 +650,11 @@
 				<p>You can then use the REPL to explore the structure of the document and do things like create summary documents from it. For example, lets say from some reason we wanted to create a short JATS XML file with the five most recent releases of this package:</p>
 				<pre><code><span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">format</span> <span class="hljs-selector-tag">jats</span>
 <span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">dest</span> <span class="hljs-selector-tag">latest-releases</span><span class="hljs-selector-class">.jats</span><span class="hljs-selector-class">.xml</span>
-<span class="hljs-selector-tag">jmp</span> &gt; {<span class="hljs-attribute">type</span>: <span class="hljs-string">'Article'</span>, content: content[? type==`Heading` &amp;&amp; depth==`<span class="hljs-number">1</span>`] | [<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]}</code></pre><p>Which creates the <code>latest-major-releases.jats.xml</code> file:</p>
-				<pre><code class="language-xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">article</span> <span class="hljs-meta-keyword">PUBLIC</span> <span class="hljs-meta-string">"-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"</span> <span class="hljs-meta-string">"JATS-archivearticle1.dtd"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">article-type</span>=<span class="hljs-string">"research-article"</span>&gt;</span>
+<span class="hljs-selector-tag">jmp</span> &gt; {<span class="hljs-attribute">type</span>: <span class="hljs-string">&#x27;Article&#x27;</span>, content: content[? type==`Heading` &amp;&amp; depth==`<span class="hljs-number">1</span>`] | [<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]}</code></pre>
+				<p>Which creates the <code>latest-major-releases.jats.xml</code> file:</p>
+				<pre><code class="language-xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">article</span> <span class="hljs-meta-keyword">PUBLIC</span> <span class="hljs-meta-string">&quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot;</span> <span class="hljs-meta-string">&quot;JATS-archivearticle1.dtd&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attr">article-type</span>=<span class="hljs-string">&quot;research-article&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">front</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">title-group</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">article-title</span>/&gt;</span>
@@ -663,32 +664,32 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">sec</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ext-link</span> <span class="hljs-attr">ext-link-type</span>=<span class="hljs-string">"uri"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0"</span>&gt;</span>0.80.0<span class="hljs-tag">&lt;/<span class="hljs-name">ext-link</span>&gt;</span> (2019-09-30)
+                <span class="hljs-tag">&lt;<span class="hljs-name">ext-link</span> <span class="hljs-attr">ext-link-type</span>=<span class="hljs-string">&quot;uri&quot;</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">&quot;https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0&quot;</span>&gt;</span>0.80.0<span class="hljs-tag">&lt;/<span class="hljs-name">ext-link</span>&gt;</span> (2019-09-30)
             <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">sec</span>&gt;</span>
 ...</code></pre>
 				<p>You can query a document in any format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and get the names of it&#39;s columns:</p>
 				<pre><code class="language-bash">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
-🛈 INFO  encoda:http Fetching <span class="hljs-string">"https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv"</span>
+🛈 INFO  encoda:http Fetching <span class="hljs-string">&quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;</span>
 jmp &gt; columns[].name
 [
-  <span class="hljs-string">'SetID'</span>,
-  <span class="hljs-string">'Number'</span>,
-  <span class="hljs-string">'Variant'</span>,
-  <span class="hljs-string">'Theme'</span>,
-  <span class="hljs-string">'Subtheme'</span>,
-  <span class="hljs-string">'Year'</span>,
-  <span class="hljs-string">'Name'</span>,
-  <span class="hljs-string">'Minifigs'</span>,
-  <span class="hljs-string">'Pieces'</span>,
-  <span class="hljs-string">'UKPrice'</span>,
-  <span class="hljs-string">'USPrice'</span>,
-  <span class="hljs-string">'CAPrice'</span>,
-  <span class="hljs-string">'EUPrice'</span>,
-  <span class="hljs-string">'ImageURL'</span>,
-  <span class="hljs-string">'Owned'</span>,
-  <span class="hljs-string">'Wanted'</span>,
-  <span class="hljs-string">'QtyOwned'</span>,
+  <span class="hljs-string">&#x27;SetID&#x27;</span>,
+  <span class="hljs-string">&#x27;Number&#x27;</span>,
+  <span class="hljs-string">&#x27;Variant&#x27;</span>,
+  <span class="hljs-string">&#x27;Theme&#x27;</span>,
+  <span class="hljs-string">&#x27;Subtheme&#x27;</span>,
+  <span class="hljs-string">&#x27;Year&#x27;</span>,
+  <span class="hljs-string">&#x27;Name&#x27;</span>,
+  <span class="hljs-string">&#x27;Minifigs&#x27;</span>,
+  <span class="hljs-string">&#x27;Pieces&#x27;</span>,
+  <span class="hljs-string">&#x27;UKPrice&#x27;</span>,
+  <span class="hljs-string">&#x27;USPrice&#x27;</span>,
+  <span class="hljs-string">&#x27;CAPrice&#x27;</span>,
+  <span class="hljs-string">&#x27;EUPrice&#x27;</span>,
+  <span class="hljs-string">&#x27;ImageURL&#x27;</span>,
+  <span class="hljs-string">&#x27;Owned&#x27;</span>,
+  <span class="hljs-string">&#x27;Wanted&#x27;</span>,
+  <span class="hljs-string">&#x27;QtyOwned&#x27;</span>,
 ]
 jmp &gt;</code></pre>
 				<p>See the <code>%help</code> REPL command for more examples.</p>
@@ -742,7 +743,7 @@ node dist/cli convert simple.md simple.html</code></pre>
 					<h4>Recording and using network fixtures</h4>
 				</a>
 				<p>As far as possible, tests should be able to run with no network access. We use <a href="https://github.com/nock/nock#nock-back">Nock Back</a> to record and play back network requests and responses. Use the <code>nockRecord</code> helper function for this with the convention of starting the fixture file with <code>nock-record-</code> e.g.</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">const</span> stopRecording = <span class="hljs-keyword">await</span> nockRecord(<span class="hljs-string">'nock-record-&lt;name-of-test&gt;.json'</span>)
+				<pre><code class="language-ts"><span class="hljs-keyword">const</span> stopRecording = <span class="hljs-keyword">await</span> nockRecord(<span class="hljs-string">&#x27;nock-record-&lt;name-of-test&gt;.json&#x27;</span>)
 <span class="hljs-comment">// Do some things that connect to the interwebs</span>
 stopRecording()</code></pre>
 				<p>Note that the <code>util/http</code> module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. <code>rm -rf ~/.config/stencila/encoda/cache/</code></p>
@@ -1158,6 +1159,5 @@ stopRecording()</code></pre>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
