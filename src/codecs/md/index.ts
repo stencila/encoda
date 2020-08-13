@@ -965,10 +965,23 @@ function decodeFigure(ext: Extension): stencila.Figure {
   const article = decodeMarkdown(ext.content) as stencila.Article
   const nodes = (article.content && article.content) || []
 
+  // If the first node is a paragraph with only an image in
+  // it then unwrap it. ie. the figure's content is just an image
+  const first = nodes[0]
+  const content =
+    stencila.isParagraph(first) &&
+    first.content?.length === 1 &&
+    stencila.isA('ImageObject', first.content[0])
+      ? first.content
+      : [first]
+
+  const caption = nodes.slice(1)
+
   return stencila.figure({
-    content: nodes.slice(0, 1),
-    caption: nodes.slice(1),
+    content,
+    caption,
     label: ext.argument,
+    id: ext.properties?.id,
   })
 }
 
