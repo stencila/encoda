@@ -73,14 +73,27 @@ export class XmdCodec extends Codec implements Codec {
     xmd = decodeFigure(xmd)
 
     // Block code chunks are replaced with a `chunk` block extension
+    // Block code chunks already nested within generic extensions e.g. a chunkfigure
+    // are converted to a plain code chunk.
     cmd = cmd.replace(
-      /```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
-      (match, lang: string, options: string, text: string): string => {
-        let md = 'chunk:\n:::\n``` ' + lang
-        if (options.length > 0) md += ` ${options}`
-        return md + '\n' + text + '\n```\n:::\n'
+      /(:::\n\s*)?```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
+      (
+        match,
+        inExtension: string | undefined,
+        lang: string,
+        options: string,
+        text: string
+      ): string => {
+        if (inExtension !== undefined) {
+          return ':::\n``` ' + lang + '\n' + text + '\n```\n'
+        } else {
+          let md = 'chunk:\n:::\n``` ' + lang
+          if (options.length > 0) md += ` ${options}`
+          return md + '\n' + text + '\n```\n:::\n'
+        }
       }
     )
+
     return load(cmd, 'md')
   }
 

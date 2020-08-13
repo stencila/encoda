@@ -159,6 +159,7 @@ const GENERIC_EXTENSIONS = [
   'expr',
   'chunk',
   'figure',
+  'chunkfigure',
   'include',
 
   'null',
@@ -421,6 +422,8 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
           return decodeCodeChunk(ext)
         case 'figure':
           return decodeFigure(ext)
+        case 'chunkfigure':
+          return decodeCodeChunkFigure(ext)
         case 'quote':
           return decodeQuote(ext)
         case 'include':
@@ -1006,6 +1009,27 @@ function encodeFigure(figure: stencila.Figure): Extension {
     content: md,
     argument: label,
   }
+}
+
+/**
+ * Decode a `chunkfigure` block extension to a `Figure` with a `CodeChunk`
+ * as it's first child.
+ */
+function decodeCodeChunkFigure(ext: Extension): stencila.Figure {
+  const { content = '' } = ext
+  const [codeAndOutputs, caption = ''] = content.split('---')
+  const chunk = decodeCodeChunk({
+    ...ext,
+    content: codeAndOutputs,
+  })
+  const figure = decodeFigure({
+    ...ext,
+    content: `dummy\n\n${caption}`,
+  })
+  if (figure.content !== undefined) {
+    figure.content[0] = chunk
+  }
+  return figure
 }
 
 /**
