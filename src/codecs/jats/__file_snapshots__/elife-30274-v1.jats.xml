@@ -154,7 +154,7 @@
                 <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
                 <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification (
                 <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
-                <xref rid="bib26" ref-type="bibr">Sabòand Amati, 2014</xref>; 
+                <xref rid="bib26" ref-type="bibr">Sabò and Amati, 2014</xref>; 
                 <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). This has also been suggested of MYCN (
                 <xref rid="bib5" ref-type="bibr">Duffy et al., 2015</xref>). The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome (
                 <xref rid="bib32" ref-type="bibr">Trakhtenberg et al., 2016</xref>). Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels (
@@ -217,7 +217,7 @@
                 <italic>p</italic>=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression (
                 <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>). There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage (
                 <xref rid="bib11" ref-type="bibr">Hiorns et al., 2004</xref>), low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer (
-                <xref rid="bib2" ref-type="bibr">Biggsand Macmillan, 1948</xref>; 
+                <xref rid="bib2" ref-type="bibr">Biggs and Macmillan, 1948</xref>; 
                 <xref rid="bib20" ref-type="bibr">Nielson et al., 1991</xref>). To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two.
             </p>
         </sec>
@@ -645,7 +645,7 @@
                 </table>
             </table-wrap>
             <p>Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference (
-                <xref rid="bib8" ref-type="bibr">Gelmanand Stern, 2006</xref>; 
+                <xref rid="bib8" ref-type="bibr">Gelman and Stern, 2006</xref>; 
                 <xref rid="bib21" ref-type="bibr">Nieuwenhuis et al., 2011</xref>). To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (
                 <ext-link ext-link-type="uri" xlink:href="#table3">Table 3</ext-link>). This suggests that active genes and silent genes do not have similar rates of expression upon c-Myc induction. To summarize, for this experiment we found results that were in the same direction as the original study and suggest that while both active and silent genes increased in expression upon c-Myc induction, the rate of increase was different.
             </p>
@@ -738,7 +738,7 @@
                 </table>
             </table-wrap>
             <p>The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set (
-                <xref rid="bib1" ref-type="bibr">Altmanand Royston, 2006</xref>; 
+                <xref rid="bib1" ref-type="bibr">Altman and Royston, 2006</xref>; 
                 <xref rid="bib4" ref-type="bibr">Cohen, 1983</xref>). Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification (
                 <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
                 <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction (
@@ -1932,6 +1932,7 @@
             </ref>
             <ref id="bib25">
                 <element-citation>
+                    <article-title>R: A language and environment for statistical computing</article-title>
                     <year iso-8601-date="2017">2017</year>
                     <source>R Foundation for Statistical Computing</source>
                 </element-citation>

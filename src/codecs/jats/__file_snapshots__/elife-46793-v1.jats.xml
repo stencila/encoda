@@ -118,16 +118,16 @@
             <title>Introduction</title>
             <p>G-quadruplex secondary structures (G4s) form in nucleic acids through the self-association of guanines (G) in G-rich sequences to form stacked tetrad structures (reviewed in 
                 <xref rid="bib15" ref-type="bibr">Bochman et al., 2012</xref>; 
-                <xref rid="bib99" ref-type="bibr">Rhodesand Lipps, 2015</xref>). In the human genome, over 700,000 G4s have been detected in vitro (
+                <xref rid="bib99" ref-type="bibr">Rhodes and Lipps, 2015</xref>). In the human genome, over 700,000 G4s have been detected in vitro (
                 <xref rid="bib23" ref-type="bibr">Chambers et al., 2015</xref>). Sequences encoding G4s are enriched in regulatory regions consistent with roles in transcription and RNA regulation (
-                <xref rid="bib63" ref-type="bibr">Huppertand Balasubramanian, 2007</xref>; 
+                <xref rid="bib63" ref-type="bibr">Huppert and Balasubramanian, 2007</xref>; 
                 <xref rid="bib62" ref-type="bibr">Huppert, 2008</xref>), and their over-representation in oncogene promoters, such as 
                 <italic>MYC, KRAS</italic> and 
                 <italic>KIT,</italic> suggests that they are important in cancer and are potential therapeutic targets (reviewed in 
                 <xref rid="bib7" ref-type="bibr">Balasubramanian et al., 2011</xref>). Computationally predicted G4s have also been linked to replication origins (
                 <xref rid="bib10" ref-type="bibr">Besnard et al., 2012</xref>) and telomere homeostasis (reviewed in 
                 <xref rid="bib88" ref-type="bibr">Neidle, 2010</xref>). In the transcriptome, more than 3000 mRNAs have been shown to contain G4 structures in vitro, particularly at 5’ and 3’ UTRs, suggestive of roles in posttranscriptional regulation (
-                <xref rid="bib19" ref-type="bibr">Bugautand Balasubramanian, 2012</xref>; 
+                <xref rid="bib19" ref-type="bibr">Bugaut and Balasubramanian, 2012</xref>; 
                 <xref rid="bib69" ref-type="bibr">Kwok et al., 2016</xref>).
             </p>
             <p>G4-specific antibodies have been used to visualise G4s in protozoa (
@@ -150,8 +150,8 @@
                 <xref rid="bib89" ref-type="bibr">Neidle, 2017</xref>). G4-stabilising ligands also interfere with telomere homeostasis by inducing telomere uncapping/DNA damage through the inhibition of telomere extension by telomerase leading to senescence or apoptosis (reviewed in 
                 <xref rid="bib88" ref-type="bibr">Neidle, 2010</xref>). 5’ UTR RNA G4 structures may also be involved in eIF4A-dependent oncogene translation (
                 <xref rid="bib127" ref-type="bibr">Wolfe et al., 2014</xref>) and their stabilisation by G4-ligands can inhibit translation in vitro (
-                <xref rid="bib19" ref-type="bibr">Bugautand Balasubramanian, 2012</xref>). Identification of several RNA G4-interacting proteins (reviewed in 
-                <xref rid="bib20" ref-type="bibr">Cammasand Millevoi, 2016</xref>), including DEAD/DEAH helicases such as DDX3X, and DHX36 (
+                <xref rid="bib19" ref-type="bibr">Bugaut and Balasubramanian, 2012</xref>). Identification of several RNA G4-interacting proteins (reviewed in 
+                <xref rid="bib20" ref-type="bibr">Cammas and Millevoi, 2016</xref>), including DEAD/DEAH helicases such as DDX3X, and DHX36 (
                 <xref rid="bib27" ref-type="bibr">Chen et al., 2018</xref>; 
                 <xref rid="bib57" ref-type="bibr">Herdy et al., 2018</xref>) additionally suggests specific roles for G4 structures in RNA.
             </p>
@@ -165,9 +165,9 @@
             </p>
             <p>We set out to address two main questions (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link>): 1) which human genes and cellular pathways interact with G4s and 2) what genetic backgrounds selectively lead to enhanced cell killing in the presence of G4 stabilising ligands? We employed PDS and PhenDC3 as representative G4 ligands as these are chemically and structurally dissimilar, but each shows a broad specificity for different G4 structural variants. Both ligands have been widely used as G4-targeting probes in biophysical (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>; 
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>; 
                 <xref rid="bib102" ref-type="bibr">Rodriguez et al., 2008</xref>) and biological studies in which they have been shown to impart transcriptional inhibition, telomere dysfunction and replication stalling (
-                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007a</xref>; 
+                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007</xref>; 
                 <xref rid="bib53" ref-type="bibr">Halder et al., 2012</xref>; 
                 <xref rid="bib84" ref-type="bibr">Mendoza et al., 2016</xref>).
             </p>
@@ -188,7 +188,7 @@
             <p>An unbiased genome-wide shRNA screen was performed in A375 human melanoma cells to globally evaluate genetic vulnerabilities to G4-ligands and to identify genes and pathways involved with G4-structures (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2A</ext-link>). For this, the pyridine-2,6-bis-quinolino-dicarboxamide derivative, PDS (
                 <xref rid="bib103" ref-type="bibr">Rodriguez et al., 2012</xref>), and bisquinolinium compound, PhenDC3 (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>) were chosen (
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>) were chosen (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2B</ext-link>). We used the latest generation shERWOOD-Ultramir shRNA pLMN retroviral library, comprising 132,000 shRNAs across 12 randomised pools targeting the protein coding genome, with an average of five optimised hairpins per gene (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2C</ext-link>) (
                 <xref rid="bib66" ref-type="bibr">Knott et al., 2014</xref>). A375 melanoma cells were used due to their rapid doubling, stable ploidy and success in other shRNA-dropout screens (
@@ -276,7 +276,7 @@
                 <xref rid="bib85" ref-type="bibr">Mishra et al., 2016</xref>), an additional eight sensitisers (
                 <italic>ADAR, DHX36, DNA2, FUS, MCRS1, RECQL4, SF3B3 and XRN1</italic>) were uncovered (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3E</ext-link>). Text-mining with G4 search terms using PolySearch2 on PubMed abstracts and open access full texts (see Materials and methods; 
-                <xref rid="bib75" ref-type="bibr">Liu et al., 2015b</xref>) revealed a further 12 sensitisers arising from our screen including helicases (
+                <xref rid="bib75" ref-type="bibr">Liu et al., 2015</xref>) revealed a further 12 sensitisers arising from our screen including helicases (
                 <italic>RTEL1</italic>), DDR components (
                 <italic>CHEK1, RAD17</italic>), transcriptional proteins (
                 <italic>POLR1A, CNBP</italic>) and replication factors (
@@ -595,7 +595,7 @@
                 <xref rid="bib80" ref-type="bibr">Matheson et al., 2016</xref>), and USP1 is involved in DDR regulation and is overexpressed in non-small cell lung and other cancers (reviewed in 
                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>). For our studies, we used MK1775 (AZD1775), a WEE1 kinase inhibitor that is being clinically evaluated in several cancers (
                 <xref rid="bib100" ref-type="bibr">Richer et al., 2017</xref>), and pimozide a potent USP1-targeting drug (
-                <xref rid="bib25" ref-type="bibr">Chen et al., 2011a</xref>). HT1080 and A375 cells were cultured in matrix combinations of PDS with MK1775 or pimozide at concentrations surrounding the GI
+                <xref rid="bib25" ref-type="bibr">Chen et al., 2011</xref>). HT1080 and A375 cells were cultured in matrix combinations of PDS with MK1775 or pimozide at concentrations surrounding the GI
                 <sub>50</sub> values and cell viability measured after 96 hr using an end-point ATP luminescence-based assay (CellTiter-Glo, Promega). Combenefit software (
                 <xref rid="bib37" ref-type="bibr">Di Veroli et al., 2016</xref>) was then used to calculate synergy for different treatment combinations in which the percentage growth inhibition compared to single agent controls is used to plot a 3D-dose-response surface of synergy distribution in concentration space (
                 <ext-link ext-link-type="uri" xlink:href="#fig9">Figure 9C–F</ext-link>). In HT1080 cells, synergy was found for both PDS and MK1775 or pimozide combinations (
@@ -663,7 +663,7 @@
             <p>Another of our aims was to use the findings of our shRNA screen to identify proteins that may bind and/or regulate G4 structures in cells, such as G4 helicases. Indeed, DHX36 and DHX9, known G4 helicases (
                 <xref rid="bib47" ref-type="bibr">Giri et al., 2011</xref>; 
                 <xref rid="bib27" ref-type="bibr">Chen et al., 2018</xref>; 
-                <xref rid="bib22" ref-type="bibr">Chakrabortyand Grosse, 2011</xref>; 
+                <xref rid="bib22" ref-type="bibr">Chakraborty and Grosse, 2011</xref>; 
                 <xref rid="bib30" ref-type="bibr">Creacy et al., 2008</xref> ; 
                 <xref rid="bib120" ref-type="bibr">Vaughn et al., 2005</xref>) and the DEAD box protein DDX3X, that was recently shown to bind RNA G4s (
                 <xref rid="bib57" ref-type="bibr">Herdy et al., 2018</xref>), were identified as G4 sensitisers in our screen. Further members of the DDX/DHX helicase family also appeared as G4 sensitisers (
@@ -719,8 +719,8 @@
             <p>Given the nuclear localisation of DDX42 and as some DDX proteins also have DNA helicase activity (
                 <xref rid="bib65" ref-type="bibr">Kikuma et al., 2004</xref>), the DDX42 affinity for a DNA G4 structure was investigated. For this, an oligonucleotide corresponding to the stable parallel G4 structure in the promoter of 
                 <italic>MYC</italic> (
-                <xref rid="bib48" ref-type="bibr">Gonzálezand Hurley, 2010</xref>; 
-                <xref rid="bib132" ref-type="bibr">Yangand Hurley, 2006</xref>), and a non-G4 forming control, were used. The oligonucleotides were folded in 100 mM KCl and structures verified by CD spectroscopic analysis (
+                <xref rid="bib48" ref-type="bibr">González and Hurley, 2010</xref>; 
+                <xref rid="bib132" ref-type="bibr">Yang and Hurley, 2006</xref>), and a non-G4 forming control, were used. The oligonucleotides were folded in 100 mM KCl and structures verified by CD spectroscopic analysis (
                 <ext-link ext-link-type="uri" xlink:href="#fig10s1">Figure 10—figure supplement 1B</ext-link>). DDX42 affinity by ELISA (
                 <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10G</ext-link>) showed that DDX42 binds to the MYC DNA G4 with an apparent K
                 <sub>d</sub> of 232.9 ± 23.5 nM with little binding to the mutant control. Thus, the G4 sensitiser screen has enabled us to identify and classify DDX42 as a G4-interacting protein as a new finding.
@@ -746,7 +746,7 @@
             </p>
             <p>In dropout screens, dissociating minor from robust growth effects is important and is highly dependent on parameters such as compound dose, genotype and cell line selected. Our screen was designed with stringent parameters to detect genes deficiencies worthy of further exploration. Indeed, we demonstrate potent growth inhibition of up to 80% of the four top G4 sensitisers genes in a parallel siRNA approach.</p>
             <p>The gene sensitivities uncovered here have potential to be exploited chemotherapeutically in cancer by deploying a G4-stabilising drug as a single-agent therapy. Alternatively, in the absence of a particular gene deficiency, pharmacological inhibition of a critical oncogene could phenocopy the genetic sensitivities described here and be used in combinatorial treatments with G4-stabilising drugs. This may be attractive as cells are less likely to simultaneously develop resistance against two drugs (reviewed in 
-                <xref rid="bib24" ref-type="bibr">Chanand Giaccia, 2011</xref>). Furthermore, as lower drug doses are used, this increases the therapeutic window and has less adverse side effects. As proof-as-principle for this, we selected the WEE1 cell cycle kinase and the deubiquitinase USP1, and demonstrated that their pharmacological inhibition, with MK1775 and pimozide, respectively, leads to the potentiation of cell death in conjunction with the G4 ligand PDS. For example, 5.3 μM PDS or 6.25 μM pimozide alone impart little growth inhibition (14% and 6% respectively), but together they lead to strong growth inhibition (79%). 
+                <xref rid="bib24" ref-type="bibr">Chan and Giaccia, 2011</xref>). Furthermore, as lower drug doses are used, this increases the therapeutic window and has less adverse side effects. As proof-as-principle for this, we selected the WEE1 cell cycle kinase and the deubiquitinase USP1, and demonstrated that their pharmacological inhibition, with MK1775 and pimozide, respectively, leads to the potentiation of cell death in conjunction with the G4 ligand PDS. For example, 5.3 μM PDS or 6.25 μM pimozide alone impart little growth inhibition (14% and 6% respectively), but together they lead to strong growth inhibition (79%). 
                 <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link> highlights further potential combinatorial opportunities for cancer-associated genes with clinical and/or experimental drugs. Additional therapeutic possibilities for other gene sensitivities that are largely still to be explored from a pharmacological perspective are illustrated in 
                 <ext-link ext-link-type="uri" xlink:href="#table2">Table 2</ext-link>.
             </p>
@@ -822,7 +822,7 @@
                             <td>Proteosome inhibitors: Bortezomib CEP187710 Carfizomib</td>
                             <td>Ubiquitin is emerging aschemotherapeutic target, and general proteasome inhibitors clinically are used against multiple myeloma.</td>
                             <td>
-                                <xref rid="bib25" ref-type="bibr">Chen et al., 2011a</xref>; 
+                                <xref rid="bib25" ref-type="bibr">Chen et al., 2011</xref>; 
                                 <xref rid="bib81" ref-type="bibr">Mattern et al., 2012</xref>; 
                                 <xref rid="bib40" ref-type="bibr">Edelmann et al., 2011</xref>
                             </td>
@@ -836,7 +836,7 @@
                             <td>
                                 <xref rid="bib106" ref-type="bibr">Schutte et al., 1996</xref>; 
                                 <xref rid="bib52" ref-type="bibr">Hahn et al., 1996</xref>; 
-                                <xref rid="bib36" ref-type="bibr">Demagnyand De Robertis, 2016</xref>; 
+                                <xref rid="bib36" ref-type="bibr">Demagny and De Robertis, 2016</xref>; 
                                 <xref rid="bib82" ref-type="bibr">McCubrey et al., 2014</xref>
                             </td>
                         </tr>
@@ -871,7 +871,7 @@
                             <td>Over-expressed inmelanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma. Pimozide is a potent USP1-targeting drug.</td>
                             <td>
                                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>;  
-                                <xref rid="bib26" ref-type="bibr">Chen et al., 2011b</xref>
+                                <xref rid="bib26" ref-type="bibr">Chen et al., 2011</xref>
                             </td>
                         </tr>
                         <tr>
@@ -983,7 +983,7 @@
                             <td>
                                 <xref rid="bib44" ref-type="bibr">Froimchuk et al., 2017</xref>
                                 <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>;  
-                                <xref rid="bib98" ref-type="bibr">Raoand Dou, 2015</xref>
+                                <xref rid="bib98" ref-type="bibr">Rao and Dou, 2015</xref>
                             </td>
                         </tr>
                         <tr>
@@ -992,7 +992,7 @@
                             <td>Mutated in 20% of human cancers; doxorubicin resistant triple-negative breast cancer is associated with loss of SMARCB1, SMARCA4, or KEAP1 (a BRCA1 interactor).</td>
                             <td>
                                 <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>;  
-                                <xref rid="bib108" ref-type="bibr">Shainand Pollack, 2013</xref>
+                                <xref rid="bib108" ref-type="bibr">Shain and Pollack, 2013</xref>
                             </td>
                         </tr>
                         <tr>
@@ -1048,7 +1048,7 @@
                 <italic>PALB2</italic>, 
                 <italic>BAP1</italic> and the deubiquitinase 
                 <italic>USP1</italic>. Importantly, this highlights that such HR repair mechanisms are an integral and important cellular response in preventing cell death induced through the increased persistence of G4s. Persistent G4 structures are also inhibitory to DNA replication/cell cycle progression (reviewed in 
-                <xref rid="bib119" ref-type="bibr">Valtonand Prioleau, 2016</xref> ), and it is of note that we also uncovered many cell cycle/DNA replication sensitivities such as 
+                <xref rid="bib119" ref-type="bibr">Valton and Prioleau, 2016</xref> ), and it is of note that we also uncovered many cell cycle/DNA replication sensitivities such as 
                 <italic>PCNA, CHEK1, CCND1, CDC7, RFC2</italic> and 
                 <italic>RFC4.</italic> Taken together these suggest that G4 stabilisation with small molecules could be an attractive therapeutic strategy to inhibit cell growth.
             </p>
@@ -1057,7 +1057,7 @@
                 <italic>RTEL1</italic> and 
                 <italic>DHX36</italic>, alongside many others with no known G4 link (see 
                 <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10A</ext-link>). Here, we demonstrate for the first time that the DDX42 DEAD/DEAH helicase is in fact a previously unidentified structure-specific G4-binding protein. On a wider level, this acts as proof-of-principle that other specific G4 interacting proteins exist within the sensitiser list of over 700 proteins. Other known G4-helicases such as BLM, WRN, PIF1 and FANCJ (reviewed in 
-                <xref rid="bib129" ref-type="bibr">Wuand Brosh, 2010</xref>) were not identified as sensitisers, which may reflect functional redundancy (
+                <xref rid="bib129" ref-type="bibr">Wu and Brosh, 2010</xref>) were not identified as sensitisers, which may reflect functional redundancy (
                 <xref rid="bib114" ref-type="bibr">Spillare et al., 2006</xref>), or a low ligand concentrations and/or cell type effects.
             </p>
             <p>Our findings highlight the ubiquitin-protesome pathway and modifications such, as neddylation as unexplored areas with respect to G4s. The only documented ubiquitin-G4 relationship in human cells is with HERC2, an E3 ubiquitin ligase that is implicated in G4 resolution whose loss sensitises cells to G4 ligands (
@@ -1072,9 +1072,9 @@
                 <italic>PSMC2)</italic> families (see 
                 <ext-link ext-link-type="uri" xlink:href="#table2">Table 2</ext-link>) (
                 <xref rid="bib107" ref-type="bibr">Senft et al., 2018</xref>; 
-                <xref rid="bib125" ref-type="bibr">Weiand Lin, 2012</xref>) Given the involvement of ubiquitin-proteasomal regulation in pathways, such as DDR and cell cycle, that are generally deregulated in cancer (
+                <xref rid="bib125" ref-type="bibr">Wei and Lin, 2012</xref>) Given the involvement of ubiquitin-proteasomal regulation in pathways, such as DDR and cell cycle, that are generally deregulated in cancer (
                 <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>), this opens up an interesting intersection between ubiquitin regulation and G4s. As ubiquitin components are being targeted for anticancer therapies (
-                <xref rid="bib61" ref-type="bibr">Huangand Dixit, 2016</xref>), their efficacy might be enhanced through simultaneous G4 targeting and here we have provided strong proof-of-principle of this using synergistic combinations of pimozide (targeting UPS1) and the G4 ligand PDS.
+                <xref rid="bib61" ref-type="bibr">Huang and Dixit, 2016</xref>), their efficacy might be enhanced through simultaneous G4 targeting and here we have provided strong proof-of-principle of this using synergistic combinations of pimozide (targeting UPS1) and the G4 ligand PDS.
             </p>
             <p>In contrast to other genetic screens identifying sensitiser genes that enhance the efficacy of anticancer agents (
                 <xref rid="bib4" ref-type="bibr">Azorsa et al., 2009</xref>; 
@@ -1416,7 +1416,7 @@
                             <td>PhenDC3</td>
                             <td>In-house synthesis</td>
                             <td>
-                                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007a</xref>
+                                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007</xref>
                             </td>
                             <td/>
                         </tr>
@@ -1454,7 +1454,7 @@
                             <td>Software, algorithm</td>
                             <td>Bowtie 2 v2.2.6</td>
                             <td>
-                                <xref rid="bib70" ref-type="bibr">Langmeadand Salzberg, 2012</xref>
+                                <xref rid="bib70" ref-type="bibr">Langmead and Salzberg, 2012</xref>
                             </td>
                             <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">http://bowtie-bio.sourceforge.net/bowtie2/index.shtml</ext-link>
@@ -1528,8 +1528,8 @@
                             <td>Software, algorithm</td>
                             <td>DAVID</td>
                             <td>
-                                <xref rid="bib59" ref-type="bibr">Huang et al., 2009a</xref>, 
-                                <xref rid="bib60" ref-type="bibr">Huang et al., 2009b</xref>
+                                <xref rid="bib59" ref-type="bibr">Huang et al., 2009</xref>, 
+                                <xref rid="bib60" ref-type="bibr">Huang et al., 2009</xref>
                             </td>
                             <td>
                                 <ext-link ext-link-type="uri" xlink:href="https://david.ncifcrf.gov">https://david.ncifcrf.gov</ext-link>
@@ -1551,7 +1551,7 @@
                             <td>Software, algorithm</td>
                             <td>FASTX-Toolkit v0.0.14</td>
                             <td>
-                                <xref rid="bib49" ref-type="bibr">Gordonand Hannon, 2010</xref>
+                                <xref rid="bib49" ref-type="bibr">Gordon and Hannon, 2010</xref>
                             </td>
                             <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://hannonlab.cshl.edu/fastx_toolkit.html">http://hannonlab.cshl.edu/fastx_toolkit.html</ext-link>
@@ -1573,7 +1573,7 @@
                             <td>Software, algorithm</td>
                             <td>PolySearch2</td>
                             <td>
-                                <xref rid="bib74" ref-type="bibr">Liu et al., 2015a</xref>
+                                <xref rid="bib74" ref-type="bibr">Liu et al., 2015</xref>
                             </td>
                             <td>
                                 <ext-link ext-link-type="uri" xlink:href="http://polysearch.cs.ualberta.ca/">http://polysearch.cs.ualberta.ca/</ext-link>
@@ -1630,7 +1630,7 @@
         <sec>
             <title>Determination of G4 ligand concentration for shRNA screens</title>
             <p>PDS and PhenDC3 (both synthesised in-house) (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>; 
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>; 
                 <xref rid="bib102" ref-type="bibr">Rodriguez et al., 2008</xref>) were used as 100 mM stocks, dissolved in DMSO (Thermofisher Scientific, cat # 20688). GI
                 <sub>20</sub> values were calculated by treating A375 and HT1080 cells with serial dilutions of PDS and PhenDC3 for 96 hr and determining cell death via a CellTitre-Glo One Solution assay (Promega, cat # G8461) according to manufacturer’s protocol. Each serial dilution was replicated four times for two-cell-seeding densities (1000/1500 cells per well). For both densities, curves were plotted averaging the four replicates in Prism (GraphPad v6) using a Non-Linear regression model, ‘dose-response – inhibition’ equation [log(inhibitor) vs. normalised response – variable slope] and GI
                 <sub>20</sub> values calculated. The GI
@@ -1727,9 +1727,9 @@
                 <ext-link ext-link-type="uri" xlink:href="https://www.ebi.ac.uk/arrayexpress/">https://www.ebi.ac.uk/arrayexpress/</ext-link>) under accession number 
                 <italic>E-MTAB-6367.</italic> Reads were trimmed to 22 nucleotides, base qualities were evaluated with FastQC v0.11.3 (
                 <xref rid="bib2" ref-type="bibr">Andrews, 2010</xref>) and bases were filtered from the 3' end with a Phred quality threshold of 33 using the FASTX-Toolkit v0.0.14 (
-                <xref rid="bib49" ref-type="bibr">Gordonand Hannon, 2010</xref>). Trimmed reads were aligned to the 113,002 reference shRNA sequences provided by transOMIC technologies (
+                <xref rid="bib49" ref-type="bibr">Gordon and Hannon, 2010</xref>). Trimmed reads were aligned to the 113,002 reference shRNA sequences provided by transOMIC technologies (
                 <xref rid="bib66" ref-type="bibr">Knott et al., 2014</xref>) using Bowtie 2 v2.2.6 with default parameters (
-                <xref rid="bib70" ref-type="bibr">Langmeadand Salzberg, 2012</xref>), which resulted in overall alignment rates of 90–95% with an average of 98% of reference sequences detected. The generated SAM files were processed to obtain shRNA counts using Unix tools (
+                <xref rid="bib70" ref-type="bibr">Langmead and Salzberg, 2012</xref>), which resulted in overall alignment rates of 90–95% with an average of 98% of reference sequences detected. The generated SAM files were processed to obtain shRNA counts using Unix tools (
                 <ext-link ext-link-type="uri" xlink:href="https://opengroup.org/unix">https://opengroup.org/unix</ext-link>) and Python scripts (v2.7.10, 
                 <ext-link ext-link-type="uri" xlink:href="https://www.python.org">https://www.python.org</ext-link>), and library purity and potential contaminations were investigated with stacked bar plots and multidimensional scaling (MDS) using the R programming language v3.2.1 (
                 <ext-link ext-link-type="uri" xlink:href="https://cran.r-project.org">https://cran.r-project.org</ext-link>). The code and scripts developed during the development of the project are available in our group’s GitHub website (
@@ -1860,7 +1860,7 @@
             <p>Furthermore, 55 confirmed human G4-interacting proteins as defined by the G4IPB database (
                 <xref rid="bib85" ref-type="bibr">Mishra et al., 2016</xref>) (
                 <ext-link ext-link-type="uri" xlink:href="http://bsbe.iiti.ac.in/bsbe/ipdb/index.php">http://bsbe.iiti.ac.in/bsbe/ipdb/index.php</ext-link>) were also used to determine predefined G4-interacting proteins from the genome-wide shRNA screen. For this, gene entries were removed where the only G4-relationship was a predicted G4-forming sequence in the mRNA or DNA (i.e. not a direct protein interaction) or where the protein was not human. To extend the list of G4-interacting proteins, text-mining using PolySearch2 (
-                <xref rid="bib75" ref-type="bibr">Liu et al., 2015b</xref>) was used. Human protein-coding gene names and G4-terms and synonyms are defined using the corresponding MeSH term id D054856 (
+                <xref rid="bib75" ref-type="bibr">Liu et al., 2015</xref>) was used. Human protein-coding gene names and G4-terms and synonyms are defined using the corresponding MeSH term id D054856 (
                 <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/mesh/68054856">https://www.ncbi.nlm.nih.gov/mesh/68054856</ext-link>) and the thesaurus of gene names obtained from the PolySearch2 website (
                 <ext-link ext-link-type="uri" xlink:href="http://polysearch.cs.ualberta.ca/">http://polysearch.cs.ualberta.ca/</ext-link>). A relevancy score measures the strength of association between two text groups, and higher the score, the more likely terms from the two groups co-occur within the same abstract; the score also accounts for the distance between terms from the two groups. A total of 5477 pieces of text were identified in PubMed and PubMed Central where any of the G4 terms co-occur with more than 500 human gene names. Overall, this generated 526 G4-associated genes, with 54 (10%) uncovered as G4-sensitisers (
                 <ext-link ext-link-type="uri" xlink:href="https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity">https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity</ext-link>), which were manually edited to 16 genes as discussed in the main text and figures.
@@ -2047,6 +2047,7 @@
             </ref>
             <ref id="bib2">
                 <element-citation>
+                    <article-title>FastQC</article-title>
                     <person-group person-group-type="author">
                         <name>
                             <surname>Andrews</surname>
@@ -2937,7 +2938,7 @@
                             <given-names>QP</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2011a">2011a</year>
+                    <year iso-8601-date="2011">2011</year>
                     <fpage>239</fpage>
                     <lpage>253</lpage>
                     <volume>11</volume>
@@ -2989,7 +2990,7 @@
                             <given-names>Z</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2011b">2011b</year>
+                    <year iso-8601-date="2011">2011</year>
                     <fpage>1390</fpage>
                     <lpage>1400</lpage>
                     <volume>18</volume>
@@ -3329,7 +3330,7 @@
                             <given-names>JL</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2007a">2007a</year>
+                    <year iso-8601-date="2007">2007</year>
                     <fpage>17347</fpage>
                     <lpage>17352</lpage>
                     <volume>104</volume>
@@ -3361,7 +3362,7 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2007b">2007b</year>
+                    <year iso-8601-date="2007">2007</year>
                     <fpage>1856</fpage>
                     <lpage>1857</lpage>
                     <volume>129</volume>
@@ -4361,7 +4362,7 @@
                             <given-names>RA</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2009a">2009a</year>
+                    <year iso-8601-date="2009">2009</year>
                     <fpage>44</fpage>
                     <lpage>57</lpage>
                     <volume>4</volume>
@@ -4385,7 +4386,7 @@
                             <given-names>RA</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2009b">2009b</year>
+                    <year iso-8601-date="2009">2009</year>
                     <fpage>1</fpage>
                     <lpage>13</lpage>
                     <volume>37</volume>
@@ -4851,7 +4852,7 @@
                             <given-names>W</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2015a">2015a</year>
+                    <year iso-8601-date="2015">2015</year>
                     <fpage>50</fpage>
                     <lpage>60</lpage>
                     <volume>1855</volume>
@@ -4875,7 +4876,7 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2015b">2015b</year>
+                    <year iso-8601-date="2015">2015</year>
                     <volume>43</volume>
                     <source>Nucleic Acids Research</source>
                 </element-citation>
@@ -5044,6 +5045,7 @@
             </ref>
             <ref id="bib79">
                 <element-citation>
+                    <article-title>GWscreen_G4sensitivity</article-title>
                     <person-group person-group-type="author">
                         <name>
                             <surname>Martínez Cuesta</surname>
