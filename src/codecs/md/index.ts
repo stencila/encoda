@@ -1213,7 +1213,8 @@ function decodeCite(
     ) ?? cite.value
 
   let value = cite.value
-  // if the reference is a `CreativeWork` node, summaraize it into a citation format such as `Smith et al (1990)`
+  // If the reference is a `CreativeWork` node, summarize it into a citation format
+  // such as `Smith et al (1990)`
   if (stencila.isCreativeWork(ref)) {
     value = encodeCitationText(ref)
   }
