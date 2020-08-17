@@ -974,13 +974,22 @@ function decodeReference(
 ): stencila.CreativeWork {
   const id = decodeInternalId(ident)
   const authors = all(elem, 'name').map(decodeName)
-  const title = textOrUndefined(child(elem, 'article-title'))
-  const datePublished = textOrUndefined(child(elem, 'year'))
   const pageStart = intOrUndefined(child(elem, 'fpage'))
   const pageEnd = intOrUndefined(child(elem, 'lpage'))
   const issueNumber = intOrUndefined(child(elem, 'issue'))
   const volumeNumber = intOrUndefined(child(elem, 'volume'))
   const periodicalName = textOrUndefined(child(elem, 'source'))
+
+  const title = textOrUndefined(child(elem, ['article-title', 'data-title']))
+
+  // The year can sometimes include a suffix e.g. 2012a (if there are multiple references
+  // for the same author in a year). So this removes that suffix by only ever taking the
+  // first four digits
+  let datePublished = textOrUndefined(child(elem, 'year'))
+  if (datePublished !== undefined) {
+    const match = /^(\d{4})/.exec(datePublished)
+    if (match) datePublished = match[1]
+  }
 
   let isPartOf: stencila.CreativeWork | undefined
   if (periodicalName !== undefined)
