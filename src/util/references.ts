@@ -22,7 +22,7 @@ export const encodeCitationText = (work: CreativeWork): string => {
         if (people.length === 2) {
           secondPerson = people[1] as Person
           if (secondPerson.familyNames)
-            citeText += 'and ' + secondPerson.familyNames.join(' ')
+            citeText += ' and ' + secondPerson.familyNames.join(' ')
         } else if (people.length > 2) {
           citeText += ' et al.'
         }
