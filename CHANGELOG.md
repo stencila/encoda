@@ -1,3 +1,11 @@
+## [0.98.1](https://github.com/stencila/encoda/compare/v0.98.0...v0.98.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* **Cite:** Add space between first author and "and" ([2dfbfcc](https://github.com/stencila/encoda/commit/2dfbfcc41713cd7eec2ebfeeeb4edf542d5cd8a3))
+* **JATS:** Improve parsing of years; use data-title if available ([81fa6f8](https://github.com/stencila/encoda/commit/81fa6f8d6ac08590eae80681aa7c588ff3e8aa75))
+
 # [0.98.0](https://github.com/stencila/encoda/compare/v0.97.3...v0.98.0) (2020-08-13)
 
 
