@@ -1610,6 +1610,12 @@ function decodeTableWrap(
             cells: all(row, 'th').map((cell) => {
               return stencila.tableCell({
                 content: decodeInlineContent(cell.elements ?? [], state),
+                ...(cell?.attributes?.colspan && {
+                  colspan: +cell.attributes?.colspan,
+                }),
+                ...(cell?.attributes?.rowspan && {
+                  rowspan: +cell.attributes?.rowspan,
+                }),
               })
             }),
           })
@@ -1625,6 +1631,12 @@ function decodeTableWrap(
             cells: all(row, 'td').map((cell) => {
               return stencila.tableCell({
                 content: decodeInlineContent(cell.elements ?? [], state),
+                ...(cell?.attributes?.colspan && {
+                  colspan: +cell.attributes?.colspan,
+                }),
+                ...(cell?.attributes?.rowspan && {
+                  rowspan: +cell.attributes?.rowspan,
+                }),
               })
             }),
           })
