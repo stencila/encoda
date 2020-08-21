@@ -3127,6 +3127,7 @@ content:
           - type: TableCell
             content: []
           - type: TableCell
+            colspan: 6
             content:
               - Conservation Categories
         rowType: header
@@ -3135,12 +3136,15 @@ content:
           - type: TableCell
             content: []
           - type: TableCell
+            colspan: 2
             content:
               - Conserved (≥ 95%)
           - type: TableCell
+            colspan: 2
             content:
               - Semi-conserved (10–94%)
           - type: TableCell
+            colspan: 2
             content:
               - Unique (less than 10%)
         rowType: header
