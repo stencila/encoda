@@ -361,6 +361,8 @@ function decodeFront(
   | 'identifiers'
   | 'fundedBy'
   | 'meta'
+  | 'pageEnd'
+  | 'pageStart'
 > {
   return front === null
     ? {}
@@ -377,6 +379,8 @@ function decodeFront(
         identifiers: decodeIdentifiers(front),
         fundedBy: decodeFunding(front),
         meta: decodeMetaFront(front),
+        pageStart: decodePageStart(front),
+        pageEnd: decodePageEnd(front),
       }
 }
 
@@ -406,6 +410,30 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
           ...encodeNodes(title ?? 'Untitled', initialEncodeState())
         )
   return elem('title-group', articleTitle)
+}
+
+/**
+ * Decode a JATS `<fpage>` element to a Stencila `Article.pageStart`.
+ */
+function decodePageStart(
+  front: xml.Element | null
+): stencila.Article['pageStart'] {
+  const pageStart = first(front, 'fpage')
+
+  if (pageStart === null || pageStart.elements === undefined) return
+  if (pageStart.elements.length === 1 && pageStart.elements[0].type === 'text')
+    return text(pageStart)
+}
+
+/**
+ * Decode a JATS `<lpage>` element to a Stencila `Article.pageEnd`.
+ */
+function decodePageEnd(front: xml.Element | null): stencila.Article['pageEnd'] {
+  const pageEnd = first(front, 'lpage')
+
+  if (pageEnd === null || pageEnd.elements === undefined) return
+  if (pageEnd.elements.length === 1 && pageEnd.elements[0].type === 'text')
+    return text(pageEnd)
 }
 
 /**
