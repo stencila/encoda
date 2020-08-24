@@ -361,6 +361,7 @@ function decodeFront(
   | 'identifiers'
   | 'fundedBy'
   | 'meta'
+  | 'issue'
 > {
   return front === null
     ? {}
@@ -377,7 +378,21 @@ function decodeFront(
         identifiers: decodeIdentifiers(front),
         fundedBy: decodeFunding(front),
         meta: decodeMetaFront(front),
+        issue: decodeIssueNumber(front),
       }
+}
+
+/**
+ * Decode a JATS `<issue>` element to a Stencila `Article.issue`.
+ */
+function decodeIssueNumber(
+  front: xml.Element | null
+): stencila.Article['issue'] {
+  const issue = first(front, 'issue')
+
+  if (issue === null || issue.elements === undefined) return
+  if (issue.elements.length === 1 && issue.elements[0].type === 'text')
+    return intOrUndefined(issue)
 }
 
 /**
