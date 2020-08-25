@@ -1,3 +1,10 @@
+## [0.98.2](https://github.com/stencila/encoda/compare/v0.98.1...v0.98.2) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Deps:** Upgrade deps ([c14bf9a](https://github.com/stencila/encoda/commit/c14bf9afa7f2fb2a72d0073137704e43cb47e970))
+
 ## [0.98.1](https://github.com/stencila/encoda/compare/v0.98.0...v0.98.1) (2020-08-17)
 
 
