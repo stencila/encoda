@@ -2246,15 +2246,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Epinephelus fuscoguttatus
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Primarily solitary and territorial; form large aggregations for
@@ -2291,15 +2287,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Plectropomus areolatus
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Primarily solitary and territorial; form large aggregations for
@@ -2336,15 +2328,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Lutjanus gibbus
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Primarily schooling; forms large aggregations for spawning
               - type: Link
@@ -2371,15 +2359,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Lutjanus fulviflamma
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Primarily schooling; spawning aggregation formation not verified
               - type: Link
@@ -2406,15 +2390,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Lethrinus lentjan
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Primarily solitary as adults; spawning aggregation formation
@@ -2451,15 +2431,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Emphasis
                 content:
                   - Lethrinus harak
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Primarily solitary or forms small groups (<10 fish); spawning
@@ -2575,115 +2551,75 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Aggregation size
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = solitary or pairing
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 2 = aggregations of 3–10 fish
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 3 = aggregations of 10–100 fish
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 4 = aggregations of 100–500 fish
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 5 = aggregations larger than 500 fish
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Aggregation location
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = aggregation location is unknown or variable
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 2 = aggregations form in specific areas of the reef
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Home range
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = species of high mobility and occupying large home range
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 2 = species of low mobility and occupying small home range
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Spawning
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 1 = aggregation formation not associated with spawning
@@ -2691,12 +2627,8 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 2 = aggregation formation associated with spawning (eggs/milt
@@ -2704,70 +2636,46 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Diel
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = aggregation formation not aligned with time of day
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 2 = aggregation formation aligned with particular time of day
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Lunar
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = aggregation formation not aligned with lunar phase
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 2 = aggregation formation aligned with particular lunar phase
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Seasonal
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 1 = aggregation formation not aligned with month or season
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 2 = aggregation formation aligned with particular month or
@@ -2848,236 +2756,148 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Fisher gender
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Male
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '12'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '15'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Female
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Fisher access to habitat
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Lagoon only
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '5'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Outer reefs only
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - All habitats
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '7'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '16'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Primary gear type
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Line
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '9'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '13'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Speargun
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '6'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '2'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Net
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Dependency on fishing
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Primary
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '13'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '2'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Secondary
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '2'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '7'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Tertiary
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '7'
   - type: Heading
@@ -3142,131 +2962,83 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Productivity
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Average age at maturity
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: <2 years; 2: 2–4 years; 3: >4 years'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Average maximum age
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: <10 years; 2: 10–30 years; 3: >30 years'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Average size at maturity
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: <30 cm; 2: 30–50 cm; 3: >50 cm'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Average maximum size
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: <60 cm; 2: 60–150 cm; 3: >150 cm'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Reproductive strategy
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: broadcast spawner; 2: demersal egg layer; 3: live bearer'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Trophic level
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: <2.5; 2: 2.5–3.5; 3: >3.5'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Catchability
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Fisher knowledge index
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: index scores 1–6; 2 :index scores 7–12; 3: index scores 13–17'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Availability
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Proportion of fisher's effort allocated in aggregation habitat,
@@ -3274,17 +3046,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Encounterability
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Species occurrence in fisher's catch, 1: never; 2:infrequently;
@@ -3292,17 +3058,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Selectivity
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 1: gears unselective for species; 2: uses one of the two most
@@ -3310,18 +3070,12 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Socio-economics
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Habitat impact of gear
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 1: fisher uses spear guns and/or hook-and-line; 2: fisher uses
@@ -3329,33 +3083,21 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Fishing effort
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1: 10–50 hrs/month; 2: 75–120 hrs/month; 3: 145–265 hrs/month'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Preference
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 1: low and medium preference spp.; 2: high preference spp.; 3:
@@ -3363,17 +3105,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Dependency on fishing
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Importance of fishing as an occupation, 1: tertiary; 2:
@@ -3381,17 +3117,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Management strategy
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 Ownership rights and conservation measures (i.e. closures), 1:
@@ -3400,12 +3130,8 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - Access to markets
               - type: Link
@@ -3414,8 +3140,6 @@ content:
                 content:
                   - '*'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - >-
                 1: Sell/barter catch in village; 2: sell/barter catch in
@@ -4133,190 +3857,120 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Fisher gender: male'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '31.4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Strong
                 content:
                   - '0.004'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4.8'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.582'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Fisher gender: female'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '31.4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Strong
                 content:
                   - '0.008'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4.8'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.534'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Access to habitat: lagoon only'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '43.1'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Strong
                 content:
                   - '0.002'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Access to habitat: outer reefs only'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '11.6'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.128'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Access to habitat: all habitats'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '13.8'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.084'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content: []
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Primary gear type: line'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '8.9'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.266'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '10.2'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.124'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Primary gear type: speargun'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4.8'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.542'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '20.3'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - type: Strong
                 content:
@@ -4324,109 +3978,69 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Primary gear type: net'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '6.7'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.472'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '5.2'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.494'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Dependency on fishing: primary'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '3.3'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.662'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '4.4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.644'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Dependency on fishing: secondary'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '6.5'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.532'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '8.9'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.27'
       - type: TableRow
         cells:
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - 'Dependency on fishing: tertiary'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '1.1'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.89'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '12.4'
           - type: TableCell
-            colspan: 1
-            rowspan: 1
             content:
               - '0.084'
   - type: Paragraph
