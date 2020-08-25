@@ -318,10 +318,8 @@ async function extractReferences(
 
   // If the encoding target is being written to disk, extract references to a separate file
   if (options.filePath && options.filePath !== STDIO_PATH) {
-    const targetPath = path.parse(options.filePath)
-    targetPath.ext = '.references.bib'
-    delete targetPath.base
-    const bibPath = path.format(targetPath)
+    const { dir, name } = path.parse(options.filePath)
+    const bibPath = path.format({ dir, name, ext: '.references.bib' })
     await bibCodec.write(article.references, bibPath)
 
     return {
@@ -661,9 +659,10 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
     // Store the bibliography file path on the `references` key
     frontmatter.references = article.meta.references
 
-    // Clean up the frontmatter objet to avoid duplicating reference content
+    // Clean up the frontmatter object to avoid duplicating reference content
     if (typeof frontmatter.meta === 'object' && frontmatter.meta !== null) {
       if (referenceGuard(frontmatter.meta)) {
+        // @ts-ignore
         delete frontmatter.meta.references
       }
 
