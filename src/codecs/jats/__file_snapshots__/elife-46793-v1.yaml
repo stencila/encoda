@@ -10822,6 +10822,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 4
             content:
               - DNA damage repair
           - type: TableCell
@@ -10976,6 +10977,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 3
             content:
               - Chromatin remodellers
           - type: TableCell
@@ -11059,6 +11061,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 3
             content:
               - Ubiquitin
           - type: TableCell

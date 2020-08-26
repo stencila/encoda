@@ -2214,9 +2214,11 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 2
             content:
               - Variable
           - type: TableCell
+            colspan: 3
             content:
               - Percent contribution
         rowType: header
