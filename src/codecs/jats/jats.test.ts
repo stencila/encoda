@@ -82,6 +82,7 @@ test.each([
   'plosone-0091296',
   'plosone-0093988',
   'plosone-0178565',
+  'ijm-00202',
 ])('decode + encode : %s', async (article) => {
   const node = unlinkFiles(await jats.read(fixture(article)))
 
