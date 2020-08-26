@@ -666,7 +666,9 @@ async function generateHtmlElement(
         type: 'module',
       }),
       h('script', {
-        nomodule: '',
+        attrs: {
+          nomodule: '',
+        },
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
         type: 'text/javascript',
