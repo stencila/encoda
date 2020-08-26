@@ -1,3 +1,15 @@
+## [0.98.3](https://github.com/stencila/encoda/compare/v0.98.2...v0.98.3) (2020-08-26)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency immer to ^7.0.8 ([23b6a17](https://github.com/stencila/encoda/commit/23b6a17850b2a7a59db1256958214a158f6f27ff))
+* **dependencies:** update dependency papaparse to ^5.3.0 ([70b6292](https://github.com/stencila/encoda/commit/70b6292c7593c89b16933757c558bae732421a65))
+* **dependencies:** update dependency remark-math to v3 ([a318937](https://github.com/stencila/encoda/commit/a3189375133c30dc5e1e2057bf05b749caf4c5eb))
+* **HTML:** Fix encoding of missing nomodule attribute ([a754a44](https://github.com/stencila/encoda/commit/a754a448f76790982661c1f958126e7d57b7fd56))
+* **JATS:** Decoding table rowspan and colspan ([d45ea03](https://github.com/stencila/encoda/commit/d45ea0366473fa3ece9fb3e9b952002ca1074e03))
+* **JATS:** Update snapshot file and minor changes ([40fd470](https://github.com/stencila/encoda/commit/40fd470042c2ed1866a892ff2ad2e4dec33c142d))
+
 ## [0.98.2](https://github.com/stencila/encoda/compare/v0.98.1...v0.98.2) (2020-08-25)
 
 
