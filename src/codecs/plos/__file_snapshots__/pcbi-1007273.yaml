@@ -3739,6 +3739,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 5
             content:
               - Arima-HiC
           - type: TableCell
@@ -3869,6 +3870,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 4
             content:
               - Mitotic Hi-C
           - type: TableCell
@@ -3976,6 +3978,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 4
             content:
               - Chicago
           - type: TableCell
@@ -4083,6 +4086,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 4
             content:
               - Illumina Assembly
           - type: TableCell

@@ -1608,8 +1608,18 @@ function decodeTableWrap(
           return stencila.tableRow({
             rowType: 'header',
             cells: all(row, 'th').map((cell) => {
+              const cellAttr = cell?.attributes
+
               return stencila.tableCell({
                 content: decodeInlineContent(cell.elements ?? [], state),
+                ...(cellAttr?.colspan &&
+                  +cellAttr?.colspan !== 1 && {
+                    colspan: +cellAttr.colspan,
+                  }),
+                ...(cellAttr?.rowspan &&
+                  +cellAttr?.rowspan !== 1 && {
+                    rowspan: +cellAttr.rowspan,
+                  }),
               })
             }),
           })
@@ -1623,8 +1633,18 @@ function decodeTableWrap(
       ? tbodyTrs.map((row) => {
           return stencila.tableRow({
             cells: all(row, 'td').map((cell) => {
+              const cellAttr = cell?.attributes
+
               return stencila.tableCell({
                 content: decodeInlineContent(cell.elements ?? [], state),
+                ...(cellAttr?.colspan &&
+                  +cellAttr?.colspan !== 1 && {
+                    colspan: +cellAttr.colspan,
+                  }),
+                ...(cellAttr?.rowspan &&
+                  +cellAttr?.rowspan !== 1 && {
+                    rowspan: +cellAttr.rowspan,
+                  }),
               })
             }),
           })
