@@ -1,0 +1,37 @@
+{
+  "type": "Article",
+  "content": [{
+    "type": "Figure",
+    "id": "fig1a",
+    "caption": [
+      {
+        "type": "Heading",
+        "depth": 2,
+        "content": [
+          "Classification and variability of neuronal cell types"
+        ]
+      },
+      {
+        "type": "Paragraph",
+        "content": [
+          "(",
+          {
+            "type": "Strong",
+            "content": [
+              "A"
+            ]
+          },
+          ") Neuronal cell types are identifiable by features clustering around a distinct point (blue, green and yellow) or a line (orange) in feature space. The clustering implies that neuron types are defined by either a single set point (blue, green and yellow) or by multiple set points spread along a line (orange)."
+        ]
+      }
+    ],
+    "label": "Figure 1A",
+    "content": [
+      {
+        "type": "CodeChunk",
+        "programmingLanguage": "r",
+        "text": "#' @width 9\n#' @height 9\nhead(mtcars)"
+      }
+    ]
+  }]
+}

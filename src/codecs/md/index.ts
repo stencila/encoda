@@ -18,6 +18,7 @@ import stencila, {
   isCreativeWork,
   isInlineContent,
   isListItem,
+  isA,
   nodeIs,
   nodeType,
   TypeMapGeneric,
@@ -492,8 +493,10 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
       return [encodeListItem(node as stencila.ListItem)]
     case 'Table':
       return [encodeTable(node as stencila.Table)]
-    case 'Figure':
-      return [encodeFigure(node as stencila.Figure)]
+    case 'Figure': {
+      const figure = encodeFigure(node as stencila.Figure)
+      return Array.isArray(figure) ? figure : [figure]
+    }
     case 'ThematicBreak':
       return [encodeThematicBreak()]
 
@@ -1004,8 +1007,13 @@ function decodeFigure(ext: Extension): stencila.Figure {
  * In the future, if there is more than one content node then we
  * may use a `ThematicBreak` to separate content from caption.
  */
-function encodeFigure(figure: stencila.Figure): Extension {
+function encodeFigure(figure: stencila.Figure): Extension | UNIST.Node[] {
   const { content, caption, label } = figure
+
+  // If figure contains a solitary `CodeChunk` as its content, encode to `chunkfigre` extension
+  if (figure.content?.length === 1 && isA('CodeChunk', figure.content[0])) {
+    return encodeCodeChunkFigure(figure)
+  }
 
   const nodes = [...(content ?? []), ...(caption ?? [])]
   const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
@@ -1037,6 +1045,49 @@ function decodeCodeChunkFigure(ext: Extension): stencila.Figure {
     figure.content[0] = chunk
   }
   return figure
+}
+
+/**
+ * Encode a `figure` node to a `chunkfigure` block extension if it only has a single `CodeChunk` is its child
+ * as it's first child.
+ */
+function encodeCodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
+  const chunkFigure: UNIST.Node[] = []
+  let content = ``
+
+  const codeChunk =
+    figure.content?.length === 1 &&
+    isA('CodeChunk', figure.content[0]) &&
+    figure.content[0]
+
+  if (codeChunk) {
+    content += encodeCodeChunk(codeChunk).content ?? ''
+  }
+
+  content += '\n---\n\n'
+
+  content +=
+    typeof figure.caption === 'string'
+      ? figure.caption
+      : Array.isArray(figure.caption)
+      ? figure.caption.map(encodeMarkdown).join('\n\n')
+      : ''
+
+  chunkFigure.push({
+    type: 'block-extension',
+    name: 'chunkfigure',
+    argument: figure.label,
+    content,
+  })
+
+  if (figure.id) {
+    chunkFigure.push({
+      type: 'text',
+      value: `{#${figure.id}}`,
+    })
+  }
+
+  return chunkFigure
 }
 
 /**
