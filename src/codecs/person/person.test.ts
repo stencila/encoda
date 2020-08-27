@@ -2,7 +2,7 @@ import * as stencila from '@stencila/schema'
 import { coerce } from '../../util/coerce'
 import { validate } from '../../util/validate'
 import { dump } from '../../util/vfile'
-import { nockRecord, snapshot } from '../../__tests__/helpers'
+import { nockRecord } from '../../__tests__/helpers'
 import { PersonCodec } from './'
 
 const { sniff, decode, encode } = new PersonCodec()
@@ -109,6 +109,10 @@ test('encode', async () => {
   expect(await dump(await encode(jill.node))).toEqual(jill.content)
 })
 
+// Testing `validate` and `coerce` functions, applied to `Person` nodes,
+// here because they use the `person` codec to parse strings into person
+// nodes.
+
 describe('validate', () => {
   it('throws for invalid emails', async () => {
     await expect(
@@ -185,8 +189,7 @@ describe('coerce', () => {
     })
   })
 
-  // TODO: Work out why this is no longer working
-  it.skip('parses strings into people', async () => {
+  it('parses strings into people', async () => {
     expect(
       await coerce(
         {
