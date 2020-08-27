@@ -1,3 +1,10 @@
+## [0.98.4](https://github.com/stencila/encoda/compare/v0.98.3...v0.98.4) (2020-08-27)
+
+
+### Bug Fixes
+
+* **JATS:** Decoding for article fpage and lpage ([ffaeaf6](https://github.com/stencila/encoda/commit/ffaeaf6616d6569841922526a2226bbed78285b1))
+
 ## [0.98.3](https://github.com/stencila/encoda/compare/v0.98.2...v0.98.3) (2020-08-26)
 
 
