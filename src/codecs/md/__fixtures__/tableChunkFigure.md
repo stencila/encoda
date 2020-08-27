@@ -1,0 +1,13 @@
+chunkfigure: Figure 1A
+:::
+| A | B                                        | C |
+| - | ---------------------------------------- | - |
+| 1 | Some content split accross multiple rows | 3 |
+| 4 | Some content split accross multiple rows | 6 |
+---
+## Classification and variability of neuronal cell types
+
+(**A**) Neuronal cell types are identifiable by features clustering around a distinct point (blue, green and yellow) or a line (orange) in feature space. The clustering implies that neuron types are defined by either a single set point (blue, green and yellow) or by multiple set points spread along a line (orange).
+:::
+
+{#fig1a}

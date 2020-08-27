@@ -1,0 +1,86 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Figure",
+      "id": "fig1a",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": ["Classification and variability of neuronal cell types"]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(",
+            {
+              "type": "Strong",
+              "content": ["A"]
+            },
+            ") Neuronal cell types are identifiable by features clustering around a distinct point (blue, green and yellow) or a line (orange) in feature space. The clustering implies that neuron types are defined by either a single set point (blue, green and yellow) or by multiple set points spread along a line (orange)."
+          ]
+        }
+      ],
+      "label": "Figure 1A",
+      "content": [
+        {
+          "type": "Table",
+          "rows": [
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "content": ["A"],
+                  "type": "TableCell"
+                },
+                {
+                  "content": ["B"],
+                  "type": "TableCell"
+                },
+                {
+                  "content": ["C"],
+                  "type": "TableCell"
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "content": ["1"],
+                  "type": "TableCell"
+                },
+                {
+                  "content": ["Some content split accross multiple rows"],
+                  "type": "TableCell"
+                },
+                {
+                  "content": ["3"],
+                  "type": "TableCell"
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "content": ["4"],
+                  "type": "TableCell"
+                },
+                {
+                  "type": "TableCell",
+                  "content": ["Some content split accross multiple rows"]
+                },
+                {
+                  "content": ["6"],
+                  "type": "TableCell"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

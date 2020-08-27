@@ -206,7 +206,7 @@ interface DecodeContext {
 /**
  * Decode a string of Markdown content to a Stencila `Node`
  */
-export function decodeMarkdown(md: string): stencila.Article | stencila.Node[] {
+export function decodeMarkdown(md: string): stencila.Article {
   const mdast = stringToMdast(md)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
   const context: DecodeContext = {
@@ -429,7 +429,7 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
         case 'figure':
           return decodeFigure(ext)
         case 'chunkfigure':
-          return decodeCodeChunkFigure(ext)
+          return decodeChunkFigure(ext)
         case 'quote':
           return decodeQuote(ext)
         case 'include':
@@ -704,7 +704,7 @@ function decodeInclude(ext: Extension): stencila.Include {
     source: ext.argument ?? '',
   }
   if (ext.content) {
-    const article = decodeMarkdown(ext.content) as stencila.Article
+    const article = decodeMarkdown(ext.content)
     include.content = (article.content ?? []).filter(isBlockContent)
   }
   return include
@@ -868,7 +868,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     return stencila.codeChunk({ text: '' })
   }
 
-  const article = decodeMarkdown(ext.content) as stencila.Article
+  const article = decodeMarkdown(ext.content)
   const nodes = (article.content && article.content) || []
 
   const first = nodes[0]
@@ -975,7 +975,7 @@ function decodeFigure(ext: Extension): stencila.Figure {
     log.warn(`Figure has no content`)
     return stencila.figure()
   }
-  const article = decodeMarkdown(ext.content) as stencila.Article
+  const article = decodeMarkdown(ext.content)
   const nodes = (article.content && article.content) || []
 
   // If the first node is a paragraph with only an image in
@@ -1010,9 +1010,12 @@ function decodeFigure(ext: Extension): stencila.Figure {
 function encodeFigure(figure: stencila.Figure): Extension | UNIST.Node[] {
   const { content, caption, label } = figure
 
-  // If figure contains a solitary `CodeChunk` as its content, encode to `chunkfigre` extension
-  if (figure.content?.length === 1 && isA('CodeChunk', figure.content[0])) {
-    return encodeCodeChunkFigure(figure)
+  // If figure contains a solitary `CodeChunk` or `Table` node as its content, encode to `chunkfigre` extension
+  if (
+    figure.content?.length === 1 &&
+    (isA('CodeChunk', figure.content[0]) || isA('Table', figure.content[0]))
+  ) {
+    return encodeChunkFigure(figure)
   }
 
   const nodes = [...(content ?? []), ...(caption ?? [])]
@@ -1027,44 +1030,51 @@ function encodeFigure(figure: stencila.Figure): Extension | UNIST.Node[] {
 }
 
 /**
- * Decode a `chunkfigure` block extension to a `Figure` with a `CodeChunk`
- * as it's first child.
+ * Decode a `chunkfigure` block extension to a `Figure` node.
  */
-function decodeCodeChunkFigure(ext: Extension): stencila.Figure {
+function decodeChunkFigure(ext: Extension): stencila.Figure {
   const { content = '' } = ext
-  const [codeAndOutputs, caption = ''] = content.split('---')
-  const chunk = decodeCodeChunk({
-    ...ext,
-    content: codeAndOutputs,
-  })
+  const [figureObject, caption = ''] = content.split(/^---$/m)
+
+  let children: stencila.Node = []
+  // Always encode `Code` Blocks to `CodeChunk` nodes
+  if (figureObject.includes('```')) {
+    children = decodeCodeChunk({
+      ...ext,
+      content: figureObject,
+    })
+  } else {
+    const decoded = decodeMarkdown(figureObject).content
+    children = decoded ? decoded[0] : []
+  }
+
   const figure = decodeFigure({
     ...ext,
     content: `dummy\n\n${caption}`,
   })
   if (figure.content !== undefined) {
-    figure.content[0] = chunk
+    figure.content[0] = children
   }
   return figure
 }
 
 /**
- * Encode a `figure` node to a `chunkfigure` block extension if it only has a single `CodeChunk` is its child
- * as it's first child.
+ * Encode a `figure` node to a `chunkfigure` block extension
  */
-function encodeCodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
+function encodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
   const chunkFigure: UNIST.Node[] = []
   let content = ``
 
-  const codeChunk =
-    figure.content?.length === 1 &&
-    isA('CodeChunk', figure.content[0]) &&
-    figure.content[0]
+  const figureContent = figure.content?.length === 1 && figure.content[0]
 
-  if (codeChunk) {
-    content += encodeCodeChunk(codeChunk).content ?? ''
+  if (isA('CodeChunk', figureContent)) {
+    // Special handling for encoding `CodeChunks`. Otherwise it leads to double nesting of block extensions
+    content += encodeCodeChunk(figureContent).content ?? ''
+  } else {
+    content += encodeMarkdown(figureContent)
   }
 
-  content += '\n---\n\n'
+  content += '\n---\n'
 
   content +=
     typeof figure.caption === 'string'
@@ -1081,10 +1091,7 @@ function encodeCodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
   })
 
   if (figure.id) {
-    chunkFigure.push({
-      type: 'text',
-      value: `{#${figure.id}}`,
-    })
+    chunkFigure.push(encodeString(`{#${figure.id}}`))
   }
 
   return chunkFigure

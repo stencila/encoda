@@ -30,7 +30,7 @@
       {
         "type": "CodeChunk",
         "programmingLanguage": "r",
-        "text": "#' @width 9\n#' @height 9\nhead(mtcars)"
+        "text": "#' @width 9\n#' @height 9\nplot(mtcars)"
       }
     ]
   }]
