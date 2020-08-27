@@ -1098,11 +1098,14 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            rowspan: 2
             content: []
           - type: TableCell
+            colspan: 4
             content:
               - Uruguay
           - type: TableCell
+            colspan: 4
             content:
               - Latin american average
         rowType: header
@@ -1330,6 +1333,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
+            colspan: 9
             content:
               - type: Strong
                 content:
