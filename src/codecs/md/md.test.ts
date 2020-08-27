@@ -1155,7 +1155,7 @@ describe.only('References', () => {
 
   const mdWithRefs = `---
 title: MD Reference Test
-references: ${relativeSnapshot('mdReferences.references.bib')}
+bibliography: ${relativeSnapshot('mdReferences.references.bib')}
 ---
 
 This is only a test
