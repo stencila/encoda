@@ -1,3 +1,10 @@
+## [0.98.5](https://github.com/stencila/encoda/compare/v0.98.4...v0.98.5) (2020-08-27)
+
+
+### Bug Fixes
+
+* **MD:** Store extracted references to a `bibliography` key ([62a4f29](https://github.com/stencila/encoda/commit/62a4f296a96631e04a39bbc4fd9896a2d503a987)), closes [#609](https://github.com/stencila/encoda/issues/609)
+
 ## [0.98.4](https://github.com/stencila/encoda/compare/v0.98.3...v0.98.4) (2020-08-27)
 
 
