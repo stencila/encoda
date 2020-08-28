@@ -493,10 +493,8 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
       return [encodeListItem(node as stencila.ListItem)]
     case 'Table':
       return [encodeTable(node as stencila.Table)]
-    case 'Figure': {
-      const figure = encodeFigure(node as stencila.Figure)
-      return Array.isArray(figure) ? figure : [figure]
-    }
+    case 'Figure':
+      return [encodeFigure(node as stencila.Figure)]
     case 'ThematicBreak':
       return [encodeThematicBreak()]
 
@@ -1007,7 +1005,7 @@ function decodeFigure(ext: Extension): stencila.Figure {
  * In the future, if there is more than one content node then we
  * may use a `ThematicBreak` to separate content from caption.
  */
-function encodeFigure(figure: stencila.Figure): Extension | UNIST.Node[] {
+function encodeFigure(figure: stencila.Figure): Extension {
   const { content, caption, label } = figure
 
   // If figure contains a solitary `CodeChunk` or `Table` node as its content, encode to `chunkfigre` extension
@@ -1061,8 +1059,7 @@ function decodeChunkFigure(ext: Extension): stencila.Figure {
 /**
  * Encode a `figure` node to a `chunkfigure` block extension
  */
-function encodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
-  const chunkFigure: UNIST.Node[] = []
+function encodeChunkFigure(figure: stencila.Figure): Extension {
   let content = ``
 
   const figureContent = figure.content?.length === 1 && figure.content[0]
@@ -1083,18 +1080,15 @@ function encodeChunkFigure(figure: stencila.Figure): UNIST.Node[] {
       ? figure.caption.map(encodeMarkdown).join('\n\n')
       : ''
 
-  chunkFigure.push({
+  return {
     type: 'block-extension',
     name: 'chunkfigure',
     argument: figure.label,
     content,
-  })
-
-  if (figure.id) {
-    chunkFigure.push(encodeString(`{#${figure.id}}`))
+    properties: {
+      id: figure.id ?? '',
+    },
   }
-
-  return chunkFigure
 }
 
 /**
@@ -1833,12 +1827,28 @@ function decodeExtension(
  * The `remark-generic-extensions` plugin does not do this stringifying for us.
  */
 function stringifyExtensions(tree: UNIST.Node): UNIST.Node {
+  // Convert the `properties` object to a string using the logic outlined at
+  // https://github.com/medfreeman/remark-generic-extensions#available-properties
+  const stringifyProperties = ([key, value]: [string, unknown]): string => {
+    if (key === 'id' && typeof value === 'string') {
+      return `#${value}`
+    } else if (key === 'class' && typeof value === 'string') {
+      return value
+    } else {
+      return `${key}=${
+        typeof value === 'string' ? value : JSON.stringify(value)
+      }`
+    }
+  }
+
   return map(tree, (node: any) => {
     if (node.type === 'inline-extension' || node.type === 'block-extension') {
       const props = Object.entries(node.properties || {})
-        .map(([key, value]) => `${key}=${JSON.stringify(value)}`)
+        .map(stringifyProperties)
         .join(' ')
+
       let value
+
       if (node.type === 'inline-extension') {
         value = `!${node.name}`
         if (node.content) value += `[${node.content}]`
@@ -1847,11 +1857,12 @@ function stringifyExtensions(tree: UNIST.Node): UNIST.Node {
       } else {
         value = `${node.name}:`
         if (node.argument) value += ` ${node.argument}`
-        value += `\n:::\n${node.content || ''}\n:::`
+        value += `\n:::\n${node.content || ''}\n:::\n`
         if (node.properties) value += `{${props}}`
       }
       return { type: 'html', value }
     }
+
     return node
   })
 }
