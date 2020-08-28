@@ -4,14 +4,14 @@ import path from 'path'
 import { MdCodec } from '../'
 import { dump, load } from '../../../util/vfile'
 import codeJSON from '../__fixtures__/codeChunkFigure.json'
-import tableJSON from '../__fixtures__/tableChunkFigure.json'
+import tableJSON from '../__fixtures__/blockTable.json'
 
 const codeMD = fs
   .readFileSync(path.join(__dirname, '../__fixtures__/codeChunkFigure.md'))
   .toString()
 
 const tableMD = fs
-  .readFileSync(path.join(__dirname, '../__fixtures__/tableChunkFigure.md'))
+  .readFileSync(path.join(__dirname, '../__fixtures__/blockTable.md'))
   .toString()
 
 const mdCodec = new MdCodec()
@@ -30,7 +30,7 @@ describe('ChunkFigure - CodeChunk', () => {
   })
 })
 
-describe('ChunkFigure - Table', () => {
+describe('Block Extension - Table', () => {
   test('encode', async () => {
     expect(await e(tableJSON)).toEqual(tableMD)
   })

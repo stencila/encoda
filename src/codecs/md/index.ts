@@ -14,11 +14,12 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila, {
+  isA,
   isBlockContent,
   isCreativeWork,
+  isEntity,
   isInlineContent,
   isListItem,
-  isA,
   nodeIs,
   nodeType,
   TypeMapGeneric,
@@ -45,6 +46,7 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 import { selectAll } from 'unist-util-select'
+import { STDIO_PATH } from '../..'
 import { isContentArray } from '../../util/content/isContentArray'
 import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
@@ -56,7 +58,6 @@ import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { citePlugin } from './plugins/cite'
 import { stringifyHTML } from './stringifyHtml'
-import { STDIO_PATH } from '../..'
 
 const texCodec = new TexCodec()
 const bibCodec = new BibCodec()
@@ -161,6 +162,7 @@ const GENERIC_EXTENSIONS = [
   'chunk',
   'figure',
   'chunkfigure',
+  'table',
   'include',
 
   'null',
@@ -430,6 +432,8 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
           return decodeFigure(ext)
         case 'chunkfigure':
           return decodeChunkFigure(ext)
+        case 'table':
+          return decodeBlockTable(ext)
         case 'quote':
           return decodeQuote(ext)
         case 'include':
@@ -974,7 +978,7 @@ function decodeFigure(ext: Extension): stencila.Figure {
     return stencila.figure()
   }
   const article = decodeMarkdown(ext.content)
-  const nodes = (article.content && article.content) || []
+  const nodes = article.content ?? []
 
   // If the first node is a paragraph with only an image in
   // it then unwrap it. ie. the figure's content is just an image
@@ -1184,9 +1188,62 @@ function decodeTable(
 }
 
 /**
+ * Decode a `table` block extension to a `stencila.Table`
+ */
+function decodeBlockTable(ext: Extension): stencila.Table {
+  const { content = '' } = ext
+  const [caption, tableMD = ''] = content.split(/^---$/m)
+
+  const article = decodeMarkdown(tableMD)
+  const decodedContent = article.content ? article.content[0] : []
+
+  const captionNodes = decodeMarkdown(caption).content ?? []
+
+  const table = isA('Table', decodedContent)
+    ? decodedContent
+    : stencila.table({ rows: [] })
+
+  return stencila.table({
+    ...table,
+    id: ext.properties?.id,
+    label: ext.argument,
+    caption: captionNodes,
+  })
+}
+
+/**
  * Encode a `stencila.Table` to a `MDAST.Table`
  */
-function encodeTable(table: stencila.Table): MDAST.Table {
+function encodeTable(table: stencila.Table): MDAST.Table | Extension {
+  if (table.caption || table.label) {
+    const { label, caption = [], ...restTable } = table
+
+    let content = ''
+
+    if (caption && Array.isArray(caption) && caption.length > 0) {
+      content +=
+        typeof caption === 'string'
+          ? caption
+          : Array.isArray(caption)
+          ? caption.map(encodeMarkdown).join('\n\n')
+          : ''
+
+      content += '\n---\n'
+    }
+
+    content += encodeMarkdown(restTable)
+
+    return {
+      type: 'block-extension',
+      name: 'table',
+      argument: label,
+      content,
+      properties: {
+        id: table.id ?? '',
+      },
+    }
+  }
+
   return {
     type: 'table',
     children: table.rows.map(
@@ -1857,8 +1914,8 @@ function stringifyExtensions(tree: UNIST.Node): UNIST.Node {
       } else {
         value = `${node.name}:`
         if (node.argument) value += ` ${node.argument}`
-        value += `\n:::\n${node.content || ''}\n:::\n`
-        if (node.properties) value += `{${props}}`
+        value += `\n:::\n${node.content || ''}\n:::`
+        if (node.properties) value += `\n{${props}}`
       }
       return { type: 'html', value }
     }
