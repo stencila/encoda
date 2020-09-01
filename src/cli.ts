@@ -101,7 +101,7 @@ async function cli(): Promise<void> {
         ...rest,
       })
     } else {
-      log.warn(`Ignored unknown command "${command}"`)
+      log.error(`Unknown command "${command}"`)
     }
   } catch (error) {
     // Uncaught error: log it and ensure process does not hang.
