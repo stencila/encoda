@@ -524,9 +524,11 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
     .filter(isDefined)
   const publisher = textOrUndefined(first(journal, 'publisher-name'))
   const volumeNumber = textOrUndefined(first(front, 'volume'))
-  return stencila.publicationVolume({
-    volumeNumber,
-    isPartOf: stencila.periodical({
+  const issueNumber = textOrUndefined(first(front, 'issue'))
+
+  let isPartOf: stencila.CreativeWork | undefined
+  if (title !== undefined && issns !== undefined && identifiers !== undefined)
+    isPartOf = stencila.periodical({
       title,
       issns,
       identifiers,
@@ -534,8 +536,13 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
         publisher !== undefined
           ? stencila.organization({ name: publisher })
           : undefined,
-    }),
-  })
+    })
+  if (volumeNumber !== undefined)
+    isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
+  if (issueNumber !== undefined)
+    isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
+
+  return isPartOf
 }
 
 /**
