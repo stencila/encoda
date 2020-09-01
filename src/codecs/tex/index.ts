@@ -13,7 +13,7 @@ import { Codec } from '../types'
 
 const log = getLogger('encoda:tex')
 
-// Just-in-time created XSLT processort for MathML to Tex
+// Just-in-time created XSLT processor for MathML to Tex
 let mathmlProcessor: xslt.Processor | undefined
 
 export class TexCodec extends Codec implements Codec {
@@ -46,7 +46,7 @@ export class TexCodec extends Codec implements Codec {
   }
 
   /**
-   * Encode a Stencila `Math` node to a `VFile` with Tex content.
+   * Encode a Stencila `Math` node to a `VFile` with TeX content.
    *
    * Attempts to translate other math languages that the node may
    * have (e.g AsciiMath) to Tex.
