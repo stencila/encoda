@@ -58,25 +58,28 @@ identifiers:
     propertyID: 'https://registry.identifiers.org/registry/doi'
     value: 10.34196/ijm.00202
 isPartOf:
-  type: PublicationVolume
+  type: PublicationIssue
   isPartOf:
-    type: Periodical
-    identifiers:
-      - type: PropertyValue
-        name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
-        value: ijm
-      - type: PropertyValue
-        name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-        value: ijm
-    issns:
-      - 1747-5864
-    publisher:
-      type: Organization
-      name: International Microsimulation Association
-    title: International Journal of Microsimulation
-  volumeNumber: '12'
+    type: PublicationVolume
+    isPartOf:
+      type: Periodical
+      identifiers:
+        - type: PropertyValue
+          name: nlm-ta
+          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          value: ijm
+        - type: PropertyValue
+          name: publisher-id
+          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          value: ijm
+      issns:
+        - 1747-5864
+      publisher:
+        type: Organization
+        name: International Microsimulation Association
+      title: International Journal of Microsimulation
+    volumeNumber: '12'
+  issueNumber: '2'
 keywords:
   - C63
   - H22
