@@ -58,7 +58,7 @@ export class MathMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Math> => {
     const content = await vfile.dump(file)
-    const mathml = await xml.load(content)
+    const mathml = await xml.load(normalize(content))
     const display = xml.attr(xml.child(mathml, 'math'), 'display')
     return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
       mathLanguage: 'mathml',
@@ -101,4 +101,40 @@ export class MathMLCodec extends Codec implements Codec {
     }
     return vfile.load(mathml)
   }
+}
+
+/**
+ * Normalizes XML before parsing.
+ *
+ * This function operates on raw XML strings.
+ * Some of these transformations could instead be done after parsing,
+ * on the XML tree. But, where it is safe, these regex based replacements
+ * are less onerous to implement and allow reuse elsewhere
+ * e.g. when using XSLT transforms.
+ *
+ * @param xml Unormalized XML
+ */
+export function normalize(xml: string): string {
+  // Replace deprecated constants
+  // See https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute/Values
+  const replacements: [RegExp, string][] = [
+    [/\bveryverythinmathspace\b/g, '0.0555em'],
+    [/\bverythinmathspace\b/g, '0.1111em'],
+    [/\bthinmathspace\b/g, '0.1667em'],
+    [/\bmediummathspace\b/g, '0.2222em'],
+    [/\bthickmathspace\b/g, '0.2778em'],
+    [/\bverythickmathspace\b/g, '0.3333em'],
+    [/\bveryverythickmathspace\b/g, '0.3889em'],
+    [/\bnegativeveryverythinmathspace\b/g, '-0.0555em'],
+    [/\bnegativeverythinmathspace\b/g, '-0.1111em'],
+    [/\bnegativethinmathspace\b/g, '-0.1667em'],
+    [/\bnegativemediummathspace\b/g, '-0.2222em'],
+    [/\bnegativethickmathspace\b/g, '-0.2778em'],
+    [/\bnegativeverythickmathspace\b/g, '-0.3333em'],
+    [/\bnegativeveryverythickmathspace\b/g, '-0.3889em]'],
+  ]
+  for (const [constant, replacement] of replacements) {
+    xml = xml.replace(constant, replacement)
+  }
+  return xml
 }

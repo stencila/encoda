@@ -1,5 +1,5 @@
 import * as schema from '@stencila/schema'
-import { MathMLCodec } from '.'
+import { MathMLCodec, normalize } from '.'
 import {
   asciimathBlock,
   asciimathFragment,
@@ -28,6 +28,46 @@ describe('sniff', () => {
     expect(await sniff('foo <math')).toBe(false)
     expect(await sniff(__dirname)).toBe(false)
     expect(await sniff(__filename)).toBe(false)
+  })
+})
+
+describe('normalize', () => {
+  it('replaces deprecated constants with values', () => {
+    expect(
+      normalize(`
+<mml:mspace width="veryverythinmathspace"/>
+<mml:mspace width="verythinmathspace"/>
+<mml:mspace width="thinmathspace"/>
+<mml:mspace width="mediummathspace"/>
+<mml:mspace width="thickmathspace"/>
+<mml:mspace width="verythickmathspace"/>
+<mml:mspace width="veryverythickmathspace"/>
+
+<mml:mspace width="negativeveryverythinmathspace"/>
+<mml:mspace width="negativeverythinmathspace"/>
+<mml:mspace width="negativethinmathspace"/>
+<mml:mspace width="negativemediummathspace"/>
+<mml:mspace width="negativethickmathspace"/>
+<mml:mspace width="negativeverythickmathspace"/>
+<mml:mspace width="negativeveryverythickmathspace"/>
+`)
+    ).toBe(`
+<mml:mspace width="0.0555em"/>
+<mml:mspace width="0.1111em"/>
+<mml:mspace width="0.1667em"/>
+<mml:mspace width="0.2222em"/>
+<mml:mspace width="0.2778em"/>
+<mml:mspace width="0.3333em"/>
+<mml:mspace width="0.3889em"/>
+
+<mml:mspace width="-0.0555em"/>
+<mml:mspace width="-0.1111em"/>
+<mml:mspace width="-0.1667em"/>
+<mml:mspace width="-0.2222em"/>
+<mml:mspace width="-0.2778em"/>
+<mml:mspace width="-0.3333em"/>
+<mml:mspace width="-0.3889em]"/>
+`)
   })
 })
 
