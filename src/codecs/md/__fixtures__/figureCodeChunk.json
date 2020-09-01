@@ -1,8 +1,9 @@
 {
   "type": "Article",
   "content": [{
-    "type": "Figure",
+    "type": "CodeChunk",
     "id": "fig1a",
+    "label": "Figure 1A",
     "caption": [
       {
         "type": "Heading",
@@ -25,12 +26,12 @@
         ]
       }
     ],
-    "label": "Figure 1A",
-    "content": [
+    "programmingLanguage": "r",
+    "text": "#' @width 9\n#' @height 9\nplot(mtcars)",
+    "outputs": [
       {
-        "type": "CodeChunk",
-        "programmingLanguage": "r",
-        "text": "#' @width 9\n#' @height 9\nplot(mtcars)"
+        "type": "ImageObject",
+        "contentUrl": "data:image/png;base64,"
       }
     ]
   }]

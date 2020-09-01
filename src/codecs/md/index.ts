@@ -161,7 +161,6 @@ const GENERIC_EXTENSIONS = [
   'expr',
   'chunk',
   'figure',
-  'chunkfigure',
   'table',
   'include',
 
@@ -220,7 +219,7 @@ export function decodeMarkdown(md: string): stencila.Article {
 /**
  * An async variant of `decodeMarkdown` specialized to decoding the top-level `Article` Markdown contents.
  * During the decoding checks the frontmatter for a `bibliography` key pointing to a separate bibliographic file.
- * If it exsists, reads in the file to populate the decoding `context`.
+ * If it exists, reads in the file to populate the decoding `context`.
  */
 async function decodeRootArticle(
   content: string,
@@ -430,10 +429,8 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
           return decodeCodeChunk(ext)
         case 'figure':
           return decodeFigure(ext)
-        case 'chunkfigure':
-          return decodeChunkFigure(ext)
         case 'table':
-          return decodeBlockTable(ext)
+          return decodeTableBlock(ext)
         case 'quote':
           return decodeQuote(ext)
         case 'include':
@@ -865,24 +862,29 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
  * Decode a `chunk:` block extension to a `stencila.CodeChunk`
  */
 function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
-  if (ext.content === undefined) {
-    log.warn(`Code chunk has no content`)
-    return stencila.codeChunk({ text: '' })
-  }
+  const { content = '', argument, properties } = ext
 
-  const article = decodeMarkdown(ext.content)
+  const article = decodeMarkdown(content)
   const nodes = (article.content && article.content) || []
 
-  const first = nodes[0]
-  if (!stencila.isA('CodeBlock', first)) {
-    log.warn(`Code chunk extension has no code`)
-    return stencila.codeChunk({ text: '' })
+  const caption: stencila.Node[] = []
+  let code
+  let index = 0
+  for (const node of nodes) {
+    index += 1
+    if (stencila.isA('CodeBlock', node)) {
+      code = node
+      break
+    } else {
+      caption.push(node)
+    }
   }
 
-  const { text, programmingLanguage, meta } = first
+  if (code === undefined) code = stencila.codeBlock({ text: '' })
+  const { text, programmingLanguage, meta } = code
 
   const outputs: stencila.Node[] = []
-  if (nodes.length > 1) {
+  if (nodes.length > index) {
     const pushOutputs = function (outputNodes: stencila.Node[]) {
       if (outputNodes.length === 1) {
         const node = outputNodes[0]
@@ -901,7 +903,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     }
 
     let outputNodes: stencila.Node[] = []
-    for (const outputContainer of nodes.slice(1)) {
+    for (const outputContainer of nodes.slice(index)) {
       // When a thematic break is encountered, start a new
       // output
       if (stencila.isA('ThematicBreak', outputContainer)) {
@@ -919,6 +921,9 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     programmingLanguage,
     meta,
     outputs: outputs.length > 0 ? outputs : undefined,
+    caption: caption.length > 0 ? caption : undefined,
+    label: argument,
+    id: properties?.id,
   })
 }
 
@@ -926,8 +931,19 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
  * Encode a `stencila.CodeChunk` to a `chunk:` block extension
  */
 function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
-  const { programmingLanguage = 'text', meta, text, outputs } = chunk
+  const {
+    programmingLanguage = 'text',
+    meta,
+    text,
+    outputs,
+    id,
+    label,
+    caption = [],
+  } = chunk
   const nodes: stencila.Node[] = []
+
+  // Encode the caption (if any)
+  nodes.push(...caption)
 
   // Encode the code as a `CodeBlock`
   nodes.push(
@@ -962,6 +978,8 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
     type: 'block-extension',
     name: 'chunk',
     content: md,
+    argument: label,
+    properties: id ? { id } : undefined,
   }
 }
 
@@ -973,52 +991,42 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
  * The extension's `argument` becomes the figure's `label`.
  */
 function decodeFigure(ext: Extension): stencila.Figure {
-  if (ext.content === undefined) {
-    log.warn(`Figure has no content`)
-    return stencila.figure()
-  }
-  const article = decodeMarkdown(ext.content)
+  const { content = '', argument, properties } = ext
+
+  const article = decodeMarkdown(content)
   const nodes = article.content ?? []
 
   // If the first node is a paragraph with only an image in
   // it then unwrap it. ie. the figure's content is just an image
   const first = nodes[0]
-  const content =
+  const contentNodes =
     stencila.isParagraph(first) &&
     first.content?.length === 1 &&
     stencila.isA('ImageObject', first.content[0])
       ? first.content
       : [first]
 
-  const caption = nodes.slice(1)
+  const captionNodes = nodes.slice(1)
 
   return stencila.figure({
-    content,
-    caption,
-    label: ext.argument,
-    id: ext.properties?.id,
+    content: contentNodes,
+    caption: captionNodes,
+    label: argument,
+    id: properties?.id,
   })
 }
 
 /**
  * Encode a `stencila.Figure` to a `figure:` block extension
  *
- * The `content` of the figure e.g. a `ImageObject` or `CodeChunk` will be the
+ * The `content` of the figure, usually an `ImageObject`, is the
  * first node of the extension's content. The `caption` is the remainder.
  *
- * In the future, if there is more than one content node then we
+ * In the future, if there is more than one content node, then we
  * may use a `ThematicBreak` to separate content from caption.
  */
 function encodeFigure(figure: stencila.Figure): Extension {
-  const { content, caption, label } = figure
-
-  // If figure contains a solitary `CodeChunk` or `Table` node as its content, encode to `chunkfigre` extension
-  if (
-    figure.content?.length === 1 &&
-    (isA('CodeChunk', figure.content[0]) || isA('Table', figure.content[0]))
-  ) {
-    return encodeChunkFigure(figure)
-  }
+  const { content, caption, label, id } = figure
 
   const nodes = [...(content ?? []), ...(caption ?? [])]
   const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
@@ -1028,70 +1036,7 @@ function encodeFigure(figure: stencila.Figure): Extension {
     name: 'figure',
     content: md,
     argument: label,
-  }
-}
-
-/**
- * Decode a `chunkfigure` block extension to a `Figure` node.
- */
-function decodeChunkFigure(ext: Extension): stencila.Figure {
-  const { content = '' } = ext
-  const [figureObject, caption = ''] = content.split(/^---$/m)
-
-  let children: stencila.Node = []
-  // Always encode `Code` Blocks to `CodeChunk` nodes
-  if (figureObject.includes('```')) {
-    children = decodeCodeChunk({
-      ...ext,
-      content: figureObject,
-    })
-  } else {
-    const decoded = decodeMarkdown(figureObject).content
-    children = decoded ? decoded[0] : []
-  }
-
-  const figure = decodeFigure({
-    ...ext,
-    content: `dummy\n\n${caption}`,
-  })
-  if (figure.content !== undefined) {
-    figure.content[0] = children
-  }
-  return figure
-}
-
-/**
- * Encode a `figure` node to a `chunkfigure` block extension
- */
-function encodeChunkFigure(figure: stencila.Figure): Extension {
-  let content = ``
-
-  const figureContent = figure.content?.length === 1 && figure.content[0]
-
-  if (isA('CodeChunk', figureContent)) {
-    // Special handling for encoding `CodeChunks`. Otherwise it leads to double nesting of block extensions
-    content += encodeCodeChunk(figureContent).content ?? ''
-  } else {
-    content += encodeMarkdown(figureContent)
-  }
-
-  content += '\n---\n'
-
-  content +=
-    typeof figure.caption === 'string'
-      ? figure.caption
-      : Array.isArray(figure.caption)
-      ? figure.caption.map(encodeMarkdown).join('\n\n')
-      : ''
-
-  return {
-    type: 'block-extension',
-    name: 'chunkfigure',
-    argument: figure.label,
-    content,
-    properties: {
-      id: figure.id ?? '',
-    },
+    properties: id ? { id } : undefined,
   }
 }
 
@@ -1188,10 +1133,10 @@ function decodeTable(
 }
 
 /**
- * Decode a `table` block extension to a `stencila.Table`
+ * Decode a `table` block extension to a `stencila.Table`.
  */
-function decodeBlockTable(ext: Extension): stencila.Table {
-  const { content = '' } = ext
+function decodeTableBlock(ext: Extension): stencila.Table {
+  const { content = '', argument, properties } = ext
   const [caption, tableMD = ''] = content.split(/^---$/m)
 
   const article = decodeMarkdown(tableMD)
@@ -1205,8 +1150,8 @@ function decodeBlockTable(ext: Extension): stencila.Table {
 
   return stencila.table({
     ...table,
-    id: ext.properties?.id,
-    label: ext.argument,
+    id: properties?.id,
+    label: argument,
     caption: captionNodes,
   })
 }

@@ -1,0 +1,77 @@
+{
+  "type": "Article",
+  "content": [{
+    "type": "CodeChunk",
+    "id": "table1",
+    "label": "Table 1",
+    "caption": [
+      {
+        "type": "Heading",
+        "depth": 2,
+        "content": [
+          "My data set"
+        ]
+      }
+    ],
+    "programmingLanguage": "r",
+    "text": "head(data)",
+    "outputs": [
+      {
+        "type": "Table",
+        "rows": [
+          {
+            "type": "TableRow",
+            "cells": [
+              {
+                "content": ["A"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["B"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["C"],
+                "type": "TableCell"
+              }
+            ]
+          },
+          {
+            "type": "TableRow",
+            "cells": [
+              {
+                "content": ["1"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["2"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["3"],
+                "type": "TableCell"
+              }
+            ]
+          },
+          {
+            "type": "TableRow",
+            "cells": [
+              {
+                "content": ["4"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["5"],
+                "type": "TableCell"
+              },
+              {
+                "content": ["6"],
+                "type": "TableCell"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}
