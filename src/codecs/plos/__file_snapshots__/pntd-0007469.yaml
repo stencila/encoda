@@ -87,30 +87,32 @@ identifiers:
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
     value: e0007469
 isPartOf:
-  type: PublicationVolume
+  type: PublicationIssue
   isPartOf:
-    type: Periodical
-    identifiers:
-      - type: PropertyValue
-        name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
-        value: PLoS Negl Trop Dis
-      - type: PropertyValue
-        name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-        value: plos
-      - type: PropertyValue
-        name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
-        value: plosntds
-    issns:
-      - 1935-2735
-    publisher:
-      type: Organization
-      name: Public Library of Science
-    title: PLOS Neglected Tropical Diseases
-  volumeNumber: '13'
-issue: 8
+    type: PublicationVolume
+    isPartOf:
+      type: Periodical
+      identifiers:
+        - type: PropertyValue
+          name: nlm-ta
+          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          value: PLoS Negl Trop Dis
+        - type: PropertyValue
+          name: publisher-id
+          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          value: plos
+        - type: PropertyValue
+          name: pmc
+          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          value: plosntds
+      issns:
+        - 1935-2735
+      publisher:
+        type: Organization
+        name: Public Library of Science
+      title: PLOS Neglected Tropical Diseases
+    volumeNumber: '13'
+  issueNumber: '8'
 licenses:
   - type: CreativeWork
     url: 'http://creativecommons.org/licenses/by/4.0/'

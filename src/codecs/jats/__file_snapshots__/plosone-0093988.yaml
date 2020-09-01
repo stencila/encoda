@@ -80,30 +80,32 @@ identifiers:
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
     value: e93988
 isPartOf:
-  type: PublicationVolume
+  type: PublicationIssue
   isPartOf:
-    type: Periodical
-    identifiers:
-      - type: PropertyValue
-        name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
-        value: PLoS ONE
-      - type: PropertyValue
-        name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-        value: plos
-      - type: PropertyValue
-        name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
-        value: plosone
-    issns:
-      - 1932-6203
-    publisher:
-      type: Organization
-      name: Public Library of Science
-    title: PLoS ONE
-  volumeNumber: '9'
-issue: 4
+    type: PublicationVolume
+    isPartOf:
+      type: Periodical
+      identifiers:
+        - type: PropertyValue
+          name: nlm-ta
+          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          value: PLoS ONE
+        - type: PropertyValue
+          name: publisher-id
+          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          value: plos
+        - type: PropertyValue
+          name: pmc
+          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          value: plosone
+      issns:
+        - 1932-6203
+      publisher:
+        type: Organization
+        name: Public Library of Science
+      title: PLoS ONE
+    volumeNumber: '9'
+  issueNumber: '4'
 licenses:
   - type: CreativeWork
     content:

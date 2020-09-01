@@ -152,31 +152,33 @@ identifiers:
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
     value: e1008133
 isPartOf:
-  type: PublicationVolume
+  type: PublicationIssue
   isPartOf:
-    type: Periodical
-    identifiers:
-      - type: PropertyValue
-        name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
-        value: PLoS Genet
-      - type: PropertyValue
-        name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-        value: plos
-      - type: PropertyValue
-        name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
-        value: plosgen
-    issns:
-      - 1553-7390
-      - 1553-7404
-    publisher:
-      type: Organization
-      name: Public Library of Science
-    title: PLOS Genetics
-  volumeNumber: '15'
-issue: 8
+    type: PublicationVolume
+    isPartOf:
+      type: Periodical
+      identifiers:
+        - type: PropertyValue
+          name: nlm-ta
+          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          value: PLoS Genet
+        - type: PropertyValue
+          name: publisher-id
+          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          value: plos
+        - type: PropertyValue
+          name: pmc
+          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          value: plosgen
+      issns:
+        - 1553-7390
+        - 1553-7404
+      publisher:
+        type: Organization
+        name: Public Library of Science
+      title: PLOS Genetics
+    volumeNumber: '15'
+  issueNumber: '8'
 licenses:
   - type: CreativeWork
     url: 'http://creativecommons.org/licenses/by/4.0/'
