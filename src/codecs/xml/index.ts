@@ -39,7 +39,7 @@ export class XmlCodec extends Codec {
     }
     const node = decodeDoc(doc)
     if (node === undefined) {
-      log.warn(`Unable to parse content as Stencila XML`)
+      log.error(`Unable to parse content as Stencila XML`)
       return null
     }
     return decodeDoc(doc)
@@ -72,7 +72,7 @@ export const decodeDoc = (doc: xml.Element): stencila.Node => {
     const root = stencila.elements[0]
     return decodeElem(root)
   } else {
-    log.warn('Unable to decode XML document')
+    log.error('Unable to decode XML document')
     return null
   }
 }

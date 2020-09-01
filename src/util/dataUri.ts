@@ -63,7 +63,7 @@ export async function fromFile(
   try {
     data = await fs.readFile(filePath, 'base64')
   } catch (error) {
-    log.warn(`When creating data URI from file: ${error.message}`)
+    log.error(`When creating data URI from file: ${error.message}`)
   }
   const dataUri = `data:${mediaType};base64,${data}`
 

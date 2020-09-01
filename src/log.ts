@@ -13,10 +13,11 @@ export default log
  *
  * @param debug In debug mode?
  */
-export const configure = (debug = false): void => {
+export const configure = (debug = false, exitOnError = true): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     logga.defaultHandler(data, {
       maxLevel: debug ? logga.LogLevel.debug : logga.LogLevel.info,
+      exitOnError,
       throttle: {
         // Do not repeat the same message within 5s
         signature: `${data.tag}${data.level}${data.message}`,

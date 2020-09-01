@@ -7,9 +7,10 @@ jest.setTimeout(5 * 60 * 1000)
 // Force TTY style output for better log readability
 process.stderr.isTTY = true
 
-// Allow debug mode in DEBUG env var set e.g.
+// Show debug log entries if DEBUG env var set e.g.
 //   DEBUG=1 npm test
-log.configure(process.env.DEBUG !== undefined)
+// Do not exit on errors
+log.configure(process.env.DEBUG !== undefined, false)
 
 // After all tests have finished run the shutdown
 // function. This needs to be done here, rather

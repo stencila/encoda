@@ -48,12 +48,12 @@ export class ElifeCodec extends Codec implements Codec {
           if (match !== null) {
             version = match[1]
           } else {
-            log.warn(
+            log.error(
               `Unable to determine latest version number from filename "${last}"`
             )
           }
         } else {
-          log.warn(
+          log.error(
             `Unable to find a version of article "${article}" with body content. Is the article number correct?`
           )
         }
@@ -71,7 +71,7 @@ export class ElifeCodec extends Codec implements Codec {
 
     // Check that there is a <body> element, some don't have one
     if (xml.all(doc, 'body').length === 0) {
-      log.warn(
+      log.error(
         `Article ${article}v${version} has no body. You may wish to try another version.`
       )
     }
