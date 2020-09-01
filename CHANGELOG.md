@@ -1,3 +1,11 @@
+## [0.98.6](https://github.com/stencila/encoda/compare/v0.98.5...v0.98.6) (2020-09-01)
+
+
+### Bug Fixes
+
+* Increase severity of decoding failures; exit CLI on error ([23ab298](https://github.com/stencila/encoda/commit/23ab298523d24fa70d5cb5245d0e1bea0973a4eb)), closes [#662](https://github.com/stencila/encoda/issues/662)
+* Increase severity of decoding failures; exit CLI on error ([4a3f7cb](https://github.com/stencila/encoda/commit/4a3f7cba6858e95a1f6d5c2aec178140abdc692d)), closes [#660](https://github.com/stencila/encoda/issues/660)
+
 ## [0.98.5](https://github.com/stencila/encoda/compare/v0.98.4...v0.98.5) (2020-08-27)
 
 
