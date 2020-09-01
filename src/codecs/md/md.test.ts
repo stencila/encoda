@@ -1136,7 +1136,7 @@ Followed by more text
   })
 })
 
-describe.only('References', () => {
+describe('References', () => {
   const relativeSnapshot = (filepath: string): string =>
     path.relative(path.join(__dirname, '..', '..', '..'), snapshot(filepath))
 
