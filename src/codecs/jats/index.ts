@@ -159,7 +159,7 @@ function decodeDocument(doc: xml.Element): stencila.Article | Content[] {
 
   const { elements } = doc
   if (elements === undefined) {
-    log.warn('No elements in XML document')
+    log.error('No elements in XML document')
     return []
   }
 
