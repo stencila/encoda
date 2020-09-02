@@ -27,11 +27,23 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-## With a figure
+## Using fig.cap option
 
-```{r figure3, fig.cap='(ref:figure-3)'}
+```{r fig1, fig.width=8, fig.cap='A plot'}
+plot(data)
+```
+
+```{r table2, fig.cap='A table'}
+head(data)
+```
+
+## Using Bookdown-style fig.cap text references
+
+```{r figure3, fig.cap='(ref:fig3)'}
 # R code here
 ```
+
+(ref:fig3) A caption for figure 3.
 
 Some intermediary content
 
@@ -41,8 +53,8 @@ Some intermediary content
 
 And follow up with a duplicate figure reference
 
-```{r figure3, fig.cap='(ref:figure-3)'}
+```{r fig5, fig.cap='(ref:fig3)'}
 # R code here
 ```
 
-(ref:figure-3) Figure 3. **Distinct and dorsoventrally organized properties of layer 2 stellate cells.**(**A**) Representative action potential after hyperpolarization waveforms from a SC (left), a pyramidal cell (middle) and an unidentified cell (right). The pyramidal and unidentified cells were...
+(ref:fig3) **Distinct and dorsoventrally organized properties of layer 2 stellate cells.**(**A**) Representative action potential after hyperpolarization waveforms from a SC (left), a pyramidal cell (middle) and an unidentified cell (right). The pyramidal and unidentified cells were...

@@ -5,10 +5,10 @@
   "content": [
     {
       "type": "CodeChunk",
+      "label": "setup",
       "programmingLanguage": "r",
       "text": "knitr::opts_chunk$set(echo = TRUE)",
       "meta": {
-        "setup,": "",
         "include": "FALSE"
       }
     },
@@ -56,11 +56,9 @@
     },
     {
       "type": "CodeChunk",
+      "label": "cars",
       "programmingLanguage": "r",
-      "text": "summary(cars)",
-      "meta": {
-        "cars": ""
-      }
+      "text": "summary(cars)"
     },
     {
       "type": "Heading",
@@ -77,10 +75,10 @@
     },
     {
       "type": "CodeChunk",
+      "label": "pressure",
       "programmingLanguage": "r",
       "text": "plot(pressure)",
       "meta": {
-        "pressure,": "",
         "echo": "FALSE"
       }
     },
@@ -99,17 +97,60 @@
       "type": "Heading",
       "depth": 2,
       "content": [
-        "With a figure"
+        "Using fig.cap option"
       ]
     },
     {
       "type": "CodeChunk",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A plot"
+          ]
+        }
+      ],
+      "label": "fig1",
       "programmingLanguage": "r",
-      "text": "# R code here",
+      "text": "plot(data)",
       "meta": {
-        "figure3,": "",
-        "fig.cap": "(ref:figure-3)"
+        "width": "8"
       }
+    },
+    {
+      "type": "CodeChunk",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A table"
+          ]
+        }
+      ],
+      "label": "table2",
+      "programmingLanguage": "r",
+      "text": "head(data)"
+    },
+    {
+      "type": "Heading",
+      "depth": 2,
+      "content": [
+        "Using Bookdown-style fig.cap text references"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A caption for figure 3."
+          ]
+        }
+      ],
+      "label": "figure3",
+      "programmingLanguage": "r",
+      "text": "# R code here"
     },
     {
       "type": "Paragraph",
@@ -119,12 +160,9 @@
     },
     {
       "type": "CodeChunk",
+      "label": "figure4",
       "programmingLanguage": "r",
-      "text": "# R code here but non-existent figure reference",
-      "meta": {
-        "figure4,": "",
-        "fig.cap": "(ref:figure-4)"
-      }
+      "text": "# R code here but non-existent figure reference"
     },
     {
       "type": "Paragraph",
@@ -134,17 +172,22 @@
     },
     {
       "type": "CodeChunk",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A caption for figure 3."
+          ]
+        }
+      ],
+      "label": "fig5",
       "programmingLanguage": "r",
-      "text": "# R code here",
-      "meta": {
-        "figure3,": "",
-        "fig.cap": "(ref:figure-3)"
-      }
+      "text": "# R code here"
     },
     {
       "type": "Paragraph",
       "content": [
-        "(ref:figure-3) Figure 3. ",
+        "(ref:fig3) ",
         {
           "type": "Strong",
           "content": [

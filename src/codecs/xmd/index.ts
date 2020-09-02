@@ -10,44 +10,6 @@ import { Codec, CommonEncodeOptions } from '../types'
 import { transformSync } from '../../util/transform'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
-/**
- * Converts the Bookdown style figure reference into Markdown Block Extension format.
- * Figures are not represented as per usual in Markdown (block extensions)
- * but rather as an image and a text reference.
- * @see https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references
- */
-export const decodeFigure = (contents: string): string => {
-  const figRegEx = /(```{(\w+).*fig\.cap=['"]\(ref:([\w-]+)\)['"].*}\n([^```]*)\n?```)\n/g
-
-  return contents.replace(
-    figRegEx,
-    (_match, _figBlock, lang?: string, refId?: string, code?: string) => {
-      const figRefRegEx = new RegExp(
-        `\\(ref:${
-          refId ?? ''
-        }\\) ((?:Fig(?:ure)?|Table) \\d+[.;]) (\\*\\*.*?\\*\\*)?\\s*(.*)`,
-        'g'
-      )
-
-      const [, label, heading, caption] = figRefRegEx.exec(contents) ?? []
-
-      let figure = `
-figure: ${label ?? refId}
-:::
-\`\`\`${lang ?? 'r'}`
-
-      figure += code === undefined ? '' : `\n${code}\`\`\`\n`
-      figure += heading === undefined ? '' : `\n${heading}`
-      figure += heading === undefined && caption === undefined ? '' : `\n`
-      figure += caption === undefined ? '' : `\n${caption}\n`
-
-      figure += '\n:::\n'
-
-      return figure
-    }
-  )
-}
-
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
 
@@ -55,7 +17,7 @@ export class XmdCodec extends Codec implements Codec {
    * Decode XMarkdown to a Stencila node.
    *
    * This function uses regexes to transform XMarkdown to Commonmark
-   * which is then passed onto the `md.decode` function.
+   * which is then passed onto the `MdCodec.decode` method (via `load()`).
    *
    * @param file The `VFile` to decode
    */
@@ -63,38 +25,9 @@ export class XmdCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     let xmd = await vfile.dump(file)
-    // Inline code chunks are replaced with special inline nodes
-    // The negative look behind at the start prevents matching block code chunks
-    let cmd = xmd.replace(
-      /(?<!``)`(r|py|python)\s+([^`]*)`/g,
-      (_match, lang, text): string => `\`${text}\`{type=expr lang=${lang}}`
-    )
-
-    xmd = decodeFigure(xmd)
-
-    // Block code chunks are replaced with a `chunk` block extension
-    // Block code chunks already nested within generic extensions e.g. a chunkfigure
-    // are converted to a plain code chunk.
-    cmd = cmd.replace(
-      /(:::\n\s*)?```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
-      (
-        match,
-        inExtension: string | undefined,
-        lang: string,
-        options: string,
-        text: string
-      ): string => {
-        if (inExtension !== undefined) {
-          return ':::\n``` ' + lang + '\n' + text + '\n```\n'
-        } else {
-          let md = 'chunk:\n:::\n``` ' + lang
-          if (options.length > 0) md += ` ${options}`
-          return md + '\n' + text + '\n```\n:::\n'
-        }
-      }
-    )
-
-    return load(cmd, 'md')
+    xmd = decodeInlineChunk(xmd)
+    xmd = decodeBlockChunk(xmd)
+    return load(xmd, 'md')
   }
 
   /**
@@ -208,4 +141,107 @@ export class XmdCodec extends Codec implements Codec {
     )
     return vfile.load(xmd)
   }
+}
+
+/**
+ * Replace RMarkdown inline code chunks with Markdown inline code nodes with `type=expr`.
+ *
+ * The inline code nodes produced will subsequently be handled by the
+ * `MdCodec.decodeInlineCode` function.
+ */
+export function decodeInlineChunk(xmd: string): string {
+  return xmd.replace(
+    // The negative look behind at the start prevents matching block code chunks.
+    /(?<!``)`(r|py|python|js|javascript)\s+([^`]*)`/g,
+    (_match, lang, text): string => `\`${text}\`{type=expr lang=${lang}}`
+  )
+}
+
+/**
+ * Replace RMarkdown block code chunks with Markdown `chunk` block extensions.
+ *
+ * If the code chunk has a label, then that becomes the label of the chunk.
+ * If the code chunk has a `fig.cap` attribute:
+ *   - if `fig.cap` is a "text reference" e.g. fig.cap='(ref:foo)', then searches
+ *     for the paragraph with that id.
+ *   - otherwise, uses the caption as is.
+ *
+ * @see https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references
+ */
+export function decodeBlockChunk(xmd: string): string {
+  const removeParagraphs: string[] = []
+  xmd = xmd.replace(
+    /^```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
+    (match, lang: string, options_: string, text: string): string => {
+      let options = options_.split(/,\s*/)
+
+      // Start chunk block extension with label (if any)
+      let md = 'chunk:'
+      if (!options[0].includes('=')) {
+        md += ' ' + options[0]
+        options = options.slice(1)
+      }
+      md += '\n:::\n'
+
+      // Add figure caption if there is a `fig.cap` option
+      let index = 0
+      for (const option of options) {
+        const [name, value] = option.split(/\s*=\s*/)
+        if (name === 'fig.cap') {
+          let caption: string | undefined
+          const match = /['"]\(ref:([\w-]+)\)['"]/.exec(value)
+          if (match) {
+            // Search for the text reference to use as the caption
+            const refId = match[1]
+            const refRegEx = new RegExp(
+              // Stops capturing the caption paragraph on a blank line
+              `^\\(ref:${refId}\\)\\s*(.+?)\\n`,
+              'gm'
+            )
+            const refMatch = refRegEx.exec(xmd)
+            if (refMatch !== null) {
+              caption = refMatch[1]
+              removeParagraphs.push(refMatch[0])
+            }
+          } else {
+            // Use the fig.cap option value
+            caption = value.replace(/'|"/g, '')
+          }
+          if (caption !== undefined) md += caption + '\n\n'
+
+          // Remove from options
+          options.splice(index, 1)
+        }
+        index += 1
+      }
+
+      // Add code block and end block extension
+      md += '```' + lang + '\n' + text + '\n```\n:::\n'
+
+      // Add any other options as properties
+      if (options.length > 0) {
+        const properties = options.map((option) => {
+          let [name, value] = option.split(/\s*=\s*/)
+          if (name === 'fig.width') {
+            name = 'width'
+          } else if (name === 'fig.height') {
+            name = 'height'
+          } else {
+            // Can't have a dot in property names...
+            name = name.replace('.', '')
+          }
+          return `${name}=${value}`
+        })
+        md += '{' + properties.join(' ') + '}\n'
+      }
+
+      return md + '\n'
+    }
+  )
+  // Text reference paragraphs that were converted to
+  // captions need to be removed
+  for (const para of removeParagraphs) {
+    xmd = xmd.replace(para, '')
+  }
+  return xmd
 }

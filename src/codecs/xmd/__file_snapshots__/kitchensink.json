@@ -77,9 +77,9 @@
       "programmingLanguage": "r",
       "text": "plot(x,y)",
       "meta": {
-        "echo": "FALSE,",
-        "fig.height": "7,",
-        "fig.width": "8"
+        "echo": "FALSE",
+        "height": "7",
+        "width": "8"
       }
     }
   ]
