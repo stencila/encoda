@@ -1,3 +1,29 @@
+# [0.99.0](https://github.com/stencila/encoda/compare/v0.98.6...v0.99.0) (2020-09-02)
+
+
+### Bug Fixes
+
+* **CSL:** Encode and decode publisher and URL ([dcc27d0](https://github.com/stencila/encoda/commit/dcc27d0782c94025e327ef46dfc9812e585a3c43))
+* **Deps:** Upgrade Schema version ([37d80f5](https://github.com/stencila/encoda/commit/37d80f53de941dc183f15dcc2f07519fe26a6c7c))
+* **HTML:** Encode code chunk with label and/or caption as figure ([2203138](https://github.com/stencila/encoda/commit/22031385b70a8a9b0df6f1625ab6e2abd478a14f))
+* **JATS:** Better decoding of alternative publication types and organizational authors ([ac9fddb](https://github.com/stencila/encoda/commit/ac9fddb8c8007edcb0399af864fc0b6cfd9ed6ab))
+* **JATS:** Decoding for article issue number ([b5937ba](https://github.com/stencila/encoda/commit/b5937ba5fd79904083436c97ebf8979bc3a4dc45))
+* **JATS:** Decoding for article issue number if exist ([21aaafc](https://github.com/stencila/encoda/commit/21aaafc874b268cf91661f9b46a5e4e9b7f3fd4d))
+* **Markdown:** Decode CodeChunk meta properly ([03ee8c6](https://github.com/stencila/encoda/commit/03ee8c60be170fe133138baeb97d82896360b0fa))
+* **Markdown:** Do not require thematic break in table block; more flexible figure/table & caption orders ([49cdc4e](https://github.com/stencila/encoda/commit/49cdc4e47b694102658f1bac9e09021dc41f6a3b))
+* **Markdown:** Remove chunkfigure extension; use chunk label and caption ([b5a7f8a](https://github.com/stencila/encoda/commit/b5a7f8a9fefd8ce89f645b4de8635ed669b388eb))
+* **MathML:** Replace deprecated constants ([9c7f1e3](https://github.com/stencila/encoda/commit/9c7f1e36febb7b360f442adc6624a54f4c49c6e7))
+* **TeX:** Normalize MathML before XSLT to TeX ([7a66590](https://github.com/stencila/encoda/commit/7a665904396e2481f9d7e6f9c2558920a5b422e6))
+* **XMD:** Allow for block extensions for chunks, figures & tables ([c17a753](https://github.com/stencila/encoda/commit/c17a753cbe298e973e5afe5dd54e2a1d68167c08))
+* **XMD:** Improve handling of code chunk label, fig.cap and other options ([fbb1b6d](https://github.com/stencila/encoda/commit/fbb1b6dc9317530402221c1f3de0dc2b44663506))
+
+
+### Features
+
+* **MD:** Add ability to encode tables with captions ([c78d6d0](https://github.com/stencila/encoda/commit/c78d6d0c2d942953753864944a84b40e693e377e))
+* **MD:** Encode chunkfigure block extensions ([1ef0c9d](https://github.com/stencila/encoda/commit/1ef0c9d52810b54adc02c5bb75dd616a5301482e))
+* **MD:** Encode Tables found in chunkfigure block extensions ([2981320](https://github.com/stencila/encoda/commit/298132030d6f17163514a301fbdc81729d869dcd))
+
 ## [0.98.6](https://github.com/stencila/encoda/compare/v0.98.5...v0.98.6) (2020-09-01)
 
 
