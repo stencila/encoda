@@ -1,7 +1,7 @@
 import notebook from '../../__fixtures__/article/r-notebook-simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
-import { XmdCodec, decodeBlockChunk } from './'
+import { XmdCodec, decodeBlockChunk, decodeNestedChunks } from './'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 
 const jsonCodec = new JsonCodec()
@@ -21,6 +21,32 @@ describe('decode', () => {
     expect(await xmdToJson(fixture('kitchensink.Rmd'))).toMatchFile(
       snapshot('kitchensink.json')
     )
+  })
+})
+
+describe('decode - nested chunks', () => {
+  it('decodes a simple text reference', () => {
+    const rmd = `
+chunk:
+:::
+Caption
+
+\`\`\`{r}
+plot
+\`\`\`
+:::
+`
+    const md = `
+chunk:
+:::
+Caption
+
+\`\`\`r
+plot
+\`\`\`
+:::
+`
+    expect(decodeNestedChunks(rmd)).toEqualStringContent(md)
   })
 })
 
@@ -110,7 +136,7 @@ describe('encode', () => {
       snapshot('r-notebook-simple.Rmd')
     )
   })
-  test('r-notebook-simple', async () => {
+  test('elife-50356', async () => {
     expect(
       await xmdCodec.dump(
         await unlinkFiles(

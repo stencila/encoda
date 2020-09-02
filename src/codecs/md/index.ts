@@ -1173,7 +1173,6 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
   const { id, label, caption, ...restTable } = table
 
   if (id || caption || label) {
-
     let content = ''
     if (typeof caption === 'string') {
       content += caption + '\n\n'

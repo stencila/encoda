@@ -26,6 +26,7 @@ export class XmdCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     let xmd = await vfile.dump(file)
     xmd = decodeInlineChunk(xmd)
+    xmd = decodeNestedChunks(xmd)
     xmd = decodeBlockChunk(xmd)
     return load(xmd, 'md')
   }
@@ -33,7 +34,7 @@ export class XmdCodec extends Codec implements Codec {
   /**
    * Encode a Stencila node to XMarkdown.
    *
-   * This function first transforms the node by converting
+   * If `strict=true`, this function first transforms the node by converting
    * any `CodeExpression` nodes to `CodeFragment` nodes and `CodeChunk` nodes
    * to `CodeBlock` nodes. This is intentionally lossy since any results of
    * execution (e.g. error or outputs) are not stored in RMarkdown.
@@ -42,8 +43,11 @@ export class XmdCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.commonEncodeDefaults
+    options: CommonEncodeOptions & { strict?: boolean } = this
+      .commonEncodeDefaults
   ): Promise<vfile.VFile> => {
+    const { strict = false } = options
+
     const transformed = transformSync(
       node,
       (node: stencila.Node): stencila.Node => {
@@ -57,47 +61,48 @@ export class XmdCodec extends Codec implements Codec {
           })
         }
         if (stencila.isA('CodeChunk', node)) {
-          const { text, programmingLanguage, meta } = node
-          return stencila.codeBlock({ text, programmingLanguage, meta })
-        }
-        // Figures are not represented as per usual in Markdown (block extensions)
-        // but rather as an image and a text reference
-        // See https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references
-        if (stencila.isA('Figure', node)) {
-          let { label, caption, content } = node
-          let title
-          let rest: stencila.InlineContent[] = []
-          if (typeof caption === 'string')
-            title = stencila.strong({ content: [caption] })
-          else if (Array.isArray(caption)) {
-            const [first] = caption
-            if (stencila.isA('Heading', first)) {
-              title = stencila.strong({ content: first.content })
-              if (caption.length > 1)
-                rest = ensureInlineContentArray(caption.slice(1))
-            } else {
-              rest = ensureInlineContentArray(caption)
+          const { text, programmingLanguage, caption, label, meta } = node
+
+          const block = stencila.codeBlock({
+            text,
+            programmingLanguage,
+          })
+
+          if (caption === undefined) {
+            // Not caption so can represent as a code block
+            return {
+              ...block,
+              meta,
             }
+          } else if (strict) {
+            // In strict mode, always convert to a code block
+            // with a fig.cap attribute
+            if (typeof caption === 'string') {
+              return {
+                ...block,
+                meta: { 'fig.cap': caption, ...meta },
+              }
+            } else {
+              const refId =
+                label !== undefined
+                  ? label.toLowerCase().replace(/[^a-z0-9]/g, '')
+                  : crypto.randomBytes(8).toString('hex')
+              return [
+                {
+                  ...block,
+                  meta: { 'fig.cap': `(ref:${refId}) `, ...meta },
+                },
+                stencila.paragraph({
+                  content: [
+                    `(ref:${refId}) `,
+                    ...(caption as stencila.InlineContent[]),
+                  ],
+                }),
+              ]
+            }
+          } else {
+            return node
           }
-          const id =
-            label !== undefined
-              ? label.toLowerCase().replace(/[^a-z0-9]/g, '')
-              : crypto.randomBytes(8).toString('hex')
-
-          if (label?.endsWith('.')) label += ' '
-          else if (!label?.endsWith('. ')) label += '. '
-
-          return [
-            ...(content ?? []),
-            stencila.paragraph({
-              content: [
-                `(ref:${id}) `,
-                ...(label !== undefined ? [label] : []),
-                ...(title ? [title, ' '] : []),
-                ...rest,
-              ],
-            }),
-          ]
         }
         return node
       }
@@ -141,6 +146,22 @@ export class XmdCodec extends Codec implements Codec {
     )
     return vfile.load(xmd)
   }
+}
+
+/**
+ * Replace RMarkdown code chunks that are nested inside a Markdown `chunk`
+ * block extension with a plain code block.
+ *
+ * When encoding code chunks we made the nested code block compatible with
+ * RMarkdown by using curly braces around the language e.g. `{r}`. This turns
+ * those into plain code blocks so that they do not get decoded to anther
+ * `chunk` by the `decodeBlockChunk` function below.
+ */
+export function decodeNestedChunks(xmd: string): string {
+  return xmd.replace(
+    /(chunk:(?:.|\n)*?```){([^}]*)}/g,
+    (_match, leading, unbraced): string => `${leading}${unbraced}`
+  )
 }
 
 /**
