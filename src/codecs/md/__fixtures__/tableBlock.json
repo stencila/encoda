@@ -3,8 +3,8 @@
   "content": [
     {
       "type": "Table",
-      "id": "table1a",
-      "label": "Table 1A",
+      "id": "table1",
+      "label": "Table 1",
       "caption": [
         {
           "type": "Heading",
@@ -62,7 +62,7 @@
             },
             {
               "content": [
-                "Some content split accross multiple rows"
+                "Some content split across multiple rows"
               ],
               "type": "TableCell"
             },
@@ -86,7 +86,7 @@
             {
               "type": "TableCell",
               "content": [
-                "Some content split accross multiple rows"
+                "Some content split across multiple rows"
               ]
             },
             {

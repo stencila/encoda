@@ -995,24 +995,28 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
 function decodeFigure(ext: Extension): stencila.Figure {
   const { content = '', argument, properties } = ext
 
-  const article = decodeMarkdown(content)
-  const nodes = article.content ?? []
+  const nodes = decodeMarkdown(content).content ?? []
 
-  // If the first node is a paragraph with only an image in
-  // it then unwrap it. ie. the figure's content is just an image
-  const first = nodes[0]
-  const contentNodes =
-    stencila.isParagraph(first) &&
-    first.content?.length === 1 &&
-    stencila.isA('ImageObject', first.content[0])
-      ? first.content
-      : [first]
-
-  const captionNodes = nodes.slice(1)
+  const caption: stencila.Node[] = []
+  let image: stencila.ImageObject | undefined
+  for (const node of nodes) {
+    // The first node that is a paragraph with only an image in
+    // it is unwrapped and made the figure's image.
+    if (
+      image === undefined &&
+      stencila.isParagraph(node) &&
+      node.content?.length === 1 &&
+      stencila.isA('ImageObject', node.content[0])
+    ) {
+      image = node.content[0]
+    } else {
+      caption.push(node)
+    }
+  }
 
   return stencila.figure({
-    content: contentNodes,
-    caption: captionNodes,
+    content: image ? [image] : [],
+    caption,
     label: argument,
     id: properties?.id,
   })
@@ -1139,22 +1143,26 @@ function decodeTable(
  */
 function decodeTableBlock(ext: Extension): stencila.Table {
   const { content = '', argument, properties } = ext
-  const [caption, tableMD = ''] = content.split(/^---$/m)
 
-  const article = decodeMarkdown(tableMD)
-  const decodedContent = article.content ? article.content[0] : []
+  const nodes = decodeMarkdown(content).content ?? []
 
-  const captionNodes = decodeMarkdown(caption).content ?? []
+  const caption: stencila.Node[] = []
+  let table
+  for (const node of nodes) {
+    if (table === undefined && isA('Table', node)) {
+      table = node
+    } else {
+      caption.push(node)
+    }
+  }
 
-  const table = isA('Table', decodedContent)
-    ? decodedContent
-    : stencila.table({ rows: [] })
+  if (table === undefined) table = stencila.table({ rows: [] })
 
   return stencila.table({
     ...table,
     id: properties?.id,
     label: argument,
-    caption: captionNodes,
+    caption,
   })
 }
 
@@ -1162,22 +1170,16 @@ function decodeTableBlock(ext: Extension): stencila.Table {
  * Encode a `stencila.Table` to a `MDAST.Table`
  */
 function encodeTable(table: stencila.Table): MDAST.Table | Extension {
-  if (table.caption || table.label) {
-    const { label, caption = [], ...restTable } = table
+  const { id, label, caption, ...restTable } = table
+
+  if (id || caption || label) {
 
     let content = ''
-
-    if (caption && Array.isArray(caption) && caption.length > 0) {
-      content +=
-        typeof caption === 'string'
-          ? caption
-          : Array.isArray(caption)
-          ? caption.map(encodeMarkdown).join('\n\n')
-          : ''
-
-      content += '\n---\n'
+    if (typeof caption === 'string') {
+      content += caption + '\n\n'
+    } else if (Array.isArray(caption) && caption.length > 0) {
+      content += caption.map(encodeMarkdown).join('\n\n') + '\n\n'
     }
-
     content += encodeMarkdown(restTable)
 
     return {
@@ -1185,9 +1187,7 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
       name: 'table',
       argument: label,
       content,
-      properties: {
-        id: table.id ?? '',
-      },
+      properties: id ? { id } : undefined,
     }
   }
 
