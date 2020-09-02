@@ -1622,9 +1622,36 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
 
 /**
  * Encode a Stencila `CodeChunk` to a `<stencila-code-chunk>` element.
+ *
+ * If the code chunk has a label or a caption then it is encoded as a figure
+ * with the code chunk as the content.
  */
 function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
-  const { text = '', meta = {}, programmingLanguage, outputs } = chunk
+  const {
+    text = '',
+    programmingLanguage,
+    meta = {},
+    outputs,
+    caption,
+    label,
+  } = chunk
+
+  if (caption !== undefined || label !== undefined) {
+    return encodeFigure(
+      stencila.figure({
+        label,
+        caption,
+        content: [
+          stencila.codeChunk({
+            text,
+            programmingLanguage,
+            meta,
+            outputs,
+          }),
+        ],
+      })
+    )
+  }
 
   const codeElem = encodeCodeBlock(
     stencila.codeBlock({ text, programmingLanguage })
