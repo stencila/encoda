@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+    <front>
+        <article-meta>
+            <title-group>
+                <article-title>Collider bias and the apparent protective effect of glucose-6-phosphate dehydrogenase deficiency on cerebral malaria</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Watson</surname>
+                        <given-names>James A</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Leopold</surname>
+                        <given-names>Stije J</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Simpson</surname>
+                        <given-names>Julie A</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Day</surname>
+                        <given-names>Nicholas PJ</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Dondorp</surname>
+                        <given-names>Arjen M</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>White</surname>
+                        <given-names>Nicholas J</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Nuffield Department of Medicine, Centre for Tropical Medicine and Global Health</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Nuffield Department of Medicine, Centre for Tropical Medicine and Global Health</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Centre for Epidemiology and Biostatistics, Melbourne School of Population and Global Health</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical Medicine</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Nuffield Department of Medicine, Centre for Tropical Medicine and Global Health</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Nuffield Department of Medicine, Centre for Tropical Medicine and Global Health</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Nuffield Department of Medicine, Centre for Tropical Medicine and Global Health</institution>
+                </aff>
+            </contrib-group>
+            <abstract>
+                <p>
+                    <p>Case fatality rates in severe falciparum malaria depend on the pattern and degree of vital organ dysfunction. Recent large-scale case-control analyses of pooled severe malaria data reported that glucose-6-phosphate dehydrogenase deficiency (G6PDd) was protective against cerebral malaria but increased the risk of severe malarial anaemia. A novel formulation of the balancing selection hypothesis was proposed as an explanation for these findings, whereby the selective advantage is driven by the competing risks of death from cerebral malaria and death from severe malarial anaemia. We re-analysed these claims using causal diagrams and showed that they are subject to collider bias. A simulation based sensitivity analysis, varying the strength of the known effect of G6PDd on anaemia, showed that this bias is sufficient to explain all of the observed association. Future genetic epidemiology studies in severe malaria would benefit from the use of causal reasoning.</p>
+                </p>
+            </abstract>
+        </article-meta>
+    </front>
+    <body>
+        <sec>
+            <title>Introduction</title>
+            <p>Severe falciparum malaria is defined by one or more criteria indicating vital organ dysfunction in the presence of microscopy confirmed asexual blood stages of 
+                <italic>Plasmodium falciparum</italic> in the peripheral blood film (
+                <xref rid="bib15" ref-type="bibr">, 2015</xref>). Multiple vital organ dysfunction is associated with increased mortality (
+                <xref rid="bib14" ref-type="bibr">, 2014</xref>). Common major clinical manifestations of severe malaria include coma, acidosis, renal failure and anaemia. Of these manifestations, anaemia is an inevitable consequence of symptomatic malaria (
+                <xref rid="bib13" ref-type="bibr">White et al., 2014</xref>). However, anaemia in individuals at risk of 
+                <italic>Plasmodium falciparum</italic> infection can also be the consequence of red cell genetic polymorphisms frequent in the populations at risk, such as glucose-6-phosphate dehydrogenase deficiency (G6PDd) or haemoglobinopathies.
+            </p>
+            <p>There is considerable interest in understanding the mechanisms conferring protective effects against severe falciparum malaria of the genetic polymorphisms which are common in malaria endemic areas (
+                <xref rid="bib12" ref-type="bibr">Weatherall, 2008</xref>). For some, such as the sickle cell trait, several different mechanisms have been proposed. These include reduced parasite erythrocyte invasion, enhanced parasitised red cell phagocytosis and a reduced propensity of infected red cells to sequester in the microvasculature (
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib1" ref-type="bibr">Band et al., 2015</xref>; 
+                <xref rid="bib2" ref-type="bibr">Cholera et al., 2008</xref>; 
+                <xref rid="bib16" ref-type="bibr">Williams, 2016</xref>). The mechanism underlying protection from severe falciparum malaria is less clear for others such as glucose-6-phosphate dehydrogenase deficiency (G6PDd). This X-linked genetic polymorphism results in the most common human enzymopathy. Nearly 200 different genetic variants have been reported (
+                <xref rid="bib5" ref-type="bibr">Howes et al., 2012</xref>; 
+                <xref rid="bib6" ref-type="bibr">Luzzatto and Arese, 2018</xref>). The mechanism whereby G6PD deficiency protects against malaria, and the natural selection forces which have resulted in the different genotypes are still debated. Prospective observational hospital or clinic based patient studies have provided the major component of the evidence base. Estimating causal effects from observational studies in severe malaria patients is difficult due to both confounding and selection bias. This work focuses on collider bias introduced by inappropriate data filtering (
+                <xref rid="bib9" ref-type="bibr">Snoep et al., 2014</xref>; 
+                <xref rid="bib8" ref-type="bibr">Pearce and Richiardi, 2014</xref>).
+            </p>
+            <p>It has been suggested that G6PDd both increases the risk of severe malarial anaemia (SMA) and decreases the risk of cerebral malaria (CM) (
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). These conclusions were based on a pooled analysis of observational data from over 11,000 patients with severe malaria studied in Africa and Asia, and relevant population controls. Based on these genetic association studies, a new formulation of the balancing-selection hypothesis was proposed in which G6PD polymorphisms are maintained in human populations, at least in part, by an evolutionary trade-off between different adverse outcomes of 
+                <italic>P. falciparum</italic> infection (
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). Collider bias probably explains this negative association between G6PDd and CM, suggesting that causal interpretations of this association and the novel formulation of balancing selection in G6PDd are invalid.
+            </p>
+        </sec>
+        <sec>
+            <title>Results</title>
+            <p>Two published analyses of pooled data from observational studies of patients with severe falciparum malaria used severe malarial anaemia (SMA) and cerebral malaria (CM) as the main endpoints (outcomes) of interest (
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). Both these published analyses defined cases of CM as the presence of coma but without concomitant SMA, and cases of SMA as patients with severe anaemia but who were conscious. Therefore, these case definitions excluded patients who had both SMA and CM. All other presentations of severe malaria were also excluded (pulmonary oedema, shock, etc.). Population controls were recruited at each site to match the ethnic composition of cases, and in some instances cord blood samples were used as controls. The consequence of these case definitions is to create an artificial dependency between SMA and CM: if a patient has SMA then they cannot have CM. G6PDd is known to influence haemoglobin concentrations directly by causing haemolysis of older erythrocytes in acute malaria. Therefore it is to be expected that SMA is positively correlated with G6PDd, thus creating a negative correlation between CM and G6PDd. In probabilistic terms, this conditional dependence is written as 
+                <inline-formula>
+                    <mml:math id="inf1">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mo stretchy="false">|</mml:mo>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mo>≠</mml:mo>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>. Indeed, when all the G6PDd mutations were mapped onto the WHO severity classification score (
+                <xref rid="bib17" ref-type="bibr">Yoshida et al., 1971</xref>), it was observed that "The mean G6PDd score was 13.5% in controls, 13% in cerebral malaria cases and 16.9% in severe malarial anaemia cases [..]." (page 8, 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). This pattern remained consistent (6, 5.6, and 7.1%, respectively) after exclusion of the G6PD c.202C &gt; T mutation (one of the ‘A-’ mutations and the most prevalent in the pooled data).
+            </p>
+            <p>By excluding patients with both SMA and CM (approximately 12% of those with either SMA or CM in the pooled data), the number of G6PDd patients in the CM category is artificially reduced and we would expect there to be fewer G6PDd patients than in the control group. 
+                <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link> proposes a simple causal diagram which posits plausible inter-dependencies limited to the variables of interest. A simple simulation study based on the assumptions shown in 
+                <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link> can be used to estimate the relationship between G6PDd and SMA which would result in the observed odds ratio for G6PDd in CM cases versus controls reported in 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>. We assessed the null model in which there is no direct causal link between G6PDd and CM in severe falciparum malaria (i.e. no arrow from G6PD deficiency to CM). We also assume that there is no direct link between SMA and CM. We calibrated the model with the marginal probabilities of SMA and CM reported in 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> and only varied the odds ratio of G6PDd in SMA cases versus controls from 1 (assuming no effect of G6PDd on SMA) to 2 (twice as likely to be G6PDd in the SMA cases than in the controls). For simplicity (avoiding assumptions concerning gene dose effects) we restricted the analysis to males and only compare the simulation results with the reported associations in males.
+            </p>
+            <fig>
+                <label>Figure 1.</label>
+                <caption>
+                    <title>Causal diagram highlighting collider bias in 
+                        <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> and 
+                        <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>.
+                    </title>
+                    <p>G6PD deficiency is the exposure of interest (green) and cerebral malaria (CM) is the outcome of interest (red). By defining the CM cases as those who had coma but no severe anaemia, collider bias operates on the effect of G6PDd on CM.</p>
+                </caption>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
+            </fig>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link> shows that if the odds ratio for G6PDd in SMA cases versus controls is strictly greater than 1, the estimated odds ratio for G6PDd in CM cases versus controls is biased (the thick red line is below the true simulated value of 1). The magnitude of this bias increases monotonically as the odds ratio for G6PDd in SMA cases versus controls increases. As can be seen from the causal diagram in 
+                <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link>, there is no bias in the estimated odds ratio for G6PDd in SMA cases versus controls (in 
+                <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link> the thick blue line approximates the identity line). This simple simulation model, restricted to males, shows that for any value of the odds ratio for G6PDd in SMA cases versus controls taken inside the reported 95% confidence interval (CI) [1.2–1.8] from 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>, will result in a biased odds ratio for G6PDd in CM cases versus controls inside the interval [0.69–0.98], the reported 95% CI for G6PDd in CM cases versus controls (
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). Moreover, if we use their reported point estimate of 1.48, restricted to males, for the odds ratio of G6PDd in SMA cases versus controls, the simulation model estimates that the observed (biased) odds ratio for G6PDd in CM cases versus controls is 0.87, qualitatively very close to their estimate of 0.82. We note that the effect of G6PDd on severe anaemia in homozygous G6PDd girls and hemizygous G6PDd boys reported in 
+                <xref rid="bib10" ref-type="bibr">Uyoga et al., 2015</xref>, an odds ratio of 1.71 (95% CI: 1.34–2.18) for G6PDd in SMA cases versus controls, is also consistent with these results. Therefore collider bias could be sufficient to explain all the observed association.
+            </p>
+            <fig>
+                <label>Figure 2.</label>
+                <caption>
+                    <title>Results of the simulation based sensitivity analysis showing how collider bias can explain all the reported association between CM and G6PDd.</title>
+                    <p>The simulation assumes that CM is independent of G6PD status but that SMA is dependent on G6PDd status (
+                        <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link>). Case definitions of CM and SMA exclude patients with both. The left panel shows the observed simulation based estimate of the odds ratio (OR) for G6PDd in SMA cases versus controls (y-axis) as a function of the true simulated value (x-axis). No bias arises (the observed and true values lie on the line of identity). The right panel shows the observed simulation based estimate of the OR for G6PDd in CM cases versus controls (y-axis), again as a function of the true simulated value of the OR for G6PDd in SMA cases versus controls (x-axis). This estimate suffers from collider bias since the true value of the OR for G6PDd in SMA cases versus controls was set to 1). The faint blue shaded areas show the 95% CI [1.22–1.8] for the odds ratio of G6PDd in SMA cases versus controls, restricted to males (
+                        <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>). The point estimate (1.48) is shown by the dashed blue line. The faint red shaded area shows the 95% CI [0.69–0.98] for G6PDd in CM cases versus controls, also restricted to males, with the point estimate (0.82) shown by the dashed red line. CI: confidence interval.
+                    </p>
+                </caption>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
+            </fig>
+        </sec>
+        <sec>
+            <title>Discussion</title>
+            <p>This re-analysis of recent reports that G6PDd reduced the risk of CM directly (
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>) suggests that the observations could have resulted entirely from collider bias. This highlights the difficulty of inferring causal relationships between baseline patient covariates (in this case G6PDd) and covariates which define inclusion criteria. The necessary causal odds ratios for G6PDd in SMA cases versus controls which would give rise to the biased observed association between G6PD status and CM fit with the recent estimate of 1.71 in homozygous girls and hemizygous boys (
+                <xref rid="bib10" ref-type="bibr">Uyoga et al., 2015</xref>). This is not to say that the risk of CM is unaffected by G6PDd, but that the observations reported could have arisen purely as a result of the implicit collider bias induced by the selection of patients by the severe malaria criteria.
+            </p>
+            <p>The example reported here highlights a major difficulty when attempting to estimate causal contributions when factors of interest define inclusion into the clinical study and the subsequent data analysis. All prospective observational severe malaria studies suffer from two major issues. First, case definitions are subjective and change over time (even though standard guidelines exist, see 
+                <xref rid="bib15" ref-type="bibr">, 2015</xref>) and mortality is strongly dependent on the case definition. Second, enrolment into studies can only be done at the hospital or clinic level and neither duration of illness nor treatment seeking behaviour can be accounted for adequately.
+            </p>
+            <p>The notion and definition of ‘severe malaria’ has two operational purposes. First it is a clinical tool for appropriate triage of malaria patients at high risk of death. Second it is a research tool for the evaluation of novel interventions seeking to reduce mortality. Interventions aimed at reducing mortality need to be trialled in the most severely ill patients in order to demonstrate intervention efficacy in this important subgroup. Pooled analyses of severe malaria studies need to take into account the variability of study inclusion and exclusion criteria. Researchers must appreciate that severe malaria is not an objective category but a subjective case definition subset from a spectrum of severity. Moreover, restricting analyses to specific patient subgroups, especially in the analysis of large pooled datasets, can have a considerable impact on the final result (
+                <xref rid="bib4" ref-type="bibr">Gelman and Loken, 2013</xref>). With increased emphasis on providing open access data so that analyses can be evaluated and best use made of clinical research it would be very helpful if investigators could publish reproducible code alongside their analyses. Future genetic epidemiological studies could benefit from use of causal diagrams and would be more readily evaluable by provision of accompanying code.
+            </p>
+        </sec>
+        <sec>
+            <title>Materials and methods</title>
+        </sec>
+        <sec>
+            <title>Data analysis in 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> and 
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>
+            </title>
+            <p>The odds ratios for G6PDd in cases versus controls are given in Table 3 of 
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref> (page 1201). The results, restricted to males, are 0.81 (95% CI: 0.68–0.96) for CM and 1.49 (95% CI: 1.24–1.79) for SMA. The case phenotype definitions are denoted ‘Cerebral malaria only’ for CM and ‘Severe malarial anaemia’ only for SMA. These case definitions, whereby patients with both SMA and CM are excluded, are also given in their Table 1. A total of 6283 cases had cerebral malaria or severe malarial anaemia, broken down as 3345 had cerebral malaria only; 2196 had severe malarial anaemia only; 742 had both cerebral malaria and severe malarial anaemia. The reported odds ratios were computed using logistic regression models with the main adjustment of interest being sickle haemoglobin genotype (HbS). We only consider the reported results restricted to males. The relevant section from the paper is: "
+                <italic>Single-SNP tests, adjusted for HbS genotype, sex and ancestry, for association with severe malaria and the severe malaria subtypes cerebral malaria only and severe malarial anemia only were performed for the 55 SNPs with a known association with severe malaria. Standard logistic regression models were used for tests of association at each autosomal SNP (Supplementary Table 25). Primary analyses comprised tests of association between each SNP and severe malaria phenotypes across all individuals combined as well as separately by sex (X-chromosome SNPs only) and study site: genotypic, additive, dominant, recessive and heterozygote advantage genetic models of inheritance were considered.</italic>" (online Methods, Statistical analysis, (
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>)).
+            </p>
+        </sec>
+        <sec>
+            <title>
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>
+            </title>
+            <p>The odds ratios for G6PDd in cases versus controls are given in Table 3 of 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> (page 6). In this publication, the results, restricted to males, are 0.82 (95% CI: 0.69–0.98) for CM and 1.48 (95% CI: 1.22–1.8) for SMA (their Table 3). The reason for the slight discrepancy between the two publications does not appear to be stated. They included a total of 6284 patients with cerebral malaria or severe malarial anaemia, broken down as: 3359 individuals had cerebral malaria only; 2184 had severe malarial anaemia only; 741 had both cerebral malaria and severe malarial anaemia. Table 1 and 6 of 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> show the case definitions for CM and SMA, highlighting that those who have both clinical presentations are excluded from the respective case definitions. This is further confirmed on page 18 where the authors state: "
+                <italic>For reasons of sample size, we did not conduct a detailed analysis of other sub-types of severe malaria, or of those individuals who had both cerebral malaria and severe malarial anaemia’.</italic> Standard logistic regression models were also used to obtain the odds ratios: 
+                <italic>‘In primary analyses, standard fixed effects logistic regression methods were used for tests of association with severe malaria and sub-types at each SNP under additive, dominant, recessive and heterozygous models. [..] Results were adjusted for sickle hemoglobin (HbS), gender and ethnicity.</italic>" (bottom of page 18).
+            </p>
+        </sec>
+        <sec>
+            <title>Sensitivity analysis</title>
+            <p>In order to characterise the proportion of the reported association explained by collider bias we constructed a simple simulation study based on the analytical procedures in 
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>. We restrict our simulation to males, and calibrate and test the model using only the results reported in males in both publications (identical up to one decimal point). For simplicity, the simulation ignores the effect of HbS which is a confounder between SMA and CM, and generates data where the two presentations occur independently, which is equivalent to adjusting for HbS in the regression model. The procedure generates simulated data dependent on a parameter characterising the effect of G6PDd on severe malarial anaemia. As no adjustment is necessary, we then compute the non-parametric odds ratio for G6PDd in CM cases versus controls, excluding from the CM case definition all those who have SMA. This simulated ‘observed’ odds ratio estimated from the 2 x 2 table (cases and controls versus G6PDd and G6PD normals) is thereby directly comparable to the reported odds ratios (obtained from logistic regression with the appropriate adjustments) in 
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>; 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref>, if we assume that only sex, ethnicity and 
+                <italic>HbS</italic> are the true confounders (i.e. all necessary adjustments were made in both publications).
+            </p>
+            <p>The hypothetical data were simulated based on the following assumptions:</p>
+            <list list-type="order">
+                <list-item>
+                    <p>G6PD deficiency increases the risk of SMA in acute symptomatic malaria (the size of the effect is the only free parameter in the model and varies from 1 to 2 as defined by the odds ratio for G6PDd in SMA cases versus controls). In reality this would be expected to be a function of genotype and gene dose (i.e. hemizygotes and homozygotes would have a greater risk than heterozygotes).</p>
+                </list-item>
+                <list-item>
+                    <p>CM is independent of G6PD status.</p>
+                </list-item>
+                <list-item>
+                    <p>A population of males only (i.e. no heterozygote women, so no partial effects) with homogeneous background frequency of G6PDd.</p>
+                </list-item>
+                <list-item>
+                    <p>CM and SMA occur independently.</p>
+                </list-item>
+            </list>
+            <p>From the data in 
+                <xref rid="bib3" ref-type="bibr">Clarke et al., 2017</xref> and 
+                <xref rid="bib7" ref-type="bibr">Rockett et al., 2014</xref>, we can estimate the marginal probability of CM as 0.34, independent of G6PD status (assumption 2). We can also estimate the marginal probability of SMA as 0.24. The probability of G6PDd in males was 0.15.
+            </p>
+            <p>If we denote 
+                <inline-formula>
+                    <mml:math id="inf2">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi>π</mml:mi>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mo>=</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mo stretchy="false">|</mml:mo>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mo>≥</mml:mo>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mo>=</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mn>0.24</mml:mn>
+                                <mml:mo>,</mml:mo>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula> then by the law of total probability:
+            </p>
+            <display-formula>
+                <mml:math id="m1">
+                    <mml:mstyle displaystyle="true" scriptlevel="0">
+                        <mml:mrow>
+                            <mml:mi mathvariant="normal">P</mml:mi>
+                            <mml:mo stretchy="false">(</mml:mo>
+                            <mml:mrow>
+                                <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                <mml:mi mathvariant="sans-serif">A</mml:mi>
+                            </mml:mrow>
+                            <mml:mrow>
+                                <mml:mo stretchy="false">|</mml:mo>
+                            </mml:mrow>
+                            <mml:mrow>
+                                <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                <mml:mi mathvariant="sans-serif">n</mml:mi>
+                            </mml:mrow>
+                            <mml:mo stretchy="false">)</mml:mo>
+                            <mml:mspace width="thinmathspace"/>
+                            <mml:mo>=</mml:mo>
+                            <mml:mspace width="thinmathspace"/>
+                            <mml:mfrac>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                    <mml:mo stretchy="false">(</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                    </mml:mrow>
+                                    <mml:mo stretchy="false">)</mml:mo>
+                                    <mml:mo>−</mml:mo>
+                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                    <mml:mo stretchy="false">(</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mo stretchy="false">|</mml:mo>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                        <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                        <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                    </mml:mrow>
+                                    <mml:mo stretchy="false">)</mml:mo>
+                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                    <mml:mo stretchy="false">(</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                        <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                        <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                    </mml:mrow>
+                                    <mml:mo stretchy="false">)</mml:mo>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mn>1</mml:mn>
+                                    <mml:mo>−</mml:mo>
+                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                    <mml:mo stretchy="false">(</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                        <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                        <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                        <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                    </mml:mrow>
+                                    <mml:mo stretchy="false">)</mml:mo>
+                                </mml:mrow>
+                            </mml:mfrac>
+                            <mml:mspace width="thinmathspace"/>
+                            <mml:mo>=</mml:mo>
+                            <mml:mspace width="thinmathspace"/>
+                            <mml:mfrac>
+                                <mml:mrow>
+                                    <mml:mn>0.24</mml:mn>
+                                    <mml:mspace width="thinmathspace"/>
+                                    <mml:mo>−</mml:mo>
+                                    <mml:mspace width="thinmathspace"/>
+                                    <mml:mn>0.15</mml:mn>
+                                    <mml:mi>π</mml:mi>
+                                </mml:mrow>
+                                <mml:mn>0.85</mml:mn>
+                            </mml:mfrac>
+                        </mml:mrow>
+                    </mml:mstyle>
+                </mml:math>
+            </display-formula>
+            <p>where G6PDd denotes G6PD deficient and G6PDn denotes G6PD normal.</p>
+            <p>The true proportion of G6PDd in the controls is known and fixed as 
+                <inline-formula>
+                    <mml:math id="inf3">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>, with the proportion of G6PDn in the controls is given by 
+                <inline-formula>
+                    <mml:math id="inf4">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mn>1</mml:mn>
+                                <mml:mo>−</mml:mo>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>, therefore the odds of G6PDd in the control group is given by 
+                <inline-formula>
+                    <mml:math id="inf5">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mfrac>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mn>1</mml:mn>
+                                        <mml:mo>−</mml:mo>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                    </mml:mrow>
+                                </mml:mfrac>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>.
+            </p>
+            <p>We then simulate cases as follows. For each value of 
+                <inline-formula>
+                    <mml:math id="inf6">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi>π</mml:mi>
+                                <mml:mo>∈</mml:mo>
+                                <mml:mo stretchy="false">[</mml:mo>
+                                <mml:mn>0.24</mml:mn>
+                                <mml:mo>,</mml:mo>
+                                <mml:mn>0.5</mml:mn>
+                                <mml:mo stretchy="false">]</mml:mo>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>:
+            </p>
+            <p>
+                <bold>Step 1</bold>. Simulate 1 million patients such that:
+            </p>
+            <p>
+                <inline-formula>
+                    <mml:math id="inf7">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mo>=</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mn>0.34</mml:mn>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>,
+            </p>
+            <p>
+                <inline-formula>
+                    <mml:math id="inf8">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mo>=</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mn>0.15</mml:mn>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>.
+            </p>
+            <p>
+                <inline-formula>
+                    <mml:math id="inf9">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mi mathvariant="normal">P</mml:mi>
+                                <mml:mo stretchy="false">(</mml:mo>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mo stretchy="false">|</mml:mo>
+                                </mml:mrow>
+                                <mml:mrow>
+                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                </mml:mrow>
+                                <mml:mo stretchy="false">)</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mo>=</mml:mo>
+                                <mml:mspace width="thinmathspace"/>
+                                <mml:mi>π</mml:mi>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>.
+            </p>
+            <p>
+                <bold>Step 2</bold>. Select only the patients who have either just CM, or just SMA, filtering out those with concomitant SMA and CM.
+            </p>
+            <p>
+                <bold>Step 3</bold>. In the remaining data compute 
+                <inline-formula>
+                    <mml:math id="inf10">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:msubsup>
+                                    <mml:mi mathvariant="normal">N</mml:mi>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mrow>
+                                                <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                                <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                                <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                            </mml:mrow>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                </mml:msubsup>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula> (number of G6PDd with SMA); 
+                <inline-formula>
+                    <mml:math id="inf11">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:msubsup>
+                                    <mml:mi mathvariant="normal">N</mml:mi>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">n</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                </mml:msubsup>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula> (number of G6PDn patients with SMA); 
+                <inline-formula>
+                    <mml:math id="inf12">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:msubsup>
+                                    <mml:mi mathvariant="normal">N</mml:mi>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                </mml:msubsup>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula> (number of G6PDd patients with CM); 
+                <inline-formula>
+                    <mml:math id="inf13">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:msubsup>
+                                    <mml:mi mathvariant="normal">N</mml:mi>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">n</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                        </mml:mrow>
+                                    </mml:mrow>
+                                </mml:msubsup>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula> (number of G6PDn patients with CM). The simulated odds ratio for G6PDd in SMA cases versus controls is 
+                <inline-formula>
+                    <mml:math id="inf14">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mfrac>
+                                    <mml:mrow>
+                                        <mml:msubsup>
+                                            <mml:mi mathvariant="normal">N</mml:mi>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                        </mml:msubsup>
+                                        <mml:mrow>
+                                            <mml:mo>/</mml:mo>
+                                        </mml:mrow>
+                                        <mml:msubsup>
+                                            <mml:mi mathvariant="normal">N</mml:mi>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">n</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">S</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">A</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                        </mml:msubsup>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mo>/</mml:mo>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mn>1</mml:mn>
+                                        <mml:mspace width="thinmathspace"/>
+                                        <mml:mo>−</mml:mo>
+                                        <mml:mspace width="thinmathspace"/>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                    </mml:mrow>
+                                </mml:mfrac>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>, and the simulated odds ratio for G6PDd in CM cases versus controls is 
+                <inline-formula>
+                    <mml:math id="inf15">
+                        <mml:mstyle displaystyle="true" scriptlevel="0">
+                            <mml:mrow>
+                                <mml:mfrac>
+                                    <mml:mrow>
+                                        <mml:msubsup>
+                                            <mml:mi mathvariant="normal">N</mml:mi>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                        </mml:msubsup>
+                                        <mml:mrow>
+                                            <mml:mo>/</mml:mo>
+                                        </mml:mrow>
+                                        <mml:msubsup>
+                                            <mml:mi mathvariant="normal">N</mml:mi>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                                    <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                                    <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">n</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                            <mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="sans-serif">C</mml:mi>
+                                                    <mml:mi mathvariant="sans-serif">M</mml:mi>
+                                                </mml:mrow>
+                                            </mml:mrow>
+                                        </mml:msubsup>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mo>/</mml:mo>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mn>1</mml:mn>
+                                        <mml:mspace width="thinmathspace"/>
+                                        <mml:mo>−</mml:mo>
+                                        <mml:mspace width="thinmathspace"/>
+                                        <mml:mi mathvariant="normal">P</mml:mi>
+                                        <mml:mo stretchy="false">(</mml:mo>
+                                        <mml:mrow>
+                                            <mml:mi mathvariant="sans-serif">G</mml:mi>
+                                            <mml:mn mathvariant="sans-serif">6</mml:mn>
+                                            <mml:mi mathvariant="sans-serif">P</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">D</mml:mi>
+                                            <mml:mi mathvariant="sans-serif">d</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                        <mml:mo stretchy="false">)</mml:mo>
+                                    </mml:mrow>
+                                </mml:mfrac>
+                            </mml:mrow>
+                        </mml:mstyle>
+                    </mml:math>
+                </inline-formula>.
+            </p>
+            <p>The causal diagram which corresponds to exclusion operating in Step two is shown in 
+                <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link>. Selection bias can be seen via the role of the vertex 
+                <italic>Case definition</italic> which is a collider between 
+                <italic> G6PD deficiency</italic> and 
+                <italic>Cerebral malaria (CM)</italic>. Implementation of the simulation model in R can be found at: 
+                <ext-link ext-link-type="uri" xlink:href="https://github.com/Stije/SevereMalariaAnalysis/SelectionBiasSimulation.Rmd">https://github.com/Stije/SevereMalariaAnalysis/SelectionBiasSimulation.Rmd</ext-link> (
+                <xref rid="bib11" ref-type="bibr">Watson and Leopold, 2019</xref>; copy archived at 
+                <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences-publications/SevereMalariaAnalysis">https://github.com/elifesciences-publications/SevereMalariaAnalysis</ext-link>).
+            </p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <title>References</title>
+            <ref id="bib1">
+                <element-citation>
+                    <article-title>A novel locus of resistance to severe malaria in a region of ancient balancing selection</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Band</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Rockett</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Spencer</surname>
+                            <given-names>CC</given-names>
+                        </name>
+                        <name>
+                            <surname>Kwiatkowski</surname>
+                            <given-names>DP</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2015">2015</year>
+                    <fpage>253</fpage>
+                    <lpage>257</lpage>
+                    <volume>526</volume>
+                    <source>Nature</source>
+                </element-citation>
+            </ref>
+            <ref id="bib2">
+                <element-citation>
+                    <article-title>Impaired cytoadherence of plasmodium falciparum-infected erythrocytes containing sickle hemoglobin</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Cholera</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Brittain</surname>
+                            <given-names>NJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Gillrie</surname>
+                            <given-names>MR</given-names>
+                        </name>
+                        <name>
+                            <surname>Lopera-Mesa</surname>
+                            <given-names>TM</given-names>
+                        </name>
+                        <name>
+                            <surname>Diakité</surname>
+                            <given-names>SA</given-names>
+                        </name>
+                        <name>
+                            <surname>Arie</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Krause</surname>
+                            <given-names>MA</given-names>
+                        </name>
+                        <name>
+                            <surname>Guindo</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Tubman</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Fujioka</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Diallo</surname>
+                            <given-names>DA</given-names>
+                        </name>
+                        <name>
+                            <surname>Doumbo</surname>
+                            <given-names>OK</given-names>
+                        </name>
+                        <name>
+                            <surname>Ho</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Wellems</surname>
+                            <given-names>TE</given-names>
+                        </name>
+                        <name>
+                            <surname>Fairhurst</surname>
+                            <given-names>RM</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2008">2008</year>
+                    <fpage>991</fpage>
+                    <lpage>996</lpage>
+                    <volume>105</volume>
+                    <source>PNAS</source>
+                </element-citation>
+            </ref>
+            <ref id="bib3">
+                <element-citation>
+                    <article-title>Characterisation of the opposing effects of G6PD deficiency on cerebral malaria and severe malarial anaemia</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Clarke</surname>
+                            <given-names>GM</given-names>
+                        </name>
+                        <name>
+                            <surname>Rockett</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Kivinen</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Hubbart</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Jeffreys</surname>
+                            <given-names>AE</given-names>
+                        </name>
+                        <name>
+                            <surname>Rowlands</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Jallow</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Conway</surname>
+                            <given-names>DJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Bojang</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Pinder</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Usen</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Sisay-Joof</surname>
+                            <given-names>F</given-names>
+                        </name>
+                        <name>
+                            <surname>Sirugo</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Toure</surname>
+                            <given-names>O</given-names>
+                        </name>
+                        <name>
+                            <surname>Thera</surname>
+                            <given-names>MA</given-names>
+                        </name>
+                        <name>
+                            <surname>Konate</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Sissoko</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Niangaly</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Poudiougou</surname>
+                            <given-names>B</given-names>
+                        </name>
+                        <name>
+                            <surname>Mangano</surname>
+                            <given-names>VD</given-names>
+                        </name>
+                        <name>
+                            <surname>Bougouma</surname>
+                            <given-names>EC</given-names>
+                        </name>
+                        <name>
+                            <surname>Sirima</surname>
+                            <given-names>SB</given-names>
+                        </name>
+                        <name>
+                            <surname>Modiano</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Amenga-Etego</surname>
+                            <given-names>LN</given-names>
+                        </name>
+                        <name>
+                            <surname>Ghansah</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Koram</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Wilson</surname>
+                            <given-names>MD</given-names>
+                        </name>
+                        <name>
+                            <surname>Enimil</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Evans</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Amodu</surname>
+                            <given-names>OK</given-names>
+                        </name>
+                        <name>
+                            <surname>Olaniyan</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Apinjoh</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Mugri</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Ndi</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Ndila</surname>
+                            <given-names>CM</given-names>
+                        </name>
+                        <name>
+                            <surname>Uyoga</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Macharia</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Peshu</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Williams</surname>
+                            <given-names>TN</given-names>
+                        </name>
+                        <name>
+                            <surname>Manjurano</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Sepúlveda</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Clark</surname>
+                            <given-names>TG</given-names>
+                        </name>
+                        <name>
+                            <surname>Riley</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Drakeley</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Reyburn</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Nyirongo</surname>
+                            <given-names>V</given-names>
+                        </name>
+                        <name>
+                            <surname>Kachala</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Molyneux</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Dunstan</surname>
+                            <given-names>SJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Phu</surname>
+                            <given-names>NH</given-names>
+                        </name>
+                        <name>
+                            <surname>Quyen</surname>
+                            <given-names>NN</given-names>
+                        </name>
+                        <name>
+                            <surname>Thai</surname>
+                            <given-names>CQ</given-names>
+                        </name>
+                        <name>
+                            <surname>Hien</surname>
+                            <given-names>TT</given-names>
+                        </name>
+                        <name>
+                            <surname>Manning</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Laman</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Siba</surname>
+                            <given-names>P</given-names>
+                        </name>
+                        <name>
+                            <surname>Karunajeewa</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Allen</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Allen</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Davis</surname>
+                            <given-names>TM</given-names>
+                        </name>
+                        <name>
+                            <surname>Michon</surname>
+                            <given-names>P</given-names>
+                        </name>
+                        <name>
+                            <surname>Mueller</surname>
+                            <given-names>I</given-names>
+                        </name>
+                        <name>
+                            <surname>Molloy</surname>
+                            <given-names>SF</given-names>
+                        </name>
+                        <name>
+                            <surname>Campino</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Kerasidou</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Cornelius</surname>
+                            <given-names>VJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Hart</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Shah</surname>
+                            <given-names>SS</given-names>
+                        </name>
+                        <name>
+                            <surname>Band</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Spencer</surname>
+                            <given-names>CC</given-names>
+                        </name>
+                        <name>
+                            <surname>Agbenyega</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Achidi</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Doumbo</surname>
+                            <given-names>OK</given-names>
+                        </name>
+                        <name>
+                            <surname>Farrar</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Marsh</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Taylor</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Kwiatkowski</surname>
+                            <given-names>DP</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2017">2017</year>
+                    <volume>6</volume>
+                    <source>eLife</source>
+                </element-citation>
+            </ref>
+            <ref id="bib4">
+                <element-citation>
+                    <article-title>The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem, Even When There Is No 'Fishing Expedition' or 'P-Hacking' and the Research Hypothesis Was Posited Ahead of Time</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Gelman</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Loken</surname>
+                            <given-names>E</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2013">2013</year>
+                </element-citation>
+            </ref>
+            <ref id="bib5">
+                <element-citation>
+                    <article-title>G6PD deficiency prevalence and estimates of affected populations in malaria endemic countries: a geostatistical model-based map</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Howes</surname>
+                            <given-names>RE</given-names>
+                        </name>
+                        <name>
+                            <surname>Piel</surname>
+                            <given-names>FB</given-names>
+                        </name>
+                        <name>
+                            <surname>Patil</surname>
+                            <given-names>AP</given-names>
+                        </name>
+                        <name>
+                            <surname>Nyangiri</surname>
+                            <given-names>OA</given-names>
+                        </name>
+                        <name>
+                            <surname>Gething</surname>
+                            <given-names>PW</given-names>
+                        </name>
+                        <name>
+                            <surname>Dewi</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Hogg</surname>
+                            <given-names>MM</given-names>
+                        </name>
+                        <name>
+                            <surname>Battle</surname>
+                            <given-names>KE</given-names>
+                        </name>
+                        <name>
+                            <surname>Padilla</surname>
+                            <given-names>CD</given-names>
+                        </name>
+                        <name>
+                            <surname>Baird</surname>
+                            <given-names>JK</given-names>
+                        </name>
+                        <name>
+                            <surname>Hay</surname>
+                            <given-names>SI</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2012">2012</year>
+                    <volume>9</volume>
+                    <source>PLOS Medicine</source>
+                </element-citation>
+            </ref>
+            <ref id="bib6">
+                <element-citation>
+                    <article-title>Favism and Glucose-6-Phosphate dehydrogenase deficiency</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Luzzatto</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Arese</surname>
+                            <given-names>P</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2018">2018</year>
+                    <fpage>60</fpage>
+                    <lpage>71</lpage>
+                    <volume>378</volume>
+                    <source>New England Journal of Medicine</source>
+                </element-citation>
+            </ref>
+            <ref id="bib7">
+                <element-citation>
+                    <article-title>Reappraisal of known malaria resistance loci in a large multicenter study</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Rockett</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Clarke</surname>
+                            <given-names>GM</given-names>
+                        </name>
+                        <name>
+                            <surname>Fitzpatrick</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Hubbart</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Jeffreys</surname>
+                            <given-names>AE</given-names>
+                        </name>
+                        <name>
+                            <surname>Rowlands</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Craik</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Jallow</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Conway</surname>
+                            <given-names>DJ</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2014">2014</year>
+                    <fpage>1197</fpage>
+                    <lpage>1204</lpage>
+                    <volume>46</volume>
+                    <source>Nature Genetics</source>
+                </element-citation>
+            </ref>
+            <ref id="bib8">
+                <element-citation>
+                    <article-title>Commentary: three worlds collide: berkson's bias, selection bias and collider bias</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Pearce</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Richiardi</surname>
+                            <given-names>L</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2014">2014</year>
+                    <fpage>521</fpage>
+                    <lpage>524</lpage>
+                    <volume>43</volume>
+                    <source>International Journal of Epidemiology</source>
+                </element-citation>
+            </ref>
+            <ref id="bib9">
+                <element-citation>
+                    <article-title>Commentary: a structural approach to Berkson's fallacy and a guide to a history of opinions about it</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Snoep</surname>
+                            <given-names>JD</given-names>
+                        </name>
+                        <name>
+                            <surname>Morabia</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Hernández-Díaz</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Hernán</surname>
+                            <given-names>MA</given-names>
+                        </name>
+                        <name>
+                            <surname>Vandenbroucke</surname>
+                            <given-names>JP</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2014">2014</year>
+                    <fpage>515</fpage>
+                    <lpage>521</lpage>
+                    <volume>43</volume>
+                    <source>International Journal of Epidemiology</source>
+                </element-citation>
+            </ref>
+            <ref id="bib10">
+                <element-citation>
+                    <article-title>Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and other diseases in children in Kenya: a case-control and a cohort study</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Uyoga</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Ndila</surname>
+                            <given-names>CM</given-names>
+                        </name>
+                        <name>
+                            <surname>Macharia</surname>
+                            <given-names>AW</given-names>
+                        </name>
+                        <name>
+                            <surname>Nyutu</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Shah</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Peshu</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Clarke</surname>
+                            <given-names>GM</given-names>
+                        </name>
+                        <name>
+                            <surname>Kwiatkowski</surname>
+                            <given-names>DP</given-names>
+                        </name>
+                        <name>
+                            <surname>Rockett</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Williams</surname>
+                            <given-names>TN</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2015">2015</year>
+                    <volume>2</volume>
+                    <source>The Lancet Haematology</source>
+                </element-citation>
+            </ref>
+            <ref id="bib11">
+                <element-citation>
+                    <article-title>Severe Malaria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Watson</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Leopold</surname>
+                            <given-names>SJ</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2019">2019</year>
+                </element-citation>
+            </ref>
+            <ref id="bib12">
+                <element-citation>
+                    <article-title>Genetic variation and susceptibility to infection: the red cell and malaria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Weatherall</surname>
+                            <given-names>DJ</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2008">2008</year>
+                    <fpage>276</fpage>
+                    <lpage>286</lpage>
+                    <volume>141</volume>
+                    <source>British Journal of Haematology</source>
+                </element-citation>
+            </ref>
+            <ref id="bib13">
+                <element-citation>
+                    <article-title>Malaria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>White</surname>
+                            <given-names>NJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Pukrittayakamee</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Hien</surname>
+                            <given-names>TT</given-names>
+                        </name>
+                        <name>
+                            <surname>Faiz</surname>
+                            <given-names>MA</given-names>
+                        </name>
+                        <name>
+                            <surname>Mokuolu</surname>
+                            <given-names>OA</given-names>
+                        </name>
+                        <name>
+                            <surname>Dondorp</surname>
+                            <given-names>AM</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2014">2014</year>
+                    <fpage>723</fpage>
+                    <lpage>735</lpage>
+                    <volume>383</volume>
+                    <source>The Lancet</source>
+                </element-citation>
+            </ref>
+            <ref id="bib14">
+                <element-citation>
+                    <article-title>Severe malaria</article-title>
+                    <person-group person-group-type="author"/>
+                    <year iso-8601-date="2014">2014</year>
+                    <fpage>7</fpage>
+                    <lpage>131</lpage>
+                    <volume>19</volume>
+                    <source>Tropical Medicine &amp; International Health</source>
+                </element-citation>
+            </ref>
+            <ref id="bib15">
+                <element-citation>
+                    <article-title>World Health Organization</article-title>
+                    <person-group person-group-type="author"/>
+                    <year iso-8601-date="2015">2015</year>
+                </element-citation>
+            </ref>
+            <ref id="bib16">
+                <element-citation>
+                    <article-title>Sickle cell disease in Sub-Saharan africa</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Williams</surname>
+                            <given-names>TN</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2016">2016</year>
+                    <fpage>343</fpage>
+                    <lpage>358</lpage>
+                    <volume>30</volume>
+                    <source>Hematology/Oncology Clinics of North America</source>
+                </element-citation>
+            </ref>
+            <ref id="bib17">
+                <element-citation>
+                    <article-title>Human glucose-6-phosphate dehydrogenase variants</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Yoshida</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Beutler</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Motulsky</surname>
+                            <given-names>AG</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="1971">1971</year>
+                    <fpage>243</fpage>
+                    <lpage>253</lpage>
+                    <volume>45</volume>
+                    <source>Bulletin of the World Health Organization</source>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>

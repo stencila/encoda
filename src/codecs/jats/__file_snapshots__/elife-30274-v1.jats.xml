@@ -877,7 +877,7 @@
             <title>Statistical analysis</title>
             <p>Statistical analysis was performed with R software (RRID:
                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_001905">SCR_001905</ext-link>), version 3.3.2 (
-                <xref rid="bib25" ref-type="bibr"/>). All data, csv files, and analysis scripts are available on the OSF (
+                <xref rid="bib25" ref-type="bibr">, 2017</xref>). All data, csv files, and analysis scripts are available on the OSF (
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/mokeb/">https://osf.io/mokeb/</ext-link>). Confirmatory statistical analysis was pre-registered (
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/nj8wb/">https://osf.io/nj8wb/</ext-link>) before the experimental work began as outlined in the Registered Report (
                 <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences (
@@ -1933,8 +1933,8 @@
             <ref id="bib25">
                 <element-citation>
                     <article-title>R: A language and environment for statistical computing</article-title>
+                    <person-group person-group-type="author"/>
                     <year iso-8601-date="2017">2017</year>
-                    <source>R Foundation for Statistical Computing</source>
                 </element-citation>
             </ref>
             <ref id="bib26">

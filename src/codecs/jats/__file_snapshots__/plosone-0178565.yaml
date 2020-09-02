@@ -196,9 +196,10 @@ references:
         givenNames:
           - BA
     datePublished: '2012'
-    isPartOf:
-      type: Periodical
-      name: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
+    publisher:
+      type: Organization
+      name: Springer Netherlands
+    title: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
   - type: Article
     id: pone-0178565-ref003
     authors:

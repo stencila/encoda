@@ -207,9 +207,10 @@ references:
         givenNames:
           - R
     datePublished: '2009'
-    isPartOf:
-      type: Periodical
-      name: Public economics and the household
+    publisher:
+      type: Organization
+      name: Cambridge University Press
+    title: Public economics and the household
   - type: Article
     id: bib5
     authors:
@@ -300,11 +301,12 @@ references:
         givenNames:
           - C
     datePublished: '2018'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Revealing Gender Gap Changes in Home Production and Labor Income in
-        Uruguay WP 5/18
+    publisher:
+      type: Organization
+      name: 'Departamento de Economía, Facultad de Ciencias Sociales, UDELAR'
+    title: >-
+      Revealing Gender Gap Changes in Home Production and Labor Income in
+      Uruguay WP 5/18
   - type: Article
     id: bib9
     authors:
@@ -362,13 +364,11 @@ references:
         givenNames:
           - A
     datePublished: '2014'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Desigualdad Y altos ingresos en Uruguay. un análisis en base a registros
-        tributarios Y encuestas de hogares para El período 2009-2011. Serie
-        Documentos de Trabajo, DT 06/2014, Instituto de Economía, Facultad de
-        Ciencias Económicas y Administración
+    title: >-
+      Desigualdad Y altos ingresos en Uruguay. un análisis en base a registros
+      tributarios Y encuestas de hogares para El período 2009-2011. Serie
+      Documentos de Trabajo, DT 06/2014, Instituto de Economía, Facultad de
+      Ciencias Económicas y Administración
   - type: Article
     id: bib11
     authors:
@@ -389,13 +389,17 @@ references:
         givenNames:
           - A
     datePublished: '2015'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Sectores de altos ingresos en Uruguay: participación relativa y patrones
-        de movilidad en el período 2009-2012, Serie Documentos de Trabajo, DT
-        03/2015, Instituto de Economía, Facultad de Ciencias Económicas y
-        Administración
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Uruguay
+      name: Universidad de la República
+    title: >-
+      Sectores de altos ingresos en Uruguay: participación relativa y patrones
+      de movilidad en el período 2009-2012, Serie Documentos de Trabajo, DT
+      03/2015, Instituto de Economía, Facultad de Ciencias Económicas y
+      Administración
   - type: Article
     id: bib12
     authors:
@@ -433,11 +437,15 @@ references:
         givenNames:
           - D
     datePublished: '2006'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Budgeting for women´s rights: monitoring government budgets for
-        compliance with CEDAW
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: New York
+      name: UNIFEM
+    title: >-
+      Budgeting for women´s rights: monitoring government budgets for compliance
+      with CEDAW
   - type: Article
     id: bib14
     authors:
@@ -477,11 +485,15 @@ references:
         givenNames:
           - P
     datePublished: '2014'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Desigualdades persistentes: mercado de trabajo, calificación y género.
-        El futuro en foco: Cuadernos sobre Desarrollo Humano
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Montevideo
+      name: PNUD
+    title: >-
+      Desigualdades persistentes: mercado de trabajo, calificación y género. El
+      futuro en foco: Cuadernos sobre Desarrollo Humano
   - type: Article
     id: bib16
     authors:
@@ -543,10 +555,17 @@ references:
           - Valodia
     datePublished: '2010'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: >-
         Taxation and Gender Equity: A comparative analysis of direct and
         indirect taxes in developing and developed countries
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: London
+      name: Routledge
+    title: Taxation and gender equality. A conceptual framework
   - type: Article
     id: bib18
     authors:
@@ -562,8 +581,9 @@ references:
           - H
     datePublished: '2015'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Comparative Chapter. Non-published
+    title: Gender Equity and Taxation in Latin America and the Caribbean
   - type: Article
     id: bib19
     authors:
@@ -578,11 +598,15 @@ references:
         givenNames:
           - I
     datePublished: '2010'
-    isPartOf:
-      type: Periodical
-      name: >-
-        Taxation and Gender Equity: A comparative analysis of direct and
-        indirect taxes in developing and developed countries
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: London
+      name: Routledge
+    title: >-
+      Taxation and Gender Equity: A comparative analysis of direct and indirect
+      taxes in developing and developed countries
   - type: Article
     id: bib21
     authors:
@@ -746,10 +770,17 @@ references:
           - Valodia
     datePublished: '2010'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: >-
         Taxation and Gender Equity: A comparative analysis of direct and
         indirect taxes in developing and developed countries
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: London
+      name: Routledge
+    title: Gender equality and taxation in Argentina
   - type: Article
     id: bib36
     authors:
@@ -803,8 +834,9 @@ references:
           - J
     datePublished: '1996'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: 'IMF Working Paper, No. 96/99.'
+    title: Gender bias in Tax systems
 title: >-
   Gendered effects of the personal income tax: Evidence from a schedular system
   with individual filing in Uruguay

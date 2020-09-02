@@ -745,9 +745,10 @@ references:
         givenNames:
           - GT
     datePublished: '1860'
-    isPartOf:
-      type: Periodical
-      name: Elemente Der Psychophysik
+    publisher:
+      type: Organization
+      name: Nabu Press
+    title: Elemente Der Psychophysik
   - type: Article
     id: bib18
     authors:
@@ -837,9 +838,10 @@ references:
         givenNames:
           - DL
     datePublished: '1961'
-    isPartOf:
-      type: Periodical
-      name: 'The Orientation of Animals, Kinesis, Taxes and Compass Reactions'
+    publisher:
+      type: Organization
+      name: 'Dover Publications, Inc'
+    title: 'The Orientation of Animals, Kinesis, Taxes and Compass Reactions'
   - type: Article
     id: bib21
     authors:
@@ -1143,10 +1145,8 @@ references:
         givenNames:
           - S
     datePublished: '2019'
-    isPartOf:
-      type: Periodical
-      name: GitLab
     title: Programs closed-loop phototaxis
+    url: 'https://gitlab.com/Phiasso/programs_closed-loop_phototaxis.git'
   - type: Article
     id: bib30
     authors:
@@ -1156,10 +1156,8 @@ references:
         givenNames:
           - S
     datePublished: '2019'
-    isPartOf:
-      type: Periodical
-      name: GitLab
     title: Analysis behavioral phototaxis
+    url: 'https://gitlab.com/Phiasso/analysis.git'
   - type: Article
     id: bib31
     authors:

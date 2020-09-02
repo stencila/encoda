@@ -1493,6 +1493,13 @@ references:
         givenNames:
           - GW
     datePublished: '1961'
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: 'Oxford, England'
+      name: 'Holt, Reinhart & Winston'
+    title: Pattern and growth in personality
   - type: Article
     id: pbio-3000349-ref041
     authors:

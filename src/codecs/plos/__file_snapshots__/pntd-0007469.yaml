@@ -1068,13 +1068,19 @@ references:
           - Benett
     datePublished: '2000'
     isPartOf:
-      type: PublicationVolume
-      isPartOf:
-        type: Periodical
-        name: Principles and practice of infectious diseases
-      volumeNumber: 2
+      type: CreativeWork
+      name: Principles and practice of infectious diseases
     pageEnd: 45
     pageStart: 2035
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: New York
+      name: Churchill Livingstone
+    title: >-
+      Rickettsia rickettsii and other spotted fever group rickettsiae (Rocky
+      Mountain spotted fever and other spotted fever
   - type: Article
     id: pntd-0007469-ref028
     authors:
@@ -1119,13 +1125,17 @@ references:
           - Jameson
     datePublished: '2001'
     isPartOf:
-      type: PublicationVolume
-      isPartOf:
-        type: Periodical
-        name: Harrison’s Principles of Internal medicine
-      volumeNumber: 1
+      type: CreativeWork
+      name: Harrison’s Principles of Internal medicine
     pageEnd: 73
     pageStart: 1056
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: New york
+      name: McGraw-Hill Professional
+    title: Rickettsial diseases
   - type: Article
     id: pntd-0007469-ref029
     authors:
@@ -1144,10 +1154,17 @@ references:
           - Rowland
     datePublished: '2018'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Merritt’s Textbook of Neurology
     pageEnd: 7
     pageStart: 125
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Philadelphia
+      name: 'lippincott, Williams & Wilkins'
+    title: Bacterial infections
   - type: Article
     id: pntd-0007469-ref030
     authors:
@@ -1384,10 +1401,17 @@ references:
           - Kissane
     datePublished: '1990'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Anderson’s Pathology
     pageEnd: 60
     pageStart: 348
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: St Louis
+      name: CV Mosby
+    title: Rickettsial and chlamydial disease
   - type: Article
     id: pntd-0007469-ref039
     authors:
@@ -5364,10 +5388,17 @@ references:
           - Kennedy
     datePublished: '2000'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Infectious diseases of the nervous system
     pageEnd: 520
     pageStart: 499
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Oxford
+      name: Butterworth-Heinemann
+    title: Ehrlichiosis and the nervous system
   - type: Article
     id: pntd-0007469-ref141
     authors:

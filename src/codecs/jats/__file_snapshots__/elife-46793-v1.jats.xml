@@ -1749,7 +1749,7 @@
         <sec>
             <title>Exploring genes associated to G4s in databases and biomedical literature</title>
             <p>Three different approaches were developed to uncover genes linked to G4s in the literature and molecular biology databases. 18 high confidence G4-related genes were obtained by scanning for genes in which the corresponding UniprotKB (
-                <xref rid="bib117" ref-type="bibr"/>) entry is annotated with the term 'quadruplex' or genes annotated with at least one of the following 11 GO terms with any evidence assertion method (
+                <xref rid="bib117" ref-type="bibr">, 2017</xref>) entry is annotated with the term 'quadruplex' or genes annotated with at least one of the following 11 GO terms with any evidence assertion method (
                 <xref rid="bib3" ref-type="bibr">Ashburner et al., 2000</xref>):
             </p>
             <p/>
@@ -3886,7 +3886,6 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source> FASTQ/A Short-Reads Pre-Processing Tools</source>
                 </element-citation>
             </ref>
             <ref id="bib50">
@@ -5053,7 +5052,6 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2019">2019</year>
-                    <source>GitHub</source>
                 </element-citation>
             </ref>
             <ref id="bib80">
@@ -7004,6 +7002,7 @@
             <ref id="bib117">
                 <element-citation>
                     <article-title>UniProt: the universal protein knowledgebase</article-title>
+                    <person-group person-group-type="author"/>
                     <year iso-8601-date="2017">2017</year>
                     <volume>45</volume>
                     <source>Nucleic Acids Research</source>

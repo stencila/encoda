@@ -205,9 +205,13 @@ references:
     title: Hemp food products - an update.
   - type: Article
     id: ref-3
-    authors: []
+    authors:
+      - type: Organization
+        name: Expert Committee on Drug Dependence
     datePublished: '2018'
     title: Cannabidiol (CBD) - Critical review report
+    url: >-
+      https://www.who.int/medicines/access/controlled-substances/CannabidiolCriticalReview.pdf
   - type: Article
     id: ref-4
     authors:
@@ -218,6 +222,8 @@ references:
           - M
     datePublished: '2018'
     title: 'Researching safety and efficacy of CBD, hemp extracts'
+    url: >-
+      https://www.naturalproductsinsider.com/ingredients/researching-safety-and-efficacy-cbd-hemp-extracts
   - type: Article
     id: ref-5
     authors:
@@ -271,6 +277,8 @@ references:
     pageEnd: 44
     pageStart: 42
     title: 'Cannabis, hemp and CBDs.'
+    url: >-
+      https://drjohnwilkinson.co.uk/wp-content/uploads/SDI_DrJohn-cannabis-Dec-Drinks-2015-1.pdf
   - type: Article
     id: ref-8
     authors:
@@ -403,9 +411,12 @@ references:
       Gastric and Physiological Fluid.
   - type: Article
     id: ref-12
-    authors: []
+    authors:
+      - type: Organization
+        name: 'PhEur Gastric juice, artificial (1039900)'
     datePublished: '2019'
     title: European Pharmacopoeia
+    url: 'https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition'
   - type: Article
     id: ref-13
     authors:
@@ -418,16 +429,23 @@ references:
     title: >-
       Dataset for “Are side effects of cannabidiol (CBD) products caused by
       delta9-tetrahydrocannabinol (THC) contamination
+    url: 'http://www.doi.org/10.17605/OSF.IO/F7ZXY'
   - type: Article
     id: ref-14
-    authors: []
+    authors:
+      - type: Organization
+        name: BgVV
     datePublished: '2000'
     title: >-
       BgVV empfiehlt Richtwerte für THC (Tetrahydrocannabinol) in hanfhaltigen
       Lebensmitteln
+    url: >-
+      https://www.bfr.bund.de/de/presseinformation/2000/07/bgvv_empfiehlt_richtwerte_fuer_thc__tetrahydrocannabinol__in_hanfhaltigen_lebensmitteln-884.html
   - type: Article
     id: ref-15
-    authors: []
+    authors:
+      - type: Organization
+        name: EFSA Panel on Contaminants in the Food Chain (CONTAM)
     datePublished: '2015'
     isPartOf:
       type: PublicationIssue
@@ -707,7 +725,9 @@ references:
                               et al.Cannabis and Cannabinoid Research 2016;1(1):102-112; DOI: 10.1089/can.2015.0004.
   - type: Article
     id: ref-25
-    authors: []
+    authors:
+      - type: Organization
+        name: European Parliament and the Council of the European Union
     datePublished: '2015'
     isPartOf:
       type: Periodical
@@ -720,9 +740,13 @@ references:
       the European Parliament and of the Council and repealing Regulation (EC)
       No 258/97 of the European Parliament and of the Council and Commission
       Regulation (EC) No 1852/2001.
+    url: >-
+      https://publications.europa.eu/en/publication-detail/-/publication/d2e5f917-9fd7-11e5-8781-01aa75ed71a1/language-en
   - type: Article
     id: ref-26
-    authors: []
+    authors:
+      - type: Organization
+        name: European Parliament and the Council of the European Union
     datePublished: '2011'
     isPartOf:
       type: Periodical
@@ -737,9 +761,12 @@ references:
       Directive 2000/13/EC of the European Parliament and of the Council,
       Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation
       (EC) No 608/2004.
+    url: 'https://eur-lex.europa.eu/eli/reg/2011/1169/oj'
   - type: Article
     id: ref-27
-    authors: []
+    authors:
+      - type: Organization
+        name: European Parliament and the Council of the European Union
     datePublished: '2006'
     isPartOf:
       type: Periodical
@@ -749,6 +776,8 @@ references:
     title: >-
       Regulation (EC) No 1924/2006 of the European Parliament and of the Council
       of 20 December 2006 on nutrition and health claims made on foods.
+    url: >-
+      https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:404:0009:0025:EN:PDF
   - type: Article
     id: ref-28
     authors:
@@ -822,7 +851,9 @@ references:
     title: '[Cannabis poisoning after eating salad].'
   - type: Article
     id: ref-31
-    authors: []
+    authors:
+      - type: Organization
+        name: BfR
     datePublished: '2018'
     title: >-
       Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu

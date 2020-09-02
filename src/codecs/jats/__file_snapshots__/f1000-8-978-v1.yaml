@@ -313,9 +313,13 @@ references:
       Mapping of climate change threats and human development impacts in the
       arab region. undp arab development report–research paper series, undp
       regiona bureau for the arab states
+    url: >-
+      https://research.fit.edu/media/site-specific/researchfitedu/coast-climate-adaptation-library/middle-east/regional---middle-east/Elasha.-2010.-Mapping-of-CC-Threats--Human-Development-Impacts-In-The-Arab-Region.pdf
   - type: Article
     id: ref-5
-    authors: []
+    authors:
+      - type: Organization
+        name: IIED
     datePublished: '2008'
     title: >-
       Climate Change and Drylands International Institute for Environmental
@@ -385,12 +389,17 @@ references:
       Step towards Conservation.
   - type: Article
     id: ref-8
-    authors: []
+    authors:
+      - type: Organization
+        name: |-
+          IPCC Climate Change, 
+                                  et al.
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
       volumeNumber: 996
     title: The physical science basis
+    url: 'https://www.ipcc.ch/site/assets/uploads/2018/05/ar4_wg1_full_report-1.pdf'
   - type: Article
     id: ref-9
     authors:
@@ -406,6 +415,8 @@ references:
           - G
     datePublished: '1998'
     title: Climate change scenarios for the united kingdom scientific report 1998
+    url: >-
+      https://pdfs.semanticscholar.org/dbee/e153dac2b70d2c3a237531bfa48f45aa9ec5.pdf
   - type: Article
     id: ref-10
     authors:
@@ -973,7 +984,9 @@ references:
     title: The worldclim interpolated global terrestrial climate surfaces
   - type: Article
     id: ref-29
-    authors: []
+    authors:
+      - type: Organization
+        name: A ESRI
     datePublished: '2012'
     title: Arcgis 10.1
   - type: Article
@@ -1130,6 +1143,8 @@ references:
       Maxent modeling for predicting suitable habitat for threatened and
       endangered tree 
                               canacomyrica monticola in new caledonia.
+    url: >-
+      http://www.academicjournals.org/app/webroot/article/article1379515268_Kumar%20and%20Stohlgren.pdf
   - type: Article
     id: ref-35
     authors:
@@ -1329,6 +1344,7 @@ references:
           - T
     datePublished: '2019'
     title: Sure2018.zip
+    url: 'https://figshare.com/articles/SURE2018_zip/8233328/1'
   - type: Article
     id: ref-42
     authors:
@@ -1406,9 +1422,12 @@ references:
     title: >-
       Managing rangelands: promoting sustainable tree species "prosopis
       cineraria": A wonder tree for agroforestry in arid and semi-arid areas"
+    url: 'http://repo.mel.cgiar.org/handle/20.500.11766/4908'
   - type: Article
     id: ref-45
-    authors: []
+    authors:
+      - type: Organization
+        name: MOEAW
     datePublished: '2015'
     title: State of Environment Report of the United Arab Emirates 2015
   - type: Article
@@ -1447,9 +1466,13 @@ references:
       deserts of the UAE.
   - type: Article
     id: ref-47
-    authors: []
+    authors:
+      - type: Organization
+        name: MOCCAE
     datePublished: '2017'
     title: National Climate Change Plan of the United Arab Emirates 2017-2050
+    url: >-
+      https://www.moccae.gov.ae/assets/30e58e2e/national-climate-change-plan-for-the-united-arab-emirates-2017-2050.aspx
 title: Climate change-induced species distribution modeling in hyper-arid ecosystems
 meta:
   authorNotes:

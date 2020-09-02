@@ -219,11 +219,14 @@ licenses:
 references:
   - type: Article
     id: ref-1
-    authors: []
+    authors:
+      - type: Organization
+        name: NISO/ALPSP Journal Article Versions (JAV) Technical Working Group
     datePublished: '2008'
     title: >-
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
+    url: 'https://groups.niso.org/publications/rp/RP-8-2008.pdf'
   - type: Article
     id: ref-2
     authors:

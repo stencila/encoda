@@ -1,0 +1,2264 @@
+type: Article
+authors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: Thailand
+          addressLocality: Bangkok
+        name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine
+        parentOrganization:
+          type: Organization
+          name: Mahidol University
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Oxford
+        name: >-
+          Nuffield Department of Medicine, Centre for Tropical Medicine and
+          Global Health
+        parentOrganization:
+          type: Organization
+          name: University of Oxford
+    emails:
+      - jwatowatson@gmail.com
+    familyNames:
+      - Watson
+    givenNames:
+      - James
+      - A
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: Thailand
+          addressLocality: Bangkok
+        name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine
+        parentOrganization:
+          type: Organization
+          name: Mahidol University
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Oxford
+        name: >-
+          Nuffield Department of Medicine, Centre for Tropical Medicine and
+          Global Health
+        parentOrganization:
+          type: Organization
+          name: University of Oxford
+    emails:
+      - stije@tropmedres.ac
+    familyNames:
+      - Leopold
+    givenNames:
+      - Stije
+      - J
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: Australia
+          addressLocality: Melbourne
+        name: >-
+          Centre for Epidemiology and Biostatistics, Melbourne School of
+          Population and Global Health
+        parentOrganization:
+          type: Organization
+          name: The University of Melbourne
+    familyNames:
+      - Simpson
+    givenNames:
+      - Julie
+      - A
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: Thailand
+          addressLocality: Bangkok
+        name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine
+        parentOrganization:
+          type: Organization
+          name: Mahidol University
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Oxford
+        name: >-
+          Nuffield Department of Medicine, Centre for Tropical Medicine and
+          Global Health
+        parentOrganization:
+          type: Organization
+          name: University of Oxford
+    familyNames:
+      - Day
+    givenNames:
+      - Nicholas
+      - PJ
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Oxford
+        name: >-
+          Nuffield Department of Medicine, Centre for Tropical Medicine and
+          Global Health
+        parentOrganization:
+          type: Organization
+          name: University of Oxford
+    familyNames:
+      - Dondorp
+    givenNames:
+      - Arjen
+      - M
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Oxford
+        name: >-
+          Nuffield Department of Medicine, Centre for Tropical Medicine and
+          Global Health
+        parentOrganization:
+          type: Organization
+          name: University of Oxford
+    emails:
+      - nickw@tropmedres.ac
+    familyNames:
+      - White
+    givenNames:
+      - Nicholas
+      - J
+dateAccepted:
+  type: Date
+  value: '2019-01-22'
+datePublished:
+  type: Date
+  value: '2019-01-28'
+dateReceived:
+  type: Date
+  value: '2018-10-26'
+description:
+  - type: Paragraph
+    content:
+      - >-
+        Case fatality rates in severe falciparum malaria depend on the pattern
+        and degree of vital organ dysfunction. Recent large-scale case-control
+        analyses of pooled severe malaria data reported that glucose-6-phosphate
+        dehydrogenase deficiency (G6PDd) was protective against cerebral malaria
+        but increased the risk of severe malarial anaemia. A novel formulation
+        of the balancing selection hypothesis was proposed as an explanation for
+        these findings, whereby the selective advantage is driven by the
+        competing risks of death from cerebral malaria and death from severe
+        malarial anaemia. We re-analysed these claims using causal diagrams and
+        showed that they are subject to collider bias. A simulation based
+        sensitivity analysis, varying the strength of the known effect of G6PDd
+        on anaemia, showed that this bias is sufficient to explain all of the
+        observed association. Future genetic epidemiology studies in severe
+        malaria would benefit from the use of causal reasoning.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        address:
+          type: PostalAddress
+          addressCountry: United States
+        name: Harvard TH Chan School of Public Health
+    familyNames:
+      - Lipsitch
+    givenNames:
+      - Marc
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Wellcome Trust
+    identifiers: []
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: National Health and Medical Research Council
+    identifiers:
+      - type: PropertyValue
+        value: Senior Research Fellowship 1104975
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '43154'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.43154
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e43154
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: elife
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: eLife
+    issns:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '8'
+keywords:
+  - causal inference
+  - severe malaria
+  - collider bias
+  - glucose-6-phosphate dehydrogenase deficiency
+  - Plasmodium falciparum
+  - P. falciparum
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This article is distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use and redistribution provided that
+            the original author and source are credited.
+references:
+  - type: Article
+    id: bib1
+    authors:
+      - type: Person
+        familyNames:
+          - Band
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Rockett
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Spencer
+        givenNames:
+          - CC
+      - type: Person
+        familyNames:
+          - Kwiatkowski
+        givenNames:
+          - DP
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Nature
+      volumeNumber: 526
+    pageEnd: 257
+    pageStart: 253
+    title: >-
+      A novel locus of resistance to severe malaria in a region of ancient
+      balancing selection
+  - type: Article
+    id: bib2
+    authors:
+      - type: Person
+        familyNames:
+          - Cholera
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Brittain
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Gillrie
+        givenNames:
+          - MR
+      - type: Person
+        familyNames:
+          - Lopera-Mesa
+        givenNames:
+          - TM
+      - type: Person
+        familyNames:
+          - Diakité
+        givenNames:
+          - SA
+      - type: Person
+        familyNames:
+          - Arie
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Krause
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Guindo
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Tubman
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Fujioka
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Diallo
+        givenNames:
+          - DA
+      - type: Person
+        familyNames:
+          - Doumbo
+        givenNames:
+          - OK
+      - type: Person
+        familyNames:
+          - Ho
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Wellems
+        givenNames:
+          - TE
+      - type: Person
+        familyNames:
+          - Fairhurst
+        givenNames:
+          - RM
+    datePublished: '2008'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: PNAS
+      volumeNumber: 105
+    pageEnd: 996
+    pageStart: 991
+    title: >-
+      Impaired cytoadherence of plasmodium falciparum-infected erythrocytes
+      containing sickle hemoglobin
+  - type: Article
+    id: bib3
+    authors:
+      - type: Person
+        familyNames:
+          - Clarke
+        givenNames:
+          - GM
+      - type: Person
+        familyNames:
+          - Rockett
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Kivinen
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Hubbart
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Jeffreys
+        givenNames:
+          - AE
+      - type: Person
+        familyNames:
+          - Rowlands
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Jallow
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Conway
+        givenNames:
+          - DJ
+      - type: Person
+        familyNames:
+          - Bojang
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Pinder
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Usen
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Sisay-Joof
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Sirugo
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Toure
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Thera
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Konate
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Sissoko
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Niangaly
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Poudiougou
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Mangano
+        givenNames:
+          - VD
+      - type: Person
+        familyNames:
+          - Bougouma
+        givenNames:
+          - EC
+      - type: Person
+        familyNames:
+          - Sirima
+        givenNames:
+          - SB
+      - type: Person
+        familyNames:
+          - Modiano
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Amenga-Etego
+        givenNames:
+          - LN
+      - type: Person
+        familyNames:
+          - Ghansah
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Koram
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Wilson
+        givenNames:
+          - MD
+      - type: Person
+        familyNames:
+          - Enimil
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Evans
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Amodu
+        givenNames:
+          - OK
+      - type: Person
+        familyNames:
+          - Olaniyan
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Apinjoh
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Mugri
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Ndi
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Ndila
+        givenNames:
+          - CM
+      - type: Person
+        familyNames:
+          - Uyoga
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Macharia
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Peshu
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Williams
+        givenNames:
+          - TN
+      - type: Person
+        familyNames:
+          - Manjurano
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Sepúlveda
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Clark
+        givenNames:
+          - TG
+      - type: Person
+        familyNames:
+          - Riley
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Drakeley
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Reyburn
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Nyirongo
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Kachala
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Molyneux
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Dunstan
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Phu
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - Quyen
+        givenNames:
+          - NN
+      - type: Person
+        familyNames:
+          - Thai
+        givenNames:
+          - CQ
+      - type: Person
+        familyNames:
+          - Hien
+        givenNames:
+          - TT
+      - type: Person
+        familyNames:
+          - Manning
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Laman
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Siba
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Karunajeewa
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Allen
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Allen
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Davis
+        givenNames:
+          - TM
+      - type: Person
+        familyNames:
+          - Michon
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Mueller
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Molloy
+        givenNames:
+          - SF
+      - type: Person
+        familyNames:
+          - Campino
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Kerasidou
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Cornelius
+        givenNames:
+          - VJ
+      - type: Person
+        familyNames:
+          - Hart
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Shah
+        givenNames:
+          - SS
+      - type: Person
+        familyNames:
+          - Band
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Spencer
+        givenNames:
+          - CC
+      - type: Person
+        familyNames:
+          - Agbenyega
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Achidi
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Doumbo
+        givenNames:
+          - OK
+      - type: Person
+        familyNames:
+          - Farrar
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Marsh
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Taylor
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Kwiatkowski
+        givenNames:
+          - DP
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: eLife
+      volumeNumber: 6
+    title: >-
+      Characterisation of the opposing effects of G6PD deficiency on cerebral
+      malaria and severe malarial anaemia
+  - type: Article
+    id: bib4
+    authors:
+      - type: Person
+        familyNames:
+          - Gelman
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Loken
+        givenNames:
+          - E
+    datePublished: '2013'
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Columbia
+      name: BibSonomy
+    title: >-
+      The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem,
+      Even When There Is No 'Fishing Expedition' or 'P-Hacking' and the Research
+      Hypothesis Was Posited Ahead of Time
+  - type: Article
+    id: bib5
+    authors:
+      - type: Person
+        familyNames:
+          - Howes
+        givenNames:
+          - RE
+      - type: Person
+        familyNames:
+          - Piel
+        givenNames:
+          - FB
+      - type: Person
+        familyNames:
+          - Patil
+        givenNames:
+          - AP
+      - type: Person
+        familyNames:
+          - Nyangiri
+        givenNames:
+          - OA
+      - type: Person
+        familyNames:
+          - Gething
+        givenNames:
+          - PW
+      - type: Person
+        familyNames:
+          - Dewi
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Hogg
+        givenNames:
+          - MM
+      - type: Person
+        familyNames:
+          - Battle
+        givenNames:
+          - KE
+      - type: Person
+        familyNames:
+          - Padilla
+        givenNames:
+          - CD
+      - type: Person
+        familyNames:
+          - Baird
+        givenNames:
+          - JK
+      - type: Person
+        familyNames:
+          - Hay
+        givenNames:
+          - SI
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: PLOS Medicine
+      volumeNumber: 9
+    title: >-
+      G6PD deficiency prevalence and estimates of affected populations in
+      malaria endemic countries: a geostatistical model-based map
+  - type: Article
+    id: bib6
+    authors:
+      - type: Person
+        familyNames:
+          - Luzzatto
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Arese
+        givenNames:
+          - P
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: New England Journal of Medicine
+      volumeNumber: 378
+    pageEnd: 71
+    pageStart: 60
+    title: Favism and Glucose-6-Phosphate dehydrogenase deficiency
+  - type: Article
+    id: bib7
+    authors:
+      - type: Person
+        familyNames:
+          - Rockett
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Clarke
+        givenNames:
+          - GM
+      - type: Person
+        familyNames:
+          - Fitzpatrick
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Hubbart
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Jeffreys
+        givenNames:
+          - AE
+      - type: Person
+        familyNames:
+          - Rowlands
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Craik
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Jallow
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Conway
+        givenNames:
+          - DJ
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Nature Genetics
+      volumeNumber: 46
+    pageEnd: 1204
+    pageStart: 1197
+    title: Reappraisal of known malaria resistance loci in a large multicenter study
+  - type: Article
+    id: bib8
+    authors:
+      - type: Person
+        familyNames:
+          - Pearce
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Richiardi
+        givenNames:
+          - L
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: International Journal of Epidemiology
+      volumeNumber: 43
+    pageEnd: 524
+    pageStart: 521
+    title: >-
+      Commentary: three worlds collide: berkson's bias, selection bias and
+      collider bias
+  - type: Article
+    id: bib9
+    authors:
+      - type: Person
+        familyNames:
+          - Snoep
+        givenNames:
+          - JD
+      - type: Person
+        familyNames:
+          - Morabia
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Hernández-Díaz
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Hernán
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Vandenbroucke
+        givenNames:
+          - JP
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: International Journal of Epidemiology
+      volumeNumber: 43
+    pageEnd: 521
+    pageStart: 515
+    title: >-
+      Commentary: a structural approach to Berkson's fallacy and a guide to a
+      history of opinions about it
+  - type: Article
+    id: bib10
+    authors:
+      - type: Person
+        familyNames:
+          - Uyoga
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Ndila
+        givenNames:
+          - CM
+      - type: Person
+        familyNames:
+          - Macharia
+        givenNames:
+          - AW
+      - type: Person
+        familyNames:
+          - Nyutu
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Shah
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Peshu
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Clarke
+        givenNames:
+          - GM
+      - type: Person
+        familyNames:
+          - Kwiatkowski
+        givenNames:
+          - DP
+      - type: Person
+        familyNames:
+          - Rockett
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Williams
+        givenNames:
+          - TN
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: The Lancet Haematology
+      volumeNumber: 2
+    title: >-
+      Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
+      other diseases in children in Kenya: a case-control and a cohort study
+  - type: Article
+    id: bib11
+    authors:
+      - type: Person
+        familyNames:
+          - Watson
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Leopold
+        givenNames:
+          - SJ
+    datePublished: '2019'
+    title: Severe Malaria
+    url: 'https://github.com/Stije/SevereMalariaAnalysis'
+  - type: Article
+    id: bib12
+    authors:
+      - type: Person
+        familyNames:
+          - Weatherall
+        givenNames:
+          - DJ
+    datePublished: '2008'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: British Journal of Haematology
+      volumeNumber: 141
+    pageEnd: 286
+    pageStart: 276
+    title: >-
+      Genetic variation and susceptibility to infection: the red cell and
+      malaria
+  - type: Article
+    id: bib13
+    authors:
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Pukrittayakamee
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Hien
+        givenNames:
+          - TT
+      - type: Person
+        familyNames:
+          - Faiz
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Mokuolu
+        givenNames:
+          - OA
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: The Lancet
+      volumeNumber: 383
+    pageEnd: 735
+    pageStart: 723
+    title: Malaria
+  - type: Article
+    id: bib14
+    authors:
+      - type: Organization
+        name: WHO
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Tropical Medicine & International Health
+      volumeNumber: 19
+    pageEnd: 131
+    pageStart: 7
+    title: Severe malaria
+  - type: Article
+    id: bib15
+    authors:
+      - type: Organization
+        name: WHO
+    datePublished: '2015'
+    isPartOf:
+      type: CreativeWork
+      name: Guidelines for the Treatment of Malaria
+    publisher:
+      type: Organization
+      name: WHO Press
+    title: World Health Organization
+  - type: Article
+    id: bib16
+    authors:
+      - type: Person
+        familyNames:
+          - Williams
+        givenNames:
+          - TN
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Hematology/Oncology Clinics of North America
+      volumeNumber: 30
+    pageEnd: 358
+    pageStart: 343
+    title: Sickle cell disease in Sub-Saharan africa
+  - type: Article
+    id: bib17
+    authors:
+      - type: Person
+        familyNames:
+          - Yoshida
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Beutler
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Motulsky
+        givenNames:
+          - AG
+    datePublished: '1971'
+    isPartOf:
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Bulletin of the World Health Organization
+      volumeNumber: 45
+    pageEnd: 253
+    pageStart: 243
+    title: Human glucose-6-phosphate dehydrogenase variants
+title: >-
+  Collider bias and the apparent protective effect of glucose-6-phosphate
+  dehydrogenase deficiency on cerebral malaria
+meta:
+  authorNotes:
+    - †These authors contributed equally to this work
+content:
+  - type: Heading
+    id: s1
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
+      - >-
+        Severe falciparum malaria is defined by one or more criteria indicating
+        vital organ dysfunction in the presence of microscopy confirmed asexual
+        blood stages of 
+      - type: Emphasis
+        content:
+          - Plasmodium falciparum
+      - ' in the peripheral blood film ('
+      - type: Cite
+        target: bib15
+        content:
+          - 'WHO, 2015'
+      - >-
+        ). Multiple vital organ dysfunction is associated with increased
+        mortality (
+      - type: Cite
+        target: bib14
+        content:
+          - 'WHO, 2014'
+      - >-
+        ). Common major clinical manifestations of severe malaria include coma,
+        acidosis, renal failure and anaemia. Of these manifestations, anaemia is
+        an inevitable consequence of symptomatic malaria (
+      - type: Cite
+        target: bib13
+        content:
+          - 'White et al., 2014'
+      - '). However, anaemia in individuals at risk of '
+      - type: Emphasis
+        content:
+          - Plasmodium falciparum
+      - ' infection can also be the consequence of red cell genetic polymorphisms frequent in the populations at risk, such as glucose-6-phosphate dehydrogenase deficiency (G6PDd) or haemoglobinopathies.'
+  - type: Paragraph
+    content:
+      - >-
+        There is considerable interest in understanding the mechanisms
+        conferring protective effects against severe falciparum malaria of the
+        genetic polymorphisms which are common in malaria endemic areas (
+      - type: Cite
+        target: bib12
+        content:
+          - 'Weatherall, 2008'
+      - >-
+        ). For some, such as the sickle cell trait, several different mechanisms
+        have been proposed. These include reduced parasite erythrocyte invasion,
+        enhanced parasitised red cell phagocytosis and a reduced propensity of
+        infected red cells to sequester in the microvasculature (
+      - type: Cite
+        target: bib7
+        content:
+          - 'Malaria Genomic Epidemiology Network et al., 2014'
+      - '; '
+      - type: Cite
+        target: bib1
+        content:
+          - 'Band et al., 2015'
+      - '; '
+      - type: Cite
+        target: bib2
+        content:
+          - 'Cholera et al., 2008'
+      - '; '
+      - type: Cite
+        target: bib16
+        content:
+          - 'Williams, 2016'
+      - >-
+        ). The mechanism underlying protection from severe falciparum malaria is
+        less clear for others such as glucose-6-phosphate dehydrogenase
+        deficiency (G6PDd). This X-linked genetic polymorphism results in the
+        most common human enzymopathy. Nearly 200 different genetic variants
+        have been reported (
+      - type: Cite
+        target: bib5
+        content:
+          - 'Howes et al., 2012'
+      - '; '
+      - type: Cite
+        target: bib6
+        content:
+          - 'Luzzatto and Arese, 2018'
+      - >-
+        ). The mechanism whereby G6PD deficiency protects against malaria, and
+        the natural selection forces which have resulted in the different
+        genotypes are still debated. Prospective observational hospital or
+        clinic based patient studies have provided the major component of the
+        evidence base. Estimating causal effects from observational studies in
+        severe malaria patients is difficult due to both confounding and
+        selection bias. This work focuses on collider bias introduced by
+        inappropriate data filtering (
+      - type: Cite
+        target: bib9
+        content:
+          - 'Snoep et al., 2014'
+      - '; '
+      - type: Cite
+        target: bib8
+        content:
+          - 'Pearce and Richiardi, 2014'
+      - ).
+  - type: Paragraph
+    content:
+      - >-
+        It has been suggested that G6PDd both increases the risk of severe
+        malarial anaemia (SMA) and decreases the risk of cerebral malaria (CM) (
+      - type: Cite
+        target: bib7
+        content:
+          - 'Malaria Genomic Epidemiology Network et al., 2014'
+      - '; '
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - >-
+        ). These conclusions were based on a pooled analysis of observational
+        data from over 11,000 patients with severe malaria studied in Africa and
+        Asia, and relevant population controls. Based on these genetic
+        association studies, a new formulation of the balancing-selection
+        hypothesis was proposed in which G6PD polymorphisms are maintained in
+        human populations, at least in part, by an evolutionary trade-off
+        between different adverse outcomes of 
+      - type: Emphasis
+        content:
+          - P. falciparum
+      - ' infection ('
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - >-
+        ). Collider bias probably explains this negative association between
+        G6PDd and CM, suggesting that causal interpretations of this association
+        and the novel formulation of balancing selection in G6PDd are invalid.
+  - type: Heading
+    id: s2
+    depth: 1
+    content:
+      - Results
+  - type: Paragraph
+    content:
+      - >-
+        Two published analyses of pooled data from observational studies of
+        patients with severe falciparum malaria used severe malarial anaemia
+        (SMA) and cerebral malaria (CM) as the main endpoints (outcomes) of
+        interest (
+      - type: Cite
+        target: bib7
+        content:
+          - 'Malaria Genomic Epidemiology Network et al., 2014'
+      - '; '
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - >-
+        ). Both these published analyses defined cases of CM as the presence of
+        coma but without concomitant SMA, and cases of SMA as patients with
+        severe anaemia but who were conscious. Therefore, these case definitions
+        excluded patients who had both SMA and CM. All other presentations of
+        severe malaria were also excluded (pulmonary oedema, shock, etc.).
+        Population controls were recruited at each site to match the ethnic
+        composition of cases, and in some instances cord blood samples were used
+        as controls. The consequence of these case definitions is to create an
+        artificial dependency between SMA and CM: if a patient has SMA then they
+        cannot have CM. G6PDd is known to influence haemoglobin concentrations
+        directly by causing haemolysis of older erythrocytes in acute malaria.
+        Therefore it is to be expected that SMA is positively correlated with
+        G6PDd, thus creating a negative correlation between CM and G6PDd. In
+        probabilistic terms, this conditional dependence is written as 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf1"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mrow><mml:mo
+          stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mo>≠</mml:mo><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mstyle></mml:math>
+      - >-
+        . Indeed, when all the G6PDd mutations were mapped onto the WHO severity
+        classification score (
+      - type: Cite
+        target: bib17
+        content:
+          - 'Yoshida et al., 1971'
+      - >-
+        ), it was observed that "The mean G6PDd score was 13.5% in controls, 13%
+        in cerebral malaria cases and 16.9% in severe malarial anaemia cases
+        [..]." (page 8, 
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - "). This pattern remained consistent (6, 5.6, and 7.1%, respectively) after exclusion of the G6PD c.202C\_>\_T mutation (one of the ‘A-’ mutations and the most prevalent in the pooled data)."
+  - type: Paragraph
+    content:
+      - >-
+        By excluding patients with both SMA and CM (approximately 12% of those
+        with either SMA or CM in the pooled data), the number of G6PDd patients
+        in the CM category is artificially reduced and we would expect there to
+        be fewer G6PDd patients than in the control group. 
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1
+      - ' proposes a simple causal diagram which posits plausible inter-dependencies limited to the variables of interest. A simple simulation study based on the assumptions shown in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1
+      - ' can be used to estimate the relationship between G6PDd and SMA which would result in the observed odds ratio for G6PDd in CM cases versus controls reported in '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - >-
+        . We assessed the null model in which there is no direct causal link
+        between G6PDd and CM in severe falciparum malaria (i.e. no arrow from
+        G6PD deficiency to CM). We also assume that there is no direct link
+        between SMA and CM. We calibrated the model with the marginal
+        probabilities of SMA and CM reported in 
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ' and only varied the odds ratio of G6PDd in SMA cases versus controls from 1 (assuming no effect of G6PDd on SMA) to 2 (twice as likely to be G6PDd in the SMA cases than in the controls). For simplicity (avoiding assumptions concerning gene dose effects) we restricted the analysis to males and only compare the simulation results with the reported associations in males.'
+  - type: Figure
+    id: fig1
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Causal diagram highlighting collider bias in '
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al. (2017)
+          - ' and '
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al. (2014)
+          - .
+      - type: Paragraph
+        content:
+          - >-
+            G6PD deficiency is the exposure of interest (green) and cerebral
+            malaria (CM) is the outcome of interest (red). By defining the CM
+            cases as those who had coma but no severe anaemia, collider bias
+            operates on the effect of G6PDd on CM.
+    label: Figure 1.
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/tiff
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
+      - type: Link
+        relation: fig
+        target: '#fig2'
+        content:
+          - Figure 2
+      - ' shows that if the odds ratio for G6PDd in SMA cases versus controls is strictly greater than 1, the estimated odds ratio for G6PDd in CM cases versus controls is biased (the thick red line is below the true simulated value of 1). The magnitude of this bias increases monotonically as the odds ratio for G6PDd in SMA cases versus controls increases. As can be seen from the causal diagram in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1
+      - >-
+        , there is no bias in the estimated odds ratio for G6PDd in SMA cases
+        versus controls (in 
+      - type: Link
+        relation: fig
+        target: '#fig2'
+        content:
+          - Figure 2
+      - ' the thick blue line approximates the identity line). This simple simulation model, restricted to males, shows that for any value of the odds ratio for G6PDd in SMA cases versus controls taken inside the reported 95% confidence interval (CI) [1.2–1.8] from '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - >-
+        , will result in a biased odds ratio for G6PDd in CM cases versus
+        controls inside the interval [0.69–0.98], the reported 95% CI for G6PDd
+        in CM cases versus controls (
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - >-
+        ). Moreover, if we use their reported point estimate of 1.48, restricted
+        to males, for the odds ratio of G6PDd in SMA cases versus controls, the
+        simulation model estimates that the observed (biased) odds ratio for
+        G6PDd in CM cases versus controls is 0.87, qualitatively very close to
+        their estimate of 0.82. We note that the effect of G6PDd on severe
+        anaemia in homozygous G6PDd girls and hemizygous G6PDd boys reported in 
+      - type: Cite
+        target: bib10
+        content:
+          - Uyoga et al. (2015)
+      - >-
+        , an odds ratio of 1.71 (95% CI: 1.34–2.18) for G6PDd in SMA cases
+        versus controls, is also consistent with these results. Therefore
+        collider bias could be sufficient to explain all the observed
+        association.
+  - type: Figure
+    id: fig2
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Results of the simulation based sensitivity analysis showing how
+            collider bias can explain all the reported association between CM
+            and G6PDd.
+      - type: Paragraph
+        content:
+          - >-
+            The simulation assumes that CM is independent of G6PD status but
+            that SMA is dependent on G6PDd status (
+          - type: Link
+            relation: fig
+            target: '#fig1'
+            content:
+              - Figure 1
+          - >-
+            ). Case definitions of CM and SMA exclude patients with both. The
+            left panel shows the observed simulation based estimate of the odds
+            ratio (OR) for G6PDd in SMA cases versus controls (y-axis) as a
+            function of the true simulated value (x-axis). No bias arises (the
+            observed and true values lie on the line of identity). The right
+            panel shows the observed simulation based estimate of the OR for
+            G6PDd in CM cases versus controls (y-axis), again as a function of
+            the true simulated value of the OR for G6PDd in SMA cases versus
+            controls (x-axis). This estimate suffers from collider bias since
+            the true value of the OR for G6PDd in SMA cases versus controls was
+            set to 1). The faint blue shaded areas show the 95% CI [1.22–1.8]
+            for the odds ratio of G6PDd in SMA cases versus controls, restricted
+            to males (
+          - type: Cite
+            target: bib3
+            content:
+              - 'Clarke et al., 2017'
+          - >-
+            ). The point estimate (1.48) is shown by the dashed blue line. The
+            faint red shaded area shows the 95% CI [0.69–0.98] for G6PDd in CM
+            cases versus controls, also restricted to males, with the point
+            estimate (0.82) shown by the dashed red line. CI: confidence
+            interval.
+    label: Figure 2.
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/tiff
+        meta:
+          inline: false
+  - type: Heading
+    id: s3
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
+      - >-
+        This re-analysis of recent reports that G6PDd reduced the risk of CM
+        directly (
+      - type: Cite
+        target: bib7
+        content:
+          - 'Malaria Genomic Epidemiology Network et al., 2014'
+      - '; '
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+      - >-
+        ) suggests that the observations could have resulted entirely from
+        collider bias. This highlights the difficulty of inferring causal
+        relationships between baseline patient covariates (in this case G6PDd)
+        and covariates which define inclusion criteria. The necessary causal
+        odds ratios for G6PDd in SMA cases versus controls which would give rise
+        to the biased observed association between G6PD status and CM fit with
+        the recent estimate of 1.71 in homozygous girls and hemizygous boys (
+      - type: Cite
+        target: bib10
+        content:
+          - 'Uyoga et al., 2015'
+      - >-
+        ). This is not to say that the risk of CM is unaffected by G6PDd, but
+        that the observations reported could have arisen purely as a result of
+        the implicit collider bias induced by the selection of patients by the
+        severe malaria criteria.
+  - type: Paragraph
+    content:
+      - >-
+        The example reported here highlights a major difficulty when attempting
+        to estimate causal contributions when factors of interest define
+        inclusion into the clinical study and the subsequent data analysis. All
+        prospective observational severe malaria studies suffer from two major
+        issues. First, case definitions are subjective and change over time
+        (even though standard guidelines exist, see 
+      - type: Cite
+        target: bib15
+        content:
+          - WHO (2015)
+      - ")\_and mortality is strongly dependent on the case definition. Second, enrolment into studies can only be done at the hospital or clinic level and neither duration of illness nor treatment seeking behaviour can be accounted for adequately."
+  - type: Paragraph
+    content:
+      - "The notion and definition of ‘severe malaria’ has two operational purposes. First it is a clinical tool for appropriate triage of malaria patients at high risk of death. Second it is a research tool for the evaluation of novel interventions seeking to reduce mortality. Interventions aimed at reducing mortality need to be trialled in the most severely ill patients in order to demonstrate intervention efficacy in this important subgroup. Pooled analyses of severe malaria studies need to take into account the variability of study inclusion and exclusion criteria. Researchers must appreciate that severe malaria is not an objective category but a subjective case definition subset\_from a spectrum of severity. Moreover, restricting analyses to specific patient subgroups, especially in the analysis of large pooled datasets, can have a considerable impact on the final result ("
+      - type: Cite
+        target: bib4
+        content:
+          - 'Gelman and Loken, 2013'
+      - >-
+        ). With increased emphasis on providing open access data so that
+        analyses can be evaluated and best use made of clinical research it
+        would be very helpful if investigators could publish reproducible code
+        alongside their analyses. Future genetic epidemiological studies could
+        benefit from use of causal diagrams and would be more readily evaluable
+        by provision of accompanying code.
+  - type: Heading
+    id: s4
+    depth: 1
+    content:
+      - Materials and methods
+  - type: Heading
+    id: s4-1
+    depth: 2
+    content:
+      - 'Data analysis in '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ' and '
+      - type: Cite
+        target: bib7
+        content:
+          - Malaria Genomic Epidemiology Network et al. (2014)
+  - type: Paragraph
+    content:
+      - >-
+        The odds ratios for G6PDd in cases versus controls are given in Table 3
+        of 
+      - type: Cite
+        target: bib7
+        content:
+          - Malaria Genomic Epidemiology Network et al. (2014)
+      - " (page 1201). The results, restricted to males, are 0.81 (95% CI: 0.68–0.96) for CM and 1.49 (95% CI: 1.24–1.79) for SMA. The case phenotype definitions are denoted ‘Cerebral malaria only’ for CM and ‘Severe malarial anaemia’ only for SMA. These case definitions, whereby patients with both SMA and CM are excluded, are also given in their Table 1. A total of 6283 cases had cerebral malaria or severe malarial anaemia, broken down as 3345 had cerebral malaria only; 2196 had severe malarial anaemia only; 742 had both cerebral malaria and severe malarial anaemia. The reported odds ratios were computed using logistic regression models with the main adjustment of interest being sickle haemoglobin\_genotype\_(HbS). We only consider the reported results restricted to males. The relevant section from the paper is: \""
+      - type: Emphasis
+        content:
+          - >-
+            Single-SNP tests, adjusted for HbS genotype, sex and ancestry, for
+            association with severe malaria and the severe malaria subtypes
+            cerebral malaria only and severe malarial anemia only were performed
+            for the 55 SNPs with a known association with severe malaria.
+            Standard logistic regression models were used for tests of
+            association at each autosomal SNP (Supplementary Table 25). Primary
+            analyses comprised tests of association between each SNP and severe
+            malaria phenotypes across all individuals combined as well as
+            separately by sex (X-chromosome SNPs only) and study site:
+            genotypic, additive, dominant, recessive and heterozygote advantage
+            genetic models of inheritance were considered.
+      - "\"\_(online Methods, Statistical analysis, ("
+      - type: Cite
+        target: bib7
+        content:
+          - 'Malaria Genomic Epidemiology Network et al., 2014'
+      - )).
+  - type: Heading
+    id: s4-2
+    depth: 2
+    content:
+      - type: Cite
+        target: bib3
+        content:
+          - 'Clarke et al., 2017'
+  - type: Paragraph
+    content:
+      - >-
+        The odds ratios for G6PDd in cases versus controls are given in Table 3
+        of 
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ' (page 6). In this publication, the results, restricted to males, are 0.82 (95% CI: 0.69–0.98) for CM and 1.48 (95% CI: 1.22–1.8) for SMA (their Table 3). The reason for the slight discrepancy between the two publications does not appear to be stated. They included a total of 6284 patients with cerebral malaria or severe malarial anaemia, broken down as: 3359 individuals had cerebral malaria only; 2184 had severe malarial anaemia only; 741 had both cerebral malaria and severe malarial anaemia. Table 1 and 6 of '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ' show the case definitions for CM and SMA, highlighting that those who have both clinical presentations are excluded from the respective case definitions. This is further confirmed on page 18 where the authors state: "'
+      - type: Emphasis
+        content:
+          - >-
+            For reasons of sample size, we did not conduct a detailed analysis
+            of other sub-types of severe malaria, or of those individuals who
+            had both cerebral malaria and severe malarial anaemia’.
+      - ' Standard logistic regression models were also used to obtain the odds ratios: '
+      - type: Emphasis
+        content:
+          - >-
+            ‘In primary analyses, standard fixed effects logistic regression
+            methods were used for tests of association with severe malaria and
+            sub-types at each SNP under additive, dominant, recessive and
+            heterozygous models. [..] Results were adjusted for sickle
+            hemoglobin (HbS), gender and ethnicity.
+      - '" (bottom of page 18).'
+  - type: Heading
+    id: s4-3
+    depth: 2
+    content:
+      - Sensitivity analysis
+  - type: Paragraph
+    content:
+      - >-
+        In order to characterise the proportion of the reported association
+        explained by collider bias we constructed a simple simulation study
+        based on the analytical procedures in 
+      - type: Cite
+        target: bib7
+        content:
+          - Malaria Genomic Epidemiology Network et al. (2014)
+      - '; '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ". We restrict our simulation to males, and calibrate and test the model using only the results reported in males in both publications (identical up to one decimal point). For simplicity, the simulation ignores the effect of HbS which is a confounder between SMA and CM, and generates data where the two presentations occur independently, which is equivalent to adjusting for HbS in the regression model. The procedure generates simulated data dependent on a parameter characterising the effect of G6PDd on severe malarial anaemia. As no adjustment is necessary, we then compute the non-parametric odds ratio for G6PDd in CM cases versus controls, excluding from the CM case definition all those who have SMA. This simulated ‘observed’ odds ratio estimated from the 2 x\_2 table (cases and controls versus G6PDd and G6PD normals) is thereby directly comparable to the reported odds ratios (obtained from logistic regression with the appropriate adjustments) in "
+      - type: Cite
+        target: bib7
+        content:
+          - Malaria Genomic Epidemiology Network et al. (2014)
+      - '; '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ', if we assume that only sex, ethnicity and '
+      - type: Emphasis
+        content:
+          - HbS
+      - ' are the true confounders (i.e. all necessary adjustments were made in both publications).'
+  - type: Paragraph
+    content:
+      - 'The hypothetical data were simulated based on the following assumptions:'
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - >-
+                G6PD deficiency increases the risk of SMA in acute symptomatic
+                malaria (the size of the effect is the only free parameter in
+                the model and varies from 1 to 2 as defined by the odds ratio
+                for G6PDd in SMA cases versus controls). In reality this would
+                be expected to be a function of genotype and gene dose (i.e.
+                hemizygotes and homozygotes would have a greater risk than
+                heterozygotes).
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - CM is independent of G6PD status.
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - >-
+                A population of males only (i.e. no heterozygote women, so no
+                partial effects) with homogeneous background frequency of G6PDd.
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - CM and SMA occur independently.
+    order: ascending
+  - type: Paragraph
+    content:
+      - 'From the data in '
+      - type: Cite
+        target: bib3
+        content:
+          - Clarke et al. (2017)
+      - ' and '
+      - type: Cite
+        target: bib7
+        content:
+          - Malaria Genomic Epidemiology Network et al. (2014)
+      - >-
+        , we can estimate the marginal probability of CM as 0.34, independent of
+        G6PD status (assumption 2). We can also estimate the marginal
+        probability of SMA as 0.24. The probability of G6PDd in males was 0.15.
+  - type: Paragraph
+    content:
+      - 'If we denote '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf2"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi>π</mml:mi><mml:mspace
+          width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mi mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mrow><mml:mo
+          stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mo>≥</mml:mo><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mn>0.24</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mstyle></mml:math>
+      - ' then by the law of total probability:'
+  - type: MathBlock
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m1"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mi mathvariant="normal">P</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi
+      mathvariant="sans-serif">S</mml:mi><mml:mi
+      mathvariant="sans-serif">M</mml:mi><mml:mi
+      mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mi
+      mathvariant="sans-serif">G</mml:mi><mml:mn
+      mathvariant="sans-serif">6</mml:mn><mml:mi
+      mathvariant="sans-serif">P</mml:mi><mml:mi
+      mathvariant="sans-serif">D</mml:mi><mml:mi
+      mathvariant="sans-serif">n</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo><mml:mspace
+      width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+      width="thinmathspace"/><mml:mfrac><mml:mrow><mml:mi
+      mathvariant="normal">P</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi
+      mathvariant="sans-serif">S</mml:mi><mml:mi
+      mathvariant="sans-serif">M</mml:mi><mml:mi
+      mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>−</mml:mo><mml:mi
+      mathvariant="normal">P</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi
+      mathvariant="sans-serif">S</mml:mi><mml:mi
+      mathvariant="sans-serif">M</mml:mi><mml:mi
+      mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mi
+      mathvariant="sans-serif">G</mml:mi><mml:mn
+      mathvariant="sans-serif">6</mml:mn><mml:mi
+      mathvariant="sans-serif">P</mml:mi><mml:mi
+      mathvariant="sans-serif">D</mml:mi><mml:mi
+      mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo><mml:mi mathvariant="normal">P</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi
+      mathvariant="sans-serif">G</mml:mi><mml:mn
+      mathvariant="sans-serif">6</mml:mn><mml:mi
+      mathvariant="sans-serif">P</mml:mi><mml:mi
+      mathvariant="sans-serif">D</mml:mi><mml:mi
+      mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mi
+      mathvariant="normal">P</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi
+      mathvariant="sans-serif">G</mml:mi><mml:mn
+      mathvariant="sans-serif">6</mml:mn><mml:mi
+      mathvariant="sans-serif">P</mml:mi><mml:mi
+      mathvariant="sans-serif">D</mml:mi><mml:mi
+      mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mfrac><mml:mspace
+      width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+      width="thinmathspace"/><mml:mfrac><mml:mrow><mml:mn>0.24</mml:mn><mml:mspace
+      width="thinmathspace"/><mml:mo>−</mml:mo><mml:mspace
+      width="thinmathspace"/><mml:mn>0.15</mml:mn><mml:mi>π</mml:mi></mml:mrow><mml:mn>0.85</mml:mn></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - "where G6PDd denotes G6PD deficient and\_G6PDn denotes\_G6PD normal."
+  - type: Paragraph
+    content:
+      - "The true proportion of\_G6PDd in the controls is known and fixed as "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf3"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mstyle></mml:math>
+      - ', with the proportion of G6PDn in the controls is given by '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf4"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mstyle></mml:math>
+      - ', therefore the odds of G6PDd in the control group is given by '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf5"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mfrac><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+      - .
+  - type: Paragraph
+    content:
+      - 'We then simulate cases as follows. For each value of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf6"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi>π</mml:mi><mml:mo>∈</mml:mo><mml:mo
+          stretchy="false">[</mml:mo><mml:mn>0.24</mml:mn><mml:mo>,</mml:mo><mml:mn>0.5</mml:mn><mml:mo
+          stretchy="false">]</mml:mo></mml:mrow></mml:mstyle></mml:math>
+      - ':'
+  - type: Paragraph
+    content:
+      - type: Strong
+        content:
+          - Step 1
+      - ".\_Simulate 1 million patients such that:"
+  - type: Paragraph
+    content:
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf7"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mn>0.34</mml:mn></mml:mrow></mml:mstyle></mml:math>
+      - ','
+  - type: Paragraph
+    content:
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf8"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mn>0.15</mml:mn></mml:mrow></mml:mstyle></mml:math>
+      - .
+  - type: Paragraph
+    content:
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf9"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow><mml:mrow><mml:mo
+          stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mo>=</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mi>π</mml:mi></mml:mrow></mml:mstyle></mml:math>
+      - .
+  - type: Paragraph
+    content:
+      - type: Strong
+        content:
+          - Step 2
+      - ".\_Select only the patients who have either just CM, or just SMA, filtering out those with concomitant SMA and CM."
+  - type: Paragraph
+    content:
+      - type: Strong
+        content:
+          - Step 3
+      - ".\_In the remaining data compute "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf10"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow></mml:mrow></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+      - " (number of\_G6PDd\_with SMA); "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf11"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">n</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+      - ' (number of G6PDn patients with SMA); '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf12"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+      - " (number of\_G6PDd patients with CM); "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf13"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">n</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+      - " (number of G6PDn patients with CM). The simulated odds ratio for\_G6PDd in SMA cases versus controls is "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf14"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow></mml:mrow></mml:msubsup><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">n</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">S</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi><mml:mi
+          mathvariant="sans-serif">A</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:mrow><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mspace
+          width="thinmathspace"/><mml:mo>−</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mi mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+      - ", and the simulated odds ratio for\_G6PDd in CM cases versus controls is "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf15"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mfrac><mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:msubsup><mml:mi
+          mathvariant="normal">N</mml:mi><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">n</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:mi
+          mathvariant="sans-serif">C</mml:mi><mml:mi
+          mathvariant="sans-serif">M</mml:mi></mml:mrow></mml:mrow></mml:msubsup></mml:mrow><mml:mrow><mml:mi
+          mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mspace
+          width="thinmathspace"/><mml:mo>−</mml:mo><mml:mspace
+          width="thinmathspace"/><mml:mi mathvariant="normal">P</mml:mi><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi
+          mathvariant="sans-serif">G</mml:mi><mml:mn
+          mathvariant="sans-serif">6</mml:mn><mml:mi
+          mathvariant="sans-serif">P</mml:mi><mml:mi
+          mathvariant="sans-serif">D</mml:mi><mml:mi
+          mathvariant="sans-serif">d</mml:mi></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+      - .
+  - type: Paragraph
+    content:
+      - >-
+        The causal diagram which corresponds to exclusion operating in Step two
+        is shown in 
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1
+      - '. Selection bias can be seen via the role of the vertex '
+      - type: Emphasis
+        content:
+          - Case definition
+      - ' which is a collider between '
+      - type: Emphasis
+        content:
+          - "\_G6PD\_deficiency"
+      - ' and '
+      - type: Emphasis
+        content:
+          - Cerebral malaria (CM)
+      - ".\_Implementation of the simulation model in R can be found at: "
+      - type: Link
+        target: >-
+          https://github.com/Stije/SevereMalariaAnalysis/SelectionBiasSimulation.Rmd
+        content:
+          - >-
+            https://github.com/Stije/SevereMalariaAnalysis/SelectionBiasSimulation.Rmd
+      - ' ('
+      - type: Cite
+        target: bib11
+        content:
+          - 'Watson and Leopold, 2019'
+      - '; copy archived at '
+      - type: Link
+        target: 'https://github.com/elifesciences-publications/SevereMalariaAnalysis'
+        content:
+          - 'https://github.com/elifesciences-publications/SevereMalariaAnalysis'
+      - ).

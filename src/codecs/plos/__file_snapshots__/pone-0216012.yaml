@@ -210,6 +210,7 @@ references:
   - type: Article
     id: pone-0216012-ref001
     authors: []
+    url: 'https://humanresearchroadmap.nasa.gov/evidence/reports/SANS.pdf'
   - type: Article
     id: pone-0216012-ref002
     authors:
@@ -250,9 +251,10 @@ references:
         givenNames:
           - E
     datePublished: '2015'
-    isPartOf:
-      type: Periodical
-      name: Microgravity and vision impairments in astronauts
+    publisher:
+      type: Organization
+      name: Springer International Publishing
+    title: Microgravity and vision impairments in astronauts
   - type: Article
     id: pone-0216012-ref004
     authors:
@@ -643,8 +645,9 @@ references:
           - JG
     datePublished: '2015'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: NASA Human Research Program Investigators Workshop
+    title: Lumped parameter models of the central nervous system for VIIP research
   - type: Article
     id: pone-0216012-ref011
     authors: []
@@ -793,8 +796,12 @@ references:
           - A
     datePublished: '2009'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: The 6th consensus report of the World Glaucoma Association
+    publisher:
+      type: Organization
+      name: Kugler Publications
+    title: Ocular blood flow in glaucoma
   - type: Article
     id: pone-0216012-ref016
     authors:
@@ -1142,10 +1149,16 @@ references:
           - E
     datePublished: '2008'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Aspects of Mathematical Modelling
     pageEnd: 227
     pageStart: 211
+    publisher:
+      type: Organization
+      name: Springer-Birkhäuser Basel
+    title: >-
+      Modelling the response of intracranial pressure to microgravity
+      environments
   - type: Article
     id: pone-0216012-ref025
     authors:
@@ -1473,10 +1486,19 @@ references:
           - K
     datePublished: '2011'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Biomechanics of the Brain
     pageEnd: 188
     pageStart: 169
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: New York
+      name: Springer
+    title: >-
+      Computational fluid dynamics for the assessment of cerebrospinal fluid
+      flow and its coupling with cerebral blood flow
   - type: Article
     id: pone-0216012-ref032
     authors:
@@ -1937,12 +1959,21 @@ references:
           - A
     datePublished: '2014'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: >-
         Integrated Multidisciplinary Approaches in the Study and Care of the
         Human Eye
     pageEnd: 66
     pageStart: 59
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Amsterdam
+      name: Kugler Publications
+    title: >-
+      Effect of intraocular pressure and cerebrospinal fluid pressure on the
+      blood flow in the central retinal vessels
   - type: Article
     id: pone-0216012-ref043
     authors:
@@ -1952,9 +1983,10 @@ references:
         givenNames:
           - TJ
     datePublished: '1980'
-    isPartOf:
-      type: Periodical
-      name: The fluid mechanics of large blood vessels
+    publisher:
+      type: Organization
+      name: Cambridge University Press
+    title: The fluid mechanics of large blood vessels
   - type: Article
     id: pone-0216012-ref044
     authors:
@@ -2791,10 +2823,16 @@ references:
           - T
     datePublished: '2005'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Intracranial Pressure and Brain Monitoring XII
     pageEnd: 181
     pageStart: 177
+    publisher:
+      type: Organization
+      name: Springer
+    title: >-
+      MRI study of cerebral blood flow and CSF flow dynamics in an upright
+      posture: the effect of posture on the intracranial compliance and pressure
   - type: Article
     id: pone-0216012-ref067
     authors:
@@ -3163,10 +3201,17 @@ references:
           - J
     datePublished: '1998'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: Glaucoma
     pageEnd: 107
     pageStart: 79
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Budapest
+      name: Academoiai Kiado
+    title: Physiology of the intraocular pressure
   - type: Article
     id: pone-0216012-ref077
     authors:
@@ -3408,10 +3453,11 @@ references:
           - AC
     datePublished: '1967'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: 'Physical Bases of Circulatory Transport: Regulation and Exchange'
     pageEnd: 326
     pageStart: 313
+    title: Analysis of small vessel function
   - type: Article
     id: pone-0216012-ref085
     authors:

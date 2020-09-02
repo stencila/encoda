@@ -1744,10 +1744,14 @@ references:
           - E
     datePublished: '1994'
     isPartOf:
-      type: Periodical
+      type: CreativeWork
       name: 'Manipulating the Mouse Embryo: A Laboratory Manual'
     pageEnd: 188
     pageStart: 127
+    publisher:
+      type: Organization
+      name: Cold Spring Harbor Press
+    title: 'Recovery, culture, and transfer of embryos and germ cells'
   - type: Article
     id: bib31
     authors:
@@ -2769,21 +2773,34 @@ references:
     title: Exome sequencing in the knockin mice generated using the CRISPR/Cas system
   - type: Article
     id: bib50
-    authors: []
+    authors:
+      - type: Organization
+        name: National Institute on Drug Abuse
     datePublished: '2018'
     title: Overdose death rates
+    url: >-
+      https://www.drugabuse.gov/related-topics/trends-statistics/overdose-death-rates
   - type: Article
     id: bib51
-    authors: []
+    authors:
+      - type: Organization
+        name: National Institute on Drug Abuse
     datePublished: '2019'
     title: Methamphetamine
+    url: 'https://www.drugabuse.gov/publications/research-reports/methamphetamine/'
   - type: Article
     id: bib52
-    authors: []
+    authors:
+      - type: Organization
+        name: National Research Council
     datePublished: '2011'
-    isPartOf:
-      type: Periodical
-      name: Guide for the Care and Use of Laboratory Animals
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: 'Washington, DC'
+      name: The National Academies Press
+    title: Guide for the Care and Use of Laboratory Animals
   - type: Article
     id: bib53
     authors:
@@ -3476,11 +3493,14 @@ references:
       ugly
   - type: Article
     id: bib67
-    authors: []
+    authors:
+      - type: Organization
+        name: United Nations Office on Drugs and Crime
     datePublished: '2016'
-    isPartOf:
-      type: Periodical
-      name: World Drug Report
+    publisher:
+      type: Organization
+      name: United Nations Publication
+    title: World Drug Report
   - type: Article
     id: bib68
     authors:
@@ -3679,10 +3699,8 @@ references:
         givenNames:
           - F
     datePublished: '2012'
-    isPartOf:
-      type: Periodical
-      name: 'December 12, 2012; Published at US008697359B1 (Awarded)'
     title: Systems methods and compositions for sequence manipulation
+    url: 'https://patents.google.com/patent/WO2015089486A3/en'
 title:
   - type: Emphasis
     content:

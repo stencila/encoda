@@ -673,6 +673,8 @@ references:
       type: Periodical
       name: eLife
     title: Composing reproducible manuscripts using R Markdown
+    url: >-
+      https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown
   - type: Article
     id: bib11
     authors:
@@ -1535,11 +1537,10 @@ references:
     title: Remarks on zeros and ties in the wilcoxon signed rank procedures
   - type: Article
     id: bib25
-    authors: []
+    authors:
+      - type: Organization
+        name: R Core Team
     datePublished: '2017'
-    isPartOf:
-      type: Periodical
-      name: R Foundation for Statistical Computing
     title: 'R: A language and environment for statistical computing'
   - type: Article
     id: bib26
@@ -2151,6 +2152,7 @@ references:
     title: >-
       Many analysts, one dataset: Making transparent how variations in
       analytical choices affect results
+    url: 'https://psyarxiv.com/qkwst/'
   - type: Article
     id: bib32
     authors:

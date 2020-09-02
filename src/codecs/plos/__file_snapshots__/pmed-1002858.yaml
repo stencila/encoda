@@ -233,7 +233,9 @@ licenses:
 references:
   - type: Article
     id: pmed-1002858-ref001
-    authors: []
+    authors:
+      - type: Organization
+        name: World Health Organization
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
@@ -747,9 +749,13 @@ references:
         givenNames:
           - J
     datePublished: '2009'
-    isPartOf:
-      type: Periodical
-      name: 'Causality: Models, Reasoning and Inference'
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: 'Cambridge, UK'
+      name: Cambridge University Press
+    title: 'Causality: Models, Reasoning and Inference'
   - type: Article
     id: pmed-1002858-ref014
     authors:
@@ -869,9 +875,13 @@ references:
         givenNames:
           - J
     datePublished: '2019'
-    isPartOf:
-      type: Periodical
-      name: Causal Inference
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: Boca Raton
+      name: Chapman & Hall/CRC
+    title: Causal Inference
   - type: Article
     id: pmed-1002858-ref019
     authors:
@@ -886,9 +896,13 @@ references:
         givenNames:
           - A
     datePublished: '1894'
-    isPartOf:
-      type: Periodical
-      name: On Summer-Autumnal Fever
+    publisher:
+      type: Organization
+      address:
+        type: PostalAddress
+        addressLocality: London
+      name: New Sydenham Society
+    title: On Summer-Autumnal Fever
   - type: Article
     id: pmed-1002858-ref020
     authors:
@@ -1351,6 +1365,7 @@ references:
   - type: Article
     id: pmed-1002858-ref030
     authors: []
+    url: 'https://CRAN.R-project.org/package=merTools'
   - type: Article
     id: pmed-1002858-ref031
     authors:

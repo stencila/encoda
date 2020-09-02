@@ -1001,21 +1001,24 @@ function encodeReferences(
 
 /**
  * Decode a JATS `<element-citation>` or `<mixed-citation>` element
- * into a Stencila `CreativeWork`.
+ * into a `CreativeWork` node.
  */
 function decodeReference(
   elem: xml.Element,
   ident: string | null
 ): stencila.CreativeWork {
+  const publicationType = attr(elem, 'publication-type')
   const id = decodeInternalId(ident)
-  const authors = all(elem, 'name').map(decodeName)
-  const pageStart = intOrUndefined(child(elem, 'fpage'))
-  const pageEnd = intOrUndefined(child(elem, 'lpage'))
-  const issueNumber = intOrUndefined(child(elem, 'issue'))
-  const volumeNumber = intOrUndefined(child(elem, 'volume'))
-  const periodicalName = textOrUndefined(child(elem, 'source'))
 
-  const title = textOrUndefined(child(elem, ['article-title', 'data-title']))
+  let authors: stencila.CreativeWork['authors'] = all(elem, 'name').map(
+    decodeName
+  )
+  // If no authors identified using `<name>` elements
+  // then use the text of `<person-group>` or `<collab>`
+  if (authors.length === 0) {
+    const name = textOrUndefined(child(elem, ['collab', 'person-group']))
+    if (name !== undefined) authors = [stencila.organization({ name })]
+  }
 
   // The year can sometimes include a suffix e.g. 2012a (if there are multiple references
   // for the same author in a year). So this removes that suffix by only ever taking the
@@ -1026,13 +1029,60 @@ function decodeReference(
     if (match) datePublished = match[1]
   }
 
+  let title: string | undefined
   let isPartOf: stencila.CreativeWork | undefined
-  if (periodicalName !== undefined)
-    isPartOf = stencila.periodical({ name: periodicalName })
-  if (volumeNumber !== undefined)
-    isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
-  if (issueNumber !== undefined)
-    isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
+  if (publicationType === 'journal' || publicationType === 'preprint') {
+    title = textOrUndefined(child(elem, 'article-title'))
+
+    const periodicalName = textOrUndefined(child(elem, 'source'))
+    const volumeNumber = intOrUndefined(child(elem, 'volume'))
+    const issueNumber = intOrUndefined(child(elem, 'issue'))
+    if (periodicalName !== undefined)
+      isPartOf = stencila.periodical({ name: periodicalName })
+    if (volumeNumber !== undefined)
+      isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
+    if (issueNumber !== undefined)
+      isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
+  } else if (publicationType === 'book' || publicationType === 'report') {
+    title = textOrUndefined(child(elem, 'chapter-title'))
+    if (title !== undefined) {
+      // Book or report chapter so try to create a `isPartOf` property
+      const book = textOrUndefined(child(elem, 'source'))
+      if (book !== undefined) {
+        isPartOf = stencila.creativeWork({ name: book })
+      }
+    } else {
+      // Not a chapter so title is <source>
+      title = textOrUndefined(child(elem, 'source'))
+    }
+  } else {
+    // e.g. publicationType: 'software', 'web', 'patent'
+    title = textOrUndefined(
+      child(elem, ['article-title', 'chapter-title', 'data-title'])
+    )
+  }
+
+  // If title is still undefined and elem is a <mixed-citation> then use
+  // its text content e.g.
+  //    <mixed-citation publication-type="other" xlink:type="simple">Maynard Smith J (1982) Evolution and the Theory of Games. Cambridge University Press.</mixed-citation>
+  if (title === undefined && elem.name === 'mixed-content') {
+    title = textOrUndefined(elem)
+  }
+
+  const pageStart = intOrUndefined(child(elem, 'fpage'))
+  const pageEnd = intOrUndefined(child(elem, 'lpage'))
+  const url = attrOrUndefined(child(elem, 'ext-link'), 'xlink:href')
+
+  let publisher: stencila.Organization | undefined
+  const publisherName = textOrUndefined(child(elem, 'publisher-name'))
+  if (publisherName !== undefined) {
+    let address: stencila.PostalAddress | undefined
+    const location = textOrUndefined(child(elem, 'publisher-loc'))
+    if (location !== undefined) {
+      address = stencila.postalAddress({ addressLocality: location })
+    }
+    publisher = stencila.organization({ name: publisherName, address })
+  }
 
   return stencila.article({
     id,
@@ -1042,6 +1092,8 @@ function decodeReference(
     pageStart,
     pageEnd,
     isPartOf,
+    publisher,
+    url,
   })
 }
 
