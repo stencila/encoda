@@ -9,6 +9,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import * as vfile from '../../util/vfile'
 import * as xslt from '../../util/xslt'
+import * as mathml from '../mathml'
 import { Codec } from '../types'
 
 const log = getLogger('encoda:tex')
@@ -81,7 +82,7 @@ export class TexCodec extends Codec implements Codec {
           mml: ns,
         })
       }
-      tex = await mathmlProcessor.transform(text)
+      tex = await mathmlProcessor.transform(mathml.normalize(text))
     } else {
       log.warn(`Unable to translate math language to TeX: ${mathLanguage}`)
       tex = ''
