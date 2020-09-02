@@ -123,7 +123,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodeboolean" class="tsd-kind-icon">decode<wbr>Boolean</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodecite" class="tsd-kind-icon">decode<wbr>Cite</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodecodechunk" class="tsd-kind-icon">decode<wbr>Code<wbr>Chunk</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodecodechunkfigure" class="tsd-kind-icon">decode<wbr>Code<wbr>Chunk<wbr>Figure</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodecodeblock" class="tsd-kind-icon">decode<wbr>Codeblock</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodedelete" class="tsd-kind-icon">decode<wbr>Delete</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodeemphasis" class="tsd-kind-icon">decode<wbr>Emphasis</a></li>
@@ -151,6 +150,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodesubscript" class="tsd-kind-icon">decode<wbr>Subscript</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodesuperscript" class="tsd-kind-icon">decode<wbr>Superscript</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodetable" class="tsd-kind-icon">decode<wbr>Table</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodetableblock" class="tsd-kind-icon">decode<wbr>Table<wbr>Block</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodetext" class="tsd-kind-icon">decode<wbr>Text</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#decodethematicbreak" class="tsd-kind-icon">decode<wbr>Thematic<wbr>Break</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_md_index_.html#encodearray" class="tsd-kind-icon">encode<wbr>Array</a></li>
@@ -220,7 +220,7 @@
 					<div class="tsd-signature tsd-kind-icon">Frontmatter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L197">src/codecs/md/index.ts:197</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L199">src/codecs/md/index.ts:199</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">FRONTMATTER_<wbr>OPTIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>marker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{ type: &#x27;yaml&#x27;, marker: &#x27;-&#x27; }]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L145">src/codecs/md/index.ts:145</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L147">src/codecs/md/index.ts:147</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,10 +250,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="generic_extensions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> GENERIC_<wbr>EXTENSIONS</h3>
-					<div class="tsd-signature tsd-kind-icon">GENERIC_<wbr>EXTENSIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;quote&#x27;,&#x27;expr&#x27;,&#x27;chunk&#x27;,&#x27;figure&#x27;,&#x27;chunkfigure&#x27;,&#x27;include&#x27;,&#x27;null&#x27;,&#x27;true&#x27;,&#x27;false&#x27;,&#x27;boolean&#x27;,&#x27;number&#x27;,&#x27;array&#x27;,&#x27;object&#x27;,]</span></div>
+					<div class="tsd-signature tsd-kind-icon">GENERIC_<wbr>EXTENSIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;quote&#x27;,&#x27;expr&#x27;,&#x27;chunk&#x27;,&#x27;figure&#x27;,&#x27;table&#x27;,&#x27;include&#x27;,&#x27;null&#x27;,&#x27;true&#x27;,&#x27;false&#x27;,&#x27;boolean&#x27;,&#x27;number&#x27;,&#x27;array&#x27;,&#x27;object&#x27;,]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L157">src/codecs/md/index.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L159">src/codecs/md/index.ts:159</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -273,7 +273,7 @@
 					<div class="tsd-signature tsd-kind-icon">bib<wbr>Codec<span class="tsd-signature-symbol">:</span> <a href="../classes/_codecs_bib_index_.bibcodec.html" class="tsd-signature-type">BibCodec</a><span class="tsd-signature-symbol"> = new BibCodec()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L61">src/codecs/md/index.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L63">src/codecs/md/index.ts:63</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -283,7 +283,7 @@
 					<div class="tsd-signature tsd-kind-icon">extension<wbr>Handlers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L173">src/codecs/md/index.ts:173</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L175">src/codecs/md/index.ts:175</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -301,7 +301,7 @@
 					<div class="tsd-signature tsd-kind-icon">html<wbr>Codec<span class="tsd-signature-symbol">:</span> <a href="../classes/_codecs_html_index_.htmlcodec.html" class="tsd-signature-type">HTMLCodec</a><span class="tsd-signature-symbol"> = new HTMLCodec()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1801">src/codecs/md/index.ts:1801</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1873">src/codecs/md/index.ts:1873</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -311,7 +311,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Mdast<wbr>Block<wbr>Content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">ExtractGeneric</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = nodeIs(mdastBlockContentTypes)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L137">src/codecs/md/index.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L139">src/codecs/md/index.ts:139</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -342,7 +342,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Mdast<wbr>Phrasing<wbr>Content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">ExtractGeneric</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = nodeIs(mdastPhrasingContentTypes)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L138">src/codecs/md/index.ts:138</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L140">src/codecs/md/index.ts:140</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -373,7 +373,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:md&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L63">src/codecs/md/index.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L65">src/codecs/md/index.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -383,7 +383,7 @@
 					<div class="tsd-signature tsd-kind-icon">tex<wbr>Codec<span class="tsd-signature-symbol">:</span> <a href="../classes/_codecs_tex_index_.texcodec.html" class="tsd-signature-type">TexCodec</a><span class="tsd-signature-symbol"> = new TexCodec()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L60">src/codecs/md/index.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L62">src/codecs/md/index.ts:62</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -393,7 +393,7 @@
 					<div class="tsd-signature tsd-kind-icon">white<wbr>Space<wbr>Reg<wbr>Ex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = new RegExp(/(^|[^\n\s])[\n]+\s*(?![\n])/g)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L108">src/codecs/md/index.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L110">src/codecs/md/index.ts:110</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -428,7 +428,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1659">src/codecs/md/index.ts:1659</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1714">src/codecs/md/index.ts:1714</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -463,7 +463,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L590">src/codecs/md/index.ts:590</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L592">src/codecs/md/index.ts:592</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -502,7 +502,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L567">src/codecs/md/index.ts:567</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L569">src/codecs/md/index.ts:569</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -528,7 +528,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L794">src/codecs/md/index.ts:794</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L796">src/codecs/md/index.ts:796</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -559,7 +559,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1604">src/codecs/md/index.ts:1604</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1659">src/codecs/md/index.ts:1659</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -596,7 +596,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1213">src/codecs/md/index.ts:1213</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1268">src/codecs/md/index.ts:1268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -627,7 +627,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L862">src/codecs/md/index.ts:862</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L864">src/codecs/md/index.ts:864</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -646,35 +646,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="decodecodechunkfigure" class="tsd-anchor"></a>
-					<h3>decode<wbr>Code<wbr>Chunk<wbr>Figure</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Code<wbr>Chunk<wbr>Figure<span class="tsd-signature-symbol">(</span>ext<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Figure</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1025">src/codecs/md/index.ts:1025</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Decode a <code>chunkfigure</code> block extension to a <code>Figure</code> with a <code>CodeChunk</code>
-									as it&#39;s first child.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ext: <a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Figure</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="decodecodeblock" class="tsd-anchor"></a>
 					<h3>decode<wbr>Codeblock</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -684,7 +655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L828">src/codecs/md/index.ts:828</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L830">src/codecs/md/index.ts:830</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -718,7 +689,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1304">src/codecs/md/index.ts:1304</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1359">src/codecs/md/index.ts:1359</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -749,7 +720,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1254">src/codecs/md/index.ts:1254</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1309">src/codecs/md/index.ts:1309</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -780,7 +751,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1756">src/codecs/md/index.ts:1756</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1811">src/codecs/md/index.ts:1811</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -811,7 +782,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L970">src/codecs/md/index.ts:970</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L995">src/codecs/md/index.ts:995</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -842,7 +813,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1810">src/codecs/md/index.ts:1810</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1882">src/codecs/md/index.ts:1882</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -873,7 +844,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L727">src/codecs/md/index.ts:727</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L729">src/codecs/md/index.ts:729</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,7 +875,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1509">src/codecs/md/index.ts:1509</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1564">src/codecs/md/index.ts:1564</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -932,7 +903,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L698">src/codecs/md/index.ts:698</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L700">src/codecs/md/index.ts:700</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -960,7 +931,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1444">src/codecs/md/index.ts:1444</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1499">src/codecs/md/index.ts:1499</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -989,7 +960,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1182">src/codecs/md/index.ts:1182</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1237">src/codecs/md/index.ts:1237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1020,7 +991,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1045">src/codecs/md/index.ts:1045</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1052">src/codecs/md/index.ts:1052</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1051,7 +1022,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1090">src/codecs/md/index.ts:1090</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1097">src/codecs/md/index.ts:1097</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1076,13 +1047,13 @@
 					<a name="decodemarkdown" class="tsd-anchor"></a>
 					<h3>decode<wbr>Markdown</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Markdown<span class="tsd-signature-symbol">(</span>md<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Markdown<span class="tsd-signature-symbol">(</span>md<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L208">src/codecs/md/index.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L210">src/codecs/md/index.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1096,7 +1067,7 @@
 									<h5>md: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Article</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1110,7 +1081,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1414">src/codecs/md/index.ts:1414</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1469">src/codecs/md/index.ts:1469</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1139,7 +1110,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L378">src/codecs/md/index.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L380">src/codecs/md/index.ts:380</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1165,7 +1136,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1581">src/codecs/md/index.ts:1581</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1636">src/codecs/md/index.ts:1636</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1187,7 +1158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1634">src/codecs/md/index.ts:1634</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1689">src/codecs/md/index.ts:1689</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1222,7 +1193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1684">src/codecs/md/index.ts:1684</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1739">src/codecs/md/index.ts:1739</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1258,7 +1229,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L754">src/codecs/md/index.ts:754</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L756">src/codecs/md/index.ts:756</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1289,7 +1260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L554">src/codecs/md/index.ts:554</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L556">src/codecs/md/index.ts:556</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1315,7 +1286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1386">src/codecs/md/index.ts:1386</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1441">src/codecs/md/index.ts:1441</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1348,14 +1319,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L222">src/codecs/md/index.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L224">src/codecs/md/index.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>An async variant of <code>decodeMarkdown</code> specialized to decoding the top-level <code>Article</code> Markdown contents.
 										During the decoding checks the frontmatter for a <code>bibliography</code> key pointing to a separate bibliographic file.
-									If it exsists, reads in the file to populate the decoding <code>context</code>.</p>
+									If it exists, reads in the file to populate the decoding <code>context</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1381,7 +1352,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1279">src/codecs/md/index.ts:1279</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1334">src/codecs/md/index.ts:1334</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1412,7 +1383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1329">src/codecs/md/index.ts:1329</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1384">src/codecs/md/index.ts:1384</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1443,7 +1414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1355">src/codecs/md/index.ts:1355</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1410">src/codecs/md/index.ts:1410</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1474,7 +1445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1108">src/codecs/md/index.ts:1108</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1115">src/codecs/md/index.ts:1115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1496,6 +1467,34 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="decodetableblock" class="tsd-anchor"></a>
+					<h3>decode<wbr>Table<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Table<wbr>Block<span class="tsd-signature-symbol">(</span>ext<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Table</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1144">src/codecs/md/index.ts:1144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decode a <code>table</code> block extension to a <code>stencila.Table</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ext: <a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Table</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="decodetext" class="tsd-anchor"></a>
 					<h3>decode<wbr>Text</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -1505,7 +1504,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1564">src/codecs/md/index.ts:1564</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1619">src/codecs/md/index.ts:1619</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1536,7 +1535,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1164">src/codecs/md/index.ts:1164</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1219">src/codecs/md/index.ts:1219</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1558,7 +1557,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1668">src/codecs/md/index.ts:1668</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1723">src/codecs/md/index.ts:1723</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1586,7 +1585,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L631">src/codecs/md/index.ts:631</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L633">src/codecs/md/index.ts:633</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1617,7 +1616,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L574">src/codecs/md/index.ts:574</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L576">src/codecs/md/index.ts:576</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1640,7 +1639,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1620">src/codecs/md/index.ts:1620</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1675">src/codecs/md/index.ts:1675</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1668,7 +1667,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1203">src/codecs/md/index.ts:1203</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1258">src/codecs/md/index.ts:1258</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1697,7 +1696,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L849">src/codecs/md/index.ts:849</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L851">src/codecs/md/index.ts:851</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1725,7 +1724,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L923">src/codecs/md/index.ts:923</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L935">src/codecs/md/index.ts:935</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1753,7 +1752,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1487">src/codecs/md/index.ts:1487</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1542">src/codecs/md/index.ts:1542</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1782,7 +1781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1472">src/codecs/md/index.ts:1472</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1527">src/codecs/md/index.ts:1527</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1810,7 +1809,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1551">src/codecs/md/index.ts:1551</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1606">src/codecs/md/index.ts:1606</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1842,7 +1841,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L550">src/codecs/md/index.ts:550</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L552">src/codecs/md/index.ts:552</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1865,7 +1864,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1319">src/codecs/md/index.ts:1319</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1374">src/codecs/md/index.ts:1374</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1893,7 +1892,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1269">src/codecs/md/index.ts:1269</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1324">src/codecs/md/index.ts:1324</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1921,16 +1920,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1007">src/codecs/md/index.ts:1007</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1034">src/codecs/md/index.ts:1034</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Encode a <code>stencila.Figure</code> to a <code>figure:</code> block extension</p>
 								</div>
-								<p>The <code>content</code> of the figure e.g. a <code>ImageObject</code> or <code>CodeChunk</code> will be the
+								<p>The <code>content</code> of the figure, usually an <code>ImageObject</code>, is the
 								first node of the extension&#39;s content. The <code>caption</code> is the remainder.</p>
-								<p>In the future, if there is more than one content node then we
+								<p>In the future, if there is more than one content node, then we
 								may use a <code>ThematicBreak</code> to separate content from caption.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1953,7 +1952,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L743">src/codecs/md/index.ts:743</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L745">src/codecs/md/index.ts:745</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1981,7 +1980,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1526">src/codecs/md/index.ts:1526</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1581">src/codecs/md/index.ts:1581</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2009,7 +2008,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L713">src/codecs/md/index.ts:713</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L715">src/codecs/md/index.ts:715</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2037,7 +2036,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L561">src/codecs/md/index.ts:561</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L563">src/codecs/md/index.ts:563</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2060,7 +2059,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1238">src/codecs/md/index.ts:1238</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1293">src/codecs/md/index.ts:1293</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2088,7 +2087,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1058">src/codecs/md/index.ts:1058</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1065">src/codecs/md/index.ts:1065</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2116,7 +2115,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1069">src/codecs/md/index.ts:1069</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1076">src/codecs/md/index.ts:1076</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2144,7 +2143,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L263">src/codecs/md/index.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L265">src/codecs/md/index.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2172,7 +2171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1429">src/codecs/md/index.ts:1429</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1484">src/codecs/md/index.ts:1484</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2201,7 +2200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L468">src/codecs/md/index.ts:468</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L470">src/codecs/md/index.ts:470</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2224,7 +2223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1588">src/codecs/md/index.ts:1588</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1643">src/codecs/md/index.ts:1643</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2246,7 +2245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1641">src/codecs/md/index.ts:1641</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1696">src/codecs/md/index.ts:1696</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2274,7 +2273,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1701">src/codecs/md/index.ts:1701</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1756">src/codecs/md/index.ts:1756</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2302,7 +2301,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L772">src/codecs/md/index.ts:772</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L774">src/codecs/md/index.ts:774</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2332,7 +2331,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L349">src/codecs/md/index.ts:349</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L351">src/codecs/md/index.ts:351</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2365,7 +2364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1400">src/codecs/md/index.ts:1400</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1455">src/codecs/md/index.ts:1455</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2393,7 +2392,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L807">src/codecs/md/index.ts:807</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L809">src/codecs/md/index.ts:809</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2421,7 +2420,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1571">src/codecs/md/index.ts:1571</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1626">src/codecs/md/index.ts:1626</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2449,7 +2448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1294">src/codecs/md/index.ts:1294</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1349">src/codecs/md/index.ts:1349</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2477,7 +2476,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1345">src/codecs/md/index.ts:1345</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1400">src/codecs/md/index.ts:1400</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2506,7 +2505,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1371">src/codecs/md/index.ts:1371</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1426">src/codecs/md/index.ts:1426</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2529,13 +2528,13 @@
 					<a name="encodetable" class="tsd-anchor"></a>
 					<h3>encode<wbr>Table</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Table</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Table</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Table<span class="tsd-signature-symbol">(</span>table<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Table</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Table</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1137">src/codecs/md/index.ts:1137</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1172">src/codecs/md/index.ts:1172</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2549,7 +2548,7 @@
 									<h5>table: <span class="tsd-signature-type">Table</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Table</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Table</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_codecs_md_index_.extension.html" class="tsd-signature-type">Extension</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -2563,7 +2562,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1173">src/codecs/md/index.ts:1173</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1228">src/codecs/md/index.ts:1228</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2585,7 +2584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L315">src/codecs/md/index.ts:315</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L317">src/codecs/md/index.ts:317</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2617,7 +2616,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L298">src/codecs/md/index.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L300">src/codecs/md/index.ts:300</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2645,7 +2644,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L285">src/codecs/md/index.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L287">src/codecs/md/index.ts:287</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2674,7 +2673,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L245">src/codecs/md/index.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L247">src/codecs/md/index.ts:247</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2697,7 +2696,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1866">src/codecs/md/index.ts:1866</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1938">src/codecs/md/index.ts:1938</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2727,7 +2726,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L181">src/codecs/md/index.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L183">src/codecs/md/index.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2755,7 +2754,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1822">src/codecs/md/index.ts:1822</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1894">src/codecs/md/index.ts:1894</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2786,7 +2785,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1777">src/codecs/md/index.ts:1777</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1832">src/codecs/md/index.ts:1832</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2815,7 +2814,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L1844">src/codecs/md/index.ts:1844</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L1916">src/codecs/md/index.ts:1916</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2848,7 +2847,7 @@
 					<div class="tsd-signature tsd-kind-icon">ATTR_<wbr>OPTIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L150">src/codecs/md/index.ts:150</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L152">src/codecs/md/index.ts:152</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -2862,7 +2861,7 @@
 						<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;permissive&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L150">src/codecs/md/index.ts:150</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L152">src/codecs/md/index.ts:152</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2873,7 +2872,7 @@
 					<div class="tsd-signature tsd-kind-icon">mdast<wbr>Block<wbr>Content<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L110">src/codecs/md/index.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L112">src/codecs/md/index.ts:112</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2882,7 +2881,7 @@
 						<div class="tsd-signature tsd-kind-icon">blockquote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"blockquote"</span><span class="tsd-signature-symbol"> = &quot;blockquote&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L111">src/codecs/md/index.ts:111</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L113">src/codecs/md/index.ts:113</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2892,7 +2891,7 @@
 						<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"code"</span><span class="tsd-signature-symbol"> = &quot;code&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L112">src/codecs/md/index.ts:112</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L114">src/codecs/md/index.ts:114</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2902,7 +2901,7 @@
 						<div class="tsd-signature tsd-kind-icon">heading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"heading"</span><span class="tsd-signature-symbol"> = &quot;heading&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L113">src/codecs/md/index.ts:113</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L115">src/codecs/md/index.ts:115</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2912,7 +2911,7 @@
 						<div class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"html"</span><span class="tsd-signature-symbol"> = &quot;html&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L114">src/codecs/md/index.ts:114</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L116">src/codecs/md/index.ts:116</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2922,7 +2921,7 @@
 						<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"list"</span><span class="tsd-signature-symbol"> = &quot;list&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L115">src/codecs/md/index.ts:115</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L117">src/codecs/md/index.ts:117</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2932,7 +2931,7 @@
 						<div class="tsd-signature tsd-kind-icon">paragraph<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"paragraph"</span><span class="tsd-signature-symbol"> = &quot;paragraph&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L116">src/codecs/md/index.ts:116</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L118">src/codecs/md/index.ts:118</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2942,7 +2941,7 @@
 						<div class="tsd-signature tsd-kind-icon">table<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"table"</span><span class="tsd-signature-symbol"> = &quot;table&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L117">src/codecs/md/index.ts:117</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L119">src/codecs/md/index.ts:119</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2952,7 +2951,7 @@
 						<div class="tsd-signature tsd-kind-icon">thematic<wbr>Break<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"thematicBreak"</span><span class="tsd-signature-symbol"> = &quot;thematicBreak&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L118">src/codecs/md/index.ts:118</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L120">src/codecs/md/index.ts:120</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2963,7 +2962,7 @@
 					<div class="tsd-signature tsd-kind-icon">mdast<wbr>Phrasing<wbr>Content<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L121">src/codecs/md/index.ts:121</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L123">src/codecs/md/index.ts:123</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2972,7 +2971,7 @@
 						<div class="tsd-signature tsd-kind-icon">break<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"break"</span><span class="tsd-signature-symbol"> = &quot;break&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L122">src/codecs/md/index.ts:122</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L124">src/codecs/md/index.ts:124</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2982,7 +2981,7 @@
 						<div class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"delete"</span><span class="tsd-signature-symbol"> = &quot;delete&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L123">src/codecs/md/index.ts:123</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L125">src/codecs/md/index.ts:125</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2992,7 +2991,7 @@
 						<div class="tsd-signature tsd-kind-icon">emphasis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"emphasis"</span><span class="tsd-signature-symbol"> = &quot;emphasis&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L124">src/codecs/md/index.ts:124</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L126">src/codecs/md/index.ts:126</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3002,7 +3001,7 @@
 						<div class="tsd-signature tsd-kind-icon">footnote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"footnote"</span><span class="tsd-signature-symbol"> = &quot;footnote&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L125">src/codecs/md/index.ts:125</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L127">src/codecs/md/index.ts:127</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3012,7 +3011,7 @@
 						<div class="tsd-signature tsd-kind-icon">footnote<wbr>Reference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"footnoteReference"</span><span class="tsd-signature-symbol"> = &quot;footnoteReference&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L126">src/codecs/md/index.ts:126</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L128">src/codecs/md/index.ts:128</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3022,7 +3021,7 @@
 						<div class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"html"</span><span class="tsd-signature-symbol"> = &quot;html&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L127">src/codecs/md/index.ts:127</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L129">src/codecs/md/index.ts:129</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3032,7 +3031,7 @@
 						<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"image"</span><span class="tsd-signature-symbol"> = &quot;image&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L128">src/codecs/md/index.ts:128</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L130">src/codecs/md/index.ts:130</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3042,7 +3041,7 @@
 						<div class="tsd-signature tsd-kind-icon">image<wbr>Reference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"imageReference"</span><span class="tsd-signature-symbol"> = &quot;imageReference&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L129">src/codecs/md/index.ts:129</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L131">src/codecs/md/index.ts:131</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3052,7 +3051,7 @@
 						<div class="tsd-signature tsd-kind-icon">inline<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"inlineCode"</span><span class="tsd-signature-symbol"> = &quot;inlineCode&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L130">src/codecs/md/index.ts:130</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L132">src/codecs/md/index.ts:132</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3062,7 +3061,7 @@
 						<div class="tsd-signature tsd-kind-icon">link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"link"</span><span class="tsd-signature-symbol"> = &quot;link&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L131">src/codecs/md/index.ts:131</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L133">src/codecs/md/index.ts:133</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3072,7 +3071,7 @@
 						<div class="tsd-signature tsd-kind-icon">link<wbr>Reference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"linkReference"</span><span class="tsd-signature-symbol"> = &quot;linkReference&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L132">src/codecs/md/index.ts:132</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L134">src/codecs/md/index.ts:134</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3082,7 +3081,7 @@
 						<div class="tsd-signature tsd-kind-icon">strong<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"strong"</span><span class="tsd-signature-symbol"> = &quot;strong&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L133">src/codecs/md/index.ts:133</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L135">src/codecs/md/index.ts:135</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3092,7 +3091,7 @@
 						<div class="tsd-signature tsd-kind-icon">text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"text"</span><span class="tsd-signature-symbol"> = &quot;text&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/md/index.ts#L134">src/codecs/md/index.ts:134</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/md/index.ts#L136">src/codecs/md/index.ts:136</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -3176,9 +3175,6 @@
 						<a href="_codecs_md_index_.html#decodecodechunk" class="tsd-kind-icon">decode<wbr>Code<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_codecs_md_index_.html#decodecodechunkfigure" class="tsd-kind-icon">decode<wbr>Code<wbr>Chunk<wbr>Figure</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_codecs_md_index_.html#decodecodeblock" class="tsd-kind-icon">decode<wbr>Codeblock</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -3258,6 +3254,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_codecs_md_index_.html#decodetable" class="tsd-kind-icon">decode<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_codecs_md_index_.html#decodetableblock" class="tsd-kind-icon">decode<wbr>Table<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_codecs_md_index_.html#decodetext" class="tsd-kind-icon">decode<wbr>Text</a>

@@ -79,7 +79,9 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_codecs_xmd_index_.html#decodefigure" class="tsd-kind-icon">decode<wbr>Figure</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_codecs_xmd_index_.html#decodeblockchunk" class="tsd-kind-icon">decode<wbr>Block<wbr>Chunk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_codecs_xmd_index_.html#decodeinlinechunk" class="tsd-kind-icon">decode<wbr>Inline<wbr>Chunk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_codecs_xmd_index_.html#decodenestedchunks" class="tsd-kind-icon">decode<wbr>Nested<wbr>Chunks</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,24 +90,29 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="decodefigure" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> decode<wbr>Figure</h3>
+					<a name="decodeblockchunk" class="tsd-anchor"></a>
+					<h3>decode<wbr>Block<wbr>Chunk</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Figure<span class="tsd-signature-symbol">(</span>contents<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Block<wbr>Chunk<span class="tsd-signature-symbol">(</span>xmd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/11550016/src/codecs/xmd/index.ts#L19">src/codecs/xmd/index.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/xmd/index.ts#L192">src/codecs/xmd/index.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Converts the Bookdown style figure reference into Markdown Block Extension format.
-										Figures are not represented as per usual in Markdown (block extensions)
-									but rather as an image and a text reference.</p>
+									<p>Replace RMarkdown block code chunks with Markdown <code>chunk</code> block extensions.</p>
 								</div>
+								<p>If the code chunk has a label, then that becomes the label of the chunk.
+								If the code chunk has a <code>fig.cap</code> attribute:</p>
+								<ul>
+									<li>if <code>fig.cap</code> is a &quot;text reference&quot; e.g. fig.cap=&#39;(ref:foo)&#39;, then searches
+									for the paragraph with that id.</li>
+									<li>otherwise, uses the caption as is.</li>
+								</ul>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references</a></p>
@@ -115,7 +122,70 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>contents: <span class="tsd-signature-type">string</span></h5>
+									<h5>xmd: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="decodeinlinechunk" class="tsd-anchor"></a>
+					<h3>decode<wbr>Inline<wbr>Chunk</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Inline<wbr>Chunk<span class="tsd-signature-symbol">(</span>xmd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/xmd/index.ts#L173">src/codecs/xmd/index.ts:173</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace RMarkdown inline code chunks with Markdown inline code nodes with <code>type=expr</code>.</p>
+								</div>
+								<p>The inline code nodes produced will subsequently be handled by the
+								<code>MdCodec.decodeInlineCode</code> function.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xmd: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="decodenestedchunks" class="tsd-anchor"></a>
+					<h3>decode<wbr>Nested<wbr>Chunks</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Nested<wbr>Chunks<span class="tsd-signature-symbol">(</span>xmd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/codecs/xmd/index.ts#L160">src/codecs/xmd/index.ts:160</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace RMarkdown code chunks that are nested inside a Markdown <code>chunk</code>
+									block extension with a plain code block.</p>
+								</div>
+								<p>When encoding code chunks we made the nested code block compatible with
+									RMarkdown by using curly braces around the language e.g. <code>{r}</code>. This turns
+									those into plain code blocks so that they do not get decoded to anther
+								<code>chunk</code> by the <code>decodeBlockChunk</code> function below.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xmd: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -141,7 +211,13 @@
 						<a href="../classes/_codecs_xmd_index_.xmdcodec.html" class="tsd-kind-icon">Xmd<wbr>Codec</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_codecs_xmd_index_.html#decodefigure" class="tsd-kind-icon">decode<wbr>Figure</a>
+						<a href="_codecs_xmd_index_.html#decodeblockchunk" class="tsd-kind-icon">decode<wbr>Block<wbr>Chunk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_codecs_xmd_index_.html#decodeinlinechunk" class="tsd-kind-icon">decode<wbr>Inline<wbr>Chunk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_codecs_xmd_index_.html#decodenestedchunks" class="tsd-kind-icon">decode<wbr>Nested<wbr>Chunks</a>
 					</li>
 				</ul>
 			</nav>
