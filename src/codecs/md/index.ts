@@ -881,7 +881,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
   }
 
   if (code === undefined) code = stencila.codeBlock({ text: '' })
-  const { text, programmingLanguage, meta } = code
+  const { text, programmingLanguage } = code
 
   const outputs: stencila.Node[] = []
   if (nodes.length > index) {
@@ -916,14 +916,16 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     pushOutputs(outputNodes)
   }
 
+  const { id, className, ...meta } = properties ?? {}
+
   return stencila.codeChunk({
     text,
     programmingLanguage,
-    meta,
+    meta: Object.keys(meta).length > 0 ? meta : undefined,
     outputs: outputs.length > 0 ? outputs : undefined,
     caption: caption.length > 0 ? caption : undefined,
     label: argument,
-    id: properties?.id,
+    id,
   })
 }
 
