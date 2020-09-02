@@ -17,4 +17,8 @@
       type: Periodical
       name: Journal of Open Research Software
     volumeNumber: '7'
+  publisher:
+    type: Organization
+    name: 'Ubiquity Press, Ltd.'
   title: Tensors.jl — Tensor Computations in Julia
+  url: 'http://dx.doi.org/10.5334/jors.182'

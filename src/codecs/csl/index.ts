@@ -121,8 +121,15 @@ export async function decodeCsl(
     issue,
     page,
 
-    // @ts-ignore // Citation.js uses this hidden property
+    publisher: publisherName,
+    'publisher-place': publisherPlace,
+
+    URL: url,
+
+    // @ts-ignore this hidden Citation.js property
     _graph,
+    // citation-label because it is the same as id (but don't want it in `lost`)
+    'citation-label': citationLabel,
 
     ...lost
   } = csl
@@ -164,6 +171,14 @@ export async function decodeCsl(
       } else pagination = page
     }
 
+    let publisher: schema.Organization | undefined
+    if (publisherName !== undefined) {
+      publisher = schema.organization({
+        name: publisherName,
+        address: publisherPlace,
+      })
+    }
+
     return schema.article({
       authors,
       title,
@@ -173,6 +188,8 @@ export async function decodeCsl(
       pageStart,
       pageEnd,
       pagination,
+      publisher,
+      url,
     })
   } else {
     logWarnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
@@ -213,6 +230,8 @@ export const encodeCreativeWork = (
     dateCreated,
     dateModified,
     isPartOf,
+    publisher,
+    url,
     ...lost
   } = work
   logWarnLossIfAny('csl', 'encode', work, lost)
@@ -226,6 +245,8 @@ export const encodeCreativeWork = (
     title: TxtCodec.stringify(title),
     author: authors.map(encodeAuthor),
     issued: date !== undefined ? encodeDate(date) : undefined,
+    URL: url,
+    ...encodePublisher(publisher),
     ...encodeIsPartOf(isPartOf),
   }
 }
@@ -308,10 +329,35 @@ const encodePerson = (person: schema.Person): Csl.Person => {
  */
 const encodeOrganization = (org: schema.Organization): Csl.Person => {
   const { name = 'Anonymous' } = org
-  logWarnLoss('csl', 'encode', 'Does not support organizations as authors')
-
   return {
     literal: name,
+  }
+}
+
+/**
+ * Encode an `Organization` as a `string` for use as the `publisher` property
+ */
+const encodePublisher = (
+  org?: schema.Organization | schema.Person
+): { publisher?: string; 'publisher-place'?: string } | undefined => {
+  if (org === undefined) return undefined
+  const { name, address } = org
+  let place: string | undefined
+  if (address !== undefined) {
+    if (typeof address === 'string') place = address
+    else {
+      place = [
+        address.addressLocality,
+        address.addressRegion,
+        address.addressCountry,
+      ]
+        .filter((item) => item !== undefined)
+        .join(', ')
+    }
+  }
+  return {
+    publisher: name,
+    'publisher-place': place,
   }
 }
 
@@ -377,7 +423,10 @@ const encodeIsPartOf = (
         : encodeContainerTitle(name, title)),
       volume: volumeNumber,
     }
-  } else if (schema.isA('Periodical', work)) {
+  } else if (
+    schema.isA('Periodical', work) ||
+    schema.isA('CreativeWork', work)
+  ) {
     const { name, title, ...lost } = work
     logWarnLossIfAny('csl', 'encode', work, lost)
 
