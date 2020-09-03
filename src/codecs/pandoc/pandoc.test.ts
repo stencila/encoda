@@ -407,32 +407,15 @@ const kitchenSink: testCase = {
             type: 'TableRow',
             cells: [
               {
-                content: ['A'],
+                content: [{ type: 'Paragraph', content: ['A'] }],
                 type: 'TableCell',
               },
               {
-                content: ['B'],
+                content: [{ type: 'Paragraph', content: ['B'] }],
                 type: 'TableCell',
               },
               {
-                content: ['C'],
-                type: 'TableCell',
-              },
-            ],
-          },
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['1'],
-                type: 'TableCell',
-              },
-              {
-                content: ['2'],
-                type: 'TableCell',
-              },
-              {
-                content: ['3'],
+                content: [{ type: 'Paragraph', content: ['C'] }],
                 type: 'TableCell',
               },
             ],
@@ -441,15 +424,32 @@ const kitchenSink: testCase = {
             type: 'TableRow',
             cells: [
               {
-                content: ['4'],
+                content: [{ type: 'Paragraph', content: ['1'] }],
                 type: 'TableCell',
               },
               {
-                content: ['5'],
+                content: [{ type: 'Paragraph', content: ['2'] }],
                 type: 'TableCell',
               },
               {
-                content: ['6'],
+                content: [{ type: 'Paragraph', content: ['3'] }],
+                type: 'TableCell',
+              },
+            ],
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: [{ type: 'Paragraph', content: ['4'] }],
+                type: 'TableCell',
+              },
+              {
+                content: [{ type: 'Paragraph', content: ['5'] }],
+                type: 'TableCell',
+              },
+              {
+                content: [{ type: 'Paragraph', content: ['6'] }],
                 type: 'TableCell',
               },
             ],

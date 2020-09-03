@@ -741,9 +741,7 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
           (cell: stencila.BlockContent[]): stencila.TableCell => {
             return {
               type: 'TableCell',
-              // TODO: currently assuming that only one block in each table cell
-              // with `content` property
-              content: (cell[0] as stencila.Paragraph).content,
+              content: cell,
             }
           }
         ),
