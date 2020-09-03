@@ -363,6 +363,7 @@ function decodeFront(
   | 'meta'
   | 'pageEnd'
   | 'pageStart'
+  | 'subjects'
 > {
   return front === null
     ? {}
@@ -381,7 +382,29 @@ function decodeFront(
         meta: decodeMetaFront(front),
         pageStart: decodePageStart(front),
         pageEnd: decodePageEnd(front),
+        subjects: decodeSubjects(front),
       }
+}
+
+/**
+ * Decode JATS `<subj-group>` elements into
+ * a Stencila `Article.subjects` property.
+ */
+function decodeSubjects(front: xml.Element): stencila.Article['subjects'] {
+  return all(front, 'subj-group')
+    .map((elem) => {
+      const subject = child(elem, ['subject'])
+      const name = attr(elem, 'subj-group-type')
+      const value = text(xml.firstByType(subject, 'text'))
+
+      if (!!name && !!value) {
+        return {
+          name,
+          value,
+        }
+      }
+    })
+    .filter(isDefined)
 }
 
 /**
