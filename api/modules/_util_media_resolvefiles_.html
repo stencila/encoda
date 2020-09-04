@@ -91,18 +91,23 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/22031385/src/util/media/resolveFiles.ts#L17">src/util/media/resolveFiles.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/af458260/src/util/media/resolveFiles.ts#L21">src/util/media/resolveFiles.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Transform a <code>Node</code> by resolving links to local media resources.</p>
+									<p>Transform a <code>Node</code> by resolving all links to local media resources.</p>
 								</div>
-								<p>This is used to create documents that can be converted to other formats,
-								in other locations, while not breaking those links</p>
+								<p>Any <code>contentUrl</code> of <code>MediaObject</code> nodes that point to files
+									are converted to absolute paths for their in memory representation.
+									Later, when encoding to another format, these paths are are made relative
+								by the <code>toFiles</code> function.</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p>unlinkFiles</p>
+									</dd>
+									<dt>see</dt>
+									<dd><p>toFiles</p>
 									</dd>
 								</dl>
 							</div>
