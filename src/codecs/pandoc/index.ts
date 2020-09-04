@@ -733,45 +733,41 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
   // Pandoc always produces a header row: an array of arrays
   // of the same length as the number of columns.
   // However this may be empty, in which case, we do not want
-  // to propogate this row
+  // to propagate this row
   const header = node.c[3].map(decodeBlocks)
-  const headerIsEmpty = header.filter(cell => cell.length > 0).length == 0
-  const headerRows = headerIsEmpty ? [] : [{
-        type: 'TableRow',
-        rowType: "header",
-        cells: header.map(
-          (cell: stencila.BlockContent[]): stencila.TableCell => {
-            return {
-              type: 'TableCell',
-              cellType: "header",
-              content: cell,
-            }
-          }
-        )
-      }]
+  const headerIsEmpty = header.filter((cell) => cell.length > 0).length === 0
+  const headerRows = headerIsEmpty
+    ? []
+    : [
+        stencila.tableRow({
+          rowType: 'header',
+          cells: header.map(
+            (cell: stencila.BlockContent[]): stencila.TableCell =>
+              stencila.tableCell({
+                cellType: 'header',
+                content: cell,
+              })
+          ),
+        }),
+      ]
 
   const data = node.c[4].map((row) => row.map(decodeBlocks))
   const dataRows = data.map(
-    (row: stencila.BlockContent[][]): stencila.TableRow => {
-      return {
-        type: 'TableRow',
+    (row: stencila.BlockContent[][]): stencila.TableRow =>
+      stencila.tableRow({
         cells: row.map(
-          (cell: stencila.BlockContent[]): stencila.TableCell => {
-            return {
-              type: 'TableCell',
+          (cell: stencila.BlockContent[]): stencila.TableCell =>
+            stencila.tableCell({
               content: cell,
-            }
-          }
+            })
         ),
-      }
-    }
+      })
   )
 
-  return {
-    type: 'Table',
+  return stencila.table({
     caption: caption.length > 0 ? caption : undefined,
     rows: [...headerRows, ...dataRows],
-  }
+  })
 }
 
 /**
