@@ -314,9 +314,8 @@ The field data will be stored using one of the following:
 
 Table 2.1: field data representation
 
-|                |            |                         |
-| -------------- | ---------- | ----------------------- |
 | NetCDF type    | Byte width | Description             |
+| -------------- | ---------- | ----------------------- |
 | signed char    | 1          | scaled signed integer   |
 | unsigned char  | 1          | scaled unsigned integer |
 | signed short   | 2          | scaled signed integer   |
@@ -525,9 +524,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## 
 
-|                         |               |               |                                                                                                                                                |
-| ----------------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Attribute name          | Type          | Convention    | Description                                                                                                                                    |
+| ----------------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Conventions             | string        | CF            | Conventions string will specify “Cf/Radial”.                                                                                                   |
 | version                 | string        | CF/Radial     | CF/Radial version number(“2.0”)                                                                                                                |
 | title                   | string        | CF            | Short description of file contents                                                                                                             |
@@ -553,9 +551,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## 
 
-|                |                                     |
-| -------------- | ----------------------------------- |
 | Dimension name | Description                         |
+| -------------- | ----------------------------------- |
 | sweep          | The number of sweeps in the dataset |
 
 ## 
@@ -564,9 +561,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## 
 
-|                     |           |        |                                                                                          |                                                                                                                                                                                                                                                                            |
-| ------------------- | --------- | ------ | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Variable name       | Dimension | Type   | Units                                                                                    | Comments                                                                                                                                                                                                                                                                   |
+| ------------------- | --------- | ------ | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | volume_number       |           | int    |                                                                                          | Volume numbers are sequential, relative to some arbitrary start time, and may wrap.                                                                                                                                                                                        |
 | platform_type       |           | string |                                                                                          | Options are:_“fixed”, “vehicle”, “ship”, “aircraft”,“aircraft_fore”,“aircraft_aft”,“aircraft_tail”,“aircraft_belly”,“aircraft_roof”,“aircraft_nose”,“satellite_orbit”,“satellite_geostat”__Assumed “fixed” if missing._                                                    |
 | instrument_type     |           | string |                                                                                          | Options are: “_radar_”, “_lidar_”Assumed “_radar_” if missing.                                                                                                                                                                                                             |
@@ -595,9 +591,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## 
 
-|                 |                                                                                                                   |
-| --------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Dimension name  | Description                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
 | time            | The number of rays.                                                                                               |
 | range           | The number of range bins                                                                                          |
 | prt             | Number of prts used in pulsing scheme.Optional for fixed, staggered or dualRequired for more complicated schemes. |
@@ -610,9 +605,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## 
 
-|               |           |        |                                                                                       |                                                            |
-| ------------- | --------- | ------ | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | Variable name | Dimension | Type   | Units                                                                                 | Comments                                                   |
+| ------------- | --------- | ------ | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | time          | (time)    | double | ISO8601 string:“seconds sinceYYYY-MM-DD HH:MM:SS”or“seconds sinceYYYY-MM-DDTHH:MM:SS” | Coordinate variable for time.Time at center of each ray.   |
 | range         | (range)   | float  | meters                                                                                | Coordinate variable for range.Range to center of each bin. |
 
@@ -620,9 +614,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ### Attributes for time coordinate variable
 
-|                |        |                                                                                                                                                                                                |
-| -------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Attribute name | Type   | Value                                                                                                                                                                                          |
+| -------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | standard_name  | string | “time”                                                                                                                                                                                         |
 | units          | string | ISO8601 string“seconds since _YYYY_-_MM_-_DD_T_hh:mm:ss_Z”,where the actual reference time values are used.                                                                                    |
 | calendar       | string | Defaults to “gregorian” if missing.Options are:“gregorian” or “standard”,“proleptic_gregorian”,“noleap” or “365_day”,“all_leap” or “366_day”,“360_day”,“julian”See CF conventions for details. |
@@ -631,9 +624,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ### Attributes for range coordinate variable
 
-|                                |        |                                                                                           |
-| ------------------------------ | ------ | ----------------------------------------------------------------------------------------- |
 | Attribute name                 | Type   | Value                                                                                     |
+| ------------------------------ | ------ | ----------------------------------------------------------------------------------------- |
 | standard_name                  | string | “projection_range_coordinate”                                                             |
 | long_name                      | string | “range to measurement volume”                                                             |
 | units                          | string | “meters”                                                                                  |
@@ -646,9 +638,8 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## Sweep variables
 
-|                       |                  |        |           |                                                                                                                                                                                                                                    |
-| --------------------- | ---------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Variable name         | Dimension        | Type   | Units     | Comments                                                                                                                                                                                                                           |
+| --------------------- | ---------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | sweep_number          |                  | int    |           | The number of the sweep, in the volume scan.0-based.                                                                                                                                                                               |
 | sweep_mode            |                  | string |           | Options are:_“sector”,“coplane”,rhi”,“vertical_pointing”,“idle”,“azimuth_surveillance”,“elevation_surveillance”,“sunscan”,“pointing”,“manual_ppi”,“manual_rhi”,“doppler_beam_swinging”,“complex_trajectory”,“electronic_steering”_ |
 | follow_mode           |                  | string |           | options are: _“none”, “sun”, “vehicle”, “aircraft”, “target”, “manual”__Assumed “none” if missing._                                                                                                                                |
@@ -682,9 +673,8 @@ The number of samples used to compute the moments may vary from field to field. 
 
 ### Attributes for azimuth(time) variable
 
-|                |        |                                 |
-| -------------- | ------ | ------------------------------- |
 | Attribute name | Type   | Value                           |
+| -------------- | ------ | ------------------------------- |
 | standard_name  | string | “ray_azimuth_angle”             |
 | long_name      | string | “azimuth angle from true north” |
 | units          | string | “degrees”                       |
@@ -692,9 +682,8 @@ The number of samples used to compute the moments may vary from field to field. 
 
 ### Attributes for elevation(time) variable
 
-|                |        |                                         |
-| -------------- | ------ | --------------------------------------- |
 | Attribute name | Type   | Value                                   |
+| -------------- | ------ | --------------------------------------- |
 | standard_name  | string | “ray_elevation_angle”                   |
 | long_name      | string | “elevation angle from horizontal plane” |
 | units          | string | “degrees”                               |
@@ -708,9 +697,8 @@ This group will always be named ‘_georeference’_.
 
 ## 
 
-|                    |           |        |               |                                                                                                                                                                                                                                                     |
-| ------------------ | --------- | ------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Variable name      | Dimension | Type   | Units         | Comments                                                                                                                                                                                                                                            |
+| ------------------ | --------- | ------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | latitude           | (time)    | double | degrees_north | Latitude of instrument.WGS84.                                                                                                                                                                                                                       |
 | longitude          | (time)    | double | degrees_east  | Longitude of instrument.WGS84.                                                                                                                                                                                                                      |
 | altitude           | (time)    | double | meters        | Altitude of instrument, above mean sea level. WGS84 with EGM2008 geoid corections.For a scanning radar, this is the center of rotation of the antenna.                                                                                              |
@@ -739,9 +727,8 @@ The groups will be named ‘_radar_monitoring_’ and ‘_lidar_monitoring_’ d
 
 ## 
 
-|                                |           |       |         |                                                                                                                                  |
-| ------------------------------ | --------- | ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Variable name                  | Dimension | Type  | Units   | Comments                                                                                                                         |
+| ------------------------------ | --------- | ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | measured_transmit_power_h      | (time)    | float | dBm     | Measured transmit powerH polarization                                                                                            |
 | measured_transmit_power_v      | (time)    | float | dBm     | Measured transmit powerV polarization                                                                                            |
 | measured_sky_noise             | (time)    | float | dBm     | Noise measured at the receiver when connected to the antenna with no noise source connected.                                     |
@@ -762,9 +749,8 @@ The field variables will be 2-dimensional arrays, with the dimensions **time** a
 
 The field data will be stored using one of the following:
 
-|             |            |                         |
-| ----------- | ---------- | ----------------------- |
 | NetCDF type | Byte width | Description             |
+| ----------- | ---------- | ----------------------- |
 | NC_UBYTE    | 1          | scaled unsigned integer |
 | NC_BYTE     | 1          | scaled signed integer   |
 | NC_USHORT   | 2          | scaled unsigned integer |
@@ -782,9 +768,8 @@ Field data variables have the following attributes:
 
 ## 
 
-|                               |                                  |            |                                                                                                                                                                                                                                                               |
-| ----------------------------- | -------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Attribute name                | Type                             | Convention | Description                                                                                                                                                                                                                                                   |
+| ----------------------------- | -------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | standard_name                 | string                           | CF         | CF standard name for field.See section 8.                                                                                                                                                                                                                     |
 | long_name                     | string                           | CF         | Long name describing the field.Any string is appropriate.Although this is an optional attribute, its use is strongly encouraged.                                                                                                                              |
 | Units                         | string                           | CF         | Units for field                                                                                                                                                                                                                                               |
@@ -955,9 +940,8 @@ If the index is not missing for a gate, it will be set to a value between 0 and 
 
 ## 
 
-|                |                                                                                                                                                                                   |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dimension name | Description                                                                                                                                                                       |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | index          | Number of spectra stored in each spectrum variable in this group. This dimensions the number of indices used to locate the spectra, i.e. for the gates where the index is not -1. |
 | sample         | Number of samples in the spectra.                                                                                                                                                 |
 
@@ -967,9 +951,8 @@ A spectrum variable will have the dimensions: (index, sample).
 
 As with moments field variables, a spectrum variable will be stored using one of the following:
 
-|             |            |                       |
-| ----------- | ---------- | --------------------- |
 | NetCDF type | Byte width | Description           |
+| ----------- | ---------- | --------------------- |
 | ncbyte      | 1          | scaled signed integer |
 | short       | 2          | scaled signed integer |
 | int         | 4          | scaled signed integer |
@@ -982,9 +965,8 @@ Spectrum fields have the following attributes:
 
 ## 
 
-|                              |                         |            |                                                                                                                                  |
-| ---------------------------- | ----------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Attribute name               | Type                    | Convention | Description                                                                                                                      |
+| ---------------------------- | ----------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | long_name                    | string                  | CF         | Long name describing the field.Any string is appropriate.Although this is an optional attribute, its use is strongly encouraged. |
 | standard_name                | string                  | CF         | CF standard name for field, or from section 8.                                                                                   |
 | units                        | string                  | CF         | Units for field                                                                                                                  |
@@ -1009,9 +991,8 @@ This group holds radar parameters specific to a radar instrument:
 
 ## 
 
-|                    |           |       |         |                                     |
-| ------------------ | --------- | ----- | ------- | ----------------------------------- |
 | Variable name      | Dimension | Type  | Units   | Comments                            |
+| ------------------ | --------- | ----- | ------- | ----------------------------------- |
 | antenna_gain_h     | none      | float | dBi     | Nominal antenna gain,H polarization |
 | antenna_gain_v     | none      | float | dBi     | Nominal antenna gain,V polarization |
 | beam_width_h       | none      | float | degrees | Antenna beam widthH polarization    |
@@ -1026,9 +1007,8 @@ This group holds radar parameters specific to a lidar instrument:
 
 ## 
 
-|                     |           |       |              |               |
-| ------------------- | --------- | ----- | ------------ | ------------- |
 | Variable name       | Dimension | Type  | Units        | Comments      |
+| ------------------- | --------- | ----- | ------------ | ------------- |
 | beam_divergence     | none      | float | milliradians | Transmit side |
 | field_of_view       | none      | float | milliradians | Receive side  |
 | aperture_diameter   | none      | float | cm           |               |
@@ -1044,9 +1024,8 @@ For a radar, **a different calibration is required for each pulse width. Therefo
 
 ### Dimensions
 
-|                |                                            |
-| -------------- | ------------------------------------------ |
 | Dimension name | Description                                |
+| -------------- | ------------------------------------------ |
 | calib          | The number of radar calibrations available |
 
 ## 
@@ -1066,9 +1045,8 @@ For single polarization radars, the '**h**' quantities should be used.
 
 ## 
 
-|                          |           |        |              |                                                                   |
-| ------------------------ | --------- | ------ | ------------ | ----------------------------------------------------------------- |
 | Variable name            | Dimension | Type   | Units        | Comments                                                          |
+| ------------------------ | --------- | ------ | ------------ | ----------------------------------------------------------------- |
 | calib_index              | (calib)   | byte   |              | Calibration index for each ray.Assumed 0 if missing.              |
 | time                     | (calib)   | string | UTC          | e.g. 2008-09-25T23:00:00Z                                         |
 | pulse_width              | (calib)   | float  | seconds      | Pulse width for thiscalibration                                   |
@@ -1132,9 +1110,8 @@ The following additional variables are used to quantify errors in the georeferen
 
 If any item is omitted, the value is assumed to be 0.
 
-|                                   |           |       |         |                                        |
-| --------------------------------- | --------- | ----- | ------- | -------------------------------------- |
 | Variable name                     | Dimension | Type  | Units   | Comments                               |
+| --------------------------------- | --------- | ----- | ------- | -------------------------------------- |
 | azimuth_correction                | none      | float | degrees | Correction to azimuth values           |
 | elevation_correction              | none      | float | degrees | Correction to elevation values         |
 | range_correction                  | none      | float | meters  | Correction to range values             |
