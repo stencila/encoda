@@ -17,8 +17,6 @@ import stencila, {
   isA,
   isBlockContent,
   isCreativeWork,
-  isEntity,
-  isInlineContent,
   isListItem,
   nodeIs,
   nodeType,
@@ -47,6 +45,7 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 import { selectAll } from 'unist-util-select'
 import { STDIO_PATH } from '../..'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { isContentArray } from '../../util/content/isContentArray'
 import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
@@ -1200,8 +1199,7 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
             (cell: stencila.TableCell): MDAST.TableCell => {
               return {
                 type: 'tableCell',
-                children: cell.content
-                  .filter(isInlineContent)
+                children: ensureInlineContentArray(cell.content)
                   .map(encodeInlineContent)
                   .flat(),
               }

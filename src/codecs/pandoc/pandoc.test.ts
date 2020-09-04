@@ -405,17 +405,21 @@ const kitchenSink: testCase = {
         rows: [
           {
             type: 'TableRow',
+            rowType: 'header',
             cells: [
               {
-                content: ['A'],
+                content: [{ type: 'Paragraph', content: ['A'] }],
+                cellType: 'header',
                 type: 'TableCell',
               },
               {
-                content: ['B'],
+                content: [{ type: 'Paragraph', content: ['B'] }],
+                cellType: 'header',
                 type: 'TableCell',
               },
               {
-                content: ['C'],
+                content: [{ type: 'Paragraph', content: ['C'] }],
+                cellType: 'header',
                 type: 'TableCell',
               },
             ],
@@ -424,15 +428,15 @@ const kitchenSink: testCase = {
             type: 'TableRow',
             cells: [
               {
-                content: ['1'],
+                content: [{ type: 'Paragraph', content: ['1'] }],
                 type: 'TableCell',
               },
               {
-                content: ['2'],
+                content: [{ type: 'Paragraph', content: ['2'] }],
                 type: 'TableCell',
               },
               {
-                content: ['3'],
+                content: [{ type: 'Paragraph', content: ['3'] }],
                 type: 'TableCell',
               },
             ],
@@ -441,15 +445,15 @@ const kitchenSink: testCase = {
             type: 'TableRow',
             cells: [
               {
-                content: ['4'],
+                content: [{ type: 'Paragraph', content: ['4'] }],
                 type: 'TableCell',
               },
               {
-                content: ['5'],
+                content: [{ type: 'Paragraph', content: ['5'] }],
                 type: 'TableCell',
               },
               {
-                content: ['6'],
+                content: [{ type: 'Paragraph', content: ['6'] }],
                 type: 'TableCell',
               },
             ],

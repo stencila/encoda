@@ -724,36 +724,50 @@ function encodeList(
 /**
  * Decode a Pandoc `Table` to a Stencila `Table`
  *
- * Note: table caption and column widths and alignments
- * are currently ignored.
+ * Note: column alignments and widths (`node.c[1]` and `node.c[2]`
+ * respectively) are currently ignored.
  */
 function decodeTable(node: Pandoc.Table): stencila.Table {
-  // const caption = decodeInlines(node.c[0])
-  // const aligns = node.c[1]
-  // const widths = node.c[2]
-  const head = node.c[3].map(decodeBlocks)
+  const caption = decodeInlines(node.c[0])
+
+  // Pandoc always produces a header row: an array of arrays
+  // of the same length as the number of columns.
+  // However this may be empty, in which case, we do not want
+  // to propagate this row
+  const header = node.c[3].map(decodeBlocks)
+  const headerIsEmpty = header.filter((cell) => cell.length > 0).length === 0
+  const headerRows = headerIsEmpty
+    ? []
+    : [
+        stencila.tableRow({
+          rowType: 'header',
+          cells: header.map(
+            (cell: stencila.BlockContent[]): stencila.TableCell =>
+              stencila.tableCell({
+                cellType: 'header',
+                content: cell,
+              })
+          ),
+        }),
+      ]
+
   const data = node.c[4].map((row) => row.map(decodeBlocks))
-  const rows = [head, ...data].map(
-    (row: stencila.BlockContent[][]): stencila.TableRow => {
-      return {
-        type: 'TableRow',
+  const dataRows = data.map(
+    (row: stencila.BlockContent[][]): stencila.TableRow =>
+      stencila.tableRow({
         cells: row.map(
-          (cell: stencila.BlockContent[]): stencila.TableCell => {
-            return {
-              type: 'TableCell',
-              // TODO: currently assuming that only one block in each table cell
-              // with `content` property
-              content: (cell[0] as stencila.Paragraph).content,
-            }
-          }
+          (cell: stencila.BlockContent[]): stencila.TableCell =>
+            stencila.tableCell({
+              content: cell,
+            })
         ),
-      }
-    }
+      })
   )
-  return {
-    type: 'Table',
-    rows,
-  }
+
+  return stencila.table({
+    caption: caption.length > 0 ? caption : undefined,
+    rows: [...headerRows, ...dataRows],
+  })
 }
 
 /**
