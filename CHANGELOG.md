@@ -1,3 +1,15 @@
+## [0.99.1](https://github.com/stencila/encoda/compare/v0.99.0...v0.99.1) (2020-09-04)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency citation-js to ^0.5.0-alpha.7 ([ddbff25](https://github.com/stencila/encoda/commit/ddbff250e5bc51fd6de3f93af150c49689dd2909))
+* **Markdown:** Make path to bibliography relative; warn if file does not exist. ([af45826](https://github.com/stencila/encoda/commit/af45826082880d4876dc4ff26873cbeb31863b19)), closes [#635](https://github.com/stencila/encoda/issues/635)
+* **Markdown:** Use ensureInlineContentArray rather than filtering for InlineContent ([8f38581](https://github.com/stencila/encoda/commit/8f38581ad39a8a8aeb6531dcb0f6fc9b09d13245))
+* **MediaObjects:** Fix resolution of files ([3216874](https://github.com/stencila/encoda/commit/321687415e41f17a1ec6b8e3d6ef0b1bb654d5e7))
+* **Pandoc:** Do not assume single block as table content ([4c706a2](https://github.com/stencila/encoda/commit/4c706a22337c77c5127fa98f39aac5c89cdb7bed)), closes [#668](https://github.com/stencila/encoda/issues/668)
+* **Pandoc:** Improve handling of Pandoc table header ([1913836](https://github.com/stencila/encoda/commit/1913836f55c543e07c591965cf3d3e78181c6048))
+
 # [0.99.0](https://github.com/stencila/encoda/compare/v0.98.6...v0.99.0) (2020-09-02)
 
 
