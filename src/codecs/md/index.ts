@@ -22,6 +22,7 @@ import stencila, {
   nodeType,
   TypeMapGeneric,
 } from '@stencila/schema'
+import fs from 'fs'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
 import * as MDAST from 'mdast'
@@ -78,7 +79,7 @@ export class MdCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const { isStandalone } = options
     const md = await vfile.dump(file)
-    return decodeRootArticle(md, isStandalone)
+    return decodeRootArticle(md, file.path, isStandalone)
   }
 
   /**
@@ -209,8 +210,10 @@ interface DecodeContext {
 export function decodeMarkdown(md: string): stencila.Article {
   const mdast = stringToMdast(md)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
+  const frontmatter = loadFrontmatter(root)
+
   const context: DecodeContext = {
-    frontmatter: loadFrontmatter(root),
+    frontmatter,
   }
   return decodeArticle(root, context)
 }
@@ -222,16 +225,24 @@ export function decodeMarkdown(md: string): stencila.Article {
  */
 async function decodeRootArticle(
   content: string,
+  filePath?: string,
   isStandalone = true
 ): Promise<stencila.Article | stencila.Node[]> {
   const mdast = stringToMdast(content)
   const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
-  const loadedFrontmatter = loadFrontmatter(root)
+  const frontmatter = loadFrontmatter(root)
+
+  const references =
+    typeof frontmatter.bibliography === 'string' && filePath !== undefined
+      ? await inlineReferences(filePath, frontmatter.bibliography)
+      : Array.isArray(frontmatter.references)
+      ? frontmatter.references
+      : undefined
 
   const context: DecodeContext = {
     frontmatter: {
-      ...loadedFrontmatter,
-      references: await loadExtractedReferences(loadedFrontmatter),
+      ...frontmatter,
+      references,
     },
   }
 
@@ -244,18 +255,13 @@ async function decodeRootArticle(
 }
 
 function loadFrontmatter(root: MDAST.Root): Frontmatter {
-  // Parse frontmatter YAML to a JSON Object and pass it along with the decoder context
   const [frontmatterYaml] = root.children.filter(
     (child) => child.type === 'yaml'
   )
-  const parsedFrontmatter = yaml.safeLoad(
+  const frontmatter = yaml.safeLoad(
     typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
   )
-  const loadedFrontmatter: Frontmatter =
-    typeof parsedFrontmatter === 'object'
-      ? (parsedFrontmatter as Frontmatter)
-      : {}
-  return loadedFrontmatter
+  return typeof frontmatter === 'object' ? (frontmatter as Frontmatter) : {}
 }
 
 /**
@@ -280,38 +286,30 @@ export function encodeMarkdown(node: stencila.Node): string {
 }
 
 /**
- * Given an article's frontmatter object, will return the article's references list, reading from the filesystem if
- * necessary.
- */
-async function loadExtractedReferences(
-  frontmatter: Frontmatter
-): Promise<stencila.CreativeWork['references']> {
-  return typeof frontmatter.bibliography === 'string'
-    ? await inlineReferences(frontmatter.bibliography)
-    : Array.isArray(frontmatter.references)
-    ? frontmatter.references
-    : undefined
-}
-
-/**
- * Given a filepath to a bibliography file in a BibTeX format, attempst to read it into an array of `CreativeWork`s.
+ * Given a file path to a bibliography file in a BibTeX format,
+ * attempt to read it into an array of `CreativeWork`s.
  */
 async function inlineReferences(
+  docFilePath: string,
   bibFilePath: string
 ): Promise<stencila.Article['references']> {
-  if (vfile.isPath(bibFilePath)) {
-    const refs = await bibCodec.read(bibFilePath)
+  const resolvedPath = path.join(path.dirname(docFilePath), bibFilePath)
+  if (fs.existsSync(resolvedPath)) {
+    const refs = await bibCodec.read(resolvedPath)
     if (Array.isArray(refs)) {
       return refs.filter(isCreativeWork)
+    } else {
+      log.warn(`Error parsing bibliography file: ${resolvedPath}`)
     }
+  } else {
+    log.warn(`Bibliography file could not be found: ${resolvedPath}`)
   }
-
   return undefined
 }
 
 /**
- * Given an `Article` node, will check if it contains a large number of references, and if so extracts the references
- * into an external BibTeX file.
+ * Given an `Article` node, will check if it contains a large number of references,
+ * and if so extracts the references into an external BibTeX file.
  */
 async function extractReferences(
   article: stencila.Article,
@@ -324,18 +322,20 @@ async function extractReferences(
   const referenceExtractionThreshold = 5
   if (article.references.length <= referenceExtractionThreshold) return article
 
-  // If the encoding target is being written to disk, extract references to a separate file
+  // If the encoding target is being written to disk, extract references to a
+  // separate file, refer to it in meta, and remove inlined references
   if (options.filePath && options.filePath !== STDIO_PATH) {
     const { dir, name } = path.parse(options.filePath)
     const bibPath = path.format({ dir, name, ext: '.references.bib' })
     await bibCodec.write(article.references, bibPath)
 
-    return {
+    return stencila.article({
       ...article,
+      references: undefined,
       meta: {
-        references: bibPath,
+        bibliography: path.relative(dir, bibPath),
       },
-    }
+    })
   }
 
   return article
@@ -635,53 +635,32 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
     children: [],
   }
 
-  // Encode the article body
+  // Encode the article content
   if (article.content) {
     root.children = article.content.map(encodeContent).flat()
   }
 
-  // Add other properties as frontmatter
+  // If the Article references have been extracted into a separate bibliography file,
+  // move the file path from the `meta` object to the YAML frontmatter.
+  // Note that this is a Markdown format specific approach, and needs to be handled
+  // when decoding the frontmatter.
+  const bibliography = article.meta?.bibliography
+  if (bibliography && typeof bibliography === 'string') {
+    if (article.meta) {
+      delete article.meta.bibliography
+      if (Object.keys(article.meta).length === 0) delete article.meta
+    }
+  }
+
+  // Article properties other than `content` go into YAML frontmatter
+  // including any bibliography
   const frontmatter: Frontmatter = {}
   for (const [key, value] of Object.entries(article)) {
     if (!['type', 'content'].includes(key)) {
       frontmatter[key] = value
     }
   }
-
-  const referenceGuard = (o: unknown): o is { references: string } => {
-    return (
-      typeof o === 'object' &&
-      o !== null &&
-      Object.keys(o).includes('references')
-    )
-  }
-
-  // If the Article references have been extracted into a separate file, move the file references from the `meta` object
-  // to the top-level `Article#references`.
-  // Note that this is a Markdown format specific approach, and needs to be handled when decoding the frontmatter.
-  if (
-    article.meta?.references &&
-    typeof article.meta.references === 'string' &&
-    vfile.isPath(article.meta.references)
-  ) {
-    // Store the bibliography file path on the `bibliography` key
-    frontmatter.bibliography = article.meta.references
-    delete frontmatter.references
-
-    // Clean up the frontmatter object to avoid duplicating reference content
-    if (typeof frontmatter.meta === 'object' && frontmatter.meta !== null) {
-      if (referenceGuard(frontmatter.meta)) {
-        // @ts-ignore
-        delete frontmatter.meta.references
-      }
-
-      // If the `meta` object only contained the `reference` file path, remove the `meta` attribute altogether.
-      if (Object.keys(frontmatter.meta).length === 0) {
-        delete frontmatter.meta
-      }
-    }
-  }
-
+  if (bibliography) frontmatter.bibliography = bibliography
   if (Object.keys(frontmatter).length) {
     const yamlNode: MDAST.YAML = {
       type: 'yaml',

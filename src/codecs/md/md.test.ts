@@ -1137,9 +1137,6 @@ Followed by more text
 })
 
 describe('References', () => {
-  const relativeSnapshot = (filepath: string): string =>
-    path.relative(path.join(__dirname, '..', '..', '..'), snapshot(filepath))
-
   const articleWithRefs = article({
     title: 'MD Reference Test',
     content: [paragraph({ content: ['This is only a test'] })],
@@ -1153,32 +1150,25 @@ describe('References', () => {
     ],
   })
 
-  const mdWithRefs = `---
-title: MD Reference Test
-bibliography: ${relativeSnapshot('mdReferences.references.bib')}
----
-
-This is only a test
-`
-
   test('encode', async () => {
     expect(await e(references.node)).toEqual(references.to)
   })
 
   test('extract references', async () => {
-    const mdFile = relativeSnapshot('mdReferences.md')
-    await mdCodec.write(articleWithRefs, mdFile)
-    const contents = fs.readFileSync(mdFile).toString()
-    const bibFile = fs
-      .readFileSync(relativeSnapshot('mdReferences.references.bib'))
-      .toString()
+    const mdPath = snapshot('mdReferences.md')
+    const bibPath = snapshot('mdReferences.references.bib')
 
-    expect(contents).toEqual(mdWithRefs)
-    expect(bibFile).toMatchFile(fixture('mdReferences.references.bib'))
+    await mdCodec.write(articleWithRefs, mdPath)
+    const md = fs.readFileSync(mdPath).toString()
+    const bib = fs.readFileSync(bibPath).toString()
+
+    expect(md).toMatchFile(fixture('mdReferences.md'))
+    expect(bib).toMatchFile(fixture('mdReferences.references.bib'))
   })
 
   test('inline references', async () => {
-    expect(await d(mdWithRefs)).toEqual(articleWithRefs)
+    const mdPath = fixture('mdReferences.md')
+    expect(await mdCodec.read(mdPath)).toEqual(articleWithRefs)
   })
 
   test('preserve references if less than 5', async () => {
