@@ -92,7 +92,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: release
-    dependsOn: [test, test_docker]
+    dependsOn: [test]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
