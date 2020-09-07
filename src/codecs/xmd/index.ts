@@ -152,7 +152,10 @@ export class XmdCodec extends Codec implements Codec {
         return xmd + '}\n'
       }
     )
-    return vfile.load(xmd)
+
+    const escaped = escapeRightSquareBrackets(xmd)
+
+    return vfile.load(escaped)
   }
 }
 
@@ -273,4 +276,31 @@ export function decodeBlockChunk(xmd: string): string {
     xmd = xmd.replace(para, '')
   }
   return xmd
+}
+
+/**
+ * Remove escaping from some characters when encoding to Rmd.
+ *
+ * The Remark stringifier intentionally only escapes right square brackets
+ * if they are inside a link. This can result "imbalanced escaping" where the
+ * left square bracket is escaped, but not the right one. This causes parsing
+ * issues for RStudio. This function balances the escaping for RStudio compatibility.
+ * See https://github.com/stencila/encoda/issues/671
+ */
+function escapeRightSquareBrackets(xmd: string): string {
+  let escaped = ''
+  let insideLink = false
+  let prev = ''
+  for (const curr of xmd) {
+    if (curr === '[' && prev !== '\\') insideLink = true
+    if (curr === ']') {
+      if (!insideLink) {
+        escaped += '\\]'
+        continue
+      } else insideLink = false
+    }
+    escaped += curr
+    prev = curr
+  }
+  return escaped
 }
