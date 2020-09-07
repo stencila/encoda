@@ -2238,6 +2238,55 @@ content:
         depth: 3
         content:
           - Evidence on aggregating behaviour of study species.
+    description:
+      - id: nt101
+        content:
+          - - a
+          - - type: Paragraph
+              content:
+                - Sadovy de Mitcheson et al. (2008);
+      - id: nt102
+        content:
+          - - b
+          - - type: Paragraph
+              content:
+                - Claydon (2004);
+      - id: nt103
+        content:
+          - - c
+          - - type: Paragraph
+              content:
+                - Froese and Pauly (2003);
+      - id: nt104
+        content:
+          - - d
+          - - type: Paragraph
+              content:
+                - Robinson et al. (2008);
+      - id: nt105
+        content:
+          - - e
+          - - type: Paragraph
+              content:
+                - Rhodes and Tupper (2008);
+      - id: nt106
+        content:
+          - - f
+          - - type: Paragraph
+              content:
+                - Grandcourt et al. (2006).
+      - id: nt107
+        content:
+          - - g
+          - - type: Paragraph
+              content:
+                - Ebisawa (2006);
+      - id: nt108
+        content:
+          - - h
+          - - type: Paragraph
+              content:
+                - Nanami and Yamada (2009).
     label: Table 1
     rows:
       - type: TableRow
@@ -2543,6 +2592,15 @@ content:
           - >-
             Scoring of aggregation attributes based on fisher knowledge of
             aggregating behaviour.
+    description:
+      - id: nt109
+        content:
+          - - a
+          - - type: Paragraph
+              content:
+                - >-
+                  If fishers had no knowledge of an attribute, a zero score was
+                  given.
     label: Table 2
     rows:
       - type: TableRow
@@ -2748,6 +2806,15 @@ content:
             Socioeconomic indicators used in redundancy analysis (RDA) to
             identify sources of variation in fisher knowledge of aggregating
             behaviour.
+    description:
+      - id: nt110
+        content:
+          - []
+          - - type: Paragraph
+              content:
+                - >-
+                  Data are the number of fishers scored at each factor level or
+                  category for case study locations.
     label: Table 3
     rows:
       - type: TableRow
@@ -2954,6 +3021,25 @@ content:
           - >-
             Attributes and their scoring system employed for
             productivity-susceptibility analysis (PSA).
+    description:
+      - id: nt111
+        content:
+          - []
+          - - type: Paragraph
+              content:
+                - >-
+                  Susceptibility attributes are subdivided into attributes
+                  associated with catchability and those associated with
+                  socioeconomic drivers of fishing pressure or habitat impacts.
+      - id: nt112
+        content:
+          - []
+          - - type: Paragraph
+              content:
+                - >-
+                  *: The provincial capital markets for Karkar and Ahus are
+                  Madang (Madang Province) and Lorengau (Manus Province),
+                  respectively.
     label: Table 4
     rows:
       - type: TableRow
@@ -3846,6 +3932,21 @@ content:
           - >-
             Variation in fisher knowledge of aggregating behaviour explained by
             socioeconomic indicators.
+    description:
+      - id: nt113
+        content:
+          - []
+          - - type: Paragraph
+              content:
+                - >-
+                  Redundancy analysis (RDA) results for Ahus and Karkar with
+                  significant 
+                - type: Emphasis
+                  content:
+                    - p
+                - >-
+                  -values highlighted in bold. Access to habitat did not vary
+                  among Karkar fishers and was not included in the RDA.
     label: Table 5
     rows:
       - type: TableRow

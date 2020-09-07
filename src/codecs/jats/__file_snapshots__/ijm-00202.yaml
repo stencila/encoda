@@ -1093,6 +1093,26 @@ content:
         depth: 3
         content:
           - Socio-demographic characteristics
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - 'Source:'
+                - ' CEPAL (2016) and World Bank (2016).'
+      - type: general
+        id: T1_FN1
+        content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Notes
+                - >-
+                  : a/ 2005–2010; b/ 2010; c/ Percentage of population; d/
+                  Population ages 25–59; e/ Population ages 15–64; f/ Percentage
+                  of households.
     label: Table 1.
     rows:
       - type: TableRow
@@ -2042,6 +2062,27 @@ content:
         depth: 3
         content:
           - Main characteristics of household categories
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Source
+                - >-
+                  : Authors’ calculations based on Encuesta Continua de Hogares
+                  2013, Instituto Nacional de Estadística.
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Note
+                - >-
+                  : The lack of contribution to social security is calculated at
+                  household level as the ratio between non-contributors and
+                  workers; the ratio takes value 0 when no one in the household
+                  participates in the labour market.
     label: Table 2.
     rows:
       - type: TableRow
@@ -2860,6 +2901,34 @@ content:
         depth: 3
         content:
           - Marginal effects estimated by a zero-inflated beta regression
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Source
+                - >-
+                  : Authors’ estimations based on Encuesta Continua de Hogares
+                  2013, Instituto Nacional de Estadística.
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Note
+                - >-
+                  : For household types, we report the discrete effect related
+                  to the “couple, dual earner” type, valuing the rest of the
+                  variables at their means. For the rest of the dependent
+                  variables, we report the ‘marginal effect’ by household type
+                  compared to the “couple, dual earner” type.
+      - type: general
+        id: T3_FN1
+        content:
+          - - type: Paragraph
+              content:
+                - '***p<0.01, **p<0.05, *p<0.1'
     label: Table 3.
     rows:
       - type: TableRow
@@ -3443,6 +3512,34 @@ content:
         depth: 3
         content:
           - Marginal effects estimated by a zero-inflated beta regression
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Source
+                - >-
+                  : Authors’ estimations based on Encuesta Continua de Hogares
+                  2013, Instituto Nacional de Estadística.
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Note
+                - >-
+                  : For household types, we report the discrete effect related
+                  to the “couple, dual earner” type, valuing the rest of the
+                  variables at their means. For the rest of the dependent
+                  variables, we report the ‘marginal effect’ by household type
+                  compared to the “couple, dual earner” type.
+      - type: general
+        id: T4_FN1
+        content:
+          - - type: Paragraph
+              content:
+                - '***p<0.01, **p<0.05, *p<0.1'
     label: Table 4.
     rows:
       - type: TableRow
@@ -3896,6 +3993,34 @@ content:
         depth: 3
         content:
           - Marginal effects estimated by a zero-inflated beta regression
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Source
+                - >-
+                  : Authors’ estimations based on Encuesta Continua de Hogares
+                  2013, Instituto Nacional de Estadística.
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Emphasis
+                  content:
+                    - Note
+                - >-
+                  : The vector of household types includes 16 categories
+                  (presented in Table 2); for the estimation we omitted “couple,
+                  non-employed”. The rest of the variables are valued at mean.
+                  Models 2 and 3 include the control variables shown in tables 3
+                  and 4.
+      - type: general
+        id: T5_FN1
+        content:
+          - - type: Paragraph
+              content:
+                - '***p<0.01, **p<0.05, *p<0.1'
     label: Table 5.
     rows:
       - type: TableRow
