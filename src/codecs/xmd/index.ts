@@ -4,11 +4,11 @@
 
 import * as stencila from '@stencila/schema'
 import crypto from 'crypto'
-import { dump, load } from '../..'
-import * as vfile from '../../util/vfile'
-import { Codec, CommonEncodeOptions } from '../types'
+import { dump } from '../..'
 import { transformSync } from '../../util/transform'
-import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
+import * as vfile from '../../util/vfile'
+import { MdCodec } from '../md'
+import { Codec, CommonEncodeOptions } from '../types'
 
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
@@ -17,7 +17,7 @@ export class XmdCodec extends Codec implements Codec {
    * Decode XMarkdown to a Stencila node.
    *
    * This function uses regexes to transform XMarkdown to Commonmark
-   * which is then passed onto the `MdCodec.decode` method (via `load()`).
+   * which is then passed onto the `MdCodec.decode` method.
    *
    * @param file The `VFile` to decode
    */
@@ -28,7 +28,15 @@ export class XmdCodec extends Codec implements Codec {
     xmd = decodeInlineChunk(xmd)
     xmd = decodeNestedChunks(xmd)
     xmd = decodeBlockChunk(xmd)
-    return load(xmd, 'md')
+
+    // To preserve relative file links etc,
+    // create a new VFile with the same file path
+    // but new content, if file.path is defined
+    const newFile = vfile.load(
+      xmd,
+      file.path !== undefined ? { path: file.path } : {}
+    )
+    return new MdCodec().decode(newFile)
   }
 
   /**

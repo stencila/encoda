@@ -46,8 +46,11 @@ export function create(
  *
  * @param contents Contents to load
  */
-export function load(contents: VFileContents): VFile {
-  return vfile({ contents })
+export function load(
+  contents: VFileContents,
+  options: vfile.VFileOptions = {}
+): VFile {
+  return vfile({ ...options, contents })
 }
 
 /**
