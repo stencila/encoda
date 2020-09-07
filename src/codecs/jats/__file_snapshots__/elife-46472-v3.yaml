@@ -5021,6 +5021,71 @@ content:
             content:
               - Oprm1
           - ' genotype combinations for the BXD strains.'
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - >-
+                  Abbreviations: BXD, C57BL/6J (B6) x DBA2/J (D2); MA,
+                  methamphetamine; 
+                - type: Emphasis
+                  content:
+                    - Oprm1
+                - ', mu-opioid receptor gene; '
+                - type: Emphasis
+                  content:
+                    - Oprm1
+                    - type: Superscript
+                      content:
+                        - B6/B6
+                - ', homozygous for B6 '
+                - type: Emphasis
+                  content:
+                    - Oprm1
+                - ' allele; '
+                - type: Emphasis
+                  content:
+                    - Oprm1
+                    - type: Superscript
+                      content:
+                        - D2/D2
+                - ', homozygous for D2 '
+                - type: Emphasis
+                  content:
+                    - Oprm1
+                - ' allele; '
+                - type: Emphasis
+                  content:
+                    - Taar1
+                - ', trace-amine associated receptor 1 gene; '
+                - type: Emphasis
+                  content:
+                    - Taar1
+                - type: Superscript
+                  content:
+                    - +/+
+                - ', homozygous for reference '
+                - type: Emphasis
+                  content:
+                    - Taar1
+                    - type: Superscript
+                      content:
+                        - +
+                - ' allele; '
+                - type: Emphasis
+                  content:
+                    - Taar1
+                    - type: Superscript
+                      content:
+                        - m1J/m1J
+                - ', homozygous for mutant '
+                - type: Emphasis
+                  content:
+                    - Taar1
+                    - type: Superscript
+                      content:
+                        - m1J
+                - ' allele.'
     label: Table 1.
     rows:
       - type: TableRow

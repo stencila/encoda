@@ -819,6 +819,28 @@ content:
         depth: 3
         content:
           - Article-type attributes.
+    description:
+      - content:
+          - - type: Paragraph
+              content:
+                - type: Strong
+                  content:
+                    - Note
+                - >-
+                  : aggregated-review-documents is not currently in the Crossref
+                  schema; that schema uses the term aggregate. Crossref has two
+                  further attributes to describe the type of content: 
+                                                  
+                - type: Strong
+                  content:
+                    - community-comment
+                - |2-
+                   and 
+                                                  
+                - type: Strong
+                  content:
+                    - manuscript.
+                - ' The XML sub-group discussed these terms and decided to exclude them as community-comment presumably refers to post-publication comments via systems like Hypothesis and so: a) are not guaranteed to be “peer” comments and are excluded from the criteria of this paper and b) it is unlikely that publishers in the near term would pull that content back into the source JATS XML, post publication. Crossref schema also allows for a stage, pre-publication or post-publication. This is therefore also felt outside of this remit.'
     label: 'Table 1. '
     rows:
       - type: TableRow

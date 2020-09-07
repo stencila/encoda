@@ -1738,12 +1738,27 @@ function decodeTableWrap(
         })
       : []
 
+  const description = all(elem, 'fn')
+    .map((fn) => {
+      const type = attr(fn, 'fn-type')
+      const id = attr(fn, 'id')
+      const content = fn?.elements?.map((e) => decodeElement(e, state))
+
+      return {
+        ...(type && { type }),
+        ...(id && { id }),
+        content,
+      }
+    })
+    .filter(isDefined)
+
   return [
     stencila.table({
       id: decodeInternalId(attr(elem, 'id')),
       label: textOrUndefined(child(elem, 'label')),
       caption,
       rows: [...headerRows, ...bodyRows],
+      ...(description.length && { description }),
     }),
   ]
 }

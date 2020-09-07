@@ -6431,6 +6431,29 @@ content:
             content:
               - Orientia
           - ' species causing CNS infections.'
+    description:
+      - id: t001fn001
+        content:
+          - - type: Paragraph
+              content:
+                - '*All genomes were imported from GenBank ('
+                - type: Link
+                  target: 'http://www.ncbi.nlm.nih.gov/genome/'
+                  content:
+                    - 'http://www.ncbi.nlm.nih.gov/genome/'
+                - )
+      - id: t001fn002
+        content:
+          - - type: Paragraph
+              content:
+                - type: Strong
+                  content:
+                    - Abbreviations
+                - >-
+                  : ATBF, African tick bite fever; CNS, central nervous system;
+                  MSF, Mediterranean spotted fever; QTT, Queensland tick typhus;
+                  RMSF, Rocky Mountain spotted fever; TIBOLA, tick-borne
+                  lymphadenopathy
     label: Table 1
     rows:
       - type: TableRow
