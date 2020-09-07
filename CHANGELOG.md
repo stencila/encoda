@@ -1,3 +1,10 @@
+## [0.99.2](https://github.com/stencila/encoda/compare/v0.99.1...v0.99.2) (2020-09-07)
+
+
+### Bug Fixes
+
+* **R Markdown:** Pass file path along for resolution of bibliography and other auxillary files ([e0af0c6](https://github.com/stencila/encoda/commit/e0af0c66912cba911d4035c972045a7ea886d8b2))
+
 ## [0.99.1](https://github.com/stencila/encoda/compare/v0.99.0...v0.99.1) (2020-09-04)
 
 
