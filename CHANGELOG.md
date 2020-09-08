@@ -1,3 +1,10 @@
+## [0.99.3](https://github.com/stencila/encoda/compare/v0.99.2...v0.99.3) (2020-09-08)
+
+
+### Bug Fixes
+
+* **R Markdown:** escape right square bracket. ([70121bb](https://github.com/stencila/encoda/commit/70121bb176d6228c42cacad941297340311fa53c)), closes [#671](https://github.com/stencila/encoda/issues/671)
+
 ## [0.99.2](https://github.com/stencila/encoda/compare/v0.99.1...v0.99.2) (2020-09-07)
 
 
