@@ -3476,6 +3476,61 @@ content:
           - >-
             Comparison of enzymes in central metabolic pathways with the
             essential and conserved genes of other datasets.
+    description:
+      - type: Paragraph
+        id: t004fn001
+        content:
+          - type: Superscript
+            content:
+              - a
+          - >-
+            Gene Conservation Index: I: Conserved (present in ≥ 95% of organism
+            cluster), II: Semi-conserved (present in 10–94% of the organism
+            cluster).
+      - type: Paragraph
+        id: t004fn002
+        content:
+          - type: Superscript
+            content:
+              - b
+          - 'Essentiality as experimentally assessed in '
+          - type: Emphasis
+            content:
+              - S
+          - '. '
+          - type: Emphasis
+            content:
+              - elongatus
+          - ' PCC 7942 ['
+          - type: Cite
+            target: pone-0178565-ref018
+            content:
+              - '18'
+          - ']: E: Essential, NE: Non-essential.'
+      - type: Paragraph
+        id: t004fn003
+        content:
+          - type: Superscript
+            content:
+              - c
+          - 'Core Set ['
+          - type: Cite
+            target: pone-0178565-ref007
+            content:
+              - '7'
+          - ']: Y: Yes (Conserved), N: No (Not Conserved).'
+      - type: Paragraph
+        id: t004fn004
+        content:
+          - type: Superscript
+            content:
+              - d
+          - 'Structural Gene ['
+          - type: Cite
+            target: pone-0178565-ref035
+            content:
+              - '35'
+          - ']: Y: Yes (Structural Gene), N: No (Non-structural Gene).'
     label: Table 4
     rows:
       - type: TableRow

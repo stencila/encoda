@@ -2864,6 +2864,23 @@ content:
           - >-
             Key characteristics and published references for the pooled dataset
             of severe-malaria patients.
+    description:
+      - type: Paragraph
+        id: t001fn001
+        content:
+          - >-
+            AAV, AQ, QC, SEAQUAMAT, and AQUAMAT were randomised controlled
+            trials.
+      - type: Paragraph
+        id: t001fn002
+        content:
+          - >-
+            Abbreviation: AAV, artemether versus artesunate trial in Vietnam;
+            AQ, artemether versus quinine trial in Vietnam; AQUAMAT, Africa
+            multinational quinine versus artesunate in severe-malaria trial;
+            DRC, Democratic Republic of Congo; QC, quinine versus chloroquine
+            trial in The Gambia; SEAQUAMAT, South East Asian multinational
+            quinine versus artesunate malaria trial.
     label: Table 1
     rows:
       - type: TableRow

@@ -2242,6 +2242,47 @@ content:
         depth: 3
         content:
           - Evidence on aggregating behaviour of study species.
+    description:
+      - type: Paragraph
+        id: nt101
+        content:
+          - a
+          - Sadovy de Mitcheson et al. (2008);
+      - type: Paragraph
+        id: nt102
+        content:
+          - b
+          - Claydon (2004);
+      - type: Paragraph
+        id: nt103
+        content:
+          - c
+          - Froese and Pauly (2003);
+      - type: Paragraph
+        id: nt104
+        content:
+          - d
+          - Robinson et al. (2008);
+      - type: Paragraph
+        id: nt105
+        content:
+          - e
+          - Rhodes and Tupper (2008);
+      - type: Paragraph
+        id: nt106
+        content:
+          - f
+          - Grandcourt et al. (2006).
+      - type: Paragraph
+        id: nt107
+        content:
+          - g
+          - Ebisawa (2006);
+      - type: Paragraph
+        id: nt108
+        content:
+          - h
+          - Nanami and Yamada (2009).
     label: Table 1
     rows:
       - type: TableRow
@@ -2547,6 +2588,12 @@ content:
           - >-
             Scoring of aggregation attributes based on fisher knowledge of
             aggregating behaviour.
+    description:
+      - type: Paragraph
+        id: nt109
+        content:
+          - a
+          - 'If fishers had no knowledge of an attribute, a zero score was given.'
     label: Table 2
     rows:
       - type: TableRow
@@ -2752,6 +2799,13 @@ content:
             Socioeconomic indicators used in redundancy analysis (RDA) to
             identify sources of variation in fisher knowledge of aggregating
             behaviour.
+    description:
+      - type: Paragraph
+        id: nt110
+        content:
+          - >-
+            Data are the number of fishers scored at each factor level or
+            category for case study locations.
     label: Table 3
     rows:
       - type: TableRow
@@ -2958,6 +3012,20 @@ content:
           - >-
             Attributes and their scoring system employed for
             productivity-susceptibility analysis (PSA).
+    description:
+      - type: Paragraph
+        id: nt111
+        content:
+          - >-
+            Susceptibility attributes are subdivided into attributes associated
+            with catchability and those associated with socioeconomic drivers of
+            fishing pressure or habitat impacts.
+      - type: Paragraph
+        id: nt112
+        content:
+          - >-
+            *: The provincial capital markets for Karkar and Ahus are Madang
+            (Madang Province) and Lorengau (Manus Province), respectively.
     label: Table 4
     rows:
       - type: TableRow
@@ -3850,6 +3918,19 @@ content:
           - >-
             Variation in fisher knowledge of aggregating behaviour explained by
             socioeconomic indicators.
+    description:
+      - type: Paragraph
+        id: nt113
+        content:
+          - >-
+            Redundancy analysis (RDA) results for Ahus and Karkar with
+            significant 
+          - type: Emphasis
+            content:
+              - p
+          - >-
+            -values highlighted in bold. Access to habitat did not vary among
+            Karkar fishers and was not included in the RDA.
     label: Table 5
     rows:
       - type: TableRow

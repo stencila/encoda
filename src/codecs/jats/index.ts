@@ -19,6 +19,7 @@ import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
+import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
@@ -1738,12 +1739,42 @@ function decodeTableWrap(
         })
       : []
 
+  const description = all(elem, 'fn').map((fn) => {
+    // Convert each footnote into block content (usually a paragraph),
+    // and possibly with an id and footnote type
+    const footnoteType = attr(fn, 'fn-type')
+    const id = attr(fn, 'id')
+
+    let block: stencila.BlockContent
+    const nodes = decodeElements(fn.elements ?? [], state)
+    if (nodes.length === 1) {
+      // Just one node in footnote (usually a single paragraph),
+      // so ensure that it a block and use that.
+      block = ensureBlockContent(nodes[0])
+    } else {
+      // More than one node, perhaps a label and a paragraph
+      // so merge them into a single paragraph
+      block = stencila.paragraph({
+        content: ensureInlineContentArray(nodes),
+      })
+    }
+    // Add id and footnote type to the block
+    block = {
+      ...block,
+      ...(id && { id }),
+      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
+    }
+
+    return block
+  })
+
   return [
     stencila.table({
       id: decodeInternalId(attr(elem, 'id')),
       label: textOrUndefined(child(elem, 'label')),
       caption,
       rows: [...headerRows, ...bodyRows],
+      ...(description.length && { description }),
     }),
   ]
 }

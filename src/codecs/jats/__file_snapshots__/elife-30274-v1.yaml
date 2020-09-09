@@ -3113,6 +3113,37 @@ content:
         depth: 3
         content:
           - Confirmatory statistical tests.
+    description:
+      - type: Paragraph
+        content:
+          - >-
+            These confirmatory statistical tests relate to the data presented
+            in 
+          - type: Link
+            relation: fig
+            target: '#fig2'
+            content:
+              - Figure 2
+          - >-
+            . Wilcoxon signed-rank test, which treat the data as paired, were
+            conducted for the original study (
+          - type: Cite
+            target: bib17
+            content:
+              - 'Lin et al., 2012'
+          - ') and this replication attempt (RP:CB). Uncorrected '
+          - type: Emphasis
+            content:
+              - p
+          - ' values are reported with an '
+          - type: Emphasis
+            content:
+              - a priori
+          - ' significance threshold of. 0167. Sample sizes reported are based on the sample size used in the tests. Additional details for this experiment can be found at '
+          - type: Link
+            target: 'https://osf.io/fn2y4/.'
+            content:
+              - 'https://osf.io/fn2y4/.'
     label: Table 1.
     rows:
       - type: TableRow
@@ -3493,6 +3524,31 @@ content:
         depth: 3
         content:
           - Exploratory statistical tests.
+    description:
+      - type: Paragraph
+        content:
+          - 'These exploratory statistical tests relate to the data presented in '
+          - type: Link
+            relation: fig
+            target: '#fig2'
+            content:
+              - Figure 2
+          - >-
+            . Wilcoxon rank sum tests, which treat the data as unpaired, were
+            conducted for the original study (
+          - type: Cite
+            target: bib17
+            content:
+              - 'Lin et al., 2012'
+          - ') and this replication attempt (RP:CB). Uncorrected '
+          - type: Emphasis
+            content:
+              - p
+          - ' values are reported. Sample sizes reported are based on treating genes as unpaired between conditions. Additional details for this experiment can be found at '
+          - type: Link
+            target: 'https://osf.io/fn2y4/.'
+            content:
+              - 'https://osf.io/fn2y4/.'
     label: Table 2.
     rows:
       - type: TableRow
@@ -3908,6 +3964,33 @@ content:
         depth: 3
         content:
           - Exploratory statistical tests.
+    description:
+      - type: Paragraph
+        content:
+          - 'These exploratory statistical tests relate to the data presented in '
+          - type: Link
+            relation: fig
+            target: '#fig2'
+            content:
+              - Figure 2
+          - . Wilcoxon rank sum tests were conducted for the original study (
+          - type: Cite
+            target: bib17
+            content:
+              - 'Lin et al., 2012'
+          - >-
+            ) and this replication attempt (RP:CB) on the difference in
+            expression of active genes during c-Myc induction (e.g. from 0 hr to
+            24 hr) compared to the difference in expression of silent genes over
+            that same period (e.g. from 0 hr to 24 hr). Uncorrected 
+          - type: Emphasis
+            content:
+              - p
+          - ' values are reported. Sample sizes reported are based on number of active and silent genes used in the tests. Additional details for this experiment can be found at '
+          - type: Link
+            target: 'https://osf.io/fn2y4/.'
+            content:
+              - 'https://osf.io/fn2y4/.'
     label: Table 3.
     rows:
       - type: TableRow
