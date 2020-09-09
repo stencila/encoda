@@ -383,7 +383,7 @@ function decodeFront(
         meta: decodeMetaFront(front),
         pageStart: decodePageStart(front),
         pageEnd: decodePageEnd(front),
-        about: decodeAbout(front),
+        ...(decodeAbout(front)?.length && { about: decodeAbout(front) }),
         genre: decodeGenres(front),
       }
 }
