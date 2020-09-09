@@ -51,4 +51,4 @@ RUN node install.js \
 # Run the tests
 # The `max-old-space-size` option is to avoid running out of memory
 # See error: https://dev.azure.com/stencila/stencila/_build/results?buildId=5098&view=logs&j=bdfe1ee2-0dfa-5214-b354-014a2d5aae2e&t=95f41a85-677a-5e68-afba-63ba0e2792c1&l=2090
-CMD DOCKER=true node --max-old-space-size=1024 ./node_modules/.bin/jest --testTimeout=120000 --forceExit
+CMD DOCKER=true node --max-old-space-size=10240 ./node_modules/.bin/jest --testTimeout=120000 --forceExit
