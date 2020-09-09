@@ -1,3 +1,11 @@
+## [0.99.5](https://github.com/stencila/encoda/compare/v0.99.4...v0.99.5) (2020-09-09)
+
+
+### Bug Fixes
+
+* **JATS:** Decode table description as an array of block content ([ec9e64b](https://github.com/stencila/encoda/commit/ec9e64b4ddf64f3c4c05dd08e3fd6f3e9e4e14ef))
+* **JATS:** Decoding tag table-wrap-foot for table ([bd0ec61](https://github.com/stencila/encoda/commit/bd0ec6196b957a7d3cf6b079083d71cfcc82e371))
+
 ## [0.99.4](https://github.com/stencila/encoda/compare/v0.99.3...v0.99.4) (2020-09-09)
 
 
