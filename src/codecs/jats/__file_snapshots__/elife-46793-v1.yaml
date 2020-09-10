@@ -1,4 +1,9 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Biochemistry and Chemical Biology
+  - type: DefinedTerm
+    name: Chromosomes and Gene Expression
 authors:
   - type: Person
     affiliations:
@@ -225,8 +230,6 @@ fundedBy:
         value: 209441/z/17/z
 genre:
   - Tools and Resources
-  - Biochemistry and Chemical Biology
-  - Chromosomes and Gene Expression
 identifiers:
   - type: PropertyValue
     name: publisher-id

@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Review
 authors:
   - type: Person
     affiliations:
@@ -73,8 +76,6 @@ editors:
     givenNames:
       - Abdallah
       - M.
-genre:
-  - Review
 identifiers:
   - type: PropertyValue
     name: doi

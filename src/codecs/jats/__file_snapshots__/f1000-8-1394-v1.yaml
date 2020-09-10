@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research Note
 authors:
   - type: Person
     affiliations:
@@ -112,8 +115,6 @@ description:
         products, the effectiveness of the instrument of food business
         operators' own responsibility for product safety must obviously be
         challenged.
-genre:
-  - Research Note
 identifiers:
   - type: PropertyValue
     name: doi

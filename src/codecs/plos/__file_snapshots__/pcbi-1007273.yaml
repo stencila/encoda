@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research Article
 authors:
   - type: Person
     affiliations:
@@ -122,8 +125,6 @@ editors:
       - Ioshikhes
     givenNames:
       - Ilya
-genre:
-  - Research Article
 identifiers:
   - type: PropertyValue
     name: publisher-id

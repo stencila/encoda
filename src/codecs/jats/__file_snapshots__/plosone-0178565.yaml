@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research Article
 authors:
   - type: Person
     affiliations:
@@ -96,8 +99,6 @@ fundedBy:
     identifiers:
       - type: PropertyValue
         value: BT/EB/PAN IIT/2012
-genre:
-  - Research Article
 identifiers:
   - type: PropertyValue
     name: doi

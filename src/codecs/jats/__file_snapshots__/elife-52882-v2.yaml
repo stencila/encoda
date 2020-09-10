@@ -1,4 +1,9 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Computational and Systems Biology
+  - type: DefinedTerm
+    name: Neuroscience
 authors:
   - type: Person
     affiliations:
@@ -216,8 +221,6 @@ fundedBy:
         value: SPF201809007064
 genre:
   - Research Article
-  - Computational and Systems Biology
-  - Neuroscience
 identifiers:
   - type: PropertyValue
     name: publisher-id

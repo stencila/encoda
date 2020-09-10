@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research Article
 authors:
   - type: Person
     affiliations:
@@ -197,8 +200,6 @@ editors:
       - Emerman
     givenNames:
       - Michael
-genre:
-  - Research Article
 identifiers:
   - type: PropertyValue
     name: doi

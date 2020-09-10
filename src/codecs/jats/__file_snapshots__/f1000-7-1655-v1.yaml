@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Opinion Article
 authors:
   - type: Person
     affiliations:
@@ -174,8 +177,6 @@ fundedBy:
         value: '108758'
       - type: PropertyValue
         value: 098321
-genre:
-  - Opinion Article
 identifiers:
   - type: PropertyValue
     name: doi

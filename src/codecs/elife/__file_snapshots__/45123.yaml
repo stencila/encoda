@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Genetics and Genomics
 authors:
   - type: Person
     affiliations:
@@ -61,7 +64,6 @@ description:
       - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
 genre:
   - Insight
-  - Genetics and Genomics
 identifiers:
   - type: PropertyValue
     name: publisher-id

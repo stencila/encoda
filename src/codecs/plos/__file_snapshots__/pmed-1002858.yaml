@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research Article
 authors:
   - type: Person
     affiliations:
@@ -175,8 +178,6 @@ editors:
     givenNames:
       - James
       - G.
-genre:
-  - Research Article
 identifiers:
   - type: PropertyValue
     name: doi
