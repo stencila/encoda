@@ -1,4 +1,9 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Research article
+  - type: DefinedTerm
+    name: Taxes and benefits
 authors:
   - type: Person
     affiliations:

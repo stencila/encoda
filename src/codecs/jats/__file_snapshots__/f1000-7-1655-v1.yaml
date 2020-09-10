@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Opinion Article
 authors:
   - type: Person
     affiliations:

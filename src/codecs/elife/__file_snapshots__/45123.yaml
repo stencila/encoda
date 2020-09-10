@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Genetics and Genomics
 authors:
   - type: Person
     affiliations:
@@ -59,6 +62,8 @@ description:
         content:
           - lnc-NR2F1
       - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+genre:
+  - Insight
 identifiers:
   - type: PropertyValue
     name: publisher-id

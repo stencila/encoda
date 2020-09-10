@@ -1,4 +1,9 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Genetics and Genomics
+  - type: DefinedTerm
+    name: Neuroscience
 authors:
   - type: Person
     affiliations:
@@ -347,6 +352,8 @@ fundedBy:
     identifiers:
       - type: PropertyValue
         value: Center support
+genre:
+  - Research Article
 identifiers:
   - type: PropertyValue
     name: publisher-id

@@ -364,7 +364,10 @@ function decodeFront(
   | 'meta'
   | 'pageEnd'
   | 'pageStart'
+  | 'about'
+  | 'genre'
 > {
+  const subjGroups = all(front, 'subj-group')
   return front === null
     ? {}
     : {
@@ -376,13 +379,72 @@ function decodeFront(
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front),
         licenses: decodeLicenses(front, state),
-        keywords: decodeKeywords(front),
+        keywords: decodeKeywords(front, subjGroups),
         identifiers: decodeIdentifiers(front),
         fundedBy: decodeFunding(front),
         meta: decodeMetaFront(front),
         pageStart: decodePageStart(front),
         pageEnd: decodePageEnd(front),
+        about: decodeAbout(subjGroups),
+        genre: decodeGenres(subjGroups),
       }
+}
+
+/**
+ * Returns the element if not empty ( "" as string )
+ * undefined if not.
+ */
+const emptySafeString = (str: string | undefined) =>
+  str?.length ? str : undefined
+
+/**
+ * Decode a JATS `<subj-group>` if attribute 'subj-group-type' includes
+ * about types elements to a Stencila `Article.about`.
+ */
+function decodeAbout(subjectGroups: xml.Element[]): stencila.Article['about'] {
+  const ABOUT_TYPES = [
+    'subject',
+    'discipline',
+    'section',
+    'primary/secondary',
+    'system taxonomy',
+    'taxonomy',
+    'heading',
+  ]
+  const about = subjectGroups
+    .map((elem) => {
+      const type = attr(elem, 'subj-group-type') ?? ''
+      const subject = child(elem, ['subject'])
+      const name = emptySafeString(
+        textOrUndefined(xml.firstByType(subject, 'text'))
+      )
+      if (name && ABOUT_TYPES.includes(type)) {
+        return stencila.definedTerm({ name })
+      }
+    })
+    .filter(isDefined)
+  return about.length ? about : undefined
+}
+
+/**
+ * Decode a JATS `<subj-group>` if attribute 'subj-group-type' includes
+ * genre types elements to a Stencila `Article.genre`.
+ */
+function decodeGenres(subjectGroups: xml.Element[]): stencila.Article['genre'] {
+  const GENRES_TYPES = ['display-channel', 'Toc-heading', 'toc', 'banner']
+  const genres = subjectGroups
+    .map((elem) => {
+      const type = attr(elem, 'subj-group-type') ?? ''
+      const subject = child(elem, ['subject'])
+      const value = emptySafeString(
+        textOrUndefined(xml.firstByType(subject, 'text'))
+      )
+      if (GENRES_TYPES.includes(type)) {
+        return value
+      }
+    })
+    .filter(isDefined)
+  return genres.length ? genres : undefined
 }
 
 /**
@@ -566,15 +628,32 @@ function decodeLicenses(
 }
 
 /**
- * Decode JATS `<kwd>` elements into a Stencila `Article.keywords` property.
+ * Decode JATS `<kwd>` and `<subj-group>` if attribute 'subj-group-type' includes
+ * elements of keywords types to a Stencila `Article.keywords`.
  */
-function decodeKeywords(front: xml.Element): stencila.Article['keywords'] {
+function decodeKeywords(
+  front: xml.Element,
+  subjectGroups: xml.Element[]
+): stencila.Article['keywords'] {
   const kwds = all(front, 'kwd')
-  if (kwds.length === 0) return undefined
-  return kwds.reduce((prev: string[], curr) => {
-    const kwd = textOrUndefined(curr)
-    return kwd !== undefined ? [...prev, kwd] : prev
-  }, [])
+  const kwdsArray = kwds
+    .map((elem: xml.Element) => textOrUndefined(elem))
+    .filter(isDefined)
+  const kwdsTypes = subjectGroups
+    .map((elem: xml.Element) => {
+      const type = attr(elem, 'subj-group-type') ?? ''
+      const KEYWORDS_TYPES = ['keywords', 'kwd']
+      const subject = child(elem, ['subject'])
+      const value = emptySafeString(
+        textOrUndefined(xml.firstByType(subject, 'text'))
+      )
+      if (KEYWORDS_TYPES.includes(type)) {
+        return value
+      }
+    })
+    .filter(isDefined)
+  const result = [...kwdsArray, ...kwdsTypes]
+  return result.length ? result : undefined
 }
 
 /**
