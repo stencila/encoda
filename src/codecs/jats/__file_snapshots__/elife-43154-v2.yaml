@@ -1,4 +1,7 @@
 type: Article
+about:
+  - type: DefinedTerm
+    name: Epidemiology and Global Health
 authors:
   - type: Person
     affiliations:
@@ -199,6 +202,8 @@ fundedBy:
     identifiers:
       - type: PropertyValue
         value: Senior Research Fellowship 1104975
+genre:
+  - Short Report
 identifiers:
   - type: PropertyValue
     name: publisher-id
