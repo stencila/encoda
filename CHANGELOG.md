@@ -1,3 +1,17 @@
+## [0.99.6](https://github.com/stencila/encoda/compare/v0.99.5...v0.99.6) (2020-09-11)
+
+
+### Bug Fixes
+
+* **Deps:** npm audit fix ([2ce84f9](https://github.com/stencila/encoda/commit/2ce84f99c1a9148c85df954e80cfc51e746572b5))
+* **JATS:** Correct decoding about, genre and keywords ([eb03d60](https://github.com/stencila/encoda/commit/eb03d609ea5e45c878d5a381aac098c70b485ee5))
+* **JATS:** Correct subject decoding ([e67f988](https://github.com/stencila/encoda/commit/e67f988b75cc111dde7e8f6d0088a31715588f11))
+* **JATS:** Correct subject decoding ([64dc78d](https://github.com/stencila/encoda/commit/64dc78db60ab33d1ae4f6e504fd4753b0be29153))
+* **JATS:** Decoding for article subjects ([35f3da7](https://github.com/stencila/encoda/commit/35f3da7298865e40ecc042b8d08b91ee87d8e13a))
+* **JATS:** Decoding types genre and about for subjects ([10ebb90](https://github.com/stencila/encoda/commit/10ebb907244120a9981324beb5abd34ecf1a19f2))
+* **JATS:** Small fix regarding package-lock ([e5363db](https://github.com/stencila/encoda/commit/e5363dbc8f72be0f0a2f4dc0f47d08e0d02c19d7))
+* **JATS:** Update snapshots ([286bfaa](https://github.com/stencila/encoda/commit/286bfaa5ec8c7290ec7d4baacd999ee72c9071d3))
+
 ## [0.99.5](https://github.com/stencila/encoda/compare/v0.99.4...v0.99.5) (2020-09-09)
 
 
