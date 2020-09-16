@@ -1,7 +1,15 @@
 {
   "type": "Article",
   "authors": [
-    "Nokome Bentley"
+    {
+      "type": "Person",
+      "familyNames": [
+        "Bentley"
+      ],
+      "givenNames": [
+        "Nokome"
+      ]
+    }
   ],
   "description": "This example is intended to have a variety of different XMarkdown elements in it.\n",
   "title": "Kitchen sink XMarkdown example",

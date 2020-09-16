@@ -1,8 +1,10 @@
 import * as stencila from '@stencila/schema'
-import * as vfile from '../util/vfile'
-import { toFiles } from '../util/media/toFiles'
+import { coerce } from '../util/coerce'
 import { fromFiles } from '../util/media/fromFiles'
 import { resolveFiles } from '../util/media/resolveFiles'
+import { toFiles } from '../util/media/toFiles'
+import * as vfile from '../util/vfile'
+
 /**
  * Encoding options that are common to all codecs.
  *
@@ -180,7 +182,7 @@ export abstract class Codec<
     content: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    return this.decode(vfile.load(content), options)
+    return coerce(await this.decode(vfile.load(content), options))
   }
 
   /**
@@ -240,28 +242,10 @@ export abstract class Codec<
     filePath: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    const node = await this.decode(await vfile.read(filePath), options)
-    return resolveFiles(node, filePath)
-  }
-
-  /**
-   * Transform a node after reading it.
-   *
-   * Makes any references to local files absolute.
-   * Derived classes may override this method to perform alternative
-   * transformations to the node, prior to writing it.
-   *
-   * @param node The `stencila.Node` to transform
-   * @param filePath The path of the file
-   * @param options Decoding options
-   * @returns A promise that resolves to a `stencila.Node`
-   */
-  public postRead(
-    node: stencila.Node,
-    filePath: string,
-    options?: DecodeOptions
-  ): Promise<stencila.Node> {
-    return Promise.resolve(resolveFiles(node, filePath))
+    return resolveFiles(
+      await coerce(await this.decode(await vfile.read(filePath), options)),
+      filePath
+    )
   }
 
   /**
