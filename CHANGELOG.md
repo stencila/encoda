@@ -1,3 +1,16 @@
+## [0.99.8](https://github.com/stencila/encoda/compare/v0.99.7...v0.99.8) (2020-09-17)
+
+
+### Bug Fixes
+
+* Always coerce when loading or reading ([bc27c39](https://github.com/stencila/encoda/commit/bc27c395b84afd28a9d4766997676a94bc7f333d))
+* **Coerce:** Check for null and array ([d2dfb47](https://github.com/stencila/encoda/commit/d2dfb47d89c4ff5ee38d3e2edb8ef2c31ff15f40))
+* **Date:** Allow date values to be short ISO strings e.g 2009-01 ([f85eab6](https://github.com/stencila/encoda/commit/f85eab6024a1f347daaf935edd7b89ab2eff3c6b))
+* **Deps:** Upgrade Schema ([0f81d53](https://github.com/stencila/encoda/commit/0f81d534073dd8c295865afefcf41b773113938f))
+* **GDoc:** Make article title a string if possible ([cb582f6](https://github.com/stencila/encoda/commit/cb582f63cbf902cc40aed4d951e90e0ffb551705))
+* **JATS:** Decode title and abstract as simply as possible; encoding of dates ([5d10c83](https://github.com/stencila/encoda/commit/5d10c83c0444f428d318065b2c072c968a8f0bab))
+* **Markdown:** Improve handling of  article title and primitives in table cells ([7b732a7](https://github.com/stencila/encoda/commit/7b732a7b0d95eafa7997c851b17ea9e8046ac082))
+
 ## [0.99.7](https://github.com/stencila/encoda/compare/v0.99.6...v0.99.7) (2020-09-17)
 
 
