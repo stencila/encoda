@@ -1,3 +1,17 @@
+## [0.99.7](https://github.com/stencila/encoda/compare/v0.99.6...v0.99.7) (2020-09-17)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.17.0 ([3b8c4ef](https://github.com/stencila/encoda/commit/3b8c4efbb5db5ad19fe2196bc774c90c4c425357))
+* **dependencies:** update dependency ajv to ^6.12.5 ([545e438](https://github.com/stencila/encoda/commit/545e4380b24c65fa33f6b8a6d227dbf88b7ed968))
+* **dependencies:** update dependency got to ^11.6.2 ([7e90438](https://github.com/stencila/encoda/commit/7e90438f96b3c6be1fa3a2fcaf8254781fbe9157))
+* **dependencies:** update dependency immer to ^7.0.9 ([9f9b2f1](https://github.com/stencila/encoda/commit/9f9b2f1658b45850eed6198803a191ba86c59f1f))
+* **dependencies:** update dependency pdf-lib to ^1.11.1 ([a817097](https://github.com/stencila/encoda/commit/a8170975243147ae67586cf7aeefb2623d2b4da8))
+* **dependencies:** update dependency puppeteer to ^5.3.0 ([9bd4467](https://github.com/stencila/encoda/commit/9bd44672611455c94f9fbc0d3a9a517e2eafd4b7))
+* **dependencies:** update dependency tempy to ^0.7.0 ([d81e76a](https://github.com/stencila/encoda/commit/d81e76a5a164145dfc36c20ba6e5d365cb23d9c2))
+* **dependencies:** update dependency xlsx to ^0.16.7 ([ab4963a](https://github.com/stencila/encoda/commit/ab4963a1c07e01f96389ff67d5a192b5ec767267))
+
 ## [0.99.6](https://github.com/stencila/encoda/compare/v0.99.5...v0.99.6) (2020-09-11)
 
 
