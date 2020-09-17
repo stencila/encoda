@@ -1,5 +1,5 @@
-/* Generated from nbformat-v4.schema.json. Do not edit. See nbformat.js. */
-/* eslint-disable camelcase, @typescript-eslint/no-explicit-any */
+/* Generated from nbformat-v4.schema.json by nbformat.js. Do not edit. */
+/* eslint-disable camelcase, no-use-before-define, @typescript-eslint/no-explicit-any */
 
 export type Cell = RawCell | MarkdownCell | CodeCell
 export type Output = ExecuteResult | DisplayData | Stream | Error

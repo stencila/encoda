@@ -17,6 +17,8 @@
 type VersionNumber = [number, number]
 export const Version: VersionNumber = [1, 20]
 
+/* eslint-disable no-use-before-define */
+
 export interface Document {
   /**
    * The Pandoc types API version
