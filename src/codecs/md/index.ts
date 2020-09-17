@@ -152,6 +152,53 @@ const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
 const ATTR_OPTIONS = { scope: 'permissive' }
 
 /**
+ * Interface for generic extension nodes decoded by
+ * [`remark-generic-extensions`](https://github.com/medfreeman/remark-generic-extensions)
+ *
+ * Inline extensions have the syntax:
+ *
+ * ```markdown
+ * !Extension[Content](Argument){Properties}
+ * ```
+ *
+ * Block extensions have the syntax:
+ *
+ * ```markdown
+ * Extension: Argument
+ * :::
+ * [Content]
+ * :::
+ * {Properties}
+ * ```
+ */
+interface Extension extends UNIST.Node {
+  /**
+   * Type of extension
+   */
+  type: 'inline-extension' | 'block-extension'
+
+  /**
+   * Name of the extension
+   */
+  name: string
+
+  /**
+   * Content (for inline extensions this is always text [but could be decoded as Markdown])
+   */
+  content?: string
+
+  /**
+   * Argument string
+   */
+  argument?: string
+
+  /**
+   * Map of computed properties
+   */
+  properties?: { [key: string]: string }
+}
+
+/**
  * Registered generic extensions.
  *
  * @see Extension
@@ -1733,53 +1780,6 @@ function decodeObject(ext: Extension): Record<string, unknown> {
 function encodeObject(value: Record<string | number, unknown>): Extension {
   const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'object', argument }
-}
-
-/**
- * Interface for generic extension nodes decoded by
- * [`remark-generic-extensions`](https://github.com/medfreeman/remark-generic-extensions)
- *
- * Inline extensions have the syntax:
- *
- * ```markdown
- * !Extension[Content](Argument){Properties}
- * ```
- *
- * Block extensions have the syntax:
- *
- * ```markdown
- * Extension: Argument
- * :::
- * [Content]
- * :::
- * {Properties}
- * ```
- */
-interface Extension extends UNIST.Node {
-  /**
-   * Type of extension
-   */
-  type: 'inline-extension' | 'block-extension'
-
-  /**
-   * Name of the extension
-   */
-  name: string
-
-  /**
-   * Content (for inline extensions this is always text [but could be decoded as Markdown])
-   */
-  content?: string
-
-  /**
-   * Argument string
-   */
-  argument?: string
-
-  /**
-   * Map of computed properties
-   */
-  properties?: { [key: string]: string }
 }
 
 /**
