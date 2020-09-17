@@ -602,7 +602,9 @@ function decodeArticle(
       child.type === 'heading' &&
       child.depth === 1
     ) {
-      const content = child.children.map((child) => decodeNode(child, context))
+      const content = ensureInlineContentArray(
+        child.children.map((child) => decodeNode(child, context))
+      )
       title =
         content.length === 1 && typeof content[0] === 'string'
           ? content[0]
@@ -1176,11 +1178,21 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
           type: 'tableRow',
           children: row.cells.map(
             (cell: stencila.TableCell): MDAST.TableCell => {
+              const content = ensureInlineContentArray(cell.content)
+              // If there is only one node in the table cell and it is
+              // a primitive e.g. a number, or boolean then encode it
+              // as a string rather than as the special `!number` etc inline
+              // extensions (which are aimed at distinguishing primitives in
+              // amongst other inline content)
+              const children =
+                content.length === 1 &&
+                stencila.isPrimitive(content[0]) &&
+                content[0] !== null
+                  ? [encodeString(`${content[0]}`)]
+                  : content.map(encodeInlineContent).flat()
               return {
                 type: 'tableCell',
-                children: ensureInlineContentArray(cell.content)
-                  .map(encodeInlineContent)
-                  .flat(),
+                children,
               }
             }
           ),

@@ -8,7 +8,12 @@ const jatsCodec = new JatsCodec()
 const jsonCodec = new JsonCodec()
 const mdCodec = new MdCodec()
 
-test('JSON strings should not get converted to numbers', async () => {
+/**
+ * https://github.com/stencila/encoda/issues/188
+ *
+ * "the number 1, if unquoted, gets converted to boolean true"
+ */
+test('188-type-coercion-weirdness', async () => {
   const json = `{
   "type": "Table",
   "rows": [
@@ -51,9 +56,8 @@ test('JSON strings should not get converted to numbers', async () => {
   const table = (await jsonCodec.load(json)) as stencila.Table
 
   expect(table?.rows?.[0].cells?.[0].content[0]).toBe(1)
-  expect(table?.rows?.[0].cells?.[1].content[0]).toBe('2')
+  expect(table?.rows?.[0].cells?.[1].content[0]).toBe(2)
 
-  expect(await jsonCodec.dump(table)).toEqual(json)
   expect(await mdCodec.dump(table)).toMatchFile(
     snapshot('188-type-coercion.md')
   )
