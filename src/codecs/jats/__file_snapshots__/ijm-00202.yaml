@@ -36,23 +36,20 @@ authors:
 datePublished:
   type: Date
   value: '2020-07-17'
-description:
-  - type: Paragraph
-    content:
-      - >-
-        This article analyses the gender differences in the Personal Income Tax
-        in Uruguay. Although the tax code does not explicitly specify gender
-        differences, the average tax rate varies among gendered household types.
-        Using post-tax income data, we simulate the average tax rate of the
-        household and estimate a zero-one inflated beta model -which properly
-        addresses the fact that the average tax rate includes many zero data
-        points- to analyse it. We find that household supported by a one-earner
-        couple bear a higher tax burden than the ones supported by a dual-earner
-        couple or a single parent. We interpret that these findings suggest that
-        the tax serves as somewhat of an incentive towards equal gender time
-        allocation within the family, which is consistent with gender equity.
-        However the strengths of the tax system from the gender perspective are
-        eroded by the possibility to opt for a (rarely used) joint filing.
+description: >-
+  This article analyses the gender differences in the Personal Income Tax in
+  Uruguay. Although the tax code does not explicitly specify gender differences,
+  the average tax rate varies among gendered household types. Using post-tax
+  income data, we simulate the average tax rate of the household and estimate a
+  zero-one inflated beta model -which properly addresses the fact that the
+  average tax rate includes many zero data points- to analyse it. We find that
+  household supported by a one-earner couple bear a higher tax burden than the
+  ones supported by a dual-earner couple or a single parent. We interpret that
+  these findings suggest that the tax serves as somewhat of an incentive towards
+  equal gender time allocation within the family, which is consistent with
+  gender equity. However the strengths of the tax system from the gender
+  perspective are eroded by the possibility to opt for a (rarely used) joint
+  filing.
 identifiers:
   - type: PropertyValue
     name: publisher-id

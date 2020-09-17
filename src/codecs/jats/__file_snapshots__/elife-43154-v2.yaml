@@ -159,24 +159,20 @@ datePublished:
 dateReceived:
   type: Date
   value: '2018-10-26'
-description:
-  - type: Paragraph
-    content:
-      - >-
-        Case fatality rates in severe falciparum malaria depend on the pattern
-        and degree of vital organ dysfunction. Recent large-scale case-control
-        analyses of pooled severe malaria data reported that glucose-6-phosphate
-        dehydrogenase deficiency (G6PDd) was protective against cerebral malaria
-        but increased the risk of severe malarial anaemia. A novel formulation
-        of the balancing selection hypothesis was proposed as an explanation for
-        these findings, whereby the selective advantage is driven by the
-        competing risks of death from cerebral malaria and death from severe
-        malarial anaemia. We re-analysed these claims using causal diagrams and
-        showed that they are subject to collider bias. A simulation based
-        sensitivity analysis, varying the strength of the known effect of G6PDd
-        on anaemia, showed that this bias is sufficient to explain all of the
-        observed association. Future genetic epidemiology studies in severe
-        malaria would benefit from the use of causal reasoning.
+description: >-
+  Case fatality rates in severe falciparum malaria depend on the pattern and
+  degree of vital organ dysfunction. Recent large-scale case-control analyses of
+  pooled severe malaria data reported that glucose-6-phosphate dehydrogenase
+  deficiency (G6PDd) was protective against cerebral malaria but increased the
+  risk of severe malarial anaemia. A novel formulation of the balancing
+  selection hypothesis was proposed as an explanation for these findings,
+  whereby the selective advantage is driven by the competing risks of death from
+  cerebral malaria and death from severe malarial anaemia. We re-analysed these
+  claims using causal diagrams and showed that they are subject to collider
+  bias. A simulation based sensitivity analysis, varying the strength of the
+  known effect of G6PDd on anaemia, showed that this bias is sufficient to
+  explain all of the observed association. Future genetic epidemiology studies
+  in severe malaria would benefit from the use of causal reasoning.
 editors:
   - type: Person
     affiliations:

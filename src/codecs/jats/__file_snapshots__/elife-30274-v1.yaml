@@ -164,35 +164,32 @@ dateReceived:
   type: Date
   value: '2017-07-10'
 description:
-  - type: Paragraph
+  - 'As part of the '
+  - type: Link
+    target: 'https://osf.io/e81xl/wiki/home/'
     content:
-      - 'As part of the '
-      - type: Link
-        target: 'https://osf.io/e81xl/wiki/home/'
-        content:
-          - 'Reproducibility Project: Cancer Biology'
-      - >-
-        , we published a Registered Report (Blum et al., 2015), that described
-        how we intended to replicate selected experiments from the paper
-        ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin
-        et al., 2012). Here we report the results. We found overexpression of
-        c-Myc increased total levels of RNA in P493-6 Burkitt’s lymphoma cells;
-        however, while the effect was in the same direction as the original
-        study (Figure 3E; Lin et al., 2012), statistical significance and the
-        size of the effect varied between the original study and the two
-        different lots of serum tested in this replication. Digital gene
-        expression analysis for a set of genes was also performed on P493-6
-        cells before and after c-Myc overexpression. Transcripts from genes that
-        were active before c-Myc induction increased in expression following
-        c-Myc overexpression, similar to the original study (Figure 3F; Lin et
-        al., 2012). Transcripts from genes that were silent before c-Myc
-        induction also increased in expression following c-Myc overexpression,
-        while the original study concluded elevated c-Myc had no effect on
-        silent genes (Figure 3F; Lin et al., 2012). Treating the data as paired,
-        we found a statistically significant increase in gene expression for
-        both active and silent genes upon c-Myc induction, with the change in
-        gene expression greater for active genes compared to silent genes.
-        Finally, we report meta-analyses for each result.
+      - 'Reproducibility Project: Cancer Biology'
+  - >-
+    , we published a Registered Report (Blum et al., 2015), that described how
+    we intended to replicate selected experiments from the paper
+    ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin et
+    al., 2012). Here we report the results. We found overexpression of c-Myc
+    increased total levels of RNA in P493-6 Burkitt’s lymphoma cells; however,
+    while the effect was in the same direction as the original study (Figure 3E;
+    Lin et al., 2012), statistical significance and the size of the effect
+    varied between the original study and the two different lots of serum tested
+    in this replication. Digital gene expression analysis for a set of genes was
+    also performed on P493-6 cells before and after c-Myc overexpression.
+    Transcripts from genes that were active before c-Myc induction increased in
+    expression following c-Myc overexpression, similar to the original study
+    (Figure 3F; Lin et al., 2012). Transcripts from genes that were silent
+    before c-Myc induction also increased in expression following c-Myc
+    overexpression, while the original study concluded elevated c-Myc had no
+    effect on silent genes (Figure 3F; Lin et al., 2012). Treating the data as
+    paired, we found a statistically significant increase in gene expression for
+    both active and silent genes upon c-Myc induction, with the change in gene
+    expression greater for active genes compared to silent genes. Finally, we
+    report meta-analyses for each result.
 editors:
   - type: Person
     affiliations:
