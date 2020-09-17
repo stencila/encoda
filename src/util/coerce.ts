@@ -22,9 +22,13 @@ export async function coerce<Key extends keyof stencila.Types>(
   return (produce(node, async (coerced: stencila.Node) => {
     if (coerced === null) return node
 
-    // Change the type, since this is coercion to the specified type
-    // @ts-ignore
-    if (typeof coerced === 'object') coerced.type = type
+    // Change the type given that this is coercion to the specified type
+    if (
+      typeof coerced === 'object' &&
+      coerced !== null &&
+      !Array.isArray(coerced)
+    )
+      coerced.type = type
 
     // Deep "reshape" node
     await reshape(coerced)
