@@ -12,7 +12,7 @@ test('decode', async () => {
     '1990-01-01T00',
     '1990-01-01T00:00',
     '1990-01-01T00:00:00',
-    '1990-01-01T00:00:00.000'
+    '1990-01-01T00:00:00.000',
   ]) {
     expect(await dateCodec.load(value)).toEqual(stencila.date({ value }))
   }
@@ -34,7 +34,7 @@ test('encode', async () => {
     '1990-01-01T00',
     '1990-01-01T00:00',
     '1990-01-01T00:00:00',
-    '1990-01-01T00:00:00.000'
+    '1990-01-01T00:00:00.000',
   ]) {
     expect(await dateCodec.dump(stencila.date({ value }))).toEqual(value)
   }
