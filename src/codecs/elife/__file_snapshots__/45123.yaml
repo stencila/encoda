@@ -55,13 +55,11 @@ dateReceived:
   type: Date
   value: '2019-02-15'
 description:
-  - type: Paragraph
+  - 'A long non-coding RNA called '
+  - type: Emphasis
     content:
-      - 'A long non-coding RNA called '
-      - type: Emphasis
-        content:
-          - lnc-NR2F1
-      - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+      - lnc-NR2F1
+  - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
 genre:
   - Insight
 identifiers:
