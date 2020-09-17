@@ -142,26 +142,22 @@ dateAccepted:
 datePublished:
   type: Date
   value: '2018-10-17'
-description:
-  - type: Paragraph
-    content:
-      - >-
-        Publishing peer review materials alongside research articles promises to
-        make the peer review process more transparent as well as making it
-        easier to recognise these contributions and give credit to peer
-        reviewers. Traditionally, the peer review reports, editors letters and
-        author responses are only shared between the small number of people in
-        those roles prior to publication, but there is a growing interest in
-        making some or all of these materials available. A small number of
-        journals have been publishing peer review materials for some time,
-        others have begun this practice more recently, and significantly more
-        are now considering how they might begin. This article outlines the
-        outcomes from a recent workshop among journals with experience in
-        publishing peer review materials, in which the specific operation of
-        these workflows, and the challenges, were discussed. Here, we provide a
-        draft as to how to represent these materials in the JATS and Crossref
-        data models to facilitate the coordination and discoverability of peer
-        review materials, and seek feedback on these initial recommendations.
+description: >-
+  Publishing peer review materials alongside research articles promises to make
+  the peer review process more transparent as well as making it easier to
+  recognise these contributions and give credit to peer reviewers.
+  Traditionally, the peer review reports, editors letters and author responses
+  are only shared between the small number of people in those roles prior to
+  publication, but there is a growing interest in making some or all of these
+  materials available. A small number of journals have been publishing peer
+  review materials for some time, others have begun this practice more recently,
+  and significantly more are now considering how they might begin. This article
+  outlines the outcomes from a recent workshop among journals with experience in
+  publishing peer review materials, in which the specific operation of these
+  workflows, and the challenges, were discussed. Here, we provide a draft as to
+  how to represent these materials in the JATS and Crossref data models to
+  facilitate the coordination and discoverability of peer review materials, and
+  seek feedback on these initial recommendations.
 fundedBy:
   - type: MonetaryGrant
     funders:
@@ -174,9 +170,9 @@ fundedBy:
         name: Wellcome Trust
     identifiers:
       - type: PropertyValue
-        value: '108758'
+        value: 108758
       - type: PropertyValue
-        value: 098321
+        value: 98321
 identifiers:
   - type: PropertyValue
     name: doi
@@ -185,7 +181,7 @@ identifiers:
   - type: PropertyValue
     name: elocation-id
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
-    value: '1655'
+    value: 1655
 isPartOf:
   type: PublicationVolume
   isPartOf:
@@ -201,7 +197,7 @@ isPartOf:
       type: Organization
       name: F1000 Research Limited
     title: F1000Research
-  volumeNumber: '7'
+  volumeNumber: 7
 keywords:
   - peer review
   - scholarly publishing
@@ -225,7 +221,9 @@ references:
     authors:
       - type: Organization
         name: NISO/ALPSP Journal Article Versions (JAV) Technical Working Group
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     title: >-
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
@@ -248,7 +246,9 @@ references:
           - Konforti
         givenNames:
           - B
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -269,7 +269,9 @@ references:
           - Ross-Hellauer
         givenNames:
           - T
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:

@@ -46,40 +46,37 @@ dateReceived:
   type: Date
   value: '2013-09-30'
 description:
-  - type: Paragraph
+  - >-
+    Reef fishes that exhibit predictable aggregating behaviour are often
+    considered vulnerable to overexploitation. However, fisher knowledge of this
+    behaviour is often heterogeneous and, coupled with socioeconomic factors
+    that constrain demand for or access to aggregated fish, will influence
+    susceptibility to fishing. At two case study locations in Papua New Guinea,
+    Ahus and Karkar islands, we conducted interview-based surveys to examine how
+    local context influenced heterogeneity in knowledge of fish aggregations. We
+    then explored the role of fisher knowledge in conferring susceptibility to
+    fishing relative to socioeconomic drivers of fishing effort. Local
+    heterogeneity in knowledge of aggregating behaviour differed between our
+    case studies. At Ahus, variable access rights among fishers and genders to
+    the main habitats were sources of heterogeneity in knowledge. By contrast,
+    knowledge was more homogenous at Karkar and the sole source of variation was
+    gear type. Differences between locations in the susceptibility of
+    aggregations to fishing depended primarily on socioeconomic drivers of
+    fishing effort rather than catchability. While Ahus fishers were
+    knowledgeable of fish aggregations and used more selective gears, Karkar
+    fishers were less constrained by tenure in their access to aggregation
+    habitat. However, fishing effort was greater at Ahus and likely related to
+    high dependency on fishing, greater access to provincial capital markets
+    than Karkar and a weakening of customary management. Moreover, highly
+    efficient fishing techniques have emerged at Ahus to exploit the
+    non-reproductive aggregating behaviour of target species. Understanding how
+    knowledge is structured within fishing communities and its relation to
+    socioeconomic drivers of fishing effort is important if customary practices
+    for conservation, such as 
+  - type: Emphasis
     content:
-      - >-
-        Reef fishes that exhibit predictable aggregating behaviour are often
-        considered vulnerable to overexploitation. However, fisher knowledge of
-        this behaviour is often heterogeneous and, coupled with socioeconomic
-        factors that constrain demand for or access to aggregated fish, will
-        influence susceptibility to fishing. At two case study locations in
-        Papua New Guinea, Ahus and Karkar islands, we conducted interview-based
-        surveys to examine how local context influenced heterogeneity in
-        knowledge of fish aggregations. We then explored the role of fisher
-        knowledge in conferring susceptibility to fishing relative to
-        socioeconomic drivers of fishing effort. Local heterogeneity in
-        knowledge of aggregating behaviour differed between our case studies. At
-        Ahus, variable access rights among fishers and genders to the main
-        habitats were sources of heterogeneity in knowledge. By contrast,
-        knowledge was more homogenous at Karkar and the sole source of variation
-        was gear type. Differences between locations in the susceptibility of
-        aggregations to fishing depended primarily on socioeconomic drivers of
-        fishing effort rather than catchability. While Ahus fishers were
-        knowledgeable of fish aggregations and used more selective gears, Karkar
-        fishers were less constrained by tenure in their access to aggregation
-        habitat. However, fishing effort was greater at Ahus and likely related
-        to high dependency on fishing, greater access to provincial capital
-        markets than Karkar and a weakening of customary management. Moreover,
-        highly efficient fishing techniques have emerged at Ahus to exploit the
-        non-reproductive aggregating behaviour of target species. Understanding
-        how knowledge is structured within fishing communities and its relation
-        to socioeconomic drivers of fishing effort is important if customary
-        practices for conservation, such as 
-      - type: Emphasis
-        content:
-          - tambu
-      - ' areas, are to be supported. The findings of this study call for a holistic approach to assessing the risks posed to reef fish aggregations by fishing, grounded in the principals of fisheries science and emerging social-ecological thinking.'
+      - tambu
+  - ' areas, are to be supported. The findings of this study call for a holistic approach to assessing the risks posed to reef fish aggregations by fishing, grounded in the principals of fisheries science and emerging social-ecological thinking.'
 editors:
   - type: Person
     affiliations:
@@ -128,8 +125,8 @@ isPartOf:
         type: Organization
         name: Public Library of Science
       title: PLoS ONE
-    volumeNumber: '9'
-  issueNumber: '3'
+    volumeNumber: 9
+  issueNumber: 3
 licenses:
   - type: CreativeWork
     content:
@@ -173,7 +170,9 @@ references:
           - Banks
         givenNames:
           - S
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -209,7 +208,9 @@ references:
           - MacNeil
         givenNames:
           - MA
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -251,7 +252,9 @@ references:
           - Cheung
         givenNames:
           - WWL
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -271,7 +274,9 @@ references:
           - Parrish
         givenNames:
           - JK
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -300,7 +305,9 @@ references:
           - Vaccaro
         givenNames:
           - I
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -335,7 +342,9 @@ references:
           - García-Cagide
         givenNames:
           - AR
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -365,7 +374,9 @@ references:
           - Montambault
         givenNames:
           - JR
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -395,7 +406,9 @@ references:
           - Luckhurst
         givenNames:
           - BE
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -430,7 +443,9 @@ references:
           - Öhman
         givenNames:
           - MC
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -456,7 +471,9 @@ references:
           - Colin
         givenNames:
           - PL
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -496,7 +513,9 @@ references:
           - Russell
         givenNames:
           - M
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -529,7 +548,9 @@ references:
           - Berkson
         givenNames:
           - J
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -564,7 +585,9 @@ references:
           - Nemeth
         givenNames:
           - RS
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -604,7 +627,9 @@ references:
           - Soria
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -629,7 +654,9 @@ references:
           - Holland
         givenNames:
           - KM
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -660,7 +687,9 @@ references:
           - Brown
         givenNames:
           - KA
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -686,7 +715,9 @@ references:
           - Hviding
         givenNames:
           - E
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -713,7 +744,9 @@ references:
           - White
         givenNames:
           - AT
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -733,7 +766,9 @@ references:
           - Aguilar-Perera
         givenNames:
           - A
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -753,7 +788,9 @@ references:
           - Cinner
         givenNames:
           - JE
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -783,7 +820,9 @@ references:
           - Graham
         givenNames:
           - NAJ
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -803,7 +842,9 @@ references:
           - Aswani
         givenNames:
           - S
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -828,7 +869,9 @@ references:
           - Kingsford
         givenNames:
           - MJ
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -856,7 +899,9 @@ references:
           - Kjerfve
         givenNames:
           - B
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -884,7 +929,9 @@ references:
           - Domeier
         givenNames:
           - M
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -922,7 +969,9 @@ references:
           - Daley
         givenNames:
           - R
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -960,7 +1009,9 @@ references:
           - Fields
         givenNames:
           - J
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -984,7 +1035,9 @@ references:
           - Arreguín-Sánchez
         givenNames:
           - F
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1022,7 +1075,9 @@ references:
           - Maina
         givenNames:
           - J
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1060,7 +1115,9 @@ references:
           - Jiddawi
         givenNames:
           - 'N'
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1095,7 +1152,9 @@ references:
           - Januchowski-Hartley
         givenNames:
           - FA
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1125,7 +1184,9 @@ references:
           - McClanahan
         givenNames:
           - TR
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1145,7 +1206,9 @@ references:
           - Crona
         givenNames:
           - BI
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1169,7 +1232,9 @@ references:
           - Wagner
         givenNames:
           - JR
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1194,7 +1259,9 @@ references:
           - Pauly
         givenNames:
           - D
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1232,7 +1299,9 @@ references:
           - Dulvy
         givenNames:
           - NK
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1255,7 +1324,9 @@ references:
           - Roberts
         givenNames:
           - CM
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1285,7 +1356,9 @@ references:
           - Sy
         givenNames:
           - JC
-    datePublished: '1985'
+    datePublished:
+      type: Date
+      value: '1985'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1310,7 +1383,9 @@ references:
           - Hochberg
         givenNames:
           - 'Y'
-    datePublished: '1995'
+    datePublished:
+      type: Date
+      value: '1995'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1333,7 +1408,9 @@ references:
           - Johannes
         givenNames:
           - RE
-    datePublished: '1978'
+    datePublished:
+      type: Date
+      value: '1978'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1356,7 +1433,9 @@ references:
           - Folke
         givenNames:
           - C
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1376,7 +1455,9 @@ references:
           - Carrier
         givenNames:
           - JG
-    datePublished: '1982'
+    datePublished:
+      type: Date
+      value: '1982'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1402,7 +1483,9 @@ references:
           - Williams
         givenNames:
           - DMcB
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1428,7 +1511,9 @@ references:
           - Cinner
         givenNames:
           - JE
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1460,7 +1545,9 @@ references:
           - Francis
         givenNames:
           - F
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1480,7 +1567,9 @@ references:
           - Claydon
         givenNames:
           - J
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1505,7 +1594,9 @@ references:
           - Tupper
         givenNames:
           - MH
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1525,7 +1616,9 @@ references:
           - Ebisawa
         givenNames:
           - A
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1550,7 +1643,9 @@ references:
           - Yamada
         givenNames:
           - H
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1581,7 +1676,9 @@ references:
           - Rose
         givenNames:
           - GA
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1611,7 +1708,9 @@ references:
           - Mills
         givenNames:
           - SC
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1644,7 +1743,9 @@ references:
           - Almany
         givenNames:
           - GR
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:

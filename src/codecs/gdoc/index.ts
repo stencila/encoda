@@ -144,7 +144,8 @@ async function decodeDocument(
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
-  let title: string | stencila.Paragraph[] | null | undefined = doc.title
+  let title: string | stencila.InlineContent[] | undefined =
+    typeof doc.title === 'string' ? doc.title : undefined
 
   // Decode the content, if any
   let content: stencila.Node[] = []
@@ -155,11 +156,18 @@ async function decodeDocument(
         if (elem.paragraph) {
           const para = elem.paragraph
           const block = decodeParagraph(para, lists)
-          // If this para has the `Title` style then set it as the content
+          // If this para has the `Title` style then use it's content
+          // as the title of the article (overrides doc.title)
           if (stencila.isParagraph(block) && para.paragraphStyle) {
             const styleType = para.paragraphStyle.namedStyleType
             if (styleType && styleType === 'TITLE') {
-              title = [block]
+              const { content } = block
+              title =
+                content.length === 0
+                  ? undefined
+                  : content.length === 1 && typeof content[0] === 'string'
+                  ? content[0]
+                  : content
               return undefined
             }
           }

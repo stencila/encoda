@@ -55,20 +55,18 @@ dateReceived:
   type: Date
   value: '2019-02-15'
 description:
-  - type: Paragraph
+  - 'A long non-coding RNA called '
+  - type: Emphasis
     content:
-      - 'A long non-coding RNA called '
-      - type: Emphasis
-        content:
-          - lnc-NR2F1
-      - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+      - lnc-NR2F1
+  - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
 genre:
   - Insight
 identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '45123'
+    value: 45123
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -96,7 +94,7 @@ isPartOf:
       type: Organization
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
-  volumeNumber: '8'
+  volumeNumber: 8
 keywords:
   - long non-coding RNA
   - intellectual disabilities
@@ -234,7 +232,9 @@ references:
           - Chang
         givenNames:
           - HY
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -317,7 +317,9 @@ references:
           - Calegari
         givenNames:
           - F
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -365,7 +367,9 @@ references:
           - Campbell
         givenNames:
           - K
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -409,7 +413,9 @@ references:
           - Vergult
         givenNames:
           - S
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -557,7 +563,9 @@ references:
           - Guigó
         givenNames:
           - R
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -592,7 +600,9 @@ references:
           - Ponting
         givenNames:
           - CP
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -620,7 +630,9 @@ references:
           - Reik
         givenNames:
           - W
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -643,7 +655,9 @@ references:
           - Ziats
         givenNames:
           - MN
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -696,7 +710,9 @@ references:
           - Glennon
         givenNames:
           - JC
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -717,7 +733,9 @@ references:
           - Rennert
         givenNames:
           - OM
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:

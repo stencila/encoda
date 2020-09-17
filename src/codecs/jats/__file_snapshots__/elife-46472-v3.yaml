@@ -216,57 +216,55 @@ dateReceived:
   type: Date
   value: '2019-02-28'
 description:
-  - type: Paragraph
+  - >-
+    We identified a locus on mouse chromosome 10 that accounts for 60% of the
+    genetic variance in methamphetamine intake in mice selectively bred for high
+    versus low methamphetamine consumption. We nominated the trace
+    amine-associated receptor 1 gene, 
+  - type: Emphasis
     content:
-      - >-
-        We identified a locus on mouse chromosome 10 that accounts for 60% of
-        the genetic variance in methamphetamine intake in mice selectively bred
-        for high versus low methamphetamine consumption. We nominated the trace
-        amine-associated receptor 1 gene, 
-      - type: Emphasis
-        content:
-          - Taar1
-      - >-
-        , as the strongest candidate and identified regulation of the mu-opioid
-        receptor 1 gene, 
-      - type: Emphasis
-        content:
-          - Oprm1
-      - >-
-        , as another contributor. This study exploited CRISPR-Cas9 to test the
-        causal role of 
-      - type: Emphasis
-        content:
-          - Taar1
-      - ' in methamphetamine intake and a genetically-associated thermal response to methamphetamine. The methamphetamine-related traits were rescued, converting them to levels found in methamphetamine-avoiding animals. We used a family of recombinant inbred mouse strains for interval mapping and to examine independent and epistatic effects of '
-      - type: Emphasis
-        content:
-          - Taar1
-      - ' and '
-      - type: Emphasis
-        content:
-          - Oprm1
-      - '. Both methamphetamine intake and the thermal response mapped to '
-      - type: Emphasis
-        content:
-          - Taar1
-      - ' and the independent effect of '
-      - type: Emphasis
-        content:
-          - Taar1
-      - ' was dependent on genotype at '
-      - type: Emphasis
-        content:
-          - Oprm1
-      - '. Our findings encourage investigation of the contribution of '
-      - type: Emphasis
-        content:
-          - Taar1
-      - ' and '
-      - type: Emphasis
-        content:
-          - Oprm1
-      - ' variants to human methamphetamine addiction.'
+      - Taar1
+  - >-
+    , as the strongest candidate and identified regulation of the mu-opioid
+    receptor 1 gene, 
+  - type: Emphasis
+    content:
+      - Oprm1
+  - >-
+    , as another contributor. This study exploited CRISPR-Cas9 to test the
+    causal role of 
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' in methamphetamine intake and a genetically-associated thermal response to methamphetamine. The methamphetamine-related traits were rescued, converting them to levels found in methamphetamine-avoiding animals. We used a family of recombinant inbred mouse strains for interval mapping and to examine independent and epistatic effects of '
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' and '
+  - type: Emphasis
+    content:
+      - Oprm1
+  - '. Both methamphetamine intake and the thermal response mapped to '
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' and the independent effect of '
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' was dependent on genotype at '
+  - type: Emphasis
+    content:
+      - Oprm1
+  - '. Our findings encourage investigation of the contribution of '
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' and '
+  - type: Emphasis
+    content:
+      - Oprm1
+  - ' variants to human methamphetamine addiction.'
 editors:
   - type: Person
     affiliations:
@@ -358,7 +356,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '46472'
+    value: 46472
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -386,7 +384,7 @@ isPartOf:
       type: Organization
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
-  volumeNumber: '8'
+  volumeNumber: 8
 keywords:
   - trace amine-associated receptor 1
   - mu-opioid receptor
@@ -525,7 +523,9 @@ references:
           - Warming
         givenNames:
           - S
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -553,7 +553,9 @@ references:
           - Yoshiki
         givenNames:
           - A
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -591,7 +593,9 @@ references:
           - Crabbe
         givenNames:
           - JC
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -611,7 +615,9 @@ references:
           - Belknap
         givenNames:
           - JK
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -676,7 +682,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -746,7 +754,9 @@ references:
           - Bettler
         givenNames:
           - B
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -771,7 +781,9 @@ references:
           - Nadeau
         givenNames:
           - JH
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -856,7 +868,9 @@ references:
           - Grandy
         givenNames:
           - DK
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -892,7 +906,9 @@ references:
           - Segal
         givenNames:
           - DS
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -917,7 +933,9 @@ references:
           - Chomchai
         givenNames:
           - S
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -965,7 +983,9 @@ references:
           - Canales
         givenNames:
           - JJ
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1004,7 +1024,9 @@ references:
           - Deutsch
         givenNames:
           - CM
-    datePublished: '1987'
+    datePublished:
+      type: Date
+      value: '1987'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1034,7 +1056,9 @@ references:
           - Dorow
         givenNames:
           - JS
-    datePublished: '1989'
+    datePublished:
+      type: Date
+      value: '1989'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1059,7 +1083,9 @@ references:
           - Dyer
         givenNames:
           - KR
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1102,7 +1128,9 @@ references:
           - Buono
         givenNames:
           - RJ
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1167,7 +1195,9 @@ references:
           - Ferraro
         givenNames:
           - TN
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1197,7 +1227,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1232,7 +1264,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1257,7 +1291,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1282,7 +1318,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1337,7 +1375,9 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1442,7 +1482,9 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1485,7 +1527,9 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1538,7 +1582,9 @@ references:
           - Berrettini
         givenNames:
           - WH
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1558,7 +1604,9 @@ references:
           - Flint
         givenNames:
           - J
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1603,7 +1651,9 @@ references:
           - Mendelson
         givenNames:
           - JE
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1648,7 +1698,9 @@ references:
           - Crabbe
         givenNames:
           - JC
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1683,7 +1735,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1716,7 +1770,9 @@ references:
       - type: Person
         familyNames:
           - Phillips
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1749,7 +1805,9 @@ references:
           - Lacy
         givenNames:
           - E
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: CreativeWork
       name: 'Manipulating the Mouse Embryo: A Laboratory Manual'
@@ -1827,7 +1885,9 @@ references:
           - Sora
         givenNames:
           - I
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1935,7 +1995,9 @@ references:
           - Sora
         givenNames:
           - I
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1985,7 +2047,9 @@ references:
           - Adams
         givenNames:
           - DJ
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2028,7 +2092,9 @@ references:
           - Charpentier
         givenNames:
           - E
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2053,7 +2119,9 @@ references:
           - Li
         givenNames:
           - JX
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2123,7 +2191,9 @@ references:
           - Salahpour
         givenNames:
           - A
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2139,7 +2209,9 @@ references:
           - Lehner
         givenNames:
           - B
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2182,7 +2254,9 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2252,7 +2326,9 @@ references:
           - Hoener
         givenNames:
           - MC
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2290,7 +2366,9 @@ references:
           - Li
         givenNames:
           - JX
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2315,7 +2393,9 @@ references:
           - Li
         givenNames:
           - JX
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2396,7 +2476,9 @@ references:
           - Szumlinski
         givenNames:
           - KK
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2500,7 +2582,9 @@ references:
           - Szumlinski
         givenNames:
           - KK
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2580,7 +2664,9 @@ references:
           - Bowl
         givenNames:
           - MR
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2619,7 +2705,9 @@ references:
           - Hinderliter
         givenNames:
           - CF
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2669,7 +2757,9 @@ references:
           - Hinderliter
         givenNames:
           - CF
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2704,7 +2794,9 @@ references:
           - Williams
         givenNames:
           - RW
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2727,7 +2819,9 @@ references:
           - Auwerx
         givenNames:
           - J
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2770,7 +2864,9 @@ references:
           - Kato
         givenNames:
           - T
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2783,7 +2879,9 @@ references:
     authors:
       - type: Organization
         name: National Institute on Drug Abuse
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     title: Overdose death rates
     url: >-
       https://www.drugabuse.gov/related-topics/trends-statistics/overdose-death-rates
@@ -2792,7 +2890,9 @@ references:
     authors:
       - type: Organization
         name: National Institute on Drug Abuse
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: Methamphetamine
     url: 'https://www.drugabuse.gov/publications/research-reports/methamphetamine/'
   - type: Article
@@ -2800,7 +2900,9 @@ references:
     authors:
       - type: Organization
         name: National Research Council
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     publisher:
       type: Organization
       address:
@@ -2831,7 +2933,9 @@ references:
           - Canales
         givenNames:
           - JJ
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2886,7 +2990,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2995,7 +3101,9 @@ references:
           - Hoener
         givenNames:
           - MC
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3025,7 +3133,9 @@ references:
           - Zucchi
         givenNames:
           - R
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3061,7 +3171,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3106,7 +3218,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3141,7 +3255,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3196,7 +3312,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3242,7 +3360,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3305,7 +3425,9 @@ references:
           - Janowsky
         givenNames:
           - A
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3353,7 +3475,9 @@ references:
           - Ling
         givenNames:
           - W
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3372,7 +3496,9 @@ references:
           - Woods
         givenNames:
           - LC
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3400,7 +3526,9 @@ references:
           - Norcross
         givenNames:
           - RD
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3486,7 +3614,9 @@ references:
           - Kippin
         givenNames:
           - TE
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3503,7 +3633,9 @@ references:
     authors:
       - type: Organization
         name: United Nations Office on Drugs and Crime
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     publisher:
       type: Organization
       name: United Nations Publication
@@ -3566,7 +3698,9 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3606,7 +3740,9 @@ references:
           - Hennighausen
         givenNames:
           - L
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3659,7 +3795,9 @@ references:
           - Gerald
         givenNames:
           - CP
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3684,7 +3822,9 @@ references:
           - Miller
         givenNames:
           - GM
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3705,7 +3845,9 @@ references:
           - Zhang
         givenNames:
           - F
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     title: Systems methods and compositions for sequence manipulation
     url: 'https://patents.google.com/patent/WO2015089486A3/en'
 title:

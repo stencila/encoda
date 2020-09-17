@@ -42,24 +42,20 @@ datePublished:
 dateReceived:
   type: Date
   value: '2014-01-13'
-description:
-  - type: Paragraph
-    content:
-      - >-
-        The Traveler's Dilemma game and the Minimum Effort Coordination game are
-        two social dilemmas that have attracted considerable attention due to
-        the fact that the predictions of classical game theory are at odds with
-        the results found when the games are studied experimentally. Moreover, a
-        direct application of deterministic evolutionary game theory, as
-        embodied in the replicator dynamics, to these games does not explain the
-        observed behavior. In this work, we formulate natural variants of these
-        two games as smoothed continuous-strategy games. We study the
-        evolutionary dynamics of these continuous-strategy games, both
-        analytically and through agent-based simulations, and show that the
-        behavior predicted theoretically is in accord with that observed
-        experimentally. Thus, these variants of the Traveler's Dilemma and the
-        Minimum Effort Coordination games provide a simple resolution of the
-        paradoxical behavior associated with the original games.
+description: >-
+  The Traveler's Dilemma game and the Minimum Effort Coordination game are two
+  social dilemmas that have attracted considerable attention due to the fact
+  that the predictions of classical game theory are at odds with the results
+  found when the games are studied experimentally. Moreover, a direct
+  application of deterministic evolutionary game theory, as embodied in the
+  replicator dynamics, to these games does not explain the observed behavior. In
+  this work, we formulate natural variants of these two games as smoothed
+  continuous-strategy games. We study the evolutionary dynamics of these
+  continuous-strategy games, both analytically and through agent-based
+  simulations, and show that the behavior predicted theoretically is in accord
+  with that observed experimentally. Thus, these variants of the Traveler's
+  Dilemma and the Minimum Effort Coordination games provide a simple resolution
+  of the paradoxical behavior associated with the original games.
 editors:
   - type: Person
     affiliations:
@@ -107,8 +103,8 @@ isPartOf:
         type: Organization
         name: Public Library of Science
       title: PLoS ONE
-    volumeNumber: '9'
-  issueNumber: '4'
+    volumeNumber: 9
+  issueNumber: 4
 licenses:
   - type: CreativeWork
     content:
@@ -131,7 +127,9 @@ references:
           - Kollock
         givenNames:
           - P
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -152,7 +150,9 @@ references:
           - Hardin
         givenNames:
           - G
-    datePublished: '1968'
+    datePublished:
+      type: Date
+      value: '1968'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -170,7 +170,9 @@ references:
           - Flood
         givenNames:
           - MM
-    datePublished: '1958'
+    datePublished:
+      type: Date
+      value: '1958'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -193,7 +195,9 @@ references:
           - Axelrod
         givenNames:
           - R
-    datePublished: '1981'
+    datePublished:
+      type: Date
+      value: '1981'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -222,7 +226,9 @@ references:
           - Walker
         givenNames:
           - J
-    datePublished: '1988'
+    datePublished:
+      type: Date
+      value: '1988'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -247,7 +253,9 @@ references:
           - Gachter
         givenNames:
           - S
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -275,7 +283,9 @@ references:
           - Knowlton
         givenNames:
           - 'N'
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -307,7 +317,9 @@ references:
           - Killingback
         givenNames:
           - T
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -335,7 +347,9 @@ references:
           - Hauert
         givenNames:
           - C
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -363,7 +377,9 @@ references:
           - Flatt
         givenNames:
           - T
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -390,7 +406,9 @@ references:
           - Roth
         givenNames:
           - A
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -408,7 +426,9 @@ references:
           - Basu
         givenNames:
           - K
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -426,7 +446,9 @@ references:
           - Basu
         givenNames:
           - K
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -449,7 +471,9 @@ references:
           - Holt
         givenNames:
           - C
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -478,7 +502,9 @@ references:
           - Beil
         givenNames:
           - R
-    datePublished: '1990'
+    datePublished:
+      type: Date
+      value: '1990'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -511,7 +537,9 @@ references:
           - Holt
         givenNames:
           - C
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -534,7 +562,9 @@ references:
           - Holt
         givenNames:
           - C
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -565,7 +595,9 @@ references:
           - Stanca
         givenNames:
           - L
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -603,7 +635,9 @@ references:
           - Nowak
         givenNames:
           - M
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -621,7 +655,9 @@ references:
           - Riehl
         givenNames:
           - C
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -646,7 +682,9 @@ references:
           - Jara
         givenNames:
           - L
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -666,7 +704,9 @@ references:
           - Bryant
         givenNames:
           - J
-    datePublished: '1983'
+    datePublished:
+      type: Date
+      value: '1983'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -694,7 +734,9 @@ references:
           - Holt
         givenNames:
           - C
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -719,7 +761,9 @@ references:
           - Pass
         givenNames:
           - R
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -737,7 +781,9 @@ references:
           - Capraro
         givenNames:
           - V
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -769,7 +815,9 @@ references:
           - Jennings
         givenNames:
           - 'N'
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -799,7 +847,9 @@ references:
           - Lin
         givenNames:
           - J
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -826,7 +876,9 @@ references:
           - Chong
         givenNames:
           - J
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -854,7 +906,9 @@ references:
           - Broseta
         givenNames:
           - B
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -877,7 +931,9 @@ references:
           - Palfrey
         givenNames:
           - T
-    datePublished: '1995'
+    datePublished:
+      type: Date
+      value: '1995'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -900,7 +956,9 @@ references:
           - Wilson
         givenNames:
           - P
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -945,7 +1003,9 @@ references:
           - Heerwaarden
         givenNames:
           - J
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -980,7 +1040,9 @@ references:
           - Meszéna
         givenNames:
           - G
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1008,7 +1070,9 @@ references:
           - Metz
         givenNames:
           - J
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1033,7 +1097,9 @@ references:
           - May
         givenNames:
           - R
-    datePublished: '1992'
+    datePublished:
+      type: Date
+      value: '1992'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1056,7 +1122,9 @@ references:
           - Doebeli
         givenNames:
           - M
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1086,7 +1154,9 @@ references:
           - Iwasa
         givenNames:
           - 'Y'
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1110,7 +1180,9 @@ references:
           - Rand
         givenNames:
           - D
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1138,7 +1210,9 @@ references:
           - Doebeli
         givenNames:
           - M
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1163,7 +1237,9 @@ references:
           - Doebeli
         givenNames:
           - M
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1188,7 +1264,9 @@ references:
           - Pacheco
         givenNames:
           - J
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1223,7 +1301,9 @@ references:
           - Nowak
         givenNames:
           - M
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1248,7 +1328,9 @@ references:
           - Fáth
         givenNames:
           - G
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1271,7 +1353,9 @@ references:
           - Strogatz
         givenNames:
           - S
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1294,7 +1378,9 @@ references:
           - Albert
         givenNames:
           - R
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1317,7 +1403,9 @@ references:
           - Barabási
         givenNames:
           - A
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1343,7 +1431,9 @@ references:
           - Gneezy
         givenNames:
           - U
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationVolume
       isPartOf:

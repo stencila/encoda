@@ -20,6 +20,7 @@ import fs from 'fs-extra'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
+import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
@@ -457,7 +458,7 @@ function decodeTitle(
   if (title === null || title.elements === undefined) return 'Untitled'
   if (title.elements.length === 1 && title.elements[0].type === 'text')
     return text(title)
-  else return decodeElements(title.elements, state)
+  else return decodeInlineContent(title.elements, state)
 }
 
 /**
@@ -506,7 +507,16 @@ function decodeAbstract(
   elem: xml.Element | null,
   state: DecodeState
 ): stencila.Article['description'] {
-  return elem !== null ? decodeElements(all(elem, 'p'), state) : undefined
+  if (elem === null) return undefined
+  const ps = all(elem, 'p')
+  if (ps.length === 0) return undefined
+  if (ps.length === 1) {
+    const content = decodeInlineContent(ps, state)
+    return content.length === 1 && typeof content[0] === 'string'
+      ? content[0]
+      : content
+  }
+  return ensureBlockContentArray(decodeElements(ps, state))
 }
 
 /**
@@ -1213,18 +1223,16 @@ function encodeReference(
       children.push(personGroup)
     }
 
-    // TODO: split date into components according to what data is set and apply to appropriate elements
     if (datePublished) {
+      const dateString =
+        typeof datePublished === 'string' ? datePublished : datePublished.value
       children.push(
         elem(
           'year',
           {
-            'iso-8601-date':
-              typeof datePublished === 'string'
-                ? datePublished
-                : datePublished.value,
+            'iso-8601-date': dateString,
           },
-          datePublished
+          dateString
         )
       )
     }

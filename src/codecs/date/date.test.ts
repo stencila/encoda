@@ -1,25 +1,41 @@
 import * as stencila from '@stencila/schema'
-import * as vfile from '../../util/vfile'
 import { DateCodec } from '.'
 
-const date = new DateCodec()
-const decode = async (text: string) => date.decode(await vfile.load(text))
-const encode = async (node: stencila.Node) =>
-  vfile.dump(await date.encode(node))
-
-const ny1990 = stencila.date({ value: '1990-01-01T00:00:00.000Z' })
-const waitangi = stencila.date({ value: '1840-02-05T12:20:56.000Z' })
+const dateCodec = new DateCodec()
 
 test('decode', async () => {
-  for (const date of ['1990', '1990-01', '1990-01-01']) {
-    expect(await decode(date)).toEqual(ny1990)
+  // Valid ISO dates, explicitly or assumed to be UTC
+  for (const value of [
+    '1990',
+    '1990-01',
+    '1990-01-01',
+    '1990-01-01T00',
+    '1990-01-01T00:00',
+    '1990-01-01T00:00:00',
+    '1990-01-01T00:00:00.000',
+  ]) {
+    expect(await dateCodec.load(value)).toEqual(stencila.date({ value }))
   }
-  expect(await decode('2 Jun 2004 14:31')).toEqual(
-    stencila.date({ value: '2004-06-02T14:31:00.000Z' })
+
+  // Non-ISO dates
+  expect(await dateCodec.load('3 Jan 2004')).toEqual(
+    stencila.date({ value: '2004-01-03' })
+  )
+  expect(await dateCodec.load('1/3/2004')).toEqual(
+    stencila.date({ value: '2004-01-03' })
   )
 })
 
 test('encode', async () => {
-  expect(await encode(ny1990)).toEqual('1990-01-01')
-  expect(await encode(waitangi)).toEqual('1840-02-05T12:20:56.000Z')
+  for (const value of [
+    '1990',
+    '1990-01',
+    '1990-01-01',
+    '1990-01-01T00',
+    '1990-01-01T00:00',
+    '1990-01-01T00:00:00',
+    '1990-01-01T00:00:00.000',
+  ]) {
+    expect(await dateCodec.dump(stencila.date({ value }))).toEqual(value)
+  }
 })

@@ -77,44 +77,40 @@ datePublished:
   type: Date
   value: '2019-08-08'
 description:
-  - type: Paragraph
+  - >-
+    Cannabidiol (CBD)-containing products are widely marketed as over the
+    counter products, mostly as food supplements, to avoid the strict rules of
+    medicinal products. Side-effects reported in anecdotal consumer reports or
+    during clinical studies were first assumed to be due to hydrolytic
+    conversion of CBD to psychoactive Δ
+                        
+  - type: Superscript
     content:
-      - >-
-        Cannabidiol (CBD)-containing products are widely marketed as over the
-        counter products, mostly as food supplements, to avoid the strict rules
-        of medicinal products. Side-effects reported in anecdotal consumer
-        reports or during clinical studies were first assumed to be due to
-        hydrolytic conversion of CBD to psychoactive Δ
-                            
-      - type: Superscript
-        content:
-          - '9'
-      - >-
-        -tetrahydrocannainol (THC). However, research of pure CBD solutions
-        stored in simulated gastric juice or subjected to various storage
-        conditions such as heat and light with specific liquid
-        chromatographic/tandem mass spectrometric (LC/MS/MS) and ultra-high
-        pressure liquid chromatographic/quadrupole time-of-flight mass
-        spectrometric (UPLC-QTOF) analyses was unable to confirm THC formation.
-        Another hypothesis for the side-effects of CBD products may be residual
-        THC concentrations in the products as contamination, because most of
-        them are based on crude hemp extracts containing the full spectrum of
-        cannabinoids besides CBD. Analyses of 28 food products of the German
-        market containing hemp extract as an ingredient (mostly CBD oils)
-        confirmed this hypothesis: 10 products (36%) contained THC above the
-        lowest observed adverse effects level (2.5 mg/day). Inversely, CBD was
-        present in the products below the no observed adverse effect level.
-        Hence, it may be assumed that the adverse effects of some commercial CBD
-        products are based on a low-dose effect of THC and not due to effects of
-        CBD itself. The safety, efficacy and purity of commercial CBD products
-        is highly questionable, and all of the products in our sample collection
-        showed various non-conformities to European food law such as unsafe THC
-        levels, full-spectrum hemp extracts as non-approved novel food
-        ingredients, non-approved health claims, and deficits in mandatory food
-        labelling requirements. In view of the growing market for such lifestyle
-        products, the effectiveness of the instrument of food business
-        operators' own responsibility for product safety must obviously be
-        challenged.
+      - 9
+  - >-
+    -tetrahydrocannainol (THC). However, research of pure CBD solutions stored
+    in simulated gastric juice or subjected to various storage conditions such
+    as heat and light with specific liquid chromatographic/tandem mass
+    spectrometric (LC/MS/MS) and ultra-high pressure liquid
+    chromatographic/quadrupole time-of-flight mass spectrometric (UPLC-QTOF)
+    analyses was unable to confirm THC formation. Another hypothesis for the
+    side-effects of CBD products may be residual THC concentrations in the
+    products as contamination, because most of them are based on crude hemp
+    extracts containing the full spectrum of cannabinoids besides CBD. Analyses
+    of 28 food products of the German market containing hemp extract as an
+    ingredient (mostly CBD oils) confirmed this hypothesis: 10 products (36%)
+    contained THC above the lowest observed adverse effects level (2.5 mg/day).
+    Inversely, CBD was present in the products below the no observed adverse
+    effect level. Hence, it may be assumed that the adverse effects of some
+    commercial CBD products are based on a low-dose effect of THC and not due to
+    effects of CBD itself. The safety, efficacy and purity of commercial CBD
+    products is highly questionable, and all of the products in our sample
+    collection showed various non-conformities to European food law such as
+    unsafe THC levels, full-spectrum hemp extracts as non-approved novel food
+    ingredients, non-approved health claims, and deficits in mandatory food
+    labelling requirements. In view of the growing market for such lifestyle
+    products, the effectiveness of the instrument of food business operators'
+    own responsibility for product safety must obviously be challenged.
 identifiers:
   - type: PropertyValue
     name: doi
@@ -123,7 +119,7 @@ identifiers:
   - type: PropertyValue
     name: elocation-id
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
-    value: '1394'
+    value: 1394
 isPartOf:
   type: PublicationVolume
   isPartOf:
@@ -139,7 +135,7 @@ isPartOf:
       type: Organization
       name: F1000 Research Limited
     title: F1000Research
-  volumeNumber: '8'
+  volumeNumber: 8
 keywords:
   - Tetrahydrocannabinol
   - cannabidiol
@@ -168,7 +164,9 @@ references:
           - Lachenmeier
         givenNames:
           - DW
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -196,7 +194,9 @@ references:
           - Deych
         givenNames:
           - A
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -211,7 +211,9 @@ references:
     authors:
       - type: Organization
         name: Expert Committee on Drug Dependence
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     title: Cannabidiol (CBD) - Critical review report
     url: >-
       https://www.who.int/medicines/access/controlled-substances/CannabidiolCriticalReview.pdf
@@ -223,7 +225,9 @@ references:
           - Sarill
         givenNames:
           - M
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     title: 'Researching safety and efficacy of CBD, hemp extracts'
     url: >-
       https://www.naturalproductsinsider.com/ingredients/researching-safety-and-efficacy-cbd-hemp-extracts
@@ -235,7 +239,9 @@ references:
           - Büechi
         givenNames:
           - S
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -255,7 +261,9 @@ references:
           - Hazekamp
         givenNames:
           - A
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -273,7 +281,9 @@ references:
           - Wilkinson
         givenNames:
           - J
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: Periodical
       name: Soft Drinks Int.
@@ -300,7 +310,9 @@ references:
           - Chapman
         givenNames:
           - KE
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -330,7 +342,9 @@ references:
           - Comi
         givenNames:
           - AM
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -364,7 +378,9 @@ references:
           - Friedman
         givenNames:
           - D
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -397,7 +413,9 @@ references:
           - Sebree
         givenNames:
           - T
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -417,7 +435,9 @@ references:
     authors:
       - type: Organization
         name: 'PhEur Gastric juice, artificial (1039900)'
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: European Pharmacopoeia
     url: 'https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition'
   - type: Article
@@ -428,7 +448,9 @@ references:
           - Lachenmeier
         givenNames:
           - DW
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: >-
       Dataset for “Are side effects of cannabidiol (CBD) products caused by
       delta9-tetrahydrocannabinol (THC) contamination
@@ -438,7 +460,9 @@ references:
     authors:
       - type: Organization
         name: BgVV
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     title: >-
       BgVV empfiehlt Richtwerte für THC (Tetrahydrocannabinol) in hanfhaltigen
       Lebensmitteln
@@ -449,7 +473,9 @@ references:
     authors:
       - type: Organization
         name: EFSA Panel on Contaminants in the Food Chain (CONTAM)
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -481,7 +507,9 @@ references:
           - Clewell
         givenNames:
           - AE
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -510,7 +538,9 @@ references:
           - Cain
         givenNames:
           - CK
-    datePublished: '1940'
+    datePublished:
+      type: Date
+      value: '1940'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -544,7 +574,9 @@ references:
           - McPhee
         givenNames:
           - WD
-    datePublished: '1941'
+    datePublished:
+      type: Date
+      value: '1941'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -575,7 +607,9 @@ references:
           - Yamaori
         givenNames:
           - S
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -603,7 +637,9 @@ references:
           - Walch
         givenNames:
           - SG
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -629,7 +665,9 @@ references:
           - Walch
         givenNames:
           - SG
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -649,7 +687,9 @@ references:
           - Manthey
         givenNames:
           - J
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -677,7 +717,9 @@ references:
           - Zuardi
         givenNames:
           - AW
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -710,7 +752,9 @@ references:
           - Zuardi
         givenNames:
           - AW
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -731,7 +775,9 @@ references:
     authors:
       - type: Organization
         name: European Parliament and the Council of the European Union
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: Periodical
       name: Off J Europ Union.
@@ -750,7 +796,9 @@ references:
     authors:
       - type: Organization
         name: European Parliament and the Council of the European Union
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: Periodical
       name: Off J Europ Union.
@@ -770,7 +818,9 @@ references:
     authors:
       - type: Organization
         name: European Parliament and the Council of the European Union
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: Periodical
       name: Off J Europ Union.
@@ -794,7 +844,9 @@ references:
           - Rehm
         givenNames:
           - J
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -813,7 +865,9 @@ references:
           - Grotenhermen
         givenNames:
           - F
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -839,7 +893,9 @@ references:
           - Vonesch
         givenNames:
           - HJ
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -857,7 +913,9 @@ references:
     authors:
       - type: Organization
         name: BfR
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     title: >-
       Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu
       hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr.
@@ -880,7 +938,9 @@ references:
           - Thomas
         givenNames:
           - BF
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:

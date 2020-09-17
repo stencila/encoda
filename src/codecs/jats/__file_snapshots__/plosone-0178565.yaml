@@ -48,39 +48,36 @@ dateReceived:
   type: Date
   value: '2017-01-25'
 description:
-  - type: Paragraph
+  - >-
+    Cyanobacteria, a group of photosynthetic prokaryotes, dominate the earth
+    with ~ 10
+  - type: Superscript
     content:
-      - >-
-        Cyanobacteria, a group of photosynthetic prokaryotes, dominate the earth
-        with ~ 10
-      - type: Superscript
-        content:
-          - '15'
-      - ' g wet biomass. Despite diversity in habitats and an ancient origin, cyanobacterial phylum has retained a significant core genome. Cyanobacteria are being explored for direct conversion of solar energy and carbon dioxide into biofuels. For this, efficient cyanobacterial strains will need to be designed via metabolic engineering. This will require identification of target knockouts to channelize the flow of carbon toward the product of interest while minimizing deletions of essential genes. We propose “Gene Conservation Index” (GCI) as a quick measure to predict gene essentiality in cyanobacteria. GCI is based on phylogenetic profile of a gene constructed with a reduced dataset of cyanobacterial genomes. GCI is the percentage of organism clusters in which the query gene is present in the reduced dataset. Of the 750 genes deemed to be essential in the experimental study on '
-      - type: Emphasis
-        content:
-          - S
-      - '. '
-      - type: Emphasis
-        content:
-          - elongatus
-      - ' PCC 7942, we found 494 to be conserved across the phylum which largely comprise of the essential metabolic pathways. On the contrary, the conserved but non-essential genes broadly comprise of genes required under stress conditions. Exceptions to this rule include genes such as the glycogen synthesis and degradation enzymes, deoxyribose-phosphate aldolase (DERA), glucose-6-phosphate 1-dehydrogenase ('
-      - type: Emphasis
-        content:
-          - zwf
-      - >-
-        ) and fructose-1,6-bisphosphatase class1, which are conserved but
-        non-essential. While the essential genes are to be avoided during gene
-        knockout studies as potentially lethal deletions, the non-essential but
-        conserved set of genes could be interesting targets for metabolic
-        engineering. Further, we identify clusters of co-evolving genes (CCG),
-        which provide insights that may be useful in annotation. Principal
-        component analysis (PCA) plots of the CCGs are demonstrated as data
-        visualization tools that are complementary to the conventional heatmaps.
-        Our dataset consists of phylogenetic profiles for 23,643 non-redundant
-        cyanobacterial genes. We believe that the data and the analysis
-        presented here will be a great resource to the scientific community
-        interested in cyanobacteria.
+      - 15
+  - ' g wet biomass. Despite diversity in habitats and an ancient origin, cyanobacterial phylum has retained a significant core genome. Cyanobacteria are being explored for direct conversion of solar energy and carbon dioxide into biofuels. For this, efficient cyanobacterial strains will need to be designed via metabolic engineering. This will require identification of target knockouts to channelize the flow of carbon toward the product of interest while minimizing deletions of essential genes. We propose “Gene Conservation Index” (GCI) as a quick measure to predict gene essentiality in cyanobacteria. GCI is based on phylogenetic profile of a gene constructed with a reduced dataset of cyanobacterial genomes. GCI is the percentage of organism clusters in which the query gene is present in the reduced dataset. Of the 750 genes deemed to be essential in the experimental study on '
+  - type: Emphasis
+    content:
+      - S
+  - '. '
+  - type: Emphasis
+    content:
+      - elongatus
+  - ' PCC 7942, we found 494 to be conserved across the phylum which largely comprise of the essential metabolic pathways. On the contrary, the conserved but non-essential genes broadly comprise of genes required under stress conditions. Exceptions to this rule include genes such as the glycogen synthesis and degradation enzymes, deoxyribose-phosphate aldolase (DERA), glucose-6-phosphate 1-dehydrogenase ('
+  - type: Emphasis
+    content:
+      - zwf
+  - >-
+    ) and fructose-1,6-bisphosphatase class1, which are conserved but
+    non-essential. While the essential genes are to be avoided during gene
+    knockout studies as potentially lethal deletions, the non-essential but
+    conserved set of genes could be interesting targets for metabolic
+    engineering. Further, we identify clusters of co-evolving genes (CCG), which
+    provide insights that may be useful in annotation. Principal component
+    analysis (PCA) plots of the CCGs are demonstrated as data visualization
+    tools that are complementary to the conventional heatmaps. Our dataset
+    consists of phylogenetic profiles for 23,643 non-redundant cyanobacterial
+    genes. We believe that the data and the analysis presented here will be a
+    great resource to the scientific community interested in cyanobacteria.
 editors:
   - type: Person
     affiliations:
@@ -137,8 +134,8 @@ isPartOf:
         type: Organization
         name: Public Library of Science
       title: PLOS ONE
-    volumeNumber: '12'
-  issueNumber: '6'
+    volumeNumber: 12
+  issueNumber: 6
 licenses:
   - type: CreativeWork
     url: 'http://creativecommons.org/licenses/by/4.0/'
@@ -177,7 +174,9 @@ references:
           - Schanz
         givenNames:
           - F
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -198,7 +197,9 @@ references:
           - Whitton
         givenNames:
           - BA
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     publisher:
       type: Organization
       name: Springer Netherlands
@@ -236,7 +237,9 @@ references:
           - Steward
         givenNames:
           - GF
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -277,7 +280,9 @@ references:
           - Wangikar
         givenNames:
           - PP
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -325,7 +330,9 @@ references:
           - Talla
         givenNames:
           - E
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -368,7 +375,9 @@ references:
           - Stanier
         givenNames:
           - RY
-    datePublished: '1979'
+    datePublished:
+      type: Date
+      value: '1979'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -396,7 +405,9 @@ references:
           - Falkowski
         givenNames:
           - PG
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -432,7 +443,9 @@ references:
           - Steuer
         givenNames:
           - R
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -469,7 +482,9 @@ references:
           - Atsumi
         givenNames:
           - S
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -500,7 +515,9 @@ references:
           - Atsumi
         givenNames:
           - S
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -517,7 +534,9 @@ references:
           - Stephanopoulos
         givenNames:
           - G
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -563,7 +582,9 @@ references:
           - Baba
         givenNames:
           - T
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -611,7 +632,9 @@ references:
           - Grosset
         givenNames:
           - J
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -639,7 +662,9 @@ references:
           - Palsson
         givenNames:
           - BØ
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -661,7 +686,9 @@ references:
           - Maniloff
         givenNames:
           - J
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -707,7 +734,9 @@ references:
           - Veronneau
         givenNames:
           - S
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -733,7 +762,9 @@ references:
           - Arndt
         givenNames:
           - GM
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -779,7 +810,9 @@ references:
           - Lowe
         givenNames:
           - LC
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -813,7 +846,9 @@ references:
           - Oltvai
         givenNames:
           - ZN
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -849,7 +884,9 @@ references:
           - Bond
         givenNames:
           - AT
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -872,7 +909,9 @@ references:
           - Basler
         givenNames:
           - G
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: Periodical
       name: 'Gene Essentiality: Methods and Protocols'
@@ -899,7 +938,9 @@ references:
           - Maranas
         givenNames:
           - CD
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -939,7 +980,9 @@ references:
           - Wangikar
         givenNames:
           - PP
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: Periodical
       name: Bioresource technology
@@ -969,7 +1012,9 @@ references:
           - Wangikar
         givenNames:
           - PP
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1012,7 +1057,9 @@ references:
           - Blankenship
         givenNames:
           - RE
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1043,7 +1090,9 @@ references:
           - Bergman
         givenNames:
           - B
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1085,7 +1134,9 @@ references:
           - Yeates
         givenNames:
           - TO
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1128,7 +1179,9 @@ references:
           - Li
         givenNames:
           - W
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1164,7 +1217,9 @@ references:
           - Wangikar
         givenNames:
           - PP
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1205,7 +1260,9 @@ references:
           - Begley
         givenNames:
           - TP
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1254,7 +1311,9 @@ references:
           - Ladner
         givenNames:
           - JE
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1302,7 +1361,9 @@ references:
           - Bayer
         givenNames:
           - P
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1332,7 +1393,9 @@ references:
           - Golden
         givenNames:
           - SS
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1378,7 +1441,9 @@ references:
           - Chetty
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1422,7 +1487,9 @@ references:
           - Moreno
         givenNames:
           - PA
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1459,7 +1526,9 @@ references:
           - Meurer
         givenNames:
           - J
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1507,7 +1576,9 @@ references:
           - Aro
         givenNames:
           - EM
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1555,7 +1626,9 @@ references:
           - Schmid
         givenNames:
           - GH
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1594,7 +1667,9 @@ references:
           - Walsh
         givenNames:
           - CT
-    datePublished: '1990'
+    datePublished:
+      type: Date
+      value: '1990'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1633,7 +1708,9 @@ references:
           - Rittenhouse
         givenNames:
           - J
-    datePublished: '1986'
+    datePublished:
+      type: Date
+      value: '1986'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1659,7 +1736,9 @@ references:
           - Wolf
         givenNames:
           - R
-    datePublished: '1990'
+    datePublished:
+      type: Date
+      value: '1990'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1687,7 +1766,9 @@ references:
           - Hayes
         givenNames:
           - PK
-    datePublished: '1989'
+    datePublished:
+      type: Date
+      value: '1989'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1717,7 +1798,9 @@ references:
           - DasSarma
         givenNames:
           - S
-    datePublished: '1991'
+    datePublished:
+      type: Date
+      value: '1991'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1740,7 +1823,9 @@ references:
           - Rosen
         givenNames:
           - B
-    datePublished: '1990'
+    datePublished:
+      type: Date
+      value: '1990'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1778,7 +1863,9 @@ references:
           - Gatti
         givenNames:
           - DL
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1806,7 +1893,9 @@ references:
           - Saier
         givenNames:
           - MH
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: Periodical
       name: International journal of microbiology
@@ -1840,7 +1929,9 @@ references:
           - Koonin
         givenNames:
           - EV
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1878,7 +1969,9 @@ references:
           - Bolt
         givenNames:
           - EL
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:

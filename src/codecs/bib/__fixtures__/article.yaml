@@ -12,7 +12,9 @@ authors:
       - Jones
     givenNames:
       - Jim
-datePublished: '2010-01-01'
+datePublished:
+  type: Date
+  value: '2010'
 isPartOf:
   type: PublicationVolume
   volumeNumber: 10
