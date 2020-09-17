@@ -190,7 +190,7 @@ fundedBy:
         name: H2020 European Research Council
     identifiers:
       - type: PropertyValue
-        value: '71598'
+        value: 71598
   - type: MonetaryGrant
     funders:
       - type: Organization
@@ -225,7 +225,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '52882'
+    value: 52882
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -253,7 +253,7 @@ isPartOf:
       type: Organization
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
-  volumeNumber: '9'
+  volumeNumber: 9
 keywords:
   - animal behavior
   - decision-making
@@ -288,7 +288,9 @@ references:
           - Tso
         givenNames:
           - WW
-    datePublished: '1974'
+    datePublished:
+      type: Date
+      value: '1974'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -328,7 +330,9 @@ references:
           - Keller
         givenNames:
           - PJ
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -348,7 +352,9 @@ references:
           - Berens
         givenNames:
           - P
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -371,7 +377,9 @@ references:
           - Brown
         givenNames:
           - DA
-    datePublished: '1972'
+    datePublished:
+      type: Date
+      value: '1972'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -399,7 +407,9 @@ references:
           - Engert
         givenNames:
           - F
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -420,7 +430,9 @@ references:
           - Engert
         givenNames:
           - F
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -443,7 +455,9 @@ references:
           - Wang
         givenNames:
           - XJ
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -468,7 +482,9 @@ references:
           - O’Malley
         givenNames:
           - DM
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -498,7 +514,9 @@ references:
           - Granato
         givenNames:
           - M
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -523,7 +541,9 @@ references:
           - Granato
         givenNames:
           - M
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -548,7 +568,9 @@ references:
           - Vergassola
         givenNames:
           - M
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -571,7 +593,9 @@ references:
           - Engert
         givenNames:
           - F
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -634,7 +658,9 @@ references:
           - Ahrens
         givenNames:
           - MB
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -657,7 +683,9 @@ references:
           - Nicola
         givenNames:
           - GN
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -700,7 +728,9 @@ references:
           - Dowling
         givenNames:
           - JE
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -733,7 +763,9 @@ references:
           - Dowling
         givenNames:
           - JE
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -751,7 +783,9 @@ references:
           - Fechner
         givenNames:
           - GT
-    datePublished: '1860'
+    datePublished:
+      type: Date
+      value: '1860'
     publisher:
       type: Organization
       name: Nabu Press
@@ -789,7 +823,9 @@ references:
           - Burgess
         givenNames:
           - HA
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -819,7 +855,9 @@ references:
           - Weliky
         givenNames:
           - M
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -844,7 +882,9 @@ references:
           - Gunn
         givenNames:
           - DL
-    datePublished: '1961'
+    datePublished:
+      type: Date
+      value: '1961'
     publisher:
       type: Organization
       name: 'Dover Publications, Inc'
@@ -857,7 +897,9 @@ references:
           - Freeman
         givenNames:
           - WJ
-    datePublished: '1995'
+    datePublished:
+      type: Date
+      value: '1995'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -885,7 +927,9 @@ references:
           - Chemla
         givenNames:
           - YR
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -911,7 +955,9 @@ references:
           - Louis
         givenNames:
           - M
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -934,7 +980,9 @@ references:
           - Louis
         givenNames:
           - M
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -969,7 +1017,9 @@ references:
           - Burgess
         givenNames:
           - HA
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1024,7 +1074,9 @@ references:
           - Sprecher
         givenNames:
           - SG
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1079,7 +1131,9 @@ references:
           - Engert
         givenNames:
           - F
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1135,7 +1189,9 @@ references:
           - Samuel
         givenNames:
           - AD
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1151,7 +1207,9 @@ references:
           - Karpenko
         givenNames:
           - S
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: Programs closed-loop phototaxis
     url: 'https://gitlab.com/Phiasso/programs_closed-loop_phototaxis.git'
   - type: Article
@@ -1162,7 +1220,9 @@ references:
           - Karpenko
         givenNames:
           - S
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: Analysis behavioral phototaxis
     url: 'https://gitlab.com/Phiasso/analysis.git'
   - type: Article
@@ -1213,7 +1273,9 @@ references:
           - Leung
         givenNames:
           - YF
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1234,7 +1296,9 @@ references:
           - Dahlquist
         givenNames:
           - FW
-    datePublished: '1975'
+    datePublished:
+      type: Date
+      value: '1975'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1257,7 +1321,9 @@ references:
           - Koshland
         givenNames:
           - DE
-    datePublished: '1972'
+    datePublished:
+      type: Date
+      value: '1972'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1285,7 +1351,9 @@ references:
           - Hogeweg
         givenNames:
           - P
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1320,7 +1388,9 @@ references:
           - Orger
         givenNames:
           - MB
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1350,7 +1420,9 @@ references:
           - Matsuo
         givenNames:
           - R
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1435,7 +1507,9 @@ references:
           - Gouveia
         givenNames:
           - A
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1465,7 +1539,9 @@ references:
           - Scott
         givenNames:
           - EK
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1488,7 +1564,9 @@ references:
           - Tu
         givenNames:
           - 'Y'
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1528,7 +1606,9 @@ references:
           - Lockery
         givenNames:
           - SR
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1556,7 +1636,9 @@ references:
           - Durham
         givenNames:
           - WM
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1579,7 +1661,9 @@ references:
           - Baier
         givenNames:
           - H
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1629,7 +1713,9 @@ references:
           - Debrégeas
         givenNames:
           - G
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1669,7 +1755,9 @@ references:
           - Schier
         givenNames:
           - AF
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1704,7 +1792,9 @@ references:
           - Sokolowski
         givenNames:
           - MB
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1734,7 +1824,9 @@ references:
           - Mattioli
         givenNames:
           - R
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1757,7 +1849,9 @@ references:
           - Newsome
         givenNames:
           - WT
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1780,7 +1874,9 @@ references:
           - Newsome
         givenNames:
           - WT
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1815,7 +1911,9 @@ references:
           - Ryu
         givenNames:
           - WS
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1866,7 +1964,9 @@ references:
           - Louis
         givenNames:
           - M
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1899,7 +1999,9 @@ references:
           - Arieli
         givenNames:
           - A
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1924,7 +2026,9 @@ references:
           - Ornstein
         givenNames:
           - LS
-    datePublished: '1930'
+    datePublished:
+      type: Date
+      value: '1930'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1942,7 +2046,9 @@ references:
           - Wang
         givenNames:
           - XJ
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1960,7 +2066,9 @@ references:
           - Wang
         givenNames:
           - XJ
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1978,7 +2086,9 @@ references:
           - Wang
         givenNames:
           - XJ
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1996,7 +2106,9 @@ references:
           - Ward
         givenNames:
           - S
-    datePublished: '1973'
+    datePublished:
+      type: Date
+      value: '1973'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2031,7 +2143,9 @@ references:
           - Xu
         givenNames:
           - XZ
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2099,7 +2213,9 @@ references:
           - Debrégeas
         givenNames:
           - G
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2132,7 +2248,9 @@ references:
           - Berg
         givenNames:
           - HC
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:

@@ -174,9 +174,9 @@ fundedBy:
         name: Wellcome Trust
     identifiers:
       - type: PropertyValue
-        value: '108758'
+        value: 108758
       - type: PropertyValue
-        value: 098321
+        value: 98321
 identifiers:
   - type: PropertyValue
     name: doi
@@ -185,7 +185,7 @@ identifiers:
   - type: PropertyValue
     name: elocation-id
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
-    value: '1655'
+    value: 1655
 isPartOf:
   type: PublicationVolume
   isPartOf:
@@ -201,7 +201,7 @@ isPartOf:
       type: Organization
       name: F1000 Research Limited
     title: F1000Research
-  volumeNumber: '7'
+  volumeNumber: 7
 keywords:
   - peer review
   - scholarly publishing
@@ -225,7 +225,9 @@ references:
     authors:
       - type: Organization
         name: NISO/ALPSP Journal Article Versions (JAV) Technical Working Group
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     title: >-
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
@@ -248,7 +250,9 @@ references:
           - Konforti
         givenNames:
           - B
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -269,7 +273,9 @@ references:
           - Ross-Hellauer
         givenNames:
           - T
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:

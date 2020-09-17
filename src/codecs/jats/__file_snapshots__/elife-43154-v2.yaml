@@ -208,7 +208,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '43154'
+    value: 43154
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -236,7 +236,7 @@ isPartOf:
       type: Organization
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
-  volumeNumber: '8'
+  volumeNumber: 8
 keywords:
   - causal inference
   - severe malaria
@@ -282,7 +282,9 @@ references:
           - Kwiatkowski
         givenNames:
           - DP
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -372,7 +374,9 @@ references:
           - Fairhurst
         givenNames:
           - RM
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -772,7 +776,9 @@ references:
           - Kwiatkowski
         givenNames:
           - DP
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -795,7 +801,9 @@ references:
           - Loken
         givenNames:
           - E
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     publisher:
       type: Organization
       address:
@@ -864,7 +872,9 @@ references:
           - Hay
         givenNames:
           - SI
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -887,7 +897,9 @@ references:
           - Arese
         givenNames:
           - P
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -945,7 +957,9 @@ references:
           - Conway
         givenNames:
           - DJ
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -968,7 +982,9 @@ references:
           - Richiardi
         givenNames:
           - L
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1008,7 +1024,9 @@ references:
           - Vandenbroucke
         givenNames:
           - JP
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1073,7 +1091,9 @@ references:
           - Williams
         givenNames:
           - TN
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1096,7 +1116,9 @@ references:
           - Leopold
         givenNames:
           - SJ
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: Severe Malaria
     url: 'https://github.com/Stije/SevereMalariaAnalysis'
   - type: Article
@@ -1107,7 +1129,9 @@ references:
           - Weatherall
         givenNames:
           - DJ
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1152,7 +1176,9 @@ references:
           - Dondorp
         givenNames:
           - AM
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1167,7 +1193,9 @@ references:
     authors:
       - type: Organization
         name: WHO
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1182,7 +1210,9 @@ references:
     authors:
       - type: Organization
         name: WHO
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: CreativeWork
       name: Guidelines for the Treatment of Malaria
@@ -1198,7 +1228,9 @@ references:
           - Williams
         givenNames:
           - TN
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1226,7 +1258,9 @@ references:
           - Motulsky
         givenNames:
           - AG
-    datePublished: '1971'
+    datePublished:
+      type: Date
+      value: '1971'
     isPartOf:
       type: PublicationVolume
       isPartOf:

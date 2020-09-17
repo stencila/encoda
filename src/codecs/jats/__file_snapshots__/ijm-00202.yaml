@@ -57,7 +57,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '00202'
+    value: 202
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -83,8 +83,8 @@ isPartOf:
         type: Organization
         name: International Microsimulation Association
       title: International Journal of Microsimulation
-    volumeNumber: '12'
-  issueNumber: '2'
+    volumeNumber: 12
+  issueNumber: 2
 keywords:
   - C63
   - H22
@@ -109,8 +109,8 @@ licenses:
           - >-
             , which permits unrestricted use and redistribution provided that
             the original author and source are credited.
-pageEnd: '86'
-pageStart: '68'
+pageEnd: 86
+pageStart: 68
 references:
   - type: Article
     id: bib1
@@ -130,7 +130,9 @@ references:
           - Karabarbounis
         givenNames:
           - L
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -158,7 +160,9 @@ references:
           - Amarante
         givenNames:
           - V
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -188,7 +192,9 @@ references:
           - Rees
         givenNames:
           - R
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -211,7 +217,9 @@ references:
           - Rees
         givenNames:
           - R
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     publisher:
       type: Organization
       name: Cambridge University Press
@@ -229,7 +237,9 @@ references:
           - Rees
         givenNames:
           - R
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -257,7 +267,9 @@ references:
           - Ochmann
         givenNames:
           - R
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -282,7 +294,9 @@ references:
           - Roca
         givenNames:
           - J
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -305,7 +319,9 @@ references:
           - Lara
         givenNames:
           - C
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     publisher:
       type: Organization
       name: 'Departamento de Economía, Facultad de Ciencias Sociales, UDELAR'
@@ -325,7 +341,9 @@ references:
           - Sanromán
         givenNames:
           - G
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -343,7 +361,9 @@ references:
           - Buis
         givenNames:
           - M
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: Periodical
       name: Statistical Software Components
@@ -368,7 +388,9 @@ references:
           - Vigorito
         givenNames:
           - A
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     title: >-
       Desigualdad Y altos ingresos en Uruguay. un análisis en base a registros
       tributarios Y encuestas de hogares para El período 2009-2011. Serie
@@ -393,7 +415,9 @@ references:
           - Vigorito
         givenNames:
           - A
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     publisher:
       type: Organization
       address:
@@ -423,7 +447,9 @@ references:
           - McCullough
         givenNames:
           - BD
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -441,7 +467,9 @@ references:
           - Elson
         givenNames:
           - D
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     publisher:
       type: Organization
       address:
@@ -459,7 +487,9 @@ references:
           - Espino
         givenNames:
           - A
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -489,7 +519,9 @@ references:
           - Azar
         givenNames:
           - P
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     publisher:
       type: Organization
       address:
@@ -512,7 +544,9 @@ references:
           - Cribari-Neto
         givenNames:
           - F
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -535,7 +569,9 @@ references:
           - Reutter
         givenNames:
           - A
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -558,7 +594,9 @@ references:
           - Grown
         givenNames:
           - Valodia
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: CreativeWork
       name: >-
@@ -584,7 +622,9 @@ references:
           - Komatsu
         givenNames:
           - H
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: CreativeWork
       name: Comparative Chapter. Non-published
@@ -602,7 +642,9 @@ references:
           - Valodia
         givenNames:
           - I
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     publisher:
       type: Organization
       address:
@@ -630,7 +672,9 @@ references:
           - Ventura
         givenNames:
           - G
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -653,7 +697,9 @@ references:
           - McCullough
         givenNames:
           - BD
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -673,7 +719,9 @@ references:
           - Nelson
         givenNames:
           - JA
-    datePublished: '1991'
+    datePublished:
+      type: Date
+      value: '1991'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -696,7 +744,9 @@ references:
           - Ferrari
         givenNames:
           - SLP
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -719,7 +769,9 @@ references:
           - Ferrari
         givenNames:
           - SLP
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -737,7 +789,9 @@ references:
           - Paolino
         givenNames:
           - P
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -773,7 +827,9 @@ references:
           - Grown
         givenNames:
           - Valodia
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: CreativeWork
       name: >-
@@ -794,7 +850,9 @@ references:
           - Rossignolo
         givenNames:
           - D
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -817,7 +875,9 @@ references:
           - Verkuilen
         givenNames:
           - J
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -837,7 +897,9 @@ references:
           - Stotsky
         givenNames:
           - J
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: CreativeWork
       name: 'IMF Working Paper, No. 96/99.'

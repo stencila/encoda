@@ -129,7 +129,7 @@ description:
                             
       - type: Superscript
         content:
-          - '2'
+          - 2
       - |2-
          is modeled under highly suitable habitat for the current year, while it is expected to increase for both 2050s and 2070s. The current high suitability of 
                             
@@ -141,7 +141,7 @@ description:
                             
       - type: Superscript
         content:
-          - '2'
+          - 2
       - |2-
          and the future projection revealed an increase of high suitability habitats. 
                             
@@ -153,7 +153,7 @@ description:
                             
       - type: Superscript
         content:
-          - '2'
+          - 2
       - ' under high suitability and it might increase in the future.'
   - type: Paragraph
     content:
@@ -179,7 +179,7 @@ identifiers:
   - type: PropertyValue
     name: elocation-id
     propertyID: 'https://registry.identifiers.org/registry/elocation-id'
-    value: '978'
+    value: 978
 isPartOf:
   type: PublicationVolume
   isPartOf:
@@ -195,7 +195,7 @@ isPartOf:
       type: Organization
       name: F1000 Research Limited
     title: F1000Research
-  volumeNumber: '8'
+  volumeNumber: 8
 keywords:
   - MaxEnt Model
   - Niche Assessment
@@ -230,7 +230,9 @@ references:
           - Leadley
         givenNames:
           - P
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -261,7 +263,9 @@ references:
           - Sudmeier-Rieux
         givenNames:
           - K
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -291,7 +295,9 @@ references:
           - Mondoni
         givenNames:
           - A
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -311,7 +317,9 @@ references:
           - Elasha
         givenNames:
           - BO
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     title: >-
       Mapping of climate change threats and human development impacts in the
       arab region. undp arab development report–research paper series, undp
@@ -323,7 +331,9 @@ references:
     authors:
       - type: Organization
         name: IIED
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     title: >-
       Climate Change and Drylands International Institute for Environmental
       Development- Commission on Climate Change and Development
@@ -345,7 +355,9 @@ references:
           - Khedr
         givenNames:
           - AHA
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -375,7 +387,9 @@ references:
           - Fawzi
         givenNames:
           - 'N'
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -397,7 +411,9 @@ references:
         name: |-
           IPCC Climate Change, 
                                   et al.
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       volumeNumber: 996
@@ -416,7 +432,9 @@ references:
           - Jenkins
         givenNames:
           - G
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     title: Climate change scenarios for the united kingdom scientific report 1998
     url: >-
       https://pdfs.semanticscholar.org/dbee/e153dac2b70d2c3a237531bfa48f45aa9ec5.pdf
@@ -438,7 +456,9 @@ references:
           - Berry
         givenNames:
           - PM
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -466,7 +486,9 @@ references:
           - New
         givenNames:
           - M
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -497,7 +519,9 @@ references:
           - Yang
         givenNames:
           - ZF
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -528,7 +552,9 @@ references:
           - Butt
         givenNames:
           - 'N'
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -556,7 +582,9 @@ references:
           - Austin
         givenNames:
           - M
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -589,7 +617,9 @@ references:
           - Graham
         givenNames:
           - CH
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -622,7 +652,9 @@ references:
           - Ferrier
         givenNames:
           - S
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -653,7 +685,9 @@ references:
           - Nakamura
         givenNames:
           - M
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -686,7 +720,9 @@ references:
           - Innes
         givenNames:
           - J
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -716,7 +752,9 @@ references:
           - Tarkesh
         givenNames:
           - M
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -749,7 +787,9 @@ references:
           - Boitani
         givenNames:
           - L
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -782,7 +822,9 @@ references:
           - Baumgartner
         givenNames:
           - JB
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -813,7 +855,9 @@ references:
           - Schapire
         givenNames:
           - RE
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -844,7 +888,9 @@ references:
           - Master
         givenNames:
           - LL
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -867,7 +913,9 @@ references:
           - Pearson
         givenNames:
           - RG
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -895,7 +943,9 @@ references:
           - Schapire
         givenNames:
           - RE
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -926,7 +976,9 @@ references:
           - Al-Assiri
         givenNames:
           - A
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -952,7 +1004,9 @@ references:
           - Ksiksi
         givenNames:
           - T
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -983,14 +1037,18 @@ references:
           - Parra
         givenNames:
           - JL
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     title: The worldclim interpolated global terrestrial climate surfaces
   - type: Article
     id: ref-29
     authors:
       - type: Organization
         name: A ESRI
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     title: Arcgis 10.1
   - type: Article
     id: ref-30
@@ -1010,7 +1068,9 @@ references:
           - Smith
         givenNames:
           - SJ
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1040,7 +1100,9 @@ references:
           - Parra
         givenNames:
           - JL
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1071,7 +1133,9 @@ references:
           - Ferrier
         givenNames:
           - S
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1104,7 +1168,9 @@ references:
           - Peterson
         givenNames:
           - AT
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1130,7 +1196,9 @@ references:
           - Stohlgren
         givenNames:
           - TJ
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1166,7 +1234,9 @@ references:
           - Slik
         givenNames:
           - JW
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1199,7 +1269,9 @@ references:
           - Tamma
         givenNames:
           - K
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1232,7 +1304,9 @@ references:
           - Hastie
         givenNames:
           - T
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1259,7 +1333,9 @@ references:
         givenNames:
           - I
         honorificSuffix: Jr
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1292,7 +1368,9 @@ references:
           - Kadmon
         givenNames:
           - R
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1325,7 +1403,9 @@ references:
           - Kumar
         givenNames:
           - S
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1345,7 +1425,9 @@ references:
           - Ksiksi
         givenNames:
           - T
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     title: Sure2018.zip
     url: 'https://figshare.com/articles/SURE2018_zip/8233328/1'
   - type: Article
@@ -1366,7 +1448,9 @@ references:
           - Alakilli
         givenNames:
           - SY
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1398,7 +1482,9 @@ references:
           - Almeida-Cortez
         givenNames:
           - J
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1421,7 +1507,9 @@ references:
           - Kumawat
         givenNames:
           - RN
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     title: >-
       Managing rangelands: promoting sustainable tree species "prosopis
       cineraria": A wonder tree for agroforestry in arid and semi-arid areas"
@@ -1431,7 +1519,9 @@ references:
     authors:
       - type: Organization
         name: MOEAW
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     title: State of Environment Report of the United Arab Emirates 2015
   - type: Article
     id: ref-46
@@ -1452,7 +1542,9 @@ references:
           - Alqamy
         givenNames:
           - H
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1472,7 +1564,9 @@ references:
     authors:
       - type: Organization
         name: MOCCAE
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     title: National Climate Change Plan of the United Arab Emirates 2017-2050
     url: >-
       https://www.moccae.gov.ae/assets/30e58e2e/national-climate-change-plan-for-the-united-arab-emirates-2017-2050.aspx

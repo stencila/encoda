@@ -220,7 +220,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: 'https://registry.identifiers.org/registry/publisher-id'
-    value: '30274'
+    value: 30274
   - type: PropertyValue
     name: doi
     propertyID: 'https://registry.identifiers.org/registry/doi'
@@ -248,7 +248,7 @@ isPartOf:
       type: Organization
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
-  volumeNumber: '7'
+  volumeNumber: 7
 keywords:
   - 'Reproducibility Project: Cancer Biology'
   - replication
@@ -285,7 +285,9 @@ references:
           - Royston
         givenNames:
           - P
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -306,7 +308,9 @@ references:
           - Macmillan
         givenNames:
           - RL
-    datePublished: '1948'
+    datePublished:
+      type: Date
+      value: '1948'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -334,7 +338,9 @@ references:
           - McCarthy
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -352,7 +358,9 @@ references:
           - Cohen
         givenNames:
           - J
-    datePublished: '1983'
+    datePublished:
+      type: Date
+      value: '1983'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -455,7 +463,9 @@ references:
           - Kolch
         givenNames:
           - W
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -501,7 +511,9 @@ references:
           - Nosek
         givenNames:
           - BA
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -592,7 +604,9 @@ references:
           - Zippo
         givenNames:
           - A
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -615,7 +629,9 @@ references:
           - Stern
         givenNames:
           - H
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -655,7 +671,9 @@ references:
           - Vogt
         givenNames:
           - PK
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -673,7 +691,9 @@ references:
           - Hartgerink
         givenNames:
           - CHJ
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: eLife
@@ -713,7 +733,9 @@ references:
           - Leyland-Jones
         givenNames:
           - B
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -873,7 +895,9 @@ references:
           - Westbrook
         givenNames:
           - TF
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -911,7 +935,9 @@ references:
           - Gelber
         givenNames:
           - C
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -999,7 +1025,9 @@ references:
           - Hartung
         givenNames:
           - T
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1057,7 +1085,9 @@ references:
           - Irizarry
         givenNames:
           - RA
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1127,7 +1157,9 @@ references:
           - Errington
         givenNames:
           - TM
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: Open Science Framework
@@ -1175,7 +1207,9 @@ references:
           - Young
         givenNames:
           - RA
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1239,7 +1273,9 @@ references:
           - Wolf
         givenNames:
           - E
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1312,7 +1348,9 @@ references:
           - Levens
         givenNames:
           - D
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1342,7 +1380,9 @@ references:
           - Greenfield
         givenNames:
           - P
-    datePublished: '1991'
+    datePublished:
+      type: Date
+      value: '1991'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1372,7 +1412,9 @@ references:
           - Wagenmakers
         givenNames:
           - EJ
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1437,7 +1479,9 @@ references:
           - Raj
         givenNames:
           - A
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1512,7 +1556,9 @@ references:
           - Eick
         givenNames:
           - D
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1530,7 +1576,9 @@ references:
           - Pratt
         givenNames:
           - JW
-    datePublished: '1959'
+    datePublished:
+      type: Date
+      value: '1959'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1545,7 +1593,9 @@ references:
     authors:
       - type: Organization
         name: R Core Team
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     title: 'R: A language and environment for statistical computing'
   - type: Article
     id: bib26
@@ -1560,7 +1610,9 @@ references:
           - Amati
         givenNames:
           - B
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1667,7 +1719,9 @@ references:
           - Amati
         givenNames:
           - B
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1727,7 +1781,9 @@ references:
           - Eick
         givenNames:
           - D
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1757,7 +1813,9 @@ references:
           - Eliceiri
         givenNames:
           - KW
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1810,7 +1868,9 @@ references:
           - Kohlhuber
         givenNames:
           - F
-    datePublished: '1999'
+    datePublished:
+      type: Date
+      value: '1999'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2150,7 +2210,9 @@ references:
           - Nosek
         givenNames:
           - BA
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: PsyArXiv
@@ -2191,7 +2253,9 @@ references:
           - Dong
         givenNames:
           - L
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2250,7 +2314,9 @@ references:
           - Schinke
         givenNames:
           - SP
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2268,7 +2334,9 @@ references:
           - Viechtbauer
         givenNames:
           - W
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2377,7 +2445,9 @@ references:
           - Eilers
         givenNames:
           - M
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
