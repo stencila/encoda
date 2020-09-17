@@ -1,8 +1,5 @@
 ---
-title:
-  - content:
-      - A Google Doc test fixture for Stencila Encoda
-    type: Paragraph
+title: A Google Doc test fixture for Stencila Encoda
 ---
 
 Given that this is a test fixture (used [here](https://github.com/stencila/encoda/blob/master/src/codecs/gdoc)), please take care when editing it, and update test expectations accordingly!

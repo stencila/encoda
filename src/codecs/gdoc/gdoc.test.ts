@@ -54,7 +54,7 @@ describe('decode:title', () => {
       })
     ).toEqual(
       stencila.article({
-        title: [stencila.paragraph({ content: ['The actual title!'] })],
+        title: 'The actual title!',
       })
     )
   })
