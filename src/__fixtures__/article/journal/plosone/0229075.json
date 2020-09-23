@@ -1,5 +1,11 @@
 {
   "type": "Article",
+  "about": [
+    {
+      "type": "DefinedTerm",
+      "name": "Research Article"
+    }
+  ],
   "authors": [
     {
       "type": "Person",
@@ -261,14 +267,7 @@
     "type": "Date",
     "value": "2019-12-05"
   },
-  "description": [
-    {
-      "type": "Paragraph",
-      "content": [
-        "Renal cell carcinoma comprises a variety of entities, the most common being the clear-cell, papillary and chromophobe subtypes. These subtypes are related to different clinical evolution; however, most therapies have been developed for clear-cell carcinoma and there is not a specific treatment based on different subtypes. In this study, one hundred and sixty-four paraffin samples from primary nephrectomies for localized tumors were analyzed. MiRNAs were isolated and measured by microRNA arrays. Significance Analysis of Microarrays and Consensus Cluster algorithm were used to characterize different renal subtypes. The analyses showed that chromophobe renal tumors are a homogeneous group characterized by an overexpression of miR 1229, miR 10a, miR 182, miR 1208, miR 222, miR 221, miR 891b, miR 629-5p and miR 221-5p. On the other hand, clear cell renal carcinomas presented two different groups inside this histological subtype, with differences in miRNAs that regulate focal adhesion, transcription, apoptosis and angiogenesis processes. Specifically, one of the defined groups had an overexpression of proangiogenic microRNAs miR185, miR126 and miR130a. In conclusion, differences in miRNA expression profiles between histological renal subtypes were established. In addition, clear cell renal carcinomas had different expression of proangiogenic miRNAs. With the emergence of antiangiogenic drugs, these differences could be used as therapeutic targets in the future or as a selection method for tailoring personalized treatments."
-      ]
-    }
-  ],
+  "description": "Renal cell carcinoma comprises a variety of entities, the most common being the clear-cell, papillary and chromophobe subtypes. These subtypes are related to different clinical evolution; however, most therapies have been developed for clear-cell carcinoma and there is not a specific treatment based on different subtypes. In this study, one hundred and sixty-four paraffin samples from primary nephrectomies for localized tumors were analyzed. MiRNAs were isolated and measured by microRNA arrays. Significance Analysis of Microarrays and Consensus Cluster algorithm were used to characterize different renal subtypes. The analyses showed that chromophobe renal tumors are a homogeneous group characterized by an overexpression of miR 1229, miR 10a, miR 182, miR 1208, miR 222, miR 221, miR 891b, miR 629-5p and miR 221-5p. On the other hand, clear cell renal carcinomas presented two different groups inside this histological subtype, with differences in miRNAs that regulate focal adhesion, transcription, apoptosis and angiogenesis processes. Specifically, one of the defined groups had an overexpression of proangiogenic microRNAs miR185, miR126 and miR130a. In conclusion, differences in miRNA expression profiles between histological renal subtypes were established. In addition, clear cell renal carcinomas had different expression of proangiogenic miRNAs. With the emergence of antiangiogenic drugs, these differences could be used as therapeutic targets in the future or as a selection method for tailoring personalized treatments.",
   "editors": [
     {
       "type": "Person",
@@ -384,39 +383,43 @@
     }
   ],
   "isPartOf": {
-    "type": "PublicationVolume",
+    "type": "PublicationIssue",
     "isPartOf": {
-      "type": "Periodical",
-      "identifiers": [
-        {
-          "type": "PropertyValue",
-          "name": "nlm-ta",
-          "propertyID": "https://registry.identifiers.org/registry/nlm-ta",
-          "value": "PLoS ONE"
+      "type": "PublicationVolume",
+      "isPartOf": {
+        "type": "Periodical",
+        "identifiers": [
+          {
+            "type": "PropertyValue",
+            "name": "nlm-ta",
+            "propertyID": "https://registry.identifiers.org/registry/nlm-ta",
+            "value": "PLoS ONE"
+          },
+          {
+            "type": "PropertyValue",
+            "name": "publisher-id",
+            "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+            "value": "plos"
+          },
+          {
+            "type": "PropertyValue",
+            "name": "pmc",
+            "propertyID": "https://registry.identifiers.org/registry/pmc",
+            "value": "plosone"
+          }
+        ],
+        "issns": [
+          "1932-6203"
+        ],
+        "publisher": {
+          "type": "Organization",
+          "name": "Public Library of Science"
         },
-        {
-          "type": "PropertyValue",
-          "name": "publisher-id",
-          "propertyID": "https://registry.identifiers.org/registry/publisher-id",
-          "value": "plos"
-        },
-        {
-          "type": "PropertyValue",
-          "name": "pmc",
-          "propertyID": "https://registry.identifiers.org/registry/pmc",
-          "value": "plosone"
-        }
-      ],
-      "issns": [
-        "1932-6203"
-      ],
-      "publisher": {
-        "type": "Organization",
-        "name": "Public Library of Science"
+        "title": "PLOS ONE"
       },
-      "title": "PLOS ONE"
+      "volumeNumber": 15
     },
-    "volumeNumber": "15"
+    "issueNumber": 2
   },
   "licenses": [
     {
@@ -473,7 +476,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -531,7 +537,10 @@
           ]
         }
       ],
-      "datePublished": "2003",
+      "datePublished": {
+        "type": "Date",
+        "value": "2003"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -598,7 +607,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -674,7 +686,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -750,7 +765,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -826,7 +844,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -902,7 +923,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -969,7 +993,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1046,7 +1073,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1120,7 +1150,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1160,7 +1193,10 @@
           ]
         }
       ],
-      "datePublished": "2014",
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1222,7 +1258,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1278,7 +1317,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1317,7 +1359,10 @@
           ]
         }
       ],
-      "datePublished": "2009",
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1389,7 +1434,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "Periodical",
         "name": "Cancer Res"
@@ -1458,7 +1506,10 @@
           ]
         }
       ],
-      "datePublished": "2012",
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1525,7 +1576,10 @@
           ]
         }
       ],
-      "datePublished": "2010",
+      "datePublished": {
+        "type": "Date",
+        "value": "2010"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1569,7 +1623,10 @@
           ]
         }
       ],
-      "datePublished": "2007",
+      "datePublished": {
+        "type": "Date",
+        "value": "2007"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1627,7 +1684,10 @@
           ]
         }
       ],
-      "datePublished": "2003",
+      "datePublished": {
+        "type": "Date",
+        "value": "2003"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1703,7 +1763,10 @@
           ]
         }
       ],
-      "datePublished": "2003",
+      "datePublished": {
+        "type": "Date",
+        "value": "2003"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1752,7 +1815,10 @@
           ]
         }
       ],
-      "datePublished": "2001",
+      "datePublished": {
+        "type": "Date",
+        "value": "2001"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1810,7 +1876,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -1886,7 +1955,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1957,7 +2029,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2033,7 +2108,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2091,7 +2169,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2167,7 +2248,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2241,7 +2325,10 @@
           ]
         }
       ],
-      "datePublished": "2014",
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2308,7 +2395,10 @@
           ]
         }
       ],
-      "datePublished": "2008",
+      "datePublished": {
+        "type": "Date",
+        "value": "2008"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2384,7 +2474,10 @@
           ]
         }
       ],
-      "datePublished": "2008",
+      "datePublished": {
+        "type": "Date",
+        "value": "2008"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2460,7 +2553,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2500,7 +2596,10 @@
           ]
         }
       ],
-      "datePublished": "2008",
+      "datePublished": {
+        "type": "Date",
+        "value": "2008"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {
@@ -2531,7 +2630,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {

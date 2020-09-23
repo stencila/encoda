@@ -1,5 +1,15 @@
 {
   "type": "Article",
+  "about": [
+    {
+      "type": "DefinedTerm",
+      "name": "Medicine"
+    },
+    {
+      "type": "DefinedTerm",
+      "name": "Neuroscience"
+    }
+  ],
   "authors": [
     {
       "type": "Person",
@@ -125,14 +135,7 @@
     "type": "Date",
     "value": "2019-07-19"
   },
-  "description": [
-    {
-      "type": "Paragraph",
-      "content": [
-        "Endometriosis is a chronic painful disease highly prevalent in women that is defined by growth of endometrial tissue outside the uterine cavity and lacks adequate treatment. Medical use of cannabis derivatives is a current hot topic and it is unknown whether phytocannabinoids may modify endometriosis symptoms and development. Here we evaluate the effects of repeated exposure to Δ9-tetrahydrocannabinol (THC) in a mouse model of surgically-induced endometriosis. In this model, female mice develop mechanical hypersensitivity in the caudal abdomen, mild anxiety-like behavior and substantial memory deficits associated with the presence of extrauterine endometrial cysts. Interestingly, daily treatments with THC (2 mg/kg) alleviate mechanical hypersensitivity and pain unpleasantness, modify uterine innervation and restore cognitive function without altering the anxiogenic phenotype. Strikingly, THC also inhibits the development of endometrial cysts. These data highlight the interest of scheduled clinical trials designed to investigate possible benefits of THC for women with endometriosis."
-      ]
-    }
-  ],
+  "description": "Endometriosis is a chronic painful disease highly prevalent in women that is defined by growth of endometrial tissue outside the uterine cavity and lacks adequate treatment. Medical use of cannabis derivatives is a current hot topic and it is unknown whether phytocannabinoids may modify endometriosis symptoms and development. Here we evaluate the effects of repeated exposure to Δ9-tetrahydrocannabinol (THC) in a mouse model of surgically-induced endometriosis. In this model, female mice develop mechanical hypersensitivity in the caudal abdomen, mild anxiety-like behavior and substantial memory deficits associated with the presence of extrauterine endometrial cysts. Interestingly, daily treatments with THC (2 mg/kg) alleviate mechanical hypersensitivity and pain unpleasantness, modify uterine innervation and restore cognitive function without altering the anxiogenic phenotype. Strikingly, THC also inhibits the development of endometrial cysts. These data highlight the interest of scheduled clinical trials designed to investigate possible benefits of THC for women with endometriosis.",
   "editors": [
     {
       "type": "Person",
@@ -231,12 +234,15 @@
       ]
     }
   ],
+  "genre": [
+    "Short Report"
+  ],
   "identifiers": [
     {
       "type": "PropertyValue",
       "name": "publisher-id",
       "propertyID": "https://registry.identifiers.org/registry/publisher-id",
-      "value": "50356"
+      "value": 50356
     },
     {
       "type": "PropertyValue",
@@ -278,7 +284,7 @@
       },
       "title": "eLife"
     },
-    "volumeNumber": "9"
+    "volumeNumber": 9
   },
   "keywords": [
     "endometriosis",
@@ -344,7 +350,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -389,7 +398,10 @@
           ]
         }
       ],
-      "datePublished": "1983",
+      "datePublished": {
+        "type": "Date",
+        "value": "1983"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -441,7 +453,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -556,7 +571,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -610,7 +628,10 @@
           ]
         }
       ],
-      "datePublished": "2004",
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -745,7 +766,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -835,7 +859,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -907,7 +934,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -997,7 +1027,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1051,7 +1084,10 @@
           ]
         }
       ],
-      "datePublished": "2012",
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1121,7 +1157,10 @@
           ]
         }
       ],
-      "datePublished": "2001",
+      "datePublished": {
+        "type": "Date",
+        "value": "2001"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1191,7 +1230,10 @@
           ]
         }
       ],
-      "datePublished": "2006",
+      "datePublished": {
+        "type": "Date",
+        "value": "2006"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1308,7 +1350,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1380,7 +1425,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1452,7 +1500,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1542,7 +1593,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1597,7 +1651,10 @@
           ]
         }
       ],
-      "datePublished": "2004",
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1669,7 +1726,10 @@
           ]
         }
       ],
-      "datePublished": "2009",
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1778,7 +1838,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1823,7 +1886,10 @@
           ]
         }
       ],
-      "datePublished": "2014",
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1850,7 +1916,10 @@
           ]
         }
       ],
-      "datePublished": "1970",
+      "datePublished": {
+        "type": "Date",
+        "value": "1970"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1913,7 +1982,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1940,7 +2012,10 @@
           ]
         }
       ],
-      "datePublished": "2004",
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2030,7 +2105,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2093,7 +2171,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2183,7 +2264,10 @@
           ]
         }
       ],
-      "datePublished": "2009",
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2246,7 +2330,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2300,7 +2387,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2345,7 +2435,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2426,7 +2519,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2471,7 +2567,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2582,7 +2681,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2636,7 +2738,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2744,7 +2849,10 @@
           ]
         }
       ],
-      "datePublished": "2010",
+      "datePublished": {
+        "type": "Date",
+        "value": "2010"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2825,7 +2933,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2879,7 +2990,10 @@
           ]
         }
       ],
-      "datePublished": "2014",
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2915,7 +3029,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2969,7 +3086,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3005,7 +3125,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3140,7 +3263,10 @@
           ]
         }
       ],
-      "datePublished": "2011",
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3203,7 +3329,10 @@
           ]
         }
       ],
-      "datePublished": "2004",
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3239,7 +3368,10 @@
           ]
         }
       ],
-      "datePublished": "1982",
+      "datePublished": {
+        "type": "Date",
+        "value": "1982"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3311,7 +3443,10 @@
           ]
         }
       ],
-      "datePublished": "2009",
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3383,7 +3518,10 @@
           ]
         }
       ],
-      "datePublished": "2013",
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3419,7 +3557,10 @@
           ]
         }
       ],
-      "datePublished": "2017",
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3482,7 +3623,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3536,7 +3680,10 @@
           ]
         }
       ],
-      "datePublished": "2016",
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3608,7 +3755,10 @@
           ]
         }
       ],
-      "datePublished": "1999",
+      "datePublished": {
+        "type": "Date",
+        "value": "1999"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3744,7 +3894,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3850,7 +4003,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3904,7 +4060,10 @@
           ]
         }
       ],
-      "datePublished": "2006",
+      "datePublished": {
+        "type": "Date",
+        "value": "2006"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3949,7 +4108,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4102,7 +4264,10 @@
           ]
         }
       ],
-      "datePublished": "2015",
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4145,7 +4310,10 @@
           ]
         }
       ],
-      "datePublished": "2014",
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4190,7 +4358,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4242,7 +4413,10 @@
           ]
         }
       ],
-      "datePublished": "2009",
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4296,7 +4470,10 @@
           ]
         }
       ],
-      "datePublished": "2008",
+      "datePublished": {
+        "type": "Date",
+        "value": "2008"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4413,7 +4590,10 @@
           ]
         }
       ],
-      "datePublished": "2018",
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4485,7 +4665,10 @@
           ]
         }
       ],
-      "datePublished": "2019",
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
