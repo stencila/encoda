@@ -1,6 +1,7 @@
 import {
   article,
   codeChunk,
+  date,
   heading,
   paragraph,
   person,
@@ -8,7 +9,7 @@ import {
 
 /**
  * An `Article` representing a simple Jupyter Python notebook: has
- * some `CodeChunk` and prose content nodes and metad-data
+ * some `CodeChunk`s and prose content nodes and meta-data
  * required by Jupyter.
  */
 export default article({
@@ -18,7 +19,7 @@ export default article({
       name: 'A. Jovian',
     }),
   ],
-  datePublished: '2020-04-01',
+  datePublished: date({ value: '2020-04-01' }),
   meta: {
     kernelspec: {
       display_name: 'Python 3',

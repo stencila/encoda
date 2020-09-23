@@ -3,7 +3,9 @@ title: Jupyter notebook title
 authors:
   - name: A. Jovian
     type: Person
-datePublished: '2020-04-01'
+datePublished:
+  value: '2020-04-01'
+  type: Date
 meta:
   kernelspec:
     display_name: Python 3

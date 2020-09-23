@@ -1036,7 +1036,9 @@ function encodeDescriptionProperty(
       itemprop: 'description',
       content: TxtCodec.stringify(desc),
     }),
-    encodeNodes(ensureBlockContentArray(typeof desc === 'string' ? [desc] : desc))
+    encodeNodes(
+      ensureBlockContentArray(typeof desc === 'string' ? [desc] : desc)
+    )
   )
 }
 

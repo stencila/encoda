@@ -47,7 +47,7 @@ namespace nbformat {
    */
   export enum Version {
     v3 = 3,
-    v4 = 4
+    v4 = 4,
   }
 
   export namespace v3 {
@@ -142,26 +142,19 @@ const validators = new Ajv({
   // For use with draft-04 schemas
   schemaId: 'auto',
   // For better error reporting
-  jsonPointers: true
+  jsonPointers: true,
 })
 validators.addMetaSchema(jsonSchemaDraft04)
 
 /**
- * Validate a notebook against a version of `nbformat` JSON Schema
- *
- * This function only logs a warning if the notebook does not validate
- * against the schema. It is intended to provide additional
- * information for debugging other subsequent errors wth decoding
- * if a notebook is corrupted.
+ * Get a `nbformat` validator.
  */
-function validateNotebook(
-  notebook: nbformat3.Notebook | nbformat4.Notebook
-): Promise<void> {
-  const schemaKey = `nbformat-v${notebook.nbformat}.schema.json`
+function getValidator(nbformat: number): Ajv.ValidateFunction {
+  const schemaKey = `nbformat-v${nbformat}.schema.json`
   let validator = validators.getSchema(schemaKey)
   if (validator === undefined) {
     try {
-      const schema = notebook.nbformat === 3 ? nbformat3Schema : nbformat4Schema
+      const schema = nbformat === 3 ? nbformat3Schema : nbformat4Schema
       validators.addSchema(schema, schemaKey)
       validator = validators.getSchema(schemaKey)
     } catch (error) {
@@ -169,9 +162,23 @@ function validateNotebook(
     }
   }
   if (validator === undefined) {
-    log.error(`Error attempting to create validator`)
-    return Promise.resolve()
+    throw new Error(`Error attempting to create Jupyter Notebook validator`)
   }
+  return validator
+}
+
+/**
+ * Validate a notebook against a version of `nbformat` JSON Schema
+ *
+ * This function only logs a warning if the notebook does not validate
+ * against the schema. It is intended to provide additional
+ * information for debugging other subsequent errors with decoding
+ * if a notebook is corrupted.
+ */
+function validateNotebook(
+  notebook: nbformat3.Notebook | nbformat4.Notebook
+): Promise<void> {
+  const validator = getValidator(notebook.nbformat)
   if (!validator(notebook)) {
     const message = (betterAjvErrors(
       validator.schema,
@@ -179,7 +186,7 @@ function validateNotebook(
       validator.errors,
       {
         format: 'cli',
-        indent: 2
+        indent: 2,
       }
     ) as unknown) as string
     log.warn(`Notebook is not valid:\n${message}`)
@@ -210,7 +217,9 @@ async function decodeNotebook(
     cells = notebook.cells
   }
 
-  const {title, authors, meta, props} = await decodeMetadata(notebook.metadata)
+  const { title, authors, meta, props } = await decodeMetadata(
+    notebook.metadata
+  )
   const content = await decodeCells(cells, version, language)
 
   return schema.article({
@@ -218,7 +227,7 @@ async function decodeNotebook(
     authors,
     meta,
     ...props,
-    content
+    content,
   })
 }
 
@@ -227,16 +236,21 @@ async function decodeNotebook(
  */
 async function encodeNode(node: schema.Node): Promise<nbformat4.Notebook> {
   const article = ensureArticle(node)
-  const { type, title, authors, content = [], ...rest } = article
+  const { type, title, authors, meta, content = [], ...rest } = article
 
-  const metadata = encodeMetadata(title, authors, rest)
+  const metadata = encodeMetadata(
+    title,
+    authors,
+    meta,
+    rest as Record<string, unknown>
+  )
   const cells = await encodeCells(content)
 
   return {
     nbformat: 4,
     nbformat_minor: 4,
     metadata,
-    cells
+    cells,
   }
 }
 
@@ -267,7 +281,7 @@ async function decodeMetadata(
   const decodedAuthors =
     authors !== undefined
       ? await Promise.all(
-          authors.map(author => {
+          authors.map((author) => {
             return schema.isA('Person', author) ||
               schema.isA('Organization', author)
               ? author
@@ -279,19 +293,22 @@ async function decodeMetadata(
       : undefined
 
   const articleSchema = await getSchema('Article')
-  const propertyNames = Object.keys({...articleSchema.properties, ...articleSchema.propertyAliases})
+  const propertyNames = Object.keys({
+    ...articleSchema.properties,
+    ...articleSchema.propertyAliases,
+  })
   const meta: Record<string, unknown> = {}
   const props: Record<string, unknown> = {}
-  Object.entries(rest).map(([key, value]) => {
-    if (key in propertyNames) props[key] = value
+  for (const [key, value] of Object.entries(rest)) {
+    if (propertyNames.includes(key)) props[key] = value
     else meta[key] = value
-  }, {})
+  }
 
   return {
     title,
     authors: decodedAuthors,
     meta,
-    props
+    props,
   }
 }
 
@@ -302,11 +319,16 @@ async function decodeMetadata(
  * and that `authors` be an array of objects with a `name` string
  * property (and optional additional properties). This functions
  * conformance to those requirements.
+ *
+ * All standard Jupyter notebook metadata properties are
+ * extracted from the the article's `meta` property and placed
+ * at the top level of the metadata.
  */
 function encodeMetadata(
   title: schema.Article['title'],
   authors: schema.Article['authors'],
-  rest: Omit<schema.Article, 'type' | 'title' | 'authors' | 'content'>
+  meta: schema.Article['meta'],
+  rest: Record<string, unknown>
 ): nbformat3.Notebook['metadata'] | nbformat4.Notebook['metadata'] {
   if (title !== undefined && typeof title !== 'string') {
     logWarnLoss(
@@ -316,8 +338,9 @@ function encodeMetadata(
     )
     title = TxtCodec.stringify(title)
   }
+
   if (authors !== undefined && authors.length > 0) {
-    authors = authors.map(author => {
+    authors = authors.map((author) => {
       if (author.name === undefined) {
         if (schema.isA('Person', author)) {
           // A person: concatenate names
@@ -325,23 +348,38 @@ function encodeMetadata(
           const names = [...givenNames, ...familyNames]
           return {
             ...author,
-            name: names.length > 1 ? names.join(' ') : 'Anonymous'
+            name: names.length > 1 ? names.join(' ') : 'Anonymous',
           }
         } else {
           // An organization: use legal name if possible
           return {
             ...author,
-            name: author.legalName ?? 'Anonymous'
+            name: author.legalName ?? 'Anonymous',
           }
         }
       }
       return author
     })
   }
+
+  if (meta !== undefined) {
+    const notebookSchema = getValidator(4).schema as {
+      properties: { metadata: Record<string, unknown> }
+    }
+    const metadataNames = Object.keys(notebookSchema?.properties?.metadata)
+    for (const [key, value] of Object.entries(meta)) {
+      if (metadataNames.includes(key)) {
+        rest[key] = value
+        delete meta[key]
+      }
+    }
+  }
+
   return {
     ...(title ? { title } : {}),
     ...(authors ? { authors } : {}),
-    ...rest
+    ...meta,
+    ...rest,
   }
 }
 
@@ -371,7 +409,7 @@ async function decodeCells(
         blocks.push({
           type: 'CodeBlock',
           programmingLanguage: 'json',
-          text: JSON.stringify(cell)
+          text: JSON.stringify(cell),
         })
     }
   }
@@ -412,7 +450,7 @@ async function decodeMarkdownCell(
   const { source } = cell
   const markdown = decodeMultilineString(source)
   const content = await load(markdown, format === 'html' ? 'html' : 'md', {
-    isStandalone: false
+    isStandalone: false,
   })
   return content as schema.BlockContent[]
 }
@@ -427,7 +465,7 @@ async function encodeMarkdownCell(
   // a fragment, not a whole article
   const article = {
     type: 'Article',
-    content: nodes
+    content: nodes,
   }
 
   const metadata = {}
@@ -438,7 +476,7 @@ async function encodeMarkdownCell(
   return {
     cell_type: 'markdown',
     metadata,
-    source
+    source,
   }
 }
 
@@ -460,7 +498,9 @@ async function decodeCodeCell(
     text: decodeMultilineString(source),
     programmingLanguage: language,
     meta: { ...metadata, execution_count },
-    outputs: outputs?.length ? await decodeOutputs(outputs, version) : undefined
+    outputs: outputs?.length
+      ? await decodeOutputs(outputs, version)
+      : undefined,
   })
 }
 
@@ -483,7 +523,7 @@ async function encodeCodeChunk(
     metadata,
     execution_count,
     source,
-    outputs
+    outputs,
   }
 }
 
@@ -495,17 +535,17 @@ async function decodeOutputs(
   version: nbformat.Version = 4
 ): Promise<schema.Node[]> {
   const nodes = await Promise.all(
-    outputs.map(output => decodeOutput(output, version))
+    outputs.map((output) => decodeOutput(output, version))
   )
 
   // Remove any matplotlib plot string representations when there is also
   // an image output (ie the actual plot). See https://github.com/stencila/encoda/issues/146
   if (
-    nodes.filter(node => isEntity(node) && node.type === 'ImageObject').length >
-    0
+    nodes.filter((node) => isEntity(node) && node.type === 'ImageObject')
+      .length > 0
   ) {
     return nodes.filter(
-      node => !(typeof node === 'string' && /^\[?<matplotlib\./.test(node))
+      (node) => !(typeof node === 'string' && /^\[?<matplotlib\./.test(node))
     )
   }
 
@@ -546,7 +586,7 @@ function decodeOutput(
       return Promise.resolve(
         schema.codeBlock({
           text: JSON.stringify(output),
-          programmingLanguage: 'json'
+          programmingLanguage: 'json',
         })
       )
   }
@@ -565,7 +605,7 @@ function encodeOutputs(
   nodes: schema.Node[]
 ): Promise<nbformat4.Output[]> {
   return Promise.all(
-    nodes.map(async node => {
+    nodes.map(async (node) => {
       if (typeof node === 'string') {
         return encodeStream(chunk, node)
       } else if (
@@ -591,7 +631,7 @@ function encodeStream(
   return {
     output_type: 'stream',
     name: 'stdout',
-    text: node as string
+    text: node as string,
   }
 }
 
@@ -605,7 +645,7 @@ async function encodeDisplayData(
   return {
     output_type: 'display_data',
     metadata: {},
-    data: await encodeMimeBundle(node)
+    data: await encodeMimeBundle(node),
   }
 }
 
@@ -622,7 +662,7 @@ async function encodeExecuteResult(
     output_type: 'execute_result',
     execution_count,
     metadata: {},
-    data: await encodeMimeBundle(node)
+    data: await encodeMimeBundle(node),
   }
 }
 
@@ -648,7 +688,7 @@ async function decodeMimeBundle(
       pdf: 'application/pdf',
       png: 'image/png',
       svg: 'image/svg+xml',
-      text: 'text/plain'
+      text: 'text/plain',
     }
     const mimetype = version === 3 ? map[key] || key : key
 
@@ -735,6 +775,6 @@ export function encodeMultilineString(
   const lines = source.split('\n')
   return lines
     .slice(0, -1)
-    .map(line => line + '\n')
+    .map((line) => line + '\n')
     .concat(lines.slice(-1))
 }

@@ -1,59 +1,58 @@
 import { unlinkFiles } from '../../util/media/unlinkFiles'
-import * as vfile from '../../util/vfile'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import { decodeMultilineString, encodeMultilineString, IpynbCodec } from './'
 
-const ipynb = new IpynbCodec()
-const json = new JsonCodec()
-
-const ipynb2json = async (name: string) => {
-  const node = await ipynb.decode(await vfile.read(fixture(name)))
-  // Unlink to remove references to temporary files which will change
-  // between test runs
-  const unlinked = unlinkFiles(node)
-  return vfile.dump(await json.encode(unlinked))
-}
+const ipynbCodec = new IpynbCodec()
+const jsonCodec = new JsonCodec()
 
 describe('decode', () => {
-  test('metadata-v4', async () => {
-    expect(await ipynb2json('metadata-v4.ipynb')).toMatchFile(
-      snapshot('metadata-v4.json')
-    )
+  test('MultilineString', () => {
+    const mls1 = ['Line1\n', 'Line2']
+    const mls2 = 'Line1\nLine2'
+    const str1 = 'Line1\nLine2'
+
+    expect(decodeMultilineString(mls1)).toEqual(str1)
+    expect(decodeMultilineString(mls2)).toEqual(str1)
+    expect(encodeMultilineString(str1)).toEqual(mls1)
   })
 
-  test('running-code', async () => {
-    expect(await ipynb2json('running-code.ipynb')).toMatchFile(
-      snapshot('running-code.json')
-    )
-  })
-
-  test('sunspots', async () => {
-    expect(await ipynb2json('sunspots.ipynb')).toMatchFile(
-      snapshot('sunspots.json')
-    )
-  })
-
-  test('well switching', async () => {
-    expect(await ipynb2json('well-switching.ipynb')).toMatchFile(
-      snapshot('well-switching.json')
-    )
-  })
-})
-
-test('encode', async () => {
-  expect(await ipynb.dump(jupyterNotebookSimple)).toMatchFile(
-    snapshot('jupyter-notebook-simple.ipynb')
+  test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching'])(
+    '%s',
+    async (name) => {
+      expect(
+        await jsonCodec.dump(
+          // Unlink files to remove references to temporary files (which
+          // will change between test runs)
+          unlinkFiles(await ipynbCodec.read(fixture(name + '.ipynb')))
+        )
+      ).toMatchFile(snapshot(name + '.json'))
+    }
   )
 })
 
-test('encode+decode MultilineString', () => {
-  const mls1 = ['Line1\n', 'Line2']
-  const mls2 = 'Line1\nLine2'
-  const str1 = 'Line1\nLine2'
+describe('encode', () => {
+  test.each([
+    ['jupyter-notebook-simple', jupyterNotebookSimple],
+    ['elife-50356', 'article/journal/elife/50356.json'],
+    ['plosone-0229075', 'article/journal/plosone/0229075.json'],
+  ])('%s', async (name, nodeOrPath) => {
+    const node =
+      typeof nodeOrPath === 'string'
+        ? await jsonCodec.read(fixture(nodeOrPath))
+        : nodeOrPath
+    expect(await ipynbCodec.dump(node)).toMatchFile(snapshot(name + '.ipynb'))
+  })
+})
 
-  expect(decodeMultilineString(mls1)).toEqual(str1)
-  expect(decodeMultilineString(mls2)).toEqual(str1)
-  expect(encodeMultilineString(str1)).toEqual(mls1)
+describe('encode+decode', () => {
+  test.each([['jupyter-notebook-simple', jupyterNotebookSimple]])(
+    '%s',
+    async (name, encoded) => {
+      const ipynb = await ipynbCodec.dump(encoded)
+      const decoded = await ipynbCodec.load(ipynb)
+      expect(decoded).toEqual(encoded)
+    }
+  )
 })
