@@ -38,6 +38,7 @@ import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 import { fromFiles } from '../../util/media/fromFiles'
+import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -1035,7 +1036,7 @@ function encodeDescriptionProperty(
       itemprop: 'description',
       content: TxtCodec.stringify(desc),
     }),
-    encodeNodes(typeof desc === 'string' ? [desc] : desc)
+    encodeNodes(ensureBlockContentArray(typeof desc === 'string' ? [desc] : desc))
   )
 }
 
