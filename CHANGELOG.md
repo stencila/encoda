@@ -1,3 +1,15 @@
+## [0.99.9](https://github.com/stencila/encoda/compare/v0.99.8...v0.99.9) (2020-09-24)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/schema to ^0.46.0 ([aa4662b](https://github.com/stencila/encoda/commit/aa4662b6bd81f62d5897c9f2955eee4ff0d27b5b))
+* **dependencies:** update dependency got to ^11.7.0 ([5ddf172](https://github.com/stencila/encoda/commit/5ddf172f8597b80f01be5665236ae67371e53aaa))
+* **dependencies:** update dependency puppeteer to ^5.3.1 ([65c6894](https://github.com/stencila/encoda/commit/65c68943d5d728f42b72d11a2d102d9381860a75))
+* **HTML:** Ensure that description is always a paragraph ([3135bee](https://github.com/stencila/encoda/commit/3135bee5dcbe628b109e6b9b7b5030fb3b5e5a79))
+* **IPYNB:** Improve handling of metadata ([139d4d2](https://github.com/stencila/encoda/commit/139d4d2b48646b9d3b7b1db90cb6ded967da9a49))
+* **IPYNB:** Improve handling of notebook metadata ([cb9ca91](https://github.com/stencila/encoda/commit/cb9ca917662eb7ea063c6a4ca3d2e258b381b7b6))
+
 ## [0.99.8](https://github.com/stencila/encoda/compare/v0.99.7...v0.99.8) (2020-09-17)
 
 
