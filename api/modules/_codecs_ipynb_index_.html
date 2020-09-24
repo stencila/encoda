@@ -115,11 +115,13 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodedisplaydata" class="tsd-kind-icon">encode<wbr>Display<wbr>Data</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodeexecuteresult" class="tsd-kind-icon">encode<wbr>Execute<wbr>Result</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodemarkdowncell" class="tsd-kind-icon">encode<wbr>Markdown<wbr>Cell</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodemetadata" class="tsd-kind-icon">encode<wbr>Metadata</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodemimebundle" class="tsd-kind-icon">encode<wbr>Mime<wbr>Bundle</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_codecs_ipynb_index_.html#encodemultilinestring" class="tsd-kind-icon">encode<wbr>Multiline<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodenode" class="tsd-kind-icon">encode<wbr>Node</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodeoutputs" class="tsd-kind-icon">encode<wbr>Outputs</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#encodestream" class="tsd-kind-icon">encode<wbr>Stream</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#getvalidator" class="tsd-kind-icon">get<wbr>Validator</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_codecs_ipynb_index_.html#isv3" class="tsd-kind-icon">isv3</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_ipynb_index_.html#validatenotebook" class="tsd-kind-icon">validate<wbr>Notebook</a></li>
 							</ul>
@@ -135,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:ipynb&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L35">src/codecs/ipynb/index.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L37">src/codecs/ipynb/index.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -145,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">validators<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Ajv</span><span class="tsd-signature-symbol"> = new Ajv({// For use with draft-04 schemasschemaId: &#x27;auto&#x27;,// For better error reportingjsonPointers: true,})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L143">src/codecs/ipynb/index.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L141">src/codecs/ipynb/index.ts:141</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -161,13 +163,13 @@
 					<a name="decodecells" class="tsd-anchor"></a>
 					<h3>decode<wbr>Cells</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Cells<span class="tsd-signature-symbol">(</span>cells<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="_codecs_ipynb_index_.nbformat.v3.html#cell" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Cell</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a>, language<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Cells<span class="tsd-signature-symbol">(</span>cells<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="_codecs_ipynb_index_.nbformat.v3.html#cell" class="tsd-signature-type">Cell</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Cell</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a>, language<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L285">src/codecs/ipynb/index.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L389">src/codecs/ipynb/index.ts:389</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -187,7 +189,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> language: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;python&quot;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -201,7 +203,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L382">src/codecs/ipynb/index.ts:382</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L486">src/codecs/ipynb/index.ts:486</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -229,13 +231,13 @@
 					<a name="decodemarkdowncell" class="tsd-anchor"></a>
 					<h3>decode<wbr>Markdown<wbr>Cell</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Markdown<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MarkdownCell</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MarkdownCell</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"markdown"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"html"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Markdown<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MarkdownCell</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MarkdownCell</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"markdown"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"html"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L341">src/codecs/ipynb/index.ts:341</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L445">src/codecs/ipynb/index.ts:445</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,7 +254,7 @@
 									<h5>format: <span class="tsd-signature-type">"markdown"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"html"</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.BlockContent</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -260,19 +262,25 @@
 					<a name="decodemetadata" class="tsd-anchor"></a>
 					<h3>decode<wbr>Metadata</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Metadata<span class="tsd-signature-symbol">(</span>metadata<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>authors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Metadata<span class="tsd-signature-symbol">(</span>metadata<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>authors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">; </span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"type"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"content"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L253">src/codecs/ipynb/index.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L268">src/codecs/ipynb/index.ts:268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Decode a notebook metadata.</p>
+									<p>Decode Jupyter Notebook metadata as <code>Article</code> metadata properties.</p>
 								</div>
+								<p>This function performs coercion of the array of authors,
+									(e.g. from strings to <code>Person</code>s) rather than leaving it to a higher level
+									function e.g. <code>read</code> to do, because that higher level function does
+								not know that we expect it to be a list of <code>Person</code>s.</p>
+								<p>Any properties in the metadata that are not properties of an
+								<code>Article</code> are placed in the <code>meta</code> property</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -280,7 +288,7 @@
 									<h5>metadata: <span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>authors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>authors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">; </span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"type"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"content"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -288,13 +296,13 @@
 					<a name="decodemimebundle" class="tsd-anchor"></a>
 					<h3>decode<wbr>Mime<wbr>Bundle</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Mime<wbr>Bundle<span class="tsd-signature-symbol">(</span>bundle<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_ipynb_index_.nbformat.mimebundle.html" class="tsd-signature-type">MimeBundle</a>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Mime<wbr>Bundle<span class="tsd-signature-symbol">(</span>bundle<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_ipynb_index_.nbformat.mimebundle.html" class="tsd-signature-type">MimeBundle</a>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L571">src/codecs/ipynb/index.ts:571</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L675">src/codecs/ipynb/index.ts:675</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +321,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> version: <a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol"> = 4</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -327,7 +335,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L659">src/codecs/ipynb/index.ts:659</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L763">src/codecs/ipynb/index.ts:763</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L195">src/codecs/ipynb/index.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L200">src/codecs/ipynb/index.ts:200</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -380,13 +388,13 @@
 					<a name="decodeoutput" class="tsd-anchor"></a>
 					<h3>decode<wbr>Output</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Output<span class="tsd-signature-symbol">(</span>output<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nbformat3.Output</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Output</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Output<span class="tsd-signature-symbol">(</span>output<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nbformat3.Output</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Output</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L451">src/codecs/ipynb/index.ts:451</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L555">src/codecs/ipynb/index.ts:555</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -398,7 +406,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> version: <a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol"> = 4</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -406,13 +414,13 @@
 					<a name="decodeoutputs" class="tsd-anchor"></a>
 					<h3>decode<wbr>Outputs</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Outputs<span class="tsd-signature-symbol">(</span>outputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">nbformat3.Output</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Output</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Outputs<span class="tsd-signature-symbol">(</span>outputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">nbformat3.Output</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">nbformat4.Output</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, version<span class="tsd-signature-symbol">?: </span><a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L429">src/codecs/ipynb/index.ts:429</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L533">src/codecs/ipynb/index.ts:533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -429,7 +437,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> version: <a href="_codecs_pandoc_types_.html#version" class="tsd-signature-type">Version</a><span class="tsd-signature-symbol"> = 4</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -437,13 +445,13 @@
 					<a name="encodecells" class="tsd-anchor"></a>
 					<h3>encode<wbr>Cells</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Cells<span class="tsd-signature-symbol">(</span>nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Cell</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Cells<span class="tsd-signature-symbol">(</span>nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Cell</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L318">src/codecs/ipynb/index.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L422">src/codecs/ipynb/index.ts:422</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -454,7 +462,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nodes: <span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>nodes: <span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Cell</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -471,7 +479,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L406">src/codecs/ipynb/index.ts:406</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L510">src/codecs/ipynb/index.ts:510</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -493,13 +501,13 @@
 					<a name="encodedisplaydata" class="tsd-anchor"></a>
 					<h3>encode<wbr>Display<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Display<wbr>Data<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DisplayData</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Display<wbr>Data<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DisplayData</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L537">src/codecs/ipynb/index.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L641">src/codecs/ipynb/index.ts:641</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -513,7 +521,7 @@
 									<h5>chunk: <span class="tsd-signature-type">CodeChunk</span></h5>
 								</li>
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DisplayData</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -524,13 +532,13 @@
 					<a name="encodeexecuteresult" class="tsd-anchor"></a>
 					<h3>encode<wbr>Execute<wbr>Result</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Execute<wbr>Result<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ExecuteResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Execute<wbr>Result<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ExecuteResult</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L551">src/codecs/ipynb/index.ts:551</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L655">src/codecs/ipynb/index.ts:655</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +552,7 @@
 									<h5>chunk: <span class="tsd-signature-type">CodeChunk</span></h5>
 								</li>
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ExecuteResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -555,13 +563,13 @@
 					<a name="encodemarkdowncell" class="tsd-anchor"></a>
 					<h3>encode<wbr>Markdown<wbr>Cell</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Markdown<wbr>Cell<span class="tsd-signature-symbol">(</span>nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">MarkdownCell</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Markdown<wbr>Cell<span class="tsd-signature-symbol">(</span>nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">MarkdownCell</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L357">src/codecs/ipynb/index.ts:357</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L461">src/codecs/ipynb/index.ts:461</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -572,7 +580,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nodes: <span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>nodes: <span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">MarkdownCell</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -580,16 +588,60 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="encodemimebundle" class="tsd-anchor"></a>
-					<h3>encode<wbr>Mime<wbr>Bundle</h3>
+					<a name="encodemetadata" class="tsd-anchor"></a>
+					<h3>encode<wbr>Metadata</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Mime<wbr>Bundle<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_ipynb_index_.nbformat.mimebundle.html" class="tsd-signature-type">MimeBundle</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Metadata<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol">]</span>, authors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol">]</span>, meta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol">]</span>, rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L632">src/codecs/ipynb/index.ts:632</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L327">src/codecs/ipynb/index.ts:327</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode a <code>Article</code>&#39;s metadata properties as Jupyter Notebook metadata.</p>
+								</div>
+								<p>The nbformat-v4 schema requires that <code>title</code> be a string
+									and that <code>authors</code> be an array of objects with a <code>name</code> string
+									property (and optional additional properties). This functions
+								conformance to those requirements.</p>
+								<p>All standard Jupyter notebook metadata properties are
+									extracted from the the article&#39;s <code>meta</code> property and placed
+								at the top level of the metadata.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"title"</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+								<li>
+									<h5>authors: <span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"authors"</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+								<li>
+									<h5>meta: <span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"meta"</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+								<li>
+									<h5>rest: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"metadata"</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="encodemimebundle" class="tsd-anchor"></a>
+					<h3>encode<wbr>Mime<wbr>Bundle</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Mime<wbr>Bundle<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_ipynb_index_.nbformat.mimebundle.html" class="tsd-signature-type">MimeBundle</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L736">src/codecs/ipynb/index.ts:736</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -602,7 +654,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_ipynb_index_.nbformat.mimebundle.html" class="tsd-signature-type">MimeBundle</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -619,7 +671,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L668">src/codecs/ipynb/index.ts:668</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L772">src/codecs/ipynb/index.ts:772</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -641,24 +693,24 @@
 					<a name="encodenode" class="tsd-anchor"></a>
 					<h3>encode<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L229">src/codecs/ipynb/index.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L237">src/codecs/ipynb/index.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Encode a Stencila <code>Article</code> as a Jupyter <code>Notebook</code>.</p>
+									<p>Encode a Stencila <code>Node</code> as a Jupyter <code>Notebook</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Notebook</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -669,13 +721,13 @@
 					<a name="encodeoutputs" class="tsd-anchor"></a>
 					<h3>encode<wbr>Outputs</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Outputs<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Output</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Outputs<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Output</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L499">src/codecs/ipynb/index.ts:499</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L603">src/codecs/ipynb/index.ts:603</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -693,7 +745,7 @@
 									<h5>chunk: <span class="tsd-signature-type">CodeChunk</span></h5>
 								</li>
 								<li>
-									<h5>nodes: <span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>nodes: <span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">nbformat4.Output</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -704,13 +756,13 @@
 					<a name="encodestream" class="tsd-anchor"></a>
 					<h3>encode<wbr>Stream</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Stream<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Stream</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Stream<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeChunk</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Stream</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L523">src/codecs/ipynb/index.ts:523</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L627">src/codecs/ipynb/index.ts:627</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -724,10 +776,38 @@
 									<h5>chunk: <span class="tsd-signature-type">CodeChunk</span></h5>
 								</li>
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Stream</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getvalidator" class="tsd-anchor"></a>
+					<h3>get<wbr>Validator</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Validator<span class="tsd-signature-symbol">(</span>nbformat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Ajv.ValidateFunction</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L152">src/codecs/ipynb/index.ts:152</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a <code>nbformat</code> validator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nbformat: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Ajv.ValidateFunction</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -741,7 +821,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L90">src/codecs/ipynb/index.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L92">src/codecs/ipynb/index.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -781,7 +861,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c3fdde9d/src/codecs/ipynb/index.ts#L159">src/codecs/ipynb/index.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/be034500/src/codecs/ipynb/index.ts#L178">src/codecs/ipynb/index.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -790,7 +870,7 @@
 								</div>
 								<p>This function only logs a warning if the notebook does not validate
 									against the schema. It is intended to provide additional
-									information for debugging other subsequent errors wth decoding
+									information for debugging other subsequent errors with decoding
 								if a notebook is corrupted.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -875,6 +955,9 @@
 						<a href="_codecs_ipynb_index_.html#encodemarkdowncell" class="tsd-kind-icon">encode<wbr>Markdown<wbr>Cell</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_codecs_ipynb_index_.html#encodemetadata" class="tsd-kind-icon">encode<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_codecs_ipynb_index_.html#encodemimebundle" class="tsd-kind-icon">encode<wbr>Mime<wbr>Bundle</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -888,6 +971,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_codecs_ipynb_index_.html#encodestream" class="tsd-kind-icon">encode<wbr>Stream</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_codecs_ipynb_index_.html#getvalidator" class="tsd-kind-icon">get<wbr>Validator</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_codecs_ipynb_index_.html#isv3" class="tsd-kind-icon">isv3</a>
