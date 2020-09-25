@@ -1,3 +1,12 @@
+## [0.99.10](https://github.com/stencila/encoda/compare/v0.99.9...v0.99.10) (2020-09-25)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/schema to ^0.46.2 ([bbe1b7a](https://github.com/stencila/encoda/commit/bbe1b7a2d5703c27fec08622a50d53e931f72c87))
+* **dependencies:** update dependency fp-ts to ^2.8.3 ([8a72259](https://github.com/stencila/encoda/commit/8a72259c9eaa3171182698f2b1f51c469b8db457))
+* **dependencies:** update dependency keyv to ^4.0.3 ([1f3c9e3](https://github.com/stencila/encoda/commit/1f3c9e3331d8409a9207ebbe833e5b223c96dd6d))
+
 ## [0.99.9](https://github.com/stencila/encoda/compare/v0.99.8...v0.99.9) (2020-09-24)
 
 
