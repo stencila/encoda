@@ -866,6 +866,51 @@ describe('Table Nodes', () => {
   })
 })
 
+// https://github.com/stencila/encoda/issues/700
+describe('Handle inline elements in Article description', () => {
+  it('does not nest inline elements inside extra paragraphs', async () => {
+    const article = stencila.article({
+      description: [
+        'Paragraph with ',
+        stencila.link({ content: ['a link'], target: 'http://stenci.la' }),
+        "and let's throw in our 1",
+        stencila.superscript({ content: ['st'] }),
+        'superscript shall we?',
+      ],
+    })
+
+    const actual = doc(await e(article)).querySelector(
+      '[data-itemprop="description"]'
+    )
+
+    expect(actual?.querySelectorAll('p')).toHaveLength(1)
+    expect(actual?.outerHTML).toMatchSnapshot()
+  })
+
+  it('does not wrap the description if it is already a paragraph', async () => {
+    const article = stencila.article({
+      description: [
+        stencila.paragraph({
+          content: [
+            'Paragraph with ',
+            stencila.link({ content: ['a link'], target: 'http://stenci.la' }),
+            "and let's throw in our 1",
+            stencila.superscript({ content: ['st'] }),
+            'superscript shall we?',
+          ],
+        }),
+      ],
+    })
+
+    const actual = doc(await e(article)).querySelector(
+      '[data-itemprop="description"]'
+    )
+
+    expect(actual?.querySelectorAll('p')).toHaveLength(1)
+    expect(actual?.outerHTML).toMatchSnapshot()
+  })
+})
+
 describe('encode/decode href attributes', () => {
   describe('decode', () => {
     test('an href pointing to a website returns the full link', () => {

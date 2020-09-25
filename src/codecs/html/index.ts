@@ -38,7 +38,6 @@ import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 import { fromFiles } from '../../util/media/fromFiles'
-import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -1028,6 +1027,8 @@ function encodeDate(
 function encodeDescriptionProperty(
   desc: string | stencila.Node[]
 ): HTMLElement {
+  const descArray = typeof desc === 'string' ? [desc] : desc
+
   return h(
     'section',
     { [stencilaItemProp]: 'description' },
@@ -1036,9 +1037,10 @@ function encodeDescriptionProperty(
       itemprop: 'description',
       content: TxtCodec.stringify(desc),
     }),
-    encodeNodes(
-      ensureBlockContentArray(typeof desc === 'string' ? [desc] : desc)
-    )
+    // Ensure that description is always wrapped in a paragraph
+    descArray.every(stencila.isInlineContent)
+      ? encodeNode(stencila.paragraph({ content: descArray }))
+      : encodeNodes(descArray)
   )
 }
 
