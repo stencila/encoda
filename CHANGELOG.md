@@ -1,3 +1,11 @@
+## [0.99.11](https://github.com/stencila/encoda/compare/v0.99.10...v0.99.11) (2020-09-27)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.17.2 ([f74599a](https://github.com/stencila/encoda/commit/f74599aa2c0b8000831bbd89f495f19711ac1308))
+* **HTML:** Don't wrap inline elements from description in paragraphs ([1133eac](https://github.com/stencila/encoda/commit/1133eac70a8a7e97ece9592f7aa496773bbe5509)), closes [#700](https://github.com/stencila/encoda/issues/700)
+
 ## [0.99.10](https://github.com/stencila/encoda/compare/v0.99.9...v0.99.10) (2020-09-25)
 
 
