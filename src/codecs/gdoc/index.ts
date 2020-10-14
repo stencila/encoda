@@ -20,6 +20,7 @@ import { TxtCodec } from '../txt'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonDecodeOptions } from '../types'
+import tempy from 'tempy'
 
 const log = getLogger('encoda:gdoc')
 
@@ -89,7 +90,7 @@ class FetchToFile {
   private requests: Promise<void>[] = []
 
   public get(url: string, ext = ''): string {
-    const filePath = crypto.createHash('md5').update(url).digest('hex') + ext
+    const filePath = tempy.file({ extension: ext })
     this.requests.push(http.download(url, filePath))
     return filePath
   }
