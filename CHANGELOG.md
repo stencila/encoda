@@ -1,3 +1,11 @@
+## [0.99.13](https://github.com/stencila/encoda/compare/v0.99.12...v0.99.13) (2020-10-14)
+
+
+### Bug Fixes
+
+* **GDoc:** Download images to temporary file; add image to test fixture ([97dca1b](https://github.com/stencila/encoda/commit/97dca1b607e8c21f0773f2b2f66686db2a73d587))
+* **GDoc:** Handle undefined list more gracefully ([a9fec19](https://github.com/stencila/encoda/commit/a9fec19edd060e645bed2a68f87e1da596632e61))
+
 ## [0.99.12](https://github.com/stencila/encoda/compare/v0.99.11...v0.99.12) (2020-10-14)
 
 
