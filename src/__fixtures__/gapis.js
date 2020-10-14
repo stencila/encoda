@@ -2,7 +2,8 @@
  * Script to testing getting and putting documents to/from Google Drive, Docs and Sheets.
  *
  * See the Google Docs API quickstart for getting API credentials set up:
- * https://developers.google.com/docs/api/quickstart/nodejs
+ * https://developers.google.com/docs/api/quickstart/nodejs. Then save the
+ * credentials file as `.gapi-credentials.json` in this folder.
  *
  * Usage examples:
  *
