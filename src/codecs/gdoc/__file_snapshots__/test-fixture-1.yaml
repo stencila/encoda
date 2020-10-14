@@ -1,0 +1,217 @@
+type: Article
+title: A Google Doc test fixture for Stencila Encoda
+content:
+  - type: Paragraph
+    content:
+      - 'Given that this is a test fixture (used '
+      - type: Link
+        target: 'https://github.com/stencila/encoda/blob/master/src/codecs/gdoc'
+        content:
+          - here
+      - >-
+        ), please take care when editing it, and update test expectations
+        accordingly!
+  - type: Heading
+    depth: 1
+    content:
+      - Lists
+  - type: Heading
+    depth: 2
+    content:
+      - Unordered
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - One of one
+    order: unordered
+  - type: Paragraph
+    content:
+      - ''
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - One of two
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Two of two
+    order: unordered
+  - type: Paragraph
+    content:
+      - ''
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - One
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Two
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Three
+    order: unordered
+  - type: Heading
+    depth: 2
+    content:
+      - Ordered
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - First
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Second
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Third
+    order: ascending
+  - type: Heading
+    depth: 2
+    content:
+      - Nested
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Fruit
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Apple
+                  - type: List
+                    items:
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Braeburn
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Cox’s Orange
+                    order: ascending
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Orange
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Banana
+            order: unordered
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Dairy
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Butter
+                  - type: List
+                    items:
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Salted
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Unsalted
+                    order: ascending
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Cheese
+            order: unordered
+    order: ascending
+  - type: Heading
+    depth: 1
+    content:
+      - Tables
+  - type: Paragraph
+    content:
+      - ''
+  - type: Table
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - A
+          - type: TableCell
+            content:
+              - B
+          - type: TableCell
+            content:
+              - C
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '1'
+          - type: TableCell
+            content:
+              - '2'
+          - type: TableCell
+            content:
+              - '3'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '4'
+          - type: TableCell
+            content:
+              - '5'
+          - type: TableCell
+            content:
+              - '6'
+  - type: Heading
+    depth: 1
+    content:
+      - Images
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: >-
+          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAABQxJREFUaIHVml+ME0Ucx38zszPd7rbH8aLkTiLJESIYY3z2gGBsuIRIIhCN7+IZDZqQSythuaXl0pTKAzkfTEASfTIGiBqNMWDgjjP6YDQxygMBCSSCf4AIuf07uzvjy5X04Fq6ba9793mbmd+v8/12d2ZndhZBl6hWq0O2be+UUq4VQgxKKR+TUmallCkAAISQjxCaBYB/CSE3EEJXdF0/nc/n/+hG/6iT5HK5/JTneW8IIYZ9398QRZEeJ59S6iiK8ruiKDOaph0vFAqX2tXSlpFSqbQ5CII9vu/nwjDsa7fzeiil9yilZ1VV/cAwjAtx82MZmZiYWB0EQdW27ZeEELH+/VYhhFjpdPorhFC+WCz+2XJeq4Gmab7led4Jx3GGpZSsPZmPRkrJOOfPAMCOXC7nTU1N/dxK3iOvyOTkZOrOnTvHLMt6tTZwewUhxEun058ihN4sFou8WWxTI6ZpZqSUp2zb3iql7K7KGGiado4QsrNYLN5tFIMbNZim2SeE+MayrERNAAA4jvOClPLLfD6fbRSzoBHTNFkURZ/Ztr1x8eTFw7KsTaqqnpycnFzw9m50RY47jjOyiLrawrbtrbdv3/5wobaHZq1SqfSG4zhjQghl8aXFh3O+YWRk5L+pqamf6uvnDfaJiYnVtm3P+L7/ZG/lxYMxdm3lypXPFwqFm7W6ebdWEARHlroJAADO+Rrbtiv1dfeNlEqlzbZtb+u9rPZwXfflSqUyXCvfNxKG4Z7FWnYsBlEUZRzHeadWxgAAhw4dWu95Xi45We3heV6uXC6vA5gzEobh7m6tYntJGIb9vu+/DjBnhHM+3Dxl6cI53wQAgKrV6tCtW7d+jbspWipQSq3+/v5nseu6u5arCQCAMAwzQRDswFEUDSUtphOklBCG4VoshBhMWkynCCEGMQA8nrSQTpFSrsLLeXzUoWMAUJNW0SlCiHTDHeJyAwOAl7SITsEYu5gQYictpAvYWEr5T9IqOgUh9DfGGN98dOjSBiF0E2OMLyctpBMQQkApvYxVVT2lKMqyHSeKolgY45N43759VymlF5MW1C4Y498Mw7iOAQAURfk+aUHtwhibAZjbWGmadoxSei9ZSfEhhNzVdf0jgDkjhULhEmPsu2RlxSeVSp3N5/OXAereoqRSqUlCiJWcrHgQQixVVY/WyveNGIZxQdO0r5ORFR9N0z43DOOHWnneopFSOsYYu9ZzVTFhjF1ljBXq6+YZMQzjhq7rZULIUl5I+ul0+sj+/fv/qq986G38+fPnf8nlckOc8+d6p601EELQ19f38cGDB8cfbFtwPzIwMDCazWbPINTRMXzXyWQy30op316obUEjo6Ojgeu6u3Rdj33evVjouj7tuu4rjQ5FG+4Qq9XqLEJo21KYyTRNO4cx3l6tVmcbxTQ9Z5+enuZbtmw5zRh7Ioqi9VLKnp5iEULcbDb7yeDg4GtjY2Nus9iWB0GxWBx1Xfc9zvmajhW2AGPsqq7r5QMHDpxoJT7WaD58+PCA4zjve563PQiCTHsSm0MIsTRN+4Ixln9wim1GW9NSpVIZtizrXc75i2EY9rfzGw9CCLmrquoZSunR8fHxH+Pmd/qZ0zrf93dzzjcKIZ4OwzDT6scFCCEghMxSSi8qijKzYsWKY3v37r3SrpauPShM01xDCNkVhmHtw7NVQogMQigFACCl9DHG1tyLghuKolzBGJ80DON6N/r/H5ThAu2molZWAAAAAElFTkSuQmCC
+      - ''
+  - type: Paragraph
+    content:
+      - ''
