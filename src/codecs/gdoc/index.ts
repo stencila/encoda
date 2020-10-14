@@ -13,14 +13,13 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isInlineContent, paragraph } from '@stencila/schema'
-import crypto from 'crypto'
+import stencila, { isInlineContent } from '@stencila/schema'
 import { docs_v1 as GDocT } from 'googleapis'
-import { TxtCodec } from '../txt'
+import tempy from 'tempy'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
+import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions } from '../types'
-import tempy from 'tempy'
 
 const log = getLogger('encoda:gdoc')
 
@@ -391,10 +390,11 @@ function decodeListItem(
     content: [stencila.paragraph({ content })],
   })
 
-  // If we have jumped up a level then it means that the
+  // If we have jumped up a level then it means that
   // the list at the lower depth has been finished
-  if (listLevel < decodingGDoc.listDepth) {
-    delete lists[listId][decodingGDoc.listDepth]
+  const { listDepth } = decodingGDoc
+  if (listLevel < listDepth && lists[listId]) {
+    delete lists[listId][listDepth]
   }
   decodingGDoc.listDepth = listLevel
 

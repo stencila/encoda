@@ -25,6 +25,33 @@ content:
         content:
           - type: Paragraph
             content:
+              - One of one
+    order: unordered
+  - type: Paragraph
+    content:
+      - ''
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - One of two
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Two of two
+    order: unordered
+  - type: Paragraph
+    content:
+      - ''
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - One
       - type: ListItem
         content:
