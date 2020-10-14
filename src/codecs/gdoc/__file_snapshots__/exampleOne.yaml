@@ -1,0 +1,186 @@
+type: Article
+title: A Google Doc test fixture for Stencila Encoda
+content:
+  - type: Paragraph
+    content:
+      - 'Given that this is a test fixture (used '
+      - type: Link
+        target: 'https://github.com/stencila/encoda/blob/master/src/codecs/gdoc'
+        content:
+          - here
+      - >-
+        ), please take care when editing it, and update test expectations
+        accordingly!
+  - type: Paragraph
+    content:
+      - ''
+  - type: Heading
+    depth: 1
+    content:
+      - Lists
+  - type: Heading
+    depth: 2
+    content:
+      - Unordered
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - One
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Two
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Three
+    order: unordered
+  - type: Heading
+    depth: 2
+    content:
+      - Ordered
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - First
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Second
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Third
+    order: ascending
+  - type: Heading
+    depth: 2
+    content:
+      - Nested
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Fruit
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Apple
+                  - type: List
+                    items:
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Braeburn
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Cox’s Orange
+                    order: ascending
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Orange
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Banana
+            order: unordered
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - Dairy
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Butter
+                  - type: List
+                    items:
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Salted
+                      - type: ListItem
+                        content:
+                          - type: Paragraph
+                            content:
+                              - Unsalted
+                    order: ascending
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - Cheese
+            order: unordered
+    order: ascending
+  - type: Paragraph
+    content:
+      - ''
+  - type: Heading
+    depth: 1
+    content:
+      - Tables
+  - type: Paragraph
+    content:
+      - ''
+  - type: Table
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - A
+          - type: TableCell
+            content:
+              - B
+          - type: TableCell
+            content:
+              - C
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '1'
+          - type: TableCell
+            content:
+              - '2'
+          - type: TableCell
+            content:
+              - '3'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '4'
+          - type: TableCell
+            content:
+              - '5'
+          - type: TableCell
+            content:
+              - '6'
+  - type: Paragraph
+    content:
+      - ''
