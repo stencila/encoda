@@ -1,3 +1,20 @@
+## [0.99.12](https://github.com/stencila/encoda/compare/v0.99.11...v0.99.12) (2020-10-14)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.14.2 ([65648e2](https://github.com/stencila/encoda/commit/65648e2972804f8905f665a6a4c1733780f4b721))
+* **dependencies:** update dependency @stencila/schema to ^0.46.5 ([d36127b](https://github.com/stencila/encoda/commit/d36127b227a8518ad5b8d64a5dcc4d0afda13d0e))
+* **dependencies:** update dependency @stencila/thema to ^2.19.1 ([146ed6f](https://github.com/stencila/encoda/commit/146ed6f2f5abd05322a54a561aaacfb7c3dda4d1))
+* **dependencies:** update dependency ajv to ^6.12.6 ([62df782](https://github.com/stencila/encoda/commit/62df7826c11bae06ad013a2a94ac4bcbee186317))
+* **dependencies:** update dependency fp-ts to ^2.8.4 ([6fe71c1](https://github.com/stencila/encoda/commit/6fe71c198e728d2c9a77c17018f3afeafb28dc67))
+* **dependencies:** update dependency jsonld to ^3.2.0 ([a392ccd](https://github.com/stencila/encoda/commit/a392ccdcfb81893dae7e4a19f766ab7ee8906194))
+* **dependencies:** update dependency mdast-util-compact to v3 ([7bb74c4](https://github.com/stencila/encoda/commit/7bb74c46e3b9b0b1105a33553c382b4881b33c85))
+* **dependencies:** update dependency pdf-lib to ^1.11.2 ([f6fc8e9](https://github.com/stencila/encoda/commit/f6fc8e98f68bb08c056e7da65070d3f17ba16065))
+* **dependencies:** update dependency tempy to ^0.7.1 ([2230f5e](https://github.com/stencila/encoda/commit/2230f5ede8c4a97fbddefcd81c09776a63a1cc66))
+* **dependencies:** update dependency tempy to v1 ([c46c63b](https://github.com/stencila/encoda/commit/c46c63bf68816886ddf5729aeed90bf03f98d234))
+* **dependencies:** update dependency xlsx to ^0.16.8 ([cc2181a](https://github.com/stencila/encoda/commit/cc2181a8bb5d13c0bac3a8c78a7b1f07aff3ab8f))
+
 ## [0.99.11](https://github.com/stencila/encoda/compare/v0.99.10...v0.99.11) (2020-09-27)
 
 
