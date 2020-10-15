@@ -61,10 +61,8 @@ describe('decode', () => {
     ))
 })
 
-
 describe('encode', () => {
-  const node2gdoc = async (node: any) =>
-    JSON.parse(await gdocCodec.dump(node))
+  const node2gdoc = async (node: any) => JSON.parse(await gdocCodec.dump(node))
 
   test('kitchenSink', async () =>
     expect(await node2gdoc(kitchenSink.node)).toEqual(kitchenSink.gdoc))
