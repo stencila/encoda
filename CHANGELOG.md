@@ -1,3 +1,15 @@
+## [0.99.14](https://github.com/stencila/encoda/compare/v0.99.13...v0.99.14) (2020-10-22)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.15.0 ([599617c](https://github.com/stencila/encoda/commit/599617ce68fccebb7924d0c0b581df691bde7210))
+* **dependencies:** update dependency @stencila/logga to ^3.0.1 ([7a7319e](https://github.com/stencila/encoda/commit/7a7319ef76ffc70d75fbcd86962a448278b6a385))
+* **dependencies:** update dependency citation-js to ^0.5.0-alpha.9 ([45b856d](https://github.com/stencila/encoda/commit/45b856d5e7d5142723c6676a2a8d4f1dbe272e2d))
+* **dependencies:** update dependency got to ^11.8.0 ([d9593f6](https://github.com/stencila/encoda/commit/d9593f6fc8fc5044f323d0e5dea553eaec73aaaa))
+* **dependencies:** update dependency immer to ^7.0.14 ([da8b9c4](https://github.com/stencila/encoda/commit/da8b9c4f235f596a64aebb9022de3eae926420f0))
+* **XMD:** Allow for Windows line endings ([231933e](https://github.com/stencila/encoda/commit/231933e536b5295f7f2d724e1cb53126b0f762ed)), closes [#717](https://github.com/stencila/encoda/issues/717)
+
 ## [0.99.13](https://github.com/stencila/encoda/compare/v0.99.12...v0.99.13) (2020-10-14)
 
 
