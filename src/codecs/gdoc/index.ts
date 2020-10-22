@@ -829,7 +829,10 @@ function decodeImage(
     }
   }
 
-  const contentUrl = decodingFetcher(imageProperties.contentUri ?? '')
+  const contentUri = imageProperties.contentUri ?? ''
+  const contentUrl = contentUri.startsWith('http')
+    ? decodingFetcher(contentUri)
+    : contentUri
   return stencila.imageObject({
     contentUrl,
     title,
