@@ -170,7 +170,7 @@ export class XmdCodec extends Codec implements Codec {
  */
 export function decodeNestedChunks(xmd: string): string {
   return xmd.replace(
-    /(chunk:(?:.|\n)*?```){([^}]*)}/g,
+    /(chunk:(?:.|\r|\n)*?\r?\n```\s*){([^}]*)}/g,
     (_match, leading, unbraced): string => `${leading}${unbraced}`
   )
 }
@@ -203,7 +203,7 @@ export function decodeInlineChunk(xmd: string): string {
 export function decodeBlockChunk(xmd: string): string {
   const removeParagraphs: string[] = []
   xmd = xmd.replace(
-    /^```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
+    /^```\s*{([a-z]+)\s*([^}]*)}\s*\n((?:.|\r|\n)*?)\r?\n```\s*\n/gm,
     (match, lang: string, options_: string, text: string): string => {
       let options = options_.split(/,\s*/)
 
