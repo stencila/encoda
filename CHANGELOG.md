@@ -1,3 +1,10 @@
+## [0.99.15](https://github.com/stencila/encoda/compare/v0.99.14...v0.99.15) (2020-10-22)
+
+
+### Bug Fixes
+
+* **GDoc:** Allow for dataURI in image URIs ([691b8e5](https://github.com/stencila/encoda/commit/691b8e5f199f2caf4302ab855c980fc811d85730))
+
 ## [0.99.14](https://github.com/stencila/encoda/compare/v0.99.13...v0.99.14) (2020-10-22)
 
 
