@@ -1,6 +1,10 @@
 import schema from '@stencila/schema'
+import path from 'path'
+
 import { XmdCodec } from '../../codecs/xmd'
 import { MdCodec } from '../../codecs/md'
+import { TxtCodec } from '../../codecs/txt'
+import { match } from '../..'
 
 /**
  * See https://github.com/stencila/encoda/issues/725
@@ -25,9 +29,9 @@ test('issue 725: programming language is incorrectly decoded', async () => {
         schema.codeChunk({
           label: 'fig2',
           programmingLanguage: 'python',
-          text: '# Python code here\n'
-        })
-      ]
+          text: '# Python code here\n',
+        }),
+      ],
     })
   )
 
@@ -40,12 +44,44 @@ test('issue 725: programming language is incorrectly decoded', async () => {
       content: [
         schema.codeBlock({
           meta: {
-            fig2: ''
+            fig2: '',
           },
           programmingLanguage: '{python',
-          text: '\n# Python code here\n'
-        })
-      ]
+          text: '\n# Python code here\n',
+        }),
+      ],
     })
   )
+})
+
+/**
+ * See https://github.com/stencila/encoda/pull/726#issuecomment-714786201
+ *
+ * Tests whether there is an issue matching .rmd files to the XmdCodec.
+ */
+test('issue 725: match function does not resolve .rmd extension to XmdCodec?', async () => {
+  const rmd = path.join(__dirname, '725-xmd-code-chunk-language.rmd')
+
+  expect(await match(rmd)).toBeInstanceOf(XmdCodec)
+
+  const xmdCodec = new XmdCodec()
+  expect(await xmdCodec.read(rmd)).toEqual(
+    schema.article({
+      title: 'Test',
+      content: [
+        schema.codeChunk({
+          label: 'fig1',
+          programmingLanguage: 'r',
+          text: 'plot(1:100)',
+        }),
+      ],
+    })
+  )
+
+  // Currently, if the 'content' argument does not exist then it is
+  // assumed to be raw context and the `txt` codec is returned.
+  // So in these cases the `format` arg needs to be supplied
+  expect(await match('doesnt-exist.rmd')).toBeInstanceOf(TxtCodec)
+  expect(await match('doesnt-exist.rmd', 'rmd')).toBeInstanceOf(XmdCodec)
+  expect(await match('doesnt-exist.rmd', 'xmd')).toBeInstanceOf(XmdCodec)
 })
