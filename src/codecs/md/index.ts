@@ -848,7 +848,7 @@ function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
  * the code block starting with,
  *
  * ~~~markdown
- * ```python python meta1 meta2=foo meta3="bar baz"
+ * ```python meta1 meta2=foo meta3="bar baz"
  * ~~~
  *
  * is decoded to a `CodeBlock` with `language` `"python"` and `meta`
