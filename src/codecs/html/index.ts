@@ -731,6 +731,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     encodeMaybe(authors, (authors) => encodeAuthorsProperty(authors)),
     encodePublisherProperty(publisher),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
+    ...encodeClassificatoryProperties(article),
     encodeIdentifiersProperty(identifiers),
     encodeMaybe(description, (desc) => encodeDescriptionProperty(desc)),
     ...encodeNodes(content),
@@ -965,6 +966,81 @@ function endodePaginationProperties(
     pageEnd !== undefined
       ? h('span', microdata(pageEnd, 'pageEnd'), pageEnd)
       : undefined,
+  ]
+}
+
+/**
+ * Encode classificatory properties( e.g. `about`, `genre` and `keyword`)
+ * of a `CreativeWork`.
+ *
+ * This function encodes properties of a creative work that are of a classificatory nature.
+ * There is no reason these need to be encoded in the the same function other than that
+ * they share this general purpose.
+ *
+ * Although this function places the resulting HTML elements next to each other,
+ * journals often display them in different places on the page and there is little consistency
+ * in this. For example, `genre` is displayed above the `title` by PLOS and F1000 but below the
+ * `title` by eLife, and `about` (aka subject areas) is displayed above the `title` by eLife
+ * but in the right sidebar by PLOS and F1000. These diversity of presentations should be able
+ * to be accommodated by Thema (e.g. by using CSS `order`).
+ */
+function encodeClassificatoryProperties(
+  work: stencila.CreativeWork
+): HTMLElement[] {
+  const { genre, about, keywords } = work
+
+  return [
+    ...(genre
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(genre, 'genre', 'array') },
+            genre.map((genreItem) =>
+              h(
+                'li',
+                { attrs: microdata(genreItem, 'genre', 'item') },
+                genreItem
+              )
+            )
+          ),
+        ]
+      : []),
+    ...(about
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(about, 'about', 'array') },
+            about.map((aboutItem) => {
+              // An about item can be any `Thing` but will usually be a `DefinedTerm` (which is
+              // also a thing). In any case we display it's `name` property encoded with the correct
+              // Microdata.
+              const { name } = aboutItem
+              return name !== undefined && name.trim() !== ''
+                ? h(
+                    'li',
+                    { attrs: microdata(aboutItem, 'about', 'item') },
+                    h('span', { attrs: microdata(name, 'name') }, name)
+                  )
+                : undefined
+            })
+          ),
+        ]
+      : []),
+    ...(keywords
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(keywords, 'keywords', 'array') },
+            keywords.map((keywordsItem) =>
+              h(
+                'li',
+                { attrs: microdata(keywordsItem, 'keywords', 'item') },
+                keywordsItem
+              )
+            )
+          ),
+        ]
+      : []),
   ]
 }
 
