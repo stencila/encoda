@@ -1390,10 +1390,16 @@ function encodeOrganization(
         []
       )
     ),
-    members?.map((member) =>
-      stencila.isA('Person', member)
-        ? encodePerson(member)
-        : encodeOrganization(member)
+    encodeMaybe(members, (members) =>
+      h(
+        'ol',
+        { attrs: { [stencilaItemProp]: 'members' }, },
+        members.map((member) =>
+          stencila.isA('Person', member)
+            ? encodePerson(member, 'members', undefined, 'li')
+            : encodeOrganization(member, 'members', 'li')
+        )
+      )
     )
   )
 }
