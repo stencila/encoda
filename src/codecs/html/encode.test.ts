@@ -38,14 +38,24 @@ const articles: [string, string | schema.Article, number, string[]][] = [
   ['math-article', mathArticle, 1, []],
   ['jupyter-notebook-simple', jupyterNotebookSimple, 1, []],
   ['r-notebook-simple', rNotebookSimple, 1, []],
-  ['elife-30274', 'article/journal/elife/30274.json', 2, ['WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID']],
+  [
+    'elife-30274',
+    'article/journal/elife/30274.json',
+    2,
+    ['WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID'],
+  ],
   ['elife-50356', 'article/journal/elife/50356.json', 2, []],
   ['plosone-0229075', 'article/journal/plosone/0229075.json', 2, []],
 ]
 describe('Articles', () => {
   test.each(articles)(
     '%s',
-    async (name: string, article: string | schema.Article, level: number, ignoreChecks: string[] = []) => {
+    async (
+      name: string,
+      article: string | schema.Article,
+      level: number,
+      ignoreChecks: string[] = []
+    ) => {
       const node =
         typeof article === 'string'
           ? await jsonCodec.read(fixture(article))

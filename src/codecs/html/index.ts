@@ -715,6 +715,9 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     authors,
     publisher,
     datePublished,
+    genre,
+    about,
+    keywords,
     identifiers,
     description,
     content = [],
@@ -731,10 +734,10 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     encodeMaybe(authors, (authors) => encodeAuthorsProperty(authors)),
     encodePublisherProperty(publisher),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
-    ...encodeClassificatoryProperties(article),
+    encodeClassificatoryProperties({ genre, about, keywords }),
     encodeIdentifiersProperty(identifiers),
     encodeMaybe(description, (desc) => encodeDescriptionProperty(desc)),
-    ...encodeNodes(content),
+    encodeNodes(content),
     encodeMaybe(references, (refs) => encodeReferencesProperty(refs))
   )
 }
@@ -979,11 +982,14 @@ function endodePaginationProperties(
  * `title` by eLife, and `about` (aka subject areas) is displayed above the `title` by eLife
  * but in the right sidebar by PLOS and F1000. These diversity of presentations should be able
  * to be accommodated by Thema (e.g. by using CSS `order`).
+ *
+ * This function uses `Pick` rather accepting an entire `CreativeWork` so that the calling
+ * function can warn of data loss (ie. properties that are not encoded).
  */
 function encodeClassificatoryProperties(
-  work: stencila.CreativeWork
+  properties: Pick<stencila.CreativeWork, 'genre' | 'about' | 'keywords'>
 ): HTMLElement[] {
-  const { genre, about, keywords } = work
+  const { genre, about, keywords } = properties
 
   return [
     ...(genre
