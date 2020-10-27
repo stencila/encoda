@@ -33,18 +33,19 @@ import { JsonCodec } from '../json'
 const jsonCodec = new JsonCodec()
 const htmlCodec = new HTMLCodec()
 
-const articles: [string, string | schema.Article, number][] = [
-  ['kitchen-sink-article', kitchenSinkArticle, 1],
-  ['math-article', mathArticle, 1],
-  ['jupyter-notebook-simple', jupyterNotebookSimple, 1],
-  ['r-notebook-simple', rNotebookSimple, 1],
-  ['elife-50356', 'article/journal/elife/50356.json', 2],
-  ['plosone-0229075', 'article/journal/plosone/0229075.json', 2],
+const articles: [string, string | schema.Article, number, string[]][] = [
+  ['kitchen-sink-article', kitchenSinkArticle, 1, []],
+  ['math-article', mathArticle, 1, []],
+  ['jupyter-notebook-simple', jupyterNotebookSimple, 1, []],
+  ['r-notebook-simple', rNotebookSimple, 1, []],
+  ['elife-30274', 'article/journal/elife/30274.json', 2, ['WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID']],
+  ['elife-50356', 'article/journal/elife/50356.json', 2, []],
+  ['plosone-0229075', 'article/journal/plosone/0229075.json', 2, []],
 ]
 describe('Articles', () => {
   test.each(articles)(
     '%s',
-    async (name: string, article: string | schema.Article, level: number) => {
+    async (name: string, article: string | schema.Article, level: number, ignoreChecks: string[] = []) => {
       const node =
         typeof article === 'string'
           ? await jsonCodec.read(fixture(article))
@@ -111,7 +112,7 @@ describe('Articles', () => {
         'color-contrast',
         'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail',
         'WCAG2AA.Principle1.Guideline1_3.1_3_1.H39.3.LayoutTable',
-      ]
+      ].concat(ignoreChecks)
       // Temporarily skip Web Component structure (not controlled by this repo)
       // See https://github.com/stencila/designa/issues/37
       const ignoreSelectorRegex = /stencila-code-chunk/

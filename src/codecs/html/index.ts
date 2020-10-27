@@ -875,11 +875,7 @@ function encodeAuthorsProperty(
   return [
     h(
       'ol',
-      {
-        attrs: {
-          [stencilaItemProp]: 'authors',
-        },
-      },
+      microdata(orgs, 'authors', 'array'),
       ...authors.map((author) =>
         author.type === 'Person'
           ? encodePerson(author, 'authors', orgs, 'li')
@@ -1312,24 +1308,6 @@ function encodePerson(
         )
       : undefined
 
-  const emailsElem =
-    emails !== undefined
-      ? h(
-          'span',
-          microdata(emails, 'emails', 'array'),
-          emails.map((email) =>
-            h(
-              'a',
-              {
-                ...microdata(email, 'emails', 'item'),
-                href: `mailto:${email}`,
-              },
-              email
-            )
-          )
-        )
-      : undefined
-
   const affiliationsElem =
     affiliations !== undefined && organizations !== undefined
       ? h(
@@ -1358,7 +1336,7 @@ function encodePerson(
     nameElem,
     givenNamesElem,
     familyNamesElem,
-    emailsElem,
+    encodeEmailsProperty(emails),
     affiliationsElem
   )
 }
@@ -1368,7 +1346,17 @@ function encodeOrganization(
   property?: string,
   tag: keyof HTMLElementTagNameMap = 'span'
 ): HTMLElement {
-  const { id, name, url, address, meta, parentOrganization, ...lost } = org
+  const {
+    id,
+    name,
+    url,
+    address,
+    contactPoints,
+    members,
+    meta,
+    parentOrganization,
+    ...lost
+  } = org
   logWarnLossIfAny('html', 'encode', org, lost)
 
   const nameElem = h('span', { itemprop: 'name' }, name)
@@ -1388,7 +1376,19 @@ function encodeOrganization(
     encodeMaybe(parentOrganization, (org) =>
       encodeOrganization(org, 'parentOrganization')
     ),
-    encodeAddressProperty(address)
+    encodeAddressProperty(address),
+    encodeEmailsProperty(
+      contactPoints?.reduce(
+        (prev: string[], { emails }) =>
+          emails && emails.length > 0 ? [...prev, ...emails] : prev,
+        []
+      )
+    ),
+    members?.map((member) =>
+      stencila.isA('Person', member)
+        ? encodePerson(member)
+        : encodeOrganization(member)
+    )
   )
 }
 
@@ -1436,6 +1436,30 @@ function encodeAddressProperty(
         : undefined
     )
   )
+}
+
+/**
+ * Encode the `emails` property.
+ */
+function encodeEmailsProperty(
+  emails: string[] | undefined
+): HTMLElement | undefined {
+  return emails !== undefined
+    ? h(
+        'span',
+        microdata(emails, 'emails', 'array'),
+        emails.map((email) =>
+          h(
+            'a',
+            {
+              ...microdata(email, 'emails', 'item'),
+              href: `mailto:${email}`,
+            },
+            email
+          )
+        )
+      )
+    : undefined
 }
 
 /**
