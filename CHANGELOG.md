@@ -1,3 +1,13 @@
+## [0.99.16](https://github.com/stencila/encoda/compare/v0.99.15...v0.99.16) (2020-10-27)
+
+
+### Bug Fixes
+
+* **HTML:** Encode classificatory properties of a creative work ([73d015a](https://github.com/stencila/encoda/commit/73d015a6ca3750e19f4807b2556c2f327779342c)), closes [#679](https://github.com/stencila/encoda/issues/679)
+* **HTML:** Encode Organization members as a list of members (ol > li) ([1c66aa9](https://github.com/stencila/encoda/commit/1c66aa9c115795680b145fd2a957ee295b67a03d))
+* **HTML:** Encode organization members as a nested list ([3a3e3ed](https://github.com/stencila/encoda/commit/3a3e3edce54477111222119864314470fadc0dff)), closes [#691](https://github.com/stencila/encoda/issues/691)
+* **JATS:** Decode members of a collab author ([05c94f9](https://github.com/stencila/encoda/commit/05c94f99a64fe20b128d858102126f3671b60302)), closes [#690](https://github.com/stencila/encoda/issues/690)
+
 ## [0.99.15](https://github.com/stencila/encoda/compare/v0.99.14...v0.99.15) (2020-10-22)
 
 
