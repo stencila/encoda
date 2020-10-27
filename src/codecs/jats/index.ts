@@ -778,7 +778,10 @@ function decodeAuthors(
   front: xml.Element,
   state: DecodeState
 ): stencila.Article['authors'] {
-  const authors = all(front, 'contrib', { 'contrib-type': 'author' })
+  const contribGroup = first(front, 'contrib-group')
+  const authors = children(contribGroup, 'contrib', {
+    'contrib-type': 'author',
+  })
   return authors.length > 0
     ? authors.map((author) => decodeContrib(author, state))
     : undefined
@@ -822,7 +825,7 @@ function decodeEditors(
 }
 
 /**
- * Decode a JATS `<contrib>` element to a Stencila `Person` node.
+ * Decode a JATS `<contrib>` element to a `Person` or `Organization` node.
  *
  * It is necessary to pass the `<article>` element to this function
  * (via `state`) so that author affiliations can be extracted.
@@ -831,65 +834,67 @@ function decodeContrib(
   contrib: xml.Element,
   state: DecodeState
 ): stencila.Person | stencila.Organization {
-  let contributor: stencila.Person | stencila.Organization
-  let contributorEl: xml.Element | null = contrib
-
-  const isCollaborative = child(contrib, ['collab']) !== null
-  if (isCollaborative) {
-    const collab = child(contrib, ['collab'])
-    contributor = stencila.organization({
+  const collab = child(contrib, 'collab')
+  if (collab) {
+    // Create an Organization contributor with individuals as
+    // its `members` each with their own affiliations. If there
+    // are multiple emails, these are assumed to be for multiple
+    // contact points rather than multiple emails for a single
+    // contact.
+    const emails = children(contrib, 'email')
+    const subContribs = all(contrib, 'contrib')
+    return stencila.organization({
       name: text(xml.firstByType(collab, 'text')),
+      contactPoints: emails.length
+        ? emails.map((email) =>
+            stencila.contactPoint({ emails: [text(email)] })
+          )
+        : undefined,
+      members: subContribs.length
+        ? subContribs.map((subContrib) => decodeContrib(subContrib, state))
+        : undefined,
     })
-    contributorEl = first(contrib, ['contrib-group'])
   } else {
+    // Create a Person contributor with organizational affiliations
     const name = child(contrib, ['name', 'string-name'])
-    contributor = name ? decodeName(name) : stencila.person()
-  }
+    const contributor = name ? decodeName(name) : stencila.person()
 
-  const emails = all(isCollaborative ? contrib : contributorEl, 'email')
-  if (emails.length) {
-    if (isA('Organization', contributor)) {
-      contributor.contactPoints = [
-        stencila.contactPoint({ emails: emails.map(text) }),
-      ]
-    } else {
-      contributor.emails = emails.map(text)
+    const emails = all(contrib, 'email')
+    if (emails.length) contributor.emails = emails.map(text)
+
+    let affiliations: stencila.Organization[] = []
+
+    const affs = all(contrib, 'aff')
+    if (affs.length > 0) {
+      affiliations = [...affiliations, ...affs.map(decodeAff)]
     }
+
+    const affRefs = all(contrib, 'xref', { 'ref-type': 'aff' })
+    if (affRefs.length > 0) {
+      affiliations = [
+        ...affiliations,
+        ...affRefs
+          .map((ref) => {
+            const id = ref.attributes?.rid
+            const aff = first(state.article, 'aff', { id: id })
+            if (!aff) {
+              log.warn(`Could not find <aff id=${id}>`)
+              return null
+            }
+            return decodeAff(aff)
+          })
+          .reduce(
+            (prev: stencila.Organization[], curr) =>
+              curr ? [...prev, curr] : prev,
+            []
+          ),
+      ]
+    }
+
+    if (affiliations.length) contributor.affiliations = affiliations
+
+    return contributor
   }
-
-  let affiliations: stencila.Organization[] = []
-
-  const affs = all(contrib, 'aff')
-  if (affs.length > 0) {
-    affiliations = [...affiliations, ...affs.map(decodeAff)]
-  }
-
-  const affRefs = all(contrib, 'xref', { 'ref-type': 'aff' })
-  if (affRefs.length > 0) {
-    affiliations = [
-      ...affiliations,
-      ...affRefs
-        .map((ref) => {
-          const id = ref.attributes?.rid
-          const aff = first(state.article, 'aff', { id: id })
-          if (!aff) {
-            log.warn(`Could not find <aff id=${id}>`)
-            return null
-          }
-          return decodeAff(aff)
-        })
-        .reduce(
-          (prev: stencila.Organization[], curr) =>
-            curr ? [...prev, curr] : prev,
-          []
-        ),
-    ]
-  }
-
-  if (affiliations.length > 0 && isA('Person', contributor))
-    contributor.affiliations = affiliations
-
-  return contributor
 }
 
 /**

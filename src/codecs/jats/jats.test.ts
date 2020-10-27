@@ -10,7 +10,14 @@ import {
 } from '../../__fixtures__/math/kitchen-sink'
 import { YamlCodec } from '../yaml'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
-import { Article, organization, contactPoint } from '@stencila/schema'
+import {
+  Article,
+  organization,
+  contactPoint,
+  person,
+  postalAddress,
+  Organization,
+} from '@stencila/schema'
 
 const jats = new JatsCodec()
 const yaml = new YamlCodec()
@@ -109,7 +116,31 @@ describe('authors', () => {
             name: 'Reproducibility Project: Cancer Biology',
             contactPoints: [
               contactPoint({
-                emails: ['tim@cos.io', 'nicole@scienceexchange.com'],
+                emails: ['tim@cos.io'],
+              }),
+              contactPoint({
+                emails: ['nicole@scienceexchange.com'],
+              }),
+            ],
+          })
+        ),
+      ])
+    )
+
+    const { members } = authors?.[authors.length - 1] as Organization
+    expect(members).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(
+          person({
+            givenNames: ['Elizabeth'],
+            familyNames: ['Iorns'],
+            affiliations: [
+              organization({
+                name: 'Science Exchange',
+                address: postalAddress({
+                  addressCountry: 'United States',
+                  addressLocality: 'Palo Alto',
+                }),
               }),
             ],
           })
