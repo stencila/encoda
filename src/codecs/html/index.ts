@@ -715,6 +715,9 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     authors,
     publisher,
     datePublished,
+    genre,
+    about,
+    keywords,
     identifiers,
     description,
     content = [],
@@ -731,9 +734,10 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     encodeMaybe(authors, (authors) => encodeAuthorsProperty(authors)),
     encodePublisherProperty(publisher),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
+    encodeClassificatoryProperties({ genre, about, keywords }),
     encodeIdentifiersProperty(identifiers),
     encodeMaybe(description, (desc) => encodeDescriptionProperty(desc)),
-    ...encodeNodes(content),
+    encodeNodes(content),
     encodeMaybe(references, (refs) => encodeReferencesProperty(refs))
   )
 }
@@ -874,11 +878,7 @@ function encodeAuthorsProperty(
   return [
     h(
       'ol',
-      {
-        attrs: {
-          [stencilaItemProp]: 'authors',
-        },
-      },
+      microdata(orgs, 'authors', 'array'),
       ...authors.map((author) =>
         author.type === 'Person'
           ? encodePerson(author, 'authors', orgs, 'li')
@@ -965,6 +965,84 @@ function endodePaginationProperties(
     pageEnd !== undefined
       ? h('span', microdata(pageEnd, 'pageEnd'), pageEnd)
       : undefined,
+  ]
+}
+
+/**
+ * Encode classificatory properties( e.g. `about`, `genre` and `keyword`)
+ * of a `CreativeWork`.
+ *
+ * This function encodes properties of a creative work that are of a classificatory nature.
+ * There is no reason these need to be encoded in the the same function other than that
+ * they share this general purpose.
+ *
+ * Although this function places the resulting HTML elements next to each other,
+ * journals often display them in different places on the page and there is little consistency
+ * in this. For example, `genre` is displayed above the `title` by PLOS and F1000 but below the
+ * `title` by eLife, and `about` (aka subject areas) is displayed above the `title` by eLife
+ * but in the right sidebar by PLOS and F1000. These diversity of presentations should be able
+ * to be accommodated by Thema (e.g. by using CSS `order`).
+ *
+ * This function uses `Pick` rather accepting an entire `CreativeWork` so that the calling
+ * function can warn of data loss (ie. properties that are not encoded).
+ */
+function encodeClassificatoryProperties(
+  properties: Pick<stencila.CreativeWork, 'genre' | 'about' | 'keywords'>
+): HTMLElement[] {
+  const { genre, about, keywords } = properties
+
+  return [
+    ...(genre
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(genre, 'genre', 'array') },
+            genre.map((genreItem) =>
+              h(
+                'li',
+                { attrs: microdata(genreItem, 'genre', 'item') },
+                genreItem
+              )
+            )
+          ),
+        ]
+      : []),
+    ...(about
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(about, 'about', 'array') },
+            about.map((aboutItem) => {
+              // An about item can be any `Thing` but will usually be a `DefinedTerm` (which is
+              // also a thing). In any case we display it's `name` property encoded with the correct
+              // Microdata.
+              const { name } = aboutItem
+              return name !== undefined && name.trim() !== ''
+                ? h(
+                    'li',
+                    { attrs: microdata(aboutItem, 'about', 'item') },
+                    h('span', { attrs: microdata(name, 'name') }, name)
+                  )
+                : undefined
+            })
+          ),
+        ]
+      : []),
+    ...(keywords
+      ? [
+          h(
+            'ul',
+            { attrs: microdata(keywords, 'keywords', 'array') },
+            keywords.map((keywordsItem) =>
+              h(
+                'li',
+                { attrs: microdata(keywordsItem, 'keywords', 'item') },
+                keywordsItem
+              )
+            )
+          ),
+        ]
+      : []),
   ]
 }
 
@@ -1236,24 +1314,6 @@ function encodePerson(
         )
       : undefined
 
-  const emailsElem =
-    emails !== undefined
-      ? h(
-          'span',
-          microdata(emails, 'emails', 'array'),
-          emails.map((email) =>
-            h(
-              'a',
-              {
-                ...microdata(email, 'emails', 'item'),
-                href: `mailto:${email}`,
-              },
-              email
-            )
-          )
-        )
-      : undefined
-
   const affiliationsElem =
     affiliations !== undefined && organizations !== undefined
       ? h(
@@ -1282,7 +1342,7 @@ function encodePerson(
     nameElem,
     givenNamesElem,
     familyNamesElem,
-    emailsElem,
+    encodeEmailsProperty(emails),
     affiliationsElem
   )
 }
@@ -1292,7 +1352,17 @@ function encodeOrganization(
   property?: string,
   tag: keyof HTMLElementTagNameMap = 'span'
 ): HTMLElement {
-  const { id, name, url, address, meta, parentOrganization, ...lost } = org
+  const {
+    id,
+    name,
+    url,
+    address,
+    contactPoints,
+    members,
+    meta,
+    parentOrganization,
+    ...lost
+  } = org
   logWarnLossIfAny('html', 'encode', org, lost)
 
   const nameElem = h('span', { itemprop: 'name' }, name)
@@ -1312,7 +1382,25 @@ function encodeOrganization(
     encodeMaybe(parentOrganization, (org) =>
       encodeOrganization(org, 'parentOrganization')
     ),
-    encodeAddressProperty(address)
+    encodeAddressProperty(address),
+    encodeEmailsProperty(
+      contactPoints?.reduce(
+        (prev: string[], { emails }) =>
+          emails && emails.length > 0 ? [...prev, ...emails] : prev,
+        []
+      )
+    ),
+    encodeMaybe(members, (members) =>
+      h(
+        'ol',
+        { attrs: { [stencilaItemProp]: 'members' }, },
+        members.map((member) =>
+          stencila.isA('Person', member)
+            ? encodePerson(member, 'members', undefined, 'li')
+            : encodeOrganization(member, 'members', 'li')
+        )
+      )
+    )
   )
 }
 
@@ -1360,6 +1448,30 @@ function encodeAddressProperty(
         : undefined
     )
   )
+}
+
+/**
+ * Encode the `emails` property.
+ */
+function encodeEmailsProperty(
+  emails: string[] | undefined
+): HTMLElement | undefined {
+  return emails !== undefined
+    ? h(
+        'span',
+        microdata(emails, 'emails', 'array'),
+        emails.map((email) =>
+          h(
+            'a',
+            {
+              ...microdata(email, 'emails', 'item'),
+              href: `mailto:${email}`,
+            },
+            email
+          )
+        )
+      )
+    : undefined
 }
 
 /**

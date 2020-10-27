@@ -22,6 +22,10 @@ import { read, write } from '..'
 
 const fixtures = [
   {
+    src: 'https://elifesciences.org/articles/30274v2',
+    dest: ['article', 'journal', 'elife', '30274.json'],
+  },
+  {
     src: 'https://elifesciences.org/articles/50356',
     dest: ['article', 'journal', 'elife', '50356.json'],
   },

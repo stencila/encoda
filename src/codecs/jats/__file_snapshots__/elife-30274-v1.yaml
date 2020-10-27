@@ -91,69 +91,72 @@ authors:
       - type: ContactPoint
         emails:
           - tim@cos.io
+      - type: ContactPoint
+        emails:
           - nicole@scienceexchange.com
+    members:
+      - type: Person
+        affiliations:
+          - type: Organization
+            address:
+              type: PostalAddress
+              addressCountry: United States
+              addressLocality: Palo Alto
+            name: Science Exchange
+        familyNames:
+          - Iorns
+        givenNames:
+          - Elizabeth
+      - type: Person
+        affiliations:
+          - type: Organization
+            address:
+              type: PostalAddress
+              addressCountry: United States
+              addressLocality: Palo Alto
+            name: Science Exchange
+        familyNames:
+          - Tsui
+        givenNames:
+          - Rachel
+      - type: Person
+        affiliations:
+          - type: Organization
+            address:
+              type: PostalAddress
+              addressCountry: United States
+              addressLocality: Charlottesville
+            name: Center for Open Science
+        familyNames:
+          - Denis
+        givenNames:
+          - Alexandria
+      - type: Person
+        affiliations:
+          - type: Organization
+            address:
+              type: PostalAddress
+              addressCountry: United States
+              addressLocality: Palo Alto
+            name: Science Exchange
+        familyNames:
+          - Perfito
+        givenNames:
+          - Nicole
+      - type: Person
+        affiliations:
+          - type: Organization
+            address:
+              type: PostalAddress
+              addressCountry: United States
+              addressLocality: Charlottesville
+            name: Center for Open Science
+        familyNames:
+          - Errington
+        givenNames:
+          - Timothy
+          - M
     name: 'Reproducibility Project: Cancer Biology'
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-    familyNames:
-      - Iorns
-    givenNames:
-      - Elizabeth
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-    familyNames:
-      - Tsui
-    givenNames:
-      - Rachel
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Charlottesville
-        name: Center for Open Science
-    familyNames:
-      - Denis
-    givenNames:
-      - Alexandria
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Palo Alto
-        name: Science Exchange
-    familyNames:
-      - Perfito
-    givenNames:
-      - Nicole
-  - type: Person
-    affiliations:
-      - type: Organization
-        address:
-          type: PostalAddress
-          addressCountry: United States
-          addressLocality: Charlottesville
-        name: Center for Open Science
-    familyNames:
-      - Errington
-    givenNames:
-      - Timothy
-      - M
 dateAccepted:
   type: Date
   value: '2017-11-16'
