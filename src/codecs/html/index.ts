@@ -1749,13 +1749,15 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
     programmingLanguage,
     meta = {},
     outputs,
+    id,
     caption,
     label,
   } = chunk
 
-  if (caption !== undefined || label !== undefined) {
+  if (id !== undefined || caption !== undefined || label !== undefined) {
     return encodeFigure(
       stencila.figure({
+        id,
         label,
         caption,
         content: [
