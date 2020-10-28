@@ -47,7 +47,7 @@ namespace nbformat {
    */
   export enum Version {
     v3 = 3,
-    v4 = 4,
+    v4 = 4
   }
 
   export namespace v3 {
@@ -142,7 +142,7 @@ const validators = new Ajv({
   // For use with draft-04 schemas
   schemaId: 'auto',
   // For better error reporting
-  jsonPointers: true,
+  jsonPointers: true
 })
 validators.addMetaSchema(jsonSchemaDraft04)
 
@@ -186,7 +186,7 @@ function validateNotebook(
       validator.errors,
       {
         format: 'cli',
-        indent: 2,
+        indent: 2
       }
     ) as unknown) as string
     log.warn(`Notebook is not valid:\n${message}`)
@@ -227,7 +227,7 @@ async function decodeNotebook(
     authors,
     meta,
     ...props,
-    content,
+    content
   })
 }
 
@@ -250,7 +250,7 @@ async function encodeNode(node: schema.Node): Promise<nbformat4.Notebook> {
     nbformat: 4,
     nbformat_minor: 4,
     metadata,
-    cells,
+    cells
   }
 }
 
@@ -282,7 +282,7 @@ async function decodeMetadata(
   const decodedAuthors =
     authors !== undefined
       ? await Promise.all(
-          authors.map((author) => {
+          authors.map(author => {
             if (schema.isA('Person', author)) {
               // When encoding `name` is calculated from `givenNames`
               // and `familyNames` to fit the IPYNB schema. Remove
@@ -307,7 +307,7 @@ async function decodeMetadata(
   const articleSchema = await getSchema('Article')
   const propertyNames = Object.keys({
     ...articleSchema.properties,
-    ...articleSchema.propertyAliases,
+    ...articleSchema.propertyAliases
   })
   const meta: Record<string, unknown> = {}
   const props: Record<string, unknown> = {}
@@ -320,7 +320,7 @@ async function decodeMetadata(
     title,
     authors: decodedAuthors,
     meta,
-    props,
+    props
   }
 }
 
@@ -352,7 +352,7 @@ function encodeMetadata(
   }
 
   if (authors !== undefined && authors.length > 0) {
-    authors = authors.map((author) => {
+    authors = authors.map(author => {
       if (author.name === undefined) {
         if (schema.isA('Person', author)) {
           // A person: concatenate names
@@ -360,13 +360,13 @@ function encodeMetadata(
           const names = [...givenNames, ...familyNames]
           return {
             ...author,
-            name: names.length > 1 ? names.join(' ') : 'Anonymous',
+            name: names.length > 1 ? names.join(' ') : 'Anonymous'
           }
         } else {
           // An organization: use legal name if possible
           return {
             ...author,
-            name: author.legalName ?? 'Anonymous',
+            name: author.legalName ?? 'Anonymous'
           }
         }
       }
@@ -391,7 +391,7 @@ function encodeMetadata(
     ...(title ? { title } : {}),
     ...(authors ? { authors } : {}),
     ...meta,
-    ...rest,
+    ...rest
   }
 }
 
@@ -412,7 +412,8 @@ async function decodeCells(
         break
       // TODO: handle `heading` cells
       case 'code':
-        blocks.push(await decodeCodeCell(cell, version, language))
+        const chunk = await decodeCodeCell(cell, version, language)
+        if (chunk) blocks.push(chunk)
         break
       // TODO: handle `raw` cells
       default:
@@ -421,7 +422,7 @@ async function decodeCells(
         blocks.push({
           type: 'CodeBlock',
           programmingLanguage: 'json',
-          text: JSON.stringify(cell),
+          text: JSON.stringify(cell)
         })
     }
   }
@@ -462,7 +463,7 @@ async function decodeMarkdownCell(
   const { source } = cell
   const markdown = decodeMultilineString(source)
   const content = await load(markdown, format === 'html' ? 'html' : 'md', {
-    isStandalone: false,
+    isStandalone: false
   })
   return content as schema.BlockContent[]
 }
@@ -477,7 +478,7 @@ async function encodeMarkdownCell(
   // a fragment, not a whole article
   const article = {
     type: 'Article',
-    content: nodes,
+    content: nodes
   }
 
   const metadata = {}
@@ -488,12 +489,15 @@ async function encodeMarkdownCell(
   return {
     cell_type: 'markdown',
     metadata,
-    source,
+    source
   }
 }
 
 /**
  * Decode a Jupyter `CodeCell` to a Stencila `CodeChunk`.
+ *
+ * If the cell has no code and no outputs then returns `undefined` (ie.
+ * empty cells are ignored).
  *
  * If the cell metadata has a `caption` that is a string it will be attempted
  * to be decoded as Markdown.
@@ -502,12 +506,14 @@ export async function decodeCodeCell(
   cell: nbformat3.CodeCell | nbformat4.CodeCell,
   version: nbformat.Version = 4,
   language = 'python'
-): Promise<schema.CodeChunk> {
+): Promise<schema.CodeChunk | undefined> {
   const { metadata, outputs } = cell
 
   const [execution_count, source] = isv3(cell, 'Cell', version)
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
+
+  if (source.length == 0 && outputs.length == 0) return undefined
 
   let { id, label, caption, ...rest } = metadata as {
     id?: string
@@ -516,7 +522,7 @@ export async function decodeCodeCell(
   }
   if (typeof caption === 'string') {
     caption = (await load(caption, 'md', {
-      isStandalone: false,
+      isStandalone: false
     })) as schema.BlockContent[]
   }
 
@@ -527,9 +533,7 @@ export async function decodeCodeCell(
     label,
     caption,
     meta: { ...rest, execution_count },
-    outputs: outputs?.length
-      ? await decodeOutputs(outputs, version)
-      : undefined,
+    outputs: outputs?.length ? await decodeOutputs(outputs, version) : undefined
   })
 }
 
@@ -551,10 +555,10 @@ export async function encodeCodeChunk(
           caption:
             typeof caption === 'string'
               ? caption
-              : (await dump(schema.article({ content: caption }), 'md')).trim(),
+              : (await dump(schema.article({ content: caption }), 'md')).trim()
         }
       : {}),
-    ...rest,
+    ...rest
   }
 
   return {
@@ -562,7 +566,7 @@ export async function encodeCodeChunk(
     metadata,
     execution_count,
     source: encodeMultilineString(text),
-    outputs: await encodeOutputs(chunk, outputs),
+    outputs: await encodeOutputs(chunk, outputs)
   }
 }
 
@@ -574,17 +578,17 @@ async function decodeOutputs(
   version: nbformat.Version = 4
 ): Promise<schema.Node[]> {
   const nodes = await Promise.all(
-    outputs.map((output) => decodeOutput(output, version))
+    outputs.map(output => decodeOutput(output, version))
   )
 
   // Remove any matplotlib plot string representations when there is also
   // an image output (ie the actual plot). See https://github.com/stencila/encoda/issues/146
   if (
-    nodes.filter((node) => isEntity(node) && node.type === 'ImageObject')
-      .length > 0
+    nodes.filter(node => isEntity(node) && node.type === 'ImageObject').length >
+    0
   ) {
     return nodes.filter(
-      (node) => !(typeof node === 'string' && /^\[?<matplotlib\./.test(node))
+      node => !(typeof node === 'string' && /^\[?<matplotlib\./.test(node))
     )
   }
 
@@ -625,7 +629,7 @@ function decodeOutput(
       return Promise.resolve(
         schema.codeBlock({
           text: JSON.stringify(output),
-          programmingLanguage: 'json',
+          programmingLanguage: 'json'
         })
       )
   }
@@ -644,7 +648,7 @@ function encodeOutputs(
   nodes: schema.Node[]
 ): Promise<nbformat4.Output[]> {
   return Promise.all(
-    nodes.map(async (node) => {
+    nodes.map(async node => {
       if (typeof node === 'string') {
         return encodeStream(chunk, node)
       } else if (
@@ -670,7 +674,7 @@ function encodeStream(
   return {
     output_type: 'stream',
     name: 'stdout',
-    text: node as string,
+    text: node as string
   }
 }
 
@@ -684,7 +688,7 @@ async function encodeDisplayData(
   return {
     output_type: 'display_data',
     metadata: {},
-    data: await encodeMimeBundle(node),
+    data: await encodeMimeBundle(node)
   }
 }
 
@@ -701,7 +705,7 @@ async function encodeExecuteResult(
     output_type: 'execute_result',
     execution_count,
     metadata: {},
-    data: await encodeMimeBundle(node),
+    data: await encodeMimeBundle(node)
   }
 }
 
@@ -727,7 +731,7 @@ async function decodeMimeBundle(
       pdf: 'application/pdf',
       png: 'image/png',
       svg: 'image/svg+xml',
-      text: 'text/plain',
+      text: 'text/plain'
     }
     const mimetype = version === 3 ? map[key] || key : key
 
@@ -814,6 +818,6 @@ export function encodeMultilineString(
   const lines = source.split('\n')
   return lines
     .slice(0, -1)
-    .map((line) => line + '\n')
+    .map(line => line + '\n')
     .concat(lines.slice(-1))
 }

@@ -19,6 +19,34 @@ const eLifeArticle = 'article/journal/elife/50356.json'
 const plosArticle = 'article/journal/plosone/0229075.json'
 
 describe('decode', () => {
+  describe('CodeChunk', () => {
+    test('Empty', async () => {
+      const cell: nbformat4.CodeCell = {
+        cell_type: 'code',
+        metadata: {},
+        source: [],
+        execution_count: 0,
+        outputs: [],
+      }
+      expect(await decodeCodeCell(cell)).toEqual(undefined)
+    })
+    test('Empty source but has outputs', async () => {
+      const cell: nbformat4.CodeCell = {
+        cell_type: 'code',
+        metadata: {},
+        source: [],
+        execution_count: 0,
+        outputs: [{
+          output_type: 'execute_result',
+          execution_count: 1,
+          data: {},
+          metadata: {}
+        }],
+      }
+      expect(await decodeCodeCell(cell)).toBeDefined()
+    })
+  })
+
   test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching'])(
     '%s',
     async (name) => {
