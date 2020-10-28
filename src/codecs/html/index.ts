@@ -1133,8 +1133,11 @@ function encodeReferencesProperty(
       'ol',
       references.map((ref) => {
         const md = microdata(ref, 'references', 'item')
+
         if (typeof ref === 'string') return h('li', md, ref)
+
         const {
+          id,
           authors = [],
           datePublished,
           title,
@@ -1142,17 +1145,19 @@ function encodeReferencesProperty(
           isPartOf,
           publisher,
         } = ref
+        const titleElem = encodeTitleProperty(title, 'span')
         return h(
           'li',
-          { attrs: { ...md, id: ref.id } },
+          { attrs: { ...md, id } },
           encodeAuthorsProperty(authors),
           encodeMaybe(datePublished, (date) =>
             encodeDate(date, 'datePublished')
           ),
-          encodeTitleProperty(title, 'span'),
+          url !== undefined
+            ? h('a', { itemprop: 'url', href: url }, titleElem)
+            : titleElem,
           encodeIsPartOfProperty(isPartOf),
           stencila.isArticle(ref) ? endodePaginationProperties(ref) : undefined,
-          encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
           encodePublisherProperty(publisher),
           isA('Article', ref) ? encodeImageProperty(ref) : []
         )
