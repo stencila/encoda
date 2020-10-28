@@ -36,12 +36,14 @@ describe('decode', () => {
         metadata: {},
         source: [],
         execution_count: 0,
-        outputs: [{
-          output_type: 'execute_result',
-          execution_count: 1,
-          data: {},
-          metadata: {}
-        }],
+        outputs: [
+          {
+            output_type: 'execute_result',
+            execution_count: 1,
+            data: {},
+            metadata: {},
+          },
+        ],
       }
       expect(await decodeCodeCell(cell)).toBeDefined()
     })
