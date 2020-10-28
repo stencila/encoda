@@ -278,20 +278,32 @@ async function decodeMetadata(
     authors?: []
   }
 
+  // Decode `authors` array
   const decodedAuthors =
     authors !== undefined
       ? await Promise.all(
           authors.map((author) => {
-            return schema.isA('Person', author) ||
-              schema.isA('Organization', author)
-              ? author
-              : typeof author === 'string'
+            if (schema.isA('Person', author)) {
+              // When encoding `name` is calculated from `givenNames`
+              // and `familyNames` to fit the IPYNB schema. Remove
+              // it if possible to avoid redundancy and have full
+              // reversibility of encoding / decoding
+              const { name, ...rest } = author as schema.Person
+              if ('givenNames' in rest || 'familyNames' in rest) return rest
+              else return author
+            }
+            if (schema.isA('Organization', author)) {
+              return author
+            }
+            return typeof author === 'string'
               ? (load(author, 'person') as Promise<schema.Person>)
               : coerce(author, 'Person')
           })
         )
       : undefined
 
+  // Sort other properties of metadata into those that
+  // are properties of an article, and those that are not
   const articleSchema = await getSchema('Article')
   const propertyNames = Object.keys({
     ...articleSchema.properties,
