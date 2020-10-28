@@ -494,8 +494,11 @@ async function encodeMarkdownCell(
 
 /**
  * Decode a Jupyter `CodeCell` to a Stencila `CodeChunk`.
+ *
+ * If the cell metadata has a `caption` that is a string it will be attempted
+ * to be decoded as Markdown.
  */
-async function decodeCodeCell(
+export async function decodeCodeCell(
   cell: nbformat3.CodeCell | nbformat4.CodeCell,
   version: nbformat.Version = 4,
   language = 'python'
@@ -506,10 +509,24 @@ async function decodeCodeCell(
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
 
+  let { id, label, caption, ...rest } = metadata as {
+    id?: string
+    label?: string
+    caption?: string | schema.Node[]
+  }
+  if (typeof caption === 'string') {
+    caption = (await load(caption, 'md', {
+      isStandalone: false,
+    })) as schema.BlockContent[]
+  }
+
   return schema.codeChunk({
     text: decodeMultilineString(source),
     programmingLanguage: language,
-    meta: { ...metadata, execution_count },
+    id,
+    label,
+    caption,
+    meta: { ...rest, execution_count },
     outputs: outputs?.length
       ? await decodeOutputs(outputs, version)
       : undefined,
@@ -519,23 +536,33 @@ async function decodeCodeCell(
 /**
  * Encode a Stencila `CodeChunk` as a Jupyter `CodeCell`.
  */
-async function encodeCodeChunk(
+export async function encodeCodeChunk(
   chunk: schema.CodeChunk
 ): Promise<nbformat4.CodeCell> {
-  const metadata = {}
-  const execution_count =
-    (chunk.meta && parseInt(chunk.meta.execution_count)) || 1
-  const source = encodeMultilineString(chunk.text || '')
-  const outputs: nbformat4.Output[] = await encodeOutputs(
-    chunk,
-    chunk.outputs ?? []
-  )
+  const { meta = {}, text, outputs = [], id, label, caption } = chunk
+
+  const { execution_count = 1, ...rest } = meta
+
+  const metadata = {
+    ...(id ? { id } : {}),
+    ...(label ? { label } : {}),
+    ...(caption
+      ? {
+          caption:
+            typeof caption === 'string'
+              ? caption
+              : (await dump(schema.article({ content: caption }), 'md')).trim(),
+        }
+      : {}),
+    ...rest,
+  }
+
   return {
     cell_type: 'code',
     metadata,
     execution_count,
-    source,
-    outputs,
+    source: encodeMultilineString(text),
+    outputs: await encodeOutputs(chunk, outputs),
   }
 }
 
