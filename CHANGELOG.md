@@ -1,3 +1,20 @@
+# [0.100.0](https://github.com/stencila/encoda/compare/v0.99.16...v0.100.0) (2020-10-29)
+
+
+### Bug Fixes
+
+* **Cite nodes:** Defere populating content until encoding ([02137d2](https://github.com/stencila/encoda/commit/02137d24199a5a81bcc86d1bd11b845339732bce)), closes [#732](https://github.com/stencila/encoda/issues/732) [#673](https://github.com/stencila/encoda/issues/673)
+* **HTML:** Encode url around title ([862ce14](https://github.com/stencila/encoda/commit/862ce14d97ee16f70a1b391c3d12432d8013f2d5)), closes [#733](https://github.com/stencila/encoda/issues/733)
+* **HTML:** Ensure that CodeChunk ids are encoded ([5ddce03](https://github.com/stencila/encoda/commit/5ddce033719e5c4008b40b415cdd373a4790aaf7))
+* **IPYNB:** Ignore empty code chunks ([d39a16f](https://github.com/stencila/encoda/commit/d39a16fa1d06c9f7926c79d97313b3236d172191)), closes [#731](https://github.com/stencila/encoda/issues/731)
+* **IPYNB:** Remove redundant name property when decoding authors ([0a1b4ef](https://github.com/stencila/encoda/commit/0a1b4ef8721344f82a62a52ddbc4714c05843037))
+* **Markdown:** Make the first row of tables rowType:header ([54332bc](https://github.com/stencila/encoda/commit/54332bc55f1bd9614597cbe8c323cdf811c469dd))
+
+
+### Features
+
+* **IPYNB:** Handle id, label and caption on code chunks ([2a387fa](https://github.com/stencila/encoda/commit/2a387fac0d7fa646b349ac8bb0f1935a808a0f43))
+
 ## [0.99.16](https://github.com/stencila/encoda/compare/v0.99.15...v0.99.16) (2020-10-27)
 
 
