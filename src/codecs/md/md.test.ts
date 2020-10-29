@@ -781,6 +781,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         rows: [
           {
             type: 'TableRow',
+            rowType: 'header',
             cells: [
               {
                 content: ['A'],

@@ -1136,31 +1136,38 @@ function decodeListItem(
 }
 
 /**
- * Decode a `MDAST.Table` to a `stencila.Table`
+ * Decode a `MDAST.Table` to a `stencila.Table`.
+ *
+ * The first row of a Markdown table is always a header row.
  */
 function decodeTable(
   table: MDAST.Table,
   context: DecodeContext
 ): stencila.Table {
+  const header = stencila.tableRow({
+    rowType: 'header',
+    cells: table.children[0].children.map((cell) =>
+      stencila.tableCell({
+        content: cell.children.map((child) =>
+          decodePhrasingContent(child, context)
+        ),
+      })
+    ),
+  })
+  const body = table.children.slice(1).map((row) =>
+    stencila.tableRow({
+      cells: row.children.map((cell) =>
+        stencila.tableCell({
+          content: cell.children.map((child) =>
+            decodePhrasingContent(child, context)
+          ),
+        })
+      ),
+    })
+  )
   return {
     type: 'Table',
-    rows: table.children.map(
-      (row: MDAST.TableRow): stencila.TableRow => {
-        return {
-          type: 'TableRow',
-          cells: row.children.map(
-            (cell: MDAST.TableCell): stencila.TableCell => {
-              return {
-                type: 'TableCell',
-                content: cell.children.map((child) =>
-                  decodePhrasingContent(child, context)
-                ),
-              }
-            }
-          ),
-        }
-      }
-    ),
+    rows: [header, ...body],
   }
 }
 
