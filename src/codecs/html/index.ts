@@ -38,6 +38,7 @@ import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 import { fromFiles } from '../../util/media/fromFiles'
+import { encodeCiteContent } from '../../util/references'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -177,6 +178,19 @@ const propsToValues = (el: HTMLElement) => (
   )
 }
 
+/**
+ * It is necessary to maintain some state during encoding.
+ * This interface defines that state and an instance
+ * is passed down through the encoding functions.
+ */
+interface EncodeState {
+  /**
+   * The references of the `CreativeWork` currently being encoded (if any).
+   * Used to populate the `content` property of `Cite` nodes.
+   */
+  references?: stencila.CreativeWork['references']
+}
+
 export class HTMLCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/html']
 
@@ -248,10 +262,11 @@ export class HTMLCodec extends Codec implements Codec {
 
     mathJaxInit()
 
+    const state: EncodeState = {}
     const fragment = Array.isArray(node)
     let dom = Array.isArray(node)
-      ? h('div', encodeNodes(node))
-      : (encodeNode(node) as HTMLElement)
+      ? h('div', encodeNodes(node, state))
+      : (encodeNode(node, state) as HTMLElement)
 
     const [name, value] = Object.entries(microdataRoot())[0]
     dom.setAttribute(name, value as string)
@@ -484,32 +499,30 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
   return []
 }
 
-const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
-
-const encodeNode = (node: stencila.Node): Node => {
+function encodeNode(node: stencila.Node, state: EncodeState): Node {
   switch (nodeType(node)) {
     case 'Article':
-      return encodeArticle(node as stencila.Article)
+      return encodeArticle(node as stencila.Article, state)
 
     case 'Include':
-      return encodeInclude(node as stencila.Include)
+      return encodeInclude(node as stencila.Include, state)
 
     case 'Heading':
-      return encodeHeading(node as stencila.Heading)
+      return encodeHeading(node as stencila.Heading, state)
     case 'Paragraph':
-      return encodeParagraph(node as stencila.Paragraph)
+      return encodeParagraph(node as stencila.Paragraph, state)
     case 'QuoteBlock':
-      return encodeQuoteBlock(node as stencila.QuoteBlock)
+      return encodeQuoteBlock(node as stencila.QuoteBlock, state)
     case 'Cite':
-      return encodeCite(node as stencila.Cite)
+      return encodeCite(node as stencila.Cite, state)
     case 'CiteGroup':
-      return encodeCiteGroup(node as stencila.CiteGroup)
+      return encodeCiteGroup(node as stencila.CiteGroup, state)
     case 'CodeBlock':
       return encodeCodeBlock(node as stencila.CodeBlock)
     case 'CodeChunk':
-      return encodeCodeChunk(node as stencila.CodeChunk)
+      return encodeCodeChunk(node as stencila.CodeChunk, state)
     case 'CodeExpression':
-      return encodeCodeExpression(node as stencila.CodeExpression)
+      return encodeCodeExpression(node as stencila.CodeExpression, state)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
     case 'Person':
@@ -522,21 +535,21 @@ const encodeNode = (node: stencila.Node): Node => {
     case 'AudioObject':
     case 'VideoObject':
     case 'MediaObject':
-      return encodeCreativeWork(node as stencila.CreativeWork)
+      return encodeCreativeWork(node as stencila.CreativeWork, state)
     case 'Collection':
-      return encodeCollection(node as stencila.Collection)
+      return encodeCollection(node as stencila.Collection, state)
     case 'Figure':
-      return encodeFigure(node as stencila.Figure)
+      return encodeFigure(node as stencila.Figure, state)
     case 'List':
-      return encodeList(node as stencila.List)
+      return encodeList(node as stencila.List, state)
     case 'ListItem':
-      return encodeListItem(node as stencila.ListItem)
+      return encodeListItem(node as stencila.ListItem, state)
     case 'Table':
-      return encodeTable(node as stencila.Table)
+      return encodeTable(node as stencila.Table, state)
     case 'TableRow':
-      return encodeTableRow(node as stencila.TableRow)
+      return encodeTableRow(node as stencila.TableRow, state)
     case 'TableCell':
-      return encodeTableCell(node as stencila.TableCell)
+      return encodeTableCell(node as stencila.TableCell, state)
     case 'Datatable':
       return encodeDatatable(node as stencila.Datatable)
     case 'Date':
@@ -548,17 +561,17 @@ const encodeNode = (node: stencila.Node): Node => {
 
     case 'Mark':
     case 'Emphasis':
-      return encodeMark(node as stencila.Emphasis, 'em')
+      return encodeMark(node as stencila.Emphasis, state, 'em')
     case 'Strong':
-      return encodeMark(node as stencila.Strong, 'strong')
+      return encodeMark(node as stencila.Strong, state, 'strong')
     case 'Delete':
-      return encodeMark(node as stencila.Strong, 'del')
+      return encodeMark(node as stencila.Strong, state, 'del')
     case 'Superscript':
-      return encodeMark(node as stencila.Superscript, 'sup')
+      return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':
-      return encodeMark(node as stencila.Subscript, 'sub')
+      return encodeMark(node as stencila.Subscript, state, 'sub')
     case 'Link':
-      return encodeLink(node as stencila.Link)
+      return encodeLink(node as stencila.Link, state)
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
 
@@ -584,6 +597,13 @@ const encodeNode = (node: stencila.Node): Node => {
     default:
       return encodeEntity(node as stencila.Entity)
   }
+}
+
+/**
+ * Encode an array of Stencila `Node`s.
+ */
+function encodeNodes(nodes: stencila.Node[], state: EncodeState): Node[] {
+  return nodes.map((node) => encodeNode(node, state))
 }
 
 /**
@@ -708,7 +728,10 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
 /**
  * Encode an `Article` node to a `<article>` element.
  */
-function encodeArticle(article: stencila.Article): HTMLElement {
+function encodeArticle(
+  article: stencila.Article,
+  state: EncodeState
+): HTMLElement {
   const {
     type,
     title,
@@ -726,19 +749,23 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   } = article
   logWarnLossIfAny('html', 'encode', article, lost)
 
+  // Add this article's references to the state for used by other
+  // decoding functions
+  state = { ...state, references }
+
   return h(
     'article',
     encodeAttrs(article),
-    encodeTitleProperty(title),
+    encodeTitleProperty(title, state),
     encodeImageProperty(article),
     encodeMaybe(authors, (authors) => encodeAuthorsProperty(authors)),
     encodePublisherProperty(publisher),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeClassificatoryProperties({ genre, about, keywords }),
     encodeIdentifiersProperty(identifiers),
-    encodeMaybe(description, (desc) => encodeDescriptionProperty(desc)),
-    encodeNodes(content),
-    encodeMaybe(references, (refs) => encodeReferencesProperty(refs))
+    encodeMaybe(description, (desc) => encodeDescriptionProperty(desc, state)),
+    encodeNodes(content, state),
+    encodeMaybe(references, (refs) => encodeReferencesProperty(refs, state))
   )
 }
 
@@ -801,6 +828,7 @@ function encodePublisherProperty(
  */
 function encodeTitleProperty(
   title: stencila.Article['title'],
+  state: EncodeState,
   tag: 'h1' | 'span' = 'h1'
 ): HTMLElement | undefined {
   if (title === undefined) return undefined
@@ -814,7 +842,7 @@ function encodeTitleProperty(
         ...(content !== title ? { content } : {}),
       },
     },
-    typeof title === 'string' ? title : encodeNodes(title)
+    typeof title === 'string' ? title : encodeNodes(title, state)
   )
 }
 
@@ -1103,7 +1131,8 @@ function encodeDate(
 }
 
 function encodeDescriptionProperty(
-  desc: string | stencila.Node[]
+  desc: string | stencila.Node[],
+  state: EncodeState
 ): HTMLElement {
   const descArray = typeof desc === 'string' ? [desc] : desc
 
@@ -1117,13 +1146,14 @@ function encodeDescriptionProperty(
     }),
     // Ensure that description is always wrapped in a paragraph
     descArray.every(stencila.isInlineContent)
-      ? encodeNode(stencila.paragraph({ content: descArray }))
-      : encodeNodes(descArray)
+      ? encodeNode(stencila.paragraph({ content: descArray }), state)
+      : encodeNodes(descArray, state)
   )
 }
 
 function encodeReferencesProperty(
-  references: (string | stencila.CreativeWork)[]
+  references: (string | stencila.CreativeWork)[],
+  state: EncodeState
 ): HTMLElement {
   return h(
     'section',
@@ -1145,7 +1175,7 @@ function encodeReferencesProperty(
           isPartOf,
           publisher,
         } = ref
-        const titleElem = encodeTitleProperty(title, 'span')
+        const titleElem = encodeTitleProperty(title, state, 'span')
         return h(
           'li',
           { attrs: { ...md, id } },
@@ -1215,6 +1245,7 @@ function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
 
 function encodeCreativeWork(
   work: stencila.CreativeWork,
+  state: EncodeState,
   { attrs, as }: CreativeWorkOptions = defaultCreativeWorkOptions
 ): HTMLElement {
   const {
@@ -1230,12 +1261,12 @@ function encodeCreativeWork(
     // @ts-ignore
     encodeAttrs(work, attrs),
     encodePublisherProperty(publisher),
-    encodeTitleProperty(title, 'span'),
+    encodeTitleProperty(title, state, 'span'),
     isA('Article', work) ? encodeImageProperty(work) : [],
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
-    encodeNodes(content)
+    encodeNodes(content, state)
   )
 }
 
@@ -1485,9 +1516,12 @@ function encodeEmailsProperty(
  * TODO: This is an initial implementation and it is probably better to generalize
  * it into a default encoding function to replace `encodeThing`.
  */
-function encodeInclude(include: stencila.Include): HTMLElement {
-  const content = include.content ?? []
-  const contentDiv = h('div', content.map(encodeNode))
+function encodeInclude(
+  include: stencila.Include,
+  state: EncodeState
+): HTMLElement {
+  const { content = [] } = include
+  const contentDiv = h('div', encodeNodes(content, state))
   contentDiv.setAttribute('itemprop', 'content')
   return h(`div`, encodeAttrs(include), contentDiv)
 }
@@ -1524,7 +1558,10 @@ function decodeHeading(
  * In rare cases that there is no content in the heading, return an empty
  * text node to avoid the 'Heading tag found with no content' accessibility error.
  */
-function encodeHeading(heading: stencila.Heading): HTMLHeadingElement | Text {
+function encodeHeading(
+  heading: stencila.Heading,
+  state: EncodeState
+): HTMLHeadingElement | Text {
   let { id, depth = 0, content } = heading
 
   if (content.length === 0) return document.createTextNode('')
@@ -1534,7 +1571,7 @@ function encodeHeading(heading: stencila.Heading): HTMLHeadingElement | Text {
   return h<HTMLHeadingElement>(
     `h${Math.min(depth + 1, 6)}`,
     { attrs: { ...microdata(heading), id } },
-    content.map(encodeNode)
+    encodeNodes(content, state)
   )
 }
 
@@ -1548,8 +1585,11 @@ function decodeParagraph(para: HTMLParagraphElement): stencila.Paragraph {
 /**
  * Encode a `stencila.Paragraph` to a `<p>` element.
  */
-function encodeParagraph(para: stencila.Paragraph): HTMLParagraphElement {
-  return h('p', { attrs: microdata(para) }, para.content.map(encodeNode))
+function encodeParagraph(
+  para: stencila.Paragraph,
+  state: EncodeState
+): HTMLParagraphElement {
+  return h('p', { attrs: microdata(para) }, encodeNodes(para.content, state))
 }
 
 /**
@@ -1565,11 +1605,15 @@ function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
 /**
  * Encode a `stencila.QuoteBlock` to a `<blockquote>` element.
  */
-function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
+function encodeQuoteBlock(
+  block: stencila.QuoteBlock,
+  state: EncodeState
+): HTMLQuoteElement {
+  const { cite, content } = block
   return h(
     'blockquote',
-    { attrs: microdata(block), cite: block.cite },
-    block.content.map(encodeNode)
+    { attrs: microdata(block), cite },
+    encodeNodes(content, state)
   )
 }
 
@@ -1606,15 +1650,27 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
 /**
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
-function encodeCite(cite: stencila.Cite): HTMLElement {
+function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
   const { prefix, target, suffix, content, ...lost } = cite
   logWarnLossIfAny('html', 'encode', cite, lost)
+
+  let contentElems: string | Node[]
+  if (content === undefined || content.length === 0) {
+    const reference = state.references?.find((ref) =>
+      typeof ref === 'string' ? false : ref.id === target
+    )
+    if (stencila.isCreativeWork(reference))
+      contentElems = encodeCiteContent(reference)
+    else contentElems = target
+  } else {
+    contentElems = encodeNodes(content, state)
+  }
 
   return h(
     'cite',
     encodeAttrs(cite),
     encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
-    h('a', { href: encodeHref(target) }, content ?? target),
+    h('a', { href: encodeHref(target) }, contentElems),
     encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
   )
 }
@@ -1631,8 +1687,15 @@ function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
 /**
  * Encode a `stencila.CiteGroup` element to a `<ol itemtype="https://schema.stenci.la/CiteGroup">`.
  */
-function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
-  return h('span', encodeAttrs(citeGroup), citeGroup.items.map(encodeCite))
+function encodeCiteGroup(
+  citeGroup: stencila.CiteGroup,
+  state: EncodeState
+): HTMLElement {
+  return h(
+    'span',
+    encodeAttrs(citeGroup),
+    citeGroup.items.map((item) => encodeCite(item, state))
+  )
 }
 
 /**
@@ -1664,16 +1727,19 @@ function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
 /**
  * Encode a `stencila.Figure` element to a `<figure>`.
  */
-function encodeFigure(figure: stencila.Figure): HTMLElement {
+function encodeFigure(
+  figure: stencila.Figure,
+  state: EncodeState
+): HTMLElement {
   const { id, label, caption = [], content = [] } = figure
   return h('figure', encodeAttrs(figure, { id, title: label }), [
     encodeMaybe(label, h('label', microdataProperty('label'), label)),
-    ...encodeNodes(content),
+    encodeNodes(content, state),
     encodeMaybe(
       caption,
       h(
         'figcaption',
-        typeof caption === 'string' ? caption : caption.map(encodeNode)
+        typeof caption === 'string' ? caption : encodeNodes(caption, state)
       )
     ),
   ])
@@ -1696,12 +1762,15 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
  * Adds the `usage` meta property, if it exists, as a `data-usage` attribute (since it is
  * not an official property of the Schema, it shouldn't be added as a `itemprop` or `data-itemprop`)
  */
-function encodeCollection(collection: stencila.Collection): HTMLOListElement {
+function encodeCollection(
+  collection: stencila.Collection,
+  state: EncodeState
+): HTMLOListElement {
   const { meta, parts } = collection
   return h(
     'ol',
     encodeAttrs(collection, meta),
-    parts.map((entry) => h('li', encodeNode(entry)))
+    parts.map((entry) => h('li', encodeNode(entry, state)))
   )
 }
 
@@ -1748,7 +1817,10 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
  * If the code chunk has a label or a caption then it is encoded as a figure
  * with the code chunk as the content.
  */
-function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
+function encodeCodeChunk(
+  chunk: stencila.CodeChunk,
+  state: EncodeState
+): HTMLElement {
   const {
     text = '',
     programmingLanguage,
@@ -1773,7 +1845,8 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
             outputs,
           }),
         ],
-      })
+      }),
+      state
     )
   }
 
@@ -1790,7 +1863,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
           slot: 'outputs',
         },
       },
-      outputs.map(encodeCodeOutput)
+      outputs.map((output) => encodeCodeOutput(output, state))
     )
   )
 
@@ -1824,7 +1897,10 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
 /**
  * Encode a Stencila `CodeExpression` to a `<stencila-code-expression>` element.
  */
-function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
+function encodeCodeExpression(
+  expr: stencila.CodeExpression,
+  state: EncodeState
+): HTMLElement {
   const { meta = {}, text, programmingLanguage, output = '' } = expr
 
   const attrs = encodeDataAttrs(meta)
@@ -1832,7 +1908,7 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
     attrs['programming-language'] = programmingLanguage
 
   let outputElem
-  if (isInlineContent(output)) outputElem = encodeNode(output)
+  if (isInlineContent(output)) outputElem = encodeNode(output, state)
   else {
     log.warn(`CodeExpression output is not InlineContent: ${nodeType(output)}`)
     outputElem = ''
@@ -1868,12 +1944,12 @@ const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
 /**
  * Encode an output of a `CodeChunk` as an `HTMLElement`.
  */
-const encodeCodeOutput = (node: stencila.Node): Node => {
+const encodeCodeOutput = (node: stencila.Node, state: EncodeState): Node => {
   switch (nodeType(node)) {
     case 'Text':
       return h('pre', h('output', node as string))
     default:
-      return encodeNode(node)
+      return encodeNode(node, state)
   }
 }
 
@@ -1895,15 +1971,21 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
  * So this function generates a default position (overridden
  * if an item has one) based on the order of items.
  */
-function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
+function encodeList(
+  list: stencila.List,
+  state: EncodeState
+): HTMLUListElement | HTMLOListElement {
   return h(
     list.order === 'unordered' ? 'ul' : 'ol',
     { attrs: microdata(list) },
     list.items.map((item, index) =>
-      encodeNode({
-        position: item.position ?? index + 1,
-        ...item,
-      })
+      encodeNode(
+        {
+          position: item.position ?? index + 1,
+          ...item,
+        },
+        state
+      )
     )
   )
 }
@@ -1926,6 +2008,7 @@ function decodeListItem(li: HTMLLIElement): stencila.ListItem {
  */
 function encodeListItem(
   listItem: stencila.ListItem,
+  state: EncodeState,
   property = 'items'
 ): HTMLLIElement {
   const { content = [], isChecked, id, position, url } = listItem
@@ -1938,8 +2021,8 @@ function encodeListItem(
       ? undefined
       : h('input', { type: 'checkbox', ...(isChecked ? { checked: '' } : {}) }),
     content.length === 1 && stencila.isA('Paragraph', content[0])
-      ? encodeNodes(content[0].content)
-      : content.map(encodeNode)
+      ? encodeNodes(content[0].content, state)
+      : encodeNodes(content, state)
   )
 }
 
@@ -1959,7 +2042,10 @@ function decodeTable(table: HTMLTableElement): stencila.Table {
  * The `label` property must be nested within the `<caption>`
  * element (it can't be directly under `<table>`).
  */
-function encodeTable(table: stencila.Table): HTMLTableElement {
+function encodeTable(
+  table: stencila.Table,
+  state: EncodeState
+): HTMLTableElement {
   const { id, label, caption, rows } = table
 
   const headerRows = takeLeftWhile(
@@ -1980,13 +2066,22 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
           return h(
             'div',
             microdataProperty('caption'),
-            typeof caption === 'string' ? caption : encodeNodes(caption)
+            typeof caption === 'string' ? caption : encodeNodes(caption, state)
           )
         })
       )
     ),
-    encodeMaybe(headerRows, h('thead', headerRows.map(encodeTableRow))),
-    h('tbody', bodyRows.map(encodeTableRow))
+    encodeMaybe(
+      headerRows,
+      h(
+        'thead',
+        headerRows.map((row) => encodeTableRow(row, state))
+      )
+    ),
+    h(
+      'tbody',
+      bodyRows.map((row) => encodeTableRow(row, state))
+    )
   )
 }
 
@@ -2008,12 +2103,15 @@ function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
 /**
  * Encode a `stencila.TableRow` to a `<tr>` element.
  */
-function encodeTableRow(row: stencila.TableRow): HTMLTableRowElement {
+function encodeTableRow(
+  row: stencila.TableRow,
+  state: EncodeState
+): HTMLTableRowElement {
   const cellTag = row.rowType === 'header' ? 'th' : 'td'
   return h(
     'tr',
     { attrs: microdata(row) },
-    row.cells.map((cell) => encodeTableCell(cell, cellTag))
+    row.cells.map((cell) => encodeTableCell(cell, state, cellTag))
   )
 }
 
@@ -2031,9 +2129,10 @@ function decodeTableCell(cell: HTMLTableDataCellElement): stencila.TableCell {
  */
 function encodeTableCell(
   cell: stencila.TableCell,
+  state: EncodeState,
   tag: 'td' | 'th' = 'td'
 ): HTMLTableDataCellElement {
-  return h(tag, { attrs: microdata(cell) }, cell.content.map(encodeNode))
+  return h(tag, { attrs: microdata(cell) }, encodeNodes(cell.content, state))
 }
 
 /**
@@ -2132,8 +2231,12 @@ function decodeMark<Type extends keyof typeof markTypes>(
 /**
  * Encode a `Mark` node to an inline element e.g. `<em>`.
  */
-function encodeMark(node: stencila.Mark, tag: string): HTMLElement {
-  return h(tag, { attrs: microdata(node) }, node.content.map(encodeNode))
+function encodeMark(
+  node: stencila.Mark,
+  state: EncodeState,
+  tag: string
+): HTMLElement {
+  return h(tag, { attrs: microdata(node) }, encodeNodes(node.content, state))
 }
 
 /**
@@ -2150,13 +2253,16 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
 /**
  * Encode a `stencila.Link` to a `<a>` element.
  */
-function encodeLink(link: stencila.Link): HTMLAnchorElement {
+function encodeLink(
+  link: stencila.Link,
+  state: EncodeState
+): HTMLAnchorElement {
   const attrs = {
     ...encodeDataAttrs(link.meta ?? {}),
     href: link.target,
     attrs: microdata(link),
   }
-  return h('a', attrs, link.content.map(encodeNode))
+  return h('a', attrs, encodeNodes(link.content, state))
 }
 
 /**

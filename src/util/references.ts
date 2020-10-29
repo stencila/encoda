@@ -2,10 +2,12 @@ import { CreativeWork, isA, Person } from '@stencila/schema'
 import { array as A } from 'fp-ts'
 
 /**
- * Create text used to cite a Stencila `CreativeWork` within
- * the content of an `Article`.
+ * Create text suitable for the `content` property of a `Cite` node from a `CreativeWork`.
+ *
+ * Currently this function only "author-date" type text citations e.g. `Smith et al (1990)`.
+ * In the future, it may have an optional `style` argument to create other styles.
  */
-export const encodeCitationText = (work: CreativeWork): string => {
+export const encodeCiteContent = (work: CreativeWork): string => {
   const { authors = [], datePublished } = work
   let citeText = ''
 

@@ -48,7 +48,6 @@ import { selectAll } from 'unist-util-select'
 import { STDIO_PATH } from '../..'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { isContentArray } from '../../util/content/isContentArray'
-import { encodeCitationText } from '../../util/references'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { BibCodec } from '../bib'
@@ -454,7 +453,7 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
     case 'delete':
       return decodeDelete(node as MDAST.Delete, context)
     case 'cite':
-      return decodeCite(node as MDAST.Literal, context)
+      return decodeCite(node as MDAST.Literal)
     case 'sub':
       return decodeSubscript(node as MDAST.Parent, context)
     case 'sup':
@@ -1288,42 +1287,6 @@ function decodeLink(link: MDAST.Link, context: DecodeContext): stencila.Link {
 }
 
 /**
- * Encode a Stencila `Cite` node to a MDAST `Text` node
- * with Pandoc style `@`-prefixed citations e.g. `@smith04`.
- */
-function encodeCite(cite: stencila.Cite): MDAST.Text {
-  return {
-    type: 'text',
-    value: `@${cite.target}`,
-  }
-}
-
-/**
- * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations e.g. `@smith04` to a Stencila `Cite` node.
- */
-function decodeCite(
-  cite: MDAST.Literal,
-  context: DecodeContext
-): stencila.Cite {
-  const ref: string | stencila.CreativeWorkTypes =
-    context.frontmatter.references?.find((ref) =>
-      typeof ref === 'string' ? false : ref.id === cite.value
-    ) ?? cite.value
-
-  let value = cite.value
-  // If the reference is a `CreativeWork` node, summarize it into a citation format
-  // such as `Smith et al (1990)`
-  if (stencila.isCreativeWork(ref)) {
-    value = encodeCitationText(ref)
-  }
-
-  return stencila.cite({
-    target: cite.value,
-    content: [value],
-  })
-}
-
-/**
  * Encode a `stencila.Link` to a `MDAST.Link`
  */
 function encodeLink(link: stencila.Link): MDAST.Link {
@@ -1336,6 +1299,30 @@ function encodeLink(link: stencila.Link): MDAST.Link {
       .map((node) => encodeInlineContent(node) as MDAST.StaticPhrasingContent[])
       .flat(),
     data,
+  }
+}
+
+/**
+ * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations (e.g. `@smith04`)
+ * to a Stencila `Cite` node.
+ *
+ * This function does not set the `content` property. That should be done during encoding
+ * to the target format.
+ */
+function decodeCite(cite: MDAST.Literal): stencila.Cite {
+  return stencila.cite({
+    target: cite.value,
+  })
+}
+
+/**
+ * Encode a Stencila `Cite` node to a MDAST `Text` node
+ * with Pandoc style `@`-prefixed citations e.g. `@smith04`.
+ */
+function encodeCite(cite: stencila.Cite): MDAST.Text {
+  return {
+    type: 'text',
+    value: `@${cite.target}`,
   }
 }
 
