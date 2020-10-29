@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Element | @stencila/encoda</title>
+	<title>EncodeState | @stencila/encoda</title>
 	<meta name="description" content="Documentation for @stencila/encoda">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
+					<a href="../modules/_codecs_html_index_.html">&quot;codecs/html/index&quot;</a>
 				</li>
 				<li>
-					<a href="_codecs_pandoc_types_.element.html">Element</a>
+					<a href="_codecs_html_index_.encodestate.html">EncodeState</a>
 				</li>
 			</ul>
-			<h1>Interface Element&lt;Type, Args&gt;</h1>
+			<h1>Interface EncodeState</h1>
 		</div>
 	</div>
 </header>
@@ -72,35 +72,17 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>An element in a Pandoc document</p>
+						<p>It is necessary to maintain some state during encoding.
+							This interface defines that state and an instance
+						is passed down through the encoding functions.</p>
 					</div>
-					<p>All elements, including metadata values, have a
-						<code>t</code> property indicating the type of element, and a
-					<code>c</code> property which are arguments to it&#39;s constructor.</p>
-					<p>This generic interface can be used to define type aliases
-						where only the type name <code>t</code>, and constructor arguments <code>a</code>
-					are varied.</p>
-					<p>However, to avoid the error &quot;type alias circularly references itself&quot;
-						it is necessary to defined a new <code>interface</code> instead of a type alias.
-					See below and <a href="https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540">this answer</a></p>
 				</div>
-			</section>
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>Type</h4>
-					</li>
-					<li>
-						<h4>Args = <span class="tsd-signature-type">undefined</span></h4>
-					</li>
-				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Element</span>
+						<span class="target">EncodeState</span>
 					</li>
 				</ul>
 			</section>
@@ -111,8 +93,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_pandoc_types_.element.html#c" class="tsd-kind-icon">c</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_pandoc_types_.element.html#t" class="tsd-kind-icon">t</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_html_index_.encodestate.html#references" class="tsd-kind-icon">references</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,24 +102,20 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="c" class="tsd-anchor"></a>
-					<h3>c</h3>
-					<div class="tsd-signature tsd-kind-icon">c<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Args</span></div>
+					<a name="references" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> references</h3>
+					<div class="tsd-signature tsd-kind-icon">references<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CreativeWork</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"references"</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/db0475c1/src/codecs/pandoc/types.ts#L56">src/codecs/pandoc/types.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/db0475c1/src/codecs/html/index.ts#L191">src/codecs/html/index.ts:191</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="t" class="tsd-anchor"></a>
-					<h3>t</h3>
-					<div class="tsd-signature tsd-kind-icon">t<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Type</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/db0475c1/src/codecs/pandoc/types.ts#L55">src/codecs/pandoc/types.ts:55</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The references of the <code>CreativeWork</code> currently being encoded (if any).
+							Used to populate the <code>content</code> property of <code>Cite</code> nodes.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -149,7 +126,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
+						<a href="../modules/_codecs_html_index_.html">&quot;codecs/html/index&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -157,14 +134,11 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_codecs_pandoc_types_.element.html" class="tsd-kind-icon">Element</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_codecs_html_index_.encodestate.html" class="tsd-kind-icon">Encode<wbr>State</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_codecs_pandoc_types_.element.html#c" class="tsd-kind-icon">c</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_codecs_pandoc_types_.element.html#t" class="tsd-kind-icon">t</a>
+								<a href="_codecs_html_index_.encodestate.html#references" class="tsd-kind-icon">references</a>
 							</li>
 						</ul>
 					</li>

@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_references_.html#encodecitationtext" class="tsd-kind-icon">encode<wbr>Citation<wbr>Text</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_references_.html#encodecitecontent" class="tsd-kind-icon">encode<wbr>Cite<wbr>Content</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,23 +82,24 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="encodecitationtext" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Citation<wbr>Text</h3>
+					<a name="encodecitecontent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Cite<wbr>Content</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Citation<wbr>Text<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Cite<wbr>Content<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1d8dc43b/src/util/references.ts#L8">src/util/references.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/db0475c1/src/util/references.ts#L10">src/util/references.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create text used to cite a Stencila <code>CreativeWork</code> within
-									the content of an <code>Article</code>.</p>
+									<p>Create text suitable for the <code>content</code> property of a <code>Cite</code> node from a <code>CreativeWork</code>.</p>
 								</div>
+								<p>Currently this function only &quot;author-date&quot; type text citations e.g. <code>Smith et al (1990)</code>.
+								In the future, it may have an optional <code>style</code> argument to create other styles.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -126,7 +127,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_util_references_.html#encodecitationtext" class="tsd-kind-icon">encode<wbr>Citation<wbr>Text</a>
+						<a href="_util_references_.html#encodecitecontent" class="tsd-kind-icon">encode<wbr>Cite<wbr>Content</a>
 					</li>
 				</ul>
 			</nav>
