@@ -1,3 +1,16 @@
+# [0.101.0](https://github.com/stencila/encoda/compare/v0.100.0...v0.101.0) (2020-10-30)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.20.0 ([7ceb8a0](https://github.com/stencila/encoda/commit/7ceb8a01cda332067b3b97eec290ca3352521c21))
+* **dependencies:** update dependency puppeteer to ^5.4.1 ([2fb87d9](https://github.com/stencila/encoda/commit/2fb87d9435bf4ffd6db36052fd09339606cceede))
+
+
+### Features
+
+* **Markdown & HTML:** Handling of audio and video objects ([8a49af6](https://github.com/stencila/encoda/commit/8a49af6e227568d3fd17104606b5f119cc1dc824))
+
 # [0.100.0](https://github.com/stencila/encoda/compare/v0.99.16...v0.100.0) (2020-10-29)
 
 
