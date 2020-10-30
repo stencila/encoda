@@ -48,6 +48,7 @@ import { selectAll } from 'unist-util-select'
 import { STDIO_PATH } from '../..'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { isContentArray } from '../../util/content/isContentArray'
+import { mediaType } from '../../util/media/mediaType'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { BibCodec } from '../bib'
@@ -1024,24 +1025,27 @@ function decodeFigure(ext: Extension): stencila.Figure {
   const nodes = decodeMarkdown(content).content ?? []
 
   const caption: stencila.Node[] = []
-  let image: stencila.ImageObject | undefined
+  let media: stencila.MediaObject | undefined
   for (const node of nodes) {
-    // The first node that is a paragraph with only an image in
-    // it is unwrapped and made the figure's image.
+    // The first node that is a paragraph with only a media object,
+    // it is unwrapped and made the figure's content.
     if (
-      image === undefined &&
+      media === undefined &&
       stencila.isParagraph(node) &&
       node.content?.length === 1 &&
-      stencila.isA('ImageObject', node.content[0])
+      stencila.isInstanceOf<stencila.MediaObject>(
+        stencila.mediaObjectTypes,
+        node.content[0]
+      )
     ) {
-      image = node.content[0]
+      media = node.content[0]
     } else {
       caption.push(node)
     }
   }
 
   return stencila.figure({
-    content: image ? [image] : [],
+    content: media ? [media] : [],
     caption,
     label: argument,
     id: properties?.id,
@@ -1590,19 +1594,34 @@ function encodeCodeExpression(
 
 /**
  * Decode a `MDAST.Image` to a `stencila.ImageObject`
+ *
+ * This function examines the file extension and if it matches and audio or video
+ * format will return an `AudioObject` or `VideoObject` respectively. Otherwise
+ * returns an `ImageObject`. For discussion on this approach see
+ * https://talk.commonmark.org/t/embedded-audio-and-video/441
+ *
+ * The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
+ * so we extract them from there.
  */
-function decodeImage(image: MDAST.Image): stencila.ImageObject {
-  const imageObject: stencila.ImageObject = {
-    type: 'ImageObject',
-    contentUrl: image.url,
-  }
-  if (image.title) imageObject.title = image.title
-  if (image.alt) imageObject.text = image.alt
-  // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
-  const meta =
-    image.data && (image.data.hProperties as { [key: string]: string })
-  if (meta) imageObject.meta = meta
-  return imageObject
+function decodeImage(
+  image: MDAST.Image
+): stencila.ImageObject | stencila.AudioObject | stencila.VideoObject {
+  const { url: contentUrl, title, alt: text, data } = image
+  const meta = data?.hProperties as { [key: string]: string }
+
+  const type = mediaType(contentUrl)
+  const constructor =
+    type === 'audio'
+      ? stencila.audioObject
+      : type === 'video'
+      ? stencila.videoObject
+      : stencila.imageObject
+  return constructor({
+    contentUrl,
+    title: title ?? undefined,
+    text: text ?? undefined,
+    meta,
+  })
 }
 
 /**

@@ -532,8 +532,6 @@ function encodeNode(node: stencila.Node, state: EncodeState): Node {
     case 'PublicationIssue':
     case 'PublicationVolume':
     case 'SoftwareSourceCode':
-    case 'AudioObject':
-    case 'VideoObject':
     case 'MediaObject':
       return encodeCreativeWork(node as stencila.CreativeWork, state)
     case 'Collection':
@@ -579,8 +577,12 @@ function encodeNode(node: stencila.Node, state: EncodeState): Node {
     case 'MathFragment':
       return encodeMath(node as stencila.Math)
 
+    case 'AudioObject':
+      return encodeAudioObject(node as stencila.AudioObject)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
+    case 'VideoObject':
+      return encodeVideoObject(node as stencila.VideoObject)
 
     case 'Null':
       return encodeNull()
@@ -2344,6 +2346,25 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
 }
 
 /**
+ * Encode a Stencila `AudioObject` to a HTML `<audio>` element.
+ */
+function encodeAudioObject(
+  audio: stencila.AudioObject,
+  property?: string
+): HTMLAudioElement {
+  const { contentUrl: src } = audio
+  return h(
+    'audio',
+    {
+      attrs: microdata(audio, property),
+      controls: '',
+    },
+    h('source', { src }),
+    h('p', 'Your browser does not support audio elements.')
+  )
+}
+
+/**
  * Encode a Stencila `ImageObject` to a HTML `<img>` element.
  *
  * Ensures that the `alt` attribute is always set (with empty string
@@ -2361,6 +2382,25 @@ function encodeImageObject(
     title: titleString,
     alt: text ?? titleString ?? property ?? '',
   })
+}
+
+/**
+ * Encode a Stencila `VideoObject` to a HTML `<video>` element.
+ */
+function encodeVideoObject(
+  video: stencila.VideoObject,
+  property?: string
+): HTMLVideoElement {
+  const { contentUrl: src } = video
+  return h(
+    'video',
+    {
+      attrs: microdata(video, property),
+      controls: '',
+    },
+    h('source', { src }),
+    h('p', 'Your browser does not support video elements.')
+  )
 }
 
 /**
