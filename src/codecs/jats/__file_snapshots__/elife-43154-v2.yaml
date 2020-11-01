@@ -278,6 +278,8 @@ references:
           - Kwiatkowski
         givenNames:
           - DP
+      - type: Organization
+        name: Malaria Genomic Epidemiology Network
     datePublished:
       type: Date
       value: '2015'
@@ -772,6 +774,8 @@ references:
           - Kwiatkowski
         givenNames:
           - DP
+      - type: Organization
+        name: "MalariaGEN\_Consortium"
     datePublished:
       type: Date
       value: '2017'
@@ -908,6 +912,8 @@ references:
   - type: Article
     id: bib7
     authors:
+      - type: Organization
+        name: Malaria Genomic Epidemiology Network
       - type: Person
         familyNames:
           - Rockett
@@ -1087,6 +1093,8 @@ references:
           - Williams
         givenNames:
           - TN
+      - type: Organization
+        name: MalariaGEN Consortium
     datePublished:
       type: Date
       value: '2015'

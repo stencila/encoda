@@ -1060,16 +1060,12 @@ function decodeReferences(
 ): stencila.Article['references'] {
   if (elem === null) return undefined
 
-  const refs = all(elem, 'ref')
-  return refs
-    .map((ref) => {
-      const citation = child(ref, ['element-citation', 'mixed-citation'])
-      return citation ? decodeReference(citation, attr(ref, 'id')) : null
-    })
-    .reduce(
-      (prev: stencila.CreativeWork[], curr) => (curr ? [...prev, curr] : prev),
-      []
-    )
+  return all(elem, 'ref').reduce((prev: stencila.CreativeWork[], ref) => {
+    const citation = child(ref, ['element-citation', 'mixed-citation'])
+    return citation
+      ? [...prev, decodeReference(citation, attr(ref, 'id'))]
+      : prev
+  }, [])
 }
 
 /**
@@ -1105,13 +1101,17 @@ function decodeReference(
   const publicationType = attr(elem, 'publication-type')
   const id = decodeInternalId(ident)
 
-  let authors: stencila.CreativeWork['authors'] = all(elem, 'name').map(
-    decodeName
-  )
+  let authors: stencila.CreativeWork['authors'] = all(elem, [
+    'name',
+    'collab',
+  ]).map((authorElem) => {
+    if (authorElem.name === 'name') return decodeName(authorElem)
+    else return stencila.organization({ name: textOrUndefined(authorElem) })
+  })
   // If no authors identified using `<name>` elements
-  // then use the text of `<person-group>` or `<collab>`
+  // then use the text of `<person-group>`
   if (authors.length === 0) {
-    const name = textOrUndefined(child(elem, ['collab', 'person-group']))
+    const name = textOrUndefined(child(elem, 'person-group'))
     if (name !== undefined) authors = [stencila.organization({ name })]
   }
 
