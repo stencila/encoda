@@ -36,7 +36,7 @@ export class CSLCodec extends Codec implements Codec {
       ...options,
     }
 
-    const content: string = await vfile.dump(file)
+    const content = await vfile.dump(file)
 
     let csls: Csl.Data[]
     try {
@@ -82,10 +82,13 @@ export class CSLCodec extends Codec implements Codec {
   }
 }
 
+/**
+ * Encode a `Node` to a string of given `format`.
+ */
 function encode(node: schema.Node, format: string): string {
   let content = ''
   if (schema.isCreativeWork(node)) {
-    const csl = encodeCsl(node)
+    const csl = encodeCsl(node, format)
     const cite = new Cite([csl])
 
     if (format === 'json') {
@@ -94,10 +97,15 @@ function encode(node: schema.Node, format: string): string {
     } else {
       content = cite.format(format)
     }
+
+    // Citation.js does not currently wrap literal author names in braces
+    // for BibTeX. So we have to use this hack. See `encodeOrganization` below.
+    if (format === 'bibtex') {
+      content = content.replace('☞', '{').replace('☜', '}')
+    }
   } else {
     logErrorNodeType('csl', 'encode', 'CreativeWork', node)
   }
-
   return content
 }
 
@@ -200,15 +208,18 @@ export async function decodeCsl(
 /**
  * Encode a `CreativeWork` as `Csl.Data`
  */
-export const encodeCsl = (work: schema.CreativeWork): Csl.Data => {
-  if (schema.isArticle(work)) return encodeArticle(work)
+export const encodeCsl = (
+  work: schema.CreativeWork,
+  format: string
+): Csl.Data => {
+  if (schema.isArticle(work)) return encodeArticle(work, format)
   else {
     logWarnLoss(
       'csl',
       'encode',
       `Unhandled creative work type ${schema.nodeType(work)}`
     )
-    return encodeCreativeWork(work, 'article')
+    return encodeCreativeWork(work, 'article', format)
   }
 }
 
@@ -220,7 +231,8 @@ export const encodeCsl = (work: schema.CreativeWork): Csl.Data => {
  */
 export const encodeCreativeWork = (
   work: schema.CreativeWork,
-  type: Csl.ItemType
+  type: Csl.ItemType,
+  format: string
 ): Csl.Data => {
   const {
     id = crypto.randomBytes(16).toString('hex'),
@@ -243,7 +255,7 @@ export const encodeCreativeWork = (
     id,
     'citation-label': id,
     title: TxtCodec.stringify(title),
-    author: authors.map(encodeAuthor),
+    author: authors.map((author) => encodeAuthor(author, format)),
     issued: date !== undefined ? encodeDate(date) : undefined,
     URL: url,
     ...encodePublisher(publisher),
@@ -254,7 +266,10 @@ export const encodeCreativeWork = (
 /**
  * Encode an `Article` as `Csl.Data`
  */
-export const encodeArticle = (article: schema.Article): Csl.Data => {
+export const encodeArticle = (
+  article: schema.Article,
+  format: string
+): Csl.Data => {
   const { pageStart, pageEnd, pagination, ...rest } = article
 
   let page
@@ -265,34 +280,33 @@ export const encodeArticle = (article: schema.Article): Csl.Data => {
   }
 
   return {
-    ...encodeCreativeWork(rest, 'article-journal'),
+    ...encodeCreativeWork(rest, 'article-journal', format),
     page,
   }
 }
 
 /**
- * Decode a `Csl.Person` as a `Person`
+ * Decode a CSL `Person` to a `Person` or `Organization` node.
  *
- * If `family` is not defined but `literal` is then the
- * `person` codec is used to decode the literal string.
+ * If `literal` is defined then assumes an organizational author.
  *
  * CSL-JSON's `non-dropping-particle` and `dropping-particle`
  * are not currently supported in `Person`.
  */
-const decodeAuthor = (author: Csl.Person): Promise<schema.Person> => {
+const decodeAuthor = (
+  author: Csl.Person
+): Promise<schema.Person | schema.Organization> => {
   const { family, given, suffix, literal, ...lost } = author
   logWarnLossIfAny('csl', 'decode', author, lost)
 
-  if (family === undefined && literal !== undefined) {
-    return load(literal, 'person') as Promise<schema.Person>
-  }
-
   return Promise.resolve(
-    schema.person({
-      familyNames: family !== undefined ? [family] : undefined,
-      givenNames: given !== undefined ? [given] : undefined,
-      honorificSuffix: suffix,
-    })
+    literal !== undefined
+      ? schema.organization({ name: literal })
+      : schema.person({
+          familyNames: family !== undefined ? [family] : undefined,
+          givenNames: given !== undefined ? [given] : undefined,
+          honorificSuffix: suffix,
+        })
   )
 }
 
@@ -300,11 +314,12 @@ const decodeAuthor = (author: Csl.Person): Promise<schema.Person> => {
  * Encode an author as a `Csl.Person`
  */
 const encodeAuthor = (
-  author: schema.Person | schema.Organization
+  author: schema.Person | schema.Organization,
+  format: string
 ): Csl.Person => {
   return schema.isA('Person', author)
     ? encodePerson(author)
-    : encodeOrganization(author)
+    : encodeOrganization(author, format)
 }
 
 /**
@@ -327,10 +342,13 @@ const encodePerson = (person: schema.Person): Csl.Person => {
  * CSL-JSON does not allow for an org author so we use the `literal` property
  * to encode the org name.
  */
-const encodeOrganization = (org: schema.Organization): Csl.Person => {
+const encodeOrganization = (
+  org: schema.Organization,
+  format: string
+): Csl.Person => {
   const { name = 'Anonymous' } = org
   return {
-    literal: name,
+    literal: `☞${name}☜`,
   }
 }
 
