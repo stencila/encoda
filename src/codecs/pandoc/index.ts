@@ -313,17 +313,17 @@ function encodeNode(
 
   const type_ = nodeType(node)
   if (type_ === 'Article') {
-    const { type, content, ...rest } = node as stencila.Article
+    const { type, content, references, ...rest } = node as stencila.Article
     standalone = true
 
     // Transform meta data as necessary before encoding it
     meta = encodeMeta(
-      rest.references
+      references
         ? {
             ...rest,
-            references: rest.references
+            references: references
               .filter(stencila.isCreativeWork)
-              .map(encodeCsl),
+              .map((ref) => encodeCsl(ref, 'json')),
           }
         : rest
     )
