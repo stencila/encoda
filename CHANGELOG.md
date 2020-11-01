@@ -1,3 +1,10 @@
+## [0.101.1](https://github.com/stencila/encoda/compare/v0.101.0...v0.101.1) (2020-11-01)
+
+
+### Bug Fixes
+
+* **Organizational authors:** Distinguish org authors in BibTeX ([ee287a3](https://github.com/stencila/encoda/commit/ee287a33027c7844d4a25f82a99075e4411efa23)), closes [#737](https://github.com/stencila/encoda/issues/737)
+
 # [0.101.0](https://github.com/stencila/encoda/compare/v0.100.0...v0.101.0) (2020-10-30)
 
 
