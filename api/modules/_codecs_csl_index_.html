@@ -112,7 +112,7 @@
 					<div class="tsd-signature tsd-kind-icon">styles<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = path.join(__dirname, &#x27;styles&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L20">src/codecs/csl/index.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L20">src/codecs/csl/index.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -128,21 +128,20 @@
 					<a name="decodeauthor" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> decode<wbr>Author</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Author<span class="tsd-signature-symbol">(</span>author<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Author<span class="tsd-signature-symbol">(</span>author<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Organization</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L282">src/codecs/csl/index.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L296">src/codecs/csl/index.ts:296</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Decode a <code>Csl.Person</code> as a <code>Person</code></p>
+									<p>Decode a CSL <code>Person</code> to a <code>Person</code> or <code>Organization</code> node.</p>
 								</div>
-								<p>If <code>family</code> is not defined but <code>literal</code> is then the
-								<code>person</code> codec is used to decode the literal string.</p>
+								<p>If <code>literal</code> is defined then assumes an organizational author.</p>
 								<p>CSL-JSON&#39;s <code>non-dropping-particle</code> and <code>dropping-particle</code>
 								are not currently supported in <code>Person</code>.</p>
 							</div>
@@ -152,7 +151,7 @@
 									<h5>author: <span class="tsd-signature-type">Csl.Person</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Organization</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -166,7 +165,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L107">src/codecs/csl/index.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L115">src/codecs/csl/index.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -194,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L367">src/codecs/csl/index.ts:367</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L385">src/codecs/csl/index.ts:385</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,9 +221,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L85">src/codecs/csl/index.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L88">src/codecs/csl/index.ts:88</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode a <code>Node</code> to a string of given <code>format</code>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -242,13 +246,13 @@
 					<a name="encodearticle" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Article</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Article<span class="tsd-signature-symbol">(</span>article<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Article<span class="tsd-signature-symbol">(</span>article<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L257">src/codecs/csl/index.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L269">src/codecs/csl/index.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -261,6 +265,9 @@
 								<li>
 									<h5>article: <span class="tsd-signature-type">Article</span></h5>
 								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Csl.Data</span></h4>
 						</li>
@@ -270,13 +277,13 @@
 					<a name="encodeauthor" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Author</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Author<span class="tsd-signature-symbol">(</span>author<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Organization</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Author<span class="tsd-signature-symbol">(</span>author<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Organization</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L302">src/codecs/csl/index.ts:302</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L316">src/codecs/csl/index.ts:316</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,6 +295,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>author: <span class="tsd-signature-type">Person</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Organization</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Csl.Person</span></h4>
@@ -304,7 +314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L447">src/codecs/csl/index.ts:447</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L465">src/codecs/csl/index.ts:465</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -329,13 +339,13 @@
 					<a name="encodecreativework" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Creative<wbr>Work</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Creative<wbr>Work<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.ItemType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Creative<wbr>Work<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.ItemType</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L221">src/codecs/csl/index.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L232">src/codecs/csl/index.ts:232</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -353,6 +363,9 @@
 								<li>
 									<h5>type: <span class="tsd-signature-type">Csl.ItemType</span></h5>
 								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Csl.Data</span></h4>
 						</li>
@@ -362,13 +375,13 @@
 					<a name="encodecsl" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Csl</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Csl<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Csl<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L203">src/codecs/csl/index.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L211">src/codecs/csl/index.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -380,6 +393,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>work: <span class="tsd-signature-type">CreativeWork</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Csl.Data</span></h4>
@@ -396,7 +412,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L384">src/codecs/csl/index.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L402">src/codecs/csl/index.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -426,7 +442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L401">src/codecs/csl/index.ts:401</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L419">src/codecs/csl/index.ts:419</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,13 +465,13 @@
 					<a name="encodeorganization" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Organization</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Organization<span class="tsd-signature-symbol">(</span>org<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Organization</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Organization<span class="tsd-signature-symbol">(</span>org<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Organization</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Person</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L330">src/codecs/csl/index.ts:330</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L345">src/codecs/csl/index.ts:345</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -469,6 +485,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>org: <span class="tsd-signature-type">Organization</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Csl.Person</span></h4>
@@ -485,7 +504,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L313">src/codecs/csl/index.ts:313</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L328">src/codecs/csl/index.ts:328</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -513,7 +532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/8a49af6e/src/codecs/csl/index.ts#L340">src/codecs/csl/index.ts:340</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/16d875fe/src/codecs/csl/index.ts#L358">src/codecs/csl/index.ts:358</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
