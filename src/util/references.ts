@@ -1,4 +1,4 @@
-import { CreativeWork, isA, Person } from '@stencila/schema'
+import { CreativeWork, isA, Organization, Person } from '@stencila/schema'
 import { array as A } from 'fp-ts'
 
 /**
@@ -12,22 +12,14 @@ export const encodeCiteContent = (work: CreativeWork): string => {
   let citeText = ''
 
   if (!A.isEmpty(authors)) {
-    const people = authors.filter((p) => isA('Person', p))
-
-    if (!A.isEmpty(people)) {
-      const firstPerson = people[0] as Person
-      let secondPerson
-
-      if (firstPerson.familyNames) {
-        citeText += firstPerson.familyNames.join(' ')
-
-        if (people.length === 2) {
-          secondPerson = people[1] as Person
-          if (secondPerson.familyNames)
-            citeText += ' and ' + secondPerson.familyNames.join(' ')
-        } else if (people.length > 2) {
-          citeText += ' et al.'
-        }
+    const firstAuthorName = getName(authors[0])
+    if (firstAuthorName.length > 0) {
+      citeText += firstAuthorName
+      if (authors.length === 2) {
+        const secondAuthorName = getName(authors[1])
+        if (secondAuthorName.length > 0) citeText += ' and ' + secondAuthorName
+      } else if (authors.length > 2) {
+        citeText += ' et al.'
       }
     }
   }
@@ -40,4 +32,12 @@ export const encodeCiteContent = (work: CreativeWork): string => {
   }
 
   return citeText
+}
+
+function getName(author: Person | Organization): string {
+  return isA('Person', author) &&
+    author.familyNames &&
+    author.familyNames.length > 0
+    ? author.familyNames.join(' ').trim()
+    : (author.name ?? '').trim()
 }
