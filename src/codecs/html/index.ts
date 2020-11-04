@@ -207,11 +207,12 @@ export class HTMLCodec extends Codec implements Codec {
     const node = decodeNode(document)
     if (Array.isArray(node)) {
       if (node.length === 0) {
+        const htmlContentTrimmed = htmlContent.toString().trim()
         log.warn(
           `No node could be decoded from HTML: ${
-            htmlContent.length > 10
-              ? htmlContent.toString().substr(0, 10) + '...'
-              : htmlContent
+            htmlContentTrimmed.length > 10
+              ? htmlContentTrimmed.substr(0, 10) + '...'
+              : htmlContentTrimmed
           }`
         )
         return ''
@@ -476,11 +477,16 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'time':
       return decodeChildNodes(node)
 
+    // Elements that are converted into text
+    case 'br':
+      return ['\n']
+
     // Elements that are explicitly ignored
     // i.e. no warning
     case 'script':
       return []
 
+    // Text content of elements
     case '#text':
       return decodeText(node as Text)
   }
