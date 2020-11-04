@@ -455,6 +455,8 @@ async function encodeCells(nodes: schema.Node[]): Promise<nbformat4.Cell[]> {
 
 /**
  * Decode a Jupyter `MarkdownCell` as an array of Stencila `BlockContent` nodes.
+ *
+ * Ignores cells with only whitespace in them.
  */
 async function decodeMarkdownCell(
   cell: nbformat3.MarkdownCell | nbformat4.MarkdownCell,
@@ -462,7 +464,10 @@ async function decodeMarkdownCell(
 ): Promise<schema.BlockContent[]> {
   // TODO: handle metadata
   const { source } = cell
-  const markdown = decodeMultilineString(source)
+
+  const markdown = decodeMultilineString(source).trim()
+  if (markdown.length === 0) return []
+
   const content = await load(markdown, format === 'html' ? 'html' : 'md', {
     isStandalone: false,
   })
