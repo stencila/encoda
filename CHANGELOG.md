@@ -1,3 +1,10 @@
+## [0.101.2](https://github.com/stencila/encoda/compare/v0.101.1...v0.101.2) (2020-11-03)
+
+
+### Bug Fixes
+
+* **Cite nodes:** Include organization name in cite content ([5d604ae](https://github.com/stencila/encoda/commit/5d604aeeb8214c5f0b5e380bee926b19632074b8))
+
 ## [0.101.1](https://github.com/stencila/encoda/compare/v0.101.0...v0.101.1) (2020-11-01)
 
 
