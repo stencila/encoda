@@ -32,13 +32,14 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
+import * as dataUri from '../../util/dataUri'
 import { getThemeAssets } from '../../util/html'
+import { fromFiles } from '../../util/media/fromFiles'
+import { encodeCiteContent } from '../../util/references'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
-import { fromFiles } from '../../util/media/fromFiles'
-import { encodeCiteContent } from '../../util/references'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -2371,23 +2372,47 @@ function encodeAudioObject(
 }
 
 /**
- * Encode a Stencila `ImageObject` to a HTML `<img>` element.
+ * Encode a Stencila `ImageObject` to a HTML `<img>` or `<picture>` element.
  *
- * Ensures that the `alt` attribute is always set (with empty string
- * if there is no other source).
+ * Encodes the image's `contentUrl` to the `src` on an `<img>` and ensures that
+ * the `alt` attribute is always set (with an empty string if there is no source
+ * for that attribute).
+ *
+ * If the image has a `content` property, this function will attempt to encode
+ * each item in that array into `<source>` elements within a `<picture>` element
+ * (with the `<img>` as the last child).
  */
 function encodeImageObject(
   image: stencila.ImageObject,
   property?: string
-): HTMLImageElement {
-  const { contentUrl: src, title, text } = image
+): HTMLImageElement | HTMLPictureElement {
+  const { contentUrl: src, title, text, content = [] } = image
+
   const titleString = title !== undefined ? TxtCodec.stringify(title) : null
-  return h('img', {
+  const img = h('img', {
     attrs: microdata(image, property),
     src,
     title: titleString,
     alt: text ?? titleString ?? property ?? '',
   })
+
+  const sources = content.reduce((prev: HTMLSourceElement[], node) => {
+    const { mediaType, data } = node as { mediaType: string; data: any }
+    if (mediaType !== undefined && data !== undefined) {
+      return [
+        ...prev,
+        h('source', {
+          attrs: {
+            type: mediaType,
+            srcset: dataUri.fromJS(data),
+          },
+        }),
+      ]
+    }
+    return prev
+  }, [])
+
+  return sources.length > 0 ? h('picture', sources, img) : img
 }
 
 /**
