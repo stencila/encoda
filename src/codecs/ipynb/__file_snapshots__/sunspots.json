@@ -44,7 +44,7 @@
             "from NOAA"
           ]
         },
-        ") and conveniently included in a popular Python package for doing statistical work... "
+        ") and conveniently included in a popular Python package for doing statistical work..."
       ]
     },
     {
@@ -62,7 +62,7 @@
           "type": "CodeFragment",
           "text": "df"
         },
-        " is shorthand for \"dataframe\", which we can think of as an Excel-like table of values. Dataframes have various methods that can be called to easily learn about the data contained in them, and we'll step through calling some of these methods. Below, we see that we have 309 pairs of (year, activity) to examine... "
+        " is shorthand for \"dataframe\", which we can think of as an Excel-like table of values. Dataframes have various methods that can be called to easily learn about the data contained in them, and we'll step through calling some of these methods. Below, we see that we have 309 pairs of (year, activity) to examine..."
       ]
     },
     {
