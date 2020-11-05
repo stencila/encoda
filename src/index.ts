@@ -75,9 +75,12 @@ export const codecList: string[] = [
   // Scripts
   'dmagic',
 
-  // Images,
+  // Images
   'rpng',
   'png',
+
+  // Plotting
+  'plotly',
 
   // Data interchange formats
   'yaml',
