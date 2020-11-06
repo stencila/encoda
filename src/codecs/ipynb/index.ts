@@ -743,7 +743,18 @@ async function decodeMimeBundle(
     }
     const mimetype = version === 3 ? map[key] || key : key
 
-    if (['image/png', 'image/jpeg'].includes(mimetype)) {
+    const text =
+      typeof data === 'string'
+        ? data
+        : Array.isArray(data)
+        ? data.join('')
+        : data.toString()
+
+    if (mimetype.endsWith('json')) {
+      // Stringify the data to be pass on to the specialised codec e.g. `plotly`
+      const json = JSON.stringify(data)
+      return load(json, mimetype)
+    } else if (['image/png', 'image/jpeg', 'image/gif'].includes(mimetype)) {
       // Image mime types as `ImagesObject`
       const dataUrl = `data:${mimetype};base64,${data}`
       const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
@@ -758,23 +769,15 @@ async function decodeMimeBundle(
       // preformatting (tabs, newlines or more than one consecutive space),
       // then decode as a `CodeBlock` since formatting is
       // often important in text output of cells.
-      const content =
-        typeof data === 'string'
-          ? data
-          : Array.isArray(data)
-          ? data.join('')
-          : data.toString()
-      const node = await load(content, 'txt')
+      const node = await load(text, 'txt')
       if (typeof node === 'string' && /[ ]{2,}|\t|\n/g.test(node))
         return schema.codeBlock({ text: node, programmingLanguage: 'text' })
       else return node
     } else {
-      // Otherwise, use the mimetype to decide how to decode the content
-      const content = typeof data === 'string' ? data : JSON.stringify(data)
-      return load(content, mimetype)
+      return load(text, mimetype)
     }
   }
-  log.warn(`Unable to decode MimeBundle`)
+  log.warn(`Unable to decode MIME bundle with keys ${Object.keys(bundle)}`)
   return ''
 }
 
