@@ -49,7 +49,7 @@ describe('decode', () => {
     })
   })
 
-  test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching'])(
+  test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching', 'meta-analysis'])(
     '%s',
     async (name) => {
       expect(
