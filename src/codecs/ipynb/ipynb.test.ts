@@ -1,4 +1,5 @@
 import * as schema from '@stencila/schema'
+import { removeDataUris } from '../../util/media/removeDataUris'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
@@ -8,7 +9,7 @@ import {
   decodeMultilineString,
   encodeCodeChunk,
   encodeMultilineString,
-  IpynbCodec,
+  IpynbCodec
 } from './'
 import * as nbformat4 from './nbformat-v4'
 
@@ -26,7 +27,7 @@ describe('decode', () => {
         metadata: {},
         source: [],
         execution_count: 0,
-        outputs: [],
+        outputs: []
       }
       expect(await decodeCodeCell(cell)).toEqual(undefined)
     })
@@ -41,33 +42,40 @@ describe('decode', () => {
             output_type: 'execute_result',
             execution_count: 1,
             data: {},
-            metadata: {},
-          },
-        ],
+            metadata: {}
+          }
+        ]
       }
       expect(await decodeCodeCell(cell)).toBeDefined()
     })
   })
 
-  test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching', 'meta-analysis'])(
-    '%s',
-    async (name) => {
-      expect(
-        await jsonCodec.dump(
+  test.each([
+    'metadata-v4',
+    'running-code',
+    'sunspots',
+    'well-switching',
+    'meta-analysis'
+  ])('%s', async name => {
+    expect(
+      await jsonCodec.dump(
+        // Remove Data URIs e.g. for ImageObjects generated from Plotly because
+        // they differ by OS
+        removeDataUris(
           // Unlink files to remove references to temporary files (which
           // will change between test runs)
           unlinkFiles(await ipynbCodec.read(fixture(name + '.ipynb')))
         )
-      ).toMatchFile(snapshot(name + '.json'))
-    }
-  )
+      )
+    ).toMatchFile(snapshot(name + '.json'))
+  })
 })
 
 describe('encode', () => {
   test.each([
     ['jupyter-notebook-simple', jupyterNotebookSimple],
     ['elife-50356', eLifeArticle],
-    ['plosone-0229075', plosArticle],
+    ['plosone-0229075', plosArticle]
   ])('%s', async (name, nodeOrPath) => {
     const node =
       typeof nodeOrPath === 'string'
@@ -95,14 +103,14 @@ describe('encode+decode', () => {
         metadata: {},
         source: ['code'],
         execution_count: 0,
-        outputs: [],
+        outputs: []
       }
       const chunk = schema.codeChunk({
         programmingLanguage: 'python',
         text: 'code',
         meta: {
-          execution_count: 0,
-        },
+          execution_count: 0
+        }
       })
       expect(await decodeCodeCell(cell)).toEqual(chunk)
       expect(await encodeCodeChunk(chunk)).toEqual(cell)
@@ -115,11 +123,11 @@ describe('encode+decode', () => {
           id: 'id',
           label: 'label',
           caption: '### Title\n\nPara',
-          other: 'foo',
+          other: 'foo'
         },
         source: ['code'],
         execution_count: 42,
-        outputs: [],
+        outputs: []
       }
       const chunk = schema.codeChunk({
         programmingLanguage: 'python',
@@ -129,16 +137,16 @@ describe('encode+decode', () => {
         caption: [
           schema.heading({
             content: ['Title'],
-            depth: 3,
+            depth: 3
           }),
           schema.paragraph({
-            content: ['Para'],
-          }),
+            content: ['Para']
+          })
         ],
         meta: {
           execution_count: 42,
-          other: 'foo',
-        },
+          other: 'foo'
+        }
       })
       expect(await decodeCodeCell(cell)).toEqual(chunk)
       expect(await encodeCodeChunk(chunk)).toEqual(cell)
@@ -152,7 +160,7 @@ describe('encode+decode', () => {
   test.each([
     ['jupyter-notebook-simple', jupyterNotebookSimple, 'all'],
     ['elife-50356', eLifeArticle, 'meta'],
-    ['plosone-0229075', plosArticle, 'meta'],
+    ['plosone-0229075', plosArticle, 'meta']
   ])('%s', async (name, nodeOrPath, compare) => {
     const node =
       typeof nodeOrPath === 'string'
