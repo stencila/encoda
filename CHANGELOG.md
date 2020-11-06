@@ -1,3 +1,15 @@
+## [0.101.3](https://github.com/stencila/encoda/compare/v0.101.2...v0.101.3) (2020-11-06)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.15.1 ([7fe1994](https://github.com/stencila/encoda/commit/7fe199472ddfb4ca171e249dcf09b82c5571da6d))
+* **dependencies:** update dependency fp-ts to ^2.8.5 ([b522298](https://github.com/stencila/encoda/commit/b5222989df377dbd99d2c601ab2b8e4aae15962b))
+* **dependencies:** update dependency unist-util-filter to ^2.0.3 ([31f39cb](https://github.com/stencila/encoda/commit/31f39cb17fc923ce7661b753307baaa9acb4db1f))
+* **dependencies:** update dependency unist-util-select to ^3.0.2 ([8bfd054](https://github.com/stencila/encoda/commit/8bfd0544f44fbe28c51ffdb36b61ebfff5555898))
+* **HTML:** Handle <br> elements; trim warning sample ([a4685e1](https://github.com/stencila/encoda/commit/a4685e1561c771a3ea3be53ea036ddcaf61ad880))
+* **IPYNB:** Ignore Markdown cells with no content ([ad496da](https://github.com/stencila/encoda/commit/ad496da92f77760e3118f8856af2fff44b68768a))
+
 ## [0.101.2](https://github.com/stencila/encoda/compare/v0.101.1...v0.101.2) (2020-11-03)
 
 
