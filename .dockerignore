@@ -1,12 +1,12 @@
-.DS_Store
-.git
-**/__outputs__
-**/*.out.*
-*credentials.json
-*token.json
-/.sandbox
-/coverage
-/dist
-/docs
-/node_modules
-temp.*
+# Tell Docker to ignore all files apart from those absolutely needed in the image
+# For why this is a good idea see https://codefresh.io/docker-tutorial/not-ignore-dockerignore/
+
+*
+
+!/package*.json
+!/tsconfig*.json
+!/install.js
+!/src
+
+src/**/*credentials.json
+src/**/*token.json
