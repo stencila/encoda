@@ -9,12 +9,12 @@ const log = getLogger('encoda:plotly')
 
 /**
  * The Puppeteer page used to persist Plotly.js across calls to `PlotlyCodec`
- * instances and across calls of `encode`.
+ * instances and calls to `encode`. Instantiated lazily and just-in-time in `ensurePlotlyPage`.
  */
 let plotlyPage: puppeteer.Page | undefined
 
 /**
- * Ensure that `plotlyPage` is defined; lazily and just-in-time.
+ * Ensure that `plotlyPage` is defined.
  */
 async function ensurePlotlyPage(): Promise<puppeteer.Page> {
   if (plotlyPage) return plotlyPage
@@ -79,6 +79,10 @@ export class PlotlyCodec extends Codec implements Codec {
     const data = JSON.parse(json)
 
     const page = await ensurePlotlyPage()
+
+    // Don't include this uninstrumented code that runs in the browser
+    // in coverage stats.
+    // istanbul ignore next
     const image = await page.evaluate(async (data) => {
       const root = document.getElementById('plotly') as HTMLDivElement
       await Plotly.newPlot(root, data)
@@ -86,6 +90,7 @@ export class PlotlyCodec extends Codec implements Codec {
       Plotly.purge(root)
       return image
     }, data)
+
     return schema.imageObject({
       contentUrl: image,
       content: [
@@ -108,12 +113,14 @@ export class PlotlyCodec extends Codec implements Codec {
     if (schema.isA('ImageObject', node) && node.content) {
       for (const content of node.content) {
         if (
-          schema.isA('Object', content) &&
+          typeof content === 'object' &&
+          content !== null &&
           'data' in content &&
           'mediaType' in content &&
           content.mediaType === this.mediaTypes[0]
         ) {
-          return Promise.resolve(vfile.load(content.data))
+          const json = JSON.stringify(content.data)
+          return Promise.resolve(vfile.load(json))
         }
       }
     }
@@ -122,6 +129,6 @@ export class PlotlyCodec extends Codec implements Codec {
         node
       )}"`
     )
-    return Promise.resolve(vfile.create())
+    return Promise.resolve(vfile.load('{}'))
   }
 }
