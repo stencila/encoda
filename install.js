@@ -31,7 +31,7 @@ async function load(modulePath) {
     const childProcess = require('child_process')
     const util = require('util')
     const exec = util.promisify(childProcess.exec)
-    await exec('npx tsc')
+    await exec('npx tsc -p tsconfig.prod.json')
     return require(modulePath)
   }
 }
