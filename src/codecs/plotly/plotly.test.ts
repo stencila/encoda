@@ -20,7 +20,6 @@ describe('decode', () => {
     const image = await plotlyLoad(data)
     expect(schema.isA('ImageObject', image)).toBe(true)
     expect(image.contentUrl).toMatch(/^data:image\/png;base64,/)
-    expect(image.contentUrl).toMatchSnapshot()
     expect(image.content).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ mediaType: plotlyCodec.mediaTypes[0], data }),
