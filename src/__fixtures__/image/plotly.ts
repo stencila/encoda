@@ -6,11 +6,13 @@ export const plotlyImage = schema.imageObject({
   content: [
     {
       mediaType: plotlyMediaType,
-      data: {
-        type: 'scatter',
-        x: [1, 2, 3],
-        y: [1, 2, 3],
-      },
+      data: [
+        {
+          type: 'scatter',
+          x: [1, 2, 3],
+          y: [1, 2, 3],
+        },
+      ],
     },
   ],
 })

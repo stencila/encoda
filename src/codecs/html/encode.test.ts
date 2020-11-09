@@ -146,7 +146,7 @@ const nodes: [string, schema.Node][] = [
   ['python-code-chunk', pythonCodeChunk],
   ['r-code-expression', rCodeExpression],
   ['r-code-chunk-image-output', rCodeChunkImageOutput],
-  ['plotly-image', plotlyImage]
+  ['plotly-image', plotlyImage],
 ]
 describe('General nodes', () => {
   test.each(nodes)('%s', async (name: string, node: schema.Node) => {

@@ -36,11 +36,13 @@ describe('encode', () => {
 
   test('basic', async () => {
     const data = await plotlyDump(plotlyImage)
-    expect(data).toEqual({
-      type: 'scatter',
-      x: [1, 2, 3],
-      y: [1, 2, 3],
-    })
+    expect(data).toEqual([
+      {
+        type: 'scatter',
+        x: [1, 2, 3],
+        y: [1, 2, 3],
+      },
+    ])
   })
 
   test('not plotly', async () => {
