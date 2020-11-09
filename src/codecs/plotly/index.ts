@@ -38,6 +38,8 @@ async function ensurePlotlyPage(): Promise<puppeteer.Page> {
   return plotlyPage
 }
 
+export const plotlyMediaType = 'application/vnd.plotly.v1+json'
+
 /**
  * Define a Plotly object to obviate the need to //@ts-ignore within
  * the `page.evaluate` function below. There is a `@types/plotly.js`
@@ -49,7 +51,7 @@ async function ensurePlotlyPage(): Promise<puppeteer.Page> {
 const Plotly: any = {}
 
 export class PlotlyCodec extends Codec implements Codec {
-  public readonly mediaTypes = ['application/vnd.plotly.v1+json']
+  public readonly mediaTypes = [plotlyMediaType]
 
   /**
    * Decode Plotly JSON to an `ImageObject`.
@@ -95,7 +97,7 @@ export class PlotlyCodec extends Codec implements Codec {
       contentUrl: image,
       content: [
         {
-          mediaType: this.mediaTypes[0],
+          mediaType: plotlyMediaType,
           data,
         },
       ],
@@ -117,7 +119,7 @@ export class PlotlyCodec extends Codec implements Codec {
           content !== null &&
           'data' in content &&
           'mediaType' in content &&
-          content.mediaType === this.mediaTypes[0]
+          content.mediaType === plotlyMediaType
         ) {
           const json = JSON.stringify(content.data)
           return Promise.resolve(vfile.load(json))

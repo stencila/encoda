@@ -32,12 +32,12 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
-import * as dataUri from '../../util/dataUri'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
 import { encodeCiteContent } from '../../util/references'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
+import { plotlyMediaType } from '../plotly'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 
@@ -2374,45 +2374,65 @@ function encodeAudioObject(
 /**
  * Encode a Stencila `ImageObject` to a HTML `<img>` or `<picture>` element.
  *
- * Encodes the image's `contentUrl` to the `src` on an `<img>` and ensures that
+ * If the image has a `content` property with a known `mediaType` property, then
+ * returns a custom element of that type e.g. `<stencila-image-plotly>`.
+ *
+ * Otherwise, encodes the image's `contentUrl` to the `src` on an `<img>` and ensures that
  * the `alt` attribute is always set (with an empty string if there is no source
  * for that attribute).
- *
- * If the image has a `content` property, this function will attempt to encode
- * each item in that array into `<source>` elements within a `<picture>` element
- * (with the `<img>` as the last child).
  */
 function encodeImageObject(
   image: stencila.ImageObject,
+  enhanced = true,
   property?: string
-): HTMLImageElement | HTMLPictureElement {
+): HTMLImageElement | HTMLElement {
   const { contentUrl: src, title, text, content = [] } = image
 
+  if (enhanced && content.length > 0) {
+    for (const node of content) {
+      if (
+        typeof node === 'object' &&
+        node !== null &&
+        'data' in node &&
+        'mediaType' in node
+      ) {
+        if (node.mediaType === plotlyMediaType) {
+          return encodeImageObjectPlotly(image, node.data)
+        }
+      }
+    }
+  }
+
   const titleString = title !== undefined ? TxtCodec.stringify(title) : null
-  const img = h('img', {
+  return h('img', {
     attrs: microdata(image, property),
     src,
     title: titleString,
     alt: text ?? titleString ?? property ?? '',
   })
+}
 
-  const sources = content.reduce((prev: HTMLSourceElement[], node) => {
-    const { mediaType, data } = node as { mediaType: string; data: any }
-    if (mediaType !== undefined && data !== undefined) {
-      return [
-        ...prev,
-        h('source', {
-          attrs: {
-            type: mediaType,
-            srcset: dataUri.fromJS(data),
-          },
-        }),
-      ]
-    }
-    return prev
-  }, [])
-
-  return sources.length > 0 ? h('picture', sources, img) : img
+/**
+ * Encode an `ImageObject` with Plotly content to a `<stencila-image-plotly>` element.
+ */
+function encodeImageObjectPlotly(
+  image: stencila.ImageObject,
+  data: unknown
+): HTMLElement {
+  return h(
+    'stencila-image-plotly',
+    h(
+      'picture',
+      h(
+        'script',
+        {
+          type: plotlyMediaType,
+        },
+        JSON.stringify(data)
+      ),
+      encodeImageObject(image, false)
+    )
+  )
 }
 
 /**

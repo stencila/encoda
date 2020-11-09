@@ -1,6 +1,7 @@
 import schema from '@stencila/schema'
 
-import { PlotlyCodec } from '.'
+import { PlotlyCodec, plotlyMediaType } from '.'
+import { plotlyImage } from '../../__fixtures__/image/plotly'
 
 const plotlyCodec = new PlotlyCodec()
 
@@ -22,7 +23,7 @@ describe('decode', () => {
     expect(image.contentUrl).toMatch(/^data:image\/png;base64,/)
     expect(image.content).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ mediaType: plotlyCodec.mediaTypes[0], data }),
+        expect.objectContaining({ mediaType: plotlyMediaType, data }),
       ])
     )
   })
@@ -34,20 +35,7 @@ describe('encode', () => {
   }
 
   test('basic', async () => {
-    const image = schema.imageObject({
-      contentUrl: 'data:image/png;base64,phony',
-      content: [
-        {
-          mediaType: plotlyCodec.mediaTypes[0],
-          data: {
-            type: 'scatter',
-            x: [1, 2, 3],
-            y: [1, 2, 3],
-          },
-        },
-      ],
-    })
-    const data = await plotlyDump(image)
+    const data = await plotlyDump(plotlyImage)
     expect(data).toEqual({
       type: 'scatter',
       x: [1, 2, 3],
