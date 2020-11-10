@@ -1,3 +1,20 @@
+# [0.102.0](https://github.com/stencila/encoda/compare/v0.101.3...v0.102.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **HTML:** Make encoding of Plotly images consistent with Web component ([b9ea97a](https://github.com/stencila/encoda/commit/b9ea97a1969650220151b0a6da9e47fdecd8d7ac))
+* **IPYNB:** Correct transformation of MIME bundle data to string ([83261d7](https://github.com/stencila/encoda/commit/83261d7f3a369edb3aa299afea92346e18e92b67))
+* **IPYNB:** Fix handling of different output types ([46c1124](https://github.com/stencila/encoda/commit/46c1124cd48b64d50c76e3f42acb59ac01eb52c6))
+
+
+### Features
+
+* **Data URIs:** Allow the encoding of a Data URI from a JS object ([4a1dabd](https://github.com/stencila/encoda/commit/4a1dabd2c6465f608d3faa2a2d9c4acacc08f74f))
+* **Deps:** Add plotly.js-dist ([ad39219](https://github.com/stencila/encoda/commit/ad392193e24b40fc941643272af3a0ae1b8a9444))
+* **HTML:** Encode a ImageObject as <picture> if necessary ([80728bf](https://github.com/stencila/encoda/commit/80728bf9c8c5e4c929918a7094c614977e66ed52))
+* **Plotly:** Add codec for Plotly JSON ([5789264](https://github.com/stencila/encoda/commit/57892644a7ff7c6c476321e8f4dca6caee91bd3f))
+
 ## [0.101.3](https://github.com/stencila/encoda/compare/v0.101.2...v0.101.3) (2020-11-06)
 
 
