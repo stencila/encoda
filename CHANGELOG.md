@@ -1,3 +1,10 @@
+## [0.102.1](https://github.com/stencila/encoda/compare/v0.102.0...v0.102.1) (2020-11-10)
+
+
+### Bug Fixes
+
+* **Puppeteer:** Do not use sandbox when inside Docker ([c598477](https://github.com/stencila/encoda/commit/c5984773db74154fbb7a42e8a9ab70b7b351c0e3))
+
 # [0.102.0](https://github.com/stencila/encoda/compare/v0.101.3...v0.102.0) (2020-11-10)
 
 
