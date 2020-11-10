@@ -1,4 +1,5 @@
 import * as schema from '@stencila/schema'
+import { removeDataUris } from '../../util/media/removeDataUris'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
@@ -49,18 +50,25 @@ describe('decode', () => {
     })
   })
 
-  test.each(['metadata-v4', 'running-code', 'sunspots', 'well-switching'])(
-    '%s',
-    async (name) => {
-      expect(
-        await jsonCodec.dump(
+  test.each([
+    'metadata-v4',
+    'running-code',
+    'sunspots',
+    'well-switching',
+    'meta-analysis',
+  ])('%s', async (name) => {
+    expect(
+      await jsonCodec.dump(
+        // Remove Data URIs e.g. for ImageObjects generated from Plotly because
+        // they differ by OS
+        removeDataUris(
           // Unlink files to remove references to temporary files (which
           // will change between test runs)
           unlinkFiles(await ipynbCodec.read(fixture(name + '.ipynb')))
         )
-      ).toMatchFile(snapshot(name + '.json'))
-    }
-  )
+      )
+    ).toMatchFile(snapshot(name + '.json'))
+  })
 })
 
 describe('encode', () => {

@@ -69,3 +69,17 @@ export async function fromFile(
 
   return { mediaType, dataUri }
 }
+
+/**
+ * Create a Data URI from a JavaScript object.
+ *
+ * JSON stringifies and then base64 encodes the object.
+ *
+ * @param object The object to encode
+ * @param mediaType The media type to encode into the Data URI
+ */
+export function fromJS(object: object, mediaType = 'application/json'): string {
+  const json = JSON.stringify(object)
+  const data = Buffer.from(json).toString('base64')
+  return `data:${mediaType};base64,${data}`
+}

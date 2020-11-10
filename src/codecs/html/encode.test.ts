@@ -27,6 +27,7 @@ import {
   rCodeChunkImageOutput,
   rCodeExpression,
 } from '../../__fixtures__/code/kitchen-sink'
+import { plotlyImage } from '../../__fixtures__/image/plotly'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 
@@ -145,6 +146,7 @@ const nodes: [string, schema.Node][] = [
   ['python-code-chunk', pythonCodeChunk],
   ['r-code-expression', rCodeExpression],
   ['r-code-chunk-image-output', rCodeChunkImageOutput],
+  ['plotly-image', plotlyImage],
 ]
 describe('General nodes', () => {
   test.each(nodes)('%s', async (name: string, node: schema.Node) => {

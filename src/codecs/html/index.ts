@@ -33,12 +33,13 @@ import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
 import { getThemeAssets } from '../../util/html'
-import { truncate } from '../../util/truncate'
-import * as vfile from '../../util/vfile'
-import { TxtCodec } from '../txt'
-import { Codec, CommonEncodeOptions } from '../types'
 import { fromFiles } from '../../util/media/fromFiles'
 import { encodeCiteContent } from '../../util/references'
+import { truncate } from '../../util/truncate'
+import * as vfile from '../../util/vfile'
+import { plotlyMediaType } from '../plotly'
+import { TxtCodec } from '../txt'
+import { Codec, CommonEncodeOptions } from '../types'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -2371,16 +2372,37 @@ function encodeAudioObject(
 }
 
 /**
- * Encode a Stencila `ImageObject` to a HTML `<img>` element.
+ * Encode a Stencila `ImageObject` to a HTML `<img>` or `<picture>` element.
  *
- * Ensures that the `alt` attribute is always set (with empty string
- * if there is no other source).
+ * If the image has a `content` property with a known `mediaType` property, then
+ * returns a custom element of that type e.g. `<stencila-image-plotly>`.
+ *
+ * Otherwise, encodes the image's `contentUrl` to the `src` on an `<img>` and ensures that
+ * the `alt` attribute is always set (with an empty string if there is no source
+ * for that attribute).
  */
 function encodeImageObject(
   image: stencila.ImageObject,
+  enhanced = true,
   property?: string
-): HTMLImageElement {
-  const { contentUrl: src, title, text } = image
+): HTMLImageElement | HTMLElement {
+  const { contentUrl: src, title, text, content = [] } = image
+
+  if (enhanced && content.length > 0) {
+    for (const node of content) {
+      if (
+        typeof node === 'object' &&
+        node !== null &&
+        'data' in node &&
+        'mediaType' in node
+      ) {
+        if (node.mediaType === plotlyMediaType) {
+          return encodeImageObjectPlotly(image, node.data)
+        }
+      }
+    }
+  }
+
   const titleString = title !== undefined ? TxtCodec.stringify(title) : null
   return h('img', {
     attrs: microdata(image, property),
@@ -2388,6 +2410,29 @@ function encodeImageObject(
     title: titleString,
     alt: text ?? titleString ?? property ?? '',
   })
+}
+
+/**
+ * Encode an `ImageObject` with Plotly content to a `<stencila-image-plotly>` element.
+ */
+function encodeImageObjectPlotly(
+  image: stencila.ImageObject,
+  data: unknown
+): HTMLElement {
+  return h(
+    'stencila-image-plotly',
+    h(
+      'picture',
+      h(
+        'script',
+        {
+          type: plotlyMediaType,
+        },
+        JSON.stringify(data)
+      ),
+      encodeImageObject(image, false)
+    )
+  )
 }
 
 /**
