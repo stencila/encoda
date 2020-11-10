@@ -88,7 +88,7 @@ jobs:
 
       - script: |
           docker build --tag stencila/encoda .
-          docker run --init --rm --cap-add=SYS_ADMIN stencila/encoda
+          docker run stencila/encoda
         displayName: 'Run tests in Docker'
 
   - job: release

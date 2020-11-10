@@ -5,8 +5,9 @@
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import fs from 'fs-extra'
+import isDocker from 'is-docker'
 import path from 'path'
-import puppeteer, { Page, Browser } from 'puppeteer'
+import puppeteer, { Browser, Page } from 'puppeteer'
 import isPackaged from './app/isPackaged'
 
 export { Page, Browser }
@@ -66,9 +67,19 @@ export async function startup(): Promise<Browser> {
         browser = await puppeteer.launch({
           executablePath,
           pipe: true,
-          // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
-          // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
-          args: ['--disable-dev-shm-usage'],
+          args: isDocker()
+            ? [
+                // Turn off Chrome's sandbox. The alternative is to make the container privileged
+                // by adding `--cap-add=SYS_ADMIN` to `docker run`. But in the context's that Encoda normally
+                // runs within a container, this is even more undesirable.
+                // See the following for discussion https://github.com/docker/for-linux/issues/496#issuecomment-441149510
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
+                // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
+                '--disable-dev-shm-usage',
+              ]
+            : [],
         })
         log.debug(`Browser launched. pid: ${browser.process().pid}`)
       }

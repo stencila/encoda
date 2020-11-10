@@ -9,6 +9,7 @@
  */
 
 import * as schema from '@stencila/schema'
+import isDocker from 'is-docker'
 import os from 'os'
 // @ts-ignore
 import pa11y from 'pa11y'
@@ -113,7 +114,7 @@ describe('Articles', () => {
        *   - https://dev.azure.com/stencila/stencila/_build/results?buildId=3936&view=logs&j=4420cb5a-3e60-5d7c-f139-f152148f0805&t=e0f33437-cdeb-5531-d1ec-78693af04887&l=1700
        *   - https://dev.azure.com/stencila/stencila/_build/results?buildId=824&view=logs&j=bdfe1ee2-0dfa-5214-b354-014a2d5aae2e&t=95f41a85-677a-5e68-afba-63ba0e2792c1&l=1091
        */
-      if (os.type() === 'Darwin' || process.env.DOCKER === 'true') return
+      if (os.type() === 'Darwin' || isDocker()) return
 
       // Accessibility test
       // Rules to ignore (add rule codes here if you need to during development)
