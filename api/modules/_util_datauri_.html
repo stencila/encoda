@@ -81,6 +81,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_datauri_.html#fromfile" class="tsd-kind-icon">from<wbr>File</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_datauri_.html#fromjs" class="tsd-kind-icon">fromJS</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_datauri_.html#match" class="tsd-kind-icon">match</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_datauri_.html#tofile" class="tsd-kind-icon">to<wbr>File</a></li>
 							</ul>
@@ -96,7 +97,7 @@
 					<div class="tsd-signature tsd-kind-icon">DATA_<wbr>URI_<wbr>REGEX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /^data:([\w/+]+);(charset&#x3D;[\w-]+|base64).*,(.*)/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3c02b71c/src/util/dataUri.ts#L13">src/util/dataUri.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L13">src/util/dataUri.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -106,7 +107,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:util&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3c02b71c/src/util/dataUri.ts#L11">src/util/dataUri.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L11">src/util/dataUri.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -123,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3c02b71c/src/util/dataUri.ts#L56">src/util/dataUri.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L56">src/util/dataUri.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -151,6 +152,44 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="fromjs" class="tsd-anchor"></a>
+					<h3>fromJS</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">fromJS<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, mediaType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L81">src/util/dataUri.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a Data URI from a JavaScript object.</p>
+								</div>
+								<p>JSON stringifies and then base64 encodes the object.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The object to encode</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mediaType: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;application/json&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The media type to encode into the Data URI</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="match" class="tsd-anchor"></a>
 					<h3>match</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -160,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3c02b71c/src/util/dataUri.ts#L20">src/util/dataUri.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L20">src/util/dataUri.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -191,7 +230,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3c02b71c/src/util/dataUri.ts#L30">src/util/dataUri.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1473b771/src/util/dataUri.ts#L30">src/util/dataUri.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,6 +280,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_util_datauri_.html#fromfile" class="tsd-kind-icon">from<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_util_datauri_.html#fromjs" class="tsd-kind-icon">fromJS</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_util_datauri_.html#match" class="tsd-kind-icon">match</a>
