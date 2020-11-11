@@ -1,7 +1,8 @@
-<doi_batch version="4.4.2" xmlns="http://www.crossref.org/schema/4.4.2">
+<?xml version="1.0" encoding="utf-8"?>
+<doi_batch version="4.4.2" xmlns="http://www.crossref.org/schema/4.4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/schema/4.4.2 http://data.crossref.org/schemas/crossref4.4.2.xsd">
   <head>
-    <doi_batch_id>5b159df20d2d35b6469cd5ef6889842420ba0645d2f4dcbc864c73b01a8195c0</doi_batch_id>
-    <timestamp>1605064422439</timestamp>
+    <doi_batch_id>070bdea9b3f4a382673209931a971dea3233c3569c28f607e8819fba7ad350a1</doi_batch_id>
+    <timestamp>1605068020541</timestamp>
     <depositor>
       <depositor_name>Stencila</depositor_name>
       <email_address>doi@stenci.la</email_address>
@@ -10,33 +11,42 @@
   </head>
   <body>
     <posted_content type="preprint">
-      <doi_data>
-        <doi>the-doi</doi>
-        <resource>the-url</resource>
-      </doi_data>
-      <group_title/>
-      <contributors/>
+      <group_title>Short Report</group_title>
+      <contributors>
+        <person_name sequence="first" contributor_role="author">
+          <given_name>Alejandra</given_name>
+          <surname>Escudero-Lara</surname>
+        </person_name>
+        <person_name sequence="additional" contributor_role="author">
+          <given_name>Josep</given_name>
+          <surname>Argerich</surname>
+        </person_name>
+        <person_name sequence="additional" contributor_role="author">
+          <given_name>David</given_name>
+          <surname>Cabañero</surname>
+        </person_name>
+        <person_name sequence="additional" contributor_role="author">
+          <given_name>Rafael</given_name>
+          <surname>Maldonado</surname>
+        </person_name>
+      </contributors>
       <titles>
         <title>Disease-modifying effects of natural Δ9-tetrahydrocannabinol in endometriosis-associated pain</title>
       </titles>
       <posted_date>
-        <year>2020</year>
-        <month>1</month>
+        <month>01</month>
         <day>14</day>
+        <year>2020</year>
       </posted_date>
       <acceptance_date>
-        <year>2019</year>
         <month>12</month>
         <day>26</day>
+        <year>2019</year>
       </acceptance_date>
-      <institution/>
-      <item_number/>
-      <jats:abstract/>
-      <fr:program/>
-      <ai:program/>
-      <rel:program/>
-      <scn_policies/>
-      <citation_list/>
+      <doi_data>
+        <doi>10.47704/1</doi>
+        <resource>https://example.org</resource>
+      </doi_data>
     </posted_content>
   </body>
 </doi_batch>

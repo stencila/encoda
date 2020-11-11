@@ -58,7 +58,8 @@ export class CrossrefCodec extends Codec implements Codec {
   /**
    * Encode a `CreativeWork` to Crossref's metadata deposit schema.
    *
-   * https://www.crossref.org/education/content-registration/crossrefs-metadata-deposit-schema/crossref-xsd-schema-quick-reference/
+   * See https://www.crossref.org/education/content-registration/crossrefs-metadata-deposit-schema/crossref-xsd-schema-quick-reference/
+   * Generated mXML can be validated via https://www.crossref.org/02publishers/parser.html
    */
   public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
     const {
@@ -67,30 +68,41 @@ export class CrossrefCodec extends Codec implements Codec {
       registrantName = 'Stencila'
     } = {}
 
-    const deposit = elem(
-      'deposit',
-      elem(
-        'doi_batch',
-        {
-          version: '4.4.2',
-          xmlns: 'http://www.crossref.org/schema/4.4.2'
-        },
-        elem(
-          'head',
-          elem('doi_batch_id', crypto.randomBytes(32).toString('hex')),
-          elem('timestamp', Date.now().toString()),
-          elem(
-            'depositor',
-            elem('depositor_name', depositorName),
-            elem('email_address', depositorEmail)
-          ),
-          elem('registrant', registrantName)
-        ),
-        elem('body', encodeNode(node))
-      )
-    )
+    const version = '4.4.2'
 
-    return Promise.resolve(vfile.load(xml.dump(deposit, { spaces: 2 })))
+    const doc = {
+      declaration: {
+        attributes: {
+          version: '1.0',
+          encoding: 'utf-8'
+        }
+      },
+      elements: [
+        elem(
+          'doi_batch',
+          {
+            version,
+            xmlns: `http://www.crossref.org/schema/${version}`,
+            'xmlns:xsi': `http://www.w3.org/2001/XMLSchema-instance`,
+            'xsi:schemaLocation': `http://www.crossref.org/schema/${version} http://data.crossref.org/schemas/crossref${version}.xsd`
+          },
+          elem(
+            'head',
+            elem('doi_batch_id', crypto.randomBytes(32).toString('hex')),
+            elem('timestamp', Date.now().toString()),
+            elem(
+              'depositor',
+              elem('depositor_name', depositorName),
+              elem('email_address', depositorEmail)
+            ),
+            elem('registrant', registrantName)
+          ),
+          elem('body', encodeNode(node))
+        )
+      ]
+    }
+
+    return Promise.resolve(vfile.load(xml.dump(doc, { spaces: 2 })))
   }
 }
 
@@ -129,15 +141,13 @@ function encodeCreativeWorkAsPostedContent(
     title = 'Untitled'
   } = work
 
+  const { doi = '10.47704/1', url = 'https://example.org' } = {}
+
   return elem(
     'posted_content',
-    {
-      type: 'preprint'
-    },
-    // Required
-    elem('doi_data', elem('doi', 'the-doi'), elem('resource', 'the-url')),
-    elem('group_title'),
-    elem('contributors'),
+    { type: 'preprint' },
+    elem('group_title', genre?.[0] ?? schema.nodeType(work)),
+    encodeAuthors(authors),
     elem('titles', elem('title', TxtCodec.stringify(title))),
     encodeDate(
       'posted_date',
@@ -148,17 +158,49 @@ function encodeCreativeWorkAsPostedContent(
         dateCreated ??
         new Date()
     ),
-    // Optional
     dateAccepted ? encodeDate('acceptance_date', dateAccepted) : null,
-    elem('institution'),
-    elem('item_number'),
-    elem('jats:abstract'),
-    elem('fr:program'),
-    elem('ai:program'),
-    elem('rel:program'),
-    elem('scn_policies'),
-    elem('citation_list')
+    //elem('institution'),
+    //elem('item_number'),
+    //elem('jats:abstract'),
+    //elem('fr:program'),
+    //elem('ai:program'),
+    //elem('rel:program'),
+    //elem('scn_policies'),
+    elem('doi_data', elem('doi', doi), elem('resource', url)),
+    //elem('citation_list')
   )
+}
+
+function encodeAuthors(
+  authors: (schema.Person | schema.Organization)[]
+): xml.Element {
+  return elem(
+    'contributors',
+    ...authors.map((author, index) =>
+      schema.isA('Person', author)
+        ? encodePerson(author, index === 0 ? 'first' : 'additional')
+        : encodeOrganization(author)
+    )
+  )
+}
+
+function encodePerson(
+  person: schema.Person,
+  sequence: 'first' | 'additional'
+): xml.Element {
+  return elem(
+    'person_name',
+    {
+      sequence,
+      contributor_role: 'author'
+    },
+    elem('given_name', person.givenNames?.join(' ')),
+    elem('surname', person.familyNames?.join(' '))
+  )
+}
+
+function encodeOrganization(organization: schema.Organization): xml.Element {
+  return elem('organization', organization.name)
 }
 
 function encodeDate(
@@ -171,8 +213,14 @@ function encodeDate(
   }
   return elem(
     tag,
-    elem('year', date.getFullYear().toString()),
-    elem('month', (date.getMonth() + 1).toString()),
-    elem('day', date.getDate().toString())
+    elem('month', (date.getMonth() + 1).toString().padStart(2, '0')),
+    elem(
+      'day',
+      date
+        .getDate()
+        .toString()
+        .padStart(2, '0')
+    ),
+    elem('year', date.getFullYear().toString())
   )
 }
