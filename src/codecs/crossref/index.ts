@@ -6,7 +6,6 @@ import crypto from 'crypto'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
-import { elem } from '../../util/xml'
 import { decodeCsl } from '../csl'
 import { Codec } from '../types'
 import { getLogger } from '@stencila/logga'
@@ -28,8 +27,8 @@ export class CrossrefCodec extends Codec implements Codec {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
       query: {
-        'query.bibliographic': content
-      }
+        'query.bibliographic': content,
+      },
     })
     if (response.statusCode === 200 && response.body.length > 0) {
       const data = JSON.parse(response.body)
@@ -46,7 +45,7 @@ export class CrossrefCodec extends Codec implements Codec {
         'journal-article': 'article-journal',
         'book-chapter': 'chapter',
         'posted-content': 'manuscript',
-        'proceedings-article': 'paper-conference'
+        'proceedings-article': 'paper-conference',
       }
       csl.type = replacers[csl.type] ?? csl.type
 
@@ -65,7 +64,7 @@ export class CrossrefCodec extends Codec implements Codec {
     const {
       depositorName = 'Stencila',
       depositorEmail = 'doi@stenci.la',
-      registrantName = 'Stencila'
+      registrantName = 'Stencila',
     } = {}
 
     const version = '4.4.2'
@@ -74,32 +73,32 @@ export class CrossrefCodec extends Codec implements Codec {
       declaration: {
         attributes: {
           version: '1.0',
-          encoding: 'utf-8'
-        }
+          encoding: 'utf-8',
+        },
       },
       elements: [
-        elem(
+        xml.elem(
           'doi_batch',
           {
             version,
             xmlns: `http://www.crossref.org/schema/${version}`,
             'xmlns:xsi': `http://www.w3.org/2001/XMLSchema-instance`,
-            'xsi:schemaLocation': `http://www.crossref.org/schema/${version} http://data.crossref.org/schemas/crossref${version}.xsd`
+            'xsi:schemaLocation': `http://www.crossref.org/schema/${version} http://data.crossref.org/schemas/crossref${version}.xsd`,
           },
-          elem(
+          xml.elem(
             'head',
-            elem('doi_batch_id', crypto.randomBytes(32).toString('hex')),
-            elem('timestamp', Date.now().toString()),
-            elem(
+            xml.elem('doi_batch_id', crypto.randomBytes(32).toString('hex')),
+            xml.elem('timestamp', Date.now().toString()),
+            xml.elem(
               'depositor',
-              elem('depositor_name', depositorName),
-              elem('email_address', depositorEmail)
+              xml.elem('depositor_name', depositorName),
+              xml.elem('email_address', depositorEmail)
             ),
-            elem('registrant', registrantName)
+            xml.elem('registrant', registrantName)
           ),
-          elem('body', encodeNode(node))
-        )
-      ]
+          xml.elem('body', encodeNode(node))
+        ),
+      ],
     }
 
     return Promise.resolve(vfile.load(xml.dump(doc, { spaces: 2 })))
@@ -138,17 +137,17 @@ function encodeCreativeWorkAsPostedContent(
     genre = [],
     licenses,
     references,
-    title = 'Untitled'
+    title = 'Untitled',
   } = work
 
   const { doi = '10.47704/1', url = 'https://example.org' } = {}
 
-  return elem(
+  return xml.elem(
     'posted_content',
     { type: 'preprint' },
-    elem('group_title', genre?.[0] ?? schema.nodeType(work)),
+    xml.elem('group_title', genre?.[0] ?? schema.nodeType(work)),
     encodeAuthors(authors),
-    elem('titles', elem('title', TxtCodec.stringify(title))),
+    xml.elem('titles', xml.elem('title', TxtCodec.stringify(title))),
     encodeDate(
       'posted_date',
       datePublished ??
@@ -158,23 +157,25 @@ function encodeCreativeWorkAsPostedContent(
         dateCreated ??
         new Date()
     ),
-    dateAccepted ? encodeDate('acceptance_date', dateAccepted) : null,
-    //elem('institution'),
-    //elem('item_number'),
-    //elem('jats:abstract'),
-    //elem('fr:program'),
-    //elem('ai:program'),
-    //elem('rel:program'),
-    //elem('scn_policies'),
-    elem('doi_data', elem('doi', doi), elem('resource', url)),
-    //elem('citation_list')
+    dateAccepted !== undefined
+      ? encodeDate('acceptance_date', dateAccepted)
+      : null,
+    // xml.elem('institution'),
+    // xml.elem('item_number'),
+    // xml.elem('jats:abstract'),
+    // xml.elem('fr:program'),
+    // xml.elem('ai:program'),
+    // xml.elem('rel:program'),
+    // xml.elem('scn_policies'),
+    xml.elem('doi_data', xml.elem('doi', doi), xml.elem('resource', url))
+    // xml.elem('citation_list')
   )
 }
 
 function encodeAuthors(
   authors: (schema.Person | schema.Organization)[]
 ): xml.Element {
-  return elem(
+  return xml.elem(
     'contributors',
     ...authors.map((author, index) =>
       schema.isA('Person', author)
@@ -188,19 +189,19 @@ function encodePerson(
   person: schema.Person,
   sequence: 'first' | 'additional'
 ): xml.Element {
-  return elem(
+  return xml.elem(
     'person_name',
     {
       sequence,
-      contributor_role: 'author'
+      contributor_role: 'author',
     },
-    elem('given_name', person.givenNames?.join(' ')),
-    elem('surname', person.familyNames?.join(' '))
+    xml.elem('given_name', person.givenNames?.join(' ')),
+    xml.elem('surname', person.familyNames?.join(' '))
   )
 }
 
 function encodeOrganization(organization: schema.Organization): xml.Element {
-  return elem('organization', organization.name)
+  return xml.elem('organization', organization.name)
 }
 
 function encodeDate(
@@ -211,16 +212,10 @@ function encodeDate(
     const iso = schema.isA('Date', date) ? date.value : date
     date = new Date(iso + ' UTC')
   }
-  return elem(
+  return xml.elem(
     tag,
-    elem('month', (date.getMonth() + 1).toString().padStart(2, '0')),
-    elem(
-      'day',
-      date
-        .getDate()
-        .toString()
-        .padStart(2, '0')
-    ),
-    elem('year', date.getFullYear().toString())
+    xml.elem('month', (date.getMonth() + 1).toString().padStart(2, '0')),
+    xml.elem('day', date.getDate().toString().padStart(2, '0')),
+    xml.elem('year', date.getFullYear().toString())
   )
 }

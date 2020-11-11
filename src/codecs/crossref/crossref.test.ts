@@ -4,6 +4,10 @@ import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 import * as elife50356 from '../../__fixtures__/article/journal/elife/50356.json'
 
+// Mocks to avoid changes in ids and timestamps between test runs
+jest.mock('crypto')
+Date.now = jest.fn(() => 1605068020541)
+
 const crossref = new CrossrefCodec()
 const yaml = new YamlCodec()
 
@@ -19,5 +23,7 @@ test.skip('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(await crossref.dump(elife50356)).toMatchFile(snapshot('elife50356.xml'))
+  expect(await crossref.dump(elife50356)).toMatchFile(
+    snapshot('elife50356.xml')
+  )
 })
