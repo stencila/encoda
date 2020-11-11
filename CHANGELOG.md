@@ -1,3 +1,10 @@
+## [0.102.2](https://github.com/stencila/encoda/compare/v0.102.1...v0.102.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* **HTML:** Use innerHTML to avoid escaping in JSON ([ba05c3e](https://github.com/stencila/encoda/commit/ba05c3e78fb041d033f12133ba7a546639ef8068)), closes [#749](https://github.com/stencila/encoda/issues/749)
+
 ## [0.102.1](https://github.com/stencila/encoda/compare/v0.102.0...v0.102.1) (2020-11-10)
 
 
