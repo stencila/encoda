@@ -2423,13 +2423,10 @@ function encodeImageObjectPlotly(
     'stencila-image-plotly',
     h(
       'picture',
-      h(
-        'script',
-        {
-          type: plotlyMediaType,
-        },
-        JSON.stringify(data)
-      ),
+      h('script', {
+        type: plotlyMediaType,
+        innerHTML: JSON.stringify(data),
+      }),
       encodeImageObject(image, false)
     )
   )
