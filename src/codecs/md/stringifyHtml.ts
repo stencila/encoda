@@ -106,13 +106,16 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
       if (node.type === 'html' && typeof node.value === 'string') {
         // Find the node index containing corresponding closing HTML tag.
         const subsequentNodes = A.dropLeft(idx)(tree.children)
-        const closingTagIdx = getClosingTagIdx(subsequentNodes)
+        const closingTagIdx = O.getOrElse(() => 0)(
+          getClosingTagIdx(subsequentNodes)
+        )
 
         // If we couldn't find the final closing tag in this Node, don't skip any Nodes
-        skipUntil = O.getOrElse(() => 0)(closingTagIdx) + idx
+        skipUntil = closingTagIdx + idx
 
         // Now that we know where in the list of the children the HTML start and end, we can merge their values
-        const subSet = A.takeLeft(skipUntil)(subsequentNodes)
+        // `closingTagIdx` is zero based, so add 1 to translate to the number of elements we want to take
+        const subSet = A.takeLeft(closingTagIdx + 1)(subsequentNodes)
         return [...innerTree, fullHtmlNode(joinHTML(subSet))]
       }
 

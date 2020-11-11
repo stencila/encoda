@@ -19,7 +19,7 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
     expect(
       await htmlCodec.dump(
         schema.paragraph({
-          content: ['R', schema.superscript({ content: ['2'] }), '.']
+          content: ['R', schema.superscript({ content: ['2'] }), '.'],
         })
       )
     ).toBe(
@@ -33,7 +33,7 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
     const article = (await mdCodec.load('R<sup>2</sup>.')) as schema.Article
     expect(article?.content?.[0] || '').toEqual(
       schema.paragraph({
-        content: ['R', schema.superscript({ content: ['2'] }), '.']
+        content: ['R', schema.superscript({ content: ['2'] }), '.'],
       })
     )
   })
@@ -52,8 +52,8 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
           schema.superscript({ content: ['1'] }),
           ' second ',
           schema.superscript({ content: ['2'] }),
-          '.'
-        ]
+          ' after.',
+        ],
       })
     )
   })
@@ -70,8 +70,8 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
           schema.link({ content: ['1'], target: 'a1' }),
           ' second ',
           schema.link({ content: ['2'], target: 'a2' }),
-          '.'
-        ]
+          ' after.',
+        ],
       })
     )
   })
