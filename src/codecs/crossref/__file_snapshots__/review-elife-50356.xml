@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doi_batch version="4.4.2" xmlns="http://www.crossref.org/schema/4.4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/schema/4.4.2 http://data.crossref.org/schemas/crossref4.4.2.xsd" xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1">
+  <head>
+    <doi_batch_id>0000000000000000000000000000000000000000000000000000000000000000</doi_batch_id>
+    <timestamp>1605068020541</timestamp>
+    <depositor>
+      <depositor_name>Stencila</depositor_name>
+      <email_address>doi@stenci.la</email_address>
+    </depositor>
+    <registrant>Stencila</registrant>
+  </head>
+  <body>
+    <peer_review>
+      <contributors>
+        <person_name sequence="first" contributor_role="reviewer">
+          <given_name>Jane</given_name>
+          <surname>Jones</surname>
+        </person_name>
+      </contributors>
+      <titles>
+        <title>Untitled</title>
+      </titles>
+      <review_date>
+        <month>11</month>
+        <day>12</day>
+        <year>2020</year>
+      </review_date>
+      <program xmlns="http://www.crossref.org/relations.xsd">
+        <related_item>
+          <inter_work_relation relationship-type="isReviewOf" identifier-type="doi">10.7554/eLife.50356</inter_work_relation>
+        </related_item>
+      </program>
+      <doi_data>
+        <doi>10.47704/1</doi>
+        <resource>https://example.org</resource>
+      </doi_data>
+    </peer_review>
+  </body>
+</doi_batch>

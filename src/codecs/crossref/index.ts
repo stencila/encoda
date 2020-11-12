@@ -10,6 +10,17 @@ import { decodeCsl } from '../csl'
 import { Codec } from '../types'
 import { getLogger } from '@stencila/logga'
 import { TxtCodec } from '../txt'
+import { encodeAbstract } from '../jats'
+
+// @ts-ignore
+interface Review extends schema.CreativeWork {
+  type: 'Review'
+  itemReviewed: schema.Thing
+  reviewAspect: string
+  reviewBody: string
+}
+
+type ContributorRole = 'author' | 'reviewer'
 
 const log = getLogger('encoda:crossref')
 
@@ -58,10 +69,12 @@ export class CrossrefCodec extends Codec implements Codec {
    * Encode a `CreativeWork` to Crossref's metadata deposit schema.
    *
    * See https://www.crossref.org/education/content-registration/crossrefs-metadata-deposit-schema/crossref-xsd-schema-quick-reference/
-   * Generated mXML can be validated via https://www.crossref.org/02publishers/parser.html
+   * Generated XML can be validated via https://www.crossref.org/02publishers/parser.html
    */
   public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
     const {
+      doi = '10.47704/1',
+      url = 'https://example.org',
       depositorName = 'Stencila',
       depositorEmail = 'doi@stenci.la',
       registrantName = 'Stencila',
@@ -84,6 +97,7 @@ export class CrossrefCodec extends Codec implements Codec {
             xmlns: `http://www.crossref.org/schema/${version}`,
             'xmlns:xsi': `http://www.w3.org/2001/XMLSchema-instance`,
             'xsi:schemaLocation': `http://www.crossref.org/schema/${version} http://data.crossref.org/schemas/crossref${version}.xsd`,
+            'xmlns:jats': 'http://www.ncbi.nlm.nih.gov/JATS1',
           },
           xml.elem(
             'head',
@@ -96,7 +110,7 @@ export class CrossrefCodec extends Codec implements Codec {
             ),
             xml.elem('registrant', registrantName)
           ),
-          xml.elem('body', encodeNode(node))
+          xml.elem('body', encodeNode(node, doi, url))
         ),
       ],
     }
@@ -106,15 +120,92 @@ export class CrossrefCodec extends Codec implements Codec {
 }
 
 /**
- * Encodes a `Node` as a child fro the Crossref `<body>` element
+ * Encodes a `Node` as a child of the Crossref `<body>` element
  *
- * Currently only handles one type of encoding (to preprint) but
- * this may be expanded in the future.
+ * Currently handles a limited number of node types but this list
+ * may be expanded in the future.
  */
-function encodeNode(node: schema.Node): xml.Element | undefined {
-  if (schema.isCreativeWork(node))
-    return encodeCreativeWorkAsPostedContent(node)
+function encodeNode(
+  node: schema.Node,
+  doi: string,
+  url: string
+): xml.Element | undefined {
+  // @ts-ignore TODO: Replace with schema.isA('Review', node)
+  if (schema.nodeType(node) === 'Review') {
+    // @ts-ignore
+    return encodePeerReview(node, doi, url)
+  } else if (schema.isCreativeWork(node)) {
+    return encodePostedContent(node, doi, url)
+  }
   log.error(`Unhandled node type ${schema.nodeType(node)}`)
+}
+
+/**
+ * Most of the following functions are named by the name of the XML element
+ * they produce, not by the node type they consume e.g.
+ *
+ * `encodePeerReview` -> `<peer_review>`
+ */
+
+/**
+ * Encode a `Review` as a Crossref `<peer_review>` element.
+ *
+ * See https://www.crossref.org/education/content-registration/content-type-markup-guide/peer-reviews/
+ */
+function encodePeerReview(
+  review: Review,
+  doi: string,
+  url: string
+): xml.Element {
+  const {
+    authors = [],
+    dateAccepted,
+    dateCreated,
+    dateModified,
+    dateReceived,
+    datePublished,
+    itemReviewed,
+    title,
+  } = review
+
+  if (!schema.isCreativeWork(itemReviewed))
+    throw new Error(
+      `Item reviewed must be a CreativeWork, got a ${schema.nodeType(
+        itemReviewed
+      )}`
+    )
+
+  let itemReviewedDoi
+  for (const identifier of itemReviewed.identifiers ?? []) {
+    if (schema.isA('PropertyValue', identifier)) {
+      const { name, value } = identifier
+      if (name?.toLowerCase() === 'doi') {
+        itemReviewedDoi = `${value}`
+      }
+    }
+  }
+  if (itemReviewedDoi === undefined) {
+    throw new Error(
+      `Item reviewed must have a DOI in it's identifiers property`
+    )
+  }
+
+  return xml.elem(
+    'peer_review',
+    encodeContributors(authors, 'reviewer'),
+    encodeTitle(title),
+    encodeDate(
+      'review_date',
+      datePublished ??
+        dateAccepted ??
+        dateReceived ??
+        dateModified ??
+        dateCreated ??
+        new Date()
+    ),
+    encodeProgramRelatedItem(itemReviewedDoi),
+    encodeDoiData(doi, url)
+  )
 }
 
 /**
@@ -122,8 +213,10 @@ function encodeNode(node: schema.Node): xml.Element | undefined {
  *
  * See https://www.crossref.org/education/content-registration/content-type-markup-guide/posted-content-includes-preprints/
  */
-function encodeCreativeWorkAsPostedContent(
-  work: schema.CreativeWork
+function encodePostedContent(
+  work: schema.CreativeWork,
+  doi: string,
+  url: string
 ): xml.Element {
   const {
     authors = [],
@@ -133,21 +226,22 @@ function encodeCreativeWorkAsPostedContent(
     dateReceived,
     datePublished,
     description,
-    fundedBy,
     genre = [],
-    licenses,
-    references,
-    title = 'Untitled',
+    title,
   } = work
 
-  const { doi = '10.47704/1', url = 'https://example.org' } = {}
+  // Create JATS abstract and namespace it and it's child tags
+  const abstract = encodeAbstract(description)
+  if (abstract !== null) {
+    abstract.attributes = { xmlns: 'http://www.ncbi.nlm.nih.gov/JATS1' }
+  }
 
   return xml.elem(
     'posted_content',
     { type: 'preprint' },
     xml.elem('group_title', genre?.[0] ?? schema.nodeType(work)),
-    encodeAuthors(authors),
-    xml.elem('titles', xml.elem('title', TxtCodec.stringify(title))),
+    encodeContributors(authors, 'author'),
+    encodeTitle(title),
     encodeDate(
       'posted_date',
       datePublished ??
@@ -160,40 +254,46 @@ function encodeCreativeWorkAsPostedContent(
     dateAccepted !== undefined
       ? encodeDate('acceptance_date', dateAccepted)
       : null,
-    // xml.elem('institution'),
-    // xml.elem('item_number'),
-    // xml.elem('jats:abstract'),
-    // xml.elem('fr:program'),
-    // xml.elem('ai:program'),
-    // xml.elem('rel:program'),
-    // xml.elem('scn_policies'),
-    xml.elem('doi_data', xml.elem('doi', doi), xml.elem('resource', url))
-    // xml.elem('citation_list')
+    abstract,
+    encodeDoiData(doi, url)
   )
 }
 
-function encodeAuthors(
-  authors: (schema.Person | schema.Organization)[]
+function encodeContributors(
+  authors: (schema.Person | schema.Organization)[],
+  contributorRole: ContributorRole
 ): xml.Element {
   return xml.elem(
     'contributors',
     ...authors.map((author, index) =>
       schema.isA('Person', author)
-        ? encodePerson(author, index === 0 ? 'first' : 'additional')
+        ? encodePersonName(
+            author,
+            contributorRole,
+            index === 0 ? 'first' : 'additional'
+          )
         : encodeOrganization(author)
     )
   )
 }
 
-function encodePerson(
+function encodeTitle(title: schema.CreativeWork['title']): xml.Element {
+  return xml.elem(
+    'titles',
+    xml.elem('title', TxtCodec.stringify(title ?? 'Untitled'))
+  )
+}
+
+function encodePersonName(
   person: schema.Person,
+  contributorRole: ContributorRole,
   sequence: 'first' | 'additional'
 ): xml.Element {
   return xml.elem(
     'person_name',
     {
+      contributor_role: contributorRole,
       sequence,
-      contributor_role: 'author',
     },
     xml.elem('given_name', person.givenNames?.join(' ')),
     xml.elem('surname', person.familyNames?.join(' '))
@@ -218,4 +318,29 @@ function encodeDate(
     xml.elem('day', date.getDate().toString().padStart(2, '0')),
     xml.elem('year', date.getFullYear().toString())
   )
+}
+
+function encodeProgramRelatedItem(
+  doi: string,
+  relation = 'isReviewOf'
+): xml.Element {
+  return xml.elem(
+    'program',
+    { xmlns: 'http://www.crossref.org/relations.xsd' },
+    xml.elem(
+      'related_item',
+      xml.elem(
+        'inter_work_relation',
+        {
+          'relationship-type': relation,
+          'identifier-type': 'doi',
+        },
+        doi
+      )
+    )
+  )
+}
+
+function encodeDoiData(doi: string, url: string): xml.Element {
+  return xml.elem('doi_data', xml.elem('doi', doi), xml.elem('resource', url))
 }

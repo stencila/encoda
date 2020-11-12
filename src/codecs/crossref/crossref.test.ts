@@ -1,3 +1,4 @@
+import * as schema from '@stencila/schema'
 import { CrossrefCodec } from '.'
 import * as vfile from '../../util/vfile'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
@@ -22,8 +23,26 @@ test.skip('decode', async () => {
   done()
 })
 
-test('encode', async () => {
-  expect(await crossref.dump(elife50356)).toMatchFile(
-    snapshot('elife50356.xml')
-  )
+describe('encode', () => {
+  test('eLife article', async () => {
+    expect(await crossref.dump(elife50356)).toMatchFile(
+      snapshot('article-elife-50356.xml')
+    )
+  })
+
+  test('review of eLife article', async () => {
+    const review = {
+      type: 'Review',
+      authors: [
+        schema.person({
+          givenNames: ['Jane'],
+          familyNames: ['Jones'],
+        }),
+      ],
+      itemReviewed: elife50356,
+    }
+    expect(await crossref.dump(review)).toMatchFile(
+      snapshot('review-elife-50356.xml')
+    )
+  })
 })

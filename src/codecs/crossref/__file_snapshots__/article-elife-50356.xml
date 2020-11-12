@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<doi_batch version="4.4.2" xmlns="http://www.crossref.org/schema/4.4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/schema/4.4.2 http://data.crossref.org/schemas/crossref4.4.2.xsd">
+<doi_batch version="4.4.2" xmlns="http://www.crossref.org/schema/4.4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/schema/4.4.2 http://data.crossref.org/schemas/crossref4.4.2.xsd" xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1">
   <head>
     <doi_batch_id>0000000000000000000000000000000000000000000000000000000000000000</doi_batch_id>
     <timestamp>1605068020541</timestamp>
@@ -43,6 +43,9 @@
         <day>26</day>
         <year>2019</year>
       </acceptance_date>
+      <abstract xmlns="http://www.ncbi.nlm.nih.gov/JATS1">
+        <p>Endometriosis is a chronic painful disease highly prevalent in women that is defined by growth of endometrial tissue outside the uterine cavity and lacks adequate treatment. Medical use of cannabis derivatives is a current hot topic and it is unknown whether phytocannabinoids may modify endometriosis symptoms and development. Here we evaluate the effects of repeated exposure to Δ9-tetrahydrocannabinol (THC) in a mouse model of surgically-induced endometriosis. In this model, female mice develop mechanical hypersensitivity in the caudal abdomen, mild anxiety-like behavior and substantial memory deficits associated with the presence of extrauterine endometrial cysts. Interestingly, daily treatments with THC (2 mg/kg) alleviate mechanical hypersensitivity and pain unpleasantness, modify uterine innervation and restore cognitive function without altering the anxiogenic phenotype. Strikingly, THC also inhibits the development of endometrial cysts. These data highlight the interest of scheduled clinical trials designed to investigate possible benefits of THC for women with endometriosis.</p>
+      </abstract>
       <doi_data>
         <doi>10.47704/1</doi>
         <resource>https://example.org</resource>
