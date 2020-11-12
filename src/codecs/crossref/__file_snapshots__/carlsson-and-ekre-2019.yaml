@@ -1,20 +1,24 @@
+type: Article
 authors:
-  - familyNames:
+  - type: Person
+    familyNames:
       - Carlsson
     givenNames:
       - Kristoffer
-    type: Person
-  - familyNames:
+  - type: Person
+    familyNames:
       - Ekre
     givenNames:
       - Fredrik
-    type: Person
-title: Tensors.jl — Tensor Computations in Julia
 datePublished: '2019'
 isPartOf:
-  volumeNumber: '7'
-  isPartOf:
-    title: Journal of Open Research Software
-    type: Periodical
   type: PublicationVolume
-type: Article
+  isPartOf:
+    type: Periodical
+    name: Journal of Open Research Software
+  volumeNumber: '7'
+publisher:
+  type: Organization
+  name: 'Ubiquity Press, Ltd.'
+title: Tensors.jl — Tensor Computations in Julia
+url: 'http://dx.doi.org/10.5334/jors.182'

@@ -37,9 +37,7 @@ export class CrossrefCodec extends Codec implements Codec {
   public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
-      query: {
-        'query.bibliographic': content,
-      },
+      searchParams: new URLSearchParams([['query.bibliographic', content]]),
     })
     if (response.statusCode === 200 && response.body.length > 0) {
       const data = JSON.parse(response.body)

@@ -12,15 +12,19 @@ Date.now = jest.fn(() => 1605068020541)
 const crossref = new CrossrefCodec()
 const yaml = new YamlCodec()
 
-const query2yaml = async (query: string) =>
-  vfile.dump(await yaml.encode(await crossref.decode(await vfile.load(query))))
+describe('decode', () => {
+  const query2yaml = async (query: string) =>
+    vfile.dump(
+      await yaml.encode(await crossref.decode(await vfile.load(query)))
+    )
 
-test.skip('decode', async () => {
-  const done = await nockRecord('carlsson-and-ekre-2019.json')
-  expect(
-    await query2yaml('Carlsson and Ekre, Tensor Computations in Julia')
-  ).toMatchFile(snapshot('carlsson-and-ekre-2019.yaml'))
-  done()
+  test('Carlsson and Ekre', async () => {
+    const done = await nockRecord('nock-record-carlsson-and-ekre.json')
+    expect(
+      await query2yaml('Carlsson and Ekre, Tensor Computations in Julia')
+    ).toMatchFile(snapshot('carlsson-and-ekre-2019.yaml'))
+    done()
+  })
 })
 
 describe('encode', () => {
@@ -31,6 +35,7 @@ describe('encode', () => {
   })
 
   test('review of eLife article', async () => {
+    // TODO: Replace this with `stencila.review()` constructor
     const review = {
       type: 'Review',
       authors: [
@@ -39,6 +44,7 @@ describe('encode', () => {
           familyNames: ['Jones'],
         }),
       ],
+      datePublished: '2020-11-12',
       itemReviewed: elife50356,
     }
     expect(await crossref.dump(review)).toMatchFile(
