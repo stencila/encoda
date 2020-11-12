@@ -12,7 +12,7 @@
   <body>
     <peer_review>
       <contributors>
-        <person_name sequence="first" contributor_role="reviewer">
+        <person_name contributor_role="reviewer" sequence="first">
           <given_name>Jane</given_name>
           <surname>Jones</surname>
         </person_name>
