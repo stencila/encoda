@@ -7,7 +7,7 @@ import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { decodeCsl } from '../csl'
-import { Codec } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 import { getLogger } from '@stencila/logga'
 import { TxtCodec } from '../txt'
 import { encodeAbstract } from '../jats'
@@ -21,6 +21,18 @@ interface Review extends schema.CreativeWork {
 }
 
 type ContributorRole = 'author' | 'reviewer'
+
+interface EncodeOptions extends CommonEncodeOptions {
+  /**
+   * The DOI for the node
+   */
+  doi?: string
+
+  /**
+   * The URL for the node
+   */
+  url?: string
+}
 
 const log = getLogger('encoda:crossref')
 
@@ -69,17 +81,25 @@ export class CrossrefCodec extends Codec implements Codec {
    * See https://www.crossref.org/education/content-registration/crossrefs-metadata-deposit-schema/crossref-xsd-schema-quick-reference/
    * Generated XML can be validated via https://www.crossref.org/02publishers/parser.html
    */
-  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
+  public readonly encode = (
+    node: schema.Node,
+    options: EncodeOptions = this.commonEncodeDefaults
+  ): Promise<vfile.VFile> => {
+    // The following "options" are actually required so throw an error
+    // if not supplied
+    const { doi, url } = options
+    if (doi === undefined) throw new Error(`The "doi" parameter is required.`)
+    if (url === undefined) throw new Error(`The "url" parameter is required.`)
+
+    // These constant may be added to options later.
     const {
-      doi = '10.47704/1',
-      url = 'https://example.org',
       depositorName = 'Stencila',
       depositorEmail = 'doi@stenci.la',
       registrantName = 'Stencila',
+      version = '4.4.2',
     } = {}
 
-    const version = '4.4.2'
-
+    // The root XMl document to create
     const doc = {
       declaration: {
         attributes: {

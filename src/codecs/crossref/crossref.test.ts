@@ -29,9 +29,12 @@ describe('decode', () => {
 
 describe('encode', () => {
   test('eLife article', async () => {
-    expect(await crossref.dump(elife50356)).toMatchFile(
-      snapshot('article-elife-50356.xml')
-    )
+    expect(
+      await crossref.dump(elife50356, {
+        doi: '10.5555/12345',
+        url: 'https://example.org',
+      })
+    ).toMatchFile(snapshot('article-elife-50356.xml'))
   })
 
   test('review of eLife article', async () => {
@@ -47,8 +50,11 @@ describe('encode', () => {
       datePublished: '2020-11-12',
       itemReviewed: elife50356,
     }
-    expect(await crossref.dump(review)).toMatchFile(
-      snapshot('review-elife-50356.xml')
-    )
+    expect(
+      await crossref.dump(review, {
+        doi: '10.5555/12345',
+        url: 'https://example.org',
+      })
+    ).toMatchFile(snapshot('review-elife-50356.xml'))
   })
 })
