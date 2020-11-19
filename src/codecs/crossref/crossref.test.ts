@@ -38,9 +38,7 @@ describe('encode', () => {
   })
 
   test('review of eLife article', async () => {
-    // TODO: Replace this with `stencila.review()` constructor
-    const review = {
-      type: 'Review',
+    const review = schema.review({
       authors: [
         schema.person({
           givenNames: ['Jane'],
@@ -48,8 +46,8 @@ describe('encode', () => {
         }),
       ],
       datePublished: '2020-11-12',
-      itemReviewed: elife50356,
-    }
+      itemReviewed: elife50356 as schema.Article,
+    })
     expect(
       await crossref.dump(review, {
         doi: '10.5555/12345',

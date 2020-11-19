@@ -12,14 +12,6 @@ import { getLogger } from '@stencila/logga'
 import { TxtCodec } from '../txt'
 import { encodeAbstract } from '../jats'
 
-// @ts-ignore
-interface Review extends schema.CreativeWork {
-  type: 'Review'
-  itemReviewed: schema.Thing
-  reviewAspect: string
-  reviewBody: string
-}
-
 type ContributorRole = 'author' | 'reviewer'
 
 interface EncodeOptions extends CommonEncodeOptions {
@@ -171,7 +163,7 @@ function encodeNode(
  * See https://www.crossref.org/education/content-registration/content-type-markup-guide/peer-reviews/
  */
 function encodePeerReview(
-  review: Review,
+  review: schema.Review,
   doi: string,
   url: string
 ): xml.Element {
@@ -185,6 +177,9 @@ function encodePeerReview(
     itemReviewed,
     title,
   } = review
+
+  if (itemReviewed === undefined)
+    throw new Error('Review must habe an `itemReviewed` property')
 
   if (!schema.isCreativeWork(itemReviewed))
     throw new Error(
