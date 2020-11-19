@@ -6021,29 +6021,19 @@
           ]
         },
         " to fit a mixed-effect (ME) model to the data reported for each measure. In this way, we can estimate an overall interval of R",
-        [
-          {
-            "type": "Superscript",
-            "content": [
-              "2"
-            ]
-          },
-          " values based on the effect sizes and the sample sizes. We can also estimate the interval of R",
-          {
-            "type": "Superscript",
-            "content": []
-          }
-        ],
+        {
+          "type": "Superscript",
+          "content": [
+            "2"
+          ]
+        },
         " values based on the effect sizes and the sample sizes. We can also estimate the interval of R",
-        [
-          {
-            "type": "Superscript",
-            "content": [
-              "2"
-            ]
-          },
-          " that we can expect in future studies (this is called prediction interval). A compact way to represent these results is given by forest plots: for each study, we represent the effect size and the related sample size using a square and a horizontal error bar; then for each measure, we represent the results from the ME model using a diamond and an additional error bar; finally to represent the prediction interval we use two hourglasses and a dotted line."
-        ],
+        {
+          "type": "Superscript",
+          "content": [
+            "2"
+          ]
+        },
         " that we can expect in future studies (this is called prediction interval). A compact way to represent these results is given by forest plots: for each study, we represent the effect size and the related sample size using a square and a horizontal error bar; then for each measure, we represent the results from the ME model using a diamond and an additional error bar; finally to represent the prediction interval we use two hourglasses and a dotted line."
       ]
     },
@@ -15119,7 +15109,7 @@
         "execution_count": 12
       }
     },
-    null,
+    0,
     {
       "type": "Paragraph",
       "content": [

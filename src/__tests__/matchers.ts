@@ -1,5 +1,5 @@
 import stencila from '@stencila/schema'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import fs from 'fs-extra'
 import diff from 'jest-diff'
 import { toMatchFile } from 'jest-file-snapshot'
