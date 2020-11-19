@@ -1,3 +1,15 @@
+## [0.102.3](https://github.com/stencila/encoda/compare/v0.102.2...v0.102.3) (2020-11-19)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/schema to ^0.47.1 ([13b981c](https://github.com/stencila/encoda/commit/13b981c82cdc7b28d7b37017d9251a5651fa2923))
+* **dependencies:** update dependency fp-ts to ^2.8.6 ([60d8700](https://github.com/stencila/encoda/commit/60d870082b0cda59eb0c0434aa4d0e85860f0fe1))
+* **dependencies:** update dependency immer to ^7.0.15 ([803886e](https://github.com/stencila/encoda/commit/803886ee00c6d9b6ed16dd2ed7a28f4c8ba53b4d))
+* **dependencies:** update dependency pdf-lib to ^1.12.0 ([4d2c2df](https://github.com/stencila/encoda/commit/4d2c2df05c7cd09e4e23535729142a27efc9d204))
+* **dependencies:** update dependency puppeteer to ^5.5.0 ([9bd4b74](https://github.com/stencila/encoda/commit/9bd4b742774805c6584ea5bb0a955958a8ead096))
+* **Markdown:** Fix encoding of inline HTML tags ([89b81f5](https://github.com/stencila/encoda/commit/89b81f58d781525a2948bfbf82cb39397adac04c))
+
 ## [0.102.2](https://github.com/stencila/encoda/compare/v0.102.1...v0.102.2) (2020-11-11)
 
 
