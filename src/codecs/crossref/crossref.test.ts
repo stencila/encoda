@@ -4,6 +4,7 @@ import * as vfile from '../../util/vfile'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 import * as elife50356 from '../../__fixtures__/article/journal/elife/50356.json'
+import * as plosone0229075 from '../../__fixtures__/article/journal/plosone/0229075.json'
 
 // Mocks to avoid changes in ids and timestamps between test runs
 jest.mock('crypto')
@@ -35,6 +36,15 @@ describe('encode', () => {
         url: 'https://example.org',
       })
     ).toMatchFile(snapshot('article-elife-50356.xml'))
+  })
+
+  test('PLOS article', async () => {
+    expect(
+      await crossref.dump(plosone0229075, {
+        doi: '10.5555/12345',
+        url: 'https://example.org',
+      })
+    ).toMatchFile(snapshot('article-plosone-0229075.xml'))
   })
 
   test('review of eLife article', async () => {

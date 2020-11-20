@@ -91,7 +91,6 @@ export class CrossrefCodec extends Codec implements Codec {
       version = '4.4.2',
     } = {}
 
-    // The root XMl document to create
     const doc = {
       declaration: {
         attributes: {
@@ -140,9 +139,7 @@ function encodeNode(
   doi: string,
   url: string
 ): xml.Element | undefined {
-  // @ts-ignore TODO: Replace with schema.isA('Review', node)
-  if (schema.nodeType(node) === 'Review') {
-    // @ts-ignore
+  if (schema.isA('Review', node)) {
     return encodePeerReview(node, doi, url)
   } else if (schema.isCreativeWork(node)) {
     return encodePostedContent(node, doi, url)
@@ -192,8 +189,8 @@ function encodePeerReview(
   for (const identifier of itemReviewed.identifiers ?? []) {
     if (schema.isA('PropertyValue', identifier)) {
       const { name, value } = identifier
-      if (name?.toLowerCase() === 'doi') {
-        itemReviewedDoi = `${value}`
+      if (name?.toLowerCase() === 'doi' && typeof value === 'string') {
+        itemReviewedDoi = value
       }
     }
   }
@@ -240,6 +237,7 @@ function encodePostedContent(
     datePublished,
     description,
     genre = [],
+    references,
     title,
   } = work
 
@@ -268,7 +266,8 @@ function encodePostedContent(
       ? encodeDate('acceptance_date', dateAccepted)
       : null,
     abstract,
-    encodeDoiData(doi, url)
+    encodeDoiData(doi, url),
+    encodeCitationList(references)
   )
 }
 
@@ -356,4 +355,114 @@ function encodeProgramRelatedItem(
 
 function encodeDoiData(doi: string, url: string): xml.Element {
   return xml.elem('doi_data', xml.elem('doi', doi), xml.elem('resource', url))
+}
+
+function encodeCitationList(
+  references: schema.CreativeWork['references']
+): xml.Element | null {
+  if (references === undefined) return null
+  return xml.elem(
+    'citation_list',
+    ...references.map((work, index) => {
+      if (typeof work === 'string') {
+        return xml.elem(
+          'citation',
+          { key: `ref${index + 1}` },
+          xml.elem('unstructured_citation', work)
+        )
+      }
+
+      return xml.elem(
+        'citation',
+        { key: `ref${index + 1}` },
+        encodeJournalTitle(work),
+        encodeAuthor(work),
+        encodeVolume(work),
+        encodeIssue(work),
+        encodeCYear(work),
+        encodeDoi(work),
+        encodeArticleTitle(work)
+      )
+    })
+  )
+}
+
+function encodeJournalTitle(work: schema.CreativeWork): xml.Element | null {
+  let isPartOf = work.isPartOf
+  while (isPartOf) {
+    if (schema.isA('Periodical', isPartOf))
+      return xml.elem(
+        'journal_title',
+        TxtCodec.stringify(isPartOf.title ?? isPartOf.name ?? 'Unknown')
+      )
+    isPartOf = isPartOf.isPartOf
+  }
+  return null
+}
+
+function encodeAuthor(work: schema.CreativeWork): xml.Element | null {
+  const firstAuthor = work.authors?.[0]
+  const firstAuthorName = schema.isA('Person', firstAuthor)
+    ? firstAuthor.familyNames?.[0] ?? firstAuthor.name
+    : firstAuthor?.name
+  return firstAuthorName !== undefined
+    ? xml.elem('author', firstAuthorName)
+    : null
+}
+
+function encodeVolume(work: schema.CreativeWork): xml.Element | null {
+  let isPartOf = work.isPartOf
+  while (isPartOf) {
+    if (
+      schema.isA('PublicationVolume', isPartOf) &&
+      isPartOf.volumeNumber !== undefined
+    )
+      return xml.elem('volume', isPartOf.volumeNumber.toString())
+    isPartOf = isPartOf.isPartOf
+  }
+  return null
+}
+
+function encodeIssue(work: schema.CreativeWork): xml.Element | null {
+  let isPartOf = work.isPartOf
+  while (isPartOf) {
+    if (
+      schema.isA('PublicationIssue', isPartOf) &&
+      isPartOf.issueNumber !== undefined
+    )
+      return xml.elem('issue', isPartOf.issueNumber.toString())
+    isPartOf = isPartOf.isPartOf
+  }
+  return null
+}
+
+function encodeCYear(work: schema.CreativeWork): xml.Element | null {
+  const date =
+    work.datePublished ??
+    work.dateAccepted ??
+    work.dateReceived ??
+    work.dateCreated
+  if (date !== undefined) {
+    const value = typeof date === 'string' ? date : date.value
+    return xml.elem('cYear', value.substr(0, 4))
+  }
+  return null
+}
+
+function encodeDoi(work: schema.CreativeWork): xml.Element | null {
+  for (const identifier of work.identifiers ?? []) {
+    if (
+      schema.isA('PropertyValue', identifier) &&
+      identifier.name?.toLowerCase() === 'doi' &&
+      typeof identifier.value === 'string'
+    )
+      return xml.elem('doi', identifier.value)
+  }
+  return null
+}
+
+function encodeArticleTitle(work: schema.CreativeWork): xml.Element | null {
+  return work.title !== undefined
+    ? xml.elem('article_title', TxtCodec.stringify(work.title))
+    : null
 }
