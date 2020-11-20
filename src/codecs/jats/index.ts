@@ -522,7 +522,7 @@ function decodeAbstract(
 /**
  * Encode a Stencila `Article.description` to a JATS `<abstract>` element.
  */
-function encodeAbstract(
+export function encodeAbstract(
   description?: stencila.Article['description']
 ): xml.Element | null {
   if (description === undefined) return null

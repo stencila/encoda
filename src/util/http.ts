@@ -8,7 +8,7 @@
 
 import { getLogger } from '@stencila/logga'
 import fs from 'fs'
-import got, { Response } from 'got'
+import got, { Options, Response } from 'got'
 import stream from 'stream'
 import util from 'util'
 import cache from './app/cacheSync'
@@ -24,7 +24,7 @@ const log = getLogger('encoda:util:http')
 const http = got.extend({
   cache,
   headers: {
-    'user-agent': `encoda (https://github.com/stencila/encoda)`,
+    'user-agent': `Encoda (https://github.com/stencila/encoda)`,
     'accept-encoding': 'gzip, deflate',
   },
 })
@@ -37,10 +37,10 @@ const http = got.extend({
  */
 export async function get(
   url: string,
-  options: any = {}
+  options: Options = {}
 ): Promise<Response<string>> {
   try {
-    return await http.get(url, options)
+    return (await http.get(url, options)) as Response<string>
   } catch (error) {
     const { message, response = {} } = error
     const { body = '' } = response
