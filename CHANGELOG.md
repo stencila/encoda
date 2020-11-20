@@ -1,3 +1,19 @@
+# [0.103.0](https://github.com/stencila/encoda/compare/v0.102.3...v0.103.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* **Crossref:** Add DOI and URL as encode options ([535e2c4](https://github.com/stencila/encoda/commit/535e2c42f654d9657f8c1ce72ba489df758ae27b))
+* **Crossref:** Add encoding of references ([05718fe](https://github.com/stencila/encoda/commit/05718fe29fbc291a033f303deca51949575bcce5))
+* **Crossref:** Adjust for new Got API ([ff6ff74](https://github.com/stencila/encoda/commit/ff6ff74ac1653d3b79a31fc75c5efcf4c11de831))
+* **Crossref:** Updates for new Schema version ([bb77da1](https://github.com/stencila/encoda/commit/bb77da1a869b7a8a2e134f2339ea6c6490349248))
+* **Deps:** Upgrade Schema ([27aee7e](https://github.com/stencila/encoda/commit/27aee7e77dfdd3abd091a892a9fba25f4202f59e))
+
+
+### Features
+
+* **Crossref:** Encoding of reviews to metadata deposit XML ([259a96b](https://github.com/stencila/encoda/commit/259a96b1d45a04c2153b684bc83887fa2087d7ba))
+
 ## [0.102.3](https://github.com/stencila/encoda/compare/v0.102.2...v0.102.3) (2020-11-19)
 
 
