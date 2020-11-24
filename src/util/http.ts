@@ -11,7 +11,7 @@ import fs from 'fs'
 import got, { Options, Response } from 'got'
 import stream from 'stream'
 import util from 'util'
-import cache from './app/cacheSync'
+import cache from './app/cache'
 
 const pipeline = util.promisify(stream.pipeline)
 
@@ -23,6 +23,9 @@ const log = getLogger('encoda:util:http')
  */
 const http = got.extend({
   cache,
+  retry: {
+    limit: 5,
+  },
   headers: {
     'user-agent': `Encoda (https://github.com/stencila/encoda)`,
     'accept-encoding': 'gzip, deflate',
