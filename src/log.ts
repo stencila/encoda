@@ -76,9 +76,7 @@ export const logWarnLossIfAny = (
     log.warn(
       `${codec}:${op} Properties of \`${stencila.nodeType(
         node
-      )}\` not supported: ${properties
-        .map((prop) => `\`${prop}\``)
-        .join(', ')}`
+      )}\` not supported: ${properties.map((prop) => `\`${prop}\``).join(', ')}`
     )
   }
 }
