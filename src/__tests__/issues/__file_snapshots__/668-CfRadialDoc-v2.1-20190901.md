@@ -1258,7 +1258,7 @@ Figure 9.3(c): Definition of roll
 
 ### The sensor coordinate system
 
-In the sensor coordinate system, **X**~i~, each data location is characterized by a range, _r_, a rotation angle, _θ_, and a tilt angle, _τ_. Following the ground-based radar convention, the rotation angle, θ, is the angle projected on the reference plane, positive clockwise from the third axis (counting from the principal axis in Xa) looking towards the sensor from the positive principal axis. The tilt angle, _τ_, is the angle of the beam relative to the reference plane. A beam has a positive/negative _τ_ depending on whether it is on the positive/negative side of the reference plane, using the principal axis to determine the sign. Each gate location (_r_, _θ_, _τ_) in **X**~i~ can be represented in (_r_, _λ_, _φ_) in **X**.
+In the sensor coordinate system, **X**~i~, each data location is characterized by a range, _r_, a rotation angle, _θ_, and a tilt angle, _τ_. Following the ground-based radar convention, the rotation angle, _θ_, is the angle projected on the reference plane, positive _clockwise_ from the third axis (counting from the principal axis in **X**~a~) looking _towards the sensor_ from the positive principal axis. The tilt angle, _τ_, is the angle of the beam relative to the reference plane. A beam has a positive/negative _τ_ depending on whether it is on the positive/negative side of the reference plane, using the principal axis to determine the sign. Each gate location (_r_, _θ_, _τ_) in **X**~i~ can be represented in (_r_, _λ_, _φ_) in **X**.
 
 Table .: Characteristics of 4 types of sensors.
 
