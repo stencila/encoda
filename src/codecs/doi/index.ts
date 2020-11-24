@@ -1,7 +1,7 @@
 import schema from '@stencila/schema'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
-import { decodeCsl } from '../csl'
+import { decodeCrossrefCsl } from '../crossref'
 import { Codec } from '../types'
 
 /**
@@ -33,14 +33,10 @@ export class DoiCodec extends Codec implements Codec {
     if (match === null) throw new Error('Unable to parse content as a DOI')
     const doi = match[4]
 
-    const response = await http.get(`https://data.crossref.org/${doi}`, {
-      headers: {
-        accept: 'application/vnd.citationstyles.csl+json',
-      },
-    })
-    const data = JSON.parse(response.body)
+    const response = await http.get(`https://api.crossref.org/works/${doi}`)
+    const csl = JSON.parse(response.body).message
 
-    return decodeCsl(data)
+    return csl !== undefined ? decodeCrossrefCsl(csl) : null
   }
 
   public readonly encode = (): Promise<vfile.VFile> => {

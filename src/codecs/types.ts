@@ -1,5 +1,6 @@
 import * as stencila from '@stencila/schema'
 import { coerce } from '../util/coerce'
+import { reshape } from '../util/reshape'
 import { fromFiles } from '../util/media/fromFiles'
 import { resolveFiles } from '../util/media/resolveFiles'
 import { toFiles } from '../util/media/toFiles'
@@ -182,7 +183,9 @@ export abstract class Codec<
     content: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    return coerce(await this.decode(vfile.load(content), options))
+    return reshape(
+      await coerce(await this.decode(vfile.load(content), options))
+    )
   }
 
   /**
@@ -243,7 +246,9 @@ export abstract class Codec<
     options?: DecodeOptions
   ): Promise<stencila.Node> {
     return resolveFiles(
-      await coerce(await this.decode(await vfile.read(filePath), options)),
+      await reshape(
+        await coerce(await this.decode(await vfile.read(filePath), options))
+      ),
       filePath
     )
   }

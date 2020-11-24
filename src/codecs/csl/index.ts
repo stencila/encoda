@@ -9,7 +9,6 @@ import crypto from 'crypto'
 import Csl from 'csl-json'
 import path from 'path'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
-import { encodeIdentifierTypeUri } from '../../util/identifiers'
 import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
@@ -142,11 +141,11 @@ export async function decodeCsl(
     // citation-label because it is the same as id (but don't want it in `lost`)
     'citation-label': citationLabel,
 
-    //...lost
+    // ...lost
   } = csl
 
   // This is noisy, and mainly useful in development, so turn off
-  //logWarnLossIfAny('csl', 'decode', csl, lost)
+  // logWarnLossIfAny('csl', 'decode', csl, lost)
 
   const authors = await Promise.all(author.map(decodeAuthor))
 
@@ -197,7 +196,7 @@ export async function decodeCsl(
     identifiers = [
       schema.propertyValue({
         name: 'doi',
-        propertyID: encodeIdentifierTypeUri(name),
+        propertyID: 'https://registry.identifiers.org/registry/doi',
         value: doi,
       }),
     ]

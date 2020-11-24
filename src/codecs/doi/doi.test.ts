@@ -1,10 +1,13 @@
 import { DoiCodec } from '.'
-import { convert } from '../..'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
+import { YamlCodec } from '../yaml'
 
-const { sniff, encode } = new DoiCodec()
+const doiCodec = new DoiCodec()
+const yamlCodec = new YamlCodec()
 
 test('sniff', async () => {
+  const { sniff } = doiCodec
+
   expect(await sniff('10.1001/this/is/a/doi')).toBe(true)
   expect(await sniff('doi 10.1001/ok')).toBe(true)
   expect(await sniff('DOI 10.1001/ok')).toBe(true)
@@ -20,11 +23,11 @@ test('sniff', async () => {
   expect(await sniff('http://foo.org/10.5334/jors.182')).toBe(false)
 })
 
-const doi2yaml = async (doi: string) =>
-  convert(doi, undefined, { from: 'doi', to: 'yaml' })
-
 test('decode', async () => {
-  const done = await nockRecord('10.5334-jors-182.json')
+  const doi2yaml = async (doi: string) =>
+    yamlCodec.dump(await doiCodec.load(doi))
+
+  const done = await nockRecord('nock-record-decode.json')
   expect(await doi2yaml('10.5334/jors.182')).toMatchFile(
     snapshot('10.5334-jors-182.yaml')
   )
@@ -32,5 +35,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(() => encode()).toThrow(/Encoding to DOI is not yet implemented/)
+  expect(() => doiCodec.encode()).toThrow(
+    /Encoding to DOI is not yet implemented/
+  )
 })
