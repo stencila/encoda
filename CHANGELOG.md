@@ -1,3 +1,10 @@
+## [0.103.1](https://github.com/stencila/encoda/compare/v0.103.0...v0.103.1) (2020-11-24)
+
+
+### Bug Fixes
+
+* **HTML:** Do not indent <address> elements ([7880a81](https://github.com/stencila/encoda/commit/7880a813261d3a29b4af97938d8a567ccd07066f)), closes [#764](https://github.com/stencila/encoda/issues/764)
+
 # [0.103.0](https://github.com/stencila/encoda/compare/v0.102.3...v0.103.0) (2020-11-20)
 
 
