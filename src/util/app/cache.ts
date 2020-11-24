@@ -2,7 +2,7 @@ import crypto from 'crypto'
 import fs from 'fs-extra'
 import Keyv from 'keyv'
 import path from 'path'
-import tempy from 'tempy'
+import tempDir from 'temp-dir'
 
 /**
  * Cache class that implements the methods required to
@@ -18,7 +18,7 @@ export class Cache implements Keyv.Store<string> {
   private dir: string
 
   public constructor() {
-    this.dir = tempy.directory({ prefix: 'encoda' })
+    this.dir = path.join(tempDir, 'stencila', 'encoda', 'cache')
     fs.ensureDirSync(this.dir)
   }
 
@@ -30,7 +30,10 @@ export class Cache implements Keyv.Store<string> {
    * and does not need to be secure.
    */
   private filename(key: string): string {
-    const filename = crypto.createHash('sha1').update(key).digest('hex')
+    const filename = crypto
+      .createHash('sha1')
+      .update(key)
+      .digest('hex')
     return path.join(this.dir, filename)
   }
 
