@@ -30,10 +30,7 @@ export class Cache implements Keyv.Store<string> {
    * and does not need to be secure.
    */
   private filename(key: string): string {
-    const filename = crypto
-      .createHash('sha1')
-      .update(key)
-      .digest('hex')
+    const filename = crypto.createHash('sha1').update(key).digest('hex')
     return path.join(this.dir, filename)
   }
 
