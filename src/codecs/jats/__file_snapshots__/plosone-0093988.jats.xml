@@ -83,9 +83,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>-claimant against a 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-claimant is defined by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>In this context a Nash equilibrium is a pair of claims, such that, if each claim is known to the other traveler then neither has reason to revise their claim. For 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, there is an incentive for each traveler to undercut any common claim. Using backward induction, it is not hard to see that the travelers should each claim the amount 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, i.e., 
@@ -130,9 +130,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist against a 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist defined by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>where 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is a cost parameter. The MEC game suffers from the opposite problem to that of the TD game. Instead of exhibiting a single, deficient, Nash equilibrium, the MEC game exhibits multiple Nash equilibria; it is easy to see that any common effort level is a Nash equilibrium. Moreover, standard refinements of the Nash equilibrium concept do not select a subset of the equilibria. For instance, the Nash equilibria are strict, and thus trembling hand-perfect. Hence, classical game theory provides no obvious criterion to choose among them.
             </p>
@@ -175,9 +175,9 @@
                 <xref rid="pone-0093988-Tirole1" ref-type="bibr"/> and the War of Attrition game 
                 <xref rid="pone-0093988-MaynardSmith1" ref-type="bibr"/>. For such games the role played by errors is potentially important. To be precise, let us consider the class of continuous-strategy games with payoff function given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>where 
                 <inline-graphic xlink:href="" xlink:type="simple"/> and 
                 <inline-graphic xlink:href="" xlink:type="simple"/> are affine functions, and the strategies 
@@ -185,9 +185,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist against a 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist in such a game being given by a function of the form 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>where 
                 <inline-graphic xlink:href="" xlink:type="simple"/> defines the probability that in an interaction between an 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist and a 
@@ -241,9 +241,9 @@
         <sec>
             <title>Models</title>
             <p>The strategies in the TD and the MEC games are the claim levels and the effort levels, respectively. Typically these games are taken to have a discrete set of strategies. However, it is in many ways more natural to view the claim levels and effort levels in the two games as being continuously variable, and thus to consider variants of these games defined for continuous strategies. The continuous forms of the TD and MEC games are examples of a broad class of continuous-strategy 2-person games with payoff functions given by </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>for affine functions 
                 <inline-graphic xlink:href="" xlink:type="simple"/> and 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, and strategies 
@@ -251,13 +251,13 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/> more succinctly with the aid of the Heaviside step function 
                 <inline-graphic xlink:href="" xlink:type="simple"/>
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>as </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Games of this form have discontinuous payoff functions. Such a discontinuous payoff function is only possible in an idealized world free from all errors. In reality, errors in the perception and implementation of actions in the game will have the effect of replacing the discontinuous payoff function with a smoothed approximation, representing the expected payoff. We now define such a variant of the game in which the discontinuity in the payoff function is removed by a smoothing procedure. To accomplish this we introduce a 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-parameter family of smoothing functions 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. The functions 
@@ -274,18 +274,18 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/> in the payoff function with its smooth approximation 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. Thus, the payoff function of the smoothed game is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>We note that for sufficiently large values of 
                 <inline-graphic xlink:href="" xlink:type="simple"/> the smoothed game approximates the original game arbitrarily well.
             </p>
             <p>A convenient 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-parameter family of smoothing functions is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>and we shall use this family when explicit smoothing functions are required.</p>
         </sec>
         <sec>
@@ -297,16 +297,16 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>), then the payoff to the 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>We now define a variant of the TD game defined by (10), in which the discontinuity in the payoff function is removed by the smoothing procedure described above. To obtain the smoothed TD game we simply replace 
                 <inline-graphic xlink:href="" xlink:type="simple"/> in the payoff function with its smooth approximation 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. We therefore have that the payoff function for the smoothed TD game is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>We shall assume, without loss of generality, that the strategy space in the smoothed TD game is the interval 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, and also that the reward/punishment parameter 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. With the payoff function defined by (11), the smoothed TD game represents a natural variant of the original TD game.
@@ -322,13 +322,13 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/> to the 
                 <inline-graphic xlink:href="" xlink:type="simple"/>-strategist is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Using (12) allows us to write the payoff function for the MEC game as </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Without loss of generality we can take the strategy space to be the unit interval (i.e. 
                 <inline-graphic xlink:href="" xlink:type="simple"/>). Every strategy pair 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is a Nash equilibrium in this game. The social dilemma embodied in this continuous-strategy game is clearly the same as for the original discrete MEC game: at any equilibrium both players obtain a payoff of 
@@ -339,9 +339,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/> in the payoff function (13) with its smooth approximation 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. The payoff function of the smoothed MEC game is therefore given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>With the payoff function defined by (14), the smoothed MEC game represents a natural variant of the original MEC game.</p>
         </sec>
         <sec>
@@ -384,19 +384,19 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>. In this case the population undergoes evolutionary branching and splits into two distinct and diverging clusters of strategies.
             </p>
             <p>The adaptive dynamics of smoothed games with payoff function defined by (8) may be analyzed as follows. The invasion fitness is given by </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Thus, the selection gradient 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>The adaptive dynamics of such a game is therefore determined by the differential equation </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>The existence of singular strategies 
                 <inline-graphic xlink:href="" xlink:type="simple"/> in games of this form, and the particular characteristics of any such 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, depend on 
@@ -415,15 +415,15 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>. Thus, the selection gradient 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>and the adaptive dynamics of 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is consequently determined by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Since 
                 <inline-graphic xlink:href="" xlink:type="simple"/> does not depend on 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, there are no singular strategies, and thus there is no possibility of exotic evolutionary outcomes, such as evolutionary branching. The evolutionary dynamics of an initial strategy 
@@ -453,15 +453,15 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>. Thus, the selection gradient 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>and the adaptive dynamics of 
                 <inline-graphic xlink:href="" xlink:type="simple"/> is therefore determined by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>Again, since 
                 <inline-graphic xlink:href="" xlink:type="simple"/> does not depend on 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, there are no singular strategies. Also, rather remarkably, the adaptive dynamics of 
@@ -530,9 +530,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>, respectively, then with probability 
                 <inline-graphic xlink:href="" xlink:type="simple"/> given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>the focal individual 
                 <inline-graphic xlink:href="" xlink:type="simple"/> will inherit 
                 <inline-graphic xlink:href="" xlink:type="simple"/>'s strategy. This update rule is often referred to as the Fermi rule. The parameter 
@@ -556,9 +556,9 @@
                 <inline-graphic xlink:href="" xlink:type="simple"/>'s strategy (with 
                 <inline-graphic xlink:href="" xlink:type="simple"/>) is given by 
             </p>
-            <p>
+            <fig>
                 <graphic xlink:href="" xlink:type="simple"/>
-            </p>
+            </fig>
             <p>where 
                 <inline-graphic xlink:href="" xlink:type="simple"/>, and 
                 <inline-graphic xlink:href="" xlink:type="simple"/>. We find that the evolutionary dynamics of the smoothed TD and MEC games is the same irrespective of which of these update rules we employ. The results presented in the next section on the evolutionary dynamics of the TD and MEC games arise from simulations using the Fermi update rule (22).
