@@ -1,5 +1,8 @@
 {
   "type": "Article",
+  "title": [
+    "Running Code"
+  ],
   "meta": {
     "kernelspec": {
       "display_name": "Python 3",
@@ -20,13 +23,6 @@
     }
   },
   "content": [
-    {
-      "type": "Heading",
-      "depth": 1,
-      "content": [
-        "Running Code"
-      ]
-    },
     {
       "type": "Paragraph",
       "content": [
