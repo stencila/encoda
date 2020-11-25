@@ -2,7 +2,7 @@ import path from 'path'
 import { DocxCodec } from '../../codecs/docx'
 import { MdCodec } from '../../codecs/md'
 import { YamlCodec } from '../../codecs/yaml'
-import { snapshot } from '../../__tests__/helpers'
+import { nockRecord, snapshot } from '../../__tests__/helpers'
 /**
  * See https://github.com/stencila/encoda/issues/668
  *
@@ -14,6 +14,8 @@ import { snapshot } from '../../__tests__/helpers'
  * Also generates a YAML snapshot primarily for debugging.
  */
 test('issue 668: decoding a DOCX', async () => {
+  const done = await nockRecord('nock-record-issue-668.json')
+
   const doc = await new DocxCodec().read(
     path.join(__dirname, '668-CfRadialDoc-v2.1-20190901.docx')
   )
@@ -23,4 +25,6 @@ test('issue 668: decoding a DOCX', async () => {
   expect(await new MdCodec().dump(doc)).toMatchFile(
     snapshot('668-CfRadialDoc-v2.1-20190901.md')
   )
+
+  done()
 })
