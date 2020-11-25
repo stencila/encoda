@@ -43,8 +43,8 @@ export class CrossrefCodec extends Codec implements Codec {
     const response = await http.get('https://api.crossref.org/works', {
       searchParams: new URLSearchParams([
         ['query.bibliographic', content],
-        ['rows', '1']
-      ])
+        ['rows', '1'],
+      ]),
     })
 
     if (!(response.statusCode === 200 && response.body.length > 0)) {
@@ -85,15 +85,15 @@ export class CrossrefCodec extends Codec implements Codec {
       depositorName = 'Stencila',
       depositorEmail = 'doi@stenci.la',
       registrantName = 'Stencila',
-      version = '4.4.2'
+      version = '4.4.2',
     } = {}
 
     const doc = {
       declaration: {
         attributes: {
           version: '1.0',
-          encoding: 'utf-8'
-        }
+          encoding: 'utf-8',
+        },
       },
       elements: [
         xml.elem(
@@ -103,7 +103,7 @@ export class CrossrefCodec extends Codec implements Codec {
             xmlns: `http://www.crossref.org/schema/${version}`,
             'xmlns:xsi': `http://www.w3.org/2001/XMLSchema-instance`,
             'xsi:schemaLocation': `http://www.crossref.org/schema/${version} http://data.crossref.org/schemas/crossref${version}.xsd`,
-            'xmlns:jats': 'http://www.ncbi.nlm.nih.gov/JATS1'
+            'xmlns:jats': 'http://www.ncbi.nlm.nih.gov/JATS1',
           },
           xml.elem(
             'head',
@@ -117,8 +117,8 @@ export class CrossrefCodec extends Codec implements Codec {
             xml.elem('registrant', registrantName)
           ),
           xml.elem('body', encodeNode(node, doi, url))
-        )
-      ]
+        ),
+      ],
     }
 
     return Promise.resolve(vfile.load(xml.dump(doc, { spaces: 2 })))
@@ -141,7 +141,7 @@ export function decodeCrossrefCsl(
     'journal-article': 'article-journal',
     'book-chapter': 'chapter',
     'posted-content': 'manuscript',
-    'proceedings-article': 'paper-conference'
+    'proceedings-article': 'paper-conference',
   }
   csl.type = (replacers[csl.type] ?? csl.type) as CSL.ItemType
 
@@ -192,7 +192,7 @@ function encodePeerReview(
     dateReceived,
     datePublished,
     itemReviewed,
-    title
+    title,
   } = review
 
   if (itemReviewed === undefined)
@@ -258,7 +258,7 @@ function encodePostedContent(
     description,
     genre = [],
     references,
-    title
+    title,
   } = work
 
   // Create JATS abstract and namespace it and it's child tags
@@ -325,7 +325,7 @@ function encodePersonName(
     'person_name',
     {
       contributor_role: contributorRole,
-      sequence
+      sequence,
     },
     xml.elem('given_name', person.givenNames?.join(' ')),
     xml.elem('surname', person.familyNames?.join(' '))
@@ -347,13 +347,7 @@ function encodeDate(
   return xml.elem(
     tag,
     xml.elem('month', (date.getMonth() + 1).toString().padStart(2, '0')),
-    xml.elem(
-      'day',
-      date
-        .getDate()
-        .toString()
-        .padStart(2, '0')
-    ),
+    xml.elem('day', date.getDate().toString().padStart(2, '0')),
     xml.elem('year', date.getFullYear().toString())
   )
 }
@@ -371,7 +365,7 @@ function encodeProgramRelatedItem(
         'inter_work_relation',
         {
           'relationship-type': relation,
-          'identifier-type': 'doi'
+          'identifier-type': 'doi',
         },
         doi
       )
