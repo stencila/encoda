@@ -70,7 +70,8 @@ export const gdoc = {
           ],
         },
       },
-      // Image
+      /*
+      // Figure
       {
         paragraph: {
           elements: [
@@ -82,6 +83,15 @@ export const gdoc = {
           ],
         },
       },
+      {
+        paragraph: {
+          elements: [
+            { textRun: { content: 'Figure 1: ' } },
+            { textRun: { content: 'My figure.' } },
+          ],
+        },
+      },
+      */
       // Unordered list
       {
         paragraph: {
@@ -243,6 +253,7 @@ export const gdoc = {
     },
   },
   inlineObjects: {
+    /*
     'kix.inlineobj0': {
       inlineObjectProperties: {
         embeddedObject: {
@@ -254,6 +265,7 @@ export const gdoc = {
         },
       },
     },
+    */
   },
 }
 
@@ -308,8 +320,9 @@ export const node = {
         '.',
       ],
     },
+    /*
     {
-      type: 'Paragraph',
+      type: 'Figure',
       content: [
         {
           type: 'ImageObject',
@@ -318,7 +331,15 @@ export const node = {
           text: 'The description',
         },
       ],
+      label: 'Figure 1',
+      caption: [
+        {
+          type: 'Paragraph',
+          content: ['My figure.'],
+        },
+      ],
     },
+    */
     {
       type: 'List',
       order: 'unordered',
