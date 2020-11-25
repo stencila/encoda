@@ -20,16 +20,134 @@ async function reshapeCreativeWork(
   work: schema.CreativeWork
 ): Promise<schema.CreativeWork> {
   const { content = [] } = work
+  const newContent: schema.CreativeWork['content'] = []
 
-  const newContent: schema.Node[] = []
+  const titleStyles = ['title']
+  const codeStyles = ['code', 'code block']
+  const tableCaptionStyles = ['table caption', 'table', 'caption']
+  const figureCaptionStyles = ['figure caption', 'figure', 'caption']
+
   for (let index = 0; index < content.length; index++) {
     const prev = newContent[newContent.length - 1]
     let node: schema.Node | undefined = content[index]
     const next = content[index + 1]
 
-    const codeStyles = ['code', 'code block']
-    if (schema.isA('Paragraph', node) && hasStyle(node, codeStyles)) {
-      let text = asString(node)
+    const text = textContent(node)
+    //console.log(text.substr(0, 50))
+
+    // Is this the first node and does it want to be the work's title?
+    if (
+      work.title === undefined &&
+      index == 0 &&
+      (schema.isA('Heading', node) ||
+        (schema.isA('Paragraph', node) &&
+          (hasStyle(node, titleStyles), isEmphasis(node) || isStrong(node))))
+    ) {
+      // Title becomes content of the block content node
+      work = { ...work, title: removeMark(node.content) }
+    }
+
+    // Is this the authors list paragraph?
+    else if (
+      work.authors === undefined &&
+      newContent.length == 0 &&
+      schema.isA('Paragraph', node) &&
+      node.content.filter(schema.is('Superscript')).length > 0
+    ) {
+      const affiliations = new Map<schema.Person, string[]>()
+
+      const parsed = await Promise.all(
+        text.split(/\s*,\s*/).map(async text => {
+          text = text.trim()
+          // If the text end in a number, assume that is the superscripted
+          // affiliation and split it off.
+          let orgId
+          if (/\d$/.test(text)) {
+            orgId = text.slice(-1)
+            text = text.slice(0, -1)
+          }
+          // Spread the person to allow it us to update it's affiliations below.
+          const { ...person } = await decodePerson(text)
+          if (orgId) affiliations.set(person, [orgId])
+          return person
+        })
+      )
+
+      const authors = parsed.filter(person => person.familyNames !== undefined)
+
+      if (authors.length > 0) {
+        // Look ahead for following affiliations paragraphs that begin with
+        // a number.
+        let step = 1
+        while (true) {
+          const following = content[index + step]
+          const followingText = textContent(following)
+          const match = /^(\d+)(.*)/.exec(followingText)
+          if (match) {
+            const [_, orgId, name] = match
+            const org = schema.organization({ name })
+            for (const author of authors) {
+              if (affiliations.get(author)?.includes(orgId))
+                author.affiliations =
+                  author.affiliations === undefined
+                    ? [org]
+                    : [...author.affiliations, org]
+            }
+          } else break
+          step++
+        }
+        index += step - 1
+      }
+
+      // Only use this as authors list if we have been able to parse at least one author
+      if (authors.length > 0) {
+        work = { ...work, authors }
+        node = undefined
+      }
+    }
+
+    // If this is an "Abstract" heading then collect the following into it
+    // Allows for a heading that is a `Heading`, `Paragraph`, even a `List`,
+    // as long as it matches the regex
+    else if (
+      work.description === undefined &&
+      schema.isBlockContent(node) &&
+      /^Abstract\s*$/i.test(text)
+    ) {
+      const description = [] as schema.BlockContent[]
+      // Merge the following paragraphs until a "header" like node
+      let step = 1
+      while (true) {
+        const following = content[index + step]
+        if (
+          schema.isA('Paragraph', following) &&
+          !(schema.isA('Heading', following) || isStrong(following))
+        ) {
+          description.push(following)
+        } else break
+        step++
+      }
+      if (description.length > 0) work = { ...work, description }
+
+      node = undefined
+      index += step - 1
+    }
+
+    // Is this a "property" paragraph?
+    else if (/^[a-z]+\s*:\s*/i.test(text)) {
+      const text = textContent(node)
+      const [first, value] = text.split(':').map(part => part.trim())
+      const name = first.toLowerCase()
+      if (work.keywords === undefined && name === 'keywords') {
+        work = { ...work, keywords: value.split(/\s*,|;\s*/) }
+      }
+
+      node = undefined
+    }
+
+    // Is this a `CodeBlock` disguised as contiguous paragraphs?
+    else if (schema.isA('Paragraph', node) && hasStyle(node, codeStyles)) {
+      let text = textContent(node)
       // Attempt to merge as many as possible of following paragraphs into
       // the same code block
       let step = 1
@@ -39,21 +157,23 @@ async function reshapeCreativeWork(
           schema.isA('Paragraph', following) &&
           hasStyle(following, codeStyles)
         ) {
-          text += '\n' + asString(following)
+          text += '\n' + textContent(following)
         } else break
         step++
       }
+
       node = schema.codeBlock({ text })
       index += step - 1
-    } else if (schema.isA('Table', node) && node.caption === undefined) {
-      // Attempt to add a caption and label
+    }
+
+    // Is this a `Table` in search of a caption?
+    else if (schema.isA('Table', node) && node.caption === undefined) {
       let captionPara: schema.Paragraph | undefined
-      const captionRegex = /^\s*Table\s+\d+\s*[.:]/
-      const captionStyles = ['table caption', 'table', 'caption']
+      const captionRegex = /^Table\s+\d+\s*[.:]/i
       if (
         schema.isA('Paragraph', prev) &&
-        (matchesRegex(prev, captionRegex) ||
-          hasStyle(prev, captionStyles) ||
+        (captionRegex.test(textContent(prev)) ||
+          hasStyle(prev, tableCaptionStyles) ||
           isEmphasis(prev) ||
           isStrong(prev))
       ) {
@@ -62,8 +182,8 @@ async function reshapeCreativeWork(
         newContent.pop()
       } else if (
         schema.isA('Paragraph', next) &&
-        (matchesRegex(next, captionRegex) ||
-          hasStyle(next, captionStyles) ||
+        (captionRegex.test(textContent(next)) ||
+          hasStyle(next, tableCaptionStyles) ||
           isEmphasis(next) ||
           isStrong(next))
       ) {
@@ -78,9 +198,12 @@ async function reshapeCreativeWork(
       node = {
         ...node,
         label: label ?? node.label,
-        caption: caption ?? node.caption,
+        caption: caption ?? node.caption
       }
-    } else if (
+    }
+
+    // Is this a `Figure` disguised as a Paragraph` with a single media object in it?
+    else if (
       schema.isA('Paragraph', node) &&
       node.content.length === 1 &&
       (schema.isA('ImageObject', node.content[0]) ||
@@ -88,12 +211,11 @@ async function reshapeCreativeWork(
     ) {
       // Attempt to find a caption
       let captionPara: schema.Paragraph | undefined
-      const captionRegex = /^\s*Figure\s+\d+\s*[.:]/
-      const captionStyles = ['figure caption', 'figure', 'caption']
+      const captionRegex = /^Figure\s+\d+\s*[.:]/i
       if (
         schema.isA('Paragraph', prev) &&
-        (matchesRegex(prev, captionRegex) ||
-          hasStyle(prev, captionStyles) ||
+        (captionRegex.test(textContent(prev)) ||
+          hasStyle(prev, figureCaptionStyles) ||
           isEmphasis(prev) ||
           isStrong(prev))
       ) {
@@ -102,8 +224,8 @@ async function reshapeCreativeWork(
         newContent.pop()
       } else if (
         schema.isA('Paragraph', next) &&
-        (matchesRegex(next, captionRegex) ||
-          hasStyle(next, captionStyles) ||
+        (captionRegex.test(textContent(next)) ||
+          hasStyle(next, figureCaptionStyles) ||
           isEmphasis(next) ||
           isStrong(next))
       ) {
@@ -119,16 +241,16 @@ async function reshapeCreativeWork(
       node = schema.figure({
         content: node.content,
         label,
-        caption,
+        caption
       })
     }
 
     // If node (or it's replacement) is bibliography heading and the article
-    // does not have any references...
+    // does not have any references...make em!
     if (
+      work.references === undefined &&
       schema.isA('Heading', node) &&
-      ['references', 'bibliography'].includes(asString(node).toLowerCase()) &&
-      (work.references === undefined || work.references?.length === 0)
+      /^references|bibliography\s*$/i.test(text)
     ) {
       // Attempt to parse each following paragraph as a reference and
       // add to article references.
@@ -138,7 +260,7 @@ async function reshapeCreativeWork(
       while (true) {
         const following = content[index + step]
         if (schema.isA('Paragraph', following)) {
-          let text = asString(following)
+          let text = textContent(following)
 
           // Remove leading numbers etc (if any)
           text = text.replace(/^\s*\d+\s*[.,:;]*\s*/, '')
@@ -175,7 +297,7 @@ async function reshapeCreativeWork(
 
       work = {
         ...work,
-        references,
+        references
       }
 
       node = undefined
@@ -185,11 +307,31 @@ async function reshapeCreativeWork(
     if (node !== undefined) newContent.push(node)
   }
 
-  return { ...work, content: newContent.length > 0 ? newContent : undefined }
+  return {
+    ...work,
+    content: newContent.length > 0 ? newContent : undefined
+  }
 }
 
-function matchesRegex(node: schema.BlockContent, regex: RegExp): boolean {
-  return regex.test(asString(node))
+/**
+ * Get the text content of a node.
+ *
+ * This is similar to `TxtCodec.stringify` but does not
+ * stringify arbitrary properties e.g a heading `depth`,
+ * it only shows what is "visible". Trims whitespace.
+ */
+function textContent(node: schema.Node): string {
+  if (node === null) return ''
+  if (typeof node === 'string') return node.trim()
+  if (Array.isArray(node)) return node.map(textContent).join(' ')
+  if (typeof node === 'object') {
+    if ('text' in node && typeof node.text == 'string') return node.text.trim()
+    if ('content' in node && Array.isArray(node.content))
+      return node.content.map(textContent).join('')
+    if ('items' in node && Array.isArray(node.items))
+      return node.items.map(textContent).join(' ')
+  }
+  return node.toString()
 }
 
 function hasStyle(node: schema.BlockContent, styles: string[]): boolean {
@@ -215,10 +357,12 @@ function isStrong(node: schema.BlockContent): boolean {
   return 'content' in node && schema.isA('Strong', node.content?.[0])
 }
 
-function asString(node: schema.Node): string {
-  return node !== null && typeof node === 'object' && 'content' in node
-    ? (node.content ?? []).map(asString).join('')
-    : node?.toString()
+function removeMark(content: schema.InlineContent[]): schema.InlineContent[] {
+  const first = content[0]
+  if (schema.isA('Emphasis', first) || schema.isA('Strong', first)) {
+    return [...first.content, ...content.slice(1)]
+  }
+  return content
 }
 
 /**
@@ -233,32 +377,41 @@ function separateLabelCaption(
   if (caption === undefined) return [undefined, undefined]
 
   // De-emphasize the caption if necessary
-  let first = caption.content[0]
-  if (schema.isA('Emphasis', first) || schema.isA('Strong', first)) {
-    caption = {
-      ...caption,
-      content: [...first.content, ...caption.content.slice(1)],
-    }
-  }
+  let content = removeMark(caption.content)
 
   // Attempt to get label and remove it from the caption
   let label: string | undefined
-  first = caption.content[0]
+  const first = content[0]
   if (typeof first === 'string') {
     const match = new RegExp(
       '^\\s*(' + type + '\\s*\\d+)\\s*[.:;]?\\s(.*)'
     ).exec(first)
     if (match) {
       label = match[1]
-      caption = { ...caption, content: [match[2], ...caption.content.slice(1)] }
+      content = [match[2], ...content.slice(1)]
     }
   }
-  return [label, [removeStyle(caption) as schema.Paragraph]]
+  return [label, [schema.paragraph({ ...removeStyle(caption), content })]]
 }
 
 // Just-in-time instantiated codec.
-// `DoiCodec` can't be imported due to circular imports.
+// These need to be synamically imported due to circular imports.
+let personCodec: unknown
 let doiCodec: unknown
+let crossrefCodec: unknown
+
+/**
+ * Decode a string to a `Person`.
+ */
+function decodePerson(text: string): Promise<schema.Person> {
+  if (personCodec === undefined) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { PersonCodec } = require('../codecs/person')
+    personCodec = new PersonCodec()
+  }
+  // @ts-ignore
+  return personCodec.load(text)
+}
 
 /**
  * Decode a DOI string to a `CreativeWork`, falling back to
@@ -276,10 +429,6 @@ function decodeDoi(
   // @ts-ignore
   return doiCodec.load(doi).catch(() => decodeCrossref(text))
 }
-
-// Just-in-time instantiated codec.
-// See note above for `doiCodec`
-let crossrefCodec: unknown
 
 /**
  * Decode a reference string to a `CreativeWork` using a Crossref
