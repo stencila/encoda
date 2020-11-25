@@ -39,12 +39,16 @@ async function reshapeCreativeWork(
     if (
       work.title === undefined &&
       index === 0 &&
-      (schema.isA('Heading', node) ||
+      // Only assume title if it is a level 1 heading. Consider a Markdown
+      // document that starts with a levels 2 heading (it's probably not the title).
+      ((schema.isA('Heading', node) && node.depth === 1) ||
         (schema.isA('Paragraph', node) &&
           (hasStyle(node, titleStyles), isEmphasis(node) || isStrong(node))))
     ) {
       // Title becomes content of the block content node
       work = { ...work, title: removeMark(node.content) }
+
+      node = undefined
     }
 
     // Is this the authors list paragraph?
@@ -57,17 +61,17 @@ async function reshapeCreativeWork(
       const affiliations = new Map<schema.Person, string[]>()
 
       const parsed = await Promise.all(
-        text.split(/\s*,\s*/).map(async (text) => {
-          text = text.trim()
+        text.split(/\s*,\s*/).map(async (authorText) => {
+          authorText = authorText.trim()
           // If the text end in a number, assume that is the superscripted
           // affiliation and split it off.
           let orgId
-          if (/\d$/.test(text)) {
-            orgId = text.slice(-1)
-            text = text.slice(0, -1)
+          if (/\d$/.test(authorText)) {
+            orgId = authorText.slice(-1)
+            authorText = authorText.slice(0, -1)
           }
           // Spread the person to allow it us to update it's affiliations below.
-          const { ...person } = await decodePerson(text)
+          const { ...person } = await decodePerson(authorText)
           if (orgId !== undefined) affiliations.set(person, [orgId])
           return person
         })
@@ -140,11 +144,14 @@ async function reshapeCreativeWork(
       const text = textContent(node)
       const [first, value] = text.split(':').map((part) => part.trim())
       const name = first.toLowerCase()
+
+      let remove = false
       if (work.keywords === undefined && name === 'keywords') {
         work = { ...work, keywords: value.split(/\s*,|;\s*/) }
+        remove = true
       }
 
-      node = undefined
+      if (remove) node = undefined
     }
 
     // Is this a `CodeBlock` disguised as contiguous paragraphs?
@@ -320,20 +327,27 @@ async function reshapeCreativeWork(
  *
  * This is similar to `TxtCodec.stringify` but does not
  * stringify arbitrary properties e.g a heading `depth`,
- * it only shows what is "visible". Trims whitespace.
+ * it only shows what is "visible".
+ *
+ * Trims whitespace leading and trailing whitespace.
+ * This is particularly useful to avoid have to allow
+ * for leading whitespace in regexes.
  */
 function textContent(node: schema.Node): string {
-  if (node === null) return ''
-  if (typeof node === 'string') return node.trim()
-  if (Array.isArray(node)) return node.map(textContent).join(' ')
-  if (typeof node === 'object') {
-    if ('text' in node && typeof node.text === 'string') return node.text.trim()
-    if ('content' in node && Array.isArray(node.content))
-      return node.content.map(textContent).join('')
-    if ('items' in node && Array.isArray(node.items))
-      return node.items.map(textContent).join(' ')
+  function getTextContent(node: schema.Node): string {
+    if (node === null) return ''
+    if (typeof node === 'string') return node
+    if (Array.isArray(node)) return node.map(getTextContent).join(' ')
+    if (typeof node === 'object') {
+      if ('text' in node && typeof node.text === 'string') return node.text
+      if ('content' in node && Array.isArray(node.content))
+        return node.content.map(getTextContent).join('')
+      if ('items' in node && Array.isArray(node.items))
+        return node.items.map(getTextContent).join(' ')
+    }
+    return node.toString()
   }
-  return node.toString()
+  return getTextContent(node).trim()
 }
 
 function hasStyle(node: schema.BlockContent, styles: string[]): boolean {
