@@ -33,12 +33,12 @@ async function reshapeCreativeWork(
     const next = content[index + 1]
 
     const text = textContent(node)
-    //console.log(text.substr(0, 50))
+    // console.log(text.substr(0, 50))
 
     // Is this the first node and does it want to be the work's title?
     if (
       work.title === undefined &&
-      index == 0 &&
+      index === 0 &&
       (schema.isA('Heading', node) ||
         (schema.isA('Paragraph', node) &&
           (hasStyle(node, titleStyles), isEmphasis(node) || isStrong(node))))
@@ -50,7 +50,7 @@ async function reshapeCreativeWork(
     // Is this the authors list paragraph?
     else if (
       work.authors === undefined &&
-      newContent.length == 0 &&
+      newContent.length === 0 &&
       schema.isA('Paragraph', node) &&
       node.content.filter(schema.is('Superscript')).length > 0
     ) {
@@ -68,7 +68,7 @@ async function reshapeCreativeWork(
           }
           // Spread the person to allow it us to update it's affiliations below.
           const { ...person } = await decodePerson(text)
-          if (orgId) affiliations.set(person, [orgId])
+          if (orgId !== undefined) affiliations.set(person, [orgId])
           return person
         })
       )
@@ -86,7 +86,7 @@ async function reshapeCreativeWork(
           const followingText = textContent(following)
           const match = /^(\d+)(.*)/.exec(followingText)
           if (match) {
-            const [_, orgId, name] = match
+            const [orgId, name] = match.slice(1)
             const org = schema.organization({ name })
             for (const author of authors) {
               if (affiliations.get(author)?.includes(orgId))
@@ -327,7 +327,7 @@ function textContent(node: schema.Node): string {
   if (typeof node === 'string') return node.trim()
   if (Array.isArray(node)) return node.map(textContent).join(' ')
   if (typeof node === 'object') {
-    if ('text' in node && typeof node.text == 'string') return node.text.trim()
+    if ('text' in node && typeof node.text === 'string') return node.text.trim()
     if ('content' in node && Array.isArray(node.content))
       return node.content.map(textContent).join('')
     if ('items' in node && Array.isArray(node.items))
@@ -396,18 +396,20 @@ function separateLabelCaption(
   return [label, [schema.paragraph({ ...removeStyle(caption), content })]]
 }
 
-// Just-in-time instantiated codec.
-// These need to be synamically imported due to circular imports.
+// Just-in-time instantiated codecs.
+// These need to be dynamically imported due to circular imports.
 let personCodec: unknown
 let doiCodec: unknown
 let crossrefCodec: unknown
+
+/* eslint-disable */
+// Due to the use of dynamic imports many un-useful eslint warnings below
 
 /**
  * Decode a string to a `Person`.
  */
 function decodePerson(text: string): Promise<schema.Person> {
   if (personCodec === undefined) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { PersonCodec } = require('../codecs/person')
     personCodec = new PersonCodec()
   }
@@ -424,7 +426,6 @@ function decodeDoi(
   text: string
 ): Promise<schema.CreativeWork | string> {
   if (doiCodec === undefined) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { DoiCodec } = require('../codecs/doi')
     doiCodec = new DoiCodec()
   }
@@ -439,7 +440,6 @@ function decodeDoi(
  */
 function decodeCrossref(text: string): Promise<schema.CreativeWork | string> {
   if (crossrefCodec === undefined) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { CrossrefCodec } = require('../codecs/crossref')
     crossrefCodec = new CrossrefCodec()
   }
@@ -452,3 +452,5 @@ function decodeCrossref(text: string): Promise<schema.CreativeWork | string> {
     })
     .catch(() => text)
 }
+
+/* eslint-enable */
