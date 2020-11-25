@@ -70,11 +70,11 @@ export class CSLCodec extends Codec implements Codec {
     let content = ''
     if (Array.isArray(node)) {
       content = node.reduce(
-        (ns: string, n: schema.Node) => ns + encode(n, format),
+        (ns: string, n: schema.Node) => ns + encodeNode(n, format),
         ''
       )
     } else {
-      content = encode(node, format)
+      content = encodeNode(node, format)
     }
 
     return Promise.resolve(vfile.load(content))
@@ -84,8 +84,13 @@ export class CSLCodec extends Codec implements Codec {
 /**
  * Encode a `Node` to a string of given `format`.
  */
-function encode(node: schema.Node, format: string): string {
+function encodeNode(node: schema.Node, format: string): string {
   let content = ''
+  if (typeof node === 'string') {
+    // `CreativeWork` references can be strings, so we need to deal with them.
+    // This just makes the string the title of a `CreativeWork`
+    return encodeNode(schema.creativeWork({ title: node }), format)
+  }
   if (schema.isCreativeWork(node)) {
     const csl = encodeCsl(node, format)
     const cite = new Cite([csl])

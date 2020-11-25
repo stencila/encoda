@@ -57,7 +57,7 @@ async function reshapeCreativeWork(
       const affiliations = new Map<schema.Person, string[]>()
 
       const parsed = await Promise.all(
-        text.split(/\s*,\s*/).map(async text => {
+        text.split(/\s*,\s*/).map(async (text) => {
           text = text.trim()
           // If the text end in a number, assume that is the superscripted
           // affiliation and split it off.
@@ -73,7 +73,9 @@ async function reshapeCreativeWork(
         })
       )
 
-      const authors = parsed.filter(person => person.familyNames !== undefined)
+      const authors = parsed.filter(
+        (person) => person.familyNames !== undefined
+      )
 
       if (authors.length > 0) {
         // Look ahead for following affiliations paragraphs that begin with
@@ -136,7 +138,7 @@ async function reshapeCreativeWork(
     // Is this a "property" paragraph?
     else if (/^[a-z]+\s*:\s*/i.test(text)) {
       const text = textContent(node)
-      const [first, value] = text.split(':').map(part => part.trim())
+      const [first, value] = text.split(':').map((part) => part.trim())
       const name = first.toLowerCase()
       if (work.keywords === undefined && name === 'keywords') {
         work = { ...work, keywords: value.split(/\s*,|;\s*/) }
@@ -198,7 +200,7 @@ async function reshapeCreativeWork(
       node = {
         ...node,
         label: label ?? node.label,
-        caption: caption ?? node.caption
+        caption: caption ?? node.caption,
       }
     }
 
@@ -241,7 +243,7 @@ async function reshapeCreativeWork(
       node = schema.figure({
         content: node.content,
         label,
-        caption
+        caption,
       })
     }
 
@@ -297,7 +299,7 @@ async function reshapeCreativeWork(
 
       work = {
         ...work,
-        references
+        references,
       }
 
       node = undefined
@@ -309,7 +311,7 @@ async function reshapeCreativeWork(
 
   return {
     ...work,
-    content: newContent.length > 0 ? newContent : undefined
+    content: newContent.length > 0 ? newContent : undefined,
   }
 }
 
