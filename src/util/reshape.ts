@@ -48,17 +48,24 @@ async function reshapeCreativeWork(
     } else if (schema.isA('Table', node) && node.caption === undefined) {
       // Attempt to add a caption and label
       let captionPara: schema.Paragraph | undefined
+      const captionRegex = /^\s*Table\s+\d+\s*[.:]/
       const captionStyles = ['table caption', 'table', 'caption']
       if (
         schema.isA('Paragraph', prev) &&
-        (hasStyle(prev, captionStyles) || isEmphasis(prev) || isStrong(prev))
+        (matchesRegex(prev, captionRegex) ||
+          hasStyle(prev, captionStyles) ||
+          isEmphasis(prev) ||
+          isStrong(prev))
       ) {
         // Make previous paragraph the table caption
         captionPara = prev
         newContent.pop()
       } else if (
         schema.isA('Paragraph', next) &&
-        (hasStyle(next, captionStyles) || isEmphasis(next) || isStrong(next))
+        (matchesRegex(next, captionRegex) ||
+          hasStyle(next, captionStyles) ||
+          isEmphasis(next) ||
+          isStrong(next))
       ) {
         // Make the next paragraph the table caption
         captionPara = next
@@ -71,7 +78,7 @@ async function reshapeCreativeWork(
       node = {
         ...node,
         label: label ?? node.label,
-        caption: caption ?? node.caption
+        caption: caption ?? node.caption,
       }
     } else if (
       schema.isA('Paragraph', node) &&
@@ -81,17 +88,24 @@ async function reshapeCreativeWork(
     ) {
       // Attempt to find a caption
       let captionPara: schema.Paragraph | undefined
+      const captionRegex = /^\s*Figure\s+\d+\s*[.:]/
       const captionStyles = ['figure caption', 'figure', 'caption']
       if (
         schema.isA('Paragraph', prev) &&
-        (hasStyle(prev, captionStyles) || isEmphasis(prev) || isStrong(prev))
+        (matchesRegex(prev, captionRegex) ||
+          hasStyle(prev, captionStyles) ||
+          isEmphasis(prev) ||
+          isStrong(prev))
       ) {
         // Make previous paragraph the figure's caption
         captionPara = prev
         newContent.pop()
       } else if (
         schema.isA('Paragraph', next) &&
-        (hasStyle(next, captionStyles) || isEmphasis(next) || isStrong(next))
+        (matchesRegex(next, captionRegex) ||
+          hasStyle(next, captionStyles) ||
+          isEmphasis(next) ||
+          isStrong(next))
       ) {
         // Make the next paragraph the figure's caption
         captionPara = next
@@ -105,7 +119,7 @@ async function reshapeCreativeWork(
       node = schema.figure({
         content: node.content,
         label,
-        caption
+        caption,
       })
     }
 
@@ -161,7 +175,7 @@ async function reshapeCreativeWork(
 
       work = {
         ...work,
-        references
+        references,
       }
 
       node = undefined
@@ -172,6 +186,10 @@ async function reshapeCreativeWork(
   }
 
   return { ...work, content: newContent.length > 0 ? newContent : undefined }
+}
+
+function matchesRegex(node: schema.BlockContent, regex: RegExp): boolean {
+  return regex.test(asString(node))
 }
 
 function hasStyle(node: schema.BlockContent, styles: string[]): boolean {
@@ -219,7 +237,7 @@ function separateLabelCaption(
   if (schema.isA('Emphasis', first) || schema.isA('Strong', first)) {
     caption = {
       ...caption,
-      content: [...first.content, ...caption.content.slice(1)]
+      content: [...first.content, ...caption.content.slice(1)],
     }
   }
 
