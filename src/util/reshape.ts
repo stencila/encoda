@@ -46,7 +46,10 @@ async function reshapeCreativeWork(
           (hasStyle(node, titleStyles), isEmphasis(node) || isStrong(node))))
     ) {
       // Title becomes content of the block content node
-      work = { ...work, title: removeMark(node.content) }
+      work = {
+        ...work,
+        title: removeMark(node.content),
+      }
 
       node = undefined
     }
@@ -373,6 +376,14 @@ function isStrong(node: schema.BlockContent): boolean {
   return 'content' in node && schema.isA('Strong', node.content?.[0])
 }
 
+/**
+ * Remove a mark (e.g. `Emphasis`) from some inline content.
+ *
+ * This in often used because the mark is not longer needed after it
+ * has been used for semantic inference. e.g. when a bold paragraph
+ * after a figure is inferred to be a figure caption, we no longer
+ * need it to be bolded.
+ */
 function removeMark(content: schema.InlineContent[]): schema.InlineContent[] {
   const first = content[0]
   if (schema.isA('Emphasis', first) || schema.isA('Strong', first)) {
