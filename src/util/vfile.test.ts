@@ -1,4 +1,4 @@
-import { isPath } from '../vfile'
+import { isPath } from './vfile'
 
 test('isPath', () => {
   // Directory specified, with or without file extension
