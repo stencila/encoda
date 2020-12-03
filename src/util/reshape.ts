@@ -338,7 +338,7 @@ async function reshapeCreativeWork(
  */
 function textContent(node: schema.Node): string {
   function getTextContent(node: schema.Node): string {
-    if (node === null) return ''
+    if (node === undefined || node === null) return ''
     if (typeof node === 'string') return node
     if (Array.isArray(node)) return node.map(getTextContent).join(' ')
     if (typeof node === 'object') {

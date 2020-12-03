@@ -81,6 +81,16 @@ export interface CommonDecodeOptions {
    * they expect content to be decode to.
    */
   asType?: keyof stencila.Types
+
+  /**
+   * Should the decoded node have the `coerce` function applied to it?
+   */
+  shouldCoerce?: boolean
+
+  /**
+   * Should the decoded node have the `reshape` function applied to it?
+   */
+  shouldReshape?: boolean
 }
 
 /**
@@ -88,11 +98,19 @@ export interface CommonDecodeOptions {
  *
  * See notes for `commonEncodeDefaults` for why these exist.
  */
-type CommonDecodeDefaults = Required<Pick<CommonDecodeOptions, 'isStandalone'>>
+type CommonDecodeDefaults = Required<
+  Pick<CommonDecodeOptions, 'isStandalone' | 'shouldCoerce' | 'shouldReshape'>
+>
 export const commonDecodeDefaults: CommonDecodeDefaults = {
   // To avoid breaking changes this is true, but may be changed to
   // false for consistency with default for encoding (false)
   isStandalone: true,
+
+  // Coerce by default
+  shouldCoerce: true,
+
+  // Reshape by default
+  shouldReshape: true,
 }
 
 /**
@@ -183,9 +201,12 @@ export abstract class Codec<
     content: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    return reshape(
-      await coerce(await this.decode(vfile.load(content), options))
-    )
+    const { shouldCoerce = true, shouldReshape = true } = options ?? {}
+
+    let node = await this.decode(vfile.load(content), options)
+    if (shouldCoerce) node = await coerce(node)
+    if (shouldReshape) node = await reshape(node)
+    return node
   }
 
   /**
@@ -245,12 +266,12 @@ export abstract class Codec<
     filePath: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    return resolveFiles(
-      await reshape(
-        await coerce(await this.decode(await vfile.read(filePath), options))
-      ),
-      filePath
-    )
+    const { shouldCoerce = true, shouldReshape = true } = options ?? {}
+
+    let node = await this.decode(await vfile.read(filePath), options)
+    if (shouldCoerce) node = await coerce(node)
+    if (shouldReshape) node = await reshape(node)
+    return resolveFiles(node, filePath)
   }
 
   /**
