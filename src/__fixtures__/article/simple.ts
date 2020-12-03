@@ -2,8 +2,12 @@ import { article, heading, paragraph } from '@stencila/schema'
 
 /**
  * A very simple `Article` with only headings, paragraphs
+ *
+ * It has a `title` to prevent the `reshape` function from
+ * treading the first header as the title.
  */
 export default article({
+  title: 'Simple article',
   content: [
     heading({
       depth: 1,
