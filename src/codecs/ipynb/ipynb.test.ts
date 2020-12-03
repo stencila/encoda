@@ -2,7 +2,7 @@ import * as schema from '@stencila/schema'
 import { removeDataUris } from '../../util/media/removeDataUris'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
-import { fixture, snapshot } from '../../__tests__/helpers'
+import { fixture, nockRecord, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import {
   decodeCodeCell,
@@ -57,6 +57,7 @@ describe('decode', () => {
     'well-switching',
     'meta-analysis',
   ])('%s', async (name) => {
+    const done = await nockRecord(`nock-record-${name}.json`)
     expect(
       await jsonCodec.dump(
         // Remove Data URIs e.g. for ImageObjects generated from Plotly because
@@ -68,6 +69,7 @@ describe('decode', () => {
         )
       )
     ).toMatchFile(snapshot(name + '.json'))
+    done()
   })
 })
 
