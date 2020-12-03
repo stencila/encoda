@@ -1,3 +1,15 @@
+## [0.103.2](https://github.com/stencila/encoda/compare/v0.103.1...v0.103.2) (2020-12-03)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.15.3 ([f9f6171](https://github.com/stencila/encoda/commit/f9f61716e786d7e348588add1d565770af75e404))
+* **dependencies:** update dependency @stencila/thema to ^2.20.4 ([f4f26b3](https://github.com/stencila/encoda/commit/f4f26b3b599377260e4ab2428bb16c858db94e24))
+* **dependencies:** update dependency fp-ts to ^2.9.1 ([8532bf8](https://github.com/stencila/encoda/commit/8532bf8c65d30ff660d62724d9582b720651aaec))
+* **dependencies:** update dependency trash to v7 ([f876e38](https://github.com/stencila/encoda/commit/f876e3841bbd8f2673b6ea7037e77c326fb8a312))
+* **dependencies:** update dependency unist-util-select to ^3.0.3 ([c3745fd](https://github.com/stencila/encoda/commit/c3745fd4ee781322cd3f6e788ee16e20dd3ac930))
+* **dependencies:** update dependency xlsx to ^0.16.9 ([0ae6555](https://github.com/stencila/encoda/commit/0ae6555012849534b654f4af0682e75b52a683b3))
+
 ## [0.103.1](https://github.com/stencila/encoda/compare/v0.103.0...v0.103.1) (2020-11-24)
 
 
