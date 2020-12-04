@@ -15,6 +15,11 @@ export type DecodeOptions = CommonDecodeOptions
 
 export interface EncodeOptions extends CommonEncodeOptions {
   /**
+   * CSS selector for item/s to take an image of
+   */
+  selector?: string
+
+  /**
    * The size of the image to create. Only applicable when
    * screen-shotting a node to create the image.
    */
@@ -72,7 +77,10 @@ export class PngCodec extends Codec implements Codec {
     node: schema.Node,
     options: EncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const { isStandalone, size } = { ...this.commonEncodeDefaults, ...options }
+    const { isStandalone, selector, size } = {
+      ...this.commonEncodeDefaults,
+      ...options,
+    }
 
     // If the node is not a creative work then wrap
     // it in one. This is done because themes usually assume that
@@ -110,10 +118,14 @@ export class PngCodec extends Codec implements Codec {
         fullPage: size === undefined,
       })
     } else {
-      const [key, value] = Object.entries(schema.microdataRoot())[0]
-      const elem = await page.$(`[${key}=${value}]`)
+      let cssSelector = selector
+      if (cssSelector === undefined) {
+        const [key, value] = Object.entries(schema.microdataRoot())[0]
+        cssSelector = `[${key}=${value}]`
+      }
+      const elem = await page.$(cssSelector)
       if (elem === null)
-        throw new Error('Woaaaah, this should never happen! Element not found!')
+        throw new Error(`No element found matching selector: ${cssSelector}`)
       const boundingBox = await elem.boundingBox()
       const viewPort = page.viewport()
       buffer = await elem.screenshot({

@@ -114,6 +114,11 @@ export class RpngCodec extends Codec implements Codec {
     const png = await pngCodec.encode(node, {
       ...options,
       theme: 'rpng',
+      selector: schema.isA('CodeChunk', node)
+        ? 'stencila-code-chunk'
+        : schema.isA('CodeExpression', node)
+        ? 'stencila-code-expression'
+        : undefined,
     })
     const buffer = await vfile.dump(png, 'buffer')
 

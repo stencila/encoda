@@ -1,4 +1,9 @@
-import { codeExpression, codeChunk, imageObject } from '@stencila/schema'
+import {
+  codeExpression,
+  codeChunk,
+  imageObject,
+  codeError,
+} from '@stencila/schema'
 
 export const rCodeExpression = codeExpression({
   programmingLanguage: 'r',
@@ -9,6 +14,12 @@ export const rCodeExpression = codeExpression({
 export const rCodeExpressionNoOutput = codeExpression({
   programmingLanguage: 'r',
   text: '',
+})
+
+export const rCodeExpressionError = codeExpression({
+  programmingLanguage: 'r',
+  text: 'foo',
+  errors: [codeError({ errorMessage: "object 'foo' not found" })],
 })
 
 export const pythonCodeChunk = codeChunk({
@@ -31,4 +42,10 @@ export const rCodeChunkImageOutput = codeChunk({
 export const rCodeChunkNoOutput = codeChunk({
   programmingLanguage: 'r',
   text: '# Just a comment\n',
+})
+
+export const rCodeChunkError = codeChunk({
+  programmingLanguage: 'r',
+  text: 'foo',
+  errors: [codeError({ errorMessage: "object 'foo' not found" })],
 })
