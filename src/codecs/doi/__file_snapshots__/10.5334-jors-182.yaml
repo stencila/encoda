@@ -1,24 +1,31 @@
-- type: Article
-  authors:
-    - type: Person
-      familyNames:
-        - Carlsson
-      givenNames:
-        - Kristoffer
-    - type: Person
-      familyNames:
-        - Ekre
-      givenNames:
-        - Fredrik
-  datePublished: '2019'
+type: Article
+authors:
+  - type: Person
+    familyNames:
+      - Carlsson
+    givenNames:
+      - Kristoffer
+  - type: Person
+    familyNames:
+      - Ekre
+    givenNames:
+      - Fredrik
+datePublished:
+  type: Date
+  value: '2019'
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.5334/jors.182
+isPartOf:
+  type: PublicationVolume
   isPartOf:
-    type: PublicationVolume
-    isPartOf:
-      type: Periodical
-      name: Journal of Open Research Software
-    volumeNumber: '7'
-  publisher:
-    type: Organization
-    name: 'Ubiquity Press, Ltd.'
-  title: Tensors.jl — Tensor Computations in Julia
-  url: 'http://dx.doi.org/10.5334/jors.182'
+    type: Periodical
+    name: Journal of Open Research Software
+  volumeNumber: 7
+publisher:
+  type: Organization
+  name: 'Ubiquity Press, Ltd.'
+title: Tensors.jl — Tensor Computations in Julia
+url: 'http://dx.doi.org/10.5334/jors.182'

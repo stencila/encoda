@@ -1,5 +1,64 @@
 {
   "type": "Article",
+  "references": [
+    {
+      "type": "Article",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Perez"
+          ],
+          "givenNames": [
+            "Fernando"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Granger"
+          ],
+          "givenNames": [
+            "Brian E."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2007"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1109/mcse.2007.53"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Computing in Science & Engineering"
+          },
+          "volumeNumber": 9
+        },
+        "issueNumber": 3
+      },
+      "pageEnd": 29,
+      "pageStart": 21,
+      "publisher": {
+        "type": "Organization",
+        "name": "Institute of Electrical and Electronics Engineers (IEEE)"
+      },
+      "title": "IPython: A System for Interactive Scientific Computing",
+      "url": "http://dx.doi.org/10.1109/mcse.2007.53"
+    },
+    "Back to Part 1",
+    "Back to FICO Labs"
+  ],
   "meta": {
     "kernelspec": {
       "display_name": "Python 3",
@@ -1181,90 +1240,6 @@
       "type": "Paragraph",
       "content": [
         "If you dabble in building on this exploration, please share it!"
-      ]
-    },
-    {
-      "type": "Heading",
-      "depth": 2,
-      "content": [
-        "References"
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        {
-          "type": "Link",
-          "target": "",
-          "content": [
-            "1"
-          ]
-        },
-        " ",
-        {
-          "type": "Emphasis",
-          "content": [
-            "The Elements of Graphing Data"
-          ]
-        },
-        ", William S. Cleveland, Hobart Press, Summit, New Jersey, 1994 ISBN: 0-9634884-1-4",
-        "",
-        {
-          "type": "Link",
-          "target": "",
-          "content": [
-            "2"
-          ]
-        },
-        " ",
-        {
-          "type": "Emphasis",
-          "content": [
-            "IPython: A System for Interactive Scientific Computing"
-          ]
-        },
-        ", Fernando Pérez, Brian E. Granger, Computing in Science and Engineering, vol. 9, no. 3, pp. 21-29, May/June 2007, doi:10.1109/MCSE.2007.53. URL: ",
-        {
-          "type": "Link",
-          "target": "http://ipython.org",
-          "content": [
-            "http://ipython.org"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        {
-          "type": "Strong",
-          "content": [
-            {
-              "type": "Link",
-              "target": "http://ficolabsblog.fico.com/2013/01/a-moment-of-science-just-plot-it.html",
-              "content": [
-                "Back to Part 1"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        {
-          "type": "Strong",
-          "content": [
-            {
-              "type": "Link",
-              "target": "http://ficolabsblog.fico.com/",
-              "content": [
-                "Back to FICO Labs"
-              ]
-            }
-          ]
-        }
       ]
     }
   ]

@@ -8,11 +8,10 @@ import Cite from 'citation-js'
 import crypto from 'crypto'
 import Csl from 'csl-json'
 import path from 'path'
-import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
-import { TxtCodec } from '../txt'
 import * as vfile from '../../util/vfile'
-import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
+import { TxtCodec } from '../txt'
+import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 
 /**
  * The directory where styles are stored
@@ -71,11 +70,11 @@ export class CSLCodec extends Codec implements Codec {
     let content = ''
     if (Array.isArray(node)) {
       content = node.reduce(
-        (ns: string, n: schema.Node) => ns + encode(n, format),
+        (ns: string, n: schema.Node) => ns + encodeNode(n, format),
         ''
       )
     } else {
-      content = encode(node, format)
+      content = encodeNode(node, format)
     }
 
     return Promise.resolve(vfile.load(content))
@@ -85,8 +84,13 @@ export class CSLCodec extends Codec implements Codec {
 /**
  * Encode a `Node` to a string of given `format`.
  */
-function encode(node: schema.Node, format: string): string {
+function encodeNode(node: schema.Node, format: string): string {
   let content = ''
+  if (typeof node === 'string') {
+    // `CreativeWork` references can be strings, so we need to deal with them.
+    // This just makes the string the title of a `CreativeWork`
+    return encodeNode(schema.creativeWork({ title: node }), format)
+  }
   if (schema.isCreativeWork(node)) {
     const csl = encodeCsl(node, format)
     const cite = new Cite([csl])
@@ -122,6 +126,7 @@ export async function decodeCsl(
     author = [],
     title = '',
 
+    submitted,
     issued,
 
     'container-title': containerTitle,
@@ -133,75 +138,96 @@ export async function decodeCsl(
     'publisher-place': publisherPlace,
 
     URL: url,
+    DOI: doi,
 
+    // Properties to ignore
     // @ts-ignore this hidden Citation.js property
     _graph,
     // citation-label because it is the same as id (but don't want it in `lost`)
     'citation-label': citationLabel,
 
-    ...lost
+    // ...lost
   } = csl
 
-  if (type === 'article-journal') {
-    logWarnLossIfAny('csl', 'decode', csl, lost)
+  // This is noisy, and mainly useful in development, so turn off
+  // logWarnLossIfAny('csl', 'decode', csl, lost)
 
-    const authors = await Promise.all(author.map(decodeAuthor))
+  const authors = await Promise.all(author.map(decodeAuthor))
 
-    const datePublished = issued !== undefined ? decodeDate(issued) : undefined
+  const dateReceived =
+    submitted !== undefined ? decodeDate(submitted) : undefined
+  const datePublished = issued !== undefined ? decodeDate(issued) : undefined
 
-    let isPartOf
-    if (containerTitle !== undefined) {
-      isPartOf = schema.periodical({
-        name: containerTitle,
-      })
-      if (volume !== undefined) {
-        isPartOf = schema.publicationVolume({
-          volumeNumber: volume,
-          isPartOf,
-        })
-      }
-      if (issue !== undefined) {
-        isPartOf = schema.publicationIssue({
-          issueNumber: issue,
-          isPartOf,
-        })
-      }
-    }
-
-    let pageStart
-    let pageEnd
-    let pagination
-    if (page !== undefined) {
-      const match = /\s*(\d+)\s*-\s*(\d+)\s*/.exec(page)
-      if (match) {
-        pageStart = match[1]
-        pageEnd = match[2]
-      } else pagination = page
-    }
-
-    let publisher: schema.Organization | undefined
-    if (publisherName !== undefined) {
-      publisher = schema.organization({
-        name: publisherName,
-        address: publisherPlace,
-      })
-    }
-
-    return schema.article({
-      authors,
-      title,
-      id,
-      datePublished,
-      isPartOf,
-      pageStart,
-      pageEnd,
-      pagination,
-      publisher,
-      url,
+  let isPartOf
+  if (containerTitle !== undefined) {
+    isPartOf = schema.periodical({
+      name: containerTitle,
     })
+    if (volume !== undefined) {
+      isPartOf = schema.publicationVolume({
+        volumeNumber: volume,
+        isPartOf,
+      })
+    }
+    if (issue !== undefined) {
+      isPartOf = schema.publicationIssue({
+        issueNumber: issue,
+        isPartOf,
+      })
+    }
+  }
+
+  let pageStart
+  let pageEnd
+  let pagination
+  if (page !== undefined) {
+    const match = /\s*(\d+)\s*-\s*(\d+)\s*/.exec(page)
+    if (match) {
+      pageStart = match[1]
+      pageEnd = match[2]
+    } else pagination = page
+  }
+
+  let publisher: schema.Organization | undefined
+  if (publisherName !== undefined) {
+    publisher = schema.organization({
+      name: publisherName,
+      address: publisherPlace,
+    })
+  }
+
+  let identifiers
+  if (doi !== undefined) {
+    identifiers = [
+      schema.propertyValue({
+        name: 'doi',
+        propertyID: 'https://registry.identifiers.org/registry/doi',
+        value: doi,
+      }),
+    ]
+  }
+
+  const common = {
+    authors,
+    title,
+    id,
+    dateReceived,
+    datePublished,
+    isPartOf,
+    publisher,
+    identifiers,
+    url,
+  }
+
+  if (type === 'article-journal') {
+    return schema.article({ ...common, pageStart, pageEnd, pagination })
   } else {
-    logWarnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
-    return schema.creativeWork()
+    logWarnLoss(
+      'csl',
+      'decode',
+      `Unhandled citation type "${csl.type}", using CreativeWork.`
+    )
+    return schema.creativeWork(common)
   }
 }
 
@@ -292,12 +318,16 @@ export const encodeArticle = (
  *
  * CSL-JSON's `non-dropping-particle` and `dropping-particle`
  * are not currently supported in `Person`.
+ *
+ * Other data that may be provided e.g. `sequence` ("first", "additional")
+ * and `ORCID` are currently ignored.
  */
 const decodeAuthor = (
   author: Csl.Person
 ): Promise<schema.Person | schema.Organization> => {
-  const { family, given, suffix, literal, ...lost } = author
-  logWarnLossIfAny('csl', 'decode', author, lost)
+  const { family, given, suffix, literal } = author
+
+  // logWarnLossIfAny('csl', 'decode', author, lost)
 
   return Promise.resolve(
     literal !== undefined

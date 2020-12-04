@@ -1676,7 +1676,7 @@ content:
           inline: true
           linkType: simple
       - '-claimant is defined by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -1921,7 +1921,7 @@ content:
           inline: true
           linkType: simple
       - '-strategist defined by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2183,7 +2183,7 @@ content:
         . For such games the role played by errors is potentially important. To
         be precise, let us consider the class of continuous-strategy games with
         payoff function given by 
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2233,7 +2233,7 @@ content:
           inline: true
           linkType: simple
       - '-strategist in such a game being given by a function of the form '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2541,7 +2541,7 @@ content:
         defined for continuous strategies. The continuous forms of the TD and
         MEC games are examples of a broad class of continuous-strategy 2-person
         games with payoff functions given by 
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2586,7 +2586,7 @@ content:
         meta:
           inline: true
           linkType: simple
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2597,7 +2597,7 @@ content:
   - type: Paragraph
     content:
       - 'as '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2705,7 +2705,7 @@ content:
           inline: true
           linkType: simple
       - '. Thus, the payoff function of the smoothed game is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2733,7 +2733,7 @@ content:
           inline: true
           linkType: simple
       - '-parameter family of smoothing functions is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2791,7 +2791,7 @@ content:
           inline: true
           linkType: simple
       - '-strategist is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2822,7 +2822,7 @@ content:
       - >-
         . We therefore have that the payoff function for the smoothed TD game is
         given by 
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2904,7 +2904,7 @@ content:
           inline: true
           linkType: simple
       - '-strategist is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2915,7 +2915,7 @@ content:
   - type: Paragraph
     content:
       - 'Using (12) allows us to write the payoff function for the MEC game as '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -2973,7 +2973,7 @@ content:
           inline: true
           linkType: simple
       - '. The payoff function of the smoothed MEC game is therefore given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3229,7 +3229,7 @@ content:
       - >-
         The adaptive dynamics of smoothed games with payoff function defined by
         (8) may be analyzed as follows. The invasion fitness is given by 
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3247,7 +3247,7 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3260,7 +3260,7 @@ content:
       - >-
         The adaptive dynamics of such a game is therefore determined by the
         differential equation 
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3358,7 +3358,7 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3376,7 +3376,7 @@ content:
           inline: true
           linkType: simple
       - ' is consequently determined by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3558,7 +3558,7 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -3576,7 +3576,7 @@ content:
           inline: true
           linkType: simple
       - ' is therefore determined by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -4006,7 +4006,7 @@ content:
           inline: true
           linkType: simple
       - ' given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''
@@ -4149,7 +4149,7 @@ content:
           inline: true
           linkType: simple
       - ') is given by '
-  - type: Paragraph
+  - type: Figure
     content:
       - type: ImageObject
         contentUrl: ''

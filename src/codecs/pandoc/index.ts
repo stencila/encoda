@@ -520,6 +520,8 @@ function decodeBlock(elem: Pandoc.Block): stencila.BlockContent {
       return decodeTable(elem)
     case 'HorizontalRule':
       return decodeHorizontalRule()
+    case 'Div':
+      return decodeDiv(elem)
   }
 
   log.error(`Unhandled Pandoc node type "${elem.t}"`)
@@ -920,19 +922,67 @@ function encodeThematicBreak(): Pandoc.HorizontalRule {
 }
 
 /**
+ * Unwrap a Pandoc `Div` to a Stencila `BlockContent` node with meta attributes.
+ *
+ * Pandoc uses a `Div` to wrap a paragraph etc and add attributes like "custom-style"
+ * (a Pandoc `Para` can not have attributes). We instead unwrap the child and
+ * add the attributes to it's `meta`. These can then be used in other functions
+ * to apply semantic inference.
+ */
+function decodeDiv(div: Pandoc.Div): stencila.BlockContent {
+  const { id, ...rest } =
+    decodeAttrs(div.c[0], { 'custom-style': 'style' }) ?? {}
+
+  const style = rest.style
+  if (style) {
+    // Do not retain styles that have unsemantic names. This is for brevity
+    // but also to avoid temptation to use them for semantic inference.
+    if (
+      [
+        'default',
+        'normal',
+        'body',
+        'text',
+        'text body',
+        'text default',
+        'default text',
+        'body text',
+        'block text',
+        'paragraph',
+        'first paragraph',
+      ].includes(style.toLowerCase())
+    ) {
+      delete rest.style
+    }
+  }
+
+  if (div.c[1].length > 1)
+    log.warn('Pandoc Div has more than one child, only first will be used.')
+  const node = decodeBlock(div.c[1][0])
+
+  let meta: object | undefined = { ...node.meta, ...rest }
+  if (Object.keys(meta).length === 0) meta = undefined
+
+  return { ...node, id, meta }
+}
+
+/**
  * Decode an array of Pandoc `Inline` nodes to Stencila `InlineContent` nodes.
  *
- * Merges contiguous `Str` and `Space` elements prior to decoding.
+ * Merges contiguous `Str` and `Space` elements prior to decoding. Will also
+ * unwrap a Pandoc `Span` (produced for `docx+styles`; no analogous node type in Stencila)
  */
 function decodeInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
+  const unwrapped = nodes.reduce(
+    (prev: Pandoc.Inline[], node) =>
+      node.t === 'Span' ? [...prev, ...node.c[1]] : [...prev, node],
+    []
+  )
+
   const inlines = []
   let previous: Pandoc.Inline | undefined
-  for (const node of nodes) {
-    if (
-      previous &&
-      previous.t === 'Str' &&
-      (node.t === 'Space' || node.t === 'Str')
-    ) {
+  for (const node of unwrapped) {
+    if (previous?.t === 'Str' && (node.t === 'Space' || node.t === 'Str')) {
       if (node.t === 'Space') previous.c += ' '
       else if (node.t === 'Str') previous.c += node.c
     } else {
@@ -944,6 +994,7 @@ function decodeInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
       previous = current
     }
   }
+
   return inlines.map(decodeInline)
 }
 
@@ -1351,15 +1402,12 @@ async function encodeMath(
  */
 function decodeLink(node: Pandoc.Link): stencila.Link {
   const [target, title] = node.c[2]
-  const link: stencila.Link = {
-    type: 'Link',
+  return stencila.link({
+    meta: decodeAttrs(node.c[0]),
     target,
+    title: title !== '' ? title : undefined,
     content: decodeInlines(node.c[1]),
-  }
-  if (title) link.title = title
-  const meta = decodeAttrs(node.c[0])
-  if (meta) link.meta = meta
-  return link
+  })
 }
 
 /**
@@ -1527,23 +1575,44 @@ async function encodeRpng(node: stencila.Node): Promise<Pandoc.Image> {
  */
 export const emptyAttrs: Pandoc.Attr = ['', [], []]
 
+interface Attributes {
+  id?: string
+  classes?: string
+  [key: string]: string | undefined
+}
+
 /**
  * Decode Pandoc `Attr` attributes to an object
  */
-function decodeAttrs(node: Pandoc.Attr): { [key: string]: string } | undefined {
-  const attrs: { [key: string]: string } = {}
+function decodeAttrs(
+  node: Pandoc.Attr,
+  renames: Record<string, string> = {}
+): Attributes | undefined {
+  const attrs: Attributes = {}
   if (node[0]) attrs.id = node[0]
   if (node[1]?.length) attrs.classes = node[1].join(' ')
-  for (const attr of node[2]) attrs[attr[0]] = attr[1]
-  return Object.keys(attrs).length ? attrs : undefined
+  for (const item of node[2]) {
+    const [name, value] = item
+    const newName = name in renames ? renames[name] : name
+    attrs[newName] = value
+  }
+  return Object.keys(attrs).length > 0 ? attrs : undefined
 }
 
 /**
  * Encode an object of attributes to a Pandoc `Attr`.
  */
-function encodeAttrs(attrs: { [key: string]: string } = {}): Pandoc.Attr {
+function encodeAttrs(attrs: Attributes = {}): Pandoc.Attr {
   const { id, classes, ...rest } = attrs
-  return [id || '', classes ? classes.split(' ') : [], Object.entries(rest)]
+  return [
+    id ?? '',
+    classes ? classes.split(' ') : [],
+    Object.entries(rest).reduce(
+      (prev: [string, string][], [name, value]) =>
+        value !== undefined ? [...prev, [name, value]] : prev,
+      []
+    ),
+  ]
 }
 
 /**

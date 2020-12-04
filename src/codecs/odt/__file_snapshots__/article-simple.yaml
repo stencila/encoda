@@ -1,0 +1,23 @@
+type: Article
+content:
+  - type: Paragraph
+    content:
+      - Simple article
+  - type: Heading
+    depth: 1
+    content:
+      - Heading one
+  - type: Heading
+    depth: 2
+    content:
+      - Heading two
+  - type: Paragraph
+    content:
+      - Paragraph one.
+  - type: Heading
+    depth: 3
+    content:
+      - Heading three
+  - type: Paragraph
+    content:
+      - Paragraph two.

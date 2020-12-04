@@ -74,11 +74,9 @@ export const logWarnLossIfAny = (
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(
-      `${codec} Properties of \`${stencila.nodeType(
+      `${codec}:${op} Properties of \`${stencila.nodeType(
         node
-      )}\` not supported by ${op}: ${properties
-        .map((prop) => `\`${prop}\``)
-        .join(', ')}`
+      )}\` not supported: ${properties.map((prop) => `\`${prop}\``).join(', ')}`
     )
   }
 }

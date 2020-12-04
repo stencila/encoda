@@ -1,0 +1,776 @@
+[
+    {
+        "scope": "https://api.crossref.org:443",
+        "method": "GET",
+        "path": "/works/10.21105/joss.02693",
+        "body": "",
+        "status": 200,
+        "response": {
+            "status": "ok",
+            "message-type": "work",
+            "message-version": "1.0.0",
+            "message": {
+                "indexed": {
+                    "date-parts": [
+                        [
+                            2020,
+                            11,
+                            24
+                        ]
+                    ],
+                    "date-time": "2020-11-24T10:19:19Z",
+                    "timestamp": 1606213159995
+                },
+                "reference-count": 7,
+                "publisher": "The Open Journal",
+                "issue": "55",
+                "license": [
+                    {
+                        "URL": "http://creativecommons.org/licenses/by/4.0/",
+                        "start": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T00:00:00Z",
+                            "timestamp": 1606176000000
+                        },
+                        "delay-in-days": 0,
+                        "content-version": "vor"
+                    },
+                    {
+                        "URL": "http://creativecommons.org/licenses/by/4.0/",
+                        "start": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T00:00:00Z",
+                            "timestamp": 1606176000000
+                        },
+                        "delay-in-days": 0,
+                        "content-version": "am"
+                    },
+                    {
+                        "URL": "http://creativecommons.org/licenses/by/4.0/",
+                        "start": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T00:00:00Z",
+                            "timestamp": 1606176000000
+                        },
+                        "delay-in-days": 0,
+                        "content-version": "tdm"
+                    }
+                ],
+                "content-domain": {
+                    "domain": [],
+                    "crossmark-restriction": false
+                },
+                "short-container-title": [
+                    "JOSS"
+                ],
+                "published-print": {
+                    "date-parts": [
+                        [
+                            2020,
+                            11,
+                            24
+                        ]
+                    ]
+                },
+                "DOI": "10.21105/joss.02693",
+                "type": "journal-article",
+                "created": {
+                    "date-parts": [
+                        [
+                            2020,
+                            11,
+                            24
+                        ]
+                    ],
+                    "date-time": "2020-11-24T09:02:08Z",
+                    "timestamp": 1606208528000
+                },
+                "page": "2693",
+                "source": "Crossref",
+                "is-referenced-by-count": 0,
+                "title": [
+                    "PyAstroPol: A Python package for the instrumental polarization analysis of the astronomical optics."
+                ],
+                "prefix": "10.21105",
+                "volume": "5",
+                "author": [
+                    {
+                        "ORCID": "http://orcid.org/0000-0002-4892-6561",
+                        "authenticated-orcid": false,
+                        "given": "Hemanth",
+                        "family": "Pruthvi.",
+                        "sequence": "first",
+                        "affiliation": []
+                    }
+                ],
+                "member": "8722",
+                "reference": [
+                    {
+                        "key": "ref1",
+                        "DOI": "10.1086/599043",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref2",
+                        "DOI": "10.1117/12.2181397",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref3",
+                        "DOI": "10.1117/12.2233176",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref4",
+                        "DOI": "10.1201/b19711",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref5",
+                        "DOI": "10.1117/1.JATIS.4.4.048002",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref6",
+                        "DOI": "10.1007/BF00157317",
+                        "doi-asserted-by": "publisher"
+                    },
+                    {
+                        "key": "ref7",
+                        "DOI": "10.1051/0004-6361:20052935",
+                        "doi-asserted-by": "publisher"
+                    }
+                ],
+                "container-title": [
+                    "Journal of Open Source Software"
+                ],
+                "original-title": [],
+                "link": [
+                    {
+                        "URL": "https://joss.theoj.org/papers/10.21105/joss.02693.pdf",
+                        "content-type": "application/pdf",
+                        "content-version": "vor",
+                        "intended-application": "text-mining"
+                    }
+                ],
+                "deposited": {
+                    "date-parts": [
+                        [
+                            2020,
+                            11,
+                            24
+                        ]
+                    ],
+                    "date-time": "2020-11-24T09:02:11Z",
+                    "timestamp": 1606208531000
+                },
+                "score": 1,
+                "subtitle": [],
+                "short-title": [],
+                "issued": {
+                    "date-parts": [
+                        [
+                            2020,
+                            11,
+                            24
+                        ]
+                    ]
+                },
+                "references-count": 7,
+                "journal-issue": {
+                    "published-online": {
+                        "date-parts": [
+                            [
+                                2020,
+                                11
+                            ]
+                        ]
+                    },
+                    "issue": "55"
+                },
+                "alternative-id": [
+                    "10.21105/joss.02693"
+                ],
+                "URL": "http://dx.doi.org/10.21105/joss.02693",
+                "relation": {
+                    "references": [
+                        {
+                            "id-type": "doi",
+                            "id": "“https://doi.org/10.5281/zenodo.4285762”",
+                            "asserted-by": "subject"
+                        }
+                    ],
+                    "has-review": [
+                        {
+                            "id-type": "uri",
+                            "id": "https://github.com/openjournals/joss-reviews/issues/2693",
+                            "asserted-by": "subject"
+                        }
+                    ],
+                    "cites": []
+                },
+                "ISSN": [
+                    "2475-9066"
+                ],
+                "issn-type": [
+                    {
+                        "value": "2475-9066",
+                        "type": "electronic"
+                    }
+                ]
+            }
+        },
+        "rawHeaders": [
+            "Content-Type",
+            "application/json;charset=UTF-8",
+            "Vary",
+            "Accept",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Access-Control-Allow-Headers",
+            "X-Requested-With",
+            "Content-Length",
+            "3040",
+            "Server",
+            "http-kit",
+            "Date",
+            "Thu, 03 Dec 2020 23:59:25 GMT",
+            "X-Rate-Limit-Limit",
+            "50",
+            "X-Rate-Limit-Interval",
+            "1s",
+            "Connection",
+            "close"
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.crossref.org:443",
+        "method": "GET",
+        "path": "/works?query.bibliographic=Foo+and+Bar+%282003%29+A+non-existent+article+that+should+remain+a+plain+text+reference.&rows=1",
+        "body": "",
+        "status": 200,
+        "response": {
+            "status": "ok",
+            "message-type": "work-list",
+            "message-version": "1.0.0",
+            "message": {
+                "facets": {},
+                "total-results": 3891651,
+                "items": [
+                    {
+                        "indexed": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    4,
+                                    13
+                                ]
+                            ],
+                            "date-time": "2020-04-13T17:36:52Z",
+                            "timestamp": 1586799412208
+                        },
+                        "reference-count": 0,
+                        "publisher": "Cambridge University Press (CUP)",
+                        "issue": "178",
+                        "license": [
+                            {
+                                "URL": "https://www.cambridge.org/core/terms",
+                                "start": {
+                                    "date-parts": [
+                                        [
+                                            2009,
+                                            2,
+                                            25
+                                        ]
+                                    ],
+                                    "date-time": "2009-02-25T00:00:00Z",
+                                    "timestamp": 1235520000000
+                                },
+                                "delay-in-days": 13662,
+                                "content-version": "unspecified"
+                            }
+                        ],
+                        "content-domain": {
+                            "domain": [
+                                "journals.cambridge.org"
+                            ],
+                            "crossmark-restriction": true
+                        },
+                        "short-container-title": [
+                            "Philosophy"
+                        ],
+                        "published-print": {
+                            "date-parts": [
+                                [
+                                    1971,
+                                    10
+                                ]
+                            ]
+                        },
+                        "abstract": "<jats:p>Can we refer to objects which do not exist? Searle says that we cannot. He postulates an ‘axiom of existence’ such that, if an object does not exist, we cannot refer to it. This ‘axiom of existence’ could be taken simply as a way of defining the notion of ‘reference’; we would not count a reference to a non-existent object as a ‘reference’ in the philosophical sense; or perhaps it might count as a reference but not as a ‘successful’ or ‘consummated’ reference, to use the terminology which Searle sometimes adopts. Whichever way we take Searle's doctrine I wish to argue that it is objectionable. The conceptual scheme he advocates obscures the truth. But I do not deny that there is a temptation to resort to it, and I hope to show that, where lawyers have yielded to the temptation, pernicious doctrines have resulted.</jats:p>",
+                        "DOI": "10.1017/s0031819100016946",
+                        "type": "journal-article",
+                        "created": {
+                            "date-parts": [
+                                [
+                                    2009,
+                                    2,
+                                    25
+                                ]
+                            ],
+                            "date-time": "2009-02-25T14:23:06Z",
+                            "timestamp": 1235571786000
+                        },
+                        "page": "302-308",
+                        "update-policy": "http://dx.doi.org/10.1017/policypage",
+                        "source": "Crossref",
+                        "is-referenced-by-count": 0,
+                        "title": [
+                            "Reference to the Non-Existent"
+                        ],
+                        "prefix": "10.1017",
+                        "volume": "46",
+                        "author": [
+                            {
+                                "given": "A. M.",
+                                "family": "Honoré",
+                                "sequence": "first",
+                                "affiliation": []
+                            }
+                        ],
+                        "member": "56",
+                        "published-online": {
+                            "date-parts": [
+                                [
+                                    2009,
+                                    2,
+                                    25
+                                ]
+                            ]
+                        },
+                        "container-title": [
+                            "Philosophy"
+                        ],
+                        "language": "en",
+                        "link": [
+                            {
+                                "URL": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0031819100016946",
+                                "content-type": "unspecified",
+                                "content-version": "vor",
+                                "intended-application": "similarity-checking"
+                            }
+                        ],
+                        "deposited": {
+                            "date-parts": [
+                                [
+                                    2019,
+                                    5,
+                                    31
+                                ]
+                            ],
+                            "date-time": "2019-05-31T19:45:16Z",
+                            "timestamp": 1559331916000
+                        },
+                        "score": 26.4251,
+                        "issued": {
+                            "date-parts": [
+                                [
+                                    1971,
+                                    10
+                                ]
+                            ]
+                        },
+                        "references-count": 0,
+                        "journal-issue": {
+                            "published-print": {
+                                "date-parts": [
+                                    [
+                                        1971,
+                                        10
+                                    ]
+                                ]
+                            },
+                            "issue": "178"
+                        },
+                        "alternative-id": [
+                            "S0031819100016946"
+                        ],
+                        "URL": "http://dx.doi.org/10.1017/s0031819100016946",
+                        "ISSN": [
+                            "0031-8191",
+                            "1469-817X"
+                        ],
+                        "issn-type": [
+                            {
+                                "value": "0031-8191",
+                                "type": "print"
+                            },
+                            {
+                                "value": "1469-817X",
+                                "type": "electronic"
+                            }
+                        ],
+                        "subject": [
+                            "Philosophy"
+                        ],
+                        "assertion": [
+                            {
+                                "value": "Copyright © The Royal Institute of Philosophy 1971",
+                                "name": "license",
+                                "label": "License",
+                                "group": {
+                                    "name": "copyright_and_licensing",
+                                    "label": "Copyright and Licensing"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "items-per-page": 1,
+                "query": {
+                    "start-index": 0,
+                    "search-terms": null
+                }
+            }
+        },
+        "rawHeaders": [
+            "Content-Type",
+            "application/json;charset=UTF-8",
+            "Vary",
+            "Accept",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Access-Control-Allow-Headers",
+            "X-Requested-With",
+            "Content-Length",
+            "3137",
+            "Server",
+            "http-kit",
+            "Date",
+            "Thu, 03 Dec 2020 23:59:26 GMT",
+            "X-Rate-Limit-Limit",
+            "50",
+            "X-Rate-Limit-Interval",
+            "1s",
+            "Connection",
+            "close"
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.crossref.org:443",
+        "method": "GET",
+        "path": "/works?query.bibliographic=Danehkar%2C+A.%2C+%282020%29.+AtomNeb+Python+Package%2C+an+addendum+to+AtomNeb%3A+IDL+Library+for+Atomic+Data+of+Ionized+Nebulae.+Journal+of+Open+Source+Software%2C+5%2855%29%2C+2797.&rows=1",
+        "body": "",
+        "status": 200,
+        "response": {
+            "status": "ok",
+            "message-type": "work-list",
+            "message-version": "1.0.0",
+            "message": {
+                "facets": {},
+                "total-results": 9981671,
+                "items": [
+                    {
+                        "indexed": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T09:37:46Z",
+                            "timestamp": 1606210666431
+                        },
+                        "reference-count": 13,
+                        "publisher": "The Open Journal",
+                        "issue": "55",
+                        "license": [
+                            {
+                                "URL": "http://creativecommons.org/licenses/by/4.0/",
+                                "start": {
+                                    "date-parts": [
+                                        [
+                                            2020,
+                                            11,
+                                            24
+                                        ]
+                                    ],
+                                    "date-time": "2020-11-24T00:00:00Z",
+                                    "timestamp": 1606176000000
+                                },
+                                "delay-in-days": 0,
+                                "content-version": "vor"
+                            },
+                            {
+                                "URL": "http://creativecommons.org/licenses/by/4.0/",
+                                "start": {
+                                    "date-parts": [
+                                        [
+                                            2020,
+                                            11,
+                                            24
+                                        ]
+                                    ],
+                                    "date-time": "2020-11-24T00:00:00Z",
+                                    "timestamp": 1606176000000
+                                },
+                                "delay-in-days": 0,
+                                "content-version": "am"
+                            },
+                            {
+                                "URL": "http://creativecommons.org/licenses/by/4.0/",
+                                "start": {
+                                    "date-parts": [
+                                        [
+                                            2020,
+                                            11,
+                                            24
+                                        ]
+                                    ],
+                                    "date-time": "2020-11-24T00:00:00Z",
+                                    "timestamp": 1606176000000
+                                },
+                                "delay-in-days": 0,
+                                "content-version": "tdm"
+                            }
+                        ],
+                        "content-domain": {
+                            "domain": [],
+                            "crossmark-restriction": false
+                        },
+                        "short-container-title": [
+                            "JOSS"
+                        ],
+                        "published-print": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ]
+                        },
+                        "DOI": "10.21105/joss.02797",
+                        "type": "journal-article",
+                        "created": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T08:31:06Z",
+                            "timestamp": 1606206666000
+                        },
+                        "page": "2797",
+                        "source": "Crossref",
+                        "is-referenced-by-count": 0,
+                        "title": [
+                            "AtomNeb Python Package, an addendum to AtomNeb: IDL Library for Atomic Data of Ionized Nebulae"
+                        ],
+                        "prefix": "10.21105",
+                        "volume": "5",
+                        "author": [
+                            {
+                                "ORCID": "http://orcid.org/0000-0003-4552-5997",
+                                "authenticated-orcid": false,
+                                "given": "Ashkbiz",
+                                "family": "Danehkar",
+                                "sequence": "first",
+                                "affiliation": []
+                            }
+                        ],
+                        "member": "8722",
+                        "reference": [
+                            {
+                                "key": "ref1",
+                                "DOI": "10.21105/joss.00899",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref2",
+                                "DOI": "10.21105/joss.00898",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref3",
+                                "unstructured": "Danehkar, A., pyEQUIB Python Package, an addendum to proEQUIB: IDL Library for Plasma Diagnostics and Abundance Analysis, The Journal of Open Source Software, 2020, submitted"
+                            },
+                            {
+                                "key": "ref4",
+                                "unstructured": "Wells, D. C. and Greisen, E. W. and Harten, R. H., FITS - a Flexible Image Transport System, Astronomy and Astrophysics Supplement, 1981, 44, 363, http://adsabs.harvard.edu/abs/1981A%26AS…44..363W, Provided by the SAO/NASA Astrophysics Data System"
+                            },
+                            {
+                                "key": "ref5",
+                                "DOI": "10.1051/0004-6361:20010923",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref6",
+                                "DOI": "10.1051/0004-6361/201015362",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref7",
+                                "DOI": "10.1051/0004-6361/201322068",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref8",
+                                "DOI": "10.3847/1538-3881/aabc4f",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref9",
+                                "DOI": "10.1109/MCSE.2011.37",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref10",
+                                "DOI": "10.1038/s41586-020-2649-2",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref11",
+                                "DOI": "10.25080/Majora-92bf1922-00a",
+                                "doi-asserted-by": "publisher"
+                            },
+                            {
+                                "key": "ref12",
+                                "unstructured": "pandas: a Foundational Python Library for Data Analysis and Statistics, McKinney, W., 2011, Python for High Performance and Scientific Computing, 14, 9"
+                            },
+                            {
+                                "key": "ref13",
+                                "unstructured": "Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython, 2nd Edition, McKinney, W., 9781491957639, 2018302150, 2017, O’Reilly Media"
+                            }
+                        ],
+                        "container-title": [
+                            "Journal of Open Source Software"
+                        ],
+                        "link": [
+                            {
+                                "URL": "https://joss.theoj.org/papers/10.21105/joss.02797.pdf",
+                                "content-type": "application/pdf",
+                                "content-version": "vor",
+                                "intended-application": "text-mining"
+                            }
+                        ],
+                        "deposited": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ],
+                            "date-time": "2020-11-24T08:31:41Z",
+                            "timestamp": 1606206701000
+                        },
+                        "score": 158.68555,
+                        "issued": {
+                            "date-parts": [
+                                [
+                                    2020,
+                                    11,
+                                    24
+                                ]
+                            ]
+                        },
+                        "references-count": 13,
+                        "journal-issue": {
+                            "published-online": {
+                                "date-parts": [
+                                    [
+                                        2020,
+                                        11
+                                    ]
+                                ]
+                            },
+                            "issue": "55"
+                        },
+                        "alternative-id": [
+                            "10.21105/joss.02797"
+                        ],
+                        "URL": "http://dx.doi.org/10.21105/joss.02797",
+                        "relation": {
+                            "references": [
+                                {
+                                    "id-type": "doi",
+                                    "id": "“https://doi.org/10.5281/zenodo.4287566”",
+                                    "asserted-by": "subject"
+                                }
+                            ],
+                            "has-review": [
+                                {
+                                    "id-type": "uri",
+                                    "id": "https://github.com/openjournals/joss-reviews/issues/2797",
+                                    "asserted-by": "subject"
+                                }
+                            ],
+                            "cites": []
+                        },
+                        "ISSN": [
+                            "2475-9066"
+                        ],
+                        "issn-type": [
+                            {
+                                "value": "2475-9066",
+                                "type": "electronic"
+                            }
+                        ]
+                    }
+                ],
+                "items-per-page": 1,
+                "query": {
+                    "start-index": 0,
+                    "search-terms": null
+                }
+            }
+        },
+        "rawHeaders": [
+            "Content-Type",
+            "application/json;charset=UTF-8",
+            "Vary",
+            "Accept",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Access-Control-Allow-Headers",
+            "X-Requested-With",
+            "Content-Length",
+            "4190",
+            "Server",
+            "http-kit",
+            "Date",
+            "Thu, 03 Dec 2020 23:59:26 GMT",
+            "X-Rate-Limit-Limit",
+            "50",
+            "X-Rate-Limit-Interval",
+            "1s",
+            "Connection",
+            "close"
+        ],
+        "responseIsBinary": false
+    }
+]

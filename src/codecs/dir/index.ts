@@ -53,7 +53,8 @@ export interface DecodeOptions extends CommonDecodeOptions {
   mainNames?: string | string[]
 }
 
-export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
+export class DirCodec
+  extends Codec<EncodeOptions, DecodeOptions>
   implements Codec<EncodeOptions, DecodeOptions> {
   public readonly extNames = ['dir']
 

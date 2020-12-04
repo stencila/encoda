@@ -23,7 +23,7 @@ export class DocxCodec extends Codec implements Codec {
     options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
     return pandoc.decode(file, options, {
-      pandocFormat: InputFormat.docx,
+      pandocFormat: InputFormat.docx_styles,
       pandocArgs: [`--extract-media=${file.path}.media`],
       ensureFile: true,
     })

@@ -11,20 +11,26 @@ import fs from 'fs'
 import got, { Options, Response } from 'got'
 import stream from 'stream'
 import util from 'util'
-import cache from './app/cacheSync'
+import cache from './app/cache'
 
 const pipeline = util.promisify(stream.pipeline)
 
 const log = getLogger('encoda:util:http')
 
 /**
- * A `got` instance with default options for
- * HTTP requests.
+ * A `got` instance with default options for HTTP requests.
+ *
+ * User agent is set, and includes a `mailto`, for politeness:
+ * https://github.com/CrossRef/rest-api-doc#good-manners--more-reliable-service
  */
 const http = got.extend({
   cache,
+  retry: {
+    limit: 5,
+  },
   headers: {
-    'user-agent': `Encoda (https://github.com/stencila/encoda)`,
+    'user-agent':
+      'Encoda (https://github.com/stencila/encoda; mailto:hello@stenci.la)',
     'accept-encoding': 'gzip, deflate',
   },
 })

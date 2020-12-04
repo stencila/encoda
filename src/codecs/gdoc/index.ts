@@ -13,7 +13,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isInlineContent } from '@stencila/schema'
+import stencila, { InlineContent, isInlineContent } from '@stencila/schema'
 import { docs_v1 as GDocT } from 'googleapis'
 import tempy from 'tempy'
 import * as http from '../../util/http'
@@ -27,7 +27,8 @@ interface DecodeOptions extends CommonDecodeOptions {
   fetch: boolean
 }
 
-export class GDocCodec extends Codec<{}, DecodeOptions>
+export class GDocCodec
+  extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
   public readonly mediaTypes = ['application/vnd.google-apps.document']
 
@@ -207,7 +208,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
   }
   encodingGDoc = gdoc
 
-  const gdocContent = assertDefined(assertDefined(gdoc.body).content)
+  const gdocContent = assertDefined(gdoc.body?.content)
 
   // Wrap the node as needed to ensure an array
   // of block element at the top level
@@ -259,6 +260,9 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
           break
         case 'Table':
           gdocContent.push(encodeTable(node as stencila.Table))
+          break
+        case 'Figure':
+          gdocContent.push(...encodeFigure(node as stencila.Figure))
           break
         case 'ThematicBreak':
           gdocContent.push(encodeThematicBreak())
@@ -560,6 +564,47 @@ function encodeTable(table: stencila.Table): GDocT.Schema$StructuralElement {
       ),
     },
   }
+}
+
+/**
+ * Encode a Stencila `Figure` to GDoc image element followed by a caption.
+ */
+function encodeFigure(
+  figure: stencila.Figure
+): GDocT.Schema$StructuralElement[] {
+  const { label, caption = [], content = [] } = figure
+  return [
+    ...content.reduce((prev: GDocT.Schema$StructuralElement[], node) => {
+      if (stencila.isA('ImageObject', node))
+        return [
+          ...prev,
+          {
+            paragraph: {
+              elements: [encodeImageObject(node)],
+            },
+          },
+        ]
+      return prev
+    }, []),
+    ...(label !== undefined || caption.length > 0
+      ? [
+          {
+            paragraph: {
+              elements: [
+                ...(label !== undefined ? [label + ': '] : []),
+                ...(typeof caption === 'string' ? [caption] : caption),
+              ].reduce((prev: GDocT.Schema$StructuralElement[], node) => {
+                if (stencila.isInlineContent(node))
+                  return [...prev, encodeInlineContent(node)]
+                else if ('content' in node)
+                  return [...prev, node.content.map(encodeInlineContent)]
+                else return prev
+              }, []),
+            },
+          },
+        ]
+      : []),
+  ]
 }
 
 /**

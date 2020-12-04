@@ -30,7 +30,9 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
 
   test('Markdown codec loads a HTML superscript as expected', async () => {
     // The Markdown codec works fine when loading a simple superscript
-    const article = (await mdCodec.load('R<sup>2</sup>.')) as schema.Article
+    const article = (await mdCodec.load('R<sup>2</sup>.', {
+      shouldReshape: false,
+    })) as schema.Article
     expect(article?.content?.[0] || '').toEqual(
       schema.paragraph({
         content: ['R', schema.superscript({ content: ['2'] }), '.'],
@@ -43,7 +45,8 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
     // any following content gets wrapped into an array and the following content
     // is also repeated.
     const article = (await mdCodec.load(
-      `First <sup>1</sup> second <sup>2</sup> after.`
+      `First <sup>1</sup> second <sup>2</sup> after.`,
+      { shouldReshape: false }
     )) as schema.Article
     expect(article.content?.[0] || '').toEqual(
       schema.paragraph({

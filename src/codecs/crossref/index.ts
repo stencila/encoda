@@ -41,30 +41,27 @@ export class CrossrefCodec extends Codec implements Codec {
   public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
-      searchParams: new URLSearchParams([['query.bibliographic', content]]),
+      searchParams: new URLSearchParams([
+        ['query.bibliographic', content],
+        ['rows', '1'],
+      ]),
     })
-    if (response.statusCode === 200 && response.body.length > 0) {
-      const data = JSON.parse(response.body)
-      const csl = data.message.items[0]
-      // The output from api.crossref.org is not strictly CSL-JSON
-      // See  https://github.com/CrossRef/rest-api-doc/issues/222 for more
-      //
-      // Props `container-title`, `title`, and `ISSN` should be a string, not an array.
-      for (const prop of ['container-title', 'title', 'ISSN']) {
-        if (Array.isArray(csl[prop])) csl[prop] = csl[prop][0]
-      }
-      // Replace erroneous types
-      const replacers: { [key: string]: string } = {
-        'journal-article': 'article-journal',
-        'book-chapter': 'chapter',
-        'posted-content': 'manuscript',
-        'proceedings-article': 'paper-conference',
-      }
-      csl.type = replacers[csl.type] ?? csl.type
 
-      return decodeCsl(csl)
+    if (!(response.statusCode === 200 && response.body.length > 0)) {
+      throw new Error(
+        `Crossref request failed: ${response.statusCode}: ${response.body}`
+      )
     }
-    throw new Error(`Request failed`)
+
+    const data = JSON.parse(response.body)
+    const csl = data.message.items[0]
+
+    // This min score should be an option. This value was determined
+    // through experimentation, leaning to avoiding false matches.
+    const minScore = 50
+    if (csl === undefined || csl.score < minScore) return null
+
+    return decodeCrossrefCsl(csl)
   }
 
   /**
@@ -126,6 +123,29 @@ export class CrossrefCodec extends Codec implements Codec {
 
     return Promise.resolve(vfile.load(xml.dump(doc, { spaces: 2 })))
   }
+}
+
+/**
+ * The output from api.crossref.org is not strictly CSL-JSON; this function fixes it.
+ * See  https://github.com/CrossRef/rest-api-doc/issues/222 for more.
+ */
+export function decodeCrossrefCsl(
+  csl: CSL.Data & { [key: string]: any }
+): Promise<schema.CreativeWork> {
+  // Props `container-title`, `title`, and `ISSN` should be a string, not an array.
+  for (const prop of ['container-title', 'title', 'ISSN']) {
+    if (Array.isArray(csl[prop])) csl[prop] = csl[prop][0]
+  }
+  // Replace erroneous types
+  const replacers: { [key: string]: string } = {
+    'journal-article': 'article-journal',
+    'book-chapter': 'chapter',
+    'posted-content': 'manuscript',
+    'proceedings-article': 'paper-conference',
+  }
+  csl.type = (replacers[csl.type] ?? csl.type) as CSL.ItemType
+
+  return decodeCsl(csl)
 }
 
 /**
