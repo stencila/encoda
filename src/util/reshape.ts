@@ -26,6 +26,13 @@ async function reshapeCreativeWork(
   const codeStyles = ['code', 'code block']
   const tableCaptionStyles = ['table caption', 'table', 'caption']
   const figureCaptionStyles = ['figure caption', 'figure', 'caption']
+  const chunkCaptionStyles = [
+    'table caption',
+    'figure caption',
+    'table',
+    'figure',
+    'caption',
+  ]
 
   for (let index = 0; index < content.length; index++) {
     const prev = newContent[newContent.length - 1]
@@ -91,7 +98,7 @@ async function reshapeCreativeWork(
         while (true) {
           const following = content[index + step]
           const followingText = textContent(following)
-          const match = /^(\d+)(.*)/.exec(followingText)
+          const match = /^(\d+)\s+(.*)/.exec(followingText)
           if (match) {
             const [orgId, name] = match.slice(1)
             const org = schema.organization({ name })
@@ -150,7 +157,10 @@ async function reshapeCreativeWork(
 
       let remove = false
       if (work.keywords === undefined && name === 'keywords') {
-        work = { ...work, keywords: value.split(/\s*,|;\s*/) }
+        work = {
+          ...work,
+          keywords: value.split(/\s*,|;\s*/).map((keyword) => keyword.trim()),
+        }
         remove = true
       }
 
@@ -214,7 +224,43 @@ async function reshapeCreativeWork(
       }
     }
 
-    // Is this a `Figure` disguised as a Paragraph` with a single media object in it?
+    // Is this a `CodeChunk` in search of a caption?
+    else if (schema.isA('CodeChunk', node) && node.caption === undefined) {
+      let captionPara: schema.Paragraph | undefined
+      const captionRegex = /^(Figure|Table)\s+\d+\s*[.:]/i
+      if (
+        schema.isA('Paragraph', prev) &&
+        (captionRegex.test(textContent(prev)) ||
+          hasStyle(prev, chunkCaptionStyles) ||
+          isEmphasis(prev) ||
+          isStrong(prev))
+      ) {
+        // Make previous paragraph the table caption
+        captionPara = prev
+        newContent.pop()
+      } else if (
+        schema.isA('Paragraph', next) &&
+        (captionRegex.test(textContent(next)) ||
+          hasStyle(next, chunkCaptionStyles) ||
+          isEmphasis(next) ||
+          isStrong(next))
+      ) {
+        // Make the next paragraph the table caption
+        captionPara = next
+        index++
+      }
+
+      // Separate figure label and caption
+      const [label, caption] = separateLabelCaption(captionPara, 'Table|Figure')
+
+      node = {
+        ...node,
+        label: label ?? node.label,
+        caption: caption ?? node.caption,
+      }
+    }
+
+    // Is this a `Figure` disguised as a `Paragraph` with a single media object in it?
     else if (
       schema.isA('Paragraph', node) &&
       node.content.length === 1 &&
