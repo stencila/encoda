@@ -1,6 +1,8 @@
-import { addHandler, LogData, LogLevel } from '@stencila/logga'
+import { replaceHandlers, LogLevel } from '@stencila/logga'
+import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 import kitchenSinkArticle from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
+import rNotebookSimple from '../../__fixtures__/article/r-notebook-simple'
 import simpleArticle from '../../__fixtures__/article/simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
@@ -13,7 +15,7 @@ const jsonCodec = new JsonCodec()
 // Note that the logs are shared across all fixtures
 const logMessages: string[] = []
 beforeAll(() => {
-  addHandler(({ level, message }) => {
+  replaceHandlers(({ level, message }) => {
     if (level === LogLevel.warn && !logMessages.includes(message))
       logMessages.push(message)
   })
@@ -24,6 +26,8 @@ const articles = [
   // These articles currently have loss on decoding
   // so these tests just check that encoding does not fail
   ['kitchen-sink-article', kitchenSinkArticle, false],
+  ['jupyter-notebook-simple', jupyterNotebookSimple, false],
+  ['r-notebook-simple', rNotebookSimple, false],
   ['math-article', mathArticle, false],
   ['math-article', mathArticle, false],
   ['elife-50356', 'article/journal/elife/50356.json', false],
