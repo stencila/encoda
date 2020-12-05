@@ -50,7 +50,7 @@ const log = getLogger('encoda:pandoc')
  * customize the decoding behavior for particular formats.
  * Not user options.
  */
-interface DecodeSettings {
+export interface DecodeSettings {
   pandocFormat?: Pandoc.InputFormat
   pandocArgs?: string[]
   ensureFile?: boolean
@@ -61,7 +61,7 @@ interface DecodeSettings {
  * customize the encoding behavior for particular formats.
  * Not user options.
  */
-interface EncodeSettings {
+export interface EncodeSettings {
   pandocFormat?: Pandoc.OutputFormat
   pandocArgs?: string[]
   ensureFile?: boolean
