@@ -167,6 +167,19 @@ async function decodeDocument(
             if (elem.paragraph) {
               const para = elem.paragraph
               const block = await decodeParagraph(para, lists)
+
+              // Ignore empty paragraphs
+              if (stencila.isParagraph(block)) {
+                const { content } = block
+                if (
+                  content.length === 0 ||
+                  (content.length === 1 &&
+                    typeof content[0] === 'string' &&
+                    content[0].trim() === '')
+                )
+                  return undefined
+              }
+
               // If this para has the `Title` style then use it's content
               // as the title of the article (overrides doc.title)
               if (stencila.isParagraph(block) && para.paragraphStyle) {

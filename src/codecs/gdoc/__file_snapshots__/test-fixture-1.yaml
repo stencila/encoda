@@ -27,9 +27,6 @@ content:
             content:
               - One of one
     order: unordered
-  - type: Paragraph
-    content:
-      - ''
   - type: List
     items:
       - type: ListItem
@@ -43,9 +40,6 @@ content:
             content:
               - Two of two
     order: unordered
-  - type: Paragraph
-    content:
-      - ''
   - type: List
     items:
       - type: ListItem
@@ -164,9 +158,6 @@ content:
     depth: 1
     content:
       - Tables
-  - type: Paragraph
-    content:
-      - ''
   - type: Table
     rows:
       - type: TableRow
@@ -211,7 +202,4 @@ content:
       - type: ImageObject
         contentUrl: >-
           data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEXMzMyWlpaqqqqcnJyxsbGjo6O3t7e+vr7FxcWUEKXMAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWNgGAWjABUwGTvgkFFNMcEhI86QjF2Cw4ChGKdNSrgkWAxwyRQ34JIJw2mNOU4Z3CACp4wEGaaNgiEEANwaBJ7ft3cYAAAAAElFTkSuQmCC
-      - ''
-  - type: Paragraph
-    content:
       - ''
