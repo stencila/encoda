@@ -103,23 +103,20 @@ test('encode > decode > encode', async () => {
     opts
   )
 
-  const read = await rpngCodec.read(
+  const read = (await rpngCodec.read(
     snapshot('r-code-chunk-image-output-a.png')
-  ) as schema.CodeChunk
+  )) as schema.CodeChunk
 
   // The read in coded chunk should be exactly the same except for
   // the output image which is not the original code generated image
   // but rather a screenshot of the `<stencila-code-chunk>` component
   // with affordances.
-  const {outputs: readOutputs, ...readRest} = read
-  const {outputs: origOutputs, ...origRest} = rCodeChunkImageOutput
+  const { outputs: readOutputs, ...readRest } = read
+  const { outputs: origOutputs, ...origRest } = rCodeChunkImageOutput
   expect(readRest).toEqual(origRest)
   expect(readOutputs).not.toEqual(origOutputs)
 
-  await rpngCodec.write(
-    read,
-    snapshot('r-code-chunk-image-output-b.png')
-  )
+  await rpngCodec.write(read, snapshot('r-code-chunk-image-output-b.png'))
 })
 
 describe('encoding of extended character sets', () => {
