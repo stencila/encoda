@@ -23,7 +23,7 @@ const log = getLogger('encoda:util:http')
  * User agent is set, and includes a `mailto`, for politeness:
  * https://github.com/CrossRef/rest-api-doc#good-manners--more-reliable-service
  */
-const http = got.extend({
+export const http = got.extend({
   cache,
   retry: {
     limit: 5,
@@ -31,6 +31,8 @@ const http = got.extend({
   headers: {
     'user-agent':
       'Encoda (https://github.com/stencila/encoda; mailto:hello@stenci.la)',
+    'content-type': 'application/json',
+    accept: 'application/json',
     'accept-encoding': 'gzip, deflate',
   },
 })

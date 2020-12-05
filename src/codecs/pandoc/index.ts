@@ -21,20 +21,23 @@ import stencila, {
 import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
+import { logWarnLossIfAny } from '../../log'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
+import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import transform, { transformSync } from '../../util/transform'
+import { http } from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
+import { EncodeOptions, PngCodec } from '../png'
 import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
-import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
-import { logWarnLossIfAny } from '../../log'
-import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
+const pngCodec = new PngCodec()
 const rpngCodec = new RpngCodec()
 const texCodec = new TexCodec()
 
@@ -64,6 +67,9 @@ interface EncodeSettings {
   ensureFile?: boolean
   templatePath?: string
   useCiteproc?: boolean
+  nodeInPng?: boolean
+  nodeInAlt?: boolean
+  nodeInLink?: boolean
 }
 
 export class PandocCodec extends Codec implements Codec {
@@ -127,7 +133,9 @@ export class PandocCodec extends Codec implements Codec {
       useCiteproc = false,
     } = settings
 
-    const { standalone, pdoc } = encodeNode(await encodeDocumentAsync(node))
+    const { standalone, pdoc } = encodeNode(
+      await encodeDocumentAsync(node, settings)
+    )
 
     const args = [`--from=json`, `--to=${pandocFormat}`]
     if (standalone) args.push('--standalone')
@@ -267,14 +275,15 @@ async function decodeDocumentAsync(
  * synchronous encoding.
  */
 async function encodeDocumentAsync(
-  node: stencila.Node
+  node: stencila.Node,
+  settings: EncodeSettings
 ): Promise<stencila.Node> {
   return transform(node, async (node, parent) => {
     switch (stencila.nodeType(node)) {
       case 'CodeExpression':
-        return encodeCodeExpression(node as stencila.CodeExpression)
+        return encodeCodeExpression(node as stencila.CodeExpression, settings)
       case 'CodeChunk':
-        return encodeCodeChunk(node as stencila.CodeChunk)
+        return encodeCodeChunk(node as stencila.CodeChunk, settings)
 
       case 'MathFragment':
         return encodeMath(node as stencila.MathFragment, 'InlineMath')
@@ -672,7 +681,10 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
  * can be edited by the user in the usual manner. See `reshape` for
  * how these are then reconsitituted based on styles etc.
  */
-async function encodeCodeChunk(chunk: stencila.CodeChunk): Promise<Pandoc.Div> {
+async function encodeCodeChunk(
+  chunk: stencila.CodeChunk,
+  settings: EncodeSettings
+): Promise<Pandoc.Div> {
   const { label, caption, ...rest } = chunk
 
   const mainDiv: Pandoc.Div = {
@@ -682,7 +694,7 @@ async function encodeCodeChunk(chunk: stencila.CodeChunk): Promise<Pandoc.Div> {
       [
         {
           t: 'Para',
-          c: [await encodeRpng(rest)],
+          c: [await encodeRpng(rest, settings)],
         },
       ],
     ],
@@ -1351,13 +1363,14 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
  * and a `custom-style` attribute.
  */
 async function encodeCodeExpression(
-  node: stencila.CodeExpression
+  node: stencila.CodeExpression,
+  settings: EncodeSettings
 ): Promise<Pandoc.Span> {
   return {
     t: 'Span',
     c: [
       ['', [], [['custom-style', 'Code Expression']]],
-      [await encodeRpng(node)],
+      [await encodeRpng(node, settings)],
     ],
   }
 }
@@ -1576,17 +1589,60 @@ function encodeFallbackInline(node: stencila.Node): Pandoc.Str {
 }
 
 /**
- * Encode a Stencila `Node` as a Pandoc `Image`
- * pointing to a RPNG.
+ * Encode a Stencila `Node` as a Pandoc `Image` pointing to a RPNG.
+ *
+ * There are three places that the JSON of the node can get stored:
+ *
+ * - nodeInPng: in a PNG metadata chunk
+ * - nodeInAlt: in the alt text of the image
+ * - nodeInLink: by POSTing to the hub.stenci.la/api/nodes and wrapping a link around the image
  */
-async function encodeRpng(node: stencila.Node): Promise<Pandoc.Image> {
+async function encodeRpng(
+  node: stencila.Node,
+  settings: EncodeSettings
+): Promise<Pandoc.Image | Pandoc.Link> {
+  const { nodeInPng = true, nodeInAlt = false, nodeInLink = false } = settings
+
   const imagePath = tempy.file({ extension: 'png' })
-  await rpngCodec.write(node, imagePath)
-  const url = imagePath
-  const title = nodeType(node)
-  return {
+  await (nodeInPng ? rpngCodec : pngCodec).write(node, imagePath)
+
+  let altText: Pandoc.Inline[] = []
+  if (nodeInAlt) {
+    // Don't include code chunk outputs in alt text for
+    // size reasons e.g. images
+    let json: string
+    if (stencila.isA('CodeChunk', node)) {
+      const { outputs, ...rest } = node
+      json = JSON.stringify(rest)
+    } else {
+      json = JSON.stringify(node)
+    }
+    altText = [{ t: 'Str', c: json }]
+  }
+
+  const imgElem: Pandoc.Image = {
     t: 'Image',
-    c: [emptyAttrs, [], [url, title]],
+    c: [emptyAttrs, altText, [imagePath, nodeType(node)]],
+  }
+
+  if (!nodeInLink) return imgElem
+
+  const json = JSON.stringify({
+    app: 'Encoda',
+    node,
+  })
+  const { url: linkUrl } = await http
+    .post('https://hub.stenci.la/api/nodes', {
+      headers: {
+        Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,
+      },
+      body: json,
+    })
+    .json()
+
+  return {
+    t: 'Link',
+    c: [emptyAttrs, [imgElem], [linkUrl, nodeType(node)]],
   }
 }
 
