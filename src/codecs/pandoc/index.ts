@@ -667,19 +667,44 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
 /**
  * Encode a Stencila `CodeChunk` to a Pandoc `Div` with an rPNG in it
  * and a `custom-style` attribute.
+ *
+ * This removes the `label` and `caption` from the code chunk so that they
+ * can be edited by the user in the usual manner. See `reshape` for
+ * how these are then reconsitituted based on styles etc.
  */
-async function encodeCodeChunk(node: stencila.CodeChunk): Promise<Pandoc.Div> {
-  return {
+async function encodeCodeChunk(chunk: stencila.CodeChunk): Promise<Pandoc.Div> {
+  const { label, caption, ...rest } = chunk
+
+  const mainDiv: Pandoc.Div = {
     t: 'Div',
     c: [
-      ['', [], [['custom-style', 'CodeChunk']]],
+      ['', [], [['custom-style', 'Code Chunk']]],
       [
         {
           t: 'Para',
-          c: [await encodeRpng(node)],
+          c: [await encodeRpng(rest)],
         },
       ],
     ],
+  }
+
+  const captionInlines = encodeCaption(label, caption)
+  if (captionInlines.length === 0) return mainDiv
+
+  const isTable = label !== undefined && /^\s*Table/i.test(label)
+  const captionStyle = isTable ? 'Table Caption' : 'Figure Caption'
+
+  const captionDiv: Pandoc.Div = {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', captionStyle]]],
+      [{ t: 'Para', c: captionInlines }],
+    ],
+  }
+
+  return {
+    t: 'Div',
+    c: [['', [], []], isTable ? [captionDiv, mainDiv] : [mainDiv, captionDiv]],
   }
 }
 
@@ -775,25 +800,26 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
 /**
  * Encode Stencila `Table` to a Pandoc `Table`.
  */
-function encodeTable(node: stencila.Table): Pandoc.Table {
-  const { title, caption } = encodeCaption(node)
+function encodeTable(table: stencila.Table): Pandoc.Table {
+  const { label, caption } = table
+  const captionInlines = encodeCaption(label, caption)
 
-  const columnCount = node.rows[0].cells.length
+  const columnCount = table.rows[0].cells.length
   const aligns: { t: Pandoc.Alignment }[] = makeBy(columnCount, () => ({
     t: Pandoc.Alignment.AlignDefault,
   }))
   const widths: number[] = makeBy(columnCount, () => 0)
 
   let head: Pandoc.TableCell[] = []
-  if (node.rows.length > 0) {
-    head = node.rows[0].cells.map((cell) =>
+  if (table.rows.length > 0) {
+    head = table.rows[0].cells.map((cell) =>
       encodeBlocks(ensureBlockContentArray(cell.content))
     )
   }
 
   let rows: Pandoc.TableCell[][] = []
-  if (node.rows.length > 1) {
-    rows = node.rows.slice(1).map((row: stencila.TableRow) => {
+  if (table.rows.length > 1) {
+    rows = table.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell) =>
         encodeBlocks(ensureBlockContentArray(cell.content))
       )
@@ -801,7 +827,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
   }
   return {
     t: 'Table',
-    c: [encodeInlines([...title, ...caption]), aligns, widths, head, rows],
+    c: [captionInlines, aligns, widths, head, rows],
   }
 }
 
@@ -816,9 +842,8 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
  * This encoding results in a similar structure to that used by Pandoc for tables
  * with a `Figure Caption` custom class analogous to the `Table Caption` custom class.
  */
-function encodeFigure(node: stencila.Figure): Pandoc.Div {
-  const { content = [] } = node
-  const { title, caption } = encodeCaption(node)
+function encodeFigure(figure: stencila.Figure): Pandoc.Div {
+  const { label, caption, content = [] } = figure
   const contentDiv: Pandoc.Div = {
     t: 'Div',
     c: [
@@ -831,55 +856,50 @@ function encodeFigure(node: stencila.Figure): Pandoc.Div {
     c: [
       ['', [], [['custom-style', 'Figure Caption']]],
       [
-        encodeParagraph(
-          stencila.paragraph({
-            content: [stencila.strong({ content: title }), ' ', ...caption],
-          })
-        ),
+        {
+          t: 'Para',
+          c: encodeCaption(label, caption),
+        },
       ],
     ],
   }
   return {
     t: 'Div',
     c: [
-      ['', [], [['custom-style', 'Figure Caption']]],
+      ['', [], []],
       [contentDiv, captionDiv],
     ],
   }
 }
 
+/**
+ * Transform the `label` and `caption` of a `Table`, `Figure` or `CodeChunk`
+ * into Pandoc inline nodes.
+ */
 function encodeCaption(
-  node: stencila.Table | stencila.Figure
-): {
-  title: stencila.InlineContent[]
-  caption: stencila.InlineContent[]
-} {
-  const { label, caption = [] } = node
+  label: string | undefined,
+  caption: string | stencila.Node[] | undefined
+): Pandoc.Inline[] {
+  let inlines: stencila.InlineContent[] = []
+
+  // Prefix the caption with the label
+  if (label !== undefined) inlines = [label, label.endsWith('.') ? ' ' : '. ']
 
   // Headings cause the custom style in formats like DOCX to
-  // be "broken up", so use them for the title, or replace
-  // with strong (character style) content
-  let title: stencila.InlineContent[] = []
-  const captionTransformed = ensureInlineContentArray(
-    transformSync(caption, (node) => {
-      if (stencila.isA('Heading', node)) {
-        const { content } = node
-        if (title.length === 0) {
-          title = content
-          return undefined
-        } else {
-          return stencila.strong({ content })
-        }
-      }
-      return node
-    })
-  )
+  // be "broken up" so replace with strong (character style) content
+  if (caption !== undefined)
+    inlines = [
+      ...inlines,
+      ...ensureInlineContentArray(
+        transformSync(caption, (node) => {
+          if (stencila.isA('Heading', node))
+            return stencila.strong({ content: node.content })
+          return node
+        })
+      ),
+    ]
 
-  // Prefix the title with the label
-  if (label !== undefined)
-    title = [label, label.endsWith('.') ? ' ' : '. ', ...title]
-
-  return { title, caption: captionTransformed }
+  return encodeInlines(inlines)
 }
 
 /**
@@ -893,7 +913,7 @@ function encodeCollection(node: stencila.Collection): Pandoc.Div | Pandoc.Para {
     return {
       t: 'Div',
       c: [
-        ['', [], [['custom-style', 'FigureGroup']]],
+        ['', [], [['custom-style', 'Figure Group']]],
         parts.map((part) => encodeFigure(part as stencila.Figure)),
       ],
     }
@@ -1336,7 +1356,7 @@ async function encodeCodeExpression(
   return {
     t: 'Span',
     c: [
-      ['', [], [['custom-style', 'CodeExpression']]],
+      ['', [], [['custom-style', 'Code Expression']]],
       [await encodeRpng(node)],
     ],
   }
