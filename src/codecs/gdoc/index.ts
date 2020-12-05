@@ -450,7 +450,7 @@ async function decodeInlineObjectElement(
             }
           : {}
       const node = await http.get(url, { headers }).json()
-      return node.node
+      return (node as { node: stencila.Entity }).node
     } catch {
       log.warn(`Error fetching node from ${url}`)
     }
