@@ -13,13 +13,13 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { InlineContent, isInlineContent } from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import { docs_v1 as GDocT } from 'googleapis'
 import tempy from 'tempy'
-import * as http from '../../util/http'
+import { http, download } from '../../util/http'
 import * as vfile from '../../util/vfile'
-import { TxtCodec } from '../txt'
-import { Codec, CommonDecodeOptions } from '../types'
+import { DocxCodec } from '../docx'
+import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 
 const log = getLogger('encoda:gdoc')
 
@@ -27,6 +27,15 @@ interface DecodeOptions extends CommonDecodeOptions {
   fetch: boolean
 }
 
+/**
+ * A codec for Google Docs.
+ *
+ * This codec currently does encoding of Google Docs via `docx`.
+ * That is because (at the time of writing) the Google Docs API does not allow
+ * creation of a Google Doc using the sample JSON as it does for getting a Google Doc.
+ * A previous version of this file had encoding functions for various nodes types
+ * but this was removed. See https://github.com/stencila/encoda/blob/4c87ea79450e50fbdc2aa6e12ededa597266d4e0/src/codecs/gdoc/index.ts#L35
+ */
 export class GDocCodec
   extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
@@ -48,15 +57,21 @@ export class GDocCodec
   }
 
   /**
-   * Encode a `stencila.Node` to a `VFile` with Markdown contents.
+   * Encode a `stencila.Node` to a Microsoft Word document suitable for uploading
+   * as a Google Doc.
    *
    * @param node The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const gdoc = encodeNode(node)
-    const json = JSON.stringify(gdoc, null, '  ')
-    return Promise.resolve(vfile.load(json))
+  public readonly encode = (
+    node: stencila.Node,
+    options: CommonEncodeOptions = this.commonEncodeDefaults
+  ): Promise<vfile.VFile> => {
+    return new DocxCodec().encode(node, options, {
+      nodeInPng: false,
+      nodeInAlt: true,
+      nodeInLink: true,
+    })
   }
 }
 
@@ -68,13 +83,6 @@ export class GDocCodec
  * the reference to the document through all the function calls.
  */
 let decodingGDoc: GDocT.Schema$Document & { listDepth: number }
-
-/**
- * The GDoc currently being encoded to
- *
- * @see decodingGDoc
- */
-let encodingGDoc: GDocT.Schema$Document
 
 /**
  * The function to use to fetch remote resources
@@ -91,7 +99,7 @@ class FetchToFile {
 
   public get(url: string, ext = ''): string {
     const filePath = tempy.file({ extension: ext })
-    this.requests.push(http.download(url, filePath))
+    this.requests.push(download(url, filePath))
     return filePath
   }
 
@@ -152,37 +160,54 @@ async function decodeDocument(
   let content: stencila.Node[] = []
   const lists: { [key: string]: stencila.List[] } = {}
   if (doc.body?.content) {
-    content = doc.body.content
-      .map((elem: GDocT.Schema$StructuralElement, index: number) => {
-        if (elem.paragraph) {
-          const para = elem.paragraph
-          const block = decodeParagraph(para, lists)
-          // If this para has the `Title` style then use it's content
-          // as the title of the article (overrides doc.title)
-          if (stencila.isParagraph(block) && para.paragraphStyle) {
-            const styleType = para.paragraphStyle.namedStyleType
-            if (styleType && styleType === 'TITLE') {
-              const { content } = block
-              title =
-                content.length === 0
-                  ? undefined
-                  : content.length === 1 && typeof content[0] === 'string'
-                  ? content[0]
-                  : content
-              return undefined
+    content = (
+      await Promise.all(
+        doc.body.content.map(
+          async (elem: GDocT.Schema$StructuralElement, index: number) => {
+            if (elem.paragraph) {
+              const para = elem.paragraph
+              const block = await decodeParagraph(para, lists)
+
+              // Ignore empty paragraphs
+              if (stencila.isParagraph(block)) {
+                const { content } = block
+                if (
+                  content.length === 0 ||
+                  (content.length === 1 &&
+                    typeof content[0] === 'string' &&
+                    content[0].trim() === '')
+                )
+                  return undefined
+              }
+
+              // If this para has the `Title` style then use it's content
+              // as the title of the article (overrides doc.title)
+              if (stencila.isParagraph(block) && para.paragraphStyle) {
+                const styleType = para.paragraphStyle.namedStyleType
+                if (styleType && styleType === 'TITLE') {
+                  const { content } = block
+                  title =
+                    content.length === 0
+                      ? undefined
+                      : content.length === 1 && typeof content[0] === 'string'
+                      ? content[0]
+                      : content
+                  return undefined
+                }
+              }
+              return block
+            } else if (elem.sectionBreak) {
+              // The first element in the content is always a sectionBreak, so ignore it
+              return index === 0 ? undefined : decodeSectionBreak()
+            } else if (elem.table) {
+              return decodeTable(elem.table)
+            } else {
+              log.warn(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
             }
           }
-          return block
-        } else if (elem.sectionBreak) {
-          // The first element in the content is always a sectionBreak, so ignore it
-          return index === 0 ? undefined : decodeSectionBreak()
-        } else if (elem.table) {
-          return decodeTable(elem.table)
-        } else {
-          log.warn(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
-        }
-      })
-      .filter((node) => node !== undefined) as stencila.Node[]
+        )
+      )
+    ).filter((node) => node !== undefined) as stencila.Node[]
   }
 
   // Resolve the fetched resources
@@ -195,87 +220,6 @@ async function decodeDocument(
 }
 
 /**
- * Encode a Stencila `Node` to a GDoc `Document`
- */
-function encodeNode(node: stencila.Node): GDocT.Schema$Document {
-  const gdoc: GDocT.Schema$Document = {
-    title: 'Untitled',
-    body: {
-      content: [{ sectionBreak: {} }],
-    },
-    lists: {},
-    inlineObjects: {},
-  }
-  encodingGDoc = gdoc
-
-  const gdocContent = assertDefined(gdoc.body?.content)
-
-  // Wrap the node as needed to ensure an array
-  // of block element at the top level
-  let content: stencila.Node[] = []
-  switch (stencila.nodeType(node)) {
-    // `CreativeWork` types (have `content`)
-    case 'Article': {
-      const article = node as stencila.Article
-      gdoc.title = TxtCodec.stringify(article.title ?? '')
-      content = article.content ?? []
-      break
-    }
-    // `BlockContent` types
-    case 'Heading':
-    case 'Paragraph':
-    case 'CodeBlock':
-    case 'List':
-    case 'Table':
-    case 'ThematicBreak': {
-      content = [node]
-      break
-    }
-    // Everything else is wrapped into a `Paragraph`
-    default: {
-      const para: stencila.Paragraph = {
-        type: 'Paragraph',
-        // TODO: avoid this use of `as`
-        content: [node as stencila.InlineContent],
-      }
-      content = [para]
-    }
-  }
-
-  if (content) {
-    for (const node of content) {
-      const type_ = stencila.nodeType(node)
-      switch (type_) {
-        case 'Heading':
-          gdocContent.push(encodeHeading(node as stencila.Heading))
-          break
-        case 'Paragraph':
-          gdocContent.push(encodeParagraph(node as stencila.Paragraph))
-          break
-        case 'CodeBlock':
-          gdocContent.push(encodeCodeBlock(node as stencila.CodeBlock))
-          break
-        case 'List':
-          gdocContent.push(...encodeList(node as stencila.List))
-          break
-        case 'Table':
-          gdocContent.push(encodeTable(node as stencila.Table))
-          break
-        case 'Figure':
-          gdocContent.push(...encodeFigure(node as stencila.Figure))
-          break
-        case 'ThematicBreak':
-          gdocContent.push(encodeThematicBreak())
-          break
-        default:
-          log.warn(`Unhandled Stencila node type "${type_}"`)
-      }
-    }
-  }
-  return gdoc
-}
-
-/**
  * Decode a GDoc `Paragraph` to a Stencila node.
  *
  * Usually, the paragraph will be decoded to a `Paragraph`, `Heading` or `List`.
@@ -283,13 +227,13 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
  * is a reproducible image, then it will be decoded to the entity in that image
  * e.g. `CodeChunk`.
  */
-function decodeParagraph(
+async function decodeParagraph(
   para: GDocT.Schema$Paragraph,
   lists: { [key: string]: stencila.List[] }
-): stencila.Node | undefined {
+): Promise<stencila.Node | undefined> {
   const { elements = [], paragraphStyle, bullet } = para
 
-  const content = elements.map(decodeParagraphElement)
+  const content = await Promise.all(elements.map(decodeParagraphElement))
 
   // See if the content is a single block content node, and if
   // so return that. Filtering is necessary to remove empty strings that
@@ -321,54 +265,6 @@ function decodeParagraph(
   if (bullet) return decodeListItem(para, inlineContent, lists)
 
   return stencila.paragraph({ content: inlineContent })
-}
-
-/**
- * Encode a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
- */
-function encodeHeading(
-  heading: stencila.Heading
-): GDocT.Schema$StructuralElement {
-  const elem = encodeParagraph({
-    type: 'Paragraph',
-    content: heading.content,
-  })
-  assertDefined(elem.paragraph).paragraphStyle = {
-    namedStyleType: `HEADING_${heading.depth}`,
-  }
-  return elem
-}
-
-/**
- * Encode a Stencila `Paragraph` to a GDoc `Paragraph`.
- */
-function encodeParagraph(
-  para: stencila.Paragraph
-): GDocT.Schema$StructuralElement {
-  return {
-    paragraph: {
-      elements: para.content.map(encodeInlineContent),
-    },
-  }
-}
-
-/**
- * Encode a Stencila `CodeBlock` to a GDOC `Paragraph`.
- */
-function encodeCodeBlock(
-  block: stencila.CodeBlock
-): GDocT.Schema$StructuralElement {
-  return {
-    paragraph: {
-      elements: [
-        {
-          textRun: {
-            content: block.text,
-          },
-        },
-      ],
-    },
-  }
 }
 
 /**
@@ -440,171 +336,54 @@ function decodeListItem(
 }
 
 /**
- * Encode a Stencila `List` to a GDoc `List` and paragraphs that link to it.
- */
-function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
-  const lists = assertDefined(encodingGDoc.lists)
-  // Generate a unique list id based on the index of the new list
-  // Ids are always prefixed with `kix.` (an old code name for GDocs)
-  // followed by a unique string. We use the index here for reversability.
-  const listId = `kix.list${Object.keys(lists).length}`
-  // Create a new list with this id
-  lists[listId] = {
-    listProperties: {
-      nestingLevels: [
-        {
-          glyphType: list.order === 'ascending' ? '%0' : undefined,
-        },
-      ],
-    },
-  }
-
-  // Create the GDoc paragraphs with a bullet with the id
-  return list.items.map((listItem) => ({
-    paragraph: encodeListItem(listItem, listId),
-  }))
-}
-
-/**
- * Encode a Stencila `ListItem` to GDoc `Paragraph` elements with a `bullet`.
- */
-const encodeListItem = (
-  listItem: stencila.ListItem,
-  listId: string
-): GDocT.Schema$Paragraph | undefined => {
-  const { content = [] } = listItem
-
-  const head = content[0]
-  if (stencila.isParagraph(head)) {
-    return {
-      elements: head.content.map(encodeInlineContent),
-      bullet: {
-        listId,
-      },
-    }
-  }
-
-  return {
-    elements: content.filter(stencila.isInlineContent).map(encodeInlineContent),
-    bullet: {
-      listId,
-    },
-  }
-}
-
-/**
  * Decode a GDoc `Table` element to a Stencila `Table`.
  */
-function decodeTable(table: GDocT.Schema$Table): stencila.Table {
+async function decodeTable(table: GDocT.Schema$Table): Promise<stencila.Table> {
   return {
     type: 'Table',
-    rows: (table.tableRows ?? []).map(
-      (row: GDocT.Schema$TableRow): stencila.TableRow => {
-        return {
-          type: 'TableRow',
-          cells: (row.tableCells ?? []).map(
-            (cell: GDocT.Schema$TableCell): stencila.TableCell => {
-              return {
-                type: 'TableCell',
-                content: (cell.content ?? []).map(
-                  (
-                    elem: GDocT.Schema$StructuralElement
-                  ): stencila.InlineContent => {
-                    if (elem.paragraph) {
-                      const { elements } = elem.paragraph
-                      if (elements) {
-                        return elements
-                          .map(decodeParagraphElement)
-                          .filter(stencila.isInlineContent)[0]
-                      }
-                    }
-                    log.warn(
-                      'Sorry, currently can only handle paragraphs in table cells'
-                    )
-                    return ''
-                  }
-                ),
-              }
-            }
-          ),
-        }
-      }
-    ),
-  }
-}
-
-/**
- * Encode a Stencila `Table` to GDoc `Table` element.
- */
-function encodeTable(table: stencila.Table): GDocT.Schema$StructuralElement {
-  return {
-    table: {
-      tableRows: table.rows.map(
-        (row: stencila.TableRow): GDocT.Schema$TableRow => {
+    rows: await Promise.all(
+      (table.tableRows ?? []).map(
+        async (row: GDocT.Schema$TableRow): Promise<stencila.TableRow> => {
           return {
-            tableCells: row.cells.map(
-              (cell: stencila.TableCell): GDocT.Schema$TableCell => {
-                return {
-                  content: cell.content.filter(isInlineContent).map(
-                    (
-                      node: stencila.InlineContent
-                    ): GDocT.Schema$StructuralElement => {
-                      return {
-                        paragraph: {
-                          elements: [encodeInlineContent(node)],
-                        },
-                      }
-                    }
-                  ),
+            type: 'TableRow',
+            cells: await Promise.all(
+              (row.tableCells ?? []).map(
+                async (
+                  cell: GDocT.Schema$TableCell
+                ): Promise<stencila.TableCell> => {
+                  return {
+                    type: 'TableCell',
+                    content: await Promise.all(
+                      (cell.content ?? []).map(
+                        async (
+                          elem: GDocT.Schema$StructuralElement
+                        ): Promise<stencila.InlineContent> => {
+                          if (elem.paragraph) {
+                            const { elements } = elem.paragraph
+                            if (elements) {
+                              return (
+                                await Promise.all(
+                                  elements.map(decodeParagraphElement)
+                                )
+                              ).filter(stencila.isInlineContent)[0]
+                            }
+                          }
+                          log.warn(
+                            'Sorry, currently can only handle paragraphs in table cells'
+                          )
+                          return ''
+                        }
+                      )
+                    ),
+                  }
                 }
-              }
+              )
             ),
           }
         }
-      ),
-    },
+      )
+    ),
   }
-}
-
-/**
- * Encode a Stencila `Figure` to GDoc image element followed by a caption.
- */
-function encodeFigure(
-  figure: stencila.Figure
-): GDocT.Schema$StructuralElement[] {
-  const { label, caption = [], content = [] } = figure
-  return [
-    ...content.reduce((prev: GDocT.Schema$StructuralElement[], node) => {
-      if (stencila.isA('ImageObject', node))
-        return [
-          ...prev,
-          {
-            paragraph: {
-              elements: [encodeImageObject(node)],
-            },
-          },
-        ]
-      return prev
-    }, []),
-    ...(label !== undefined || caption.length > 0
-      ? [
-          {
-            paragraph: {
-              elements: [
-                ...(label !== undefined ? [label + ': '] : []),
-                ...(typeof caption === 'string' ? [caption] : caption),
-              ].reduce((prev: GDocT.Schema$StructuralElement[], node) => {
-                if (stencila.isInlineContent(node))
-                  return [...prev, encodeInlineContent(node)]
-                else if ('content' in node)
-                  return [...prev, node.content.map(encodeInlineContent)]
-                else return prev
-              }, []),
-            },
-          },
-        ]
-      : []),
-  ]
 }
 
 /**
@@ -615,29 +394,20 @@ function decodeSectionBreak(): stencila.ThematicBreak {
 }
 
 /**
- * Encode a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
- */
-function encodeThematicBreak(): GDocT.Schema$StructuralElement {
-  return {
-    sectionBreak: {},
-  }
-}
-
-/**
  * Decode a GDoc `ParagraphElement`.
  *
  * See the [docs](https://developers.google.com/docs/api/reference/rest/v1/documents#paragraphelement)
  * for a list of the possible union field types.
  */
-function decodeParagraphElement(
+async function decodeParagraphElement(
   elem: GDocT.Schema$ParagraphElement
-): stencila.Entity | stencila.InlineContent {
+): Promise<stencila.Entity | stencila.InlineContent> {
   // The paragraph element has one of these union fields
   if (elem.textRun) {
     return decodeTextRun(elem.textRun)
   }
   if (elem.inlineObjectElement) {
-    return decodeInlineObjectElement(elem.inlineObjectElement)
+    return await decodeInlineObjectElement(elem.inlineObjectElement)
   }
   if (elem.pageBreak || elem.horizontalRule) {
     // We can not decode these to a `ThematicBreak` (because that is not `InlineContent`)
@@ -663,9 +433,29 @@ function decodeParagraphElement(
 /**
  * Decode a GDoc `InlineObjectElement` to a Stencila `Entity`.
  */
-function decodeInlineObjectElement(
+async function decodeInlineObjectElement(
   elem: GDocT.Schema$InlineObjectElement
-): stencila.Entity {
+): Promise<stencila.Entity> {
+  // Check if there is a link to a node
+  const url = elem.textStyle?.link?.url
+  if (
+    typeof url === 'string' &&
+    url.startsWith('https://hub.stenci.la/api/nodes/')
+  ) {
+    try {
+      const headers =
+        process.env.STENCILA_API_TOKEN !== undefined
+          ? {
+              Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,
+            }
+          : {}
+      const node = await http.get(url, { headers }).json()
+      return (node as { node: stencila.Entity }).node
+    } catch {
+      log.warn(`Error fetching node from ${url}`)
+    }
+  }
+
   const embeddedObject = assertDefined(
     assertDefined(
       assertDefined(decodingGDoc.inlineObjects)[
@@ -673,41 +463,29 @@ function decodeInlineObjectElement(
       ].inlineObjectProperties
     ).embeddedObject
   )
+
+  // Check if the description text is a JSON representation
+  // of a node.
+  const { description } = embeddedObject
+  if (typeof description === 'string') {
+    let node
+    try {
+      node = JSON.parse(description)
+    } catch {
+      // continue
+    }
+    if (node !== undefined && stencila.isEntity(node)) {
+      // If the description contains a Stencila entity then
+      // return it
+      return node
+    }
+  }
+
   if (embeddedObject.imageProperties) {
     return decodeImage(embeddedObject, embeddedObject.imageProperties)
   } else {
     log.warn(`Unhandled embedded object type ${JSON.stringify(embeddedObject)}`)
     return stencila.imageObject({ contentUrl: '' })
-  }
-}
-
-/**
- * Encode a Stencila inline content node to a GDoc `ParagraphElement`
- */
-function encodeInlineContent(
-  node: stencila.InlineContent
-): GDocT.Schema$ParagraphElement {
-  const type_ = stencila.nodeType(node)
-  switch (type_) {
-    case 'Emphasis':
-      return encodeEmphasis(node as stencila.Emphasis)
-    case 'Strong':
-      return encodeStrong(node as stencila.Strong)
-    case 'Delete':
-      return encodeDelete(node as stencila.Delete)
-    case 'Superscript':
-      return encodeSuperscript(node as stencila.Superscript)
-    case 'Subscript':
-      return encodeSubscript(node as stencila.Subscript)
-    case 'Link':
-      return encodeLink(node as stencila.Link)
-    case 'ImageObject':
-      return encodeImageObject(node as stencila.ImageObject)
-    case 'Text':
-      return encodeString(node as string)
-    default:
-      log.warn(`Unhandled node type ${type_}`)
-      return encodeString('')
   }
 }
 
@@ -751,101 +529,7 @@ function decodeTextRun(
 }
 
 /**
- * Encode a Stencila `Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
- */
-function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(em),
-      textStyle: {
-        italic: true,
-      },
-    },
-  }
-}
-
-/**
- * Encode a Stencila `Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
- */
-function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(strong),
-      textStyle: {
-        bold: true,
-      },
-    },
-  }
-}
-
-/**
- * Encode a Stencila `Delete` node to a GDoc `TextRun` node with `textStyle.strikethrough`.
- */
-function encodeDelete(node: stencila.Delete): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(node),
-      textStyle: {
-        strikethrough: true,
-      },
-    },
-  }
-}
-
-/**
- * Encode a Stencila `Superscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUPERSCRIPT'`.
- */
-function encodeSuperscript(
-  node: stencila.Superscript
-): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(node),
-      textStyle: {
-        baselineOffset: 'SUPERSCRIPT',
-      },
-    },
-  }
-}
-
-/**
- * Encode a Stencila `Subscript` node to a GDoc `TextRun` node
- * with `textStyle.baselineOffset === 'SUBSCRIPT'`.
- */
-function encodeSubscript(
-  node: stencila.Subscript
-): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(node),
-      textStyle: {
-        baselineOffset: 'SUBSCRIPT',
-      },
-    },
-  }
-}
-
-/**
- * Encode a Stencila `Link` node to a GDoc `TextRun` node with `textStyle.link`.
- */
-function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: TxtCodec.stringify(link),
-      textStyle: {
-        link: {
-          url: link.target,
-        },
-      },
-    },
-  }
-}
-
-/**
- * Decode a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `Entity`.
- *
- * If the image has a description that can be parsed as JSON into a Stencila `Entity`,
- * then that entity will be returned. Otherwise, a `ImageObject` is returned.
+ * Decode a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `ImageObject`.
  *
  * Because the `imageProperties.contentUri` is ephemeral (lasts about ~30mins) this
  * function fetches the URL before it disappears.
@@ -853,72 +537,15 @@ function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
 function decodeImage(
   embeddedObject: GDocT.Schema$EmbeddedObject,
   imageProperties: GDocT.Schema$ImageProperties
-): stencila.Entity {
-  let { title, description } = embeddedObject
-  if (title === null) title = undefined
-  if (description === null) description = undefined
-
-  // Check to see if this is a reproducible images i.e. that the
-  // description contains JSON that can be parsed into a Stencila node.
-  if (typeof description === 'string') {
-    let node
-    try {
-      node = JSON.parse(description)
-    } catch {
-      // Do nothing
-    }
-    if (node !== undefined && stencila.isEntity(node)) {
-      // If the description contains a Stencila entity then
-      // return it
-      return node
-    }
-  }
-
+): stencila.ImageObject {
+  const { title, description } = embeddedObject
   const contentUri = imageProperties.contentUri ?? ''
   const contentUrl = contentUri.startsWith('http')
     ? decodingFetcher(contentUri)
     : contentUri
   return stencila.imageObject({
     contentUrl,
-    title,
-    text: description,
+    title: title !== null ? title : undefined,
+    text: description !== null ? description : undefined,
   })
-}
-
-/**
- * Encode a Stencila `ImageObject` node to a GDoc `ParagraphElement` linked to
- * an image item in `inlineObjects`.
- */
-function encodeImageObject(
-  imageObject: stencila.ImageObject
-): GDocT.Schema$ParagraphElement {
-  const inlineObjects = encodingGDoc.inlineObjects!
-  const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
-  inlineObjects[inlineObjectId] = {
-    inlineObjectProperties: {
-      embeddedObject: {
-        imageProperties: {
-          contentUri: imageObject.contentUrl,
-        },
-        title: TxtCodec.stringify(imageObject.title ?? ''),
-        description: imageObject.text,
-      },
-    },
-  }
-  return {
-    inlineObjectElement: {
-      inlineObjectId,
-    },
-  }
-}
-
-/**
- * Encode a `string` to a GDoc `TextRun`.
- */
-function encodeString(value: string): GDocT.Schema$ParagraphElement {
-  return {
-    textRun: {
-      content: value,
-    },
-  }
 }

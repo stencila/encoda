@@ -7,7 +7,13 @@ import path from 'path'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import * as vfile from '../../util/vfile'
 import { stylesDir } from '../csl'
-import { InputFormat, OutputFormat, PandocCodec } from '../pandoc'
+import {
+  InputFormat,
+  OutputFormat,
+  PandocCodec,
+  EncodeSettings,
+  DecodeSettings,
+} from '../pandoc'
 import { dataDir } from '../pandoc/binary'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 
@@ -20,12 +26,14 @@ export class DocxCodec extends Codec implements Codec {
 
   public readonly decode = async (
     file: vfile.VFile,
-    options: CommonDecodeOptions = this.commonDecodeDefaults
+    options: CommonDecodeOptions = this.commonDecodeDefaults,
+    settings: DecodeSettings = {}
   ): Promise<stencila.Node> => {
     return pandoc.decode(file, options, {
       pandocFormat: InputFormat.docx_styles,
       pandocArgs: [`--extract-media=${file.path}.media`],
       ensureFile: true,
+      ...settings,
     })
   }
 
@@ -36,7 +44,8 @@ export class DocxCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.commonEncodeDefaults
+    options: CommonEncodeOptions = this.commonEncodeDefaults,
+    settings: EncodeSettings = {}
   ): Promise<vfile.VFile> => {
     const article = ensureArticle(node)
 
@@ -57,6 +66,7 @@ export class DocxCodec extends Codec implements Codec {
       pandocArgs,
       ensureFile: true,
       useCiteproc,
+      ...settings,
     })
   }
 

@@ -4,6 +4,10 @@ import {
   pythonCodeChunk,
   rCodeChunkImageOutput,
   rCodeChunkNoOutput,
+  rCodeChunkError,
+  rCodeExpression,
+  rCodeExpressionNoOutput,
+  rCodeExpressionError,
 } from '../../__fixtures__/code/kitchen-sink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { PngCodec } from './'
@@ -22,7 +26,8 @@ describe('decode', () => {
 })
 
 describe('encode', () => {
-  // Currently these snapshot files are only tested manually, visually
+  // Currently these snapshot files are only "tested"
+  // by visual inspection
 
   it('encodes nodes as a screenshot of HTML', async () => {
     await png.write(kitchenSink, snapshot('kitchen-sink.png'))
@@ -44,24 +49,41 @@ describe('encode', () => {
   })
 
   it('encodes a code chunk', async () => {
-    await png.write(pythonCodeChunk, snapshot('python-code-chunk.png'), {
+    const opts = {
       theme: 'rpng',
-    })
+      selector: 'stencila-code-chunk',
+    }
 
+    await png.write(pythonCodeChunk, snapshot('python-code-chunk.png'), opts)
     await png.write(
       rCodeChunkImageOutput,
       snapshot('r-code-chunk-image-output.png'),
-      {
-        theme: 'rpng',
-      }
+      opts
     )
-
     await png.write(
       rCodeChunkNoOutput,
       snapshot('r-code-chunk-no-output.png'),
-      {
-        theme: 'rpng',
-      }
+      opts
+    )
+    await png.write(rCodeChunkError, snapshot('r-code-chunk-error.png'), opts)
+  })
+
+  it('encodes a code expression', async () => {
+    const opts = {
+      theme: 'rpng',
+      selector: 'stencila-code-expression',
+    }
+
+    await png.write(rCodeExpression, snapshot('r-code-expr.png'), opts)
+    await png.write(
+      rCodeExpressionNoOutput,
+      snapshot('r-code-expr-no-output.png'),
+      opts
+    )
+    await png.write(
+      rCodeExpressionError,
+      snapshot('r-code-expr-error.png'),
+      opts
     )
   })
 })

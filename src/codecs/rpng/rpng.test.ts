@@ -1,6 +1,7 @@
 import fs from 'fs-extra'
 import {
   pythonCodeChunk,
+  rCodeChunkImageOutput,
   rCodeExpression,
   rCodeExpressionNoOutput,
 } from '../../__fixtures__/code/kitchen-sink'
@@ -37,7 +38,7 @@ test('sniffDecode', async () => {
   expect(await rpngCodec.sniffDecode('/some/file.zip')).toEqual(undefined)
 })
 
-describe('encode+decode', () => {
+describe('encode > decode', () => {
   test.each([
     ['asciimath-fragment', asciimathFragment],
     ['tex-block', texBlock],
@@ -88,6 +89,34 @@ describe('encode+decode', () => {
     expect(schema.isA('ImageObject', image)).toBe(true)
     expect(image.contentUrl).toMatch(/^data:image\/png;base64/)
   })
+})
+
+test('encode > decode > encode', async () => {
+  const opts = {
+    theme: 'rpng',
+    selector: 'stencila-code-chunk',
+  }
+
+  await rpngCodec.write(
+    rCodeChunkImageOutput,
+    snapshot('r-code-chunk-image-output-a.png'),
+    opts
+  )
+
+  const read = (await rpngCodec.read(
+    snapshot('r-code-chunk-image-output-a.png')
+  )) as schema.CodeChunk
+
+  // The read in coded chunk should be exactly the same except for
+  // the output image which is not the original code generated image
+  // but rather a screenshot of the `<stencila-code-chunk>` component
+  // with affordances.
+  const { outputs: readOutputs, ...readRest } = read
+  const { outputs: origOutputs, ...origRest } = rCodeChunkImageOutput
+  expect(readRest).toEqual(origRest)
+  expect(readOutputs).not.toEqual(origOutputs)
+
+  await rpngCodec.write(read, snapshot('r-code-chunk-image-output-b.png'))
 })
 
 describe('encoding of extended character sets', () => {

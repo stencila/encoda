@@ -21,20 +21,23 @@ import stencila, {
 import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
+import { logWarnLossIfAny } from '../../log'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
+import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import transform, { transformSync } from '../../util/transform'
+import { http } from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
+import { EncodeOptions, PngCodec } from '../png'
 import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
-import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
-import { logWarnLossIfAny } from '../../log'
-import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
+const pngCodec = new PngCodec()
 const rpngCodec = new RpngCodec()
 const texCodec = new TexCodec()
 
@@ -47,7 +50,7 @@ const log = getLogger('encoda:pandoc')
  * customize the decoding behavior for particular formats.
  * Not user options.
  */
-interface DecodeSettings {
+export interface DecodeSettings {
   pandocFormat?: Pandoc.InputFormat
   pandocArgs?: string[]
   ensureFile?: boolean
@@ -58,12 +61,15 @@ interface DecodeSettings {
  * customize the encoding behavior for particular formats.
  * Not user options.
  */
-interface EncodeSettings {
+export interface EncodeSettings {
   pandocFormat?: Pandoc.OutputFormat
   pandocArgs?: string[]
   ensureFile?: boolean
   templatePath?: string
   useCiteproc?: boolean
+  nodeInPng?: boolean
+  nodeInAlt?: boolean
+  nodeInLink?: boolean
 }
 
 export class PandocCodec extends Codec implements Codec {
@@ -127,7 +133,9 @@ export class PandocCodec extends Codec implements Codec {
       useCiteproc = false,
     } = settings
 
-    const { standalone, pdoc } = encodeNode(await encodeDocumentAsync(node))
+    const { standalone, pdoc } = encodeNode(
+      await encodeDocumentAsync(node, settings)
+    )
 
     const args = [`--from=json`, `--to=${pandocFormat}`]
     if (standalone) args.push('--standalone')
@@ -267,14 +275,15 @@ async function decodeDocumentAsync(
  * synchronous encoding.
  */
 async function encodeDocumentAsync(
-  node: stencila.Node
+  node: stencila.Node,
+  settings: EncodeSettings
 ): Promise<stencila.Node> {
   return transform(node, async (node, parent) => {
     switch (stencila.nodeType(node)) {
       case 'CodeExpression':
-        return encodeCodeExpression(node as stencila.CodeExpression)
+        return encodeCodeExpression(node as stencila.CodeExpression, settings)
       case 'CodeChunk':
-        return encodeCodeChunk(node as stencila.CodeChunk)
+        return encodeCodeChunk(node as stencila.CodeChunk, settings)
 
       case 'MathFragment':
         return encodeMath(node as stencila.MathFragment, 'InlineMath')
@@ -667,19 +676,47 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
 /**
  * Encode a Stencila `CodeChunk` to a Pandoc `Div` with an rPNG in it
  * and a `custom-style` attribute.
+ *
+ * This removes the `label` and `caption` from the code chunk so that they
+ * can be edited by the user in the usual manner. See `reshape` for
+ * how these are then reconsitituted based on styles etc.
  */
-async function encodeCodeChunk(node: stencila.CodeChunk): Promise<Pandoc.Div> {
-  return {
+async function encodeCodeChunk(
+  chunk: stencila.CodeChunk,
+  settings: EncodeSettings
+): Promise<Pandoc.Div> {
+  const { label, caption, ...rest } = chunk
+
+  const mainDiv: Pandoc.Div = {
     t: 'Div',
     c: [
-      ['', [], [['custom-style', 'CodeChunk']]],
+      ['', [], [['custom-style', 'Code Chunk']]],
       [
         {
           t: 'Para',
-          c: [await encodeRpng(node)],
+          c: [await encodeRpng(rest, settings)],
         },
       ],
     ],
+  }
+
+  const captionInlines = encodeCaption(label, caption)
+  if (captionInlines.length === 0) return mainDiv
+
+  const isTable = label !== undefined && /^\s*Table/i.test(label)
+  const captionStyle = isTable ? 'Table Caption' : 'Figure Caption'
+
+  const captionDiv: Pandoc.Div = {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', captionStyle]]],
+      [{ t: 'Para', c: captionInlines }],
+    ],
+  }
+
+  return {
+    t: 'Div',
+    c: [['', [], []], isTable ? [captionDiv, mainDiv] : [mainDiv, captionDiv]],
   }
 }
 
@@ -775,25 +812,26 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
 /**
  * Encode Stencila `Table` to a Pandoc `Table`.
  */
-function encodeTable(node: stencila.Table): Pandoc.Table {
-  const { title, caption } = encodeCaption(node)
+function encodeTable(table: stencila.Table): Pandoc.Table {
+  const { label, caption } = table
+  const captionInlines = encodeCaption(label, caption)
 
-  const columnCount = node.rows[0].cells.length
+  const columnCount = table.rows[0].cells.length
   const aligns: { t: Pandoc.Alignment }[] = makeBy(columnCount, () => ({
     t: Pandoc.Alignment.AlignDefault,
   }))
   const widths: number[] = makeBy(columnCount, () => 0)
 
   let head: Pandoc.TableCell[] = []
-  if (node.rows.length > 0) {
-    head = node.rows[0].cells.map((cell) =>
+  if (table.rows.length > 0) {
+    head = table.rows[0].cells.map((cell) =>
       encodeBlocks(ensureBlockContentArray(cell.content))
     )
   }
 
   let rows: Pandoc.TableCell[][] = []
-  if (node.rows.length > 1) {
-    rows = node.rows.slice(1).map((row: stencila.TableRow) => {
+  if (table.rows.length > 1) {
+    rows = table.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell) =>
         encodeBlocks(ensureBlockContentArray(cell.content))
       )
@@ -801,7 +839,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
   }
   return {
     t: 'Table',
-    c: [encodeInlines([...title, ...caption]), aligns, widths, head, rows],
+    c: [captionInlines, aligns, widths, head, rows],
   }
 }
 
@@ -816,9 +854,8 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
  * This encoding results in a similar structure to that used by Pandoc for tables
  * with a `Figure Caption` custom class analogous to the `Table Caption` custom class.
  */
-function encodeFigure(node: stencila.Figure): Pandoc.Div {
-  const { content = [] } = node
-  const { title, caption } = encodeCaption(node)
+function encodeFigure(figure: stencila.Figure): Pandoc.Div {
+  const { label, caption, content = [] } = figure
   const contentDiv: Pandoc.Div = {
     t: 'Div',
     c: [
@@ -831,55 +868,50 @@ function encodeFigure(node: stencila.Figure): Pandoc.Div {
     c: [
       ['', [], [['custom-style', 'Figure Caption']]],
       [
-        encodeParagraph(
-          stencila.paragraph({
-            content: [stencila.strong({ content: title }), ' ', ...caption],
-          })
-        ),
+        {
+          t: 'Para',
+          c: encodeCaption(label, caption),
+        },
       ],
     ],
   }
   return {
     t: 'Div',
     c: [
-      ['', [], [['custom-style', 'Figure Caption']]],
+      ['', [], []],
       [contentDiv, captionDiv],
     ],
   }
 }
 
+/**
+ * Transform the `label` and `caption` of a `Table`, `Figure` or `CodeChunk`
+ * into Pandoc inline nodes.
+ */
 function encodeCaption(
-  node: stencila.Table | stencila.Figure
-): {
-  title: stencila.InlineContent[]
-  caption: stencila.InlineContent[]
-} {
-  const { label, caption = [] } = node
+  label: string | undefined,
+  caption: string | stencila.Node[] | undefined
+): Pandoc.Inline[] {
+  let inlines: stencila.InlineContent[] = []
+
+  // Prefix the caption with the label
+  if (label !== undefined) inlines = [label, label.endsWith('.') ? ' ' : '. ']
 
   // Headings cause the custom style in formats like DOCX to
-  // be "broken up", so use them for the title, or replace
-  // with strong (character style) content
-  let title: stencila.InlineContent[] = []
-  const captionTransformed = ensureInlineContentArray(
-    transformSync(caption, (node) => {
-      if (stencila.isA('Heading', node)) {
-        const { content } = node
-        if (title.length === 0) {
-          title = content
-          return undefined
-        } else {
-          return stencila.strong({ content })
-        }
-      }
-      return node
-    })
-  )
+  // be "broken up" so replace with strong (character style) content
+  if (caption !== undefined)
+    inlines = [
+      ...inlines,
+      ...ensureInlineContentArray(
+        transformSync(caption, (node) => {
+          if (stencila.isA('Heading', node))
+            return stencila.strong({ content: node.content })
+          return node
+        })
+      ),
+    ]
 
-  // Prefix the title with the label
-  if (label !== undefined)
-    title = [label, label.endsWith('.') ? ' ' : '. ', ...title]
-
-  return { title, caption: captionTransformed }
+  return encodeInlines(inlines)
 }
 
 /**
@@ -893,7 +925,7 @@ function encodeCollection(node: stencila.Collection): Pandoc.Div | Pandoc.Para {
     return {
       t: 'Div',
       c: [
-        ['', [], [['custom-style', 'FigureGroup']]],
+        ['', [], [['custom-style', 'Figure Group']]],
         parts.map((part) => encodeFigure(part as stencila.Figure)),
       ],
     }
@@ -1331,13 +1363,14 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
  * and a `custom-style` attribute.
  */
 async function encodeCodeExpression(
-  node: stencila.CodeExpression
+  node: stencila.CodeExpression,
+  settings: EncodeSettings
 ): Promise<Pandoc.Span> {
   return {
     t: 'Span',
     c: [
-      ['', [], [['custom-style', 'CodeExpression']]],
-      [await encodeRpng(node)],
+      ['', [], [['custom-style', 'Code Expression']]],
+      [await encodeRpng(node, settings)],
     ],
   }
 }
@@ -1556,17 +1589,60 @@ function encodeFallbackInline(node: stencila.Node): Pandoc.Str {
 }
 
 /**
- * Encode a Stencila `Node` as a Pandoc `Image`
- * pointing to a RPNG.
+ * Encode a Stencila `Node` as a Pandoc `Image` pointing to a RPNG.
+ *
+ * There are three places that the JSON of the node can get stored:
+ *
+ * - nodeInPng: in a PNG metadata chunk
+ * - nodeInAlt: in the alt text of the image
+ * - nodeInLink: by POSTing to the hub.stenci.la/api/nodes and wrapping a link around the image
  */
-async function encodeRpng(node: stencila.Node): Promise<Pandoc.Image> {
+async function encodeRpng(
+  node: stencila.Node,
+  settings: EncodeSettings
+): Promise<Pandoc.Image | Pandoc.Link> {
+  const { nodeInPng = true, nodeInAlt = false, nodeInLink = false } = settings
+
   const imagePath = tempy.file({ extension: 'png' })
-  await rpngCodec.write(node, imagePath)
-  const url = imagePath
-  const title = nodeType(node)
-  return {
+  await (nodeInPng ? rpngCodec : pngCodec).write(node, imagePath)
+
+  let altText: Pandoc.Inline[] = []
+  if (nodeInAlt) {
+    // Don't include code chunk outputs in alt text for
+    // size reasons e.g. images
+    let json: string
+    if (stencila.isA('CodeChunk', node)) {
+      const { outputs, ...rest } = node
+      json = JSON.stringify(rest)
+    } else {
+      json = JSON.stringify(node)
+    }
+    altText = [{ t: 'Str', c: json }]
+  }
+
+  const imgElem: Pandoc.Image = {
     t: 'Image',
-    c: [emptyAttrs, [], [url, title]],
+    c: [emptyAttrs, altText, [imagePath, nodeType(node)]],
+  }
+
+  if (!nodeInLink) return imgElem
+
+  const json = JSON.stringify({
+    app: 'Encoda',
+    node,
+  })
+  const { url: linkUrl } = await http
+    .post('https://hub.stenci.la/api/nodes', {
+      headers: {
+        Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,
+      },
+      body: json,
+    })
+    .json()
+
+  return {
+    t: 'Link',
+    c: [emptyAttrs, [imgElem], [linkUrl, nodeType(node)]],
   }
 }
 

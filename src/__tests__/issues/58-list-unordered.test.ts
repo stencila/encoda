@@ -1,34 +1,23 @@
-import * as stencila from '@stencila/schema'
-import fs from 'fs-extra'
+import * as schema from '@stencila/schema'
 import path from 'path'
-import { dump, read } from '../..'
+import { GDocCodec } from '../../codecs/gdoc'
+import { MdCodec } from '../../codecs/md'
 
-describe('issue 58', () => {
+const gdocCodec = new GDocCodec()
+const mdCodec = new MdCodec()
+
+test('issue 58: decoding GDoc incorrectly generates ordered list instead of unordered', async () => {
   const file = path.join(__dirname, '58-list-unordered.gdoc')
 
-  test('goc unordered list is decoded correctly', async () => {
-    const gdoc = fs.readJSONSync(file)
-    expect(
-      gdoc.lists['kix.list.1'].listProperties.nestingLevels[0].glyphType
-    ).toBe('GLYPH_TYPE_UNSPECIFIED')
-  })
+  const article = (await gdocCodec.read(file)) as schema.Article
+  expect(article.content?.length).toBe(4)
 
-  test('list lengths are correct', async () => {
-    const article = (await read(file)) as stencila.Article
-    expect(article.content && article.content.length).toBe(5)
-  })
+  const list = article.content?.[3] as schema.List
+  expect(schema.isA('List', list)).toBe(true)
+  expect(list.order).toBe('unordered')
 
-  test('list is unordered', async () => {
-    const article = (await read(file)) as stencila.Article
-    // @ts-ignore
-    const list = article.content[4] as stencila.List
-    expect(list.order).toBe('unordered')
-  })
-
-  test('that gdoc converts to the expected md', async () => {
-    const article = (await read(file)) as stencila.Article
-    const md = await dump(article, 'md')
-    expect(md).toBe(`---
+  const md = await mdCodec.dump(article)
+  expect(md).toBe(`---
 title: real converter test
 ---
 
@@ -42,5 +31,4 @@ A para inserted by Nokome
 -   test
 -   and final test
 `)
-  })
 })

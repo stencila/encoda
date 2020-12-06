@@ -11,7 +11,7 @@
 # The `--init` and `--cap-add` options to `run` are necessary for running Puppeteer
 # (see below).
 
-FROM node:12
+FROM node:14
 
 # Installs for getting Puppeteer to run in Docker
 # See the following for more, including recommended `docker run` args

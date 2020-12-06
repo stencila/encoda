@@ -1,6 +1,6 @@
 import * as stencila from '@stencila/schema'
 import { GDocCodec } from '.'
-import { fixture, snapshot } from '../../__tests__/helpers'
+import { fixture, nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 import * as kitchenSink from './__fixtures__/kitchenSink'
 import * as nestedList from './__fixtures__/nestedList'
@@ -52,18 +52,19 @@ describe('decode', () => {
   test('nestedList', async () =>
     expect(await gdoc2node(nestedList.gdoc)).toEqual(nestedList.node))
 
-  const gdoc2yaml = async (path: string) =>
-    yamlCodec.dump(await gdocCodec.read(path))
+  test('fixtures', async () => {
+    const gdoc2yaml = async (path: string) =>
+      yamlCodec.dump(await gdocCodec.read(path))
 
-  test('test-fixture-1.gdoc', async () =>
+    const done = await nockRecord('nock-record-decode-fixtures.json')
+
     expect(await gdoc2yaml(fixture('test-fixture-1.gdoc'))).toMatchFile(
       snapshot('test-fixture-1.yaml')
-    ))
-})
+    )
+    expect(await gdoc2yaml(fixture('test-fixture-2.gdoc'))).toMatchFile(
+      snapshot('test-fixture-2.yaml')
+    )
 
-describe('encode', () => {
-  const node2gdoc = async (node: any) => JSON.parse(await gdocCodec.dump(node))
-
-  test('kitchenSink', async () =>
-    expect(await node2gdoc(kitchenSink.node)).toEqual(kitchenSink.gdoc))
+    done()
+  })
 })
