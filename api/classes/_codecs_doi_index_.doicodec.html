@@ -69,6 +69,19 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Codec for Digital Object Identifiers (DOI)</p>
+					</div>
+					<p>A previous version of this codec used the <code>@doi/id</code> format of
+						the <code>CSLCodec</code> which is in turn based on <code>citation-js</code> and
+						fetches metadata for a DOI from <a href="https://data.crossref.org">https://data.crossref.org</a>.
+						However, to use caching and retries it was switched to
+						using our own <code>util/http</code> module and fetching data from
+					Crossref directly (with <code>decodeCsl</code> used for response data translation).</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -100,7 +113,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_doi_index_.doicodec.html#extnames" class="tsd-kind-icon">ext<wbr>Names</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_doi_index_.doicodec.html#filenames" class="tsd-kind-icon">file<wbr>Names</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_doi_index_.doicodec.html#mediatypes" class="tsd-kind-icon">media<wbr>Types</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_codecs_doi_index_.doicodec.html#csl" class="tsd-kind-icon">csl</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_codecs_doi_index_.doicodec.html#regex" class="tsd-kind-icon">regex</a></li>
 							</ul>
 						</section>
@@ -130,7 +142,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commondecodedefaults">commonDecodeDefaults</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L144">src/codecs/types.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L163">src/codecs/types.ts:163</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -146,7 +158,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commonencodedefaults">commonEncodeDefaults</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L139">src/codecs/types.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L158">src/codecs/types.ts:158</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -162,7 +174,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#extnames">extNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L13">src/codecs/doi/index.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L20">src/codecs/doi/index.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,7 +185,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#filenames">fileNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L119">src/codecs/types.ts:119</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L138">src/codecs/types.ts:138</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -191,17 +203,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#mediatypes">mediaTypes</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L11">src/codecs/doi/index.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="csl" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> csl</h3>
-					<div class="tsd-signature tsd-kind-icon">csl<span class="tsd-signature-symbol">:</span> <a href="_codecs_csl_index_.cslcodec.html" class="tsd-signature-type">CSLCodec</a><span class="tsd-signature-symbol"> = new CSLCodec()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L15">src/codecs/doi/index.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L18">src/codecs/doi/index.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -211,7 +213,7 @@
 					<div class="tsd-signature tsd-kind-icon">regex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L19">src/codecs/doi/index.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L24">src/codecs/doi/index.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -222,14 +224,14 @@
 					<a name="decode" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> decode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#decode">decode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L25">src/codecs/doi/index.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L30">src/codecs/doi/index.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -238,7 +240,7 @@
 									<h5>file: <span class="tsd-signature-type">VFile</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -253,7 +255,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L221">src/codecs/types.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L245">src/codecs/types.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -292,7 +294,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#encode">encode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L35">src/codecs/doi/index.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L42">src/codecs/doi/index.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -310,7 +312,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L181">src/codecs/types.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L200">src/codecs/types.ts:200</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -352,7 +354,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#predump">preDump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L203">src/codecs/types.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L227">src/codecs/types.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -397,7 +399,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#prewrite">preWrite</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L265">src/codecs/types.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L291">src/codecs/types.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,7 +449,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L241">src/codecs/types.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L265">src/codecs/types.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -489,7 +491,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#sniff">sniff</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/doi/index.ts#L21">src/codecs/doi/index.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/doi/index.ts#L26">src/codecs/doi/index.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -513,7 +515,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L286">src/codecs/types.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L312">src/codecs/types.ts:312</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -582,9 +584,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_codecs_doi_index_.doicodec.html#mediatypes" class="tsd-kind-icon">media<wbr>Types</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_codecs_doi_index_.doicodec.html#csl" class="tsd-kind-icon">csl</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
 								<a href="_codecs_doi_index_.doicodec.html#regex" class="tsd-kind-icon">regex</a>

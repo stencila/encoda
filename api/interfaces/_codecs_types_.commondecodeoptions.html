@@ -103,6 +103,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commondecodeoptions.html#astype" class="tsd-kind-icon">as<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commondecodeoptions.html#format" class="tsd-kind-icon">format</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commondecodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commondecodeoptions.html#shouldcoerce" class="tsd-kind-icon">should<wbr>Coerce</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commondecodeoptions.html#shouldreshape" class="tsd-kind-icon">should<wbr>Reshape</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,7 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">as<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">Types</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L82">src/codecs/types.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L83">src/codecs/types.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -137,7 +139,7 @@
 					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L58">src/codecs/types.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L59">src/codecs/types.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -155,7 +157,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Standalone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/18526a29/src/codecs/types.ts#L70">src/codecs/types.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L71">src/codecs/types.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -168,6 +170,36 @@
 							option is <code>false</code>, some codecs will default to returning
 							an array of content nodes, instead of for example an
 						<code>Article</code> node.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="shouldcoerce" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> should<wbr>Coerce</h3>
+					<div class="tsd-signature tsd-kind-icon">should<wbr>Coerce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L88">src/codecs/types.ts:88</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should the decoded node have the <code>coerce</code> function applied to it?</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="shouldreshape" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> should<wbr>Reshape</h3>
+					<div class="tsd-signature tsd-kind-icon">should<wbr>Reshape<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/b34c213d/src/codecs/types.ts#L93">src/codecs/types.ts:93</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should the decoded node have the <code>reshape</code> function applied to it?</p>
+						</div>
 					</div>
 				</section>
 			</section>
@@ -201,6 +233,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_codecs_types_.commondecodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_types_.commondecodeoptions.html#shouldcoerce" class="tsd-kind-icon">should<wbr>Coerce</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_types_.commondecodeoptions.html#shouldreshape" class="tsd-kind-icon">should<wbr>Reshape</a>
 							</li>
 						</ul>
 					</li>
