@@ -1,3 +1,33 @@
+# [0.104.0](https://github.com/stencila/encoda/compare/v0.103.2...v0.104.0) (2020-12-06)
+
+
+### Bug Fixes
+
+* **Biblio codecs:** Various fixes ([3f02fca](https://github.com/stencila/encoda/commit/3f02fca4abf22ca60a095c1516ef25327b3119b3))
+* **Cache:** Remove unused async version; use temp dir ([1262f6b](https://github.com/stencila/encoda/commit/1262f6bdcad04c1c3495f03172673fd80940d7b8))
+* **Cache:** Use the same tempdir on each instantiation ([4ba76a7](https://github.com/stencila/encoda/commit/4ba76a75bc97ca8a1ee79a62d6a3c17550068ade))
+* **CSL:** Handle string nodes ([93419ea](https://github.com/stencila/encoda/commit/93419eaa36552ac605be18d23f682eed64d581bb))
+* **CSL:** Use more of parsed data ([2e60777](https://github.com/stencila/encoda/commit/2e60777ca29d49c7cecfd9ec827bbc89a2853425))
+* **DOI:** Fetch data directly ([a295205](https://github.com/stencila/encoda/commit/a2952053395cb30627aa50b28d837d98e32ea2a3))
+* **GDoc:** Ignore empty paragraphs ([faf47dd](https://github.com/stencila/encoda/commit/faf47ddc6e564a8eced22ccb88175d51bd9785e1))
+* **HTTP:** Add contact information to user agent header ([d897385](https://github.com/stencila/encoda/commit/d897385ebb0ec913c464347ea8bc0331e8019bc6))
+* **HTTP:** Retry on errors ([80bb069](https://github.com/stencila/encoda/commit/80bb069f1f8a64cefb376c9b05aa441fd38d91cc))
+* **Logging:** Use consistent format for message ([87477cd](https://github.com/stencila/encoda/commit/87477cdf5b04da9452db145998c685569b40e0d4))
+* **Pandoc:** Consistent style name; separate out chunk labels ([2452b1f](https://github.com/stencila/encoda/commit/2452b1fb537d59b2ab956f216e4d397317a37053))
+* **PNG:** Allow setting of selector ([a471d8c](https://github.com/stencila/encoda/commit/a471d8cafd22e45942b7d37aebf2dfd23bd04c7a))
+* **Reshape:** Linting and minor fixes ([6013374](https://github.com/stencila/encoda/commit/601337439446d432dee0be21e077ebb008975d22))
+
+
+### Features
+
+* Add options to turn off coerce and reshape ([4c87ea7](https://github.com/stencila/encoda/commit/4c87ea79450e50fbdc2aa6e12ededa597266d4e0))
+* **DOCX:** Retain styles when decoding ([82e77ec](https://github.com/stencila/encoda/commit/82e77ec261bb1cd471f570968b39fa868eab04f5))
+* **GDoc:** Fetch node content from Hub if possible ([34b0ab5](https://github.com/stencila/encoda/commit/34b0ab500103737f7efe7f9f8df2477d3cc15141))
+* **Pandoc:** Allow for alternative ways to encode code chunks ([8300f88](https://github.com/stencila/encoda/commit/8300f8808d86789360baa47ded85fbb5fc1396e8))
+* **Reshape:** Add reshape function and apply on load and read ([c0bed26](https://github.com/stencila/encoda/commit/c0bed26863afd986c03014d153919d718372e01b))
+* **Reshape:** Detect captions using regexes ([720adaf](https://github.com/stencila/encoda/commit/720adaf180c38695152db14837320c0af85efa35))
+* **Reshape:** Infer authors and other properties ([e52cf82](https://github.com/stencila/encoda/commit/e52cf82df7298adf3c91d07fa7faa3cee9e038d6))
+
 ## [0.103.2](https://github.com/stencila/encoda/compare/v0.103.1...v0.103.2) (2020-12-03)
 
 
