@@ -1,3 +1,16 @@
+## [0.104.1](https://github.com/stencila/encoda/compare/v0.104.0...v0.104.1) (2020-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.15.4 ([47c78a1](https://github.com/stencila/encoda/commit/47c78a1da25934c8ebd61ac75204cea80e33a459))
+* **dependencies:** update dependency @stencila/thema to ^2.20.7 ([477f42f](https://github.com/stencila/encoda/commit/477f42fd91b0275aa839f60778c9b26d07fa2a41))
+* **dependencies:** update dependency async-lock to ^1.2.6 ([53a85a3](https://github.com/stencila/encoda/commit/53a85a3887b10829d30b06ba2d71d7186a2d4235))
+* **dependencies:** update dependency js-yaml to ^3.14.1 ([cd51480](https://github.com/stencila/encoda/commit/cd51480c0d34e19b46262d3e21c3b0d73e7d2aa5))
+* **dependencies:** update dependency pdf-lib to ^1.13.0 ([7017ab4](https://github.com/stencila/encoda/commit/7017ab4536a5bbbf7c470fb6094755cdae1560c0))
+* **dependencies:** update dependency plotly.js-dist to ^1.58.2 ([c31fb2c](https://github.com/stencila/encoda/commit/c31fb2cc87e7f1af69d4dc9c91dac840d6f72812))
+* **dependencies:** update dependency vfile to ^4.2.1 ([7ccd235](https://github.com/stencila/encoda/commit/7ccd235dd719fe23f643c9fe710a398a126fa455))
+
 # [0.104.0](https://github.com/stencila/encoda/compare/v0.103.2...v0.104.0) (2020-12-06)
 
 
