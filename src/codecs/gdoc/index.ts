@@ -73,6 +73,15 @@ export class GDocCodec
       nodeInLink: true,
     })
   }
+
+  /**
+   * @override Overrides {@link Codec.preWrite} so that media files
+   * do NOT get written to a sibling folder (since they are embedded
+   * in the DOCX file during encoding).
+   */
+  public preWrite(node: stencila.Node): Promise<stencila.Node> {
+    return Promise.resolve(node)
+  }
 }
 
 /**

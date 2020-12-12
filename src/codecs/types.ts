@@ -281,6 +281,7 @@ export abstract class Codec<
    * This default behavior can be overridden using the `isBundle: true`
    * option, but is usually appropriate for `write`ing files (cf `dump`
    * which bundles them.
+   *
    * Derived classes may override this method to perform alternative
    * transformations to the node, prior to writing it.
    *
