@@ -63,7 +63,11 @@ export async function fromFile(
   try {
     data = await fs.readFile(filePath, 'base64')
   } catch (error) {
-    log.error(`When creating data URI from file: ${error.message}`)
+    if (error.code === 'ENOENT') {
+      log.warn(`Image file does not exist, ignoring: ${filePath}`)
+    } else {
+      log.error(error)
+    }
   }
   const dataUri = `data:${mediaType};base64,${data}`
 

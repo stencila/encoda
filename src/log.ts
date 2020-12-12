@@ -17,6 +17,7 @@ export const configure = (debug = false, exitOnError = true): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     logga.defaultHandler(data, {
       maxLevel: debug ? logga.LogLevel.debug : logga.LogLevel.info,
+      showStack: debug,
       exitOnError,
       throttle: {
         // Do not repeat the same message within 5s
