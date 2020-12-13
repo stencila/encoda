@@ -68,7 +68,10 @@ export class GDocCodec
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     return new DocxCodec().encode(node, options, {
-      nodeInPng: false,
+      // Although the PNG tEXt chunks are not retained in the
+      // Google Doc's images (Google modifies the images),
+      // we enable this option for the RPNG themeing
+      nodeInPng: true,
       nodeInAlt: true,
       nodeInLink: true,
     })
