@@ -1,3 +1,13 @@
+## [0.104.2](https://github.com/stencila/encoda/compare/v0.104.1...v0.104.2) (2020-12-13)
+
+
+### Bug Fixes
+
+* **dataURIs:** Log warning, not error if file not found. ([c6f3dcb](https://github.com/stencila/encoda/commit/c6f3dcb2bbcc925c67f41b6d0713a53ee5101255))
+* **Deps:** Update deps ([4f2a7e0](https://github.com/stencila/encoda/commit/4f2a7e0dc58397c536dcf38b03735ace34fc0c1d))
+* **GDoc:** DO not write media to sibling folder. ([39813e0](https://github.com/stencila/encoda/commit/39813e0e660743964dee17cd19fff55069113c7a))
+* **RPNG:** Add selectors for math node types ([217cbf2](https://github.com/stencila/encoda/commit/217cbf264573ec04d64e0e4fe34d5022325e5730))
+
 ## [0.104.1](https://github.com/stencila/encoda/compare/v0.104.0...v0.104.1) (2020-12-09)
 
 
