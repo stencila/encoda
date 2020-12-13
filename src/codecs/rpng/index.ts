@@ -111,14 +111,17 @@ export class RpngCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     // Generate the PNG of the **original node**
     // (which sill contains images) and get it as a `Buffer`
+    const selectorMap: Record<string, string> = {
+      CodeChunk: 'stencila-code-chunk',
+      CodeExpression: 'stencila-code-expression',
+      MathFragment: '[itemtype~="http://schema.stenci.la/MathFragment"]',
+      MathBlock: '[itemtype~="http://schema.stenci.la/MathBlock"]',
+    }
+    const selector = selectorMap[schema.nodeType(node) as string]
     const png = await pngCodec.encode(node, {
       ...options,
       theme: 'rpng',
-      selector: schema.isA('CodeChunk', node)
-        ? 'stencila-code-chunk'
-        : schema.isA('CodeExpression', node)
-        ? 'stencila-code-expression'
-        : undefined,
+      selector,
     })
     const buffer = await vfile.dump(png, 'buffer')
 
