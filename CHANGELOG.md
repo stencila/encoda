@@ -1,3 +1,10 @@
+## [0.104.3](https://github.com/stencila/encoda/compare/v0.104.2...v0.104.3) (2020-12-14)
+
+
+### Bug Fixes
+
+* **GDoc:** Use nodeInPng option for proper themeing ([7c258ea](https://github.com/stencila/encoda/commit/7c258eacd6fba33bb6a22addf859e8b26d7d29f9))
+
 ## [0.104.2](https://github.com/stencila/encoda/compare/v0.104.1...v0.104.2) (2020-12-13)
 
 
