@@ -1,3 +1,11 @@
+## [0.104.4](https://github.com/stencila/encoda/compare/v0.104.3...v0.104.4) (2020-12-21)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency mime to ^2.4.7 ([aee6138](https://github.com/stencila/encoda/commit/aee61386cc2da7cf26e82db174be8b135949f16c))
+* **dependencies:** update dependency unist-util-select to ^3.0.4 ([209c6e5](https://github.com/stencila/encoda/commit/209c6e53c9cc5b8d206d5f98705a011ca95f67bc))
+
 ## [0.104.3](https://github.com/stencila/encoda/compare/v0.104.2...v0.104.3) (2020-12-14)
 
 
