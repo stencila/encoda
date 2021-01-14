@@ -1,3 +1,10 @@
+## [0.104.5](https://github.com/stencila/encoda/compare/v0.104.4...v0.104.5) (2021-01-14)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency better-ajv-errors to ^0.7.0 ([f904182](https://github.com/stencila/encoda/commit/f904182898b5120917b294757fecda904062f254))
+
 ## [0.104.4](https://github.com/stencila/encoda/compare/v0.104.3...v0.104.4) (2020-12-21)
 
 
