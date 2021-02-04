@@ -348,10 +348,23 @@ async function reshapeCreativeWork(
           promises = []
         }
       }
+
       // Resolve remaining promises
       references.push(
         ...((await Promise.all(promises)) as schema.CreativeWork[])
       )
+
+      // Give references an id if they do not already have one
+      let ref = 1
+      for (const reference of references) {
+        if (
+          schema.isA('CreativeWork', reference) &&
+          reference.id === undefined
+        ) {
+          reference.id = `ref${ref}`
+        }
+        ref += 1
+      }
 
       work = {
         ...work,

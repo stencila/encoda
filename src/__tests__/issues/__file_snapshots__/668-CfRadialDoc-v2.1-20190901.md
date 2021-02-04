@@ -62,6 +62,7 @@ references:
         type: PropertyValue
     url: 'http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0'
     type: CreativeWork
+    id: ref2
   - authors:
       - familyNames:
           - Lee
