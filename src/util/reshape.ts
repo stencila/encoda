@@ -1,4 +1,5 @@
 import * as schema from '@stencila/schema'
+import { transformSync } from './transform'
 
 /**
  * Reshape a node by inferring its semantic structure.
@@ -40,7 +41,6 @@ async function reshapeCreativeWork(
     const next = content[index + 1]
 
     const text = textContent(node)
-    // console.log(text.substr(0, 50))
 
     // Is this the first node and does it want to be the work's title?
     if (
@@ -366,10 +366,7 @@ async function reshapeCreativeWork(
         ref += 1
       }
 
-      work = {
-        ...work,
-        references,
-      }
+      work.references = references
 
       node = undefined
       index += step - 1
@@ -378,10 +375,66 @@ async function reshapeCreativeWork(
     if (node !== undefined) newContent.push(node)
   }
 
-  return {
-    ...work,
-    content: newContent.length > 0 ? newContent : undefined,
+  work.content = newContent.length > 0 ? newContent : undefined
+
+  const { references } = work
+  if (references !== undefined) {
+    // Scan paragraphs for citations and reshape them into `Cite` nodes
+    // that link to references. Splits string content into `[string, Cite, string]`.
+    // At present, only detects "[12]" and "[7,8]" style citations in string inline content
+    // (ie. will ignore Superscripts, Links etc)
+    transformSync(
+      work,
+      (node): schema.Node => {
+        if (schema.isA('Paragraph', node)) {
+          node.content = node.content.reduce(
+            (prev: schema.InlineContent[], curr): schema.InlineContent[] => {
+              if (typeof curr === 'string') {
+                const parts = []
+                let last = 0
+                // Only match if preceding space and trailing space or punctuation
+                const regex = /(?<=\s)\[(\d+)(?:\s*,\s*(\d+))*\](?=[ ,.!?)])/g
+                let match
+                while ((match = regex.exec(curr))) {
+                  // Try to convert each number into a Cite
+                  const items = match
+                    .slice(1)
+                    .filter((digits) => digits !== undefined)
+                    .map((digits) => {
+                      const num = parseInt(digits)
+
+                      // Get generate an id for the reference
+                      const ref = references[num - 1]
+                      let id = `ref${num}`
+                      if (schema.isCreativeWork(ref)) {
+                        if (ref.id !== undefined) id = ref.id
+                        else ref.id = id
+                      }
+
+                      return schema.cite({ target: id })
+                    })
+
+                  // Split into [string, CiteGroup] parts
+                  parts.push(
+                    curr.slice(last, match.index),
+                    schema.citeGroup({ items })
+                  )
+
+                  last = match.index + match[0].length
+                }
+                parts.push(curr.slice(last))
+                return [...prev, ...parts]
+              } else return [...prev, curr]
+            },
+            []
+          )
+        }
+        return node
+      }
+    )
   }
+
+  return work
 }
 
 /**

@@ -53,7 +53,7 @@ Figure 1. Caption after after image
 
 ## Chunks
 
-For formats such as Word and Google Docs placing the figure caption outside of the chunk (and image in those cases). Allows users to more convieiently edit them.
+For formats such as Word and Google Docs placing the figure caption outside of the chunk (and image in those cases). Allows users to more conveniently edit them.
 
 chunk:
 :::
@@ -64,6 +64,13 @@ chunk:
 :::
 
 Figure 3. The caption for the code chunk.
+
+
+## Citations
+
+Detect in paragraph citations like \[1], \[2] (and \[3]) including those referring to a non-existent reference e.g. \[101] but ignoring those in non-string inline content e.g. _\[1]_, `[2]` (Note the need for escaping the leading square bracket because we are in Markdown).
+
+Can also deal with groups of citations e.g. \[1,2] and \[2, 3].
 
 
 # References

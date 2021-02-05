@@ -1,0 +1,274 @@
+type: Article
+authors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: Stencila
+    familyNames:
+      - Bentley
+    givenNames:
+      - Nokome
+description:
+  - type: Paragraph
+    content:
+      - >-
+        This fixture is for testing that the reshape function does what is
+        expected. See 
+      - type: CodeFragment
+        text: ../__file__snapshots/reshape-1.md
+      - ' for the reshaped version. We use Markdown just becuase it''s quick and easy to write but this doc could have been in JSON or YAML.'
+keywords:
+  - testing
+  - reshaping
+references:
+  - type: Article
+    id: ref1
+    authors:
+      - type: Person
+        familyNames:
+          - Pruthvi.
+        givenNames:
+          - Hemanth
+    datePublished:
+      type: Date
+      value: '2020-11-24'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: 'https://registry.identifiers.org/registry/doi'
+        value: 10.21105/joss.02693
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        isPartOf:
+          type: Periodical
+          name: Journal of Open Source Software
+        volumeNumber: 5
+      issueNumber: 55
+    pagination: '2693'
+    publisher:
+      type: Organization
+      name: The Open Journal
+    title: >-
+      PyAstroPol: A Python package for the instrumental polarization analysis of
+      the astronomical optics.
+    url: 'http://dx.doi.org/10.21105/joss.02693'
+  - type: Article
+    id: ref2
+    authors:
+      - type: Person
+        familyNames:
+          - Danehkar
+        givenNames:
+          - Ashkbiz
+    datePublished:
+      type: Date
+      value: '2020-11-24'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: 'https://registry.identifiers.org/registry/doi'
+        value: 10.21105/joss.02797
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        isPartOf:
+          type: Periodical
+          name: Journal of Open Source Software
+        volumeNumber: 5
+      issueNumber: 55
+    pagination: '2797'
+    publisher:
+      type: Organization
+      name: The Open Journal
+    title: >-
+      AtomNeb Python Package, an addendum to AtomNeb: IDL Library for Atomic
+      Data of Ionized Nebulae
+    url: 'http://dx.doi.org/10.21105/joss.02797'
+  - >-
+    Foo and Bar (2003) A non-existent article that should remain a plain text
+    reference.
+title: A test fixture for the reshape function
+content:
+  - type: Heading
+    depth: 1
+    content:
+      - 'Figure, table and chunk captions'
+  - type: Paragraph
+    content:
+      - >-
+        The reshape function attempts to combine tables, figures and code chunks
+        and their captions.
+  - type: Heading
+    depth: 2
+    content:
+      - Tables
+  - type: Table
+    caption:
+      - type: Paragraph
+        content:
+          - Caption starts with Table number.
+    label: Table 1
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - A
+          - type: TableCell
+            content:
+              - B
+        rowType: header
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '1'
+          - type: TableCell
+            content:
+              - '2'
+  - type: Paragraph
+    content:
+      - The caption can be after e.g.
+  - type: Table
+    caption:
+      - type: Paragraph
+        content:
+          - Caption after table
+    label: Table 2
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - A
+          - type: TableCell
+            content:
+              - B
+        rowType: header
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '3'
+          - type: TableCell
+            content:
+              - '4'
+  - type: Paragraph
+    content:
+      - Captions can also be indicated by emphasis or string emphasis e.g.
+  - type: Table
+    caption:
+      - type: Paragraph
+        content:
+          - Caption for the next table
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - A
+          - type: TableCell
+            content:
+              - B
+        rowType: header
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '3'
+          - type: TableCell
+            content:
+              - '4'
+  - type: Heading
+    depth: 2
+    content:
+      - Figures
+  - type: Figure
+    caption:
+      - type: Paragraph
+        content:
+          - Caption after after image
+    label: Figure 1
+    content:
+      - type: ImageObject
+        contentUrl: 'https://via.placeholder.com/100'
+  - type: Figure
+    caption:
+      - type: Paragraph
+        content:
+          - Caption is above and bold
+    content:
+      - type: ImageObject
+        contentUrl: 'https://via.placeholder.com/200'
+  - type: Heading
+    depth: 2
+    content:
+      - Chunks
+  - type: Paragraph
+    content:
+      - >-
+        For formats such as Word and Google Docs placing the figure caption
+        outside of the chunk (and image in those cases). Allows users to more
+        conveniently edit them.
+  - type: CodeChunk
+    caption:
+      - type: Paragraph
+        content:
+          - The caption for the code chunk.
+    label: Figure 3
+    programmingLanguage: r
+    text: '# Some R code'
+  - type: Heading
+    depth: 2
+    content:
+      - Citations
+  - type: Paragraph
+    content:
+      - 'Detect in paragraph citations like '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+      - ', '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref2
+      - ' (and '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref3
+      - ') including those referring to a non-existent reference e.g. '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref101
+      - ' but ignoring those in non-string inline content e.g. '
+      - type: Emphasis
+        content:
+          - '[1]'
+      - ', '
+      - type: CodeFragment
+        text: '[2]'
+      - ' (Note the need for escaping the leading square bracket because we are in Markdown).'
+  - type: Paragraph
+    content:
+      - 'Can also deal with groups of citations e.g. '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+          - type: Cite
+            target: ref2
+      - ' and '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref2
+          - type: Cite
+            target: ref3
+      - .

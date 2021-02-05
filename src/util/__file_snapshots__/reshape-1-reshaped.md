@@ -54,6 +54,7 @@ references:
     url: 'http://dx.doi.org/10.21105/joss.02693'
     pagination: '2693'
     type: Article
+    id: ref1
   - authors:
       - familyNames:
           - Danehkar
@@ -86,6 +87,7 @@ references:
     url: 'http://dx.doi.org/10.21105/joss.02797'
     pagination: '2797'
     type: Article
+    id: ref2
   - >-
     Foo and Bar (2003) A non-existent article that should remain a plain text
     reference.
@@ -146,7 +148,7 @@ Caption is above and bold
 
 ## Chunks
 
-For formats such as Word and Google Docs placing the figure caption outside of the chunk (and image in those cases). Allows users to more convieiently edit them.
+For formats such as Word and Google Docs placing the figure caption outside of the chunk (and image in those cases). Allows users to more conveniently edit them.
 
 chunk: Figure 3
 :::
@@ -156,3 +158,9 @@ The caption for the code chunk.
 # Some R code
 ```
 :::
+
+## Citations
+
+Detect in paragraph citations like @ref1, @ref2 (and @ref3) including those referring to a non-existent reference e.g. @ref101 but ignoring those in non-string inline content e.g. _\[1]_, `[2]` (Note the need for escaping the leading square bracket because we are in Markdown).
+
+Can also deal with groups of citations e.g. \[@ref1; @ref2] and \[@ref2; @ref3].
