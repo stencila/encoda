@@ -392,8 +392,8 @@ async function reshapeCreativeWork(
               if (typeof curr === 'string') {
                 const parts = []
                 let last = 0
-                // Only match if preceding space and trailing space or punctuation
-                const regex = /(?<=\s)\[(\d+)(?:\s*,\s*(\d+))*\](?=[ ,.!?)])/g
+                // Only match square brackets if preceding space
+                const regex = /(?<=\s)\[(\d+)(?:\s*,\s*(\d+))*\]/g
                 let match
                 while ((match = regex.exec(curr))) {
                   // Try to convert each number into a Cite
