@@ -34,7 +34,7 @@ import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
-import { encodeCiteContent } from '../../util/references'
+import { encodeCiteAuthorsYear, encodeCiteNumeric } from '../../util/references'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { plotlyMediaType } from '../plotly'
@@ -1237,13 +1237,16 @@ function encodeReferencesProperty(
     h('h2', { [stencilaItemType]: microdataItemtype('Heading') }, 'References'),
     h(
       'ol',
-      references.map((ref) => {
+      references.map((ref, index) => {
         const md = microdata(ref, 'references', 'item')
 
-        if (typeof ref === 'string') return h('li', md, ref)
+        if (typeof ref === 'string') {
+          const id = `ref${index + 1}`
+          return h('li', { attrs: { ...md, id } }, ref)
+        }
 
         const {
-          id,
+          id = `ref${index + 1}`,
           authors = [],
           datePublished,
           title,
@@ -1734,12 +1737,32 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
 
   let contentElems: string | Node[]
   if (content === undefined || content.length === 0) {
-    const reference = state.references?.find((ref) =>
-      typeof ref === 'string' ? false : ref.id === target
+    const reference = state.references?.find((ref, index) =>
+      typeof ref === 'string'
+        ? `ref${index + 1}` === target || `bib${index + 1}` === target
+        : ref.id === target
     )
-    if (stencila.isCreativeWork(reference))
-      contentElems = encodeCiteContent(reference)
-    else contentElems = target
+    if (reference === undefined) {
+      contentElems = target
+    } else {
+      contentElems = [
+        h(
+          'span',
+          { class: 'cite-numeric' },
+          encodeCiteNumeric(reference, state.references)
+        ),
+      ]
+      if (stencila.isCreativeWork(reference)) {
+        contentElems = [
+          ...contentElems,
+          h(
+            'span',
+            { class: 'cite-authors-year' },
+            encodeCiteAuthorsYear(reference)
+          ),
+        ]
+      }
+    }
   } else {
     contentElems = encodeNodes(content, state)
   }
@@ -1754,7 +1777,8 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
 }
 
 /**
- * Decode a `<ol itemtype="https://schema.stenci.la/CiteGroup">` element to a `stencila.CiteGroup`.
+ * Decode a `<ol itemtype="https://schema.stenci.la/CiteGroup">` element to
+ * a `stencila.CiteGroup`.
  */
 function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
   return stencila.citeGroup({

@@ -2,12 +2,22 @@ import { CreativeWork, isA, Organization, Person } from '@stencila/schema'
 import { array as A } from 'fp-ts'
 
 /**
- * Create text suitable for the `content` property of a `Cite` node from a `CreativeWork`.
+ * Create string for use in "numeric" in-text citations e.g. `[1]`.
  *
- * Currently this function only "author-date" type text citations e.g. `Smith et al (1990)`.
- * In the future, it may have an optional `style` argument to create other styles.
+ * Will return "-1" if there are no references and "0" if the work
+ * is not able to be found in the references
  */
-export const encodeCiteContent = (work: CreativeWork): string => {
+export const encodeCiteNumeric = (
+  work: CreativeWork | string,
+  references: CreativeWork['references']
+): string => {
+  return `${(references?.indexOf(work) ?? -2) + 1}`
+}
+
+/**
+ * Create string for "author-year" type in-text citations e.g. `Smith et al (1990)`.
+ */
+export const encodeCiteAuthorsYear = (work: CreativeWork): string => {
   const { authors = [], datePublished } = work
   let citeText = ''
 

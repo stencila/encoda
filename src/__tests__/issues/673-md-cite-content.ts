@@ -42,8 +42,8 @@ In a figure caption @bib1.
 A citation that aint @bib42 in references.
 `)
   )
-  expect(dom).toHaveTextContent('In a para Smith and Jones, 1990.')
-  expect(dom).toHaveTextContent('In a figure caption Smith and Jones, 1990.')
+  expect(dom).toHaveTextContent('In a para 1Smith and Jones, 1990.')
+  expect(dom).toHaveTextContent('In a figure caption 1Smith and Jones, 1990.')
   expect(dom).toHaveTextContent('A citation that aint bib42 in references.')
 
   dom = await toDom(
@@ -71,6 +71,6 @@ A citation that aint @bib42 in references.
     )
   )
   expect(dom).toHaveTextContent(
-    'In a para Singh et al., 2022 and one that aint foo.'
+    'In a para 1Singh et al., 2022 and one that aint foo.'
   )
 })

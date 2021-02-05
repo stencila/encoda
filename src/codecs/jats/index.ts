@@ -23,7 +23,7 @@ import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { encodeIdentifierTypeUri } from '../../util/identifiers'
-import { encodeCiteContent } from '../../util/references'
+import { encodeCiteAuthorsYear } from '../../util/references'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
@@ -1222,7 +1222,7 @@ function encodeReference(
       )
 
       if (rid && state.references[rid] === undefined) {
-        state.references[rid] = encodeCiteContent(work)
+        state.references[rid] = encodeCiteAuthorsYear(work)
         populateBibrContent(rid, state)
       }
 
