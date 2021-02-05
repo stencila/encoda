@@ -1188,18 +1188,22 @@ function encodeIdentifiersProperty(
 /**
  * Encode a `Date` node as a HTML `<time>` element.
  *
- * Note that since a `Date` is a basic, atomic https://schema.org/DataType
- * it does not have an `itemtype` property.
+ * Note that since a `Date` is an [atomic data type](https://schema.org/DataType)
+ * it is not given a Microdata `itemtype` attribute.
  *
  * @param date The date to encode
  * @param property The property the data belongs to
+ * @param format The format for the content of the element.
+ *               Only %Y supported at present.
  */
 function encodeDate(
   date: string | stencila.Date,
-  property?: string
+  property?: string,
+  format?: string
 ): HTMLElement {
   const value = stencila.isA('Date', date) ? date.value : date
-  return h('time', { ...microdata(value, property), datetime: value }, value)
+  const content = format === '%Y' ? value.slice(0, 4) : value
+  return h('time', { ...microdata(value, property), datetime: value }, content)
 }
 
 function encodeDescriptionProperty(
@@ -1253,7 +1257,7 @@ function encodeReferencesProperty(
           { attrs: { ...md, id } },
           encodeAuthorsProperty(authors),
           encodeMaybe(datePublished, (date) =>
-            encodeDate(date, 'datePublished')
+            encodeDate(date, 'datePublished', '%Y')
           ),
           url !== undefined
             ? h('a', { itemprop: 'url', href: url }, titleElem)
