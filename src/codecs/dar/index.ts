@@ -5,7 +5,6 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import h from 'hyperscript'
-import produce from 'immer'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
 import path from 'path'
@@ -190,7 +189,7 @@ async function encodeDocumentAssets(
     }
     return node
   }
-  const encoded = (await produce(node, walk)) as stencila.Node
+  const encoded = await walk(node)
   return Promise.resolve({ encoded, assets })
 }
 

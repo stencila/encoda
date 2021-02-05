@@ -1,6 +1,5 @@
 import stencila, { isEntity, nodeType } from '@stencila/schema'
 import Ajv from 'ajv'
-import produce from 'immer'
 import { getCoecer, getErrorMessage, getSchema } from './schemas'
 import { getLogger } from '@stencila/logga'
 
@@ -19,29 +18,21 @@ export async function coerce<Key extends keyof stencila.Types>(
   if (type === undefined) type = nodeType(node) as Key
   const coecer = await getCoecer(type)
 
-  return (produce(node, async (coerced: stencila.Node) => {
-    if (coerced === null) return node
+  // Change the type given that this is coercion to the specified type
+  if (typeof node === 'object' && node !== null && !Array.isArray(node))
+    node.type = type
 
-    // Change the type given that this is coercion to the specified type
-    if (
-      typeof coerced === 'object' &&
-      coerced !== null &&
-      !Array.isArray(coerced)
-    )
-      coerced.type = type
+  // Deep "reshape" node
+  await reshape(node)
 
-    // Deep "reshape" node
-    await reshape(coerced)
-
-    // Coerce and validate using Ajv
-    try {
-      return await coecer(coerced)
-    } catch (error) {
-      if (error instanceof Ajv.ValidationError)
-        throw new Error(getErrorMessage(coecer, node, error.errors, 'cli'))
-      else throw error
-    }
-  }) as unknown) as stencila.Types[Key]
+  // Coerce and validate using Ajv
+  try {
+    return await coecer(node)
+  } catch (error) {
+    if (error instanceof Ajv.ValidationError)
+      throw new Error(getErrorMessage(coecer, node, error.errors, 'cli'))
+    else throw error
+  }
 
   /**
    * Recursively walk through the node reshaping it

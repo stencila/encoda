@@ -284,25 +284,16 @@ describe('coerce', () => {
     )
   })
 
-  it('has no side effects', async () => {
+  it('has side effects', async () => {
     const inp: any = {
       name: 42,
       title: 'Untitled',
       authors: [{ type: 'Person', givenNames: 'Jane' }],
     }
-    const out = await coerce(inp, 'Article')
+    await coerce(inp, 'Article')
 
-    // The original object should be unchanged
-    expect(inp.type).toBeUndefined()
-    expect(inp.name).toEqual(42)
-    const inpPerson = inp.authors[0]
-    expect(inpPerson.givenNames).toEqual('Jane')
-
-    // The new object has the changes made
-    expect(out.type).toEqual('Article')
-    expect(out.name).toEqual('42')
-    const outPerson = out.authors![0]
-    // @ts-ignore
-    expect(outPerson.givenNames).toEqual(['Jane'])
+    // The original object is changed
+    expect(inp.type).toEqual('Article')
+    expect(inp.name).toEqual('42')
   })
 })
