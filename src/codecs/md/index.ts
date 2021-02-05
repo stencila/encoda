@@ -545,6 +545,8 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
     case 'ThematicBreak':
       return [encodeThematicBreak()]
 
+    case 'CiteGroup':
+      return [encodeCiteGroup(node as stencila.CiteGroup)]
     case 'Cite':
       return [encodeCite(node as stencila.Cite)]
     case 'Link':
@@ -1324,6 +1326,20 @@ function decodeCite(cite: MDAST.Literal): stencila.Cite {
   return stencila.cite({
     target: cite.value,
   })
+}
+
+/**
+ * Encode a Stencila `CiteGroup` node to a MDAST `Text` node
+ * with Pandoc style citation groups e.g. `[@smith04; @doe99]`.
+ */
+function encodeCiteGroup(citeGroup: stencila.CiteGroup): MDAST.Text {
+  const { items } = citeGroup
+  return items.length === 1
+    ? encodeCite(items[0])
+    : {
+        type: 'text',
+        value: `[${items.map((item) => encodeCite(item).value).join('; ')}]`,
+      }
 }
 
 /**
