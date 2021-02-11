@@ -78,7 +78,7 @@ export class DarCodec extends Codec implements Codec {
         const fileName = `${fileId}.csv`
         const filePath = path.join(darPath, fileName)
         await write(node, filePath)
-        const [h, asset] = await encodeAsset(filePath, fileId, darPath)
+        const [_, asset] = await encodeAsset(filePath, fileId, darPath)
         return { document: null, assets: [asset] }
       } else {
         const { encoded, assets } = await encodeDocumentAssets(
@@ -205,7 +205,7 @@ async function encodeAsset(
   id: string,
   darPath: string
 ): Promise<[string, Element]> {
-  const { name, ext } = path.parse(url)
+  const { ext } = path.parse(url)
   const assetFile = `${id}${ext}`
   const assetPath = path.join(darPath, assetFile)
 

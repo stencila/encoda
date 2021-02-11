@@ -135,8 +135,12 @@ export class PngCodec extends Codec implements Codec {
               clip: {
                 x: boundingBox.x,
                 y: boundingBox.y,
-                width: Math.min(boundingBox.width, viewPort.width),
-                height: Math.min(boundingBox.height, viewPort.height),
+                width: viewPort
+                  ? Math.min(boundingBox.width, viewPort.width)
+                  : boundingBox.width,
+                height: viewPort
+                  ? Math.min(boundingBox.height, viewPort.height)
+                  : boundingBox.height,
               },
             }
           : {}),
@@ -145,6 +149,6 @@ export class PngCodec extends Codec implements Codec {
 
     await page.close()
 
-    return vfile.load(buffer)
+    return vfile.load(buffer !== undefined ? buffer : '')
   }
 }

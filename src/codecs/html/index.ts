@@ -1449,6 +1449,7 @@ function encodePerson(
                 index
               )
             }
+            return undefined
           })
         )
       : undefined
@@ -1699,9 +1700,7 @@ function encodeQuoteBlock(
 }
 
 // Regex to test if a string is a URL. Thanks to https://stackoverflow.com/a/3809435
-const urlRegex = new RegExp(
-  /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
-)
+const urlRegex = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
 
 export const decodeHref = (href?: string | null): string => {
   if (!isDefined(href)) return '#'
@@ -2723,7 +2722,7 @@ function encodeAttrs(
   node: stencila.Node,
   propertyOrExtra?: string | Record<string, string | undefined>,
   extra?: Record<string, string | undefined>
-) {
+): { attrs: Record<string, unknown> } {
   const [property, extras] =
     typeof propertyOrExtra === 'string'
       ? [propertyOrExtra, extra]

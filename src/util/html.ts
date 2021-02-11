@@ -8,13 +8,7 @@
  * @module util/html
  */
 
-import {
-  getTheme,
-  isTheme,
-  styleEntry,
-  scriptEntry,
-  ThemaAssets,
-} from '@stencila/thema'
+import { getTheme, styleEntry, scriptEntry, ThemaAssets } from '@stencila/thema'
 import fs from 'fs'
 import jsdom from 'jsdom'
 import path from 'path'
@@ -157,7 +151,7 @@ export const getThemeAssets = async (
       ? theme.slice(0, theme.length - 1)
       : theme
     const parts = cleanUrl.split('/')
-    const endsInFile = new RegExp('\\.\\w+$').test(parts[parts.length - 1])
+    const endsInFile = /\.\w+$/.test(parts[parts.length - 1])
     // Account for receiving top level URL such as 'http://example.com', and not consider '.com' as a file extension
     const urlParts =
       parts.length > 3 && endsInFile ? parts.slice(0, parts.length - 1) : parts

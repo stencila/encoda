@@ -396,7 +396,7 @@ function decodeFront(
  * Returns the element if not empty ( "" as string )
  * undefined if not.
  */
-const emptySafeString = (str: string | undefined) =>
+const emptySafeString = (str: string | undefined): string | undefined =>
   str?.length ? str : undefined
 
 /**
@@ -420,9 +420,9 @@ function decodeAbout(subjectGroups: xml.Element[]): stencila.Article['about'] {
       const name = emptySafeString(
         textOrUndefined(xml.firstByType(subject, 'text'))
       )
-      if (name && ABOUT_TYPES.includes(type)) {
-        return stencila.definedTerm({ name })
-      }
+      return name && ABOUT_TYPES.includes(type)
+        ? stencila.definedTerm({ name })
+        : undefined
     })
     .filter(isDefined)
   return about.length ? about : undefined
@@ -441,9 +441,7 @@ function decodeGenres(subjectGroups: xml.Element[]): stencila.Article['genre'] {
       const value = emptySafeString(
         textOrUndefined(xml.firstByType(subject, 'text'))
       )
-      if (GENRES_TYPES.includes(type)) {
-        return value
-      }
+      return GENRES_TYPES.includes(type) ? value : undefined
     })
     .filter(isDefined)
   return genres.length ? genres : undefined
@@ -592,8 +590,9 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
       const name = attr(elem, 'journal-id-type') ?? undefined
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
-      if (value !== undefined)
-        return stencila.propertyValue({ name, propertyID, value })
+      return value !== undefined
+        ? stencila.propertyValue({ name, propertyID, value })
+        : undefined
     })
     .filter(isDefined)
   const publisher = textOrUndefined(first(journal, 'publisher-name'))
@@ -658,9 +657,7 @@ function decodeKeywords(
       const value = emptySafeString(
         textOrUndefined(xml.firstByType(subject, 'text'))
       )
-      if (KEYWORDS_TYPES.includes(type)) {
-        return value
-      }
+      return KEYWORDS_TYPES.includes(type) ? value : undefined
     })
     .filter(isDefined)
   const result = [...kwdsArray, ...kwdsTypes]
@@ -679,23 +676,25 @@ function decodeIdentifiers(
       const name = attr(elem, 'pub-id-type') ?? undefined
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
-      if (value !== undefined)
-        return stencila.propertyValue({
-          name,
-          propertyID,
-          value,
-        })
+      return value !== undefined
+        ? stencila.propertyValue({
+            name,
+            propertyID,
+            value,
+          })
+        : undefined
     }),
     ...all(front, 'elocation-id').map((elem) => {
       const name = 'elocation-id'
       const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
-      if (value !== undefined)
-        return stencila.propertyValue({
-          name,
-          propertyID,
-          value,
-        })
+      return value !== undefined
+        ? stencila.propertyValue({
+            name,
+            propertyID,
+            value,
+          })
+        : undefined
     }),
   ].filter(isDefined)
 }
@@ -712,7 +711,9 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
     const identifiers = all(award, 'award-id')
       .map((id) => {
         const value = textOrUndefined(id)
-        if (value !== undefined) return stencila.propertyValue({ value })
+        return value !== undefined
+          ? stencila.propertyValue({ value })
+          : undefined
       })
       .filter(isDefined)
 

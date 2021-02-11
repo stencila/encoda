@@ -727,6 +727,8 @@ async function decodeMimeBundle(
   bundle: nbformat.MimeBundle,
   version: nbformat.Version = 4
 ): Promise<schema.Node> {
+  // TODO: Avoid this disablement
+  // eslint-disable-next-line no-unreachable-loop
   for (const [key, data] of Object.entries(bundle)) {
     // For nbformat 3 it is necessary to convert some property
     // names to mimetypes

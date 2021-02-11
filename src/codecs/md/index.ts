@@ -107,7 +107,7 @@ export class MdCodec extends Codec implements Codec {
  * @example myString.replace(whiteSpaceRegEx, '$1 ')
  */
 
-const whiteSpaceRegEx = new RegExp(/(^|[^\n\s])[\n]+\s*(?![\n])/g)
+const whiteSpaceRegEx = /(^|[^\n\s])[\n]+\s*(?![\n])/g
 
 export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   blockquote: 'blockquote',
@@ -914,7 +914,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
 
   const outputs: stencila.Node[] = []
   if (nodes.length > index) {
-    const pushOutputs = function (outputNodes: stencila.Node[]) {
+    const pushOutputs = function (outputNodes: stencila.Node[]): void {
       if (outputNodes.length === 1) {
         const node = outputNodes[0]
         if (stencila.isA('Paragraph', node) && node.content.length === 1) {

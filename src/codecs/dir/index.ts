@@ -285,6 +285,6 @@ export class DirCodec
     source: string,
     options?: DecodeOptions
   ): Promise<stencila.Collection> {
-    return this.decode(await vfile.create(source), options)
+    return this.decode(vfile.create(source), options)
   }
 }

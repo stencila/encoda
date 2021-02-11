@@ -58,7 +58,7 @@ export class MathMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Math> => {
     const content = await vfile.dump(file)
-    const mathml = await xml.load(normalize(content))
+    const mathml = xml.load(normalize(content))
     const display = xml.attr(xml.child(mathml, 'math'), 'display')
     return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
       mathLanguage: 'mathml',

@@ -166,7 +166,7 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
     return xml.elem(type, { key }, ...items)
   }
   const props = Object.entries(node)
-    .filter(([key, value]) => key !== 'type')
+    .filter(([key]) => key !== 'type')
     .map(([key, value]) => encodeNode(value, key))
   return xml.elem(type, { key }, ...props)
 }

@@ -144,7 +144,7 @@ export async function decodeCsl(
     // @ts-ignore this hidden Citation.js property
     _graph,
     // citation-label because it is the same as id (but don't want it in `lost`)
-    'citation-label': citationLabel,
+    'citation-label': _citationLabel,
 
     // ...lost
   } = csl
@@ -374,7 +374,7 @@ const encodePerson = (person: schema.Person): Csl.Person => {
  */
 const encodeOrganization = (
   org: schema.Organization,
-  format: string
+  _format: string
 ): Csl.Person => {
   const { name = 'Anonymous' } = org
   return {

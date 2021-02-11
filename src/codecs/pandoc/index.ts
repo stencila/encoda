@@ -29,7 +29,7 @@ import transform, { transformSync } from '../../util/transform'
 import { http } from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
-import { EncodeOptions, PngCodec } from '../png'
+import { PngCodec } from '../png'
 import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
@@ -89,7 +89,7 @@ export class PandocCodec extends Codec implements Codec {
    */
   public readonly decode = async (
     file: vfile.VFile,
-    options: CommonDecodeOptions = this.commonDecodeDefaults,
+    _options: CommonDecodeOptions = this.commonDecodeDefaults,
     settings: DecodeSettings = {}
   ): Promise<stencila.Node> => {
     const {
@@ -195,7 +195,7 @@ export function run(
     const child = childProcess.spawn(binary.path(), args)
 
     // If there's an error also show the input in the debug log
-    function raise(error: Error) {
+    function raise(error: Error): void {
       const pretty = JSON.stringify(JSON.parse(input.toString()), null, '  ')
       log.debug(`${error}\n  input: ${pretty}`)
       reject(error)
@@ -278,7 +278,7 @@ async function encodeDocumentAsync(
   node: stencila.Node,
   settings: EncodeSettings
 ): Promise<stencila.Node> {
-  return transform(node, async (node, parent) => {
+  return transform(node, async (node) => {
     switch (stencila.nodeType(node)) {
       case 'CodeExpression':
         return encodeCodeExpression(node as stencila.CodeExpression, settings)

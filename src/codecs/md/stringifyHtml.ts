@@ -38,8 +38,8 @@ const joinHTML = (tree: Node[]): string =>
     return acc + value
   }, '')
 
-const htmlTagRegExp = new RegExp(/<\/?(\w+)[\s>]/g)
-const openingTagRegExp = new RegExp(/^<\w+/)
+const htmlTagRegExp = /<\/?(\w+)[\s>]/g
+const openingTagRegExp = /^<\w+/
 
 const isOpeningTag = (tag: string): boolean => openingTagRegExp.test(tag.trim())
 
