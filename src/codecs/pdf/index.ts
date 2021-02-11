@@ -98,7 +98,7 @@ export class PdfCodec extends Codec {
     `,
     })
     const buffer = await page.pdf({
-      format: 'A4',
+      format: 'a4',
       printBackground: true,
       scale: 0.85,
       margin: {
