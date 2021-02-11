@@ -127,7 +127,7 @@ export class PngCodec extends Codec implements Codec {
       if (elem === null)
         throw new Error(`No element found matching selector: ${cssSelector}`)
       const boundingBox = await elem.boundingBox()
-      const viewPort = page.viewport()
+
       buffer = await elem.screenshot({
         encoding: 'binary',
         ...(size !== undefined && boundingBox !== null
@@ -135,12 +135,8 @@ export class PngCodec extends Codec implements Codec {
               clip: {
                 x: boundingBox.x,
                 y: boundingBox.y,
-                width: viewPort
-                  ? Math.min(boundingBox.width, viewPort.width)
-                  : boundingBox.width,
-                height: viewPort
-                  ? Math.min(boundingBox.height, viewPort.height)
-                  : boundingBox.height,
+                width: Math.round(boundingBox.width),
+                height: Math.round(boundingBox.height),
               },
             }
           : {}),
