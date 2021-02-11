@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli.js",
   "scripts": {
-    "install": "node install.js",
+    "install": "npx patch-package && node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
@@ -147,6 +147,7 @@
     "markdown-toc": "1.2.0",
     "nock": "13.0.7",
     "pa11y": "5.3.0",
+    "patch-package": "6.2.2",
     "structured-data-testing-tool": "4.5.0",
     "ts-jest": "26.5.1",
     "ts-node": "9.1.1",
