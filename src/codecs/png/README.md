@@ -1,4 +1,4 @@
-# `png`
+# Portable Network Graphics (PNG)
 
 
 ## Notes

@@ -1,4 +1,4 @@
-# `csl`: Citation Style Language Codec
+# Citation Style Language
 
 A codec for CSL JSON. Also acts a base codec for other bibliographic formats
 e.g. BibTeX. Based on https://citation.js.org/

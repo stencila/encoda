@@ -1,6 +1,4 @@
-# `rpng`
-
-A codec for Reproducible PNGs (rPNG) files.
+# Reproducible PNGs (rPNGs)
 
 This codec decodes from, and encodes to, a rPNG which embeds the JSON-LD of the node
 into the `tEXt` chunk of the PNG.

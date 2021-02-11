@@ -1,6 +1,4 @@
-# `gdoc`
-
-A codec for Google Documents (GDoc).
+# Google Docs
 
 This codec decodes from, and encodes to, the GDoc JSON ('application/vnd.google-apps.document')
 as defined as [JSON Schemas here](https://docs.googleapis.com/$discovery/rest?version=v1) and in

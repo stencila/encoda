@@ -1,4 +1,4 @@
-# `dmagic`
+# Demo Magic
 
 Codec for [Demo Magic](https://github.com/paxtonhare/demo-magic) script.
 

@@ -1,3 +1,1 @@
-# `docx`
-
-Codec for Microsoft Word
+# Microsoft Word

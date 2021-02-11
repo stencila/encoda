@@ -1,4 +1,4 @@
-# `html`
+# HyperText Markup Language (HTML)
 
 This is a codec for HyperText Markup Language (HTML).
 It decodes/encodes Stencila Document Tree (SDT) nodes from/to HTML.

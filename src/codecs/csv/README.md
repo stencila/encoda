@@ -1,3 +1,1 @@
-# `csv`
-
-Codec for comma separated values (CSV)
+# Comma separated values (CSV)

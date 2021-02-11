@@ -1,4 +1,4 @@
-# `http`: HTTP codec
+# HTTP
 
 The `http` codec is able to decode a HTTP URL (a URL starting with `http` or `https`). It is a 'meta' codec in that it uses the media type of the response content, as specified in the `Content-Type` header, to delegate the decoding of content to other codecs. It also maintains a cache of responses, which respects the `Cache-Control` header, to improve performance and reduce bandwidth consumption.
 

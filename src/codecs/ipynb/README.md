@@ -1,4 +1,4 @@
-# `ipynb`: Jupyter Notebook codec
+# Jupyter Notebooks
 
 The `ipynb` codec is for decoding and encoding Jupyter Notebook's `nbformat` JSON. Jupyter Notebooks were formally known as IPython Notebooks, and correspondingly, usually having the `ipynb` filename extension.
 

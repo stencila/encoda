@@ -1,9 +1,4 @@
----
-title: Comma separated items codec
-authors: []
----
-
-# `csi`: Comma separated items codec
+# Comma separated items
 
 The `csi` codec is for decoding/encoding from/to a comma separated list of items in plain text.
 

@@ -1,3 +1,1 @@
-# `ods`
-
-Codec for Open Document Spreadsheet (ODS)
+# Open Document Spreadsheet (ODS)

@@ -1,4 +1,4 @@
-# `pandoc`
+# Pandoc
 
 Typescript definitions for Pandoc.
 

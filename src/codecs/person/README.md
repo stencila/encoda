@@ -1,9 +1,4 @@
----
-title: person
-authors: []
----
-
-# `person`: a codec for plain text representation of humans
+# Plain text representation of humans
 
 The `person` codec is most often used for decoding a simple string of plain text representing a person e.g. in the YAML header of a R Markdown file, or the `package.json` file of a NPM Javascript package.
 

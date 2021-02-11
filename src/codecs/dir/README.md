@@ -1,4 +1,4 @@
-# `dir`
+# Directories
 
 The `dir` codec decodes a filesystem directory into a `Collection` of `CreativeWork`s. It encodes a `Collection` as directory, with each `CreativeWork` by default being encoded using the `html` codec.
 

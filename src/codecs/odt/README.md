@@ -1,3 +1,1 @@
-# `odt`
-
-Codec for Open Document Text (ODT)
+# Open Document Text (ODT)

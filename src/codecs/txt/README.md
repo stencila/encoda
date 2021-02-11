@@ -1,4 +1,4 @@
-# `txt`: Plain text codec
+# Plain text
 
 The `txt` codec is for decoding/encoding from/to plain text. It's main purpose is to provide a decoder for the `text/plain` media type (in particular for decoding outputs of Jupyter Notebook cells which have this media type). It may also be useful for decoding user input in plain text form fields.
 
