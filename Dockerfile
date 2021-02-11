@@ -39,6 +39,9 @@ USER encoda
 # Use `--ignore-scripts` option otherwise our own `install.js` script will fail
 COPY package*.json ./
 RUN npm install --ignore-scripts
+
+# Copy over and run patches
+COPY patches/ patches/
 RUN npx patch-package
 
 # Copy over other file and run the necessary install scripts that

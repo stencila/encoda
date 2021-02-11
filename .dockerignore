@@ -7,6 +7,7 @@
 !/tsconfig*.json
 !/install.js
 !/src
+!/patches
 
 src/**/*credentials.json
 src/**/*token.json
