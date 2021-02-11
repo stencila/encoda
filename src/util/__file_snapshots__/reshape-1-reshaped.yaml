@@ -35,7 +35,7 @@ references:
     identifiers:
       - type: PropertyValue
         name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.21105/joss.02693
     isPartOf:
       type: PublicationIssue
@@ -53,7 +53,7 @@ references:
     title: >-
       PyAstroPol: A Python package for the instrumental polarization analysis of
       the astronomical optics.
-    url: 'http://dx.doi.org/10.21105/joss.02693'
+    url: http://dx.doi.org/10.21105/joss.02693
   - type: Article
     id: ref2
     authors:
@@ -68,7 +68,7 @@ references:
     identifiers:
       - type: PropertyValue
         name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.21105/joss.02797
     isPartOf:
       type: PublicationIssue
@@ -86,7 +86,7 @@ references:
     title: >-
       AtomNeb Python Package, an addendum to AtomNeb: IDL Library for Atomic
       Data of Ionized Nebulae
-    url: 'http://dx.doi.org/10.21105/joss.02797'
+    url: http://dx.doi.org/10.21105/joss.02797
   - >-
     Foo and Bar (2003) A non-existent article that should remain a plain text
     reference.
@@ -95,7 +95,7 @@ content:
   - type: Heading
     depth: 1
     content:
-      - 'Figure, table and chunk captions'
+      - Figure, table and chunk captions
   - type: Paragraph
     content:
       - >-
@@ -194,7 +194,7 @@ content:
     label: Figure 1
     content:
       - type: ImageObject
-        contentUrl: 'https://via.placeholder.com/100'
+        contentUrl: https://via.placeholder.com/100
   - type: Figure
     caption:
       - type: Paragraph
@@ -202,7 +202,7 @@ content:
           - Caption is above and bold
     content:
       - type: ImageObject
-        contentUrl: 'https://via.placeholder.com/200'
+        contentUrl: https://via.placeholder.com/200
   - type: Heading
     depth: 2
     content:

@@ -48,10 +48,10 @@ references:
       type: Organization
     identifiers:
       - name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.21105/joss.02693
         type: PropertyValue
-    url: 'http://dx.doi.org/10.21105/joss.02693'
+    url: http://dx.doi.org/10.21105/joss.02693
     pagination: '2693'
     type: Article
     id: ref1
@@ -81,10 +81,10 @@ references:
       type: Organization
     identifiers:
       - name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.21105/joss.02797
         type: PropertyValue
-    url: 'http://dx.doi.org/10.21105/joss.02797'
+    url: http://dx.doi.org/10.21105/joss.02797
     pagination: '2797'
     type: Article
     id: ref2
