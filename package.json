@@ -45,10 +45,10 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
-    "@stencila/executa": "^1.15.4",
+    "@stencila/executa": "^1.15.7",
     "@stencila/logga": "^4.0.0",
     "@stencila/schema": "^0.47.2",
-    "@stencila/thema": "^2.20.8",
+    "@stencila/thema": "^2.20.15",
     "ajv": "^6.12.6",
     "appdata-path": "^1.0.0",
     "asciimath2tex": "https://github.com/christianp/asciimath2tex/tarball/dedc42ddfdb80678bfb09864cfa76afb0a4b5f44",
