@@ -121,6 +121,7 @@ export class RpngCodec extends Codec implements Codec {
     const png = await pngCodec.encode(node, {
       ...options,
       theme: 'rpng',
+      isStandalone: false,
       selector,
     })
     const buffer = await vfile.dump(png, 'buffer')
