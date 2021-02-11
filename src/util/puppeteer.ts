@@ -81,7 +81,7 @@ export async function startup(): Promise<Browser> {
               ]
             : [],
         })
-        log.debug(`Browser launched. pid: ${browser.process().pid}`)
+        log.debug(`Browser launched. pid: ${browser.process()?.pid}`)
       }
       return browser
     }
@@ -104,7 +104,7 @@ export async function shutdown(): Promise<void> {
     'browser',
     async (): Promise<void> => {
       if (browser !== undefined) {
-        log.debug(`Closing browser. pid: ${browser.process().pid}`)
+        log.debug(`Closing browser. pid: ${browser.process()?.pid}`)
         await browser.close()
         log.debug('Browser closed')
         browser = undefined
