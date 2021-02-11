@@ -9,32 +9,19 @@ jobs:
   - job: test
     strategy:
       matrix:
-        linux_node_14:
-          # Primary test with latest Node LTS and Nock in 'wild' mode
-          # so that it makes HTTP requests as a way of testing whether
-          # there have been changes in any API we are using
+        linux:
           image_name: ubuntu-latest
-          node_version: 14.x
-          nock_mode: wild
-        linux_node_12:
-          image_name: ubuntu-latest
-          node_version: 12.x
-          nock_mode: dryrun
         mac:
-          node_version: 14.x
           image_name: macOS-latest
-          nock_mode: dryrun
         windows:
-          node_version: 14.x
           image_name: windows-latest
-          nock_mode: dryrun
     pool:
       vmImage: $(image_name)
     steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: $(node_version)
-        displayName: 'Install Node.js $(node_version)'
+          versionSpec: 14.x
+        displayName: 'Install Node.js 14.x'
 
       # Do not convert line endings on checkout, otherwise snapshot
       # files fail on Windows.
@@ -54,16 +41,15 @@ jobs:
         displayName: 'Linting'
 
       # Run tests with
-      #   - Fifteen (!) minute default test timeout
+      #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
+      #   - Fifteen (!) minute test timeout
       #   - Force exit to prevent hanging
-      #   - See https://github.com/nock/nock#modes for what nock modes do
       # Currently skipping tests on Windows due to weird, unresolvable failures
       # https://dev.azure.com/stencila/stencila/_build/results?buildId=732&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=0d6dcb53-0957-53aa-c18a-237166af945a&l=532
       - script: npx jest --coverage --runInBand --testTimeout=900000 --forceExit
         condition: ne(variables['agent.os'], 'Windows_NT')
         displayName: 'Run tests'
         env:
-          NOCK_MODE: $(nock_mode)
           # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
           # physical memory at time of writing). Aimed to avoid this:
@@ -92,7 +78,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: release
-    dependsOn: [test]
+    dependsOn: [test, test_docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
