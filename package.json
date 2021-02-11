@@ -14,7 +14,7 @@
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
-    "test": "jest --maxWorkers=4",
+    "test": "jest --maxWorkers=4 --testTimeout=120000",
     "test:wild": "NOCK_MODE=wild npm test",
     "test:cover": "npm test -- --coverage",
     "test:watch": "npm test -- --watchAll",

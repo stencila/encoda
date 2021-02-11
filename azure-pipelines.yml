@@ -15,7 +15,7 @@ jobs:
           # there have been changes in any API we are using
           image_name: ubuntu-latest
           node_version: 14.x
-          nock_mode: dryrun
+          nock_mode: wild
         linux_node_12:
           image_name: ubuntu-latest
           node_version: 12.x
@@ -54,17 +54,17 @@ jobs:
         displayName: 'Linting'
 
       # Run tests with
-      #   - Two minute default test timeout
+      #   - Fifteen (!) minute default test timeout
       #   - Force exit to prevent hanging
       #   - See https://github.com/nock/nock#modes for what nock modes do
-      # Currently skipping tests on Windows due to wierd, unresolvable failures
+      # Currently skipping tests on Windows due to weird, unresolvable failures
       # https://dev.azure.com/stencila/stencila/_build/results?buildId=732&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=0d6dcb53-0957-53aa-c18a-237166af945a&l=532
-      - script: npm run test:cover -- --testTimeout=120000 --forceExit
+      - script: npm run test:cover -- --testTimeout=900000 --forceExit
         condition: ne(variables['agent.os'], 'Windows_NT')
         displayName: 'Run tests'
         env:
           NOCK_MODE: $(nock_mode)
-          # Tell Node.js how much un-garbarge-collected-memory it can
+          # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
           # physical memory at time of writing). Aimed to avoid this:
           # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
@@ -74,7 +74,7 @@ jobs:
         displayName: 'Build package'
 
       # Only upload coverage on Linux (fails on Windows and largely
-      # unncessary to duplicate by OS anyway)
+      # unnecessary to duplicate by OS anyway)
       - script: bash <(curl -s https://codecov.io/bash)
         condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Upload coverage'
