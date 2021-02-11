@@ -7,11 +7,9 @@ import { transformSync } from './transform'
  * Most often used on a `CreativeWork` to do things like infer
  * `title`, `authors`, `references` etc from its `content`.
  */
-export function reshape(node: schema.Node): schema.Node {
-  if (schema.isCreativeWork(node)) {
-    return reshapeCreativeWork(node)
-  }
-  return node
+export function reshape(node: schema.Node): Promise<schema.Node> {
+  if (schema.isCreativeWork(node)) return reshapeCreativeWork(node)
+  return Promise.resolve(node)
 }
 
 /**
