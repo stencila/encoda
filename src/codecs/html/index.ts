@@ -20,7 +20,6 @@ import stencila, {
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import { dropLeft, flatten, isNonEmpty, takeLeftWhile } from 'fp-ts/lib/Array'
-// @ts-ignore
 import GithubSlugger from 'github-slugger'
 import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'

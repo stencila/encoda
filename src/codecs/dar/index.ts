@@ -5,7 +5,6 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import h from 'hyperscript'
-// @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
 import path from 'path'
 import tempy from 'tempy'

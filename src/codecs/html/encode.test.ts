@@ -11,7 +11,6 @@
 import * as schema from '@stencila/schema'
 import isDocker from 'is-docker'
 import os from 'os'
-// @ts-ignore
 import pa11y from 'pa11y'
 // @ts-ignore
 import { structuredDataTest } from 'structured-data-testing-tool'
