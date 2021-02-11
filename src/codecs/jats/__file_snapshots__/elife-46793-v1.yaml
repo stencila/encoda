@@ -176,7 +176,7 @@ editors:
         address:
           type: PostalAddress
           addressCountry: United States
-        name: 'University of California, Davis'
+        name: University of California, Davis
     familyNames:
       - Heyer
     givenNames:
@@ -229,15 +229,15 @@ genre:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: 46793
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.7554/eLife.46793
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e46793
 isPartOf:
   type: PublicationVolume
@@ -246,17 +246,17 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        propertyID: https://registry.identifiers.org/registry/nlm-ta
         value: elife
       - type: PropertyValue
         name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        propertyID: https://registry.identifiers.org/registry/publisher-id
         value: eLife
     issns:
       - 2050-084X
     publisher:
       type: Organization
-      name: 'eLife Sciences Publications, Ltd'
+      name: eLife Sciences Publications, Ltd
     title: eLife
   volumeNumber: 8
 keywords:
@@ -269,13 +269,13 @@ keywords:
   - Human
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This article is distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -339,7 +339,7 @@ references:
       type: Organization
       name: Bioinformatics
     title: FastQC
-    url: 'http://www.bioinformatics.babraham.ac.uk/projects/fastqc/'
+    url: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
   - type: Article
     id: bib3
     authors:
@@ -2702,7 +2702,7 @@ references:
     datePublished:
       type: Date
       value: '2010'
-    url: 'http://hannonlab.cshl.edu/fastx_toolkit/download.html'
+    url: http://hannonlab.cshl.edu/fastx_toolkit/download.html
   - type: Article
     id: bib50
     authors:
@@ -2943,7 +2943,7 @@ references:
       volumeNumber: 271
     pageEnd: 353
     pageStart: 350
-    title: 'DPC4, a candidate tumor suppressor gene at human chromosome 18q21.1'
+    title: DPC4, a candidate tumor suppressor gene at human chromosome 18q21.1
   - type: Article
     id: bib53
     authors:
@@ -4203,7 +4203,7 @@ references:
       type: Date
       value: '2019'
     title: GWscreen_G4sensitivity
-    url: 'https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity'
+    url: https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
   - type: Article
     id: bib80
     authors:
@@ -5977,7 +5977,7 @@ references:
         type: Periodical
         name: PLOS ONE
       volumeNumber: 8
-    title: 'The spectrum of SWI/SNF mutations, ubiquitous in human cancers'
+    title: The spectrum of SWI/SNF mutations, ubiquitous in human cancers
   - type: Article
     id: bib109
     authors:
@@ -6870,7 +6870,7 @@ references:
       type: PublicationVolume
       isPartOf:
         type: Periodical
-        name: 'Drug Design, Development and Therapy'
+        name: Drug Design, Development and Therapy
       volumeNumber: 8
     pageEnd: 2088
     pageStart: 2075
@@ -7588,7 +7588,7 @@ references:
       type: PublicationVolume
       isPartOf:
         type: Periodical
-        name: 'Nucleosides, Nucleotides and Nucleic Acids'
+        name: Nucleosides, Nucleotides and Nucleic Acids
       volumeNumber: 25
     pageEnd: 968
     pageStart: 951
@@ -7911,54 +7911,54 @@ content:
       - type: Cite
         target: bib15
         content:
-          - 'Bochman et al., 2012'
+          - Bochman et al., 2012
       - '; '
       - type: Cite
         target: bib99
         content:
-          - 'Rhodes and Lipps, 2015'
-      - '). In the human genome, over 700,000 G4s have been detected in vitro ('
+          - Rhodes and Lipps, 2015
+      - ). In the human genome, over 700,000 G4s have been detected in vitro (
       - type: Cite
         target: bib23
         content:
-          - 'Chambers et al., 2015'
+          - Chambers et al., 2015
       - >-
         ). Sequences encoding G4s are enriched in regulatory regions consistent
         with roles in transcription and RNA regulation (
       - type: Cite
         target: bib63
         content:
-          - 'Huppert and Balasubramanian, 2007'
+          - Huppert and Balasubramanian, 2007
       - '; '
       - type: Cite
         target: bib62
         content:
-          - 'Huppert, 2008'
+          - Huppert, 2008
       - '), and their over-representation in oncogene promoters, such as '
       - type: Emphasis
         content:
-          - 'MYC, KRAS'
+          - MYC, KRAS
       - ' and '
       - type: Emphasis
         content:
-          - 'KIT,'
+          - KIT,
       - ' suggests that they are important in cancer and are potential therapeutic targets (reviewed in '
       - type: Cite
         target: bib7
         content:
-          - 'Balasubramanian et al., 2011'
+          - Balasubramanian et al., 2011
       - >-
         ). Computationally predicted G4s have also been linked to replication
         origins (
       - type: Cite
         target: bib10
         content:
-          - 'Besnard et al., 2012'
+          - Besnard et al., 2012
       - ') and telomere homeostasis (reviewed in '
       - type: Cite
         target: bib88
         content:
-          - 'Neidle, 2010'
+          - Neidle, 2010
       - >-
         ). In the transcriptome, more than 3000 mRNAs have been shown to contain
         G4 structures in vitro, particularly at 5’ and 3’ UTRs, suggestive of
@@ -7966,12 +7966,12 @@ content:
       - type: Cite
         target: bib19
         content:
-          - 'Bugaut and Balasubramanian, 2012'
+          - Bugaut and Balasubramanian, 2012
       - '; '
       - type: Cite
         target: bib69
         content:
-          - 'Kwok et al., 2016'
+          - Kwok et al., 2016
       - ).
   - type: Paragraph
     content:
@@ -7979,22 +7979,22 @@ content:
       - type: Cite
         target: bib105
         content:
-          - 'Schaffitzel et al., 2001'
+          - Schaffitzel et al., 2001
       - ) and mammalian cells (
       - type: Cite
         target: bib11
         content:
-          - 'Biffi et al., 2013'
+          - Biffi et al., 2013
       - '; '
       - type: Cite
         target: bib56
         content:
-          - 'Henderson et al., 2014'
+          - Henderson et al., 2014
       - '; '
       - type: Cite
         target: bib76
         content:
-          - 'Liu et al., 2016'
+          - Liu et al., 2016
       - >-
         ). More G4s are detected in transformed versus primary cells, and in
         human stomach and liver cancers compared to non-neoplastic tissues,
@@ -8002,12 +8002,12 @@ content:
       - type: Cite
         target: bib12
         content:
-          - 'Biffi et al., 2014'
+          - Biffi et al., 2014
       - '; '
       - type: Cite
         target: bib54
         content:
-          - 'Hänsel-Hertsch et al., 2016'
+          - Hänsel-Hertsch et al., 2016
       - >-
         ). More recently, ChIP-seq was used to map endogenous G4 structure
         formation in chromatin revealing a link between G4s, promoters and
@@ -8015,7 +8015,7 @@ content:
       - type: Cite
         target: bib54
         content:
-          - 'Hänsel-Hertsch et al., 2016'
+          - Hänsel-Hertsch et al., 2016
       - >-
         ). G4s are found predominately in nucleosome-depleted chromatin within
         promoters and 5’ UTRs of highly transcribed genes, including
@@ -8027,7 +8027,7 @@ content:
       - type: Cite
         target: bib16
         content:
-          - 'Brázda et al., 2014'
+          - Brázda et al., 2014
       - >-
         ). As G4 structures can pause or stall polymerases, they must be
         resolved by helicases to allow replication and transcription to proceed.
@@ -8036,12 +8036,12 @@ content:
       - type: Cite
         target: bib17
         content:
-          - 'Brosh, 2013'
+          - Brosh, 2013
       - '; '
       - type: Cite
         target: bib84
         content:
-          - 'Mendoza et al., 2016'
+          - Mendoza et al., 2016
       - >-
         ), and it is notable that fibroblasts from Werner (WRN) and Bloom (BLM)
         syndrome patients, who are predisposed to cancer, show altered gene
@@ -8049,7 +8049,7 @@ content:
       - type: Cite
         target: bib33
         content:
-          - 'Damerla et al., 2012'
+          - Damerla et al., 2012
       - ).
   - type: Paragraph
     content:
@@ -8060,22 +8060,22 @@ content:
         many genes harbouring a promoter G4, including oncogenes such as 
       - type: Emphasis
         content:
-          - 'MYC,'
+          - MYC,
       - ' in multiple cancer cell lines ('
       - type: Cite
         target: bib53
         content:
-          - 'Halder et al., 2012'
+          - Halder et al., 2012
       - '; '
       - type: Cite
         target: bib83
         content:
-          - 'McLuckie et al., 2013'
+          - McLuckie et al., 2013
       - '; '
       - type: Cite
         target: bib89
         content:
-          - 'Neidle, 2017'
+          - Neidle, 2017
       - >-
         ). G4-stabilising ligands also interfere with telomere homeostasis by
         inducing telomere uncapping/DNA damage through the inhibition of
@@ -8084,36 +8084,36 @@ content:
       - type: Cite
         target: bib88
         content:
-          - 'Neidle, 2010'
+          - Neidle, 2010
       - >-
         ). 5’ UTR RNA G4 structures may also be involved in eIF4A-dependent
         oncogene translation (
       - type: Cite
         target: bib127
         content:
-          - 'Wolfe et al., 2014'
+          - Wolfe et al., 2014
       - >-
         ) and their stabilisation by G4-ligands can inhibit translation in vitro
         (
       - type: Cite
         target: bib19
         content:
-          - 'Bugaut and Balasubramanian, 2012'
+          - Bugaut and Balasubramanian, 2012
       - '). Identification of several RNA G4-interacting proteins (reviewed in '
       - type: Cite
         target: bib20
         content:
-          - 'Cammas and Millevoi, 2016'
-      - '), including DEAD/DEAH helicases such as DDX3X, and DHX36 ('
+          - Cammas and Millevoi, 2016
+      - ), including DEAD/DEAH helicases such as DDX3X, and DHX36 (
       - type: Cite
         target: bib27
         content:
-          - 'Chen et al., 2018'
+          - Chen et al., 2018
       - '; '
       - type: Cite
         target: bib57
         content:
-          - 'Herdy et al., 2018'
+          - Herdy et al., 2018
       - ) additionally suggests specific roles for G4 structures in RNA.
   - type: Paragraph
     content:
@@ -8128,7 +8128,7 @@ content:
       - type: Cite
         target: bib103
         content:
-          - 'Rodriguez et al., 2012'
+          - Rodriguez et al., 2012
       - >-
         ). Subsequent studies demonstrated that homologous recombination (HR)
         repair deficiencies can be exploited to selectively kill
@@ -8136,22 +8136,22 @@ content:
       - type: Cite
         target: bib83
         content:
-          - 'McLuckie et al., 2013'
+          - McLuckie et al., 2013
       - '; '
       - type: Cite
         target: bib137
         content:
-          - 'Zimmer et al., 2016'
+          - Zimmer et al., 2016
       - >-
         ). Recently, this concept has been applied to BRCA1/2-deficient breast
         cancers using CX-5461, a G4 ligand currently in clinical trials (
       - type: Cite
         target: bib130
         content:
-          - 'Xu et al., 2017'
+          - Xu et al., 2017
       - ) (
       - type: Link
-        target: 'https://clinicaltrials.gov/show/NCT02719977'
+        target: https://clinicaltrials.gov/show/NCT02719977
         content:
           - NCT02719977
       - ' ClinicalTrials.gov). Overall, these initial studies demonstrate that specific genotypes can be selectively vulnerable to G4-stabilisation and raises the question as to what other genotypes might provide further such opportunities.'
@@ -8174,12 +8174,12 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'De Cian et al., 2007b'
+          - De Cian et al., 2007b
       - '; '
       - type: Cite
         target: bib102
         content:
-          - 'Rodriguez et al., 2008'
+          - Rodriguez et al., 2008
       - >-
         ) and biological studies in which they have been shown to impart
         transcriptional inhibition, telomere dysfunction and replication
@@ -8187,17 +8187,17 @@ content:
       - type: Cite
         target: bib34
         content:
-          - 'De Cian et al., 2007a'
+          - De Cian et al., 2007a
       - '; '
       - type: Cite
         target: bib53
         content:
-          - 'Halder et al., 2012'
+          - Halder et al., 2012
       - '; '
       - type: Cite
         target: bib84
         content:
-          - 'Mendoza et al., 2016'
+          - Mendoza et al., 2016
       - ).
   - type: Figure
     id: fig1
@@ -8248,12 +8248,12 @@ content:
       - type: Cite
         target: bib103
         content:
-          - 'Rodriguez et al., 2012'
-      - '), and bisquinolinium compound, PhenDC3 ('
+          - Rodriguez et al., 2012
+      - ), and bisquinolinium compound, PhenDC3 (
       - type: Cite
         target: bib35
         content:
-          - 'De Cian et al., 2007b'
+          - De Cian et al., 2007b
       - ) were chosen (
       - type: Link
         relation: fig
@@ -8274,14 +8274,14 @@ content:
       - type: Cite
         target: bib66
         content:
-          - 'Knott et al., 2014'
+          - Knott et al., 2014
       - >-
         ). A375 melanoma cells were used due to their rapid doubling, stable
         ploidy and success in other shRNA-dropout screens (
       - type: Cite
         target: bib112
         content:
-          - 'Sims et al., 2011'
+          - Sims et al., 2011
       - '); they are TP53 wild-type and driven by oncogenic '
       - type: Emphasis
         content:
@@ -8294,7 +8294,7 @@ content:
       - type: Cite
         target: bib43
         content:
-          - 'Forbes et al., 2015'
+          - Forbes et al., 2015
       - '). '
       - type: Link
         relation: fig
@@ -8456,37 +8456,37 @@ content:
         known G4 sensitisers 
       - type: Emphasis
         content:
-          - 'BRCA1/2, ATRX and HERC2'
+          - BRCA1/2, ATRX and HERC2
       - ' ('
       - type: Cite
         target: bib83
         content:
-          - 'McLuckie et al., 2013'
+          - McLuckie et al., 2013
       - '; '
       - type: Cite
         target: bib123
         content:
-          - 'Wang et al., 2019'
+          - Wang et al., 2019
       - '; '
       - type: Cite
         target: bib124
         content:
-          - 'Watson et al., 2013'
+          - Watson et al., 2013
       - '; '
       - type: Cite
         target: bib128
         content:
-          - 'Wu et al., 2018'
+          - Wu et al., 2018
       - '; '
       - type: Cite
         target: bib130
         content:
-          - 'Xu et al., 2017'
+          - Xu et al., 2017
       - ";\_"
       - type: Cite
         target: bib137
         content:
-          - 'Zimmer et al., 2016'
+          - Zimmer et al., 2016
       - ";\_"
       - type: Link
         relation: fig
@@ -8546,7 +8546,7 @@ content:
           - ') known G4 ligand sensitisers, '
           - type: Emphasis
             content:
-              - 'ATRX, HERC2'
+              - ATRX, HERC2
           - ', '
           - type: Emphasis
             content:
@@ -8554,7 +8554,7 @@ content:
           - ' and '
           - type: Emphasis
             content:
-              - 'BRCA2,'
+              - BRCA2,
           - ' that are independently validated in our screen; ('
           - type: Strong
             content:
@@ -8593,11 +8593,11 @@ content:
       - type: Cite
         target: bib85
         content:
-          - 'Mishra et al., 2016'
-      - '), an additional eight sensitisers ('
+          - Mishra et al., 2016
+      - ), an additional eight sensitisers (
       - type: Emphasis
         content:
-          - 'ADAR, DHX36, DNA2, FUS, MCRS1, RECQL4, SF3B3 and XRN1'
+          - ADAR, DHX36, DNA2, FUS, MCRS1, RECQL4, SF3B3 and XRN1
       - ) were uncovered (
       - type: Link
         relation: fig
@@ -8608,25 +8608,25 @@ content:
       - type: Cite
         target: bib75
         content:
-          - 'Liu et al., 2015b'
+          - Liu et al., 2015b
       - >-
         ) revealed a further 12 sensitisers arising from our screen including
         helicases (
       - type: Emphasis
         content:
           - RTEL1
-      - '), DDR components ('
+      - ), DDR components (
       - type: Emphasis
         content:
-          - 'CHEK1, RAD17'
-      - '), transcriptional proteins ('
+          - CHEK1, RAD17
+      - ), transcriptional proteins (
       - type: Emphasis
         content:
-          - 'POLR1A, CNBP'
+          - POLR1A, CNBP
       - ) and replication factors (
       - type: Emphasis
         content:
-          - 'ORC1, RPA3, TOP1'
+          - ORC1, RPA3, TOP1
       - ) (
       - type: Link
         relation: fig
@@ -8741,8 +8741,8 @@ content:
       - type: Cite
         target: bib43
         content:
-          - 'Forbes et al., 2015'
-      - '). Of the 758 sensitisers, there was a two-fold enrichment (p=9.1×10'
+          - Forbes et al., 2015
+      - ). Of the 758 sensitisers, there was a two-fold enrichment (p=9.1×10
       - type: Superscript
         content:
           - −6
@@ -8757,18 +8757,18 @@ content:
         relation: fig
         target: '#fig5'
         content:
-          - 'Figure 5A,B'
+          - Figure 5A,B
       - ', '
       - type: Link
         relation: supplementary-material
         target: '#supp1'
         content:
           - Supplementary file 1
-      - '). Notably, when STRING network analysis ('
+      - ). Notably, when STRING network analysis (
       - type: Cite
         target: bib115
         content:
-          - 'Szklarczyk et al., 2017'
+          - Szklarczyk et al., 2017
       - >-
         ) was used to investigate functional interactions, this revealed a DDR
         cluster that included 
@@ -8824,7 +8824,7 @@ content:
           - (
           - type: Strong
             content:
-              - 'A, B'
+              - A, B
           - ) Median log
           - type: Subscript
             content:
@@ -8887,7 +8887,7 @@ content:
         relation: fig
         target: '#fig6'
         content:
-          - 'Figure 6B,C'
+          - Figure 6B,C
       - >-
         ). From this, we identified 290 G4 sensitisers with 89 and 161 unique
         for PDS and PhenDC3, respectively, and 40 genes common for both ligands
@@ -8904,7 +8904,7 @@ content:
         relation: fig
         target: '#fig6'
         content:
-          - 'Figure 6D,E'
+          - Figure 6D,E
       - >-
         ). Consistent with direct G4-targeting, nucleic-acid-related GO terms
         were enriched (
@@ -8994,7 +8994,7 @@ content:
               - ") DAVID, STRING (experimental data, co-expression, medium confidence\_≥0.4) interaction and UniprotKB data were used to categorise biochemical roles for the 40 high-confidence G4 sensitisers common to both ligands. Genes in red indicate those found in the (DGIdb 2.0). *=genes in multiple categories. ("
               - type: Strong
                 content:
-                  - 'G, H'
+                  - G, H
               - ) Overlap of the all 290 robust G4 sensitisers (
               - type: Strong
                 content:
@@ -9119,7 +9119,7 @@ content:
       - type: Cite
         target: bib50
         content:
-          - 'Griffith et al., 2013'
+          - Griffith et al., 2013
       - >-
         ). A total of 74 G4-sensitisers were found in the classifications
         ‘Druggable Genome’ (genes with known or predicted drug interactions) and
@@ -9153,10 +9153,10 @@ content:
         target: '#supp1'
         content:
           - Supplementary file 1
-      - '), including 5 ('
+      - ), including 5 (
       - type: Emphasis
         content:
-          - 'BRCA1, CHEK1, CDK12, TOP1, PDKP1'
+          - BRCA1, CHEK1, CDK12, TOP1, PDKP1
       - >-
         ) common to both druggable and clinically actionable classifications.
         These results therefore open up new possibilities for cancer therapies
@@ -9222,7 +9222,7 @@ content:
         relation: fig
         target: '#fig7'
         content:
-          - 'Figure 7B,C'
+          - Figure 7B,C
       - >-
         ), and it is noteworthy that both G4 ligands targeted similar processes
         including transcription, splicing and ubiquitin-mediated proteolysis (
@@ -9230,7 +9230,7 @@ content:
         relation: fig
         target: '#fig7'
         content:
-          - 'Figure 7D,E'
+          - Figure 7D,E
       - ).
   - type: Collection
     parts:
@@ -9398,7 +9398,7 @@ content:
     content:
       - type: Emphasis
         content:
-          - 'BRCA1, TOP1, DDX42'
+          - BRCA1, TOP1, DDX42
       - ' and '
       - type: Emphasis
         content:
@@ -9412,11 +9412,11 @@ content:
         sensitisers- 
       - type: Emphasis
         content:
-          - 'BRCA1, TOP1, DDX42'
+          - BRCA1, TOP1, DDX42
       - ' and '
       - type: Emphasis
         content:
-          - 'GAR1,'
+          - GAR1,
       - ' as they consistently appeared in both cell types and with both G4-ligands in all screens ('
       - type: Link
         relation: fig
@@ -9441,7 +9441,7 @@ content:
       - '). Both A375 and HT1080 cells were transfected with siRNAs targeting '
       - type: Emphasis
         content:
-          - 'BRCA1, TOP1, DDX42'
+          - BRCA1, TOP1, DDX42
       - ' or '
       - type: Emphasis
         content:
@@ -9487,7 +9487,7 @@ content:
         target: '#fig8s3'
         content:
           - Figure 8—figure supplement 3C–F
-      - ') and compared to DMSO treatment at 72, 96 and 120 hr ('
+      - ) and compared to DMSO treatment at 72, 96 and 120 hr (
       - type: Link
         relation: fig
         target: '#fig8'
@@ -9540,7 +9540,7 @@ content:
               - ', '
               - type: Emphasis
                 content:
-                  - 'TOP1, DDX42'
+                  - TOP1, DDX42
               - ' and '
               - type: Emphasis
                 content:
@@ -9769,15 +9769,15 @@ content:
               - type: Strong
                 content:
                   - C
-              - ') BRCA1, ('
+              - ) BRCA1, (
               - type: Strong
                 content:
                   - D
-              - ') TOP1, ('
+              - ) TOP1, (
               - type: Strong
                 content:
                   - E
-              - ') DDX42, ('
+              - ) DDX42, (
               - type: Strong
                 content:
                   - F
@@ -9787,15 +9787,15 @@ content:
               - type: Strong
                 content:
                   - G
-              - ') BRCA1, ('
+              - ) BRCA1, (
               - type: Strong
                 content:
                   - H
-              - ') TOP1, ('
+              - ) TOP1, (
               - type: Strong
                 content:
                   - I
-              - ') DDX42, ('
+              - ) DDX42, (
               - type: Strong
                 content:
                   - J
@@ -9910,7 +9910,7 @@ content:
       - ' knockdown in A375 cells did not reflect the screens ligand sensitivities and this may in part be due to lower knockdown efficiency compared (~40%). Nonetheless, these independent siRNA short-term assays substantiate that '
       - type: Emphasis
         content:
-          - 'BRCA1, TOP1, DDX42'
+          - BRCA1, TOP1, DDX42
       - ' and '
       - type: Emphasis
         content:
@@ -9941,26 +9941,26 @@ content:
       - type: Cite
         target: bib80
         content:
-          - 'Matheson et al., 2016'
+          - Matheson et al., 2016
       - >-
         ), and USP1 is involved in DDR regulation and is overexpressed in
         non-small cell lung and other cancers (reviewed in 
       - type: Cite
         target: bib46
         content:
-          - 'García-Santisteban et al., 2013'
+          - García-Santisteban et al., 2013
       - >-
         ). For our studies, we used MK1775 (AZD1775), a WEE1 kinase inhibitor
         that is being clinically evaluated in several cancers (
       - type: Cite
         target: bib100
         content:
-          - 'Richer et al., 2017'
-      - '), and pimozide a potent USP1-targeting drug ('
+          - Richer et al., 2017
+      - ), and pimozide a potent USP1-targeting drug (
       - type: Cite
         target: bib25
         content:
-          - 'Chen et al., 2011a'
+          - Chen et al., 2011a
       - >-
         ). HT1080 and A375 cells were cultured in matrix combinations of PDS
         with MK1775 or pimozide at concentrations surrounding the GI
@@ -9971,7 +9971,7 @@ content:
       - type: Cite
         target: bib37
         content:
-          - 'Di Veroli et al., 2016'
+          - Di Veroli et al., 2016
       - >-
         ) was then used to calculate synergy for different treatment
         combinations in which the percentage growth inhibition compared to
@@ -9989,7 +9989,7 @@ content:
         relation: fig
         target: '#fig9'
         content:
-          - 'Figure 9C,D'
+          - Figure 9C,D
       - ', '
       - type: Link
         relation: fig
@@ -10014,7 +10014,7 @@ content:
         target: '#fig9s1'
         content:
           - Figure 9—figure supplement 1
-      - '), with peak synergy of 15% at 8 μM PDS, 444 nM MK1775 (GI'
+      - ), with peak synergy of 15% at 8 μM PDS, 444 nM MK1775 (GI
       - type: Subscript
         content:
           - '50'
@@ -10084,19 +10084,19 @@ content:
               - ) Synergy plots for HT1080 (
               - type: Strong
                 content:
-                  - 'C, D'
+                  - C, D
               - ) and A375 (
               - type: Strong
                 content:
-                  - 'E, F'
+                  - E, F
               - ) cells treated with PDS in combination with MK1775 (
               - type: Strong
                 content:
-                  - 'C, E'
+                  - C, E
               - ) or pimozide (
               - type: Strong
                 content:
-                  - 'D, F'
+                  - D, F
               - >-
                 ). To determine any synergy in cell killing, 3D response surface
                 plots were calculated using Combenefit software with the BLISS
@@ -10226,34 +10226,34 @@ content:
       - type: Cite
         target: bib47
         content:
-          - 'Giri et al., 2011'
+          - Giri et al., 2011
       - '; '
       - type: Cite
         target: bib27
         content:
-          - 'Chen et al., 2018'
+          - Chen et al., 2018
       - '; '
       - type: Cite
         target: bib22
         content:
-          - 'Chakraborty and Grosse, 2011'
+          - Chakraborty and Grosse, 2011
       - ";\_"
       - type: Cite
         target: bib30
         content:
-          - 'Creacy et al., 2008'
+          - Creacy et al., 2008
       - "\_; "
       - type: Cite
         target: bib120
         content:
-          - 'Vaughn et al., 2005'
+          - Vaughn et al., 2005
       - >-
         ) and the DEAD box protein DDX3X, that was recently shown to bind RNA
         G4s (
       - type: Cite
         target: bib57
         content:
-          - 'Herdy et al., 2018'
+          - Herdy et al., 2018
       - >-
         ), were identified as G4 sensitisers in our screen. Further members of
         the DDX/DHX helicase family also appeared as G4 sensitisers (
@@ -10270,12 +10270,12 @@ content:
       - type: Cite
         target: bib118
         content:
-          - 'Uhlmann-Schiffler et al., 2006'
+          - Uhlmann-Schiffler et al., 2006
       - ) and has been associated with splicing (
       - type: Cite
         target: bib126
         content:
-          - 'Will et al., 2002'
+          - Will et al., 2002
       - >-
         ); however, this protein remains largely uncharacterised. By
         immunoblotting of nuclear and cytoplasmic sub-cellular fractions (
@@ -10294,7 +10294,7 @@ content:
         relation: fig
         target: '#fig10'
         content:
-          - 'Figure 10C,D'
+          - Figure 10C,D
       - ).
   - type: Collection
     parts:
@@ -10333,7 +10333,7 @@ content:
                 cells probed for DDX42, laminB1 and GAPDH2. (
               - type: Strong
                 content:
-                  - 'C, D'
+                  - C, D
               - ) GAPDH and laminB1 protein levels for (
               - type: Strong
                 content:
@@ -10349,7 +10349,7 @@ content:
               - ") DDX42 nuclear protein levels (normalised to cytoplasmic levels, mean for two biological replicates\_±\_standard deviation). ("
               - type: Strong
                 content:
-                  - 'F, G'
+                  - F, G
               - ) DDX42 binding curves G4s by ELISA. (
               - type: Strong
                 content:
@@ -10443,14 +10443,14 @@ content:
       - type: Cite
         target: bib68
         content:
-          - 'Kumari et al., 2007'
+          - Kumari et al., 2007
       - >-
         ), was used together with a mutated oligonucleotide unable to form a G4
         structure and also a RNA hairpin as negative controls (
       - type: Cite
         target: bib57
         content:
-          - 'Herdy et al., 2018'
+          - Herdy et al., 2018
       - >-
         ). Oligonucleotides were folded in 100 mM KCl to promote G4 structure
         formation and the resultant structures confirmed by circular dichroism
@@ -10484,7 +10484,7 @@ content:
       - type: Cite
         target: bib65
         content:
-          - 'Kikuma et al., 2004'
+          - Kikuma et al., 2004
       - >-
         ), the DDX42 affinity for a DNA G4 structure was investigated. For this,
         an oligonucleotide corresponding to the stable parallel G4 structure in
@@ -10496,12 +10496,12 @@ content:
       - type: Cite
         target: bib48
         content:
-          - 'González and Hurley, 2010'
+          - González and Hurley, 2010
       - '; '
       - type: Cite
         target: bib132
         content:
-          - 'Yang and Hurley, 2006'
+          - Yang and Hurley, 2006
       - >-
         ), and a non-G4 forming control, were used. The oligonucleotides were
         folded in 100 mM KCl and structures verified by CD spectroscopic
@@ -10533,7 +10533,7 @@ content:
       - type: Cite
         target: bib130
         content:
-          - 'Xu et al., 2017'
+          - Xu et al., 2017
       - >-
         ) but the range of disease-associated genetic backgrounds that
         potentiate G4 ligand effects has yet to be defined. Here, we have
@@ -10546,7 +10546,7 @@ content:
         genetic vulnerabilities to G4 ligands including 
       - type: Emphasis
         content:
-          - 'BRCA1/2, HERC2'
+          - BRCA1/2, HERC2
       - ' and '
       - type: Emphasis
         content:
@@ -10555,32 +10555,32 @@ content:
       - type: Cite
         target: bib83
         content:
-          - 'McLuckie et al., 2013'
+          - McLuckie et al., 2013
       - '; '
       - type: Cite
         target: bib123
         content:
-          - 'Wang et al., 2019'
+          - Wang et al., 2019
       - '; '
       - type: Cite
         target: bib124
         content:
-          - 'Watson et al., 2013'
+          - Watson et al., 2013
       - '; '
       - type: Cite
         target: bib128
         content:
-          - 'Wu et al., 2018'
+          - Wu et al., 2018
       - '; '
       - type: Cite
         target: bib130
         content:
-          - 'Xu et al., 2017'
+          - Xu et al., 2017
       - ";\_"
       - type: Cite
         target: bib137
         content:
-          - 'Zimmer et al., 2016'
+          - Zimmer et al., 2016
       - >-
         ). We now report for the first time genetic vulnerabilities in 20 other
         known G4-associated genes that promote sensitivity to G4-stabilising
@@ -10594,17 +10594,17 @@ content:
       - type: Cite
         target: bib18
         content:
-          - 'Bryant et al., 2005'
+          - Bryant et al., 2005
       - '; '
       - type: Cite
         target: bib41
         content:
-          - 'Farmer et al., 2005'
+          - Farmer et al., 2005
       - "), and it is notable that BRCA\_deficiencies were isolated as one of the top genetic vulnerabilities for both G4 ligands in both A375 and HT1080 cells. While PDS and PhenDC3 have not been optimised by medicinal chemistry, the findings of Zimmer et al showing similar efficacy of PDS and olaparib in several BRCA-deficient models ("
       - type: Cite
         target: bib137
         content:
-          - 'Zimmer et al., 2016'
+          - Zimmer et al., 2016
       - >-
         ) lends further support that our screen detects robust, biologically
         relevant effects.
@@ -10631,7 +10631,7 @@ content:
       - type: Cite
         target: bib24
         content:
-          - 'Chan and Giaccia, 2011'
+          - Chan and Giaccia, 2011
       - >-
         ). Furthermore, as lower drug doses are used, this increases the
         therapeutic window and has less adverse side effects. As
@@ -10704,29 +10704,29 @@ content:
               - Olaparib CX-5461
           - type: TableCell
             content:
-              - 'Deficient in ovarian,breast and colorectal cancer.'
+              - Deficient in ovarian,breast and colorectal cancer.
           - type: TableCell
             content:
               - type: Cite
                 target: bib72
                 content:
-                  - 'Lee et al., 2014'
+                  - Lee et al., 2014
               - '; '
               - ' '
               - type: Cite
                 target: bib130
                 content:
-                  - 'Xu et al., 2017'
+                  - Xu et al., 2017
               - ";\_"
               - type: Cite
                 target: bib83
                 content:
-                  - 'McLuckie et al., 2013'
+                  - McLuckie et al., 2013
               - '; '
               - type: Cite
                 target: bib137
                 content:
-                  - 'Zimmer et al., 2016'
+                  - Zimmer et al., 2016
       - type: TableRow
         cells:
           - type: TableCell
@@ -10751,12 +10751,12 @@ content:
               - type: Cite
                 target: bib97
                 content:
-                  - 'Puxeddu et al., 2005'
+                  - Puxeddu et al., 2005
               - '; '
               - type: Cite
                 target: bib86
                 content:
-                  - 'Morra et al., 2015'
+                  - Morra et al., 2015
       - type: TableRow
         cells:
           - type: TableCell
@@ -10781,12 +10781,12 @@ content:
               - type: Cite
                 target: bib96
                 content:
-                  - 'Parry et al., 2010'
+                  - Parry et al., 2010
               - '; '
               - type: Cite
                 target: bib6
                 content:
-                  - 'Bajrami et al., 2014'
+                  - Bajrami et al., 2014
       - type: TableRow
         cells:
           - type: TableCell
@@ -10812,22 +10812,22 @@ content:
               - type: Cite
                 target: bib104
                 content:
-                  - 'Sanchez-Vega et al., 2018'
+                  - Sanchez-Vega et al., 2018
               - ";\_"
               - type: Cite
                 target: bib1
                 content:
-                  - 'Abed et al., 2015'
+                  - Abed et al., 2015
               - ";\_"
               - type: Cite
                 target: bib77
                 content:
-                  - 'Lu et al., 2016'
+                  - Lu et al., 2016
               - ";\_"
               - type: Cite
                 target: bib122
                 content:
-                  - 'Wang et al., 2014'
+                  - Wang et al., 2014
       - type: TableRow
         cells:
           - type: TableCell
@@ -10853,17 +10853,17 @@ content:
               - type: Cite
                 target: bib25
                 content:
-                  - 'Chen et al., 2011a'
+                  - Chen et al., 2011a
               - '; '
               - type: Cite
                 target: bib81
                 content:
-                  - 'Mattern et al., 2012'
+                  - Mattern et al., 2012
               - ";\_"
               - type: Cite
                 target: bib40
                 content:
-                  - 'Edelmann et al., 2011'
+                  - Edelmann et al., 2011
       - type: TableRow
         cells:
           - type: TableCell
@@ -10889,22 +10889,22 @@ content:
               - type: Cite
                 target: bib106
                 content:
-                  - 'Schutte et al., 1996'
+                  - Schutte et al., 1996
               - ";\_"
               - type: Cite
                 target: bib52
                 content:
-                  - 'Hahn et al., 1996'
+                  - Hahn et al., 1996
               - '; '
               - type: Cite
                 target: bib36
                 content:
-                  - 'Demagny and De Robertis, 2016'
+                  - Demagny and De Robertis, 2016
               - '; '
               - type: Cite
                 target: bib82
                 content:
-                  - 'McCubrey et al., 2014'
+                  - McCubrey et al., 2014
       - type: TableRow
         cells:
           - type: TableCell
@@ -10930,22 +10930,22 @@ content:
               - type: Cite
                 target: bib136
                 content:
-                  - 'Zhou et al., 2014'
+                  - Zhou et al., 2014
               - ";\_"
               - type: Cite
                 target: bib111
                 content:
-                  - 'Shkreta et al., 2017'
+                  - Shkreta et al., 2017
               - '; '
               - type: Cite
                 target: bib28
                 content:
-                  - 'Cheung et al., 2016'
+                  - Cheung et al., 2016
               - ";\_"
               - type: Cite
                 target: bib67
                 content:
-                  - 'Kotake et al., 2007'
+                  - Kotake et al., 2007
       - type: TableRow
         cells:
           - type: TableCell
@@ -10970,7 +10970,7 @@ content:
               - type: Cite
                 target: bib113
                 content:
-                  - 'Soucy et al., 2009'
+                  - Soucy et al., 2009
       - type: TableRow
         cells:
           - type: TableCell
@@ -10996,13 +10996,13 @@ content:
               - type: Cite
                 target: bib46
                 content:
-                  - 'García-Santisteban et al., 2013'
+                  - García-Santisteban et al., 2013
               - '; '
               - ' '
               - type: Cite
                 target: bib26
                 content:
-                  - 'Chen et al., 2011b'
+                  - Chen et al., 2011b
       - type: TableRow
         cells:
           - type: TableCell
@@ -11019,28 +11019,28 @@ content:
               - AZDMK1775
           - type: TableCell
             content:
-              - 'Over-expressed in several cancers, some NSCLC are deficient.'
+              - Over-expressed in several cancers, some NSCLC are deficient.
           - type: TableCell
             content:
               - type: Cite
                 target: bib80
                 content:
-                  - 'Matheson et al., 2016'
+                  - Matheson et al., 2016
               - ";\_"
               - type: Cite
                 target: bib100
                 content:
-                  - 'Richer et al., 2017'
+                  - Richer et al., 2017
               - ";\_"
               - type: Cite
                 target: bib5
                 content:
-                  - 'Backert et al., 1999'
+                  - Backert et al., 1999
               - '; '
               - type: Cite
                 target: bib134
                 content:
-                  - 'Yoshida et al., 2004'
+                  - Yoshida et al., 2004
       - type: TableRow
         cells:
           - type: TableCell
@@ -11065,12 +11065,12 @@ content:
               - type: Cite
                 target: bib29
                 content:
-                  - 'Coussens et al., 2017'
+                  - Coussens et al., 2017
               - '; '
               - type: Cite
                 target: bib9
                 content:
-                  - 'Bennett et al., 2017'
+                  - Bennett et al., 2017
   - type: Table
     id: table2
     caption:
@@ -11124,13 +11124,13 @@ content:
               - type: Cite
                 target: bib55
                 content:
-                  - 'Harrigan et al., 2018'
+                  - Harrigan et al., 2018
               - '; '
               - ' '
               - type: Cite
                 target: bib91
                 content:
-                  - 'Nepomuceno et al., 2017'
+                  - Nepomuceno et al., 2017
               - ' '
               - ' '
               - ' '
@@ -11154,12 +11154,12 @@ content:
               - type: Cite
                 target: bib55
                 content:
-                  - 'Harrigan et al., 2018'
+                  - Harrigan et al., 2018
               - '; '
               - type: Cite
                 target: bib21
                 content:
-                  - 'Carbone et al., 2013'
+                  - Carbone et al., 2013
       - type: TableRow
         cells:
           - type: TableCell
@@ -11183,25 +11183,25 @@ content:
               - type: Cite
                 target: bib55
                 content:
-                  - 'Harrigan et al., 2018'
+                  - Harrigan et al., 2018
               - '; '
               - ' '
               - type: Cite
                 target: bib92
                 content:
-                  - 'Nijman et al., 2005'
+                  - Nijman et al., 2005
               - '; '
               - ' '
               - type: Cite
                 target: bib58
                 content:
-                  - 'Huang et al., 2006'
+                  - Huang et al., 2006
               - '; '
               - ' '
               - type: Cite
                 target: bib46
                 content:
-                  - 'García-Santisteban et al., 2013'
+                  - García-Santisteban et al., 2013
       - type: TableRow
         cells:
           - type: TableCell
@@ -11225,13 +11225,13 @@ content:
               - type: Cite
                 target: bib131
                 content:
-                  - 'Yadav et al., 2014'
+                  - Yadav et al., 2014
               - '; '
               - ' '
               - type: Cite
                 target: bib121
                 content:
-                  - 'Wang, 2002'
+                  - Wang, 2002
       - type: TableRow
         cells:
           - type: TableCell
@@ -11254,7 +11254,7 @@ content:
               - type: Cite
                 target: bib17
                 content:
-                  - 'Brosh, 2013'
+                  - Brosh, 2013
       - type: TableRow
         cells:
           - type: TableCell
@@ -11275,17 +11275,17 @@ content:
               - type: Cite
                 target: bib73
                 content:
-                  - 'Lim et al., 2012'
+                  - Lim et al., 2012
               - ' '
               - type: Cite
                 target: bib90
                 content:
-                  - 'Neilsen et al., 2008'
+                  - Neilsen et al., 2008
               - ' '
               - type: Cite
                 target: bib94
                 content:
-                  - 'Noll et al., 2012'
+                  - Noll et al., 2012
       - type: TableRow
         cells:
           - type: TableCell
@@ -11302,17 +11302,17 @@ content:
               - type: Cite
                 target: bib44
                 content:
-                  - 'Froimchuk et al., 2017'
+                  - Froimchuk et al., 2017
               - type: Cite
                 target: bib64
                 content:
-                  - 'Kadoch et al., 2013'
+                  - Kadoch et al., 2013
               - '; '
               - ' '
               - type: Cite
                 target: bib98
                 content:
-                  - 'Rao and Dou, 2015'
+                  - Rao and Dou, 2015
       - type: TableRow
         cells:
           - type: TableCell
@@ -11332,13 +11332,13 @@ content:
               - type: Cite
                 target: bib64
                 content:
-                  - 'Kadoch et al., 2013'
+                  - Kadoch et al., 2013
               - '; '
               - ' '
               - type: Cite
                 target: bib108
                 content:
-                  - 'Shain and Pollack, 2013'
+                  - Shain and Pollack, 2013
       - type: TableRow
         cells:
           - type: TableCell
@@ -11359,7 +11359,7 @@ content:
               - type: Cite
                 target: bib95
                 content:
-                  - 'Pan et al., 2015'
+                  - Pan et al., 2015
       - type: TableRow
         cells:
           - type: TableCell
@@ -11378,13 +11378,13 @@ content:
               - type: Cite
                 target: bib135
                 content:
-                  - 'Zhao et al., 2018'
+                  - Zhao et al., 2018
               - '; '
               - ' '
               - type: Cite
                 target: bib45
                 content:
-                  - 'Gao et al., 2012'
+                  - Gao et al., 2012
       - type: TableRow
         cells:
           - type: TableCell
@@ -11404,19 +11404,19 @@ content:
               - type: Cite
                 target: bib87
                 content:
-                  - 'Moyal et al., 2011'
+                  - Moyal et al., 2011
               - '; '
               - ' '
               - type: Cite
                 target: bib110
                 content:
-                  - 'Shema et al., 2008'
+                  - Shema et al., 2008
               - '; '
               - ' '
               - type: Cite
                 target: bib8
                 content:
-                  - 'Barber et al., 2008'
+                  - Barber et al., 2008
       - type: TableRow
         cells:
           - type: TableCell
@@ -11438,32 +11438,32 @@ content:
               - type: Cite
                 target: bib31
                 content:
-                  - 'Crozat et al., 1993'
+                  - Crozat et al., 1993
               - '; '
               - ' '
               - type: Cite
                 target: bib39
                 content:
-                  - 'Dvinge et al., 2016'
+                  - Dvinge et al., 2016
               - '; '
               - type: Cite
                 target: bib116
                 content:
-                  - 'Takahama et al., 2013'
+                  - Takahama et al., 2013
   - type: Paragraph
     content:
       - "While the custom HT1080 screen recovered 58% of sensitisers seen for each ligand in the A375 genome-wide screen, it is striking that this increases to 93% (i.e. 112 out of 121) when considering all screens irrespective of G4 ligand, suggesting remarkable consistency when comparing G4 ligand effects globally. Differences in individual ligand sensitives may arise from variances in cellular uptake and dose, for\_example, the GI20 dose of PhenDC3 is ten-fold higher for A375 compared to HT1080; G4 ligand-dependent molecular preference for G-tetrad end binding ("
       - type: Cite
         target: bib71
         content:
-          - 'Le et al., 2015'
+          - Le et al., 2015
       - >-
         ) and/or the accessibility of G4s in the chromatin of individual cell
         lines (
       - type: Cite
         target: bib54
         content:
-          - 'Hänsel-Hertsch et al., 2016'
+          - Hänsel-Hertsch et al., 2016
       - >-
         ). These points plus differences in protein knockdown efficiency,
         especially in A375 cells, may contribute to the differences in G4 ligand
@@ -11477,7 +11477,7 @@ content:
       - type: Cite
         target: bib93
         content:
-          - 'Nijman, 2011'
+          - Nijman, 2011
       - >-
         ). Higher doses may mask these effects, by targeting more G4s that are
         not dependent on the particular gene lost and/or be due to other
@@ -11520,11 +11520,11 @@ content:
       - type: Cite
         target: bib119
         content:
-          - 'Valton and Prioleau, 2016'
+          - Valton and Prioleau, 2016
       - ' ), and it is of note that we also uncovered many cell cycle/DNA replication sensitivities such as '
       - type: Emphasis
         content:
-          - 'PCNA, CHEK1, CCND1, CDC7, RFC2'
+          - PCNA, CHEK1, CCND1, CDC7, RFC2
       - ' and '
       - type: Emphasis
         content:
@@ -11564,15 +11564,15 @@ content:
       - type: Cite
         target: bib129
         content:
-          - 'Wu and Brosh, 2010'
+          - Wu and Brosh, 2010
       - >-
         ) were not identified as sensitisers, which may reflect functional
         redundancy (
       - type: Cite
         target: bib114
         content:
-          - 'Spillare et al., 2006'
-      - '), or a low ligand concentrations and/or cell type effects.'
+          - Spillare et al., 2006
+      - ), or a low ligand concentrations and/or cell type effects.
   - type: Paragraph
     content:
       - >-
@@ -11584,7 +11584,7 @@ content:
       - type: Cite
         target: bib128
         content:
-          - 'Wu et al., 2018'
+          - Wu et al., 2018
       - '). We also independently validate '
       - type: Emphasis
         content:
@@ -11592,20 +11592,20 @@ content:
       - ' as a G4 sensitiser in our screen and extend our observations to cover the full breadth of the proteosomal degradation pathway, including members of E1 ligase ('
       - type: Emphasis
         content:
-          - 'UBA3, UBA2, SAE1'
-      - '), E2 ligase ('
+          - UBA3, UBA2, SAE1
+      - ), E2 ligase (
       - type: Emphasis
         content:
           - UBE2H
-      - '), E3 ligase ('
+      - ), E3 ligase (
       - type: Emphasis
         content:
-          - 'NEDD4L, RBX1'
+          - NEDD4L, RBX1
       - ', '
       - type: Emphasis
         content:
-          - 'CUL1, RNF20'
-      - '), deubiquitinating enzyme ('
+          - CUL1, RNF20
+      - ), deubiquitinating enzyme (
       - type: Emphasis
         content:
           - USP1
@@ -11627,19 +11627,19 @@ content:
       - type: Cite
         target: bib107
         content:
-          - 'Senft et al., 2018'
+          - Senft et al., 2018
       - ";\_"
       - type: Cite
         target: bib125
         content:
-          - 'Wei and Lin, 2012'
+          - Wei and Lin, 2012
       - >-
         ) Given the involvement of ubiquitin-proteasomal regulation in pathways,
         such as DDR and cell cycle, that are generally deregulated in cancer (
       - type: Cite
         target: bib55
         content:
-          - 'Harrigan et al., 2018'
+          - Harrigan et al., 2018
       - >-
         ), this opens up an interesting intersection between ubiquitin
         regulation and G4s. As ubiquitin components are being targeted for
@@ -11647,7 +11647,7 @@ content:
       - type: Cite
         target: bib61
         content:
-          - 'Huang and Dixit, 2016'
+          - Huang and Dixit, 2016
       - >-
         ), their efficacy might be enhanced through simultaneous G4 targeting
         and here we have provided strong proof-of-principle of this using
@@ -11661,12 +11661,12 @@ content:
       - type: Cite
         target: bib4
         content:
-          - 'Azorsa et al., 2009'
+          - Azorsa et al., 2009
       - '; '
       - type: Cite
         target: bib78
         content:
-          - 'Martens-de Kemp et al., 2017'
+          - Martens-de Kemp et al., 2017
       - >-
         ), our work suggests that persistent G4s are problematic for splicing.
         We identified several cancer-associated splicing factors as G4
@@ -11675,18 +11675,18 @@ content:
       - type: Cite
         target: bib31
         content:
-          - 'Crozat et al., 1993'
+          - Crozat et al., 1993
       - ";\_"
       - type: Cite
         target: bib39
         content:
-          - 'Dvinge et al., 2016'
+          - Dvinge et al., 2016
       - '; '
       - type: Cite
         target: bib116
         content:
-          - 'Takahama et al., 2013'
-      - '). For the latter, a drug inhibiting general spliceosome assembly ('
+          - Takahama et al., 2013
+      - ). For the latter, a drug inhibiting general spliceosome assembly (
       - type: Link
         relation: table
         target: '#table1'
@@ -11696,7 +11696,7 @@ content:
       - type: Cite
         target: bib67
         content:
-          - 'Kotake et al., 2007'
+          - Kotake et al., 2007
       - >-
         ) raising the possibility of potentiation by G4-stabilising ligand
         combinatorial treatment.
@@ -11722,7 +11722,7 @@ content:
       - type: Cite
         target: bib38
         content:
-          - 'Dos Santos et al., 2017'
+          - Dos Santos et al., 2017
       - >-
         ), we suggest that this cancer may be acutely sensitive to
         G4-stabilisation by small molecules.
@@ -11789,7 +11789,7 @@ content:
             content:
               - 'Cat# CRL-1619, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/CVCL_0132'
+                target: https://scicrunch.org/resolver/CVCL_0132
                 content:
                   - CVCL_0132
           - type: TableCell
@@ -11813,7 +11813,7 @@ content:
             content:
               - 'Cat# CCL-121, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/CVCL_0317'
+                target: https://scicrunch.org/resolver/CVCL_0317
                 content:
                   - CVCL_0317
           - type: TableCell
@@ -11837,7 +11837,7 @@ content:
             content:
               - 'Cat# RV-102, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/CVCL_B489'
+                target: https://scicrunch.org/resolver/CVCL_B489
                 content:
                   - CVCL_B489
           - type: TableCell
@@ -11857,12 +11857,12 @@ content:
             content:
               - 'Cat# A5441, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_476744'
+                target: https://scicrunch.org/resolver/AB_476744
                 content:
                   - AB_476744
           - type: TableCell
             content:
-              - 'WB (1:250)'
+              - WB (1:250)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11878,12 +11878,12 @@ content:
             content:
               - 'Cat# ab80975, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_2041042'
+                target: https://scicrunch.org/resolver/AB_2041042
                 content:
                   - AB_2041042
           - type: TableCell
             content:
-              - 'WB (1:250)'
+              - WB (1:250)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11899,12 +11899,12 @@ content:
             content:
               - 'Cat# 4970, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_2223172'
+                target: https://scicrunch.org/resolver/AB_2223172
                 content:
                   - AB_2223172
           - type: TableCell
             content:
-              - 'WB (1:500)'
+              - WB (1:500)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11920,12 +11920,12 @@ content:
             content:
               - 'Cat# 9010, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_2228244'
+                target: https://scicrunch.org/resolver/AB_2228244
                 content:
                   - AB_2228244
           - type: TableCell
             content:
-              - 'WB (1:50)'
+              - WB (1:50)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11941,12 +11941,12 @@ content:
             content:
               - 'Cat# 5174, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_10622025'
+                target: https://scicrunch.org/resolver/AB_10622025
                 content:
                   - AB_10622025
           - type: TableCell
             content:
-              - 'WB (1:50)'
+              - WB (1:50)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11962,12 +11962,12 @@ content:
             content:
               - 'Cat# NBP2-31742, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_2801566'
+                target: https://scicrunch.org/resolver/AB_2801566
                 content:
                   - AB_2801566
           - type: TableCell
             content:
-              - 'WB (1:100)'
+              - WB (1:100)
       - type: TableRow
         cells:
           - type: TableCell
@@ -11975,7 +11975,7 @@ content:
               - Antibody
           - type: TableCell
             content:
-              - 'Rabbit polyclonal anti-GST, HRP-conjugated'
+              - Rabbit polyclonal anti-GST, HRP-conjugated
           - type: TableCell
             content:
               - Abcam
@@ -11983,12 +11983,12 @@ content:
             content:
               - 'Cat# ab3416, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_30378'
+                target: https://scicrunch.org/resolver/AB_30378
                 content:
                   - AB_30378
           - type: TableCell
             content:
-              - 'ELISA (1:10,000)'
+              - ELISA (1:10,000)
       - type: TableRow
         cells:
           - type: TableCell
@@ -12004,12 +12004,12 @@ content:
             content:
               - 'Cat# 12586, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_2650517'
+                target: https://scicrunch.org/resolver/AB_2650517
                 content:
                   - AB_2650517
           - type: TableCell
             content:
-              - 'WB (1:250)'
+              - WB (1:250)
       - type: TableRow
         cells:
           - type: TableCell
@@ -12025,12 +12025,12 @@ content:
             content:
               - 'Cat# ab109374, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/AB_10861978'
+                target: https://scicrunch.org/resolver/AB_10861978
                 content:
                   - AB_10861978
           - type: TableCell
             content:
-              - 'WB (1:250)'
+              - WB (1:250)
       - type: TableRow
         cells:
           - type: TableCell
@@ -12046,7 +12046,7 @@ content:
             content:
               - 'Cat # 8454, RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/Addgene_8454'
+                target: https://scicrunch.org/resolver/Addgene_8454
                 content:
                   - Addgene_8454
           - type: TableCell
@@ -12062,7 +12062,7 @@ content:
               - G-quadruplex focused shRNA plasmid library
           - type: TableCell
             content:
-              - 'transOMIC technologies, this paper'
+              - transOMIC technologies, this paper
           - type: TableCell
             content: []
           - type: TableCell
@@ -12168,7 +12168,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Peptide, recombinant protein'
+              - Peptide, recombinant protein
           - type: TableCell
             content:
               - Recombinant human DDX42
@@ -12360,7 +12360,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - Ampicillin
@@ -12376,7 +12376,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - Chloroquine diphosphate
@@ -12392,7 +12392,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - cOmplete mini protease inhibitor
@@ -12408,7 +12408,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - DMSO
@@ -12424,7 +12424,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - Geneticin
@@ -12440,7 +12440,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - MK1775
@@ -12456,7 +12456,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - PenStrep
@@ -12472,7 +12472,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - PhenDC3
@@ -12484,14 +12484,14 @@ content:
               - type: Cite
                 target: bib34
                 content:
-                  - 'De Cian et al., 2007a'
+                  - De Cian et al., 2007a
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - Pimozide
@@ -12507,7 +12507,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - "Pyridostatin\_(PDS)"
@@ -12526,7 +12526,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - Sodium Butyrate
@@ -12542,7 +12542,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Chemical compound, drug'
+              - Chemical compound, drug
           - type: TableCell
             content:
               - TMB substrate
@@ -12558,7 +12558,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Bowtie 2 v2.2.6
@@ -12567,20 +12567,20 @@ content:
               - type: Cite
                 target: bib70
                 content:
-                  - 'Langmead and Salzberg, 2012'
+                  - Langmead and Salzberg, 2012
           - type: TableCell
             content:
               - type: Link
-                target: 'http://bowtie-bio.sourceforge.net/bowtie2/index.shtml'
+                target: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
                 content:
-                  - 'http://bowtie-bio.sourceforge.net/bowtie2/index.shtml'
+                  - http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - ClueGO v3.5.1
@@ -12589,26 +12589,26 @@ content:
               - type: Cite
                 target: bib13
                 content:
-                  - 'Bindea et al., 2009'
+                  - Bindea et al., 2009
               - '; '
               - ' '
               - type: Cite
                 target: bib14
                 content:
-                  - 'Bindea et al., 2013'
+                  - Bindea et al., 2013
           - type: TableCell
             content:
               - type: Link
-                target: 'http://www.ici.upmc.fr/cluego/cluegoDownload.shtml'
+                target: http://www.ici.upmc.fr/cluego/cluegoDownload.shtml
                 content:
-                  - 'http://www.ici.upmc.fr/cluego/cluegoDownload.shtml'
+                  - http://www.ici.upmc.fr/cluego/cluegoDownload.shtml
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - ColonyArea
@@ -12617,7 +12617,7 @@ content:
               - type: Cite
                 target: bib51
                 content:
-                  - 'Guzmán et al., 2014'
+                  - Guzmán et al., 2014
           - type: TableCell
             content:
               - Image J plugin
@@ -12627,7 +12627,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Code used for shRNA screen data analysis
@@ -12638,7 +12638,7 @@ content:
             content:
               - 'All scripts are available at: '
               - type: Link
-                target: 'https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity'
+                target: https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
                 content:
                   - >-
                     https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
@@ -12648,7 +12648,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Combenefit
@@ -12657,20 +12657,20 @@ content:
               - type: Cite
                 target: bib37
                 content:
-                  - 'Di Veroli et al., 2016'
+                  - Di Veroli et al., 2016
           - type: TableCell
             content:
               - type: Link
-                target: 'https://sourceforge.net/projects/combenefit/'
+                target: https://sourceforge.net/projects/combenefit/
                 content:
-                  - 'https://sourceforge.net/projects/combenefit/'
+                  - https://sourceforge.net/projects/combenefit/
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Cytoscape v3.6.0
@@ -12679,20 +12679,20 @@ content:
               - type: Cite
                 target: bib109
                 content:
-                  - 'Shannon et al., 2003'
+                  - Shannon et al., 2003
           - type: TableCell
             content:
               - type: Link
-                target: 'http://www.cytoscape.org/'
+                target: http://www.cytoscape.org/
                 content:
-                  - 'http://www.cytoscape.org/'
+                  - http://www.cytoscape.org/
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - edgeR v3.6
@@ -12701,11 +12701,11 @@ content:
               - type: Cite
                 target: bib101
                 content:
-                  - 'Robinson et al., 2010'
+                  - Robinson et al., 2010
           - type: TableCell
             content:
               - type: Link
-                target: 'http://bioconductor.org/packages/release/bioc/html/edgeR.html'
+                target: http://bioconductor.org/packages/release/bioc/html/edgeR.html
                 content:
                   - >-
                     http://bioconductor.org/packages/release/bioc/html/edgeR.html
@@ -12715,7 +12715,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - DAVID
@@ -12724,25 +12724,25 @@ content:
               - type: Cite
                 target: bib59
                 content:
-                  - 'Huang et al., 2009a'
+                  - Huang et al., 2009a
               - ', '
               - type: Cite
                 target: bib60
                 content:
-                  - 'Huang et al., 2009b'
+                  - Huang et al., 2009b
           - type: TableCell
             content:
               - type: Link
-                target: 'https://david.ncifcrf.gov'
+                target: https://david.ncifcrf.gov
                 content:
-                  - 'https://david.ncifcrf.gov'
+                  - https://david.ncifcrf.gov
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - FastQC v0.11.3
@@ -12751,20 +12751,20 @@ content:
               - type: Cite
                 target: bib2
                 content:
-                  - 'Andrews, 2010'
+                  - Andrews, 2010
           - type: TableCell
             content:
               - type: Link
-                target: 'http://www.bioinformatics.babraham.ac.uk/projects/fastqc'
+                target: http://www.bioinformatics.babraham.ac.uk/projects/fastqc
                 content:
-                  - 'http://www.bioinformatics.babraham.ac.uk/projects/fastqc'
+                  - http://www.bioinformatics.babraham.ac.uk/projects/fastqc
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - FASTX-Toolkit v0.0.14
@@ -12773,20 +12773,20 @@ content:
               - type: Cite
                 target: bib49
                 content:
-                  - 'Gordon and Hannon, 2010'
+                  - Gordon and Hannon, 2010
           - type: TableCell
             content:
               - type: Link
-                target: 'http://hannonlab.cshl.edu/fastx_toolkit.html'
+                target: http://hannonlab.cshl.edu/fastx_toolkit.html
                 content:
-                  - 'http://hannonlab.cshl.edu/fastx_toolkit.html'
+                  - http://hannonlab.cshl.edu/fastx_toolkit.html
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Graphpad Prism
@@ -12794,15 +12794,15 @@ content:
             content:
               - GraphPad Prism (
               - type: Link
-                target: 'https://graphpad.com'
+                target: https://graphpad.com
                 content:
-                  - 'https://graphpad.com'
+                  - https://graphpad.com
               - )
           - type: TableCell
             content:
               - 'RRID:'
               - type: Link
-                target: 'https://scicrunch.org/resolver/SCR_015807'
+                target: https://scicrunch.org/resolver/SCR_015807
                 content:
                   - SCR_015807
           - type: TableCell
@@ -12812,7 +12812,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - PolySearch2
@@ -12821,29 +12821,29 @@ content:
               - type: Cite
                 target: bib74
                 content:
-                  - 'Liu et al., 2015a'
+                  - Liu et al., 2015a
           - type: TableCell
             content:
               - type: Link
-                target: 'http://polysearch.cs.ualberta.ca/'
+                target: http://polysearch.cs.ualberta.ca/
                 content:
-                  - 'http://polysearch.cs.ualberta.ca/'
+                  - http://polysearch.cs.ualberta.ca/
           - type: TableCell
             content: []
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - Python programming language v2.7.10
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.python.org'
+                target: https://www.python.org
                 content:
-                  - 'https://www.python.org'
+                  - https://www.python.org
           - type: TableCell
             content: []
           - type: TableCell
@@ -12852,16 +12852,16 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
               - R programming language v3.2.1
           - type: TableCell
             content:
               - type: Link
-                target: 'https://cran.r-project.org/'
+                target: https://cran.r-project.org/
                 content:
-                  - 'https://cran.r-project.org/'
+                  - https://cran.r-project.org/
           - type: TableCell
             content: []
           - type: TableCell
@@ -12870,16 +12870,16 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Software, algorithm'
+              - Software, algorithm
           - type: TableCell
             content:
-              - 'Unix tools (cat, cut, awk, sort and uniq)'
+              - Unix tools (cat, cut, awk, sort and uniq)
           - type: TableCell
             content:
               - type: Link
-                target: 'https://opengroup.org/unix'
+                target: https://opengroup.org/unix
                 content:
-                  - 'https://opengroup.org/unix'
+                  - https://opengroup.org/unix
           - type: TableCell
             content: []
           - type: TableCell
@@ -12893,19 +12893,19 @@ content:
     content:
       - 'HT1080 (RRID: '
       - type: Link
-        target: 'https://scicrunch.org/resolver/CRL-1619'
+        target: https://scicrunch.org/resolver/CRL-1619
         content:
           - CRL-1619
       - ') and A375 (RRID: '
       - type: Link
-        target: 'https://scicrunch.org/resolver/CRL-121'
+        target: https://scicrunch.org/resolver/CRL-121
         content:
           - CRL-121
       - >-
         ) were obtained from the American Type Culture Collection repository
         (ATCC) (LGC Standards, United Kingdom) and Plat-A (RRID: 
       - type: Link
-        target: 'https://scicrunch.org/resolver/RV-102'
+        target: https://scicrunch.org/resolver/RV-102
         content:
           - RV-102
       - >-
@@ -12950,12 +12950,12 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'De Cian et al., 2007b'
+          - De Cian et al., 2007b
       - '; '
       - type: Cite
         target: bib102
         content:
-          - 'Rodriguez et al., 2008'
+          - Rodriguez et al., 2008
       - >-
         ) were used as 100 mM stocks, dissolved in DMSO (Thermofisher
         Scientific, cat # 20688). GI
@@ -13034,7 +13034,7 @@ content:
     id: s4-6
     depth: 2
     content:
-      - 'Cell culture for pilot, genome-wide and focused shRNAs pools'
+      - Cell culture for pilot, genome-wide and focused shRNAs pools
   - type: Paragraph
     content:
       - >-
@@ -13056,7 +13056,7 @@ content:
       - type: Cite
         target: bib66
         content:
-          - 'Knott et al., 2014'
+          - Knott et al., 2014
       - >-
         ). The volume of DMSO used in the ‘vehicle’ condition is equal to the
         volume for 10 μM PhenDC3. The remaining drug treatments were
@@ -13092,7 +13092,7 @@ content:
     id: s4-8
     depth: 2
     content:
-      - 'Barcode recovery, adapter ligation and sequencing'
+      - Barcode recovery, adapter ligation and sequencing
   - type: Paragraph
     content:
       - >-
@@ -13190,14 +13190,14 @@ content:
     id: s4-9
     depth: 2
     content:
-      - 'Sequencing, read processing, alignment and counting of shRNAs'
+      - Sequencing, read processing, alignment and counting of shRNAs
   - type: Paragraph
     content:
       - Sequencing data have been deposited in ArrayExpress (
       - type: Link
-        target: 'https://www.ebi.ac.uk/arrayexpress/'
+        target: https://www.ebi.ac.uk/arrayexpress/
         content:
-          - 'https://www.ebi.ac.uk/arrayexpress/'
+          - https://www.ebi.ac.uk/arrayexpress/
       - ') under accession number '
       - type: Emphasis
         content:
@@ -13206,59 +13206,59 @@ content:
       - type: Cite
         target: bib2
         content:
-          - 'Andrews, 2010'
+          - Andrews, 2010
       - >-
         ) and bases were filtered from the 3' end with a Phred quality threshold
         of 33 using the FASTX-Toolkit v0.0.14 (
       - type: Cite
         target: bib49
         content:
-          - 'Gordon and Hannon, 2010'
+          - Gordon and Hannon, 2010
       - >-
         ). Trimmed reads were aligned to the 113,002 reference shRNA sequences
         provided by transOMIC technologies (
       - type: Cite
         target: bib66
         content:
-          - 'Knott et al., 2014'
+          - Knott et al., 2014
       - ) using Bowtie 2 v2.2.6 with default parameters (
       - type: Cite
         target: bib70
         content:
-          - 'Langmead and Salzberg, 2012'
+          - Langmead and Salzberg, 2012
       - >-
         ), which resulted in overall alignment rates of 90–95% with an average
         of 98% of reference sequences detected. The generated SAM files were
         processed to obtain shRNA counts using Unix tools (
       - type: Link
-        target: 'https://opengroup.org/unix'
+        target: https://opengroup.org/unix
         content:
-          - 'https://opengroup.org/unix'
+          - https://opengroup.org/unix
       - ') and Python scripts (v2.7.10, '
       - type: Link
-        target: 'https://www.python.org'
+        target: https://www.python.org
         content:
-          - 'https://www.python.org'
+          - https://www.python.org
       - >-
         ), and library purity and potential contaminations were investigated
         with stacked bar plots and multidimensional scaling (MDS) using the R
         programming language v3.2.1 (
       - type: Link
-        target: 'https://cran.r-project.org'
+        target: https://cran.r-project.org
         content:
-          - 'https://cran.r-project.org'
+          - https://cran.r-project.org
       - >-
         ). The code and scripts developed during the development of the project
         are available in our group’s GitHub website (
       - type: Cite
         target: bib79
         content:
-          - 'Martínez Cuesta, 2019'
+          - Martínez Cuesta, 2019
       - '; copy archived at '
       - type: Link
-        target: 'https://github.com/elifesciences-publications/GWscreen_G4sensitivity'
+        target: https://github.com/elifesciences-publications/GWscreen_G4sensitivity
         content:
-          - 'https://github.com/elifesciences-publications/GWscreen_G4sensitivity'
+          - https://github.com/elifesciences-publications/GWscreen_G4sensitivity
       - ).
   - type: Heading
     id: s4-10
@@ -13273,7 +13273,7 @@ content:
       - type: Cite
         target: bib101
         content:
-          - 'Robinson et al., 2010'
+          - Robinson et al., 2010
       - >-
         ). To compare groups of replicates (time points and chemical treatments)
         for each pool, differential representation analysis of shRNA counts was
@@ -13281,7 +13281,7 @@ content:
       - type: Cite
         target: bib101
         content:
-          - 'Robinson et al., 2010'
+          - Robinson et al., 2010
       - >-
         ). Common and shRNA-specific dispersions were estimated to allow the
         fitting of a negative binomial generalised linear model to the treatment
@@ -13291,7 +13291,7 @@ content:
       - type: Cite
         target: bib32
         content:
-          - 'Dai et al., 2014'
+          - Dai et al., 2014
       - "). Fold changes (FC) were then computed for every shRNA, and false discovery rates (FDR) were estimated using the Benjamini-Hochberg method. A gene was defined as significantly differentially represented for a given treatment if at least 50% or a minimum of 3 shRNAs were significant (FDR\_≤\_0.05); sensitisation was additionally determined by applying a log"
       - type: Subscript
         content:
@@ -13312,7 +13312,7 @@ content:
       - type: Cite
         target: bib117
         content:
-          - 'The UniProt Consortium, 2017'
+          - The UniProt Consortium, 2017
       - >-
         ) entry is annotated with the term 'quadruplex' or genes annotated with
         at least one of the following 11 GO terms with any evidence assertion
@@ -13320,7 +13320,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Ashburner et al., 2000'
+          - Ashburner et al., 2000
       - '):'
   - type: Paragraph
     content: []
@@ -13346,7 +13346,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'GO:0051880'
+              - GO:0051880
           - type: TableCell
             content:
               - G-quadruplex DNA binding
@@ -13356,14 +13356,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:0051880'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:0051880
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:0051880'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:0051880
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:0002151'
+              - GO:0002151
           - type: TableCell
             content:
               - G-quadruplex RNA binding
@@ -13373,14 +13373,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:0002151'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:0002151
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:0002151'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:0002151
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:0061849'
+              - GO:0061849
           - type: TableCell
             content:
               - telomeric G-quadruplex DNA binding
@@ -13390,14 +13390,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:0061849'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:0061849
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:0061849'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:0061849
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:0071919'
+              - GO:0071919
           - type: TableCell
             content:
               - G-quadruplex DNA formation
@@ -13407,14 +13407,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:0071919'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:0071919
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:0071919'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:0071919
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:0044806'
+              - GO:0044806
           - type: TableCell
             content:
               - G-quadruplex DNA unwinding
@@ -13424,14 +13424,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:0044806'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:0044806
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:0044806'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:0044806
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905493'
+              - GO:1905493
           - type: TableCell
             content:
               - regulation of G-quadruplex DNA binding
@@ -13441,14 +13441,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905493'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905493
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905493'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905493
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905494'
+              - GO:1905494
           - type: TableCell
             content:
               - negative regulation of G-quadruplex DNA binding
@@ -13458,14 +13458,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905494'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905494
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905494'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905494
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905495'
+              - GO:1905495
           - type: TableCell
             content:
               - positive regulation of G-quadruplex DNA binding
@@ -13475,14 +13475,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905495'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905495
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905495'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905495
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905465'
+              - GO:1905465
           - type: TableCell
             content:
               - regulation of G-quadruplex DNA unwinding
@@ -13492,14 +13492,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905465'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905465
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905465'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905465
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905466'
+              - GO:1905466
           - type: TableCell
             content:
               - negative regulation of G-quadruplex DNA unwinding
@@ -13509,14 +13509,14 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905466'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905466
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905466'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905466
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'GO:1905467'
+              - GO:1905467
           - type: TableCell
             content:
               - positive regulation of G-quadruplex DNA unwinding
@@ -13526,9 +13526,9 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ebi.ac.uk/QuickGO/term/GO:1905467'
+                target: https://www.ebi.ac.uk/QuickGO/term/GO:1905467
                 content:
-                  - 'https://www.ebi.ac.uk/QuickGO/term/GO:1905467'
+                  - https://www.ebi.ac.uk/QuickGO/term/GO:1905467
   - type: Paragraph
     content:
       - >-
@@ -13537,12 +13537,12 @@ content:
       - type: Cite
         target: bib85
         content:
-          - 'Mishra et al., 2016'
+          - Mishra et al., 2016
       - ) (
       - type: Link
-        target: 'http://bsbe.iiti.ac.in/bsbe/ipdb/index.php'
+        target: http://bsbe.iiti.ac.in/bsbe/ipdb/index.php
         content:
-          - 'http://bsbe.iiti.ac.in/bsbe/ipdb/index.php'
+          - http://bsbe.iiti.ac.in/bsbe/ipdb/index.php
       - >-
         ) were also used to determine predefined G4-interacting proteins from
         the genome-wide shRNA screen. For this, gene entries were removed where
@@ -13553,21 +13553,21 @@ content:
       - type: Cite
         target: bib75
         content:
-          - 'Liu et al., 2015b'
+          - Liu et al., 2015b
       - >-
         ) was used. Human protein-coding gene names and G4-terms and synonyms
         are defined using the corresponding MeSH term id D054856 (
       - type: Link
-        target: 'https://www.ncbi.nlm.nih.gov/mesh/68054856'
+        target: https://www.ncbi.nlm.nih.gov/mesh/68054856
         content:
-          - 'https://www.ncbi.nlm.nih.gov/mesh/68054856'
+          - https://www.ncbi.nlm.nih.gov/mesh/68054856
       - >-
         ) and the thesaurus of gene names obtained from the PolySearch2 website
         (
       - type: Link
-        target: 'http://polysearch.cs.ualberta.ca/'
+        target: http://polysearch.cs.ualberta.ca/
         content:
-          - 'http://polysearch.cs.ualberta.ca/'
+          - http://polysearch.cs.ualberta.ca/
       - >-
         ). A relevancy score measures the strength of association between two
         text groups, and higher the score, the more likely terms from the two
@@ -13578,9 +13578,9 @@ content:
         generated 526 G4-associated genes, with 54 (10%) uncovered as
         G4-sensitisers (
       - type: Link
-        target: 'https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity'
+        target: https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
         content:
-          - 'https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity'
+          - https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
       - >-
         ), which were manually edited to 16 genes as discussed in the main text
         and figures.
@@ -13588,24 +13588,24 @@ content:
     id: s4-12
     depth: 2
     content:
-      - 'KEGG pathway, gene ontology and protein domain enrichment analysis'
+      - KEGG pathway, gene ontology and protein domain enrichment analysis
   - type: Paragraph
     content:
       - The ClueGO v2.3.3 (
       - type: Cite
         target: bib13
         content:
-          - 'Bindea et al., 2009'
+          - Bindea et al., 2009
       - '; '
       - type: Cite
         target: bib14
         content:
-          - 'Bindea et al., 2013'
+          - Bindea et al., 2013
       - ) plugin for Cytoscape (
       - type: Cite
         target: bib109
         content:
-          - 'Shannon et al., 2003'
+          - Shannon et al., 2003
       - >-
         ) (v3.5.1) was used to determine networks of enriched KEGG pathways and
         Gene Ontology terms (Biological Process and Molecular Function) for
@@ -13624,12 +13624,12 @@ content:
       - type: Cite
         target: bib42
         content:
-          - 'Finn et al., 2016'
+          - Finn et al., 2016
       - '; '
       - type: Cite
         target: bib133
         content:
-          - 'Yeats et al., 2006'
+          - Yeats et al., 2006
       - ).
   - type: Heading
     id: s4-13
@@ -13644,12 +13644,12 @@ content:
       - type: Cite
         target: bib43
         content:
-          - 'Forbes et al., 2015'
+          - Forbes et al., 2015
       - ") was used to investigate the association between G4 sensitisers and cancer genes.\_~150,000 were mutations available in COSMIC for 702 (93%) sensitiser genes, with some predicted to be pathogenic by the FATHMM algorithm embedded within the COSMIC database. The Cancer Gene Census ("
       - type: Link
-        target: 'http://cancer.sanger.ac.uk/census'
+        target: http://cancer.sanger.ac.uk/census
         content:
-          - 'http://cancer.sanger.ac.uk/census'
+          - http://cancer.sanger.ac.uk/census
       - >-
         ) was used to investigate whether G4 sensitisers are enriched in genes
         containing mutations causally implicated in cancer. Fisher’s exact tests
@@ -13776,7 +13776,7 @@ content:
       - type: Cite
         target: bib37
         content:
-          - 'Di Veroli et al., 2016'
+          - Di Veroli et al., 2016
       - >-
         ) to determine synergy. For the clonogenic cell survival assay, A375
         (300 cells per well) and HT1080 (400 cells per well) were plated as
@@ -13792,7 +13792,7 @@ content:
       - type: Cite
         target: bib51
         content:
-          - 'Guzmán et al., 2014'
+          - Guzmán et al., 2014
       - >-
         ), which considers both the intensity and percentage of area covered by
         the colonies. Values were normalised to and expressed as a percentage of
@@ -13878,7 +13878,7 @@ content:
               - RNA
           - type: TableCell
             content:
-              - '5’ [Btn] UGU GGG AGG GGC GGG UCU GGG UGC 3’'
+              - 5’ [Btn] UGU GGG AGG GGC GGG UCU GGG UGC 3’
       - type: TableRow
         cells:
           - type: TableCell
@@ -13889,7 +13889,7 @@ content:
               - RNA
           - type: TableCell
             content:
-              - '5’ [Btn] UGU AGA AAG AGC AGA UCU AGA UG 3’'
+              - 5’ [Btn] UGU AGA AAG AGC AGA UCU AGA UG 3’
       - type: TableRow
         cells:
           - type: TableCell
@@ -13900,7 +13900,7 @@ content:
               - RNA
           - type: TableCell
             content:
-              - '5’ [Btn] ACA GGG CUC CGC GAU GGC GGA GCC CAA 3’'
+              - 5’ [Btn] ACA GGG CUC CGC GAU GGC GGA GCC CAA 3’
       - type: TableRow
         cells:
           - type: TableCell
@@ -13911,7 +13911,7 @@ content:
               - DNA
           - type: TableCell
             content:
-              - '5’ [Btn] TGA GGG T GGG TA GGG T GGG TAA 3’'
+              - 5’ [Btn] TGA GGG T GGG TA GGG T GGG TAA 3’
       - type: TableRow
         cells:
           - type: TableCell
@@ -13922,7 +13922,7 @@ content:
               - DNA
           - type: TableCell
             content:
-              - '5’ [Btn] TGA GAG T GAG TA GAG T GAG TAA 3’'
+              - 5’ [Btn] TGA GAG T GAG TA GAG T GAG TAA 3’
   - type: Heading
     id: s4-18
     depth: 2

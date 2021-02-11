@@ -44,7 +44,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Arima Genomics, San Diego, California, United States of America'
+        name: Arima Genomics, San Diego, California, United States of America
     familyNames:
       - Schmitt
     givenNames:
@@ -52,7 +52,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Arima Genomics, San Diego, California, United States of America'
+        name: Arima Genomics, San Diego, California, United States of America
     familyNames:
       - Selvaraj
     givenNames:
@@ -110,15 +110,15 @@ description:
       - a priori
   - ' estimate of chromosome number and minimizes errors by scaffolding with the assistance of an assembly graph. We demonstrate higher accuracy than the state-of-the-art methods across a variety of Hi-C library preparations and input assembly sizes. The Python and C++ code for our method is openly available at '
   - type: Link
-    target: 'https://github.com/machinegun/SALSA'
+    target: https://github.com/machinegun/SALSA
     content:
-      - 'https://github.com/machinegun/SALSA'
+      - https://github.com/machinegun/SALSA
   - .
 editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Ottawa University, CANADA'
+        name: Ottawa University, CANADA
     familyNames:
       - Ioshikhes
     givenNames:
@@ -126,15 +126,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PCOMPBIOL-D-19-00061
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pcbi.1007273
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e1007273
 isPartOf:
   type: PublicationIssue
@@ -145,15 +145,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Comput Biol
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: ploscomp
       issns:
         - 1553-734X
@@ -166,7 +166,7 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    url: https://creativecommons.org/publicdomain/zero/1.0/
     content:
       - type: Paragraph
         content:
@@ -176,7 +176,7 @@ licenses:
             or otherwise used by anyone for any lawful purpose. The work is made
             available under the 
           - type: Link
-            target: 'https://creativecommons.org/publicdomain/zero/1.0/'
+            target: https://creativecommons.org/publicdomain/zero/1.0/
             content:
               - Creative Commons CC0
           - ' public domain dedication.'
@@ -1235,7 +1235,7 @@ references:
         volumeNumber: 37
       issueNumber: 5
     pageStart: 540
-    title: 'Assembly of long, error-prone reads using repeat graphs'
+    title: Assembly of long, error-prone reads using repeat graphs
   - type: Article
     id: pcbi-1007273-ref031
     authors:
@@ -1256,7 +1256,7 @@ references:
       issueNumber: 3
     pageEnd: 467
     pageStart: 449
-    title: 'Paths, trees, and flowers'
+    title: Paths, trees, and flowers
   - type: Article
     id: pcbi-1007273-ref032
     authors: []
@@ -2053,7 +2053,7 @@ content:
       - '].'
   - type: Paragraph
     content:
-      - 'LACHESIS ['
+      - LACHESIS [
       - type: Cite
         target: pcbi-1007273-ref016
         content:
@@ -2109,7 +2109,7 @@ content:
       - '].'
   - type: Paragraph
     content:
-      - 'SALSA1 ['
+      - SALSA1 [
       - type: Cite
         target: pcbi-1007273-ref021
         content:
@@ -2252,7 +2252,7 @@ content:
       - Read alignment
   - type: Paragraph
     content:
-      - 'Hi-C paired end reads are aligned to contigs using the BWA aligner ['
+      - Hi-C paired end reads are aligned to contigs using the BWA aligner [
       - type: Cite
         target: pcbi-1007273-ref026
         content:
@@ -2273,9 +2273,9 @@ content:
         ]. Read pairs aligned to different contigs are used to construct the
         initial scaffold graph. The suggested mapping pipeline is available at 
       - type: Link
-        target: 'http://github.com/ArimaGenomics/mapping_pipeline'
+        target: http://github.com/ArimaGenomics/mapping_pipeline
         content:
-          - 'http://github.com/ArimaGenomics/mapping_pipeline'
+          - http://github.com/ArimaGenomics/mapping_pipeline
       - .
   - type: Heading
     id: sec005
@@ -2348,7 +2348,7 @@ content:
       - Assembly graph construction
   - type: Paragraph
     content:
-      - 'For our experiments, we use the unitig assembly graph produced by Canu ['
+      - For our experiments, we use the unitig assembly graph produced by Canu [
       - type: Cite
         target: pcbi-1007273-ref028
         content:
@@ -2811,7 +2811,7 @@ content:
       - type: Superscript
         content:
           - '2'
-      - ') time ['
+      - ) time [
       - type: Cite
         target: pcbi-1007273-ref031
         content:
@@ -3222,7 +3222,7 @@ content:
       - type: Emphasis
         content:
           - I
-      - '∪{'
+      - ∪{
       - type: Emphasis
         content:
           - s
@@ -3615,9 +3615,9 @@ content:
         scaffolding. All the assemblies described in this paper are available
         online and can be found at 
       - type: Link
-        target: 'https://obj.umiacs.umd.edu/paper_assemblies/index.html'
+        target: https://obj.umiacs.umd.edu/paper_assemblies/index.html
         content:
-          - 'https://obj.umiacs.umd.edu/paper_assemblies/index.html'
+          - https://obj.umiacs.umd.edu/paper_assemblies/index.html
       - .
   - type: Figure
     id: pcbi-1007273-g003
@@ -4269,7 +4269,7 @@ content:
       - type: Heading
         depth: 3
         content:
-          - 'Chromosome ideogram generated using the coloredChromosomes ['
+          - Chromosome ideogram generated using the coloredChromosomes [
           - type: Cite
             target: pcbi-1007273-ref039
             content:
@@ -4649,7 +4649,7 @@ content:
         newly generated Hi-C data.
   - type: Paragraph
     content:
-      - 'As the Genome10K consortium ['
+      - As the Genome10K consortium [
       - type: Cite
         target: pcbi-1007273-ref050
         content:

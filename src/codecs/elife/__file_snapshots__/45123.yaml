@@ -65,15 +65,15 @@ genre:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: 45123
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.7554/eLife.45123
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e45123
 isPartOf:
   type: PublicationVolume
@@ -82,17 +82,17 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        propertyID: https://registry.identifiers.org/registry/nlm-ta
         value: elife
       - type: PropertyValue
         name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        propertyID: https://registry.identifiers.org/registry/publisher-id
         value: eLife
     issns:
       - 2050-084X
     publisher:
       type: Organization
-      name: 'eLife Sciences Publications, Ltd'
+      name: eLife Sciences Publications, Ltd
     title: eLife
   volumeNumber: 8
 keywords:
@@ -106,13 +106,13 @@ keywords:
   - Mouse
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This article is distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -766,7 +766,7 @@ content:
           - '8'
       - ':e41770 . doi: '
       - type: Link
-        target: 'http://doi.org/10.7554/eLife.41770'
+        target: http://doi.org/10.7554/eLife.41770
         content:
           - 10.7554/eLife.41770
   - type: Paragraph
@@ -782,22 +782,22 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Ponting et al., 2009'
+          - Ponting et al., 2009
       - ). The brain expresses more lncRNAs than any other part of the body (
       - type: Cite
         target: bib5
         content:
-          - 'Derrien et al., 2012'
+          - Derrien et al., 2012
       - "), but we know relatively little about the roles these molecules play in this\_organ ("
       - type: Cite
         target: bib4
         content:
-          - 'D''haene et al., 2016'
+          - D'haene et al., 2016
       - '; '
       - type: Cite
         target: bib2
         content:
-          - 'Aprea et al., 2013'
+          - Aprea et al., 2013
       - >-
         ). Learning more about lncRNAs will be essential if we are to understand
         both the typical and the atypical brain.
@@ -812,21 +812,21 @@ content:
       - type: Cite
         target: bib8
         content:
-          - 'Rennert and Ziats, 2017'
+          - Rennert and Ziats, 2017
       - >-
         ). Several lncRNAs are associated with these conditions, sometimes being
         transcribed atypically (reviewed in 
       - type: Cite
         target: bib9
         content:
-          - 'van de Vondervoort et al., 2013'
+          - van de Vondervoort et al., 2013
       - >-
         ). For instance, certain lncRNAs are expressed differently in patients
         on the autism spectrum (
       - type: Cite
         target: bib10
         content:
-          - 'Ziats and Rennert, 2013'
+          - Ziats and Rennert, 2013
       - ).
   - type: Paragraph
     content:
@@ -840,7 +840,7 @@ content:
       - type: Cite
         target: bib1
         content:
-          - 'Ang et al., 2019'
+          - Ang et al., 2019
       - ).
   - type: Paragraph
     content:
@@ -869,7 +869,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Borello et al., 2014'
+          - Borello et al., 2014
       - ).
   - type: Paragraph
     content:
@@ -889,7 +889,7 @@ content:
       - type: Cite
         target: bib6
         content:
-          - 'Ponjavic et al., 2009'
+          - Ponjavic et al., 2009
       - '). However, the work by Ang et al. potentially indicates that '
       - type: Emphasis
         content:

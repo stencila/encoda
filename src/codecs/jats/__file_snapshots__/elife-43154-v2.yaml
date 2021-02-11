@@ -203,15 +203,15 @@ genre:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: 43154
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.7554/eLife.43154
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e43154
 isPartOf:
   type: PublicationVolume
@@ -220,17 +220,17 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        propertyID: https://registry.identifiers.org/registry/nlm-ta
         value: elife
       - type: PropertyValue
         name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        propertyID: https://registry.identifiers.org/registry/publisher-id
         value: eLife
     issns:
       - 2050-084X
     publisher:
       type: Organization
-      name: 'eLife Sciences Publications, Ltd'
+      name: eLife Sciences Publications, Ltd
     title: eLife
   volumeNumber: 8
 keywords:
@@ -242,13 +242,13 @@ keywords:
   - P. falciparum
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This article is distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -1124,7 +1124,7 @@ references:
       type: Date
       value: '2019'
     title: Severe Malaria
-    url: 'https://github.com/Stije/SevereMalariaAnalysis'
+    url: https://github.com/Stije/SevereMalariaAnalysis
   - type: Article
     id: bib12
     authors:
@@ -1299,14 +1299,14 @@ content:
       - type: Cite
         target: bib15
         content:
-          - 'WHO, 2015'
+          - WHO, 2015
       - >-
         ). Multiple vital organ dysfunction is associated with increased
         mortality (
       - type: Cite
         target: bib14
         content:
-          - 'WHO, 2014'
+          - WHO, 2014
       - >-
         ). Common major clinical manifestations of severe malaria include coma,
         acidosis, renal failure and anaemia. Of these manifestations, anaemia is
@@ -1314,7 +1314,7 @@ content:
       - type: Cite
         target: bib13
         content:
-          - 'White et al., 2014'
+          - White et al., 2014
       - '). However, anaemia in individuals at risk of '
       - type: Emphasis
         content:
@@ -1329,7 +1329,7 @@ content:
       - type: Cite
         target: bib12
         content:
-          - 'Weatherall, 2008'
+          - Weatherall, 2008
       - >-
         ). For some, such as the sickle cell trait, several different mechanisms
         have been proposed. These include reduced parasite erythrocyte invasion,
@@ -1338,22 +1338,22 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Malaria Genomic Epidemiology Network et al., 2014'
+          - Malaria Genomic Epidemiology Network et al., 2014
       - '; '
       - type: Cite
         target: bib1
         content:
-          - 'Band et al., 2015'
+          - Band et al., 2015
       - '; '
       - type: Cite
         target: bib2
         content:
-          - 'Cholera et al., 2008'
+          - Cholera et al., 2008
       - '; '
       - type: Cite
         target: bib16
         content:
-          - 'Williams, 2016'
+          - Williams, 2016
       - >-
         ). The mechanism underlying protection from severe falciparum malaria is
         less clear for others such as glucose-6-phosphate dehydrogenase
@@ -1363,12 +1363,12 @@ content:
       - type: Cite
         target: bib5
         content:
-          - 'Howes et al., 2012'
+          - Howes et al., 2012
       - '; '
       - type: Cite
         target: bib6
         content:
-          - 'Luzzatto and Arese, 2018'
+          - Luzzatto and Arese, 2018
       - >-
         ). The mechanism whereby G6PD deficiency protects against malaria, and
         the natural selection forces which have resulted in the different
@@ -1381,12 +1381,12 @@ content:
       - type: Cite
         target: bib9
         content:
-          - 'Snoep et al., 2014'
+          - Snoep et al., 2014
       - '; '
       - type: Cite
         target: bib8
         content:
-          - 'Pearce and Richiardi, 2014'
+          - Pearce and Richiardi, 2014
       - ).
   - type: Paragraph
     content:
@@ -1396,12 +1396,12 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Malaria Genomic Epidemiology Network et al., 2014'
+          - Malaria Genomic Epidemiology Network et al., 2014
       - '; '
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - >-
         ). These conclusions were based on a pooled analysis of observational
         data from over 11,000 patients with severe malaria studied in Africa and
@@ -1417,7 +1417,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - >-
         ). Collider bias probably explains this negative association between
         G6PDd and CM, suggesting that causal interpretations of this association
@@ -1437,12 +1437,12 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Malaria Genomic Epidemiology Network et al., 2014'
+          - Malaria Genomic Epidemiology Network et al., 2014
       - '; '
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - >-
         ). Both these published analyses defined cases of CM as the presence of
         coma but without concomitant SMA, and cases of SMA as patients with
@@ -1484,7 +1484,7 @@ content:
       - type: Cite
         target: bib17
         content:
-          - 'Yoshida et al., 1971'
+          - Yoshida et al., 1971
       - >-
         ), it was observed that "The mean G6PDd score was 13.5% in controls, 13%
         in cerebral malaria cases and 16.9% in severe malarial anaemia cases
@@ -1492,7 +1492,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - "). This pattern remained consistent (6, 5.6, and 7.1%, respectively) after exclusion of the G6PD c.202C\_>\_T mutation (one of the ‘A-’ mutations and the most prevalent in the pooled data)."
   - type: Paragraph
     content:
@@ -1592,7 +1592,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - >-
         ). Moreover, if we use their reported point estimate of 1.48, restricted
         to males, for the odds ratio of G6PDd in SMA cases versus controls, the
@@ -1646,7 +1646,7 @@ content:
           - type: Cite
             target: bib3
             content:
-              - 'Clarke et al., 2017'
+              - Clarke et al., 2017
           - >-
             ). The point estimate (1.48) is shown by the dashed blue line. The
             faint red shaded area shows the 95% CI [0.69–0.98] for G6PDd in CM
@@ -1673,12 +1673,12 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Malaria Genomic Epidemiology Network et al., 2014'
+          - Malaria Genomic Epidemiology Network et al., 2014
       - '; '
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
       - >-
         ) suggests that the observations could have resulted entirely from
         collider bias. This highlights the difficulty of inferring causal
@@ -1690,7 +1690,7 @@ content:
       - type: Cite
         target: bib10
         content:
-          - 'Uyoga et al., 2015'
+          - Uyoga et al., 2015
       - >-
         ). This is not to say that the risk of CM is unaffected by G6PDd, but
         that the observations reported could have arisen purely as a result of
@@ -1716,7 +1716,7 @@ content:
       - type: Cite
         target: bib4
         content:
-          - 'Gelman and Loken, 2013'
+          - Gelman and Loken, 2013
       - >-
         ). With increased emphasis on providing open access data so that
         analyses can be evaluated and best use made of clinical research it
@@ -1771,7 +1771,7 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Malaria Genomic Epidemiology Network et al., 2014'
+          - Malaria Genomic Epidemiology Network et al., 2014
       - )).
   - type: Heading
     id: s4-2
@@ -1780,7 +1780,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Clarke et al., 2017'
+          - Clarke et al., 2017
   - type: Paragraph
     content:
       - >-
@@ -2298,10 +2298,10 @@ content:
       - type: Cite
         target: bib11
         content:
-          - 'Watson and Leopold, 2019'
+          - Watson and Leopold, 2019
       - '; copy archived at '
       - type: Link
-        target: 'https://github.com/elifesciences-publications/SevereMalariaAnalysis'
+        target: https://github.com/elifesciences-publications/SevereMalariaAnalysis
         content:
-          - 'https://github.com/elifesciences-publications/SevereMalariaAnalysis'
+          - https://github.com/elifesciences-publications/SevereMalariaAnalysis
       - ).

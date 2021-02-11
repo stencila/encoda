@@ -14,7 +14,7 @@ datePublished: '2019'
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.5334/jors.182
 isPartOf:
   type: PublicationVolume
@@ -24,6 +24,6 @@ isPartOf:
   volumeNumber: '7'
 publisher:
   type: Organization
-  name: 'Ubiquity Press, Ltd.'
+  name: Ubiquity Press, Ltd.
 title: Tensors.jl — Tensor Computations in Julia
-url: 'http://dx.doi.org/10.5334/jors.182'
+url: http://dx.doi.org/10.5334/jors.182

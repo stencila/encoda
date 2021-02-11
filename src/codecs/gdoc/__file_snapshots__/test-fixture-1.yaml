@@ -5,7 +5,7 @@ content:
     content:
       - 'Given that this is a test fixture (used '
       - type: Link
-        target: 'https://github.com/stencila/encoda/blob/master/src/codecs/gdoc'
+        target: https://github.com/stencila/encoda/blob/master/src/codecs/gdoc
         content:
           - here
       - >-

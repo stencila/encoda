@@ -98,7 +98,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Harvard Medical School, Howard Hughes Medical Institute, UNITED STATES'
+        name: Harvard Medical School, Howard Hughes Medical Institute, UNITED STATES
     familyNames:
       - Perrimon
     givenNames:
@@ -114,7 +114,7 @@ fundedBy:
   - type: MonetaryGrant
     funders:
       - type: Organization
-        name: 'Ministry of Science, Innovation and Universities'
+        name: Ministry of Science, Innovation and Universities
     identifiers:
       - type: PropertyValue
         value: INTERGROWTH-BFU2016-77587-P
@@ -142,15 +142,15 @@ fundedBy:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pgen.1008133
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PGENETICS-D-19-00590
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e1008133
 isPartOf:
   type: PublicationIssue
@@ -161,15 +161,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Genet
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosgen
       issns:
         - 1553-7390
@@ -182,13 +182,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -980,7 +980,7 @@ references:
       volumeNumber: 21
     pageEnd: 18
     pageStart: 3009
-    title: 'Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway'
+    title: Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway
   - type: Article
     id: pgen-1008133-ref023
     authors:
@@ -1011,7 +1011,7 @@ references:
     title: >-
       Evolution of TNF signaling mechanisms: JNK-dependent apoptosis triggered
       by Eiger, the Drosophila homolog of the TNF superfamily
-    url: 'http://www.ncbi.nlm.nih.gov/pubmed/12176339'
+    url: http://www.ncbi.nlm.nih.gov/pubmed/12176339
   - type: Article
     id: pgen-1008133-ref024
     authors:
@@ -2037,7 +2037,7 @@ references:
       volumeNumber: 232
     pageEnd: 584
     pageStart: 575
-    title: 'Dissecting JNK signaling, one KKKinase at a time'
+    title: Dissecting JNK signaling, one KKKinase at a time
   - type: Article
     id: pgen-1008133-ref054
     authors:
@@ -2332,7 +2332,7 @@ references:
     title: >-
       Ecdysteroid control of cell proliferation during optic lobe neurogenesis
       in the moth Manduca sexta
-    url: 'http://www.ncbi.nlm.nih.gov/pubmed/9486800'
+    url: http://www.ncbi.nlm.nih.gov/pubmed/9486800
   - type: Article
     id: pgen-1008133-ref062
     authors:
@@ -2466,11 +2466,11 @@ references:
       type: PublicationVolume
       isPartOf:
         type: Periodical
-        name: 'Antioxid Redox Signal. Mary Ann Liebert, Inc'
+        name: Antioxid Redox Signal. Mary Ann Liebert, Inc
       volumeNumber: 15
     pageEnd: 78
     pageStart: 1669
-    title: 'p53, oxidative stress, and aging'
+    title: p53, oxidative stress, and aging
   - type: Article
     id: pgen-1008133-ref067
     authors:
@@ -2988,7 +2988,7 @@ content:
         target: '#pgen-1008133-g001'
         content:
           - Fig 1A–1C
-      - '; ['
+      - ; [
       - type: Cite
         target: pgen-1008133-ref017
         content:
@@ -3016,7 +3016,7 @@ content:
         target: '#pgen-1008133-g001'
         content:
           - Fig 1G and 1H
-      - '; ['
+      - ; [
       - type: Cite
         target: pgen-1008133-ref017
         content:
@@ -3033,7 +3033,7 @@ content:
             target genes.
       - type: Paragraph
         content:
-          - '(A) Representative adult wings from individuals expressing GFP, RA'
+          - (A) Representative adult wings from individuals expressing GFP, RA
           - type: Superscript
             content:
               - CS
@@ -3190,7 +3190,7 @@ content:
         target: '#pgen-1008133-g001'
         content:
           - Fig 1J
-      - '). In addition, 57 genes previously described as p53 targets ['
+      - ). In addition, 57 genes previously described as p53 targets [
       - type: Cite
         target: pgen-1008133-ref026
         content:
@@ -3223,7 +3223,7 @@ content:
         Dmp53
   - type: Paragraph
     content:
-      - 'Next, we looked for upregulated secreted signaling molecules in RA'
+      - Next, we looked for upregulated secreted signaling molecules in RA
       - type: Superscript
         content:
           - CS
@@ -3296,7 +3296,7 @@ content:
       - type: Superscript
         content:
           - IR
-      - ') ['
+      - ) [
       - type: Cite
         target: pgen-1008133-ref022
         content:
@@ -3449,7 +3449,7 @@ content:
         target: '#pgen-1008133-g002'
         content:
           - Fig 2C
-      - '; ['
+      - ; [
       - type: Cite
         target: pgen-1008133-ref017
         content:
@@ -3617,7 +3617,7 @@ content:
         target: '#pgen-1008133-g003'
         content:
           - Fig 3E and 3E’
-      - '), P compartment ('
+      - ), P compartment (
       - type: Link
         relation: supplementary-material
         target: '#pgen-1008133-s003'
@@ -4192,7 +4192,7 @@ content:
           - A role of JNK signaling in intra-organ growth.
       - type: Paragraph
         content:
-          - '(A-C) Wing imaginal discs from individuals expressing GFP, RA'
+          - (A-C) Wing imaginal discs from individuals expressing GFP, RA
           - type: Superscript
             content:
               - CS
@@ -4668,7 +4668,7 @@ content:
         target: '#pgen-1008133-s005'
         content:
           - S5A Fig
-      - '). Consistently, Egr/JNK pathway inhibition suppressed RA'
+      - ). Consistently, Egr/JNK pathway inhibition suppressed RA
       - type: Superscript
         content:
           - CS
@@ -4892,7 +4892,7 @@ content:
         target: '#pgen-1008133-g006'
         content:
           - Fig 6B
-      - '). Importantly, RA'
+      - ). Importantly, RA
       - type: Superscript
         content:
           - CS
@@ -4908,7 +4908,7 @@ content:
         target: '#pgen-1008133-g006'
         content:
           - Fig 6C
-      - '), whereas vehicle treatment had no effect on this parameter ('
+      - ), whereas vehicle treatment had no effect on this parameter (
       - type: Link
         relation: supplementary-material
         target: '#pgen-1008133-s006'
@@ -5089,7 +5089,7 @@ content:
         target: '#pgen-1008133-s006'
         content:
           - S6A and S6B Fig
-      - '). Of note, neither RA'
+      - ). Of note, neither RA
       - type: Superscript
         content:
           - CS
@@ -5803,7 +5803,7 @@ content:
       - TUNEL and BrdU assays
   - type: Paragraph
     content:
-      - 'TUNEL was performed as described in ['
+      - TUNEL was performed as described in [
       - type: Cite
         target: pgen-1008133-ref068
         content:
@@ -5863,7 +5863,7 @@ content:
       - RNA in situ hybridization
   - type: Paragraph
     content:
-      - 'In situ hybridization was performed as described in ['
+      - In situ hybridization was performed as described in [
       - type: Cite
         target: pgen-1008133-ref068
         content:
@@ -5926,7 +5926,7 @@ content:
       - Chromatin immunoprecipitation
   - type: Paragraph
     content:
-      - 'ChIP assays were performed following the modEncode protocol ['
+      - ChIP assays were performed following the modEncode protocol [
       - type: Cite
         target: pgen-1008133-ref070
         content:
@@ -5985,9 +5985,9 @@ content:
         v6.7. Microarray datasets have been deposited in the Gene Expression
         Omnibus (
       - type: Link
-        target: 'http://www.ncbi.nlm.nih.gov/geo/'
+        target: http://www.ncbi.nlm.nih.gov/geo/
         content:
-          - 'http://www.ncbi.nlm.nih.gov/geo/'
+          - http://www.ncbi.nlm.nih.gov/geo/
       - ) under accession number GSE125794.
   - type: Heading
     id: sec020

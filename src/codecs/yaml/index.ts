@@ -15,12 +15,12 @@ export class YamlCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const yml = await vfile.dump(file)
-    return yaml.safeLoad(yml) ?? null
+    return yaml.load(yml) ?? null
   }
 
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const ordered = orderProperties(node)
-    const yml = yaml.safeDump(ordered, {
+    const yml = yaml.dump(ordered, {
       // "do not throw on invalid types (like function in the safe schema)
       // and skip pairs and single values with such types."
       skipInvalid: true,

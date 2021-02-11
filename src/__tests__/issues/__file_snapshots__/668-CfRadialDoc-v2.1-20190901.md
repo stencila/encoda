@@ -27,10 +27,10 @@ references:
       type: Organization
     identifiers:
       - name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
-        value: '10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2'
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
         type: PropertyValue
-    url: 'http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2'
+    url: http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
     pageStart: 645
     pageEnd: 666
     type: Article
@@ -57,10 +57,10 @@ references:
       type: Organization
     identifiers:
       - name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1016/b978-0-12-221420-2.50009-0
         type: PropertyValue
-    url: 'http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0'
+    url: http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0
     type: CreativeWork
     id: ref2
   - authors:
@@ -103,10 +103,10 @@ references:
       type: Organization
     identifiers:
       - name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
-        value: '10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2'
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
         type: PropertyValue
-    url: 'http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2'
+    url: http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
     pageStart: 572
     pageEnd: 578
     type: Article

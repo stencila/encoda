@@ -122,7 +122,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'University of Cambridge, UNITED KINGDOM'
+        name: University of Cambridge, UNITED KINGDOM
     familyNames:
       - Seymour
     givenNames:
@@ -130,15 +130,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pbio.3000349
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PBIOLOGY-D-18-01201
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e3000349
 isPartOf:
   type: PublicationIssue
@@ -149,15 +149,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Biol
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosbiol
       issns:
         - 1544-9173
@@ -170,13 +170,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -248,7 +248,7 @@ references:
       volumeNumber: 87
     pageEnd: 91
     pageStart: 474
-    title: 'Nociception, Pain, Negative Moods, and Behavior Selection'
+    title: Nociception, Pain, Negative Moods, and Behavior Selection
   - type: Article
     id: pbio-3000349-ref003
     authors:
@@ -1495,8 +1495,8 @@ references:
       type: Organization
       address:
         type: PostalAddress
-        addressLocality: 'Oxford, England'
-      name: 'Holt, Reinhart & Winston'
+        addressLocality: Oxford, England
+      name: Holt, Reinhart & Winston
     title: Pattern and growth in personality
   - type: Article
     id: pbio-3000349-ref041
@@ -2565,7 +2565,7 @@ content:
         Emote-trait
   - type: Paragraph
     content:
-      - 'Next, we used a connectomics-based ['
+      - Next, we used a connectomics-based [
       - type: Cite
         target: pbio-3000349-ref030
         content:
@@ -2691,7 +2691,7 @@ content:
         relation: fig
         target: '#pbio-3000349-g003'
         content:
-          - 'Fig 3B, 3D and 3F'
+          - Fig 3B, 3D and 3F
       - ).
   - type: Figure
     id: pbio-3000349-g003
@@ -2760,7 +2760,7 @@ content:
         relation: fig
         target: '#pbio-3000349-g003'
         content:
-          - 'Fig 3C, 3E and 3G'
+          - Fig 3C, 3E and 3G
       - >-
         ). Pain-trait scores were determined from a total of 1,326 weighted
         positive links: mainly between DMN and sensorimotor, cingulate,
@@ -3078,7 +3078,7 @@ content:
     id: sec008
     depth: 2
     content:
-      - 'Associations between traits, neurotraits, and socioeconomic status'
+      - Associations between traits, neurotraits, and socioeconomic status
   - type: Paragraph
     content:
       - >-
@@ -3543,9 +3543,9 @@ content:
     content:
       - In an earlier preprint version of this manuscript (
       - type: Link
-        target: 'https://www.biorxiv.org/content/10.1101/421438v1'
+        target: https://www.biorxiv.org/content/10.1101/421438v1
         content:
-          - 'https://www.biorxiv.org/content/10.1101/421438v1'
+          - https://www.biorxiv.org/content/10.1101/421438v1
       - >-
         ), we reported on deriving subtypes (which we defined as
         neuropsychotypes) of CBP based on clustering the CBP patients using
@@ -3719,9 +3719,9 @@ content:
         analysis applied on the questionnaire data was performed with the
         Network analyser app in Cytoskape (
       - type: Link
-        target: 'https://cytoscape.org/'
+        target: https://cytoscape.org/
         content:
-          - 'https://cytoscape.org/'
+          - https://cytoscape.org/
       - ) version 3.6.1.
   - type: Heading
     id: sec021
@@ -3825,7 +3825,7 @@ content:
       - Brain-imaging protocol and data analysis
   - type: Paragraph
     content:
-      - 'Brain-imaging data are the same as in ['
+      - Brain-imaging data are the same as in [
       - type: Cite
         target: pbio-3000349-ref029
         content:
@@ -3932,7 +3932,7 @@ content:
       - Parcellation schemes
   - type: Paragraph
     content:
-      - 'The main parcellation scheme was the same as the one used in ['
+      - The main parcellation scheme was the same as the one used in [
       - type: Cite
         target: pbio-3000349-ref029
         content:
@@ -4201,14 +4201,14 @@ content:
           - S1 Data
       - ', the raw data are available at '
       - type: Link
-        target: 'http://www.openpain.org/placebo_1/'
+        target: http://www.openpain.org/placebo_1/
         content:
-          - 'http://www.openpain.org/placebo_1/'
+          - http://www.openpain.org/placebo_1/
       - ', and the code is available at '
       - type: Link
-        target: 'https://github.com/EtienneVP'
+        target: https://github.com/EtienneVP
         content:
-          - 'https://github.com/EtienneVP'
+          - https://github.com/EtienneVP
       - .
   - type: Heading
     id: sec031

@@ -219,15 +219,15 @@ genre:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: 52882
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.7554/eLife.52882
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e52882
 isPartOf:
   type: PublicationVolume
@@ -236,17 +236,17 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: nlm-ta
-        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        propertyID: https://registry.identifiers.org/registry/nlm-ta
         value: elife
       - type: PropertyValue
         name: publisher-id
-        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        propertyID: https://registry.identifiers.org/registry/publisher-id
         value: eLife
     issns:
       - 2050-084X
     publisher:
       type: Organization
-      name: 'eLife Sciences Publications, Ltd'
+      name: eLife Sciences Publications, Ltd
     title: eLife
   volumeNumber: 9
 keywords:
@@ -257,13 +257,13 @@ keywords:
   - Zebrafish
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This article is distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -882,8 +882,8 @@ references:
       value: '1961'
     publisher:
       type: Organization
-      name: 'Dover Publications, Inc'
-    title: 'The Orientation of Animals, Kinesis, Taxes and Compass Reactions'
+      name: Dover Publications, Inc
+    title: The Orientation of Animals, Kinesis, Taxes and Compass Reactions
   - type: Article
     id: bib21
     authors:
@@ -1206,7 +1206,7 @@ references:
       type: Date
       value: '2019'
     title: Programs closed-loop phototaxis
-    url: 'https://gitlab.com/Phiasso/programs_closed-loop_phototaxis.git'
+    url: https://gitlab.com/Phiasso/programs_closed-loop_phototaxis.git
   - type: Article
     id: bib30
     authors:
@@ -1219,7 +1219,7 @@ references:
       type: Date
       value: '2019'
     title: Analysis behavioral phototaxis
-    url: 'https://gitlab.com/Phiasso/analysis.git'
+    url: https://gitlab.com/Phiasso/analysis.git
   - type: Article
     id: bib31
     authors:
@@ -2278,12 +2278,12 @@ content:
       - type: Cite
         target: bib49
         content:
-          - 'Stephens et al., 2008'
-      - '), Zebrafish ('
+          - Stephens et al., 2008
+      - ), Zebrafish (
       - type: Cite
         target: bib22
         content:
-          - 'Girdhar et al., 2015'
+          - Girdhar et al., 2015
       - ') or '
       - type: Emphasis
         content:
@@ -2292,7 +2292,7 @@ content:
       - type: Cite
         target: bib24
         content:
-          - 'Gomez-Marin and Louis, 2012'
+          - Gomez-Marin and Louis, 2012
       - >-
         ), which consists of just a few stereotyped maneuvers executed in a
         sequential way. In this case, behavior is best described as a set of
@@ -2305,27 +2305,27 @@ content:
       - type: Cite
         target: bib8
         content:
-          - 'Budick and O’Malley, 2000'
+          - Budick and O’Malley, 2000
       - '; '
       - type: Cite
         target: bib19
         content:
-          - 'Fiser et al., 2004'
+          - Fiser et al., 2004
       - '; '
       - type: Cite
         target: bib5
         content:
-          - 'Bianco et al., 2011'
+          - Bianco et al., 2011
       - '; '
       - type: Cite
         target: bib38
         content:
-          - 'McClenahan et al., 2012'
+          - McClenahan et al., 2012
       - '; '
       - type: Cite
         target: bib6
         content:
-          - 'Bianco and Engert, 2015'
+          - Bianco and Engert, 2015
       - >-
         ). However, most of the time, sensory cues merely reflect changes in
         external factors as the animal navigates through a complex environment.
@@ -2335,12 +2335,12 @@ content:
       - type: Cite
         target: bib51
         content:
-          - 'Tsodyks et al., 1999'
+          - Tsodyks et al., 1999
       - '; '
       - type: Cite
         target: bib19
         content:
-          - 'Fiser et al., 2004'
+          - Fiser et al., 2004
       - ).
   - type: Paragraph
     content:
@@ -2363,7 +2363,7 @@ content:
       - type: Cite
         target: bib32
         content:
-          - 'Lovely and Dahlquist, 1975'
+          - Lovely and Dahlquist, 1975
       - >-
         ). Motile bacteria navigate by alternating straight swimming and turning
         phases, so-called runs and tumbles, resulting in trajectories akin to
@@ -2371,7 +2371,7 @@ content:
       - type: Cite
         target: bib4
         content:
-          - 'Berg and Brown, 1972'
+          - Berg and Brown, 1972
       - >-
         ). Chemotaxis originates from a chemical-driven modulation of the
         transition probability from run to tumble: the transition rate is
@@ -2381,27 +2381,27 @@ content:
       - type: Cite
         target: bib33
         content:
-          - 'Macnab and Koshland, 1972'
+          - Macnab and Koshland, 1972
       - '; '
       - type: Cite
         target: bib1
         content:
-          - 'Adler and Tso, 1974'
+          - Adler and Tso, 1974
       - '; '
       - type: Cite
         target: bib39
         content:
-          - 'Mello and Tu, 2007'
+          - Mello and Tu, 2007
       - '; '
       - type: Cite
         target: bib59
         content:
-          - 'Yuan et al., 2010'
+          - Yuan et al., 2010
       - '; '
       - type: Cite
         target: bib11
         content:
-          - 'Celani and Vergassola, 2010'
+          - Celani and Vergassola, 2010
       - >-
         ). More recently, similar descriptions have been successfully used to
         quantify chemotaxis and phototaxis in multicellular organisms such as 
@@ -2412,47 +2412,47 @@ content:
       - type: Cite
         target: bib56
         content:
-          - 'Ward, 1973'
+          - Ward, 1973
       - '; '
       - type: Cite
         target: bib40
         content:
-          - 'Miller et al., 2005'
+          - Miller et al., 2005
       - '; '
       - type: Cite
         target: bib57
         content:
-          - 'Ward et al., 2008'
-      - '), Drosophila larva ('
+          - Ward et al., 2008
+      - ), Drosophila larva (
       - type: Cite
         target: bib45
         content:
-          - 'Sawin et al., 1994'
+          - Sawin et al., 1994
       - '; '
       - type: Cite
         target: bib28
         content:
-          - 'Kane et al., 2013'
+          - Kane et al., 2013
       - '; '
       - type: Cite
         target: bib23
         content:
-          - 'Gomez-Marin et al., 2011'
+          - Gomez-Marin et al., 2011
       - '; '
       - type: Cite
         target: bib50
         content:
-          - 'Tastekin et al., 2018'
+          - Tastekin et al., 2018
       - ) or different types of slugs (
       - type: Cite
         target: bib36
         content:
-          - 'Matsuo et al., 2014'
+          - Matsuo et al., 2014
       - '; '
       - type: Cite
         target: bib34
         content:
-          - 'Marée et al., 1999'
+          - Marée et al., 1999
       - >-
         ). Although the sensorimotor apparatus of these animals are very
         different, the taxis strategies at play appear to be convergent and can
@@ -2460,12 +2460,12 @@ content:
       - type: Cite
         target: bib20
         content:
-          - 'Fraenkel and Gunn, 1961'
+          - Fraenkel and Gunn, 1961
       - '; '
       - type: Cite
         target: bib24
         content:
-          - 'Gomez-Marin and Louis, 2012'
+          - Gomez-Marin and Louis, 2012
       - >-
         ). Tropotaxis refers to strategies in which the organism directly and
         instantaneously infers the stimulus direction by comparison between two
@@ -2477,7 +2477,7 @@ content:
       - type: Cite
         target: bib26
         content:
-          - 'Humberg et al., 2018'
+          - Humberg et al., 2018
       - >-
         ). It requires at least a basic form of memory, since the sensory
         information needs to be retained for some finite period of time.
@@ -2491,12 +2491,12 @@ content:
       - type: Cite
         target: bib43
         content:
-          - 'Panier et al., 2013'
+          - Panier et al., 2013
       - '; '
       - type: Cite
         target: bib2
         content:
-          - 'Ahrens et al., 2013'
+          - Ahrens et al., 2013
       - >-
         ). It thus provides a unique opportunity to study how sensorimotor
         tasks, such as sensory-driven locomotion, are implemented at the
@@ -2507,17 +2507,17 @@ content:
       - type: Cite
         target: bib46
         content:
-          - 'Serra et al., 1999'
+          - Serra et al., 1999
       - '; '
       - type: Cite
         target: bib37
         content:
-          - 'Maximino et al., 2007'
+          - Maximino et al., 2007
       - "), they display positive phototaxis at the larval stage, from 5 days post-fertilization (dpf) on\_("
       - type: Cite
         target: bib42
         content:
-          - 'Orger and Baier, 2005'
+          - Orger and Baier, 2005
       - >-
         ). At this early stage, their locomotion consists of a series of
         discrete swimming events interspersed by ~1 s long periods of inactivity
@@ -2525,7 +2525,7 @@ content:
       - type: Cite
         target: bib22
         content:
-          - 'Girdhar et al., 2015'
+          - Girdhar et al., 2015
       - >-
         ). Previous studies have shown that, when exposed to a distant light
         source, the first bouts executed by the fish tend to be orientated in
@@ -2533,7 +2533,7 @@ content:
       - type: Cite
         target: bib9
         content:
-          - 'Burgess et al., 2010'
+          - Burgess et al., 2010
       - '). Furthermore, '
       - type: Cite
         target: bib12
@@ -2549,22 +2549,22 @@ content:
       - type: Cite
         target: bib2
         content:
-          - 'Ahrens et al., 2013'
+          - Ahrens et al., 2013
       - '; '
       - type: Cite
         target: bib13
         content:
-          - 'Dunn et al., 2016'
+          - Dunn et al., 2016
       - '; '
       - type: Cite
         target: bib58
         content:
-          - 'Wolf et al., 2017'
+          - Wolf et al., 2017
       - "). This region, called ARTR (anterior rhombencephalic turning region) or HBO (hindbrain oscillator), displays pseudo-periodic antiphasic oscillations, such that the activity of the left and right subpopulations alternate with a ~20\_s period. This alternation was shown to set the coordinated direction of the gaze and tail bout orientation, thus effectively organizing the temporal sequence of the successive reorientations. It was further shown that this circuit oscillation could be driven by whole-field illumination of the ipsilateral eye, such as to favor the animal’s orientation towards a light source ("
       - type: Cite
         target: bib58
         content:
-          - 'Wolf et al., 2017'
+          - Wolf et al., 2017
       - ).
   - type: Paragraph
     content:
@@ -2663,7 +2663,7 @@ content:
           - ' at bout index '
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf4"><mml:mi>n</mml:mi></mml:math>'
+            text: <mml:math id="inf4"><mml:mi>n</mml:mi></mml:math>
           - ' ('
           - type: Emphasis
             content:
@@ -2675,7 +2675,7 @@ content:
           - ') Time-sequence of the fish body orientation '
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf5"><mml:mi>α</mml:mi></mml:math>'
+            text: <mml:math id="inf5"><mml:mi>α</mml:mi></mml:math>
           - ' (top). Swim bouts elicit rapid re-orientations. The angular dynamics can thus be represented as a series of discrete reorientation events of various amplitudes '
           - type: MathFragment
             mathLanguage: mathml
@@ -2731,11 +2731,11 @@ content:
           - ' chain controls the forward scoot ('
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf10"><mml:mi>F</mml:mi></mml:math>'
+            text: <mml:math id="inf10"><mml:mi>F</mml:mi></mml:math>
           - ) versus turning (
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf11"><mml:mi>T</mml:mi></mml:math>'
+            text: <mml:math id="inf11"><mml:mi>T</mml:mi></mml:math>
           - ') state, with transitions rates '
           - type: MathFragment
             mathLanguage: mathml
@@ -2755,11 +2755,11 @@ content:
           - ' chain controls the transitions between left ('
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf14"><mml:mi>L</mml:mi></mml:math>'
+            text: <mml:math id="inf14"><mml:mi>L</mml:mi></mml:math>
           - ) and right (
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf15"><mml:mi>R</mml:mi></mml:math>'
+            text: <mml:math id="inf15"><mml:mi>R</mml:mi></mml:math>
           - >-
             ) headings when the animal is in the turning state, with transition
             rate 
@@ -2781,7 +2781,7 @@ content:
           - ' as a function of the squared amplitude of bout '
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf18"><mml:mi>n</mml:mi></mml:math>'
+            text: <mml:math id="inf18"><mml:mi>n</mml:mi></mml:math>
           - ' (grey), and its associated analytical fit (blue, Appendix From behavior to circuit modeling of light-seeking navigation in zebrafish larvae '
           - type: Link
             relation: disp-formula
@@ -2801,7 +2801,7 @@ content:
           - ' as a function of the reorientation at bout '
           - type: MathFragment
             mathLanguage: mathml
-            text: '<mml:math id="inf20"><mml:mi>n</mml:mi></mml:math>'
+            text: <mml:math id="inf20"><mml:mi>n</mml:mi></mml:math>
           - ' (grey), and its associated analytical fit (blue, '
           - type: Link
             relation: disp-formula
@@ -2888,7 +2888,7 @@ content:
       - type: Cite
         target: bib10
         content:
-          - 'Burgess and Granato, 2007'
+          - Burgess and Granato, 2007
       - >-
         ), while enabling the quantification of the basal exploratory kinematics
         for each fish.
@@ -2910,7 +2910,7 @@ content:
       - type: Cite
         target: bib13
         content:
-          - 'Dunn et al., 2016'
+          - Dunn et al., 2016
       - >-
         ). Each bout results in a translational motion of the animal and/or a
         change in its body axis orientation, and can thus be automatically
@@ -2925,7 +2925,7 @@ content:
       - ' measured just before each swimming event '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf27"><mml:mi>n</mml:mi></mml:math>'
+        text: <mml:math id="inf27"><mml:mi>n</mml:mi></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -2947,7 +2947,7 @@ content:
       - type: Cite
         target: bib27
         content:
-          - 'Johnson et al., 2019'
+          - Johnson et al., 2019
       - '), the statistical distribution of the reorientation angles '
       - type: MathFragment
         mathLanguage: mathml
@@ -2959,7 +2959,17 @@ content:
       - ' in such unbiased conditions can be correctly captured by the weighted sum of two zero-mean normal distributions, '
       - type: MathFragment
         mathLanguage: mathml
-        text: "<mml:math id=\"inf30\"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>"
+        text: >-
+          <mml:math
+          id="inf30"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi
+          class="ltx_font_mathcaligraphic">𝒩</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi
+          class="ltx_font_mathcaligraphic">𝒩</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - >-
         , reflecting the predominance of only two distinct bouts types: turning
         bouts (standard deviation 
@@ -3067,12 +3077,12 @@ content:
       - type: Cite
         target: bib12
         content:
-          - 'Chen and Engert, 2014'
+          - Chen and Engert, 2014
       - '; '
       - type: Cite
         target: bib13
         content:
-          - 'Dunn et al., 2016'
+          - Dunn et al., 2016
       - >-
         ), we also noticed that successive turning bouts tended to be oriented
         in the same (left or right) direction (
@@ -3119,7 +3129,7 @@ content:
       - ' at bout '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf41"><mml:mi>n</mml:mi></mml:math>'
+        text: <mml:math id="inf41"><mml:mi>n</mml:mi></mml:math>
       - ' following a reorientation angle '
       - type: MathFragment
         mathLanguage: mathml
@@ -3151,7 +3161,7 @@ content:
       - ') accumulated after '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf45"><mml:mi>n</mml:mi></mml:math>'
+        text: <mml:math id="inf45"><mml:mi>n</mml:mi></mml:math>
       - ' bouts ('
       - type: Link
         relation: fig
@@ -3313,7 +3323,7 @@ content:
       - ' respectively, were locked onto the fish’s orientation '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf59"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf59"><mml:mi>θ</mml:mi></mml:math>
       - ' relative to the virtual light source ('
       - type: Link
         relation: fig
@@ -3335,7 +3345,7 @@ content:
       - ' was varied linearly with '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf62"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf62"><mml:mi>θ</mml:mi></mml:math>
       - ', with a mirror symmetry at '
       - type: MathFragment
         mathLanguage: mathml
@@ -3382,7 +3392,7 @@ content:
                 relative to the virtual source is noted 
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf66"><mml:mi>θ</mml:mi></mml:math>'
+                text: <mml:math id="inf66"><mml:mi>θ</mml:mi></mml:math>
               - . (
               - type: Strong
                 content:
@@ -3396,7 +3406,7 @@ content:
               - ' (bottom panel) as a function of '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf68"><mml:mi>θ</mml:mi></mml:math>'
+                text: <mml:math id="inf68"><mml:mi>θ</mml:mi></mml:math>
               - . The virtual light source is defined by a null contrast (
               - type: MathFragment
                 mathLanguage: mathml
@@ -3448,11 +3458,19 @@ content:
               - ' of the fish relative to the source. The vector v is defined as '
               - type: MathFragment
                 mathLanguage: mathml
-                text: "<mml:math id=\"inf74\"><mml:mrow><mml:mtext>\U0001D42F</mml:mtext><mml:mo>=</mml:mo><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo largeop=\"true\" symmetric=\"true\">∑</mml:mo><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow></mml:mrow></mml:math>"
+                text: >-
+                  <mml:math
+                  id="inf74"><mml:mrow><mml:mtext>𝐯</mml:mtext><mml:mo>=</mml:mo><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+                  largeop="true"
+                  symmetric="true">∑</mml:mo><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow></mml:mrow></mml:math>
               - '. The mean angle to the source is '
               - type: MathFragment
                 mathLanguage: mathml
-                text: "<mml:math id=\"inf75\"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mi>arg</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mtext>\U0001D42F</mml:mtext><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>"
+                text: >-
+                  <mml:math
+                  id="inf75"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mi>arg</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo
+                  stretchy="false">(</mml:mo><mml:mtext>𝐯</mml:mtext><mml:mo
+                  stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
               - ' ('
               - type: Strong
                 content:
@@ -3470,7 +3488,7 @@ content:
               - ' per bout as a function of contrast '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf77"><mml:mi>c</mml:mi></mml:math>'
+                text: <mml:math id="inf77"><mml:mi>c</mml:mi></mml:math>
               - ' for all fish. Error bars represent the standard error of the mean. Red line is the linear fit with slope 0.2 rad. ('
               - type: Strong
                 content:
@@ -3485,7 +3503,7 @@ content:
               - type: Strong
                 content:
                   - I
-              - ') Means, ('
+              - ) Means, (
               - type: Strong
                 content:
                   - J
@@ -3511,7 +3529,7 @@ content:
               - ' as a function of the reorientation at bout '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf80"><mml:mi>n</mml:mi></mml:math>'
+                text: <mml:math id="inf80"><mml:mi>n</mml:mi></mml:math>
               - ' in reinforcing (contrast and previous bout orientation are consistent) or conflicting (contrast and previous bout orientation are in conflict) situations. The dashed line is the analytical prediction in the absence of stimulation. ('
               - type: Strong
                 content:
@@ -3544,7 +3562,7 @@ content:
               - 'Evolution of the mean resultant vector '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf82"><mml:mi>v</mml:mi></mml:math>'
+                text: <mml:math id="inf82"><mml:mi>v</mml:mi></mml:math>
               - ' projected on the direction of the virtual light source with the bout index for the four tested phototactic modalities (uniform illumination : (p1–p3) and stereo-visual contrast). The vertical lines indicate the median number of bouts per sequence in each modality.'
         label: Figure 2—figure supplement 1.
         content:
@@ -3565,7 +3583,7 @@ content:
               - 'Slope '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf83"><mml:mi>α</mml:mi></mml:math>'
+                text: <mml:math id="inf83"><mml:mi>α</mml:mi></mml:math>
               - ' of '
               - type: MathFragment
                 mathLanguage: mathml
@@ -3753,7 +3771,7 @@ content:
         at bout 
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf89"><mml:mi>n</mml:mi></mml:math>'
+        text: <mml:math id="inf89"><mml:mi>n</mml:mi></mml:math>
       - ' as a function of the reorientation angle at bout '
       - type: MathFragment
         mathLanguage: mathml
@@ -3804,11 +3822,11 @@ content:
         intensity 
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf93"><mml:mi>I</mml:mi></mml:math>'
+        text: <mml:math id="inf93"><mml:mi>I</mml:mi></mml:math>
       - ' was locked onto the fish orientation '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf94"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf94"><mml:mi>θ</mml:mi></mml:math>
       - ' relative to a virtual light source. We tested three different illumination profiles '
       - type: MathFragment
         mathLanguage: mathml
@@ -3915,7 +3933,7 @@ content:
               - ' of all fish as a function of '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf104"><mml:mi>θ</mml:mi></mml:math>'
+                text: <mml:math id="inf104"><mml:mi>θ</mml:mi></mml:math>
               - ' for the three profiles. No significant bias towards the source ('
               - type: MathFragment
                 mathLanguage: mathml
@@ -4102,7 +4120,7 @@ content:
         amplitude variance was dependent on the intensity 
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf121"><mml:mi>I</mml:mi></mml:math>'
+        text: <mml:math id="inf121"><mml:mi>I</mml:mi></mml:math>
       - ' and intensity change '
       - type: MathFragment
         mathLanguage: mathml
@@ -4125,7 +4143,7 @@ content:
       - type: Cite
         target: bib17
         content:
-          - 'Fechner, 1860'
+          - Fechner, 1860
       - >-
         ), which states that the perceived change scales with the relative
         change in the physical stimulus. One noticeable feature of this process
@@ -4144,7 +4162,7 @@ content:
       - type: Cite
         target: bib41
         content:
-          - 'Oliveira et al., 2016'
+          - Oliveira et al., 2016
       - >-
         ), the zebrafish larva can thus be considered as a 'pessimistic’
         phototactic animal: the orientational diffusivity increases in response
@@ -4191,7 +4209,7 @@ content:
       - type: Cite
         target: bib18
         content:
-          - 'Fernandes et al., 2012'
+          - Fernandes et al., 2012
       - >-
         ), we ran similar assays on bi-enucleated fish. In this condition, no
         orientational bias was observed, which indicates that the retinal
@@ -4204,7 +4222,7 @@ content:
       - ', all p-values > 0.14, pairwise '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf128"><mml:mi>T</mml:mi></mml:math>'
+        text: <mml:math id="inf128"><mml:mi>T</mml:mi></mml:math>
       - '-tests).'
   - type: Heading
     id: s2-4
@@ -4252,7 +4270,7 @@ content:
       - '. The value of '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf131"><mml:mi>a</mml:mi></mml:math>'
+        text: <mml:math id="inf131"><mml:mi>a</mml:mi></mml:math>
       - ' was set so as to capture the contrast-dependent orientational drift ('
       - type: Link
         relation: fig
@@ -4379,11 +4397,11 @@ content:
       - '. The values of '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf136"><mml:mi>β</mml:mi></mml:math>'
+        text: <mml:math id="inf136"><mml:mi>β</mml:mi></mml:math>
       - ' and '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf137"><mml:mi>γ</mml:mi></mml:math>'
+        text: <mml:math id="inf137"><mml:mi>γ</mml:mi></mml:math>
       - ' were adjusted to reproduce the observed dependence of the turn-vs-forward ratio and bout amplitude with '
       - type: MathFragment
         mathLanguage: mathml
@@ -4469,21 +4487,21 @@ content:
       - type: Cite
         target: bib2
         content:
-          - 'Ahrens et al., 2013'
+          - Ahrens et al., 2013
       - >-
         ). The currently active region (left or right) constitutes a strong
         predictor of the orientation of turning bouts (
       - type: Cite
         target: bib13
         content:
-          - 'Dunn et al., 2016'
+          - Dunn et al., 2016
       - >-
         ). This circuit further integrates visual inputs as each ARTR
         subpopulation responds to the stimulation of the ipsilateral eye (
       - type: Cite
         target: bib58
         content:
-          - 'Wolf et al., 2017'
+          - Wolf et al., 2017
       - ).
   - type: Paragraph
     content:
@@ -4603,7 +4621,7 @@ content:
               - ' as a function of the contrast '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf145"><mml:mi>c</mml:mi></mml:math>'
+                text: <mml:math id="inf145"><mml:mi>c</mml:mi></mml:math>
               - . (
               - type: Strong
                 content:
@@ -4625,7 +4643,7 @@ content:
                 imposed contrast 
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf147"><mml:mi>c</mml:mi></mml:math>'
+                text: <mml:math id="inf147"><mml:mi>c</mml:mi></mml:math>
               - ' in situations of conflict or reinforcement (neuronal model). ('
               - type: Strong
                 content:
@@ -4633,7 +4651,7 @@ content:
               - ') Probability distribution function of '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf148"><mml:mi>θ</mml:mi></mml:math>'
+                text: <mml:math id="inf148"><mml:mi>θ</mml:mi></mml:math>
               - ' for 10 simulated phototactic trajectories with a linear dependence of average reorientation on contrast. Each trajectory lasted 50,000 s. The dotted line is the orientational distribution in the absence of visual stimulation.'
         label: Figure 5.
         content:
@@ -4688,7 +4706,7 @@ content:
               - ' displaying different fractal dimensions '
               - type: MathFragment
                 mathLanguage: mathml
-                text: '<mml:math id="inf151"><mml:mi>H</mml:mi></mml:math>'
+                text: <mml:math id="inf151"><mml:mi>H</mml:mi></mml:math>
               - '. Units : mm. ('
               - type: Strong
                 content:
@@ -4911,7 +4929,7 @@ content:
       - type: Cite
         target: bib52
         content:
-          - 'Uhlenbeck and Ornstein, 1930'
+          - Uhlenbeck and Ornstein, 1930
       - >-
         ), which describes the dynamics of a diffusive brownian particle in a
         quadratic trap. In the klinotaxis configuration (in the absence of
@@ -4942,7 +4960,7 @@ content:
       - type: Cite
         target: bib9
         content:
-          - 'Burgess et al., 2010'
+          - Burgess et al., 2010
       - >-
         ), our approach allowed us to clearly disentangle the contributions of
         spatial (stereovisual contrast) and time-dependent (motion-induced
@@ -4980,7 +4998,7 @@ content:
       - type: Cite
         target: bib14
         content:
-          - 'Easter and Nicola, 1996'
+          - Easter and Nicola, 1996
       - >-
         ). Although we could not avoid the initial large drop in illumination at
         the onset of each trial, the associated short-term response (i.e. the
@@ -5052,34 +5070,34 @@ content:
       - type: Cite
         target: bib44
         content:
-          - 'Prober et al., 2006'
+          - Prober et al., 2006
       - '; '
       - type: Cite
         target: bib15
         content:
-          - 'Emran et al., 2007'
+          - Emran et al., 2007
       - '; '
       - type: Cite
         target: bib16
         content:
-          - 'Emran et al., 2010'
+          - Emran et al., 2010
       - '; '
       - type: Cite
         target: bib31
         content:
-          - 'Liu et al., 2015'
+          - Liu et al., 2015
       - >-
         ). This long-term behavioral change, so-called photokinesis, might be
         regulated by deep brain photoreceptors (
       - type: Cite
         target: bib18
         content:
-          - 'Fernandes et al., 2012'
+          - Fernandes et al., 2012
       - '; '
       - type: Cite
         target: bib25
         content:
-          - 'Horstick et al., 2017'
+          - Horstick et al., 2017
       - >-
         ) and thus constitutes a distinct mechanism. One particularly exciting
         prospect will be to understand how such behavioral plasticity may not
@@ -5087,7 +5105,7 @@ content:
       - type: Cite
         target: bib27
         content:
-          - 'Johnson et al., 2019'
+          - Johnson et al., 2019
       - ) but also affects the phototactic dynamics.
   - type: Paragraph
     content:
@@ -5127,12 +5145,12 @@ content:
       - type: Cite
         target: bib47
         content:
-          - 'Shadlen and Newsome, 1996'
+          - Shadlen and Newsome, 1996
       - '; '
       - type: Cite
         target: bib48
         content:
-          - 'Shadlen and Newsome, 2001'
+          - Shadlen and Newsome, 2001
       - >-
         ). In this class of models, the binary decision process reflects the
         competition between two cross-inhibitory neural populations. The circuit
@@ -5219,7 +5237,7 @@ content:
       - type: Cite
         target: bib30
         content:
-          - 'Karpenko, 2019b'
+          - Karpenko, 2019b
       - '; copy archived at '
       - type: Link
         target: >-
@@ -5305,7 +5323,7 @@ content:
       - ') were varied linearly as a function of '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf172"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf172"><mml:mi>θ</mml:mi></mml:math>
       - ', such that '
       - type: MathFragment
         mathLanguage: mathml
@@ -5340,13 +5358,13 @@ content:
       - ' and '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf177"><mml:mi>π</mml:mi></mml:math>'
+        text: <mml:math id="inf177"><mml:mi>π</mml:mi></mml:math>
       - >-
         , only does the first one correspond to a stable equilibrium point.
         When 
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf178"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf178"><mml:mi>θ</mml:mi></mml:math>
       - ' is close to zero, any excursion away from this particular direction results in a contrast that drives the animal back to the null angle. Conversely, when '
       - type: MathFragment
         mathLanguage: mathml
@@ -5356,7 +5374,7 @@ content:
       - ', the contrast drives the animal away from '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf180"><mml:mi>π</mml:mi></mml:math>'
+        text: <mml:math id="inf180"><mml:mi>π</mml:mi></mml:math>
       - ' (unstable equilibrium).'
   - type: Paragraph
     content:
@@ -5368,7 +5386,7 @@ content:
         orientation 
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf181"><mml:mi>θ</mml:mi></mml:math>'
+        text: <mml:math id="inf181"><mml:mi>θ</mml:mi></mml:math>
       - ' relative to a virtual light source. The initial orientation was randomly chosen at the beginning of a recording sequence. Three different intensity angular profiles were implemented: (uniform 1) a sinusoidal profile, with a maximum intensity of 60% of '
       - type: MathFragment
         mathLanguage: mathml
@@ -5418,7 +5436,7 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Berens, 2009'
+          - Berens, 2009
       - ).
   - type: Paragraph
     content:
@@ -5517,11 +5535,11 @@ content:
       - '. The bins were constructed either on the contrast '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf192"><mml:mi>c</mml:mi></mml:math>'
+        text: <mml:math id="inf192"><mml:mi>c</mml:mi></mml:math>
       - ' experienced just before bout '
       - type: MathFragment
         mathLanguage: mathml
-        text: '<mml:math id="inf193"><mml:mi>n</mml:mi></mml:math>'
+        text: <mml:math id="inf193"><mml:mi>n</mml:mi></mml:math>
       - ' or on the relative difference of intensity experienced at bout '
       - type: MathFragment
         mathLanguage: mathml
@@ -5557,7 +5575,7 @@ content:
       - type: Cite
         target: bib30
         content:
-          - 'Karpenko, 2019b'
+          - Karpenko, 2019b
       - >-
         ). Initial orientations and positions within the ROI were randomly
         sampled from, respectively, a uniform distribution and a normal

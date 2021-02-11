@@ -1,5 +1,5 @@
 type: Person
-id: 'http://orcid.org/0000-0002-1825-0097'
+id: http://orcid.org/0000-0002-1825-0097
 affiliations:
   - type: Organization
     alternateNames:
@@ -29,4 +29,4 @@ identifiers:
   - type: PropertyValue
     propertyID: Scopus Author ID
     value: 7007156898
-url: 'http://library.brown.edu/about/hay/carberry.php'
+url: http://library.brown.edu/about/hay/carberry.php

@@ -174,11 +174,11 @@ fundedBy:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.12688/f1000research.19540.1
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: 978
 isPartOf:
   type: PublicationVolume
@@ -187,7 +187,7 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        propertyID: https://registry.identifiers.org/registry/pmc
         value: F1000Research
     issns:
       - 2046-1402
@@ -202,7 +202,7 @@ keywords:
   - Species Distribution Models
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
@@ -418,7 +418,7 @@ references:
       type: PublicationVolume
       volumeNumber: 996
     title: The physical science basis
-    url: 'https://www.ipcc.ch/site/assets/uploads/2018/05/ar4_wg1_full_report-1.pdf'
+    url: https://www.ipcc.ch/site/assets/uploads/2018/05/ar4_wg1_full_report-1.pdf
   - type: Article
     id: ref-9
     authors:
@@ -924,7 +924,7 @@ references:
       volumeNumber: 1
     pageEnd: 117
     pageStart: 102
-    title: 'Raxworthy cj, nakamura m, townsend peterson a.'
+    title: Raxworthy cj, nakamura m, townsend peterson a.
   - type: Article
     id: ref-25
     authors:
@@ -1429,7 +1429,7 @@ references:
       type: Date
       value: '2019'
     title: Sure2018.zip
-    url: 'https://figshare.com/articles/SURE2018_zip/8233328/1'
+    url: https://figshare.com/articles/SURE2018_zip/8233328/1
   - type: Article
     id: ref-42
     authors:
@@ -1513,7 +1513,7 @@ references:
     title: >-
       Managing rangelands: promoting sustainable tree species "prosopis
       cineraria": A wonder tree for agroforestry in arid and semi-arid areas"
-    url: 'http://repo.mel.cgiar.org/handle/20.500.11766/4908'
+    url: http://repo.mel.cgiar.org/handle/20.500.11766/4908
   - type: Article
     id: ref-45
     authors:
@@ -1915,7 +1915,7 @@ content:
         We have extracted current and future 19 bioclimatic variables from the 
                             
       - type: Link
-        target: 'https://www.worldclim.org'
+        target: https://www.worldclim.org
         content:
           - WorldClim
       - |2-
@@ -1940,7 +1940,7 @@ content:
          (an open-source alternative is 
                             
       - type: Link
-        target: 'https://www.qgis.org/en/site/'
+        target: https://www.qgis.org/en/site/
         content:
           - QGIS
       - >-
@@ -1951,7 +1951,7 @@ content:
         pathway (RCP)4.5 was selected and for 2050s and 2070s, the 
                             
       - type: Link
-        target: 'http://www.cesm.ucar.edu/models/ccsm4.0/'
+        target: http://www.cesm.ucar.edu/models/ccsm4.0/
         content:
           - Community Climate System Model version 4
       - |2-
@@ -2081,7 +2081,7 @@ content:
         The 
                             
       - type: Link
-        target: 'https://www.gbif.org/en/tool/81279/maxent'
+        target: https://www.gbif.org/en/tool/81279/maxent
         content:
           - MaxEnt model Version 3.4.1
       - type: Superscript
@@ -3003,9 +3003,9 @@ content:
     content:
       - "Figshare:\tSURE2018.zip. \n                    "
       - type: Link
-        target: 'https://doi.org/10.6084/m9.figshare.8233328.v1'
+        target: https://doi.org/10.6084/m9.figshare.8233328.v1
         content:
-          - 'https://doi.org/10.6084/m9.figshare.8233328.v1'
+          - https://doi.org/10.6084/m9.figshare.8233328.v1
       - type: Superscript
         content:
           - type: Cite
@@ -3055,7 +3055,7 @@ content:
         Data are available under the terms of the 
                             
       - type: Link
-        target: 'https://creativecommons.org/licenses/by/4.0/legalcode'
+        target: https://creativecommons.org/licenses/by/4.0/legalcode
         content:
           - Creative Commons Attribution 4.0 International license
       - ' (CC-BY 4.0).'

@@ -172,7 +172,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Burnet Institute, AUSTRALIA'
+        name: Burnet Institute, AUSTRALIA
     familyNames:
       - Beeson
     givenNames:
@@ -181,15 +181,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pmed.1002858
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PMEDICINE-D-19-00206
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e1002858
 isPartOf:
   type: PublicationIssue
@@ -200,15 +200,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Med
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosmed
       issns:
         - 1549-1277
@@ -221,13 +221,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -756,7 +756,7 @@ references:
       type: Organization
       address:
         type: PostalAddress
-        addressLocality: 'Cambridge, UK'
+        addressLocality: Cambridge, UK
       name: Cambridge University Press
     title: 'Causality: Models, Reasoning and Inference'
   - type: Article
@@ -1368,7 +1368,7 @@ references:
   - type: Article
     id: pmed-1002858-ref030
     authors: []
-    url: 'https://CRAN.R-project.org/package=merTools'
+    url: https://CRAN.R-project.org/package=merTools
   - type: Article
     id: pmed-1002858-ref031
     authors:
@@ -2428,7 +2428,7 @@ content:
       - Causal inference framework
   - type: Paragraph
     content:
-      - 'We used a structural model causal inference approach ['
+      - We used a structural model causal inference approach [
       - type: Cite
         target: pmed-1002858-ref013
         content:
@@ -2445,9 +2445,9 @@ content:
           - Fig 3
       - ' and can be accessed online on the DAGitty website ('
       - type: Link
-        target: 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+        target: http://dagitty.net/development/dags.html?id=HJ1OW3
         content:
-          - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+          - http://dagitty.net/development/dags.html?id=HJ1OW3
       - >-
         ). DAGitty is an online platform for the analysis of causal diagrams and
         implements causal calculus (d-separation rules). Conditional on the
@@ -2904,7 +2904,7 @@ content:
               - In-hospital mortality (%)
           - type: TableCell
             content:
-              - 'Median age, years (range)'
+              - Median age, years (range)
           - type: TableCell
             content:
               - Parenteral antimalarial treatments
@@ -2926,7 +2926,7 @@ content:
               - Bangladesh
           - type: TableCell
             content:
-              - '1,107'
+              - 1,107
           - type: TableCell
             content:
               - '22'
@@ -3090,7 +3090,7 @@ content:
               - Indonesia
           - type: TableCell
             content:
-              - '1,461'
+              - 1,461
           - type: TableCell
             content:
               - '19'
@@ -3138,7 +3138,7 @@ content:
               - DRC
           - type: TableCell
             content:
-              - '5,494'
+              - 5,494
           - type: TableCell
             content:
               - '10'
@@ -3172,7 +3172,7 @@ content:
             content:
               - type: Strong
                 content:
-                  - '9,040'
+                  - 9,040
           - type: TableCell
             content:
               - type: Strong
@@ -3200,9 +3200,9 @@ content:
         2017). All analyses are fully reproducible and publicly available as an
         RMarkdown notebook on GitHub, which can be found at 
       - type: Link
-        target: 'https://github.com/Stije/SevereMalariaAnalysis'
+        target: https://github.com/Stije/SevereMalariaAnalysis
         content:
-          - 'https://github.com/Stije/SevereMalariaAnalysis'
+          - https://github.com/Stije/SevereMalariaAnalysis
       - >-
         . This analysis of all prospectively studied patients was not
         prespecified using a published statistical analysis plan, and all
@@ -3283,9 +3283,9 @@ content:
         total of 100 imputed datasets were created for the final analysis. The
         full imputation code is available online at 
       - type: Link
-        target: 'https://github.com/Stije/SevereMalariaAnalysis'
+        target: https://github.com/Stije/SevereMalariaAnalysis
         content:
-          - 'https://github.com/Stije/SevereMalariaAnalysis'
+          - https://github.com/Stije/SevereMalariaAnalysis
       - .
   - type: Heading
     id: sec015
@@ -3447,7 +3447,7 @@ content:
           <mml:math display="inline" id="M2"><mml:mrow><mml:msub><mml:mover
           accent="true"><mml:mi
           mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math>
-      - '. Parameter estimation was done using the R package ‘lme4’ ['
+      - . Parameter estimation was done using the R package ‘lme4’ [
       - type: Cite
         target: pmed-1002858-ref029
         content:
@@ -3904,9 +3904,9 @@ content:
               - Methods
           - ') can be found at '
           - type: Link
-            target: 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+            target: http://dagitty.net/development/dags.html?id=HJ1OW3
             content:
-              - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+              - http://dagitty.net/development/dags.html?id=HJ1OW3
           - >-
             . AKI, acute kidney injury; DAG, directed acyclic graph; Pulm.
             Oedema, pulmonary oedema.

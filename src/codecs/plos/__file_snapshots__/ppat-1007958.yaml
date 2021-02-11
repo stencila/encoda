@@ -193,7 +193,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Fred Hutchinson Cancer Research Center, UNITED STATES'
+        name: Fred Hutchinson Cancer Research Center, UNITED STATES
     familyNames:
       - Emerman
     givenNames:
@@ -201,15 +201,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.ppat.1007958
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PPATHOGENS-D-19-00210
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e1007958
 isPartOf:
   type: PublicationIssue
@@ -220,15 +220,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Pathog
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plospath
       issns:
         - 1553-7366
@@ -241,13 +241,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -836,7 +836,7 @@ references:
       volumeNumber: 145
     pageEnd: 1152
     pageStart: 1145
-    title: 'Transportin-SR, a nuclear import receptor for SR proteins'
+    title: Transportin-SR, a nuclear import receptor for SR proteins
   - type: Article
     id: ppat-1007958-ref017
     authors:
@@ -1585,8 +1585,8 @@ references:
       volumeNumber: 62
     pageEnd: 590
     pageStart: 579
-    title: 'Glycogen, Creatine, and High Energy Phosphate in Human Muscle Disease'
-    url: 'http://www.ncbi.nlm.nih.gov/pubmed/14080857'
+    title: Glycogen, Creatine, and High Energy Phosphate in Human Muscle Disease
+    url: http://www.ncbi.nlm.nih.gov/pubmed/14080857
   - type: Article
     id: ppat-1007958-ref036
     authors:
@@ -2852,7 +2852,7 @@ content:
       - '].'
   - type: Paragraph
     content:
-      - 'TNPO3 is a member of the karyopherin β superfamily of proteins ['
+      - TNPO3 is a member of the karyopherin β superfamily of proteins [
       - type: Cite
         target: ppat-1007958-ref013
         content:
@@ -3200,7 +3200,7 @@ content:
               - '40'
           - type: TableCell
             content:
-              - 'SH,PF'
+              - SH,PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3256,7 +3256,7 @@ content:
               - '16'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3284,7 +3284,7 @@ content:
               - '10'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3312,7 +3312,7 @@ content:
               - '8'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3340,7 +3340,7 @@ content:
               - '7'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3368,7 +3368,7 @@ content:
               - '11'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3396,7 +3396,7 @@ content:
               - '5'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HA / LW
@@ -3424,7 +3424,7 @@ content:
               - '40'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HA / LW
@@ -3452,7 +3452,7 @@ content:
               - '20'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HA / LW
@@ -3480,7 +3480,7 @@ content:
               - '7'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HA / LW
@@ -3508,7 +3508,7 @@ content:
               - '18'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3704,7 +3704,7 @@ content:
               - '1'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HAW / LW
@@ -3732,7 +3732,7 @@ content:
               - '1'
           - type: TableCell
             content:
-              - 'SH, PF'
+              - SH, PF
           - type: TableCell
             content:
               - HA / LW
@@ -4213,7 +4213,7 @@ content:
         target: '#ppat-1007958-g005'
         content:
           - Fig 5A
-      - '), nor in the number of cytoplasmic and nuclear PICs per cell ('
+      - ), nor in the number of cytoplasmic and nuclear PICs per cell (
       - type: Link
         relation: fig
         target: '#ppat-1007958-g005'
@@ -4322,7 +4322,7 @@ content:
         target: '#ppat-1007958-s004'
         content:
           - S4 Fig
-      - '). Next, we compared the luciferase signal of HIV-fLuc'
+      - ). Next, we compared the luciferase signal of HIV-fLuc
       - type: Superscript
         content:
           - VSV-G
@@ -4332,7 +4332,7 @@ content:
         target: '#ppat-1007958-g006'
         content:
           - Fig 6
-      - ') (p<0.01) ['
+      - ) (p<0.01) [
       - type: Cite
         target: ppat-1007958-ref007
         content:
@@ -4927,7 +4927,7 @@ content:
       - Immunoblotting assays
   - type: Paragraph
     content:
-      - 'Whole protein extracts were obtained as described previously ['
+      - Whole protein extracts were obtained as described previously [
       - type: Cite
         target: ppat-1007958-ref057
         content:

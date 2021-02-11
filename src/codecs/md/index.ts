@@ -305,7 +305,7 @@ function loadFrontmatter(root: MDAST.Root): Frontmatter {
   const [frontmatterYaml] = root.children.filter(
     (child) => child.type === 'yaml'
   )
-  const frontmatter = yaml.safeLoad(
+  const frontmatter = yaml.load(
     typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
   )
   return typeof frontmatter === 'object' ? (frontmatter as Frontmatter) : {}
@@ -715,7 +715,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
   if (Object.keys(frontmatter).length) {
     const yamlNode: MDAST.YAML = {
       type: 'yaml',
-      value: yaml.safeDump(frontmatter, { skipInvalid: true }).trim(),
+      value: yaml.dump(frontmatter, { skipInvalid: true }).trim(),
     }
     root.children.unshift(yamlNode)
   }

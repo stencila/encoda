@@ -176,11 +176,11 @@ fundedBy:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.12688/f1000research.16460.1
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: 1655
 isPartOf:
   type: PublicationVolume
@@ -189,7 +189,7 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        propertyID: https://registry.identifiers.org/registry/pmc
         value: F1000Research
     issns:
       - 2046-1402
@@ -206,7 +206,7 @@ keywords:
   - Crossref
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
@@ -227,7 +227,7 @@ references:
     title: >-
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
-    url: 'https://groups.niso.org/publications/rp/RP-8-2008.pdf'
+    url: https://groups.niso.org/publications/rp/RP-8-2008.pdf
   - type: Article
     id: ref-2
     authors:
@@ -329,7 +329,7 @@ content:
           - type: Emphasis
             content:
               - et al
-          - '., 2018'
+          - ., 2018
       - >-
         ). There were 10 journals identified in the PMC corpus that archive some
         peer review materials. These journals take a variety of different
@@ -354,7 +354,7 @@ content:
       - type: Cite
         target: ref-3
         content:
-          - 'Ross-Hellauer, 2017'
+          - Ross-Hellauer, 2017
       - >-
         ), but we feel that many of our suggestions and recommendations are
         relevant to most if not all of these approaches.
@@ -394,7 +394,7 @@ content:
           - '○ '
           - type: Paragraph
             content:
-              - 'Peer review reports, anonymized or with report author names'
+              - Peer review reports, anonymized or with report author names
       - type: ListItem
         content:
           - '○ '
@@ -457,9 +457,9 @@ content:
         content (
                         
       - type: Link
-        target: 'https://www.crossref.org/services/content-registration/peer-reviews/'
+        target: https://www.crossref.org/services/content-registration/peer-reviews/
         content:
-          - 'https://www.crossref.org/services/content-registration/peer-reviews/'
+          - https://www.crossref.org/services/content-registration/peer-reviews/
       - >-
         ). As downstream recipients of peer review materials, PMC and Europe PMC
         presented the perspective of archives that collaborate with journals to
@@ -676,7 +676,7 @@ content:
         published version of a paper. The 
                         
       - type: Link
-        target: 'http://www.niso.org/publications/rp/RP-8-2008.pdf'
+        target: http://www.niso.org/publications/rp/RP-8-2008.pdf
         content:
           - >-
             Recommendations of the NISO/ALPSP Journal Article Versions (JAV)
@@ -737,9 +737,9 @@ content:
         “-r1”, “-r2”, etc. (
                         
       - type: Link
-        target: 'https://jats4r.org/article-publication-and-history-dates'
+        target: https://jats4r.org/article-publication-and-history-dates
         content:
-          - 'https://jats4r.org/article-publication-and-history-dates'
+          - https://jats4r.org/article-publication-and-history-dates
       - ).
   - type: Paragraph
     content:
@@ -949,19 +949,19 @@ content:
           - '○ '
           - type: Paragraph
             content:
-              - 'For Peer Reviews, use @contrib-type=“reviewer”'
+              - For Peer Reviews, use @contrib-type=“reviewer”
       - type: ListItem
         content:
           - '○ '
           - type: Paragraph
             content:
-              - 'For Decision Letters, use @contrib-type=“editor”'
+              - For Decision Letters, use @contrib-type=“editor”
       - type: ListItem
         content:
           - '○ '
           - type: Paragraph
             content:
-              - 'For Author Reply, use @contrib-type=“author”'
+              - For Author Reply, use @contrib-type=“author”
     order: unordered
   - type: Paragraph
     content:
@@ -983,9 +983,9 @@ content:
         follow standard JATS tagging (see JATS4R recommendation: 
                             
       - type: Link
-        target: 'https://jats4r.org/authors-and-affiliations'
+        target: https://jats4r.org/authors-and-affiliations
         content:
-          - 'https://jats4r.org/authors-and-affiliations'
+          - https://jats4r.org/authors-and-affiliations
       - ).
   - type: Heading
     id: ''
@@ -998,9 +998,9 @@ content:
         Follow tagging recommended by JATS4R: 
                             
       - type: Link
-        target: 'https://jats4r.org/conflict-of-interest-statements'
+        target: https://jats4r.org/conflict-of-interest-statements
         content:
-          - 'https://jats4r.org/conflict-of-interest-statements'
+          - https://jats4r.org/conflict-of-interest-statements
       - .
   - type: Heading
     id: ''
@@ -1027,9 +1027,9 @@ content:
         in the JATS4R Permissions Recommendations (
                             
       - type: Link
-        target: 'https://jats4r.org/permissions'
+        target: https://jats4r.org/permissions
         content:
-          - 'https://jats4r.org/permissions'
+          - https://jats4r.org/permissions
       - ).
   - type: Heading
     id: ''
@@ -1064,13 +1064,13 @@ content:
           - 'b. '
           - type: Paragraph
             content:
-              - '<app>, <app-group>, <ack>, <glossary>, <back>/<sec>'
+              - <app>, <app-group>, <ack>, <glossary>, <back>/<sec>
       - type: ListItem
         content:
           - 'c. '
           - type: Paragraph
             content:
-              - '<supplementary-material>, <inline-supplementary-material>'
+              - <supplementary-material>, <inline-supplementary-material>
       - type: ListItem
         content:
           - 'd. '

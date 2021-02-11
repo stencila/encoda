@@ -68,7 +68,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'Faculty of Science, Ain Shams University (ASU), EGYPT'
+        name: Faculty of Science, Ain Shams University (ASU), EGYPT
     familyNames:
       - Samy
     givenNames:
@@ -77,15 +77,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pntd.0007469
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PNTD-D-18-02030
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e0007469
 isPartOf:
   type: PublicationIssue
@@ -96,15 +96,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS Negl Trop Dis
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosntds
       issns:
         - 1935-2735
@@ -116,13 +116,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -1164,7 +1164,7 @@ references:
       address:
         type: PostalAddress
         addressLocality: Philadelphia
-      name: 'lippincott, Williams & Wilkins'
+      name: lippincott, Williams & Wilkins
     title: Bacterial infections
   - type: Article
     id: pntd-0007469-ref030
@@ -3046,7 +3046,7 @@ references:
         name: Emerg Infect Dis
       volumeNumber: 9
     pageStart: 135
-    title: 'First isolation of Rickettsia slovaca from a patient, France'
+    title: First isolation of Rickettsia slovaca from a patient, France
   - type: Article
     id: pntd-0007469-ref082
     authors:
@@ -3536,7 +3536,7 @@ references:
       volumeNumber: 6
     pageEnd: 92
     pageStart: 389
-    title: 'Evidence of Rickettsia helvetica infection in humans, eastern France'
+    title: Evidence of Rickettsia helvetica infection in humans, eastern France
   - type: Article
     id: pntd-0007469-ref092
     authors:
@@ -3745,7 +3745,7 @@ references:
       volumeNumber: 16
     pageEnd: 2
     pageStart: 490
-    title: 'Rickettsia helvetica in patient with meningitis, Sweden, 2006'
+    title: Rickettsia helvetica in patient with meningitis, Sweden, 2006
   - type: Article
     id: pntd-0007469-ref098
     authors:
@@ -4165,7 +4165,7 @@ references:
       volumeNumber: 331
     pageEnd: 7
     pageStart: 1612
-    title: 'Rickettsialpox in a New York City hospital, 1980 to 1989'
+    title: Rickettsialpox in a New York City hospital, 1980 to 1989
   - type: Article
     id: pntd-0007469-ref111
     authors:
@@ -4495,7 +4495,7 @@ references:
       volumeNumber: 13
     pageEnd: 4
     pageStart: 1742
-    title: 'Severe spotted fever group rickettsiosis, Australia'
+    title: Severe spotted fever group rickettsiosis, Australia
   - type: Article
     id: pntd-0007469-ref121
     authors:
@@ -4523,7 +4523,7 @@ references:
       volumeNumber: 15
     pageEnd: 7
     pageStart: 1126
-    title: 'Rickettsia felis infection in man, France'
+    title: Rickettsia felis infection in man, France
   - type: Article
     id: pntd-0007469-ref122
     authors:
@@ -6063,7 +6063,7 @@ references:
       volumeNumber: 18
     pageEnd: 2
     pageStart: 171
-    title: 'Brill-Zinsser disease in Moroccan man, France, 2011'
+    title: Brill-Zinsser disease in Moroccan man, France, 2011
 title: Rickettsial infections of the central nervous system
 meta:
   authorNotes:
@@ -6253,7 +6253,7 @@ content:
         target: '#pntd-0007469-t001'
         content:
           - Table 1
-      - '), with sporadic and often seasonal outbreaks ['
+      - ), with sporadic and often seasonal outbreaks [
       - type: Cite
         target: pntd-0007469-ref011
         content:
@@ -6438,9 +6438,9 @@ content:
         content:
           - '*All genomes were imported from GenBank ('
           - type: Link
-            target: 'http://www.ncbi.nlm.nih.gov/genome/'
+            target: http://www.ncbi.nlm.nih.gov/genome/
             content:
-              - 'http://www.ncbi.nlm.nih.gov/genome/'
+              - http://www.ncbi.nlm.nih.gov/genome/
           - )
       - type: Paragraph
         id: t001fn002
@@ -6504,7 +6504,7 @@ content:
               - ' ticks'
           - type: TableCell
             content:
-              - 'Sub-Saharan Africa, West Indies'
+              - Sub-Saharan Africa, West Indies
           - type: TableCell
             content:
               - NC_012633
@@ -6535,7 +6535,7 @@ content:
               - ' mites'
           - type: TableCell
             content:
-              - 'North America, Asia, Europe'
+              - North America, Asia, Europe
           - type: TableCell
             content:
               - NC_009881
@@ -6589,7 +6589,7 @@ content:
               - ' ticks'
           - type: TableCell
             content:
-              - 'Europe, North Africa, Asia'
+              - Europe, North Africa, Asia
           - type: TableCell
             content:
               - NC_003103
@@ -6643,7 +6643,7 @@ content:
               - ' sp.'
           - type: TableCell
             content:
-              - 'Europe, Asia, North Africa'
+              - Europe, Asia, North Africa
           - type: TableCell
             content:
               - NZ_CM001467
@@ -6670,7 +6670,7 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_016050'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_016050
                 content:
                   - NC_016050
       - type: TableRow
@@ -6700,7 +6700,7 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NZ_CP010969'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NZ_CP010969
                 content:
                   - NZ_CP010969
       - type: TableRow
@@ -6727,7 +6727,7 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_009882'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_009882
                 content:
                   - NC_009882
       - type: TableRow
@@ -6749,11 +6749,11 @@ content:
               - ' ticks'
           - type: TableCell
             content:
-              - 'Europe, Asia'
+              - Europe, Asia
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_016639'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_016639
                 content:
                   - NC_016639
       - type: TableRow
@@ -6779,11 +6779,11 @@ content:
               - ' lice'
           - type: TableCell
             content:
-              - 'Africa, Russia, South America'
+              - Africa, Russia, South America
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_000963'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_000963
                 content:
                   - NC_000963
       - type: TableRow
@@ -6817,7 +6817,7 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_006142'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_006142
                 content:
                   - NC_006142
       - type: TableRow
@@ -6847,7 +6847,7 @@ content:
           - type: TableCell
             content:
               - type: Link
-                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_010793'
+                target: https://www.ncbi.nlm.nih.gov/nuccore/NC_010793
                 content:
                   - NC_010793
   - type: Heading
@@ -7266,7 +7266,7 @@ content:
       - '].'
   - type: Paragraph
     content:
-      - 'The CNS is also a crucial target in other rickettsial diseases ['
+      - The CNS is also a crucial target in other rickettsial diseases [
       - type: Cite
         target: pntd-0007469-ref041
         content:
@@ -8023,7 +8023,7 @@ content:
       - Rickettsialpox
   - type: Paragraph
     content:
-      - 'Rickettsialpox was first described in 1946 in New York City, New York ['
+      - Rickettsialpox was first described in 1946 in New York City, New York [
       - type: Cite
         target: pntd-0007469-ref107
         content:

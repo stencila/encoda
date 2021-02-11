@@ -81,7 +81,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'The Australian National University, Australia'
+        name: The Australian National University, Australia
     familyNames:
       - Fulton
     givenNames:
@@ -90,15 +90,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PONE-D-13-40395
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pone.0091296
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e91296
 isPartOf:
   type: PublicationIssue
@@ -109,15 +109,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS ONE
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosone
       issns:
         - 1932-6203
@@ -134,7 +134,7 @@ licenses:
         content:
           - 'This is an open-access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -1026,7 +1026,7 @@ references:
   - type: Article
     id: pone-0091296-Froese1
     authors: []
-    url: 'http://www.fishbase.org'
+    url: http://www.fishbase.org
   - type: Article
     id: pone-0091296-ArregunSnchez1
     authors:
@@ -1122,7 +1122,7 @@ references:
       type: PublicationVolume
       isPartOf:
         type: Periodical
-        name: 'Proc 10th Int Coral Reef Symp, Okinawa'
+        name: Proc 10th Int Coral Reef Symp, Okinawa
       volumeNumber: 1
     pageEnd: 1346
     pageStart: 1335
@@ -1466,7 +1466,7 @@ references:
       volumeNumber: 77
     pageEnd: 915
     pageStart: 904
-    title: 'Fishing practices on Ponam Island (Manus Province, Papua New Guinea)'
+    title: Fishing practices on Ponam Island (Manus Province, Papua New Guinea)
   - type: Article
     id: pone-0091296-Carrier2
     authors: []
@@ -2697,7 +2697,7 @@ content:
         id: nt109
         content:
           - a
-          - 'If fishers had no knowledge of an attribute, a zero score was given.'
+          - If fishers had no knowledge of an attribute, a zero score was given.
     label: Table 2
     rows:
       - type: TableRow
@@ -3738,7 +3738,7 @@ content:
         relation: fig
         target: '#pone-0091296-g003'
         content:
-          - 'Figure 3a,b'
+          - Figure 3a,b
       - >-
         ). By contrast, fishers from both Ahus and Karkar perceived snapper
         aggregating behaviour to be complex, alternating between solitary
@@ -3747,7 +3747,7 @@ content:
         relation: fig
         target: '#pone-0091296-g003'
         content:
-          - 'Figure 3c,d'
+          - Figure 3c,d
       - >-
         ). In spite of this complexity, there were significant associations
         between locations in how fishers perceived the forms of aggregating
@@ -3783,7 +3783,7 @@ content:
         relation: fig
         target: '#pone-0091296-g003'
         content:
-          - 'Figure 3e,f'
+          - Figure 3e,f
       - >-
         ). Aggregation formation was considered a much more common behaviour by
         fishers on Ahus, especially for 

@@ -53,11 +53,11 @@ description: >-
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: 202
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.34196/ijm.00202
 isPartOf:
   type: PublicationIssue
@@ -68,11 +68,11 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: ijm
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: ijm
       issns:
         - 1747-5864
@@ -94,13 +94,13 @@ keywords:
   - gender
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This article is distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -245,7 +245,7 @@ references:
       volumeNumber: 8
     pageEnd: 323
     pageStart: 297
-    title: 'Family labor supply, taxation and saving in an imperfect capital market'
+    title: Family labor supply, taxation and saving in an imperfect capital market
   - type: Article
     id: bib6
     authors:
@@ -321,7 +321,7 @@ references:
       value: '2018'
     publisher:
       type: Organization
-      name: 'Departamento de Economía, Facultad de Ciencias Sociales, UDELAR'
+      name: Departamento de Economía, Facultad de Ciencias Sociales, UDELAR
     title: >-
       Revealing Gender Gap Changes in Home Production and Labor Income in
       Uruguay WP 5/18
@@ -899,7 +899,7 @@ references:
       value: '1996'
     isPartOf:
       type: CreativeWork
-      name: 'IMF Working Paper, No. 96/99.'
+      name: IMF Working Paper, No. 96/99.
     title: Gender bias in Tax systems
 title: >-
   Gendered effects of the personal income tax: Evidence from a schedular system
@@ -934,7 +934,7 @@ content:
       - type: Cite
         target: bib34
         content:
-          - 'Andrienko et al., 2015'
+          - Andrienko et al., 2015
       - >-
         ). Under this rule, the second earner (typically women) effectively pays
         a higher tax (on her income) than if she was taxed individually, because
@@ -947,7 +947,7 @@ content:
       - type: Cite
         target: bib1
         content:
-          - 'Alesina et al., 2011'
+          - Alesina et al., 2011
       - >-
         ). Also, from a gender equity perspective, joint taxation discourages
         the participation of married women in the labour market and men’s
@@ -955,17 +955,17 @@ content:
       - type: Cite
         target: bib5
         content:
-          - 'Apps and Rees, 2010'
+          - Apps and Rees, 2010
       - '; '
       - type: Cite
         target: bib6
         content:
-          - 'Bach et al., 2013'
+          - Bach et al., 2013
       - '; '
       - type: Cite
         target: bib21
         content:
-          - 'Guner et al., 2012'
+          - Guner et al., 2012
       - ).
   - type: Paragraph
     content:
@@ -980,7 +980,7 @@ content:
       - type: Cite
         target: bib19
         content:
-          - 'Grown and Valodia, 2010'
+          - Grown and Valodia, 2010
       - ).
   - type: Paragraph
     content:
@@ -1000,7 +1000,7 @@ content:
       - type: Cite
         target: bib4
         content:
-          - 'Apps and Rees, 2009'
+          - Apps and Rees, 2009
       - )
   - type: Paragraph
     content:
@@ -1011,7 +1011,7 @@ content:
       - type: Cite
         target: bib30
         content:
-          - 'Stotsky, 1996'
+          - Stotsky, 1996
       - ' and '
       - type: Cite
         target: bib13
@@ -1027,7 +1027,7 @@ content:
       - type: Cite
         target: bib17
         content:
-          - 'Genser and Reutter, 2007'
+          - Genser and Reutter, 2007
       - >-
         ). It is expected that these reforms would diminish gender bias.
         However, gender tax burden differences may be observed even under
@@ -1036,7 +1036,7 @@ content:
       - type: Cite
         target: bib19
         content:
-          - 'Grown and Valodia, 2010'
+          - Grown and Valodia, 2010
       - ', for a survey). For example, '
       - type: Cite
         target: bib28
@@ -1633,7 +1633,7 @@ content:
       - type: Cite
         target: bib8
         content:
-          - 'Bucheli and Lara, 2018'
+          - Bucheli and Lara, 2018
       - >-
         ). Part of it is due to gender differences in time spent in labour
         market: working hours per week were on average 32 for women and more
@@ -1646,22 +1646,22 @@ content:
       - type: Cite
         target: bib3
         content:
-          - 'Amarante et al., 2004'
+          - Amarante et al., 2004
       - '; '
       - type: Cite
         target: bib9
         content:
-          - 'Bucheli and Sanromán, 2005'
+          - Bucheli and Sanromán, 2005
       - '; '
       - type: Cite
         target: bib14
         content:
-          - 'Espino, 2013'
+          - Espino, 2013
       - '; '
       - type: Cite
         target: bib15
         content:
-          - 'Espino et al., 2014'
+          - Espino et al., 2014
       - >-
         ). These works find that the portion of the gender gap that is not
         explained by observable productive attributes (which is usually
@@ -1731,11 +1731,11 @@ content:
         include workers that choose individual filing (
       - type: Emphasis
         content:
-          - 'ind_file =1,277,210'
+          - ind_file =1,277,210
       - ' in 2013) and couples that choose joint filing ('
       - type: Emphasis
         content:
-          - 'joint_file =22,567'
+          - joint_file =22,567
       - ' in 2013). The number of individuals involved in the records was 1,332,344 ('
       - type: Emphasis
         content:
@@ -1764,7 +1764,7 @@ content:
       - type: Cite
         target: bib7
         content:
-          - 'Barreix and Roca, 2007'
+          - Barreix and Roca, 2007
       - >-
         ). At the same time, it facilitates tax administration relating to
         ownership and splitting treatments (for pros and cons of dual income
@@ -1772,7 +1772,7 @@ content:
       - type: Cite
         target: bib17
         content:
-          - 'Genser and Reutter, 2007'
+          - Genser and Reutter, 2007
       - >-
         ). With regard to the topic of concern in this study, a relevant
         characteristic of the dual structure is that a flat rate on capital
@@ -2045,7 +2045,7 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'Burdin et al., 2014'
+          - Burdin et al., 2014
       - ' assess the accuracy of the ECH comparing its information with Tax Office records for the period 2009–2011. To estimate gross income based on ECH, they follow a procedure quite similar to the one used in this paper and described below. They conclude that the ECH underestimates capital income but it is fairly accurate to measure labour income and pensions, though top incomes are not well registered. The ratio between capital income reported by ECH and administrative records had a decreasing trend in the period of study; it was on average 73% but only 48% in 2011. The difference was very important among high income individual for which capital income is noticeable underestimated in data survey. Meanwhile, the average ratio for 2009–2011 was 88% for pensions and 104% for labour income. It is worth to note that in the case of labour income data of the ECH, they only considered the information given by workers who declared to pay contributions of the Social Security System. In other words, they assumed that contributors pay PIT and workers that pay PIT are contributors.'
   - type: Paragraph
     content:
@@ -2086,7 +2086,7 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'Burdin et al., 2014'
+          - Burdin et al., 2014
       - >-
         . Because of the findings by Vigorito & Esponda when comparing ECH and
         Tax Office records, we expect that this is a reasonable assumption to
@@ -2232,12 +2232,12 @@ content:
               - '48.9'
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, male breadwinner'
+              - Couple, male breadwinner
           - type: TableCell
             content:
               - '18.4'
@@ -2258,12 +2258,12 @@ content:
               - '42.5'
           - type: TableCell
             content:
-              - '22,230'
+              - 22,230
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, dual earner'
+              - Couple, dual earner
           - type: TableCell
             content:
               - '30.7'
@@ -2284,12 +2284,12 @@ content:
               - '41.4'
           - type: TableCell
             content:
-              - '37,082'
+              - 37,082
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, female breadwinner'
+              - Couple, female breadwinner
           - type: TableCell
             content:
               - '3.2'
@@ -2310,12 +2310,12 @@ content:
               - '52.4'
           - type: TableCell
             content:
-              - '4,033'
+              - 4,033
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, non-employed'
+              - Couple, non-employed
           - type: TableCell
             content:
               - '7.0'
@@ -2336,12 +2336,12 @@ content:
               - '68.5'
           - type: TableCell
             content:
-              - '9,008'
+              - 9,008
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, male breadwinner'
+              - Single, male breadwinner
           - type: TableCell
             content:
               - '3.2'
@@ -2362,12 +2362,12 @@ content:
               - '47.1'
           - type: TableCell
             content:
-              - '4,125'
+              - 4,125
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, female breadwinner'
+              - Single, female breadwinner
           - type: TableCell
             content:
               - '7.8'
@@ -2388,12 +2388,12 @@ content:
               - '45.2'
           - type: TableCell
             content:
-              - '11,225'
+              - 11,225
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed male'
+              - Single, non-employed male
           - type: TableCell
             content:
               - '1.3'
@@ -2414,12 +2414,12 @@ content:
               - '70.2'
           - type: TableCell
             content:
-              - '1,886'
+              - 1,886
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed female'
+              - Single, non-employed female
           - type: TableCell
             content:
               - '6.1'
@@ -2440,12 +2440,12 @@ content:
               - '65.9'
           - type: TableCell
             content:
-              - '8,670'
+              - 8,670
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, male breadwinner, extended'
+              - Couple, male breadwinner, extended
           - type: TableCell
             content:
               - '4.0'
@@ -2466,12 +2466,12 @@ content:
               - '48.5'
           - type: TableCell
             content:
-              - '4,721'
+              - 4,721
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, dual earner, extended'
+              - Couple, dual earner, extended
           - type: TableCell
             content:
               - '4.5'
@@ -2492,12 +2492,12 @@ content:
               - '45.8'
           - type: TableCell
             content:
-              - '5,268'
+              - 5,268
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Couple, female breadwinner, extended'
+              - Couple, female breadwinner, extended
           - type: TableCell
             content:
               - '0.8'
@@ -2523,7 +2523,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Couple, non-employed , extended'
+              - Couple, non-employed , extended
           - type: TableCell
             content:
               - '2.2'
@@ -2544,12 +2544,12 @@ content:
               - '66.5'
           - type: TableCell
             content:
-              - '2,615'
+              - 2,615
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, male breadwinner, extended'
+              - Single, male breadwinner, extended
           - type: TableCell
             content:
               - '1.7'
@@ -2570,12 +2570,12 @@ content:
               - '44.4'
           - type: TableCell
             content:
-              - '1,976'
+              - 1,976
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, female breadwinner, extended'
+              - Single, female breadwinner, extended
           - type: TableCell
             content:
               - '4.1'
@@ -2596,12 +2596,12 @@ content:
               - '47.9'
           - type: TableCell
             content:
-              - '5,113'
+              - 5,113
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed male, extended'
+              - Single, non-employed male, extended
           - type: TableCell
             content:
               - '0.8'
@@ -2627,7 +2627,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed female, extended'
+              - Single, non-employed female, extended
           - type: TableCell
             content:
               - '4.2'
@@ -2648,7 +2648,7 @@ content:
               - '65.8'
           - type: TableCell
             content:
-              - '5,118'
+              - 5,118
   - type: Paragraph
     content:
       - >-
@@ -2755,17 +2755,17 @@ content:
       - type: Cite
         target: bib26
         content:
-          - 'Paolino, 2001'
+          - Paolino, 2001
       - '; '
       - type: Cite
         target: bib22
         content:
-          - 'Kieschnick and McCullough, 2003'
+          - Kieschnick and McCullough, 2003
       - '; '
       - type: Cite
         target: bib29
         content:
-          - 'Smithson and Verkuilen, 2006'
+          - Smithson and Verkuilen, 2006
       - >-
         ) argue that the beta regression model is the most suitable for
         distributional asymmetries and can be adjusted for data in the interval
@@ -2782,7 +2782,7 @@ content:
       - ' when it adopts a beta distribution '
       - type: Emphasis
         content:
-          - 'Β(μ, ϕ'
+          - Β(μ, ϕ
       - '):'
   - type: Paragraph
     content:
@@ -2824,7 +2824,7 @@ content:
       - type: Cite
         target: bib25
         content:
-          - 'Ospina and Ferrari, 2012'
+          - Ospina and Ferrari, 2012
       - >-
         ). The density is called a zero-inflated beta distribution and the
         probability function generated by the combination is:
@@ -3043,7 +3043,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Couple, male breadwinner'
+              - Couple, male breadwinner
           - type: TableCell
             content:
               - −0.0067
@@ -3084,7 +3084,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, female breadwinner'
+              - Single, female breadwinner
           - type: TableCell
             content:
               - −0.0116
@@ -3125,7 +3125,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Couple, female breadwinner'
+              - Couple, female breadwinner
           - type: TableCell
             content:
               - −0.0084
@@ -3166,7 +3166,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, male breadwinner'
+              - Single, male breadwinner
           - type: TableCell
             content:
               - −0.0045
@@ -3270,7 +3270,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Number of earners (labour, capital earnings or pensions)'
+              - Number of earners (labour, capital earnings or pensions)
           - type: TableCell
             content: []
           - type: TableCell
@@ -3420,13 +3420,13 @@ content:
               - Observations
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
   - type: Paragraph
     content:
       - >-
@@ -3652,7 +3652,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Couple, male breadwinner'
+              - Couple, male breadwinner
           - type: TableCell
             content:
               - −0.0086
@@ -3693,7 +3693,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, female breadwinner'
+              - Single, female breadwinner
           - type: TableCell
             content:
               - −0.0107
@@ -3734,7 +3734,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Couple, female breadwinner'
+              - Couple, female breadwinner
           - type: TableCell
             content:
               - −0.0095
@@ -3775,7 +3775,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, male breadwinner'
+              - Single, male breadwinner
           - type: TableCell
             content:
               - −0.0036
@@ -3879,7 +3879,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Number of earners (labour, capital earnings or pensions)'
+              - Number of earners (labour, capital earnings or pensions)
           - type: TableCell
             content: []
           - type: TableCell
@@ -4029,13 +4029,13 @@ content:
               - Observations
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
   - type: Paragraph
     content:
       - >-
@@ -4130,7 +4130,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed female'
+              - Single, non-employed female
           - type: TableCell
             content:
               - −0.0045
@@ -4171,7 +4171,7 @@ content:
         cells:
           - type: TableCell
             content:
-              - 'Single, non-employed male'
+              - Single, non-employed male
           - type: TableCell
             content:
               - −0.0049
@@ -4229,13 +4229,13 @@ content:
               - Observations
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
           - type: TableCell
             content:
-              - '124,987'
+              - 124,987
   - type: Paragraph
     content:
       - 'In '
@@ -4322,7 +4322,7 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'Burdin et al., 2014'
+          - Burdin et al., 2014
       - >-
         ) whereas there are no assessments about the accuracy of the labour
         income reports of evader workers. Besides, as it informs income after
@@ -4334,7 +4334,7 @@ content:
       - type: Cite
         target: bib35
         content:
-          - 'Burdin et al., 2014'
+          - Burdin et al., 2014
       - ' find that the aggregated labour income obtained under this assumption is similar to the total labour income informed by Tax Office records. However, the assumption of no evasion of income capital may be extreme and could bias the results: the highest share of income capital is observed for non-employed households (both single male and female) and one earner households (male and female breadwinner types). Future analysis should work on the underreporting and evasion of capital income and assess the sensitivity of the results to these issues.'
   - type: Paragraph
     content:
@@ -4357,7 +4357,7 @@ content:
       - type: Cite
         target: bib19
         content:
-          - 'Grown and Valodia, 2010'
+          - Grown and Valodia, 2010
       - >-
         ). When we control by different potential explanatory factors, a gap
         remains. One of the factors that explain the gap is the lower number of

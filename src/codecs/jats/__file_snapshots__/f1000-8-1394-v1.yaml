@@ -114,11 +114,11 @@ description:
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.12688/f1000research.19931.1
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: 1394
 isPartOf:
   type: PublicationVolume
@@ -127,7 +127,7 @@ isPartOf:
     identifiers:
       - type: PropertyValue
         name: pmc
-        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        propertyID: https://registry.identifiers.org/registry/pmc
         value: F1000Research
     issns:
       - 2046-1402
@@ -146,7 +146,7 @@ keywords:
   - drug effects
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
@@ -228,7 +228,7 @@ references:
     datePublished:
       type: Date
       value: '2018'
-    title: 'Researching safety and efficacy of CBD, hemp extracts'
+    title: Researching safety and efficacy of CBD, hemp extracts
     url: >-
       https://www.naturalproductsinsider.com/ingredients/researching-safety-and-efficacy-cbd-hemp-extracts
   - type: Article
@@ -289,7 +289,7 @@ references:
       name: Soft Drinks Int.
     pageEnd: 44
     pageStart: 42
-    title: 'Cannabis, hemp and CBDs.'
+    title: Cannabis, hemp and CBDs.
     url: >-
       https://drjohnwilkinson.co.uk/wp-content/uploads/SDI_DrJohn-cannabis-Dec-Drinks-2015-1.pdf
   - type: Article
@@ -434,12 +434,12 @@ references:
     id: ref-12
     authors:
       - type: Organization
-        name: 'PhEur Gastric juice, artificial (1039900)'
+        name: PhEur Gastric juice, artificial (1039900)
     datePublished:
       type: Date
       value: '2019'
     title: European Pharmacopoeia
-    url: 'https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition'
+    url: https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition
   - type: Article
     id: ref-13
     authors:
@@ -454,7 +454,7 @@ references:
     title: >-
       Dataset for “Are side effects of cannabidiol (CBD) products caused by
       delta9-tetrahydrocannabinol (THC) contamination
-    url: 'http://www.doi.org/10.17605/OSF.IO/F7ZXY'
+    url: http://www.doi.org/10.17605/OSF.IO/F7ZXY
   - type: Article
     id: ref-14
     authors:
@@ -812,7 +812,7 @@ references:
       Directive 2000/13/EC of the European Parliament and of the Council,
       Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation
       (EC) No 608/2004.
-    url: 'https://eur-lex.europa.eu/eli/reg/2011/1169/oj'
+    url: https://eur-lex.europa.eu/eli/reg/2011/1169/oj
   - type: Article
     id: ref-27
     authors:
@@ -1741,7 +1741,7 @@ content:
                 Methanol / 1 mol/L
                                                     
               - ' '
-              - 'HCl (50:50)'
+              - HCl (50:50)
           - type: TableCell
             content:
               - '500'
@@ -3336,9 +3336,9 @@ content:
         contamination?” 
                             
       - type: Link
-        target: 'https://dx.doi.org/10.17605/OSF.IO/F7ZXY'
+        target: https://dx.doi.org/10.17605/OSF.IO/F7ZXY
         content:
-          - 'https://doi.org/10.17605/OSF.IO/F7ZXY'
+          - https://doi.org/10.17605/OSF.IO/F7ZXY
       - type: Superscript
         content:
           - type: Cite
@@ -3382,7 +3382,7 @@ content:
         Data are available under the terms of the 
                             
       - type: Link
-        target: 'http://creativecommons.org/publicdomain/zero/1.0/'
+        target: http://creativecommons.org/publicdomain/zero/1.0/
         content:
           - Creative Commons Zero “No rights reserved” data waiver
       - ' (CC0 1.0 Public domain dedication).'

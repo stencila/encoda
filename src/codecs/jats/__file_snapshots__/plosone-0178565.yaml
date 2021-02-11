@@ -82,7 +82,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'National Center for Biotechnology Information, UNITED STATES'
+        name: National Center for Biotechnology Information, UNITED STATES
     familyNames:
       - Rogozin
     givenNames:
@@ -92,22 +92,22 @@ fundedBy:
   - type: MonetaryGrant
     funders:
       - type: Organization
-        name: 'Department of Biotechnology, Ministry of Science and Technology'
+        name: Department of Biotechnology, Ministry of Science and Technology
     identifiers:
       - type: PropertyValue
         value: BT/EB/PAN IIT/2012
 identifiers:
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pone.0178565
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PONE-D-17-03368
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e0178565
 isPartOf:
   type: PublicationIssue
@@ -118,15 +118,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS ONE
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosone
       issns:
         - 1932-6203
@@ -138,13 +138,13 @@ isPartOf:
   issueNumber: 6
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -496,7 +496,7 @@ references:
       issueNumber: 4
     pageEnd: 54
     pageStart: 1249
-    title: 'Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol'
+    title: Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol
   - type: Article
     id: pone-0178565-ref010
     authors:
@@ -700,7 +700,7 @@ references:
       issueNumber: 19
     pageEnd: 6
     pageStart: 10004
-    title: 'The minimal cell genome:" on being the right size"'
+    title: The minimal cell genome:" on being the right size"
   - type: Article
     id: pone-0178565-ref016
     authors:
@@ -1722,7 +1722,7 @@ references:
       issueNumber: 2
     pageEnd: 81
     pageStart: 374
-    title: 'Amino acid sequence homology among fructose-1, 6-bisphosphatases'
+    title: Amino acid sequence homology among fructose-1, 6-bisphosphatases
   - type: Article
     id: pone-0178565-ref041
     authors:
@@ -2166,7 +2166,7 @@ content:
       - type: Superscript
         content:
           - '13'
-      - 'C-MFA) ['
+      - C-MFA) [
       - type: Cite
         target: pone-0178565-ref024
         content:
@@ -2397,7 +2397,7 @@ content:
         content:
           - type: Paragraph
             content:
-              - 'd = modified hamming distance,'
+              - d = modified hamming distance,
       - type: ListItem
         content:
           - type: Paragraph
@@ -2697,7 +2697,7 @@ content:
         content:
           - type: Paragraph
             content:
-              - 'Conserved; with a GCI score of ≥ 95%,'
+              - Conserved; with a GCI score of ≥ 95%,
       - type: ListItem
         content:
           - type: Paragraph
@@ -2804,7 +2804,7 @@ content:
               - SYNPCC7002_A1683
           - type: TableCell
             content:
-              - 'tricarboxylic acid cycle [GO:0006099]'
+              - tricarboxylic acid cycle [GO:0006099]
           - type: TableCell
             content:
               - Carbohydrate metabolism; tricarboxylic acid cycle.
@@ -2815,7 +2815,7 @@ content:
               - D7DZP2
           - type: TableCell
             content:
-              - 'Cytochrome c oxidase, subunit I'
+              - Cytochrome c oxidase, subunit I
           - type: TableCell
             content:
               - Aazo_2640
@@ -2834,7 +2834,7 @@ content:
               - Q93UM1
           - type: TableCell
             content:
-              - 'Enoyl-[acyl-carrier-protein] reductase [NADH]'
+              - Enoyl-[acyl-carrier-protein] reductase [NADH]
           - type: TableCell
             content:
               - 'envM '
@@ -2842,7 +2842,7 @@ content:
               - SYNPCC7002_A1676
           - type: TableCell
             content:
-              - 'fatty acid biosynthetic process [GO:0006633]'
+              - fatty acid biosynthetic process [GO:0006633]
           - type: TableCell
             content:
               - Lipid metabolism; fatty acid biosynthesis.
@@ -2882,7 +2882,7 @@ content:
               - SYNPCC7002_A1356
           - type: TableCell
             content:
-              - 'leucine biosynthetic process [GO:0009098]'
+              - leucine biosynthetic process [GO:0009098]
           - type: TableCell
             content:
               - Amino-acid biosynthesis; L-leucine biosynthesis.
@@ -2893,7 +2893,7 @@ content:
               - B1XQ71
           - type: TableCell
             content:
-              - '1,4-alpha-glucan branching enzyme'
+              - 1,4-alpha-glucan branching enzyme
           - type: TableCell
             content:
               - 'glgB '
@@ -2901,7 +2901,7 @@ content:
               - SYNPCC7002_A1865
           - type: TableCell
             content:
-              - 'glycogen biosynthetic process [GO:0005978]'
+              - glycogen biosynthetic process [GO:0005978]
           - type: TableCell
             content:
               - Glycan biosynthesis; glycogen biosynthesis.
@@ -2920,7 +2920,7 @@ content:
               - SYNPCC7002_A0309
           - type: TableCell
             content:
-              - 'biotin biosynthetic process [GO:0009102]'
+              - biotin biosynthetic process [GO:0009102]
           - type: TableCell
             content:
               - Cofactor biosynthesis; biotin biosynthesis.
@@ -2939,7 +2939,7 @@ content:
               - SYNPCC7002_A0955
           - type: TableCell
             content:
-              - 'translation [GO:0006412]'
+              - translation [GO:0006412]
           - type: TableCell
             content:
               - '-'
@@ -2950,13 +2950,13 @@ content:
               - B1XPW9
           - type: TableCell
             content:
-              - 'Arsenical resistance operon repressor, ArsR family'
+              - Arsenical resistance operon repressor, ArsR family
           - type: TableCell
             content:
               - SYNPCC7002_A0590
           - type: TableCell
             content:
-              - 'transcription, DNA-templated [GO:0006351]'
+              - transcription, DNA-templated [GO:0006351]
           - type: TableCell
             content:
               - '-'
@@ -2967,13 +2967,13 @@ content:
               - B1XNN3
           - type: TableCell
             content:
-              - 'DNA polymerase III, delta subunit'
+              - DNA polymerase III, delta subunit
           - type: TableCell
             content:
               - holA SYNPCC7002_A1567
           - type: TableCell
             content:
-              - 'DNA replication [GO:0006260]'
+              - DNA replication [GO:0006260]
           - type: TableCell
             content:
               - '-'
@@ -3038,7 +3038,7 @@ content:
       - ' is conserved.'
   - type: Paragraph
     content:
-      - 'Initially Martin et al. ['
+      - Initially Martin et al. [
       - type: Cite
         target: pone-0178565-ref035
         content:
@@ -3156,7 +3156,7 @@ content:
           - ' PCC 7942 for which experimental data is available.'
       - type: Paragraph
         content:
-          - '(A) Overlap of conserved genes (this work), core set proteins ['
+          - (A) Overlap of conserved genes (this work), core set proteins [
           - type: Cite
             target: pone-0178565-ref007
             content:
@@ -3284,16 +3284,16 @@ content:
               - '102'
           - type: TableCell
             content:
-              - '4,413'
+              - 4,413
           - type: TableCell
             content:
-              - '3,867'
+              - 3,867
           - type: TableCell
             content:
-              - '3,505'
+              - 3,505
           - type: TableCell
             content:
-              - '10,865'
+              - 10,865
   - type: Heading
     id: sec012
     depth: 2
@@ -3609,7 +3609,7 @@ content:
           - type: Superscript
             content:
               - c
-          - 'Core Set ['
+          - Core Set [
           - type: Cite
             target: pone-0178565-ref007
             content:
@@ -3621,7 +3621,7 @@ content:
           - type: Superscript
             content:
               - d
-          - 'Structural Gene ['
+          - Structural Gene [
           - type: Cite
             target: pone-0178565-ref035
             content:
@@ -4042,7 +4042,7 @@ content:
                   - sucD
           - type: TableCell
             content:
-              - 'succinyl-CoA synthetase, alpha chain'
+              - succinyl-CoA synthetase, alpha chain
           - type: TableCell
             content:
               - II
@@ -4066,7 +4066,7 @@ content:
                   - hdrB
           - type: TableCell
             content:
-              - 'Heterodisulfide reductase, subunit B'
+              - Heterodisulfide reductase, subunit B
           - type: TableCell
             content:
               - II
@@ -4620,7 +4620,7 @@ content:
               - K9PKC1
           - type: TableCell
             content:
-              - 'CRISPR-associated helicase, Cas3 family'
+              - CRISPR-associated helicase, Cas3 family
           - type: TableCell
             content:
               - Cal7507_2972

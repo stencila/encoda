@@ -13,8 +13,8 @@ references:
     identifiers:
       - type: PropertyValue
         name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
-        value: '10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2'
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -33,7 +33,7 @@ references:
       On the Accuracy of Wind Measurements Using an Inertial Platform in an
       Aircraft, and an Example of a Measurement of the Vertical Mesostructure of
       the Atmosphere
-    url: 'http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2'
+    url: http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
   - type: CreativeWork
     id: ref2
     authors:
@@ -53,7 +53,7 @@ references:
     identifiers:
       - type: PropertyValue
         name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
+        propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1016/b978-0-12-221420-2.50009-0
     isPartOf:
       type: Periodical
@@ -62,7 +62,7 @@ references:
       type: Organization
       name: Elsevier
     title: Weather Echo Signals
-    url: 'http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0'
+    url: http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0
   - type: Article
     authors:
       - type: Person
@@ -92,8 +92,8 @@ references:
     identifiers:
       - type: PropertyValue
         name: doi
-        propertyID: 'https://registry.identifiers.org/registry/doi'
-        value: '10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2'
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -109,7 +109,7 @@ references:
       type: Organization
       name: American Meteorological Society
     title: Mapping of Airborne Doppler Radar Data
-    url: 'http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2'
+    url: http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
   - >-
     Michelson D.B., Lewandowski R., Szewczykowski M., Beekhuis H., and Haase G.,
     2014: EUMETNET OPERA weather radar information model for implementation with
@@ -147,26 +147,26 @@ content:
     meta:
       style: Body1
     content:
-      - 'Mike Dixon, EOL, NCAR, Boulder, Colorado, USA'
+      - Mike Dixon, EOL, NCAR, Boulder, Colorado, USA
       - ''
-      - 'Mark Curtis, Bureau of Meteorology, Melbourne, Australia'
+      - Mark Curtis, Bureau of Meteorology, Melbourne, Australia
       - ''
-      - 'Daniel Michelson, Environment and Climate Change Canada, Toronto, Canada'
+      - Daniel Michelson, Environment and Climate Change Canada, Toronto, Canada
   - type: Paragraph
     meta:
       style: Body1
     content:
-      - 'Joe Hardin, PNNL, DOE, Richland, Washington, USA'
+      - Joe Hardin, PNNL, DOE, Richland, Washington, USA
   - type: Paragraph
     meta:
       style: Body1
     content:
-      - 'Ken Kehoe, University of Oklahoma, Norman, Oklahoma, USA'
+      - Ken Kehoe, University of Oklahoma, Norman, Oklahoma, USA
   - type: Paragraph
     meta:
       style: Body1
     content:
-      - 'Samuel Haimov, University of Wyoming, Laramie, Wyoming, USA'
+      - Samuel Haimov, University of Wyoming, Laramie, Wyoming, USA
   - type: Paragraph
     meta:
       style: Title 1
@@ -691,7 +691,7 @@ content:
       - type: Link
         target: '#special-case-ground-based-stationary-and-leveled-sensors'
         content:
-          - '9.1 Special case – ground-based, stationary and leveled sensors 50'
+          - 9.1 Special case – ground-based, stationary and leveled sensors 50
   - type: Paragraph
     meta:
       style: toc 3
@@ -904,9 +904,9 @@ content:
   - type: Paragraph
     content:
       - type: Link
-        target: 'http://cfconventions.org/'
+        target: http://cfconventions.org/
         content:
-          - 'http://cfconventions.org/'
+          - http://cfconventions.org/
   - type: Paragraph
     content:
       - type: Link
@@ -926,7 +926,7 @@ content:
     content:
       - type: Paragraph
         content:
-          - 'https://github.com/NCAR/CfRadial/docs'
+          - https://github.com/NCAR/CfRadial/docs
   - type: Heading
     depth: 2
     content:
@@ -1203,9 +1203,9 @@ content:
       - type: Paragraph
         content:
           - type: Link
-            target: 'https://github.com/NCAR/CfRadial/tree/master/docs'
+            target: https://github.com/NCAR/CfRadial/tree/master/docs
             content:
-              - 'https://github.com/NCAR/CfRadial/tree/master/docs'
+              - https://github.com/NCAR/CfRadial/tree/master/docs
   - type: Paragraph
     content:
       - >-
@@ -1217,9 +1217,9 @@ content:
   - type: Paragraph
     content:
       - type: Link
-        target: 'http://cfconventions.org/'
+        target: http://cfconventions.org/
         content:
-          - 'http://cfconventions.org/'
+          - http://cfconventions.org/
   - type: Paragraph
     content:
       - type: Link
@@ -1235,7 +1235,7 @@ content:
   - type: Heading
     depth: 2
     content:
-      - 'Logical organization of data in a volume, using sweeps and rays'
+      - Logical organization of data in a volume, using sweeps and rays
   - type: Paragraph
     content:
       - >-
@@ -1379,7 +1379,7 @@ content:
               - sweep mode (
               - type: Emphasis
                 content:
-                  - 'surveillance, sector, RHI'
+                  - surveillance, sector, RHI
               - ', etc.)'
       - type: ListItem
         content:
@@ -1477,7 +1477,7 @@ content:
   - type: Heading
     depth: 2
     content:
-      - 'Logical organization of data in a volume, using sweeps with 2-D data'
+      - Logical organization of data in a volume, using sweeps with 2-D data
   - type: Paragraph
     meta:
       style: Figure
@@ -1513,7 +1513,7 @@ content:
     meta:
       style: Figure
     content:
-      - 'Figure 2.3 Data field for a sweep, represented in time and range,'
+      - Figure 2.3 Data field for a sweep, represented in time and range,
       - ''
       - with a constant number of range gates
   - type: Heading
@@ -2095,7 +2095,7 @@ content:
     content:
       - 'Figure 3.1: Group structure showing top-level dimensions,'
       - ''
-      - 'attributes, variables and sweep groups'
+      - attributes, variables and sweep groups
   - type: Paragraph
     content:
       - type: ImageObject
@@ -2114,9 +2114,9 @@ content:
     content:
       - 'Figure 3.2: Sweep group structure in more detail, showing'
       - ''
-      - 'support for geo-freference metadata for moving platforms,'
+      - support for geo-freference metadata for moving platforms,
       - ''
-      - 'spectra, and monitoring data.'
+      - spectra, and monitoring data.
       - ''
       - Optional groups are in blue.
   - type: Paragraph
@@ -2207,7 +2207,7 @@ content:
       - 'The data fields are stored as 2-D arrays, with dimensions '
       - type: Strong
         content:
-          - '(time, range)'
+          - (time, range)
       - .
   - type: Heading
     depth: 2
@@ -2237,7 +2237,7 @@ content:
       - ' may be used.'
   - type: Paragraph
     content:
-      - 'Only one or the other should be specified, not both.'
+      - Only one or the other should be specified, not both.
   - type: Paragraph
     content:
       - >-
@@ -2494,14 +2494,14 @@ content:
             meta:
               style: bullet_1
             content:
-              - 'dB (ratio of two values, in log units. For example, ZDR).'
+              - dB (ratio of two values, in log units. For example, ZDR).
       - type: ListItem
         content:
           - type: Paragraph
             meta:
               style: bullet_1
             content:
-              - 'dBm (power in milliwatts, in log units)'
+              - dBm (power in milliwatts, in log units)
       - type: ListItem
         content:
           - type: Paragraph
@@ -2520,7 +2520,7 @@ content:
     order: ascending
   - type: Paragraph
     content:
-      - 'Given the above extensions, CfRadial2 files will be CF2 compliant.'
+      - Given the above extensions, CfRadial2 files will be CF2 compliant.
   - type: Table
     caption:
       - type: Paragraph
@@ -2998,7 +2998,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Name of scan strategy used, if applicable'
+                  - Name of scan strategy used, if applicable
       - type: TableRow
         cells:
           - type: TableCell
@@ -3028,7 +3028,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Scan strategy id, if applicable.'
+                  - Scan strategy id, if applicable.
                   - ''
                   - Assumed 0 if missing.
       - type: TableRow
@@ -3118,7 +3118,7 @@ content:
                 content:
                   - type: Delete
                     content:
-                      - 'string[]'
+                      - string[]
           - type: TableCell
             content:
               - type: Paragraph
@@ -3405,15 +3405,15 @@ content:
                   - ''
                   - type: Emphasis
                     content:
-                      - '“fixed”, “vehicle”, “ship”, “aircraft”,'
+                      - “fixed”, “vehicle”, “ship”, “aircraft”,
                       - ''
-                      - '“aircraft_fore”,“aircraft_aft”,'
+                      - “aircraft_fore”,“aircraft_aft”,
                       - ''
-                      - '“aircraft_tail”,“aircraft_belly”,'
+                      - “aircraft_tail”,“aircraft_belly”,
                       - ''
-                      - '“aircraft_roof”,“aircraft_nose”,'
+                      - “aircraft_roof”,“aircraft_nose”,
                       - ''
-                      - '“satellite_orbit”,'
+                      - “satellite_orbit”,
                       - ''
                       - “satellite_geostat”
               - type: Paragraph
@@ -3453,7 +3453,7 @@ content:
                   - type: Emphasis
                     content:
                       - radar
-                  - '”, “'
+                  - ”, “
                   - type: Emphasis
                     content:
                       - lidar
@@ -3538,10 +3538,10 @@ content:
                 content:
                   - 'ISO8601 string:'
                   - ''
-                  - '“seconds since YYYY-MM-DD HH:MM:SS” or'
+                  - “seconds since YYYY-MM-DD HH:MM:SS” or
               - type: Paragraph
                 content:
-                  - '“seconds since YYYY-MM-DDTHH:MM:SS”'
+                  - “seconds since YYYY-MM-DDTHH:MM:SS”
           - type: TableCell
             content:
               - type: Paragraph
@@ -3573,10 +3573,10 @@ content:
                 content:
                   - 'ISO8601 string:'
                   - ''
-                  - '“seconds since YYYY-MM-DD HH:MM:SS” or'
+                  - “seconds since YYYY-MM-DD HH:MM:SS” or
               - type: Paragraph
                 content:
-                  - '“seconds since YYYY-MM-DDTHH:MM:SS”'
+                  - “seconds since YYYY-MM-DDTHH:MM:SS”
           - type: TableCell
             content:
               - type: Paragraph
@@ -3615,7 +3615,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Latitude of instrument,'
+                  - Latitude of instrument,
                   - ''
                   - using WGS84.
                   - ''
@@ -3653,7 +3653,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Longitude of instrument,'
+                  - Longitude of instrument,
                   - ''
                   - using WGS84
                   - ''
@@ -3843,7 +3843,7 @@ content:
                     not included in other parts of the data structure. Format
                     can be simple text,
                   - ''
-                  - 'XML, JSon, etc.'
+                  - XML, JSon, etc.
   - type: Heading
     depth: 2
     content: []
@@ -3940,7 +3940,7 @@ content:
                 content:
                   - Number of prts used in pulsing scheme.
                   - ''
-                  - 'Optional for fixed, staggered or dual'
+                  - Optional for fixed, staggered or dual
                   - ''
                   - Required for more complicated schemes.
       - type: TableRow
@@ -4055,14 +4055,14 @@ content:
                   - ''
                   - “seconds since
                   - ''
-                  - 'YYYY-MM-DD HH:MM:SS”'
+                  - YYYY-MM-DD HH:MM:SS”
                   - ''
                   - or
               - type: Paragraph
                 content:
                   - “seconds since
                   - ''
-                  - 'YYYY-MM-DDTHH:MM:SS”'
+                  - YYYY-MM-DDTHH:MM:SS”
           - type: TableCell
             content:
               - type: Paragraph
@@ -4208,8 +4208,8 @@ content:
                   - T
                   - type: Emphasis
                     content:
-                      - 'hh:mm:ss'
-                  - 'Z”,'
+                      - hh:mm:ss
+                  - Z”,
                   - ''
                   - where the actual reference time values are used.
       - type: TableRow
@@ -4238,15 +4238,15 @@ content:
                   - ''
                   - 'Options are:'
                   - ''
-                  - '“gregorian” or “standard”,'
+                  - “gregorian” or “standard”,
                   - ''
-                  - '“proleptic_gregorian”,'
+                  - “proleptic_gregorian”,
                   - ''
-                  - '“noleap” or “365_day”,'
+                  - “noleap” or “365_day”,
                   - ''
-                  - '“all_leap” or “366_day”,'
+                  - “all_leap” or “366_day”,
                   - ''
-                  - '“360_day”,'
+                  - “360_day”,
                   - ''
                   - “julian”
                   - ''
@@ -4522,7 +4522,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'The number of the sweep, in the volume scan.'
+                  - The number of the sweep, in the volume scan.
                   - ''
                   - 0-based.
       - type: TableRow
@@ -4555,21 +4555,21 @@ content:
                   - ''
                   - type: Emphasis
                     content:
-                      - '“sector”,“coplane”,rhi”,'
+                      - “sector”,“coplane”,rhi”,
                       - ''
-                      - '“vertical_pointing”,“idle”,'
+                      - “vertical_pointing”,“idle”,
                       - ''
-                      - '“azimuth_surveillance”,'
+                      - “azimuth_surveillance”,
                       - ''
-                      - '“elevation_surveillance”,'
+                      - “elevation_surveillance”,
                       - ''
-                      - '“sunscan”,“pointing”,'
+                      - “sunscan”,“pointing”,
                       - ''
-                      - '“manual_ppi”,“manual_rhi”,'
+                      - “manual_ppi”,“manual_rhi”,
                       - ''
-                      - '“doppler_beam_swinging”,'
+                      - “doppler_beam_swinging”,
                       - ''
-                      - '“complex_trajectory”,'
+                      - “complex_trajectory”,
                       - ''
                       - “electronic_steering”
       - type: TableRow
@@ -4601,7 +4601,7 @@ content:
                   - 'options are: '
                   - type: Emphasis
                     content:
-                      - '“none”, “sun”, “vehicle”, “aircraft”, “target”, “manual”'
+                      - “none”, “sun”, “vehicle”, “aircraft”, “target”, “manual”
               - type: Paragraph
                 meta:
                   style: cell
@@ -4640,7 +4640,7 @@ content:
                   - 'Options are: '
                   - type: Emphasis
                     content:
-                      - '“fixed”, “staggered”, “dual”, “hybrid”.'
+                      - “fixed”, “staggered”, “dual”, “hybrid”.
                       - ''
                       - Assumed “fixed” if missing.
                       - ''
@@ -4683,9 +4683,9 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'List of operating frequencies, in Hertz.'
+                  - List of operating frequencies, in Hertz.
                   - ''
-                  - 'In most cases, only a single frequency is used.'
+                  - In most cases, only a single frequency is used.
       - type: TableRow
         cells:
           - type: TableCell
@@ -4998,7 +4998,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Azimuth of antenna, relative to true north.'
+                  - Azimuth of antenna, relative to true north.
                   - ''
                   - The azimuth should refer to the center of the dwell.
       - type: TableRow
@@ -5037,7 +5037,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Elevation of antenna, relative to the horizontal plane.'
+                  - Elevation of antenna, relative to the horizontal plane.
                   - ''
                   - The elevation should refer to the center of the dwell.
       - type: TableRow
@@ -5071,9 +5071,9 @@ content:
                 meta:
                   style: cell
                 content:
-                  - '1 if antenna is in transition,'
+                  - 1 if antenna is in transition,
                   - ''
-                  - 'i.e. between sweeps, 0 if not.'
+                  - i.e. between sweeps, 0 if not.
                   - ''
                   - >-
                     If variable is omitted, the transition will be assumed to be
@@ -5187,7 +5187,7 @@ content:
                 content:
                   - Resolution of the raw receiver samples.
                   - ''
-                  - 'If missing, assumed to be meters_between_gates (5.2.2).'
+                  - If missing, assumed to be meters_between_gates (5.2.2).
                   - ''
                   - Raw data may be resampled before data storage.
       - type: TableRow
@@ -5228,7 +5228,7 @@ content:
                 content:
                   - Pulse repetition time.
                   - ''
-                  - 'For staggered prt, also see prt_ratio.'
+                  - For staggered prt, also see prt_ratio.
       - type: TableRow
         cells:
           - type: TableCell
@@ -5278,7 +5278,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - '(time, prt)'
+                  - (time, prt)
           - type: TableCell
             content:
               - type: Paragraph
@@ -7743,7 +7743,7 @@ content:
                   - ''
                   - “true” indicates this is a quality control field.
                   - ''
-                  - 'If the attribute is not present, defaults to “false”.'
+                  - If the attribute is not present, defaults to “false”.
       - type: TableRow
         cells:
           - type: TableCell
@@ -7779,7 +7779,7 @@ content:
             content:
               - type: Paragraph
                 content:
-                  - 'string[]'
+                  - string[]
           - type: TableCell
             content:
               - type: Paragraph
@@ -7827,7 +7827,7 @@ content:
             content:
               - type: Paragraph
                 content:
-                  - 'string[]'
+                  - string[]
           - type: TableCell
             content:
               - type: Paragraph
@@ -7855,7 +7855,7 @@ content:
             content:
               - type: Paragraph
                 content:
-                  - 'string[]'
+                  - string[]
           - type: TableCell
             content:
               - type: Paragraph
@@ -7979,7 +7979,7 @@ content:
       - Use of flag values - optional
   - type: Paragraph
     content:
-      - 'For all data sets, the _'
+      - For all data sets, the _
       - type: Strong
         content:
           - FillValue
@@ -8294,7 +8294,7 @@ content:
       - type: Emphasis
         content:
           - spectrum_index
-      - '(time, range)'
+      - (time, range)
   - type: Paragraph
     content:
       - just as for all field variables.
@@ -8631,7 +8631,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'CF standard name for field, or from section 8.'
+                  - CF standard name for field, or from section 8.
       - type: TableRow
         cells:
           - type: TableCell
@@ -8890,7 +8890,7 @@ content:
         of the system.
   - type: Paragraph
     content:
-      - 'These groups reside in the root group, and are optional.'
+      - These groups reside in the root group, and are optional.
   - type: Heading
     depth: 2
     content:
@@ -8980,7 +8980,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Nominal antenna gain,'
+                  - Nominal antenna gain,
                   - ''
                   - H polarization
       - type: TableRow
@@ -9019,7 +9019,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Nominal antenna gain,'
+                  - Nominal antenna gain,
                   - ''
                   - V polarization
       - type: TableRow
@@ -9535,7 +9535,7 @@ content:
     order: unordered
   - type: Paragraph
     content:
-      - 'For single polarization radars, the '''
+      - For single polarization radars, the '
       - type: Strong
         content:
           - h
@@ -9654,7 +9654,7 @@ content:
                 content:
                   - e.g. 2008-09-25
                   - ''
-                  - 'T23:00:00Z'
+                  - T23:00:00Z
       - type: TableRow
         cells:
           - type: TableCell
@@ -9888,7 +9888,7 @@ content:
                 content:
                   - 2-way waveguide loss
                   - ''
-                  - 'measurement plane to feed horn, H channel'
+                  - measurement plane to feed horn, H channel
       - type: TableRow
         cells:
           - type: TableCell
@@ -9930,7 +9930,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'measurement plane to feed horn, V channel'
+                  - measurement plane to feed horn, V channel
       - type: TableRow
         cells:
           - type: TableCell
@@ -11292,7 +11292,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'System PhiDp, as seen in drizzle close to radar'
+                  - System PhiDp, as seen in drizzle close to radar
       - type: TableRow
         cells:
           - type: TableCell
@@ -11402,7 +11402,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Computed receiver slope, ideally 1.0'
+                  - Computed receiver slope, ideally 1.0
                   - ''
                   - H co-pol channel
       - type: TableRow
@@ -11436,7 +11436,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Computed receiver slope, ideally 1.0'
+                  - Computed receiver slope, ideally 1.0
                   - ''
                   - V co-pol channel
       - type: TableRow
@@ -11470,7 +11470,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Computed receiver slope, ideally 1.0'
+                  - Computed receiver slope, ideally 1.0
                   - ''
                   - H cross-pol channel
       - type: TableRow
@@ -11504,7 +11504,7 @@ content:
                 meta:
                   style: cell
                 content:
-                  - 'Computed receiver slope, ideally 1.0'
+                  - Computed receiver slope, ideally 1.0
                   - ''
                   - V cross-pol channel
   - type: Heading
@@ -11539,7 +11539,7 @@ content:
         a volume.
   - type: Paragraph
     content:
-      - 'If any item is omitted, the value is assumed to be 0.'
+      - If any item is omitted, the value is assumed to be 0.
   - type: Table
     rows:
       - type: TableRow
@@ -12218,11 +12218,11 @@ content:
       - type: Emphasis
         content:
           - r
-      - '), azimuth ('
+      - ), azimuth (
       - type: Emphasis
         content:
           - λ
-      - '), and elevation ('
+      - ), and elevation (
       - type: Emphasis
         content:
           - φ
@@ -12293,7 +12293,7 @@ content:
   - type: Heading
     depth: 2
     content:
-      - 'Special case – ground-based, stationary and leveled sensors'
+      - Special case – ground-based, stationary and leveled sensors
   - type: Paragraph
     content:
       - >-
@@ -12307,7 +12307,7 @@ content:
       - type: Emphasis
         content:
           - λ
-      - ') are positive clockwise looking from above (+Z), with 0 being TN.'
+      - ) are positive clockwise looking from above (+Z), with 0 being TN.
   - type: Paragraph
     content:
       - Elevation angles (
@@ -12434,7 +12434,7 @@ content:
       - type: Emphasis
         content:
           - z
-      - ') from above, using normal spherical geometry.'
+      - ) from above, using normal spherical geometry.
   - type: Heading
     depth: 3
     content:
@@ -12540,7 +12540,7 @@ content:
             meta:
               style: bullet_1
             content:
-              - 'roll, pitch and heading of the platform'
+              - roll, pitch and heading of the platform
       - type: ListItem
         content:
           - type: Paragraph
@@ -12756,11 +12756,11 @@ content:
       - type: Subscript
         content:
           - a
-      - '), the heading, (Y'
+      - ), the heading, (Y
       - type: Subscript
         content:
           - a
-      - '), and the zenith, (Z'
+      - ), and the zenith, (Z
       - type: Subscript
         content:
           - a
@@ -12783,7 +12783,7 @@ content:
       - type: Emphasis
         content:
           - H
-      - '), pitch ('
+      - ), pitch (
       - type: Emphasis
         content:
           - P
@@ -13373,7 +13373,7 @@ content:
               - type: Subscript
                 content:
                   - a
-              - ') plane, positive above it (for +Z'
+              - ) plane, positive above it (for +Z
               - type: Subscript
                 content:
                   - a
@@ -13438,7 +13438,7 @@ content:
               - type: Subscript
                 content:
                   - a
-              - ') plane, i.e. along the +X'
+              - ) plane, i.e. along the +X
               - type: Subscript
                 content:
                   - a
@@ -13461,7 +13461,7 @@ content:
               - type: Subscript
                 content:
                   - a
-              - ') plane, positive for +Y'
+              - ) plane, positive for +Y
               - type: Subscript
                 content:
                   - a
@@ -13557,7 +13557,7 @@ content:
           - type: Subscript
             content:
               - a
-          - ') plane, positive for +Y'
+          - ) plane, positive for +Y
           - type: Subscript
             content:
               - a
@@ -13637,7 +13637,7 @@ content:
               - type: Subscript
                 content:
                   - a
-              - ') plane, i.e. along the +Z'
+              - ) plane, i.e. along the +Z
               - type: Subscript
                 content:
                   - a
@@ -13668,7 +13668,7 @@ content:
               - type: Subscript
                 content:
                   - a
-              - ') plane, positive for +X'
+              - ) plane, positive for +X
               - type: Subscript
                 content:
                   - a

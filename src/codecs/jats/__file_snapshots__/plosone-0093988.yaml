@@ -60,7 +60,7 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        name: 'University of Maribor, Slovenia'
+        name: University of Maribor, Slovenia
     familyNames:
       - Perc
     givenNames:
@@ -68,15 +68,15 @@ editors:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PONE-D-14-01441
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pone.0093988
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e93988
 isPartOf:
   type: PublicationIssue
@@ -87,15 +87,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS ONE
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosone
       issns:
         - 1932-6203
@@ -112,7 +112,7 @@ licenses:
         content:
           - 'This is an open-access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -513,7 +513,7 @@ references:
       volumeNumber: 80
     pageEnd: 248
     pageStart: 234
-    title: 'Tacit coordination games, strategic uncertainty, and coordination failure'
+    title: Tacit coordination games, strategic uncertainty, and coordination failure
   - type: Article
     id: pone-0093988-Capra1
     authors:
@@ -2055,7 +2055,7 @@ content:
         target: pone-0093988-Manapat1
         content:
           - '[24]'
-      - '. Thus, this situation has the structure of the TD game.'
+      - . Thus, this situation has the structure of the TD game.
   - type: Paragraph
     content:
       - >-

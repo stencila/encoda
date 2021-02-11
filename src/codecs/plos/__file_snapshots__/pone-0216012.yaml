@@ -142,7 +142,7 @@ fundedBy:
   - type: MonetaryGrant
     funders:
       - type: Organization
-        name: 'University of Strasbourg, France'
+        name: University of Strasbourg, France
     identifiers:
       - type: PropertyValue
         value: Labex IRMIA
@@ -156,15 +156,15 @@ fundedBy:
 identifiers:
   - type: PropertyValue
     name: publisher-id
-    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    propertyID: https://registry.identifiers.org/registry/publisher-id
     value: PONE-D-19-09231
   - type: PropertyValue
     name: doi
-    propertyID: 'https://registry.identifiers.org/registry/doi'
+    propertyID: https://registry.identifiers.org/registry/doi
     value: 10.1371/journal.pone.0216012
   - type: PropertyValue
     name: elocation-id
-    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    propertyID: https://registry.identifiers.org/registry/elocation-id
     value: e0216012
 isPartOf:
   type: PublicationIssue
@@ -175,15 +175,15 @@ isPartOf:
       identifiers:
         - type: PropertyValue
           name: nlm-ta
-          propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+          propertyID: https://registry.identifiers.org/registry/nlm-ta
           value: PLoS ONE
         - type: PropertyValue
           name: publisher-id
-          propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+          propertyID: https://registry.identifiers.org/registry/publisher-id
           value: plos
         - type: PropertyValue
           name: pmc
-          propertyID: 'https://registry.identifiers.org/registry/pmc'
+          propertyID: https://registry.identifiers.org/registry/pmc
           value: plosone
       issns:
         - 1932-6203
@@ -195,13 +195,13 @@ isPartOf:
   issueNumber: '8'
 licenses:
   - type: CreativeWork
-    url: 'http://creativecommons.org/licenses/by/4.0/'
+    url: http://creativecommons.org/licenses/by/4.0/
     content:
       - type: Paragraph
         content:
           - 'This is an open access article distributed under the terms of the '
           - type: Link
-            target: 'http://creativecommons.org/licenses/by/4.0/'
+            target: http://creativecommons.org/licenses/by/4.0/
             content:
               - Creative Commons Attribution License
           - >-
@@ -211,7 +211,7 @@ references:
   - type: Article
     id: pone-0216012-ref001
     authors: []
-    url: 'https://humanresearchroadmap.nasa.gov/evidence/reports/SANS.pdf'
+    url: https://humanresearchroadmap.nasa.gov/evidence/reports/SANS.pdf
   - type: Article
     id: pone-0216012-ref002
     authors:
@@ -912,7 +912,7 @@ references:
       issueNumber: 5
     pageEnd: 712
     pageStart: 704
-    title: 'Blood pressure, perfusion pressure, and glaucoma'
+    title: Blood pressure, perfusion pressure, and glaucoma
   - type: Article
     id: pone-0216012-ref019
     authors:
@@ -1471,7 +1471,7 @@ references:
       issueNumber: 6
     pageEnd: 759
     pageStart: 729
-    title: 'A mathematical model of blood, cerebrospinal fluid and brain dynamics'
+    title: A mathematical model of blood, cerebrospinal fluid and brain dynamics
   - type: Article
     id: pone-0216012-ref031
     authors:
@@ -4057,7 +4057,7 @@ content:
       - type: Heading
         depth: 4
         content:
-          - 'Network model of fluid flows in the brain and eyes ['
+          - Network model of fluid flows in the brain and eyes [
           - type: Cite
             target: pone-0216012-ref012
             content:
@@ -4143,19 +4143,19 @@ content:
               - type: Emphasis
                 content:
                   - r
-              - '), choroid ('
+              - ), choroid (
               - type: Emphasis
                 content:
                   - ch
-              - '), central retinal artery ('
+              - ), central retinal artery (
               - type: Emphasis
                 content:
                   - cra
-              - '), central retinal vein ('
+              - ), central retinal vein (
               - type: Emphasis
                 content:
                   - crv
-              - '), ciliary body circulation ('
+              - ), ciliary body circulation (
               - type: Emphasis
                 content:
                   - cl
@@ -7270,7 +7270,7 @@ content:
           - type: Emphasis
             content:
               - CF
-      - '. Unlike the choice adopted in ['
+      - . Unlike the choice adopted in [
       - type: Cite
         target: pone-0216012-ref024
         content:
@@ -7501,7 +7501,7 @@ content:
       - type: Emphasis
         content:
           - a
-      - '), capillaries ('
+      - ), capillaries (
       - type: Emphasis
         content:
           - c
@@ -8779,7 +8779,7 @@ content:
       - type: Heading
         depth: 3
         content:
-          - 'Conditions for simulated microgravity environment, as in ['
+          - Conditions for simulated microgravity environment, as in [
           - type: Cite
             target: pone-0216012-ref024
             content:
@@ -9169,7 +9169,7 @@ content:
               - ' = 0.5'
   - type: Paragraph
     content:
-      - 'We remark that a weakened blood/brain barrier was utilized in ['
+      - We remark that a weakened blood/brain barrier was utilized in [
       - type: Cite
         target: pone-0216012-ref024
         content:
@@ -9366,7 +9366,7 @@ content:
         target: '#pone-0216012-t005'
         content:
           - Table 5
-      - '. In particular, considering posture, the brain model by Lakin et al ['
+      - . In particular, considering posture, the brain model by Lakin et al [
       - type: Cite
         target: pone-0216012-ref024
         content:
@@ -13181,7 +13181,7 @@ content:
             choroidal circulations.
       - type: Paragraph
         content:
-          - 'LHDT solid line, M2 dash-dotted line.'
+          - LHDT solid line, M2 dash-dotted line.
     label: Fig 6
     content:
       - type: ImageObject
@@ -13201,7 +13201,7 @@ content:
             circulation.
       - type: Paragraph
         content:
-          - 'LHDT solid line, M2 dash-dotted line.'
+          - LHDT solid line, M2 dash-dotted line.
     label: Fig 7
     content:
       - type: ImageObject

@@ -1,8 +1,8 @@
 type: Article
-id: 'https://doi.org/10.5438/0000-00cc'
+id: https://doi.org/10.5438/0000-00cc
 authors:
   - type: Person
-    id: 'https://orcid.org/0000-0003-1419-2405'
+    id: https://orcid.org/0000-0003-1419-2405
     affiliations:
       - type: Organization
         name: DataCite
@@ -28,10 +28,10 @@ description: >-
 identifiers:
   - type: PropertyValue
     propertyID: DOI
-    value: 'https://doi.org/10.5438/0000-00cc'
+    value: https://doi.org/10.5438/0000-00cc
 isPartOf:
   type: Article
-  id: 'https://doi.org/10.5438/0000-00ss'
+  id: https://doi.org/10.5438/0000-00ss
 keywords:
   - doi
   - schema.org
@@ -42,14 +42,14 @@ publisher:
   name: DataCite
 references:
   - type: CreativeWork
-    id: 'https://doi.org/10.5438/0000-00ss'
+    id: https://doi.org/10.5438/0000-00ss
   - type: CreativeWork
-    id: 'http://dublincore.org/documents/2012/06/14/dces'
+    id: http://dublincore.org/documents/2012/06/14/dces
   - type: CreativeWork
-    id: 'https://doi.org/10.5438/tnhx-54cg'
+    id: https://doi.org/10.5438/tnhx-54cg
   - type: CreativeWork
-    id: 'https://doi.org/10.5438/55e5-t5c0'
+    id: https://doi.org/10.5438/55e5-t5c0
   - type: CreativeWork
-    id: 'https://doi.org/10.5438/4k3m-nyvg'
-url: 'https://blog.datacite.org/schema-org-register-dois/'
+    id: https://doi.org/10.5438/4k3m-nyvg
+url: https://blog.datacite.org/schema-org-register-dois/
 version: '1.0'
