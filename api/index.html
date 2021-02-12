@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @stencila/encoda">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +50,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>@stencila/encoda</h1>
 		</div>
 	</div>
@@ -464,32 +458,35 @@
 					<h2>Publishers</h2>
 				</a>
 				<p>Several of the codecs in Encoda, deal with fetching content from a particular publisher. For example, to get an eLife article and read it in Markdown:</p>
-				<pre><code class="language-bash">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</span>
+</code></pre>
 				<p>Some of these publisher codecs deal with meta data. e.g.</p>
-				<pre><code class="language-bash">stencila convert <span class="hljs-string">&quot;Watson and Crick 1953&quot;</span> - --from crossref --to yaml</code></pre>
-				<pre><code class="language-yaml"><span class="hljs-attr">type:</span> <span class="hljs-string">Article</span>
-<span class="hljs-attr">title:</span> <span class="hljs-string">Genetical</span> <span class="hljs-string">Implications</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">Structure</span> <span class="hljs-string">of</span> <span class="hljs-string">Deoxyribonucleic</span> <span class="hljs-string">Acid</span>
-<span class="hljs-attr">authors:</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-attr">familyNames:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">WATSON</span>
-    <span class="hljs-attr">givenNames:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">J.</span> <span class="hljs-string">D.</span>
-    <span class="hljs-attr">type:</span> <span class="hljs-string">Person</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-attr">familyNames:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">CRICK</span>
-    <span class="hljs-attr">givenNames:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">F.</span> <span class="hljs-string">H.</span> <span class="hljs-string">C.</span>
-    <span class="hljs-attr">type:</span> <span class="hljs-string">Person</span>
-<span class="hljs-attr">datePublished:</span> <span class="hljs-string">&#x27;1953,5&#x27;</span>
-<span class="hljs-attr">isPartOf:</span>
-  <span class="hljs-attr">issueNumber:</span> <span class="hljs-string">&#x27;4361&#x27;</span>
-  <span class="hljs-attr">isPartOf:</span>
-    <span class="hljs-attr">volumeNumber:</span> <span class="hljs-string">&#x27;171&#x27;</span>
-    <span class="hljs-attr">isPartOf:</span>
-      <span class="hljs-attr">title:</span> <span class="hljs-string">Nature</span>
-      <span class="hljs-attr">type:</span> <span class="hljs-string">Periodical</span>
-    <span class="hljs-attr">type:</span> <span class="hljs-string">PublicationVolume</span>
-  <span class="hljs-attr">type:</span> <span class="hljs-string">PublicationIssue</span></code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">stencila convert </span><span style="color: #A31515">&quot;Watson and Crick 1953&quot;</span><span style="color: #000000"> - --from crossref --to yaml</span>
+</code></pre>
+				<pre><code class="language-yaml"><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">Article</span>
+<span style="color: #800000">title</span><span style="color: #000000">: </span><span style="color: #0000FF">Genetical Implications of the Structure of Deoxyribonucleic Acid</span>
+<span style="color: #800000">authors</span><span style="color: #000000">:</span>
+<span style="color: #000000">  - </span><span style="color: #800000">familyNames</span><span style="color: #000000">:</span>
+<span style="color: #000000">      - </span><span style="color: #0000FF">WATSON</span>
+<span style="color: #000000">    </span><span style="color: #800000">givenNames</span><span style="color: #000000">:</span>
+<span style="color: #000000">      - </span><span style="color: #0000FF">J. D.</span>
+<span style="color: #000000">    </span><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">Person</span>
+<span style="color: #000000">  - </span><span style="color: #800000">familyNames</span><span style="color: #000000">:</span>
+<span style="color: #000000">      - </span><span style="color: #0000FF">CRICK</span>
+<span style="color: #000000">    </span><span style="color: #800000">givenNames</span><span style="color: #000000">:</span>
+<span style="color: #000000">      - </span><span style="color: #0000FF">F. H. C.</span>
+<span style="color: #000000">    </span><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">Person</span>
+<span style="color: #800000">datePublished</span><span style="color: #000000">: </span><span style="color: #0000FF">&#039;1953,5&#039;</span>
+<span style="color: #800000">isPartOf</span><span style="color: #000000">:</span>
+<span style="color: #000000">  </span><span style="color: #800000">issueNumber</span><span style="color: #000000">: </span><span style="color: #0000FF">&#039;4361&#039;</span>
+<span style="color: #000000">  </span><span style="color: #800000">isPartOf</span><span style="color: #000000">:</span>
+<span style="color: #000000">    </span><span style="color: #800000">volumeNumber</span><span style="color: #000000">: </span><span style="color: #0000FF">&#039;171&#039;</span>
+<span style="color: #000000">    </span><span style="color: #800000">isPartOf</span><span style="color: #000000">:</span>
+<span style="color: #000000">      </span><span style="color: #800000">title</span><span style="color: #000000">: </span><span style="color: #0000FF">Nature</span>
+<span style="color: #000000">      </span><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">Periodical</span>
+<span style="color: #000000">    </span><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">PublicationVolume</span>
+<span style="color: #000000">  </span><span style="color: #800000">type</span><span style="color: #000000">: </span><span style="color: #0000FF">PublicationIssue</span>
+</code></pre>
 				<table>
 					<thead>
 						<tr>
@@ -586,7 +583,8 @@
 					<h2>Install</h2>
 				</a>
 				<p>The easiest way to use Encoda is to install the <a href="https://github.com/stencila/stencila"><code>stencila</code> command line tool</a>. Encoda powers <code>stencila convert</code>, and other commands, in that CLI. However, the version of Encoda in <code>stencila</code>, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:</p>
-				<pre><code class="language-bash">npm install @stencila/encoda --global</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm install @stencila/encoda --global</span>
+</code></pre>
 				<a href="#use" id="use" style="color: inherit; text-decoration: none;">
 					<h2>Use</h2>
 				</a>
@@ -594,23 +592,29 @@
 				<a href="#converting-files" id="converting-files" style="color: inherit; text-decoration: none;">
 					<h3>Converting files</h3>
 				</a>
-				<pre><code class="language-bash">encoda convert notebook.ipynb notebook.docx</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert notebook.ipynb notebook.docx</span>
+</code></pre>
 				<p>Encoda will determine the input and output formats based on the file extensions. You can override these using the <code>--from</code> and <code>--to</code> options. e.g.</p>
-				<pre><code class="language-bash">encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert notebook.ipynb notebook.xml --to jats</span>
+</code></pre>
 				<p>You can also convert to more than one file / format (in this case the <code>--to</code> argument only applies to the first output file) e.g.</p>
-				<pre><code class="language-bash">encoda convert report.docx report.Rmd report.html report.jats</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert report.docx report.Rmd report.html report.jats</span>
+</code></pre>
 				<a href="#converting-folders" id="converting-folders" style="color: inherit; text-decoration: none;">
 					<h3>Converting folders</h3>
 				</a>
 				<p>You can decode an entire directory into a <code>Collection</code>. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the <code>Collection</code> using the <code>dir</code> codec into a tree of HTML files e.g.</p>
-				<pre><code class="language-bash">encoda convert myproject myproject-published --to dir --pattern <span class="hljs-string">&#x27;**/*.{rmd, csv}&#x27;</span></code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert myproject myproject-published --to dir --pattern </span><span style="color: #A31515">&#039;**/*.{rmd, csv}&#039;</span>
+</code></pre>
 				<a href="#converting-command-line-input" id="converting-command-line-input" style="color: inherit; text-decoration: none;">
 					<h3>Converting command line input</h3>
 				</a>
 				<p>You can also read content from the first argument. In that case, you&#39;ll need to specifying the <code>--from</code> format e.g.</p>
-				<pre><code class="language-bash">encoda convert <span class="hljs-string">&quot;{type: &#x27;Paragraph&#x27;, content: [&#x27;Hello world!&#x27;]}&quot;</span> --from json5 paragraph.md</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert </span><span style="color: #A31515">&quot;{type: &#039;Paragraph&#039;, content: [&#039;Hello world!&#039;]}&quot;</span><span style="color: #000000"> --from json5 paragraph.md</span>
+</code></pre>
 				<p>You can send output to the console by using <code>-</code> as the second argument and specifying the <code>--to</code> format e.g.</p>
-				<pre><code class="language-bash">encoda convert paragraph.md - --to yaml</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">encoda convert paragraph.md - --to yaml</span>
+</code></pre>
 				<a href="#creating-zip-archives" id="creating-zip-archives" style="color: inherit; text-decoration: none;">
 					<h3>Creating zip archives</h3>
 				</a>
@@ -632,66 +636,78 @@
 						</tr>
 						<tr>
 							<td><code>--theme</code></td>
-							<td>The theme for the output (only applies to HTML, PDF and RPNG output) e.g. <code>--theme eLife</code>. Either a</td>
+							<td>The theme for the output (only applies to HTML, PDF and RPNG output) e.g. <code>--theme eLife</code>. Either a <a href="https://github.com/stencila/thema#available-themes">Thema theme name</a> or a path/URL to a directory containing a <code>styles.css</code> and a <code>index.js</code> file.</td>
+						</tr>
+						<tr>
+							<td><code>--standalone</code></td>
+							<td>Generate a standalone document, not a fragment (default <code>true</code>)</td>
+						</tr>
+						<tr>
+							<td><code>--bundle</code></td>
+							<td>Bundle all assets (e.g images, CSS and JS) into the document (default <code>false</code>)</td>
+						</tr>
+						<tr>
+							<td><code>--debug</code></td>
+							<td>Print debugging information</td>
 						</tr>
 				</tbody></table>
-				<p><a href="https://github.com/stencila/thema#available-themes">Thema theme name</a> or a path/URL to a directory containing a
-					<code>styles.css</code> and a <code>index.js</code> file. |
-					| <code>--standalone</code> | Generate a standalone document, not a fragment (default <code>true</code>) |
-					| <code>--bundle</code> | Bundle all assets (e.g images, CSS and JS) into the document (default <code>false</code>) |
-				| <code>--debug</code> | Print debugging information |</p>
 				<a href="#using-with-executa" id="using-with-executa" style="color: inherit; text-decoration: none;">
 					<h3>Using with Executa</h3>
 				</a>
 				<p>Encoda exposes the <code>decode</code> and <code>encode</code> methods of the <a href="https://github.com/stencila/executa">Executa</a> API. Register Encoda so that it can be discovered by other executors on your machine,</p>
-				<pre><code class="language-bash">npm run register</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run register</span>
+</code></pre>
 				<p>You can then use Encoda as a plugin for Executa that provides additional format conversion capabilities. For example, you can use the <code>query</code> REPL on a Markdown document:</p>
-				<pre><code class="language-bash">npx executa query CHANGELOG.md --repl</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npx executa query CHANGELOG.md --repl</span>
+</code></pre>
 				<p>You can then use the REPL to explore the structure of the document and do things like create summary documents from it. For example, lets say from some reason we wanted to create a short JATS XML file with the five most recent releases of this package:</p>
-				<pre><code><span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">format</span> <span class="hljs-selector-tag">jats</span>
-<span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">dest</span> <span class="hljs-selector-tag">latest-releases</span><span class="hljs-selector-class">.jats</span><span class="hljs-selector-class">.xml</span>
-<span class="hljs-selector-tag">jmp</span> &gt; {<span class="hljs-attribute">type</span>: <span class="hljs-string">&#x27;Article&#x27;</span>, content: content[? type==`Heading` &amp;&amp; depth==`<span class="hljs-number">1</span>`] | [<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]}</code></pre>
+				<pre><code><span style="color: #001080">jmp</span><span style="color: #000000"> &gt; %</span><span style="color: #001080">format</span><span style="color: #000000"> </span><span style="color: #001080">jats</span>
+<span style="color: #001080">jmp</span><span style="color: #000000"> &gt; %</span><span style="color: #001080">dest</span><span style="color: #000000"> </span><span style="color: #001080">latest</span><span style="color: #000000">-</span><span style="color: #001080">releases</span><span style="color: #000000">.</span><span style="color: #001080">jats</span><span style="color: #000000">.</span><span style="color: #001080">xml</span>
+<span style="color: #001080">jmp</span><span style="color: #000000"> &gt; {</span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Article&#039;</span><span style="color: #000000">, </span><span style="color: #001080">content:</span><span style="color: #000000"> </span><span style="color: #001080">content</span><span style="color: #000000">[? </span><span style="color: #001080">type</span><span style="color: #000000">==</span><span style="color: #A31515">`Heading`</span><span style="color: #000000"> &amp;&amp; </span><span style="color: #001080">depth</span><span style="color: #000000">==</span><span style="color: #A31515">`1`</span><span style="color: #000000">] | [</span><span style="color: #098658">1</span><span style="color: #000000">:</span><span style="color: #098658">5</span><span style="color: #000000">]}</span>
+</code></pre>
 				<p>Which creates the <code>latest-major-releases.jats.xml</code> file:</p>
-				<pre><code class="language-xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">article</span> <span class="hljs-meta-keyword">PUBLIC</span> <span class="hljs-meta-string">&quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot;</span> <span class="hljs-meta-string">&quot;JATS-archivearticle1.dtd&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="hljs-attr">article-type</span>=<span class="hljs-string">&quot;research-article&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">front</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">title-group</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">article-title</span>/&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">title-group</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">contrib-group</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">front</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">sec</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ext-link</span> <span class="hljs-attr">ext-link-type</span>=<span class="hljs-string">&quot;uri&quot;</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">&quot;https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0&quot;</span>&gt;</span>0.80.0<span class="hljs-tag">&lt;/<span class="hljs-name">ext-link</span>&gt;</span> (2019-09-30)
-            <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">sec</span>&gt;</span>
-...</code></pre>
+				<pre><code class="language-xml"><span style="color: #800000">&lt;?xml</span><span style="color: #FF0000"> version</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;1.0&quot;</span><span style="color: #FF0000"> encoding</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;utf-8&quot;</span><span style="color: #800000">?&gt;</span>
+<span style="color: #800000">&lt;!</span><span style="color: #0000FF">DOCTYPE</span><span style="color: #000000"> </span><span style="color: #0000FF">article</span><span style="color: #000000"> PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #800000">&lt;article</span><span style="color: #000000"> </span><span style="color: #FF0000">xmlns:xlink</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;http://www.w3.org/1999/xlink&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">article-type</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;research-article&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;front&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;title-group&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;article-title/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/title-group&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;contrib-group/&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/front&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;body&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;sec&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;title&gt;</span>
+<span style="color: #000000">                </span><span style="color: #800000">&lt;ext-link</span><span style="color: #000000"> </span><span style="color: #FF0000">ext-link-type</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;uri&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">xlink:href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0&quot;</span><span style="color: #800000">&gt;</span><span style="color: #000000">0.80.0</span><span style="color: #800000">&lt;/ext-link&gt;</span><span style="color: #000000"> (2019-09-30)</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;/title&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/sec&gt;</span>
+<span style="color: #000000">...</span>
+</code></pre>
 				<p>You can query a document in any format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and get the names of it&#39;s columns:</p>
-				<pre><code class="language-bash">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
-🛈 INFO  encoda:http Fetching <span class="hljs-string">&quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;</span>
-jmp &gt; columns[].name
-[
-  <span class="hljs-string">&#x27;SetID&#x27;</span>,
-  <span class="hljs-string">&#x27;Number&#x27;</span>,
-  <span class="hljs-string">&#x27;Variant&#x27;</span>,
-  <span class="hljs-string">&#x27;Theme&#x27;</span>,
-  <span class="hljs-string">&#x27;Subtheme&#x27;</span>,
-  <span class="hljs-string">&#x27;Year&#x27;</span>,
-  <span class="hljs-string">&#x27;Name&#x27;</span>,
-  <span class="hljs-string">&#x27;Minifigs&#x27;</span>,
-  <span class="hljs-string">&#x27;Pieces&#x27;</span>,
-  <span class="hljs-string">&#x27;UKPrice&#x27;</span>,
-  <span class="hljs-string">&#x27;USPrice&#x27;</span>,
-  <span class="hljs-string">&#x27;CAPrice&#x27;</span>,
-  <span class="hljs-string">&#x27;EUPrice&#x27;</span>,
-  <span class="hljs-string">&#x27;ImageURL&#x27;</span>,
-  <span class="hljs-string">&#x27;Owned&#x27;</span>,
-  <span class="hljs-string">&#x27;Wanted&#x27;</span>,
-  <span class="hljs-string">&#x27;QtyOwned&#x27;</span>,
-]
-jmp &gt;</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl</span>
+<span style="color: #000000">🛈 INFO  encoda:http Fetching </span><span style="color: #A31515">&quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;</span>
+<span style="color: #000000">jmp &gt; columns[].name</span>
+<span style="color: #000000">[</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;SetID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Number&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Variant&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Theme&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Subtheme&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Year&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Name&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Minifigs&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Pieces&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;UKPrice&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;USPrice&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;CAPrice&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;EUPrice&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;ImageURL&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Owned&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;Wanted&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;QtyOwned&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">]</span>
+<span style="color: #000000">jmp &gt;</span>
+</code></pre>
 				<p>See the <code>%help</code> REPL command for more examples.</p>
 				<p>Note: If you have <a href="https://github.com/stencila/executa"><code>executa</code></a> installed globally, then the <code>npx</code> prefix above is not necessary.</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
@@ -703,18 +719,23 @@ jmp &gt;</code></pre>
 				</a>
 				<p>Check how to <a href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md">contribute back to the project</a>. All PRs are most welcome! Thank you!</p>
 				<p>Clone the repository and install a development environment:</p>
-				<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/stencila/encoda.git
-<span class="hljs-built_in">cd</span> encoda
-npm install</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">git clone https://github.com/stencila/encoda.git</span>
+<span style="color: #795E26">cd</span><span style="color: #000000"> encoda</span>
+<span style="color: #000000">npm install</span>
+</code></pre>
 				<p>You can manually test conversion using the <code>ts-node</code> and the <code>cli.ts</code> script:</p>
-				<pre><code class="language-bash">npm run cli -- convert simple.md simple.html</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run cli -- convert simple.md simple.html</span>
+</code></pre>
 				<p>There is a bash script to make that a little shorter and more like real life usage:</p>
-				<pre><code class="language-bash">./encoda convert simple.md simple.html</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">./encoda convert simple.md simple.html</span>
+</code></pre>
 				<p>If that is a bit slow, compile the Typescript to Javascript first and use <code>node</code> directly:</p>
-				<pre><code class="language-bash">npm run build
-node dist/cli convert simple.md simple.html</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run build</span>
+<span style="color: #000000">node dist/cli convert simple.md simple.html</span>
+</code></pre>
 				<p>If you are using VSCode, you can use the <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature">Auto Attach feature</a> to attach to the CLI when running the <code>cli:debug</code> NPM script:</p>
-				<pre><code class="language-bash">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run cli:debug -- convert simple.gdoc simple.ipynb</span>
+</code></pre>
 				<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
 					<h2>Testing</h2>
 				</a>
@@ -722,20 +743,26 @@ node dist/cli convert simple.md simple.html</code></pre>
 					<h3>Running tests locally</h3>
 				</a>
 				<p>Run the test suite using:</p>
-				<pre><code class="language-bash">npm <span class="hljs-built_in">test</span></code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm </span><span style="color: #795E26">test</span>
+</code></pre>
 				<p>Or, run a single test file e.g.</p>
-				<pre><code class="language-bash">npx jest tests/xlsx.test.ts --watch</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npx jest tests/xlsx.test.ts --watch</span>
+</code></pre>
 				<p>To display debug logs during testing set the environment variable <code>DEBUG=1</code>, e.g.</p>
-				<pre><code class="language-bash">DEBUG=1 npm <span class="hljs-built_in">test</span></code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">DEBUG=1 npm </span><span style="color: #795E26">test</span>
+</code></pre>
 				<p>To get coverage statistics:</p>
-				<pre><code class="language-bash">npm run cover</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run cover</span>
+</code></pre>
 				<p>There&#39;s also a <code>Makefile</code> if you prefer to run tasks that way e.g.</p>
-				<pre><code class="language-bash">make lint cover</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">make lint cover</span>
+</code></pre>
 				<a href="#running-test-in-docker" id="running-test-in-docker" style="color: inherit; text-decoration: none;">
 					<h3>Running test in Docker</h3>
 				</a>
 				<p>You can also test this package using with a Docker container:</p>
-				<pre><code class="language-bash">npm run <span class="hljs-built_in">test</span>:docker</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">npm run test:docker</span>
+</code></pre>
 				<a href="#writing-tests" id="writing-tests" style="color: inherit; text-decoration: none;">
 					<h2>Writing tests</h2>
 				</a>
@@ -743,9 +770,10 @@ node dist/cli convert simple.md simple.html</code></pre>
 					<h4>Recording and using network fixtures</h4>
 				</a>
 				<p>As far as possible, tests should be able to run with no network access. We use <a href="https://github.com/nock/nock#nock-back">Nock Back</a> to record and play back network requests and responses. Use the <code>nockRecord</code> helper function for this with the convention of starting the fixture file with <code>nock-record-</code> e.g.</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">const</span> stopRecording = <span class="hljs-keyword">await</span> nockRecord(<span class="hljs-string">&#x27;nock-record-&lt;name-of-test&gt;.json&#x27;</span>)
-<span class="hljs-comment">// Do some things that connect to the interwebs</span>
-stopRecording()</code></pre>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">stopRecording</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">nockRecord</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;nock-record-&lt;name-of-test&gt;.json&#039;</span><span style="color: #000000">)</span>
+<span style="color: #008000">// Do some things that connect to the interwebs</span>
+<span style="color: #795E26">stopRecording</span><span style="color: #000000">()</span>
+</code></pre>
 				<p>Note that the <code>util/http</code> module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. <code>rm -rf ~/.config/stencila/encoda/cache/</code></p>
 				<p>As part of continuous integration, tests are run with both <code>NOCK_MODE=wild</code> (which ignores recording) to test that tests still work when using real network connections, and <code>NOCK_MODE=dryrun</code> (for speed and consistency with the default).</p>
 				<a href="#contribute" id="contribute" style="color: inherit; text-decoration: none;">
@@ -789,7 +817,8 @@ stopRecording()</code></pre>
 							</blockquote>
 						</li>
 						<li><p>Use the <a href="https://allcontributors.org/docs/en/cli/overview"><code>all-contributors</code> CLI</a> to do it yourself:</p>
-							<pre><code class="language-bash">npx all-contributors add octocat bugs, tests, code</code></pre>
+							<pre><code class="language-bash"><span style="color: #000000">npx all-contributors add octocat bugs, tests, code</span>
+</code></pre>
 						</li>
 					</ol>
 					<p>See the list of <a href="https://allcontributors.org/docs/en/emoji-key">contribution types</a>.</p>
@@ -852,284 +881,281 @@ stopRecording()</code></pre>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_cli_.html">&quot;cli&quot;</a>
+						<a href="modules/cli.html">cli</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_bib_index_.html">&quot;codecs/bib/index&quot;</a>
+						<a href="modules/codecs_bib.html">codecs/bib</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_crossref_index_.html">&quot;codecs/crossref/index&quot;</a>
+						<a href="modules/codecs_crossref.html">codecs/crossref</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_csi_index_.html">&quot;codecs/csi/index&quot;</a>
+						<a href="modules/codecs_csi.html">codecs/csi</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_csl_index_.html">&quot;codecs/csl/index&quot;</a>
+						<a href="modules/codecs_csl.html">codecs/csl</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_csv_index_.html">&quot;codecs/csv/index&quot;</a>
+						<a href="modules/codecs_csv.html">codecs/csv</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_dar_index_.html">&quot;codecs/dar/index&quot;</a>
+						<a href="modules/codecs_dar.html">codecs/dar</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_date_index_.html">&quot;codecs/date/index&quot;</a>
+						<a href="modules/codecs_date.html">codecs/date</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_dir_index_.html">&quot;codecs/dir/index&quot;</a>
+						<a href="modules/codecs_docx.html">codecs/docx</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_dmagic_index_.html">&quot;codecs/dmagic/index&quot;</a>
+						<a href="modules/codecs_doi.html">codecs/doi</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_docx_index_.html">&quot;codecs/docx/index&quot;</a>
+						<a href="modules/codecs_elife.html">codecs/elife</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_doi_index_.html">&quot;codecs/doi/index&quot;</a>
+						<a href="modules/codecs_html.html">codecs/html</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_elife_index_.html">&quot;codecs/elife/index&quot;</a>
+						<a href="modules/codecs_http.html">codecs/http</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_gdoc_index_.html">&quot;codecs/gdoc/index&quot;</a>
+						<a href="modules/codecs_ipynb_nbformat_v3.html">codecs/ipynb/nbformat-<wbr>v3</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_html_index_.html">&quot;codecs/html/index&quot;</a>
+						<a href="modules/codecs_ipynb_nbformat_v4.html">codecs/ipynb/nbformat-<wbr>v4</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_http_index_.html">&quot;codecs/http/index&quot;</a>
+						<a href="modules/codecs_jats_pandoc.html">codecs/jats-<wbr>pandoc</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_ipynb_index_.html">&quot;codecs/ipynb/index&quot;</a>
+						<a href="modules/codecs_json.html">codecs/json</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_jats_pandoc_index_.html">&quot;codecs/jats-<wbr>pandoc/index&quot;</a>
+						<a href="modules/codecs_json5.html">codecs/json5</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_jats_index_.html">&quot;codecs/jats/index&quot;</a>
+						<a href="modules/codecs_jsonld.html">codecs/jsonld</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_json_index_.html">&quot;codecs/json/index&quot;</a>
+						<a href="modules/codecs_latex.html">codecs/latex</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_json5_index_.html">&quot;codecs/json5/index&quot;</a>
+						<a href="modules/codecs_mathml.html">codecs/mathml</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_jsonld_index_.html">&quot;codecs/jsonld/index&quot;</a>
+						<a href="modules/codecs_md_plugins_cite.html">codecs/md/plugins/cite</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_latex_index_.html">&quot;codecs/latex/index&quot;</a>
+						<a href="modules/codecs_md_stringifyhtml.html">codecs/md/stringify<wbr>Html</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_mathml_index_.html">&quot;codecs/mathml/index&quot;</a>
+						<a href="modules/codecs_ods.html">codecs/ods</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_md_index_.html">&quot;codecs/md/index&quot;</a>
+						<a href="modules/codecs_odt.html">codecs/odt</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_md_plugins_cite_.html">&quot;codecs/md/plugins/cite&quot;</a>
+						<a href="modules/codecs_orcid.html">codecs/orcid</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_md_stringifyhtml_.html">&quot;codecs/md/stringify<wbr>Html&quot;</a>
+						<a href="modules/codecs_pandoc_binary.html">codecs/pandoc/binary</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_ods_index_.html">&quot;codecs/ods/index&quot;</a>
+						<a href="modules/codecs_pdf.html">codecs/pdf</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_odt_index_.html">&quot;codecs/odt/index&quot;</a>
+						<a href="modules/codecs_plos.html">codecs/plos</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_orcid_index_.html">&quot;codecs/orcid/index&quot;</a>
+						<a href="modules/codecs_plotly.html">codecs/plotly</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_pandoc_binary_.html">&quot;codecs/pandoc/binary&quot;</a>
+						<a href="modules/codecs_png.html">codecs/png</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_pandoc_index_.html">&quot;codecs/pandoc/index&quot;</a>
+						<a href="modules/codecs_rnb.html">codecs/rnb</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
+						<a href="modules/codecs_rpng.html">codecs/rpng</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_pdf_index_.html">&quot;codecs/pdf/index&quot;</a>
+						<a href="modules/codecs_tex.html">codecs/tex</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_person_index_.html">&quot;codecs/person/index&quot;</a>
+						<a href="modules/codecs_txt.html">codecs/txt</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_plos_index_.html">&quot;codecs/plos/index&quot;</a>
+						<a href="modules/codecs_types.html">codecs/types</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_plotly_index_.html">&quot;codecs/plotly/index&quot;</a>
+						<a href="modules/codecs_xmd.html">codecs/xmd</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_png_index_.html">&quot;codecs/png/index&quot;</a>
+						<a href="modules/codecs_xml.html">codecs/xml</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_rnb_index_.html">&quot;codecs/rnb/index&quot;</a>
+						<a href="modules/codecs_yaml.html">codecs/yaml</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_rpng_index_.html">&quot;codecs/rpng/index&quot;</a>
+						<a href="modules/dir.html">dir</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_tdp_index_.html">&quot;codecs/tdp/index&quot;</a>
+						<a href="modules/dmagic.html">dmagic</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_tex_index_.html">&quot;codecs/tex/index&quot;</a>
+						<a href="modules/encoda.html">encoda</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_txt_index_.html">&quot;codecs/txt/index&quot;</a>
+						<a href="modules/gdoc.html">gdoc</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_types_.html">&quot;codecs/types&quot;</a>
+						<a href="modules/index.html">index</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_xlsx_index_.html">&quot;codecs/xlsx/index&quot;</a>
+						<a href="modules/ipynb.html">ipynb</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_xmd_index_.html">&quot;codecs/xmd/index&quot;</a>
+						<a href="modules/jats.html">jats</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_xml_index_.html">&quot;codecs/xml/index&quot;</a>
+						<a href="modules/lib.html">lib</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_yaml_index_.html">&quot;codecs/yaml/index&quot;</a>
+						<a href="modules/log.html">log</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_encoda_.html">&quot;encoda&quot;</a>
+						<a href="modules/md.html">md</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
+						<a href="modules/pandoc.html">pandoc</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_log_.html">&quot;log&quot;</a>
+						<a href="modules/pandoc_types.html">pandoc/types</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_process_.html">&quot;process&quot;</a>
+						<a href="modules/person.html">person</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_app_cache_.html">&quot;util/app/cache&quot;</a>
+						<a href="modules/process.html">process</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_app_data_.html">&quot;util/app/data&quot;</a>
+						<a href="modules/tdp.html">tdp</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_app_home_.html">&quot;util/app/home&quot;</a>
+						<a href="modules/util.html">util</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_app_iscompiled_.html">&quot;util/app/is<wbr>Compiled&quot;</a>
+						<a href="modules/util_app_cache.html">util/app/cache</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_app_ispackaged_.html">&quot;util/app/is<wbr>Packaged&quot;</a>
+						<a href="modules/util_app_data.html">util/app/data</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_coerce_.html">&quot;util/coerce&quot;</a>
+						<a href="modules/util_app_home.html">util/app/home</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_content_ensurearticle_.html">&quot;util/content/ensure<wbr>Article&quot;</a>
+						<a href="modules/util_app_iscompiled.html">util/app/is<wbr>Compiled</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_content_ensureblockcontent_.html">&quot;util/content/ensure<wbr>Block<wbr>Content&quot;</a>
+						<a href="modules/util_app_ispackaged.html">util/app/is<wbr>Packaged</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_content_ensureblockcontentarray_.html">&quot;util/content/ensure<wbr>Block<wbr>Content<wbr>Array&quot;</a>
+						<a href="modules/util_coerce.html">util/coerce</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_content_ensureinlinecontentarray_.html">&quot;util/content/ensure<wbr>Inline<wbr>Content<wbr>Array&quot;</a>
+						<a href="modules/util_content_ensurearticle.html">util/content/ensure<wbr>Article</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_content_iscontentarray_.html">&quot;util/content/is<wbr>Content<wbr>Array&quot;</a>
+						<a href="modules/util_content_ensureblockcontent.html">util/content/ensure<wbr>Block<wbr>Content</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_datauri_.html">&quot;util/data<wbr>Uri&quot;</a>
+						<a href="modules/util_content_ensureblockcontentarray.html">util/content/ensure<wbr>Block<wbr>Content<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_html_.html">&quot;util/html&quot;</a>
+						<a href="modules/util_content_ensureinlinecontentarray.html">util/content/ensure<wbr>Inline<wbr>Content<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_http_.html">&quot;util/http&quot;</a>
+						<a href="modules/util_content_iscontentarray.html">util/content/is<wbr>Content<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_identifiers_.html">&quot;util/identifiers&quot;</a>
+						<a href="modules/util_datauri.html">util/data<wbr>Uri</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_index_.html">&quot;util/index&quot;</a>
+						<a href="modules/util_html.html">util/html</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_copyfile_.html">&quot;util/media/copy<wbr>File&quot;</a>
+						<a href="modules/util_http.html">util/http</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_fromfiles_.html">&quot;util/media/from<wbr>Files&quot;</a>
+						<a href="modules/util_identifiers.html">util/identifiers</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_mediatype_.html">&quot;util/media/media<wbr>Type&quot;</a>
+						<a href="modules/util_media_copyfile.html">util/media/copy<wbr>File</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_removedatauris_.html">&quot;util/media/remove<wbr>Data<wbr>Uris&quot;</a>
+						<a href="modules/util_media_fromfiles.html">util/media/from<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_resolvefiles_.html">&quot;util/media/resolve<wbr>Files&quot;</a>
+						<a href="modules/util_media_mediatype.html">util/media/media<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_tofiles_.html">&quot;util/media/to<wbr>Files&quot;</a>
+						<a href="modules/util_media_removedatauris.html">util/media/remove<wbr>Data<wbr>Uris</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_media_unlinkfiles_.html">&quot;util/media/unlink<wbr>Files&quot;</a>
+						<a href="modules/util_media_resolvefiles.html">util/media/resolve<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_orderproperties_.html">&quot;util/order<wbr>Properties&quot;</a>
+						<a href="modules/util_media_tofiles.html">util/media/to<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_puppeteer_.html">&quot;util/puppeteer&quot;</a>
+						<a href="modules/util_media_unlinkfiles.html">util/media/unlink<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_references_.html">&quot;util/references&quot;</a>
+						<a href="modules/util_orderproperties.html">util/order<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_reshape_.html">&quot;util/reshape&quot;</a>
+						<a href="modules/util_puppeteer.html">util/puppeteer</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_schemas_.html">&quot;util/schemas&quot;</a>
+						<a href="modules/util_references.html">util/references</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_transform_.html">&quot;util/transform&quot;</a>
+						<a href="modules/util_reshape.html">util/reshape</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_truncate_.html">&quot;util/truncate&quot;</a>
+						<a href="modules/util_schemas.html">util/schemas</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_uri_.html">&quot;util/uri&quot;</a>
+						<a href="modules/util_transform.html">util/transform</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_validate_.html">&quot;util/validate&quot;</a>
+						<a href="modules/util_truncate.html">util/truncate</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_vfile_.html">&quot;util/vfile&quot;</a>
+						<a href="modules/util_uri.html">util/uri</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_xml_.html">&quot;util/xml&quot;</a>
+						<a href="modules/util_validate.html">util/validate</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_xslt_.html">&quot;util/xslt&quot;</a>
+						<a href="modules/util_vfile.html">util/vfile</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_util_zip_.html">&quot;util/zip&quot;</a>
+						<a href="modules/util_xml.html">util/xml</a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_xslt.html">util/xslt</a>
 					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_codecs_ipynb_nbformat_v3_schema_.html">&quot;codecs/ipynb/nbformat-<wbr>v3.schema&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_zip.html">util/zip</a>
 					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_codecs_ipynb_nbformat_v4_schema_.html">&quot;codecs/ipynb/nbformat-<wbr>v4.schema&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/xlsx.html">xlsx</a>
 					</li>
 				</ul>
 			</nav>
@@ -1146,15 +1172,10 @@ stopRecording()</code></pre>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
@@ -1162,6 +1183,9 @@ stopRecording()</code></pre>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 		</div>
 	</div>
