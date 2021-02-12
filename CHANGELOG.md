@@ -1,3 +1,31 @@
+# [0.105.0](https://github.com/stencila/encoda/compare/v0.104.5...v0.105.0) (2021-02-12)
+
+
+### Bug Fixes
+
+* **Coerce:** No longer use immer ([dee60dd](https://github.com/stencila/encoda/commit/dee60ddf3eeffde34e39a7cb347491973219ba3e))
+* **dependencies:** update dependency @stencila/logga to v4 ([e4387f7](https://github.com/stencila/encoda/commit/e4387f72da84da6f2e74cec838acc782194b2b2d))
+* **dependencies:** update dependency js-yaml to v4 ([4a7f6d4](https://github.com/stencila/encoda/commit/4a7f6d4509587eed58a902938dad8b3e2d52d17a))
+* **dependencies:** update dependency puppeteer to v7 ([4d1b48f](https://github.com/stencila/encoda/commit/4d1b48f70963c514730b8043c20fa58d3213b0a5))
+* **Deps:** Patch for Puppeteer export assignment ([0ca62bd](https://github.com/stencila/encoda/commit/0ca62bdfc31f0b367e9c6bcfa93e621f6707fcf0))
+* **Deps:** Upgrade JSON5 ([e80d3f6](https://github.com/stencila/encoda/commit/e80d3f6f6acc062976ca51d21f8102b2d0130e55))
+* **Deps:** Upgrade JSONLD ([67b60b7](https://github.com/stencila/encoda/commit/67b60b778592d76031b452d0640558676ea9c76c))
+* **Deps:** Upgrade to latest Stencila libs ([502c952](https://github.com/stencila/encoda/commit/502c95223c53b18edf8db99deb757e17b6c4828f))
+* **HTML:** Encode content of date in references using year only ([b7e9642](https://github.com/stencila/encoda/commit/b7e96422e94a8c9d488763669b74a1c758d667ca))
+* **PDF:** Use enum variant ([b484cda](https://github.com/stencila/encoda/commit/b484cda3f00f33758d698c7ab31dc154a08db581))
+* **Puppeteer:** Type fixes ([13df791](https://github.com/stencila/encoda/commit/13df791141c9e187621e1bc7d8c34193cc0b2a8b))
+* **Reshape:** Remove lookahead condition ([e397ffa](https://github.com/stencila/encoda/commit/e397ffaeb5c78af6bc48adf3fb4202423d5f091d))
+* **RPNG:** Use element size for screenshot dimension instead of viewport ([2682e9b](https://github.com/stencila/encoda/commit/2682e9b524ebd0f8be0303e5247bb2bc1e1c011c))
+* **YAML:** Updates for v4 of js-yaml ([3f4d67d](https://github.com/stencila/encoda/commit/3f4d67d8528a9c23098ea505d1687ee7a9c7e0ae))
+
+
+### Features
+
+* **HTML:** Encode both numeric and author-year citation styles ([1ef5200](https://github.com/stencila/encoda/commit/1ef5200e84140b24c051922593bc3d239be4b28c))
+* **Markdown:** Add encoding of CiteGroups ([4bc1974](https://github.com/stencila/encoda/commit/4bc1974510efb44743c6c146bbeb7ebb7e41d287))
+* **Reshape:** Detection of numbered citations ([373df27](https://github.com/stencila/encoda/commit/373df27379f6b74497ad9ec328b70bf25954ff90))
+* **Reshape:** Give references an id ([465dead](https://github.com/stencila/encoda/commit/465dead15f083ddaa5091fdf59a6f0bf0fc19f4c))
+
 ## [0.104.5](https://github.com/stencila/encoda/compare/v0.104.4...v0.104.5) (2021-01-14)
 
 
