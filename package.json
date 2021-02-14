@@ -236,7 +236,72 @@
   },
   "renovate": {
     "extends": [
-      "@stencila"
+      "config:base"
+    ],
+    "timezone": "UTC",
+    "schedule": [
+      "before 12pm on Wednesday"
+    ],
+    "stabilityDays": 3,
+    "masterIssue": true,
+    "masterIssueTitle": "Update dependencies",
+    "packageRules": [
+      {
+        "matchDepTypes": [
+          "dependencies"
+        ],
+        "matchUpdateTypes": [
+          "major"
+        ],
+        "rangeStrategy": "bump",
+        "semanticCommitType": "fix",
+        "semanticCommitScope": "Dependencies",
+        "automerge": false
+      },
+      {
+        "matchDepTypes": [
+          "dependencies"
+        ],
+        "matchUpdateTypes": [
+          "minor",
+          "patch",
+          "pin"
+        ],
+        "rangeStrategy": "bump",
+        "semanticCommitType": "fix",
+        "semanticCommitScope": "Dependencies",
+        "automerge": true
+      },
+      {
+        "groupName": "Dev dependencies",
+        "groupSlug": "dev",
+        "matchDepTypes": [
+          "devDependencies"
+        ],
+        "matchUpdateTypes": [
+          "major"
+        ],
+        "rangeStrategy": "pin",
+        "semanticCommitType": "chore",
+        "semanticCommitScope": "Dev dependencies",
+        "automerge": false
+      },
+      {
+        "groupName": "Dev dependencies",
+        "groupSlug": "dev",
+        "matchDepTypes": [
+          "devDependencies"
+        ],
+        "matchUpdateTypes": [
+          "minor",
+          "patch",
+          "pin"
+        ],
+        "rangeStrategy": "pin",
+        "semanticCommitType": "chore",
+        "semanticCommitScope": "Dev dependencies",
+        "automerge": true
+      }
     ]
   }
 }
