@@ -264,8 +264,7 @@
         ],
         "matchUpdateTypes": [
           "minor",
-          "patch",
-          "pin"
+          "patch"
         ],
         "rangeStrategy": "bump",
         "semanticCommitType": "fix",
