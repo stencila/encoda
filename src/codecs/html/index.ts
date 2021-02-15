@@ -1743,21 +1743,11 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
     if (reference === undefined) {
       contentElems = target
     } else {
-      contentElems = [
-        h(
-          'span',
-          { class: 'cite-numeric' },
-          encodeCiteNumeric(reference, state.references)
-        ),
-      ]
+      contentElems = [h('span', encodeCiteNumeric(reference, state.references))]
       if (stencila.isCreativeWork(reference)) {
         contentElems = [
           ...contentElems,
-          h(
-            'span',
-            { class: 'cite-authors-year' },
-            encodeCiteAuthorsYear(reference)
-          ),
+          h('span', encodeCiteAuthorsYear(reference)),
         ]
       }
     }
