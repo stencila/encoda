@@ -1,3 +1,10 @@
+## [0.105.2](https://github.com/stencila/encoda/compare/v0.105.1...v0.105.2) (2021-02-15)
+
+
+### Bug Fixes
+
+* **Puppeteer:** Upgrade version and use own types ([cd3be97](https://github.com/stencila/encoda/commit/cd3be97fcd18dc239630f5323ac3893076eb82cf))
+
 ## [0.105.1](https://github.com/stencila/encoda/compare/v0.105.0...v0.105.1) (2021-02-15)
 
 
