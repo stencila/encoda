@@ -40,10 +40,6 @@ USER encoda
 COPY package*.json ./
 RUN npm install --ignore-scripts
 
-# Copy over and run patches
-COPY patches/ patches/
-RUN npx patch-package
-
 # Copy over other file and run the necessary install scripts that
 # we previously ignored.
 COPY tsconfig*.json install.js ./

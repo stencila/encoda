@@ -7,7 +7,7 @@ import AsyncLock from 'async-lock'
 import fs from 'fs-extra'
 import isDocker from 'is-docker'
 import path from 'path'
-import puppeteer, { Browser, Page } from 'puppeteer'
+import puppeteer, { Browser, ProductLauncher, Page } from 'puppeteer'
 import isPackaged from './app/isPackaged'
 
 export { Page, Browser }
@@ -18,7 +18,9 @@ const log = getLogger('encoda:puppeteer')
  * The following code is necessary to ensure the Chromium binary can be correctly
  * found when bundled as a binary using [`pkg`](https://github.com/zeit/pkg).
  * See: [`pkg-puppeteer`](https://github.com/rocklau/pkg-puppeteer)
- */
+
+TODO: `puppeteer.executablePath()` is no longer part of the API
+so this is temporarily disabled.
 
 // Adapts the regex path to work on both Windows and *Nix platforms
 const pathRegex =
@@ -42,6 +44,7 @@ export const executablePath = isPackaged
 
 if (!fs.pathExistsSync(executablePath))
   log.error(`Chromium does not exist in expected location: ${executablePath}`)
+*/
 
 /**
  * Module global Puppeteer instance
@@ -65,7 +68,6 @@ export async function startup(): Promise<Browser> {
       if (typeof browser === 'undefined') {
         log.debug('Launching new browser')
         browser = await puppeteer.launch({
-          executablePath,
           pipe: true,
           args: isDocker()
             ? [
