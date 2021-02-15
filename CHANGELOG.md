@@ -1,3 +1,11 @@
+## [0.105.1](https://github.com/stencila/encoda/compare/v0.105.0...v0.105.1) (2021-02-15)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency jsonld to v4 ([7f2ace6](https://github.com/stencila/encoda/commit/7f2ace6577074a42bd58fe7dec8aa4a2738f9935))
+* **HTML:** Remove classes in Cite nodes ([b0ce8d3](https://github.com/stencila/encoda/commit/b0ce8d3e4dae4ce600965d2cfaeb3e2750f51f17))
+
 # [0.105.0](https://github.com/stencila/encoda/compare/v0.104.5...v0.105.0) (2021-02-12)
 
 
