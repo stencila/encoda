@@ -1252,6 +1252,7 @@ function encodeReferencesProperty(
           url,
           isPartOf,
           publisher,
+          identifiers,
         } = ref
         const titleElem = encodeTitleProperty(title, state, 'span')
         return h(
@@ -1267,7 +1268,8 @@ function encodeReferencesProperty(
           encodeIsPartOfProperty(isPartOf),
           stencila.isArticle(ref) ? encodePaginationProperties(ref) : undefined,
           encodePublisherProperty(publisher),
-          stencila.isArticle(ref) ? encodeImageProperty(ref) : undefined
+          stencila.isArticle(ref) ? encodeImageProperty(ref) : undefined,
+          encodeIdentifiersProperty(identifiers)
         )
       })
     )
