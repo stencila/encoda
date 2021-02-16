@@ -167,6 +167,11 @@ references:
     datePublished:
       type: Date
       value: '2004'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.5281/zenodo.3266096
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -242,6 +247,11 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1159/000484886
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -264,6 +274,11 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1159/000489287
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -313,6 +328,15 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 25845492
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.yebeh.2015.02.043
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -345,6 +369,19 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 29998598
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/epi.14477
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 6175436
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -381,6 +418,15 @@ references:
     datePublished:
       type: Date
       value: '2016'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 26724101
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/S1474-4422(15)00379-8
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -416,6 +462,19 @@ references:
     datePublished:
       type: Date
       value: '2016'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28861485
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1089/can.2015.0004
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 5576596
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -476,6 +535,11 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.2903/j.efsa.2015.4141
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -510,6 +574,19 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 29977291
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1155/2018/8143582
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 6011091
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -541,6 +618,11 @@ references:
     datePublished:
       type: Date
       value: '1940'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1021/ja01866a040
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -577,6 +659,11 @@ references:
     datePublished:
       type: Date
       value: '1941'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1021/ja01853a052
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -610,6 +697,11 @@ references:
     datePublished:
       type: Date
       value: '2007'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1007/s11419-007-0021-y
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -640,6 +732,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1300/J237v10n02_02
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -668,6 +765,11 @@ references:
     datePublished:
       type: Date
       value: '2005'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.5281/zenodo.438133
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -690,6 +792,15 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 31030057
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.drugpo.2019.03.006
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -720,6 +831,19 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28861507
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1089/can.2017.0009
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 5510776
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -755,6 +879,19 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28861499
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1089/can.2016.0036
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 5531368
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -847,6 +984,19 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 25634572
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1038/srep08126
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 4311234
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -868,6 +1018,15 @@ references:
     datePublished:
       type: Date
       value: '2003'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 12648025
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.2165/00003088-200342040-00003
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -896,6 +1055,11 @@ references:
     datePublished:
       type: Date
       value: '1997'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 9157527
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -916,6 +1080,11 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.17590/20181108-075209-0
     title: >-
       Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu
       hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr.
@@ -941,6 +1110,19 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 29114823
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1001/jama.2017.11909
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 5818782
     isPartOf:
       type: PublicationIssue
       isPartOf:
