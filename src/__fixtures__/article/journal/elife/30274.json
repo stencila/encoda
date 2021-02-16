@@ -422,6 +422,20 @@
         "type": "Date",
         "value": "2006"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1136/bmj.332.7549.1080"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 16675816
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -459,6 +473,20 @@
         "type": "Date",
         "value": "1948"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1136/jcp.1.5.288"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 16810816
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -501,12 +529,24 @@
           "givenNames": [
             "M"
           ]
+        },
+        {
+          "type": "Organization",
+          "name": "Reproducibility Project: Cancer Biology"
         }
       ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.04024"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -535,6 +575,14 @@
         "type": "Date",
         "value": "1983"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1177/014662168300700301"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -718,6 +766,14 @@
         "type": "Date",
         "value": "2015"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.18632/oncotarget.6568"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -793,6 +849,14 @@
         "type": "Date",
         "value": "2014"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.04333"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -956,6 +1020,20 @@
         "type": "Date",
         "value": "2016"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/ncomms11903"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 27301576
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -993,6 +1071,14 @@
         "type": "Date",
         "value": "2006"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1198/000313006X152649"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1059,6 +1145,14 @@
         "type": "Date",
         "value": "2014"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.18632/oncotarget.3033"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1155,6 +1249,20 @@
         "type": "Date",
         "value": "2004"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/sj.bjc.6601405"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 14735196
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1437,6 +1545,20 @@
         "type": "Date",
         "value": "2015"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nature14985"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 26331541
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1503,6 +1625,14 @@
         "type": "Date",
         "value": "2007"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.2144/000112598"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1659,6 +1789,20 @@
         "type": "Date",
         "value": "2016"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/srep28994"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 27456714
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1759,6 +1903,20 @@
         "type": "Date",
         "value": "2010"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nrg2825"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 20838408
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -1879,6 +2037,14 @@
         "type": "Date",
         "value": "2017"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.17605/OSF.IO/MOKEB"
+        }
+      ],
       "isPartOf": {
         "type": "Periodical",
         "name": "Open Science Framework"
@@ -1966,6 +2132,20 @@
         "type": "Date",
         "value": "2012"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2012.08.026"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 23021215
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2078,6 +2258,20 @@
         "type": "Date",
         "value": "2016"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.15161"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 27460974
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2205,6 +2399,20 @@
         "type": "Date",
         "value": "2012"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2012.08.033"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 23021216
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2253,6 +2461,14 @@
         "type": "Date",
         "value": "1991"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1021/bp00012a600"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2301,6 +2517,20 @@
         "type": "Date",
         "value": "2011"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nn.2886"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 21878926
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2412,6 +2642,20 @@
         "type": "Date",
         "value": "2015"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.molcel.2015.03.005"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 25866248
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2541,6 +2785,20 @@
         "type": "Date",
         "value": "2000"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1002/1097-0215(20000915)87:6<787::AID-IJC4>3.0.CO;2-6"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 10956386
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2571,6 +2829,14 @@
         "type": "Date",
         "value": "1959"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1080/01621459.1959.10501526"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2625,6 +2891,20 @@
         "type": "Date",
         "value": "2014"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1101/cshperspect.a014191"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 24492846
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2816,6 +3096,20 @@
         "type": "Date",
         "value": "2014"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nature13537"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 25043028
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2918,6 +3212,20 @@
         "type": "Date",
         "value": "2005"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/sj.onc.1208198"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 15516975
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -2966,6 +3274,20 @@
         "type": "Date",
         "value": "2012"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nmeth.2089"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 22930834
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3059,6 +3381,20 @@
         "type": "Date",
         "value": "1999"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/S0960-9822(99)80507-7"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 10556095
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3737,6 +4073,20 @@
         "type": "Date",
         "value": "2016"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/srep32249"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 27577089
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3838,6 +4188,20 @@
         "type": "Date",
         "value": "2011"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1007/s11121-011-0217-6"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 21541692
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -3868,6 +4232,14 @@
         "type": "Date",
         "value": "2010"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.18637/jss.v036.i03"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
@@ -4061,6 +4433,20 @@
         "type": "Date",
         "value": "2014"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nature13473"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmid",
+          "propertyID": "https://registry.identifiers.org/registry/pmid",
+          "value": 25043018
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {
