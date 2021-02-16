@@ -1051,7 +1051,7 @@ function encodeIsPartOfProperty(
 /**
  * Encode the pagination related properties of an article
  */
-function endodePaginationProperties(
+function encodePaginationProperties(
   article: stencila.Article
 ): (HTMLElement | undefined)[] {
   const { pageStart, pageEnd, pagination } = article
@@ -1265,9 +1265,9 @@ function encodeReferencesProperty(
             ? h('a', { itemprop: 'url', href: url }, titleElem)
             : titleElem,
           encodeIsPartOfProperty(isPartOf),
-          stencila.isArticle(ref) ? endodePaginationProperties(ref) : undefined,
+          stencila.isArticle(ref) ? encodePaginationProperties(ref) : undefined,
           encodePublisherProperty(publisher),
-          isA('Article', ref) ? encodeImageProperty(ref) : []
+          stencila.isArticle(ref) ? encodeImageProperty(ref) : undefined
         )
       })
     )
