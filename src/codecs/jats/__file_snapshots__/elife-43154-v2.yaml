@@ -283,6 +283,15 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1038/nature15390
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 26416757
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -375,6 +384,15 @@ references:
     datePublished:
       type: Date
       value: '2008'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1073/pnas.0711401105
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 18192399
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -779,6 +797,15 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.7554/eLife.15085
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28067620
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -875,6 +902,15 @@ references:
     datePublished:
       type: Date
       value: '2012'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1371/journal.pmed.1001339
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 23152723
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -900,6 +936,15 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1056/NEJMra1708111
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 29298156
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -962,6 +1007,15 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1038/ng.3107
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 25261933
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -987,6 +1041,15 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1093/ije/dyu025
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 24585732
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1029,6 +1092,15 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1093/ije/dyu026
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 24585735
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1098,6 +1170,15 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/S2352-3026(15)00152-0
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 26686045
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1136,6 +1217,15 @@ references:
     datePublished:
       type: Date
       value: '2008'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1365-2141.2008.07085.x
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 18410566
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1183,6 +1273,11 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/S0140-6736(13)60024-0
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1200,6 +1295,15 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/tmi.12313_2
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 25214480
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1235,6 +1339,15 @@ references:
     datePublished:
       type: Date
       value: '2016'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.hoc.2015.11.005
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 27040958
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1265,6 +1378,11 @@ references:
     datePublished:
       type: Date
       value: '1971'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 5316621
     isPartOf:
       type: PublicationVolume
       isPartOf:

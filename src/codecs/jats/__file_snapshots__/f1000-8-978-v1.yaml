@@ -233,6 +233,19 @@ references:
     datePublished:
       type: Date
       value: '2012'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 22257223
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1461-0248.2011.01736.x
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 3880584
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -266,6 +279,11 @@ references:
     datePublished:
       type: Date
       value: '2013'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.biocon.2013.05.020
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -298,6 +316,11 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ecocom.2014.02.003
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -358,6 +381,11 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.jaridenv.2015.02.008
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -390,6 +418,11 @@ references:
     datePublished:
       type: Date
       value: '2012'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.4236/nr.2012.31001
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -459,6 +492,11 @@ references:
     datePublished:
       type: Date
       value: '2002'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/S0304-3800(02)00056-X
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -489,6 +527,15 @@ references:
     datePublished:
       type: Date
       value: '2007'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 17011070
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.tree.2006.09.010
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -522,6 +569,11 @@ references:
     datePublished:
       type: Date
       value: '2016'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ecoleng.2016.04.010
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -555,6 +607,15 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28474209
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1007/s00267-017-0884-6
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -585,6 +646,11 @@ references:
     datePublished:
       type: Date
       value: '2001'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.2307/2679936
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -620,6 +686,11 @@ references:
     datePublished:
       type: Date
       value: '2003'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1523-1739.2003.00233.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -655,6 +726,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1365-2664.2006.01164.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -688,6 +764,11 @@ references:
     datePublished:
       type: Date
       value: '2007'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1365-2699.2006.01594.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -723,6 +804,11 @@ references:
     datePublished:
       type: Date
       value: '2016'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.foreco.2015.08.004
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -755,6 +841,11 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.3832/ifor2559-011
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -790,6 +881,15 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 16972877
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1461-0248.2006.00970.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -825,6 +925,19 @@ references:
     datePublished:
       type: Date
       value: '2013'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 24134332
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/ele.12189
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 4280402
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -858,6 +971,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ecolmodel.2005.03.026
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -891,6 +1009,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.0906-7590.2006.04700.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -946,6 +1069,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ecolmodel.2005.03.026
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -979,6 +1107,15 @@ references:
     datePublished:
       type: Date
       value: '2005'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 15652855
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ajo.2004.07.062
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1007,6 +1144,11 @@ references:
     datePublished:
       type: Date
       value: '2005'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.foreco.2005.03.058
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1071,6 +1213,11 @@ references:
     datePublished:
       type: Date
       value: '2011'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1007/s10584-011-0151-4
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1103,6 +1250,11 @@ references:
     datePublished:
       type: Date
       value: '2005'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1002/joc.1276
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1136,6 +1288,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.2006.0906-7590.04596.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1171,6 +1328,19 @@ references:
     datePublished:
       type: Date
       value: '2007'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 17622339
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1371/journal.pone.0000563
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 1905943
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1237,6 +1407,11 @@ references:
     datePublished:
       type: Date
       value: '2009'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1600-0587.2009.05800.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1272,6 +1447,19 @@ references:
     datePublished:
       type: Date
       value: '2010'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 21060831
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1371/journal.pone.0013724
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 2966403
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1307,6 +1495,11 @@ references:
     datePublished:
       type: Date
       value: '2011'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1472-4642.2010.00725.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1336,6 +1529,11 @@ references:
     datePublished:
       type: Date
       value: '2011'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.ecolmodel.2011.04.011
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1371,6 +1569,11 @@ references:
     datePublished:
       type: Date
       value: '2006'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1111/j.1365-2664.2006.01214.x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1406,6 +1609,11 @@ references:
     datePublished:
       type: Date
       value: '2013'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.actao.2013.02.007
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1451,6 +1659,19 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 24520340
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1371/journal.pone.0087895
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 3919747
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1485,6 +1706,11 @@ references:
     datePublished:
       type: Date
       value: '2013'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1007/s11738-012-1076-x
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1545,6 +1771,11 @@ references:
     datePublished:
       type: Date
       value: '2009'
+    identifiers:
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1016/j.jaridenv.2008.10.004
     isPartOf:
       type: PublicationIssue
       isPartOf:

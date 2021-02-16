@@ -249,6 +249,15 @@ references:
     datePublished:
       type: Date
       value: '2018'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 30158621
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1038/d41586-018-06032-w
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -272,6 +281,19 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    identifiers:
+      - type: PropertyValue
+        name: pmid
+        propertyID: https://registry.identifiers.org/registry/pmid
+        value: 28580134
+      - type: PropertyValue
+        name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.12688/f1000research.11369.2
+      - type: PropertyValue
+        name: pmcid
+        propertyID: https://registry.identifiers.org/registry/pmcid
+        value: 5967747
     isPartOf:
       type: PublicationVolume
       isPartOf:
