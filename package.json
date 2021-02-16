@@ -15,7 +15,7 @@
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
     "test": "jest --maxWorkers=4 --testTimeout=120000",
-    "test:wild": "NOCK_MODE=wild npm test",
+    "test:wild": "NOCK_BACK_MODE=wild npm test",
     "test:cover": "npm test -- --coverage",
     "test:watch": "npm test -- --watchAll",
     "test:docker": "docker build --tag stencila/encoda . && docker run -it --init --rm --cap-add=SYS_ADMIN stencila/encoda",

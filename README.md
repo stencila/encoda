@@ -405,9 +405,14 @@ const stopRecording = await nockRecord('nock-record-<name-of-test>.json')
 stopRecording()
 ```
 
-Note that the `util/http` module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. `rm -rf ~/.config/stencila/encoda/cache/`
+Note that the `util/http` module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. `rm -rf ~/.config/stencila/encoda/cache/`.
 
-As part of continuous integration, tests are run with both `NOCK_MODE=wild` (which ignores recording) to test that tests still work when using real network connections, and `NOCK_MODE=dryrun` (for speed and consistency with the default).
+If there are changes in the URLs that your test fetches, or you want to check that your test is still works against an external API that may have changed, remove the Nock recording and rerun the test e.g.,
+
+```sh
+rm src/codecs/elife/__fixtures__/nock-record-*.json
+npx jest src/codecs/elife/ --testTimeout 30000
+```
 
 ## Contribute
 
