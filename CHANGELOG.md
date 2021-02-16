@@ -1,3 +1,15 @@
+# [0.106.0](https://github.com/stencila/encoda/compare/v0.105.2...v0.106.0) (2021-02-16)
+
+
+### Bug Fixes
+
+* **JATS:** Decode reference identifiers ([2fc33f6](https://github.com/stencila/encoda/commit/2fc33f6dade9a245e249cbd8458cfa1899d01902)), closes [#413](https://github.com/stencila/encoda/issues/413)
+
+
+### Features
+
+* **HTML:** Encode DOI and other identifiers in references ([2cbe99e](https://github.com/stencila/encoda/commit/2cbe99eeb79ede286d5b3deacb8b22650f6456f0)), closes [#816](https://github.com/stencila/encoda/issues/816)
+
 ## [0.105.2](https://github.com/stencila/encoda/compare/v0.105.1...v0.105.2) (2021-02-15)
 
 
