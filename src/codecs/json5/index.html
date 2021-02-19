@@ -1,0 +1,54 @@
+<html lang="en">
+
+  <head>
+    <title>JSON5 codec</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@2/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@2/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript" nomodule=""></script>
+  </head>
+
+  <body>
+    <main role="main">
+      <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+        <h1 itemprop="headline">JSON5 codec</h1>
+        <meta itemprop="image"
+          content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=JSON5%20codec"><span
+          itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+          <meta itemprop="name" content="Unknown"><span itemscope=""
+            itemtype="http://schema.org/ImageObject" itemprop="logo">
+            <meta itemprop="url"
+              content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+          </span>
+        </span>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="https://json5.org/"
+            itemscope="" itemtype="http://schema.stenci.la/Link">JSON5</a> is &quot;JSON for
+          Humans&quot;:</p>
+        <blockquote itemscope="" itemtype="http://schema.stenci.la/QuoteBlock">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The JSON5 Data Interchange
+            Format (JSON5) is a superset of JSON that aims to alleviate some of the limitations of
+            JSON by expanding its syntax to include some productions from ECMAScript 5.1.</p>
+        </blockquote>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This codec is primarily
+          targeted at developers. Given that it is more forgiving and it has less typing overhead,
+          JSON5 can be a little more convenient than JSON for quickly testing encoding of Stencila
+          nodes e.g</p>
+        <pre class="language-bash" itemscope=""
+          itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert &quot;{type:&#39;ImageObject&#39;, contentUrl: &#39;https://example.org&#39;, text: &#39;alt&#39;, title: &#39;title&#39;}&quot; --from json5 --to html</code></pre>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Versus using JSON:</p>
+        <pre class="language-bash" itemscope=""
+          itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert &#39;{&quot;type&quot;:&quot;ImageObject&quot;, &quot;contentUrl&quot;: &quot;https://example.org&quot;, &quot;text&quot;: &quot;alt&quot;, &quot;title&quot;: &quot;title&quot;}&#39; --from json --to html</code></pre>
+      </article>
+    </main>
+  </body>
+
+</html>

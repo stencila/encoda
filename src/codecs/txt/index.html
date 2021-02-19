@@ -1,0 +1,124 @@
+<html lang="en">
+
+  <head>
+    <title>Plain text</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@2/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@2/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript" nomodule=""></script>
+  </head>
+
+  <body>
+    <main role="main">
+      <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+        <h1 itemprop="headline">Plain text</h1>
+        <meta itemprop="image"
+          content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Plain%20text"><span
+          itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+          <meta itemprop="name" content="Unknown"><span itemscope=""
+            itemtype="http://schema.org/ImageObject" itemprop="logo">
+            <meta itemprop="url"
+              content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+          </span>
+        </span>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">txt</code> codec is for
+          decoding/encoding from/to plain text. It&#39;s main purpose is to provide a decoder for
+          the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text/plain</code>
+          media type (in particular for decoding outputs of Jupyter Notebook cells which have this
+          media type). It may also be useful for decoding user input in plain text form fields.</p>
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding">Decoding</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">txt</code> codec only decodes content to
+          primitive node types i.e. <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">null</code>, <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">boolean</code>, <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">number</code> and <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">string</code>. It makes no attempt to
+          decode more complex structure or semantics of the content.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The string <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">&quot;null&quot;</code> is decoded to
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">null</code>, the string
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&quot;true&quot;</code>
+          and <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">&quot;false&quot;</code> are decoded to
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">boolean</code> values,
+          and strings with only digits and an optional decimal place are decoded to a <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">number</code>.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Everything else is decoded to a
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>. For
+          example, this plain text content (with some Unicode characters),</p>
+        <pre class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+          data-import="ex1"><code>Yay, plain text! 👏</code></pre>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into a <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>, encoded in
+          <a href="../json5" itemscope="" itemtype="http://schema.stenci.la/Link">JSON5</a> as,</p>
+        <pre class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+          data-export="ex1"><code>&#39;Yay, plain text! 👏&#39;</code></pre>
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding">Encoding</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Node</code> types are encoded as plain
+          text. For non-<code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">string</code> primitive nodes, e.g.
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">boolean</code>, <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">number</code>, the plain
+          text representation comes from the <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">toString()</code> method.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">No attempt is made to perform
+          lossless encoding of more complex nodes. For <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Array</code> nodes, items are encoded
+          and joined by a single space. For <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Object</code> nodes, if there is a <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">content</code> node then
+          that is encoded only, otherwise values are encoded as space separated strings. For
+          example, the following <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Article</code> node, encoded as <a
+            href="../json5" itemscope="" itemtype="http://schema.stenci.la/Link">JSON5</a>,</p>
+        <pre class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+          data-import="ex2"><code>{
+  type: &#39;Article&#39;,
+  title: &#39;My simple article&#39;,
+  authors: [
+    {
+      type: &#39;Person&#39;,
+      givenNames: [&#39;Peter&#39;],
+      familyNames: [&#39;Pan&#39;]
+    }
+  ],
+  content: [
+    {
+      type: &#39;Paragraph&#39;,
+      content: [&#39;My first paragraph.&#39;]
+    }
+  ]
+}</code></pre>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded in <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">txt</code> as,</p>
+        <pre class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+          data-export="ex2"><code>My first paragraph.</code></pre>
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="invertability">Invertability
+        </h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">txt</code> codec is only invertible for
+          primitive node types. It is lossy for <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">array</code>, <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">object</code> and other more complex
+          node types because it intentionally makes no attempt to encode these as plain text. Use
+          one of the data transfer formats e.g. <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">json</code> or <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">yaml</code> for lossless text-based
+          encoding.</p>
+      </article>
+    </main>
+  </body>
+
+</html>

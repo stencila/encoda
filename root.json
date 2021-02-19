@@ -1,0 +1,541 @@
+{
+  "type": "Collection",
+  "name": ".",
+  "parts": [
+    {
+      "type": "Article",
+      "name": "CHANGELOG",
+      "title": [
+        {
+          "type": "Link",
+          "target": "https://github.com/stencila/encoda/compare/v0.105.2...v0.106.0",
+          "content": [
+            "0.106.0"
+          ]
+        },
+        " (2021-02-16)"
+      ],
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "name": "CONTRIBUTING",
+      "title": "Contributing to Stencila",
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "name": "FAQ",
+      "title": "FAQ",
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "name": "README",
+      "title": "Encoda",
+      "meta": {
+        "depth": 0,
+        "main": true
+      }
+    },
+    {
+      "type": "Collection",
+      "name": "src",
+      "parts": [
+        {
+          "type": "Collection",
+          "name": "codecs",
+          "parts": [
+            {
+              "type": "Collection",
+              "name": "csi",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Comma separated items",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "csl",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Citation Style Language",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "csv",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Comma separated values (CSV)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "date",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Date codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "dir",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Directories",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "dmagic",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Demo Magic",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "docx",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Microsoft Word",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "gdoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Google Docs",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "html",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "HyperText Markup Language (HTML)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "http",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "HTTP",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "ipynb",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Jupyter Notebooks",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jats",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Journal Article Tag Suite (JATS)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jats-pandoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Journal Article Tag Suite (JATS)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "json",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "JSON",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "json5",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "JSON5 codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jsonld",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "JSON-LD codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "latex",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "LaTeX",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "mathml",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "MathML codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "md",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Markdown",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "ods",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Open Document Spreadsheet (ODS)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "odt",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Open Document Text (ODT)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "pandoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Pandoc",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "pdf",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "PDF codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "person",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Plain text representation of humans",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "png",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Portable Network Graphics (PNG)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "rpng",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Reproducible PNGs (rPNGs)",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "tdp",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "TDP: Tabular Data Package",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "tex",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "TeX codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "txt",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Plain text",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xlsx",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "XLSX: Microsoft Excel",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xmd",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "XMD: RMarkdown and other language variants",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xml",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "XML codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
