@@ -1,3 +1,10 @@
+## [0.106.1](https://github.com/stencila/encoda/compare/v0.106.0...v0.106.1) (2021-02-19)
+
+
+### Bug Fixes
+
+* **ELife:** Don't scale graphic assets to support low-res images ([c7efc36](https://github.com/stencila/encoda/commit/c7efc363dc2ce67b3ed782dee9335fb403bbafc3)), closes [#286](https://github.com/stencila/encoda/issues/286)
+
 # [0.106.0](https://github.com/stencila/encoda/compare/v0.105.2...v0.106.0) (2021-02-16)
 
 
