@@ -69,7 +69,7 @@ export const output = (filename: string): string =>
  * @param filename The filename of the records HTTP request / response
  */
 export const nockRecord = async (filename: string) => {
-  const mode = (process.env.NOCK_MODE || 'record') as nock.BackMode
+  const mode = (process.env.NOCK_BACK_MODE || 'record') as nock.BackMode
   nock.back.setMode(mode)
   nock.back.fixtures = path.join(callDir(), '__fixtures__')
   const result = await nock.back(filename)
