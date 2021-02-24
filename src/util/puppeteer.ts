@@ -4,11 +4,8 @@
 
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
-import fs from 'fs-extra'
 import isDocker from 'is-docker'
-import path from 'path'
-import puppeteer, { Browser, ProductLauncher, Page } from 'puppeteer'
-import isPackaged from './app/isPackaged'
+import puppeteer, { Browser, Page } from 'puppeteer'
 
 export { Page, Browser }
 
