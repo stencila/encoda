@@ -1,3 +1,10 @@
+# [0.107.0](https://github.com/stencila/encoda/compare/v0.106.1...v0.107.0) (2021-02-24)
+
+
+### Features
+
+* **Reshape:** Heading and empty blocks ([6797528](https://github.com/stencila/encoda/commit/67975282559ab78b3fbe99d8b4a4c438ec9d227c))
+
 ## [0.106.1](https://github.com/stencila/encoda/compare/v0.106.0...v0.106.1) (2021-02-19)
 
 
