@@ -14244,8 +14244,6 @@ content:
         content:
           - '4'
       - " (25 mM), 1.5 μL polymerase, 4 μL DMSO. Forward (Mir-F) and reverse (PGKpro-R) primers flanking the loop and antisense sequence of the hairpin region were used at a final concentration of 300 nM. PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 98°C for 35 s, 58°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 1.2 mL of pooled PCR reaction were cleaned-up using QIAquick PCR purification kit (Qiagen, cat # 28104) according to manufacturer’s protocol. 2 μg purified PCR product were PCR amplified in a second step, using forward (P5-Seq-P-Mir-Loop) and reverse (P7-Index-n-TruSeq-PGKpro-R) primers containing the P5 and P7 flowcell adapters, respectively. PCR was performed in 8 × 50 μL reactions each with 500 ng template DNA. The reverse primer contains TruSeq adapter small RNA Indexes for multiplexing and a 6-nucleotide barcode, denoted ‘nnnnnn’ below. PCR reagents were as for the first PCR, with the exception of the primers, which were used at a final concentration 1.5 μM. The second PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 94°C for 35 s, 52°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 200 μL of pooled secondary PCR product was cleaned up as previously and the desired product (~340 bp) was extracted using BluePippin (Sage Science) 2% Internal Standard Marker Kit (DF marker 100–600 bp; Sage Science, BDF2010), according to manufacturer’s protocol using a broad range elution (300–400 bp). Individual samples were quantified with a KAPA library quantification kit (KAPA Biosystems, cat # 0796-6014-0001) using a BioRad CFX96 Real Time PCR instrument with no Rox according to manufacturer’s protocols. Libraries were diluted to 4 nM in RNAse free water. For the genome-wide screen samples, 24 libraries (12 pools) and for the focused screen samples, 24 libraries (both cell lines) were combined to create a pooled 4 nM stock, with each sample having a unique TruSeq adapter. The genome-wide screen samples were sequenced in six batches; all focused screen samples were sequenced simultaneously. DNA-Seq libraries were prepared from these samples using the NextSeq Illumina Platform v2 High Output Kit 75 cycles, followed by 36 base pair single-read sequencing performed on an Illumina NextSeq instrument, using a custom sequencing primer."
-  - type: Paragraph
-    content: []
   - type: Table
     id: inlinetable1
     rows:
@@ -14460,8 +14458,6 @@ content:
         content:
           - Ashburner et al., 2000
       - '):'
-  - type: Paragraph
-    content: []
   - type: Table
     id: inlinetable2
     rows:
@@ -14804,8 +14800,6 @@ content:
   - type: Paragraph
     content:
       - "ON-TARGETplus siRNAs (Dharmacon/GE healthcare) were used as summarised in the table below. Cells were transfected with either targeting or non-targeting control siRNAs using lipofectamine RNAiMAX (Thermo Fisher Scientific, cat # 13778150) and OptiMEM reduced serum medium (Thermo Fisher Scientific) according to the manufacturer’s protocol (reagent protocol 2013) alongside a non-transfected control. 24 hr after transfection, cells were trypsinised, counted and re-plated in media supplemented with PDS, PhenDC3 or DMSO vehicle control (minimum two biological replicates per condition) in a 48-well plate format (seeding density - 8,000 cells per well A375; 4,000 cells per well HT1080). Cell growth was monitored for 144 hr using IncuCyteZOOM live cell analysis (Sartorius) and cell confluency calculated as a percentage of the well area covered. Scans were performed every 3 hr; nine scans per well. To monitor protein levels, cells transfected simultaneously with the same siRNA-reagent mixture were harvested 48 hr and 144 hr after transfection, by cell scraping and lysed on ice (30 min) with RIPA lysis buffer with protease inhibitor\_+EDTA (Thermo Fisher Scientific, cat # 8990). Lysates were analysed by capillary electrophoresis via the Protein Simple Wes platform according to manufacturer’s protocol with antibodies summarised in the key resource table above. Lysates from non-transfected and siRNA-treated (targeting and non-targeting) samples were probed with antibodies against BRCA1 (Cell Signalling Technology, cat # 4970-CST), TOP1 (Abcam, cat # AB109374), GAR1 (NovusBio cat #NBP2-31742) or DDX42 (Abcam cat #AB80975), plus anti-beta actin antibody (mouse Merck cat # A5441; rabbit cat # 4970-CST) by multiplexing. For non-targeting and targeting lysates, the area of the desired band was normalised to beta-actin and then normalised to the protein level in the non-targeting sample, for three (48 hr after transfection lysates) or two independent Wes runs (144 hr after transfection). Protein depletion is expressed as an average of these normalised values. All lysates were used at a concentration of 0.8 mg/mL and antibody dilutions as follows: BRCA1 1:50; TOP1 1:250; GAR1 1:100; DDX42 1:250; rabbit-actin 1:500; mouse-actin 1:250."
-  - type: Paragraph
-    content: []
   - type: Table
     id: inlinetable3
     rows:
@@ -14989,8 +14983,6 @@ content:
         100 mM KCl by heating at 95°C, 10 min followed by slow cooling to room
         temperature overnight at a controlled rate of 0.2°C/min. Annealed
         oligonucleotides were stored at 4°C for maximum 1 month.
-  - type: Paragraph
-    content: []
   - type: Table
     id: inlinetable4
     rows:

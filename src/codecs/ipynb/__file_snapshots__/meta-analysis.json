@@ -113,14 +113,10 @@
       "type": "ThematicBreak"
     },
     {
-      "type": "Paragraph",
+      "type": "Heading",
+      "depth": 1,
       "content": [
-        {
-          "type": "Strong",
-          "content": [
-            "A bit more about this Jupyter Notebook"
-          ]
-        }
+        "A bit more about this Jupyter Notebook"
       ]
     },
     {

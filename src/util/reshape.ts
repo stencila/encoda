@@ -165,6 +165,28 @@ async function reshapeCreativeWork(
       if (remove) node = undefined
     }
 
+    // Is this an empty `Paragraph`, `Heading`, or other block node
+    else if (
+      (schema.isA('Paragraph', node) || schema.isA('Heading', node)) &&
+      node.content.length === 0
+    ) {
+      node = undefined
+    }
+
+    // Is this a `Heading 1` disguised as a `Paragraph` with only bold text
+    else if (
+      schema.isA('Paragraph', node) &&
+      node.content.length === 1 &&
+      schema.isA('Strong', node.content[0]) &&
+      !schema.isA('Figure', prev) &&
+      !schema.isA('Table', next)
+    ) {
+      const bolded = node.content[0]
+      if (!/^(Figure|Table|Note)\b/i.test(textContent(bolded))) {
+        node = schema.heading({ content: bolded.content, depth: 1 })
+      }
+    }
+
     // Is this a `CodeBlock` disguised as contiguous paragraphs?
     else if (schema.isA('Paragraph', node) && hasStyle(node, codeStyles)) {
       let text = textContent(node)

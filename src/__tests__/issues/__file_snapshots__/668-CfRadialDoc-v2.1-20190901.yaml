@@ -123,21 +123,18 @@ content:
       style: Title 1
     content:
       - CfRadial2 Data File Format
-  - type: Paragraph
+  - type: Heading
+    depth: 1
     content:
-      - type: Strong
-        content:
-          - CF2 NetCDF Format for
-  - type: Paragraph
+      - CF2 NetCDF Format for
+  - type: Heading
+    depth: 1
     content:
-      - type: Strong
-        content:
-          - RADAR and LIDAR data
-  - type: Paragraph
+      - RADAR and LIDAR data
+  - type: Heading
+    depth: 1
     content:
-      - type: Strong
-        content:
-          - in Radial Coordinates
+      - in Radial Coordinates
   - type: Paragraph
     meta:
       style: Body1
@@ -2630,9 +2627,6 @@ content:
     depth: 2
     content:
       - Global attributes
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -3255,14 +3249,8 @@ content:
                   - Data in this file are simulated
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - Global Dimensions
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -3299,14 +3287,8 @@ content:
                   - The number of sweeps in the dataset
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - Global variables
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -3845,9 +3827,6 @@ content:
                   - ''
                   - XML, JSon, etc.
   - type: Heading
-    depth: 2
-    content: []
-  - type: Heading
     depth: 1
     content:
       - Sweep groups
@@ -3870,9 +3849,6 @@ content:
     depth: 2
     content:
       - Sweep-specific Dimensions
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -3977,14 +3953,8 @@ content:
                   - Number of frequencies used
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - Sweep coordinate variables
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -4114,9 +4084,6 @@ content:
                   style: cell
                 content:
                   - Range to center of each bin.
-  - type: Heading
-    depth: 2
-    content: []
   - type: Heading
     depth: 3
     content:
@@ -4251,9 +4218,6 @@ content:
                   - “julian”
                   - ''
                   - See CF conventions for details.
-  - type: Heading
-    depth: 2
-    content: []
   - type: Heading
     depth: 3
     content:
@@ -4450,9 +4414,6 @@ content:
                   style: cell
                 content:
                   - “radial_range_coordinate”
-  - type: Heading
-    depth: 2
-    content: []
   - type: Heading
     depth: 2
     content:
@@ -5459,9 +5420,6 @@ content:
         5.6) is the actual number of samples used for a given field, divided by
         n_samples. It will generally be 1.0, the default.
   - type: Heading
-    depth: 2
-    content: []
-  - type: Heading
     depth: 3
     content:
       - Attributes for azimuth(time) variable
@@ -5725,9 +5683,6 @@ content:
         content:
           - georeference’
       - .
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -6521,9 +6476,6 @@ content:
       - >-
         ’ depending on the instrument type. The variables included will be
         dependent on the particular instrument.
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -7251,9 +7203,6 @@ content:
   - type: Paragraph
     content:
       - 'Field data variables have the following attributes:'
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -7952,27 +7901,25 @@ content:
   - type: Paragraph
     content:
       - 'For stationary platforms, the coordinates attribute should be set to:'
-  - type: Paragraph
+  - type: Heading
+    depth: 1
     content:
-      - type: Strong
+      - “
+      - type: Emphasis
         content:
-          - “
-          - type: Emphasis
-            content:
-              - elevation azimuth range
-          - ”
+          - elevation azimuth range
+      - ”
   - type: Paragraph
     content:
       - 'For mobile platforms, the coordinates attribute should be set to:'
-  - type: Paragraph
+  - type: Heading
+    depth: 1
     content:
-      - type: Strong
+      - “
+      - type: Emphasis
         content:
-          - “
-          - type: Emphasis
-            content:
-              - elevation azimuth range heading roll pitch rotation tilt
-          - ”
+          - elevation azimuth range heading roll pitch rotation tilt
+      - ”
   - type: Heading
     depth: 3
     content:
@@ -8316,9 +8263,6 @@ content:
     depth: 2
     content:
       - Spectrum group dimensions
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -8531,9 +8475,6 @@ content:
   - type: Paragraph
     content:
       - 'Spectrum fields have the following attributes:'
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -8902,9 +8843,6 @@ content:
   - type: Paragraph
     content:
       - 'This group holds radar parameters specific to a radar instrument:'
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -9139,9 +9077,6 @@ content:
                   - Bandwidth of radar receiver
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - 'The '
       - type: Emphasis
@@ -9151,9 +9086,6 @@ content:
   - type: Paragraph
     content:
       - 'This group holds radar parameters specific to a lidar instrument:'
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -9397,9 +9329,6 @@ content:
             content: []
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - 'The '
       - type: Emphasis
@@ -9452,9 +9381,6 @@ content:
                   style: cell
                 content:
                   - The number of radar calibrations available
-  - type: Heading
-    depth: 2
-    content: []
   - type: Heading
     depth: 3
     content:
@@ -9540,9 +9466,6 @@ content:
         content:
           - h
       - ''' quantities should be used.'
-  - type: Heading
-    depth: 2
-    content: []
   - type: Table
     rows:
       - type: TableRow
@@ -11509,9 +11432,6 @@ content:
                   - V cross-pol channel
   - type: Heading
     depth: 2
-    content: []
-  - type: Heading
-    depth: 2
     content:
       - 'The '
       - type: Emphasis
@@ -12171,8 +12091,6 @@ content:
                   style: cell
                 content:
                   - Correction to tilt values
-  - type: Paragraph
-    content: []
   - type: Heading
     depth: 1
     content:

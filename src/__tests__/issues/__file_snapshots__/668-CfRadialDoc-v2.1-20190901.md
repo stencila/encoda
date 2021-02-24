@@ -121,11 +121,11 @@ references:
 
 CfRadial2 Data File Format
 
-**CF2 NetCDF Format for**
+# CF2 NetCDF Format for
 
-**RADAR and LIDAR data**
+# RADAR and LIDAR data
 
-**in Radial Coordinates**
+# in Radial Coordinates
 
 Version 2.1 - DRAFT
 
@@ -652,8 +652,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## Global attributes
 
-## 
-
 | Attribute name          | Type          | Convention    | Description                                                                                                                                    |
 | ----------------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Conventions             | string        | CF            | Conventions string will specify “Cf/Radial”.                                                                                                   |
@@ -675,21 +673,13 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 | ~~time_coverage_end~~   | ~~string~~    | ~~CF/Radial~~ | ~~Copy of time_coverage_end global variable in 4.3.~~                                                                                          |
 | simulated data          | string        | ODIM          | “true” or “false”Assumed “false” if missing.Data in this file are simulated                                                                    |
 
-## 
-
 ## Global Dimensions
-
-## 
 
 | Dimension name | Description                         |
 | -------------- | ----------------------------------- |
 | sweep          | The number of sweeps in the dataset |
 
-## 
-
 ## Global variables
-
-## 
 
 | Variable name       | Dimension | Type   | Units                                                                                    | Comments                                                                                                                                                                                                                                                                   |
 | ------------------- | --------- | ------ | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -707,8 +697,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 | sweep_fixed_angle   | (sweep)   | float  | degrees                                                                                  | Array of fixed angles for sweeps. This summarizes the fixed angles for all of the sweeps, so that a user does not need to read individual sweep groups to determine the fixed angles. The value should be copied from the sweep_fixed_angle attribute in the sweep groups. |
 | status_str          |           | string |                                                                                          | General-purpose string for storing any information that is not included in other parts of the data structure. Format can be simple text,XML, JSon, etc.                                                                                                                    |
 
-## 
-
 # Sweep groups
 
 This section provides details of the information in each sweep group.
@@ -719,8 +707,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 ## Sweep-specific Dimensions
 
-## 
-
 | Dimension name  | Description                                                                                                       |
 | --------------- | ----------------------------------------------------------------------------------------------------------------- |
 | time            | The number of rays.                                                                                               |
@@ -729,18 +715,12 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 | spectrum_groups | Number of spectrum groups in this sweep                                                                           |
 | frequency       | Number of frequencies used                                                                                        |
 
-## 
-
 ## Sweep coordinate variables
-
-## 
 
 | Variable name | Dimension | Type   | Units                                                                                 | Comments                                                   |
 | ------------- | --------- | ------ | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | time          | (time)    | double | ISO8601 string:“seconds sinceYYYY-MM-DD HH:MM:SS”or“seconds sinceYYYY-MM-DDTHH:MM:SS” | Coordinate variable for time.Time at center of each ray.   |
 | range         | (range)   | float  | meters                                                                                | Coordinate variable for range.Range to center of each bin. |
-
-## 
 
 ### Attributes for time coordinate variable
 
@@ -749,8 +729,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 | standard_name  | string | “time”                                                                                                                                                                                         |
 | units          | string | ISO8601 string“seconds since _YYYY_-_MM_-_DD_T_hh:mm:ss_Z”,where the actual reference time values are used.                                                                                    |
 | calendar       | string | Defaults to “gregorian” if missing.Options are:“gregorian” or “standard”,“proleptic_gregorian”,“noleap” or “365_day”,“all_leap” or “366_day”,“360_day”,“julian”See CF conventions for details. |
-
-## 
 
 ### Attributes for range coordinate variable
 
@@ -763,8 +741,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 | meters_to_center_of_first_gate | float  | Start range in meters.                                                                    |
 | meters_between_gates           | float  | Gate spacing in meters.Required ifspacing_is_constant is “true”.Not applicable otherwise. |
 | axis                           | string | “radial_range_coordinate”                                                                 |
-
-## 
 
 ## Sweep variables
 
@@ -799,8 +775,6 @@ NOTE that in the tables below, shading indicates required items. The non-shaded 
 
 The number of samples used to compute the moments may vary from field to field. In the table above, n_samples refers to the maximum number of samples used for any field. The field attribute ‘sampling_ratio’ (see 5.6) is the actual number of samples used for a given field, divided by n_samples. It will generally be 1.0, the default.
 
-## 
-
 ### Attributes for azimuth(time) variable
 
 | Attribute name | Type   | Value                           |
@@ -824,8 +798,6 @@ The number of samples used to compute the moments may vary from field to field. 
 For _mobile_ platforms, this sub-group will be included in each sweep group, to store the metadata for platform position, pointing and velocity.
 
 This group will always be named ‘_georeference’_.
-
-## 
 
 | Variable name      | Dimension | Type   | Units         | Comments                                                                                                                                                                                                                                            |
 | ------------------ | --------- | ------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -854,8 +826,6 @@ This group will always be named ‘_georeference’_.
 If monitoring data is available, this monitoring sub-groups will be included in each relevant sweep group, to store the monitoring variables.
 
 The groups will be named ‘_radar_monitoring_’ and ‘_lidar_monitoring_’ depending on the instrument type. The variables included will be dependent on the particular instrument.
-
-## 
 
 | Variable name                  | Dimension | Type  | Units   | Comments                                                                                                                         |
 | ------------------------------ | --------- | ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -896,8 +866,6 @@ The NetCDF variable name is interpreted as the short name for the field.
 
 Field data variables have the following attributes:
 
-## 
-
 | Attribute name                | Type                             | Convention | Description                                                                                                                                                                                                                                                   |
 | ----------------------------- | -------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | standard_name                 | string                           | CF         | CF standard name for field.See section 8.                                                                                                                                                                                                                     |
@@ -934,11 +902,11 @@ The “coordinates’ attribute lists the variables needed to compute the locati
 
 For stationary platforms, the coordinates attribute should be set to:
 
-**“_elevation azimuth range_”**
+# “_elevation azimuth range_”
 
 For mobile platforms, the coordinates attribute should be set to:
 
-**“_elevation azimuth range heading roll pitch rotation tilt_”**
+# “_elevation azimuth range heading roll pitch rotation tilt_”
 
 ### Use of flag values - optional
 
@@ -1068,8 +1036,6 @@ If the index is not missing for a gate, it will be set to a value between 0 and 
 
 ## Spectrum group dimensions
 
-## 
-
 | Dimension name | Description                                                                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | index          | Number of spectra stored in each spectrum variable in this group. This dimensions the number of indices used to locate the spectra, i.e. for the gates where the index is not -1. |
@@ -1092,8 +1058,6 @@ As with moments field variables, a spectrum variable will be stored using one of
 ## Spectrum field attributes
 
 Spectrum fields have the following attributes:
-
-## 
 
 | Attribute name               | Type                    | Convention | Description                                                                                                                      |
 | ---------------------------- | ----------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -1119,8 +1083,6 @@ These groups reside in the root group, and are optional.
 
 This group holds radar parameters specific to a radar instrument:
 
-## 
-
 | Variable name      | Dimension | Type  | Units   | Comments                            |
 | ------------------ | --------- | ----- | ------- | ----------------------------------- |
 | antenna_gain_h     | none      | float | dBi     | Nominal antenna gain,H polarization |
@@ -1129,13 +1091,9 @@ This group holds radar parameters specific to a radar instrument:
 | beam_width_v       | none      | float | degrees | Antenna beam widthV polarization    |
 | receiver_bandwidth | none      | float | s-1     | Bandwidth of radar receiver         |
 
-## 
-
 ## The _lidar_parameters_ sub-group
 
 This group holds radar parameters specific to a lidar instrument:
-
-## 
 
 | Variable name       | Dimension | Type  | Units        | Comments      |
 | ------------------- | --------- | ----- | ------------ | ------------- |
@@ -1146,8 +1104,6 @@ This group holds radar parameters specific to a lidar instrument:
 | peak_power          | none      | float | watts        |               |
 | pulse_energy        | none      | float | joules       |               |
 
-## 
-
 ## The _radar_calibration_ sub-group
 
 For a radar, **a different calibration is required for each pulse width. Therefore the calibration variables are arrays.**
@@ -1157,8 +1113,6 @@ For a radar, **a different calibration is required for each pulse width. Therefo
 | Dimension name | Description                                |
 | -------------- | ------------------------------------------ |
 | calib          | The number of radar calibrations available |
-
-## 
 
 ### Variables
 
@@ -1172,8 +1126,6 @@ The meaning of the designations used in the calibration variables are as follows
 -   '**vx**' – vertical cross-polar (h transmit, v receive)
 
 For single polarization radars, the '**h**' quantities should be used.
-
-## 
 
 | Variable name            | Dimension | Type   | Units        | Comments                                                          |
 | ------------------------ | --------- | ------ | ------------ | ----------------------------------------------------------------- |
@@ -1227,8 +1179,6 @@ For single polarization radars, the '**h**' quantities should be used.
 | receiver_slope_vc        | (calib)   | float  |              | Computed receiver slope, ideally 1.0V co-pol channel              |
 | receiver_slope_hx        | (calib)   | float  |              | Computed receiver slope, ideally 1.0H cross-pol channel           |
 | receiver_slope_vx        | (calib)   | float  |              | Computed receiver slope, ideally 1.0V cross-pol channel           |
-
-## 
 
 ## The _lidar_calibration_ sub-group
 
