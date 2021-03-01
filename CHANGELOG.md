@@ -1,3 +1,10 @@
+## [0.107.1](https://github.com/stencila/encoda/compare/v0.107.0...v0.107.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency puppeteer to v8 ([3f3cac0](https://github.com/stencila/encoda/commit/3f3cac03993a76e948c6c4144884df826006aa19))
+
 # [0.107.0](https://github.com/stencila/encoda/compare/v0.106.1...v0.107.0) (2021-02-24)
 
 
