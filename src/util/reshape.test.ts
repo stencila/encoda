@@ -1,6 +1,9 @@
+import * as schema from '@stencila/schema'
+
 import { MdCodec } from '../codecs/md'
 import { YamlCodec } from '../codecs/yaml'
 import { fixture, nockRecord, snapshot } from '../__tests__/helpers'
+import { groupCitesIntoGiteGroup } from './reshape'
 
 const mdCodec = new MdCodec()
 const yamlCodec = new YamlCodec()
@@ -19,4 +22,58 @@ test('reshape', async () => {
   )
 
   done()
+})
+
+describe('groupCitesIntoGiteGroup', () => {
+  test('one CiteGroup with one Cite', () => {
+    const before = [
+      'this is (ignored) because its in text, and so is this math (',
+      schema.mathFragment({ text: 'pi' }),
+      ') but (',
+      schema.cite({ target: 'a' }),
+      ') is not.',
+    ]
+    const after = [
+      'this is (ignored) because its in text, and so is this math (',
+      schema.mathFragment({ text: 'pi' }),
+      ') but ',
+      schema.citeGroup({ items: [schema.cite({ target: 'a' })] }),
+      ' is not.',
+    ]
+
+    expect(groupCitesIntoGiteGroup(before)).toEqual(after)
+  })
+
+  test('two CiteGroups with two and three Cites each', () => {
+    const before = [
+      'first (',
+      schema.cite({ target: 'a' }),
+      '; ',
+      schema.cite({ target: 'b' }),
+      ') second (',
+      schema.cite({ target: 'c' }),
+      '; ',
+      schema.cite({ target: 'd' }),
+      ' ; ',
+      schema.cite({ target: 'e' }),
+      ').',
+    ]
+    const after = [
+      'first ',
+      schema.citeGroup({
+        items: [schema.cite({ target: 'a' }), schema.cite({ target: 'b' })],
+      }),
+      ' second ',
+      schema.citeGroup({
+        items: [
+          schema.cite({ target: 'c' }),
+          schema.cite({ target: 'd' }),
+          schema.cite({ target: 'e' }),
+        ],
+      }),
+      '.',
+    ]
+
+    expect(groupCitesIntoGiteGroup(before)).toEqual(after)
+  })
 })

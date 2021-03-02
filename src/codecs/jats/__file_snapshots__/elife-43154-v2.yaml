@@ -1413,27 +1413,33 @@ content:
       - type: Emphasis
         content:
           - Plasmodium falciparum
-      - ' in the peripheral blood film ('
-      - type: Cite
-        target: bib15
-        content:
-          - WHO, 2015
+      - ' in the peripheral blood film '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib15
+            content:
+              - WHO, 2015
       - >-
-        ). Multiple vital organ dysfunction is associated with increased
-        mortality (
-      - type: Cite
-        target: bib14
-        content:
-          - WHO, 2014
+        . Multiple vital organ dysfunction is associated with increased
+        mortality 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib14
+            content:
+              - WHO, 2014
       - >-
-        ). Common major clinical manifestations of severe malaria include coma,
+        . Common major clinical manifestations of severe malaria include coma,
         acidosis, renal failure and anaemia. Of these manifestations, anaemia is
-        an inevitable consequence of symptomatic malaria (
-      - type: Cite
-        target: bib13
-        content:
-          - White et al., 2014
-      - '). However, anaemia in individuals at risk of '
+        an inevitable consequence of symptomatic malaria 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib13
+            content:
+              - White et al., 2014
+      - '. However, anaemia in individuals at risk of '
       - type: Emphasis
         content:
           - Plasmodium falciparum
@@ -1443,85 +1449,89 @@ content:
       - >-
         There is considerable interest in understanding the mechanisms
         conferring protective effects against severe falciparum malaria of the
-        genetic polymorphisms which are common in malaria endemic areas (
-      - type: Cite
-        target: bib12
-        content:
-          - Weatherall, 2008
+        genetic polymorphisms which are common in malaria endemic areas 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib12
+            content:
+              - Weatherall, 2008
       - >-
-        ). For some, such as the sickle cell trait, several different mechanisms
+        . For some, such as the sickle cell trait, several different mechanisms
         have been proposed. These include reduced parasite erythrocyte invasion,
         enhanced parasitised red cell phagocytosis and a reduced propensity of
-        infected red cells to sequester in the microvasculature (
-      - type: Cite
-        target: bib7
-        content:
-          - Malaria Genomic Epidemiology Network et al., 2014
-      - '; '
-      - type: Cite
-        target: bib1
-        content:
-          - Band et al., 2015
-      - '; '
-      - type: Cite
-        target: bib2
-        content:
-          - Cholera et al., 2008
-      - '; '
-      - type: Cite
-        target: bib16
-        content:
-          - Williams, 2016
+        infected red cells to sequester in the microvasculature 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al., 2014
+          - type: Cite
+            target: bib1
+            content:
+              - Band et al., 2015
+          - type: Cite
+            target: bib2
+            content:
+              - Cholera et al., 2008
+          - type: Cite
+            target: bib16
+            content:
+              - Williams, 2016
       - >-
-        ). The mechanism underlying protection from severe falciparum malaria is
+        . The mechanism underlying protection from severe falciparum malaria is
         less clear for others such as glucose-6-phosphate dehydrogenase
         deficiency (G6PDd). This X-linked genetic polymorphism results in the
         most common human enzymopathy. Nearly 200 different genetic variants
-        have been reported (
-      - type: Cite
-        target: bib5
-        content:
-          - Howes et al., 2012
-      - '; '
-      - type: Cite
-        target: bib6
-        content:
-          - Luzzatto and Arese, 2018
+        have been reported 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib5
+            content:
+              - Howes et al., 2012
+          - type: Cite
+            target: bib6
+            content:
+              - Luzzatto and Arese, 2018
       - >-
-        ). The mechanism whereby G6PD deficiency protects against malaria, and
+        . The mechanism whereby G6PD deficiency protects against malaria, and
         the natural selection forces which have resulted in the different
         genotypes are still debated. Prospective observational hospital or
         clinic based patient studies have provided the major component of the
         evidence base. Estimating causal effects from observational studies in
         severe malaria patients is difficult due to both confounding and
         selection bias. This work focuses on collider bias introduced by
-        inappropriate data filtering (
-      - type: Cite
-        target: bib9
-        content:
-          - Snoep et al., 2014
-      - '; '
-      - type: Cite
-        target: bib8
-        content:
-          - Pearce and Richiardi, 2014
-      - ).
+        inappropriate data filtering 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib9
+            content:
+              - Snoep et al., 2014
+          - type: Cite
+            target: bib8
+            content:
+              - Pearce and Richiardi, 2014
+      - .
   - type: Paragraph
     content:
       - >-
         It has been suggested that G6PDd both increases the risk of severe
-        malarial anaemia (SMA) and decreases the risk of cerebral malaria (CM) (
-      - type: Cite
-        target: bib7
-        content:
-          - Malaria Genomic Epidemiology Network et al., 2014
-      - '; '
-      - type: Cite
-        target: bib3
-        content:
-          - Clarke et al., 2017
+        malarial anaemia (SMA) and decreases the risk of cerebral malaria (CM) 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al., 2014
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al., 2017
       - >-
-        ). These conclusions were based on a pooled analysis of observational
+        . These conclusions were based on a pooled analysis of observational
         data from over 11,000 patients with severe malaria studied in Africa and
         Asia, and relevant population controls. Based on these genetic
         association studies, a new formulation of the balancing-selection
@@ -1531,13 +1541,15 @@ content:
       - type: Emphasis
         content:
           - P. falciparum
-      - ' infection ('
-      - type: Cite
-        target: bib3
-        content:
-          - Clarke et al., 2017
+      - ' infection '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al., 2017
       - >-
-        ). Collider bias probably explains this negative association between
+        . Collider bias probably explains this negative association between
         G6PDd and CM, suggesting that causal interpretations of this association
         and the novel formulation of balancing selection in G6PDd are invalid.
   - type: Heading
@@ -1551,18 +1563,19 @@ content:
         Two published analyses of pooled data from observational studies of
         patients with severe falciparum malaria used severe malarial anaemia
         (SMA) and cerebral malaria (CM) as the main endpoints (outcomes) of
-        interest (
-      - type: Cite
-        target: bib7
-        content:
-          - Malaria Genomic Epidemiology Network et al., 2014
-      - '; '
-      - type: Cite
-        target: bib3
-        content:
-          - Clarke et al., 2017
+        interest 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al., 2014
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al., 2017
       - >-
-        ). Both these published analyses defined cases of CM as the presence of
+        . Both these published analyses defined cases of CM as the presence of
         coma but without concomitant SMA, and cases of SMA as patients with
         severe anaemia but who were conscious. Therefore, these case definitions
         excluded patients who had both SMA and CM. All other presentations of
@@ -1598,13 +1611,15 @@ content:
           stretchy="false">)</mml:mo></mml:mrow></mml:mstyle></mml:math>
       - >-
         . Indeed, when all the G6PDd mutations were mapped onto the WHO severity
-        classification score (
-      - type: Cite
-        target: bib17
-        content:
-          - Yoshida et al., 1971
+        classification score 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib17
+            content:
+              - Yoshida et al., 1971
       - >-
-        ), it was observed that "The mean G6PDd score was 13.5% in controls, 13%
+        , it was observed that "The mean G6PDd score was 13.5% in controls, 13%
         in cerebral malaria cases and 16.9% in severe malarial anaemia cases
         [..]." (page 8, 
       - type: Cite
@@ -1706,13 +1721,15 @@ content:
       - >-
         , will result in a biased odds ratio for G6PDd in CM cases versus
         controls inside the interval [0.69–0.98], the reported 95% CI for G6PDd
-        in CM cases versus controls (
-      - type: Cite
-        target: bib3
-        content:
-          - Clarke et al., 2017
+        in CM cases versus controls 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al., 2017
       - >-
-        ). Moreover, if we use their reported point estimate of 1.48, restricted
+        . Moreover, if we use their reported point estimate of 1.48, restricted
         to males, for the odds ratio of G6PDd in SMA cases versus controls, the
         simulation model estimates that the observed (biased) odds ratio for
         G6PDd in CM cases versus controls is 0.87, qualitatively very close to
@@ -1760,13 +1777,15 @@ content:
             the true value of the OR for G6PDd in SMA cases versus controls was
             set to 1). The faint blue shaded areas show the 95% CI [1.22–1.8]
             for the odds ratio of G6PDd in SMA cases versus controls, restricted
-            to males (
-          - type: Cite
-            target: bib3
-            content:
-              - Clarke et al., 2017
+            to males 
+          - type: CiteGroup
+            items:
+              - type: Cite
+                target: bib3
+                content:
+                  - Clarke et al., 2017
           - >-
-            ). The point estimate (1.48) is shown by the dashed blue line. The
+            . The point estimate (1.48) is shown by the dashed blue line. The
             faint red shaded area shows the 95% CI [0.69–0.98] for G6PDd in CM
             cases versus controls, also restricted to males, with the point
             estimate (0.82) shown by the dashed red line. CI: confidence
@@ -1787,30 +1806,26 @@ content:
     content:
       - >-
         This re-analysis of recent reports that G6PDd reduced the risk of CM
-        directly (
-      - type: Cite
-        target: bib7
-        content:
-          - Malaria Genomic Epidemiology Network et al., 2014
-      - '; '
-      - type: Cite
-        target: bib3
-        content:
-          - Clarke et al., 2017
+        directly 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al., 2014
+          - type: Cite
+            target: bib3
+            content:
+              - Clarke et al., 2017
+      - ' suggests that the observations could have resulted entirely from collider bias. This highlights the difficulty of inferring causal relationships between baseline patient covariates (in this case G6PDd) and covariates which define inclusion criteria. The necessary causal odds ratios for G6PDd in SMA cases versus controls which would give rise to the biased observed association between G6PD status and CM fit with the recent estimate of 1.71 in homozygous girls and hemizygous boys '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib10
+            content:
+              - Uyoga et al., 2015
       - >-
-        ) suggests that the observations could have resulted entirely from
-        collider bias. This highlights the difficulty of inferring causal
-        relationships between baseline patient covariates (in this case G6PDd)
-        and covariates which define inclusion criteria. The necessary causal
-        odds ratios for G6PDd in SMA cases versus controls which would give rise
-        to the biased observed association between G6PD status and CM fit with
-        the recent estimate of 1.71 in homozygous girls and hemizygous boys (
-      - type: Cite
-        target: bib10
-        content:
-          - Uyoga et al., 2015
-      - >-
-        ). This is not to say that the risk of CM is unaffected by G6PDd, but
+        . This is not to say that the risk of CM is unaffected by G6PDd, but
         that the observations reported could have arisen purely as a result of
         the implicit collider bias induced by the selection of patients by the
         severe malaria criteria.
@@ -1830,18 +1845,20 @@ content:
       - ")\_and mortality is strongly dependent on the case definition. Second, enrolment into studies can only be done at the hospital or clinic level and neither duration of illness nor treatment seeking behaviour can be accounted for adequately."
   - type: Paragraph
     content:
-      - "The notion and definition of ‘severe malaria’ has two operational purposes. First it is a clinical tool for appropriate triage of malaria patients at high risk of death. Second it is a research tool for the evaluation of novel interventions seeking to reduce mortality. Interventions aimed at reducing mortality need to be trialled in the most severely ill patients in order to demonstrate intervention efficacy in this important subgroup. Pooled analyses of severe malaria studies need to take into account the variability of study inclusion and exclusion criteria. Researchers must appreciate that severe malaria is not an objective category but a subjective case definition subset\_from a spectrum of severity. Moreover, restricting analyses to specific patient subgroups, especially in the analysis of large pooled datasets, can have a considerable impact on the final result ("
-      - type: Cite
-        target: bib4
-        content:
-          - Gelman and Loken, 2013
+      - "The notion and definition of ‘severe malaria’ has two operational purposes. First it is a clinical tool for appropriate triage of malaria patients at high risk of death. Second it is a research tool for the evaluation of novel interventions seeking to reduce mortality. Interventions aimed at reducing mortality need to be trialled in the most severely ill patients in order to demonstrate intervention efficacy in this important subgroup. Pooled analyses of severe malaria studies need to take into account the variability of study inclusion and exclusion criteria. Researchers must appreciate that severe malaria is not an objective category but a subjective case definition subset\_from a spectrum of severity. Moreover, restricting analyses to specific patient subgroups, especially in the analysis of large pooled datasets, can have a considerable impact on the final result "
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib4
+            content:
+              - Gelman and Loken, 2013
       - >-
-        ). With increased emphasis on providing open access data so that
-        analyses can be evaluated and best use made of clinical research it
-        would be very helpful if investigators could publish reproducible code
-        alongside their analyses. Future genetic epidemiological studies could
-        benefit from use of causal diagrams and would be more readily evaluable
-        by provision of accompanying code.
+        . With increased emphasis on providing open access data so that analyses
+        can be evaluated and best use made of clinical research it would be very
+        helpful if investigators could publish reproducible code alongside their
+        analyses. Future genetic epidemiological studies could benefit from use
+        of causal diagrams and would be more readily evaluable by provision of
+        accompanying code.
   - type: Heading
     id: s4
     depth: 1
@@ -1885,12 +1902,14 @@ content:
             separately by sex (X-chromosome SNPs only) and study site:
             genotypic, additive, dominant, recessive and heterozygote advantage
             genetic models of inheritance were considered.
-      - "\"\_(online Methods, Statistical analysis, ("
-      - type: Cite
-        target: bib7
-        content:
-          - Malaria Genomic Epidemiology Network et al., 2014
-      - )).
+      - "\"\_(online Methods, Statistical analysis, "
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib7
+            content:
+              - Malaria Genomic Epidemiology Network et al., 2014
+      - ).
   - type: Heading
     id: s4-2
     depth: 2

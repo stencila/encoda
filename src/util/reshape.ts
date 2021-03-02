@@ -399,55 +399,12 @@ async function reshapeCreativeWork(
 
   const { references } = work
   if (references !== undefined) {
-    // Scan paragraphs for citations and reshape them into `Cite` nodes
-    // that link to references. Splits string content into `[string, Cite, string]`.
-    // At present, only detects "[12]" and "[7,8]" style citations in string inline content
-    // (ie. will ignore Superscripts, Links etc)
     transformSync(
       work,
       (node): schema.Node => {
         if (schema.isA('Paragraph', node)) {
-          node.content = node.content.reduce(
-            (prev: schema.InlineContent[], curr): schema.InlineContent[] => {
-              if (typeof curr === 'string') {
-                const parts = []
-                let last = 0
-                // Only match square brackets if preceding space
-                const regex = /(?<=\s)\[(\d+)(?:\s*,\s*(\d+))*\]/g
-                let match
-                while ((match = regex.exec(curr))) {
-                  // Try to convert each number into a Cite
-                  const items = match
-                    .slice(1)
-                    .filter((digits) => digits !== undefined)
-                    .map((digits) => {
-                      const num = parseInt(digits)
-
-                      // Get generate an id for the reference
-                      const ref = references[num - 1]
-                      let id = `ref${num}`
-                      if (schema.isCreativeWork(ref)) {
-                        if (ref.id !== undefined) id = ref.id
-                        else ref.id = id
-                      }
-
-                      return schema.cite({ target: id })
-                    })
-
-                  // Split into [string, CiteGroup] parts
-                  parts.push(
-                    curr.slice(last, match.index),
-                    schema.citeGroup({ items })
-                  )
-
-                  last = match.index + match[0].length
-                }
-                parts.push(curr.slice(last))
-                return [...prev, ...parts]
-              } else return [...prev, curr]
-            },
-            []
-          )
+          node.content = decodeNumericCites(node.content, references)
+          node.content = groupCitesIntoGiteGroup(node.content)
         }
         return node
       }
@@ -551,6 +508,115 @@ function separateLabelCaption(
     }
   }
   return [label, [schema.paragraph({ ...removeStyle(caption), content })]]
+}
+
+/**
+ * Scan paragraphs for citations and reshape them into `CiteGroup` nodes
+ * that link to references
+ *
+ * Splits string content into `[string, CiteGroup, string]`.
+ * At present, detects "[12]" and "[7,8]" style citations in string inline content
+ * (ie. will ignore Superscripts, Links etc)
+ *
+ * @param para  The paragraph to reshape
+ * @param references  The reference to link to
+ */
+function decodeNumericCites(
+  content: schema.InlineContent[],
+  references: Exclude<schema.CreativeWork['references'], undefined>
+): schema.InlineContent[] {
+  return content.reduce(
+    (prev: schema.InlineContent[], curr): schema.InlineContent[] => {
+      if (typeof curr === 'string') {
+        const parts = []
+        let last = 0
+        // Only match square brackets if preceding space
+        const regex = /(?<=\s)\[(\d+)(?:\s*,\s*(\d+))*\]/g
+        let match
+        while ((match = regex.exec(curr))) {
+          // Try to convert each number into a Cite
+          const items = match
+            .slice(1)
+            .filter((digits) => digits !== undefined)
+            .map((digits) => {
+              const num = parseInt(digits)
+
+              // Get generate an id for the reference
+              const ref = references[num - 1]
+              let id = `ref${num}`
+              if (schema.isCreativeWork(ref)) {
+                if (ref.id !== undefined) id = ref.id
+                else ref.id = id
+              }
+
+              return schema.cite({ target: id })
+            })
+
+          // Split into [string, CiteGroup] parts
+          parts.push(curr.slice(last, match.index), schema.citeGroup({ items }))
+
+          last = match.index + match[0].length
+        }
+        parts.push(curr.slice(last))
+        return [...prev, ...parts]
+      } else return [...prev, curr]
+    },
+    []
+  )
+}
+
+/**
+ * Group `Cite` nodes into `CiteGroup` nodes
+ *
+ * @param para The paragraph to reshape
+ */
+export function groupCitesIntoGiteGroup(
+  content: schema.InlineContent[]
+): schema.InlineContent[] {
+  content = [...content]
+
+  for (let index = 0; index < content.length; index++) {
+    const curr = content[index]
+    if (typeof curr === 'string' && curr.endsWith('(')) {
+      let items: schema.Cite[] = []
+      let ahead = 1
+      while (index + ahead < content.length) {
+        const node = content[index + ahead]
+        if (schema.isA('Cite', node)) {
+          // Collect into cite items
+          items = [...items, node]
+        } else if (typeof node === 'string') {
+          if (node.startsWith(')')) {
+            // Matching closing parenthesis so makes modifications
+            // to content
+            content[index] = curr.slice(0, -1)
+            content[index + ahead] = node.slice(1)
+            content.splice(
+              index + 1, // start
+              ahead - 1, // items to delete
+              schema.citeGroup({ items }) // item to insert
+            )
+
+            // Skip ahead one so we don't bother looking at the
+            // CiteGroup that was just inserted
+            index += 1
+            break
+          } else if (/\s*,|;\s*/.test(node)) {
+            // Ignore separators
+          } else {
+            // Some other text between Cite nodes so exit
+            break
+          }
+        } else {
+          // Some other, non matching content so exit
+          break
+        }
+        ahead++
+      }
+    }
+  }
+
+  return content
 }
 
 // Just-in-time instantiated codecs.

@@ -2696,27 +2696,33 @@ content:
         at short time scale to a finite motor repertoire while the long-term
         sequence of successive motor actions displays apparent stochasticity.
         This dual characteristic is immediately visible in the locomotion of
-        small animals such as Nematodes (
-      - type: Cite
-        target: bib49
-        content:
-          - Stephens et al., 2008
-      - ), Zebrafish (
-      - type: Cite
-        target: bib22
-        content:
-          - Girdhar et al., 2015
-      - ') or '
+        small animals such as Nematodes 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib49
+            content:
+              - Stephens et al., 2008
+      - ', Zebrafish '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib22
+            content:
+              - Girdhar et al., 2015
+      - ' or '
       - type: Emphasis
         content:
           - Drosophila
-      - ' larvae ('
-      - type: Cite
-        target: bib24
-        content:
-          - Gomez-Marin and Louis, 2012
+      - ' larvae '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib24
+            content:
+              - Gomez-Marin and Louis, 2012
       - >-
-        ), which consists of just a few stereotyped maneuvers executed in a
+        , which consists of just a few stereotyped maneuvers executed in a
         sequential way. In this case, behavior is best described as a set of
         statistical rules that defines how these elemental motor actions are
         chained. In the presence of sensory cues, two types of behavioral
@@ -2753,17 +2759,18 @@ content:
         external factors as the animal navigates through a complex environment.
         These weak motor-related cues interfere with the innate motor program to
         cumulatively promote the exploration of regions that are more favorable
-        for the animal (
-      - type: Cite
-        target: bib51
-        content:
-          - Tsodyks et al., 1999
-      - '; '
-      - type: Cite
-        target: bib19
-        content:
-          - Fiser et al., 2004
-      - ).
+        for the animal 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib51
+            content:
+              - Tsodyks et al., 1999
+          - type: Cite
+            target: bib19
+            content:
+              - Fiser et al., 2004
+      - .
   - type: Paragraph
     content:
       - >-
@@ -2781,127 +2788,132 @@ content:
         In physics terms, the animal can thus be described as a random walker,
         whose transition probabilities are a function of the sensory inputs.
         This statistical approach was originally introduced to analyze bacteria
-        chemotaxis (
-      - type: Cite
-        target: bib32
-        content:
-          - Lovely and Dahlquist, 1975
+        chemotaxis 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib32
+            content:
+              - Lovely and Dahlquist, 1975
       - >-
-        ). Motile bacteria navigate by alternating straight swimming and turning
+        . Motile bacteria navigate by alternating straight swimming and turning
         phases, so-called runs and tumbles, resulting in trajectories akin to
-        random walks (
-      - type: Cite
-        target: bib4
-        content:
-          - Berg and Brown, 1972
+        random walks 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib4
+            content:
+              - Berg and Brown, 1972
       - >-
-        ). Chemotaxis originates from a chemical-driven modulation of the
+        . Chemotaxis originates from a chemical-driven modulation of the
         transition probability from run to tumble: the transition rate is
         governed by the time-history of chemical sensing. How this dependency is
         optimized to enhance gradient-climbing has been the subject of extensive
-        literature (
-      - type: Cite
-        target: bib33
-        content:
-          - Macnab and Koshland, 1972
-      - '; '
-      - type: Cite
-        target: bib1
-        content:
-          - Adler and Tso, 1974
-      - '; '
-      - type: Cite
-        target: bib39
-        content:
-          - Mello and Tu, 2007
-      - '; '
-      - type: Cite
-        target: bib59
-        content:
-          - Yuan et al., 2010
-      - '; '
-      - type: Cite
-        target: bib11
-        content:
-          - Celani and Vergassola, 2010
+        literature 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib33
+            content:
+              - Macnab and Koshland, 1972
+          - type: Cite
+            target: bib1
+            content:
+              - Adler and Tso, 1974
+          - type: Cite
+            target: bib39
+            content:
+              - Mello and Tu, 2007
+          - type: Cite
+            target: bib59
+            content:
+              - Yuan et al., 2010
+          - type: Cite
+            target: bib11
+            content:
+              - Celani and Vergassola, 2010
       - >-
-        ). More recently, similar descriptions have been successfully used to
+        . More recently, similar descriptions have been successfully used to
         quantify chemotaxis and phototaxis in multicellular organisms such as 
       - type: Emphasis
         content:
           - Caenorhabditis elegans
-      - ' ('
-      - type: Cite
-        target: bib56
-        content:
-          - Ward, 1973
-      - '; '
-      - type: Cite
-        target: bib40
-        content:
-          - Miller et al., 2005
-      - '; '
-      - type: Cite
-        target: bib57
-        content:
-          - Ward et al., 2008
-      - ), Drosophila larva (
-      - type: Cite
-        target: bib45
-        content:
-          - Sawin et al., 1994
-      - '; '
-      - type: Cite
-        target: bib28
-        content:
-          - Kane et al., 2013
-      - '; '
-      - type: Cite
-        target: bib23
-        content:
-          - Gomez-Marin et al., 2011
-      - '; '
-      - type: Cite
-        target: bib50
-        content:
-          - Tastekin et al., 2018
-      - ) or different types of slugs (
-      - type: Cite
-        target: bib36
-        content:
-          - Matsuo et al., 2014
-      - '; '
-      - type: Cite
-        target: bib34
-        content:
-          - Marée et al., 1999
+      - ' '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib56
+            content:
+              - Ward, 1973
+          - type: Cite
+            target: bib40
+            content:
+              - Miller et al., 2005
+          - type: Cite
+            target: bib57
+            content:
+              - Ward et al., 2008
+      - ', Drosophila larva '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib45
+            content:
+              - Sawin et al., 1994
+          - type: Cite
+            target: bib28
+            content:
+              - Kane et al., 2013
+          - type: Cite
+            target: bib23
+            content:
+              - Gomez-Marin et al., 2011
+          - type: Cite
+            target: bib50
+            content:
+              - Tastekin et al., 2018
+      - ' or different types of slugs '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib36
+            content:
+              - Matsuo et al., 2014
+          - type: Cite
+            target: bib34
+            content:
+              - Marée et al., 1999
       - >-
-        ). Although the sensorimotor apparatus of these animals are very
+        . Although the sensorimotor apparatus of these animals are very
         different, the taxis strategies at play appear to be convergent and can
-        be classified based on the gradient-sensing methods (
-      - type: Cite
-        target: bib20
-        content:
-          - Fraenkel and Gunn, 1961
-      - '; '
-      - type: Cite
-        target: bib24
-        content:
-          - Gomez-Marin and Louis, 2012
+        be classified based on the gradient-sensing methods 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib20
+            content:
+              - Fraenkel and Gunn, 1961
+          - type: Cite
+            target: bib24
+            content:
+              - Gomez-Marin and Louis, 2012
       - >-
-        ). Tropotaxis refers to strategies in which the organism directly and
+        . Tropotaxis refers to strategies in which the organism directly and
         instantaneously infers the stimulus direction by comparison between two
         spatially distinct sensory receptors. In contrast, during klinotaxis,
         the sensory gradient is inferred from successive samplings at different
         spatial positions. This second strategy is particularly adapted when the
         organism has only one receptor, or if the sensory gradient across the
-        animal’s body is too small to be detected (
-      - type: Cite
-        target: bib26
-        content:
-          - Humberg et al., 2018
+        animal’s body is too small to be detected 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib26
+            content:
+              - Humberg et al., 2018
       - >-
-        ). It requires at least a basic form of memory, since the sensory
+        . It requires at least a basic form of memory, since the sensory
         information needs to be retained for some finite period of time.
   - type: Paragraph
     content:
@@ -2909,20 +2921,21 @@ content:
         In the present work, we implement such a framework to produce a
         comprehensive statistical model of phototaxis in zebrafish larvae.
         Zebrafish larva is currently the only vertebrate system that allows in
-        vivo whole-brain functional imaging at cellular resolution (
-      - type: Cite
-        target: bib43
-        content:
-          - Panier et al., 2013
-      - '; '
-      - type: Cite
-        target: bib2
-        content:
-          - Ahrens et al., 2013
+        vivo whole-brain functional imaging at cellular resolution 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib43
+            content:
+              - Panier et al., 2013
+          - type: Cite
+            target: bib2
+            content:
+              - Ahrens et al., 2013
       - >-
-        ). It thus provides a unique opportunity to study how sensorimotor
-        tasks, such as sensory-driven locomotion, are implemented at the
-        brain-scale level.
+        . It thus provides a unique opportunity to study how sensorimotor tasks,
+        such as sensory-driven locomotion, are implemented at the brain-scale
+        level.
   - type: Paragraph
     content:
       - 'Although adult zebrafish are generally photophobic (or scototactic, '
@@ -2935,28 +2948,33 @@ content:
         target: bib37
         content:
           - Maximino et al., 2007
-      - "), they display positive phototaxis at the larval stage, from 5 days post-fertilization (dpf) on\_("
-      - type: Cite
-        target: bib42
-        content:
-          - Orger and Baier, 2005
+      - "), they display positive phototaxis at the larval stage, from 5 days post-fertilization (dpf) on\_"
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib42
+            content:
+              - Orger and Baier, 2005
       - >-
-        ). At this early stage, their locomotion consists of a series of
-        discrete swimming events interspersed by ~1 s long periods of inactivity
-        (
-      - type: Cite
-        target: bib22
-        content:
-          - Girdhar et al., 2015
+        . At this early stage, their locomotion consists of a series of discrete
+        swimming events interspersed by ~1 s long periods of inactivity 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib22
+            content:
+              - Girdhar et al., 2015
       - >-
-        ). Previous studies have shown that, when exposed to a distant light
+        . Previous studies have shown that, when exposed to a distant light
         source, the first bouts executed by the fish tend to be orientated in
-        the direction of the source (tropotaxis) (
-      - type: Cite
-        target: bib9
-        content:
-          - Burgess et al., 2010
-      - '). Furthermore, '
+        the direction of the source (tropotaxis) 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib9
+            content:
+              - Burgess et al., 2010
+      - '. Furthermore, '
       - type: Cite
         target: bib12
         content:
@@ -2967,27 +2985,29 @@ content:
       - >-
         From a neuronal viewpoint, recent calcium imaging experiments identified
         a small circuit in the rostral hindbrain that plays a key role in
-        phototaxis (
-      - type: Cite
-        target: bib2
-        content:
-          - Ahrens et al., 2013
-      - '; '
-      - type: Cite
-        target: bib13
-        content:
-          - Dunn et al., 2016
-      - '; '
-      - type: Cite
-        target: bib58
-        content:
-          - Wolf et al., 2017
-      - "). This region, called ARTR (anterior rhombencephalic turning region) or HBO (hindbrain oscillator), displays pseudo-periodic antiphasic oscillations, such that the activity of the left and right subpopulations alternate with a ~20\_s period. This alternation was shown to set the coordinated direction of the gaze and tail bout orientation, thus effectively organizing the temporal sequence of the successive reorientations. It was further shown that this circuit oscillation could be driven by whole-field illumination of the ipsilateral eye, such as to favor the animal’s orientation towards a light source ("
-      - type: Cite
-        target: bib58
-        content:
-          - Wolf et al., 2017
-      - ).
+        phototaxis 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib2
+            content:
+              - Ahrens et al., 2013
+          - type: Cite
+            target: bib13
+            content:
+              - Dunn et al., 2016
+          - type: Cite
+            target: bib58
+            content:
+              - Wolf et al., 2017
+      - ". This region, called ARTR (anterior rhombencephalic turning region) or HBO (hindbrain oscillator), displays pseudo-periodic antiphasic oscillations, such that the activity of the left and right subpopulations alternate with a ~20\_s period. This alternation was shown to set the coordinated direction of the gaze and tail bout orientation, thus effectively organizing the temporal sequence of the successive reorientations. It was further shown that this circuit oscillation could be driven by whole-field illumination of the ipsilateral eye, such as to favor the animal’s orientation towards a light source "
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib58
+            content:
+              - Wolf et al., 2017
+      - .
   - type: Paragraph
     content:
       - >-
@@ -3306,13 +3326,15 @@ content:
           id="inf23"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>450</mml:mn><mml:mo>⁢</mml:mo><mml:mi>μ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>W</mml:mi></mml:mrow></mml:mrow><mml:mo>.</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
       - >-
         . Such pre-conditioning phases were used to promote light-seeking
-        behavior (
-      - type: Cite
-        target: bib10
-        content:
-          - Burgess and Granato, 2007
+        behavior 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib10
+            content:
+              - Burgess and Granato, 2007
       - >-
-        ), while enabling the quantification of the basal exploratory kinematics
+        , while enabling the quantification of the basal exploratory kinematics
         for each fish.
   - type: Paragraph
     content:
@@ -3328,13 +3350,15 @@ content:
         text: >-
           <mml:math
           id="inf25"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-      - ) during which the fish remains still (
-      - type: Cite
-        target: bib13
-        content:
-          - Dunn et al., 2016
+      - ') during which the fish remains still '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib13
+            content:
+              - Dunn et al., 2016
       - >-
-        ). Each bout results in a translational motion of the animal and/or a
+        . Each bout results in a translational motion of the animal and/or a
         change in its body axis orientation, and can thus be automatically
         detected from kinematic parameters. As we are mostly interested in the
         orientational dynamics, we extracted a discrete sequence of
@@ -3365,12 +3389,14 @@ content:
     content:
       - >-
         Although the complete swim bouts repertoire of zebrafish larvae is rich
-        and complex (
-      - type: Cite
-        target: bib27
-        content:
-          - Johnson et al., 2019
-      - '), the statistical distribution of the reorientation angles '
+        and complex 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib27
+            content:
+              - Johnson et al., 2019
+      - ', the statistical distribution of the reorientation angles '
       - type: MathFragment
         mathLanguage: mathml
         text: >-
@@ -3495,19 +3521,20 @@ content:
         bout type selection is taken into account.
   - type: Paragraph
     content:
-      - In line with previous observations (
-      - type: Cite
-        target: bib12
-        content:
-          - Chen and Engert, 2014
-      - '; '
-      - type: Cite
-        target: bib13
-        content:
-          - Dunn et al., 2016
+      - 'In line with previous observations '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib12
+            content:
+              - Chen and Engert, 2014
+          - type: Cite
+            target: bib13
+            content:
+              - Dunn et al., 2016
       - >-
-        ), we also noticed that successive turning bouts tended to be oriented
-        in the same (left or right) direction (
+        , we also noticed that successive turning bouts tended to be oriented in
+        the same (left or right) direction (
       - type: Link
         relation: fig
         target: '#fig1'
@@ -4561,16 +4588,17 @@ content:
         target: '#fig3s1'
         content:
           - Figure 3—figure supplement 1
-      - ). This observation is in line with the Weber-Fechner law (
-      - type: Cite
-        target: bib17
-        content:
-          - Fechner, 1860
+      - '). This observation is in line with the Weber-Fechner law '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib17
+            content:
+              - Fechner, 1860
       - >-
-        ), which states that the perceived change scales with the relative
-        change in the physical stimulus. One noticeable feature of this process
-        is that the modulation of the turning amplitude is limited to
-        illumination 
+        , which states that the perceived change scales with the relative change
+        in the physical stimulus. One noticeable feature of this process is that
+        the modulation of the turning amplitude is limited to illumination 
       - type: Emphasis
         content:
           - decrement
@@ -4580,13 +4608,15 @@ content:
         text: >-
           <mml:math
           id="inf124"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
-      - ). In the terminology of bacterial chemotaxis (
-      - type: Cite
-        target: bib41
-        content:
-          - Oliveira et al., 2016
+      - '). In the terminology of bacterial chemotaxis '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib41
+            content:
+              - Oliveira et al., 2016
       - >-
-        ), the zebrafish larva can thus be considered as a 'pessimistic’
+        , the zebrafish larva can thus be considered as a 'pessimistic’
         phototactic animal: the orientational diffusivity increases in response
         to a decrease in illumination (corresponding to a negative subjective
         value), whereas its exploratory kinematics remain unchanged upon an
@@ -4626,14 +4656,16 @@ content:
     content:
       - >-
         To test whether this uniform phototactic process has a retinal origin,
-        or whether it might be mediated by non-visual deep-brain phototreceptors
-        (
-      - type: Cite
-        target: bib18
-        content:
-          - Fernandes et al., 2012
+        or whether it might be mediated by non-visual deep-brain
+        phototreceptors 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib18
+            content:
+              - Fernandes et al., 2012
       - >-
-        ), we ran similar assays on bi-enucleated fish. In this condition, no
+        , we ran similar assays on bi-enucleated fish. In this condition, no
         orientational bias was observed, which indicates that the retinal
         pathway is involved in orientational klinotaxis 
       - type: Link
@@ -4905,26 +4937,32 @@ content:
       - ' right orientation of the turning bouts. These two processes are independently modulated by two distinct features of the visual stimulus, namely the global intensity changes and the stereo-visual contrast, leading to the two phototactic strategies.'
   - type: Paragraph
     content:
-      - "This in turn suggests that, at the neuronal level, two independent circuits may control these characteristics of the executed swim bouts. As mentioned in the introduction, the ARTR is a natural candidate for the neuronal selection of bouts orientation. This small bilaterally-distributed circuit located in the anterior hindbrain displays antiphasic activity oscillation with ~\_20s period ("
-      - type: Cite
-        target: bib2
-        content:
-          - Ahrens et al., 2013
+      - "This in turn suggests that, at the neuronal level, two independent circuits may control these characteristics of the executed swim bouts. As mentioned in the introduction, the ARTR is a natural candidate for the neuronal selection of bouts orientation. This small bilaterally-distributed circuit located in the anterior hindbrain displays antiphasic activity oscillation with ~\_20s period "
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib2
+            content:
+              - Ahrens et al., 2013
       - >-
-        ). The currently active region (left or right) constitutes a strong
-        predictor of the orientation of turning bouts (
-      - type: Cite
-        target: bib13
-        content:
-          - Dunn et al., 2016
+        . The currently active region (left or right) constitutes a strong
+        predictor of the orientation of turning bouts 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib13
+            content:
+              - Dunn et al., 2016
       - >-
-        ). This circuit further integrates visual inputs as each ARTR
-        subpopulation responds to the stimulation of the ipsilateral eye (
-      - type: Cite
-        target: bib58
-        content:
-          - Wolf et al., 2017
-      - ).
+        . This circuit further integrates visual inputs as each ARTR
+        subpopulation responds to the stimulation of the ipsilateral eye 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib58
+            content:
+              - Wolf et al., 2017
+      - .
   - type: Paragraph
     content:
       - 'Here, we adapted a minimal neuronal model of the ARTR, introduced in '
@@ -5347,13 +5385,15 @@ content:
         illumination increases the ratio of turning bouts but does not favor any
         particular direction. For the contrast-driven configuration
         (tropotaxis), the minimal model corresponds to an Ornstein-Uhlenbeck
-        process (
-      - type: Cite
-        target: bib52
-        content:
-          - Uhlenbeck and Ornstein, 1930
+        process 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib52
+            content:
+              - Uhlenbeck and Ornstein, 1930
       - >-
-        ), which describes the dynamics of a diffusive brownian particle in a
+        , which describes the dynamics of a diffusive brownian particle in a
         quadratic trap. In the klinotaxis configuration (in the absence of
         stereo-visual contrast), the orientational bias solely results from a
         light-dependent modulation of the diffusivity, a mechanism reminiscent
@@ -5378,13 +5418,15 @@ content:
         tree that would select between distinct turn bout categories.
   - type: Paragraph
     content:
-      - "Compared to previous studies on phototaxis, for\_example ("
-      - type: Cite
-        target: bib9
-        content:
-          - Burgess et al., 2010
+      - "Compared to previous studies on phototaxis, for\_example "
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib9
+            content:
+              - Burgess et al., 2010
       - >-
-        ), our approach allowed us to clearly disentangle the contributions of
+        , our approach allowed us to clearly disentangle the contributions of
         spatial (stereovisual contrast) and time-dependent (motion-induced
         change in global illumination) visual cues. Hence, the contrast-driven
         assays were performed under constant overall illumination intensity (the
@@ -5416,13 +5458,15 @@ content:
         slowly varying angular modulations. The luminosity profiles were thus
         chosen to ensure that individual bouts elicited relatively mild changes
         in illumination. By doing so, we tried to mitigate visual startle
-        responses that are known to be elicited upon sudden darkening (
-      - type: Cite
-        target: bib14
-        content:
-          - Easter and Nicola, 1996
+        responses that are known to be elicited upon sudden darkening 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib14
+            content:
+              - Easter and Nicola, 1996
       - >-
-        ). Although we could not avoid the initial large drop in illumination at
+        . Although we could not avoid the initial large drop in illumination at
         the onset of each trial, the associated short-term response (i.e. the
         first bout) was excluded from the analysis. In this respect, our
         experiment differs from the study of 
@@ -5488,47 +5532,46 @@ content:
         text: >-
           <mml:math
           id="inf163"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-      - ' is sufficient to predict the forthcoming bout. However, one should be aware that such observation is only valid provided that the sensory context remains relatively stable. Hence for instance, a prolonged uniform drop in luminosity is known to enhance the overall motor activity (generally estimated by the average displacement over a period of time) for up to several tens of minutes ('
-      - type: Cite
-        target: bib44
-        content:
-          - Prober et al., 2006
-      - '; '
-      - type: Cite
-        target: bib15
-        content:
-          - Emran et al., 2007
-      - '; '
-      - type: Cite
-        target: bib16
-        content:
-          - Emran et al., 2010
-      - '; '
-      - type: Cite
-        target: bib31
-        content:
-          - Liu et al., 2015
+      - ' is sufficient to predict the forthcoming bout. However, one should be aware that such observation is only valid provided that the sensory context remains relatively stable. Hence for instance, a prolonged uniform drop in luminosity is known to enhance the overall motor activity (generally estimated by the average displacement over a period of time) for up to several tens of minutes '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib44
+            content:
+              - Prober et al., 2006
+          - type: Cite
+            target: bib15
+            content:
+              - Emran et al., 2007
+          - type: Cite
+            target: bib16
+            content:
+              - Emran et al., 2010
+          - type: Cite
+            target: bib31
+            content:
+              - Liu et al., 2015
       - >-
-        ). This long-term behavioral change, so-called photokinesis, might be
-        regulated by deep brain photoreceptors (
-      - type: Cite
-        target: bib18
-        content:
-          - Fernandes et al., 2012
-      - '; '
-      - type: Cite
-        target: bib25
-        content:
-          - Horstick et al., 2017
-      - >-
-        ) and thus constitutes a distinct mechanism. One particularly exciting
-        prospect will be to understand how such behavioral plasticity may not
-        only modulate the spontaneous activity (
-      - type: Cite
-        target: bib27
-        content:
-          - Johnson et al., 2019
-      - ) but also affects the phototactic dynamics.
+        . This long-term behavioral change, so-called photokinesis, might be
+        regulated by deep brain photoreceptors 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib18
+            content:
+              - Fernandes et al., 2012
+          - type: Cite
+            target: bib25
+            content:
+              - Horstick et al., 2017
+      - ' and thus constitutes a distinct mechanism. One particularly exciting prospect will be to understand how such behavioral plasticity may not only modulate the spontaneous activity '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib27
+            content:
+              - Johnson et al., 2019
+      - ' but also affects the phototactic dynamics.'
   - type: Paragraph
     content:
       - >-
@@ -5563,18 +5606,19 @@ content:
         target: bib54
         content:
           - Wang (2002)
-      - ' for a decision task executed in the parietal cortex ('
-      - type: Cite
-        target: bib47
-        content:
-          - Shadlen and Newsome, 1996
-      - '; '
-      - type: Cite
-        target: bib48
-        content:
-          - Shadlen and Newsome, 2001
+      - ' for a decision task executed in the parietal cortex '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib47
+            content:
+              - Shadlen and Newsome, 1996
+          - type: Cite
+            target: bib48
+            content:
+              - Shadlen and Newsome, 2001
       - >-
-        ). In this class of models, the binary decision process reflects the
+        . In this class of models, the binary decision process reflects the
         competition between two cross-inhibitory neural populations. The circuit
         is endowed with two major functional capacities: (1) it can maintain
         mnemonic persistent activity over long periods of time, thanks to
@@ -5854,12 +5898,14 @@ content:
         circular statistics tests, namely the circular V-test of non-uniformity
         of data and the one-sample test for the mean angle of a circular
         distribution (tested on the orientation of the light virtual light
-        source) were performed using CircStat toolbox for Matlab (
-      - type: Cite
-        target: bib3
-        content:
-          - Berens, 2009
-      - ).
+        source) were performed using CircStat toolbox for Matlab 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib3
+            content:
+              - Berens, 2009
+      - .
   - type: Paragraph
     content:
       - >-
@@ -5993,13 +6039,15 @@ content:
     content:
       - >-
         The Markov-chain model simulations were performed using a custom-written
-        code in MATLAB (
-      - type: Cite
-        target: bib30
-        content:
-          - Karpenko, 2019b
+        code in MATLAB 
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: bib30
+            content:
+              - Karpenko, 2019b
       - >-
-        ). Initial orientations and positions within the ROI were randomly
+        . Initial orientations and positions within the ROI were randomly
         sampled from, respectively, a uniform distribution and a normal
         distribution centered on a circle of radius 20 mm from the center of the
         ROI with a standard deviation of 1.3 mm (mimicking the starting points
