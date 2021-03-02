@@ -1,3 +1,10 @@
+# [0.108.0](https://github.com/stencila/encoda/compare/v0.107.1...v0.108.0) (2021-03-02)
+
+
+### Features
+
+* **Reshape:** Add groupCitesIntoGiteGroup function ([7614877](https://github.com/stencila/encoda/commit/7614877fed28615b891dbed7db204dee3957f368)), closes [#831](https://github.com/stencila/encoda/issues/831)
+
 ## [0.107.1](https://github.com/stencila/encoda/compare/v0.107.0...v0.107.1) (2021-03-01)
 
 
