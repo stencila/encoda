@@ -8,9 +8,10 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
+import sharp from 'sharp'
 import zlib from 'zlib'
 import { fromFiles } from '../../util/media/fromFiles'
-import { transformSync } from '../../util/transform'
+import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { JsonLdCodec } from '../jsonld'
 import { PngCodec } from '../png'
@@ -173,16 +174,43 @@ export class RpngCodec extends Codec implements Codec {
  */
 async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
   const root = await jsonLdCodec.load(jsonLd)
-  return transformSync(root, (node) => {
+  return transform(root, async (node) => {
     if (schema.isA('ImageObject', node)) {
       const { contentUrl } = node
       if (contentUrl === 'data:self') {
+        // To avoid multiple instances of the RPNG symbol indicator, we crop out
+        // the left side of the image to remove the symbol.
+        // @see https://github.com/stencila/thema/issues/270
+
+        // TODO: update with helper function from Thema once ready
+        // @see https://github.com/stencila/thema/pull/304
+        const rpngSymbolWidth = 18
+
+        const sharpImage = sharp(buffer)
+
+        const {
+          width = Infinity,
+          height = Infinity,
+        } = await sharpImage.metadata()
+
+        const croppedBuffer = await sharpImage
+          .extract({
+            left: rpngSymbolWidth,
+            top: 0,
+            width: width - rpngSymbolWidth,
+            height: height,
+          })
+          .toBuffer()
+
         return {
           ...node,
-          contentUrl: `data:image/png;base64,${buffer.toString('base64')}`,
+          contentUrl: `data:image/png;base64,${croppedBuffer.toString(
+            'base64'
+          )}`,
         }
       }
     }
+
     return node
   })
 }
