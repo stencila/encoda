@@ -1,3 +1,10 @@
+# [0.109.0](https://github.com/stencila/encoda/compare/v0.108.0...v0.109.0) (2021-03-05)
+
+
+### Features
+
+* **RPNG:** Crop out RPNG symbol indicator when decoding images ([80c7082](https://github.com/stencila/encoda/commit/80c7082141091a007a7817bde3820d44190b53c5))
+
 # [0.108.0](https://github.com/stencila/encoda/compare/v0.107.1...v0.108.0) (2021-03-02)
 
 
