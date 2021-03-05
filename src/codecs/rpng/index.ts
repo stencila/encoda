@@ -3,14 +3,16 @@
  */
 
 import * as schema from '@stencila/schema'
+import { getRpngSymbolSize } from '@stencila/thema'
 import fs from 'fs-extra'
+import Jimp from 'jimp'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import zlib from 'zlib'
 import { fromFiles } from '../../util/media/fromFiles'
-import { transformSync } from '../../util/transform'
+import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { JsonLdCodec } from '../jsonld'
 import { PngCodec } from '../png'
@@ -173,16 +175,30 @@ export class RpngCodec extends Codec implements Codec {
  */
 async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
   const root = await jsonLdCodec.load(jsonLd)
-  return transformSync(root, (node) => {
+  return transform(root, async (node) => {
     if (schema.isA('ImageObject', node)) {
       const { contentUrl } = node
       if (contentUrl === 'data:self') {
+        // To avoid multiple instances of the RPNG symbol indicator, we crop out
+        // the left side of the image to remove the symbol.
+        // @see https://github.com/stencila/thema/issues/270
+        const editableImage = await Jimp.read(buffer)
+
+        const height = editableImage.getHeight()
+        const width = editableImage.getWidth()
+        const rpngSymbolWidth = getRpngSymbolSize().width
+
+        const croppedImage = await editableImage
+          .crop(rpngSymbolWidth, 0, width - rpngSymbolWidth, height)
+          .getBase64Async(Jimp.MIME_PNG)
+
         return {
           ...node,
-          contentUrl: `data:image/png;base64,${buffer.toString('base64')}`,
+          contentUrl: croppedImage,
         }
       }
     }
+
     return node
   })
 }
