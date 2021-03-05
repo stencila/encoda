@@ -3,12 +3,13 @@
  */
 
 import * as schema from '@stencila/schema'
+import { getRpngSymbolSize } from '@stencila/thema'
 import fs from 'fs-extra'
+import Jimp from 'jimp'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-import Jimp from 'jimp'
 import zlib from 'zlib'
 import { fromFiles } from '../../util/media/fromFiles'
 import transform from '../../util/transform'
@@ -181,15 +182,11 @@ async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
         // To avoid multiple instances of the RPNG symbol indicator, we crop out
         // the left side of the image to remove the symbol.
         // @see https://github.com/stencila/thema/issues/270
-
-        // TODO: update with helper function from Thema once ready
-        // @see https://github.com/stencila/thema/pull/304
-        const rpngSymbolWidth = 18
-
         const editableImage = await Jimp.read(buffer)
 
         const height = editableImage.getHeight()
         const width = editableImage.getWidth()
+        const rpngSymbolWidth = getRpngSymbolSize().width
 
         const croppedImage = await editableImage
           .crop(rpngSymbolWidth, 0, width - rpngSymbolWidth, height)
