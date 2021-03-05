@@ -8,7 +8,7 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-import sharp from 'sharp'
+import Jimp from 'jimp'
 import zlib from 'zlib'
 import { fromFiles } from '../../util/media/fromFiles'
 import transform from '../../util/transform'
@@ -186,27 +186,18 @@ async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
         // @see https://github.com/stencila/thema/pull/304
         const rpngSymbolWidth = 18
 
-        const sharpImage = sharp(buffer)
+        const editableImage = await Jimp.read(buffer)
 
-        const {
-          width = Infinity,
-          height = Infinity,
-        } = await sharpImage.metadata()
+        const height = editableImage.getHeight()
+        const width = editableImage.getWidth()
 
-        const croppedBuffer = await sharpImage
-          .extract({
-            left: rpngSymbolWidth,
-            top: 0,
-            width: width - rpngSymbolWidth,
-            height: height,
-          })
-          .toBuffer()
+        const croppedImage = await editableImage
+          .crop(rpngSymbolWidth, 0, width - rpngSymbolWidth, height)
+          .getBase64Async(Jimp.MIME_PNG)
 
         return {
           ...node,
-          contentUrl: `data:image/png;base64,${croppedBuffer.toString(
-            'base64'
-          )}`,
+          contentUrl: croppedImage,
         }
       }
     }
