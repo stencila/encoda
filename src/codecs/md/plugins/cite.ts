@@ -8,7 +8,7 @@ import { Eat, Locator, Parser, Tokenizer } from 'remark-parse'
 import { Plugin } from 'unified'
 
 const marker = '@'
-const CITE_REGEX = /@([\w|-]+)/
+const CITE_REGEX = /[ [(]@([\w|-]+)[\w.]*[\])]?|^@([\w|-]+)[\w.]*/
 
 const locator: Locator = (value, fromIndex) => {
   let index = -1
@@ -51,9 +51,13 @@ export const citePlugin: Plugin<[]> = function () {
       const citeLength = pipe(
         CITE_REGEX.exec(value) ?? [],
         A.head,
+        O.filter((match) => !(match.includes('.') && !match.endsWith('.'))), // Filter out email addresses, but not end of sentences
         O.getOrElse(() => ''),
         (match) => match.length
       )
+
+      // Early termination if we don’t have a match
+      if (citeLength === 0) return
 
       eat(value.substring(0, citeLength))({
         type: 'cite',
