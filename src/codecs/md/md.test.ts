@@ -1175,7 +1175,7 @@ And lastly a simple, non-linked, email hello@stenci.la.
     )
   })
 
-  it('decodes a citation at the end a a sentence', async () => {
+  it('decodes a citation at the end of a sentence', async () => {
     const article = `# Cite test
 
 A sentence ending with a citation (${reference}).
