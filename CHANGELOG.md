@@ -1,3 +1,10 @@
+## [0.109.1](https://github.com/stencila/encoda/compare/v0.109.0...v0.109.1) (2021-03-09)
+
+
+### Bug Fixes
+
+* **MD:** Don't treat email addresses as citations ([be8b5ff](https://github.com/stencila/encoda/commit/be8b5ffdc9e7313803ff5d336ae6f25340c00467))
+
 # [0.109.0](https://github.com/stencila/encoda/compare/v0.108.0...v0.109.0) (2021-03-05)
 
 
