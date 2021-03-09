@@ -1,3 +1,10 @@
+## [0.109.2](https://github.com/stencila/encoda/compare/v0.109.1...v0.109.2) (2021-03-09)
+
+
+### Bug Fixes
+
+* **Docx:** Improve contrasts for text styles ([fd7ca13](https://github.com/stencila/encoda/commit/fd7ca135fb9fe5f321a355a95b21dfe4a8d949ae))
+
 ## [0.109.1](https://github.com/stencila/encoda/compare/v0.109.0...v0.109.1) (2021-03-09)
 
 
