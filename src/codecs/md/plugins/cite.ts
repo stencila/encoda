@@ -8,7 +8,11 @@ import { Eat, Locator, Parser, Tokenizer } from 'remark-parse'
 import { Plugin } from 'unified'
 
 const marker = '@'
-const CITE_REGEX = /@([\w|-]+)/
+/* Regex to find Pandoc style citations, but care needs to be taken to filter out email addresses.
+ * Group 1: Possibly a citation target id
+ * Group 2: Possibly the top level domain of an email address. If not empty, then the match is an email.
+ */
+const CITE_REGEX = /\B@([\w|-]+)(\.\w+)?/
 
 const locator: Locator = (value, fromIndex) => {
   let index = -1
@@ -48,12 +52,22 @@ export const citePlugin: Plugin<[]> = function () {
       !value.startsWith(marker + ' ') &&
       !value.startsWith(marker + marker)
     ) {
+      const matches = CITE_REGEX.exec(value) ?? []
+
+      const isEmail = matches[2] !== undefined
+
+      // Early termination if we’re dealing with an email and not a citation format
+      if (isEmail) return
+
       const citeLength = pipe(
-        CITE_REGEX.exec(value) ?? [],
+        matches,
         A.head,
         O.getOrElse(() => ''),
         (match) => match.length
       )
+
+      // Early termination if we don’t have a match
+      if (citeLength === 0) return
 
       eat(value.substring(0, citeLength))({
         type: 'cite',

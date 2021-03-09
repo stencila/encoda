@@ -1135,6 +1135,58 @@ Followed by more text
 
     expect(await d(citeGroup)).toEqual(citeGroupNode)
   })
+
+  it('does not treat email addresses as citations', async () => {
+    const article = `# Cite test
+
+Some paragraph with a citation (${reference}) inside a paragraph.
+
+Followed by more text and an email [hello@stenci.la](mailto:hello@stenci.la).
+
+And lastly a simple, non-linked, email hello@stenci.la.
+`
+
+    const ast = await d(article)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(referenceNode)])
+    )
+
+    expect(ast).toHaveProperty(
+      ['content', 1, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining({
+          content: ['hello@stenci.la'],
+          target: 'mailto:hello@stenci.la',
+          type: 'Link',
+        }),
+      ])
+    )
+
+    expect(ast).toHaveProperty(
+      ['content', 2, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining({
+          content: ['hello@stenci.la'],
+          target: 'mailto:hello@stenci.la',
+          type: 'Link',
+        }),
+      ])
+    )
+  })
+
+  it('decodes a citation at the end of a sentence', async () => {
+    const article = `# Cite test
+
+A sentence ending with a citation (${reference}).
+`
+
+    const ast = await d(article)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(referenceNode)])
+    )
+  })
 })
 
 describe('References', () => {
