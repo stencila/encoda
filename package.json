@@ -246,39 +246,9 @@
         "matchDepTypes": [
           "dependencies"
         ],
-        "matchUpdateTypes": [
-          "major"
-        ],
         "rangeStrategy": "bump",
         "semanticCommitType": "fix",
         "semanticCommitScope": "Dependencies",
-        "automerge": false
-      },
-      {
-        "matchDepTypes": [
-          "dependencies"
-        ],
-        "matchUpdateTypes": [
-          "minor",
-          "patch"
-        ],
-        "rangeStrategy": "bump",
-        "semanticCommitType": "fix",
-        "semanticCommitScope": "Dependencies",
-        "automerge": true
-      },
-      {
-        "groupName": "Dev dependencies",
-        "groupSlug": "dev",
-        "matchDepTypes": [
-          "devDependencies"
-        ],
-        "matchUpdateTypes": [
-          "major"
-        ],
-        "rangeStrategy": "pin",
-        "semanticCommitType": "chore",
-        "semanticCommitScope": "Dev dependencies",
         "automerge": false
       },
       {
@@ -286,11 +256,6 @@
         "groupSlug": "dev",
         "matchDepTypes": [
           "devDependencies"
-        ],
-        "matchUpdateTypes": [
-          "minor",
-          "patch",
-          "pin"
         ],
         "rangeStrategy": "pin",
         "semanticCommitType": "chore",
