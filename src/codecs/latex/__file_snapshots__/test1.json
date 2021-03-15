@@ -10,8 +10,7 @@
         ",",
         "",
         "Yet another author here^{1*}",
-        ",",
-        "",
+        ", ",
         "Last author here^{1*}",
         "",
         {
@@ -69,11 +68,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Let us try to generate some errors here.",
-        "",
-        "First, I am going to try to cite some papers with ’e.g.’ as arguments",
-        "",
-        "to the ",
+        "Let us try to generate some errors here. First, I am going to try to cite some papers with ’e.g.’ as arguments to the ",
         {
           "type": "CodeFragment",
           "text": "citep{}"
@@ -85,10 +80,7 @@
             "natbib"
           ]
         },
-        " LaTeXpackage, like",
-        "",
-        "this:",
-        "",
+        " LaTeXpackage, like this: ",
         {
           "type": "CiteGroup",
           "items": [
@@ -112,20 +104,14 @@
             }
           ]
         },
-        ".",
-        "",
-        "Note that we are typing one sentence per line – Emacs might still",
-        "",
-        "line wrap, but we never have a period ",
+        ". Note that we are typing one sentence per line – Emacs might still line wrap, but we never have a period ",
         {
           "type": "Quote",
           "content": [
             "."
           ]
         },
-        " followed by a word on the",
-        "",
-        "same line."
+        " followed by a word on the same line."
       ]
     },
     {
@@ -156,11 +142,7 @@
       "type": "Table",
       "id": "tab:tab1",
       "caption": [
-        "Let us type a very long caption. Sometimes journal styles will",
-        "",
-        "fail to nicely format a very long caption on top of a narrow table.",
-        "",
-        "[tab:tab1]"
+        "Let us type a very long caption. Sometimes journal styles will fail to nicely format a very long caption on top of a narrow table. [tab:tab1]"
       ],
       "rows": [
         {
@@ -391,8 +373,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Inside this box, we will put another equation that we got from",
-        "",
+        "Inside this box, we will put another equation that we got from ",
         {
           "type": "Cite",
           "citationMode": "normal",
@@ -424,9 +405,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "This subsection title should not be numbered.",
-        "",
-        "We will place a .png figure now:"
+        "This subsection title should not be numbered. We will place a .png figure now:"
       ]
     },
     {

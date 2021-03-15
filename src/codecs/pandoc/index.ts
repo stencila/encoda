@@ -1014,8 +1014,11 @@ function decodeInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
   const inlines = []
   let previous: Pandoc.Inline | undefined
   for (const node of unwrapped) {
-    if (previous?.t === 'Str' && (node.t === 'Space' || node.t === 'Str')) {
-      if (node.t === 'Space') previous.c += ' '
+    if (
+      previous?.t === 'Str' &&
+      (node.t === 'Space' || node.t === 'SoftBreak' || node.t === 'Str')
+    ) {
+      if (node.t === 'Space' || node.t === 'SoftBreak') previous.c += ' '
       else if (node.t === 'Str') previous.c += node.c
     } else {
       let current = node
