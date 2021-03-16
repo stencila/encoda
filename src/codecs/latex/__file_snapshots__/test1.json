@@ -86,20 +86,15 @@
           "items": [
             {
               "type": "Cite",
-              "citationMode": "normal",
-              "target": "article1",
-              "content": [
-                "\\citep[e.g.,][]{article1,article2,article3}"
-              ]
+              "prefix": "e.g.,",
+              "target": "article1"
             },
             {
               "type": "Cite",
-              "citationMode": "normal",
               "target": "article2"
             },
             {
               "type": "Cite",
-              "citationMode": "normal",
               "target": "article3"
             }
           ]
@@ -377,11 +372,8 @@
         "Inside this box, we will put another equation that we got from ",
         {
           "type": "Cite",
-          "citationMode": "normal",
-          "target": "article2",
-          "content": [
-            "\\citealt{article2}"
-          ]
+          "citationMode": "narrative",
+          "target": "article2"
         },
         ":"
       ]
