@@ -1,3 +1,26 @@
+## [0.109.3](https://github.com/stencila/encoda/compare/v0.109.2...v0.109.3) (2021-03-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.22.1 ([ebcf971](https://github.com/stencila/encoda/commit/ebcf9715aa4b4914d8c882b49008694d1414e005))
+* **dependencies:** update dependency async-lock to ^1.2.8 ([981728c](https://github.com/stencila/encoda/commit/981728c7ec8f6d3174d089f20d56371942522f97))
+* **dependencies:** update dependency fp-ts to ^2.9.5 ([a98c9bb](https://github.com/stencila/encoda/commit/a98c9bb21bdd14c7bb7103555c39e645fe98983a))
+* **dependencies:** update dependency fs-extra to ^9.1.0 ([527bc75](https://github.com/stencila/encoda/commit/527bc75343e52a300cbe6c51e36ea5e61440fdcc))
+* **dependencies:** update dependency globby to ^11.0.2 ([5b3309a](https://github.com/stencila/encoda/commit/5b3309a65b75d658382397559543b93e62a98df1))
+* **dependencies:** update dependency got to ^11.8.2 ([7f5793d](https://github.com/stencila/encoda/commit/7f5793d6a024ec669d1a76826c29ec98184b84bf))
+* **dependencies:** update dependency js-beautify to ^1.13.5 ([a5ec760](https://github.com/stencila/encoda/commit/a5ec7609da58e442fc0824f36fa0fca37fff1e31))
+* **dependencies:** update dependency jsdom to ^16.5.1 ([4e0cc4e](https://github.com/stencila/encoda/commit/4e0cc4ef233a6f9a0f5777177ceb10787cb8dc72))
+* **dependencies:** update dependency jsonld to ^4.0.1 ([66e7a88](https://github.com/stencila/encoda/commit/66e7a883a6b90abaa32888233256a157fea1dae4))
+* **dependencies:** update dependency jszip to ^3.6.0 ([1c187dc](https://github.com/stencila/encoda/commit/1c187dc0931fc2aef9f8a21dda6fa099e57cd48a))
+* **dependencies:** update dependency mime to ^2.5.2 ([cf3bb1a](https://github.com/stencila/encoda/commit/cf3bb1ad185304c5616f659d9fed8127eeba4f60))
+* **dependencies:** update dependency parse-full-name to ^1.2.5 ([2811586](https://github.com/stencila/encoda/commit/2811586e4924fd735143e20ecb654bba9c5018a5))
+* **dependencies:** update dependency pdf-lib to ^1.16.0 ([051c6f2](https://github.com/stencila/encoda/commit/051c6f28dea42553817e2b4965ca8477d5de067c))
+* **dependencies:** update dependency plotly.js-dist to ^1.58.4 ([164a8fc](https://github.com/stencila/encoda/commit/164a8fca4f7daa2e84d9ad165a37e5581f3ede4e))
+* **dependencies:** update dependency remark-sub-super to ^1.0.20 ([9254917](https://github.com/stencila/encoda/commit/925491728c1ed992995884854d781e9af4507533))
+* **dependencies:** update dependency trash to ^7.1.1 ([777fb97](https://github.com/stencila/encoda/commit/777fb9759c723c7af8ef63bfc0590a8da8706f21))
+* **dependencies:** update dependency unified to ^9.2.1 ([c015967](https://github.com/stencila/encoda/commit/c015967332ace88ceb840d43a813fa72946e7b48))
+
 ## [0.109.2](https://github.com/stencila/encoda/compare/v0.109.1...v0.109.2) (2021-03-09)
 
 
