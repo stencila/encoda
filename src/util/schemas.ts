@@ -7,8 +7,7 @@
  * that effort.
  */
 
-import stencila from '@stencila/schema'
-import JsonSchema from '@stencila/schema/dist/ts/jsonSchema'
+import stencila, { JsonSchema } from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
 import fs from 'fs-extra'
@@ -206,7 +205,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
   return true
 }
 
-coercers.addKeyword('codec', {
+coercers.addKeyword('parser', {
   type: 'string',
   modifying: true,
   async: true,
