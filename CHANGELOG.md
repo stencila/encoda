@@ -1,3 +1,10 @@
+## [0.109.4](https://github.com/stencila/encoda/compare/v0.109.3...v0.109.4) (2021-03-17)
+
+
+### Bug Fixes
+
+* **Dependencies:** Changes for Schema v1 ([53a3f57](https://github.com/stencila/encoda/commit/53a3f57d7160e56dd821aa9fb68794077ed6b807))
+
 ## [0.109.3](https://github.com/stencila/encoda/compare/v0.109.2...v0.109.3) (2021-03-16)
 
 
