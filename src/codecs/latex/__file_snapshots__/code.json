@@ -1,0 +1,59 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "Some inline ",
+        {
+          "type": "CodeFragment",
+          "text": "code"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Some inline Java ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "java",
+          "text": "public class MyClass"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "CodeBlock",
+      "text": "This is like the HTML <pre> element"
+    },
+    {
+      "type": "CodeBlock",
+      "programmingLanguage": "js",
+      "text": "const foo = 'bar'\nconsole.log(foo)"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "An evaluated Python expression ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "python",
+          "text": "pow(2,2)"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "CodeBlock",
+      "programmingLanguage": "r",
+      "text": "plot(y~x, data)"
+    },
+    {
+      "type": "CodeBlock",
+      "programmingLanguage": "r",
+      "text": "plot(data)"
+    }
+  ]
+}

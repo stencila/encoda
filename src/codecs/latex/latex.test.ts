@@ -22,12 +22,19 @@ test('invertible', async () => {
 })
 
 describe('fixtures', () => {
-  test('test1.tex', async () => {
-    const test1 = await latexCodec.read(fixture('test1.tex'), {
+  test('kitchen-sink.tex', async () => {
+    const node = await latexCodec.read(fixture('kitchen-sink.tex'), {
       shouldCoerce: false,
       shouldReshape: false,
     })
-    expect(await jsonCodec.dump(test1)).toMatchFile(snapshot('test1.json'))
+    expect(await jsonCodec.dump(node)).toMatchFile(
+      snapshot('kitchen-sink.json')
+    )
+  })
+
+  test('code.tex', async () => {
+    const node = await latexCodec.read(fixture('code.tex'))
+    expect(await jsonCodec.dump(node)).toMatchFile(snapshot('code.json'))
   })
 })
 
