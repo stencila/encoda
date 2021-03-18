@@ -15,39 +15,59 @@ export const encodeCiteNumeric = (
 }
 
 /**
- * Create string for "author-year" type in-text citations e.g. `Smith et al (1990)`.
+ * Create string for "author-year" type citations within
+ * a citation group e.g. `Smith et al., 1990`.
  */
 export const encodeCiteAuthorsYear = (work: CreativeWork): string => {
-  const { authors = [], datePublished } = work
-  let citeText = ''
+  const authors = encodeCiteAuthors(work) ?? ''
+  const year = encodeCiteYear(work)
+  return year !== undefined ? `${authors}, ${year}` : authors
+}
 
-  if (!A.isEmpty(authors)) {
-    const firstAuthorName = getName(authors[0])
-    if (firstAuthorName.length > 0) {
-      citeText += firstAuthorName
-      if (authors.length === 2) {
-        const secondAuthorName = getName(authors[1])
-        if (secondAuthorName.length > 0) citeText += ' and ' + secondAuthorName
-      } else if (authors.length > 2) {
-        citeText += ' et al.'
-      }
+/**
+ * Create string for the authors part of in-text citations.
+ * e.g. `Smith et al.` in `Smith et al. (1990)`.
+ */
+export const encodeCiteAuthors = (work: CreativeWork): string | undefined => {
+  const { authors = [] } = work
+
+  if (A.isEmpty(authors)) return undefined
+
+  let citeText = ''
+  const firstAuthorName = getName(authors[0])
+  if (firstAuthorName.length > 0) {
+    citeText += firstAuthorName
+    if (authors.length === 2) {
+      const secondAuthorName = getName(authors[1])
+      if (secondAuthorName.length > 0) citeText += ' and ' + secondAuthorName
+    } else if (authors.length > 2) {
+      citeText += ' et al.'
     }
   }
-
-  if (datePublished !== undefined) {
-    const date =
-      typeof datePublished === 'string' ? datePublished : datePublished.value
-    const publishedYear = date.split('-')[0]
-    citeText += `, ${publishedYear}`
-  }
-
   return citeText
 }
 
+/**
+ * Get the name of a person or organization to use in an in-text citation.
+ */
 function getName(author: Person | Organization): string {
   return isA('Person', author) &&
     author.familyNames &&
     author.familyNames.length > 0
     ? author.familyNames.join(' ').trim()
     : (author.name ?? '').trim()
+}
+
+/**
+ * Create string for the year part on in-text citations.
+ * e.g. the `1990` in `Smith et al. (1990)`.
+ */
+export const encodeCiteYear = (work: CreativeWork): string | undefined => {
+  const { datePublished } = work
+
+  if (datePublished === undefined) return undefined
+
+  const date =
+    typeof datePublished === 'string' ? datePublished : datePublished.value
+  return date.split('-')[0]
 }

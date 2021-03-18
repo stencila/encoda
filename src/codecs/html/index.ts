@@ -33,7 +33,11 @@ import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
-import { encodeCiteAuthorsYear, encodeCiteNumeric } from '../../util/references'
+import {
+  encodeCiteAuthors,
+  encodeCiteNumeric,
+  encodeCiteYear,
+} from '../../util/references'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { plotlyMediaType } from '../plotly'
@@ -1745,12 +1749,20 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
     if (reference === undefined) {
       contentElems = target
     } else {
-      contentElems = [h('span', encodeCiteNumeric(reference, state.references))]
+      const number = encodeCiteNumeric(reference, state.references)
+      contentElems = [h('span', number)]
+
       if (stencila.isCreativeWork(reference)) {
-        contentElems = [
-          ...contentElems,
-          h('span', encodeCiteAuthorsYear(reference)),
-        ]
+        const authors = encodeCiteAuthors(reference)
+        // For theming, always add authors span so that year span is
+        // always the third span (if present)
+        contentElems = [...contentElems, h('span', authors ?? '')]
+
+        const year = encodeCiteYear(reference)
+        // For theming, only add year span if a year is available
+        // to prevent e.g. Smith ()
+        if (year !== undefined)
+          contentElems = [...contentElems, h('span', year)]
       }
     }
   } else {
