@@ -1736,9 +1736,11 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
 function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
-  const { prefix, target, suffix, content, ...lost } = cite
+  const { prefix, target, suffix, content, citationMode, ...lost } = cite
   logWarnLossIfAny('html', 'encode', cite, lost)
 
+  // If there is no existing citation content (ie. the visible text of
+  // the citation) then create it.
   let contentElems: string | Node[]
   if (content === undefined || content.length === 0) {
     const reference = state.references?.find((ref, index) =>
@@ -1771,7 +1773,11 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
 
   return h(
     'cite',
-    encodeAttrs(cite),
+    // Citation mode is added as an attribute (`data-citationmode`)
+    // rather than as a separate <meta> tag because that is more useful
+    // for theming and because `citationMode` is not a schema.org property
+    // anyway.
+    encodeAttrs(cite, { citationMode }),
     encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
     h('a', { href: encodeHref(target) }, contentElems),
     encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
