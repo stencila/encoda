@@ -29,13 +29,12 @@ test('issue 737: references with an organisational author', async () => {
   const bib = await new BibCodec().dump(ref)
   expect(bib).toBe(
     `@article{bib7,
+\tauthor = {{Malaria Genomic Epidemiology Network} and Rockett, KA and Clarke, GM and Fitzpatrick, K and Hubbart, C and Jeffreys, AE and Rowlands, K and Craik, R and Jallow, M and Conway, DJ},
 \tjournal = {Nature Genetics},
+\tyear = {2014},
+\tpages = {1197--1204},
 \ttitle = {Reappraisal of known malaria resistance loci in a large multicenter study},
 \tvolume = {46},
-\tauthor = {{Malaria Genomic Epidemiology Network} and Rockett, KA and Clarke, GM and Fitzpatrick, K and Hubbart, C and Jeffreys, AE and Rowlands, K and Craik, R and Jallow, M and Conway, DJ},
-\tpages = {1197--1204},
-\tdate = {2014},
-\tyear = {2014},
 }
 
 `

@@ -101,12 +101,6 @@ function encodeNode(node: schema.Node, format: string): string {
     } else {
       content = cite.format(format)
     }
-
-    // Citation.js does not currently wrap literal author names in braces
-    // for BibTeX. So we have to use this hack. See `encodeOrganization` below.
-    if (format === 'bibtex') {
-      content = content.replace('☞', '{').replace('☜', '}')
-    }
   } else {
     logErrorNodeType('csl', 'encode', 'CreativeWork', node)
   }
@@ -314,7 +308,8 @@ export const encodeArticle = (
 /**
  * Decode a CSL `Person` to a `Person` or `Organization` node.
  *
- * If `literal` is defined then assumes an organizational author.
+ * If only `family` is defined then assumes an organizational author.
+ * (Citation.js seems to put `literal` names into `family`).
  *
  * CSL-JSON's `non-dropping-particle` and `dropping-particle`
  * are not currently supported in `Person`.
@@ -325,13 +320,13 @@ export const encodeArticle = (
 const decodeAuthor = (
   author: Csl.Person
 ): Promise<schema.Person | schema.Organization> => {
-  const { family, given, suffix, literal } = author
+  const { family, given, suffix } = author
 
   // logWarnLossIfAny('csl', 'decode', author, lost)
 
   return Promise.resolve(
-    literal !== undefined
-      ? schema.organization({ name: literal })
+    family !== undefined && given === undefined
+      ? schema.organization({ name: family })
       : schema.person({
           familyNames: family !== undefined ? [family] : undefined,
           givenNames: given !== undefined ? [given] : undefined,
@@ -377,9 +372,7 @@ const encodeOrganization = (
   _format: string
 ): Csl.Person => {
   const { name = 'Anonymous' } = org
-  return {
-    literal: `☞${name}☜`,
-  }
+  return { literal: name }
 }
 
 /**
