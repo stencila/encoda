@@ -47,11 +47,8 @@
         "Citations in line ",
         {
           "type": "Cite",
-          "citationMode": "normal",
-          "target": "WatsonCrick1953",
-          "content": [
-            "@WatsonCrick1953"
-          ]
+          "citationMode": "Narrative",
+          "target": "WatsonCrick1953"
         },
         " or grouped in brackets ",
         {
@@ -59,15 +56,10 @@
           "items": [
             {
               "type": "Cite",
-              "citationMode": "normal",
-              "target": "WatsonCrick1953",
-              "content": [
-                "[@WatsonCrick1953; @WatsonCrick1953]"
-              ]
+              "target": "WatsonCrick1953"
             },
             {
               "type": "Cite",
-              "citationMode": "normal",
               "target": "WatsonCrick1953"
             }
           ]

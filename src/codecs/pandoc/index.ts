@@ -1464,18 +1464,33 @@ function encodeLink(node: stencila.Link): Pandoc.Link {
  */
 function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
   const citations = cite.c[0]
-  const inlines = cite.c[1]
 
   const cites = citations.map((citation) => {
+    const {
+      citationId,
+      citationMode,
+      citationPrefix,
+      citationSuffix,
+    } = citation
     return stencila.cite({
-      target: citation.citationId,
+      target: citationId,
       citationMode:
-        citation.citationMode.t === 'SuppressAuthor'
-          ? 'suppressAuthor'
-          : 'normal',
+        citationMode.t === 'AuthorInText'
+          ? 'Narrative'
+          : citationMode.t === 'SuppressAuthor'
+          ? 'NarrativeYear'
+          : undefined, // `citationMode` defaults to parenthetical if undefined
+      prefix:
+        citationPrefix.length > 0
+          ? decodeInlinesToString(citationPrefix)
+          : undefined,
+      suffix:
+        citationSuffix.length > 0
+          ? decodeInlinesToString(citationSuffix)
+          : undefined,
     })
   })
-  if (cites.length > 0) cites[0].content = decodeInlines(inlines)
+
   return cites.length === 1 ? cites[0] : stencila.citeGroup({ items: cites })
 }
 
@@ -1483,14 +1498,18 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
  * Encode a Stencila `Cite` to a Pandoc `Citation`.
  */
 function encodeCitation(cite: stencila.Cite): Pandoc.Citation {
-  const { target = '', citationMode = 'normal' } = cite
+  const { target = '', citationMode } = cite
   return {
     citationId: target,
     citationPrefix: [],
     citationSuffix: [],
     citationMode: {
       t:
-        citationMode === 'suppressAuthor' ? 'SuppressAuthor' : 'NormalCitation',
+        citationMode === 'Narrative' || citationMode === 'NarrativeAuthor'
+          ? 'AuthorInText'
+          : citationMode === 'NarrativeYear'
+          ? 'SuppressAuthor'
+          : 'NormalCitation',
     },
     citationNoteNum: 0,
     citationHash: 0,
