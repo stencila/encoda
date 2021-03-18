@@ -1194,12 +1194,12 @@ describe('References', () => {
     title: 'MD Reference Test',
     content: [paragraph({ content: ['This is only a test'] })],
     references: [
-      article({ title: 'Test article 1', id: '1', authors: [] }),
-      article({ title: 'Test article 2', id: '2', authors: [] }),
-      article({ title: 'Test article 3', id: '3', authors: [] }),
-      article({ title: 'Test article 4', id: '4', authors: [] }),
-      article({ title: 'Test article 5', id: '5', authors: [] }),
-      article({ title: 'Test article 6', id: '6', authors: [] }),
+      article({ title: 'Test article 1', id: 'ref1', authors: [] }),
+      article({ title: 'Test article 2', id: 'ref2', authors: [] }),
+      article({ title: 'Test article 3', id: 'ref3', authors: [] }),
+      article({ title: 'Test article 4', id: 'ref4', authors: [] }),
+      article({ title: 'Test article 5', id: 'ref5', authors: [] }),
+      article({ title: 'Test article 6', id: 'ref6', authors: [] }),
     ],
   })
 
