@@ -1316,7 +1316,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
 }
 
 /**
- * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations (e.g. `@smith04`)
+ * Decode a MDAST `Cite` node with Pandoc style `@`-prefixed citations (e.g. `@smith04`)
  * to a Stencila `Cite` node.
  *
  * This function does not set the `content` property. That should be done during encoding
@@ -1329,6 +1329,28 @@ function decodeCite(cite: MDAST.Literal): stencila.Cite {
 }
 
 /**
+ * Encode a Stencila `Cite` node to a MDAST `Text` node
+ * with Pandoc style `@`-prefixed citations e.g.
+ * `@smith04` for narrative, `[@smith04]` for parenthetical.
+ */
+function encodeCite(cite: stencila.Cite): MDAST.Text {
+  const { target, prefix, suffix, citationMode = 'Parenthetical' } = cite
+
+  // Encode the citation consistent with how Pandoc does it
+  // For Narrative mode, Pandoc does not seem to support a prefix
+  // Tip use `echo ' @ref1 [suffix] ' | pandoc --from markdown --to json | jq` etc
+  // to see how Pandoc reads/writes.
+  const value =
+    citationMode === 'Parenthetical'
+      ? `[${prefix !== undefined ? `${prefix} ` : ''}@${target}${
+          suffix !== undefined ? ` ${suffix}` : ''
+        }]`
+      : `@${target}${suffix !== undefined ? ` [${suffix}]` : ''}`
+
+  return { type: 'text', value }
+}
+
+/**
  * Encode a Stencila `CiteGroup` node to a MDAST `Text` node
  * with Pandoc style citation groups e.g. `[@smith04; @doe99]`.
  */
@@ -1338,19 +1360,13 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): MDAST.Text {
     ? encodeCite(items[0])
     : {
         type: 'text',
-        value: `[${items.map((item) => encodeCite(item).value).join('; ')}]`,
+        value: `[${items
+          .map((cite) => {
+            const { target, prefix = '', suffix = '' } = cite
+            return `${prefix} @${target} ${suffix}`.trim()
+          })
+          .join('; ')}]`,
       }
-}
-
-/**
- * Encode a Stencila `Cite` node to a MDAST `Text` node
- * with Pandoc style `@`-prefixed citations e.g. `@smith04`.
- */
-function encodeCite(cite: stencila.Cite): MDAST.Text {
-  return {
-    type: 'text',
-    value: `@${cite.target}`,
-  }
 }
 
 /**
