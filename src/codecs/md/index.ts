@@ -230,10 +230,11 @@ for (const ext of GENERIC_EXTENSIONS) {
 export function stringToMdast(content: string): UNIST.Node {
   // HACK: It is necessary to "escape" parenthetical citations
   // e.g. `[prefix @smith04]` before the Remark parser attempts to
-  // parse them as links. The `citePlugin` then handles it
+  // parse them as links. The `citePlugin` then handles it.
+  // The negative lookahead avoid matching escaped opening square brackets.
   // This will probably be done better when we move to a new plugin based
   // on the new Remark parser.
-  const escaped = content.replace(/\[(.*?)\]/g, (matched) => {
+  const escaped = content.replace(/(?<!\\)\[(.*?)\]/g, (matched) => {
     // Only escape if the content inside brackets has an @
     // that does not seem to be an email (i.e. has a non-word
     // character before it and a word character after it)

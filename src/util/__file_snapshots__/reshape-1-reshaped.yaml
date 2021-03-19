@@ -227,7 +227,60 @@ content:
       - Citations
   - type: Paragraph
     content:
-      - 'Detect in paragraph citations like '
+      - >-
+        Remove unnecessary parentheses and brackets around singular
+        parenthetical citations 
+      - type: Cite
+        target: ref
+      - ' and '
+      - type: Cite
+        target: ref
+      - ' and citation groups '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+          - type: Cite
+            target: ref2
+      - ' and '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+          - type: Cite
+            target: ref2
+      - ' (these can cause duplication if left). '
+  - type: Paragraph
+    content:
+      - >-
+        Group together citations surrounded by parentheses to avoid them being
+        treated as narrative 
+      - type: Cite
+        target: ref
+      - ' and '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+          - type: Cite
+            target: ref2
+      - ' and '
+      - type: CiteGroup
+        items:
+          - type: Cite
+            target: ref1
+          - type: Cite
+            target: ref2
+          - type: Cite
+            target: ref3
+      - '. Note that true narrative citations e.g. '
+      - type: Cite
+        citationMode: Narrative
+        target: ref
+      - ' should not be affected.'
+  - type: Paragraph
+    content:
+      - 'Detect in paragraph numeric citations like '
       - type: CiteGroup
         items:
           - type: Cite
@@ -254,10 +307,7 @@ content:
       - ', '
       - type: CodeFragment
         text: '[2]'
-      - ' (Note the need for escaping the leading square bracket because we are in Markdown).'
-  - type: Paragraph
-    content:
-      - 'Can also deal with groups of citations e.g. '
+      - '. Can also deal with groups of numeric citations e.g. '
       - type: CiteGroup
         items:
           - type: Cite
@@ -272,3 +322,8 @@ content:
           - type: Cite
             target: ref3
       - .
+  - type: Paragraph
+    content:
+      - >-
+        Note the need for escaping the leading square bracket because we are in
+        Markdown and they must not be confused with links.

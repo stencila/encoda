@@ -577,41 +577,59 @@ export function groupCitesIntoGiteGroup(
 
   for (let index = 0; index < content.length; index++) {
     const curr = content[index]
-    if (typeof curr === 'string' && curr.endsWith('(')) {
-      let items: schema.Cite[] = []
-      let ahead = 1
-      while (index + ahead < content.length) {
-        const node = content[index + ahead]
-        if (schema.isA('Cite', node)) {
-          // Collect into cite items
-          items = [...items, node]
-        } else if (typeof node === 'string') {
-          if (node.startsWith(')')) {
-            // Matching closing parenthesis so makes modifications
-            // to content
-            content[index] = curr.slice(0, -1)
-            content[index + ahead] = node.slice(1)
-            content.splice(
-              index + 1, // start
-              ahead - 1, // items to delete
-              schema.citeGroup({ items }) // item to insert
-            )
+    if (typeof curr === 'string') {
+      for (const [startDelim, endDelim] of [
+        ['(', ')'],
+        ['[', ']'],
+      ]) {
+        if (!curr.endsWith(startDelim)) continue
 
-            // Skip ahead one so we don't bother looking at the
-            // CiteGroup that was just inserted
-            index += 1
-            break
-          } else if (/\s*,|;\s*/.test(node)) {
-            // Ignore separators
+        let group: schema.CiteGroup | undefined = undefined
+        let items: schema.Cite[] = []
+        let ahead = 1
+        while (index + ahead < content.length) {
+          const node = content[index + ahead]
+          if (schema.isA('CiteGroup', node) && group === undefined) {
+            group = node
+          } else if (schema.isA('Cite', node)) {
+            // Make sure that this cite does not have a narrative citationMode
+            // (parenthetical is the default)
+            node.citationMode = undefined
+            // Collect into cite items
+            items = [...items, node]
+          } else if (typeof node === 'string') {
+            if (node.startsWith(endDelim)) {
+              // Matching closing parenthesis so make modifications
+              // to content
+              content[index] = curr.slice(0, -1)
+              content[index + ahead] = node.slice(1)
+              content.splice(
+                index + 1, // start
+                ahead - 1, // items to delete
+                // item to insert...
+                group
+                  ? group // existing group
+                  : items.length === 1
+                  ? items[0] // only cite
+                  : schema.citeGroup({ items }) // group cites together
+              )
+
+              // Skip ahead one so we don't bother looking at the
+              // CiteGroup that was just inserted
+              index += 1
+              break
+            } else if (/\s*,|;\s*/.test(node)) {
+              // Ignore separators
+            } else {
+              // Some other text between Cite nodes so exit
+              break
+            }
           } else {
-            // Some other text between Cite nodes so exit
+            // Some other, non matching content so exit
             break
           }
-        } else {
-          // Some other, non matching content so exit
-          break
+          ahead++
         }
-        ahead++
       }
     }
   }
