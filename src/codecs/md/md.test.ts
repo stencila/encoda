@@ -1,6 +1,7 @@
 import stencila, {
   article,
   cite,
+  citeGroup,
   heading,
   imageObject,
   link,
@@ -1047,6 +1048,66 @@ const references = {
     ],
   },
 }
+
+describe('Parenthetical citations', () => {
+  test.each([
+    ['[@ref]', cite({ target: 'ref' })],
+    ['[prefix @ref]', cite({ target: 'ref', prefix: 'prefix' })],
+    ['[@ref suffix]', cite({ target: 'ref', suffix: 'suffix' })],
+    [
+      '[multiword prefix @ref suffix]',
+      cite({ target: 'ref', prefix: 'multiword prefix', suffix: 'suffix' }),
+    ],
+    [
+      '[com.pil.icated @ prefix and @ref suffix p. 3-53]',
+      cite({
+        target: 'ref',
+        prefix: 'com.pil.icated @ prefix and',
+        suffix: 'suffix p. 3-53',
+      }),
+    ],
+    [
+      '[@ref1; @ref2]',
+      citeGroup({
+        items: [cite({ target: 'ref1' }), cite({ target: 'ref2' })],
+      }),
+    ],
+    [
+      '[@ref1; @ref2; @ref3]',
+      citeGroup({
+        items: [
+          cite({ target: 'ref1' }),
+          cite({ target: 'ref2' }),
+          cite({ target: 'ref3' }),
+        ],
+      }),
+    ],
+    [
+      '[prefix1 @ref1 suffix1; prefix2 @ref2 suffix2]',
+      citeGroup({
+        items: [
+          cite({ prefix: 'prefix1', target: 'ref1', suffix: 'suffix1' }),
+          cite({ prefix: 'prefix2', target: 'ref2', suffix: 'suffix2' }),
+        ],
+      }),
+    ],
+    [
+      '[prefix @ref1; @ref2 suffix]',
+      citeGroup({
+        items: [
+          cite({ prefix: 'prefix', target: 'ref1' }),
+          cite({ target: 'ref2', suffix: 'suffix' }),
+        ],
+      }),
+    ],
+  ])('%s', async (md, node) => {
+    expect(await d(md)).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(node)])
+    )
+    expect(await e(node)).toEqual(md)
+  })
+})
 
 describe('Narrative citations', () => {
   const simpleMd = '@simple'

@@ -3,10 +3,8 @@
 // Encode Pandoc style `@`-prefixed citation e.g. `@smith04` strings into a custom `Cite` MDAST node type.
 
 import { array as A } from 'fp-ts'
-import { Eat, Locator, Parser, Tokenizer } from 'remark-parse'
+import { Eat, Parser, Tokenizer } from 'remark-parse'
 import { Plugin } from 'unified'
-
-const marker = '@'
 
 /* Regex to find Pandoc style narrative citations (not enclosed in brackets)
  *
@@ -29,23 +27,7 @@ const NARRATIVE_REGEX = /\B@([\w-]+)(\.\w+)?\s*(\[([^\]]+)\])?/
  *
  * See https://regex101.com/r/cPaCmO/1/
  */
-const PARENTHETICAL_REGEX = /\B\[(.*?)@([\w-]+)(.*?)(\s*;\s*(.*?)@([\w-]+)(.*?))*\]/
-
-const locator: Locator = (value, fromIndex) => {
-  let index = -1
-  const found = []
-  index = value.indexOf(marker, fromIndex)
-  if (index !== -1) {
-    found.push(index)
-  }
-
-  if (!A.isEmpty(found)) {
-    found.sort((a, b) => a - b)
-    return found[0]
-  }
-
-  return -1
-}
+const PARENTHETICAL_REGEX = /\B►(.*?)@([\w-]+)(.*?)((\s*;\s*.*?@[\w-]+.*?)*)?◄/
 
 export const citePlugin: Plugin<[]> = function () {
   const inlineTokenizer: Tokenizer = function (
@@ -55,32 +37,55 @@ export const citePlugin: Plugin<[]> = function () {
   ) {
     // Allow escaping of markers
     // @ts-expect-error
-    // eslint-disable @typescript-eslint/strict-boolean-expressions
-    if (!this.escape.includes('[')) this.escape.push('[')
-    // @ts-expect-error
-    // eslint-disable @typescript-eslint/strict-boolean-expressions
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (!this.escape.includes('@')) this.escape.push('@')
 
     // Parenthetical citations
-    if (
-      value[0] === '[' &&
-      !value.startsWith('[ ') &&
-      !value.startsWith('[[')
-    ) {
+    if (value[0] === '►') {
       const match = PARENTHETICAL_REGEX.exec(value)
 
       // Early termination if we don’t have a match
       if (!match) return
 
-      const [_0, prefix, target, suffix, ...rest] = match
+      const [_all, prefix, target, suffix, more] = match
 
-      // Early termination if we’re dealing with an email, not a citation
-      if (rest.length === 0 && /\.[a-z]{2,}/.test(suffix)) return
+      // Early termination if we’re dealing with an email link
+      if (
+        more !== undefined &&
+        /\w$/.test(prefix) &&
+        /\.[a-z]{2,}/.test(suffix)
+      )
+        return
 
-      eat(value)({
-        type: 'cite',
-        data: { type: 'Cite', target, prefix, suffix },
+      let groups = [[prefix, target, suffix]]
+      if (more !== undefined) {
+        groups = [
+          ...groups,
+          ...more
+            .split(/\s*;\s*/)
+            .slice(1)
+            .map((cite) => (/^(.*?)@([\w-]+)(.*?)$/.exec(cite) ?? []).slice(1)),
+        ]
+      }
+
+      // Handle potentially more than one Cite
+      const items = groups.map(([prefix, target, suffix]) => {
+        if (prefix !== undefined) prefix = prefix.trim()
+        if (suffix !== undefined) suffix = suffix.trim()
+
+        return {
+          type: 'Cite',
+          target,
+          prefix: prefix === '' ? undefined : prefix,
+          suffix: suffix === '' ? undefined : suffix,
+        }
       })
+
+      eat(value)(
+        items.length === 1
+          ? { type: 'cite', data: items[0] }
+          : { type: 'citeGroup', data: { items } }
+      )
     }
 
     // Narrative citations
@@ -96,8 +101,8 @@ export const citePlugin: Plugin<[]> = function () {
 
       const [_0, target, domain, _3, suffix] = match
 
-      // Early termination if we’re dealing with an email, not a citation
-      if (domain) return
+      // Early termination if we’re dealing with an email
+      if (domain !== undefined) return
 
       eat(value)({
         type: 'cite',
@@ -106,13 +111,26 @@ export const citePlugin: Plugin<[]> = function () {
     }
   }
 
-  inlineTokenizer.locator = locator
+  inlineTokenizer.locator = (value, fromIndex) => {
+    let index = -1
+    const found = []
+    index = value.indexOf('@', fromIndex)
+    if (index !== -1) {
+      found.push(index)
+    }
 
+    if (!A.isEmpty(found)) {
+      found.sort((a, b) => a - b)
+      return found[0]
+    }
+
+    return -1
+  }
+
+  // Inject into parser
   const Parser = this.Parser
-
-  // Inject inlineTokenizer
   const inlineTokenizers = Parser.prototype.inlineTokenizers
-  const inlineMethods = Parser.prototype.inlineMethods
   inlineTokenizers.citeRefs = inlineTokenizer
+  const inlineMethods = Parser.prototype.inlineMethods
   inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'citeRefs')
 }

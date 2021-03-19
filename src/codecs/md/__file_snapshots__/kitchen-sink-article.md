@@ -10,6 +10,25 @@ authors:
 datePublished:
   value: '2020-03-13'
   type: Date
+references:
+  - id: ref1
+    authors:
+      - familyNames:
+          - Adams
+        givenNames:
+          - B
+        type: Person
+    datePublished: '1990'
+    type: Article
+  - id: ref2
+    authors:
+      - familyNames:
+          - Smith
+        givenNames:
+          - T
+        type: Person
+    datePublished: '1991'
+    type: Article
 ---
 
 # Heading one
@@ -23,6 +42,8 @@ A paragraph with _emphasis_, **strong**, ~~delete~~.
 A paragraph with [a _rich_ link](https://example.org){attr=foo}.
 
 A paragraph with !quote[quote](https://example.org).
+
+A paragraph with in-text citations with different citation modes. Parenthetical: [@ref1]. Narrative: @ref1. Narrative author only: @ref1. Narrative year only: @ref1. Citation group with prefix and suffix text [e.g.  @ref1; @ref2  and others].
 
 A paragraph with `# code`{lang=python}.
 
