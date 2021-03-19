@@ -1,3 +1,12 @@
+## [0.109.5](https://github.com/stencila/encoda/compare/v0.109.4...v0.109.5) (2021-03-19)
+
+
+### Bug Fixes
+
+* **CSL:** Handling of literal names and organizational authors ([ecdc925](https://github.com/stencila/encoda/commit/ecdc925d7f0578f818e9811233677d8f84dba551))
+* **dependencies:** update dependency citation-js to ^0.5.0-alpha.10 ([32d98bd](https://github.com/stencila/encoda/commit/32d98bd5a213b697dcdb1ad26cee394dabc5f4fc))
+* **dependencies:** update dependency tempy to ^1.0.1 ([e01a6bf](https://github.com/stencila/encoda/commit/e01a6bfd5b42a3c3197fe3dc40167acc64721610))
+
 ## [0.109.4](https://github.com/stencila/encoda/compare/v0.109.3...v0.109.4) (2021-03-17)
 
 
