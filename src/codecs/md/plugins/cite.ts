@@ -2,17 +2,34 @@
 // Based on https://github.com/zestedesavoir/zmarkdown/blob/master/packages/remark-sub-super/src/index.js
 // Encode Pandoc style `@`-prefixed citation e.g. `@smith04` strings into a custom `Cite` MDAST node type.
 
-import { array as A, option as O } from 'fp-ts'
-import { pipe } from 'fp-ts/lib/pipeable'
+import { array as A } from 'fp-ts'
 import { Eat, Locator, Parser, Tokenizer } from 'remark-parse'
 import { Plugin } from 'unified'
 
 const marker = '@'
-/* Regex to find Pandoc style citations, but care needs to be taken to filter out email addresses.
- * Group 1: Possibly a citation target id
- * Group 2: Possibly the top level domain of an email address. If not empty, then the match is an email.
+
+/* Regex to find Pandoc style narrative citations (not enclosed in brackets)
+ *
+ * Group 1: Citation `target` id
+ * Group 2: Possibly the top level domain of an email address.
+ *          If not empty, then the match is an email. For some reason can't use
+ *          a negative lookahead for this and need to deal with in plugin logic
+ * Group 3: Optional citation `suffix`
+ *
+ * See https://regex101.com/r/G6zvyw/2
  */
-const CITE_REGEX = /\B@([\w|-]+)(\.\w+)?/
+const NARRATIVE_REGEX = /\B@([\w-]+)(\.\w+)?\s*(\[([^\]]+)\])?/
+
+/* Regex to find Pandoc style parenthetical citations (in square brackets)
+ *
+ * Group 1: Optional prefix
+ * Group 2: Citation `target` id
+ * Group 3: Optional suffix (if starts with period instead of space assumed to be email)
+ * Group 4-: Possibly additional citations separated by colons
+ *
+ * See https://regex101.com/r/cPaCmO/1/
+ */
+const PARENTHETICAL_REGEX = /\B\[(.*?)@([\w-]+)(.*?)(\s*;\s*(.*?)@([\w-]+)(.*?))*\]/
 
 const locator: Locator = (value, fromIndex) => {
   let index = -1
@@ -36,45 +53,55 @@ export const citePlugin: Plugin<[]> = function () {
     eat: Eat,
     value: string
   ) {
-    // allow escaping of all markers
+    // Allow escaping of markers
     // @ts-expect-error
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (!this.escape.includes(marker)) this.escape.push(marker)
-
-    const startChar = value[0]
+    // eslint-disable @typescript-eslint/strict-boolean-expressions
+    if (!this.escape.includes('[')) this.escape.push('[')
     // @ts-expect-error
-    const now = eat.now()
-    now.column += 1
-    now.offset += 1
+    // eslint-disable @typescript-eslint/strict-boolean-expressions
+    if (!this.escape.includes('@')) this.escape.push('@')
 
+    // Parenthetical citations
     if (
-      startChar === marker &&
-      !value.startsWith(marker + ' ') &&
-      !value.startsWith(marker + marker)
+      value[0] === '[' &&
+      !value.startsWith('[ ') &&
+      !value.startsWith('[[')
     ) {
-      const matches = CITE_REGEX.exec(value) ?? []
-
-      const isEmail = matches[2] !== undefined
-
-      // Early termination if we’re dealing with an email and not a citation format
-      if (isEmail) return
-
-      const citeLength = pipe(
-        matches,
-        A.head,
-        O.getOrElse(() => ''),
-        (match) => match.length
-      )
+      const match = PARENTHETICAL_REGEX.exec(value)
 
       // Early termination if we don’t have a match
-      if (citeLength === 0) return
+      if (!match) return
 
-      eat(value.substring(0, citeLength))({
+      const [_0, prefix, target, suffix, ...rest] = match
+
+      // Early termination if we’re dealing with an email, not a citation
+      if (rest.length === 0 && /\.[a-z]{2,}/.test(suffix)) return
+
+      eat(value)({
         type: 'cite',
-        value: value.substring(1, citeLength),
-        data: {
-          hName: 'cite',
-        },
+        data: { type: 'Cite', target, prefix, suffix },
+      })
+    }
+
+    // Narrative citations
+    else if (
+      value[0] === '@' &&
+      !value.startsWith('@ ') &&
+      !value.startsWith('@@')
+    ) {
+      const match = NARRATIVE_REGEX.exec(value)
+
+      // Early termination if we don’t have a match
+      if (!match) return
+
+      const [_0, target, domain, _3, suffix] = match
+
+      // Early termination if we’re dealing with an email, not a citation
+      if (domain) return
+
+      eat(value)({
+        type: 'cite',
+        data: { type: 'Cite', citationMode: 'Narrative', target, suffix },
       })
     }
   }

@@ -1323,9 +1323,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
  * to the target format.
  */
 function decodeCite(cite: MDAST.Literal): stencila.Cite {
-  return stencila.cite({
-    target: cite.value,
-  })
+  return stencila.cite((cite.data as unknown) as stencila.Cite)
 }
 
 /**

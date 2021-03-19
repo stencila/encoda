@@ -1048,81 +1048,106 @@ const references = {
   },
 }
 
-describe('Citations', () => {
-  const reference = '@simple'
-  const referenceNode = cite({ target: reference.replace('@', '') })
-
-  const complexReference = '@like-this'
-  const complexReferenceNode = cite({
-    target: complexReference.replace('@', ''),
+describe('Narrative citations', () => {
+  const simpleMd = '@simple'
+  const simpleCite = cite({
+    citationMode: 'Narrative',
+    target: simpleMd.replace('@', ''),
   })
 
-  const complexReference2 = '@like-this_underscore'
-  const complexReferenceNode2 = cite({
-    target: complexReference2.replace('@', ''),
+  const hyphenMd = '@like-this'
+  const hyphenCite = cite({
+    citationMode: 'Narrative',
+    target: hyphenMd.replace('@', ''),
   })
 
-  const alphaNumReference = '@alpha1234num'
-  const alphaNumReferenceNode = cite({
-    target: alphaNumReference.replace('@', ''),
+  const complexMd = '@like-this_underscore'
+  const complexCite = cite({
+    citationMode: 'Narrative',
+    target: complexMd.replace('@', ''),
+  })
+
+  const alphanumMd = '@alpha1234num'
+  const alphanumCite = cite({
+    citationMode: 'Narrative',
+    target: alphanumMd.replace('@', ''),
+  })
+
+  const suffixMd = '@ref [multiword suffix]'
+  const suffixCite = cite({
+    citationMode: 'Narrative',
+    target: 'ref',
+    suffix: 'multiword suffix',
   })
 
   it('encodes a cite node to markdown', async () => {
-    expect(await e(referenceNode)).toEqual(reference)
+    expect(await e(simpleCite)).toEqual(simpleMd)
   })
 
   it('decodes a simple citation', async () => {
-    const ast = await d(reference)
+    const ast = await d(simpleMd)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
-    )
-  })
-
-  it('decodes a simple citation', async () => {
-    const ast = await d(reference)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
     )
   })
 
   it('decodes a complex citation', async () => {
-    const ast = await d(complexReference)
+    const ast = await d(hyphenMd)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(complexReferenceNode)])
+      expect.arrayContaining([expect.objectContaining(hyphenCite)])
     )
   })
 
   it('decodes a citation with underscores', async () => {
-    const ast = await d(complexReference2)
+    const ast = await d(complexMd)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(complexReferenceNode2)])
+      expect.arrayContaining([expect.objectContaining(complexCite)])
     )
   })
 
   it('decodes an alphanumeric citation', async () => {
-    const ast = await d(alphaNumReference)
+    const ast = await d(alphanumMd)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(alphaNumReferenceNode)])
+      expect.arrayContaining([expect.objectContaining(alphanumCite)])
     )
   })
 
-  it('decodes a complex paragraph', async () => {
-    const article = `# Cite test
+  it('decodes a citation with a suffix', async () => {
+    const ast = await d(suffixMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(suffixCite)])
+    )
+  })
 
-Some paragraph with a citation (${reference}) inside a paragraph.
+  it('decodes citations within paragraphs', async () => {
+    const article = `
+Some paragraph with a citation ${simpleMd} inside a paragraph.
 
-Followed by more text
+${complexMd} at start of paragraph.
+
+Followed by more text, a [link] and a ${suffixMd}.
 `
 
     const ast = await d(article)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 1, 'content'],
+      expect.arrayContaining([expect.objectContaining(complexCite)])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 2, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining(link({ target: '', content: ['link'] })),
+        expect.objectContaining(suffixCite),
+      ])
     )
   })
 
@@ -1130,7 +1155,7 @@ Followed by more text
   it.skip('encodes a citeGroup node to markdown', async () => {
     const citeGroup = `some text with (@cite-group-cite1, @cite-group-cite-another) a cite`
     const citeGroupNode = cite({
-      target: complexReference.replace('@', ''),
+      target: hyphenMd.replace('@', ''),
     })
 
     expect(await d(citeGroup)).toEqual(citeGroupNode)
@@ -1139,7 +1164,7 @@ Followed by more text
   it('does not treat email addresses as citations', async () => {
     const article = `# Cite test
 
-Some paragraph with a citation (${reference}) inside a paragraph.
+Some paragraph with a citation (${simpleMd}) inside a paragraph.
 
 Followed by more text and an email [hello@stenci.la](mailto:hello@stenci.la).
 
@@ -1149,7 +1174,7 @@ And lastly a simple, non-linked, email hello@stenci.la.
     const ast = await d(article)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
     )
 
     expect(ast).toHaveProperty(
@@ -1178,13 +1203,13 @@ And lastly a simple, non-linked, email hello@stenci.la.
   it('decodes a citation at the end of a sentence', async () => {
     const article = `# Cite test
 
-A sentence ending with a citation (${reference}).
+A sentence ending with a citation (${simpleMd}).
 `
 
     const ast = await d(article)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
     )
   })
 })
