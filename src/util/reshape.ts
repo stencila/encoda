@@ -584,7 +584,7 @@ export function groupCitesIntoGiteGroup(
       ]) {
         if (!curr.endsWith(startDelim)) continue
 
-        let group: schema.CiteGroup | undefined = undefined
+        let group: schema.CiteGroup | undefined
         let items: schema.Cite[] = []
         let ahead = 1
         while (index + ahead < content.length) {
@@ -607,11 +607,10 @@ export function groupCitesIntoGiteGroup(
                 index + 1, // start
                 ahead - 1, // items to delete
                 // item to insert...
-                group
-                  ? group // existing group
-                  : items.length === 1
-                  ? items[0] // only cite
-                  : schema.citeGroup({ items }) // group cites together
+                group ??
+                  (items.length === 1
+                    ? items[0] // only cite
+                    : schema.citeGroup({ items })) // group cites together
               )
 
               // Skip ahead one so we don't bother looking at the
