@@ -16,7 +16,7 @@ import { Plugin } from 'unified'
  *
  * See https://regex101.com/r/G6zvyw/2
  */
-const NARRATIVE_REGEX = /\B@([\w-]+)(\.\w+)?\s*(\[([^\]]+)\])?/
+const NARRATIVE_REGEX = /@([\w-]+)(\.\w+)?(\s*\[([^\]]+)\])?/
 
 /* Regex to find Pandoc style parenthetical citations (in square brackets)
  *
@@ -27,7 +27,7 @@ const NARRATIVE_REGEX = /\B@([\w-]+)(\.\w+)?\s*(\[([^\]]+)\])?/
  *
  * See https://regex101.com/r/cPaCmO/1/
  */
-const PARENTHETICAL_REGEX = /\B►(.*?)@([\w-]+)(.*?)((\s*;\s*.*?@[\w-]+.*?)*)?◄/
+const PARENTHETICAL_REGEX = /►(.*?)@([\w-]+)(.*?)((\s*;\s*.*?@[\w-]+.*?)*)?◄/
 
 export const citePlugin: Plugin<[]> = function () {
   const inlineTokenizer: Tokenizer = function (
@@ -81,7 +81,7 @@ export const citePlugin: Plugin<[]> = function () {
         }
       })
 
-      eat(value)(
+      eat(match[0])(
         items.length === 1
           ? { type: 'cite', data: items[0] }
           : { type: 'citeGroup', data: { items } }
@@ -104,20 +104,22 @@ export const citePlugin: Plugin<[]> = function () {
       // Early termination if we’re dealing with an email
       if (domain !== undefined) return
 
-      eat(value)({
+      eat(match[0])({
         type: 'cite',
         data: { type: 'Cite', citationMode: 'Narrative', target, suffix },
       })
     }
   }
 
+  // Locate the first of either of the starting characters in a string
   inlineTokenizer.locator = (value, fromIndex) => {
-    let index = -1
     const found = []
-    index = value.indexOf('@', fromIndex)
-    if (index !== -1) {
-      found.push(index)
-    }
+
+    const index1 = value.indexOf('►', fromIndex)
+    if (index1 !== -1) found.push(index1)
+
+    const index2 = value.indexOf('@', fromIndex)
+    if (index2 !== -1) found.push(index2)
 
     if (!A.isEmpty(found)) {
       found.sort((a, b) => a - b)
