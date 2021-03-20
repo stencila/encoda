@@ -1480,11 +1480,11 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
           : citationMode.t === 'SuppressAuthor'
           ? 'NarrativeYear'
           : undefined, // `citationMode` defaults to parenthetical if undefined
-      prefix:
+      citationPrefix:
         citationPrefix.length > 0
           ? decodeInlinesToString(citationPrefix)
           : undefined,
-      suffix:
+      citationSuffix:
         citationSuffix.length > 0
           ? decodeInlinesToString(citationSuffix)
           : undefined,

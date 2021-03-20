@@ -76,8 +76,8 @@ export const citePlugin: Plugin<[]> = function () {
         return {
           type: 'Cite',
           target,
-          prefix: prefix === '' ? undefined : prefix,
-          suffix: suffix === '' ? undefined : suffix,
+          citationPrefix: prefix === '' ? undefined : prefix,
+          citationSuffix: suffix === '' ? undefined : suffix,
         }
       })
 
@@ -99,14 +99,19 @@ export const citePlugin: Plugin<[]> = function () {
       // Early termination if we don’t have a match
       if (!match) return
 
-      const [_0, target, domain, _3, suffix] = match
+      const [_0, target, domain, _3, citationSuffix] = match
 
       // Early termination if we’re dealing with an email
       if (domain !== undefined) return
 
       eat(match[0])({
         type: 'cite',
-        data: { type: 'Cite', citationMode: 'Narrative', target, suffix },
+        data: {
+          type: 'Cite',
+          citationMode: 'Narrative',
+          target,
+          citationSuffix,
+        },
       })
     }
   }

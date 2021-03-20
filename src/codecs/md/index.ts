@@ -1350,7 +1350,12 @@ function decodeCite(literal: MDAST.Literal): stencila.Cite {
  * escaped with a backslash.
  */
 function encodeCite(cite: stencila.Cite): MDAST.HTML {
-  const { target, prefix, suffix, citationMode = 'Parenthetical' } = cite
+  const {
+    target,
+    citationPrefix,
+    citationSuffix,
+    citationMode = 'Parenthetical',
+  } = cite
 
   // Encode the citation consistent with how Pandoc does it
   // For Narrative mode, Pandoc does not seem to support a prefix
@@ -1358,10 +1363,12 @@ function encodeCite(cite: stencila.Cite): MDAST.HTML {
   // to see how Pandoc reads/writes.
   const value =
     citationMode === 'Parenthetical'
-      ? `[${prefix !== undefined ? `${prefix} ` : ''}@${target}${
-          suffix !== undefined ? ` ${suffix}` : ''
-        }]`
-      : `@${target}${suffix !== undefined ? ` [${suffix}]` : ''}`
+      ? `[${
+          citationPrefix !== undefined ? `${citationPrefix} ` : ''
+        }@${target}${citationSuffix !== undefined ? ` ${citationSuffix}` : ''}]`
+      : `@${target}${
+          citationSuffix !== undefined ? ` [${citationSuffix}]` : ''
+        }`
 
   return { type: 'html', value }
 }
@@ -1389,8 +1396,8 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): MDAST.HTML {
         type: 'html',
         value: `[${items
           .map((cite) => {
-            const { target, prefix = '', suffix = '' } = cite
-            return `${prefix} @${target} ${suffix}`.trim()
+            const { target, citationPrefix = '', citationSuffix = '' } = cite
+            return `${citationPrefix} @${target} ${citationSuffix}`.trim()
           })
           .join('; ')}]`,
       }

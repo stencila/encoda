@@ -108,8 +108,8 @@ export default article({
         'Citation group with prefix and suffix text ',
         citeGroup({
           items: [
-            cite({ target: 'ref1', prefix: 'e.g. ' }),
-            cite({ target: 'ref2', suffix: ' and others' }),
+            cite({ target: 'ref1', citationPrefix: 'e.g. ' }),
+            cite({ target: 'ref2', citationSuffix: ' and others' }),
           ],
         }),
         '.',

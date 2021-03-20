@@ -1722,13 +1722,17 @@ export const encodeHref = (href?: string | null): string => {
  */
 function decodeCite(elem: HTMLElement): stencila.Cite {
   const target = elem.querySelector('a')
-  const prefix = elem.querySelector('[itemprop="citePrefix"]')
-  const suffix = elem.querySelector('[itemprop="citeSuffix"]')
+  const prefix = elem.querySelector('[itemprop="citationPrefix"]')
+  const suffix = elem.querySelector('[itemprop="citationSuffix"]')
 
   return stencila.cite({
     target: decodeHref(target?.getAttribute('href') ?? '#'),
-    prefix: isDefined(prefix) ? prefix.textContent ?? undefined : undefined,
-    suffix: isDefined(suffix) ? suffix.textContent ?? undefined : undefined,
+    citationPrefix: isDefined(prefix)
+      ? prefix.textContent ?? undefined
+      : undefined,
+    citationSuffix: isDefined(suffix)
+      ? suffix.textContent ?? undefined
+      : undefined,
   })
 }
 
@@ -1736,7 +1740,14 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
 function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
-  const { prefix, target, suffix, content, citationMode, ...lost } = cite
+  const {
+    citationPrefix,
+    target,
+    citationSuffix,
+    content,
+    citationMode,
+    ...lost
+  } = cite
   logWarnLossIfAny('html', 'encode', cite, lost)
 
   // If there is no existing citation content (ie. the visible text of
@@ -1778,9 +1789,13 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
     // for theming and because `citationMode` is not a schema.org property
     // anyway.
     encodeAttrs(cite, { citationMode }),
-    encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
+    encodeMaybe(citationPrefix, (value) =>
+      h('span', { itemprop: 'citationPrefix' }, value)
+    ),
     h('a', { href: encodeHref(target) }, contentElems),
-    encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
+    encodeMaybe(citationSuffix, (value) =>
+      h('span', { itemprop: 'citationSuffix' }, value)
+    )
   )
 }
 

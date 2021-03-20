@@ -1052,18 +1052,22 @@ const references = {
 describe('Parenthetical citations', () => {
   test.each([
     ['[@ref]', cite({ target: 'ref' })],
-    ['[prefix @ref]', cite({ target: 'ref', prefix: 'prefix' })],
-    ['[@ref suffix]', cite({ target: 'ref', suffix: 'suffix' })],
+    ['[prefix @ref]', cite({ target: 'ref', citationPrefix: 'prefix' })],
+    ['[@ref suffix]', cite({ target: 'ref', citationSuffix: 'suffix' })],
     [
       '[multiword prefix @ref suffix]',
-      cite({ target: 'ref', prefix: 'multiword prefix', suffix: 'suffix' }),
+      cite({
+        target: 'ref',
+        citationPrefix: 'multiword prefix',
+        citationSuffix: 'suffix',
+      }),
     ],
     [
       '[com.pil.icated @ prefix and @ref suffix p. 3-53]',
       cite({
         target: 'ref',
-        prefix: 'com.pil.icated @ prefix and',
-        suffix: 'suffix p. 3-53',
+        citationPrefix: 'com.pil.icated @ prefix and',
+        citationSuffix: 'suffix p. 3-53',
       }),
     ],
     [
@@ -1086,8 +1090,16 @@ describe('Parenthetical citations', () => {
       '[prefix1 @ref1 suffix1; prefix2 @ref2 suffix2]',
       citeGroup({
         items: [
-          cite({ prefix: 'prefix1', target: 'ref1', suffix: 'suffix1' }),
-          cite({ prefix: 'prefix2', target: 'ref2', suffix: 'suffix2' }),
+          cite({
+            citationPrefix: 'prefix1',
+            target: 'ref1',
+            citationSuffix: 'suffix1',
+          }),
+          cite({
+            citationPrefix: 'prefix2',
+            target: 'ref2',
+            citationSuffix: 'suffix2',
+          }),
         ],
       }),
     ],
@@ -1095,8 +1107,8 @@ describe('Parenthetical citations', () => {
       '[prefix @ref1; @ref2 suffix]',
       citeGroup({
         items: [
-          cite({ prefix: 'prefix', target: 'ref1' }),
-          cite({ target: 'ref2', suffix: 'suffix' }),
+          cite({ citationPrefix: 'prefix', target: 'ref1' }),
+          cite({ target: 'ref2', citationSuffix: 'suffix' }),
         ],
       }),
     ],
@@ -1104,8 +1116,8 @@ describe('Parenthetical citations', () => {
       '[e.g. @ref1; @ref2 and others]',
       citeGroup({
         items: [
-          cite({ prefix: 'e.g.', target: 'ref1' }),
-          cite({ target: 'ref2', suffix: 'and others' }),
+          cite({ citationPrefix: 'e.g.', target: 'ref1' }),
+          cite({ target: 'ref2', citationSuffix: 'and others' }),
         ],
       }),
     ],
@@ -1186,7 +1198,7 @@ describe('Narrative citations', () => {
   const suffixCite = cite({
     citationMode: 'Narrative',
     target: 'ref',
-    suffix: 'multiword suffix',
+    citationSuffix: 'multiword suffix',
   })
 
   it('encodes a cite node to markdown', async () => {
@@ -1330,7 +1342,7 @@ and an [email@example.com](mailto:email@example.com) to prove it.`
       cite({
         citationMode: 'Narrative',
         target: 'smith',
-        suffix: 'p 21',
+        citationSuffix: 'p 21',
       }),
       ' it is true but others dispute that ',
       citeGroup({
