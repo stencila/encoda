@@ -1790,11 +1790,11 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
     // anyway.
     encodeAttrs(cite, { citationMode }),
     encodeMaybe(citationPrefix, (value) =>
-      h('span', { itemprop: 'citationPrefix' }, value)
+      h('span', microdata(value, 'citationPrefix'), value)
     ),
     h('a', { href: encodeHref(target) }, contentElems),
     encodeMaybe(citationSuffix, (value) =>
-      h('span', { itemprop: 'citationSuffix' }, value)
+      h('span', microdata(value, 'citationSuffix'), value)
     )
   )
 }

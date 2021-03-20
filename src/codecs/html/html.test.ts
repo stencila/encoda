@@ -144,14 +144,18 @@ describe('Encode & Decode cite nodes', () => {
     expect(actual).toHaveTextContent('e.g.myTargetp. 21')
     expect(actual).toContainElement(prefix)
     expect(actual).toContainElement(suffix)
-    expect(prefix).toHaveAttribute('itemprop', 'citationPrefix')
-    expect(suffix).toHaveAttribute('itemprop', 'citationSuffix')
+    expect(prefix).toHaveAttribute('data-itemprop', 'citationPrefix')
+    expect(suffix).toHaveAttribute('data-itemprop', 'citationSuffix')
     expect.assertions(5)
   })
 
   test('decode with prefix & suffix', async () => {
     const actual = await d(
-      `<cite><span itemprop="citationPrefix">e.g.</span><a href="#myTarget">myTarget</a><span itemprop="citationSuffix">p. 21</span></cite>`
+      `<cite>
+        <span data-itemprop="citationPrefix">e.g.</span>
+        <a href="#myTarget">myTarget</a>
+        <span data-itemprop="citationSuffix">p. 21</span>
+      </cite>`
     )
 
     expect(actual).toHaveProperty('target', 'myTarget')
