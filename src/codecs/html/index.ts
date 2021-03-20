@@ -1722,8 +1722,8 @@ export const encodeHref = (href?: string | null): string => {
  */
 function decodeCite(elem: HTMLElement): stencila.Cite {
   const target = elem.querySelector('a')
-  const prefix = elem.querySelector('[itemprop="citationPrefix"]')
-  const suffix = elem.querySelector('[itemprop="citationSuffix"]')
+  const prefix = elem.querySelector('[data-itemprop="citationPrefix"]')
+  const suffix = elem.querySelector('[data-itemprop="citationSuffix"]')
 
   return stencila.cite({
     target: decodeHref(target?.getAttribute('href') ?? '#'),
