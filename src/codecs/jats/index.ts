@@ -1416,6 +1416,8 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
     }
     case 'MediaObject':
       return encodeMedia(node as stencila.ImageObject, 'media')
+    case 'CiteGroup':
+      return encodeCiteGroup(node as stencila.CiteGroup, state)
     case 'Cite':
       return encodeCite(node as stencila.Cite, state)
     case 'Collection': {
@@ -1685,24 +1687,45 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
 }
 
 /**
+ * Encode a Stencila `CiteGroup` node as a JATS `<xref>` elements.
+ */
+function encodeCiteGroup(
+  citeGroup: stencila.CiteGroup,
+  state: EncodeState
+): xml.Element[] {
+  const { items } = citeGroup
+  return [
+    { type: 'text', text: '(' },
+    ...items.reduce((prev: xml.Element[], cite, index) => {
+      return [
+        ...prev,
+        { type: 'text', text: index > 0 ? '; ' : '' },
+        ...encodeCite(cite, state, false),
+      ]
+    }, []),
+    { type: 'text', text: ')' },
+  ]
+}
+
+/**
  * Encode a Stencila `Cite` node as a JATS `<xref>` element.
  */
-function encodeCite(cite: stencila.Cite, state: EncodeState): [xml.Element] {
-  const rid = cite.target.startsWith('#')
-    ? cite.target.substring(1)
-    : cite.target
+function encodeCite(
+  cite: stencila.Cite,
+  state: EncodeState,
+  orphan = true
+): xml.Element[] {
+  const { target: rid, citationMode = 'Parenthetical' } = cite
 
   const xref = elem('xref', { rid, 'ref-type': 'bibr' })
 
-  if (state.citations[rid] === undefined) {
-    state.citations[rid] = []
-  }
-
+  if (state.citations[rid] === undefined) state.citations[rid] = []
   state.citations[rid].push(xref)
-
   populateBibrContent(rid, state)
 
-  return [xref]
+  return orphan && citationMode === 'Parenthetical'
+    ? [{ type: 'text', text: '(' }, xref, { type: 'text', text: ')' }]
+    : [xref]
 }
 
 /**

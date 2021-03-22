@@ -1,6 +1,7 @@
 import stencila, {
   article,
   cite,
+  citeGroup,
   heading,
   imageObject,
   link,
@@ -1048,98 +1049,250 @@ const references = {
   },
 }
 
-describe('Citations', () => {
-  const reference = '@simple'
-  const referenceNode = cite({ target: reference.replace('@', '') })
-
-  const complexReference = '@like-this'
-  const complexReferenceNode = cite({
-    target: complexReference.replace('@', ''),
-  })
-
-  const complexReference2 = '@like-this_underscore'
-  const complexReferenceNode2 = cite({
-    target: complexReference2.replace('@', ''),
-  })
-
-  const alphaNumReference = '@alpha1234num'
-  const alphaNumReferenceNode = cite({
-    target: alphaNumReference.replace('@', ''),
-  })
-
-  it('encodes a cite node to markdown', async () => {
-    expect(await e(referenceNode)).toEqual(reference)
-  })
-
-  it('decodes a simple citation', async () => {
-    const ast = await d(reference)
-    expect(ast).toHaveProperty(
+describe('Parenthetical citations', () => {
+  test.each([
+    ['[@ref]', cite({ target: 'ref' })],
+    ['[prefix @ref]', cite({ target: 'ref', citationPrefix: 'prefix' })],
+    ['[@ref suffix]', cite({ target: 'ref', citationSuffix: 'suffix' })],
+    [
+      '[multiword prefix @ref suffix]',
+      cite({
+        target: 'ref',
+        citationPrefix: 'multiword prefix',
+        citationSuffix: 'suffix',
+      }),
+    ],
+    [
+      '[com.pil.icated @ prefix and @ref suffix p. 3-53]',
+      cite({
+        target: 'ref',
+        citationPrefix: 'com.pil.icated @ prefix and',
+        citationSuffix: 'suffix p. 3-53',
+      }),
+    ],
+    [
+      '[@ref1; @ref2]',
+      citeGroup({
+        items: [cite({ target: 'ref1' }), cite({ target: 'ref2' })],
+      }),
+    ],
+    [
+      '[@ref1; @ref2; @ref3]',
+      citeGroup({
+        items: [
+          cite({ target: 'ref1' }),
+          cite({ target: 'ref2' }),
+          cite({ target: 'ref3' }),
+        ],
+      }),
+    ],
+    [
+      '[prefix1 @ref1 suffix1; prefix2 @ref2 suffix2]',
+      citeGroup({
+        items: [
+          cite({
+            citationPrefix: 'prefix1',
+            target: 'ref1',
+            citationSuffix: 'suffix1',
+          }),
+          cite({
+            citationPrefix: 'prefix2',
+            target: 'ref2',
+            citationSuffix: 'suffix2',
+          }),
+        ],
+      }),
+    ],
+    [
+      '[prefix @ref1; @ref2 suffix]',
+      citeGroup({
+        items: [
+          cite({ citationPrefix: 'prefix', target: 'ref1' }),
+          cite({ target: 'ref2', citationSuffix: 'suffix' }),
+        ],
+      }),
+    ],
+    [
+      '[e.g. @ref1; @ref2 and others]',
+      citeGroup({
+        items: [
+          cite({ citationPrefix: 'e.g.', target: 'ref1' }),
+          cite({ target: 'ref2', citationSuffix: 'and others' }),
+        ],
+      }),
+    ],
+  ])('%s', async (md, node) => {
+    expect(await d(md)).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(node)])
     )
+    expect(await e(node)).toEqual(md)
   })
 
-  it('decodes a simple citation', async () => {
-    const ast = await d(reference)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
-    )
-  })
+  it('decodes citations within paragraphs', async () => {
+    const article = `
+A paragraph with a citation [@ref] inside it.
 
-  it('decodes a complex citation', async () => {
-    const ast = await d(complexReference)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(complexReferenceNode)])
-    )
-  })
+[@ref1; @ref2] at start of paragraph.
 
-  it('decodes a citation with underscores', async () => {
-    const ast = await d(complexReference2)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(complexReferenceNode2)])
-    )
-  })
-
-  it('decodes an alphanumeric citation', async () => {
-    const ast = await d(alphaNumReference)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(alphaNumReferenceNode)])
-    )
-  })
-
-  it('decodes a complex paragraph', async () => {
-    const article = `# Cite test
-
-Some paragraph with a citation (${reference}) inside a paragraph.
-
-Followed by more text
+Followed by more text, a [link] and a [@ref].
 `
 
     const ast = await d(article)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([
+        'A paragraph with a citation ',
+        expect.objectContaining(cite({ target: 'ref' })),
+        ' inside it.',
+      ])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 1, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining(
+          citeGroup({
+            items: [cite({ target: 'ref1' }), cite({ target: 'ref2' })],
+          })
+        ),
+        ' at start of paragraph.',
+      ])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 2, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining(link({ target: '', content: ['link'] })),
+        expect.objectContaining(cite({ target: 'ref' })),
+        '.',
+      ])
+    )
+  })
+})
+
+describe('Narrative citations', () => {
+  const simpleMd = '@simple'
+  const simpleCite = cite({
+    citationMode: 'Narrative',
+    target: simpleMd.replace('@', ''),
+  })
+
+  const hyphenMd = '@like-this'
+  const hyphenCite = cite({
+    citationMode: 'Narrative',
+    target: hyphenMd.replace('@', ''),
+  })
+
+  const complexMd = '@like-this_underscore'
+  const complexCite = cite({
+    citationMode: 'Narrative',
+    target: complexMd.replace('@', ''),
+  })
+
+  const alphanumMd = '@alpha1234num'
+  const alphanumCite = cite({
+    citationMode: 'Narrative',
+    target: alphanumMd.replace('@', ''),
+  })
+
+  const suffixMd = '@ref [multiword suffix]'
+  const suffixCite = cite({
+    citationMode: 'Narrative',
+    target: 'ref',
+    citationSuffix: 'multiword suffix',
+  })
+
+  it('encodes a cite node to markdown', async () => {
+    expect(await e(simpleCite)).toEqual(simpleMd)
+  })
+
+  it('decodes a simple citation', async () => {
+    const ast = await d(simpleMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
     )
   })
 
-  // TODO: Encode a chain of citations into a `CiteGroup`
-  it.skip('encodes a citeGroup node to markdown', async () => {
-    const citeGroup = `some text with (@cite-group-cite1, @cite-group-cite-another) a cite`
-    const citeGroupNode = cite({
-      target: complexReference.replace('@', ''),
-    })
+  it('decodes a complex citation', async () => {
+    const ast = await d(hyphenMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(hyphenCite)])
+    )
+  })
 
-    expect(await d(citeGroup)).toEqual(citeGroupNode)
+  it('decodes a citation with underscores', async () => {
+    const ast = await d(complexMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(complexCite)])
+    )
+  })
+
+  it('decodes an alphanumeric citation', async () => {
+    const ast = await d(alphanumMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(alphanumCite)])
+    )
+  })
+
+  it('decodes a citation with a suffix', async () => {
+    const ast = await d(suffixMd)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(suffixCite)])
+    )
+  })
+
+  it('decodes citations within paragraphs', async () => {
+    const article = `
+A paragraph with a citation ${simpleMd} inside it.
+
+${complexMd}, at start of paragraph.
+
+Followed by more text, a [link] and a ${suffixMd}.
+`
+
+    const ast = await d(article)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([
+        'A paragraph with a citation ',
+        expect.objectContaining(simpleCite),
+        ' inside it.',
+      ])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 1, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining(complexCite),
+        ', at start of paragraph.',
+      ])
+    )
+    expect(ast).toHaveProperty(
+      ['content', 2, 'content'],
+      expect.arrayContaining([
+        expect.objectContaining(link({ target: '', content: ['link'] })),
+        expect.objectContaining(suffixCite),
+        '.',
+      ])
+    )
+  })
+
+  it('decodes a citation at the end of a string', async () => {
+    const article = `A sentence ending with a citation ${simpleMd}`
+    const ast = await d(article)
+    expect(ast).toHaveProperty(
+      ['content', 0, 'content'],
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
+    )
   })
 
   it('does not treat email addresses as citations', async () => {
     const article = `# Cite test
 
-Some paragraph with a citation (${reference}) inside a paragraph.
+Some paragraph with a citation ${simpleMd} inside a paragraph.
 
 Followed by more text and an email [hello@stenci.la](mailto:hello@stenci.la).
 
@@ -1149,7 +1302,7 @@ And lastly a simple, non-linked, email hello@stenci.la.
     const ast = await d(article)
     expect(ast).toHaveProperty(
       ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
+      expect.arrayContaining([expect.objectContaining(simpleCite)])
     )
 
     expect(ast).toHaveProperty(
@@ -1174,19 +1327,40 @@ And lastly a simple, non-linked, email hello@stenci.la.
       ])
     )
   })
+})
 
-  it('decodes a citation at the end of a sentence', async () => {
-    const article = `# Cite test
+test('Parenthetical and narrative citations in the same paragraph', async () => {
+  const article = `According to @smith [p 21] it is true but others
+dispute that [@singh; @alvarez] and here is a [link]
+and an [email@example.com](mailto:email@example.com) to prove it.`
 
-A sentence ending with a citation (${reference}).
-`
-
-    const ast = await d(article)
-    expect(ast).toHaveProperty(
-      ['content', 0, 'content'],
-      expect.arrayContaining([expect.objectContaining(referenceNode)])
-    )
-  })
+  const ast = await d(article)
+  expect(ast).toHaveProperty(
+    ['content', 0, 'content'],
+    [
+      'According to ',
+      cite({
+        citationMode: 'Narrative',
+        target: 'smith',
+        citationSuffix: 'p 21',
+      }),
+      ' it is true but others dispute that ',
+      citeGroup({
+        items: [cite({ target: 'singh' }), cite({ target: 'alvarez' })],
+      }),
+      ' and here is a ',
+      link({
+        content: ['link'],
+        target: '',
+      }),
+      ' and an ',
+      link({
+        content: ['email@example.com'],
+        target: 'mailto:email@example.com',
+      }),
+      ' to prove it.',
+    ]
+  )
 })
 
 describe('References', () => {

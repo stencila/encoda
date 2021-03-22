@@ -228,6 +228,20 @@ for (const ext of GENERIC_EXTENSIONS) {
  * Decode a string of Markdown content to a `UNIST.Node`
  */
 export function stringToMdast(content: string): UNIST.Node {
+  // HACK: It is necessary to "escape" parenthetical citations
+  // e.g. `[prefix @smith04]` before the Remark parser attempts to
+  // parse them as links. The `citePlugin` then handles it.
+  // The negative lookahead avoid matching escaped opening square brackets.
+  // This will probably be done better when we move to a new plugin based
+  // on the new Remark parser.
+  const escaped = content.replace(/(?<!\\)\[(.*?)\]/g, (matched) => {
+    // Only escape if the content inside brackets has an @
+    // that does not seem to be an email (i.e. has a non-word
+    // character before it and a word character after it)
+    if (/\W@\w/.test(matched)) return `►${matched.slice(1, -1)}◄`
+    return matched
+  })
+
   const mdast = unified()
     .use(parser, { commonmark: true })
     .use(frontmatter, FRONTMATTER_OPTIONS)
@@ -236,7 +250,7 @@ export function stringToMdast(content: string): UNIST.Node {
     .use(math)
     .use(citePlugin)
     .use(genericExtensions, { elements: extensionHandlers })
-    .parse(content)
+    .parse(escaped)
 
   compact(mdast, true)
 
@@ -455,6 +469,8 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
       return decodeDelete(node as MDAST.Delete, context)
     case 'cite':
       return decodeCite(node as MDAST.Literal)
+    case 'citeGroup':
+      return decodeCiteGroup(node as MDAST.Literal)
     case 'sub':
       return decodeSubscript(node as MDAST.Parent, context)
     case 'sup':
@@ -1316,41 +1332,75 @@ function encodeLink(link: stencila.Link): MDAST.Link {
 }
 
 /**
- * Encode a MDAST `Cite` node with Pandoc style `@`-prefixed citations (e.g. `@smith04`)
- * to a Stencila `Cite` node.
+ * Decode a MDAST `type: cite` node to a Stencila `Cite` node.
  *
- * This function does not set the `content` property. That should be done during encoding
- * to the target format.
+ * See `plugins/cite.ts`.
  */
-function decodeCite(cite: MDAST.Literal): stencila.Cite {
-  return stencila.cite({
-    target: cite.value,
-  })
+function decodeCite(literal: MDAST.Literal): stencila.Cite {
+  // Use `cite` constructor to remove undefined properties
+  return stencila.cite((literal.data as unknown) as stencila.Cite)
+}
+
+/**
+ * Encode a Stencila `Cite` node to a MDAST `Text` node
+ * with Pandoc style `@`-prefixed citations e.g.
+ * `@smith04` for narrative, `[@smith04]` for parenthetical.
+ *
+ * Returns a `MDAST.HTML` node to avoid having opening square bracket
+ * escaped with a backslash.
+ */
+function encodeCite(cite: stencila.Cite): MDAST.HTML {
+  const {
+    target,
+    citationPrefix,
+    citationSuffix,
+    citationMode = 'Parenthetical',
+  } = cite
+
+  // Encode the citation consistent with how Pandoc does it
+  // For Narrative mode, Pandoc does not seem to support a prefix
+  // Tip use `echo ' @ref1 [suffix] ' | pandoc --from markdown --to json | jq` etc
+  // to see how Pandoc reads/writes.
+  const value =
+    citationMode === 'Parenthetical'
+      ? `[${
+          citationPrefix !== undefined ? `${citationPrefix} ` : ''
+        }@${target}${citationSuffix !== undefined ? ` ${citationSuffix}` : ''}]`
+      : `@${target}${
+          citationSuffix !== undefined ? ` [${citationSuffix}]` : ''
+        }`
+
+  return { type: 'html', value }
+}
+
+/**
+ * Decode a MDAST `type: citeGroup` node to a Stencila `CiteGroup` node.
+ *
+ * See `plugins/cite.ts`.
+ */
+function decodeCiteGroup(literal: MDAST.Literal): stencila.CiteGroup {
+  // Use `cite` constructor on each item to remove undefined properties
+  const { items } = (literal.data as unknown) as stencila.CiteGroup
+  return stencila.citeGroup({ items: items.map((item) => stencila.cite(item)) })
 }
 
 /**
  * Encode a Stencila `CiteGroup` node to a MDAST `Text` node
  * with Pandoc style citation groups e.g. `[@smith04; @doe99]`.
  */
-function encodeCiteGroup(citeGroup: stencila.CiteGroup): MDAST.Text {
+function encodeCiteGroup(citeGroup: stencila.CiteGroup): MDAST.HTML {
   const { items } = citeGroup
   return items.length === 1
     ? encodeCite(items[0])
     : {
-        type: 'text',
-        value: `[${items.map((item) => encodeCite(item).value).join('; ')}]`,
+        type: 'html',
+        value: `[${items
+          .map((cite) => {
+            const { target, citationPrefix = '', citationSuffix = '' } = cite
+            return `${citationPrefix} @${target} ${citationSuffix}`.trim()
+          })
+          .join('; ')}]`,
       }
-}
-
-/**
- * Encode a Stencila `Cite` node to a MDAST `Text` node
- * with Pandoc style `@`-prefixed citations e.g. `@smith04`.
- */
-function encodeCite(cite: stencila.Cite): MDAST.Text {
-  return {
-    type: 'text',
-    value: `@${cite.target}`,
-  }
 }
 
 /**

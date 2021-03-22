@@ -68,10 +68,13 @@ Figure 3. The caption for the code chunk.
 
 ## Citations
 
-Detect in paragraph citations like \[1], \[2] (and \[3]) including those referring to a non-existent reference e.g. \[101] but ignoring those in non-string inline content e.g. _\[1]_, `[2]` (Note the need for escaping the leading square bracket because we are in Markdown).
+Remove unnecessary parentheses and brackets around singular parenthetical citations ([@ref]) and \[[@ref]] and citation groups ([@ref1; @ref2]) and \[[@ref1; @ref2]] (these can cause duplication if left). 
 
-Can also deal with groups of citations e.g. \[1,2] and \[2, 3].
+Group together citations surrounded by parentheses to avoid them being treated as narrative (@ref) and (@ref1, @ref2) and (@ref1; @ref2, @ref3). Note that true narrative citations e.g. @ref should not be affected.
 
+Detect in paragraph numeric citations like \[1], \[2] (and \[3]) including those referring to a non-existent reference e.g. \[101] but ignoring those in non-string inline content e.g. _\[1]_, `[2]`. Can also deal with groups of numeric citations e.g. \[1,2] and \[2, 3].
+
+Note the need for escaping the leading square bracket because we are in Markdown and they must not be confused with links.
 
 # References
 

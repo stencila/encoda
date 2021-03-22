@@ -868,19 +868,15 @@ content:
         molecules are called long non-coding RNAs (lncRNAs) because they contain
         more than 200 base pairs: these transcripts fine-tune gene expression by
         interacting with chromatin and the transcription machinery inside cells 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib7
-            content:
-              - Ponting et al., 2009
+      - type: Cite
+        target: bib7
+        content:
+          - Ponting et al., 2009
       - '. The brain expresses more lncRNAs than any other part of the body '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib5
-            content:
-              - Derrien et al., 2012
+      - type: Cite
+        target: bib5
+        content:
+          - Derrien et al., 2012
       - ", but we know relatively little about the roles these molecules play in this\_organ "
       - type: CiteGroup
         items:
@@ -903,12 +899,10 @@ content:
         appear early in development and persist into adulthood. These
         neurodevelopmental disorders involve abnormal changes in the way genetic
         information is expressed 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib8
-            content:
-              - Rennert and Ziats, 2017
+      - type: Cite
+        target: bib8
+        content:
+          - Rennert and Ziats, 2017
       - >-
         . Several lncRNAs are associated with these conditions, sometimes being
         transcribed atypically (reviewed in 
@@ -919,12 +913,10 @@ content:
       - >-
         ). For instance, certain lncRNAs are expressed differently in patients
         on the autism spectrum 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib10
-            content:
-              - Ziats and Rennert, 2013
+      - type: Cite
+        target: bib10
+        content:
+          - Ziats and Rennert, 2013
       - .
   - type: Paragraph
     content:
@@ -935,12 +927,10 @@ content:
         lncRNAs that are involved in the formation of neurons are mutated or
         disrupted in children with autism spectrum disorder and intellectual
         disabilities 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib1
-            content:
-              - Ang et al., 2019
+      - type: Cite
+        target: bib1
+        content:
+          - Ang et al., 2019
       - .
   - type: Paragraph
     content:
@@ -966,12 +956,10 @@ content:
       - >-
         , a gene which encodes a transcription factor that helps neurons form
         and wire together 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib3
-            content:
-              - Borello et al., 2014
+      - type: Cite
+        target: bib3
+        content:
+          - Borello et al., 2014
       - .
   - type: Paragraph
     content:
@@ -988,12 +976,10 @@ content:
         content:
           - lnc-NR2F1
       - ' gene. Most of the brain lncRNAs are located near genes that code for proteins, and it is believed that both lncRNAs and protein-coding genes are expressed at the same time '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib6
-            content:
-              - Ponjavic et al., 2009
+      - type: Cite
+        target: bib6
+        content:
+          - Ponjavic et al., 2009
       - '. However, the work by Ang et al. potentially indicates that '
       - type: Emphasis
         content:

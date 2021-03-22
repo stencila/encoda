@@ -53,6 +53,27 @@
         <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A paragraph with <q
             cite="https://example.org" itemscope=""
             itemtype="http://schema.stenci.la/Quote">quote</q>.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A paragraph with in-text
+          citations with different citation modes. Parenthetical: <cite itemscope=""
+            itemtype="http://schema.stenci.la/Cite"><a
+              href="#ref1"><span>1</span><span>Adams</span><span>1990</span></a></cite>. Narrative:
+          <cite itemscope="" itemtype="http://schema.stenci.la/Cite"
+            data-citationmode="Narrative"><a
+              href="#ref1"><span>1</span><span>Adams</span><span>1990</span></a></cite>. Narrative
+          author only: <cite itemscope="" itemtype="http://schema.stenci.la/Cite"
+            data-citationmode="NarrativeAuthor"><a
+              href="#ref1"><span>1</span><span>Adams</span><span>1990</span></a></cite>. Narrative
+          year only: <cite itemscope="" itemtype="http://schema.stenci.la/Cite"
+            data-citationmode="NarrativeYear"><a
+              href="#ref1"><span>1</span><span>Adams</span><span>1990</span></a></cite>. Citation
+          group with prefix and suffix text <span itemscope=""
+            itemtype="http://schema.stenci.la/CiteGroup"><cite itemscope=""
+              itemtype="http://schema.stenci.la/Cite"><span data-itemprop="citationPrefix">e.g.
+              </span><a
+                href="#ref1"><span>1</span><span>Adams</span><span>1990</span></a></cite><cite
+              itemscope="" itemtype="http://schema.stenci.la/Cite"><a
+                href="#ref2"><span>2</span><span>Smith</span><span>1991</span></a><span
+                data-itemprop="citationSuffix"> and others</span></cite></span>.</p>
         <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A paragraph with <code
             class="language-python" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">#
             code</code>.</p>
@@ -120,6 +141,47 @@ const inc = (n) =&gt; n + 1</code></pre>
           </tbody>
         </table>
         <hr itemscope="" itemtype="http://schema.stenci.la/ThematicBreak">
+        <section data-itemprop="references">
+          <h2 data-itemtype="http://schema.stenci.la/Heading">References</h2>
+          <ol>
+            <li itemscope="" itemtype="http://schema.org/Article" itemprop="citation" id="ref1">
+              <ol data-itemprop="authors">
+                <li itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+                  <meta itemprop="name" content="B Adams"><span data-itemprop="givenNames"><span
+                      itemprop="givenName">B</span></span><span data-itemprop="familyNames"><span
+                      itemprop="familyName">Adams</span></span>
+                </li>
+              </ol><time itemprop="datePublished" datetime="1990">1990</time><span itemscope=""
+                itemtype="http://schema.org/Organization" itemprop="publisher">
+                <meta itemprop="name" content="Unknown"><span itemscope=""
+                  itemtype="http://schema.org/ImageObject" itemprop="logo">
+                  <meta itemprop="url"
+                    content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+                </span>
+              </span>
+              <meta itemprop="image"
+                content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
+            </li>
+            <li itemscope="" itemtype="http://schema.org/Article" itemprop="citation" id="ref2">
+              <ol data-itemprop="authors">
+                <li itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+                  <meta itemprop="name" content="T Smith"><span data-itemprop="givenNames"><span
+                      itemprop="givenName">T</span></span><span data-itemprop="familyNames"><span
+                      itemprop="familyName">Smith</span></span>
+                </li>
+              </ol><time itemprop="datePublished" datetime="1991">1991</time><span itemscope=""
+                itemtype="http://schema.org/Organization" itemprop="publisher">
+                <meta itemprop="name" content="Unknown"><span itemscope=""
+                  itemtype="http://schema.org/ImageObject" itemprop="logo">
+                  <meta itemprop="url"
+                    content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+                </span>
+              </span>
+              <meta itemprop="image"
+                content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
+            </li>
+          </ol>
+        </section>
       </article>
     </main>
   </body>

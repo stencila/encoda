@@ -2,33 +2,32 @@
 // Based on https://github.com/zestedesavoir/zmarkdown/blob/master/packages/remark-sub-super/src/index.js
 // Encode Pandoc style `@`-prefixed citation e.g. `@smith04` strings into a custom `Cite` MDAST node type.
 
-import { array as A, option as O } from 'fp-ts'
-import { pipe } from 'fp-ts/lib/pipeable'
-import { Eat, Locator, Parser, Tokenizer } from 'remark-parse'
+import { array as A } from 'fp-ts'
+import { Eat, Parser, Tokenizer } from 'remark-parse'
 import { Plugin } from 'unified'
 
-const marker = '@'
-/* Regex to find Pandoc style citations, but care needs to be taken to filter out email addresses.
- * Group 1: Possibly a citation target id
- * Group 2: Possibly the top level domain of an email address. If not empty, then the match is an email.
+/* Regex to find Pandoc style narrative citations (not enclosed in brackets)
+ *
+ * Group 1: Citation `target` id
+ * Group 2: Possibly the top level domain of an email address.
+ *          If not empty, then the match is an email. For some reason can't use
+ *          a negative lookahead for this and need to deal with in plugin logic
+ * Group 3: Optional citation `suffix`
+ *
+ * See https://regex101.com/r/G6zvyw/2
  */
-const CITE_REGEX = /\B@([\w|-]+)(\.\w+)?/
+const NARRATIVE_REGEX = /@([\w-]+)(\.\w+)?(\s*\[([^\]]+)\])?/
 
-const locator: Locator = (value, fromIndex) => {
-  let index = -1
-  const found = []
-  index = value.indexOf(marker, fromIndex)
-  if (index !== -1) {
-    found.push(index)
-  }
-
-  if (!A.isEmpty(found)) {
-    found.sort((a, b) => a - b)
-    return found[0]
-  }
-
-  return -1
-}
+/* Regex to find Pandoc style parenthetical citations (in square brackets)
+ *
+ * Group 1: Optional prefix
+ * Group 2: Citation `target` id
+ * Group 3: Optional suffix (if starts with period instead of space assumed to be email)
+ * Group 4-: Possibly additional citations separated by colons
+ *
+ * See https://regex101.com/r/cPaCmO/1/
+ */
+const PARENTHETICAL_REGEX = /►(.*?)@([\w-]+)(.*?)((\s*;\s*.*?@[\w-]+.*?)*)?◄/
 
 export const citePlugin: Plugin<[]> = function () {
   const inlineTokenizer: Tokenizer = function (
@@ -36,56 +35,109 @@ export const citePlugin: Plugin<[]> = function () {
     eat: Eat,
     value: string
   ) {
-    // allow escaping of all markers
+    // Allow escaping of markers
     // @ts-expect-error
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (!this.escape.includes(marker)) this.escape.push(marker)
+    if (!this.escape.includes('@')) this.escape.push('@')
 
-    const startChar = value[0]
-    // @ts-expect-error
-    const now = eat.now()
-    now.column += 1
-    now.offset += 1
-
-    if (
-      startChar === marker &&
-      !value.startsWith(marker + ' ') &&
-      !value.startsWith(marker + marker)
-    ) {
-      const matches = CITE_REGEX.exec(value) ?? []
-
-      const isEmail = matches[2] !== undefined
-
-      // Early termination if we’re dealing with an email and not a citation format
-      if (isEmail) return
-
-      const citeLength = pipe(
-        matches,
-        A.head,
-        O.getOrElse(() => ''),
-        (match) => match.length
-      )
+    // Parenthetical citations
+    if (value[0] === '►') {
+      const match = PARENTHETICAL_REGEX.exec(value)
 
       // Early termination if we don’t have a match
-      if (citeLength === 0) return
+      if (!match) return
 
-      eat(value.substring(0, citeLength))({
+      const [_all, prefix, target, suffix, more] = match
+
+      // Early termination if we’re dealing with an email link
+      if (
+        more !== undefined &&
+        /\w$/.test(prefix) &&
+        /\.[a-z]{2,}/.test(suffix)
+      )
+        return
+
+      let groups = [[prefix, target, suffix]]
+      if (more !== undefined) {
+        groups = [
+          ...groups,
+          ...more
+            .split(/\s*;\s*/)
+            .slice(1)
+            .map((cite) => (/^(.*?)@([\w-]+)(.*?)$/.exec(cite) ?? []).slice(1)),
+        ]
+      }
+
+      // Handle potentially more than one Cite
+      const items = groups.map(([prefix, target, suffix]) => {
+        if (prefix !== undefined) prefix = prefix.trim()
+        if (suffix !== undefined) suffix = suffix.trim()
+
+        return {
+          type: 'Cite',
+          target,
+          citationPrefix: prefix === '' ? undefined : prefix,
+          citationSuffix: suffix === '' ? undefined : suffix,
+        }
+      })
+
+      eat(match[0])(
+        items.length === 1
+          ? { type: 'cite', data: items[0] }
+          : { type: 'citeGroup', data: { items } }
+      )
+    }
+
+    // Narrative citations
+    else if (
+      value[0] === '@' &&
+      !value.startsWith('@ ') &&
+      !value.startsWith('@@')
+    ) {
+      const match = NARRATIVE_REGEX.exec(value)
+
+      // Early termination if we don’t have a match
+      if (!match) return
+
+      const [_0, target, domain, _3, citationSuffix] = match
+
+      // Early termination if we’re dealing with an email
+      if (domain !== undefined) return
+
+      eat(match[0])({
         type: 'cite',
-        value: value.substring(1, citeLength),
         data: {
-          hName: 'cite',
+          type: 'Cite',
+          citationMode: 'Narrative',
+          target,
+          citationSuffix,
         },
       })
     }
   }
 
-  inlineTokenizer.locator = locator
+  // Locate the first of either of the starting characters in a string
+  inlineTokenizer.locator = (value, fromIndex) => {
+    const found = []
 
+    const index1 = value.indexOf('►', fromIndex)
+    if (index1 !== -1) found.push(index1)
+
+    const index2 = value.indexOf('@', fromIndex)
+    if (index2 !== -1) found.push(index2)
+
+    if (!A.isEmpty(found)) {
+      found.sort((a, b) => a - b)
+      return found[0]
+    }
+
+    return -1
+  }
+
+  // Inject into parser
   const Parser = this.Parser
-
-  // Inject inlineTokenizer
   const inlineTokenizers = Parser.prototype.inlineTokenizers
-  const inlineMethods = Parser.prototype.inlineMethods
   inlineTokenizers.citeRefs = inlineTokenizer
+  const inlineMethods = Parser.prototype.inlineMethods
   inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'citeRefs')
 }

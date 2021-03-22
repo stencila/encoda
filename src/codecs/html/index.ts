@@ -33,7 +33,11 @@ import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
-import { encodeCiteAuthorsYear, encodeCiteNumeric } from '../../util/references'
+import {
+  encodeCiteAuthors,
+  encodeCiteNumeric,
+  encodeCiteYear,
+} from '../../util/references'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { plotlyMediaType } from '../plotly'
@@ -1718,13 +1722,17 @@ export const encodeHref = (href?: string | null): string => {
  */
 function decodeCite(elem: HTMLElement): stencila.Cite {
   const target = elem.querySelector('a')
-  const prefix = elem.querySelector('[itemprop="citePrefix"]')
-  const suffix = elem.querySelector('[itemprop="citeSuffix"]')
+  const prefix = elem.querySelector('[data-itemprop="citationPrefix"]')
+  const suffix = elem.querySelector('[data-itemprop="citationSuffix"]')
 
   return stencila.cite({
     target: decodeHref(target?.getAttribute('href') ?? '#'),
-    prefix: isDefined(prefix) ? prefix.textContent ?? undefined : undefined,
-    suffix: isDefined(suffix) ? suffix.textContent ?? undefined : undefined,
+    citationPrefix: isDefined(prefix)
+      ? prefix.textContent ?? undefined
+      : undefined,
+    citationSuffix: isDefined(suffix)
+      ? suffix.textContent ?? undefined
+      : undefined,
   })
 }
 
@@ -1732,9 +1740,18 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
 function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
-  const { prefix, target, suffix, content, ...lost } = cite
+  const {
+    citationPrefix,
+    target,
+    citationSuffix,
+    content,
+    citationMode,
+    ...lost
+  } = cite
   logWarnLossIfAny('html', 'encode', cite, lost)
 
+  // If there is no existing citation content (ie. the visible text of
+  // the citation) then create it.
   let contentElems: string | Node[]
   if (content === undefined || content.length === 0) {
     const reference = state.references?.find((ref, index) =>
@@ -1745,12 +1762,20 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
     if (reference === undefined) {
       contentElems = target
     } else {
-      contentElems = [h('span', encodeCiteNumeric(reference, state.references))]
+      const number = encodeCiteNumeric(reference, state.references)
+      contentElems = [h('span', number)]
+
       if (stencila.isCreativeWork(reference)) {
-        contentElems = [
-          ...contentElems,
-          h('span', encodeCiteAuthorsYear(reference)),
-        ]
+        const authors = encodeCiteAuthors(reference)
+        // For theming, always add authors span so that year span is
+        // always the third span (if present)
+        contentElems = [...contentElems, h('span', authors ?? '')]
+
+        const year = encodeCiteYear(reference)
+        // For theming, only add year span if a year is available
+        // to prevent e.g. Smith ()
+        if (year !== undefined)
+          contentElems = [...contentElems, h('span', year)]
       }
     }
   } else {
@@ -1759,10 +1784,18 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
 
   return h(
     'cite',
-    encodeAttrs(cite),
-    encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
+    // Citation mode is added as an attribute (`data-citationmode`)
+    // rather than as a separate <meta> tag because that is more useful
+    // for theming and because `citationMode` is not a schema.org property
+    // anyway.
+    encodeAttrs(cite, { citationMode }),
+    encodeMaybe(citationPrefix, (value) =>
+      h('span', microdata(value, 'citationPrefix'), value)
+    ),
     h('a', { href: encodeHref(target) }, contentElems),
-    encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
+    encodeMaybe(citationSuffix, (value) =>
+      h('span', microdata(value, 'citationSuffix'), value)
+    )
   )
 }
 

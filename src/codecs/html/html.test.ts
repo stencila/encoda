@@ -130,27 +130,37 @@ describe('Encode & Decode cite nodes', () => {
 
   test('encode with prefix & suffix', async () => {
     const actual = doc(
-      await e(cite({ target: 'myTarget', prefix: '(', suffix: ')' }))
+      await e(
+        cite({
+          target: 'myTarget',
+          citationPrefix: 'e.g.',
+          citationSuffix: 'p. 21',
+        })
+      )
     )
-    const prefix = getByText(actual, '(')
-    const suffix = getByText(actual, ')')
+    const prefix = getByText(actual, 'e.g.')
+    const suffix = getByText(actual, 'p. 21')
 
-    expect(actual).toHaveTextContent('(myTarget)')
+    expect(actual).toHaveTextContent('e.g.myTargetp. 21')
     expect(actual).toContainElement(prefix)
     expect(actual).toContainElement(suffix)
-    expect(prefix).toHaveAttribute('itemprop', 'citePrefix')
-    expect(suffix).toHaveAttribute('itemprop', 'citeSuffix')
+    expect(prefix).toHaveAttribute('data-itemprop', 'citationPrefix')
+    expect(suffix).toHaveAttribute('data-itemprop', 'citationSuffix')
     expect.assertions(5)
   })
 
   test('decode with prefix & suffix', async () => {
     const actual = await d(
-      `<cite><span itemprop="citePrefix">(</span><a href="#myTarget">myTarget</a><span itemprop="citeSuffix">)</span></cite>`
+      `<cite>
+        <span data-itemprop="citationPrefix">e.g.</span>
+        <a href="#myTarget">myTarget</a>
+        <span data-itemprop="citationSuffix">p. 21</span>
+      </cite>`
     )
 
     expect(actual).toHaveProperty('target', 'myTarget')
-    expect(actual).toHaveProperty('prefix', '(')
-    expect(actual).toHaveProperty('suffix', ')')
+    expect(actual).toHaveProperty('citationPrefix', 'e.g.')
+    expect(actual).toHaveProperty('citationSuffix', 'p. 21')
   })
 })
 

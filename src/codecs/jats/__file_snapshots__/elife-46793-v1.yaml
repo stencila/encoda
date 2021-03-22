@@ -9056,12 +9056,10 @@ content:
         content:
           - Rhodes and Lipps, 2015
       - '). In the human genome, over 700,000 G4s have been detected in vitro '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib23
-            content:
-              - Chambers et al., 2015
+      - type: Cite
+        target: bib23
+        content:
+          - Chambers et al., 2015
       - >-
         . Sequences encoding G4s are enriched in regulatory regions consistent
         with roles in transcription and RNA regulation 
@@ -9091,12 +9089,10 @@ content:
       - >-
         ). Computationally predicted G4s have also been linked to replication
         origins 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib10
-            content:
-              - Besnard et al., 2012
+      - type: Cite
+        target: bib10
+        content:
+          - Besnard et al., 2012
       - ' and telomere homeostasis (reviewed in '
       - type: Cite
         target: bib88
@@ -9120,12 +9116,10 @@ content:
   - type: Paragraph
     content:
       - 'G4-specific antibodies have been used to visualise G4s in protozoa '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib105
-            content:
-              - Schaffitzel et al., 2001
+      - type: Cite
+        target: bib105
+        content:
+          - Schaffitzel et al., 2001
       - ' and mammalian cells '
       - type: CiteGroup
         items:
@@ -9159,12 +9153,10 @@ content:
         . More recently, ChIP-seq was used to map endogenous G4 structure
         formation in chromatin revealing a link between G4s, promoters and
         transcription 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib54
-            content:
-              - Hänsel-Hertsch et al., 2016
+      - type: Cite
+        target: bib54
+        content:
+          - Hänsel-Hertsch et al., 2016
       - >-
         . G4s are found predominately in nucleosome-depleted chromatin within
         promoters and 5’ UTRs of highly transcribed genes, including
@@ -9196,12 +9188,10 @@ content:
         , and it is notable that fibroblasts from Werner (WRN) and Bloom (BLM)
         syndrome patients, who are predisposed to cancer, show altered gene
         expression that correlates with sites with potential to form G4s 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib33
-            content:
-              - Damerla et al., 2012
+      - type: Cite
+        target: bib33
+        content:
+          - Damerla et al., 2012
       - .
   - type: Paragraph
     content:
@@ -9240,19 +9230,15 @@ content:
       - >-
         ). 5’ UTR RNA G4 structures may also be involved in eIF4A-dependent
         oncogene translation 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib127
-            content:
-              - Wolfe et al., 2014
+      - type: Cite
+        target: bib127
+        content:
+          - Wolfe et al., 2014
       - ' and their stabilisation by G4-ligands can inhibit translation in vitro '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib19
-            content:
-              - Bugaut and Balasubramanian, 2012
+      - type: Cite
+        target: bib19
+        content:
+          - Bugaut and Balasubramanian, 2012
       - '. Identification of several RNA G4-interacting proteins (reviewed in '
       - type: Cite
         target: bib20
@@ -9280,12 +9266,10 @@ content:
         content:
           - SRC
       - ' '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib103
-            content:
-              - Rodriguez et al., 2012
+      - type: Cite
+        target: bib103
+        content:
+          - Rodriguez et al., 2012
       - >-
         . Subsequent studies demonstrated that homologous recombination (HR)
         repair deficiencies can be exploited to selectively kill
@@ -9303,12 +9287,10 @@ content:
       - >-
         . Recently, this concept has been applied to BRCA1/2-deficient breast
         cancers using CX-5461, a G4 ligand currently in clinical trials 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib130
-            content:
-              - Xu et al., 2017
+      - type: Cite
+        target: bib130
+        content:
+          - Xu et al., 2017
       - ' ('
       - type: Link
         target: https://clinicaltrials.gov/show/NCT02719977
@@ -9403,19 +9385,15 @@ content:
       - >-
         ). For this, the pyridine-2,6-bis-quinolino-dicarboxamide derivative,
         PDS 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib103
-            content:
-              - Rodriguez et al., 2012
+      - type: Cite
+        target: bib103
+        content:
+          - Rodriguez et al., 2012
       - ', and bisquinolinium compound, PhenDC3 '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib35
-            content:
-              - De Cian et al., 2007b
+      - type: Cite
+        target: bib35
+        content:
+          - De Cian et al., 2007b
       - ' were chosen ('
       - type: Link
         relation: fig
@@ -9433,21 +9411,17 @@ content:
         content:
           - Figure 2C
       - ') '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib66
-            content:
-              - Knott et al., 2014
+      - type: Cite
+        target: bib66
+        content:
+          - Knott et al., 2014
       - >-
         . A375 melanoma cells were used due to their rapid doubling, stable
         ploidy and success in other shRNA-dropout screens 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib112
-            content:
-              - Sims et al., 2011
+      - type: Cite
+        target: bib112
+        content:
+          - Sims et al., 2011
       - '; they are TP53 wild-type and driven by oncogenic '
       - type: Emphasis
         content:
@@ -9457,12 +9431,10 @@ content:
         content:
           - CDKN2A
       - ' loss '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib43
-            content:
-              - Forbes et al., 2015
+      - type: Cite
+        target: bib43
+        content:
+          - Forbes et al., 2015
       - '. '
       - type: Link
         relation: fig
@@ -9758,12 +9730,10 @@ content:
         whose deficiency has not yet been linked with any enhanced sensitivity
         to G4 ligands. For genes annotated with G4-related terms in the
         UniprotKB, Gene Ontology (GO) and G4IPDB databases 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib85
-            content:
-              - Mishra et al., 2016
+      - type: Cite
+        target: bib85
+        content:
+          - Mishra et al., 2016
       - ', an additional eight sensitisers ('
       - type: Emphasis
         content:
@@ -9908,12 +9878,10 @@ content:
         vulnerabilities to G4-stabilising ligands. For this, we searched this
         list for any significant enrichment in the COSMIC database (v83) of
         genes causally implicated in cancer 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib43
-            content:
-              - Forbes et al., 2015
+      - type: Cite
+        target: bib43
+        content:
+          - Forbes et al., 2015
       - . Of the 758 sensitisers, there was a two-fold enrichment (p=9.1×10
       - type: Superscript
         content:
@@ -9937,12 +9905,10 @@ content:
         content:
           - Supplementary file 1
       - '). Notably, when STRING network analysis '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib115
-            content:
-              - Szklarczyk et al., 2017
+      - type: Cite
+        target: bib115
+        content:
+          - Szklarczyk et al., 2017
       - ' was used to investigate functional interactions, this revealed a DDR cluster that included '
       - type: Emphasis
         content:
@@ -10288,12 +10254,10 @@ content:
         potential for combinatorial pharmacological inhibition and G4-ligands.
         We therefore looked for the presence of these sensitisers genes within
         the druggable genome interaction database (DGIdb) 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib50
-            content:
-              - Griffith et al., 2013
+      - type: Cite
+        target: bib50
+        content:
+          - Griffith et al., 2013
       - >-
         . A total of 74 G4-sensitisers were found in the classifications
         ‘Druggable Genome’ (genes with known or predicted drug interactions) and
@@ -11112,12 +11076,10 @@ content:
         content:
           - Figure 9B
       - '). WEE1 is a crucial G2/M regulator overexpressed in several cancers '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib80
-            content:
-              - Matheson et al., 2016
+      - type: Cite
+        target: bib80
+        content:
+          - Matheson et al., 2016
       - >-
         , and USP1 is involved in DDR regulation and is overexpressed in
         non-small cell lung and other cancers (reviewed in 
@@ -11128,19 +11090,15 @@ content:
       - >-
         ). For our studies, we used MK1775 (AZD1775), a WEE1 kinase inhibitor
         that is being clinically evaluated in several cancers 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib100
-            content:
-              - Richer et al., 2017
+      - type: Cite
+        target: bib100
+        content:
+          - Richer et al., 2017
       - ', and pimozide a potent USP1-targeting drug '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib25
-            content:
-              - Chen et al., 2011a
+      - type: Cite
+        target: bib25
+        content:
+          - Chen et al., 2011a
       - >-
         . HT1080 and A375 cells were cultured in matrix combinations of PDS with
         MK1775 or pimozide at concentrations surrounding the GI
@@ -11148,12 +11106,10 @@ content:
         content:
           - '50'
       - ' values and cell viability measured after 96 hr using an end-point ATP luminescence-based assay (CellTiter-Glo, Promega). Combenefit software '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib37
-            content:
-              - Di Veroli et al., 2016
+      - type: Cite
+        target: bib37
+        content:
+          - Di Veroli et al., 2016
       - ' was then used to calculate synergy for different treatment combinations in which the percentage growth inhibition compared to single agent controls is used to plot a 3D-dose-response surface of synergy distribution in concentration space ('
       - type: Link
         relation: fig
@@ -11424,12 +11380,10 @@ content:
             content:
               - Vaughn et al., 2005
       - ' and the DEAD box protein DDX3X, that was recently shown to bind RNA G4s '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib57
-            content:
-              - Herdy et al., 2018
+      - type: Cite
+        target: bib57
+        content:
+          - Herdy et al., 2018
       - >-
         , were identified as G4 sensitisers in our screen. Further members of
         the DDX/DHX helicase family also appeared as G4 sensitisers (
@@ -11443,19 +11397,15 @@ content:
         uncharacterized G4-binding proteins. To address this directly, we chose
         to investigate DDX42 as this was one of the four key G4 sensitisers
         identified above. DDX42 is a non-processive RNA helicase 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib118
-            content:
-              - Uhlmann-Schiffler et al., 2006
+      - type: Cite
+        target: bib118
+        content:
+          - Uhlmann-Schiffler et al., 2006
       - ' and has been associated with splicing '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib126
-            content:
-              - Will et al., 2002
+      - type: Cite
+        target: bib126
+        content:
+          - Will et al., 2002
       - >-
         ; however, this protein remains largely uncharacterised. By
         immunoblotting of nuclear and cytoplasmic sub-cellular fractions (
@@ -11620,21 +11570,17 @@ content:
         affinity for a RNA-G4 structure as this has not previously been
         documented. For this, a G4 RNA oligonucleotide from the NRAS 5’UTR
         sequence, which forms a stable parallel G4 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib68
-            content:
-              - Kumari et al., 2007
+      - type: Cite
+        target: bib68
+        content:
+          - Kumari et al., 2007
       - >-
         , was used together with a mutated oligonucleotide unable to form a G4
         structure and also a RNA hairpin as negative controls 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib57
-            content:
-              - Herdy et al., 2018
+      - type: Cite
+        target: bib57
+        content:
+          - Herdy et al., 2018
       - >-
         . Oligonucleotides were folded in 100 mM KCl to promote G4 structure
         formation and the resultant structures confirmed by circular dichroism
@@ -11665,12 +11611,10 @@ content:
       - >-
         Given the nuclear localisation of DDX42 and as some DDX proteins also
         have DNA helicase activity 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib65
-            content:
-              - Kikuma et al., 2004
+      - type: Cite
+        target: bib65
+        content:
+          - Kikuma et al., 2004
       - >-
         , the DDX42 affinity for a DNA G4 structure was investigated. For this,
         an oligonucleotide corresponding to the stable parallel G4 structure in
@@ -11717,12 +11661,10 @@ content:
   - type: Paragraph
     content:
       - 'G4 structures are emerging as promising clinical targets in cancer '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib130
-            content:
-              - Xu et al., 2017
+      - type: Cite
+        target: bib130
+        content:
+          - Xu et al., 2017
       - ' but the range of disease-associated genetic backgrounds that potentiate G4 ligand effects has yet to be defined. Here, we have discovered many genes that when depleted enhance cell killing with the G4 ligands PDS and/or PhenDC3. The majority of these have no documented link to G4 biology and the use of low ligand concentrations is likely to favour discovery of gene losses that are the most sensitive in imparting selective cell killing. Validating the success of our approach, we independently identified G4-associated protein coding genes known to be genetic vulnerabilities to G4 ligands including '
       - type: Emphasis
         content:
@@ -11779,12 +11721,10 @@ content:
             content:
               - Farmer et al., 2005
       - ", and it is notable that BRCA\_deficiencies were isolated as one of the top genetic vulnerabilities for both G4 ligands in both A375 and HT1080 cells. While PDS and PhenDC3 have not been optimised by medicinal chemistry, the findings of Zimmer et al showing similar efficacy of PDS and olaparib in several BRCA-deficient models "
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib137
-            content:
-              - Zimmer et al., 2016
+      - type: Cite
+        target: bib137
+        content:
+          - Zimmer et al., 2016
       - ' lends further support that our screen detects robust, biologically relevant effects.'
   - type: Paragraph
     content:
@@ -12631,19 +12571,15 @@ content:
   - type: Paragraph
     content:
       - "While the custom HT1080 screen recovered 58% of sensitisers seen for each ligand in the A375 genome-wide screen, it is striking that this increases to 93% (i.e. 112 out of 121) when considering all screens irrespective of G4 ligand, suggesting remarkable consistency when comparing G4 ligand effects globally. Differences in individual ligand sensitives may arise from variances in cellular uptake and dose, for\_example, the GI20 dose of PhenDC3 is ten-fold higher for A375 compared to HT1080; G4 ligand-dependent molecular preference for G-tetrad end binding "
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib71
-            content:
-              - Le et al., 2015
+      - type: Cite
+        target: bib71
+        content:
+          - Le et al., 2015
       - ' and/or the accessibility of G4s in the chromatin of individual cell lines '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib54
-            content:
-              - Hänsel-Hertsch et al., 2016
+      - type: Cite
+        target: bib54
+        content:
+          - Hänsel-Hertsch et al., 2016
       - >-
         . These points plus differences in protein knockdown efficiency,
         especially in A375 cells, may contribute to the differences in G4 ligand
@@ -12654,12 +12590,10 @@ content:
         ligand dose for a particular gene loss leading to enhanced cell death.
         Indeed, it is thought that lower drug concentrations better fall within
         a ‘synthetic lethality window’ 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib93
-            content:
-              - Nijman, 2011
+      - type: Cite
+        target: bib93
+        content:
+          - Nijman, 2011
       - >-
         . Higher doses may mask these effects, by targeting more G4s that are
         not dependent on the particular gene lost and/or be due to other
@@ -12750,12 +12684,10 @@ content:
       - >-
         ) were not identified as sensitisers, which may reflect functional
         redundancy 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib114
-            content:
-              - Spillare et al., 2006
+      - type: Cite
+        target: bib114
+        content:
+          - Spillare et al., 2006
       - ', or a low ligand concentrations and/or cell type effects.'
   - type: Paragraph
     content:
@@ -12765,12 +12697,10 @@ content:
         documented ubiquitin-G4 relationship in human cells is with HERC2, an E3
         ubiquitin ligase that is implicated in G4 resolution whose loss
         sensitises cells to G4 ligands 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib128
-            content:
-              - Wu et al., 2018
+      - type: Cite
+        target: bib128
+        content:
+          - Wu et al., 2018
       - '. We also independently validate '
       - type: Emphasis
         content:
@@ -12821,22 +12751,18 @@ content:
             content:
               - Wei and Lin, 2012
       - ' Given the involvement of ubiquitin-proteasomal regulation in pathways, such as DDR and cell cycle, that are generally deregulated in cancer '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib55
-            content:
-              - Harrigan et al., 2018
+      - type: Cite
+        target: bib55
+        content:
+          - Harrigan et al., 2018
       - >-
         , this opens up an interesting intersection between ubiquitin regulation
         and G4s. As ubiquitin components are being targeted for anticancer
         therapies 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib61
-            content:
-              - Huang and Dixit, 2016
+      - type: Cite
+        target: bib61
+        content:
+          - Huang and Dixit, 2016
       - >-
         , their efficacy might be enhanced through simultaneous G4 targeting and
         here we have provided strong proof-of-principle of this using
@@ -12883,12 +12809,10 @@ content:
         content:
           - Table 1
       - ') has been pharmacologically explored '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib67
-            content:
-              - Kotake et al., 2007
+      - type: Cite
+        target: bib67
+        content:
+          - Kotake et al., 2007
       - ' raising the possibility of potentiation by G4-stabilising ligand combinatorial treatment.'
   - type: Paragraph
     content:
@@ -12909,12 +12833,10 @@ content:
         content:
           - GAR1)
       - ' whose deficiencies stood out with respect to consistent sensitivity to PDS and PhenDC3 in both cell lines tested. Given this, we postulate that deficiencies in any of these four genes will impart significant G4 ligand sensitivity for a range of cell types and/or with other G4 ligands. As GAR1-deficiencies are implicated in chronic lymphocytic leukaemia and contribute to telomere dysfunction '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib38
-            content:
-              - Dos Santos et al., 2017
+      - type: Cite
+        target: bib38
+        content:
+          - Dos Santos et al., 2017
       - >-
         , we suggest that this cancer may be acutely sensitive to
         G4-stabilisation by small molecules.
@@ -14244,12 +14166,10 @@ content:
         content:
           - '6'
       - ' (HT1080) cells per replica re-plated in fresh drug/DMSO and media (17 mL media per plate). At all times, sufficient cell numbers were used so that a minimum of 1000 or 800 cells per shRNA was maintained (A375 and HT1080, respectively), to ensure maximal potential for uncovering phenotypic effects from each shRNA hairpin tested '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib66
-            content:
-              - Knott et al., 2014
+      - type: Cite
+        target: bib66
+        content:
+          - Knott et al., 2014
       - >-
         . The volume of DMSO used in the ‘vehicle’ condition is equal to the
         volume for 10 μM PhenDC3. The remaining drug treatments were
@@ -14394,35 +14314,27 @@ content:
         content:
           - E-MTAB-6367.
       - ' Reads were trimmed to 22 nucleotides, base qualities were evaluated with FastQC v0.11.3 '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib2
-            content:
-              - Andrews, 2010
+      - type: Cite
+        target: bib2
+        content:
+          - Andrews, 2010
       - ' and bases were filtered from the 3'' end with a Phred quality threshold of 33 using the FASTX-Toolkit v0.0.14 '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib49
-            content:
-              - Gordon and Hannon, 2010
+      - type: Cite
+        target: bib49
+        content:
+          - Gordon and Hannon, 2010
       - >-
         . Trimmed reads were aligned to the 113,002 reference shRNA sequences
         provided by transOMIC technologies 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib66
-            content:
-              - Knott et al., 2014
+      - type: Cite
+        target: bib66
+        content:
+          - Knott et al., 2014
       - ' using Bowtie 2 v2.2.6 with default parameters '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib70
-            content:
-              - Langmead and Salzberg, 2012
+      - type: Cite
+        target: bib70
+        content:
+          - Langmead and Salzberg, 2012
       - >-
         , which resulted in overall alignment rates of 90–95% with an average of
         98% of reference sequences detected. The generated SAM files were
@@ -14467,34 +14379,28 @@ content:
   - type: Paragraph
     content:
       - "To discard shRNAs bearing low counts, each library was filtered based on a counts-per-million threshold of 0.5 for all initial time points (t0), for\_example in a library of 10M reads, shRNAs with at least five counts for all initial time points will pass this filter. Normalisation factors were calculated to scale the raw library sizes using the weighted trimmed mean of M-values (TMM) approach "
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib101
-            content:
-              - Robinson et al., 2010
+      - type: Cite
+        target: bib101
+        content:
+          - Robinson et al., 2010
       - >-
         . To compare groups of replicates (time points and chemical treatments)
         for each pool, differential representation analysis of shRNA counts was
         performed using edgeR 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib101
-            content:
-              - Robinson et al., 2010
+      - type: Cite
+        target: bib101
+        content:
+          - Robinson et al., 2010
       - >-
         . Common and shRNA-specific dispersions were estimated to allow the
         fitting of a negative binomial generalised linear model to the treatment
         counts. Contrasts between the initial time point and the treatments were
         defined (PDS-t0, PhenDC3-t0, and DMSO-t0) and likelihood ratio tests
         were carried out accordingly 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib32
-            content:
-              - Dai et al., 2014
+      - type: Cite
+        target: bib32
+        content:
+          - Dai et al., 2014
       - ". Fold changes (FC) were then computed for every shRNA, and false discovery rates (FDR) were estimated using the Benjamini-Hochberg method. A gene was defined as significantly differentially represented for a given treatment if at least 50% or a minimum of 3 shRNAs were significant (FDR\_≤\_0.05); sensitisation was additionally determined by applying a log"
       - type: Subscript
         content:
@@ -14512,19 +14418,15 @@ content:
         in the literature and molecular biology databases. 18 high confidence
         G4-related genes were obtained by scanning for genes in which the
         corresponding UniprotKB 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib117
-            content:
-              - The UniProt Consortium, 2017
+      - type: Cite
+        target: bib117
+        content:
+          - The UniProt Consortium, 2017
       - ' entry is annotated with the term ''quadruplex'' or genes annotated with at least one of the following 11 GO terms with any evidence assertion method '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib3
-            content:
-              - Ashburner et al., 2000
+      - type: Cite
+        target: bib3
+        content:
+          - Ashburner et al., 2000
       - ':'
   - type: Table
     id: inlinetable2
@@ -14736,12 +14638,10 @@ content:
       - >-
         Furthermore, 55 confirmed human G4-interacting proteins as defined by
         the G4IPB database 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib85
-            content:
-              - Mishra et al., 2016
+      - type: Cite
+        target: bib85
+        content:
+          - Mishra et al., 2016
       - ' ('
       - type: Link
         target: http://bsbe.iiti.ac.in/bsbe/ipdb/index.php
@@ -14754,12 +14654,10 @@ content:
         or DNA (i.e. not a direct protein interaction) or where the protein was
         not human. To extend the list of G4-interacting proteins, text-mining
         using PolySearch2 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib75
-            content:
-              - Liu et al., 2015b
+      - type: Cite
+        target: bib75
+        content:
+          - Liu et al., 2015b
       - ' was used. Human protein-coding gene names and G4-terms and synonyms are defined using the corresponding MeSH term id D054856 ('
       - type: Link
         target: https://www.ncbi.nlm.nih.gov/mesh/68054856
@@ -14807,12 +14705,10 @@ content:
             content:
               - Bindea et al., 2013
       - ' plugin for Cytoscape '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib109
-            content:
-              - Shannon et al., 2003
+      - type: Cite
+        target: bib109
+        content:
+          - Shannon et al., 2003
       - ' (v3.5.1) was used to determine networks of enriched KEGG pathways and Gene Ontology terms (Biological Process and Molecular Function) for significantly depleted genes upon G4 ligand treatment. Specifically, a right-sided (Enrichment) test based on the hyper-geometric distribution was performed on the corresponding Entrez gene IDs for each gene list and the Bonferroni adjustment (p<0.05) was applied to correct for multiple hypothesis testing. Only experimental evidence codes (EXP, IDA, IPI, IMP, IGI, IEP) were used. The Kappa-statistics score threshold was set to 0.4 and GO term fusion was used to diminish redundancy of terms shared by similar proteins. Other parameters include: GO level intervals (3–8 genes) and Group Merge (50%). Protein domains were investigated using DAVID (v6.8) to integrate GENE3D crystallographic data and PFAM sequence information and enrichment was considered significant if the EASE score p<0.05 '
       - type: CiteGroup
         items:
@@ -14835,12 +14731,10 @@ content:
       - >-
         Cancer mutation data (CosmicMutantExport.tsv) from the COSMIC database
         v82 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib43
-            content:
-              - Forbes et al., 2015
+      - type: Cite
+        target: bib43
+        content:
+          - Forbes et al., 2015
       - " was used to investigate the association between G4 sensitisers and cancer genes.\_~150,000 were mutations available in COSMIC for 702 (93%) sensitiser genes, with some predicted to be pathogenic by the FATHMM algorithm embedded within the COSMIC database. The Cancer Gene Census ("
       - type: Link
         target: http://cancer.sanger.ac.uk/census
@@ -14967,19 +14861,15 @@ content:
         performed for three biological replicas. Data were analysed via
         Combenefit software using the BLISS independence model since the
         molecule have independent targets 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib37
-            content:
-              - Di Veroli et al., 2016
+      - type: Cite
+        target: bib37
+        content:
+          - Di Veroli et al., 2016
       - ' to determine synergy. For the clonogenic cell survival assay, A375 (300 cells per well) and HT1080 (400 cells per well) were plated as single cells in 12-well plates. The next day, cells were treated with DMSO or the indicated doses of PDS, pimozide and/or MK1775 in media. After 8 days, colonies were fixed with 3% trichloroacetic acid (TCA) for 90 min at 4°C, washed with MiliQ, air dried and then stained with 0.057% (v/v) Sulforhodamine B solution (Merck, cat # 230162–5G) for 30 min at room temperature. Plates were then washed four times with 1% acetic acid, air dried and colonies visualised using GelCount (Oxford Optronix). Colony growth was determined using the ‘colony intensity percentage’ parameter in the ColonyArea Image J plugin '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib51
-            content:
-              - Guzmán et al., 2014
+      - type: Cite
+        target: bib51
+        content:
+          - Guzmán et al., 2014
       - >-
         , which considers both the intensity and percentage of area covered by
         the colonies. Values were normalised to and expressed as a percentage of

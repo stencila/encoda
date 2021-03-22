@@ -1,4 +1,11 @@
-import { article, person, date } from '@stencila/schema'
+import {
+  article,
+  person,
+  date,
+  cite,
+  citeGroup,
+  paragraph,
+} from '@stencila/schema'
 
 /**
  * An `Article` containing examples of many node types.
@@ -83,6 +90,31 @@ export default article({
         '.',
       ],
     },
+    paragraph({
+      content: [
+        'A paragraph with in-text citations with different citation modes. ',
+        'Parenthetical: ',
+        cite({ target: 'ref1' }),
+        '. ',
+        'Narrative: ',
+        cite({ citationMode: 'Narrative', target: 'ref1' }),
+        '. ',
+        'Narrative author only: ',
+        cite({ citationMode: 'NarrativeAuthor', target: 'ref1' }),
+        '. ',
+        'Narrative year only: ',
+        cite({ citationMode: 'NarrativeYear', target: 'ref1' }),
+        '. ',
+        'Citation group with prefix and suffix text ',
+        citeGroup({
+          items: [
+            cite({ target: 'ref1', citationPrefix: 'e.g. ' }),
+            cite({ target: 'ref2', citationSuffix: ' and others' }),
+          ],
+        }),
+        '.',
+      ],
+    }),
     {
       type: 'Paragraph',
       content: [
@@ -216,5 +248,17 @@ export default article({
     {
       type: 'ThematicBreak',
     },
+  ],
+  references: [
+    article({
+      id: 'ref1',
+      authors: [person({ familyNames: ['Adams'], givenNames: ['B'] })],
+      datePublished: '1990',
+    }),
+    article({
+      id: 'ref2',
+      authors: [person({ familyNames: ['Smith'], givenNames: ['T'] })],
+      datePublished: '1991',
+    }),
   ],
 })

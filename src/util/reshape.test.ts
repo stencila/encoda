@@ -25,7 +25,7 @@ test('reshape', async () => {
 })
 
 describe('groupCitesIntoGiteGroup', () => {
-  test('one CiteGroup with one Cite', () => {
+  test('single parenthetical Cite has extraneous parentheses removed', () => {
     const before = [
       'this is (ignored) because its in text, and so is this math (',
       schema.mathFragment({ text: 'pi' }),
@@ -37,7 +37,7 @@ describe('groupCitesIntoGiteGroup', () => {
       'this is (ignored) because its in text, and so is this math (',
       schema.mathFragment({ text: 'pi' }),
       ') but ',
-      schema.citeGroup({ items: [schema.cite({ target: 'a' })] }),
+      schema.cite({ target: 'a' }),
       ' is not.',
     ]
 
