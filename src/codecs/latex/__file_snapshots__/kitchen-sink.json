@@ -86,7 +86,7 @@
           "items": [
             {
               "type": "Cite",
-              "prefix": "e.g.,",
+              "citationPrefix": "e.g.,",
               "target": "article1"
             },
             {
@@ -372,7 +372,7 @@
         "Inside this box, we will put another equation that we got from ",
         {
           "type": "Cite",
-          "citationMode": "narrative",
+          "citationMode": "Narrative",
           "target": "article2"
         },
         ":"

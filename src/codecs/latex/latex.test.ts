@@ -116,8 +116,8 @@ describe('natbib citation commands', () => {
     expect(node).toEqual(
       citeGroup({
         items: [
-          cite({ prefix: 'e.g.', target: 'ref1' }),
-          cite({ target: 'ref2', suffix: 'and others' }),
+          cite({ citationPrefix: 'e.g.', target: 'ref1' }),
+          cite({ target: 'ref2', citationSuffix: 'and others' }),
         ],
       })
     )
@@ -140,7 +140,7 @@ describe('natbib citation commands', () => {
     const node = await load(`\\citet{ref1}`)
     expect(node).toEqual(
       cite({
-        citationMode: 'narrative',
+        citationMode: 'Narrative',
         target: 'ref1',
       })
     )
@@ -152,7 +152,7 @@ describe('natbib citation commands', () => {
     const node = await load(`\\citet*{ref1}`)
     expect(node).toEqual(
       cite({
-        citationMode: 'narrative',
+        citationMode: 'Narrative',
         target: 'ref1',
       })
     )
@@ -165,7 +165,7 @@ describe('natbib citation commands', () => {
     const node = await load(`\\citeauthor{ref1}`)
     expect(node).toEqual(
       cite({
-        citationMode: 'narrative',
+        citationMode: 'Narrative',
         target: 'ref1',
       })
     )
@@ -176,7 +176,7 @@ describe('natbib citation commands', () => {
     const node = await load(`\\citeyear{ref1}`)
     expect(node).toEqual(
       cite({
-        citationMode: 'narrative-year',
+        citationMode: 'NarrativeYear',
         target: 'ref1',
       })
     )
