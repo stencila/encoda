@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/nw/README.md]]
+ *
+ * @module nw
+ */
+
 import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { LatexCodec } from '../latex'
