@@ -46,6 +46,49 @@
       ]
     },
     {
+      "type": "Paragraph",
+      "content": [
+        "No lang ",
+        {
+          "type": "CodeFragment",
+          "text": "a + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Lang specified ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "py",
+          "text": "b + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "R ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "r",
+          "text": "c + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Python ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "py",
+          "text": "d + 1"
+        }
+      ]
+    },
+    {
       "type": "CodeChunk",
       "programmingLanguage": "r",
       "text": "plot(y~x, data)"

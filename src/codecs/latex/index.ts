@@ -17,9 +17,14 @@ export class LatexCodec extends Codec implements Codec {
 
   public readonly decode = async (
     file: vfile.VFile,
-    options: CommonDecodeOptions = this.commonDecodeDefaults
+    options: CommonDecodeOptions & {
+      defaultLanguage?: string
+    } = this.commonDecodeDefaults
   ): Promise<schema.Node> => {
-    const root = await pandoc.decode(file, options, {
+    const latex = await vfile.dump(file)
+    const converted = convertCommands(latex, options.defaultLanguage)
+
+    const root = await pandoc.decode(vfile.load(converted), options, {
       pandocFormat: InputFormat.latex,
     })
     return transform(
@@ -41,6 +46,38 @@ export class LatexCodec extends Codec implements Codec {
       pandocFormat: OutputFormat.latex,
     })
   }
+}
+
+/**
+ * Decode LaTeX commands to those that Pandoc recognizes.
+ *
+ * Pandoc knows about a lot of commands (see https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/LaTeX/Inline.hs)
+ * but not all of them. This converts less common commands to "equivalents" that
+ * Pandoc knows about.
+ */
+export function convertCommands(
+  latex: string,
+  defaultLanguage?: string
+): string {
+  return latex.replace(
+    /\\(S?expr|py)(\[(.*?)\])?{(.*?)}/g,
+    (_match, cmd: string, _opts, opts: string, text: string) => {
+      let language =
+        cmd === 'Sexpr' ? 'r' : cmd === 'py' ? 'py' : defaultLanguage
+
+      // An explicit language option overrides the above
+      if (opts) {
+        const match = /language\s*=\s*(\w+)/.exec(opts)
+        if (match) {
+          language = match[1]
+        }
+      }
+
+      let latex = '\\lstinline'
+      if (language !== undefined) latex += `[language=${language} exec]`
+      return latex + `{${text}}`
+    }
+  )
 }
 
 /**
@@ -78,7 +115,6 @@ async function decodeCodeBlock(
 function decodeCodeFragment(
   node: schema.CodeFragment
 ): schema.CodeFragment | schema.CodeExpression {
-  console.log(node)
   const { isExecutable, programmingLanguage, meta } = checkIfExecutable(node)
 
   return isExecutable

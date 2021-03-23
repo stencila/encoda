@@ -42,6 +42,16 @@ console.log(foo)
 % Pandoc only seems to pass `language` and not other attributes
 An evaluated Python expression \lstinline[language=python exec]{pow(2,2)}.
 
+% This codec also treats certain LaTeX commands as a `CodeExpression'
+
+No lang \expr{a + 1}
+
+Lang specified \expr[language=py]{b + 1}
+
+R \Sexpr{c + 1}
+
+Python \py{d + 1}
+
 % A `CodeChunk' can be represented by adding the `exec` class
 % to `\lstlisting` language.
 % In this case, Pandoc v2.12 does parse "exec" as a separate attribute on the
