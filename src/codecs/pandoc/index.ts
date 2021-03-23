@@ -199,8 +199,7 @@ export function run(
 
     // If there's an error also show the input in the debug log
     function raise(error: Error): void {
-      const pretty = JSON.stringify(JSON.parse(input.toString()), null, '  ')
-      log.debug(`${error}\n  input: ${pretty}`)
+      log.debug(`${error}\n  input: ${input}`)
       reject(error)
     }
 
