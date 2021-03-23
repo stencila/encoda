@@ -71,6 +71,7 @@ export const codecList: string[] = [
 
   // Math
   'mathml',
+  'tex',
 
   // Scripts
   'dmagic',
@@ -167,8 +168,14 @@ export async function match(
 
   let codec: Codec | undefined
 
-  // Attempt to match extension name to codec
-  if (extName !== undefined) codec = await getCodec(extName)
+  // Attempt to match extension name to codec name
+  // This is a shortcut attempted before iterating over codecs in codecList
+  if (extName !== undefined) {
+    // LaTeX files usually have a `tex` extension. Without this
+    // exception they get prematurely matched to the TeX codec (for math)
+    const codecName = extName === 'tex' ? 'latex' : extName
+    codec = await getCodec(codecName)
+  }
   if (codec !== undefined) return codec
 
   // Iterate through codecs searching for a match
