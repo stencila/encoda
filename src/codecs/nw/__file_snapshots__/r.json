@@ -28,13 +28,13 @@
       "content": [
         "We can also try to add 1 to 1 and see that it’s ",
         {
-          "type": "CodeFragment",
+          "type": "CodeExpression",
           "programmingLanguage": "r",
           "text": "1.0 + 1.0"
         },
         " and ",
         {
-          "type": "CodeFragment",
+          "type": "CodeExpression",
           "programmingLanguage": "r",
           "text": "2.0"
         },
