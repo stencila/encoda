@@ -24,9 +24,19 @@ export class LatexCodec extends Codec implements Codec {
     const latex = await vfile.dump(file)
     const converted = convertCommands(latex, options.defaultLanguage)
 
-    const root = await pandoc.decode(vfile.load(converted), options, {
-      pandocFormat: InputFormat.latex,
-    })
+    const root = await pandoc.decode(
+      vfile.load(
+        converted,
+        // Need to pass the file path so that absolute path of associated files e.g. bibliography
+        // can be resolved from relative paths.
+        file.path !== undefined ? { path: file.path } : {}
+      ),
+      options,
+      {
+        pandocFormat: InputFormat.latex,
+      }
+    )
+
     return transform(
       root,
       async (node): Promise<schema.Node> => {
