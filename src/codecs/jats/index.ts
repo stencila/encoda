@@ -1162,7 +1162,7 @@ function decodeReference(
   // If title is still undefined and elem is a <mixed-citation> then use
   // its text content e.g.
   //    <mixed-citation publication-type="other" xlink:type="simple">Maynard Smith J (1982) Evolution and the Theory of Games. Cambridge University Press.</mixed-citation>
-  if (title === undefined && elem.name === 'mixed-content') {
+  if (title === undefined && elem.name === 'mixed-citation') {
     title = textOrUndefined(elem)
   }
 
