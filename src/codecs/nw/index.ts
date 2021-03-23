@@ -6,7 +6,7 @@ import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 const latex = new LatexCodec()
 
 export class NwCodec extends Codec implements Codec {
-  public readonly mediaTypes = ['application/x-nw'] // mediaTypes are strings that identify types of content
+  public readonly mediaTypes = ['application/x-nw']
 
   public readonly extNames = ['nw', 'rnw']
 
