@@ -1,11 +1,51 @@
 {
   "type": "Article",
-  "bibliography": {
-    "type": "Paragraph",
-    "content": [
-      "cite-bib-file.bib"
-    ]
-  },
+  "references": [
+    {
+      "type": "Article",
+      "id": "WatsonCrick1953",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Watson"
+          ],
+          "givenNames": [
+            "James D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Crick"
+          ],
+          "givenNames": [
+            "Francis HC"
+          ]
+        },
+        {
+          "type": "Organization",
+          "name": "others"
+        }
+      ],
+      "datePublished": "1953",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Nature"
+          },
+          "volumeNumber": "171"
+        },
+        "issueNumber": "4356"
+      },
+      "pageEnd": "738",
+      "pageStart": "737",
+      "title": "Molecular structure of nucleic acids"
+    }
+  ],
   "content": [
     {
       "type": "Paragraph",

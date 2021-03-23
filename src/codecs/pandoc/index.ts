@@ -19,16 +19,19 @@ import stencila, {
   nodeType,
 } from '@stencila/schema'
 import childProcess from 'child_process'
+import Csl from 'csl-json'
 import { makeBy } from 'fp-ts/lib/Array'
+import path from 'path'
 import tempy from 'tempy'
+import { read } from '../..'
 import { logWarnLossIfAny } from '../../log'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
-import transform, { transformSync } from '../../util/transform'
 import { http } from '../../util/http'
+import transform, { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
-import { encodeCsl } from '../csl'
+import { decodeCsl, encodeCsl } from '../csl'
 import { PngCodec } from '../png'
 import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
@@ -108,7 +111,7 @@ export class PandocCodec extends Codec implements Codec {
 
     const json = await run(contents, args)
     const pdoc = JSON.parse(json)
-    return decodeDocument(await decodeDocumentAsync(pdoc))
+    return decodeDocument(pdoc, path)
   }
 
   /**
@@ -243,34 +246,6 @@ export function run(
 }
 
 /**
- * Do any asynchronous decoding of a Pandoc `Document` before doing
- * synchronous decoding.
- */
-async function decodeDocumentAsync(
-  pdoc: Pandoc.Document
-): Promise<Pandoc.Document> {
-  return transform(pdoc, async (elem) => {
-    if (elem === null || (typeof elem === 'object' && !('t' in elem)))
-      return elem
-
-    const { t } = elem as Pandoc.Block | Pandoc.Inline
-    switch (t) {
-      case 'Image': {
-        const image = decodeImage(elem as Pandoc.Image)
-        // If the image is an rPNG then decode it and return
-        // the embedded node
-        const { contentUrl } = image
-        if (contentUrl) {
-          const node = await rpngCodec.sniffDecode(contentUrl)
-          if (node !== undefined) return node
-        }
-      }
-    }
-    return elem
-  }) as Promise<Pandoc.Document>
-}
-
-/**
  * Do any asynchronous encoding of a Pandoc `Document` before doing
  * synchronous encoding.
  */
@@ -297,9 +272,38 @@ async function encodeDocumentAsync(
 /**
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
-function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
-  const meta = decodeMeta(pdoc.meta)
-  const content = decodeBlocks(pdoc.blocks)
+async function decodeDocument(
+  pdoc: Pandoc.Document,
+  docPath?: string
+): Promise<stencila.Article> {
+  const meta = await decodeMeta(pdoc.meta, docPath)
+
+  /**
+   * Do any asynchronous decoding of a Pandoc `Document` before doing
+   * synchronous decoding.
+   */
+  const blocks = (await transform(pdoc.blocks, async (elem) => {
+    if (elem === null || (typeof elem === 'object' && !('t' in elem)))
+      return elem
+
+    const { t } = elem as Pandoc.Block | Pandoc.Inline
+    switch (t) {
+      case 'Image': {
+        const image = decodeImage(elem as Pandoc.Image)
+        // If the image is an rPNG then decode it and return
+        // the embedded node
+        const { contentUrl } = image
+        if (contentUrl) {
+          const node = await rpngCodec.sniffDecode(contentUrl)
+          if (node !== undefined) return node
+        }
+      }
+    }
+    return elem
+  })) as Pandoc.Document['blocks']
+
+  const content = decodeBlocks(blocks)
+
   return stencila.article({ ...meta, content })
 }
 
@@ -363,14 +367,20 @@ function encodeNode(
  *
  * This function also translates the names / values
  * of Pandoc meta data (e.g. as used in template) to
- * names / values used ib Stencila schema.
+ * names / values used in Stencila schema.
  */
-export function decodeMeta(
-  meta: Pandoc.Meta
-): { [key: string]: stencila.Node } {
-  const { title, author, date, ...rest } = objectMap(meta, (_, value) =>
-    decodeMetaValue(value)
-  )
+export async function decodeMeta(
+  meta: Pandoc.Meta,
+  docPath?: string
+): Promise<Record<string, stencila.Node>> {
+  const {
+    title,
+    author,
+    date,
+    bibliography,
+    references,
+    ...rest
+  } = objectMap(meta, (_, value) => decodeMetaValue(value))
 
   if (title !== undefined) {
     rest.title =
@@ -390,6 +400,22 @@ export function decodeMeta(
   if (date !== undefined) {
     const content = TxtCodec.stringify(date)
     if (content.length > 0) rest.datePublished = content
+  }
+
+  // Pandoc uses the `bibliography` metadata field to refer to an
+  // external file (usually a .bib file) and the `references` metadata
+  // field as "a list of citations in CSL YAML format". This
+  // section deals with both of those cases.
+  if (references !== undefined) {
+    const csl = references as Csl.Data[]
+    rest.references = await Promise.all(csl.map((item) => decodeCsl(item)))
+  } else if (bibliography !== undefined) {
+    const relativePath = TxtCodec.stringify(bibliography)
+    const absolutePath = path.join(
+      docPath !== undefined ? path.dirname(docPath) : '.',
+      relativePath
+    )
+    rest.references = await read(absolutePath)
   }
 
   return rest

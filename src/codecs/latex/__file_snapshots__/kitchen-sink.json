@@ -48,12 +48,108 @@
       ]
     }
   ],
-  "bibliography": [
+  "references": [
     {
-      "type": "Paragraph",
-      "content": [
-        "kitchen-sink.bib"
-      ]
+      "type": "Article",
+      "id": "article1",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Doe"
+          ],
+          "givenNames": [
+            "John"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Doe"
+          ],
+          "givenNames": [
+            "Jane"
+          ]
+        }
+      ],
+      "datePublished": "2100",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Stencila Reproducible Journal"
+          },
+          "volumeNumber": "1"
+        },
+        "issueNumber": "1"
+      },
+      "pageEnd": "2",
+      "pageStart": "1",
+      "title": "We shall make science reproducible"
+    },
+    {
+      "type": "Article",
+      "id": "article2",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Smith"
+          ],
+          "givenNames": [
+            "Paul"
+          ]
+        }
+      ],
+      "datePublished": "2100",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Stencila Reproducible Journal"
+          },
+          "volumeNumber": "1"
+        },
+        "issueNumber": "2"
+      },
+      "pageEnd": "2",
+      "pageStart": "1",
+      "title": "We shall make science reproducible faster"
+    },
+    {
+      "type": "Article",
+      "id": "article3",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Johson"
+          ],
+          "givenNames": [
+            "Mary"
+          ]
+        }
+      ],
+      "datePublished": "2100",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Stencila Reproducible Journal"
+          },
+          "volumeNumber": "1"
+        },
+        "issueNumber": "1"
+      },
+      "pageEnd": "2",
+      "pageStart": "1",
+      "title": "We shall make science reproducible even faster"
     }
   ],
   "title": "A title here",
