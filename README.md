@@ -43,39 +43,149 @@ Encoda provides a collection of codecs for converting between, and composing tog
 
 ## Formats
 
-| Format                      | Codec         | Status | Coverage             |
-| --------------------------- | ------------- | ------ | -------------------- |
-| **Text**                    |
-| Plain text                  | [txt]         | ✔      | ![][txt-cov]         |
-| Markdown                    | [md]          | ✔      | ![][md-cov]          |
-| LaTex                       | [latex]       | α      | ![][latex-cov]       |
-| Microsoft Word              | [docx]        | β      | ![][docx-cov]        |
-| Google Docs                 | [gdoc]        | β      | ![][gdoc-cov]        |
-| Open Document Text          | [odt]         | α      | ![][odt-cov]         |
-| HTML                        | [html]        | ✔      | ![][html-cov]        |
-| JATS XML                    | [jats]        | ✔      | ![][jats-cov]        |
-| JATS XML (Pandoc-based)     | [jats-pandoc] | β      | ![][jats-pandoc-cov] |
-| Portable Document Format    | [pdf]         | β      | ![][pdf-cov]         |
-| **Notebooks**               |
-| Jupyter                     | [ipynb]       | ✔      | ![][ipynb-cov]       |
-| RMarkdown                   | [xmd]         | ✔      | ![][xmd-cov]         |
-| **Spreadsheets**            |
-| Microsoft Excel             | [xlsx]        | β      | ![][xlsx-cov]        |
-| Open Document Spreadsheet   | [ods]         | β      | ![][ods-cov]         |
-| **Tabular data**            |
-| CSV                         | [csv]         | β      | ![][csv-cov]         |
-| Tabular Data Package        | [tdp]         | α      | ![][tdp-cov]         |
-| **Collections**             |
-| Document Archive            | [dar]         | α      | ![][dar-cov]         |
-| Filesystem Directory        | [dir]         | β      | ![][dir-cov]         |
-| **Data interchange, other** |
-| JSON                        | [json]        | ✔      | ![][json-cov]        |
-| JSON-LD                     | [jsonld]      | ✔      | ![][jsonld-cov]      |
-| JSON5                       | [json5]       | ✔      | ![][json5-cov]       |
-| YAML                        | [yaml]        | ✔      | ![][yaml-cov]        |
-| Pandoc                      | [pandoc]      | β      | ![][pandoc-cov]      |
-| Reproducible PNG            | [rpng]        | ✔      | ![][rpng-cov]        |
-| XML                         | [xml]         | ✔      | ![][xml-cov]         |
+As far as possible, Encoda piggybacks on top of existing tools for parsing and serializing documents in various formats. It uses [extensions to schema.org](https://github.com/stencila/schema) as the central data model for all documents and for many formats, it simply transforms the data model of the external tool (e.g. [Pandoc types](https://hackage.haskell.org/package/pandoc-types), [SheetJS spreadsheet model](https://github.com/SheetJS/sheetjs/blob/master/types/index.d.ts)) to that schema ("decoding") and back again ("encoding"). In this sense, you can think of Encoda as a [Rosetta Stone](https://en.wikipedia.org/wiki/Rosetta_Stone) with schema.org at it's centre.
+
+> ⚡ Tip: If a codec for your favorite format is missing below, see if there is already an [issue](https://github.com/stencila/encoda/issues) for it and 👍 or comment. If there is no issue regarding the converter you need, feel free to [create one](https://github.com/stencila/encoda/issues/new).
+
+| Format                       | Codec            | Powered by             | Status | Coverage             |
+| ---------------------------- | ---------------- | ---------------------- | ------ | -------------------- |
+| **Text**                     |
+| Plain text                   | [txt]            | [`toString`][tostring] | ✔      | ![][txt-cov]         |
+| Markdown                     | [md]             | [Remark]               | ✔      | ![][md-cov]          |
+| LaTex                        | [latex]          | [Pandoc]               | α      | ![][latex-cov]       |
+| Microsoft Word               | [docx]           | [Pandoc]               | β      | ![][docx-cov]        |
+| Google Docs                  | [gdoc]           | [`JSON`][json]         | β      | ![][gdoc-cov]        |
+| Open Document Text           | [odt]            | [Pandoc]               | α      | ![][odt-cov]         |
+| HTML                         | [html]           | [jsdom], [hyperscript] | ✔      | ![][html-cov]        |
+| JATS XML                     | [jats]           | [xml-js]               | ✔      | ![][jats-cov]        |
+|                              | [jats-pandoc]    | [Pandoc]               | β      | ![][jats-pandoc-cov] |
+| Portable Document Format     | [pdf]            | [pdf-lib], [Puppeteer] | β      | ![][pdf-cov]         |
+| **Math**                     |
+| TeX                          | [tex]            | [mathconverter]        | ✔      | ![][tex-cov]         |
+| MathML                       | [mathml]         | [MathJax]              | ✔      | ![][mathml-cov]      |
+| **Bibliographic**            |
+| Citation Style Language JSON | [csl]            | [Citation.js]          | ✔      | ![][csl-cov]         |
+| BibTeX                       | [bib]            | [Citation.js]          | ✔      | ![][bib-cov]         |
+| **Notebooks**                |
+| Jupyter                      | [ipynb]          | [`JSON`][json]         | ✔      | ![][ipynb-cov]       |
+| RMarkdown                    | [xmd]            | [Remark]               | ✔      | ![][xmd-cov]         |
+| **Spreadsheets**             |
+| Microsoft Excel              | [xlsx]           | [SheetJS]              | β      | ![][xlsx-cov]        |
+| Open Document Spreadsheet    | [ods]            | [SheetJS]              | β      | ![][ods-cov]         |
+| **Tabular data**             |
+| CSV                          | [csv]            | [SheetJS]              | β      | ![][csv-cov]         |
+| Tabular Data Package         | [tdp]            | [datapackage-js]       | α      | ![][tdp-cov]         |
+| **Collections**              |
+| Filesystem Directory         | [dir]            | [`fs`](fs)             | β      | ![][dir-cov]         |
+| **Data interchange, other**  |
+| JSON                         | [json]           | [`JSON`][json]         | ✔      | ![][json-cov]        |
+| JSON-LD                      | [jsonld]         | [jsonld]               | ✔      | ![][jsonld-cov]      |
+| JSON5                        | [json5]          | [json5]                | ✔      | ![][json5-cov]       |
+| YAML                         | [yaml]           | [js-yaml]              | ✔      | ![][yaml-cov]        |
+| Pandoc                       | [pandoc](pandoc) | [Pandoc]               | ✔      | ![][pandoc-cov]      |
+| Reproducible PNG             | [rpng]           | [Puppeteer]            | ✔      | ![][rpng-cov]        |
+| XML                          | [xml]            | [xml-js]               | ✔      | ![][xml-cov]         |
+
+<!-- Codecs -->
+
+[bib]: src/codecs/bib
+[crossref]: src/codecs/crossref
+[csl]: src/codecs/csl
+[csv]: src/codecs/csv
+[dar]: src/codecs/dar
+[dir]: src/codecs/dir
+[dmagic]: src/codecs/dmagic
+[docx]: src/codecs/docx
+[doi]: src/codecs/doi
+[elife]: src/codecs/elife
+[gdoc]: src/codecs/gdoc
+[html]: src/codecs/html
+[http]: src/codecs/http
+[ipynb]: src/codecs/ipynb
+[jats-pandoc]: src/codecs/jats-pandoc
+[jats]: src/codecs/jats
+[json]: src/codecs/json
+[json5]: src/codecs/json5
+[jsonld]: src/codecs/jsonld
+[latex]: src/codecs/latex
+[mathml]: src/codecs/mathml
+[md]: src/codecs/md
+[ods]: src/codecs/ods
+[odt]: src/codecs/odt
+[orcid]: src/codecs/orcid
+[pdf]: src/codecs/pdf
+[plos]: src/codecs/plos
+[rpng]: src/codecs/rpng
+[tdp]: src/codecs/tdp
+[tex]: src/codecs/tex
+[txt]: src/codecs/txt
+[xlsx]: src/codecs/xlsx
+[xmd]: src/codecs/xmd
+[xml]: src/codecs/xml
+[yaml]: src/codecs/yaml
+
+<!-- Dependencies -->
+
+[citation.js]: https://citation.js.org/
+[datapackage-js]: https://github.com/frictionlessdata/datapackage-js
+[fs]: https://nodejs.org/api/fs.html
+[hyperscript]: https://github.com/hyperhype/hyperscript
+[js-yaml]: https://github.com/nodeca/js-yaml#readme
+[jsdom]: https://github.com/jsdom/jsdom
+[json]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+[json5]: https://json5.org/
+[jsonld]: https://github.com/digitalbazaar/jsonld.js
+[mathconverter]: https://github.com/oerpub/mathconverter
+[mathjax]: https://www.mathjax.org/
+[pandoc]: https://pandoc.org/
+[pdf-lib]: https://pdf-lib.js.org/
+[puppeteer]: https://pptr.dev/
+[remark]: https://remark.js.org/
+[sheetjs]: https://sheetjs.com
+[tostring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+[xml-js]: https://github.com/nashwaan/xml-js#readme
+
+<!-- Coverage -->
+
+[bib-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/bib
+[crossref-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/crossref
+[csl-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csl
+[csv-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv
+[csvy-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csvy
+[dar-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar
+[dir-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir
+[dmagic-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic
+[docx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx
+[doi-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/doi
+[elife-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/elife
+[gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
+[gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
+[html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
+[http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
+[ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
+[jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
+[jats-pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc
+[json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
+[json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
+[jsonld-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld
+[latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
+[mathml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/mathml
+[md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
+[ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
+[odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
+[orcid-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/orcid
+[pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
+[pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
+[plos-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plos
+[pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
+[rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
+[tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
+[tex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tex
+[txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
+[xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
+[xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
+[xml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml
+[yaml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml
 
 **Key**
 
@@ -83,8 +193,6 @@ Encoda provides a collection of codecs for converting between, and composing tog
 - α: Alpha, initial implementation
 - β: Beta, ready for user testing
 - ✔: Ready for production use
-
-If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
 ## Publishers
 
@@ -439,17 +547,17 @@ See the list of [contribution types](https://allcontributors.org/docs/en/emoji-k
 
 Encoda relies on many awesome opens source tools (see `package.json` for the complete list). We are grateful ❤ to their developers and contributors for all their time and energy. In particular, these tools do a lot of the heavy lifting 💪 under the hood.
 
-| Tool                                                                                                               | Use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Ajv](https://ajv.js.org/images/ajv_logo.png)                                                                     | [Ajv](https://ajv.js.org/) is "the fastest JSON Schema validator for Node.js and browser". Ajv is not only fast, it also has an impressive breadth of functionality. We use Ajv for the `validate()` and `coerce()` functions to ensure that ingested data is valid against the Stencila [schema](https://github.com/stencila/schema).                                                                                                                                                                                                                                                                         |
-| ![Citation.js](https://avatars0.githubusercontent.com/u/41587916?s=200&v=4)                                        | [`Citation.js`](https://citation.js.org/) converts bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it to power the codecs for those formats and APIs.                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ![Frictionless Data](https://avatars0.githubusercontent.com/u/5912125?s=200&v=4)                                   | [`datapackage-js`](https://github.com/frictionlessdata/datapackage-js) from the team at [Frictionless Data](https://frictionlessdata.io/) is a Javascript library for working with [Data Packages](https://frictionlessdata.io/specs/data-package/). It does a lot of the work in converting between Tabular Data Packages and Stencila Datatables.                                                                                                                                                                                                                                                            |
-| ![Glitch Digital](https://avatars1.githubusercontent.com/u/16604593?s=200&v=4)                                     | Glitch Digital's [`structured-data-testing-tool`](https://github.com/glitchdigital/structured-data-testing-tool) is a library and command line tool to help inspect and test for Structured Data. We use it to check that the HTML generated by Encoda can be read by bots 🤖                                                                                                                                                                                                                                                                                                                                  |
-| ![Pa11y](https://pa11y.org/resources/brand/logo.svg)                                                               | [Pa11y](https://pa11y.org/) provides a range of free and open source tools to help designers and developers make their web pages more accessible. We use [`pa11y`](https://github.com/pa11y/pa11y) to test that HTML generated produced by Encoda meets the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG20/) and [Axe](https://dequeuniversity.com/rules/axe/3.5) rule set.                                                                                                                                                                                                        |
-| **Pandoc**                                                                                                         | [Pandoc](https://pandoc.org/) is a "universal document converter". It's able to convert between an impressive number of formats for textual documents. Our [Typescript definitions for Pandoc's AST](https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts) allow us to leverage this functionality from within Node.js while maintaining type safety. Pandoc powers our converters for Word, JATS and Latex. We have contributed to Pandoc, including developing its [JATS reader](https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs). |
-| ![Puppeteer](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png) | [Puppeteer](https://pptr.dev/) is a Node library which provides a high-level API to control Chrome. We use it to take screenshots of HTML snippets as part of generating rPNGs and we plan to use it for [generating PDFs](https://github.com/stencila/encoda/issues/53).                                                                                                                                                                                                                                                                                                                                      |
-| ![Remark](https://avatars2.githubusercontent.com/u/16309564?s=200&v=4)                                             | [`Remark`](https://remark.js.org/) is an ecosystem of plugins for processing Markdown. It's part of the [unified](https://unifiedjs.github.io/) framework for processing text with syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as our Markdown parser because of it's extensibility.                                                                                                                                                                                                                                                                                          |
-| ![SheetJs](https://sheetjs.com/sketch128.png)                                                                      | [SheetJs](https://sheetjs.com) is a Javascript library for parsing and writing various spreadsheet formats. We use their [community edition](https://github.com/sheetjs/js-xlsx) to power converters for CSV, Excel, and Open Document Spreadsheet formats. They also have a [pro version](https://sheetjs.com/pro) if you need extra support and functionality.                                                                                                                                                                                                                                               |
+| Tool                                                                                                               | Use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Ajv](https://ajv.js.org/images/ajv_logo.png)                                                                     | [Ajv](https://ajv.js.org/) is "the fastest JSON Schema validator for Node.js and browser". Ajv is not only fast, it also has an impressive breadth of functionality. We use Ajv for the `validate()` and `coerce()` functions to ensure that ingested data is valid against the Stencila [schema](https://github.com/stencila/schema).                                                                                                                                                                                                                                                    |
+| ![Citation.js](https://avatars0.githubusercontent.com/u/41587916?s=200&v=4)                                        | [Citation.js] converts bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it to power the codecs for those formats and APIs.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ![Frictionless Data](https://avatars0.githubusercontent.com/u/5912125?s=200&v=4)                                   | [`datapackage-js`](https://github.com/frictionlessdata/datapackage-js) from the team at [Frictionless Data](https://frictionlessdata.io/) is a Javascript library for working with [Data Packages](https://frictionlessdata.io/specs/data-package/). It does a lot of the work in converting between Tabular Data Packages and Stencila Datatables.                                                                                                                                                                                                                                       |
+| ![Glitch Digital](https://avatars1.githubusercontent.com/u/16604593?s=200&v=4)                                     | Glitch Digital's [`structured-data-testing-tool`](https://github.com/glitchdigital/structured-data-testing-tool) is a library and command line tool to help inspect and test for Structured Data. We use it to check that the HTML generated by Encoda can be read by bots 🤖                                                                                                                                                                                                                                                                                                             |
+| ![Pa11y](https://pa11y.org/resources/brand/logo.svg)                                                               | [Pa11y](https://pa11y.org/) provides a range of free and open source tools to help designers and developers make their web pages more accessible. We use [`pa11y`](https://github.com/pa11y/pa11y) to test that HTML generated produced by Encoda meets the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG20/) and [Axe](https://dequeuniversity.com/rules/axe/3.5) rule set.                                                                                                                                                                                   |
+| **Pandoc**                                                                                                         | [Pandoc] is a "universal document converter". It's able to convert between an impressive number of formats for textual documents. Our [Typescript definitions for Pandoc's AST](https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts) allow us to leverage this functionality from within Node.js while maintaining type safety. Pandoc powers our converters for Word, JATS and Latex. We have contributed to Pandoc, including developing its [JATS reader](https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs). |
+| ![Puppeteer](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png) | [Puppeteer] is a Node library which provides a high-level API to control Chrome. We use it to take screenshots of HTML snippets as part of generating rPNGs and we plan to use it for [generating PDFs](https://github.com/stencila/encoda/issues/53).                                                                                                                                                                                                                                                                                                                                    |
+| ![Remark](https://avatars2.githubusercontent.com/u/16309564?s=200&v=4)                                             | [Remark] is an ecosystem of plugins for processing Markdown. It's part of the [unified](https://unifiedjs.github.io/) framework for processing text with syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as our Markdown parser because of it's extensibility.                                                                                                                                                                                                                                                                                               |
+| ![SheetJs](https://sheetjs.com/sketch128.png)                                                                      | [SheetJs] is a Javascript library for parsing and writing various spreadsheet formats. We use their [community edition](https://github.com/sheetjs/js-xlsx) to power converters for CSV, Excel, and Open Document Spreadsheet formats. They also have a [pro version](https://sheetjs.com/pro) if you need extra support and functionality.                                                                                                                                                                                                                                               |
 
 Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLife](https://elifesciences.org) for funding development of this tool.
 
@@ -457,75 +565,3 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
   <img width="250" src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png">
   <img width="250" src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png">
 </p>
-
-[crossref]: src/codecs/crossref
-[csv]: src/codecs/csv
-[csvy]: src/codecs/csvy
-[dar]: src/codecs/dar
-[dir]: src/codecs/dir
-[dmagic]: src/codecs/dmagic
-[docx]: src/codecs/docx
-[doi]: src/codecs/doi
-[elife]: src/codecs/elife
-[gdoc]: src/codecs/gdoc
-[gsheet]: src/codecs/gsheet
-[html]: src/codecs/html
-[http]: src/codecs/http
-[ipynb]: src/codecs/ipynb
-[jats-pandoc]: src/codecs/jats-pandoc
-[jats]: src/codecs/jats
-[json]: src/codecs/json
-[json5]: src/codecs/json5
-[jsonld]: src/codecs/jsonld
-[latex]: src/codecs/latex
-[md]: src/codecs/md
-[ods]: src/codecs/ods
-[odt]: src/codecs/odt
-[orcid]: src/codecs/orcid
-[pandoc]: src/codecs/pandoc
-[pdf]: src/codecs/pdf
-[plos]: src/codecs/plos
-[pptx]: src/codecs/pptx
-[rpng]: src/codecs/rpng
-[tdp]: src/codecs/tdp
-[txt]: src/codecs/txt
-[xlsx]: src/codecs/xlsx
-[xmd]: src/codecs/xmd
-[xml]: src/codecs/xml
-[yaml]: src/codecs/yaml
-[yaml]: src/codecs/yaml
-[crossref-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/crossref
-[csv-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv
-[csvy-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csvy
-[dar-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar
-[dir-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir
-[dmagic-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic
-[docx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx
-[doi-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/doi
-[elife-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/elife
-[gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
-[gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
-[html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
-[http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
-[ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
-[jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
-[jats-pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc
-[json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
-[json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
-[jsonld-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld
-[latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
-[md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
-[ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
-[odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
-[orcid-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/orcid
-[pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
-[pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
-[plos-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plos
-[pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
-[rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
-[tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
-[txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
-[xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
-[xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
-[xml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml
-[yaml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml
