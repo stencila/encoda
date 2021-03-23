@@ -13,8 +13,9 @@
       ]
     },
     {
-      "type": "CodeBlock",
-      "text": "[language=r exec, id=]\n\nlibrary(ggplot2)\nx <- c(1, 2, 3)\ny <- c(1, 2, 3)\ndf <- as.data.frame(x, y)\n\na.plot <- ggplot(data=df, aes(x=x, y=y)) + geom_line() + theme_classic()\na.plot"
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "\nlibrary(ggplot2)\nx <- c(1, 2, 3)\ny <- c(1, 2, 3)\ndf <- as.data.frame(x, y)\n\na.plot <- ggplot(data=df, aes(x=x, y=y)) + geom_line() + theme_classic()\na.plot"
     },
     {
       "type": "Paragraph",
@@ -25,7 +26,19 @@
     {
       "type": "Paragraph",
       "content": [
-        "We can also try to add 1 to 1 and see that it’s ."
+        "We can also try to add 1 to 1 and see that it’s ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "r",
+          "text": "1.0 + 1.0"
+        },
+        " and ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "r",
+          "text": "2.0"
+        },
+        "."
       ]
     }
   ]

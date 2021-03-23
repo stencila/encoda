@@ -20,7 +20,7 @@ plot(data)
 @
 ```
 
-If the `id` ends with a `\.[a-z]` regex pattern (e.g. `.py`, `.r`) then the letters will be used as the `CodeChunk`'s `programmingLanguage` e.g.
+If the `id` ends with a `\.\w+` regex pattern (e.g. `.py`, `.r`) then the letters will be used as the `CodeChunk`'s `programmingLanguage` e.g.
 
 ```
 <<first.py>>=
@@ -30,7 +30,7 @@ import pandas
 
 For `.Rnw` files all `CodeChunk`s are assumed to have `programmingLanguage: r` unless explicitly overridden.
 
-It is possible to declare that a `CodeChunk` is dependant on another `CodeChunk` e.g.
+In Noweb it is possible to declare that a `CodeChunk` is dependant on another `CodeChunk` e.g.
 
 ```
 <<second.py>>=
@@ -39,7 +39,7 @@ pandas.read_csv('mydata.csv')
 @
 ```
 
-> 💬 Note: Currently, this explicit declaration of a dependency between `CodeChunk`s is stored in the `meta.depends` property by may be promoted to `depends` pending forthcoming work on enabling dependency analysis and reactivity in Stencila documents.
+Currently, this explicit declaration of a dependency between `CodeChunk`s is not supported pending forthcoming work on enabling dependency analysis and reactivity in Stencila documents.
 
 
 ## Installing Noweb

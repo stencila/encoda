@@ -4,13 +4,13 @@
     {
       "type": "Paragraph",
       "content": [
-        "A python script below. We start by adding two separate global variables in two different code chunks:"
+        "We start by adding two separate global variables in two different code chunks:"
       ]
     },
     {
       "type": "CodeChunk",
-      "id": "global\\_variables",
-      "programmingLanguage": "r",
+      "id": "first.py",
+      "programmingLanguage": "py",
       "text": "\na_global_var1 = 1.0"
     },
     {
@@ -21,8 +21,8 @@
     },
     {
       "type": "CodeChunk",
-      "id": "global\\_variables",
-      "programmingLanguage": "r",
+      "id": "second.py",
+      "programmingLanguage": "py",
       "text": "\na_global_var2 = 2.0"
     },
     {
@@ -33,9 +33,9 @@
     },
     {
       "type": "CodeChunk",
-      "id": "full\\_python\\_script.py",
-      "programmingLanguage": "r",
-      "text": "\n<<global\\_variables>>\nprint(\"Let us now print the global variables\")\nprint(a_global_var1)\nprint(a_global_var2)"
+      "id": "third.py",
+      "programmingLanguage": "py",
+      "text": "\nprint(\"Let us now print the global variables\")\nprint(a_global_var1)\nprint(a_global_var2)"
     },
     {
       "type": "Paragraph",
