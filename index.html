@@ -178,16 +178,34 @@
           there are already several tools for that. Instead the focus of Encoda is to use existing
           tools to encode and compose semantic documents in alternative formats.</p>
         <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="formats">Formats</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As far as possible, Encoda
+          piggybacks on top of existing tools for parsing and serializing documents in various
+          formats. It uses <a href="https://github.com/stencila/schema" itemscope=""
+            itemtype="http://schema.stenci.la/Link">extensions to schema.org</a> as the central data
+          model for all documents and for many formats, it simply transforms the data model of the
+          external tool (e.g. <a href="https://hackage.haskell.org/package/pandoc-types"
+            itemscope="" itemtype="http://schema.stenci.la/Link">Pandoc types</a>, <a
+            href="https://github.com/SheetJS/sheetjs/blob/master/types/index.d.ts" itemscope=""
+            itemtype="http://schema.stenci.la/Link">SheetJS spreadsheet model</a>) to that schema
+          (&quot;decoding&quot;) and back again (&quot;encoding&quot;). In this sense, you can think
+          of Encoda as a <a href="https://en.wikipedia.org/wiki/Rosetta_Stone" itemscope=""
+            itemtype="http://schema.stenci.la/Link">Rosetta Stone</a> with schema.org at it&#39;s
+          centre.</p>
+        <blockquote itemscope="" itemtype="http://schema.stenci.la/QuoteBlock">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">⚡ Tip: If a codec for your
+            favorite format is missing below, see if there is already an <a
+              href="https://github.com/stencila/encoda/issues" itemscope=""
+              itemtype="http://schema.stenci.la/Link">issue</a> for it and 👍 or comment. If there
+            is no issue regarding the converter you need, feel free to <a
+              href="https://github.com/stencila/encoda/issues/new" itemscope=""
+              itemtype="http://schema.stenci.la/Link">create one</a>.</p>
+        </blockquote>
         <table itemscope="" itemtype="http://schema.org/Table">
-          <caption>
-            <div itemprop="caption">
-              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Key</p>
-            </div>
-          </caption>
           <thead>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <th itemscope="" itemtype="http://schema.stenci.la/TableCell">Format</th>
               <th itemscope="" itemtype="http://schema.stenci.la/TableCell">Codec</th>
+              <th itemscope="" itemtype="http://schema.stenci.la/TableCell">Powered by</th>
               <th itemscope="" itemtype="http://schema.stenci.la/TableCell">Status</th>
               <th itemscope="" itemtype="http://schema.stenci.la/TableCell">Coverage</th>
             </tr>
@@ -201,6 +219,10 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Plain text</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/txt"
                   itemscope="" itemtype="http://schema.stenci.la/Link">txt</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"
+                  itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                    itemtype="http://schema.stenci.la/CodeFragment">toString</code></a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt"
@@ -210,6 +232,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Markdown</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/md"
                   itemscope="" itemtype="http://schema.stenci.la/Link">md</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://remark.js.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Remark</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md"
@@ -220,6 +245,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/latex" itemscope=""
                   itemtype="http://schema.stenci.la/Link">latex</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pandoc.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Pandoc</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex"
@@ -230,6 +258,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/docx" itemscope=""
                   itemtype="http://schema.stenci.la/Link">docx</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pandoc.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Pandoc</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx"
@@ -240,6 +271,10 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/gdoc" itemscope=""
                   itemtype="http://schema.stenci.la/Link">gdoc</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+                  itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                    itemtype="http://schema.stenci.la/CodeFragment">JSON</code></a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc"
@@ -249,6 +284,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Open Document Text</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/odt"
                   itemscope="" itemtype="http://schema.stenci.la/Link">odt</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pandoc.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Pandoc</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt"
@@ -259,6 +297,11 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/html" itemscope=""
                   itemtype="http://schema.stenci.la/Link">html</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/jsdom/jsdom" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">jsdom</a>, <a
+                  href="https://github.com/hyperhype/hyperscript" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">hyperscript</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html"
@@ -269,17 +312,22 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/jats" itemscope=""
                   itemtype="http://schema.stenci.la/Link">jats</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/nashwaan/xml-js#readme" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">xml-js</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats"
                   alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JATS XML (Pandoc-based)
-              </td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/jats-pandoc" itemscope=""
                   itemtype="http://schema.stenci.la/Link">jats-pandoc</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pandoc.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Pandoc</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc"
@@ -290,9 +338,71 @@
               </td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pdf"
                   itemscope="" itemtype="http://schema.stenci.la/Link">pdf</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pdf-lib.js.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">pdf-lib</a>, <a href="https://pptr.dev/"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">Puppeteer</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf"
+                  alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                  itemtype="http://schema.stenci.la/Strong">Math</strong></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">TeX</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/tex"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">tex</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/oerpub/mathconverter" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">mathconverter</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                  src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tex"
+                  alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">MathML</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="src/codecs/mathml" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">mathml</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://www.mathjax.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">MathJax</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                  src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/mathml"
+                  alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                  itemtype="http://schema.stenci.la/Strong">Bibliographic</strong></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Citation Style Language
+                JSON</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csl"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">csl</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://citation.js.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Citation.js</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                  src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csl"
+                  alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            </tr>
+            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">BibTeX</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/bib"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">bib</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://citation.js.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Citation.js</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                  src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/bib"
                   alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
@@ -304,6 +414,10 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/ipynb" itemscope=""
                   itemtype="http://schema.stenci.la/Link">ipynb</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+                  itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                    itemtype="http://schema.stenci.la/CodeFragment">JSON</code></a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb"
@@ -313,6 +427,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">RMarkdown</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xmd"
                   itemscope="" itemtype="http://schema.stenci.la/Link">xmd</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://remark.js.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Remark</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd"
@@ -327,6 +444,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/xlsx" itemscope=""
                   itemtype="http://schema.stenci.la/Link">xlsx</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://sheetjs.com" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">SheetJS</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx"
@@ -337,6 +457,9 @@
                 Spreadsheet</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/ods"
                   itemscope="" itemtype="http://schema.stenci.la/Link">ods</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://sheetjs.com" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">SheetJS</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods"
@@ -350,6 +473,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">CSV</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csv"
                   itemscope="" itemtype="http://schema.stenci.la/Link">csv</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://sheetjs.com" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">SheetJS</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv"
@@ -360,6 +486,9 @@
               </td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/tdp"
                   itemscope="" itemtype="http://schema.stenci.la/Link">tdp</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/frictionlessdata/datapackage-js" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">datapackage-js</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp"
@@ -370,19 +499,13 @@
                   itemtype="http://schema.stenci.la/Strong">Collections</strong></td>
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Document Archive</td>
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dar"
-                  itemscope="" itemtype="http://schema.stenci.la/Link">dar</a></td>
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-                  src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar"
-                  alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
-            </tr>
-            <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Filesystem Directory
               </td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dir"
                   itemscope="" itemtype="http://schema.stenci.la/Link">dir</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="fs"
+                  itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                    itemtype="http://schema.stenci.la/CodeFragment">fs</code></a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir"
@@ -395,8 +518,12 @@
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-                  href="src/codecs/json" itemscope=""
-                  itemtype="http://schema.stenci.la/Link">json</a></td>
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">json</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+                  itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                    itemtype="http://schema.stenci.la/CodeFragment">JSON</code></a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json"
@@ -405,7 +532,10 @@
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON-LD</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-                  href="src/codecs/jsonld" itemscope=""
+                  href="https://github.com/digitalbazaar/jsonld.js" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">jsonld</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/digitalbazaar/jsonld.js" itemscope=""
                   itemtype="http://schema.stenci.la/Link">jsonld</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
@@ -415,7 +545,10 @@
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON5</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-                  href="src/codecs/json5" itemscope=""
+                  href="https://json5.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">json5</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://json5.org/" itemscope=""
                   itemtype="http://schema.stenci.la/Link">json5</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
@@ -427,6 +560,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/yaml" itemscope=""
                   itemtype="http://schema.stenci.la/Link">yaml</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/nodeca/js-yaml#readme" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">js-yaml</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml"
@@ -434,10 +570,12 @@
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Pandoc</td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="pandoc"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">pandoc</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-                  href="src/codecs/pandoc" itemscope=""
-                  itemtype="http://schema.stenci.la/Link">pandoc</a></td>
-              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+                  href="https://pandoc.org/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Pandoc</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc"
                   alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
@@ -447,6 +585,9 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="src/codecs/rpng" itemscope=""
                   itemtype="http://schema.stenci.la/Link">rpng</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://pptr.dev/" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Puppeteer</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng"
@@ -456,13 +597,19 @@
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">XML</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xml"
                   itemscope="" itemtype="http://schema.stenci.la/Link">xml</a></td>
+              <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                  href="https://github.com/nashwaan/xml-js#readme" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">xml-js</a></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
                   src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml"
                   alt="" itemscope="" itemtype="http://schema.org/ImageObject"></td>
             </tr>
           </tbody>
-        </table>
+        </table><span data-itemtype="http://schema.stenci.la/Null">null</span><span
+          data-itemtype="http://schema.stenci.la/Null">null</span><span
+          data-itemtype="http://schema.stenci.la/Null">null</span>
+        <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="key">Key</h2>
         <ul itemscope="" itemtype="http://schema.org/ItemList">
           <li itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
             <meta itemprop="position" content="1">
@@ -481,13 +628,6 @@
             <meta itemprop="url" content="#4">✔: Ready for production use
           </li>
         </ul>
-        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If you&#39;d like to see a
-          converter for your favorite format, look at the <a
-            href="https://github.com/stencila/encoda/issues" itemscope=""
-            itemtype="http://schema.stenci.la/Link">listed issues</a> and comment under the relevant
-          one. If there is no issue regarding the converter you need, <a
-            href="https://github.com/stencila/encoda/issues/new" itemscope=""
-            itemtype="http://schema.stenci.la/Link">create one</a>.</p>
         <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="publishers">Publishers</h3>
         <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Several of the codecs in
           Encoda, deal with fetching content from a particular publisher. For example, to get an
@@ -1101,10 +1241,9 @@ npx jest src/codecs/elife/ --testTimeout 30000</code></pre>
                   alt="Citation.js" itemscope="" itemtype="http://schema.org/ImageObject"></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="https://citation.js.org/" itemscope=""
-                  itemtype="http://schema.stenci.la/Link"><code itemscope=""
-                    itemtype="http://schema.stenci.la/CodeFragment">Citation.js</code></a> converts
-                bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it
-                to power the codecs for those formats and APIs.</td>
+                  itemtype="http://schema.stenci.la/Link">Citation.js</a> converts bibliographic
+                formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it to power the
+                codecs for those formats and APIs.</td>
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
@@ -1183,13 +1322,11 @@ npx jest src/codecs/elife/ --testTimeout 30000</code></pre>
                   itemscope="" itemtype="http://schema.org/ImageObject"></td>
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
                   href="https://remark.js.org/" itemscope=""
-                  itemtype="http://schema.stenci.la/Link"><code itemscope=""
-                    itemtype="http://schema.stenci.la/CodeFragment">Remark</code></a> is an
-                ecosystem of plugins for processing Markdown. It&#39;s part of the <a
-                  href="https://unifiedjs.github.io/" itemscope=""
-                  itemtype="http://schema.stenci.la/Link">unified</a> framework for processing text
-                with syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as
-                our Markdown parser because of it&#39;s extensibility.</td>
+                  itemtype="http://schema.stenci.la/Link">Remark</a> is an ecosystem of plugins for
+                processing Markdown. It&#39;s part of the <a href="https://unifiedjs.github.io/"
+                  itemscope="" itemtype="http://schema.stenci.la/Link">unified</a> framework for
+                processing text with syntax trees - a similar approach to Pandoc but in Javascript.
+                We use Remark as our Markdown parser because of it&#39;s extensibility.</td>
             </tr>
             <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
               <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
