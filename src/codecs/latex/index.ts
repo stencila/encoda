@@ -105,10 +105,12 @@ async function decodeCodeBlock(
   const id = meta?.id as string
   delete meta?.id
 
-  let caption: schema.CodeChunk['caption'] = meta?.caption as string
-  if (typeof caption === 'string') {
-    const article = (await new LatexCodec().load(caption)) as schema.Article
-    caption = article?.content?.[0] as schema.CodeChunk['caption']
+  let caption
+  if (typeof meta?.caption === 'string') {
+    const article = (await new LatexCodec().load(
+      meta?.caption
+    )) as schema.Article
+    caption = article?.content
   }
   delete meta?.caption
 
