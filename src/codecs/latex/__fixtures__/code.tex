@@ -36,25 +36,32 @@ console.log(foo)
 % want to find was to represent them in LaTeX using modifications of
 % syntaxes that Pandoc already knows about.
 
-% A `CodeExpression' could be represented by adding `exec` to
+% A `CodeExpression' can be represented by adding `exec` to
 % the `\lstinline` language. It would be preferable to use a comma between them
 % (i.e. a different Pandoc "attr" on the element) but at the time of writing
 % Pandoc only seems to pass `language` and not other attributes
 An evaluated Python expression \lstinline[language=python exec]{pow(2,2)}.
 
-% A `CodeChunk' could be represented by adding the `exec` class
+% A `CodeChunk' can be represented by adding the `exec` class
 % to `\lstlisting` language.
 % In this case, Pandoc v2.12 does parse "exec" as a separate attribute on the
-% element (in contrast to lstinline) but for consistency we don't use the comma here.
+% element (in contrast to lstinline) but for consistency allow for the use of
+% the comma here.
 \begin{lstlisting}[language=r exec]
 plot(y~x, data)
+\end{lstlisting}
+
+% For \lstlisting, Pandoc v2.12 does parse ", exec" as a separate attribute on the
+% element (in contrast to lstinline) so we allow for that too.
+\begin{lstlisting}[language=r, exec]
+head(mtcars)
 \end{lstlisting}
 
 % A `CodeChunk` with `id` and `caption` properties can be represented
 % using a lstlisting as well (but might require a second parsing of the
 % caption string)
-\begin{lstlisting}[language=r exec, caption={
-    A plot of the data which hasd a mean of \lstinline[language=r exec]{ mean(data) }
+\begin{lstlisting}[language=r, exec, caption={
+    A plot of the data which has a mean of \lstinline[language=r exec]{ mean(data) }
 }, label=fig2]
 plot(data)
 \end{lstlisting}

@@ -38,7 +38,7 @@
       "content": [
         "An evaluated Python expression ",
         {
-          "type": "CodeFragment",
+          "type": "CodeExpression",
           "programmingLanguage": "python",
           "text": "pow(2,2)"
         },
@@ -46,14 +46,34 @@
       ]
     },
     {
-      "type": "CodeBlock",
+      "type": "CodeChunk",
       "programmingLanguage": "r",
       "text": "plot(y~x, data)"
     },
     {
-      "type": "CodeBlock",
+      "type": "CodeChunk",
       "programmingLanguage": "r",
-      "text": "plot(data)"
+      "text": "head(mtcars)"
+    },
+    {
+      "type": "CodeChunk",
+      "id": "fig2",
+      "caption": {
+        "type": "Paragraph",
+        "content": [
+          "A plot of the data which has a mean of ",
+          {
+            "type": "CodeExpression",
+            "programmingLanguage": "r",
+            "text": " mean(data) "
+          }
+        ]
+      },
+      "programmingLanguage": "r",
+      "text": "plot(data)",
+      "meta": {
+        "label": "fig2"
+      }
     }
   ]
 }

@@ -676,16 +676,19 @@ function encodeQuoteBlock(node: stencila.QuoteBlock): Pandoc.BlockQuote {
  * Decode a Pandoc `CodeBlock` to a Stencila `CodeBlock`.
  */
 function decodeCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
-  const codeblock: stencila.CodeBlock = {
-    type: 'CodeBlock',
-    text: node.c[1],
-  }
+  let programmingLanguage
+  let meta
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
-    const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-    if (language) codeblock.programmingLanguage = language
+    const { language, classes, ...rest } = attrs
+    if (language) programmingLanguage = language
+    else if (classes) programmingLanguage = classes
+    meta = Object.keys(rest).length > 0 ? rest : undefined
   }
-  return codeblock
+
+  const text = node.c[1]
+
+  return stencila.codeBlock({ text, programmingLanguage, meta })
 }
 
 /**
@@ -1366,13 +1369,19 @@ function encodeQuote(node: stencila.Quote): Pandoc.Quoted {
  * Decode a Pandoc `Code` element to a Stencila `CodeFragment` node.
  */
 function decodeCode(node: Pandoc.Code): stencila.CodeFragment {
-  const code = stencila.codeFragment({ text: node.c[1] })
+  let programmingLanguage
+  let meta
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
-    const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-    if (language) code.programmingLanguage = language
+    const { language, classes, ...rest } = attrs
+    if (language) programmingLanguage = language
+    else if (classes) programmingLanguage = classes
+    meta = Object.keys(rest).length > 0 ? rest : undefined
   }
-  return code
+
+  const text = node.c[1]
+
+  return stencila.codeFragment({ text, programmingLanguage, meta })
 }
 
 /**
