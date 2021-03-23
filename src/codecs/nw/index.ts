@@ -44,11 +44,11 @@ export class NwCodec extends Codec implements Codec {
 export function decodeCodeChunk(nw: string, defaultLanguage?: string): string {
   return nw.replace(
     /<<(.*?)>>=((.|\r|\n)*?)\r?\n@\n/g,
-    (_match, opts: string, text: string) => {
+    (_match, opts: string | undefined, text: string) => {
       const options = opts?.split(/\s*,\s*/)
 
       let id: string | undefined
-      if (options && options.length > 1) {
+      if (options !== undefined && options.length > 1) {
         id = options[0]
       } else {
         id = opts

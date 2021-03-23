@@ -61,12 +61,12 @@ export function convertCommands(
 ): string {
   return latex.replace(
     /\\(S?expr|py)(\[(.*?)\])?{(.*?)}/g,
-    (_match, cmd: string, _opts, opts: string, text: string) => {
+    (_match, cmd: string, _opts, opts: string | undefined, text: string) => {
       let language =
         cmd === 'Sexpr' ? 'r' : cmd === 'py' ? 'py' : defaultLanguage
 
       // An explicit language option overrides the above
-      if (opts) {
+      if (opts !== undefined) {
         const match = /language\s*=\s*(\w+)/.exec(opts)
         if (match) {
           language = match[1]
