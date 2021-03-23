@@ -1,3 +1,27 @@
+# [0.110.0](https://github.com/stencila/encoda/compare/v0.109.5...v0.110.0) (2021-03-23)
+
+
+### Bug Fixes
+
+* **Cite:** Use citationPrefix and citationSuffix ([926e498](https://github.com/stencila/encoda/commit/926e49821c3a028478e1a34b3954823be5addfd7))
+* **Cite:** Use correct microdata attribute name for prefix and suffix ([07cb26a](https://github.com/stencila/encoda/commit/07cb26ab0d85b2d28fb0dccd5e37d43701dc8446))
+* **dependencies:** update dependency @stencila/thema to ^2.23.0 ([e30851d](https://github.com/stencila/encoda/commit/e30851ddecde4b2d39df68e3e9d3809f11214d1e))
+* **dependencies:** update dependency globby to ^11.0.3 ([206ba85](https://github.com/stencila/encoda/commit/206ba85d1f11ebdabfac2699cc2f230a9c41aa63))
+* **HTML:** Use correct property when decoding ([5cf9bfd](https://github.com/stencila/encoda/commit/5cf9bfdb3af9f197327c5b91cd01d51dd37a9abf))
+* **JATS:** Add encodeCiteGroup and use citationMode ([bae5ef4](https://github.com/stencila/encoda/commit/bae5ef4098a0b1730fe1a85f167866699479168f))
+* **Markdown:** Decoding of parenthetical citations ([d9aa005](https://github.com/stencila/encoda/commit/d9aa0059dca58f476bfe7fc6240cfdd093dad537))
+* **Markdown:** Properly locate and eat characters ([8619ded](https://github.com/stencila/encoda/commit/8619dede4fdec581c6b154d8018a23896de90cc7))
+* **Markdown:** Respect citationMode when encoding Cite nodes ([1a0d84f](https://github.com/stencila/encoda/commit/1a0d84fefde4cb7414d5032b9261db2e07166c5c))
+* **Markdown:** Separate parsing of narrative and parenthetical citations ([de559a5](https://github.com/stencila/encoda/commit/de559a523ee2691eadb17083e64d85c5e2c18a2a))
+* **Pandoc:** Use new citation modes ([865f976](https://github.com/stencila/encoda/commit/865f976749935eaa189ef528e86b9a67aac4e708))
+* **Reshape:** Consider citationMode when grouping ([d8d1640](https://github.com/stencila/encoda/commit/d8d1640f950a426a87efbf1d068ee8f861433cf7))
+
+
+### Features
+
+* **HTML:** Encode citationMode for Cite nodes ([a7ace78](https://github.com/stencila/encoda/commit/a7ace78e6ea28e0c51aecee16f06fc868225a0cc))
+* **HTML:** Separate authors from years ([5b6abe8](https://github.com/stencila/encoda/commit/5b6abe8e4545d8df2f1673e80014ff04c02536fe))
+
 ## [0.109.5](https://github.com/stencila/encoda/compare/v0.109.4...v0.109.5) (2021-03-19)
 
 
