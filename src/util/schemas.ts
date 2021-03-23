@@ -7,7 +7,7 @@
  * that effort.
  */
 
-import stencila, { JsonSchema } from '@stencila/schema'
+import stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
 import fs from 'fs-extra'
