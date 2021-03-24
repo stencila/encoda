@@ -8,12 +8,12 @@
       "title": [
         {
           "type": "Link",
-          "target": "https://github.com/stencila/encoda/compare/v0.108.0...v0.109.0",
+          "target": "https://github.com/stencila/encoda/compare/v0.109.5...v0.110.0",
           "content": [
-            "0.109.0"
+            "0.110.0"
           ]
         },
-        " (2021-03-05)"
+        " (2021-03-23)"
       ],
       "meta": {
         "depth": 0
@@ -331,6 +331,21 @@
                   "type": "Article",
                   "name": "README",
                   "title": "Markdown",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "nw",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "Noweb codec",
                   "meta": {
                     "depth": 3,
                     "main": true
