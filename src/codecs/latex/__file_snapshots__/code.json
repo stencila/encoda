@@ -101,17 +101,19 @@
     {
       "type": "CodeChunk",
       "id": "fig2",
-      "caption": {
-        "type": "Paragraph",
-        "content": [
-          "A plot of the data which has a mean of ",
-          {
-            "type": "CodeExpression",
-            "programmingLanguage": "r",
-            "text": " mean(data) "
-          }
-        ]
-      },
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A plot of the data which has a mean of ",
+            {
+              "type": "CodeExpression",
+              "programmingLanguage": "r",
+              "text": " mean(data) "
+            }
+          ]
+        }
+      ],
       "programmingLanguage": "r",
       "text": "plot(data)",
       "meta": {
