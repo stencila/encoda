@@ -2125,14 +2125,18 @@ function decodeMath(
     const image = decodeGraphic(graphic, inline)
     return inline ? image : [stencila.paragraph({ content: image })]
   }
-  const equationId = attr(formula, 'id') ?? ''
-  const altText = attr(mathml, 'alttext') ?? ''
+
+  const id = attrOrUndefined(formula, 'id')
+
+  const altText = attrOrUndefined(mathml, 'alttext')
+  const meta = altText !== undefined ? { altText } : undefined
+
   // Wrapper is needed to dump the entire math element
   const text = xml.dump(elem('wrapper', mathml))
   return [
     (inline ? stencila.mathFragment : stencila.mathBlock)({
-      id: equationId,
-      meta: { altText: altText },
+      id,
+      meta,
       mathLanguage: 'mathml',
       text,
     }),
