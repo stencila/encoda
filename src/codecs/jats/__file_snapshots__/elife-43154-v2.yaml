@@ -2044,6 +2044,7 @@ content:
           width="thinmathspace"/><mml:mn>0.24</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mstyle></mml:math>
       - ' then by the law of total probability:'
   - type: MathBlock
+    id: equ1
     mathLanguage: mathml
     text: >-
       <mml:math id="m1"><mml:mstyle displaystyle="true"
