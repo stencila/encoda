@@ -3296,6 +3296,7 @@ content:
     content:
       - 'Patient data are denoted '
       - type: MathFragment
+        id: pmed.1002858.e001
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -3442,6 +3443,7 @@ content:
     content:
       - 'This model fit estimates the set of parameters '
       - type: MathFragment
+        id: pmed.1002858.e002
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M2"><mml:mrow><mml:msub><mml:mover
@@ -3457,6 +3459,7 @@ content:
     content:
       - 'In a second stage, the sets of parameters '
       - type: MathFragment
+        id: pmed.1002858.e003
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -3470,6 +3473,7 @@ content:
           - '30'
       - ']) and obtain a global estimate '
       - type: MathFragment
+        id: pmed.1002858.e004
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M4"><mml:mover accent="true"><mml:mi
@@ -3479,6 +3483,7 @@ content:
     content:
       - 'The global estimate '
       - type: MathFragment
+        id: pmed.1002858.e005
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M5"><mml:mover accent="true"><mml:mi

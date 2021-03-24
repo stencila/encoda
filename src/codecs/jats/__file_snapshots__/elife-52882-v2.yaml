@@ -5883,6 +5883,7 @@ content:
           id="inf187"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' in the form:'
   - type: MathBlock
+    id: equ1
     mathLanguage: mathml
     text: >-
       <mml:math
@@ -5893,6 +5894,7 @@ content:
     content:
       - using
   - type: MathBlock
+    id: equ2
     mathLanguage: mathml
     text: >-
       <mml:math
@@ -5907,6 +5909,7 @@ content:
     content:
       - and
   - type: MathBlock
+    id: equ3
     mathLanguage: mathml
     text: >-
       <mml:math
@@ -5915,6 +5918,7 @@ content:
     content:
       - with
   - type: MathBlock
+    id: equ4
     mathLanguage: mathml
     text: >-
       <mml:math

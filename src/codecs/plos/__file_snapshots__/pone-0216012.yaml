@@ -4311,6 +4311,7 @@ content:
       - |
         ]:
   - type: MathBlock
+    id: pone.0216012.e001
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M1"><mml:mtable
@@ -4403,6 +4404,7 @@ content:
       - |2
          is governed by the hydraulic analogue of Ohm’s law
   - type: MathBlock
+    id: pone.0216012.e002
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M2"><mml:mtable
@@ -6113,6 +6115,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e003
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6145,6 +6148,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e004
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6173,6 +6177,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e005
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6200,6 +6205,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e006
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6478,6 +6484,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e007
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6491,6 +6498,7 @@ content:
                   - 'n'
               - ' = 1, 2, 3, 4, with '
               - type: MathFragment
+                id: pone.0216012.e008
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M8"><mml:mrow><mml:msub><mml:mi
@@ -6502,6 +6510,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e009
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6518,6 +6527,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e010
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6534,6 +6544,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e011
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6723,6 +6734,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e012
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6736,6 +6748,7 @@ content:
                   - 'n'
               - ' = 1, 2, 3, 4, with '
               - type: MathFragment
+                id: pone.0216012.e013
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6748,6 +6761,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e014
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -6764,6 +6778,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e015
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -7663,6 +7678,7 @@ content:
         along each single vessel. This leads to the following expression for a
         generic resistance of each component of the circuit
   - type: MathBlock
+    id: pone.0216012.e016
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M16"><mml:mtable
@@ -7678,12 +7694,14 @@ content:
 
         where 
       - type: MathFragment
+        id: pone.0216012.e017
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M17"><mml:mi
           mathvariant="script">A</mml:mi></mml:math>
       - ' is the representative cross-sectional area of the compartment, '
       - type: MathFragment
+        id: pone.0216012.e018
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M18"><mml:mi
@@ -7715,12 +7733,14 @@ content:
           - ρ
       - '. In the case of a single vessel, '
       - type: MathFragment
+        id: pone.0216012.e019
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M19"><mml:mi
           mathvariant="script">A</mml:mi></mml:math>
       - ' and '
       - type: MathFragment
+        id: pone.0216012.e020
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M20"><mml:mi
@@ -7784,6 +7804,7 @@ content:
       - |2
          we then write
   - type: MathBlock
+    id: pone.0216012.e021
     mathLanguage: mathml
     text: >-
       <mml:math display="block"
@@ -7800,6 +7821,7 @@ content:
 
         where,
   - type: MathBlock
+    id: pone.0216012.e022
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M22"><mml:mtable
@@ -7964,6 +7986,7 @@ content:
         introducing appropriate functional expressions relating changes in the
         representative cross-sectional area 
       - type: MathFragment
+        id: pone.0216012.e023
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M23"><mml:mi
@@ -9806,6 +9829,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e024
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M24"><mml:msub><mml:mi
@@ -9926,6 +9950,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e025
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M25"><mml:msub><mml:mi
@@ -9998,6 +10023,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e026
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -10021,6 +10047,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e027
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M27"><mml:msub><mml:mi
@@ -10041,6 +10068,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e028
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M28"><mml:msub><mml:mi
@@ -10061,6 +10089,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e029
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M29"><mml:msub><mml:mi
@@ -10265,6 +10294,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e030
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M30"><mml:msub><mml:mi
@@ -10287,6 +10317,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e031
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M31"><mml:msub><mml:mi
@@ -10307,6 +10338,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e032
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M32"><mml:msub><mml:mi
@@ -10327,6 +10359,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e033
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline"
@@ -10350,6 +10383,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e034
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M34"><mml:msub><mml:mi
@@ -10604,6 +10638,7 @@ content:
           - type: TableCell
             content:
               - type: MathFragment
+                id: pone.0216012.e035
                 mathLanguage: mathml
                 text: >-
                   <mml:math display="inline" id="M35"><mml:msub><mml:mi
@@ -11037,6 +11072,7 @@ content:
           - Reference values for blood flow rates in the eye
       - '. A reference value of '
       - type: MathFragment
+        id: pone.0216012.e036
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M36"><mml:mrow><mml:msub><mml:mover
@@ -11060,6 +11096,7 @@ content:
           - '75'
       - ']. Similarly, a reference value of '
       - type: MathFragment
+        id: pone.0216012.e037
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M37"><mml:mrow><mml:msub><mml:mover
@@ -11086,6 +11123,7 @@ content:
         obvious due to the lack of experimental measurements. Here we choose a
         value of 
       - type: MathFragment
+        id: pone.0216012.e038
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M38"><mml:mrow><mml:msub><mml:mover
@@ -11111,6 +11149,7 @@ content:
           - Reference values for blood pressures in the eye
       - '. A reference value of '
       - type: MathFragment
+        id: pone.0216012.e039
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11130,6 +11169,7 @@ content:
           - '80'
       - '], this value can be estimated as '
       - type: MathFragment
+        id: pone.0216012.e040
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11138,12 +11178,14 @@ content:
           width="0.166667em"/><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', where '
       - type: MathFragment
+        id: pone.0216012.e041
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
           id="M41"><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' is the reference value for the mean arterial pressure defined as '
       - type: MathFragment
+        id: pone.0216012.e042
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11153,18 +11195,21 @@ content:
           width="0.166667em"/><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', with '
       - type: MathFragment
+        id: pone.0216012.e043
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
           id="M43"><mml:mover><mml:mtext>SBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' and '
       - type: MathFragment
+        id: pone.0216012.e044
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
           id="M44"><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' denoting the reference values for systolic and diastolic blood pressures, here set at 120 mmHg and 80 mmHg, respectively. A reference value of '
       - type: MathFragment
+        id: pone.0216012.e045
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11192,6 +11237,7 @@ content:
           - '25'
       - ']. Reference values of '
       - type: MathFragment
+        id: pone.0216012.e046
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11199,6 +11245,7 @@ content:
           =</mml:mo><mml:mn>60</mml:mn></mml:mrow></mml:math>
       - ' mmHg and '
       - type: MathFragment
+        id: pone.0216012.e047
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -11283,6 +11330,7 @@ content:
         as follows. Let the blood volumes in the venous segments of retinal
         ciliary body and choroidal circulations be defined as 
       - type: MathFragment
+        id: pone.0216012.e048
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M48"><mml:mrow><mml:msub><mml:mi
@@ -11311,6 +11359,7 @@ content:
         ciliary body (res. choroidal) venous segment is that same as the ratio
         between the corresponding flow rates, namely
   - type: MathBlock
+    id: pone.0216012.e049
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M49"><mml:mtable
@@ -11328,6 +11377,7 @@ content:
 
         Then it follows that
   - type: MathBlock
+    id: pone.0216012.e050
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M50"><mml:mtable
@@ -11345,6 +11395,7 @@ content:
 
         which implies that
   - type: MathBlock
+    id: pone.0216012.e051
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M51"><mml:mtable
@@ -12504,6 +12555,7 @@ content:
     content:
       - 'The value of '
       - type: MathFragment
+        id: pone.0216012.e052
         mathLanguage: mathml
         text: >-
           <mml:math display="inline" id="M52"><mml:msub><mml:mi
@@ -12522,6 +12574,7 @@ content:
           - ch
       - ', is computed imposing that, when '
       - type: MathFragment
+        id: pone.0216012.e053
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -12529,6 +12582,7 @@ content:
           =</mml:mo><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mover><mml:mrow><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mi>P</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', with '
       - type: MathFragment
+        id: pone.0216012.e054
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -12536,6 +12590,7 @@ content:
           =</mml:mo><mml:mn>15</mml:mn></mml:mrow></mml:math>
       - ' mmHg, the value of the resistance in the Starling model equals the value of '
       - type: MathFragment
+        id: pone.0216012.e055
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -13012,6 +13067,7 @@ content:
               - c
       - ', in the range '
       - type: MathFragment
+        id: pone.0216012.e056
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
@@ -13020,6 +13076,7 @@ content:
           width="4.pt"/><mml:mtext>mmHg</mml:mtext></mml:mrow></mml:math>
       - ' and, for '
       - type: MathFragment
+        id: pone.0216012.e057
         mathLanguage: mathml
         text: >-
           <mml:math display="inline"
