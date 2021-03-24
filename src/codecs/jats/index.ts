@@ -2109,15 +2109,15 @@ function decodeSupplementaryMaterial(
  * Decode a JATS `<inline-formula>` or `<disp-formula>` element to a
  * Stencila `MathFragment`, `MathBlock` or `ImageObject` node.
  *
- * This function preferentially uses `<mml:math>` but, if that is
- * not available, uses an image as an alternative (which is wrapped in
- * a paragraph for display formulas).
+ * This function preferentially uses `<mml:math>` or `<m:math>` but, if
+ * that is not available, uses an image as an alternative (which is wrapped
+ * in a paragraph for display formulas).
  */
 function decodeMath(
   formula: xml.Element
 ): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
-  const mathml = first(formula, 'mml:math')
+  const mathml = first(formula, 'mml:math') || first(formula, 'm:math')
 
   if (mathml === null) {
     const graphic = first(formula, ['graphic', 'inline-graphic'])
