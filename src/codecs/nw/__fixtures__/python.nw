@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{noweb}
+\begin{document}
+
+We start by adding two separate global variables in two different code chunks:
+
+<<first.py>>=
+a_global_var1 = 1.0
+@
+
+and now the second:
+
+<<second.py>>=
+a_global_var2 = 2.0
+@
+
+Note that the name of the code chunks above was the same:
+
+<<third.py>>=
+print("Let us now print the global variables")
+print(a_global_var1)
+print(a_global_var2)
+@
+
+\noindent and that's it.
+
+\end{document}

@@ -1,0 +1,45 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "This is some ",
+        {
+          "type": "CodeFragment",
+          "text": "R"
+        },
+        " code."
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "\nlibrary(ggplot2)\nx <- c(1, 2, 3)\ny <- c(1, 2, 3)\ndf <- as.data.frame(x, y)\n\na.plot <- ggplot(data=df, aes(x=x, y=y)) + geom_line() + theme_classic()\na.plot"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "and that’s it."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We can also try to add 1 to 1 and see that it’s ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "r",
+          "text": "1.0 + 1.0"
+        },
+        " and ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "r",
+          "text": "2.0"
+        },
+        "."
+      ]
+    }
+  ]
+}

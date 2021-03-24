@@ -1,43 +1,55 @@
 {
   "type": "Article",
-  "bibliography": [
+  "references": [
     {
-      "author": [
-        {
-          "family": {
-            "type": "Paragraph",
-            "content": [
-              "Watson"
-            ]
-          },
-          "given": {
-            "type": "Paragraph",
-            "content": [
-              "J. D."
-            ]
-          }
-        },
-        {
-          "family": {
-            "type": "Paragraph",
-            "content": [
-              "Crick"
-            ]
-          },
-          "given": {
-            "type": "Paragraph",
-            "content": [
-              "F. H. C."
-            ]
-          }
-        }
-      ],
+      "type": "CreativeWork",
       "id": {
         "type": "Paragraph",
         "content": [
           "WatsonCrick1953"
         ]
-      }
+      },
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            {
+              "type": "Paragraph",
+              "content": [
+                "Watson"
+              ]
+            }
+          ],
+          "givenNames": [
+            {
+              "type": "Paragraph",
+              "content": [
+                "J. D."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            {
+              "type": "Paragraph",
+              "content": [
+                "Crick"
+              ]
+            }
+          ],
+          "givenNames": [
+            {
+              "type": "Paragraph",
+              "content": [
+                "F. H. C."
+              ]
+            }
+          ]
+        }
+      ],
+      "title": ""
     }
   ],
   "content": [

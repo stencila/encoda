@@ -192,10 +192,6 @@ const kitchenSink: testCase = {
           },
         ],
       },
-      references: {
-        t: 'MetaList',
-        c: [],
-      },
     },
     blocks: [
       {
@@ -316,7 +312,6 @@ const kitchenSink: testCase = {
         familyNames: ['Jones'],
       },
     ],
-    references: [],
     content: [
       {
         type: 'Heading',

@@ -1,5 +1,5 @@
 ---
-bibliography:
+references:
   - id: WatsonCrick1953
     author:
       - family: Watson

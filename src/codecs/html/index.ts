@@ -1856,12 +1856,13 @@ function encodeFigure(
   figure: stencila.Figure,
   state: EncodeState
 ): HTMLElement {
-  const { id, label, caption = [], content = [] } = figure
+  const { id, label, caption, content = [] } = figure
   return h('figure', encodeAttrs(figure, { id, title: label }), [
-    encodeMaybe(label, h('label', microdataProperty('label'), label)),
+    encodeMaybe(label, (label) =>
+      h('label', microdataProperty('label'), label)
+    ),
     encodeNodes(content, state),
-    encodeMaybe(
-      caption,
+    encodeMaybe(caption, (caption) =>
       h(
         'figcaption',
         typeof caption === 'string' ? caption : encodeNodes(caption, state)

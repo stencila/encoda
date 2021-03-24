@@ -1,0 +1,124 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "Some inline ",
+        {
+          "type": "CodeFragment",
+          "text": "code"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Some inline Java ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "java",
+          "text": "public class MyClass"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "CodeBlock",
+      "text": "This is like the HTML <pre> element"
+    },
+    {
+      "type": "CodeBlock",
+      "programmingLanguage": "js",
+      "text": "const foo = 'bar'\nconsole.log(foo)"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "An evaluated Python expression ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "python",
+          "text": "pow(2,2)"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "No lang ",
+        {
+          "type": "CodeFragment",
+          "text": "a + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Lang specified ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "py",
+          "text": "b + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "R ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "r",
+          "text": "c + 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Python ",
+        {
+          "type": "CodeExpression",
+          "programmingLanguage": "py",
+          "text": "d + 1"
+        }
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "plot(y~x, data)"
+    },
+    {
+      "type": "CodeChunk",
+      "programmingLanguage": "r",
+      "text": "head(mtcars)"
+    },
+    {
+      "type": "CodeChunk",
+      "id": "fig2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "A plot of the data which has a mean of ",
+            {
+              "type": "CodeExpression",
+              "programmingLanguage": "r",
+              "text": " mean(data) "
+            }
+          ]
+        }
+      ],
+      "programmingLanguage": "r",
+      "text": "plot(data)",
+      "meta": {
+        "label": "fig2"
+      }
+    }
+  ]
+}

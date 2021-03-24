@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{noweb}
+\begin{document}
+
+This is some \texttt{R} code.
+
+<<>>=
+library(ggplot2)
+x <- c(1, 2, 3)
+y <- c(1, 2, 3)
+df <- as.data.frame(x, y)
+
+a.plot <- ggplot(data=df, aes(x=x, y=y)) + geom_line() + theme_classic()
+a.plot
+@
+
+\noindent and that's it.
+
+We can also try to add 1 to 1 and see that it's \Sexpr{1.0 + 1.0} and \expr{2.0}.
+
+\end{document}

@@ -8,6 +8,7 @@ module.exports = {
     '**/__tests__/**/*',
     '**/**/*.test.ts',
   ],
+  includes: '.',
   out: './docs/api',
   readme: 'README.md',
 }

@@ -1,0 +1,47 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "We start by adding two separate global variables in two different code chunks:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "id": "first.py",
+      "programmingLanguage": "py",
+      "text": "\na_global_var1 = 1.0"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "and now the second:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "id": "second.py",
+      "programmingLanguage": "py",
+      "text": "\na_global_var2 = 2.0"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Note that the name of the code chunks above was the same:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "id": "third.py",
+      "programmingLanguage": "py",
+      "text": "\nprint(\"Let us now print the global variables\")\nprint(a_global_var1)\nprint(a_global_var2)"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "and that’s it."
+      ]
+    }
+  ]
+}
