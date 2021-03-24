@@ -1,3 +1,30 @@
+# [0.111.0](https://github.com/stencila/encoda/compare/v0.110.0...v0.111.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update @stencila/schema for MathBlock label ([cf9af72](https://github.com/stencila/encoda/commit/cf9af72801d22a846674e171c63597c8c667ce1c))
+* **LaTeX:** Don't take first node of content, take all; avoid use of casts ([2edc99d](https://github.com/stencila/encoda/commit/2edc99dcf3777b64a1dca38c3633bbbbdafe1669))
+* **LaTeX:** Match .tex file to LaTeX codec ([096fb04](https://github.com/stencila/encoda/commit/096fb043bbd4c9e15310516ab681fb6270bf1687))
+* **LaTeX:** Pass along file path if available ([bf99d3e](https://github.com/stencila/encoda/commit/bf99d3e48f122bb38fa064f63d05a3f17172e669))
+* Add equation id and alttext for MathML in JATS ([7aade96](https://github.com/stencila/encoda/commit/7aade969815adc7dd3c169b0dd91037ed99b49ec))
+* Fix mixed citation in JATS ([c558ddf](https://github.com/stencila/encoda/commit/c558ddf95af3d75bd9ec337ecc39ae15cc50b072))
+* **LaTeX:** Citation modes and content ([63f067e](https://github.com/stencila/encoda/commit/63f067e44fe546855d1f461f4b89c2e1f4b959d0))
+* **LaTeX:** Extract equation label to MathBlock id ([f782dd1](https://github.com/stencila/encoda/commit/f782dd1c66518b3c11fdfb3de6af9067ae9de086))
+* **LaTeX:** Transform listings marked as executable ([c5e7b16](https://github.com/stencila/encoda/commit/c5e7b1686cd721d6f8d1b1ccd1931cfe1b23b7cf))
+* **LaTeX:** Update for new version of Schema ([11b62f1](https://github.com/stencila/encoda/commit/11b62f1f3028f81551a77c0c0e5f8e2923ad74dd))
+* **Pandoc:** Do not attempt to JSON.parse input ([2ecd8e1](https://github.com/stencila/encoda/commit/2ecd8e1dea67b713037ac7f7273122b1d9b9c015))
+* **Pandoc:** Handle SoftBreaks ([b278f33](https://github.com/stencila/encoda/commit/b278f33ee427528435108dc64c256f56e30f9840))
+
+
+### Features
+
+* **LaTeX:** Handle commands for code expressions ([761f069](https://github.com/stencila/encoda/commit/761f06914b271be62e53a95ed472709b9c7bf393))
+* **Noweb:** Add noweb codec ([a09b39d](https://github.com/stencila/encoda/commit/a09b39d8304a8b0598d82ba181bbf7c346245212))
+* **Noweb:** Handle code chunk languages ([c82c529](https://github.com/stencila/encoda/commit/c82c529842a6d64fa4871e9ae761e8c28b61d14d))
+* **Noweb:** Parse noweb style code chunks ([8e53b59](https://github.com/stencila/encoda/commit/8e53b590a0f9fb3620974e7a8b366c5afed896cb))
+* **Pandoc:** Handle bibliography and references meta fields ([45a6e5c](https://github.com/stencila/encoda/commit/45a6e5cb450e3ff2162157fe2fc619a6d5df0c9f)), closes [#842](https://github.com/stencila/encoda/issues/842)
+
 # [0.110.0](https://github.com/stencila/encoda/compare/v0.109.5...v0.110.0) (2021-03-23)
 
 
