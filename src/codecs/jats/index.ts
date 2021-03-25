@@ -1570,6 +1570,7 @@ function decodeParagraph(
 ): stencila.Node[] {
   const nodes = decodeElements(elem.elements ?? [], state)
   let para: stencila.Paragraph | undefined = stencila.paragraph({ content: [] })
+  para.id = attrOrUndefined(elem, 'id')
   const blocks: stencila.Node[] = []
   for (const node of nodes) {
     if (stencila.isInlineContent(node)) {
