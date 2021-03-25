@@ -1394,6 +1394,7 @@ content:
             conditions.
     description:
       - type: Paragraph
+        id: FN1
         content:
           - type: Superscript
             content:
@@ -2065,6 +2066,7 @@ content:
             extracts from the German market (2018–2019).
     description:
       - type: Paragraph
+        id: FN2
         content:
           - type: Superscript
             content:
@@ -2080,24 +2082,28 @@ content:
                   - '13'
           - ', table sheet 2).'
       - type: Paragraph
+        id: FN3
         content:
           - type: Superscript
             content:
               - '2'
           - ' Not analyzed or outside calibration.'
       - type: Paragraph
+        id: FN4
         content:
           - type: Superscript
             content:
               - '3'
           - ' No labelling provided by manufacturer.'
       - type: Paragraph
+        id: FN5
         content:
           - type: Superscript
             content:
               - '4'
           - ' THC (mg/day) calculated on the basis of 1 portion according to the manufacturer’s labelling. The LOAEL may be exceeded with a probable intake of 2 portions/day.'
       - type: Paragraph
+        id: FN6
         content:
           - type: Superscript
             content:

@@ -1558,18 +1558,24 @@ function encodeHeading(
 }
 
 /**
- * Decode a JATS `<p>` element to an array of Stencila block
- * content nodes.
+ * Decode a JATS `<p>` element to an array of Stencila nodes.
  *
  * This function handles the 'breaking apart' of a paragraph
- * when an element inside it is decoded to block content
+ * when an element inside it is decoded to a `BlockContent` node
+ * rather than an `InlineContent` node.
  */
 function decodeParagraph(
   elem: xml.Element,
   state: DecodeState
 ): stencila.Node[] {
+  const id = attrOrUndefined(elem, 'id')
   const nodes = decodeElements(elem.elements ?? [], state)
-  let para: stencila.Paragraph | undefined = stencila.paragraph({ content: [] })
+
+  let para: stencila.Paragraph | undefined = stencila.paragraph({
+    id,
+    content: [],
+  })
+
   const blocks: stencila.Node[] = []
   for (const node of nodes) {
     if (stencila.isInlineContent(node)) {
@@ -1584,6 +1590,7 @@ function decodeParagraph(
     }
   }
   if (para !== undefined) blocks.push(para)
+
   return blocks
 }
 
