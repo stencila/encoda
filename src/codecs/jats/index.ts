@@ -2117,7 +2117,7 @@ function decodeMath(
   formula: xml.Element
 ): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
-  const mathml = first(formula, 'mml:math') || first(formula, 'm:math')
+  const mathml = first(formula, 'mml:math') ?? first(formula, 'm:math')
 
   if (mathml === null) {
     const graphic = first(formula, ['graphic', 'inline-graphic'])
