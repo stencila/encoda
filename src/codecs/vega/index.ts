@@ -15,20 +15,17 @@ let page: puppeteer.Page | undefined
 /**
  * Ensure that `page` is defined.
  */
-async function ensureVegaPage(): Promise<puppeteer.Page> {
+async function ensureVegaPage(vegaScriptSrc: string): Promise<puppeteer.Page> {
   if (page) return page
 
   page = await puppeteer.page()
 
-  // TODO: This currently assumes the latest version of Vega dependency.
-  // We should instead try to derive the version from the mimeType
   await page.setContent(`<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <!-- Import vega-embed -->
-    <script src="https://unpkg.com/vega@latest"></script>
-    <script src="https://unpkg.com/vega-lite@latest"></script>
+    <script src="${vegaScriptSrc}"></script>
     <!-- Import vega-embed -->
     <script src="https://unpkg.com/vega-embed@latest"></script>
   </head>
@@ -42,19 +39,37 @@ async function ensureVegaPage(): Promise<puppeteer.Page> {
 }
 
 const vegaMediaTypes = [
-  'application/vnd.vega',
+  // Custom and generic Vega mimetype used by Stencila during encoding
+  'application/vnd.vega+json',
   // Altair MIME bundle types
   // @see https://iliatimofeev.github.io/altair-viz.github.io/user_guide/display_frontends.html#renderer-api
-  'application/vnd.vegalite.v2+json',
   'application/vnd.vegalite.v1+json',
   'application/vnd.vega.v3+json',
   'application/vnd.vega.v2+json',
 ]
 
-export const vegaMediaType = 'application/vnd.vega'
+export const vegaMediaType = 'application/vnd.vega+json'
 
 export const isVegaMediaType = (mimeType: string): boolean =>
   vegaMediaTypes.includes(mimeType)
+
+/**
+ * RegEx to parse a Vega Spec `$schema` url and find the library and version number used
+ * Group 1: library used `vega` or `vega-lite | vegalite`
+ * Group 2: version number used
+ */
+const VegaVersionRegEx = /(vega|vega-?lite)[/.]v([0-9]+(?:\.[0-9]){0,2})/
+
+/**
+ * Given a string, attempts to find the Vega library (`vega` vs `vega-lite`)
+ * and the version being used.
+ * Falls back to `vega` and `latest`.
+ */
+const getVegaVersion = (input: string): [library: string, version: string] => {
+  const [, library = 'vega', version = 'latest'] =
+    VegaVersionRegEx.exec(input) ?? []
+  return [library.replace('lite', '-lite'), version]
+}
 
 /**
  * Define a Vega object to obviate the need to //@ts-ignore within
@@ -85,7 +100,10 @@ export class VegaCodec extends Codec implements Codec {
     const json = await vfile.dump(file)
     const spec = JSON.parse(json)
 
-    const page = await ensureVegaPage()
+    const [library, version] = getVegaVersion(spec)
+    const vegaScriptSrc = `https://unpkg.com/${library}@${version}`
+
+    const page = await ensureVegaPage(vegaScriptSrc)
 
     // Wait until all resources are loaded
     await page.waitForFunction('vegaEmbed !== undefined')
