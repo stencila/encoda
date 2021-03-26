@@ -3,7 +3,7 @@ import { vegaMediaType } from '../../codecs/vega'
 
 export const testData = {
   description: 'A simple bar chart with embedded spec.',
-  spec: {
+  data: {
     values: [
       { a: 'A', b: 28 },
       { a: 'B', b: 55 },

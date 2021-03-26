@@ -12,10 +12,18 @@ const log = getLogger('encoda:vega')
  */
 let page: puppeteer.Page | undefined
 
+interface VegaScriptVersions {
+  vega: string
+  vegaLite: string
+}
+
 /**
  * Ensure that `page` is defined.
  */
-async function ensureVegaPage(vegaScriptSrc: string): Promise<puppeteer.Page> {
+async function ensureVegaPage({
+  vega,
+  vegaLite,
+}: VegaScriptVersions): Promise<puppeteer.Page> {
   if (page) return page
 
   page = await puppeteer.page()
@@ -25,7 +33,8 @@ async function ensureVegaPage(vegaScriptSrc: string): Promise<puppeteer.Page> {
   <head>
     <meta charset="utf-8">
     <!-- Import vega-embed -->
-    <script src="${vegaScriptSrc}"></script>
+    <script src="https://unpkg.com/vega@${vega}"></script>
+    <script src="https://unpkg.com/vega-lite@${vegaLite}"></script>
     <!-- Import vega-embed -->
     <script src="https://unpkg.com/vega-embed@latest"></script>
   </head>
@@ -60,16 +69,37 @@ export const isVegaMediaType = (mimeType: string): boolean =>
  */
 const VegaVersionRegEx = /(vega|vega-?lite)[/.]v([0-9]+(?:\.[0-9]){0,2})/
 
+interface LibVersion {
+  library: string
+  version: string
+  versionMajor: string
+}
+
 /**
  * Given a string, attempts to find the Vega library (`vega` vs `vega-lite`)
  * and the version being used.
  * Falls back to `vega` and `latest`.
  */
-const getVegaVersion = (input: string): [library: string, version: string] => {
-  const [, library = 'vega', version = 'latest'] =
+const getVegaVersion = (input: string): LibVersion => {
+  const [, lib = 'vega', version = 'latest'] =
     VegaVersionRegEx.exec(input) ?? []
-  return [library.replace('lite', '-lite'), version]
+
+  const library = lib.replace('lite', '-lite')
+  const versionMajor = version.split('.')[0]
+
+  return { library, version, versionMajor }
 }
+
+const vegaScriptVersions = (libVersion: LibVersion): VegaScriptVersions => ({
+  vega:
+    libVersion.library === 'vega'
+      ? libVersion.version
+      : libVersion.versionMajor,
+  vegaLite:
+    libVersion.library === 'vegaLite'
+      ? libVersion.version
+      : libVersion.versionMajor,
+})
 
 /**
  * Define a Vega object to obviate the need to //@ts-ignore within
@@ -100,10 +130,9 @@ export class VegaCodec extends Codec implements Codec {
     const json = await vfile.dump(file)
     const spec = JSON.parse(json)
 
-    const [library, version] = getVegaVersion(spec)
-    const vegaScriptSrc = `https://unpkg.com/${library}@${version}`
+    const libVersions = vegaScriptVersions(getVegaVersion(spec))
 
-    const page = await ensureVegaPage(vegaScriptSrc)
+    const page = await ensureVegaPage(libVersions)
 
     // Wait until all resources are loaded
     await page.waitForFunction('vegaEmbed !== undefined')

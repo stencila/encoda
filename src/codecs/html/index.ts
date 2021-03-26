@@ -2508,16 +2508,11 @@ function encodeImageObject(
 
   if (enhanced && content.length > 0) {
     for (const node of content) {
-      if (
-        typeof node === 'object' &&
-        node !== null &&
-        'data' in node &&
-        'mediaType' in node
-      ) {
-        if (node.mediaType === plotlyMediaType) {
+      if (typeof node === 'object' && node !== null && 'mediaType' in node) {
+        if (node.mediaType === plotlyMediaType && 'data' in node) {
           return encodeImageObjectPlotly(image, node.data)
-        } else if (isVegaMediaType(node.mediaType)) {
-          return encodeImageObjectVega(image, node.data)
+        } else if (isVegaMediaType(node.mediaType) && 'spec' in node) {
+          return encodeImageObjectVega(image, node.spec)
         }
       }
     }
