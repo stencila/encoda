@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/transform
  */
 
 import * as stencila from '@stencila/schema'

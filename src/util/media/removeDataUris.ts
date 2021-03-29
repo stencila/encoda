@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/media/removeDataUris
  */
 
 import * as schema from '@stencila/schema'

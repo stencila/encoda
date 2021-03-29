@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/media/fromFiles
  */
 
 import * as schema from '@stencila/schema'

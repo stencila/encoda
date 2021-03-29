@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/media/mediaType
  */
 
 import path from 'path'

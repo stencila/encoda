@@ -1,7 +1,7 @@
 /**
  * Type definitions for Pandoc's internal AST
  *
- * @module pandoc/types
+ * @module codecs/pandoc/types
  */
 
 /**

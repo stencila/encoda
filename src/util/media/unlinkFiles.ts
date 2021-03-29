@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/media/unlinkFiles
  */
 
 import * as schema from '@stencila/schema'

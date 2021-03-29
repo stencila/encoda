@@ -19,7 +19,7 @@
  *    the implementation is complete (?), and it's available across platforms
  *
  * @see https://en.wikipedia.org/wiki/XSLT
- * @module xslt
+ * @module util/xslt
  */
 
 import * as puppeteer from './puppeteer'

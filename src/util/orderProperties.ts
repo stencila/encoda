@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/orderProperties
  */
 
 import * as stencila from '@stencila/schema'

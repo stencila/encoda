@@ -1,10 +1,10 @@
 /**
- * @module schemas
- *
  * Several other modules use the JSON Schemas from `@stencila/schema`.
  * This module provides a single place for lazily, and asynchronously,
  * loading the schemas to avoid each of those other modules duplicating
  * that effort.
+ *
+ * @module util/schemas
  */
 
 import stencila from '@stencila/schema'

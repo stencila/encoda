@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/dataUri
  */
 
 import { getLogger } from '@stencila/logga'

@@ -1,5 +1,5 @@
 /**
- * @module util
+ * @module util/media/copyFile
  */
 
 import { getLogger } from '@stencila/logga'
