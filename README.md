@@ -11,27 +11,26 @@
 
 <!-- toc -->
 
-- [Encoda](#encoda) - [Codecs for structured, semantic, composable, and executable documents](#codecs-for-structured-semantic-composable-and-executable-documents)
-  - [Introduction](#introduction)
-  - [Formats](#formats)
-  - [Publishers](#publishers)
-  - [Install](#install)
-  - [Use](#use)
-    - [Converting files](#converting-files)
-    - [Converting folders](#converting-folders)
-    - [Converting command line input](#converting-command-line-input)
-    - [Creating zip archives](#creating-zip-archives)
-    - [Using with Executa](#using-with-executa)
-  - [Documentation](#documentation)
-  - [Develop](#develop)
-  - [Testing](#testing)
-    - [Running tests locally](#running-tests-locally)
-    - [Running test in Docker](#running-test-in-docker)
-  - [Writing tests](#writing-tests)
-    - [Recording and using network fixtures](#recording-and-using-network-fixtures)
-  - [Contribute](#contribute)
-  - [Contributors](#contributors)
-  - [Acknowledgments](#acknowledgments)
+- [Introduction](#introduction)
+- [Formats](#formats)
+- [Publishers](#publishers)
+- [Install](#install)
+- [Use](#use)
+  - [Converting files](#converting-files)
+  - [Converting folders](#converting-folders)
+  - [Converting command line input](#converting-command-line-input)
+  - [Creating zip archives](#creating-zip-archives)
+  - [Using with Executa](#using-with-executa)
+- [Documentation](#documentation)
+- [Develop](#develop)
+- [Testing](#testing)
+  - [Running tests locally](#running-tests-locally)
+  - [Running test in Docker](#running-test-in-docker)
+- [Writing tests](#writing-tests)
+  - [Recording and using network fixtures](#recording-and-using-network-fixtures)
+- [Contribute](#contribute)
+- [Contributors](#contributors)
+- [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
 
@@ -47,44 +46,47 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 
 > ⚡ Tip: If a codec for your favorite format is missing below, see if there is already an [issue](https://github.com/stencila/encoda/issues) for it and 👍 or comment. If there is no issue regarding the converter you need, feel free to [create one](https://github.com/stencila/encoda/issues/new).
 
-| Format                       | Codec            | Powered by             | Status | Coverage             |
-| ---------------------------- | ---------------- | ---------------------- | ------ | -------------------- |
+| Format                       | Codec         | Powered by             | Status | Coverage             |
+| ---------------------------- | ------------- | ---------------------- | ------ | -------------------- |
 | **Text**                     |
-| Plain text                   | [txt]            | [`toString`][tostring] | ✔      | ![][txt-cov]         |
-| Markdown                     | [md]             | [Remark]               | ✔      | ![][md-cov]          |
-| LaTex                        | [latex]          | [Pandoc]               | α      | ![][latex-cov]       |
-| Microsoft Word               | [docx]           | [Pandoc]               | β      | ![][docx-cov]        |
-| Google Docs                  | [gdoc]           | [`JSON`][json]         | β      | ![][gdoc-cov]        |
-| Open Document Text           | [odt]            | [Pandoc]               | α      | ![][odt-cov]         |
-| HTML                         | [html]           | [jsdom], [hyperscript] | ✔      | ![][html-cov]        |
-| JATS XML                     | [jats]           | [xml-js]               | ✔      | ![][jats-cov]        |
-|                              | [jats-pandoc]    | [Pandoc]               | β      | ![][jats-pandoc-cov] |
-| Portable Document Format     | [pdf]            | [pdf-lib], [Puppeteer] | β      | ![][pdf-cov]         |
+| Plain text                   | [txt]         | [`toString`][tostring] | ✔      | ![][txt-cov]         |
+| Markdown                     | [md]          | [Remark]               | ✔      | ![][md-cov]          |
+| LaTex                        | [latex]       | [Pandoc][pandoc-org]   | α      | ![][latex-cov]       |
+| Microsoft Word               | [docx]        | [Pandoc][pandoc-org]   | β      | ![][docx-cov]        |
+| Google Docs                  | [gdoc]        | [`JSON`][json-api]     | β      | ![][gdoc-cov]        |
+| Open Document Text           | [odt]         | [Pandoc][pandoc-org]   | α      | ![][odt-cov]         |
+| HTML                         | [html]        | [jsdom], [hyperscript] | ✔      | ![][html-cov]        |
+| JATS XML                     | [jats]        | [xml-js]               | ✔      | ![][jats-cov]        |
+|                              | [jats-pandoc] | [Pandoc][pandoc-org]   | β      | ![][jats-pandoc-cov] |
+| Portable Document Format     | [pdf]         | [pdf-lib], [Puppeteer] | β      | ![][pdf-cov]         |
 | **Math**                     |
-| TeX                          | [tex]            | [mathconverter]        | ✔      | ![][tex-cov]         |
-| MathML                       | [mathml]         | [MathJax]              | ✔      | ![][mathml-cov]      |
+| TeX                          | [tex]         | [mathconverter]        | ✔      | ![][tex-cov]         |
+| MathML                       | [mathml]      | [MathJax]              | ✔      | ![][mathml-cov]      |
+| **Visualization**            |
+| Plotly                       | [plotly]      | [Plotly.js]            | ✔      | ![][plotly-cov]      |
+| Vega / Vega-Lite             | [vega]        | [Vega][vega-io]        | ✔      | ![][vega-cov]        |
 | **Bibliographic**            |
-| Citation Style Language JSON | [csl]            | [Citation.js]          | ✔      | ![][csl-cov]         |
-| BibTeX                       | [bib]            | [Citation.js]          | ✔      | ![][bib-cov]         |
+| Citation Style Language JSON | [csl]         | [Citation.js]          | ✔      | ![][csl-cov]         |
+| BibTeX                       | [bib]         | [Citation.js]          | ✔      | ![][bib-cov]         |
 | **Notebooks**                |
-| Jupyter                      | [ipynb]          | [`JSON`][json]         | ✔      | ![][ipynb-cov]       |
-| RMarkdown                    | [xmd]            | [Remark]               | ✔      | ![][xmd-cov]         |
+| Jupyter                      | [ipynb]       | [`JSON`][json-api]     | ✔      | ![][ipynb-cov]       |
+| RMarkdown                    | [xmd]         | [Remark]               | ✔      | ![][xmd-cov]         |
 | **Spreadsheets**             |
-| Microsoft Excel              | [xlsx]           | [SheetJS]              | β      | ![][xlsx-cov]        |
-| Open Document Spreadsheet    | [ods]            | [SheetJS]              | β      | ![][ods-cov]         |
+| Microsoft Excel              | [xlsx]        | [SheetJS]              | β      | ![][xlsx-cov]        |
+| Open Document Spreadsheet    | [ods]         | [SheetJS]              | β      | ![][ods-cov]         |
 | **Tabular data**             |
-| CSV                          | [csv]            | [SheetJS]              | β      | ![][csv-cov]         |
-| Tabular Data Package         | [tdp]            | [datapackage-js]       | α      | ![][tdp-cov]         |
+| CSV                          | [csv]         | [SheetJS]              | β      | ![][csv-cov]         |
+| Tabular Data Package         | [tdp]         | [datapackage-js]       | α      | ![][tdp-cov]         |
 | **Collections**              |
-| Filesystem Directory         | [dir]            | [`fs`](fs)             | β      | ![][dir-cov]         |
+| Filesystem Directory         | [dir]         | [`fs`][fs]             | β      | ![][dir-cov]         |
 | **Data interchange, other**  |
-| JSON                         | [json]           | [`JSON`][json]         | ✔      | ![][json-cov]        |
-| JSON-LD                      | [jsonld]         | [jsonld]               | ✔      | ![][jsonld-cov]      |
-| JSON5                        | [json5]          | [json5]                | ✔      | ![][json5-cov]       |
-| YAML                         | [yaml]           | [js-yaml]              | ✔      | ![][yaml-cov]        |
-| Pandoc                       | [pandoc](pandoc) | [Pandoc]               | ✔      | ![][pandoc-cov]      |
-| Reproducible PNG             | [rpng]           | [Puppeteer]            | ✔      | ![][rpng-cov]        |
-| XML                          | [xml]            | [xml-js]               | ✔      | ![][xml-cov]         |
+| JSON                         | [json]        | [`JSON`][json-api]     | ✔      | ![][json-cov]        |
+| JSON-LD                      | [jsonld]      | [jsonld.js]            | ✔      | ![][jsonld-cov]      |
+| JSON5                        | [json5]       | [json5][json5-org]     | ✔      | ![][json5-cov]       |
+| YAML                         | [yaml]        | [js-yaml]              | ✔      | ![][yaml-cov]        |
+| Pandoc                       | [pandoc]      | [Pandoc][pandoc-org]   | ✔      | ![][pandoc-cov]      |
+| Reproducible PNG             | [rpng]        | [Puppeteer]            | ✔      | ![][rpng-cov]        |
+| XML                          | [xml]         | [xml-js]               | ✔      | ![][xml-cov]         |
 
 <!-- Codecs -->
 
@@ -113,12 +115,15 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 [ods]: src/codecs/ods
 [odt]: src/codecs/odt
 [orcid]: src/codecs/orcid
+[pandoc]: src/codecs/pandoc
 [pdf]: src/codecs/pdf
 [plos]: src/codecs/plos
+[plotly]: src/codecs/plotly
 [rpng]: src/codecs/rpng
 [tdp]: src/codecs/tdp
 [tex]: src/codecs/tex
 [txt]: src/codecs/txt
+[vega]: src/codecs/vega
 [xlsx]: src/codecs/xlsx
 [xmd]: src/codecs/xmd
 [xml]: src/codecs/xml
@@ -132,17 +137,19 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 [hyperscript]: https://github.com/hyperhype/hyperscript
 [js-yaml]: https://github.com/nodeca/js-yaml#readme
 [jsdom]: https://github.com/jsdom/jsdom
-[json]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
-[json5]: https://json5.org/
-[jsonld]: https://github.com/digitalbazaar/jsonld.js
+[json-api]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+[json5-org]: https://json5.org/
+[jsonld.js]: https://github.com/digitalbazaar/jsonld.js
 [mathconverter]: https://github.com/oerpub/mathconverter
 [mathjax]: https://www.mathjax.org/
-[pandoc]: https://pandoc.org/
+[pandoc-org]: https://pandoc.org/
 [pdf-lib]: https://pdf-lib.js.org/
+[plotly.js]: https://plotly.com/javascript/
 [puppeteer]: https://pptr.dev/
 [remark]: https://remark.js.org/
 [sheetjs]: https://sheetjs.com
 [tostring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+[vega-io]: https://vega.github.io/vega/
 [xml-js]: https://github.com/nashwaan/xml-js#readme
 
 <!-- Coverage -->
@@ -177,11 +184,13 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 [pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
 [pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
 [plos-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plos
+[plotly-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plotly
 [pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
 [rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
 [tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
 [tex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tex
 [txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
+[vega-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/vega
 [xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
 [xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
 [xml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml
