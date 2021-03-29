@@ -29,9 +29,8 @@
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
     "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/codecs/tex/",
     "register": "npm run build && node dist/encoda register",
-    "docs": "npm run docs:readme && npm run docs:dogfood && npm run docs:ts",
+    "docs": "npm run docs:readme && npm run docs:ts",
     "docs:readme": "markdown-toc -i --maxdepth=4 README.md",
-    "docs:dogfood": "npx ts-node --files docs.ts",
     "docs:ts": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },

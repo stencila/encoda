@@ -1,7 +1,6 @@
 module.exports = {
   tsconfig: 'tsconfig.prod.json',
   exclude: [
-    '**/node_modules/**/*',
     '**/__fixtures__/**/*',
     '**/__file_snapshots__/**/*',
     '**/__mocks__/**/*',
@@ -9,6 +8,6 @@ module.exports = {
     '**/**/*.test.ts',
   ],
   includes: '.',
-  out: './docs/api',
+  out: './docs/',
   readme: 'README.md',
 }
