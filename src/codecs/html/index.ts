@@ -43,6 +43,7 @@ import * as vfile from '../../util/vfile'
 import { plotlyMediaType } from '../plotly'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
+import { isVegaMediaType, vegaMediaType } from '../vega'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -2507,14 +2508,11 @@ function encodeImageObject(
 
   if (enhanced && content.length > 0) {
     for (const node of content) {
-      if (
-        typeof node === 'object' &&
-        node !== null &&
-        'data' in node &&
-        'mediaType' in node
-      ) {
-        if (node.mediaType === plotlyMediaType) {
+      if (typeof node === 'object' && node !== null && 'mediaType' in node) {
+        if (node.mediaType === plotlyMediaType && 'data' in node) {
           return encodeImageObjectPlotly(image, node.data)
+        } else if (isVegaMediaType(node.mediaType) && 'spec' in node) {
+          return encodeImageObjectVega(image, node.spec)
         }
       }
     }
@@ -2542,6 +2540,26 @@ function encodeImageObjectPlotly(
       'picture',
       h('script', {
         type: plotlyMediaType,
+        innerHTML: JSON.stringify(data),
+      }),
+      encodeImageObject(image, false)
+    )
+  )
+}
+
+/**
+ * Encode an `ImageObject` with Vega content to a `<stencila-image-vega>` element.
+ */
+function encodeImageObjectVega(
+  image: stencila.ImageObject,
+  data: unknown
+): HTMLElement {
+  return h(
+    'stencila-image-vega',
+    h(
+      'picture',
+      h('script', {
+        type: vegaMediaType,
         innerHTML: JSON.stringify(data),
       }),
       encodeImageObject(image, false)
