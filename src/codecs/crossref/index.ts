@@ -1,6 +1,9 @@
 /**
- * Compiler for a Digital Object Identifier (DOI) URL i.e. `http[s]://doi.org/<DOI>`
+ * [[include:src/codecs/crossref/README.md]]
+ *
+ * @module codecs/crossref
  */
+
 import schema from '@stencila/schema'
 import crypto from 'crypto'
 import * as http from '../../util/http'

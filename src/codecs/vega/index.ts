@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/vega/README.md]]
+ *
+ * @module codecs/vega
+ */
+
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
 import * as puppeteer from '../../util/puppeteer'

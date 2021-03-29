@@ -1,5 +1,7 @@
 /**
- * @module xlsx
+ * [[include:src/codecs/xlsx/README.md]]
+ *
+ * @module codecs/xlsx
  */
 
 /**

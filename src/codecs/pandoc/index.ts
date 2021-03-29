@@ -1,5 +1,7 @@
 /**
- * @module pandoc
+ * [[include:src/codecs/pandoc/README.md]]
+ *
+ * @module codecs/pandoc
  */
 
 /**

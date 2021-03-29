@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/elife/README.md]]
+ *
+ * @module codecs/elife
+ */
+
 import stencila from '@stencila/schema'
 import { JatsCodec } from '../jats'
 import * as xml from '../../util/xml'

@@ -1,5 +1,7 @@
 /**
- * @module txt
+ * [[include:src/codecs/txt/README.md]]
+ *
+ * @module codecs/txt
  */
 
 import stencila from '@stencila/schema'

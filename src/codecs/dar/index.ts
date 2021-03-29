@@ -1,5 +1,7 @@
 /**
- * @module dar
+ * [[include:src/codecs/dar/README.md]]
+ *
+ * @module codecs/dar
  */
 
 import stencila from '@stencila/schema'

@@ -1,5 +1,7 @@
 /**
- * @module gdoc
+ * [[include:src/codecs/gdoc/README.md]]
+ *
+ * @module codecs/gdoc
  */
 
 /**

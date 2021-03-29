@@ -1,5 +1,7 @@
 /**
- * @module json5
+ * [[include:src/codecs/json5/README.md]]
+ *
+ * @module codecs/json5
  */
 
 import stencila from '@stencila/schema'

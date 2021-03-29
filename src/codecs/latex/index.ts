@@ -1,5 +1,7 @@
 /**
- * @module latex
+ * [[include:src/codecs/latex/README.md]]
+ *
+ * @module codecs/latex
  */
 
 import schema from '@stencila/schema'

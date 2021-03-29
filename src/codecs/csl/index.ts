@@ -1,5 +1,7 @@
 /**
- * @module csl
+ * [[include:src/codecs/csl/README.md]]
+ *
+ * @module codecs/csl
  */
 
 import * as schema from '@stencila/schema'

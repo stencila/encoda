@@ -1,5 +1,7 @@
 /**
- * @module yaml
+ * [[include:src/codecs/yaml/README.md]]
+ *
+ * @module codecs/yaml
  */
 
 import * as stencila from '@stencila/schema'

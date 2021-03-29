@@ -1,5 +1,7 @@
 /**
- * Codec for an Open Researcher and Contributor ID (ORCID)
+ * [[include:src/codecs/orcid/README.md]]
+ *
+ * @module codecs/orcid
  */
 
 import * as stencila from '@stencila/schema'

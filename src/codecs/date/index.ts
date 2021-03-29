@@ -1,5 +1,7 @@
 /**
- * @module date
+ * [[include:src/codecs/date/README.md]]
+ *
+ * @module codecs/date
  */
 
 import * as stencila from '@stencila/schema'

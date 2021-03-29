@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/plotly/README.md]]
+ *
+ * @module codecs/plotly
+ */
+
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
 import fs from 'fs-extra'

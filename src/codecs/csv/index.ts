@@ -1,5 +1,7 @@
 /**
- * @module csv
+ * [[include:src/codecs/csv/README.md]]
+ *
+ * @module codecs/csv
  */
 
 import * as stencila from '@stencila/schema'

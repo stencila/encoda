@@ -1,5 +1,7 @@
 /**
- * @module ipynb
+ * [[include:src/codecs/ipynb/README.md]]
+ *
+ * @module codecs/ipynb
  */
 
 /**

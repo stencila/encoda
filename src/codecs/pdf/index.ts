@@ -1,7 +1,8 @@
 /**
- * @module pdf
+ * [[include:src/codecs/pdf/README.md]]
+ *
+ * @module codecs/pdf
  */
-
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import { PDFDocument, PDFName, PDFStream } from 'pdf-lib'

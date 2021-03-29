@@ -1,5 +1,7 @@
 /**
- * @module tdp
+ * [[include:src/codecs/tdp/README.md]]
+ *
+ * @module codecs/tdp
  */
 
 /**

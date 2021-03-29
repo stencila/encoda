@@ -1,5 +1,7 @@
 /**
- * @module png
+ * [[include:src/codecs/png/README.md]]
+ *
+ * @module codecs/png
  */
 
 import * as schema from '@stencila/schema'

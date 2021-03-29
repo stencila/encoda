@@ -1,5 +1,7 @@
 /**
- * @module jats
+ * [[include:src/codecs/jats-pandoc/README.md]]
+ *
+ * @module codecs/jats-pandoc
  */
 
 import stencila from '@stencila/schema'

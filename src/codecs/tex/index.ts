@@ -1,5 +1,7 @@
 /**
- * @module tex
+ * [[include:src/codecs/tex/README.md]]
+ *
+ * @module codecs/tex
  */
 
 import { getLogger } from '@stencila/logga'

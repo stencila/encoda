@@ -1,7 +1,7 @@
 /**
  * [[include:src/codecs/nw/README.md]]
  *
- * @module nw
+ * @module codecs/nw
  */
 
 import schema from '@stencila/schema'

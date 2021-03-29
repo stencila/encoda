@@ -1,5 +1,7 @@
 /**
- * Codec for BibTeX
+ * [[include:src/codecs/bib/README.md]]
+ *
+ * @module codecs/bib
  */
 
 import stencila from '@stencila/schema'

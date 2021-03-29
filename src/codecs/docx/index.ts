@@ -1,5 +1,7 @@
 /**
- * @module docx
+ * [[include:src/codecs/docx/README.md]]
+ *
+ * @module codecs/docx
  */
 
 import stencila from '@stencila/schema'

@@ -1,5 +1,7 @@
 /**
- * @module jats
+ * [[include:src/codecs/jats/README.md]]
+ *
+ * @module codecs/jats
  */
 
 /**

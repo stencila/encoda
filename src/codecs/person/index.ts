@@ -1,5 +1,7 @@
 /**
- * @module person
+ * [[include:src/codecs/person/README.md]]
+ *
+ * @module codecs/person
  */
 
 /**

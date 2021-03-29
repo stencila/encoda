@@ -1,5 +1,7 @@
 /**
- * @module csi
+ * [[include:src/codecs/csi/README.md]]
+ *
+ * @module codecs/csi
  */
 
 import * as stencila from '@stencila/schema'

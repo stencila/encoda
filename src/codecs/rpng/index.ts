@@ -1,7 +1,8 @@
 /**
- * @module rpng
+ * [[include:src/codecs/rpng/README.md]]
+ *
+ * @module codecs/rpng
  */
-
 import * as schema from '@stencila/schema'
 import { getRpngSymbolSize } from '@stencila/thema'
 import fs from 'fs-extra'

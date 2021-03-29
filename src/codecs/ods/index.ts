@@ -1,5 +1,7 @@
 /**
- * @module ods
+ * [[include:src/codecs/ods/README.md]]
+ *
+ * @module codecs/ods
  */
 
 import stencila from '@stencila/schema'

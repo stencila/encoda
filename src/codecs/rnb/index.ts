@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/rnb/README.md]]
+ *
+ * @module codecs/rnb
+ */
+
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'

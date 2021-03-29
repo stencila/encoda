@@ -1,7 +1,8 @@
 /**
- * @module dmagic
+ * [[include:src/codecs/dmagic/README.md]]
+ *
+ * @module codecs/dmagic
  */
-
 /**
  * Hello contributor 👋! If you are working on this file, please
  * endeavor to remove the need for the following `eslint-disable` line 🙏.

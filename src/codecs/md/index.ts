@@ -1,5 +1,7 @@
 /**
- * @module md
+ * [[include:src/codecs/md/README.md]]
+ *
+ * @module codecs/md
  */
 
 /**

@@ -1,5 +1,7 @@
 /**
- * @module odt
+ * [[include:src/codecs/odt/README.md]]
+ *
+ * @module codecs/odt
  */
 
 import stencila from '@stencila/schema'

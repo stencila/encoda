@@ -1,5 +1,7 @@
 /**
- * @module xml
+ * [[include:src/codecs/xml/README.md]]
+ *
+ * @module codecs/xml
  */
 
 import { getLogger } from '@stencila/logga'

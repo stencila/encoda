@@ -1,5 +1,7 @@
 /**
- * @module xmd
+ * [[include:src/codecs/xmd/README.md]]
+ *
+ * @module codecs/xmd
  */
 
 import * as stencila from '@stencila/schema'

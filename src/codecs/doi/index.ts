@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/doi/README.md]]
+ *
+ * @module codecs/doi
+ */
+
 import schema from '@stencila/schema'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'

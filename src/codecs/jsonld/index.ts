@@ -1,5 +1,7 @@
 /**
- * @module jsonld
+ * [[include:src/codecs/jsonld/README.md]]
+ *
+ * @module codecs/jsonld
  */
 
 import { getLogger } from '@stencila/logga'

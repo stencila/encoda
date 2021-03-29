@@ -1,7 +1,8 @@
 /**
- * @module mathml
+ * [[include:src/codecs/mathml/README.md]]
+ *
+ * @module codecs/mathml
  */
-
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'

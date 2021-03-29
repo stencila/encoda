@@ -1,3 +1,9 @@
+/**
+ * [[include:src/codecs/plos/README.md]]
+ *
+ * @module codecs/plos
+ */
+
 import stencila from '@stencila/schema'
 import { JatsCodec } from '../jats'
 import * as xml from '../../util/xml'
