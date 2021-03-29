@@ -73,6 +73,7 @@ jobs:
         displayName: 'Install Docker'
 
       - script: |
+          set -e
           docker build --tag stencila/encoda .
           docker run stencila/encoda
         displayName: 'Run tests in Docker'
@@ -89,6 +90,7 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
+          set -e
           npm install
           npm run docs
           npm run build
