@@ -1,0 +1,297 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>codecs/person | @stencila/encoda</title>
+	<meta name="description" content="Documentation for @stencila/encoda">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@stencila/encoda</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@stencila/encoda</a>
+				</li>
+				<li>
+					<a href="codecs_person.html">codecs/person</a>
+				</li>
+			</ul>
+			<h1>Module codecs/person</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#plain-text-representation-of-humans" id="plain-text-representation-of-humans" style="color: inherit; text-decoration: none;">
+							<h1>Plain text representation of humans</h1>
+						</a>
+						<p>The <code>person</code> codec is most often used for decoding a simple string of plain text representing a person e.g. in the YAML header of a R Markdown file, or the <code>package.json</code> file of a NPM Javascript package.</p>
+						<a href="#decoding" id="decoding" style="color: inherit; text-decoration: none;">
+							<h2>Decoding</h2>
+						</a>
+						<p>Decoding a string is done in two phases.</p>
+						<a href="#orcid-detection-and-use" id="orcid-detection-and-use" style="color: inherit; text-decoration: none;">
+							<h3>ORCID detection and use</h3>
+						</a>
+						<p>If the string contains an <a href="https://orcid.org">ORCID</a>, then the <a href="../orcid"><code>orcid</code></a> codec is used to fetch the metadata for that person and other data in the string is ignored. For example,</p>
+						<pre><code class="language-person">Miss Josiah Carbeeeerry (https://orcid.org/0000-0002-1825-0097)
+</code></pre>
+						<p>is decoded to,</p>
+						<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;id&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;http://orcid.org/0000-0002-1825-0097&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Person&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;url&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;http://library.brown.edu/about/hay/carberry.php&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;affiliations&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Wesleyan University&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;Psychoceramics&quot;</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Brown University&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;Psychoceramics&quot;</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Josiah Stinkney Carberry&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;J. Carberry&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;J. S. Carberry&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;familyNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Carberry&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;givenNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Josiah&quot;</span>
+<span style="color: #000000">  ]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						<p>The ORCID can appear anywhere in the string, optionally prefixed with <code>http://orcid.org/</code> or <code>ORCID</code>. For example, this raw ORCID,</p>
+						<pre><code class="language-person">0000-0002-9079-593X
+</code></pre>
+						<p>is decoded to</p>
+						<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;id&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;http://orcid.org/0000-0002-9079-593X&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Person&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;affiliations&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;University of Cambridge&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;Applied Mathematics and Theoretical Physics&quot;</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;University of Cambridge&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;Mathematics&quot;</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;California Institute of Technology&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;alternateNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;Physics, Mathematics and Astronomy&quot;</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;familyNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Hawking&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;givenNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Stephen&quot;</span>
+<span style="color: #000000">  ]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						<a href="#text-parsing" id="text-parsing" style="color: inherit; text-decoration: none;">
+							<h3>Text parsing</h3>
+						</a>
+						<p>If no ORCID is detected, or if ORCID decoding fails (e.g. due to no network access) then the text string is parsed to extract:</p>
+						<ul>
+							<li>  given names (and or initials)</li>
+							<li>  family name</li>
+							<li>  a prefix (title) e.g. <code>Mr</code>, <code>Dr</code>, <code>Her Majesty</code></li>
+							<li>  a suffix e.g. <code>PhD</code>, <code>Esquire</code>, <code>Jnr</code>, <code>III</code></li>
+							<li>  email (inside angle brackets <code>&lt;&gt;</code>)</li>
+							<li>  URL (inside parentheses <code>()</code>)</li>
+						</ul>
+						<p>For a complete list of the prefixes and suffixes supported see the <a href="https://github.com/dschnelldavis/parse-full-name/blob/master/index.js#L108"><code>parse-full-name</code></a> library used by this codec.</p>
+						<p>All of these properties are optional and &quot;last name first followed by comma&quot; order is also supported. For example,</p>
+						<pre><code class="language-person">Doe, J. PhD
+</code></pre>
+						<p>is decoded to,</p>
+						<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;givenNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;J.&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;familyNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Doe&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;honorificSuffix&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;PhD&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Person&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						<p>whereas this, more complete example,</p>
+						<pre><code class="language-person">Judge Jane J. Jones PhD IV (http://example.org/jones/jane) &lt;jjjj@example.org&gt;
+</code></pre>
+						<p>is decoded to,</p>
+						<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;givenNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Jane&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;J.&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;familyNames&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Jones&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;honorificPrefix&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Judge&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;honorificSuffix&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;PhD, IV&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;emails&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;jjjj@example.org&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;url&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;http://example.org/jones/jane&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Person&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						<a href="#encoding" id="encoding" style="color: inherit; text-decoration: none;">
+							<h2>Encoding</h2>
+						</a>
+						<p>When encoding a <code>Person</code> this codec simply constructs a string that is compatible with the decoding above. That means that other properties (e.g. <code>affiliations</code>) will be lost. For example, this <code>Person</code> node,</p>
+						<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Person&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;givenNames&quot;</span><span style="color: #000000">: [</span><span style="color: #A31515">&quot;Jill&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;J.&quot;</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;familyNames&quot;</span><span style="color: #000000">: [</span><span style="color: #A31515">&quot;James&quot;</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;emails&quot;</span><span style="color: #000000">: [</span><span style="color: #A31515">&quot;jill@example.com&quot;</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;url&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;http://example.com/jill&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;honorificPrefix&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Dr&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;honorificSuffix&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;PhD&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;affiliations&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;type&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Organization&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #0451A5">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Example Corp.&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  ]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						<p>is encoded by the <code>person</code> codec as,</p>
+						<pre><code class="language-person">Dr Jill J. James PhD &lt;jill@example.com&gt; (http://example.com/jill)
+</code></pre>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/codecs_person.personcodec.html" class="tsd-kind-icon">Person<wbr>Codec</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="codecs_person.html">codecs/person</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/codecs_person.personcodec.html" class="tsd-kind-icon">Person<wbr>Codec</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

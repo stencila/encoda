@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>codecs/csl | @stencila/encoda</title>
+	<meta name="description" content="Documentation for @stencila/encoda">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@stencila/encoda</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@stencila/encoda</a>
+				</li>
+				<li>
+					<a href="codecs_csl.html">codecs/csl</a>
+				</li>
+			</ul>
+			<h1>Module codecs/csl</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#citation-style-language" id="citation-style-language" style="color: inherit; text-decoration: none;">
+							<h1>Citation Style Language</h1>
+						</a>
+						<p>A codec for CSL JSON. Also acts a base codec for other bibliographic formats
+						e.g. BibTeX. Based on <a href="https://citation.js.org/">https://citation.js.org/</a></p>
+						<a href="#develop" id="develop" style="color: inherit; text-decoration: none;">
+							<h2>Develop</h2>
+						</a>
+						<p>The <code>styles</code> directory contains CSL styles downloaded from the CSL <a href="https://github.com/citation-style-language/styles">styles Github repository</a>. These styles are used by the <code>pandoc</code> codec when encoding to some formats e.g. <code>docx</code>.</p>
+						<p>To download the most recent versions of the styles, from the top level of this repository:</p>
+						<pre><code class="language-bash"><span style="color: #000000">make -C src/codecs/csl/styles</span>
+</code></pre>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/codecs_csl.cslcodec.html" class="tsd-kind-icon">CSLCodec</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="codecs_csl.html#stylesdir" class="tsd-kind-icon">styles<wbr>Dir</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_csl.html#decodecsl" class="tsd-kind-icon">decode<wbr>Csl</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_csl.html#encodearticle" class="tsd-kind-icon">encode<wbr>Article</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_csl.html#encodecreativework" class="tsd-kind-icon">encode<wbr>Creative<wbr>Work</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_csl.html#encodecsl" class="tsd-kind-icon">encode<wbr>Csl</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="stylesdir" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> styles<wbr>Dir</h3>
+					<div class="tsd-signature tsd-kind-icon">styles<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/664b4bd6/src/codecs/csl/index.ts#L21">src/codecs/csl/index.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The directory where styles are stored</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="decodecsl" class="tsd-anchor"></a>
+					<h3>decode<wbr>Csl</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Csl<span class="tsd-signature-symbol">(</span>csl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Csl.Data</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.CreativeWork</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">schema.Article</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/664b4bd6/src/codecs/csl/index.ts#L115">src/codecs/csl/index.ts:115</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decode <code>Csl.Data</code> to a <code>CreativeWork</code> or derived type.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>csl: <span class="tsd-signature-type">Csl.Data</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.CreativeWork</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">schema.Article</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="encodearticle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Article</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Article<span class="tsd-signature-symbol">(</span>article<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Article</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Data</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/664b4bd6/src/codecs/csl/index.ts#L291">src/codecs/csl/index.ts:291</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode an <code>Article</code> as <code>Csl.Data</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>article: <span class="tsd-signature-type">Article</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Data</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="encodecreativework" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Creative<wbr>Work</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Creative<wbr>Work<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ItemType</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Data</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/664b4bd6/src/codecs/csl/index.ts#L254">src/codecs/csl/index.ts:254</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode a <code>CreativeWork</code> as <code>Csl.Data</code>.</p>
+								</div>
+								<p>This function is intended as a base for other functions that encode particular
+								types of creative works e.g. <code>Book</code>, or as a fallback.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>work: <span class="tsd-signature-type">CreativeWork</span></h5>
+								</li>
+								<li>
+									<h5>type: <span class="tsd-signature-type">ItemType</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Data</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="encodecsl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Csl</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Csl<span class="tsd-signature-symbol">(</span>work<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CreativeWork</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Data</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/664b4bd6/src/codecs/csl/index.ts#L233">src/codecs/csl/index.ts:233</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode a <code>CreativeWork</code> as <code>Csl.Data</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>work: <span class="tsd-signature-type">CreativeWork</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Data</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="codecs_csl.html">codecs/csl</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/codecs_csl.cslcodec.html" class="tsd-kind-icon">CSLCodec</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="codecs_csl.html#stylesdir" class="tsd-kind-icon">styles<wbr>Dir</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="codecs_csl.html#decodecsl" class="tsd-kind-icon">decode<wbr>Csl</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="codecs_csl.html#encodearticle" class="tsd-kind-icon">encode<wbr>Article</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="codecs_csl.html#encodecreativework" class="tsd-kind-icon">encode<wbr>Creative<wbr>Work</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="codecs_csl.html#encodecsl" class="tsd-kind-icon">encode<wbr>Csl</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
