@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<!-- Examples taken from https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/fig.html -->
+
+<article>
+  <front>
+    <article-meta>
+      <contrib-group />
+    </article-meta>
+  </front>
+  <body>
+
+    <p>Example 1</p>
+    <fig id="f1" orientation="portrait" position="float">
+      <graphic xlink:href="f1" />
+      <attrib>Brookhaven National Laboratory</attrib>
+    </fig>
+
+    <p>Example 2</p>
+    <fig id="f8" orientation="portrait" position="float">
+      <label>FIG. 8.</label>
+      <caption>
+        <p>Time difference between events F and A as a function of the
+length of entering plug for bifurcations B to BXXX, where X stands
+for 0 or 1.</p>
+      </caption>
+      <graphic orientation="portrait" position="float" xlink:href="f8" />
+    </fig>
+
+    <p>Example 3</p>
+    <fig id="F1">
+      <caption>
+        <title>Deaths among patients receiving day hospital care
+or alternative services.</title>
+        <p>
+          Odds ratios of death by end of follow up were calculated by
+fixed effects model. Heterogeneity between trials is presented as
+&#x03C7;
+          <sup>2</sup>
+        </p>
+      </caption>
+      <alt-text>Deaths in hospitals or with alternative services</alt-text>
+      <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="fors2662.f1">
+        <object-id>456472</object-id>
+      </graphic>
+    </fig>
+
+    <p>Example 4</p>
+    <fig id="f1" orientation="portrait" position="float">
+      <label>FIG. 1.</label>
+      <caption>
+        <p>
+          (a) Schematic of the working principles of HFM, (b) a typical application
+scheme for an electric bias in HFM, (c) regulation the conformations and
+dynamics (trapping, concentration, and sudden stretching) of λ-DNA molecules
+in HFM, and (d) schematic of the trapping location regulation (enhanced online).
+[URL:
+          <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1063/1.4762852.1">
+http://dx.doi.org/10.1063/1.4762852.1</ext-link>
+          ]
+          <alternatives>
+            <media id="v1" mime-subtype="avi" mimetype="video" orientation="portrait" position="anchor" specific-use="original-format" xlink:href="v1" />
+            <media mime-subtype="mpeg" mimetype="video" orientation="portrait" position="anchor" specific-use="archival-format" xlink:href="v1" />
+            <media mime-subtype="x-flv" mimetype="video" orientation="portrait" position="anchor" specific-use="online-format" xlink:href="v1" />
+          </alternatives>
+        </p>
+      </caption>
+      <graphic orientation="portrait" position="float" xlink:href="f1" />
+      <graphic id="f1a" orientation="portrait" position="float" xlink:href="dummy1.png" />
+      <graphic id="f1b" orientation="portrait" position="float" xlink:href="dummy2.png" />
+      <graphic id="f1c" orientation="portrait" position="float" xlink:href="dummy3.png" />
+      <graphic id="f1d" orientation="portrait" position="float" xlink:href="dummy4.png" />
+    </fig>
+
+    <p>Example 5</p>
+    <fig id="f3" position="float">
+      <label>FIG. 3.</label>
+      <caption>...</caption>
+      <alternatives>
+        <graphic specific-use="print" xlink:href="1.4821168.figures.highres.f3.zip" />
+        <graphic specific-use="online" xlink:href="1.4821168.figures.online.f3.jpg" />
+      </alternatives>
+    </fig>
+
+  </body>
+  <back>
+    <app-group />
+  </back>
+</article>
