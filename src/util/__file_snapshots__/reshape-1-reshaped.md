@@ -134,14 +134,14 @@ Caption for the next table
 
 figure: Figure 1
 :::
-![](https://via.placeholder.com/100)
+![](https://example.org/image.png)
 
 Caption after after image
 :::
 
 figure:
 :::
-![](https://via.placeholder.com/200)
+![](https://example.org/image.png)
 
 Caption is above and bold
 :::

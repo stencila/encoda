@@ -47,7 +47,7 @@ A paragraph with in-text citations with different citation modes. Parenthetical:
 
 A paragraph with `# code`{lang=python}.
 
-A paragraph with an image ![alt text](https://via.placeholder.com/10 "title").
+A paragraph with an image ![alt text](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 "title").
 
 Paragraph with a !true and a !false.
 

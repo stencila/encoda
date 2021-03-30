@@ -1,8 +1,9 @@
 import * as schema from '@stencila/schema'
 import { plotlyMediaType } from '../../codecs/plotly'
+import { tinyImageUrl } from './tiny'
 
 export const plotlyImage = schema.imageObject({
-  contentUrl: 'https://via.placeholder.com/300x150',
+  contentUrl: tinyImageUrl,
   content: [
     {
       mediaType: plotlyMediaType,

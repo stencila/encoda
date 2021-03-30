@@ -43,13 +43,13 @@ Captions can also be indicated by emphasis or string emphasis e.g.
 
 ## Figures
 
-![](https://via.placeholder.com/100)
+![](https://example.org/image.png)
 
 Figure 1. Caption after after image
 
 **Caption is above and bold**
 
-![](https://via.placeholder.com/200)
+![](https://example.org/image.png)
 
 ## Chunks
 

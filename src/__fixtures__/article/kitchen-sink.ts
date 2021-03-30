@@ -6,6 +6,7 @@ import {
   citeGroup,
   paragraph,
 } from '@stencila/schema'
+import { tinyImageUrl } from '../image/tiny'
 
 /**
  * An `Article` containing examples of many node types.
@@ -133,7 +134,7 @@ export default article({
         'A paragraph with an image ',
         {
           type: 'ImageObject',
-          contentUrl: 'https://via.placeholder.com/10',
+          contentUrl: tinyImageUrl,
           title: 'title',
           text: 'alt text',
         },

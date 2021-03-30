@@ -1,5 +1,6 @@
 import * as schema from '@stencila/schema'
 import { vegaMediaType } from '../../codecs/vega'
+import { tinyImageUrl } from './tiny'
 
 export const testData = {
   description: 'A simple bar chart with embedded spec.',
@@ -24,7 +25,7 @@ export const testData = {
 }
 
 export const vegaImage = schema.imageObject({
-  contentUrl: 'https://via.placeholder.com/300x150',
+  contentUrl: tinyImageUrl,
   content: [
     {
       mediaType: vegaMediaType,

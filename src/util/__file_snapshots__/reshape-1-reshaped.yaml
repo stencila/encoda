@@ -194,7 +194,7 @@ content:
     label: Figure 1
     content:
       - type: ImageObject
-        contentUrl: https://via.placeholder.com/100
+        contentUrl: https://example.org/image.png
   - type: Figure
     caption:
       - type: Paragraph
@@ -202,7 +202,7 @@ content:
           - Caption is above and bold
     content:
       - type: ImageObject
-        contentUrl: https://via.placeholder.com/200
+        contentUrl: https://example.org/image.png
   - type: Heading
     depth: 2
     content:
