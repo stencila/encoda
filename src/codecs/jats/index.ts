@@ -2019,31 +2019,14 @@ function decodeFigure(
 
   const caption = child(elem, 'caption')
 
-  const alternatives = child(elem, 'alternatives')
-  let content
-  if (alternatives !== null) content = decodeDefault(alternatives, state)
-  else {
-    const item = child(elem, [
-      'disp-formula',
-      'disp-formula-group',
-      'chem-struct-wrap',
-      'disp-quote',
-      'speech',
-      'statement',
-      'verse-group',
-      'table-wrap',
-      'p',
-      'def-list',
-      'list',
-      'array',
-      'code',
-      'graphic',
-      'media',
-      'preformat',
-    ])
-    content = item !== null ? decodeElement(item, state) : undefined
+  const content = []
+  if (elem.elements) {
+    for (const item of elem.elements) {
+      if (item.name !== 'caption') {
+        content.push(decodeElement(item, state))
+      }
+    }
   }
-
   return [
     stencila.figure({
       id: decodeInternalId(attr(elem, 'id')),
