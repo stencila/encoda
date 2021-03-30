@@ -2264,6 +2264,7 @@ function decodeGraphic(
 ): [stencila.ImageObject] {
   const contentUrl = attr(elem, 'xlink:href') ?? ''
   const format = extractMimetype(elem)
+  const id = attrOrUndefined(elem, 'id')
 
   const meta: stencila.ImageObject['meta'] = { inline }
   const linkType = attr(elem, 'xlink:type')
