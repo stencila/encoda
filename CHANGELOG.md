@@ -1,3 +1,20 @@
+# [0.112.0](https://github.com/stencila/encoda/compare/v0.111.0...v0.112.0) (2021-03-30)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency jsdom to ^16.5.2 ([2f2eb96](https://github.com/stencila/encoda/commit/2f2eb96a0502df36305693897c7069316930fb32))
+* Allow MathML elements with `m:math` namespace in JATS ([f39df7d](https://github.com/stencila/encoda/commit/f39df7d2bdac919fe6f9568fd2d3446c7fe92c87))
+* Use nullish coalescing operator (`??`) ([820bbaa](https://github.com/stencila/encoda/commit/820bbaaddb10a69c720a0448f3d2b85dee5f8dc6))
+* **dependencies:** update dependency jsonld to v5 ([117544e](https://github.com/stencila/encoda/commit/117544e29ec1a14dcae7ab68641956bc38769e02))
+
+
+### Features
+
+* **JATS:** Read ids of paragraphs ([204b32d](https://github.com/stencila/encoda/commit/204b32dcb79d405af5b3b6e9806f9df692b9ddbd))
+* **Vega:** Add Vega codec, and Vega figure support to HTML Codec ([4758c21](https://github.com/stencila/encoda/commit/4758c219d452be9780b7c22fec5f0cee3b0ead3a))
+* **Vega:** Detect Vega library and version being used ([63a5572](https://github.com/stencila/encoda/commit/63a55722f21bec5d90f3b59656361de2c3aef788))
+
 # [0.111.0](https://github.com/stencila/encoda/compare/v0.110.0...v0.111.0) (2021-03-24)
 
 
