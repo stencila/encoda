@@ -1,0 +1,143 @@
+type: Article
+identifiers: []
+title: Untitled
+meta: {}
+content:
+  - type: Paragraph
+    content:
+      - Example 1
+  - type: Figure
+    id: f1
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+      - Brookhaven National Laboratory
+  - type: Paragraph
+    content:
+      - Example 2
+  - type: Figure
+    id: f8
+    caption:
+      - type: Paragraph
+        content:
+          - |-
+            Time difference between events F and A as a function of the
+            length of entering plug for bifurcations B to BXXX, where X stands
+            for 0 or 1.
+    label: FIG. 8.
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
+      - Example 3
+  - type: Figure
+    id: F1
+    caption:
+      - type: Heading
+        depth: 1
+        content:
+          - |-
+            Deaths among patients receiving day hospital care
+            or alternative services.
+      - type: Paragraph
+        content:
+          - |2-
+
+                      Odds ratios of death by end of follow up were calculated by
+            fixed effects model. Heterogeneity between trials is presented as
+            χ
+                      
+          - type: Superscript
+            content:
+              - '2'
+    content:
+      - Deaths in hospitals or with alternative services
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
+      - Example 4
+  - type: Figure
+    id: f1
+    caption:
+      - type: Paragraph
+        content:
+          - >2-
+
+                      (a) Schematic of the working principles of HFM, (b) a typical application
+            scheme for an electric bias in HFM, (c) regulation the conformations
+            and
+
+            dynamics (trapping, concentration, and sudden stretching) of λ-DNA
+            molecules
+
+            in HFM, and (d) schematic of the trapping location regulation
+            (enhanced online).
+
+            [URL:
+                      
+          - type: Link
+            target: http://dx.doi.org/10.1063/1.4762852.1
+            content:
+              - |-
+
+                http://dx.doi.org/10.1063/1.4762852.1
+          - |2-
+
+                      ]
+                      
+      - type: MediaObject
+        contentUrl: ''
+        format: video/avi
+    label: FIG. 1.
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
+      - Example 5
+  - type: Figure
+    id: f3
+    caption:
+      - ...
+    label: FIG. 3.
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: ''
+        meta:
+          inline: false
+          usage: print

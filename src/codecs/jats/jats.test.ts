@@ -1,7 +1,6 @@
 import path from 'path'
 import { JatsCodec } from '.'
-import { convert } from '../..'
-import { snapshot } from '../../__tests__/helpers'
+import { fixture, snapshot } from '../../__tests__/helpers'
 import {
   asciimathFragment,
   texFragment,
@@ -24,9 +23,6 @@ const yaml = new YamlCodec()
 
 const { sniff } = jats
 
-const fixture = (name: string) =>
-  path.join(__dirname, '__fixtures__', name, 'main.jats.xml')
-
 jest.mock('crypto')
 
 test('sniff', async () => {
@@ -46,9 +42,9 @@ test('sniff', async () => {
     )
   ).toBe(true)
 
-  expect(await sniff(fixture('elife-46793-v1'))).toBe(true)
-  expect(await sniff(fixture('f1000-7-1655-v1'))).toBe(true)
-  expect(await sniff(fixture('plosone-0091296'))).toBe(true)
+  expect(await sniff(fixture('elife-46793-v1/main.jats.xml'))).toBe(true)
+  expect(await sniff(fixture('f1000-7-1655-v1/main.jats.xml'))).toBe(true)
+  expect(await sniff(fixture('plosone-0091296/main.jats.xml'))).toBe(true)
 
   expect(await sniff('foo bar')).toBe(false)
   expect(await sniff(__dirname)).toBe(false)
@@ -79,6 +75,7 @@ describe('encode: Math', () => {
 })
 
 test.each([
+  'fig.xml',
   'elife-30274-v1',
   'elife-43154-v2',
   'elife-46472-v3',
@@ -92,21 +89,24 @@ test.each([
   'plosone-0178565',
   'ijm-00202',
 ])('decode + encode : %s', async (article) => {
-  const node = unlinkFiles(await jats.read(fixture(article)))
+  const input = article.endsWith('.xml') ? article : `${article}/main.jats.xml`
+  const name = article.endsWith('.xml') ? article.replace('.xml', '') : article
 
-  expect(await yaml.dump(node)).toMatchFile(snapshot(`${article}.yaml`))
+  const node = unlinkFiles(await jats.read(fixture(input)))
+
+  expect(await yaml.dump(node)).toMatchFile(snapshot(`${name}.yaml`))
 
   expect(
     await jats.dump(node, {
       isStandalone: true,
     })
-  ).toMatchFile(snapshot(`${article}.jats.xml`))
+  ).toMatchFile(snapshot(`${name}.jats.xml`))
 })
 
 describe('authors', () => {
   test('decode collaborators', async () => {
     const { authors } = unlinkFiles(
-      await jats.read(fixture('elife-30274-v1'))
+      await jats.read(fixture('elife-30274-v1/main.jats.xml'))
     ) as Article
 
     expect(authors).toEqual(

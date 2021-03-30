@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+    <front>
+        <article-meta>
+            <title-group>
+                <article-title>Untitled</article-title>
+            </title-group>
+            <contrib-group/>
+        </article-meta>
+    </front>
+    <body>
+        <sec>
+            <p>Example 1</p>
+            <fig>
+                <alternatives>
+                    <graphic xlink:href=""/>Brookhaven National Laboratory
+                </alternatives>
+            </fig>
+            <p>Example 2</p>
+            <fig>
+                <label>FIG. 8.</label>
+                <caption>
+                    <p>Time difference between events F and A as a function of the
+length of entering plug for bifurcations B to BXXX, where X stands
+for 0 or 1.</p>
+                </caption>
+                <graphic xlink:href=""/>
+            </fig>
+            <p>Example 3</p>
+            <fig>
+                <caption>
+                    <title>Deaths among patients receiving day hospital care
+or alternative services.</title>
+                    <p>
+          Odds ratios of death by end of follow up were calculated by
+fixed effects model. Heterogeneity between trials is presented as
+χ
+          
+                        <sup>2</sup>
+                    </p>
+                </caption>
+                <alternatives>Deaths in hospitals or with alternative services
+                    <graphic xlink:href=""/>
+                </alternatives>
+            </fig>
+            <p>Example 4</p>
+            <fig>
+                <label>FIG. 1.</label>
+                <caption>
+                    <p>
+          (a) Schematic of the working principles of HFM, (b) a typical application
+scheme for an electric bias in HFM, (c) regulation the conformations and
+dynamics (trapping, concentration, and sudden stretching) of λ-DNA molecules
+in HFM, and (d) schematic of the trapping location regulation (enhanced online).
+[URL:
+          
+                        <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1063/1.4762852.1">
+http://dx.doi.org/10.1063/1.4762852.1</ext-link>
+          ]
+          
+                    </p>
+                    <media xlink:href="" mimetype="video" mime-subtype="avi"/>
+                </caption>
+                <alternatives>
+                    <graphic xlink:href=""/>
+                    <graphic xlink:href=""/>
+                    <graphic xlink:href=""/>
+                    <graphic xlink:href=""/>
+                    <graphic xlink:href=""/>
+                </alternatives>
+            </fig>
+            <p>Example 5</p>
+            <fig>
+                <label>FIG. 3.</label>
+                <caption>...</caption>
+                <graphic xlink:href="" specific-use="print"/>
+            </fig>
+        </sec>
+    </body>
+    <back/>
+</article>

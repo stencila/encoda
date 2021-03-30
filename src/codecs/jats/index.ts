@@ -1334,6 +1334,8 @@ function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
 function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
   if (elem.type === 'text') return [elem.text ?? '']
   switch (elem.name) {
+    case 'alternatives':
+      return decodeAlternatives(elem, state)
     case 'sec':
       return decodeSection(elem, state)
     case 'title':
@@ -1502,6 +1504,28 @@ function decodeInlineContent(
   state: DecodeState
 ): stencila.InlineContent[] {
   return ensureInlineContentArray(decodeElements(elems, state))
+}
+
+/**
+ * Decode a JATS `<alternatives>` element.
+ *
+ * As per https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/alternatives.html:
+ *
+ * > Container element used to hold a group of processing alternatives, for example, a
+ * single <graphic> that ships in several formats (tif, gif, and jpeg) or in different
+ * resolutions. This element is a physical grouping to contain multiple logically
+ * equivalent (substitutable) versions of the same information object. Typically these
+ * are processing alternatives, and **the reader is expected to see only one version** of
+ * the object.
+ *
+ * Given that the reader is only expected to see one alternative and given that we don't
+ * yet have the concept of alternatives in Stencila, we simply take the first one.
+ */
+function decodeAlternatives(
+  elem: xml.Element,
+  state: DecodeState
+): stencila.Node[] {
+  return elem.elements?.[0] ? decodeElement(elem.elements[0], state) : []
 }
 
 /**
@@ -2007,9 +2031,6 @@ function encodeFigGroup(
 
 /**
  * Decode a JATS `<fig>` element to a Stencila `Figure` node.
- *
- * Uses the `<alternatives>` element as content, if it exists, otherwise the first
- * valid child e.g. `<graphic>`.
  */
 function decodeFigure(
   elem: xml.Element,
@@ -2017,43 +2038,33 @@ function decodeFigure(
 ): [stencila.Figure] {
   state = { ...state, ancestorElem: elem }
 
-  const caption = child(elem, 'caption')
+  const id = decodeInternalId(attr(elem, 'id'))
+  const label = textOrUndefined(child(elem, 'label'))
 
-  const alternatives = child(elem, 'alternatives')
-  let content
-  if (alternatives !== null) content = decodeDefault(alternatives, state)
-  else {
-    const item = child(elem, [
-      'disp-formula',
-      'disp-formula-group',
-      'chem-struct-wrap',
-      'disp-quote',
-      'speech',
-      'statement',
-      'verse-group',
-      'table-wrap',
-      'p',
-      'def-list',
-      'list',
-      'array',
-      'code',
-      'graphic',
-      'media',
-      'preformat',
-    ])
-    content = item !== null ? decodeElement(item, state) : undefined
+  // Get any `caption`
+  const captionEl = child(elem, 'caption')
+  const caption = captionEl?.elements?.length
+    ? decodeElements(captionEl.elements, state)
+    : undefined
+
+  // Get the `content`, ignoring certain elements that have already been
+  // gotten or are not "content". Note that for any `<alternative>` elements
+  // that the first child will be taken by `decodeAlternative`.
+  const content = []
+  if (elem.elements) {
+    for (const item of elem.elements) {
+      if (
+        typeof item.name === 'string' &&
+        !['object-id', 'label', 'caption', 'abstract', 'kwd-group'].includes(
+          item.name
+        )
+      ) {
+        content.push(...decodeElement(item, state))
+      }
+    }
   }
 
-  return [
-    stencila.figure({
-      id: decodeInternalId(attr(elem, 'id')),
-      label: textOrUndefined(child(elem, 'label')),
-      caption: caption?.elements?.length
-        ? decodeElements(caption.elements, state)
-        : undefined,
-      content,
-    }),
-  ]
+  return [stencila.figure({ id, label, caption, content })]
 }
 
 /**
@@ -2251,21 +2262,16 @@ function decodeGraphic(
   elem: xml.Element,
   inline: boolean
 ): [stencila.ImageObject] {
-  const meta: { [key: string]: any } = { inline }
+  const contentUrl = attr(elem, 'xlink:href') ?? ''
+  const format = extractMimetype(elem)
 
+  const meta: stencila.ImageObject['meta'] = { inline }
   const linkType = attr(elem, 'xlink:type')
   if (linkType) meta.linkType = linkType
-
   const usage = attr(elem, 'specific-use')
   if (usage) meta.usage = usage
 
-  return [
-    stencila.imageObject({
-      contentUrl: attr(elem, 'xlink:href') ?? '',
-      format: extractMimetype(elem),
-      meta: meta,
-    }),
-  ]
+  return [stencila.imageObject({ contentUrl, format, meta })]
 }
 
 /**
