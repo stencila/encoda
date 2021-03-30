@@ -29,7 +29,7 @@ references:
     authors:
       - Smith
       - Jones
-    datePublished: 1990
+    datePublished: '1990'
 ---
 
 In a para @bib1.
