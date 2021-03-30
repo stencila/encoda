@@ -2272,7 +2272,7 @@ function decodeGraphic(
   const usage = attr(elem, 'specific-use')
   if (usage) meta.usage = usage
 
-  return [stencila.imageObject({ contentUrl, format, meta })]
+  return [stencila.imageObject({ contentUrl, format, id, meta })]
 }
 
 /**
