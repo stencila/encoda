@@ -18,6 +18,9 @@ Some inline \verb|code|.
 % using `\lstinline`.
 Some inline Java \lstinline[language=Java]{public class MyClass}.
 
+% Or, using a `mintinline` command.
+Some inline R code \mintinline{r}{2^3}.
+
 % A `CodeBlock` with no `programmingLanguage` can be represented
 % using a `verbatim` environment.
 \begin{verbatim}
@@ -30,6 +33,15 @@ This is like the HTML <pre> element
 const foo = 'bar'
 console.log(foo)
 \end{lstlisting}
+
+% Or, using a `minted` environment
+\begin{minted}{yaml}
+test: 'that we can have a minted environment with YAML as the language'
+here:
+  - is
+  - an
+  - array
+\end{minted}
 
 % The above are all "static" code nodes with standard approaches for
 % inclusion in LaTeX. The following a "dynamic" code nodes - where we

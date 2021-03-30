@@ -25,6 +25,18 @@
       ]
     },
     {
+      "type": "Paragraph",
+      "content": [
+        "Some inline R code ",
+        {
+          "type": "CodeFragment",
+          "programmingLanguage": "r",
+          "text": "2^3"
+        },
+        "."
+      ]
+    },
+    {
       "type": "CodeBlock",
       "text": "This is like the HTML <pre> element"
     },
@@ -32,6 +44,11 @@
       "type": "CodeBlock",
       "programmingLanguage": "js",
       "text": "const foo = 'bar'\nconsole.log(foo)"
+    },
+    {
+      "type": "CodeBlock",
+      "programmingLanguage": "yaml",
+      "text": "test: 'that we can have a minted environment with YAML as the language'\nhere:\n  - is\n  - an\n  - array"
     },
     {
       "type": "Paragraph",
