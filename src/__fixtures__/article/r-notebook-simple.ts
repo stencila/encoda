@@ -1,6 +1,7 @@
 import {
   article,
   codeChunk,
+  date,
   heading,
   paragraph,
   person,
@@ -19,7 +20,7 @@ export default article({
       familyNames: ['Jones'],
     }),
   ],
-  datePublished: '2020-04-01',
+  datePublished: date({ value: '2020-04-01' }),
   content: [
     codeChunk({
       text: 'x <- 3.14',

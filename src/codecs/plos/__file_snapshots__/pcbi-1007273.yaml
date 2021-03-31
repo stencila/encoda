@@ -194,7 +194,9 @@ references:
           - Pop
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -225,7 +227,9 @@ references:
           - Sutton
         givenNames:
           - G
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -256,7 +260,9 @@ references:
           - Waterman
         givenNames:
           - MS
-    datePublished: '2001'
+    datePublished:
+      type: Date
+      value: '2001'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -277,7 +283,9 @@ references:
           - Myers
         givenNames:
           - EW
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -298,7 +306,9 @@ references:
           - Pop
         givenNames:
           - M
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -331,7 +341,9 @@ references:
           - Hood
         givenNames:
           - L
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -376,7 +388,9 @@ references:
           - Walker
         givenNames:
           - BJ
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -424,7 +438,9 @@ references:
           - Wang
         givenNames:
           - YK
-    datePublished: '1993'
+    datePublished:
+      type: Date
+      value: '1993'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -472,7 +488,9 @@ references:
           - Zhang
         givenNames:
           - W
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -520,7 +538,9 @@ references:
           - Anantharaman
         givenNames:
           - T
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -567,7 +587,9 @@ references:
           - Hindson
         givenNames:
           - CM
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: Periodical
       name: Nature biotechnology
@@ -602,7 +624,9 @@ references:
           - Jaffe
         givenNames:
           - DB
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -643,7 +667,9 @@ references:
           - Birol
         givenNames:
           - I
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: Bioinformatics
@@ -682,7 +708,9 @@ references:
           - Wit
         givenNames:
           - E
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -731,7 +759,9 @@ references:
           - Telling
         givenNames:
           - A
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -759,7 +789,9 @@ references:
           - Adey
         givenNames:
           - A
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -787,7 +819,9 @@ references:
           - Dekker
         givenNames:
           - J
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -833,7 +867,9 @@ references:
           - Parodi
         givenNames:
           - DP
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -859,7 +895,9 @@ references:
           - Koren
         givenNames:
           - S
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -892,7 +930,9 @@ references:
           - Omer
         givenNames:
           - AD
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -935,7 +975,9 @@ references:
           - Chin
         givenNames:
           - CS
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -980,7 +1022,9 @@ references:
           - Shen
         givenNames:
           - 'Y'
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1028,7 +1072,9 @@ references:
           - Otto
         givenNames:
           - G
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1064,7 +1110,9 @@ references:
           - Akeson
         givenNames:
           - M
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1086,7 +1134,9 @@ references:
           - Li
         givenNames:
           - H
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1114,7 +1164,9 @@ references:
           - Durbin
         givenNames:
           - R
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1149,7 +1201,9 @@ references:
           - Berlin
         givenNames:
           - K
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1197,7 +1251,9 @@ references:
           - Clum
         givenNames:
           - A
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1225,7 +1281,9 @@ references:
           - Pevzner
         givenNames:
           - PA
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1245,7 +1303,9 @@ references:
           - Edmonds
         givenNames:
           - J
-    datePublished: '1965'
+    datePublished:
+      type: Date
+      value: '1965'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1298,7 +1358,9 @@ references:
           - Kitts
         givenNames:
           - PA
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1336,7 +1398,9 @@ references:
           - Rand
         givenNames:
           - AC
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1355,7 +1419,9 @@ references:
           - Shamim
         givenNames:
           - MS
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1403,7 +1469,9 @@ references:
           - Antonescu
         givenNames:
           - C
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1432,7 +1500,9 @@ references:
           - Pang
         givenNames:
           - AWC
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: Periodical
       name: Nature methods
@@ -1472,7 +1542,9 @@ references:
           - Koren
         givenNames:
           - S
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1513,7 +1585,9 @@ references:
           - Epplen
         givenNames:
           - JT
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1541,7 +1615,9 @@ references:
           - Mishra
         givenNames:
           - B
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1570,7 +1646,9 @@ references:
           - Shamim
         givenNames:
           - MS
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1603,7 +1681,9 @@ references:
           - Fudenberg
         givenNames:
           - G
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1639,7 +1719,9 @@ references:
           - Rice
         givenNames:
           - BJ
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1687,7 +1769,9 @@ references:
           - Phillippy
         givenNames:
           - AM
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1713,7 +1797,9 @@ references:
           - Borneman
         givenNames:
           - AR
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1760,7 +1846,9 @@ references:
           - Ma
         givenNames:
           - X
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1807,7 +1895,9 @@ references:
           - Li
         givenNames:
           - J
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1850,7 +1940,9 @@ references:
           - Hansen
         givenNames:
           - KD
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1888,7 +1980,9 @@ references:
           - Crawford
         givenNames:
           - JE
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: bioRxiv
@@ -1916,7 +2010,9 @@ references:
           - O’Brien
         givenNames:
           - SJ
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:

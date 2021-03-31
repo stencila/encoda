@@ -1,10 +1,10 @@
 import {
   article,
-  person,
-  date,
   cite,
   citeGroup,
+  date,
   paragraph,
+  person,
 } from '@stencila/schema'
 import { tinyImageUrl } from '../image/tiny'
 
@@ -254,12 +254,12 @@ export default article({
     article({
       id: 'ref1',
       authors: [person({ familyNames: ['Adams'], givenNames: ['B'] })],
-      datePublished: '1990',
+      datePublished: date({ value: '1990' }),
     }),
     article({
       id: 'ref2',
       authors: [person({ familyNames: ['Smith'], givenNames: ['T'] })],
-      datePublished: '1991',
+      datePublished: date({ value: '1991' }),
     }),
   ],
 })

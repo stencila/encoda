@@ -32,7 +32,7 @@ references:
       PyAstroPol: A Python package for the instrumental polarization analysis of
       the astronomical optics.
     datePublished:
-      value: '2020-11-24'
+      value: 2020,11,24
       type: Date
     isPartOf:
       issueNumber: 55
@@ -65,7 +65,7 @@ references:
       AtomNeb Python Package, an addendum to AtomNeb: IDL Library for Atomic
       Data of Ionized Nebulae
     datePublished:
-      value: '2020-11-24'
+      value: 2020,11,24
       type: Date
     isPartOf:
       issueNumber: 55

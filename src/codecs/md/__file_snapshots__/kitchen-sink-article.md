@@ -18,7 +18,9 @@ references:
         givenNames:
           - B
         type: Person
-    datePublished: '1990'
+    datePublished:
+      value: '1990'
+      type: Date
     type: Article
   - id: ref2
     authors:
@@ -27,7 +29,9 @@ references:
         givenNames:
           - T
         type: Person
-    datePublished: '1991'
+    datePublished:
+      value: '1991'
+      type: Date
     type: Article
 ---
 

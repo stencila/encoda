@@ -1122,10 +1122,11 @@ function decodeReference(
   // The year can sometimes include a suffix e.g. 2012a (if there are multiple references
   // for the same author in a year). So this removes that suffix by only ever taking the
   // first four digits
-  let datePublished = textOrUndefined(child(elem, 'year'))
-  if (datePublished !== undefined) {
-    const match = /^(\d{4})/.exec(datePublished)
-    if (match) datePublished = match[1]
+  let datePublishedString = textOrUndefined(child(elem, 'year'))
+  let datePublished: stencila.Date | undefined
+  if (datePublishedString !== undefined) {
+    const match = /^(\d{4})/.exec(datePublishedString)
+    if (match) datePublished = stencila.date({ value: match[1] })
   }
 
   let title: string | undefined

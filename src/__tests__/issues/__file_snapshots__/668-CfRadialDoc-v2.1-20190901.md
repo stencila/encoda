@@ -11,7 +11,7 @@ references:
       Aircraft, and an Example of a Measurement of the Vertical Mesostructure of
       the Atmosphere
     datePublished:
-      value: '1968-08-01'
+      value: 1968,8
       type: Date
     isPartOf:
       issueNumber: 4
@@ -87,7 +87,7 @@ references:
         type: Person
     title: Mapping of Airborne Doppler Radar Data
     datePublished:
-      value: '1994-04-01'
+      value: 1994,4
       type: Date
     isPartOf:
       issueNumber: 2

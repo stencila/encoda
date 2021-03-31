@@ -28,7 +28,10 @@
           "name": "others"
         }
       ],
-      "datePublished": "1953",
+      "datePublished": {
+        "type": "Date",
+        "value": "1953"
+      },
       "isPartOf": {
         "type": "PublicationIssue",
         "isPartOf": {

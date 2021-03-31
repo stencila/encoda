@@ -6,7 +6,9 @@ authors:
     familyNames:
       - Jones
     type: Person
-datePublished: '2020-04-01'
+datePublished:
+  value: '2020-04-01'
+  type: Date
 ---
 
 chunk:

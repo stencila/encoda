@@ -213,7 +213,9 @@ references:
           - Vousden
         givenNames:
           - KH
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -243,7 +245,9 @@ references:
           - Dekanty
         givenNames:
           - A
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -264,7 +268,9 @@ references:
           - Lowe
         givenNames:
           - SW
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -307,7 +313,9 @@ references:
           - Bolden
         givenNames:
           - JE
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -341,7 +349,9 @@ references:
           - Dyke
         givenNames:
           - T
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -386,7 +396,9 @@ references:
           - Mutter
         givenNames:
           - GL
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -429,7 +441,9 @@ references:
           - Kalofoutis
         givenNames:
           - A
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -474,7 +488,9 @@ references:
           - Miething
         givenNames:
           - C
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -517,7 +533,9 @@ references:
           - Krizhanovsky
         givenNames:
           - V
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -562,7 +580,9 @@ references:
           - Hiraki
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -606,7 +626,9 @@ references:
           - Robin
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -636,7 +658,9 @@ references:
           - Johnston
         givenNames:
           - LA
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -661,7 +685,9 @@ references:
           - Johnston
         givenNames:
           - LA
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -708,7 +734,9 @@ references:
           - Quinzii
         givenNames:
           - CM
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -743,7 +771,9 @@ references:
           - Piddini
         givenNames:
           - E
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: Periodical
       name: Nat Commun. Springer US
@@ -769,7 +799,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -799,7 +831,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -827,7 +861,9 @@ references:
           - Milan
         givenNames:
           - M
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -860,7 +896,9 @@ references:
           - Shingleton
         givenNames:
           - AW
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -900,7 +938,9 @@ references:
           - Halme
         givenNames:
           - A
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -926,7 +966,9 @@ references:
           - Shingleton
         givenNames:
           - AW
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -971,7 +1013,9 @@ references:
           - Aigaki
         givenNames:
           - T
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -999,7 +1043,9 @@ references:
           - Basler
         givenNames:
           - K
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1030,7 +1076,9 @@ references:
           - Dominguez
         givenNames:
           - M
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1055,7 +1103,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1093,7 +1143,9 @@ references:
           - Abrams
         givenNames:
           - JM
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1127,7 +1179,9 @@ references:
           - Su
         givenNames:
           - TT
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1158,7 +1212,9 @@ references:
           - Steller
         givenNames:
           - H
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1186,7 +1242,9 @@ references:
           - García-Bellido
         givenNames:
           - A
-    datePublished: '1997'
+    datePublished:
+      type: Date
+      value: '1997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1214,7 +1272,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1255,7 +1315,9 @@ references:
           - Suchold
         givenNames:
           - D
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1303,7 +1365,9 @@ references:
           - Montell
         givenNames:
           - DJ
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: Periodical
       name: Mol Biol Cell
@@ -1326,7 +1390,9 @@ references:
           - Serras
         givenNames:
           - F
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1366,7 +1432,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1396,7 +1464,9 @@ references:
           - Xu
         givenNames:
           - T
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1421,7 +1491,9 @@ references:
           - Bohmann
         givenNames:
           - D
-    datePublished: '2006'
+    datePublished:
+      type: Date
+      value: '2006'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1466,7 +1538,9 @@ references:
           - Xu
         givenNames:
           - T
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1509,7 +1583,9 @@ references:
           - Classen
         givenNames:
           - A-K
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1554,7 +1630,9 @@ references:
           - Röthlisberger
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1584,7 +1662,9 @@ references:
           - Léopold
         givenNames:
           - P
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1624,7 +1704,9 @@ references:
           - Dominguez
         givenNames:
           - M
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1659,7 +1741,9 @@ references:
           - Léopold
         givenNames:
           - P
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1698,7 +1782,9 @@ references:
           - Dominguez
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1736,7 +1822,9 @@ references:
           - Léopold
         givenNames:
           - P
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: Periodical
       name: Dev Cell
@@ -1773,7 +1861,9 @@ references:
           - Gaumer
         givenNames:
           - S
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1813,7 +1903,9 @@ references:
           - Paro
         givenNames:
           - R
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1838,7 +1930,9 @@ references:
           - Bohmann
         givenNames:
           - D
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1863,7 +1957,9 @@ references:
           - Chandel
         givenNames:
           - NS
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1894,7 +1990,9 @@ references:
           - Mitchison
         givenNames:
           - TJ
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1939,7 +2037,9 @@ references:
           - Volovitch
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1983,7 +2083,9 @@ references:
           - Milán
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2008,7 +2110,9 @@ references:
           - Miura
         givenNames:
           - M
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2028,7 +2132,9 @@ references:
           - Stronach
         givenNames:
           - B
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2066,7 +2172,9 @@ references:
           - Xu
         givenNames:
           - T
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2111,7 +2219,9 @@ references:
           - Virolle
         givenNames:
           - V
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2156,7 +2266,9 @@ references:
           - Igaki
         givenNames:
           - T
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2186,7 +2298,9 @@ references:
           - Herranz
         givenNames:
           - H
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2231,7 +2345,9 @@ references:
           - Garcez
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2260,7 +2376,9 @@ references:
           - Léopold
         givenNames:
           - P
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2295,7 +2413,9 @@ references:
           - Halme
         givenNames:
           - A
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2320,7 +2440,9 @@ references:
           - Truman
         givenNames:
           - JW
-    datePublished: '1998'
+    datePublished:
+      type: Date
+      value: '1998'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2366,7 +2488,9 @@ references:
           - Martín
         givenNames:
           - D
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2385,7 +2509,9 @@ references:
           - Finkel
         givenNames:
           - T
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2413,7 +2539,9 @@ references:
           - Ghaffari
         givenNames:
           - S
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2436,7 +2564,9 @@ references:
           - Banerjee
         givenNames:
           - U
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2461,7 +2591,9 @@ references:
           - Xu
         givenNames:
           - 'Y'
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2504,7 +2636,9 @@ references:
           - Makhijani
         givenNames:
           - K
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2534,7 +2668,9 @@ references:
           - García-Bellido
         givenNames:
           - A
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2579,7 +2715,9 @@ references:
           - Pietzsch
         givenNames:
           - T
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2622,7 +2760,9 @@ references:
           - Batzoglou
         givenNames:
           - S
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2665,7 +2805,9 @@ references:
           - Quiroga
         givenNames:
           - G
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationVolume
       isPartOf:

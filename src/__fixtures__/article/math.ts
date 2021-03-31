@@ -1,8 +1,9 @@
 import {
   article,
-  paragraph,
-  mathFragment,
+  date,
   mathBlock,
+  mathFragment,
+  paragraph,
   person,
 } from '@stencila/schema'
 
@@ -16,7 +17,7 @@ export default article({
       name: 'Janet J Johns',
     }),
   ],
-  datePublished: 'Friday 13 March, 2020',
+  datePublished: date({ value: '2020-03-13' }),
   content: [
     paragraph({
       content: [

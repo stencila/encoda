@@ -405,17 +405,19 @@ const encodePublisher = (
 }
 
 /**
- * Decode a `Csl.Date` as an ISO date `string`
+ * Decode a `Csl.Date` to a Stencila `Date`
  */
-const decodeDate = (date: Csl.Date): string => {
+const decodeDate = (date: Csl.Date): schema.Date | undefined => {
   const { 'date-parts': dateParts, raw, literal, ...lost } = date
   logWarnLossIfAny('csl', 'decode', date, lost)
 
-  if (dateParts !== undefined) return dateParts.join('-')
-  if (raw !== undefined) return new Date(raw).toISOString()
-  if (literal !== undefined) return literal
+  if (dateParts !== undefined)
+    return schema.date({ value: dateParts.join('-') })
+  if (raw !== undefined)
+    return schema.date({ value: new Date(raw).toISOString() })
+  if (literal !== undefined) return schema.date({ value: literal })
 
-  return ''
+  return undefined
 }
 
 /**

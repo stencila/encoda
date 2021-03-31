@@ -11,6 +11,7 @@ import stencila, {
   creativeWork,
   datatable,
   datatableColumn,
+  date,
   del,
   emphasis,
   Entity,
@@ -26,6 +27,7 @@ import stencila, {
   mathBlock,
   mathFragment,
   mediaObject,
+  microdataItemtype,
   organization,
   paragraph,
   periodical,
@@ -41,10 +43,9 @@ import stencila, {
   table,
   tableCell,
   tableRow,
-  Types,
   thematicBreak,
+  Types,
   videoObject,
-  microdataItemtype,
 } from '@stencila/schema'
 import { getAllByRole, getByText } from '@testing-library/dom'
 import fs from 'fs'
@@ -227,7 +228,7 @@ describe.skip('Encode & Decode references', () => {
       creativeWork({
         title:
           'Cell flow reorients the axis of planar polarity in the wing epithelium of Drosophila',
-        datePublished: '2010',
+        datePublished: date({ value: '2010' }),
         // issueNumber: 142,
         // title: 'Cell',
         // pagination: '773-786',

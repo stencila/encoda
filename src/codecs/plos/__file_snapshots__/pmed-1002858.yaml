@@ -239,7 +239,9 @@ references:
     authors:
       - type: Organization
         name: World Health Organization
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -282,7 +284,9 @@ references:
           - Kruk
         givenNames:
           - ME
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -331,7 +335,9 @@ references:
           - Babiker
         givenNames:
           - A
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -374,7 +380,9 @@ references:
           - Mukaka
         givenNames:
           - M
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -418,7 +426,9 @@ references:
           - White
         givenNames:
           - NJ
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -466,7 +476,9 @@ references:
           - Tjitra
         givenNames:
           - E
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -515,7 +527,9 @@ references:
           - Agbenyega
         givenNames:
           - T
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -553,7 +567,9 @@ references:
           - Dondorp
         givenNames:
           - AM
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -599,7 +615,9 @@ references:
           - Kain
         givenNames:
           - KC
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -639,7 +657,9 @@ references:
           - Day
         givenNames:
           - NP
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -685,7 +705,9 @@ references:
           - Loc
         givenNames:
           - PP
-    datePublished: '2002'
+    datePublished:
+      type: Date
+      value: '2002'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -733,7 +755,9 @@ references:
           - White
         givenNames:
           - NJ
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -751,7 +775,9 @@ references:
           - Pearl
         givenNames:
           - J
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     publisher:
       type: Organization
       address:
@@ -767,7 +793,9 @@ references:
           - Rubin
         givenNames:
           - DB
-    datePublished: '1974'
+    datePublished:
+      type: Date
+      value: '1974'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -799,7 +827,9 @@ references:
           - Pearce
         givenNames:
           - 'N'
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -828,7 +858,9 @@ references:
           - Smith
         givenNames:
           - G
-    datePublished: '2016'
+    datePublished:
+      type: Date
+      value: '2016'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -851,7 +883,9 @@ references:
           - Holland
         givenNames:
           - PW
-    datePublished: '1986'
+    datePublished:
+      type: Date
+      value: '1986'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -877,7 +911,9 @@ references:
           - Robins
         givenNames:
           - J
-    datePublished: '2019'
+    datePublished:
+      type: Date
+      value: '2019'
     publisher:
       type: Organization
       address:
@@ -898,7 +934,9 @@ references:
           - Bignami
         givenNames:
           - A
-    datePublished: '1894'
+    datePublished:
+      type: Date
+      value: '1894'
     publisher:
       type: Organization
       address:
@@ -939,7 +977,9 @@ references:
           - Roberts
         givenNames:
           - LJ
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: Periodical
       name: Critical Care Medicine
@@ -979,7 +1019,9 @@ references:
           - Silamut
         givenNames:
           - K
-    datePublished: '2003'
+    datePublished:
+      type: Date
+      value: '2003'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1027,7 +1069,9 @@ references:
           - Samad
         givenNames:
           - R
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1074,7 +1118,9 @@ references:
           - Faiz
         givenNames:
           - M
-    datePublished: '2013'
+    datePublished:
+      type: Date
+      value: '2013'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1122,7 +1168,9 @@ references:
           - Haider
         givenNames:
           - MS
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1171,7 +1219,9 @@ references:
           - Brewster
         givenNames:
           - D
-    datePublished: '1989'
+    datePublished:
+      type: Date
+      value: '1989'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1219,7 +1269,9 @@ references:
           - Chuong
         givenNames:
           - LV
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1266,7 +1318,9 @@ references:
           - Loc
         givenNames:
           - PP
-    datePublished: '1996'
+    datePublished:
+      type: Date
+      value: '1996'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1314,7 +1368,9 @@ references:
           - Chhaganlal
         givenNames:
           - KD
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1352,7 +1408,9 @@ references:
           - Walker
         givenNames:
           - S
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1388,7 +1446,9 @@ references:
           - Geskus
         givenNames:
           - RB
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1409,7 +1469,9 @@ references:
           - Lumley
         givenNames:
           - T
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1435,7 +1497,9 @@ references:
           - Stuart
         givenNames:
           - EA
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1459,7 +1523,9 @@ references:
           - Beutler
         givenNames:
           - E
-    datePublished: '1994'
+    datePublished:
+      type: Date
+      value: '1994'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1505,7 +1571,9 @@ references:
           - Luchtman-Jones
         givenNames:
           - L
-    datePublished: '2010'
+    datePublished:
+      type: Date
+      value: '2010'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1551,7 +1619,9 @@ references:
           - Ganesh
         givenNames:
           - SK
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1599,7 +1669,9 @@ references:
           - Peshu
         givenNames:
           - 'N'
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1645,7 +1717,9 @@ references:
           - Macharia
         givenNames:
           - A
-    datePublished: '2011'
+    datePublished:
+      type: Date
+      value: '2011'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1673,7 +1747,9 @@ references:
           - Maitland
         givenNames:
           - K
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1720,7 +1796,9 @@ references:
           - Richardson
         givenNames:
           - D
-    datePublished: '2009'
+    datePublished:
+      type: Date
+      value: '2009'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1766,7 +1844,9 @@ references:
           - Engoru
         givenNames:
           - C
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1788,7 +1868,9 @@ references:
           - White
         givenNames:
           - NJ
-    datePublished: '2018'
+    datePublished:
+      type: Date
+      value: '2018'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1813,7 +1895,9 @@ references:
           - Ding
         givenNames:
           - P
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1859,7 +1943,9 @@ references:
           - Loc
         givenNames:
           - PP
-    datePublished: '2000'
+    datePublished:
+      type: Date
+      value: '2000'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1892,7 +1978,9 @@ references:
           - White
         givenNames:
           - NJ
-    datePublished: '2004'
+    datePublished:
+      type: Date
+      value: '2004'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1941,7 +2029,9 @@ references:
           - Faiz
         givenNames:
           - MA
-    datePublished: '2008'
+    datePublished:
+      type: Date
+      value: '2008'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1989,7 +2079,9 @@ references:
           - McNeil
         givenNames:
           - YR
-    datePublished: '2007'
+    datePublished:
+      type: Date
+      value: '2007'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -2032,7 +2124,9 @@ references:
           - Ho
         givenNames:
           - M
-    datePublished: '2005'
+    datePublished:
+      type: Date
+      value: '2005'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -2070,7 +2164,9 @@ references:
           - Shevkoplyas
         givenNames:
           - SS
-    datePublished: '2017'
+    datePublished:
+      type: Date
+      value: '2017'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -2113,7 +2209,9 @@ references:
           - Jeffreys
         givenNames:
           - AE
-    datePublished: '2014'
+    datePublished:
+      type: Date
+      value: '2014'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -2158,7 +2256,9 @@ references:
           - Mallewa
         givenNames:
           - M
-    datePublished: '2015'
+    datePublished:
+      type: Date
+      value: '2015'
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -2206,7 +2306,9 @@ references:
           - Olaosebikan
         givenNames:
           - R
-    datePublished: '2012'
+    datePublished:
+      type: Date
+      value: '2012'
     isPartOf:
       type: PublicationIssue
       isPartOf:

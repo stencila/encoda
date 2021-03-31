@@ -55,7 +55,7 @@ describe('encode', () => {
           familyNames: ['Jones'],
         }),
       ],
-      datePublished: '2020-11-12',
+      datePublished: schema.date({ value: '2020-11-12' }),
       itemReviewed: elife50356 as schema.Article,
     })
     expect(

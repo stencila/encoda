@@ -6,7 +6,9 @@
         - Einstein
       givenNames:
         - Albert
-  datePublished: '1924'
+  datePublished:
+    type: Date
+    value: '1924'
   isPartOf:
     type: PublicationIssue
     isPartOf:

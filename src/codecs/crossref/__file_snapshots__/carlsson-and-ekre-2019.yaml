@@ -10,7 +10,9 @@ authors:
       - Ekre
     givenNames:
       - Fredrik
-datePublished: '2019'
+datePublished:
+  type: Date
+  value: '2019'
 identifiers:
   - type: PropertyValue
     name: doi
