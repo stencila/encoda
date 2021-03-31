@@ -1,3 +1,19 @@
+# [0.113.0](https://github.com/stencila/encoda/compare/v0.112.0...v0.113.0) (2021-03-31)
+
+
+### Bug Fixes
+
+* **Dates:** Update schema and use `Date`, not strings, everywhere ([f0f2cf7](https://github.com/stencila/encoda/commit/f0f2cf7a63fe1ef2d3378a6aaee4eb7af9f2dc61))
+* **dependencies:** update dependency @stencila/schema to ^1.1.4 ([f3dd604](https://github.com/stencila/encoda/commit/f3dd604174b8b0c781256758e98ff735f7a97591))
+* **dependencies:** update dependency @stencila/thema to ^2.24.0 ([9414e46](https://github.com/stencila/encoda/commit/9414e46b50ba11b3588380d70fe1448ce08f9759))
+* **JATS:** Allow for multiple objects in `fig` ([68fe2b5](https://github.com/stencila/encoda/commit/68fe2b5596aab8a83277a63898937e08a507bf1c))
+* **JATS:** Handl alternatives explicitly; ignore fig children that are meta ([6a50e23](https://github.com/stencila/encoda/commit/6a50e23c7ce65658b2d4c92039c69ae7ca6767f5))
+
+
+### Features
+
+* **JATS:** Decode ids from `graphic` objects ([e849246](https://github.com/stencila/encoda/commit/e849246239ca6c5f95a1391b5fcab827af49398b))
+
 # [0.112.0](https://github.com/stencila/encoda/compare/v0.111.0...v0.112.0) (2021-03-30)
 
 
