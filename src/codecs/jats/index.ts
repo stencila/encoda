@@ -1378,6 +1378,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeSupplementaryMaterial(elem, state)
     case 'code':
       return decodeCode(elem)
+    case 'fn':
+      return decodeNote(elem, state)
     default:
       log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
       return decodeDefault(elem, state)
@@ -2320,6 +2322,21 @@ function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
     stencila.codeBlock({
       text: text(elem),
       programmingLanguage: attr(elem, 'language') ?? undefined,
+    }),
+  ]
+}
+
+/**
+ * Decode a JATS `<fn>` element as a Stencila `Note`.
+ */
+function decodeNote(elem: xml.Element, state: DecodeState): [stencila.Note] {
+  const id = attrOrUndefined(elem, 'id')
+  return [
+    stencila.note({
+      id,
+      content: ensureBlockContentArray(
+        decodeElements(elem.elements ?? [], state)
+      ),
     }),
   ]
 }
