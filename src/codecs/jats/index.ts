@@ -2337,6 +2337,7 @@ function decodeNote(elem: xml.Element, state: DecodeState): [stencila.Note] {
       content: ensureBlockContentArray(
         decodeElements(elem.elements ?? [], state)
       ),
+      noteType: 'Footnote',
     }),
   ]
 }
