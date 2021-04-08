@@ -1305,7 +1305,9 @@ function decodeBody(
   body: xml.Element | null,
   state: DecodeState
 ): stencila.Article['content'] {
-  return body === null ? undefined : decodeDefault(body, state)
+  return body === null
+    ? undefined
+    : ensureBlockContentArray(decodeDefault(body, state))
 }
 
 /**
