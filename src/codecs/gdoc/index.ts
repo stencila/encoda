@@ -18,6 +18,7 @@ import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import { docs_v1 as GDocT } from 'googleapis'
 import tempy from 'tempy'
+import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
 import { http, download } from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { DocxCodec } from '../docx'
@@ -229,7 +230,7 @@ async function decodeDocument(
 
   return stencila.article({
     title: title ?? undefined,
-    content: content.length > 0 ? content : undefined,
+    content: ensureBlockContentArrayOrUndefined(content),
   })
 }
 
