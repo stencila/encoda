@@ -11,7 +11,6 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: ''
         meta:
           inline: false
       - Brookhaven National Laboratory
@@ -31,7 +30,6 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: ''
         meta:
           inline: false
   - type: Paragraph
@@ -56,12 +54,11 @@ content:
                       
           - type: Superscript
             content:
-              - '2'
+              - 2
     content:
       - Deaths in hospitals or with alternative services
       - type: ImageObject
         contentUrl: ''
-        format: ''
         meta:
           inline: false
   - type: Paragraph
@@ -96,38 +93,33 @@ content:
 
                       ]
                       
-      - type: MediaObject
-        contentUrl: ''
-        format: video/avi
+          - type: MediaObject
+            contentUrl: ''
+            format: video/avi
     label: FIG. 1.
     content:
       - type: ImageObject
         contentUrl: ''
-        format: ''
         meta:
           inline: false
       - type: ImageObject
         id: f1a
         contentUrl: ''
-        format: ''
         meta:
           inline: false
       - type: ImageObject
         id: f1b
         contentUrl: ''
-        format: ''
         meta:
           inline: false
       - type: ImageObject
         id: f1c
         contentUrl: ''
-        format: ''
         meta:
           inline: false
       - type: ImageObject
         id: f1d
         contentUrl: ''
-        format: ''
         meta:
           inline: false
   - type: Paragraph
@@ -136,12 +128,13 @@ content:
   - type: Figure
     id: f3
     caption:
-      - ...
+      - type: Paragraph
+        content:
+          - ...
     label: FIG. 3.
     content:
       - type: ImageObject
         contentUrl: ''
-        format: ''
         meta:
           inline: false
           usage: print

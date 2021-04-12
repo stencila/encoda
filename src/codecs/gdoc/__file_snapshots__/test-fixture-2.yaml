@@ -13,7 +13,7 @@ title: A Google Doc test fixture for Stencila
 content:
   - type: Paragraph
     content:
-      - '1. '
+      - 1
       - Stencila, Kaikoura, New Zealand
   - type: Heading
     depth: 1
@@ -29,7 +29,7 @@ content:
               - >-
                 Italicized (or bolded) captions before or after a table should
                 be decoded as table with caption (and label if any).
-          - ''
+          - null
     label: Table 1
     rows:
       - type: TableRow
@@ -50,10 +50,10 @@ content:
               - A
           - type: TableCell
             content:
-              - '2'
+              - 2
           - type: TableCell
             content:
-              - '3'
+              - 3
       - type: TableRow
         cells:
           - type: TableCell
@@ -61,10 +61,10 @@ content:
               - B
           - type: TableCell
             content:
-              - '5'
+              - 5
           - type: TableCell
             content:
-              - '6'
+              - 6
   - type: Heading
     depth: 1
     content:
@@ -74,7 +74,7 @@ content:
       - type: ImageObject
         contentUrl: >-
           data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEXMzMyWlpaqqqqcnJyxsbGjo6O3t7e+vr7FxcWUEKXMAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWNgGAWjABUwGTvgkFFNMcEhI86QjF2Cw4ChGKdNSrgkWAxwyRQ34JIJw2mNOU4Z3CACp4wEGaaNgiEEANwaBJ7ft3cYAAAAAElFTkSuQmCC
-      - ''
+      - null
   - type: Paragraph
     content:
       - type: Emphasis
@@ -82,7 +82,7 @@ content:
           - >-
             Figure 1. Italicized (or bolded) captions before or after an image
             should be decoded as figure caption (and label if any).
-      - ''
+      - null
   - type: Heading
     depth: 1
     content:
@@ -102,7 +102,7 @@ content:
       - type: Paragraph
         content:
           - Code chunk caption.
-          - ''
+          - null
     duration: 0.007
     label: Figure 2
     outputs:

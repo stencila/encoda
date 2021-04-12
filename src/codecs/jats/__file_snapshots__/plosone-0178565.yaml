@@ -2014,11 +2014,11 @@ content:
           - type: Cite
             target: pone-0178565-ref001
             content:
-              - '1'
+              - 1
           - type: Cite
             target: pone-0178565-ref002
             content:
-              - '2'
+              - 2
       - >-
         . This ability to sequester atmospheric carbon dioxide and
         photosynthetically convert it to biomass makes cyanobacteria leading
@@ -2027,24 +2027,24 @@ content:
       - type: Cite
         target: pone-0178565-ref003
         content:
-          - '3'
+          - 3
       - ' and are attracting attention as biofertilizers and for nitrogenase-dependent hydrogen production '
       - type: Cite
         target: pone-0178565-ref004
         content:
-          - '4'
+          - 4
       - >-
         . Thus, the cyanobacterial phylum shows significant diversity both in
         terms of their metabolic capability and habitats [
       - type: Cite
         target: pone-0178565-ref005
         content:
-          - '5'
+          - 5
       - –
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - >-
         ]. Despite this diversity, the phylum has retained a significant core
         genome 
@@ -2053,11 +2053,11 @@ content:
           - type: Cite
             target: pone-0178565-ref007
             content:
-              - '7'
+              - 7
           - type: Cite
             target: pone-0178565-ref008
             content:
-              - '8'
+              - 8
       - .
   - type: Paragraph
     content:
@@ -2071,11 +2071,11 @@ content:
           - type: Cite
             target: pone-0178565-ref009
             content:
-              - '9'
+              - 9
           - type: Cite
             target: pone-0178565-ref010
             content:
-              - '10'
+              - 10
       - >-
         . Classical metabolic engineering involves knocking out or
         downregulating pathways that drain the carbon away from the product of
@@ -2083,7 +2083,7 @@ content:
       - type: Cite
         target: pone-0178565-ref011
         content:
-          - '11'
+          - 11
       - >-
         . Knowledge of essential genes allows mapping of critical points in
         metabolic networks and design of mutants with minimal wasteful
@@ -2091,24 +2091,24 @@ content:
       - type: Cite
         target: pone-0178565-ref012
         content:
-          - '12'
+          - 12
       - '. Essential genes also play a role in drug designing '
       - type: Cite
         target: pone-0178565-ref013
         content:
-          - '13'
+          - 13
       - >-
         , in identifying potential targets for antibiotics in pathogenic
         microorganism 
       - type: Cite
         target: pone-0178565-ref014
         content:
-          - '14'
+          - 14
       - ' and in minimal genome construction '
       - type: Cite
         target: pone-0178565-ref015
         content:
-          - '15'
+          - 15
       - >-
         . Experimental as well as computational methods have been reported for
         identification of essential genes. Conventional experimental methods
@@ -2116,17 +2116,17 @@ content:
       - type: Cite
         target: pone-0178565-ref016
         content:
-          - '16'
+          - 16
       - ' and RNA interference '
       - type: Cite
         target: pone-0178565-ref017
         content:
-          - '17'
+          - 17
       - ' where viability of the organism is checked by deleting or silencing the gene. A recently developed method, random bar code transposon-site sequencing (RB-TnSeq), parallelizes this process dramatically thereby permitting genome-wide gene essentiality testing '
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - >-
         . In parallel, a number of computational methods have been proposed in
         the past decade or so that may be time efficient. These are based on
@@ -2134,41 +2134,41 @@ content:
       - type: Cite
         target: pone-0178565-ref019
         content:
-          - '19'
+          - 19
       - ', gene expression data '
       - type: Cite
         target: pone-0178565-ref020
         content:
-          - '20'
+          - 20
       - ', metabolic modelling '
       - type: Cite
         target: pone-0178565-ref021
         content:
-          - '21'
+          - 21
       - ', flux balance analysis (FBA) '
       - type: CiteGroup
         items:
           - type: Cite
             target: pone-0178565-ref022
             content:
-              - '22'
+              - 22
           - type: Cite
             target: pone-0178565-ref023
             content:
-              - '23'
+              - 23
       - ' and '
       - type: Superscript
         content:
-          - '13'
+          - 13
       - C metabolic flux analysis (
       - type: Superscript
         content:
-          - '13'
+          - 13
       - 'C-MFA) '
       - type: Cite
         target: pone-0178565-ref024
         content:
-          - '24'
+          - 24
       - >-
         . FBA based methods systematically assesses the growth rate of all
         single gene deletion mutants. A gene is termed essential if it’s
@@ -2178,7 +2178,7 @@ content:
       - type: Cite
         target: pone-0178565-ref022
         content:
-          - '22'
+          - 22
       - .
   - type: Paragraph
     content:
@@ -2188,27 +2188,27 @@ content:
       - type: Cite
         target: pone-0178565-ref025
         content:
-          - '25'
+          - 25
       - ' performed comparative genomic analysis on different groups of photosynthetic prokaryotes for common gene orthologs to propose photosynthetic evolution. Subsequently, Shi and Falkowski '
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - ' enumerated 682 core genes based on conservation in 13 cyanobacterial genomes. Larsson et al. '
       - type: Cite
         target: pone-0178565-ref026
         content:
-          - '26'
+          - 26
       - ' predicted gene orthologs with a larger genome dataset of 58 cyanobacterial genomes and identified 404 such orthologs. Beck et al. '
       - type: Cite
         target: pone-0178565-ref008
         content:
-          - '8'
+          - 8
       - ' categorized the clusters of likely ortholog genes (CLOGs) identified from 16 cyanobacterial strains into core, shared and unique clusters. Besides these computational studies across the cyanobacterial phylum, Rubin et al. '
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - ' experimentally identified a total of 718 essential genes in '
       - type: Emphasis
         content:
@@ -2254,7 +2254,7 @@ content:
       - type: Cite
         target: pone-0178565-ref027
         content:
-          - '27'
+          - 27
       - >-
         , with minor modifications. Briefly, a total of 120 completely sequenced
         cyanobacterial genomes were used to create a local database (
@@ -2277,7 +2277,7 @@ content:
       - type: Cite
         target: pone-0178565-ref028
         content:
-          - '28'
+          - 28
       - >-
         . A given query protein sequence was searched against each of the 120
         cyanobacterial genomes using NCBI local BLASTP. A hit was accepted if
@@ -2292,7 +2292,7 @@ content:
       - type: Cite
         target: pone-0178565-ref029
         content:
-          - '29'
+          - 29
       - >-
         ). These conditions were imposed to minimize spurious hits that result
         from partial domain matches. All proteins that satisfy these criteria
@@ -2492,7 +2492,7 @@ content:
       - type: Cite
         target: pone-0178565-ref005
         content:
-          - '5'
+          - 5
       - . The tree can be broken down into 4 clades (
       - type: Link
         relation: fig
@@ -2562,7 +2562,7 @@ content:
         in profiles formation and find that 1904 of the ~ 10
       - type: Superscript
         content:
-          - '5'
+          - 5
       - ' pairs show E-value of ≤ 10'
       - type: Superscript
         content:
@@ -2614,7 +2614,7 @@ content:
       - type: Cite
         target: pone-0178565-ref030
         content:
-          - '30'
+          - 30
       - ' (Strauss et al, 2001). Each query protein is present in evolutionarily related subset of organisms suggesting that the divergence of the protein sequences correlates with the evolution of the organism. Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both represent the '
       - type: Emphasis
         content:
@@ -2625,11 +2625,11 @@ content:
           - type: Cite
             target: pone-0178565-ref031
             content:
-              - '31'
+              - 31
           - type: Cite
             target: pone-0178565-ref032
             content:
-              - '32'
+              - 32
       - >-
         . This suggests that the potentially redundant profiles represent genes
         that have diverged significantly in the subsets of organisms and are not
@@ -2744,7 +2744,7 @@ content:
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - ' have called this set the stable core.'
   - type: Table
     id: pone-0178565-t001
@@ -2784,7 +2784,6 @@ content:
           - type: TableCell
             content:
               - 'acnB '
-              - ' '
               - SYNPCC7002_A1683
           - type: TableCell
             content:
@@ -2822,7 +2821,6 @@ content:
           - type: TableCell
             content:
               - 'envM '
-              - ' '
               - SYNPCC7002_A1676
           - type: TableCell
             content:
@@ -2841,7 +2839,6 @@ content:
           - type: TableCell
             content:
               - 'fcl '
-              - ' '
               - SYNPCC7002_A2832
           - type: TableCell
             content:
@@ -2862,7 +2859,6 @@ content:
           - type: TableCell
             content:
               - 'leuA '
-              - ' '
               - SYNPCC7002_A1356
           - type: TableCell
             content:
@@ -2881,7 +2877,6 @@ content:
           - type: TableCell
             content:
               - 'glgB '
-              - ' '
               - SYNPCC7002_A1865
           - type: TableCell
             content:
@@ -2900,7 +2895,6 @@ content:
           - type: TableCell
             content:
               - 'bioB '
-              - ' '
               - SYNPCC7002_A0309
           - type: TableCell
             content:
@@ -2919,7 +2913,6 @@ content:
           - type: TableCell
             content:
               - 'rpsA '
-              - ' '
               - SYNPCC7002_A0955
           - type: TableCell
             content:
@@ -2989,11 +2982,11 @@ content:
           - type: Cite
             target: pone-0178565-ref033
             content:
-              - '33'
+              - 33
           - type: Cite
             target: pone-0178565-ref034
             content:
-              - '34'
+              - 34
       - >-
         . We checked for the conservation index of these genes and we find that
         the oscillator genes 
@@ -3027,22 +3020,22 @@ content:
       - type: Cite
         target: pone-0178565-ref035
         content:
-          - '35'
+          - 35
       - ' reported such a set in cyanobacteria which they called structural genes. Later Shi and Falkowski '
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - ' reported such a gene set in cyanobacteria which they called the stable core. Only few cyanobacterial genomes were available at that time. Our analysis benefits by the availability of a much larger number of genomes. We further improve upon the results by clustering of the organisms which removes the bias introduced by the overrepresentation of genomes from certain genera. Further, the 95% cut-off used by us helps remove errors introduced due to incomplete genome sequencing. A large number of conserved genes are common between our analysis and that presented by Martin et al. '
       - type: Cite
         target: pone-0178565-ref035
         content:
-          - '35'
+          - 35
       - ' and Shi and Falkowski '
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - ' ('
       - type: Link
         relation: fig
@@ -3065,16 +3058,16 @@ content:
           - type: Cite
             target: pone-0178565-ref036
             content:
-              - '36'
+              - 36
           - type: Cite
             target: pone-0178565-ref037
             content:
-              - '37'
+              - 37
       - ' are semi-conserved in our dataset but conserved in the dataset of Shi and Falkowski '
       - type: Cite
         target: pone-0178565-ref007
         content:
-          - '7'
+          - 7
       - '. Gene '
       - type: Emphasis
         content:
@@ -3083,12 +3076,12 @@ content:
       - type: Cite
         target: pone-0178565-ref038
         content:
-          - '38'
+          - 38
       - ' is semi-conserved in our dataset is one of the structural gene of Martin et al. '
       - type: Cite
         target: pone-0178565-ref035
         content:
-          - '35'
+          - 35
       - >-
         . These discrepancies may be due to differences in the genome datasets
         used in the three studies. Our analysis includes symbiotic strains which
@@ -3105,17 +3098,17 @@ content:
           - type: Cite
             target: pone-0178565-ref007
             content:
-              - '7'
+              - 7
           - '], structural genes of Martin et al. ['
           - type: Cite
             target: pone-0178565-ref035
             content:
-              - '35'
+              - 35
           - '] and essential genes of Rubin et al. ['
           - type: Cite
             target: pone-0178565-ref018
             content:
-              - '18'
+              - 18
           - '] shown for '
           - type: Emphasis
             content:
@@ -3131,17 +3124,17 @@ content:
           - type: Cite
             target: pone-0178565-ref007
             content:
-              - '7'
+              - 7
           - ' and structural genes '
           - type: Cite
             target: pone-0178565-ref035
             content:
-              - '35'
+              - 35
           - '. (B) Conserved genes (this work) and essential genes '
           - type: Cite
             target: pone-0178565-ref018
             content:
-              - '18'
+              - 18
           - >-
             . (C) Conserved genes without clustering of microorganisms and
             removing the microorganism redundancy and the overlap with essential
@@ -3149,7 +3142,7 @@ content:
           - type: Cite
             target: pone-0178565-ref018
             content:
-              - '18'
+              - 18
           - .
     label: Fig 5
     content:
@@ -3249,10 +3242,10 @@ content:
               - Number of genes
           - type: TableCell
             content:
-              - '891'
+              - 891
           - type: TableCell
             content:
-              - '102'
+              - 102
           - type: TableCell
             content:
               - 4,413
@@ -3288,7 +3281,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - ' ('
       - type: Link
         relation: supplementary-material
@@ -3338,7 +3331,7 @@ content:
       - type: Cite
         target: pone-0178565-ref038
         content:
-          - '38'
+          - 38
       - >-
         . The gene is semi-conserved in the entire phylum but is conserved in
         clade C. The gene 
@@ -3349,7 +3342,7 @@ content:
       - type: Cite
         target: pone-0178565-ref039
         content:
-          - '39'
+          - 39
       - >-
         . The gene is conserved in clades A and D but semi-conserved in the
         entire phylum. The genes 
@@ -3368,7 +3361,7 @@ content:
       - type: Cite
         target: pone-0178565-ref040
         content:
-          - '40'
+          - 40
       - '. The gene '
       - type: Emphasis
         content:
@@ -3377,7 +3370,7 @@ content:
       - type: Cite
         target: pone-0178565-ref041
         content:
-          - '41'
+          - 41
       - '. The genes are conserved in our data but are non-essential in '
       - type: Emphasis
         content:
@@ -3390,7 +3383,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - >-
         . This may be due to the fact that the PPP pathway may be used under
         certain stress conditions that are not accounted for in the experimental
@@ -3425,13 +3418,13 @@ content:
               - Essential
           - type: TableCell
             content:
-              - '494'
+              - 494
           - type: TableCell
             content:
-              - '242'
+              - 242
           - type: TableCell
             content:
-              - '14'
+              - 14
       - type: TableRow
         cells:
           - type: TableCell
@@ -3439,13 +3432,13 @@ content:
               - Non-Essential
           - type: TableCell
             content:
-              - '374'
+              - 374
           - type: TableCell
             content:
-              - '1089'
+              - 1089
           - type: TableCell
             content:
-              - '88'
+              - 88
   - type: Paragraph
     content:
       - >-
@@ -3475,7 +3468,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - ' for enzymes of select central carbon pathways ('
       - type: Link
         relation: table
@@ -3503,7 +3496,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - >-
         . Similarly, for Calvin cycle, we find that eight of the ten conserved
         enzymes are essential. However, we observe a disagreement with the data
@@ -3511,7 +3504,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - ' in the cases of gene '
       - type: Emphasis
         content:
@@ -3532,7 +3525,7 @@ content:
       - type: Cite
         target: pone-0178565-ref018
         content:
-          - '18'
+          - 18
       - .
   - type: Table
     id: pone-0178565-t004
@@ -3572,7 +3565,7 @@ content:
           - type: Cite
             target: pone-0178565-ref018
             content:
-              - '18'
+              - 18
           - ': E: Essential, NE: Non-essential.'
       - type: Paragraph
         id: t004fn003
@@ -3584,7 +3577,7 @@ content:
           - type: Cite
             target: pone-0178565-ref007
             content:
-              - '7'
+              - 7
           - ': Y: Yes (Conserved), N: No (Not Conserved).'
       - type: Paragraph
         id: t004fn004
@@ -3596,7 +3589,7 @@ content:
           - type: Cite
             target: pone-0178565-ref035
             content:
-              - '35'
+              - 35
           - ': Y: Yes (Structural Gene), N: No (Non-structural Gene).'
     label: Table 4
     rows:
@@ -4418,7 +4411,7 @@ content:
       - type: Cite
         target: pone-0178565-ref027
         content:
-          - '27'
+          - 27
       - >-
         . To that end, we clustered the semi-conserved genes using Hamming
         distance as metric and a cutoff of 0.15. A few selected clusters (
@@ -4466,11 +4459,11 @@ content:
           - type: Cite
             target: pone-0178565-ref042
             content:
-              - '42'
+              - 42
           - type: Cite
             target: pone-0178565-ref043
             content:
-              - '43'
+              - 43
       - '. The gene '
       - type: Emphasis
         content:
@@ -4479,12 +4472,12 @@ content:
       - type: Cite
         target: pone-0178565-ref044
         content:
-          - '44'
+          - 44
       - –
       - type: Cite
         target: pone-0178565-ref046
         content:
-          - '46'
+          - 46
       - >-
         ]. Cluster 9 has 4 proteins, of which three are Clustered Regularly
         Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and
@@ -4496,11 +4489,11 @@ content:
           - type: Cite
             target: pone-0178565-ref047
             content:
-              - '47'
+              - 47
           - type: Cite
             target: pone-0178565-ref048
             content:
-              - '48'
+              - 48
       - >-
         . The uncharacterized proteins present in the above clusters may have
         similar functions related to the proteins present in the respective
@@ -4585,7 +4578,7 @@ content:
               - OSCI_520004
           - type: TableCell
             content:
-              - '17.8'
+              - 17.8
       - type: TableRow
         cells:
           - type: TableCell
@@ -4599,7 +4592,7 @@ content:
               - Cal7507_2972
           - type: TableCell
             content:
-              - '15.1'
+              - 15.1
       - type: TableRow
         cells:
           - type: TableCell
@@ -4613,7 +4606,7 @@ content:
               - Cal7507_2975
           - type: TableCell
             content:
-              - '15.1'
+              - 15.1
       - type: TableRow
         cells:
           - type: TableCell
@@ -4627,7 +4620,7 @@ content:
               - Cal7507_2973
           - type: TableCell
             content:
-              - '15.1'
+              - 15.1
   - type: Heading
     id: sec015
     depth: 1
@@ -4653,288 +4646,315 @@ content:
     depth: 1
     content:
       - Supporting information
-  - type: MediaObject
-    id: pone-0178565-s001
-    contentUrl: ''
-    text: S1 Fig
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s001
+        contentUrl: ''
+        text: S1 Fig
         content:
-          - >-
-            Histogram of gene conservation index (GCI) for the essential and
-            non-essential genes of 
-          - type: Emphasis
+          - type: Heading
+            depth: 2
             content:
-              - S
-          - '. '
-          - type: Emphasis
+              - >-
+                Histogram of gene conservation index (GCI) for the essential and
+                non-essential genes of 
+              - type: Emphasis
+                content:
+                  - S
+              - '. '
+              - type: Emphasis
+                content:
+                  - elongatus
+              - ' PCC 7942.'
+          - type: Paragraph
             content:
-              - elongatus
-          - ' PCC 7942.'
-      - type: Paragraph
-        content:
-          - >-
-            Essentiality is obtained from the experimental studies of Rubin et
-            al, 2015 
-          - type: Cite
-            target: pone-0178565-ref018
+              - >-
+                Essentiality is obtained from the experimental studies of Rubin
+                et al, 2015 
+              - type: Cite
+                target: pone-0178565-ref018
+                content:
+                  - '18'
+              - .
+          - type: Paragraph
             content:
-              - '18'
-          - .
-      - type: Paragraph
-        content:
-          - (TIF)
-  - type: MediaObject
-    id: pone-0178565-s002
-    contentUrl: ''
-    text: S1 Table
+              - (TIF)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s002
+        contentUrl: ''
+        text: S1 Table
         content:
-          - List of the 120 cyanobacterial genomes used in the analysis.
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s003
-    contentUrl: ''
-    text: S2 Table
+          - type: Heading
+            depth: 2
+            content:
+              - List of the 120 cyanobacterial genomes used in the analysis.
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s003
+        contentUrl: ''
+        text: S2 Table
         content:
-          - List of query organisms used while constructing the profiles.
-      - type: Paragraph
-        content:
-          - >-
-            Columns C and D describe the number of proteins used to construct
-            the profiles and number of proteins present in the genome,
-            respectively. The organisms are listed in sequential order in which
-            they were used to form the profiles.
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s004
-    contentUrl: ''
-    text: S3 Table
+          - type: Heading
+            depth: 2
+            content:
+              - List of query organisms used while constructing the profiles.
+          - type: Paragraph
+            content:
+              - >-
+                Columns C and D describe the number of proteins used to
+                construct the profiles and number of proteins present in the
+                genome, respectively. The organisms are listed in sequential
+                order in which they were used to form the profiles.
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s004
+        contentUrl: ''
+        text: S3 Table
         content:
-          - >-
-            Phylogenetic profiles of 23,643 query proteins drawn from twenty
-            genetically diverse cyanobacterial genomes.
-      - type: Paragraph
-        content:
-          - >-
-            Columns A-D describe the various identifiers and attributes of the
-            query proteins. Column E depicts the presence or absence of the
-            query protein in the genome of while column F provides the best hit.
-            Likewise, presence of the query proteins in 120 cyanobacterial
-            genomes and the respective best hits are presented in columns G to
-            IJ.
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s005
-    contentUrl: ''
-    text: S4 Table
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                Phylogenetic profiles of 23,643 query proteins drawn from twenty
+                genetically diverse cyanobacterial genomes.
+          - type: Paragraph
+            content:
+              - >-
+                Columns A-D describe the various identifiers and attributes of
+                the query proteins. Column E depicts the presence or absence of
+                the query protein in the genome of while column F provides the
+                best hit. Likewise, presence of the query proteins in 120
+                cyanobacterial genomes and the respective best hits are
+                presented in columns G to IJ.
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s005
+        contentUrl: ''
+        text: S4 Table
         content:
-          - Clusters of 120 cyanobacterial strains.
-      - type: Paragraph
-        content:
-          - >-
-            Column A denotes the name of the cyanobacteria and the thick borders
-            represents a cluster. Column B describe the cluster number. The
-            cyanobacterial strains are arranged in the order shown in 
-          - type: Link
-            relation: fig
-            target: '#pone-0178565-g002'
+          - type: Heading
+            depth: 2
             content:
-              - Fig 2
-          - ' from top to bottom.'
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s006
-    contentUrl: ''
-    text: S5 Table
+              - Clusters of 120 cyanobacterial strains.
+          - type: Paragraph
+            content:
+              - >-
+                Column A denotes the name of the cyanobacteria and the thick
+                borders represents a cluster. Column B describe the cluster
+                number. The cyanobacterial strains are arranged in the order
+                shown in 
+              - type: Link
+                relation: fig
+                target: '#pone-0178565-g002'
+                content:
+                  - Fig 2
+              - ' from top to bottom.'
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s006
+        contentUrl: ''
+        text: S5 Table
         content:
-          - >-
-            Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse
-            cyanobacterial genomes across 73 clusters of cyanobacteria.
-      - type: Paragraph
-        content:
-          - >-
-            Columns A-D describe the various identifiers and attributes of the
-            query proteins. Columns E to BY depicts the presence or absence of
-            the query protein in the respective cluster of organisms. Column BZ
-            denotes the gene conservation index (GCI) for the profile. Columns
-            CA to CD depict if the gene is conserved in clades A to D.
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s007
-    contentUrl: ''
-    text: S6 Table
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                Phylogenetic profiles of 23,643 query proteins drawn from 20
+                diverse cyanobacterial genomes across 73 clusters of
+                cyanobacteria.
+          - type: Paragraph
+            content:
+              - >-
+                Columns A-D describe the various identifiers and attributes of
+                the query proteins. Columns E to BY depicts the presence or
+                absence of the query protein in the respective cluster of
+                organisms. Column BZ denotes the gene conservation index (GCI)
+                for the profile. Columns CA to CD depict if the gene is
+                conserved in clades A to D.
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s007
+        contentUrl: ''
+        text: S6 Table
         content:
-          - >-
-            List of genes used for PCA plot and heatmap generation to check for
-            mutually exclusive and diverse genes.
-      - type: Paragraph
-        content:
-          - >-
-            Column A to C describes about various identifiers and attributes of
-            the genes used. Column D describes the Gene Conservation Index
-            (GCI). All the genes are color coded according to the 
-          - type: Link
-            relation: fig
-            target: '#pone-0178565-g003'
+          - type: Heading
+            depth: 2
             content:
-              - Fig 3
-          - '. '
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s008
-    contentUrl: ''
-    text: S7 Table
+              - >-
+                List of genes used for PCA plot and heatmap generation to check
+                for mutually exclusive and diverse genes.
+          - type: Paragraph
+            content:
+              - >-
+                Column A to C describes about various identifiers and attributes
+                of the genes used. Column D describes the Gene Conservation
+                Index (GCI). All the genes are color coded according to the 
+              - type: Link
+                relation: fig
+                target: '#pone-0178565-g003'
+                content:
+                  - Fig 3
+              - '. '
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s008
+        contentUrl: ''
+        text: S7 Table
         content:
-          - >-
-            List of conserved genes in our analysis and their gene ontology
-            classification.
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s009
-    contentUrl: ''
-    text: S8 Table
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                List of conserved genes in our analysis and their gene ontology
+                classification.
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s009
+        contentUrl: ''
+        text: S8 Table
         content:
-          - 'Conservation level of the genes from '
-          - type: Emphasis
+          - type: Heading
+            depth: 2
             content:
-              - Synechococcus elongatus
-          - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
-          - type: Cite
-            target: pone-0178565-ref018
+              - 'Conservation level of the genes from '
+              - type: Emphasis
+                content:
+                  - Synechococcus elongatus
+              - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
+              - type: Cite
+                target: pone-0178565-ref018
+                content:
+                  - '18'
+              - '] and database of core proteins by Shi and Falkowski ['
+              - type: Cite
+                target: pone-0178565-ref007
+                content:
+                  - '7'
+              - '].'
+          - type: Paragraph
             content:
-              - '18'
-          - '] and database of core proteins by Shi and Falkowski ['
-          - type: Cite
-            target: pone-0178565-ref007
+              - >-
+                Column A describe the Protein UniProt IDs of query genes used in
+                the study, Column B to D describe the genes of 
+              - type: Emphasis
+                content:
+                  - S
+              - '. '
+              - type: Emphasis
+                content:
+                  - elongatus
+              - ' PCC 7942.'
+          - type: Paragraph
             content:
-              - '7'
-          - '].'
-      - type: Paragraph
-        content:
-          - >-
-            Column A describe the Protein UniProt IDs of query genes used in the
-            study, Column B to D describe the genes of 
-          - type: Emphasis
-            content:
-              - S
-          - '. '
-          - type: Emphasis
-            content:
-              - elongatus
-          - ' PCC 7942.'
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s010
-    contentUrl: ''
-    text: S9 Table
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s010
+        contentUrl: ''
+        text: S9 Table
         content:
-          - >-
-            Conservation level of enzymes in key metabolic pathways based on
-            reduced dataset and compared with experimental results on gene
-            essentiality by Rubin et al. [
-          - type: Cite
-            target: pone-0178565-ref018
+          - type: Heading
+            depth: 2
             content:
-              - '18'
-          - '], database of core proteins by Shi and Falkowski ['
-          - type: Cite
-            target: pone-0178565-ref007
+              - >-
+                Conservation level of enzymes in key metabolic pathways based on
+                reduced dataset and compared with experimental results on gene
+                essentiality by Rubin et al. [
+              - type: Cite
+                target: pone-0178565-ref018
+                content:
+                  - '18'
+              - '], database of core proteins by Shi and Falkowski ['
+              - type: Cite
+                target: pone-0178565-ref007
+                content:
+                  - '7'
+              - '] and structural genes by Martin et al. ['
+              - type: Cite
+                target: pone-0178565-ref035
+                content:
+                  - '35'
+              - '].'
+          - type: Paragraph
             content:
-              - '7'
-          - '] and structural genes by Martin et al. ['
-          - type: Cite
-            target: pone-0178565-ref035
-            content:
-              - '35'
-          - '].'
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s011
-    contentUrl: ''
-    text: S10 Table
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s011
+        contentUrl: ''
+        text: S10 Table
         content:
-          - >-
-            List of genes used for PCA plot and heatmap generation to check the
-            group of co-evolving genes.
-      - type: Paragraph
-        content:
-          - >-
-            Column A to C describes various identifiers and attributes of the
-            genes used. Column D describes the Gene Conservation Index (GCI).
-            All the genes are color coded according to the 
-          - type: Link
-            relation: fig
-            target: '#pone-0178565-g006'
+          - type: Heading
+            depth: 2
             content:
-              - Fig 6
-          - .
-      - type: Paragraph
-        content:
-          - (XLSX)
-  - type: MediaObject
-    id: pone-0178565-s012
-    contentUrl: ''
-    text: S11 Table
+              - >-
+                List of genes used for PCA plot and heatmap generation to check
+                the group of co-evolving genes.
+          - type: Paragraph
+            content:
+              - >-
+                Column A to C describes various identifiers and attributes of
+                the genes used. Column D describes the Gene Conservation Index
+                (GCI). All the genes are color coded according to the 
+              - type: Link
+                relation: fig
+                target: '#pone-0178565-g006'
+                content:
+                  - Fig 6
+              - .
+          - type: Paragraph
+            content:
+              - (XLSX)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pone-0178565-s012
+        contentUrl: ''
+        text: S11 Table
         content:
-          - List of co-evolving genes.
-      - type: Paragraph
-        content:
-          - >-
-            Column A describes the cluster number. Column B to D describes
-            various identifiers and attributes of the genes used. Column E
-            denotes the GCI.
-      - type: Paragraph
-        content:
-          - (XLSX)
+          - type: Heading
+            depth: 2
+            content:
+              - List of co-evolving genes.
+          - type: Paragraph
+            content:
+              - >-
+                Column A describes the cluster number. Column B to D describes
+                various identifiers and attributes of the genes used. Column E
+                denotes the GCI.
+          - type: Paragraph
+            content:
+              - (XLSX)
