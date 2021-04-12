@@ -153,14 +153,14 @@ export default article({
         ', a ',
         3.14,
         ', and a ',
-        [1, 2],
+        true,
         '.',
       ],
     },
     {
       type: 'QuoteBlock',
       cite: 'https://example.org',
-      content: ['A blockquote'],
+      content: [paragraph({ content: ['A blockquote'] })],
     },
     {
       type: 'CodeBlock',
