@@ -35,7 +35,7 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
     })) as schema.Article
     expect(article?.content?.[0] || '').toEqual(
       schema.paragraph({
-        content: ['R', schema.superscript({ content: ['2'] }), '.'],
+        content: ['R', schema.superscript({ content: [2] }), '.'],
       })
     )
   })
@@ -70,9 +70,9 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
       schema.paragraph({
         content: [
           'First ',
-          schema.link({ content: ['1'], target: 'a1' }),
+          schema.link({ content: [1], target: 'a1' }),
           ' second ',
-          schema.link({ content: ['2'], target: 'a2' }),
+          schema.link({ content: [2], target: 'a2' }),
           ' after.',
         ],
       })
