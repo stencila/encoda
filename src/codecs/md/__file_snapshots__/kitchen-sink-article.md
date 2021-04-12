@@ -55,7 +55,7 @@ A paragraph with an image ![alt text](data:image/gif;base64,R0lGODlhAQABAIAAAAAA
 
 Paragraph with a !true and a !false.
 
-A paragraph with other data: a !null, a !number(3.14), and a !array(1,2).
+A paragraph with other data: a !null, a !number(3.14), and a !true.
 
 > A blockquote
 

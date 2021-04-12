@@ -18,3 +18,13 @@ export const ensureBlockContentArray = (
     []
   )
 }
+
+/**
+ * Ensure that all nodes in an array are `BlockContent` or if no nodes
+ * return `undefined`.
+ */
+export const ensureBlockContentArrayOrUndefined = (
+  nodes: schema.Node[]
+): schema.BlockContent[] | undefined => {
+  return nodes.length === 0 ? undefined : ensureBlockContentArray(nodes)
+}
