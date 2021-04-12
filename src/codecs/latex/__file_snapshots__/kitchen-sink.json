@@ -242,7 +242,12 @@
       "type": "Table",
       "id": "tab:tab1",
       "caption": [
-        "Let us type a very long caption. Sometimes journal styles will fail to nicely format a very long caption on top of a narrow table. [tab:tab1]"
+        {
+          "type": "Paragraph",
+          "content": [
+            "Let us type a very long caption. Sometimes journal styles will fail to nicely format a very long caption on top of a narrow table. [tab:tab1]"
+          ]
+        }
       ],
       "rows": [
         {
