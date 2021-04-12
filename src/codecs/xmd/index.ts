@@ -7,6 +7,7 @@
 import * as stencila from '@stencila/schema'
 import crypto from 'crypto'
 import { dump } from '../..'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { MdCodec } from '../md'
@@ -105,7 +106,7 @@ export class XmdCodec extends Codec implements Codec {
                 stencila.paragraph({
                   content: [
                     `(ref:${refId}) `,
-                    ...(caption as stencila.InlineContent[]),
+                    ...ensureInlineContentArray(caption),
                   ],
                 }),
               ]
