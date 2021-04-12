@@ -69,7 +69,7 @@ const node: stencila.Article = {
     {
       type: 'CodeBlock',
       programmingLanguage: 'foo',
-      value: 'ignored',
+      text: 'ignored',
     },
   ],
 }
