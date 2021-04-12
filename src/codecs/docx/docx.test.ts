@@ -54,9 +54,9 @@ describe('encode+decode', () => {
 
   test('logs have expected warnings only', () => {
     expect(logMessages).toEqual([
-      'Unhandled block node type when encoding: Text',
       'csl:encode Properties of `Article` not supported: `identifiers`',
-      'Unhandled block node type when encoding: MediaObject',
+      'Falling back to default encoding for inline node type MediaObject.',
+      'Unhandled block node type when encoding: Text',
     ])
   })
 })
