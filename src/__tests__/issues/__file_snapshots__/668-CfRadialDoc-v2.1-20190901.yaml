@@ -145,9 +145,9 @@ content:
       style: Body1
     content:
       - Mike Dixon, EOL, NCAR, Boulder, Colorado, USA
-      - ''
+      - null
       - Mark Curtis, Bureau of Meteorology, Melbourne, Australia
-      - ''
+      - null
       - Daniel Michelson, Environment and Climate Change Canada, Toronto, Canada
   - type: Paragraph
     meta:
@@ -464,7 +464,7 @@ content:
           - type: Emphasis
             content:
               - monitoring sub-groups
-          - ' 32'
+          - 32
   - type: Paragraph
     meta:
       style: toc 2
@@ -552,7 +552,7 @@ content:
       - type: Link
         target: '#spectrum_index-variable'
         content:
-          - '6.2 '
+          - 6.2
           - type: Emphasis
             content:
               - spectrum_index
@@ -702,7 +702,7 @@ content:
               data:image/wmf;base64,183GmgAAAAAAACABwAEECQAAAAD1XgEACQAAA7oAAAAAAGwAAAAAAAUAAAACAQEAAAAFAAAAAQL///8ABQAAAC4BGQAAAAUAAAALAgAAAAAFAAAADALAASABEwAAACYGDwAcAP////8AAE4AEAAAAMD///+m////4AAAAGYBAAALAAAAJgYPAAwATWF0aFR5cGUAACAAbAAAACYGDwDNAE1hdGhUeXBlVVXBAAUBAAUCRFNNVDUAARNXaW5BbGxCYXNpY0NvZGVQYWdlcwARBVRpbWVzIE5ldyBSb21hbgARA1N5bWJvbAARBUNvdXJpZXIgTmV3ABEETVQgRXh0cmEAEgAIIS9Fj0QvQVD0EA9HX0FQ8h8eQVD0FQ9BAPRF9CX0j0JfQQD0EA9DX0EA9I9F9CpfSPSPQQD0EA9A9I9Bf0j0EA9BKl9EX0X0X0X0X0EPDAEAAQABAgICAgACAAEBAQADAAEABAAACgAACwAAACYGDwAMAP////8BAAAAAAAAAAMAAAAAAA==
             text: ''
             title: ''
-          - ' 50'
+          - 50
   - type: Paragraph
     meta:
       style: toc 3
@@ -782,7 +782,7 @@ content:
           - type: Subscript
             content:
               - a
-          - ' 56'
+          - 56
   - type: Paragraph
     meta:
       style: toc 3
@@ -1254,7 +1254,7 @@ content:
       style: Figure
     content:
       - 'Figure 2.1: logical data structure for a volume scan,'
-      - ''
+      - null
       - using sweep and ray abstractions and 1-D data field arrays
   - type: Paragraph
     content:
@@ -1480,7 +1480,7 @@ content:
       style: Figure
     content:
       - 'Figure 2.2: logical data structure for a volume scan,'
-      - ''
+      - null
       - using the sweep abstraction with 2-D data fields
   - type: Paragraph
     content:
@@ -1511,7 +1511,7 @@ content:
       style: Figure
     content:
       - Figure 2.3 Data field for a sweep, represented in time and range,
-      - ''
+      - null
       - with a constant number of range gates
   - type: Heading
     depth: 2
@@ -2091,7 +2091,7 @@ content:
       style: Figure
     content:
       - 'Figure 3.1: Group structure showing top-level dimensions,'
-      - ''
+      - null
       - attributes, variables and sweep groups
   - type: Paragraph
     content:
@@ -2110,11 +2110,11 @@ content:
       style: Figure
     content:
       - 'Figure 3.2: Sweep group structure in more detail, showing'
-      - ''
+      - null
       - support for geo-freference metadata for moving platforms,
-      - ''
+      - null
       - spectra, and monitoring data.
-      - ''
+      - null
       - Optional groups are in blue.
   - type: Paragraph
     meta:
@@ -12313,21 +12313,21 @@ content:
           - x
       - type: Subscript
         content:
-          - '0'
+          - 0
       - ', '
       - type: Emphasis
         content:
           - 'y'
       - type: Subscript
         content:
-          - '0'
+          - 0
       - ', '
       - type: Emphasis
         content:
           - z
       - type: Subscript
         content:
-          - '0'
+          - 0
       - >-
         ) are the coordinates of the sensor relative to the Cartesian grid
         origin and the azimuth angle (
@@ -12647,7 +12647,7 @@ content:
           - h
       - type: Subscript
         content:
-          - '0'
+          - 0
       - ) of the remote sensor.
   - type: Heading
     depth: 3
@@ -13392,13 +13392,13 @@ content:
           - type: Strong
             content:
               - Note that the definition of
-      - ' '
+      - 0
       - type: Emphasis
         content:
           - type: Strong
             content:
               - θ is different from the convention defined in Lee et al. (1994)
-      - ''
+      - null
       - type: Emphasis
         content:
           - type: Strong
@@ -13487,7 +13487,7 @@ content:
           - type: Strong
             content:
               - Note that the definition of
-      - ' '
+      - 0
       - type: Emphasis
         content:
           - type: Strong

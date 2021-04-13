@@ -3028,7 +3028,6 @@ content:
           - type: TableCell
             content:
               - Thailand
-              - ' '
               - Bangladesh
           - type: TableCell
             content:
@@ -3042,9 +3041,7 @@ content:
           - type: TableCell
             content:
               - Artemether
-              - ' '
               - Artesunate
-              - ' '
               - Quinine
           - type: TableCell
             content:
@@ -3054,28 +3051,24 @@ content:
                 content:
                   - '22'
               - ']'
-              - ' '
               - '['
               - type: Cite
                 target: pmed-1002858-ref021
                 content:
                   - '21'
               - ']'
-              - ' '
               - '['
               - type: Cite
                 target: pmed-1002858-ref024
                 content:
                   - '24'
               - ']'
-              - ' '
               - '['
               - type: Cite
                 target: pmed-1002858-ref020
                 content:
                   - '20'
               - ']'
-              - ' '
               - '['
               - type: Cite
                 target: pmed-1002858-ref023
@@ -3104,7 +3097,6 @@ content:
           - type: TableCell
             content:
               - Artemether
-              - ' '
               - Artesunate
           - type: TableCell
             content:
@@ -3136,7 +3128,6 @@ content:
           - type: TableCell
             content:
               - Artemether
-              - ' '
               - Quinine
           - type: TableCell
             content:
@@ -3168,7 +3159,6 @@ content:
           - type: TableCell
             content:
               - Quinine
-              - ' '
               - Chloroquine
           - type: TableCell
             content:
@@ -3188,11 +3178,8 @@ content:
           - type: TableCell
             content:
               - Bangladesh
-              - ' '
               - Myanmar
-              - ' '
               - India
-              - ' '
               - Indonesia
           - type: TableCell
             content:
@@ -3206,7 +3193,6 @@ content:
           - type: TableCell
             content:
               - Artesunate
-              - ' '
               - Quinine
           - type: TableCell
             content:
@@ -3226,21 +3212,13 @@ content:
           - type: TableCell
             content:
               - Mozambique
-              - ' '
               - Ghana
-              - ' '
               - Kenya
-              - ' '
               - The Gambia
-              - ' '
               - Nigeria
-              - ' '
               - Tanzania
-              - ' '
               - Uganda
-              - ' '
               - Rwanda
-              - ' '
               - DRC
           - type: TableCell
             content:
@@ -3254,7 +3232,6 @@ content:
           - type: TableCell
             content:
               - Artesunate
-              - ' '
               - Quinine
           - type: TableCell
             content:
@@ -4557,90 +4534,104 @@ content:
     depth: 1
     content:
       - Supporting information
-  - type: MediaObject
-    id: pmed-1002858-s001
-    contentUrl: ''
-    text: S1 Fig
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pmed-1002858-s001
+        contentUrl: ''
+        text: S1 Fig
         content:
-          - Comparison between Asian and African data.
-      - type: Paragraph
-        content:
-          - >-
-            Green diamonds (lines): point estimates (95% CI) using data from
-            only Asian patients. Blue diamonds (lines): point estimates (95% CI)
-            using data from only African patients. Black diamonds (lines): point
-            estimates (95% CI) using the whole pooled database, as shown in 
-          - type: Link
-            relation: fig
-            target: '#pmed-1002858-g004'
+          - type: Heading
+            depth: 2
             content:
-              - Fig 4
-          - .
-      - type: Paragraph
-        content:
-          - (TIF)
-  - type: MediaObject
-    id: pmed-1002858-s002
-    contentUrl: ''
-    text: S2 Fig
+              - Comparison between Asian and African data.
+          - type: Paragraph
+            content:
+              - >-
+                Green diamonds (lines): point estimates (95% CI) using data from
+                only Asian patients. Blue diamonds (lines): point estimates (95%
+                CI) using data from only African patients. Black diamonds
+                (lines): point estimates (95% CI) using the whole pooled
+                database, as shown in 
+              - type: Link
+                relation: fig
+                target: '#pmed-1002858-g004'
+                content:
+                  - Fig 4
+              - .
+          - type: Paragraph
+            content:
+              - (TIF)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pmed-1002858-s002
+        contentUrl: ''
+        text: S2 Fig
         content:
-          - Mediation analysis looking at the effect of transfusion on survival.
-      - type: Paragraph
-        content:
-          - >-
-            The forest plot shows the estimated effects on survival of main
-            patient characteristics and treatment drug used, stratified by time
-            to death and adjusted for transfusion.
-      - type: Paragraph
-        content:
-          - (TIF)
-  - type: MediaObject
-    id: pmed-1002858-s003
-    contentUrl: ''
-    text: S3 Fig
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                Mediation analysis looking at the effect of transfusion on
+                survival.
+          - type: Paragraph
+            content:
+              - >-
+                The forest plot shows the estimated effects on survival of main
+                patient characteristics and treatment drug used, stratified by
+                time to death and adjusted for transfusion.
+          - type: Paragraph
+            content:
+              - (TIF)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pmed-1002858-s003
+        contentUrl: ''
+        text: S3 Fig
         content:
-          - >-
-            Standardised differences for the major clinical variables between
-            the transfused and not-transfused children in the AQUAMAT study with
-            baseline haematocrits between 15% and 25%.
-      - type: Paragraph
-        content:
-          - >-
-            The black circles show the standardised differences for the original
-            population, and the red triangles show the standardised differences
-            for the IPW population. Standardised differences greater than 0
-            indicate higher values of that covariate in the transfused group
-            (e.g., base deficit), whereas standardised differences less than 0
-            indicate higher values in the not-transfused group (e.g., coma). The
-            vertical dashed lines show ±10% standardised difference. AQUAMAT,
-            Africa multinational quinine versus artesunate in severe-malaria
-            trial; IPW, inverse probability weighting.
-      - type: Paragraph
-        content:
-          - (TIF)
-  - type: MediaObject
-    id: pmed-1002858-s004
-    contentUrl: ''
-    text: S1 Table
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                Standardised differences for the major clinical variables
+                between the transfused and not-transfused children in the
+                AQUAMAT study with baseline haematocrits between 15% and 25%.
+          - type: Paragraph
+            content:
+              - >-
+                The black circles show the standardised differences for the
+                original population, and the red triangles show the standardised
+                differences for the IPW population. Standardised differences
+                greater than 0 indicate higher values of that covariate in the
+                transfused group (e.g., base deficit), whereas standardised
+                differences less than 0 indicate higher values in the
+                not-transfused group (e.g., coma). The vertical dashed lines
+                show ±10% standardised difference. AQUAMAT, Africa multinational
+                quinine versus artesunate in severe-malaria trial; IPW, inverse
+                probability weighting.
+          - type: Paragraph
+            content:
+              - (TIF)
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: MediaObject
+        id: pmed-1002858-s004
+        contentUrl: ''
+        text: S1 Table
         content:
-          - Inclusion criteria for the studies used in the pooled data analysis.
-      - type: Paragraph
-        content:
-          - >-
-            HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood pressure;
-            SC, serum creatinine; UO, urine output.
-      - type: Paragraph
-        content:
-          - (XLSX)
+          - type: Heading
+            depth: 2
+            content:
+              - >-
+                Inclusion criteria for the studies used in the pooled data
+                analysis.
+          - type: Paragraph
+            content:
+              - >-
+                HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood
+                pressure; SC, serum creatinine; UO, urine output.
+          - type: Paragraph
+            content:
+              - (XLSX)

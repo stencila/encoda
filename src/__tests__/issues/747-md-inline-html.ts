@@ -52,9 +52,9 @@ describe('issue 747: rendering of Superscript nodes in HTML', () => {
       schema.paragraph({
         content: [
           'First ',
-          schema.superscript({ content: ['1'] }),
+          schema.superscript({ content: [1] }),
           ' second ',
-          schema.superscript({ content: ['2'] }),
+          schema.superscript({ content: [2] }),
           ' after.',
         ],
       })

@@ -56,7 +56,7 @@ describe('encode+decode', () => {
     expect(logMessages).toEqual([
       'csl:encode Properties of `Article` not supported: `identifiers`',
       'Falling back to default encoding for inline node type MediaObject.',
-      'Unhandled block node type when encoding: Text',
+      'Unhandled inline node type when encoding: MediaObject',
     ])
   })
 })
