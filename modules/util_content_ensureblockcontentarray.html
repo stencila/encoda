@@ -73,6 +73,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="util_content_ensureblockcontentarray.html#ensureblockcontentarray" class="tsd-kind-icon">ensure<wbr>Block<wbr>Content<wbr>Array</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="util_content_ensureblockcontentarray.html#ensureblockcontentarrayorundefined" class="tsd-kind-icon">ensure<wbr>Block<wbr>Content<wbr>Array<wbr>OrUndefined</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,13 +91,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/f0f2cf7a/src/util/content/ensureBlockContentArray.ts#L7">src/util/content/ensureBlockContentArray.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/06181986/src/util/content/ensureBlockContentArray.ts#L11">src/util/content/ensureBlockContentArray.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Ensure that all nodes in an array are <code>BlockContent</code>.</p>
 								</div>
+								<p>If <em>all</em> the nodes in the array are <code>InlineContent</code> then will consolidate
+									them into a <code>Paragraph</code>. Otherwise, each element is coerced into an <code>Paragraph</code>
+								if necessary.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -105,6 +109,35 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">BlockContent</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="ensureblockcontentarrayorundefined" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> ensure<wbr>Block<wbr>Content<wbr>Array<wbr>OrUndefined</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">ensure<wbr>Block<wbr>Content<wbr>Array<wbr>OrUndefined<span class="tsd-signature-symbol">(</span>nodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BlockContent</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/06181986/src/util/content/ensureBlockContentArray.ts#L33">src/util/content/ensureBlockContentArray.ts:33</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Ensure that all nodes in an array are <code>BlockContent</code> or if no nodes
+									return <code>undefined</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nodes: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BlockContent</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -125,6 +158,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="util_content_ensureblockcontentarray.html#ensureblockcontentarray" class="tsd-kind-icon">ensure<wbr>Block<wbr>Content<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="util_content_ensureblockcontentarray.html#ensureblockcontentarrayorundefined" class="tsd-kind-icon">ensure<wbr>Block<wbr>Content<wbr>Array<wbr>OrUndefined</a>
 					</li>
 				</ul>
 			</nav>
