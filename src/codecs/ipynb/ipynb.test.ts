@@ -83,7 +83,10 @@ describe('encode', () => {
       typeof nodeOrPath === 'string'
         ? await jsonCodec.read(fixture(nodeOrPath))
         : nodeOrPath
-    expect(await ipynbCodec.dump(node)).toMatchFile(snapshot(name + '.ipynb'))
+    // Remove large data URIs for easier comparison to snapshots
+    expect(await ipynbCodec.dump(removeDataUris(node))).toMatchFile(
+      snapshot(name + '.ipynb')
+    )
   })
 })
 
