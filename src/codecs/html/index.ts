@@ -1849,7 +1849,10 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
 }
 
 /**
- * Decode a `<figcaption>` element to a list of `stencila.Node`s.
+ * Decode a `<figcaption>` element to an array of `BlockContent`.
+ *
+ * A [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
+ * can include block content such as `<h1>` and inline content such as `<em>`.
  */
 function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
   return decodeChildNodes(elem)
