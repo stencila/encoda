@@ -9444,11 +9444,11 @@ content:
       - ' outlines our shRNA screening strategy. To identify shRNAs that are lost between the initial (t0) and final (fF) timepoints, unique 3’-antisense sequences were recovered by PCR and quantified by sequencing. If a gene knockdown compromises cell viability then the associated shRNA will be depleted compared to those targeting non-essential genes: the tF sequence count will be less than t0 thus log'
       - type: Subscript
         content:
-          - '2'
+          - 2
       - " fold change (FC, tF/t0) is negative. A pilot using one shRNA pool established that a tF of 15 population doublings can be used to reveal significant G4-ligand-mediated changes [false discovery rate (FDR)\_≤\_0.05] in shRNA levels using a ligand concentration resulting in 20% cell death (GI"
       - type: Subscript
         content:
-          - '20'
+          - 20
       - ", see Materials\_and\_methods and "
       - type: Link
         relation: fig
@@ -9533,7 +9533,7 @@ content:
               - ) Comparison of FDR and log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - 'FC values for a hairpin targeting '
               - type: Emphasis
                 content:
@@ -9553,7 +9553,7 @@ content:
       - "To understand the complete spectrum of G4 vulnerabilities, we first considered the combined set of sensitivities to PDS and PhenDC3 together. For the whole library, when individual shRNAs are considered 9509 (~7%) G4-ligand-specific hairpins (i.e. those not in DMSO) were found to be depleted (FDR\_≤\_0.05; log"
       - type: Subscript
         content:
-          - '2'
+          - 2
       - " FC\_<0, "
       - type: Link
         relation: fig
@@ -9572,7 +9572,7 @@ content:
         significantly depleted for that gene (median log
       - type: Subscript
         content:
-          - '2'
+          - 2
       - " FC\_<0). This resulted in the identification of 843 G4 ligand-specific gene knockdowns not present in DMSO ("
       - type: Link
         relation: fig
@@ -9584,7 +9584,7 @@ content:
         sensitisers as those having a median log
       - type: Subscript
         content:
-          - '2'
+          - 2
       - ' FC ≤ −1 ('
       - type: Link
         relation: fig
@@ -9660,7 +9660,7 @@ content:
           - ") significantly depleted genes (50% or three hairpins, FDR\_≤\_0.05, median log"
           - type: Subscript
             content:
-              - '2'
+              - 2
           - "FC\_<\_0) following DMSO, PDS and PhenDC3 treatment and ("
           - type: Strong
             content:
@@ -9670,7 +9670,7 @@ content:
             applying a median log
           - type: Subscript
             content:
-              - '2'
+              - 2
           - FC ≤ −1 cut off. (
           - type: Strong
             content:
@@ -9678,7 +9678,7 @@ content:
           - ) Tables showing the number of depleted hairpins and median log
           - type: Subscript
             content:
-              - '2'
+              - 2
           - 'FC values for: ('
           - type: Strong
             content:
@@ -9708,7 +9708,7 @@ content:
           - ") sensitisers identified as G4-related by text-mining showing the associated PolySearch2 algorithm score and summary of the G4 association. Sensitisers are defined as a gene where 50% or three hairpins were significantly differentially expressed (FDR\_≤\_0.05) with median log"
           - type: Subscript
             content:
-              - '2'
+              - 2
           - 'FC ≤ −1. See also '
           - type: Link
             relation: supplementary-material
@@ -9966,7 +9966,7 @@ content:
           - ) Median log
           - type: Subscript
             content:
-              - '2'
+              - 2
           - >-
             FC and number of significantly depleted hairpins for G4 sensitisers
             overlapping the COSMIC database for PDS (
@@ -10100,7 +10100,7 @@ content:
                 or three significantly depleted with median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - ' FC≤ −1). ('
               - type: Strong
                 content:
@@ -10425,7 +10425,7 @@ content:
                 number of depleted hairpins and median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - >-
                 FC values for four key genes found as both PDS and PhenDC3
                 sensitisers across all the three screens. See also 
@@ -10493,7 +10493,7 @@ content:
                 not DMSO and median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - FC ≤ −1). (
               - type: Strong
                 content:
@@ -10513,7 +10513,7 @@ content:
                 significantly depleted with a median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - 'FC ≤ −1). See also '
               - type: Link
                 relation: supplementary-material
@@ -10595,7 +10595,7 @@ content:
         relation: fig
         target: '#fig8s2'
         content:
-          - '2'
+          - 2
       - ). For both HT1080 (
       - type: Link
         relation: fig
@@ -10737,44 +10737,44 @@ content:
                 relation: fig
                 target: '#fig8s2'
                 content:
-                  - '2'
+                  - 2
               - ' and '
               - type: Link
                 relation: fig
                 target: '#fig8s3'
                 content:
-                  - '3'
+                  - 3
               - .
           - type: Paragraph
-            content: []
-          - type: MediaObject
-            id: fig8sdata1
-            contentUrl: ''
-            text: Figure 8—source data 1.
             content:
-              - type: Heading
-                depth: 3
+              - type: MediaObject
+                id: fig8sdata1
+                contentUrl: ''
+                text: Figure 8—source data 1.
                 content:
-                  - Source files for western blots.
-              - type: Paragraph
-                content:
-                  - (
-                  - type: Strong
+                  - type: Heading
+                    depth: 3
                     content:
-                      - A
-                  - ) Full length western blots and (
-                  - type: Strong
+                      - Source files for western blots.
+                  - type: Paragraph
                     content:
-                      - B
-                  - >-
-                    ) capillary traces obtained from Compass Software (Simple
-                    Western) for results shown in 
-                  - type: Link
-                    relation: fig
-                    target: '#fig8'
-                    content:
-                      - Figure 8A
-                  - .
+                      - (
+                      - type: Strong
+                        content:
+                          - A
+                      - ) Full length western blots and (
+                      - type: Strong
+                        content:
+                          - B
+                      - >-
+                        ) capillary traces obtained from Compass Software
+                        (Simple Western) for results shown in 
+                      - type: Link
+                        relation: fig
+                        target: '#fig8'
+                        content:
+                          - Figure 8A
+                      - .
         label: Figure 8.
         content:
           - type: ImageObject
@@ -10939,35 +10939,35 @@ content:
                   - J
               - ) GAR1.
           - type: Paragraph
-            content: []
-          - type: MediaObject
-            id: fig8s3sdata1
-            contentUrl: ''
-            text: Figure 8—figure supplement 3—source data 1.
             content:
-              - type: Heading
-                depth: 3
+              - type: MediaObject
+                id: fig8s3sdata1
+                contentUrl: ''
+                text: Figure 8—figure supplement 3—source data 1.
                 content:
-                  - Source files for western blots.
-              - type: Paragraph
-                content:
-                  - (
-                  - type: Strong
+                  - type: Heading
+                    depth: 3
                     content:
-                      - A
-                  - ) Full length western blots and (
-                  - type: Strong
+                      - Source files for western blots.
+                  - type: Paragraph
                     content:
-                      - B
-                  - >-
-                    ) capillary traces obtained from Compass Software (Simple
-                    Western) for results shown in 
-                  - type: Link
-                    relation: fig
-                    target: '#fig8s3'
-                    content:
-                      - Figure 8—figure supplement 3A
-                  - .
+                      - (
+                      - type: Strong
+                        content:
+                          - A
+                      - ) Full length western blots and (
+                      - type: Strong
+                        content:
+                          - B
+                      - >-
+                        ) capillary traces obtained from Compass Software
+                        (Simple Western) for results shown in 
+                      - type: Link
+                        relation: fig
+                        target: '#fig8s3'
+                        content:
+                          - Figure 8—figure supplement 3A
+                      - .
         label: Figure 8—figure supplement 3.
         content:
           - type: ImageObject
@@ -11028,7 +11028,7 @@ content:
         relation: fig
         target: '#fig8s3'
         content:
-          - '3'
+          - 3
       - '). While '
       - type: Emphasis
         content:
@@ -11104,7 +11104,7 @@ content:
         MK1775 or pimozide at concentrations surrounding the GI
       - type: Subscript
         content:
-          - '50'
+          - 50
       - ' values and cell viability measured after 96 hr using an end-point ATP luminescence-based assay (CellTiter-Glo, Promega). Combenefit software '
       - type: Cite
         target: bib37
@@ -11135,7 +11135,7 @@ content:
         6.25 μM pimozide, respectively (GI
       - type: Subscript
         content:
-          - '50'
+          - 50
       - " for PDS, MK1775 and pimozide alone\_=\_322 nM, 59 nM and 8.4 μM, respectively). A375 cells showed lower synergy with PDS and MK1775 combination ("
       - type: Link
         relation: fig
@@ -11151,7 +11151,7 @@ content:
       - ), with peak synergy of 15% at 8 μM PDS, 444 nM MK1775 (GI
       - type: Subscript
         content:
-          - '50'
+          - 50
       - " for PDS, MK1775 and pimozide alone\_=\_8.5 μM, 625 nM and 12.2 μM, respectively). The greatest synergy was seen in combinations of PDS and pimozide in A375 cells ("
       - type: Link
         relation: fig
@@ -11208,7 +11208,7 @@ content:
               - ) Numbers of depleted shRNA hairpins and median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - >-
                 FC values for WEE1 and USP1 in the genome-wide and focused
                 screens. (
@@ -11247,7 +11247,7 @@ content:
                 relation: fig
                 target: '#fig9s2'
                 content:
-                  - '2'
+                  - 2
               - ).
         label: Figure 9.
         content:
@@ -11444,7 +11444,7 @@ content:
               - ) Number of depleted hairpins and median log
               - type: Subscript
                 content:
-                  - '2'
+                  - 2
               - >-
                 FC values for DEAH/DEAD-box helicase genes within the 758 genes
                 identified in the genome-wide screen. Those highlighted in blue
@@ -11496,35 +11496,35 @@ content:
                   - d
               - ' is calculated from five replicates (values are indicative as the model assumes saturation kinetics).'
           - type: Paragraph
-            content: []
-          - type: MediaObject
-            id: fig10sdata1
-            contentUrl: ''
-            text: Figure 10—source data 1.
             content:
-              - type: Heading
-                depth: 3
+              - type: MediaObject
+                id: fig10sdata1
+                contentUrl: ''
+                text: Figure 10—source data 1.
                 content:
-                  - Source files for western blots.
-              - type: Paragraph
-                content:
-                  - (
-                  - type: Strong
+                  - type: Heading
+                    depth: 3
                     content:
-                      - A
-                  - ) Full-length western blots and (
-                  - type: Strong
+                      - Source files for western blots.
+                  - type: Paragraph
                     content:
-                      - B
-                  - >-
-                    ) capillary traces obtained from Compass Software (Simple
-                    Western) for results shown in 
-                  - type: Link
-                    relation: fig
-                    target: '#fig10'
-                    content:
-                      - Figure 10A
-                  - .
+                      - (
+                      - type: Strong
+                        content:
+                          - A
+                      - ) Full-length western blots and (
+                      - type: Strong
+                        content:
+                          - B
+                      - >-
+                        ) capillary traces obtained from Compass Software
+                        (Simple Western) for results shown in 
+                      - type: Link
+                        relation: fig
+                        target: '#fig10'
+                        content:
+                          - Figure 10A
+                      - .
         label: Figure 10.
         content:
           - type: ImageObject
@@ -11800,7 +11800,6 @@ content:
           - type: TableCell
             content:
               - 'Cancer association '
-              - ' '
               - summary
           - type: TableCell
             content:
@@ -11830,7 +11829,6 @@ content:
                 content:
                   - Lee et al., 2014
               - '; '
-              - ' '
               - type: Cite
                 target: bib130
                 content:
@@ -12116,7 +12114,6 @@ content:
                 content:
                   - García-Santisteban et al., 2013
               - '; '
-              - ' '
               - type: Cite
                 target: bib26
                 content:
@@ -12212,7 +12209,6 @@ content:
           - type: TableCell
             content:
               - 'Cancer '
-              - ' '
               - association summary
           - type: TableCell
             content:
@@ -12233,9 +12229,7 @@ content:
           - type: TableCell
             content:
               - 'Inactivating mutations predispose patients to '
-              - ' '
               - 'myeloid leukaemia, Wilm’s tumour '
-              - ' '
               - and Fanconi anaemia.
           - type: TableCell
             content:
@@ -12244,16 +12238,10 @@ content:
                 content:
                   - Harrigan et al., 2018
               - '; '
-              - ' '
               - type: Cite
                 target: bib91
                 content:
                   - Nepomuceno et al., 2017
-              - ' '
-              - ' '
-              - ' '
-              - ' '
-              - ' '
       - type: TableRow
         cells:
           - type: TableCell
@@ -12289,7 +12277,6 @@ content:
                 Fanconi anaemia and translesion synthesis DDR; deubiquitinase
                 required for FANCD2, FANCI and PCNA localisation to sites of
                 DNA 
-              - ' '
               - damage
           - type: TableCell
             content:
@@ -12303,19 +12290,16 @@ content:
                 content:
                   - Harrigan et al., 2018
               - '; '
-              - ' '
               - type: Cite
                 target: bib92
                 content:
                   - Nijman et al., 2005
               - '; '
-              - ' '
               - type: Cite
                 target: bib58
                 content:
                   - Huang et al., 2006
               - '; '
-              - ' '
               - type: Cite
                 target: bib46
                 content:
@@ -12334,7 +12318,6 @@ content:
           - type: TableCell
             content:
               - 'Common cancer target, to '
-              - ' '
               - >-
                 induces DNA damage following pharmacological inhibition, lethal
                 to cells.
@@ -12345,7 +12328,6 @@ content:
                 content:
                   - Yadav et al., 2014
               - '; '
-              - ' '
               - type: Cite
                 target: bib121
                 content:
@@ -12394,12 +12376,10 @@ content:
                 target: bib73
                 content:
                   - Lim et al., 2012
-              - ' '
               - type: Cite
                 target: bib90
                 content:
                   - Neilsen et al., 2008
-              - ' '
               - type: Cite
                 target: bib94
                 content:
@@ -12426,7 +12406,6 @@ content:
                 content:
                   - Kadoch et al., 2013
               - '; '
-              - ' '
               - type: Cite
                 target: bib98
                 content:
@@ -12452,7 +12431,6 @@ content:
                 content:
                   - Kadoch et al., 2013
               - '; '
-              - ' '
               - type: Cite
                 target: bib108
                 content:
@@ -12498,7 +12476,6 @@ content:
                 content:
                   - Zhao et al., 2018
               - '; '
-              - ' '
               - type: Cite
                 target: bib45
                 content:
@@ -12524,13 +12501,11 @@ content:
                 content:
                   - Moyal et al., 2011
               - '; '
-              - ' '
               - type: Cite
                 target: bib110
                 content:
                   - Shema et al., 2008
               - '; '
-              - ' '
               - type: Cite
                 target: bib8
                 content:
@@ -12558,7 +12533,6 @@ content:
                 content:
                   - Crozat et al., 1993
               - '; '
-              - ' '
               - type: Cite
                 target: bib39
                 content:
@@ -12865,9 +12839,7 @@ content:
           - type: TableCell
             content:
               - 'Reagent type '
-              - ' '
               - '(species) or '
-              - ' '
               - resource
           - type: TableCell
             content:
@@ -12881,7 +12853,6 @@ content:
           - type: TableCell
             content:
               - 'Additional '
-              - ' '
               - information
         rowType: header
       - type: TableRow
@@ -13705,7 +13676,6 @@ content:
                 content:
                   - Bindea et al., 2009
               - '; '
-              - ' '
               - type: Cite
                 target: bib14
                 content:
@@ -14029,7 +13999,7 @@ content:
         Scientific, cat #10500064) and grown at 37°C in a 5% CO
       - type: Subscript
         content:
-          - '2'
+          - 2
       - ' humidified atmosphere. Cell lines were authenticated using small tandem repeat (STR) profiling and regularly checked to be mycoplasma-free by RNA-capture ELISA. All cell lines tested negative for '
       - type: Emphasis
         content:
@@ -14051,7 +14021,7 @@ content:
         a viable cell concentration of 1–2 × 10
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' cells/mL, with ‘Events to Acquire’ parameter set at 1000 events. Three cell counts were recorded.'
   - type: Heading
     id: s4-3
@@ -14074,15 +14044,15 @@ content:
       - ' were used as 100 mM stocks, dissolved in DMSO (Thermofisher Scientific, cat # 20688). GI'
       - type: Subscript
         content:
-          - '20'
+          - 20
       - ' values were calculated by treating A375 and HT1080 cells with serial dilutions of PDS and PhenDC3 for 96 hr and determining cell death via a CellTitre-Glo One Solution assay (Promega, cat # G8461) according to manufacturer’s protocol. Each serial dilution was replicated four times for two-cell-seeding densities (1000/1500 cells per well). For both densities, curves were plotted averaging the four replicates in Prism (GraphPad v6) using a Non-Linear regression model, ‘dose-response – inhibition’ equation [log(inhibitor) vs. normalised response – variable slope] and GI'
       - type: Subscript
         content:
-          - '20'
+          - 20
       - ' values calculated. The GI'
       - type: Subscript
         content:
-          - '20'
+          - 20
       - ' concentrations used represent an average of three separate assays per cell line and yielded the following concentrations used for the screens - A375: 10 μM PhenDC3 and 1.5 μM PDS; HT1080: 1 μM PhenDC3 and 0.5 μM PDS.'
   - type: Heading
     id: s4-4
@@ -14094,7 +14064,7 @@ content:
       - "The genome-wide screen uses the transOMIC LMN shRNA library against the human protein coding genome, consisting of 113,002 total shRNAs, split between 12 pools for ease-of-handling (approximately 10,000 shRNAs per pool) with an average number of five optimised hairpins per gene. The G4 focused screen consists of a custom shRNA pool (transOMIC\_technologies) with the same LMN vector (8018 shRNAs); this includes 1247 genes (7436 shRNAs) uncovered in the genome-wide screen (751 sensitisers and 496 upregulated genes), 116 additional genes identified from the literature as potentially G4-associated (439 shRNAs) and shRNAs targeting 37 olfactory receptors as non-targeting controls (143 shRNAs). 496 upregulated genes (FDR\_≤\_0.05, 50% or three hairpins; log"
       - type: Subscript
         content:
-          - '2'
+          - 2
       - "FC\_≥\_1) were included to mimic the genome-wide screen on a smaller scale by maintaining the population ratio of sensitisation and resistance. In this custom pool, unlike the commercially available genome-wide library, we capped the number of shRNAs at seven per gene. The backbone of both libraries contains Neo"
       - type: Superscript
         content:
@@ -14125,23 +14095,23 @@ content:
         (2.7 μM, Qiagen cat # 1027423) to increase viral titre and 0.25 M CaCl
       - type: Subscript
         content:
-          - '2'
+          - 2
       - ' in a total volume of 1.5 mL per 15 cm dish and bubbled with 1.5 mL 2 x HBS (50 mM HEPES, 10 mM KCl, 12 mM Dextrose, 280 mM NaCl, 1.5 mM Na'
       - type: Subscript
         content:
-          - '2'
+          - 2
       - PO
       - type: Subscript
         content:
-          - '4'
+          - 4
       - " at pH 7.00) and added to the Platinum-A cells (containing 17mL media) in a dropwise fashion. Immediately before adding the DNA-Pasha-transfection mixture to the Platinum-A cells, chloroquine diphosphate (lysosomal inhibitor, Acros Organics cat # 455200250) was added to the plates at a final concentration 2.5 μM. 14–16 hr after transfection, fresh media was added with 1:1000 1\_M sodium butyrate (Merck, cat # 303410) for enhanced mammalian expression of the shRNA LMN plasmid. Virus was then harvested 48 hr after transfection and filter sterilised (0.45 μM) and stored at 4°C for a maximum of 7 days. Viral titre was determined by performing mock infections and quantifying fluorescent cells, via flow cytometry (MacsQUANT, Miltenyi Biotec Ltd.) 48 hr after infection. For both the genome-wide and focused-screen, 3.6 × 10"
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' target cells were infected with a viral volume predicted to cause 30% infection (MOI 0.3) to minimise multiple shRNA integrations per cell. This provides approximately 10 × 10'
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' shRNA expressing cells (1000-fold shRNA representation). Virus was diluted in serum free media plus polybrene (8 μg/mL) with infections carried out in triplicate and treated as independent replicates hereafter. 48 hr after infection cells antibiotic selection was performed with 800 μg/mL (HT1080) and 1000 μg/mL (A375) geneticin for 7–9 days (antibiotic concentrations were determined from 7-day toxicity curves prior to transfection setup).'
   - type: Heading
     id: s4-6
@@ -14156,15 +14126,15 @@ content:
         PDS, PhenDC3 and DMSO vehicle control, each containing 8–10 × 10
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' cells to maintain 1000-fold hairpin representation. Every 72 hr, cells were trypsinised, counted via Muse Cell Analyzer to determine the number of population doublings, and 10 × 10'
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' (A375 genome-wide and focused) or 8 × 10'
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' (HT1080) cells per replica re-plated in fresh drug/DMSO and media (17 mL media per plate). At all times, sufficient cell numbers were used so that a minimum of 1000 or 800 cells per shRNA was maintained (A375 and HT1080, respectively), to ensure maximal potential for uncovering phenotypic effects from each shRNA hairpin tested '
       - type: Cite
         target: bib66
@@ -14184,7 +14154,7 @@ content:
         replicas each). Therefore, 144 samples of 10 × 10
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' cells were generated to cover the entire screen. For each cell line of the focused screen, 12 samples were generated (t0, DMSO tF, PDS tF, PhenDC3 tF, three replicas each).'
   - type: Heading
     id: s4-7
@@ -14199,7 +14169,7 @@ content:
         (t7 and t15 respectively) and the average log
       - type: Subscript
         content:
-          - '2'
+          - 2
       - "FC (tF/t0) counts for each hairpin were determined as described below. For t7, 13 and 115 shRNAs were significantly altered following PDS and PhenDC3 treatment respectively (FDR\_≤\_0.05). At t15, more hairpins were significantly depleted following PDS and PhenDC3 treatment (746 and 93 shRNAs respectively, excluding those significantly changed in DMSO)."
   - type: Heading
     id: s4-8
@@ -14213,11 +14183,11 @@ content:
         table below. Cell pellets (10 × 10
       - type: Superscript
         content:
-          - '6'
+          - 6
       - ' cells) were resuspended in PBS and genomic DNA extracted using QIAmp DNA Blood Maxi Kit (Qiagen, cat # 51194) according to the manufacturer’s spin protocol, eluted in a final volume of 1200 μL and quantified by Qubit DNA HS Assay Kit (Thermo Fisher Scientific, cat # Q32851). The shRNA inserts were PCR-amplified from all DNA in each sample, in multiple 50 μL reactions each using 1.5 μg gDNA, with KOD Hot Start DNA Polymerase (Merck, cat # 710864) and the following reagents (included within the kit): 5 μL 10 x buffer, 5 μL 2 mM each dNTPs, 4 μL MgSO'
       - type: Subscript
         content:
-          - '4'
+          - 4
       - " (25 mM), 1.5 μL polymerase, 4 μL DMSO. Forward (Mir-F) and reverse (PGKpro-R) primers flanking the loop and antisense sequence of the hairpin region were used at a final concentration of 300 nM. PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 98°C for 35 s, 58°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 1.2 mL of pooled PCR reaction were cleaned-up using QIAquick PCR purification kit (Qiagen, cat # 28104) according to manufacturer’s protocol. 2 μg purified PCR product were PCR amplified in a second step, using forward (P5-Seq-P-Mir-Loop) and reverse (P7-Index-n-TruSeq-PGKpro-R) primers containing the P5 and P7 flowcell adapters, respectively. PCR was performed in 8 × 50 μL reactions each with 500 ng template DNA. The reverse primer contains TruSeq adapter small RNA Indexes for multiplexing and a 6-nucleotide barcode, denoted ‘nnnnnn’ below. PCR reagents were as for the first PCR, with the exception of the primers, which were used at a final concentration 1.5 μM. The second PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 94°C for 35 s, 52°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 200 μL of pooled secondary PCR product was cleaned up as previously and the desired product (~340 bp) was extracted using BluePippin (Sage Science) 2% Internal Standard Marker Kit (DF marker 100–600 bp; Sage Science, BDF2010), according to manufacturer’s protocol using a broad range elution (300–400 bp). Individual samples were quantified with a KAPA library quantification kit (KAPA Biosystems, cat # 0796-6014-0001) using a BioRad CFX96 Real Time PCR instrument with no Rox according to manufacturer’s protocols. Libraries were diluted to 4 nM in RNAse free water. For the genome-wide screen samples, 24 libraries (12 pools) and for the focused screen samples, 24 libraries (both cell lines) were combined to create a pooled 4 nM stock, with each sample having a unique TruSeq adapter. The genome-wide screen samples were sequenced in six batches; all focused screen samples were sequenced simultaneously. DNA-Seq libraries were prepared from these samples using the NextSeq Illumina Platform v2 High Output Kit 75 cycles, followed by 36 base pair single-read sequencing performed on an Illumina NextSeq instrument, using a custom sequencing primer."
   - type: Table
     id: inlinetable1
@@ -14404,7 +14374,7 @@ content:
       - ". Fold changes (FC) were then computed for every shRNA, and false discovery rates (FDR) were estimated using the Benjamini-Hochberg method. A gene was defined as significantly differentially represented for a given treatment if at least 50% or a minimum of 3 shRNAs were significant (FDR\_≤\_0.05); sensitisation was additionally determined by applying a log"
       - type: Subscript
         content:
-          - '2'
+          - 2
       - FC ≤ −1.
   - type: Heading
     id: s4-11
@@ -14890,7 +14860,7 @@ content:
         buffer (20 mM HEPES pH7.4, 10 mM NaCl, 3 mM MgCl
       - type: Subscript
         content:
-          - '2'
+          - 2
       - >-
         , 0.2 mM EDTA, 1 mM DTT) plus protease inhibitor (cOmplete mini, Roche
         cat#11836153001), lysed on ice (15 min) and 0.5% Igepal added. Samples
@@ -14900,7 +14870,7 @@ content:
         high-salt buffer (20 mM HEPES pH7.4, 500 mM NaCl, 3 mM MgCl
       - type: Subscript
         content:
-          - '2'
+          - 2
       - >-
         , 0.5% Igepal, 0.2 mM EDTA, 1 mM DTT) plus protease inhibitors, followed
         by lysis on ice with intermittent vortexing (30 min). Lysates were
@@ -15013,11 +14983,11 @@ content:
         450 rpm). Wells were washed three times with ELISA buffer (50 mM K
       - type: Subscript
         content:
-          - '2'
+          - 2
       - HPO
       - type: Subscript
         content:
-          - '4'
+          - 4
       - ' pH 7.4 and 100 mM KCl/100 mM LiCl); 1 min shaking, 450 rpm. Wells were then blocked with 3% (w/v) BSA (Merck, cat# A7030) in ELISA buffer for 1 hr, at room temperature and then incubated with serial dilutions of DDX42 up to 200 nM for 1 hr. Wells were washed three times with 0.1% TWEEN-20 in ELISA buffer and then incubated for 1 hr with anti-GST HRP-conjugated antibody (Abcam AB3416) diluted 1:10,000 in blocking buffer. Wells were again washed three times with ELISA-Tween, and the bound anti-GST HRP detected with TMB substrate (Merck,cat#T4444) for 2 min. Reactions were stopped with 2 M HCl. Absorbance at 450 nm was measured with PheraSTAR plate reader (BMG labtech). Binding curves with standard error of the mean (SEM) were fitted using GraphPad Prism software, using a non-linear regression fit, one site, specific binding model with saturation kinetics. The following equation was used: y=(Bmax*x)/(K'
       - type: Subscript
         content:
@@ -15044,11 +15014,11 @@ content:
       - ' is quoted in 10'
       - type: Superscript
         content:
-          - '5'
+          - 5
       - ' deg cm'
       - type: Superscript
         content:
-          - '2'
+          - 2
       - ' dmol'
       - type: Superscript
         content:

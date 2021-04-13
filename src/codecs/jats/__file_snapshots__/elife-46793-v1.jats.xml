@@ -509,8 +509,9 @@
                             <ext-link ext-link-type="uri" xlink:href="#fig8s2">2</ext-link> and 
                             <ext-link ext-link-type="uri" xlink:href="#fig8s3">3</ext-link>.
                         </p>
-                        <p/>
-                        <media xlink:href=""/>
+                        <p>
+                            <media xlink:href=""/>
+                        </p>
                     </caption>
                     <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
@@ -562,8 +563,9 @@
                             <bold>I</bold>) DDX42, (
                             <bold>J</bold>) GAR1.
                         </p>
-                        <p/>
-                        <media xlink:href=""/>
+                        <p>
+                            <media xlink:href=""/>
+                        </p>
                     </caption>
                     <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
@@ -690,8 +692,9 @@
                             <bold>G</bold>) MYC DNA G4 (dG4) and mutated control (dG4 mut). Apparent K
                             <sub>d</sub> is calculated from five replicates (values are indicative as the model assumes saturation kinetics).
                         </p>
-                        <p/>
-                        <media xlink:href=""/>
+                        <p>
+                            <media xlink:href=""/>
+                        </p>
                     </caption>
                     <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
@@ -760,7 +763,7 @@
                             <th>Oncogene/tumour suppressor</th>
                             <th>Combinatorial/single agent</th>
                             <th>Available drug treatments</th>
-                            <th>Cancer association  summary</th>
+                            <th>Cancer association summary</th>
                             <th>Reference</th>
                         </th>
                     </thead>
@@ -772,7 +775,7 @@
                             <td>Olaparib CX-5461</td>
                             <td>Deficient in ovarian,breast and colorectal cancer.</td>
                             <td>(
-                                <xref rid="bib72" ref-type="bibr">Lee et al., 2014</xref>);  (
+                                <xref rid="bib72" ref-type="bibr">Lee et al., 2014</xref>); (
                                 <xref rid="bib130" ref-type="bibr">Xu et al., 2017</xref>); (
                                 <xref rid="bib83" ref-type="bibr">McLuckie et al., 2013</xref>); (
                                 <xref rid="bib137" ref-type="bibr">Zimmer et al., 2016</xref>)
@@ -868,7 +871,7 @@
                             <td>Pimozide</td>
                             <td>Over-expressed inmelanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma. Pimozide is a potent USP1-targeting drug.</td>
                             <td>(
-                                <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>);  (
+                                <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>); (
                                 <xref rid="bib26" ref-type="bibr">Chen et al., 2011</xref>)
                             </td>
                         </tr>
@@ -910,7 +913,7 @@
                             <th>Gene category</th>
                             <th>Gene name</th>
                             <th>Function/pathway Summary</th>
-                            <th>Cancer  association summary</th>
+                            <th>Cancer association summary</th>
                             <th>References</th>
                         </th>
                     </thead>
@@ -919,10 +922,10 @@
                             <td>DNA damage repair</td>
                             <td>PALB2</td>
                             <td>Homologous recombination; binds BRCA2</td>
-                            <td>Inactivating mutations predispose patients to  myeloid leukaemia, Wilm’s tumour  and Fanconi anaemia.</td>
+                            <td>Inactivating mutations predispose patients to myeloid leukaemia, Wilm’s tumour and Fanconi anaemia.</td>
                             <td>(
-                                <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>);  (
-                                <xref rid="bib91" ref-type="bibr">Nepomuceno et al., 2017</xref>)     
+                                <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>); (
+                                <xref rid="bib91" ref-type="bibr">Nepomuceno et al., 2017</xref>)
                             </td>
                         </tr>
                         <tr>
@@ -936,21 +939,21 @@
                         </tr>
                         <tr>
                             <td> USP1</td>
-                            <td>Fanconi anaemia and translesion synthesis DDR; deubiquitinase required for FANCD2, FANCI and PCNA localisation to sites of DNA  damage</td>
+                            <td>Fanconi anaemia and translesion synthesis DDR; deubiquitinase required for FANCD2, FANCI and PCNA localisation to sites of DNA damage</td>
                             <td>USP1 mRNA over-expressed in melanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma.</td>
                             <td>(
-                                <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>);  (
-                                <xref rid="bib92" ref-type="bibr">Nijman et al., 2005</xref>);  (
-                                <xref rid="bib58" ref-type="bibr">Huang et al., 2006</xref>);  (
+                                <xref rid="bib55" ref-type="bibr">Harrigan et al., 2018</xref>); (
+                                <xref rid="bib92" ref-type="bibr">Nijman et al., 2005</xref>); (
+                                <xref rid="bib58" ref-type="bibr">Huang et al., 2006</xref>); (
                                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>)
                             </td>
                         </tr>
                         <tr>
                             <td> TOP1</td>
                             <td>Relieves torsional stress during DNA replication; suppresses genomic instability at actively transcribed exogenous G4-forming sequences</td>
-                            <td>Common cancer target, to  induces DNA damage following pharmacological inhibition, lethal to cells.</td>
+                            <td>Common cancer target, to induces DNA damage following pharmacological inhibition, lethal to cells.</td>
                             <td>(
-                                <xref rid="bib131" ref-type="bibr">Yadav et al., 2014</xref>);  (
+                                <xref rid="bib131" ref-type="bibr">Yadav et al., 2014</xref>); (
                                 <xref rid="bib121" ref-type="bibr">Wang, 2002</xref>)
                             </td>
                         </tr>
@@ -969,8 +972,8 @@
                             <td>Transcription factor; Recruits histone deacetylases</td>
                             <td>Tumour suppressor epigenetically silenced in breast cancers.</td>
                             <td>(
-                                <xref rid="bib73" ref-type="bibr">Lim et al., 2012</xref>) (
-                                <xref rid="bib90" ref-type="bibr">Neilsen et al., 2008</xref>) (
+                                <xref rid="bib73" ref-type="bibr">Lim et al., 2012</xref>)(
+                                <xref rid="bib90" ref-type="bibr">Neilsen et al., 2008</xref>)(
                                 <xref rid="bib94" ref-type="bibr">Noll et al., 2012</xref>)
                             </td>
                         </tr>
@@ -980,7 +983,7 @@
                             <td>Frequently inactivated in several cancers.</td>
                             <td>(
                                 <xref rid="bib44" ref-type="bibr">Froimchuk et al., 2017</xref>)(
-                                <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>);  (
+                                <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>); (
                                 <xref rid="bib98" ref-type="bibr">Rao and Dou, 2015</xref>)
                             </td>
                         </tr>
@@ -989,7 +992,7 @@
                             <td>SWI/SNF ATP-dependent chromatin remodellers</td>
                             <td>Mutated in 20% of human cancers; doxorubicin resistant triple-negative breast cancer is associated with loss of SMARCB1, SMARCA4, or KEAP1 (a BRCA1 interactor).</td>
                             <td>(
-                                <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>);  (
+                                <xref rid="bib64" ref-type="bibr">Kadoch et al., 2013</xref>); (
                                 <xref rid="bib108" ref-type="bibr">Shain and Pollack, 2013</xref>)
                             </td>
                         </tr>
@@ -1007,7 +1010,7 @@
                             <td>E3 ubiquitin ligase</td>
                             <td>Expression correlates with poor patient outcome in hepatocellular and gastric carcinomas.</td>
                             <td>(
-                                <xref rid="bib135" ref-type="bibr">Zhao et al., 2018</xref>);  (
+                                <xref rid="bib135" ref-type="bibr">Zhao et al., 2018</xref>); (
                                 <xref rid="bib45" ref-type="bibr">Gao et al., 2012</xref>)
                             </td>
                         </tr>
@@ -1016,8 +1019,8 @@
                             <td>E3 ubiquitin ligase; chromatin remodelling and DDR</td>
                             <td>Tumour supressor down-regulated in several cancers. Deletion is main contributor to chromosomal instability in colorectal cancer.</td>
                             <td>(
-                                <xref rid="bib87" ref-type="bibr">Moyal et al., 2011</xref>);  (
-                                <xref rid="bib110" ref-type="bibr">Shema et al., 2008</xref>);  (
+                                <xref rid="bib87" ref-type="bibr">Moyal et al., 2011</xref>); (
+                                <xref rid="bib110" ref-type="bibr">Shema et al., 2008</xref>); (
                                 <xref rid="bib8" ref-type="bibr">Barber et al., 2008</xref>)
                             </td>
                         </tr>
@@ -1027,7 +1030,7 @@
                             <td>Splicing component and known G4-interactor</td>
                             <td>Over-expressed in colon, breast and liposarcoma cancers, respectively.</td>
                             <td>(
-                                <xref rid="bib31" ref-type="bibr">Crozat et al., 1993</xref>);  (
+                                <xref rid="bib31" ref-type="bibr">Crozat et al., 1993</xref>); (
                                 <xref rid="bib39" ref-type="bibr">Dvinge et al., 2016</xref>); (
                                 <xref rid="bib116" ref-type="bibr">Takahama et al., 2013</xref>)
                             </td>
@@ -1100,11 +1103,11 @@
                 <table>
                     <thead>
                         <th>
-                            <th>Reagent type  (species) or  resource</th>
+                            <th>Reagent type (species) or resource</th>
                             <th>Designation</th>
                             <th>Source or reference</th>
                             <th>Identifiers</th>
-                            <th>Additional  information</th>
+                            <th>Additional information</th>
                         </th>
                     </thead>
                     <tbody>
@@ -1463,7 +1466,7 @@
                             <td>Software, algorithm</td>
                             <td>ClueGO v3.5.1</td>
                             <td>(
-                                <xref rid="bib13" ref-type="bibr">Bindea et al., 2009</xref>);  (
+                                <xref rid="bib13" ref-type="bibr">Bindea et al., 2009</xref>); (
                                 <xref rid="bib14" ref-type="bibr">Bindea et al., 2013</xref>)
                             </td>
                             <td>

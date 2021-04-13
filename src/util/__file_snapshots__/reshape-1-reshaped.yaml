@@ -125,10 +125,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - '1'
+              - 1
           - type: TableCell
             content:
-              - '2'
+              - 2
   - type: Paragraph
     content:
       - The caption can be after e.g.
@@ -152,10 +152,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - '3'
+              - 3
           - type: TableCell
             content:
-              - '4'
+              - 4
   - type: Paragraph
     content:
       - Captions can also be indicated by emphasis or string emphasis e.g.
@@ -178,10 +178,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - '3'
+              - 3
           - type: TableCell
             content:
-              - '4'
+              - 4
   - type: Heading
     depth: 2
     content:

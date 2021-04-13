@@ -1122,7 +1122,7 @@ function decodeReference(
   // The year can sometimes include a suffix e.g. 2012a (if there are multiple references
   // for the same author in a year). So this removes that suffix by only ever taking the
   // first four digits
-  let datePublishedString = textOrUndefined(child(elem, 'year'))
+  const datePublishedString = textOrUndefined(child(elem, 'year'))
   let datePublished: stencila.Date | undefined
   if (datePublishedString !== undefined) {
     const match = /^(\d{4})/.exec(datePublishedString)
@@ -1857,7 +1857,7 @@ function decodeTableWrap(
   const cap = child(elem, 'caption')
   const caption =
     cap !== null && Array.isArray(cap.elements)
-      ? decodeElements(cap.elements, state)
+      ? ensureBlockContentArray(decodeElements(cap.elements, state))
       : undefined
 
   const thead = first(elem, 'thead')
@@ -2049,7 +2049,7 @@ function decodeFigure(
   // Get any `caption`
   const captionEl = child(elem, 'caption')
   const caption = captionEl?.elements?.length
-    ? decodeElements(captionEl.elements, state)
+    ? ensureBlockContentArray(decodeElements(captionEl.elements, state))
     : undefined
 
   // Get the `content`, ignoring certain elements that have already been
@@ -2199,24 +2199,25 @@ function encodeMath(math: stencila.Math): xml.Element[] {
  * Decode a JATS `<break>` element into a space.
  *
  * The `break` element is "An explicit line break in the text."
- * At present, this is assumed not to imply any semantic meaning
- * as is decoded to a space.
+ * and "Usage is discouraged". Assumed not to imply any semantic meaning
+ * and in our test fixtures often seems to be used as a `\n` not a `\s\n`
+ * (space plus line break). Thus, this returns an empty array
  */
-function decodeBreak(): [string] {
-  return [' ']
+function decodeBreak(): [] {
+  return []
 }
 
 /**
  * Get the `mimetype` and `mime-subtype` from an element and return it in a
  * traditional `type/subtype` string.
  */
-function extractMimetype(elem: xml.Element): string {
+function extractMimetype(elem: xml.Element): string | undefined {
   const mimetype = attr(elem, 'mimetype') ?? ''
-
   const mimeSubtype = attr(elem, 'mime-subtype') ?? ''
 
-  const joiner = mimetype.length && mimeSubtype.length ? '/' : ''
+  if (mimetype === '' && mimeSubtype === '') return undefined
 
+  const joiner = mimetype.length && mimeSubtype.length ? '/' : ''
   return mimetype + joiner + mimeSubtype
 }
 

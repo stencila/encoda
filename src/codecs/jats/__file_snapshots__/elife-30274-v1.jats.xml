@@ -193,8 +193,9 @@
                             <ext-link ext-link-type="uri" xlink:href="#table3">Table 3</ext-link>. Additional details for this experiment can be found at 
                             <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
                         </p>
-                        <p/>
-                        <media xlink:href=""/>
+                        <p>
+                            <media xlink:href=""/>
+                        </p>
                     </caption>
                     <graphic xlink:href="" mimetype="application" mime-subtype="postscript"/>
                 </fig>
@@ -314,7 +315,7 @@
                             <td>1 hr vs 24 hr</td>
                             <td>RP:CB Lot 1</td>
                             <td>4.742</td>
-                            <td>1.92e-06</td>
+                            <td>0.00000192</td>
                             <td>708</td>
                         </tr>
                         <tr>
@@ -400,7 +401,7 @@
                             <td/>
                             <td>RP:CB Lot 2</td>
                             <td>4.436</td>
-                            <td>8.35e-06</td>
+                            <td>0.00000835</td>
                             <td>573</td>
                         </tr>
                         <tr>
@@ -410,7 +411,7 @@
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>)
                             </td>
                             <td>5.806</td>
-                            <td>4.11e-09</td>
+                            <td>4.11e-9</td>
                             <td>236</td>
                         </tr>
                     </tbody>
@@ -456,7 +457,7 @@
                                 <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>)
                             </td>
                             <td>318799</td>
-                            <td>6.67e-05</td>
+                            <td>0.0000667</td>
                             <td>1510</td>
                         </tr>
                         <tr>
@@ -490,7 +491,7 @@
                             <td>1 hr vs 24 hr</td>
                             <td>RP:CB Lot 1</td>
                             <td>281679</td>
-                            <td>5.45e-05</td>
+                            <td>0.0000545</td>
                             <td>1416</td>
                         </tr>
                         <tr>
@@ -663,7 +664,7 @@
                             <td>1 hr vs 24 hr</td>
                             <td>RP:CB Lot 1</td>
                             <td>235077</td>
-                            <td>7.45e-06</td>
+                            <td>0.00000745</td>
                             <td>1288</td>
                         </tr>
                         <tr>

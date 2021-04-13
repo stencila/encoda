@@ -392,8 +392,12 @@ describe('Encode & Decode figure nodes', () => {
           content: [imageObject({ contentUrl: 'someImage' })],
           label,
           caption: [
-            'This is a test image. It has a ',
-            link({ content: ['link'], target: '#' }),
+            paragraph({
+              content: [
+                'This is a test image. It has a ',
+                link({ content: ['link'], target: '#' }),
+              ],
+            }),
           ],
         })
       )
@@ -413,8 +417,12 @@ describe('Encode & Decode figure nodes', () => {
     const schemaNode = figure({
       content: [imageObject({ contentUrl: 'someImage' })],
       caption: [
-        'This is a test image. It has a ',
-        link({ content: ['link'], target: '#' }),
+        paragraph({
+          content: [
+            'This is a test image. It has a ',
+            link({ content: ['link'], target: '#' }),
+          ],
+        }),
       ],
     })
 
@@ -518,8 +526,12 @@ describe('Encode & Decode Collections', () => {
       figure({
         content: [imageObject({ contentUrl: 'someImage' })],
         caption: [
-          'This is a test image. It has a ',
-          link({ content: ['link'], target: '#' }),
+          paragraph({
+            content: [
+              'This is a test image. It has a ',
+              link({ content: ['link'], target: '#' }),
+            ],
+          }),
         ],
       }),
       figure({

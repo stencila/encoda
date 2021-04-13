@@ -57,7 +57,7 @@ followed by more paragraphs`)
         content: [
           heading({ content: ['First heading'], depth: 2 }),
           paragraph({ content: ['some paragraphs'] }),
-          '',
+          paragraph({ content: [''] }), // TODO change return type of decodeNode to Node[] so that this does not exist
           paragraph({ content: [link({ content: ['My link'], target: '#' })] }),
           paragraph({ content: ['followed by more paragraphs'] }),
         ],

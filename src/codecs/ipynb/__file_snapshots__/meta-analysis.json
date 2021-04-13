@@ -23,7 +23,12 @@
     }
   },
   "content": [
-    0,
+    {
+      "type": "Paragraph",
+      "content": [
+        0
+      ]
+    },
     {
       "type": "Paragraph",
       "content": [
@@ -106,7 +111,7 @@
           ]
         },
         " So far, a long list of studies have looked at MRI-histology comparisons, each of them focusing on a specific pathology and a few MRI measures. Despite these numerous studies, there is still an ongoing debate on what MRI measure should be used to quantify myelin and as a consequence there is a constant methodological effort to propose new measures. We believe that this debate would benefit from a quantitative analysis of all the findings published so far, specifically addressing inter-study variations and prospects for future studies, something that is currently missing from the literature. ",
-        "\n"
+        0
       ]
     },
     {
@@ -194,7 +199,7 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "",
+        null,
         {
           "type": "ImageObject",
           "contentUrl": "",
@@ -2570,7 +2575,7 @@
         {
           "type": "Superscript",
           "content": [
-            "2"
+            2
           ]
         },
         ", as it was the most common quantitative result we could obtain from these studies. To have a look at both sample size and effect size for each measure, we prepared an interactive bubble chart, where the size of each bubble is proportional to the sample size. You can hover on the bubbles to obtain additional details."
@@ -6016,14 +6021,14 @@
         {
           "type": "Superscript",
           "content": [
-            "2"
+            2
           ]
         },
         " values based on the effect sizes and the sample sizes. We can also estimate the interval of R",
         {
           "type": "Superscript",
           "content": [
-            "2"
+            2
           ]
         },
         " that we can expect in future studies (this is called prediction interval). A compact way to represent these results is given by forest plots: for each study, we represent the effect size and the related sample size using a square and a horizontal error bar; then for each measure, we represent the results from the ME model using a diamond and an additional error bar; finally to represent the prediction interval we use two hourglasses and a dotted line."
@@ -8464,7 +8469,7 @@
         {
           "type": "Superscript",
           "content": [
-            "2"
+            2
           ]
         },
         " estimates across measures? To do that, we pooled together all the measures from all the studies and computed first a repeated measures meta-regression and then all the possible pairwise comparisons (Tukey's test), correcting for multiple comparisons (Bonferroni correction). To visually represent these results, we used two heatmaps, one for the z-scores and one for the p-values: each element refers to the comparison between the measure on the x axis and the one on the y axis."
@@ -15101,7 +15106,12 @@
         "execution_count": 12
       }
     },
-    0,
+    {
+      "type": "Paragraph",
+      "content": [
+        0
+      ]
+    },
     {
       "type": "Paragraph",
       "content": [

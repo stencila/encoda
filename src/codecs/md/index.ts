@@ -48,6 +48,7 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 import { selectAll } from 'unist-util-select'
 import { STDIO_PATH } from '../..'
+import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { isContentArray } from '../../util/content/isContentArray'
 import { mediaType } from '../../util/media/mediaType'
@@ -685,7 +686,7 @@ function decodeArticle(
     ...context.frontmatter,
     title,
     references: context.frontmatter.references,
-    content,
+    content: ensureBlockContentArrayOrUndefined(content),
   })
 }
 
@@ -970,7 +971,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     programmingLanguage,
     meta: Object.keys(meta).length > 0 ? meta : undefined,
     outputs: outputs.length > 0 ? outputs : undefined,
-    caption: caption.length > 0 ? caption : undefined,
+    caption: ensureBlockContentArrayOrUndefined(caption),
     label: argument,
     id,
   })
@@ -1066,7 +1067,7 @@ function decodeFigure(ext: Extension): stencila.Figure {
 
   return stencila.figure({
     content: media ? [media] : [],
-    caption,
+    caption: ensureBlockContentArrayOrUndefined(caption),
     label: argument,
     id: properties?.id,
   })
@@ -1219,7 +1220,7 @@ function decodeTableBlock(ext: Extension): stencila.Table {
     ...table,
     id: properties?.id,
     label: argument,
-    caption,
+    caption: ensureBlockContentArrayOrUndefined(caption),
   })
 }
 

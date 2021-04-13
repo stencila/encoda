@@ -5452,7 +5452,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Endometriosis is a chronic inflammatory disease that affects 1 in 10 women of childbearing age (",
+        "Endometriosis is a chronic inflammatory disease that affects 1 in 10 women of childbearing age ",
         {
           "type": "Cite",
           "target": "bib59",
@@ -5460,47 +5460,54 @@
             "Zondervan et al., 2019"
           ]
         },
-        "). It is characterized by the growth of endometrium in extrauterine locations, chronic pain in the pelvis and the lower abdomen, infertility, emotional distress and loss of working ability (",
+        ". It is characterized by the growth of endometrium in extrauterine locations, chronic pain in the pelvis and the lower abdomen, infertility, emotional distress and loss of working ability ",
         {
-          "type": "Cite",
-          "target": "bib22",
-          "content": [
-            "Fourquet et al., 2011"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib22",
+              "content": [
+                "Fourquet et al., 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib38",
+              "content": [
+                "Márki et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib59",
+              "content": [
+                "Zondervan et al., 2019"
+              ]
+            }
           ]
         },
-        "; ",
+        ". Current clinical management provides unsatisfactory outcomes. On the one hand, hormonal therapy has unwanted effects including contraception and emotional disturbances ",
         {
-          "type": "Cite",
-          "target": "bib38",
-          "content": [
-            "Márki et al., 2017"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib45",
+              "content": [
+                "Ross and Kaiser, 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib47",
+              "content": [
+                "Skovlund et al., 2016"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib59",
-          "content": [
-            "Zondervan et al., 2019"
-          ]
-        },
-        "). Current clinical management provides unsatisfactory outcomes. On the one hand, hormonal therapy has unwanted effects including contraception and emotional disturbances (",
-        {
-          "type": "Cite",
-          "target": "bib45",
-          "content": [
-            "Ross and Kaiser, 2017"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib47",
-          "content": [
-            "Skovlund et al., 2016"
-          ]
-        },
-        "), whereas surgical excision of the growths is associated with high-recurrence rates and post-surgical pain (",
+        ", whereas surgical excision of the growths is associated with high-recurrence rates and post-surgical pain ",
         {
           "type": "Cite",
           "target": "bib23",
@@ -5508,7 +5515,7 @@
             "Garry, 2004"
           ]
         },
-        "). Hence, clinical treatments are limited and women often unsatisfactorily self-manage their pain (",
+        ". Hence, clinical treatments are limited and women often unsatisfactorily self-manage their pain ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -5516,7 +5523,7 @@
             "Armour et al., 2019"
           ]
         },
-        "). In this context, marijuana legalization for medical purposes in American and European states has led to increased availability of phytocannabinoids (",
+        ". In this context, marijuana legalization for medical purposes in American and European states has led to increased availability of phytocannabinoids ",
         {
           "type": "Cite",
           "target": "bib1",
@@ -5524,7 +5531,7 @@
             "Abuhasira et al., 2018"
           ]
         },
-        "). While cannabis may provide pain relief in certain conditions (",
+        ". While cannabis may provide pain relief in certain conditions ",
         {
           "type": "Cite",
           "target": "bib11",
@@ -5532,7 +5539,7 @@
             "Campbell et al., 2001"
           ]
         },
-        "), it is unclear whether it may modify endometriosis symptoms or development."
+        ", it is unclear whether it may modify endometriosis symptoms or development."
       ]
     },
     {
@@ -5545,47 +5552,48 @@
             "Cannabis sativa"
           ]
         },
-        " plant, and multiple animal and clinical studies suggest its efficacy relieving chronic pain (",
+        " plant, and multiple animal and clinical studies suggest its efficacy relieving chronic pain ",
         {
-          "type": "Cite",
-          "target": "bib17",
-          "content": [
-            "De Vry et al., 2004"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib17",
+              "content": [
+                "De Vry et al., 2004"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib28",
+              "content": [
+                "Harris et al., 2016"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib30",
+              "content": [
+                "King et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib52",
+              "content": [
+                "Ueberall et al., 2019"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib57",
+              "content": [
+                "Williams et al., 2008"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib28",
-          "content": [
-            "Harris et al., 2016"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib30",
-          "content": [
-            "King et al., 2017"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib52",
-          "content": [
-            "Ueberall et al., 2019"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib57",
-          "content": [
-            "Williams et al., 2008"
-          ]
-        },
-        "), although controversial results have been obtained in human clinical trials (",
+        ", although controversial results have been obtained in human clinical trials ",
         {
           "type": "Cite",
           "target": "bib50",
@@ -5593,31 +5601,34 @@
             "Stockings et al., 2018"
           ]
         },
-        "). However, THC has important side effects including cognitive deficits and anxiety (",
+        ". However, THC has important side effects including cognitive deficits and anxiety ",
         {
-          "type": "Cite",
-          "target": "bib12",
-          "content": [
-            "Célérier et al., 2006"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib12",
+              "content": [
+                "Célérier et al., 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib29",
+              "content": [
+                "Kasten et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib44",
+              "content": [
+                "Puighermanal et al., 2013"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib29",
-          "content": [
-            "Kasten et al., 2017"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib44",
-          "content": [
-            "Puighermanal et al., 2013"
-          ]
-        },
-        "). This work investigates the effects of natural THC in a mouse model of endometriosis that reproduces the ectopic endometrial growths and some of the behavioral alterations of clinical endometriosis. Our data show that THC is effective inhibiting hypersensitivity in the caudal abdominal area without inducing tolerance, as well as reducing the pain unpleasantness associated with endometriosis. Notably, THC also prevents the cognitive impairment observed in mice with ectopic endometrium without modifying anxiety-like behavior at this particular dose. Interestingly, THC shows efficacy limiting the development of ectopic endometrium, revealing disease-modifying effects of this natural cannabinoid."
+        ". This work investigates the effects of natural THC in a mouse model of endometriosis that reproduces the ectopic endometrial growths and some of the behavioral alterations of clinical endometriosis. Our data show that THC is effective inhibiting hypersensitivity in the caudal abdominal area without inducing tolerance, as well as reducing the pain unpleasantness associated with endometriosis. Notably, THC also prevents the cognitive impairment observed in mice with ectopic endometrium without modifying anxiety-like behavior at this particular dose. Interestingly, THC shows efficacy limiting the development of ectopic endometrium, revealing disease-modifying effects of this natural cannabinoid."
       ]
     },
     {
@@ -5702,63 +5713,74 @@
             "Figure 1d"
           ]
         },
-        "). In line with these findings, previous rodent models of endometriosis found increased mechanosensitivity in the lower abdomen (",
+        "). In line with these findings, previous rodent models of endometriosis found increased mechanosensitivity in the lower abdomen ",
         {
-          "type": "Cite",
-          "target": "bib4",
-          "content": [
-            "Arosh et al., 2015"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib4",
+              "content": [
+                "Arosh et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib24",
+              "content": [
+                "Greaves et al., 2017"
+              ]
+            }
           ]
         },
-        "; ",
+        " and affective-like disturbances ",
         {
-          "type": "Cite",
-          "target": "bib24",
-          "content": [
-            "Greaves et al., 2017"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib19",
+              "content": [
+                "Filho et al., 2019"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib35",
+              "content": [
+                "Li et al., 2018"
+              ]
+            }
           ]
         },
-        ") and affective-like disturbances (",
+        ". Previous works associate nociceptive and emotional distress in chronic pain settings with cognitive decline ",
         {
-          "type": "Cite",
-          "target": "bib19",
-          "content": [
-            "Filho et al., 2019"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib7",
+              "content": [
+                "Bushnell et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib32",
+              "content": [
+                "La Porta et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib58",
+              "content": [
+                "You et al., 2018"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib35",
-          "content": [
-            "Li et al., 2018"
-          ]
-        },
-        "). Previous works associate nociceptive and emotional distress in chronic pain settings with cognitive decline (",
-        {
-          "type": "Cite",
-          "target": "bib7",
-          "content": [
-            "Bushnell et al., 2015"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib32",
-          "content": [
-            "La Porta et al., 2015"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib58",
-          "content": [
-            "You et al., 2018"
-          ]
-        },
-        "), although this cognitive impairment has not yet been revealed in rodent models of endometriosis. We found in our model a dramatic impairment of long-term memory in endometriosis mice (",
+        ", although this cognitive impairment has not yet been revealed in rodent models of endometriosis. We found in our model a dramatic impairment of long-term memory in endometriosis mice (",
         {
           "type": "Link",
           "relation": "fig",
@@ -5767,23 +5789,27 @@
             "Figure 1e"
           ]
         },
-        "). While mnemonic effects of this pathology have not been thoroughly evaluated, a cognitive impairment may contribute to the loss of working ability consistently reported in women with endometriosis (",
+        "). While mnemonic effects of this pathology have not been thoroughly evaluated, a cognitive impairment may contribute to the loss of working ability consistently reported in women with endometriosis ",
         {
-          "type": "Cite",
-          "target": "bib27",
-          "content": [
-            "Hansen et al., 2013"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib27",
+              "content": [
+                "Hansen et al., 2013"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib49",
+              "content": [
+                "Sperschneider et al., 2019"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib49",
-          "content": [
-            "Sperschneider et al., 2019"
-          ]
-        },
-        "). Hence, mice with ectopic endometrium recapitulate in our model some of the symptomatology observed in the clinics, although manifestations of spontaneous pain could not be evaluated in this work."
+        ". Hence, mice with ectopic endometrium recapitulate in our model some of the symptomatology observed in the clinics, although manifestations of spontaneous pain could not be evaluated in this work."
       ]
     },
     {
@@ -5864,19 +5890,20 @@
             },
             {
               "type": "Paragraph",
-              "content": []
-            },
-            {
-              "type": "MediaObject",
-              "id": "fig1sdata1",
-              "contentUrl": "50356.json.media/elife-50356-fig1-data1-v2.xlsx",
-              "text": "Figure 1—source data 1.",
               "content": [
                 {
-                  "type": "Heading",
-                  "depth": 3,
+                  "type": "MediaObject",
+                  "id": "fig1sdata1",
+                  "contentUrl": "50356.json.media/elife-50356-fig1-data1-v2.xlsx",
+                  "text": "Figure 1—source data 1.",
                   "content": [
-                    "Effects of ectopic endometrium."
+                    {
+                      "type": "Heading",
+                      "depth": 3,
+                      "content": [
+                        "Effects of ectopic endometrium."
+                      ]
+                    }
                   ]
                 }
               ]
@@ -6043,39 +6070,47 @@
             "Figure 1f"
           ]
         },
-        "), as shown in women (",
+        "), as shown in women ",
         {
-          "type": "Cite",
-          "target": "bib51",
-          "content": [
-            "Tokushige et al., 2006"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib51",
+              "content": [
+                "Tokushige et al., 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib56",
+              "content": [
+                "Wang et al., 2009"
+              ]
+            }
           ]
         },
-        "; ",
+        " and other rodent models ",
         {
-          "type": "Cite",
-          "target": "bib56",
-          "content": [
-            "Wang et al., 2009"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib4",
+              "content": [
+                "Arosh et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib5",
+              "content": [
+                "Berkley et al., 2004"
+              ]
+            }
           ]
         },
-        ") and other rodent models (",
-        {
-          "type": "Cite",
-          "target": "bib4",
-          "content": [
-            "Arosh et al., 2015"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib5",
-          "content": [
-            "Berkley et al., 2004"
-          ]
-        },
-        "). Interestingly, we also found increased expression of the neuronal marker beta-III tubulin in the uteri of endometriosis mice (",
+        ". Interestingly, we also found increased expression of the neuronal marker beta-III tubulin in the uteri of endometriosis mice (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6084,23 +6119,27 @@
             "Figure 1—figure supplement 3"
           ]
         },
-        "), mimicking not only some of the symptoms but also the histological phenotype observed in women with endometriosis (",
+        "), mimicking not only some of the symptoms but also the histological phenotype observed in women with endometriosis ",
         {
-          "type": "Cite",
-          "target": "bib39",
-          "content": [
-            "Miller and Fraser, 2015"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib39",
+              "content": [
+                "Miller and Fraser, 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib51",
+              "content": [
+                "Tokushige et al., 2006"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib51",
-          "content": [
-            "Tokushige et al., 2006"
-          ]
-        },
-        ")."
+        "."
       ]
     },
     {
@@ -6159,19 +6198,20 @@
         },
         {
           "type": "Paragraph",
-          "content": []
-        },
-        {
-          "type": "MediaObject",
-          "id": "fig2sdata1",
-          "contentUrl": "50356.json.media/elife-50356-fig2-data1-v2.xlsx",
-          "text": "Figure 2—source data 1.",
           "content": [
             {
-              "type": "Heading",
-              "depth": 3,
+              "type": "MediaObject",
+              "id": "fig2sdata1",
+              "contentUrl": "50356.json.media/elife-50356-fig2-data1-v2.xlsx",
+              "text": "Figure 2—source data 1.",
               "content": [
-                "Acute THC effects."
+                {
+                  "type": "Heading",
+                  "depth": 3,
+                  "content": [
+                    "Acute THC effects."
+                  ]
+                }
               ]
             }
           ]
@@ -6228,31 +6268,34 @@
             "Figure 3—figure supplement 2"
           ]
         },
-        "). Therefore, THC did not lose its efficacy when repeated administration started once painful symptomatology was established. The absence of tolerance to THC-induced antinociception is in contrast with the tolerance described at higher THC doses in other pain models (",
+        "). Therefore, THC did not lose its efficacy when repeated administration started once painful symptomatology was established. The absence of tolerance to THC-induced antinociception is in contrast with the tolerance described at higher THC doses in other pain models ",
         {
-          "type": "Cite",
-          "target": "bib25",
-          "content": [
-            "Greene et al., 2018"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib25",
+              "content": [
+                "Greene et al., 2018"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib33",
+              "content": [
+                "LaFleur et al., 2018"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib54",
+              "content": [
+                "Wakley et al., 2014"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib33",
-          "content": [
-            "LaFleur et al., 2018"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib54",
-          "content": [
-            "Wakley et al., 2014"
-          ]
-        },
-        "). As expected, no effects of endometriosis or THC treatments were found in mechanical sensitivity of distant areas (Hind paw, ",
+        ". As expected, no effects of endometriosis or THC treatments were found in mechanical sensitivity of distant areas (Hind paw, ",
         {
           "type": "Link",
           "relation": "fig",
@@ -6270,7 +6313,7 @@
             "Figure 3c"
           ]
         },
-        "). Interestingly, the 7 day treatment with THC inhibited this component of negative affect, while the effects of an acute administration of THC were highly variable. This variable response could be associated to aversive effects associated with a first exposure to THC, an event described in humans (",
+        "). Interestingly, the 7 day treatment with THC inhibited this component of negative affect, while the effects of an acute administration of THC were highly variable. This variable response could be associated to aversive effects associated with a first exposure to THC, an event described in humans ",
         {
           "type": "Cite",
           "target": "bib37",
@@ -6278,7 +6321,7 @@
             "MacCallum and Russo, 2018"
           ]
         },
-        ") and mice (",
+        " and mice ",
         {
           "type": "Cite",
           "target": "bib31",
@@ -6286,7 +6329,7 @@
             "Kubilius et al., 2018"
           ]
         },
-        ")."
+        "."
       ]
     },
     {
@@ -6374,19 +6417,20 @@
             },
             {
               "type": "Paragraph",
-              "content": []
-            },
-            {
-              "type": "MediaObject",
-              "id": "fig3sdata1",
-              "contentUrl": "50356.json.media/elife-50356-fig3-data1-v2.xlsx",
-              "text": "Figure 3—source data 1.",
               "content": [
                 {
-                  "type": "Heading",
-                  "depth": 3,
+                  "type": "MediaObject",
+                  "id": "fig3sdata1",
+                  "contentUrl": "50356.json.media/elife-50356-fig3-data1-v2.xlsx",
+                  "text": "Figure 3—source data 1.",
                   "content": [
-                    "Effects of repeated THC on behavioral alterations."
+                    {
+                      "type": "Heading",
+                      "depth": 3,
+                      "content": [
+                        "Effects of repeated THC on behavioral alterations."
+                      ]
+                    }
                   ]
                 }
               ]
@@ -6543,7 +6587,7 @@
             "Figure 3d"
           ]
         },
-        ", percentage of time in open arms). Previous studies described anxiogenic-like effects of slightly higher doses (3 mg/kg) in naïve male mice (",
+        ", percentage of time in open arms). Previous studies described anxiogenic-like effects of slightly higher doses (3 mg/kg) in naïve male mice ",
         {
           "type": "Cite",
           "target": "bib53",
@@ -6551,7 +6595,7 @@
             "Viñals et al., 2015"
           ]
         },
-        "), and anxiolytic-like effects when using lower doses (0.3 mg/kg, ",
+        ", and anxiolytic-like effects when using lower doses (0.3 mg/kg, ",
         {
           "type": "Cite",
           "target": "bib44",
@@ -6576,23 +6620,27 @@
             "Figure 3d"
           ]
         },
-        "). Memory performance was also assessed the third week after starting the THC treatment. As expected, mice exposed to the chronic nociceptive manifestations of endometriosis showed a pronounced cognitive impairment, as well as sham mice exposed to THC, in accordance with previous reports in naïve males (",
+        "). Memory performance was also assessed the third week after starting the THC treatment. As expected, mice exposed to the chronic nociceptive manifestations of endometriosis showed a pronounced cognitive impairment, as well as sham mice exposed to THC, in accordance with previous reports in naïve males ",
         {
-          "type": "Cite",
-          "target": "bib29",
-          "content": [
-            "Kasten et al., 2017"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib29",
+              "content": [
+                "Kasten et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib44",
+              "content": [
+                "Puighermanal et al., 2013"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib44",
-          "content": [
-            "Puighermanal et al., 2013"
-          ]
-        },
-        "). Surprisingly, endometriosis mice repeatedly treated with natural THC showed intact discrimination indices (",
+        ". Surprisingly, endometriosis mice repeatedly treated with natural THC showed intact discrimination indices (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6601,29 +6649,33 @@
             "Figure 3e"
           ]
         },
-        ") suggesting protective effects of THC in this chronic inflammatory condition. In agreement, recent studies have shown cognitive improvements after THC exposure in old male and female mice (",
+        ") suggesting protective effects of THC in this chronic inflammatory condition. In agreement, recent studies have shown cognitive improvements after THC exposure in old male and female mice ",
         {
-          "type": "Cite",
-          "target": "bib6",
-          "content": [
-            "Bilkei-Gorzo et al., 2017"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib6",
+              "content": [
+                "Bilkei-Gorzo et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib46",
+              "content": [
+                "Sarne et al., 2018"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib46",
-          "content": [
-            "Sarne et al., 2018"
-          ]
-        },
-        ")."
+        "."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Exogenous and endogenous cannabinoids have shown modulatory effects on the female reproductive system (",
+        "Exogenous and endogenous cannabinoids have shown modulatory effects on the female reproductive system ",
         {
           "type": "Cite",
           "target": "bib55",
@@ -6631,7 +6683,7 @@
             "Walker et al., 2019"
           ]
         },
-        "). Thus, we analyzed the effects of THC on the ectopic and eutopic endometrium and on ovarian follicle maturation. Interestingly, endometriosis mice receiving THC 2 mg/kg for 32 days showed an evident inhibition of the development of endometrial cysts (cyst diameter and area of endometrial tissue, ",
+        ". Thus, we analyzed the effects of THC on the ectopic and eutopic endometrium and on ovarian follicle maturation. Interestingly, endometriosis mice receiving THC 2 mg/kg for 32 days showed an evident inhibition of the development of endometrial cysts (cyst diameter and area of endometrial tissue, ",
         {
           "type": "Link",
           "relation": "fig",
@@ -6649,7 +6701,7 @@
             "Figure 4—figure supplement 1a"
           ]
         },
-        "). In agreement, a previous study showed antiproliferative effects of WIN 55212–2, a synthetic cannabinoid agonist, on endometrial cell cultures and in ectopic endometrium implanted in immunodepressed mice (",
+        "). In agreement, a previous study showed antiproliferative effects of WIN 55212–2, a synthetic cannabinoid agonist, on endometrial cell cultures and in ectopic endometrium implanted in immunodepressed mice ",
         {
           "type": "Cite",
           "target": "bib34",
@@ -6657,7 +6709,7 @@
             "Leconte et al., 2010"
           ]
         },
-        "). The assessment of the uterine diameter and the area of eutopic endometrium (",
+        ". The assessment of the uterine diameter and the area of eutopic endometrium (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6684,23 +6736,27 @@
             "Figure 4b"
           ]
         },
-        ") indicating again that THC exposure may have different consequences under chronic inflammatory conditions. In agreement, recent studies showed differential effects of THC on the nervous system of rodents with and without chronic inflammation (",
+        ") indicating again that THC exposure may have different consequences under chronic inflammatory conditions. In agreement, recent studies showed differential effects of THC on the nervous system of rodents with and without chronic inflammation ",
         {
-          "type": "Cite",
-          "target": "bib6",
-          "content": [
-            "Bilkei-Gorzo et al., 2017"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib6",
+              "content": [
+                "Bilkei-Gorzo et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib46",
+              "content": [
+                "Sarne et al., 2018"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib46",
-          "content": [
-            "Sarne et al., 2018"
-          ]
-        },
-        "). To investigate a possible estrogenic influence on these histological findings, we analyzed 17 β-estradiol plasma levels. As expected, 17 β-estradiol plasma levels depended on the phase of the estrous cycle: mice in proestrus had the highest concentration followed by mice in diestrus, and mice in estrus showed the lowest levels (",
+        ". To investigate a possible estrogenic influence on these histological findings, we analyzed 17 β-estradiol plasma levels. As expected, 17 β-estradiol plasma levels depended on the phase of the estrous cycle: mice in proestrus had the highest concentration followed by mice in diestrus, and mice in estrus showed the lowest levels (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6812,19 +6868,20 @@
             },
             {
               "type": "Paragraph",
-              "content": []
-            },
-            {
-              "type": "MediaObject",
-              "id": "fig4sdata1",
-              "contentUrl": "50356.json.media/elife-50356-fig4-data1-v2.xlsx",
-              "text": "Figure 4—source data 1.",
               "content": [
                 {
-                  "type": "Heading",
-                  "depth": 3,
+                  "type": "MediaObject",
+                  "id": "fig4sdata1",
+                  "contentUrl": "50356.json.media/elife-50356-fig4-data1-v2.xlsx",
+                  "text": "Figure 4—source data 1.",
                   "content": [
-                    "Effects of repeated THC on histopathological features."
+                    {
+                      "type": "Heading",
+                      "depth": 3,
+                      "content": [
+                        "Effects of repeated THC on histopathological features."
+                      ]
+                    }
                   ]
                 }
               ]
@@ -6915,23 +6972,27 @@
     {
       "type": "Paragraph",
       "content": [
-        "We also assessed possible effects of THC on ovarian functioning, since previous works have suggested inhibitory effects of THC on folliculogenesis and ovulation (",
+        "We also assessed possible effects of THC on ovarian functioning, since previous works have suggested inhibitory effects of THC on folliculogenesis and ovulation ",
         {
-          "type": "Cite",
-          "target": "bib2",
-          "content": [
-            "Adashi et al., 1983"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib2",
+              "content": [
+                "Adashi et al., 1983"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib18",
+              "content": [
+                "El-Talatini et al., 2009"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib18",
-          "content": [
-            "El-Talatini et al., 2009"
-          ]
-        },
-        "). Numbers of preantral follicles, antral follicles and corpora lutea were similar in all groups in our experimental conditions (",
+        ". Numbers of preantral follicles, antral follicles and corpora lutea were similar in all groups in our experimental conditions (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6970,7 +7031,7 @@
             "gynica.com"
           ]
         },
-        ") have planned the initiation of clinical trials to provide evidence on the translatability of these results to women with endometriosis. These novel clinical trials will evaluate this new possible endometriosis treatment under pathological human conditions. However, cannabis has a large number of potential side effects, as well as a high potential for abuse liability (",
+        ") have planned the initiation of clinical trials to provide evidence on the translatability of these results to women with endometriosis. These novel clinical trials will evaluate this new possible endometriosis treatment under pathological human conditions. However, cannabis has a large number of potential side effects, as well as a high potential for abuse liability ",
         {
           "type": "Cite",
           "target": "bib15",
@@ -6978,7 +7039,7 @@
             "Curran et al., 2016"
           ]
         },
-        "), that have to be considered by physicians and patients. Therefore, the use of cannabis in unregulated scenarios should be discouraged taking into account these serious side effects."
+        ", that have to be considered by physicians and patients. Therefore, the use of cannabis in unregulated scenarios should be discouraged taking into account these serious side effects."
       ]
     },
     {
@@ -7001,7 +7062,6 @@
               "type": "TableCell",
               "content": [
                 "Reagent type ",
-                " ",
                 "(species) or resource"
               ]
             },
@@ -7027,7 +7087,6 @@
               "type": "TableCell",
               "content": [
                 "Additional ",
-                " ",
                 "information"
               ]
             }
@@ -7089,7 +7148,6 @@
               "type": "TableCell",
               "content": [
                 "THC ",
-                " ",
                 "(Tetrahydrocannabinol)"
               ]
             },
@@ -7730,79 +7788,76 @@
     {
       "type": "Paragraph",
       "content": [
-        "THC was purchased from THC-Pharm-GmbH (Frankfurt, Germany) as natural THC with 98.8% purity. This source of natural THC has been widely used in multiple research studies (",
+        "THC was purchased from THC-Pharm-GmbH (Frankfurt, Germany) as natural THC with 98.8% purity. This source of natural THC has been widely used in multiple research studies ",
         {
-          "type": "Cite",
-          "target": "bib9",
-          "content": [
-            "Busquets-Garcia et al., 2018"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib9",
+              "content": [
+                "Busquets-Garcia et al., 2018"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib8",
+              "content": [
+                "Busquets-Garcia et al., 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib16",
+              "content": [
+                "Cutando et al., 2013"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib20",
+              "content": [
+                "Flores et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib21",
+              "content": [
+                "Forsberg, 1970"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib26",
+              "content": [
+                "Gunasekaran et al., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib36",
+              "content": [
+                "Lopez-Rodriguez et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib40",
+              "content": [
+                "Morrison et al., 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib44",
+              "content": [
+                "Puighermanal et al., 2013"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib8",
-          "content": [
-            "Busquets-Garcia et al., 2011"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib16",
-          "content": [
-            "Cutando et al., 2013"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib20",
-          "content": [
-            "Flores et al., 2014"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib21",
-          "content": [
-            "Forsberg, 1970"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib26",
-          "content": [
-            "Gunasekaran et al., 2009"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib36",
-          "content": [
-            "Lopez-Rodriguez et al., 2014"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib40",
-          "content": [
-            "Morrison et al., 2011"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib44",
-          "content": [
-            "Puighermanal et al., 2013"
-          ]
-        },
-        "). To corroborate the purity of the THC samples, High Performance Liquid Cromatography – Ultraviolet (HPLC-UV) was used for cannabinoid analysis and Gas Chromatography and Flame Ionization Detection (GC-FID) for terpenes (Canna Foundation, Paterna, Spain). These analyses revealed no detectable amounts of other cannabinoids or terpenes (Source Data Files 2, 3 and 4). THC was diluted in a vehicle composed of 2.5% ethanol, 5% Cremophor EL (C5135, Sigma-Aldrich St. Louis, MO, USA), and 92.5% saline, and was administered subcutaneously in a volume of 5 ml/kg."
+        ". To corroborate the purity of the THC samples, High Performance Liquid Cromatography – Ultraviolet (HPLC-UV) was used for cannabinoid analysis and Gas Chromatography and Flame Ionization Detection (GC-FID) for terpenes (Canna Foundation, Paterna, Spain). These analyses revealed no detectable amounts of other cannabinoids or terpenes (Source Data Files 2, 3 and 4). THC was diluted in a vehicle composed of 2.5% ethanol, 5% Cremophor EL (C5135, Sigma-Aldrich St. Louis, MO, USA), and 92.5% saline, and was administered subcutaneously in a volume of 5 ml/kg."
       ]
     },
     {
@@ -7816,7 +7871,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "The phase of the estrous cycle was assessed by histological examination of cells extracted by vaginal lavage (",
+        "The phase of the estrous cycle was assessed by histological examination of cells extracted by vaginal lavage ",
         {
           "type": "Cite",
           "target": "bib10",
@@ -7824,7 +7879,7 @@
             "Byers et al., 2012"
           ]
         },
-        ") the day of the surgeries and the day of euthanasia. Briefly, mice were gently restrained and 20 μl of saline were flushed 5 times into the vagina. The resulting fluid was placed onto gelatinized slides, stained with methylene blue and observed at 40X magnification under a light microscope (DM6000 B, Leica Biosystems, Nussloch, Germany)."
+        " the day of the surgeries and the day of euthanasia. Briefly, mice were gently restrained and 20 μl of saline were flushed 5 times into the vagina. The resulting fluid was placed onto gelatinized slides, stained with methylene blue and observed at 40X magnification under a light microscope (DM6000 B, Leica Biosystems, Nussloch, Germany)."
       ]
     },
     {
@@ -7838,7 +7893,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Endometriotic lesions were surgically-induced as previously described (",
+        "Endometriotic lesions were surgically-induced as previously described ",
         {
           "type": "Cite",
           "target": "bib48",
@@ -7846,7 +7901,7 @@
             "Somigliana et al., 1999"
           ]
         },
-        "), with some modifications. Briefly, uterine horns from donor mice at diestrus were excised, opened longitudinally and biopsied into four pieces (2 × 2 mm). Recipient mice were anesthetized with vaporized isoflurane in oxygen (4% V/V for induction; 2.5% V/V for maintenance) and a midline incision of 1 cm was made to expose the abdominal compartment. Endometriosis mice had four uterine fragments sutured to the parietal peritoneum, whereas sham-operated mice received four similar-sized fragments of abdominal fat. Transplanted tissues and abdominal muscle and skin were stitched using 6–0 black silk (8065195601, Alcon Cusi S.A., Barcelona, Spain)."
+        ", with some modifications. Briefly, uterine horns from donor mice at diestrus were excised, opened longitudinally and biopsied into four pieces (2 × 2 mm). Recipient mice were anesthetized with vaporized isoflurane in oxygen (4% V/V for induction; 2.5% V/V for maintenance) and a midline incision of 1 cm was made to expose the abdominal compartment. Endometriosis mice had four uterine fragments sutured to the parietal peritoneum, whereas sham-operated mice received four similar-sized fragments of abdominal fat. Transplanted tissues and abdominal muscle and skin were stitched using 6–0 black silk (8065195601, Alcon Cusi S.A., Barcelona, Spain)."
       ]
     },
     {
@@ -7912,23 +7967,27 @@
     {
       "type": "Paragraph",
       "content": [
-        "Unpleasantness of pain in response to a mechanical stimulus was measured as previously described (",
+        "Unpleasantness of pain in response to a mechanical stimulus was measured as previously described ",
         {
-          "type": "Cite",
-          "target": "bib14",
-          "content": [
-            "Corder et al., 2019"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib14",
+              "content": [
+                "Corder et al., 2019"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib13",
+              "content": [
+                "Corder et al., 2017"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib13",
-          "content": [
-            "Corder et al., 2017"
-          ]
-        },
-        ") with minor modifications. Briefly, this parameter was evaluated using a single application of the von Frey filament 4.08 (corresponding to 1 g) against the caudal abdominal area shown in ",
+        " with minor modifications. Briefly, this parameter was evaluated using a single application of the von Frey filament 4.08 (corresponding to 1 g) against the caudal abdominal area shown in ",
         {
           "type": "Link",
           "relation": "fig",
@@ -7965,7 +8024,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "The novel object recognition task was assayed in a V-shaped maze to measure cognitive performance (",
+        "The novel object recognition task was assayed in a V-shaped maze to measure cognitive performance ",
         {
           "type": "Cite",
           "target": "bib43",
@@ -7973,7 +8032,7 @@
             "Puighermanal et al., 2009"
           ]
         },
-        "). On the first day, mice were habituated for 9 min to the maze. On the second day, mice were placed again in the maze for 9 min and two identical objects were presented at the ends of the arms of the maze. Twenty-four h later, one of the familiar objects was replaced with a novel one and mice were placed back in the maze for 9 min. The time spent exploring each object (novel and familiar) was recorded and a discrimination index (DI) was calculated as the difference between the time spent exploring the novel and the familiar object, divided by the total time exploring the two objects. A threshold of 10 s of total interaction with the objects was set to discard low levels of general activity."
+        ". On the first day, mice were habituated for 9 min to the maze. On the second day, mice were placed again in the maze for 9 min and two identical objects were presented at the ends of the arms of the maze. Twenty-four h later, one of the familiar objects was replaced with a novel one and mice were placed back in the maze for 9 min. The time spent exploring each object (novel and familiar) was recorded and a discrimination index (DI) was calculated as the difference between the time spent exploring the novel and the familiar object, divided by the total time exploring the two objects. A threshold of 10 s of total interaction with the objects was set to discard low levels of general activity."
       ]
     },
     {
@@ -8055,7 +8114,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Sections of ovaries were stained with hematoxylin and eosin and observed under an upright microscope (DM6000 B, Leica Biosystems). The number of pre-antral and antral follicles was determined in every nine sections. Only follicles containing an oocyte were counted and the total number of follicles was estimated by multiplying the raw counts by nine according to published criteria (",
+        "Sections of ovaries were stained with hematoxylin and eosin and observed under an upright microscope (DM6000 B, Leica Biosystems). The number of pre-antral and antral follicles was determined in every nine sections. Only follicles containing an oocyte were counted and the total number of follicles was estimated by multiplying the raw counts by nine according to published criteria ",
         {
           "type": "Cite",
           "target": "bib41",
@@ -8063,7 +8122,7 @@
             "Myers et al., 2004"
           ]
         },
-        "). The number of corpora lutea was determined by direct counting of every 18 sections according to the average corpus luteum diameter (",
+        ". The number of corpora lutea was determined by direct counting of every 18 sections according to the average corpus luteum diameter ",
         {
           "type": "Cite",
           "target": "bib42",
@@ -8071,7 +8130,7 @@
             "Numazawa and Kawashima, 1982"
           ]
         },
-        ")."
+        "."
       ]
     },
     {

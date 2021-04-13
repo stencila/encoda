@@ -175,24 +175,24 @@ content:
         cells:
           - type: TableCell
             content:
-              - '1'
+              - 1
           - type: TableCell
             content:
-              - '2'
+              - 2
           - type: TableCell
             content:
-              - '3'
+              - 3
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - '4'
+              - 4
           - type: TableCell
             content:
-              - '5'
+              - 5
           - type: TableCell
             content:
-              - '6'
+              - 6
   - type: Heading
     depth: 1
     content:
@@ -202,4 +202,4 @@ content:
       - type: ImageObject
         contentUrl: >-
           data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEXMzMyWlpaqqqqcnJyxsbGjo6O3t7e+vr7FxcWUEKXMAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQklEQVQ4jWNgGAWjABUwGTvgkFFNMcEhI86QjF2Cw4ChGKdNSrgkWAxwyRQ34JIJw2mNOU4Z3CACp4wEGaaNgiEEANwaBJ7ft3cYAAAAAElFTkSuQmCC
-      - ''
+      - null

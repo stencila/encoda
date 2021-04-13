@@ -430,15 +430,15 @@ export const node = {
           type: 'TableRow',
           cells: [
             {
-              content: ['1'],
+              content: [1],
               type: 'TableCell',
             },
             {
-              content: ['2'],
+              content: [2],
               type: 'TableCell',
             },
             {
-              content: ['3'],
+              content: [3],
               type: 'TableCell',
             },
           ],
@@ -447,15 +447,15 @@ export const node = {
           type: 'TableRow',
           cells: [
             {
-              content: ['4'],
+              content: [4],
               type: 'TableCell',
             },
             {
-              content: ['5'],
+              content: [5],
               type: 'TableCell',
             },
             {
-              content: ['6'],
+              content: [6],
               type: 'TableCell',
             },
           ],

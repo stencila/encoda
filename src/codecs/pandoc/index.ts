@@ -28,7 +28,10 @@ import tempy from 'tempy'
 import { read } from '../..'
 import { logWarnLossIfAny } from '../../log'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
+import {
+  ensureBlockContentArray,
+  ensureBlockContentArrayOrUndefined,
+} from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import { http } from '../../util/http'
 import transform, { transformSync } from '../../util/transform'
@@ -797,7 +800,7 @@ function encodeList(
  * respectively) are currently ignored.
  */
 function decodeTable(node: Pandoc.Table): stencila.Table {
-  const caption = decodeInlines(node.c[0])
+  const caption = ensureBlockContentArrayOrUndefined(decodeInlines(node.c[0]))
 
   // Pandoc always produces a header row: an array of arrays
   // of the same length as the number of columns.
@@ -834,7 +837,7 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
   )
 
   return stencila.table({
-    caption: caption.length > 0 ? caption : undefined,
+    caption,
     rows: [...headerRows, ...dataRows],
   })
 }

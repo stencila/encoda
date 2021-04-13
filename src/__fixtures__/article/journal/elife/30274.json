@@ -4498,7 +4498,7 @@
             "Science Exchange"
           ]
         },
-        " that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology (",
+        " that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology ",
         {
           "type": "Cite",
           "target": "bib6",
@@ -4506,7 +4506,7 @@
             "Errington et al., 2014"
           ]
         },
-        "). For each of these papers a Registered Report detailing the proposed experimental designs and protocols for the replications was peer reviewed and published prior to data collection. The present paper is a Replication Study that reports the results of the replication experiments detailed in the Registered Report (",
+        ". For each of these papers a Registered Report detailing the proposed experimental designs and protocols for the replications was peer reviewed and published prior to data collection. The present paper is a Replication Study that reports the results of the replication experiments detailed in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -4514,7 +4514,7 @@
             "Blum et al., 2015"
           ]
         },
-        ") for a 2012 paper by Lin et al., and uses a number of approaches to compare the outcomes of the original experiments and the replications."
+        " for a 2012 paper by Lin et al., and uses a number of approaches to compare the outcomes of the original experiments and the replications."
       ]
     },
     {
@@ -4533,7 +4533,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated (Figure 1B and 3E–F), and summarized the current evidence for these findings (",
+        "The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated (Figure 1B and 3E–F), and summarized the current evidence for these findings ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -4541,87 +4541,95 @@
             "Blum et al., 2015"
           ]
         },
-        "). Since that publication there have been additional studies investigating the ability c-Myc to influence the global gene expression output of cells. Similar to Lin et al. other studies have reported c-Myc dependent amplification of cellular RNA (",
+        ". Since that publication there have been additional studies investigating the ability c-Myc to influence the global gene expression output of cells. Similar to Lin et al. other studies have reported c-Myc dependent amplification of cellular RNA ",
         {
-          "type": "Cite",
-          "target": "bib9",
-          "content": [
-            "Hart et al., 2014"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib9",
+              "content": [
+                "Hart et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib12",
+              "content": [
+                "Hsu et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib19",
+              "content": [
+                "Nie et al., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib27",
+              "content": [
+                "Sabò et al., 2014"
+              ]
+            }
           ]
         },
-        "; ",
+        ", although this observation was not reported in all biological systems ",
         {
-          "type": "Cite",
-          "target": "bib12",
-          "content": [
-            "Hsu et al., 2015"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib7",
+              "content": [
+                "Fagnocchi et al., 2016"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib27",
+              "content": [
+                "Sabò et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib35",
+              "content": [
+                "Walz et al., 2014"
+              ]
+            }
           ]
         },
-        "; ",
+        ". It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification ",
         {
-          "type": "Cite",
-          "target": "bib19",
-          "content": [
-            "Nie et al., 2012"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib27",
+              "content": [
+                "Sabò et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib26",
+              "content": [
+                "Sabò and Amati, 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib35",
+              "content": [
+                "Walz et al., 2014"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib27",
-          "content": [
-            "Sabò et al., 2014"
-          ]
-        },
-        "), although this observation was not reported in all biological systems (",
-        {
-          "type": "Cite",
-          "target": "bib7",
-          "content": [
-            "Fagnocchi et al., 2016"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib27",
-          "content": [
-            "Sabò et al., 2014"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib35",
-          "content": [
-            "Walz et al., 2014"
-          ]
-        },
-        "). It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification (",
-        {
-          "type": "Cite",
-          "target": "bib27",
-          "content": [
-            "Sabò et al., 2014"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib26",
-          "content": [
-            "Sabò and Amati, 2014"
-          ]
-        },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib35",
-          "content": [
-            "Walz et al., 2014"
-          ]
-        },
-        "). This has also been suggested of MYCN (",
+        ". This has also been suggested of MYCN ",
         {
           "type": "Cite",
           "target": "bib5",
@@ -4629,7 +4637,7 @@
             "Duffy et al., 2015"
           ]
         },
-        "). The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome (",
+        ". The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome ",
         {
           "type": "Cite",
           "target": "bib32",
@@ -4637,7 +4645,7 @@
             "Trakhtenberg et al., 2016"
           ]
         },
-        "). Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels (",
+        ". Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels ",
         {
           "type": "Cite",
           "target": "bib18",
@@ -4645,7 +4653,7 @@
             "Lorenzin et al., 2016"
           ]
         },
-        ")."
+        "."
       ]
     },
     {
@@ -4680,23 +4688,27 @@
             "MYC"
           ]
         },
-        " transgene (",
+        " transgene ",
         {
-          "type": "Cite",
-          "target": "bib23",
-          "content": [
-            "Pajic et al., 2000"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib23",
+              "content": [
+                "Pajic et al., 2000"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib30",
+              "content": [
+                "Schuhmacher et al., 1999"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib30",
-          "content": [
-            "Schuhmacher et al., 1999"
-          ]
-        },
-        ") as the original study. We performed Western blot analysis to confirm c-Myc expression could be reduced to very low levels and then reactivated after removal of tetracycline. This is comparable to what was reported in Figure 1B of ",
+        " as the original study. We performed Western blot analysis to confirm c-Myc expression could be reduced to very low levels and then reactivated after removal of tetracycline. This is comparable to what was reported in Figure 1B of ",
         {
           "type": "Cite",
           "target": "bib17",
@@ -4704,7 +4716,7 @@
             "Lin et al. (2012)"
           ]
         },
-        " and described in Protocol 1 in the Registered Report (",
+        " and described in Protocol 1 in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -4712,23 +4724,27 @@
             "Blum et al., 2015"
           ]
         },
-        "). Since proliferation of P493-6 cells depend on c-Myc expression and the presence of serum (",
+        ". Since proliferation of P493-6 cells depend on c-Myc expression and the presence of serum ",
         {
-          "type": "Cite",
-          "target": "bib23",
-          "content": [
-            "Pajic et al., 2000"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib23",
+              "content": [
+                "Pajic et al., 2000"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib30",
+              "content": [
+                "Schuhmacher et al., 1999"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib30",
-          "content": [
-            "Schuhmacher et al., 1999"
-          ]
-        },
-        "), with serum reported to stimulate a majority of genes independent of c-Myc (",
+        ", with serum reported to stimulate a majority of genes independent of c-Myc ",
         {
           "type": "Cite",
           "target": "bib28",
@@ -4736,7 +4752,7 @@
             "Schlosser et al., 2005"
           ]
         },
-        "), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (",
+        ", we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (",
         {
           "type": "Link",
           "relation": "fig",
@@ -4889,7 +4905,7 @@
             "Lin et al. (2012)"
           ]
         },
-        " and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report (",
+        " and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -4897,7 +4913,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after tetracycline release and the amount of RNA per 1,000 cells was quantified (",
+        ". Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after tetracycline release and the amount of RNA per 1,000 cells was quantified (",
         {
           "type": "Link",
           "relation": "fig",
@@ -4962,7 +4978,7 @@
             "p"
           ]
         },
-        "=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression (",
+        "=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression ",
         {
           "type": "Cite",
           "target": "bib27",
@@ -4970,7 +4986,7 @@
             "Sabò et al., 2014"
           ]
         },
-        "). There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage (",
+        ". There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage ",
         {
           "type": "Cite",
           "target": "bib11",
@@ -4978,23 +4994,27 @@
             "Hiorns et al., 2004"
           ]
         },
-        "), low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer (",
+        ", low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer ",
         {
-          "type": "Cite",
-          "target": "bib2",
-          "content": [
-            "Biggs and Macmillan, 1948"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib2",
+              "content": [
+                "Biggs and Macmillan, 1948"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib20",
+              "content": [
+                "Nielson et al., 1991"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib20",
-          "content": [
-            "Nielson et al., 1991"
-          ]
-        },
-        "). To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two."
+        ". To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two."
       ]
     },
     {
@@ -5016,7 +5036,7 @@
             "Lin et al. (2012)"
           ]
         },
-        " and described in Protocols 3–4 in the Registered Report (",
+        " and described in Protocols 3–4 in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -5024,7 +5044,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the same genes as the 1338 genes interrogated in the original study. We used the same criteria as the original study to classify a gene as silent (expression was less than 0.5 transcript/cell at time 0 hr) or active (more than one transcript/cell at time 0 hr). In cells with low levels of c-Myc (0 hr) there were 708 active genes with a median expression of 4.70, and 580 silent genes with a median expression of 0.032, for serum lot one. For active genes, 75% of the genes increased from 0 hr to 1 hr, 68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times increase in median expression, respectively (",
+        ". We quantified mRNA levels/cell of 1369 genes, of which 1212 were the same genes as the 1338 genes interrogated in the original study. We used the same criteria as the original study to classify a gene as silent (expression was less than 0.5 transcript/cell at time 0 hr) or active (more than one transcript/cell at time 0 hr). In cells with low levels of c-Myc (0 hr) there were 708 active genes with a median expression of 4.70, and 580 silent genes with a median expression of 0.032, for serum lot one. For active genes, 75% of the genes increased from 0 hr to 1 hr, 68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times increase in median expression, respectively (",
         {
           "type": "Link",
           "relation": "fig",
@@ -5145,19 +5165,20 @@
             },
             {
               "type": "Paragraph",
-              "content": []
-            },
-            {
-              "type": "MediaObject",
-              "id": "fig2sdata1",
-              "contentUrl": "30274.json.media/elife-30274-fig2-data1-v2.csv",
-              "text": "Figure 2—source data 1.",
               "content": [
                 {
-                  "type": "Heading",
-                  "depth": 3,
+                  "type": "MediaObject",
+                  "id": "fig2sdata1",
+                  "contentUrl": "30274.json.media/elife-30274-fig2-data1-v2.csv",
+                  "text": "Figure 2—source data 1.",
                   "content": [
-                    "List of Reporter CodeSets and gene expression values."
+                    {
+                      "type": "Heading",
+                      "depth": 3,
+                      "content": [
+                        "List of Reporter CodeSets and gene expression values."
+                      ]
+                    }
                   ]
                 }
               ]
@@ -5209,7 +5230,7 @@
                 {
                   "type": "Subscript",
                   "content": [
-                    "2"
+                    2
                   ]
                 },
                 " transformed scale for active (",
@@ -5237,7 +5258,7 @@
                 {
                   "type": "Subscript",
                   "content": [
-                    "2"
+                    2
                   ]
                 },
                 " ratio) between the indicated times for active (",
@@ -5312,7 +5333,7 @@
                 {
                   "type": "Subscript",
                   "content": [
-                    "2"
+                    2
                   ]
                 },
                 " transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. (",
@@ -5326,7 +5347,7 @@
                 {
                   "type": "Subscript",
                   "content": [
-                    "2"
+                    2
                   ]
                 },
                 " ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at ",
@@ -5361,7 +5382,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report (",
+        "To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -5369,7 +5390,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent (",
+        ". This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -5377,7 +5398,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (",
+        ". We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (",
         {
           "type": "Link",
           "relation": "table",
@@ -5432,7 +5453,7 @@
                 "Figure 2"
               ]
             },
-            ". Wilcoxon signed-rank test, which treat the data as paired, were conducted for the original study (",
+            ". Wilcoxon signed-rank test, which treat the data as paired, were conducted for the original study ",
             {
               "type": "Cite",
               "target": "bib17",
@@ -5440,7 +5461,7 @@
                 "Lin et al., 2012"
               ]
             },
-            ") and this replication attempt (RP:CB). Uncorrected ",
+            " and this replication attempt (RP:CB). Uncorrected ",
             {
               "type": "Emphasis",
               "content": [
@@ -5533,19 +5554,19 @@
             {
               "type": "TableCell",
               "content": [
-                "14.86"
+                14.86
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.36e-55"
+                1.36e-55
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "708"
+                708
               ]
             }
           ]
@@ -5570,19 +5591,19 @@
             {
               "type": "TableCell",
               "content": [
-                "11.83"
+                11.83
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "2.83e-34"
+                2.83e-34
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "719"
+                719
               ]
             }
           ]
@@ -5613,19 +5634,19 @@
             {
               "type": "TableCell",
               "content": [
-                "21.17"
+                21.17
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.05e-130"
+                1.05e-130
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "755"
+                755
               ]
             }
           ]
@@ -5652,19 +5673,19 @@
             {
               "type": "TableCell",
               "content": [
-                "9.922"
+                9.922
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "3.67e-24"
+                3.67e-24
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "708"
+                708
               ]
             }
           ]
@@ -5689,19 +5710,19 @@
             {
               "type": "TableCell",
               "content": [
-                "12.77"
+                12.77
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "3.77e-40"
+                3.77e-40
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "719"
+                719
               ]
             }
           ]
@@ -5732,19 +5753,19 @@
             {
               "type": "TableCell",
               "content": [
-                "23.26"
+                23.26
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "3.33e-184"
+                3.33e-184
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "755"
+                755
               ]
             }
           ]
@@ -5771,19 +5792,19 @@
             {
               "type": "TableCell",
               "content": [
-                "4.742"
+                4.742
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.92e-06"
+                0.00000192
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "708"
+                708
               ]
             }
           ]
@@ -5808,19 +5829,19 @@
             {
               "type": "TableCell",
               "content": [
-                "10.04"
+                10.04
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "9.91e-25"
+                9.91e-25
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "719"
+                719
               ]
             }
           ]
@@ -5851,19 +5872,19 @@
             {
               "type": "TableCell",
               "content": [
-                "23.26"
+                23.26
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "3.33e-184"
+                3.33e-184
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "755"
+                755
               ]
             }
           ]
@@ -5892,19 +5913,19 @@
             {
               "type": "TableCell",
               "content": [
-                "12.61"
+                12.61
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "7.11e-40"
+                7.11e-40
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "580"
+                580
               ]
             }
           ]
@@ -5929,19 +5950,19 @@
             {
               "type": "TableCell",
               "content": [
-                "7.05"
+                7.05
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "9.29e-13"
+                9.29e-13
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "572"
+                572
               ]
             }
           ]
@@ -5978,13 +5999,13 @@
             {
               "type": "TableCell",
               "content": [
-                "0.0457"
+                0.0457
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "274"
+                274
               ]
             }
           ]
@@ -6011,19 +6032,19 @@
             {
               "type": "TableCell",
               "content": [
-                "8.328"
+                8.328
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "2.22e-17"
+                2.22e-17
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "579"
+                579
               ]
             }
           ]
@@ -6048,19 +6069,19 @@
             {
               "type": "TableCell",
               "content": [
-                "8.156"
+                8.156
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.03e-16"
+                1.03e-16
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "572"
+                572
               ]
             }
           ]
@@ -6091,19 +6112,19 @@
             {
               "type": "TableCell",
               "content": [
-                "3.179"
+                3.179
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.00144"
+                0.00144
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "276"
+                276
               ]
             }
           ]
@@ -6130,19 +6151,19 @@
             {
               "type": "TableCell",
               "content": [
-                "0.6853"
+                0.6853
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.493"
+                0.493
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "580"
+                580
               ]
             }
           ]
@@ -6167,19 +6188,19 @@
             {
               "type": "TableCell",
               "content": [
-                "4.436"
+                4.436
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "8.35e-06"
+                0.00000835
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "573"
+                573
               ]
             }
           ]
@@ -6210,19 +6231,19 @@
             {
               "type": "TableCell",
               "content": [
-                "5.806"
+                5.806
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "4.11e-09"
+                4.11e-9
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "236"
+                236
               ]
             }
           ]
@@ -6254,7 +6275,7 @@
                 "Figure 2"
               ]
             },
-            ". Wilcoxon rank sum tests, which treat the data as unpaired, were conducted for the original study (",
+            ". Wilcoxon rank sum tests, which treat the data as unpaired, were conducted for the original study ",
             {
               "type": "Cite",
               "target": "bib17",
@@ -6262,7 +6283,7 @@
                 "Lin et al., 2012"
               ]
             },
-            ") and this replication attempt (RP:CB). Uncorrected ",
+            " and this replication attempt (RP:CB). Uncorrected ",
             {
               "type": "Emphasis",
               "content": [
@@ -6348,19 +6369,19 @@
             {
               "type": "TableCell",
               "content": [
-                "270378"
+                270378
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.0103"
+                0.0103
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1416"
+                1416
               ]
             }
           ]
@@ -6385,19 +6406,19 @@
             {
               "type": "TableCell",
               "content": [
-                "274696"
+                274696
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.0395"
+                0.0395
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1438"
+                1438
               ]
             }
           ]
@@ -6428,19 +6449,19 @@
             {
               "type": "TableCell",
               "content": [
-                "318799"
+                318799
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "6.67e-05"
+                0.0000667
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1510"
+                1510
               ]
             }
           ]
@@ -6467,19 +6488,19 @@
             {
               "type": "TableCell",
               "content": [
-                "300774"
+                300774
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "7.16e-11"
+                7.16e-11
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1416"
+                1416
               ]
             }
           ]
@@ -6504,19 +6525,19 @@
             {
               "type": "TableCell",
               "content": [
-                "324564"
+                324564
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "4.74e-17"
+                4.74e-17
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1438"
+                1438
               ]
             }
           ]
@@ -6547,19 +6568,19 @@
             {
               "type": "TableCell",
               "content": [
-                "400999"
+                400999
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.16e-42"
+                1.16e-42
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1510"
+                1510
               ]
             }
           ]
@@ -6586,19 +6607,19 @@
             {
               "type": "TableCell",
               "content": [
-                "281679"
+                281679
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "5.45e-05"
+                0.0000545
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1416"
+                1416
               ]
             }
           ]
@@ -6623,19 +6644,19 @@
             {
               "type": "TableCell",
               "content": [
-                "308954"
+                308954
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.45e-10"
+                1.45e-10
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1438"
+                1438
               ]
             }
           ]
@@ -6666,19 +6687,19 @@
             {
               "type": "TableCell",
               "content": [
-                "372714"
+                372714
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "4.11e-25"
+                4.11e-25
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1510"
+                1510
               ]
             }
           ]
@@ -6707,19 +6728,19 @@
             {
               "type": "TableCell",
               "content": [
-                "187682"
+                187682
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.000638"
+                0.000638
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1160"
+                1160
               ]
             }
           ]
@@ -6744,19 +6765,19 @@
             {
               "type": "TableCell",
               "content": [
-                "174695"
+                174695
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.0602"
+                0.0602
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1146"
+                1146
               ]
             }
           ]
@@ -6787,19 +6808,19 @@
             {
               "type": "TableCell",
               "content": [
-                "127104"
+                127104
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.236"
+                0.236
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1028"
+                1028
               ]
             }
           ]
@@ -6826,19 +6847,19 @@
             {
               "type": "TableCell",
               "content": [
-                "185804"
+                185804
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.00203"
+                0.00203
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1160"
+                1160
               ]
             }
           ]
@@ -6863,19 +6884,19 @@
             {
               "type": "TableCell",
               "content": [
-                "184470"
+                184470
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.000289"
+                0.000289
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1146"
+                1146
               ]
             }
           ]
@@ -6906,19 +6927,19 @@
             {
               "type": "TableCell",
               "content": [
-                "132082"
+                132082
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.997"
+                0.997
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1028"
+                1028
               ]
             }
           ]
@@ -6945,19 +6966,19 @@
             {
               "type": "TableCell",
               "content": [
-                "166122"
+                166122
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.716"
+                0.716
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1160"
+                1160
               ]
             }
           ]
@@ -6982,19 +7003,19 @@
             {
               "type": "TableCell",
               "content": [
-                "173608"
+                173608
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.0918"
+                0.0918
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1146"
+                1146
               ]
             }
           ]
@@ -7025,19 +7046,19 @@
             {
               "type": "TableCell",
               "content": [
-                "136443"
+                136443
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "0.295"
+                0.295
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1028"
+                1028
               ]
             }
           ]
@@ -7047,23 +7068,27 @@
     {
       "type": "Paragraph",
       "content": [
-        "Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference (",
+        "Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference ",
         {
-          "type": "Cite",
-          "target": "bib8",
-          "content": [
-            "Gelman and Stern, 2006"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib8",
+              "content": [
+                "Gelman and Stern, 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib21",
+              "content": [
+                "Nieuwenhuis et al., 2011"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib21",
-          "content": [
-            "Nieuwenhuis et al., 2011"
-          ]
-        },
-        "). To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (",
+        ". To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (",
         {
           "type": "Link",
           "relation": "table",
@@ -7100,7 +7125,7 @@
                 "Figure 2"
               ]
             },
-            ". Wilcoxon rank sum tests were conducted for the original study (",
+            ". Wilcoxon rank sum tests were conducted for the original study ",
             {
               "type": "Cite",
               "target": "bib17",
@@ -7108,7 +7133,7 @@
                 "Lin et al., 2012"
               ]
             },
-            ") and this replication attempt (RP:CB) on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Uncorrected ",
+            " and this replication attempt (RP:CB) on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Uncorrected ",
             {
               "type": "Emphasis",
               "content": [
@@ -7182,19 +7207,19 @@
             {
               "type": "TableCell",
               "content": [
-                "303897"
+                303897
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "7.78e-50"
+                7.78e-50
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1288"
+                1288
               ]
             }
           ]
@@ -7215,19 +7240,19 @@
             {
               "type": "TableCell",
               "content": [
-                "278646"
+                278646
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.1e-27"
+                1.1e-27
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1292"
+                1292
               ]
             }
           ]
@@ -7254,19 +7279,19 @@
             {
               "type": "TableCell",
               "content": [
-                "349351"
+                349351
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.27e-130"
+                1.27e-130
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1269"
+                1269
               ]
             }
           ]
@@ -7289,19 +7314,19 @@
             {
               "type": "TableCell",
               "content": [
-                "272441"
+                272441
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "5.18e-24"
+                5.18e-24
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1288"
+                1288
               ]
             }
           ]
@@ -7322,19 +7347,19 @@
             {
               "type": "TableCell",
               "content": [
-                "292865"
+                292865
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "7.4e-39"
+                7.4e-39
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1292"
+                1292
               ]
             }
           ]
@@ -7361,19 +7386,19 @@
             {
               "type": "TableCell",
               "content": [
-                "368182"
+                368182
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1.14e-163"
+                1.14e-163
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1269"
+                1269
               ]
             }
           ]
@@ -7396,19 +7421,19 @@
             {
               "type": "TableCell",
               "content": [
-                "235077"
+                235077
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "7.45e-06"
+                0.00000745
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1288"
+                1288
               ]
             }
           ]
@@ -7429,19 +7454,19 @@
             {
               "type": "TableCell",
               "content": [
-                "272028"
+                272028
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "3.73e-23"
+                3.73e-23
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1292"
+                1292
               ]
             }
           ]
@@ -7468,19 +7493,19 @@
             {
               "type": "TableCell",
               "content": [
-                "332069"
+                332069
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "5.72e-104"
+                5.72e-104
               ]
             },
             {
               "type": "TableCell",
               "content": [
-                "1269"
+                1269
               ]
             }
           ]
@@ -7490,23 +7515,47 @@
     {
       "type": "Paragraph",
       "content": [
-        "The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set (",
+        "The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set ",
         {
-          "type": "Cite",
-          "target": "bib1",
-          "content": [
-            "Altman and Royston, 2006"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib1",
+              "content": [
+                "Altman and Royston, 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib4",
+              "content": [
+                "Cohen, 1983"
+              ]
+            }
           ]
         },
-        "; ",
+        ". Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification ",
         {
-          "type": "Cite",
-          "target": "bib4",
-          "content": [
-            "Cohen, 1983"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib27",
+              "content": [
+                "Sabò et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib35",
+              "content": [
+                "Walz et al., 2014"
+              ]
+            }
           ]
         },
-        "). Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification (",
+        ". Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction ",
         {
           "type": "Cite",
           "target": "bib27",
@@ -7514,23 +7563,7 @@
             "Sabò et al., 2014"
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib35",
-          "content": [
-            "Walz et al., 2014"
-          ]
-        },
-        "). Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction (",
-        {
-          "type": "Cite",
-          "target": "bib27",
-          "content": [
-            "Sabò et al., 2014"
-          ]
-        },
-        "). However, instead of dichotomizing genes as active or silent, gene expression data was presented as continuous. Similarly, we presented the digital gene expression data generated during this replication attempt as continuous, which illustrates a general pattern of overall increased gene expression following c-Myc induction (",
+        ". However, instead of dichotomizing genes as active or silent, gene expression data was presented as continuous. Similarly, we presented the digital gene expression data generated during this replication attempt as continuous, which illustrates a general pattern of overall increased gene expression following c-Myc induction (",
         {
           "type": "Link",
           "relation": "fig",
@@ -7553,7 +7586,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We performed a meta-analysis using a random-effects model to combine each of the effects described above as pre-specified in the confirmatory analysis plan (",
+        "We performed a meta-analysis using a random-effects model to combine each of the effects described above as pre-specified in the confirmatory analysis plan ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -7561,7 +7594,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). To provide a standardized measure of the effect, a common effect size was calculated for each effect from the original and replication studies. Cohen’s ",
+        ". To provide a standardized measure of the effect, a common effect size was calculated for each effect from the original and replication studies. Cohen’s ",
         {
           "type": "Emphasis",
           "content": [
@@ -7575,23 +7608,27 @@
             "r"
           ]
         },
-        " is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results (",
+        " is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results ",
         {
-          "type": "Cite",
-          "target": "bib6",
-          "content": [
-            "Errington et al., 2014"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib6",
+              "content": [
+                "Errington et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib33",
+              "content": [
+                "Valentine et al., 2011"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib33",
-          "content": [
-            "Valentine et al., 2011"
-          ]
-        },
-        "). Importantly, the width of the confidence interval for each study is a reflection of not only the confidence level (e.g. 95%), but also variability of the sample (e.g. ",
+        ". Importantly, the width of the confidence interval for each study is a reflection of not only the confidence level (e.g. 95%), but also variability of the sample (e.g. ",
         {
           "type": "Emphasis",
           "content": [
@@ -7611,7 +7648,7 @@
             "d"
           ]
         },
-        " = 4.19, 95% CI [0.94, 7.37] for the data reported in Figure 3E of the original study (",
+        " = 4.19, 95% CI [0.94, 7.37] for the data reported in Figure 3E of the original study ",
         {
           "type": "Cite",
           "target": "bib17",
@@ -7619,7 +7656,7 @@
             "Lin et al., 2012"
           ]
         },
-        "). This compares to ",
+        ". This compares to ",
         {
           "type": "Emphasis",
           "content": [
@@ -7735,7 +7772,7 @@
             {
               "type": "Superscript",
               "content": [
-                "-7"
+                -7
               ]
             },
             "), 0 hr compared to 24 hr (meta-analysis ",
@@ -7749,7 +7786,7 @@
             {
               "type": "Superscript",
               "content": [
-                "-4"
+                -4
               ]
             },
             "), 1 hr compared to 24 hr (meta-analysis ",
@@ -7777,7 +7814,7 @@
             {
               "type": "Superscript",
               "content": [
-                "-17"
+                -17
               ]
             },
             "), 1 hr compared to 24 hr (meta-analysis ",
@@ -7823,7 +7860,7 @@
             "Figure 3B"
           ]
         },
-        "). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report (",
+        "). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -7831,7 +7868,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (",
+        ". For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (",
         {
           "type": "Emphasis",
           "content": [
@@ -7914,7 +7951,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "This direct replication provides an opportunity to understand the present evidence of these effects. Any known differences, including reagents and protocol differences, were identified prior to conducting the experimental work and described in the Registered Report (",
+        "This direct replication provides an opportunity to understand the present evidence of these effects. Any known differences, including reagents and protocol differences, were identified prior to conducting the experimental work and described in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -7922,7 +7959,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). However, this is limited to what was obtainable from the original paper and through communication with the original authors, which means there might be particular features of the original experimental protocol that could be critical, but unidentified. So while some aspects, such as the cell line, induction time course, and the method used to measure gene expression were maintained, others were changed at the time of study design (",
+        ". However, this is limited to what was obtainable from the original paper and through communication with the original authors, which means there might be particular features of the original experimental protocol that could be critical, but unidentified. So while some aspects, such as the cell line, induction time course, and the method used to measure gene expression were maintained, others were changed at the time of study design ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -7930,7 +7967,7 @@
             "Blum et al., 2015"
           ]
         },
-        ") that could affect results, such as the analytical approach (",
+        " that could affect results, such as the analytical approach ",
         {
           "type": "Cite",
           "target": "bib31",
@@ -7938,7 +7975,7 @@
             "Silberzahn et al., 2017"
           ]
         },
-        ") and serum lot (",
+        " and serum lot ",
         {
           "type": "Cite",
           "target": "bib15",
@@ -7946,23 +7983,27 @@
             "Leek et al., 2010"
           ]
         },
-        "). Furthermore, other aspects were unknown or not easily controlled for. These include variables such as cell line genetic drift (",
+        ". Furthermore, other aspects were unknown or not easily controlled for. These include variables such as cell line genetic drift ",
         {
-          "type": "Cite",
-          "target": "bib13",
-          "content": [
-            "Hughes et al., 2007"
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "bib13",
+              "content": [
+                "Hughes et al., 2007"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "bib14",
+              "content": [
+                "Kleensang et al., 2016"
+              ]
+            }
           ]
         },
-        "; ",
-        {
-          "type": "Cite",
-          "target": "bib14",
-          "content": [
-            "Kleensang et al., 2016"
-          ]
-        },
-        ") or changes in cellular volume that can impact overall transcript abundance (",
+        " or changes in cellular volume that can impact overall transcript abundance ",
         {
           "type": "Cite",
           "target": "bib22",
@@ -7970,7 +8011,7 @@
             "Padovan-Merhar et al., 2015"
           ]
         },
-        "). Whether these or other factors influence the outcomes of this study is open to hypothesizing and further investigation, which is facilitated by direct replications and transparent reporting."
+        ". Whether these or other factors influence the outcomes of this study is open to hypothesizing and further investigation, which is facilitated by direct replications and transparent reporting."
       ]
     },
     {
@@ -7984,7 +8025,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "As described in the Registered Report (",
+        "As described in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -7992,7 +8033,7 @@
             "Blum et al., 2015"
           ]
         },
-        "), we attempted a replication of the experiments reported in Figures 1B and 3E-F of ",
+        ", we attempted a replication of the experiments reported in Figures 1B and 3E-F of ",
         {
           "type": "Cite",
           "target": "bib17",
@@ -8000,7 +8041,7 @@
             "Lin et al. (2012)"
           ]
         },
-        ". A detailed description of all protocols can be found in the Registered Report (",
+        ". A detailed description of all protocols can be found in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -8008,7 +8049,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). Additional detailed experimental notes, data, and analysis are available on the Open Science Framework (OSF) (RRID:",
+        ". Additional detailed experimental notes, data, and analysis are available on the Open Science Framework (OSF) (RRID:",
         {
           "type": "Link",
           "target": "https://scicrunch.org/resolver/SCR_003238",
@@ -8040,7 +8081,7 @@
             "https://osf.io/vdrsh/"
           ]
         },
-        ") that was used to compose this manuscript, which is a reproducible document linking the results in the article directly to the data and code that produced them (",
+        ") that was used to compose this manuscript, which is a reproducible document linking the results in the article directly to the data and code that produced them ",
         {
           "type": "Cite",
           "target": "bib10",
@@ -8048,7 +8089,7 @@
             "Hartgerink, 2017"
           ]
         },
-        ")."
+        "."
       ]
     },
     {
@@ -8074,7 +8115,7 @@
         {
           "type": "Subscript",
           "content": [
-            "2"
+            2
           ]
         },
         ". Quality control data for the cell line are available at ",
@@ -8105,7 +8146,7 @@
             "MYC"
           ]
         },
-        " (",
+        0,
         {
           "type": "Cite",
           "target": "bib30",
@@ -8113,7 +8154,7 @@
             "Schuhmacher et al., 1999"
           ]
         },
-        "). For ",
+        ". For ",
         {
           "type": "Emphasis",
           "content": [
@@ -8138,10 +8179,10 @@
         {
           "type": "Superscript",
           "content": [
-            "7"
+            7
           ]
         },
-        " cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury, NY, model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report (",
+        " cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury, NY, model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -8149,7 +8190,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics, Burlingame, CA, cat# 1472–1; RRID:",
+        ". The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics, Burlingame, CA, cat# 1472–1; RRID:",
         {
           "type": "Link",
           "target": "https://scicrunch.org/resolver/AB_731658",
@@ -8181,7 +8222,7 @@
             "SCR_003070"
           ]
         },
-        "), version 1.50i (",
+        "), version 1.50i ",
         {
           "type": "Cite",
           "target": "bib29",
@@ -8189,7 +8230,7 @@
             "Schneider et al., 2012"
           ]
         },
-        "). All images taken are available at ",
+        ". All images taken are available at ",
         {
           "type": "Link",
           "target": "https://osf.io/ujg7t/.",
@@ -8214,7 +8255,7 @@
         {
           "type": "Superscript",
           "content": [
-            "7"
+            7
           ]
         },
         " cells (exact number determined with a C-chip disposable hemocytometer) and homogenizing the sample in 1 ml Tri Reagent (Sigma-Aldrich, cat# T9424) according to the manufacturer’s instructions. For each sample 10% v/v miRNA Homogenate Additive was added, vortexed, and incubated on ice for 10 min. For each 1 ml of Tri Reagent, 100 µl of bromochloropropane was added, vortexed for 15–30 s, incubated for 5 min at RT, then centrifuged at 12,000x",
@@ -8250,10 +8291,10 @@
         {
           "type": "Superscript",
           "content": [
-            "6"
+            6
           ]
         },
-        " cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden, Germany, cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report (",
+        " cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden, Germany, cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -8261,7 +8302,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit, nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369 genes across multiple functional categories were used. Following hybridization, samples were immediately processed with the nCounter Analysis System (NanoString Technologies, NCT-PREP-120). The count data was collected using the nCounter RCC Collector Worksheet (NanoString Technologies), version 1.6.0 and then positive-, negative-, and housekeeping gene-normalized per nCounter guidelines. Expression for each gene was averaged across the four independent replicate samples. Additionally, for genes that appeared on multiple CodeSets, expression values were averaged together to generate a single value for each gene. A gene was defined as transcriptionally active if its average expression was above one transcript/cell at 0 hr and transcriptionally silent if below 0.5 transcript/cell. A list of all Reporter CodeSets and their expression values (transcripts/cell) are available at ",
+        ". Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit, nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369 genes across multiple functional categories were used. Following hybridization, samples were immediately processed with the nCounter Analysis System (NanoString Technologies, NCT-PREP-120). The count data was collected using the nCounter RCC Collector Worksheet (NanoString Technologies), version 1.6.0 and then positive-, negative-, and housekeeping gene-normalized per nCounter guidelines. Expression for each gene was averaged across the four independent replicate samples. Additionally, for genes that appeared on multiple CodeSets, expression values were averaged together to generate a single value for each gene. A gene was defined as transcriptionally active if its average expression was above one transcript/cell at 0 hr and transcriptionally silent if below 0.5 transcript/cell. A list of all Reporter CodeSets and their expression values (transcripts/cell) are available at ",
         {
           "type": "Link",
           "relation": "supplementary-material",
@@ -8299,7 +8340,7 @@
             "SCR_001905"
           ]
         },
-        "), version 3.3.2 (",
+        "), version 3.3.2 ",
         {
           "type": "Cite",
           "target": "bib25",
@@ -8307,7 +8348,7 @@
             "R Core Team, 2017"
           ]
         },
-        "). All data, csv files, and analysis scripts are available on the OSF (",
+        ". All data, csv files, and analysis scripts are available on the OSF (",
         {
           "type": "Link",
           "target": "https://osf.io/mokeb/",
@@ -8323,7 +8364,7 @@
             "https://osf.io/nj8wb/"
           ]
         },
-        ") before the experimental work began as outlined in the Registered Report (",
+        ") before the experimental work began as outlined in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -8331,7 +8372,7 @@
             "Blum et al., 2015"
           ]
         },
-        "). Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences (",
+        ". Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences ",
         {
           "type": "Cite",
           "target": "bib24",
@@ -8339,7 +8380,7 @@
             "Pratt, 1959"
           ]
         },
-        "), with additional exploratory analysis performed using the Wilcoxon rank sum test as reported in the original study and a Wilcoxon rank sum test on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Data were checked to ensure assumptions of statistical tests were met. When described in the results, the Bonferroni correction, to account for multiple testings, was applied to the alpha error by dividing the uncorrected value (.05) by the number of tests performed. Although the Bonferroni method is conservative, it was accounted for in the power calculations to ensure sample size was sufficient. In cases where the number of groups were three and the sample sizes were evenly distributed among the groups, Fisher's LSD test was performed resulting in an ",
+        ", with additional exploratory analysis performed using the Wilcoxon rank sum test as reported in the original study and a Wilcoxon rank sum test on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Data were checked to ensure assumptions of statistical tests were met. When described in the results, the Bonferroni correction, to account for multiple testings, was applied to the alpha error by dividing the uncorrected value (.05) by the number of tests performed. Although the Bonferroni method is conservative, it was accounted for in the power calculations to ensure sample size was sufficient. In cases where the number of groups were three and the sample sizes were evenly distributed among the groups, Fisher's LSD test was performed resulting in an ",
         {
           "type": "Emphasis",
           "content": [
@@ -8353,7 +8394,7 @@
             "metafor"
           ]
         },
-        " package (",
+        " package ",
         {
           "type": "Cite",
           "target": "bib34",
@@ -8361,7 +8402,7 @@
             "Viechtbauer, 2010"
           ]
         },
-        ") (available at: ",
+        " (available at: ",
         {
           "type": "Link",
           "target": "https://osf.io/5yscz/",
@@ -8387,7 +8428,7 @@
             "Figure 3"
           ]
         },
-        " for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking (",
+        " for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking ",
         {
           "type": "Cite",
           "target": "bib24",
@@ -8395,7 +8436,7 @@
             "Pratt, 1959"
           ]
         },
-        "). The raw original study data were shared by the original authors with the summary data published in the Registered Report (",
+        ". The raw original study data were shared by the original authors with the summary data published in the Registered Report ",
         {
           "type": "Cite",
           "target": "bib3",
@@ -8403,7 +8444,7 @@
             "Blum et al., 2015"
           ]
         },
-        ") and was used in the power calculations to determine the sample size for this study."
+        " and was used in the power calculations to determine the sample size for this study."
       ]
     },
     {

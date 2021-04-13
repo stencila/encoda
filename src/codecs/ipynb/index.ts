@@ -36,6 +36,11 @@ import * as nbformat4 from './nbformat-v4'
 import nbformat4Schema from './nbformat-v4.schema.json'
 import { coerce } from '../../util/coerce'
 import { getSchema } from '../../util/schemas'
+import {
+  ensureBlockContentArray,
+  ensureBlockContentArrayOrUndefined,
+} from '../../util/content/ensureBlockContentArray'
+
 const log = getLogger('encoda:ipynb')
 
 /**
@@ -473,7 +478,7 @@ async function decodeMarkdownCell(
   const content = await load(markdown, format === 'html' ? 'html' : 'md', {
     isStandalone: false,
   })
-  return content as schema.BlockContent[]
+  return ensureBlockContentArray(content)
 }
 
 /**
@@ -523,15 +528,21 @@ export async function decodeCodeCell(
 
   if (source.length === 0 && outputs.length === 0) return undefined
 
-  let { id, label, caption, ...rest } = metadata as {
+  const { id, label, caption: cap, ...rest } = metadata as {
     id?: string
     label?: string
     caption?: string | schema.Node[]
   }
-  if (typeof caption === 'string') {
-    caption = (await load(caption, 'md', {
-      isStandalone: false,
-    })) as schema.BlockContent[]
+
+  let caption: schema.BlockContent[] | undefined
+  if (typeof cap === 'string') {
+    caption = ensureBlockContentArray(
+      await load(cap, 'md', {
+        isStandalone: false,
+      })
+    )
+  } else if (cap !== undefined) {
+    caption = ensureBlockContentArrayOrUndefined(cap)
   }
 
   return schema.codeChunk({

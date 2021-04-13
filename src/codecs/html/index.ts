@@ -33,6 +33,7 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
+import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
 import {
@@ -799,7 +800,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
   return stencila.article({
     title,
     references: isNonEmpty(refItems) ? refItems : undefined,
-    content: decodeChildNodes(element),
+    content: ensureBlockContentArrayOrUndefined(decodeChildNodes(element)),
   })
 }
 
@@ -928,15 +929,14 @@ function encodeTitleProperty(
  * Encode the `Article.image` property to HTML.
  *
  * The GSDTT requires an `Article` to have a `image` property.
- * This scans the article and finds the first `ImageObject`
- * and uses that. If no images in the article then uses a placeholder.
+ * This currently uses a placeholder but should walk through the `content`
+ * tree and find the first image.
  */
 function encodeImageProperty(article: stencila.Article): HTMLElement {
-  const img = article.content?.find((node) => isA('ImageObject', node))
+  // TODO: Implement tree walking search for an image
   const headline = typeof article.title === 'string' ? article.title : ''
   const fallback = placeholderImg(headline, 1200, 714)
-  const contentUrl = isA('ImageObject', img) ? img.contentUrl : fallback
-  return h('meta', { itemprop: 'image', content: contentUrl })
+  return h('meta', { itemprop: 'image', content: fallback })
 }
 
 /**
@@ -1841,12 +1841,18 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
   return stencila.figure({
     id: elem.getAttribute('id') ?? undefined,
     content,
-    caption: caption !== null ? decodeFigCaption(caption) : undefined,
+    caption:
+      caption !== null
+        ? ensureBlockContentArrayOrUndefined(decodeFigCaption(caption))
+        : undefined,
   })
 }
 
 /**
- * Decode a `<figcaption>` element to a list of `stencila.Node`s.
+ * Decode a `<figcaption>` element to an array of `BlockContent`.
+ *
+ * A [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
+ * can include block content such as `<h1>` and inline content such as `<em>`.
  */
 function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
   return decodeChildNodes(elem)
