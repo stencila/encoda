@@ -1,3 +1,27 @@
+# [0.114.0](https://github.com/stencila/encoda/compare/v0.113.0...v0.114.0) (2021-04-13)
+
+
+### Bug Fixes
+
+* **Coersion:** Merge inline content into a single paragraph ([4eea506](https://github.com/stencila/encoda/commit/4eea5063b93f4a226e340415cf3f01aa31b505d5))
+* **Deps:** NPM audit fix ([deaceaf](https://github.com/stencila/encoda/commit/deaceaf45b8aeeb38be30e595f771cbce640a2ec))
+* **Deps:** Update Schema version ([0229112](https://github.com/stencila/encoda/commit/02291123385a5e023325ffbdee819c2d0ceae6ed))
+* **Deps:** Upgrade Schema ([85ce1e7](https://github.com/stencila/encoda/commit/85ce1e7497afcd40d8fb4923c32f43e6fdc47213))
+* **GDoc:** Ensure article content is a BlockContent array ([6bd4ca9](https://github.com/stencila/encoda/commit/6bd4ca9b0993933a0ebcc2a807cdb8e04e6b1f1d))
+* **HTML:** Ensure BlockContent array for various properties ([92dba96](https://github.com/stencila/encoda/commit/92dba96d8e5daf98099bceccb583bc790067f2c7))
+* **IPYNB:** Updates for changes in schema ([533bd75](https://github.com/stencila/encoda/commit/533bd7509e8d6caeda0cd82fccea2f434e5a229f))
+* **JATS:** Ensure BlockContent array for various properties and other fixes ([b1ef3ac](https://github.com/stencila/encoda/commit/b1ef3acfa845fc904394367de80f17d3556c462b))
+* **JATS:** Update schema to 1.2.1 with Inline Notes ([1ab835e](https://github.com/stencila/encoda/commit/1ab835ea4eae8a35432e3fd7e85354e104b02242))
+* **Markdown:** Ensure BlockContent array for various properties ([de4b3bf](https://github.com/stencila/encoda/commit/de4b3bfe688f1bb51c4693e1613e8aa83d1ef53e))
+* **Pandoc:** Ensure BlockContent array for various properties ([189f721](https://github.com/stencila/encoda/commit/189f72124d7aa1a522d388ed1759c11d23b7a1d4))
+* **Xmd:** Coerce to inline content ([38bb129](https://github.com/stencila/encoda/commit/38bb12900bfc3281cb6c383387cf425e880856a3))
+
+
+### Features
+
+* **JATS:** Add footnote ([fd8241a](https://github.com/stencila/encoda/commit/fd8241ab48d31e293b8e2662347ad4372e5444f6))
+* **JATS:** Add Footnote as default note type ([365a55c](https://github.com/stencila/encoda/commit/365a55c71566edc4e83c943509c5c625a33ab639))
+
 # [0.113.0](https://github.com/stencila/encoda/compare/v0.112.0...v0.113.0) (2021-03-31)
 
 
