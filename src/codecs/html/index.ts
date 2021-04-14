@@ -1299,6 +1299,7 @@ type CreativeWorkTagMap = {
 const creativeWorkTagMap: CreativeWorkTagMap = {
   Article: 'article',
   AudioObject: 'audio',
+  Claim: 'div',
   Collection: 'div',
   Comment: 'div',
   CreativeWork: 'div',

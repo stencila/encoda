@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<article>
+  <front>
+    <article-meta>
+      <contrib-group />
+    </article-meta>
+  </front>
+  <body>
+    <statement id="statement1">
+      <label>Hypothesis 1</label>
+      <p>It's a hypothesis.</p>
+    </statement>
+    <statement id="statement2">
+      <title>Theorem 1</title>
+      <p>It's a theorem.</p>
+    </statement>
+  </body>
+  <back>
+    <app-group />
+  </back>
+</article>

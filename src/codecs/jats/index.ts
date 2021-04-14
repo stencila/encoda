@@ -1382,6 +1382,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeCode(elem)
     case 'fn':
       return decodeNote(elem, state)
+    case 'statement':
+      return decodeStatement(elem, state)
     default:
       log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
       return decodeDefault(elem, state)
@@ -2341,6 +2343,37 @@ function decodeNote(elem: xml.Element, state: DecodeState): [stencila.Note] {
         decodeElements(elem.elements ?? [], state)
       ),
       noteType: 'Footnote',
+    }),
+  ]
+}
+
+/**
+ * Decode a JATS `<statement>` element as a Stencila `Claim`.
+ */
+function decodeStatement(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.Claim] {
+  const id = attrOrUndefined(elem, 'id')
+  const label = textOrUndefined(child(elem, ['label', 'title']))
+  const content = []
+  if (elem.elements) {
+    for (const item of elem.elements) {
+      if (
+        typeof item.name === 'string' &&
+        !['label', 'title', 'kwd-group', 'attrib', 'permission'].includes(
+          item.name
+        )
+      ) {
+        content.push(...decodeElement(item, state))
+      }
+    }
+  }
+  return [
+    stencila.claim({
+      id,
+      label,
+      content: ensureBlockContentArray(content),
     }),
   ]
 }
