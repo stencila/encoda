@@ -76,6 +76,7 @@ describe('encode: Math', () => {
 
 test.each([
   'fig.xml',
+  'statement.xml',
   'elife-30274-v1',
   'elife-43154-v2',
   'elife-46472-v3',
