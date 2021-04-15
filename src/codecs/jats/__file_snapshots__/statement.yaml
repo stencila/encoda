@@ -1,0 +1,19 @@
+type: Article
+identifiers: []
+title: Untitled
+meta: {}
+content:
+  - type: Claim
+    id: statement1
+    label: Hypothesis 1
+    content:
+      - type: Paragraph
+        content:
+          - It's a hypothesis.
+  - type: Claim
+    id: statement2
+    label: Theorem 1
+    content:
+      - type: Paragraph
+        content:
+          - It's a theorem.
