@@ -5,6 +5,7 @@ meta: {}
 content:
   - type: Claim
     id: statement1
+    claimType: Hypothesis
     label: Hypothesis 1
     content:
       - type: Paragraph
@@ -12,8 +13,31 @@ content:
           - It's a hypothesis.
   - type: Claim
     id: statement2
+    claimType: Theorem
     label: Theorem 1
     content:
       - type: Paragraph
         content:
           - It's a theorem.
+  - type: Claim
+    id: statement3
+    claimType: Theorem
+    label: Fermat's Last Theorem
+    content:
+      - type: Paragraph
+        content:
+          - a^n + b^n = c^n
+  - type: Claim
+    id: statement4
+    claimType: Postulate
+    label: A postulate
+    content:
+      - type: Paragraph
+        content:
+          - It's a postulate.
+  - type: Claim
+    id: statement5
+    label: A label that doesn't have a particular type
+    content:
+      - type: Paragraph
+        content: []

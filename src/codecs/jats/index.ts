@@ -2356,6 +2356,19 @@ function decodeStatement(
 ): [stencila.Claim] {
   const id = attrOrUndefined(elem, 'id')
   const label = textOrUndefined(child(elem, ['label', 'title']))
+
+  let claimType
+  if (label !== undefined) {
+    const match = /\b(Statement|Theorem|Lemma|Proof|Postulate|Hypothesis|Proposition|Corollary)\b/i.exec(
+      label
+    )
+    if (match) {
+      const type = match[0]
+      claimType = (type.charAt(0).toUpperCase() +
+        type.slice(1)) as stencila.Claim['claimType']
+    }
+  }
+
   const content = []
   if (elem.elements) {
     for (const item of elem.elements) {
@@ -2369,10 +2382,12 @@ function decodeStatement(
       }
     }
   }
+
   return [
     stencila.claim({
       id,
       label,
+      claimType,
       content: ensureBlockContentArray(content),
     }),
   ]

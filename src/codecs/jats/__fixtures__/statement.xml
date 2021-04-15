@@ -14,6 +14,17 @@
       <title>Theorem 1</title>
       <p>It's a theorem.</p>
     </statement>
+    <statement id="statement3">
+      <title>Fermat's Last Theorem</title>
+      <p>a^n + b^n = c^n</p>
+    </statement>
+    <statement id="statement4">
+      <label>A postulate</label>
+      <p>It's a postulate.</p>
+    </statement>
+    <statement id="statement5">
+      <label>A label that doesn't have a particular type</label>
+    </statement>
   </body>
   <back>
     <app-group />
