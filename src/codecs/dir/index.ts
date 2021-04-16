@@ -16,14 +16,11 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila, { isCreativeWork } from '@stencila/schema'
-import { range } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import tempy from 'tempy'
 import trash from 'trash'
-// @ts-ignore
-import unixify from 'unixify'
 import { read, write } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
@@ -115,7 +112,7 @@ export class DirCodec
     // Decompose file paths into parts so that they
     // can be sorted by depth AND name
     const routes = filePaths
-      .map((filePath) => unixify(filePath).split('/'))
+      .map((filePath) => filePath.split(path.sep))
       .sort((a, b) => {
         return (
           a.length - b.length || a[a.length - 1].localeCompare(b[b.length - 1])
@@ -158,7 +155,8 @@ export class DirCodec
     collections.set('', root)
     for (const { route, node } of sorted) {
       let parent = root
-      for (const depth of range(0, route.length - 2)) {
+      let depth = 0
+      while (depth < route.length - 1) {
         const level = route.slice(0, depth + 1).join('/')
         let collection = collections.get(level)
         if (!collection) {
@@ -171,6 +169,7 @@ export class DirCodec
           parent.parts.push(collection)
         }
         parent = collection
+        depth += 1
       }
       parent.parts.push(node)
     }
