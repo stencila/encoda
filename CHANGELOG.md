@@ -1,3 +1,23 @@
+# [0.115.0](https://github.com/stencila/encoda/compare/v0.114.0...v0.115.0) (2021-04-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.24.1 ([5723a8f](https://github.com/stencila/encoda/commit/5723a8f612fd957531da74c62b5f669ff491e731))
+* **dependencies:** update dependency citation-js to ^0.5.0 ([db9e3c2](https://github.com/stencila/encoda/commit/db9e3c2a05f9c173351a1800d33271a9173accf0))
+* **dependencies:** update dependency fp-ts to ^2.10.2 ([9ddc3f9](https://github.com/stencila/encoda/commit/9ddc3f97a1f42a885daae26fbcdaf024794fc184))
+* **dependencies:** update dependency js-beautify to ^1.13.11 ([b2ff869](https://github.com/stencila/encoda/commit/b2ff869bb6782cf0fec758152c5aa579e53327f5))
+* **dependencies:** update dependency js-yaml to ^4.1.0 ([f5be5f4](https://github.com/stencila/encoda/commit/f5be5f423ca9be397235b2cca472cc045b1f2c9a))
+* **Deps:** Update Schema version ([a94815f](https://github.com/stencila/encoda/commit/a94815fb8457ef52e2770a01960603ff6fe5e261))
+* **Deps:** Upgrade dependencies ([70f5a79](https://github.com/stencila/encoda/commit/70f5a793721bf61ad8b7ff6e8ac05b16a1365688))
+* **Dir:** Fix bug related to upgraded dependency ([5a14e1a](https://github.com/stencila/encoda/commit/5a14e1ad30ce33cf4fdc16cd0e068f8cbd9e4ec0))
+
+
+### Features
+
+* **JATS:** Add statement decoder ([66f7d81](https://github.com/stencila/encoda/commit/66f7d8102faa47a5c3da218fd7cb871203136e94))
+* **JATS:** Determine claimType from label ([36ef707](https://github.com/stencila/encoda/commit/36ef707834e62285db1f9bce99d575d1658e22be))
+
 # [0.114.0](https://github.com/stencila/encoda/compare/v0.113.0...v0.114.0) (2021-04-13)
 
 
