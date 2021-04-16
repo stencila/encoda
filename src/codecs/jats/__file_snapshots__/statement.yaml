@@ -6,7 +6,8 @@ content:
   - type: Claim
     id: statement1
     claimType: Hypothesis
-    label: Hypothesis 1
+    label:
+      - Hypothesis 1
     content:
       - type: Paragraph
         content:
@@ -14,7 +15,8 @@ content:
   - type: Claim
     id: statement2
     claimType: Theorem
-    label: Theorem 1
+    label:
+      - Theorem 1
     content:
       - type: Paragraph
         content:
@@ -22,7 +24,11 @@ content:
   - type: Claim
     id: statement3
     claimType: Theorem
-    label: Fermat's Last Theorem
+    label:
+      - 'Fermat''s '
+      - type: Emphasis
+        content:
+          - Last Theorem
     content:
       - type: Paragraph
         content:
@@ -30,14 +36,16 @@ content:
   - type: Claim
     id: statement4
     claimType: Postulate
-    label: A postulate
+    label:
+      - A postulate
     content:
       - type: Paragraph
         content:
           - It's a postulate.
   - type: Claim
     id: statement5
-    label: A label that doesn't have a particular type
+    label:
+      - A label that doesn't have a particular type
     content:
       - type: Paragraph
         content: []

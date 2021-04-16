@@ -2355,12 +2355,16 @@ function decodeStatement(
   state: DecodeState
 ): [stencila.Claim] {
   const id = attrOrUndefined(elem, 'id')
-  const label = textOrUndefined(child(elem, ['label', 'title']))
+  const labelText = textOrUndefined(child(elem, ['label', 'title']))
+  const label = decodeInlineContent(
+    child(elem, ['label', 'title'])?.elements || [],
+    state
+  )
 
   let claimType
-  if (label !== undefined) {
+  if (labelText !== undefined) {
     const match = /\b(Statement|Theorem|Lemma|Proof|Postulate|Hypothesis|Proposition|Corollary)\b/i.exec(
-      label
+      labelText
     )
     if (match) {
       const type = match[0]
