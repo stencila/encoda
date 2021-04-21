@@ -1,3 +1,12 @@
+## [0.115.1](https://github.com/stencila/encoda/compare/v0.115.0...v0.115.1) (2021-04-21)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/schema to ^1.4.3 ([cf6431b](https://github.com/stencila/encoda/commit/cf6431be177d697b9c3636b446bf5afa503dcbbb))
+* **dependencies:** update dependency fp-ts to ^2.10.4 ([1298c7c](https://github.com/stencila/encoda/commit/1298c7c399e216787a7f9e3c9d05d7f797c6c1fb))
+* **dependencies:** update dependency js-beautify to ^1.13.13 ([5479962](https://github.com/stencila/encoda/commit/54799622dea2fa6364b3b33a5a1c44aae99ceb78))
+
 # [0.115.0](https://github.com/stencila/encoda/compare/v0.114.0...v0.115.0) (2021-04-16)
 
 
