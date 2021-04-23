@@ -2370,15 +2370,20 @@ function decodeStatement(
   }
 
   const content = []
+  let title = undefined
   if (elem.elements) {
     for (const item of elem.elements) {
-      if (
-        typeof item.name === 'string' &&
-        !['label', 'title', 'kwd-group', 'attrib', 'permission'].includes(
-          item.name
-        )
-      ) {
-        content.push(...decodeElement(item, state))
+      if (typeof item.name === 'string') {
+        if (item.name === 'title') {
+          const nodes = ensureInlineContentArray(decodeElement(item, state))
+          title = nodes.length == 1 && nodes[0] === 'string' ? nodes[0] : nodes
+        } else if (
+          !['label', 'title', 'kwd-group', 'attrib', 'permission'].includes(
+            item.name
+          )
+        ) {
+          content.push(...decodeElement(item, state))
+        }
       }
     }
   }
@@ -2387,6 +2392,7 @@ function decodeStatement(
     stencila.claim({
       id,
       label,
+      title,
       claimType,
       content: ensureBlockContentArray(content),
     }),

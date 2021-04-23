@@ -15,6 +15,7 @@ content:
     id: statement2
     claimType: Theorem
     label: Theorem 1
+    title: Theorem 1
     content:
       - type: Paragraph
         content:
@@ -23,6 +24,11 @@ content:
     id: statement3
     claimType: Theorem
     label: Fermat's Last Theorem
+    title:
+      - 'Fermat''s '
+      - type: Strong
+        content:
+          - Last Theorem
     content:
       - type: Paragraph
         content:
