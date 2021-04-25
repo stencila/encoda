@@ -2370,13 +2370,13 @@ function decodeStatement(
   }
 
   const content = []
-  let title = undefined
+  let title
   if (elem.elements) {
     for (const item of elem.elements) {
       if (typeof item.name === 'string') {
         if (item.name === 'title') {
           const nodes = ensureInlineContentArray(decodeElement(item, state))
-          title = nodes.length == 1 && nodes[0] === 'string' ? nodes[0] : nodes
+          title = nodes.length === 1 && nodes[0] === 'string' ? nodes[0] : nodes
         } else if (
           !['label', 'title', 'kwd-group', 'attrib', 'permission'].includes(
             item.name
