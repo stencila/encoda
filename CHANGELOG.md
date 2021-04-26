@@ -1,3 +1,10 @@
+## [0.115.3](https://github.com/stencila/encoda/compare/v0.115.2...v0.115.3) (2021-04-26)
+
+
+### Bug Fixes
+
+* **IPYNB:** Improve handing of Vega and Plotly outputs ([f1fe060](https://github.com/stencila/encoda/commit/f1fe06067ffc1f291578a6ba5923e2dc59e5e8ce))
+
 ## [0.115.2](https://github.com/stencila/encoda/compare/v0.115.1...v0.115.2) (2021-04-26)
 
 
