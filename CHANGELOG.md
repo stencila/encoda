@@ -1,3 +1,11 @@
+## [0.115.2](https://github.com/stencila/encoda/compare/v0.115.1...v0.115.2) (2021-04-26)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency puppeteer to v9 ([2e36597](https://github.com/stencila/encoda/commit/2e365972b2dc457936d5d7398562db914e95ee5e))
+* **JATS:** Parse statement title as inline elements ([87faacc](https://github.com/stencila/encoda/commit/87faaccd648c5b49bd63968013b61f74c5169f39))
+
 ## [0.115.1](https://github.com/stencila/encoda/compare/v0.115.0...v0.115.1) (2021-04-21)
 
 
