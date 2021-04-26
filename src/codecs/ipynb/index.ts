@@ -25,21 +25,26 @@ import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json'
 import betterAjvErrors from 'better-ajv-errors'
 import { dump, load } from '../..'
 import { logWarnLoss } from '../../log'
-import { ensureArticle } from '../../util/content/ensureArticle'
-import * as dataUri from '../../util/dataUri'
-import * as vfile from '../../util/vfile'
-import { TxtCodec } from '../txt'
-import { Codec } from '../types'
-import * as nbformat3 from './nbformat-v3'
-import nbformat3Schema from './nbformat-v3.schema.json'
-import * as nbformat4 from './nbformat-v4'
-import nbformat4Schema from './nbformat-v4.schema.json'
 import { coerce } from '../../util/coerce'
-import { getSchema } from '../../util/schemas'
+import { ensureArticle } from '../../util/content/ensureArticle'
 import {
   ensureBlockContentArray,
   ensureBlockContentArrayOrUndefined,
 } from '../../util/content/ensureBlockContentArray'
+import * as dataUri from '../../util/dataUri'
+import { getSchema } from '../../util/schemas'
+import * as vfile from '../../util/vfile'
+import { PlotlyCodec } from '../plotly'
+import { TxtCodec } from '../txt'
+import { Codec } from '../types'
+import { VegaCodec } from '../vega'
+import * as nbformat3 from './nbformat-v3'
+import nbformat3Schema from './nbformat-v3.schema.json'
+import * as nbformat4 from './nbformat-v4'
+import nbformat4Schema from './nbformat-v4.schema.json'
+
+const vegaCodec = new VegaCodec()
+const plotlyCodec = new PlotlyCodec()
 
 const log = getLogger('encoda:ipynb')
 
@@ -733,31 +738,47 @@ async function encodeExecuteResult(
 /**
  * Decode a Jupyter `MimeBundle` to a Stencila `Node`.
  *
- * The bundle is a dictionary of {mediaType : content}. We iterate over
- * the dictionary until we find the first media type that can be decoded.
+ * The bundle is a dictionary of {mediaType : content} with alternative representations
+ * of the output e.g. JSON and plain text. This function attempts to decode the "richest"
+ * / most easily parsable mimetypes first e.g JSON before plain text.
  */
 async function decodeMimeBundle(
   bundle: nbformat.MimeBundle,
   version: nbformat.Version = 4
 ): Promise<schema.Node> {
-  // TODO: Avoid this disablement
-  // eslint-disable-next-line no-unreachable-loop
-  for (const [key, data] of Object.entries(bundle)) {
-    // For nbformat 3 it is necessary to convert some property
-    // names to mimetypes
+  for (let mimetype of [
+    ...plotlyCodec.mediaTypes,
+    ...vegaCodec.mediaTypes,
+    'image/png',
+    'image/jpeg',
+    'image/svg+xml',
+    'application/json',
+    'application/x-latex',
+    'text/html',
+    'text/plain',
+    'application/javascript',
+    'application/pdf',
+  ]) {
+    // For nbformat 3 it is necessary to convert the mimetype to a name
     const map: { [key: string]: string } = {
-      html: 'text/html',
-      javascript: 'application/javascript',
-      jpeg: 'image/jpeg',
-      json: 'application/json',
-      latex: 'application/x-latex',
-      pdf: 'application/pdf',
-      png: 'image/png',
-      svg: 'image/svg+xml',
-      text: 'text/plain',
+      'application/javascript': 'javascript',
+      'application/json': 'json',
+      'application/pdf': 'pdf',
+      'application/x-latex': 'latex',
+      'image/jpeg': 'jpeg',
+      'image/png': 'png',
+      'image/svg+xml': 'svg',
+      'text/html': 'html',
+      'text/plain': 'text',
     }
-    const mimetype = version === 3 ? map[key] || key : key
+    const name = version === 3 ? map[mimetype] || mimetype : mimetype
 
+    // If the bundle does not have a corresponding value
+    // then continue trying other mimetypes
+    const data = bundle[mimetype] || bundle[name]
+    if (data === undefined) continue
+
+    // Convert data to a string
     const text =
       typeof data === 'string'
         ? data
@@ -765,17 +786,17 @@ async function decodeMimeBundle(
         ? data.join('')
         : data.toString()
 
-    if (mimetype.endsWith('json')) {
-      // Stringify the data to be pass on to the specialised codec e.g. `plotly`
-      const json = JSON.stringify(data)
-      return load(json, mimetype)
-    } else if (['image/png', 'image/jpeg', 'image/gif'].includes(mimetype)) {
+    if (plotlyCodec.mediaTypes.includes(mimetype)) {
+      return plotlyCodec.load(JSON.stringify(data))
+    }
+    if (vegaCodec.mediaTypes.includes(mimetype)) {
+      return vegaCodec.load(JSON.stringify(data))
+    } else if (mimetype.startsWith('image/')) {
       // Image mime types as `ImagesObject`
-      const dataUrl = `data:${mimetype};base64,${data}`
-      const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
-        dataUrl
-      )
-      return schema.imageObject({ contentUrl, format })
+      return schema.imageObject({
+        contentUrl: `data:${mimetype};base64,${data}`,
+        format: mimetype,
+      })
     } else if (mimetype === 'text/plain') {
       // Text output, including stdout, is decoded using the `txt` codec
       // which attempts to parse `numbers` etc (and may in the future,
@@ -789,10 +810,14 @@ async function decodeMimeBundle(
         return schema.codeBlock({ text: node, programmingLanguage: 'text' })
       else return node
     } else {
-      return load(text, mimetype)
+      const node = await load(text, mimetype)
+      if (node === null) continue
+      else return node
     }
   }
-  log.warn(`Unable to decode MIME bundle with keys ${Object.keys(bundle)}`)
+  log.warn(
+    `Unable to decode MIME bundle with keys: ${Object.keys(bundle).join(', ')}`
+  )
   return ''
 }
 

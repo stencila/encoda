@@ -53,17 +53,23 @@ async function ensureVegaPage({
   return page
 }
 
-const vegaMediaTypes = [
-  // Custom and generic Vega mimetype used by Stencila during encoding
-  'application/vnd.vega+json',
-  // Altair MIME bundle types
-  // @see https://iliatimofeev.github.io/altair-viz.github.io/user_guide/display_frontends.html#renderer-api
-  'application/vnd.vegalite.v1+json',
-  'application/vnd.vega.v3+json',
-  'application/vnd.vega.v2+json',
-]
-
+// Custom and generic Vega mimetype used by Stencila during encoding
 export const vegaMediaType = 'application/vnd.vega+json'
+
+const vegaMediaTypes = [
+  vegaMediaType,
+  // Mimetypes used by Altair
+  // @see https://altair-viz.github.io/user_guide/display_frontends.html#renderer-api
+  'application/vnd.vega.v1+json',
+  'application/vnd.vega.v2+json',
+  'application/vnd.vega.v3+json',
+  'application/vnd.vega.v4+json',
+  'application/vnd.vega.v5+json',
+  'application/vnd.vegalite.v1+json',
+  'application/vnd.vegalite.v2+json',
+  'application/vnd.vegalite.v3+json',
+  'application/vnd.vegalite.v4+json',
+]
 
 export const isVegaMediaType = (mimeType: string): boolean =>
   vegaMediaTypes.includes(mimeType)
