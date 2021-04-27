@@ -746,7 +746,7 @@ async function decodeMimeBundle(
   bundle: nbformat.MimeBundle,
   version: nbformat.Version = 4
 ): Promise<schema.Node> {
-  for (let mimetype of [
+  for (const mimetype of [
     ...plotlyCodec.mediaTypes,
     ...vegaCodec.mediaTypes,
     'image/png',
