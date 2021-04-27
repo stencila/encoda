@@ -71,20 +71,37 @@
 						<a href="#demo-magic" id="demo-magic" style="color: inherit; text-decoration: none;">
 							<h1>Demo Magic</h1>
 						</a>
-						<p>Codec for <a href="https://github.com/paxtonhare/demo-magic">Demo Magic</a> script.</p>
+						<p>Codec for <a href="https://github.com/paxtonhare/demo-magic">Demo Magic</a> scripts.</p>
 						<blockquote>
 							<p><code>demo-magic.sh</code> is a handy shell script that enables you to script
 								repeatable demos in a bash environment so you don&#39;t have to type as
 								you present. Rather than trying to type commands when presenting you
 							simply script them and let <code>demo-magic.sh</code> run them for you.</p>
 						</blockquote>
-						<p>This codec encodes a Stencila <code>Node</code> (usually an <code>Article</code> authored using
+						<p>This codec encodes a Stencila document (usually an <code>Article</code> authored using
 							Markdown) as a Bash script that uses the <code>demo-magic.sh</code> functions to
 							provide an interactive demo with simulated typing and other features.
 						It&#39;s very useful for recording screencasts for command line applications.</p>
 						<p>It supports <code>Heading</code>, <code>Paragraph</code> and <code>CodeBlock</code> nodes with <code>bash</code> or
-						<code>sh</code> as the <code>language</code>.</p>
-						<p>You can run the generated script using options. Use <code>-h</code> for help.</p>
+						<code>sh</code> as the language. <code>CodeBlock</code>s support the options <code>pause</code> and <code>hidden</code>.</p>
+						<p>Use <code>pause</code> to specify the number of seconds to wait after some code has been typed. This can be useful when you want to give your screencast viewer time to understand result before progressing the demo. e.g.</p>
+						<pre><code class="language-markdown"><span style="color: #000000">```bash pause=2</span>
+<span style="color: #000000FF">ls -la</span>
+<span style="color: #000000">```</span>
+</code></pre>
+						<p>Use <code>hidden</code> to execute Bash code that you do not want the viewer to see.</p>
+						<p>The generated script can be run using various options:</p>
+						<pre><code class="language-console">&gt; stencila convert demo.md demo.sh --to demo-magic
+&gt; ./demo.sh -h
+
+Usage: ./demo.sh [options]
+
+        Where options is one or more of:
+        -h      Prints Help text
+        -d      Debug mode. Disables simulated typing
+        -n      No wait
+        -w      Waits max the given amount of seconds before proceeding with demo (e.g. &#39;-w5&#39;)
+</code></pre>
 					</div>
 				</div>
 			</section>
