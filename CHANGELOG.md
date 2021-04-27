@@ -1,3 +1,10 @@
+# [0.116.0](https://github.com/stencila/encoda/compare/v0.115.4...v0.116.0) (2021-04-27)
+
+
+### Features
+
+* **Demo Magic:** Add noexec option and improve spacing after code ([45ac2f3](https://github.com/stencila/encoda/commit/45ac2f3db129176b44487aef778881159214c1d0))
+
 ## [0.115.4](https://github.com/stencila/encoda/compare/v0.115.3...v0.115.4) (2021-04-27)
 
 
