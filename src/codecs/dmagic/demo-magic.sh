@@ -251,9 +251,16 @@ DEMO_CMD_COLOR=$GREEN
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
-# Print headings
+# Print a heading (note that the level of the heading is currently ignored)
 function h {
-  p "$BOLD$WHITE$2$COLOR_RESET$NORMAL"
+  p "# $BOLD$WHITE$1$COLOR_RESET$NORMAL"
+  echo ""
+}
+
+# Print a paragraph (with a blank line after it
+function pa {
+  p "# $1"
+  echo ""
 }
 
 # Function to `sleep` when in non interactive mode i.e. `-n`

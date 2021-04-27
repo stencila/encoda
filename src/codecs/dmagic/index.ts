@@ -3,21 +3,12 @@
  *
  * @module codecs/dmagic
  */
-/**
- * Hello contributor 👋! If you are working on this file, please
- * endeavor to remove the need for the following `eslint-disable` line 🙏.
- * Remove the line and run `npx eslint path/to/this/file.ts` to
- * see which code needs some linting ❤️.
- * See https://github.com/stencila/encoda/issues/199 for suggestions
- * on how to refactor code to avoid non-strict boolean expressions.
- */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
-import { dump } from '../..'
 import * as vfile from '../../util/vfile'
+import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 
 export class DMagicCodec extends Codec implements Codec {
@@ -45,29 +36,40 @@ export class DMagicCodec extends Codec implements Codec {
   /**
    * Encode a Stencila `Node` to a `VFile` with `demo-magic.sh` content.
    *
+   * By default bundles the Demo Magic script into the generated file.
+   *
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.commonEncodeDefaults
+    options: CommonEncodeOptions = {
+      ...this.commonEncodeDefaults,
+      isStandalone: true,
+      isBundle: true,
+    }
   ): Promise<vfile.VFile> => {
-    const { isBundle = true } = options
-    let bash = await encodeNode(node)
-    if (isBundle) {
-      if (!demoMagicSh) {
+    const { isBundle = true, isStandalone = true } = options
+
+    let bash
+    if (isBundle || isStandalone) {
+      if (demoMagicSh === undefined) {
         demoMagicSh = await fs.readFile(
-          path.join(__dirname, 'demo-magic-template.sh'),
+          path.join(__dirname, 'demo-magic.sh'),
           'utf8'
         )
       }
-      bash = demoMagicSh + bash
+      bash = demoMagicSh
+    } else {
+      bash = `#!/usr/bin/env bash\n. demo-magic.sh\nclear\n\n`
     }
+    bash += await encodeNode(node)
+
     return vfile.load(bash)
   }
 }
 
-// The content of the Bash Script. Lazily loaded.
+// The content of the Demo Magic Bash Script. Lazily loaded.
 let demoMagicSh: string | undefined
 
 /**
@@ -77,13 +79,13 @@ async function encodeNode(node: stencila.Node): Promise<string> {
   if (node === null || typeof node !== 'object') return ''
 
   if (stencila.isA('Heading', node)) {
-    return `h ${node.depth} "${await escapedMd(node)}"\n\n`
+    return `h "${await escapedText(node.content)}"\n\n`
   } else if (stencila.isA('Paragraph', node)) {
-    return `p "# ${await escapedMd(node)}"\n\n`
+    return `pa "${await escapedText(node.content)}"\n\n`
   } else if (stencila.isA('CodeBlock', node)) {
     const { programmingLanguage, meta, text } = node
     if (
-      programmingLanguage &&
+      programmingLanguage === undefined &&
       programmingLanguage !== 'bash' &&
       programmingLanguage !== 'sh'
     ) {
@@ -94,7 +96,7 @@ async function encodeNode(node: stencila.Node): Promise<string> {
     }
     let bash = `pe "${text}"\n`
     if (meta) {
-      if (meta.pause) bash += `z ${meta.pause}\n`
+      if (meta.pause !== undefined) bash += `z ${meta.pause}\n`
     }
     return bash + '\n'
   }
@@ -107,7 +109,7 @@ async function encodeNode(node: stencila.Node): Promise<string> {
 /**
  * Generate escaped Markdown suitable for inserting into Bash
  */
-async function escapedMd(node: stencila.Node): Promise<string> {
-  const markdown = await dump(node, 'md')
-  return markdown.replace(/`/g, '\\`')
+async function escapedText(content: stencila.InlineContent[]): Promise<string> {
+  const txt = content.map(TxtCodec.stringify).join('')
+  return txt.replace(/`/g, '\\`')
 }
