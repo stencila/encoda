@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This Bash file includes the demo-magic.sh Bash script (from https://raw.githubusercontent.com/paxtonhare/demo-magic/a336b3c3afd48830adb3f83975dbea1b43e3cc6d/demo-magic.sh)
+# This Bash file includes the demo-magic.sh Bash script (from https://raw.githubusercontent.com/paxtonhare/demo-magic/828ae783fc23eab3de6df842a93ad395f72e0d4a/demo-magic.sh)
 # plus some customisations and extensions (at the end of this file) for use with Encoda.
 
 ###############################################################################
@@ -26,6 +26,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ##############################################################################
+
 
 ###############################################################################
 #
@@ -114,7 +115,7 @@ function p() {
 
   # render the prompt
   x=$(PS1="$DEMO_PROMPT" "$BASH" --norc -i </dev/null 2>&1 | sed -n '${s/^\(.*\)exit$/\1/p;}')
-  
+
   # show command number is selected
   if $SHOW_CMD_NUMS; then
    printf "[$((++C_NUM))] $x"
@@ -123,7 +124,7 @@ function p() {
   fi
 
   # wait for the user to press a key before typing the command
-  if !($NO_WAIT); then
+  if [ $NO_WAIT = false ]; then
     wait
   fi
 
@@ -134,7 +135,7 @@ function p() {
   fi
 
   # wait for the user to press a key before moving on
-  if !($NO_WAIT); then
+  if [ $NO_WAIT = false ]; then
     wait
   fi
   echo ""
@@ -151,9 +152,19 @@ function p() {
 function pe() {
   # print the command
   p "$@"
+  run_cmd "$@"
+}
 
-  # execute the command
-  eval "$@"
+##
+# print and executes a command immediately
+#
+# takes 1 parameter - the string command to run
+#
+# usage: pei "ls -l"
+#
+##
+function pei {
+  NO_WAIT=true pe "$@"
 }
 
 ##
@@ -169,7 +180,19 @@ function cmd() {
   x=$(PS1="$DEMO_PROMPT" "$BASH" --norc -i </dev/null 2>&1 | sed -n '${s/^\(.*\)exit$/\1/p;}')
   printf "$x\033[0m"
   read command
-  eval "${command}"
+  run_cmd "${command}"
+}
+
+function run_cmd() {
+  function handle_cancel() {
+    printf ""
+  }
+
+  trap handle_cancel SIGINT
+  stty -echoctl
+  eval "$@"
+  stty echoctl
+  trap - SIGINT
 }
 
 
