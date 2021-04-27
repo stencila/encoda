@@ -1,3 +1,11 @@
+## [0.115.4](https://github.com/stencila/encoda/compare/v0.115.3...v0.115.4) (2021-04-27)
+
+
+### Bug Fixes
+
+* **Demo Magic:** Improve spacing after heings and paragraphs ([196a55b](https://github.com/stencila/encoda/commit/196a55bd92216d54d479ad77ddb699afec6b859a))
+* **Demo Magic:** Update and rename demo-magic.sh ([82b3f2a](https://github.com/stencila/encoda/commit/82b3f2aa921344015122b03bf22f13e243fee1f1))
+
 ## [0.115.3](https://github.com/stencila/encoda/compare/v0.115.2...v0.115.3) (2021-04-26)
 
 
