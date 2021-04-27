@@ -83,7 +83,7 @@ async function encodeNode(node: stencila.Node): Promise<string> {
   } else if (stencila.isA('Paragraph', node)) {
     return `pa "${escapedText(node.content)}"\n\n`
   } else if (stencila.isA('CodeBlock', node)) {
-    const { programmingLanguage, meta, text } = node
+    const { programmingLanguage, meta = {}, text } = node
     if (
       programmingLanguage !== undefined &&
       programmingLanguage !== 'bash' &&
@@ -91,14 +91,15 @@ async function encodeNode(node: stencila.Node): Promise<string> {
     ) {
       return ''
     }
-    if (meta && meta.hidden === '') {
+
+    if (meta.hidden !== undefined) {
       return `${text}\n`
     }
-    let bash = `pe "${text}"\n`
-    if (meta) {
-      if (meta.pause !== undefined) bash += `z ${meta.pause}\n`
-    }
-    return bash + '\n'
+
+    let bash = `${meta.noexec === undefined ? 'pe' : 'p'} "${text}"\n`
+    if (meta.pause !== undefined) bash += `z ${meta.pause}\n`
+
+    return bash + 'echo\n\n'
   }
 
   // For all other node types, recurse over their children

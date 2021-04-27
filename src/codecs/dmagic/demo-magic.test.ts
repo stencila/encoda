@@ -65,6 +65,14 @@ const node: stencila.Article = {
     },
     {
       type: 'CodeBlock',
+      programmingLanguage: 'bash',
+      text: 'sleep 10',
+      meta: {
+        noexec: '',
+      },
+    },
+    {
+      type: 'CodeBlock',
       programmingLanguage: 'sh',
       text: 'date -u',
     },
@@ -87,10 +95,16 @@ h "Heading two"
 pa "A paragraph with strong and code"
 
 pe "date"
+echo
 
 pe "date --utc"
 z 2
+echo
+
+p "sleep 10"
+echo
 
 pe "date -u"
+echo
 
 `

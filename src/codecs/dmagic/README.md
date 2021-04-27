@@ -13,7 +13,7 @@ provide an interactive demo with simulated typing and other features.
 It's very useful for recording screencasts for command line applications.
 
 It supports `Heading`, `Paragraph` and `CodeBlock` nodes with `bash` or
-`sh` as the language. `CodeBlock`s support the options `pause` and `hidden`.
+`sh` as the language. `CodeBlock`s support the options `pause`, `noexec` and `hidden`.
 
 Use `pause` to specify the number of seconds to wait after some code has been typed. This can be useful when you want to give your screencast viewer time to understand result before progressing the demo. e.g.
 
@@ -23,7 +23,7 @@ ls -la
 ```
 ````
 
-Use `hidden` to execute Bash code that you do not want the viewer to see.
+Use `noexec` to display but not execute Bash code. Use `hidden` to execute Bash code that you want to execute but do not want to display in the demo.
 
 The generated script can be run using various options:
 
