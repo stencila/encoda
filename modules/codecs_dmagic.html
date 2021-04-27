@@ -83,13 +83,13 @@
 							provide an interactive demo with simulated typing and other features.
 						It&#39;s very useful for recording screencasts for command line applications.</p>
 						<p>It supports <code>Heading</code>, <code>Paragraph</code> and <code>CodeBlock</code> nodes with <code>bash</code> or
-						<code>sh</code> as the language. <code>CodeBlock</code>s support the options <code>pause</code> and <code>hidden</code>.</p>
+						<code>sh</code> as the language. <code>CodeBlock</code>s support the options <code>pause</code>, <code>noexec</code> and <code>hidden</code>.</p>
 						<p>Use <code>pause</code> to specify the number of seconds to wait after some code has been typed. This can be useful when you want to give your screencast viewer time to understand result before progressing the demo. e.g.</p>
 						<pre><code class="language-markdown"><span style="color: #000000">```bash pause=2</span>
 <span style="color: #000000FF">ls -la</span>
 <span style="color: #000000">```</span>
 </code></pre>
-						<p>Use <code>hidden</code> to execute Bash code that you do not want the viewer to see.</p>
+						<p>Use <code>noexec</code> to display but not execute Bash code. Use <code>hidden</code> to execute Bash code that you want to execute but do not want to display in the demo.</p>
 						<p>The generated script can be run using various options:</p>
 						<pre><code class="language-console">&gt; stencila convert demo.md demo.sh --to demo-magic
 &gt; ./demo.sh -h
