@@ -1,21 +1,23 @@
 import stencila from '@stencila/schema'
-import { dump } from '../../util/vfile'
 import { commonEncodeDefaults } from '../types'
 import { DMagicCodec } from './'
 
-const { decode, encode } = new DMagicCodec()
+const dMagicCodec = new DMagicCodec()
 
 test('decode', async () => {
-  expect(() => decode()).toThrow(
+  expect(() => dMagicCodec.decode()).toThrow(
     /Decoding of Demo Magic scripts is not supported/
   )
 })
 
 test('encode', async () => {
   expect(
-    await dump(await encode(node, { ...commonEncodeDefaults, isBundle: false }))
+    await dMagicCodec.dump(node, {
+      ...commonEncodeDefaults,
+      isBundle: false,
+      isStandalone: false,
+    })
   ).toEqual(bash)
-  expect(await encode(node)).toBeTruthy()
 })
 
 const node: stencila.Article = {
@@ -74,11 +76,15 @@ const node: stencila.Article = {
   ],
 }
 
-const bash = `h 1 "# Heading one"
+const bash = `#!/usr/bin/env bash
+. demo-magic.sh
+clear
 
-h 2 "## Heading two"
+h "Heading one"
 
-p "# A paragraph with **strong** and \\\`code\\\`"
+h "Heading two"
+
+pa "A paragraph with strong and code"
 
 pe "date"
 

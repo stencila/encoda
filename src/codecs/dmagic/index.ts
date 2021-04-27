@@ -79,13 +79,13 @@ async function encodeNode(node: stencila.Node): Promise<string> {
   if (node === null || typeof node !== 'object') return ''
 
   if (stencila.isA('Heading', node)) {
-    return `h "${await escapedText(node.content)}"\n\n`
+    return `h "${escapedText(node.content)}"\n\n`
   } else if (stencila.isA('Paragraph', node)) {
-    return `pa "${await escapedText(node.content)}"\n\n`
+    return `pa "${escapedText(node.content)}"\n\n`
   } else if (stencila.isA('CodeBlock', node)) {
     const { programmingLanguage, meta, text } = node
     if (
-      programmingLanguage === undefined &&
+      programmingLanguage !== undefined &&
       programmingLanguage !== 'bash' &&
       programmingLanguage !== 'sh'
     ) {
@@ -107,9 +107,8 @@ async function encodeNode(node: stencila.Node): Promise<string> {
 }
 
 /**
- * Generate escaped Markdown suitable for inserting into Bash
+ * Generate escaped text suitable for inserting into Bash
  */
-async function escapedText(content: stencila.InlineContent[]): Promise<string> {
-  const txt = content.map(TxtCodec.stringify).join('')
-  return txt.replace(/`/g, '\\`')
+function escapedText(content: stencila.InlineContent[]): string {
+  return content.map(TxtCodec.stringify).join('').replace(/`/g, '\\`')
 }
