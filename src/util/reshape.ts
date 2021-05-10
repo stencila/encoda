@@ -1,5 +1,9 @@
 import * as schema from '@stencila/schema'
 import { transformSync } from './transform'
+import {
+  hasContent,
+  isInlineContentArray,
+} from '../util/content/isContentArray'
 
 /**
  * Reshape a node by inferring its semantic structure.
@@ -402,9 +406,14 @@ async function reshapeCreativeWork(
     transformSync(
       work,
       (node): schema.Node => {
-        if (schema.isA('Paragraph', node)) {
-          node.content = decodeNumericCites(node.content, references)
-          node.content = groupCitesIntoGiteGroup(node.content)
+        if (
+          schema.isEntity(node) &&
+          hasContent(node) &&
+          isInlineContentArray(node.content)
+        ) {
+          const content = node.content
+          node.content = decodeNumericCites(content, references)
+          node.content = groupCitesIntoGiteGroup(content)
         }
         return node
       }
@@ -568,6 +577,10 @@ function decodeNumericCites(
 /**
  * Group `Cite` nodes into `CiteGroup` nodes
  *
+ * A single `Cite` surrounded in parentheses (or square brackets)
+ * will be made `Parenthetical` but will not be put into a single item
+ * `CiteGroup`.
+ *
  * @param para The paragraph to reshape
  */
 export function groupCitesIntoGiteGroup(
@@ -592,8 +605,8 @@ export function groupCitesIntoGiteGroup(
           if (schema.isA('CiteGroup', node) && group === undefined) {
             group = node
           } else if (schema.isA('Cite', node)) {
-            // Make sure that this cite does not have a narrative citationMode
-            // (parenthetical is the default)
+            // Make sure that this cite does not have a narrative `citationMode`
+            // (parenthetical is the default so set to `undefined`)
             node.citationMode = undefined
             // Collect into cite items
             items = [...items, node]

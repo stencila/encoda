@@ -3094,22 +3094,22 @@ content:
         content:
           - >-
             Overlap of conserved genes (this work) with core set proteins of Shi
-            and Falkowski [
+            and Falkowski 
           - type: Cite
             target: pone-0178565-ref007
             content:
               - 7
-          - '], structural genes of Martin et al. ['
+          - ', structural genes of Martin et al. '
           - type: Cite
             target: pone-0178565-ref035
             content:
               - 35
-          - '] and essential genes of Rubin et al. ['
+          - ' and essential genes of Rubin et al. '
           - type: Cite
             target: pone-0178565-ref018
             content:
               - 18
-          - '] shown for '
+          - ' shown for '
           - type: Emphasis
             content:
               - S
@@ -4851,17 +4851,17 @@ content:
               - type: Emphasis
                 content:
                   - Synechococcus elongatus
-              - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
+              - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. '
               - type: Cite
                 target: pone-0178565-ref018
                 content:
                   - '18'
-              - '] and database of core proteins by Shi and Falkowski ['
+              - ' and database of core proteins by Shi and Falkowski '
               - type: Cite
                 target: pone-0178565-ref007
                 content:
                   - '7'
-              - '].'
+              - .
           - type: Paragraph
             content:
               - >-
@@ -4891,22 +4891,22 @@ content:
               - >-
                 Conservation level of enzymes in key metabolic pathways based on
                 reduced dataset and compared with experimental results on gene
-                essentiality by Rubin et al. [
+                essentiality by Rubin et al. 
               - type: Cite
                 target: pone-0178565-ref018
                 content:
                   - '18'
-              - '], database of core proteins by Shi and Falkowski ['
+              - ', database of core proteins by Shi and Falkowski '
               - type: Cite
                 target: pone-0178565-ref007
                 content:
                   - '7'
-              - '] and structural genes by Martin et al. ['
+              - ' and structural genes by Martin et al. '
               - type: Cite
                 target: pone-0178565-ref035
                 content:
                   - '35'
-              - '].'
+              - .
           - type: Paragraph
             content:
               - (XLSX)

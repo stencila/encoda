@@ -280,50 +280,52 @@ content:
       - ' should not be affected.'
   - type: Paragraph
     content:
-      - 'Detect in paragraph numeric citations like '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref1
-      - ', '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref2
-      - ' (and '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref3
-      - ') including those referring to a non-existent reference e.g. '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref101
-      - ' but ignoring those in non-string inline content e.g. '
+      - >-
+        Detect numeric citations like [1], [2] (and [3]) including those
+        referring to a non-existent reference e.g. [101] and those within marked
+        inline content e.g. 
       - type: Emphasis
         content:
           - '[1]'
-      - ', '
+      - ' bu ignoring "plain text" as in a code fragment e.g. '
       - type: CodeFragment
         text: '[2]'
-      - '. Can also deal with groups of numeric citations e.g. '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref1
-          - type: Cite
-            target: ref2
-      - ' and '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref2
-          - type: Cite
-            target: ref3
-      - .
+      - . Can also deal with groups of numeric citations e.g. [1,2] and [2, 3].
   - type: Paragraph
     content:
       - >-
         Note the need for escaping the leading square bracket because we are in
         Markdown and they must not be confused with links.
+  - type: Paragraph
+    content:
+      - Also detects citations within tables e.g.
+  - type: Table
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Column 1
+          - type: TableCell
+            content:
+              - 'Column 2 '
+              - type: Cite
+                target: ref1
+              - ''
+        rowType: header
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - type: Cite
+                citationMode: Narrative
+                target: ref2
+          - type: TableCell
+            content:
+              - type: Cite
+                citationMode: Narrative
+                target: ref3
+              - ' '
+              - type: Cite
+                target: ref4
+              - ''

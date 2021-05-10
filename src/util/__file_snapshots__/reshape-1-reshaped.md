@@ -165,6 +165,12 @@ Remove unnecessary parentheses and brackets around singular parenthetical citati
 
 Group together citations surrounded by parentheses to avoid them being treated as narrative [@ref] and [@ref1; @ref2] and [@ref1; @ref2; @ref3]. Note that true narrative citations e.g. @ref should not be affected.
 
-Detect in paragraph numeric citations like [@ref1], [@ref2] (and [@ref3]) including those referring to a non-existent reference e.g. [@ref101] but ignoring those in non-string inline content e.g. _\[1]_, `[2]`. Can also deal with groups of numeric citations e.g. [@ref1; @ref2] and [@ref2; @ref3].
+Detect numeric citations like \[1], \[2] (and \[3]) including those referring to a non-existent reference e.g. \[101] and those within marked inline content e.g. _\[1]_ bu ignoring "plain text" as in a code fragment e.g. `[2]`. Can also deal with groups of numeric citations e.g. \[1,2] and \[2, 3].
 
 Note the need for escaping the leading square bracket because we are in Markdown and they must not be confused with links.
+
+Also detects citations within tables e.g.
+
+| Column 1 | Column 2 [@ref1] |
+| -------- | ---------------- |
+| @ref2    | @ref3 [@ref4]    |
