@@ -1,9 +1,6 @@
-# Azure Pipelines config
-#
-# For docs on multi-platform setup see:
-#   https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-multiplatform?view=azure-devops
-# For migration guide see:
-#   https://docs.microsoft.com/en-us/azure/devops/pipelines/migrate/from-travis?view=azure-devops
+variables:
+  - name: NODE_VERSION
+    value: '16.x'
 
 jobs:
   - job: test
@@ -20,8 +17,8 @@ jobs:
     steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: 14.x
-        displayName: 'Install Node.js 14.x'
+          versionSpec: $(NODE_VERSION)
+        displayName: Use Node.js $(NODE_VERSION)
 
       # Do not convert line endings on checkout, otherwise snapshot
       # files fail on Windows.
@@ -86,8 +83,8 @@ jobs:
     steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: 14.x
-        displayName: 'Install Node.js'
+          versionSpec: $(NODE_VERSION)
+        displayName: Use Node.js $(NODE_VERSION)
 
       - script: |
           set -e
