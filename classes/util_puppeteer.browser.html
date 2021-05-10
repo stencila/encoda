@@ -148,6 +148,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="util_puppeteer.browser.html#_process" class="tsd-kind-icon">_process</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="util_puppeteer.browser.html#_targetcreated" class="tsd-kind-icon">_target<wbr>Created</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="util_puppeteer.browser.html#_targetdestroyed" class="tsd-kind-icon">_target<wbr>Destroyed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="util_puppeteer.browser.html#_targetfiltercallback" class="tsd-kind-icon">_target<wbr>Filter<wbr>Callback</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="util_puppeteer.browser.html#_targetinfochanged" class="tsd-kind-icon">_target<wbr>Info<wbr>Changed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="util_puppeteer.browser.html#_targets" class="tsd-kind-icon">_targets</a></li>
 							</ul>
@@ -192,14 +193,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Browser<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Connection</span>, contextIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, ignoreHTTPSErrors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, defaultViewport<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Viewport</span>, process<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ChildProcess</span>, closeCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">BrowserCloseCallback</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Browser<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Connection</span>, contextIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, ignoreHTTPSErrors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, defaultViewport<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Viewport</span>, process<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ChildProcess</span>, closeCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">BrowserCloseCallback</span>, targetFilterCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TargetFilterCallback</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides EventEmitter.constructor</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:183</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:184</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -227,6 +228,9 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> closeCallback: <span class="tsd-signature-type">BrowserCloseCallback</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> targetFilterCallback: <span class="tsd-signature-type">TargetFilterCallback</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a></h4>
@@ -262,7 +266,7 @@
 					<div class="tsd-signature tsd-kind-icon">_contexts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:178</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:179</li>
 						</ul>
 					</aside>
 				</section>
@@ -272,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">_default<wbr>Context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:177</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:178</li>
 						</ul>
 					</aside>
 				</section>
@@ -292,7 +296,7 @@
 					<div class="tsd-signature tsd-kind-icon">_get<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:320</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:321</li>
 						</ul>
 					</aside>
 				</section>
@@ -322,7 +326,7 @@
 					<div class="tsd-signature tsd-kind-icon">_target<wbr>Created<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:225</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:226</li>
 						</ul>
 					</aside>
 				</section>
@@ -332,7 +336,17 @@
 					<div class="tsd-signature tsd-kind-icon">_target<wbr>Destroyed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:226</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:227</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+					<a name="_targetfiltercallback" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _target<wbr>Filter<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">_target<wbr>Filter<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:177</li>
 						</ul>
 					</aside>
 				</section>
@@ -342,7 +356,7 @@
 					<div class="tsd-signature tsd-kind-icon">_target<wbr>Info<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:227</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:228</li>
 						</ul>
 					</aside>
 				</section>
@@ -352,7 +366,7 @@
 					<div class="tsd-signature tsd-kind-icon">_targets<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Target</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:183</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:184</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -376,7 +390,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:254</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:255</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -406,7 +420,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:224</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:225</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -437,7 +451,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1680</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1685</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -473,7 +487,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:215</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:216</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -496,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:309</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:310</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -519,7 +533,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:210</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:211</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -556,7 +570,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:219</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:220</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -578,7 +592,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:315</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:316</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -603,7 +617,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.emit</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1688</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1693</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -641,7 +655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:319</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:320</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -664,7 +678,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1702</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1707</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -696,7 +710,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:249</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:250</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +733,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.off</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1670</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1675</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -758,7 +772,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.on</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1663</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1668</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -797,7 +811,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.once</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1695</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1700</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -835,7 +849,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:288</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:289</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -864,7 +878,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:192</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:193</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -888,7 +902,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1709</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1714</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -922,7 +936,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1675</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1680</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -958,7 +972,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:263</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:264</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -980,7 +994,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:259</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:260</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1003,7 +1017,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:304</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:305</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1026,7 +1040,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:299</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:300</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1055,7 +1069,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:278</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:279</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1116,7 +1130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:245</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:246</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1143,7 +1157,7 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Connection</span>, contextIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, ignoreHTTPSErrors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, defaultViewport<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Viewport</span>, process<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ChildProcess</span>, closeCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">BrowserCloseCallback</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Connection</span>, contextIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, ignoreHTTPSErrors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, defaultViewport<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Viewport</span>, process<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ChildProcess</span>, closeCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">BrowserCloseCallback</span>, targetFilterCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TargetFilterCallback</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1177,6 +1191,9 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> closeCallback: <span class="tsd-signature-type">BrowserCloseCallback</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> targetFilterCallback: <span class="tsd-signature-type">TargetFilterCallback</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="util_puppeteer.browser.html" class="tsd-signature-type" data-tsd-kind="Class">Browser</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1235,6 +1252,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="util_puppeteer.browser.html#_targetdestroyed" class="tsd-kind-icon">_target<wbr>Destroyed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="util_puppeteer.browser.html#_targetfiltercallback" class="tsd-kind-icon">_target<wbr>Filter<wbr>Callback</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="util_puppeteer.browser.html#_targetinfochanged" class="tsd-kind-icon">_target<wbr>Info<wbr>Changed</a>
