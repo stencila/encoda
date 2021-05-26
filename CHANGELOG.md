@@ -1,3 +1,11 @@
+## [0.116.1](https://github.com/stencila/encoda/compare/v0.116.0...v0.116.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency async-lock to ^1.3.0 ([dea118f](https://github.com/stencila/encoda/commit/dea118fb184eb149a9817a377264d932771e6aaa))
+* **Deps:** Update various dependencies ([ab1f903](https://github.com/stencila/encoda/commit/ab1f903d40da01c5d311554a598bf3dc7eaf4d3f))
+
 # [0.116.0](https://github.com/stencila/encoda/compare/v0.115.4...v0.116.0) (2021-04-27)
 
 
