@@ -5,7 +5,7 @@ import { HTMLCodec } from '../../codecs/html'
 /**
  * See https://github.com/stencila/encoda/issues/700
  */
-describe('issue 700: Handle inline elements in Article description', async () => {
+describe('issue 700: Handle inline elements in Article description', () => {
   const doc = async (article: schema.Article) => {
     const innerHTML = await new HTMLCodec().dump(article)
     return new JSDOM(innerHTML).window.document.documentElement
