@@ -2722,7 +2722,7 @@ content:
                 The total (which is also the direct effect) of seizures on death
                 can be estimated with adjustments required for AKI, acidosis,
                 anaemia, coma, hypoglycaemia, pulmonary oedema, and shock.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -2948,7 +2948,7 @@ content:
                 content:
                   - '28'
               - '].'
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -3017,7 +3017,7 @@ content:
           - type: TableCell
             content:
               - References
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3358,7 +3358,7 @@ content:
               - >-
                 Missing parasitaemia values were imputed from age on the log
                 scale with Gaussian error.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -3521,7 +3521,7 @@ content:
           - type: Paragraph
             content:
               - country
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'This model fit estimates the set of parameters '

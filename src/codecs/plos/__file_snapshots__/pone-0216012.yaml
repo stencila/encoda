@@ -4321,7 +4321,7 @@ content:
               - >-
                 cerebral tissue and interstitial fluid (1 compartment: brain
                 (B));
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - in each of the two eyes
@@ -4362,7 +4362,7 @@ content:
                 content:
                   - ah
               - ') (1 compartment: anterior and posterior chamber);'
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - and in the eye-brain coupling
@@ -4378,7 +4378,7 @@ content:
                 bridging intracranial and extracranial regions, also including
                 the subarachnoid space in the optic nerve posterior to the
                 lamina cribrosa).
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -4737,7 +4737,7 @@ content:
               - ' C'
               - urrent
               - Laws
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -5303,7 +5303,7 @@ content:
               - onstitutive
               - ' R'
               - elations
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -8387,7 +8387,7 @@ content:
             content:
               - S
               - ource
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -8757,7 +8757,7 @@ content:
                 arrow) and by the CSFp in the subarachnoid space in the optic
                 nerve, here assumed to be equal to the extraventricular CSFp
                 (grey arrow).
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -9012,7 +9012,7 @@ content:
               - imulation
               - ' C'
               - onditions
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -9615,7 +9615,7 @@ content:
               - odel
               - ' P'
               - arameters
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -11616,7 +11616,7 @@ content:
             content:
               - B
               - aseline values
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -11639,7 +11639,7 @@ content:
                 content:
                   - −1
               - )
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -13146,7 +13146,7 @@ content:
           - type: Paragraph
             content:
               - blue for ciliary body circulation.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'Thus, for example, black vertical lines in '

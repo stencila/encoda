@@ -809,7 +809,7 @@ describe('Table Nodes', () => {
   const tableNodes = table({
     rows: [
       tableRow({
-        rowType: 'header',
+        rowType: 'Header',
         cells: [tableCell({ content: ['A'] }), tableCell({ content: ['B'] })],
       }),
       tableRow({
@@ -824,7 +824,7 @@ describe('Table Nodes', () => {
   })
 
   describe('encode', () => {
-    it('encodes "rowType: header" as <th> elements', () => {
+    it('encodes "rowType: Header" as <th> elements', () => {
       expect(getAllByRole(tableHTML, 'columnheader')).toHaveLength(2)
     })
 
@@ -838,7 +838,7 @@ describe('Table Nodes', () => {
       expect(getAllByRole(thead!, 'columnheader')).toHaveLength(2)
     })
 
-    it('does not create a <thead> element if no "rowType: header" rows are present', async () => {
+    it('does not create a <thead> element if no "rowType: Header" rows are present', async () => {
       const headlessTable = doc(
         await e(
           table({
@@ -867,7 +867,7 @@ describe('Table Nodes', () => {
   })
 
   describe('decode', () => {
-    it('decodes <tr> elements inside a <thead> as "rowType: header"', async () => {
+    it('decodes <tr> elements inside a <thead> as "rowType: Header"', async () => {
       const tableWithHead = `
         <table>
           <thead>

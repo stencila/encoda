@@ -255,7 +255,7 @@
           "cells": [
             {
               "type": "TableCell",
-              "cellType": "header",
+              "cellType": "Header",
               "content": [
                 {
                   "type": "Paragraph",
@@ -270,7 +270,7 @@
             },
             {
               "type": "TableCell",
-              "cellType": "header",
+              "cellType": "Header",
               "content": [
                 {
                   "type": "Paragraph",
@@ -284,7 +284,7 @@
               ]
             }
           ],
-          "rowType": "header"
+          "rowType": "Header"
         },
         {
           "type": "TableRow",

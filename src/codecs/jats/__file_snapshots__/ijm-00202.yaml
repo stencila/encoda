@@ -1300,7 +1300,7 @@ content:
             colspan: 4
             content:
               - Latin american average
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -1327,7 +1327,7 @@ content:
           - type: TableCell
             content:
               - W/M
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2278,7 +2278,7 @@ content:
           - type: TableCell
             content:
               - Number of cases in the sample
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3104,7 +3104,7 @@ content:
           - type: TableCell
             content:
               - Model 3
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3690,7 +3690,7 @@ content:
           - type: TableCell
             content:
               - Model 3
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -4146,7 +4146,7 @@ content:
           - type: TableCell
             content:
               - Model 3
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell

@@ -979,7 +979,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
@@ -987,7 +987,7 @@ content:
                     content:
                       - Date
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
@@ -995,14 +995,14 @@ content:
                     content:
                       - Version
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - type: Strong
                     content:
                       - Remarks
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -1341,7 +1341,7 @@ content:
               - >-
                 time period for vertically pointing instrument (azimuth and
                 elevation both constant)
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'The following '
@@ -1383,7 +1383,7 @@ content:
           - type: Paragraph
             content:
               - target angle(s)
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'The following would '
@@ -1426,7 +1426,7 @@ content:
           - type: Paragraph
             content:
               - data quality control procedures
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'For a given '
@@ -1846,7 +1846,7 @@ content:
               style: bullet_1
             content:
               - sun scanning in either PPI or RHI mode.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'For each of these modes a '
@@ -1893,7 +1893,7 @@ content:
                 aircraft tail-type radars: a sweep starts at a rotation angle of
                 0 (antenna pointing vertically upwards) and ends 360 degrees
                 later.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -1961,7 +1961,7 @@ content:
               style: bullet_1
             content:
               - altitude
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - See sections 4.3 and 5.4 for details on these variables.
@@ -2007,7 +2007,7 @@ content:
               style: bullet_1
             content:
               - tilt
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - See section 5.4 for details on these variables.
@@ -2315,24 +2315,24 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Coordinate variable
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Standard name
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Auxiliary reference
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2389,24 +2389,24 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Attribute
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Type
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Description
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2448,7 +2448,7 @@ content:
           - type: Paragraph
             content:
               - 'The following axis attribute types:'
-    order: ascending
+    order: Ascending
   - type: List
     items:
       - type: ListItem
@@ -2472,7 +2472,7 @@ content:
               style: bullet_1
             content:
               - axis = "radial_range_coordinate";
-    order: unordered
+    order: Unordered
   - type: List
     items:
       - type: ListItem
@@ -2482,7 +2482,7 @@ content:
               - >-
                 For CfRadial to follow CF properly, support for the following
                 must be added to the supported units:
-    order: ascending
+    order: Ascending
   - type: List
     items:
       - type: ListItem
@@ -2506,7 +2506,7 @@ content:
               style: bullet_1
             content:
               - dBZ (radar reflectivity in log units)
-    order: unordered
+    order: Unordered
   - type: List
     items:
       - type: ListItem
@@ -2514,7 +2514,7 @@ content:
           - type: Paragraph
             content:
               - Additional standard names – see section 8.
-    order: ascending
+    order: Ascending
   - type: Paragraph
     content:
       - Given the above extensions, CfRadial2 files will be CF2 compliant.
@@ -2532,7 +2532,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
@@ -2540,14 +2540,14 @@ content:
                     content:
                       - Units string in NetCDF file
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - type: Strong
                     content:
                       - Abbreviation in tables
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -9458,7 +9458,7 @@ content:
                 content:
                   - vx
               - ''' – vertical cross-polar (h transmit, v receive)'
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - For single polarization radars, the '
@@ -12497,7 +12497,7 @@ content:
                 content:
                   - air
               - )
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -12586,7 +12586,7 @@ content:
                 content:
                   - h
               - ' : leveled, platform heading-relative coordinates, +Y points heading, +X points 90° clockwise from heading, and Z points up (local zenith).'
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'The goal here is to derive transformations from '
@@ -12880,7 +12880,7 @@ content:
       - type: TableRow
         cells:
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 meta:
@@ -12888,7 +12888,7 @@ content:
                 content:
                   - Sensor Type
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 meta:
@@ -12896,7 +12896,7 @@ content:
                 content:
                   - Type X
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 meta:
@@ -12904,20 +12904,20 @@ content:
                 content:
                   - Type Y
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 content:
                   - Type Y-prime
           - type: TableCell
-            cellType: header
+            cellType: Header
             content:
               - type: Paragraph
                 meta:
                   style: bullet_1
                 content:
                   - Type Z
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -13201,7 +13201,7 @@ content:
               - type: Strong
                 content:
                   - X
-    order: unordered
+    order: Unordered
   - type: Heading
     depth: 3
     content:
@@ -13296,7 +13296,7 @@ content:
                 content:
                   - a
               - ) and negative below it.
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - The transformation to Χ
@@ -13384,7 +13384,7 @@ content:
                 content:
                   - a
               - .
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - type: Emphasis
@@ -13427,7 +13427,7 @@ content:
                   - type: Strong
                     content:
                       - Type Y-prime sensors
-    order: ascending
+    order: Ascending
   - type: Paragraph
     content:
       - 'The characteristics are:'
@@ -13591,7 +13591,7 @@ content:
                 content:
                   - a
               - .
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - The transformation to Χ
@@ -13667,7 +13667,7 @@ content:
               - type: Emphasis
                 content:
                   - H
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - 'The transformation matrix for removing the roll component is:'

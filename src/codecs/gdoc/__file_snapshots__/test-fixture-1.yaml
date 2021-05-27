@@ -26,7 +26,7 @@ content:
           - type: Paragraph
             content:
               - One of one
-    order: unordered
+    order: Unordered
   - type: List
     items:
       - type: ListItem
@@ -39,7 +39,7 @@ content:
           - type: Paragraph
             content:
               - Two of two
-    order: unordered
+    order: Unordered
   - type: List
     items:
       - type: ListItem
@@ -57,7 +57,7 @@ content:
           - type: Paragraph
             content:
               - Three
-    order: unordered
+    order: Unordered
   - type: Heading
     depth: 2
     content:
@@ -79,7 +79,7 @@ content:
           - type: Paragraph
             content:
               - Third
-    order: ascending
+    order: Ascending
   - type: Heading
     depth: 2
     content:
@@ -110,7 +110,7 @@ content:
                           - type: Paragraph
                             content:
                               - Cox’s Orange
-                    order: ascending
+                    order: Ascending
               - type: ListItem
                 content:
                   - type: Paragraph
@@ -121,7 +121,7 @@ content:
                   - type: Paragraph
                     content:
                       - Banana
-            order: unordered
+            order: Unordered
       - type: ListItem
         content:
           - type: Paragraph
@@ -146,14 +146,14 @@ content:
                           - type: Paragraph
                             content:
                               - Unsalted
-                    order: ascending
+                    order: Ascending
               - type: ListItem
                 content:
                   - type: Paragraph
                     content:
                       - Cheese
-            order: unordered
-    order: ascending
+            order: Unordered
+    order: Ascending
   - type: Heading
     depth: 1
     content:

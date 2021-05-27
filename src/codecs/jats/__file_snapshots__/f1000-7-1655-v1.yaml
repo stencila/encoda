@@ -429,7 +429,7 @@ content:
           - type: Paragraph
             content:
               - Editor decision letters
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -538,7 +538,7 @@ content:
                 Peer review materials are full-text XML “articles” or
                 “commentaries” in their own right that link bidirectionally to
                 the main article.
-    order: unordered
+    order: Unordered
   - type: Heading
     id: ''
     depth: 1
@@ -622,7 +622,7 @@ content:
                   - type: Paragraph
                     content:
                       - Arbitration processes for conflicting reviews
-            order: unordered
+            order: Unordered
       - type: ListItem
         content:
           - type: Paragraph
@@ -643,7 +643,7 @@ content:
           - type: Paragraph
             content:
               - Arbitration processes for conflicting reviews
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -748,7 +748,7 @@ content:
           - type: Paragraph
             content:
               - enhanced-version-of-record
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -821,7 +821,7 @@ content:
                 Letters MUST link to the version of the article they are passing
                 judgment on; and Author Replies MUST link to each
                 Review/Decision Letter it is addressing)
-    order: unordered
+    order: Unordered
   - type: Heading
     id: ''
     depth: 2
@@ -877,7 +877,7 @@ content:
           - type: TableCell
             content:
               - Corresponding term in this document
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -984,7 +984,7 @@ content:
           - type: Paragraph
             content:
               - For Author Reply, use @contrib-type=“author”
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - >-
@@ -1109,7 +1109,7 @@ content:
                 “versioned”. If the reviewer(s) write a review on an updated
                 version of the manuscript, the peer review is a new published
                 object.
-    order: unordered
+    order: Unordered
   - type: Heading
     id: ''
     depth: 1

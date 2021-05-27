@@ -400,21 +400,21 @@ const kitchenSink: testCase = {
         rows: [
           {
             type: 'TableRow',
-            rowType: 'header',
+            rowType: 'Header',
             cells: [
               {
                 content: [{ type: 'Paragraph', content: ['A'] }],
-                cellType: 'header',
+                cellType: 'Header',
                 type: 'TableCell',
               },
               {
                 content: [{ type: 'Paragraph', content: ['B'] }],
-                cellType: 'header',
+                cellType: 'Header',
                 type: 'TableCell',
               },
               {
                 content: [{ type: 'Paragraph', content: ['C'] }],
-                cellType: 'header',
+                cellType: 'Header',
                 type: 'TableCell',
               },
             ],

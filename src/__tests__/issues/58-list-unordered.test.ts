@@ -14,7 +14,7 @@ test('issue 58: decoding GDoc incorrectly generates ordered list instead of unor
 
   const list = article.content?.[3] as schema.List
   expect(schema.isA('List', list)).toBe(true)
-  expect(list.order).toBe('unordered')
+  expect(list.order).toBe('Unordered')
 
   const md = await mdCodec.dump(article)
   expect(md).toBe(`---

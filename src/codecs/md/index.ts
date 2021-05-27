@@ -595,7 +595,7 @@ function encodeNode(node: stencila.Node): UNIST.Node[] {
     case 'Collection':
       return encodeCollection(node as stencila.Collection)
 
-    case 'Text':
+    case 'String':
       return [encodeString(node as string)]
     case 'Null':
       return [encodeNull()]
@@ -824,7 +824,7 @@ function encodeParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph[] {
   if (
     content.length === 0 ||
     (content.length === 1 &&
-      nodeType(content[0]) === 'Text' &&
+      nodeType(content[0]) === 'String' &&
       (content[0] as string).trim().length === 0)
   ) {
     return []
@@ -1103,7 +1103,7 @@ function encodeFigure(figure: stencila.Figure): Extension {
 function decodeList(list: MDAST.List, context: DecodeContext): stencila.List {
   return {
     type: 'List',
-    order: list.ordered ? 'ascending' : 'unordered',
+    order: list.ordered ? 'Ascending' : 'Unordered',
     items: list.children
       .map((child) => decodeNode(child, context))
       .filter(isListItem),
@@ -1116,7 +1116,7 @@ function decodeList(list: MDAST.List, context: DecodeContext): stencila.List {
 function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
-    ordered: list.order === 'ascending',
+    ordered: list.order === 'Ascending',
     children: list.items.filter(isListItem).map(encodeListItem),
   }
 }
@@ -1170,7 +1170,7 @@ function decodeTable(
   context: DecodeContext
 ): stencila.Table {
   const header = stencila.tableRow({
-    rowType: 'header',
+    rowType: 'Header',
     cells: table.children[0].children.map((cell) =>
       stencila.tableCell({
         content: cell.children.map((child) =>

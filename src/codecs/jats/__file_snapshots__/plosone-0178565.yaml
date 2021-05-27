@@ -2404,7 +2404,7 @@ content:
                 content:
                   - '2'
               - ' = Profile of gene 2.'
-    order: unordered
+    order: Unordered
   - type: Heading
     id: sec006
     depth: 1
@@ -2692,7 +2692,7 @@ content:
           - type: Paragraph
             content:
               - Unique; with a GCI score of < 10%.
-    order: ascending
+    order: Ascending
   - type: Figure
     id: pone-0178565-g004
     caption:
@@ -2772,7 +2772,7 @@ content:
           - type: TableCell
             content:
               - Pathway
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3194,7 +3194,7 @@ content:
             colspan: 6
             content:
               - Conservation Categories
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3211,7 +3211,7 @@ content:
             colspan: 2
             content:
               - Unique (less than 10%)
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3234,7 +3234,7 @@ content:
           - type: TableCell
             content:
               - Unannotated
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3410,7 +3410,7 @@ content:
           - type: TableCell
             content:
               - Unique
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3644,7 +3644,7 @@ content:
                   - type: Superscript
                     content:
                       - d
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -4564,7 +4564,7 @@ content:
           - type: TableCell
             content:
               - GCI
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell

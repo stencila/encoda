@@ -59,7 +59,7 @@ test('issue 95: extra bullet in blockquote', async () => {
         // This seems to be because Pandoc classifies a paragraph as a `BlockQuote`
         // based on it's paragraph style "Block Text". This would be difficult to fix.
         type: 'List',
-        order: 'unordered',
+        order: 'Unordered',
         items: [
           {
             type: 'ListItem',

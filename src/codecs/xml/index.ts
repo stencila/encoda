@@ -159,7 +159,7 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
   if (node === null) {
     return xml.elem(type, { key })
   }
-  if (type === 'Boolean' || type === 'Number' || type === 'Text') {
+  if (type === 'Boolean' || type === 'Number' || type === 'String') {
     return xml.elem(type, { key }, node.toString())
   }
   if (type === 'Array') {

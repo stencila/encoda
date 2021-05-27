@@ -1445,7 +1445,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
     case 'Array':
     case 'Object':
       return [{ type: 'text', text: JSON.stringify(node) }]
-    case 'Text':
+    case 'String':
       return [{ type: 'text', text: node as string }]
   }
 
@@ -1822,7 +1822,7 @@ function encodeMark(
 function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const type = attr(elem, 'list-type')
   const order =
-    type === 'bullet' || type === 'simple' ? 'unordered' : 'ascending'
+    type === 'bullet' || type === 'simple' ? 'Unordered' : 'Ascending'
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
       return stencila.listItem({
@@ -1838,7 +1838,7 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
  */
 function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
   const attrs = {
-    'list-type': node.order === 'unordered' ? 'bullet' : 'order',
+    'list-type': node.order === 'Unordered' ? 'bullet' : 'order',
   }
   const items = node.items.map((item) => {
     const { content = [] } = item
@@ -1868,7 +1868,7 @@ function decodeTableWrap(
     theadTrs.length > 0
       ? theadTrs.map((row) => {
           return stencila.tableRow({
-            rowType: 'header',
+            rowType: 'Header',
             cells: all(row, 'th').map((cell) => {
               const cellAttr = cell?.attributes
 
@@ -1962,7 +1962,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
   const { id, label, caption, rows } = table
 
   const headerRows = takeLeftWhile(
-    (row: stencila.TableRow) => row.rowType === 'header'
+    (row: stencila.TableRow) => row.rowType === 'Header'
   )(rows)
 
   const bodyRows = dropLeft(headerRows.length)(rows)

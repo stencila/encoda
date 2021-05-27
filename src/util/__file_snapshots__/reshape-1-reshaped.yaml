@@ -120,7 +120,7 @@ content:
           - type: TableCell
             content:
               - B
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -147,7 +147,7 @@ content:
           - type: TableCell
             content:
               - B
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -173,7 +173,7 @@ content:
           - type: TableCell
             content:
               - B
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -312,7 +312,7 @@ content:
               - type: Cite
                 target: ref1
               - ''
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell

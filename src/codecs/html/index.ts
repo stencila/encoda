@@ -667,7 +667,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): Node {
       return encodeBoolean(node as boolean)
     case 'Number':
       return encodeNumber(node as number)
-    case 'Text':
+    case 'String':
       return encodeString(node as string)
     case 'Array':
       return encodeArray(node as unknown[])
@@ -1122,7 +1122,7 @@ function encodeClassificatoryProperties(
               // An about item can be any `Thing` but will usually be a `DefinedTerm` (which is
               // also a thing). In any case we display it's `name` property encoded with the correct
               // Microdata.
-              const { name } = aboutItem
+              const { name } = aboutItem as stencila.Thing
               return name !== undefined && name.trim() !== ''
                 ? h(
                     'li',
@@ -2082,7 +2082,7 @@ const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
  */
 const encodeCodeOutput = (node: stencila.Node, state: EncodeState): Node => {
   switch (nodeType(node)) {
-    case 'Text':
+    case 'String':
       return h('pre', h('output', node as string))
     default:
       return encodeNode(node, state)
@@ -2093,7 +2093,7 @@ const encodeCodeOutput = (node: stencila.Node, state: EncodeState): Node => {
  * Decode a `<ul>` or `<ol>` element to a `stencila.List`.
  */
 function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
-  const order = list.tagName === 'UL' ? 'unordered' : 'ascending'
+  const order = list.tagName === 'UL' ? 'Unordered' : 'Ascending'
   return stencila.list({
     order,
     items: [...list.querySelectorAll('li')].map(decodeListItem),
@@ -2112,7 +2112,7 @@ function encodeList(
   state: EncodeState
 ): HTMLUListElement | HTMLOListElement {
   return h(
-    list.order === 'unordered' ? 'ul' : 'ol',
+    list.order === 'Unordered' ? 'ul' : 'ol',
     { attrs: microdata(list) },
     list.items.map((item, index) =>
       encodeNode(
@@ -2185,7 +2185,7 @@ function encodeTable(
   const { id, label, caption, rows } = table
 
   const headerRows = takeLeftWhile(
-    (row: stencila.TableRow) => row.rowType === 'header'
+    (row: stencila.TableRow) => row.rowType === 'Header'
   )(rows)
 
   const bodyRows: stencila.TableRow[] = dropLeft(headerRows.length)(rows)
@@ -2227,7 +2227,7 @@ function encodeTable(
 function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
   const parent = row.parentElement?.nodeName.toLowerCase()
   return stencila.tableRow({
-    rowType: parent === 'thead' ? 'header' : undefined,
+    rowType: parent === 'thead' ? 'Header' : undefined,
     cells: Array.from(
       row.querySelectorAll<HTMLTableHeaderCellElement | HTMLTableCellElement>(
         'th, td'
@@ -2243,7 +2243,7 @@ function encodeTableRow(
   row: stencila.TableRow,
   state: EncodeState
 ): HTMLTableRowElement {
-  const cellTag = row.rowType === 'header' ? 'th' : 'td'
+  const cellTag = row.rowType === 'Header' ? 'th' : 'td'
   return h(
     'tr',
     { attrs: microdata(row) },

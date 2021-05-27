@@ -487,7 +487,7 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue | undefined {
         t: 'MetaString',
         c: Number.isInteger(node as number) ? `${node}` : `!!number ${node}`,
       }
-    case 'Text':
+    case 'String':
       return {
         t: 'MetaString',
         c: node as string,
@@ -759,7 +759,7 @@ async function encodeCodeChunk(
 function decodeList(
   node: Pandoc.BulletList | Pandoc.OrderedList
 ): stencila.List {
-  const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
+  const order = node.t === 'BulletList' ? 'Unordered' : 'Ascending'
   const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
   return {
     type: 'List',
@@ -786,7 +786,7 @@ function encodeList(
     const { content = [] } = item
     return content.map(ensureBlockContent).map(encodeBlock)
   })
-  if (node.order === 'ascending') {
+  if (node.order === 'Ascending') {
     return { t: 'OrderedList', c: [listAttrs, blocks] }
   } else {
     return { t: 'BulletList', c: blocks }
@@ -812,11 +812,11 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
     ? []
     : [
         stencila.tableRow({
-          rowType: 'header',
+          rowType: 'Header',
           cells: header.map(
             (cell: stencila.BlockContent[]): stencila.TableCell =>
               stencila.tableCell({
-                cellType: 'header',
+                cellType: 'Header',
                 content: cell,
               })
           ),
@@ -1129,7 +1129,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'Array':
     case 'Object':
       return encodePrimitive(node)
-    case 'Text':
+    case 'String':
       return encodeString(node as string)
     case 'Emphasis':
       return encodeEmph(node as stencila.Emphasis)

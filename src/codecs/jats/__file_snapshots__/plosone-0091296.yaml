@@ -2425,7 +2425,7 @@ content:
     rows:
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2736,7 +2736,7 @@ content:
     rows:
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2948,7 +2948,7 @@ content:
     rows:
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3168,7 +3168,7 @@ content:
     rows:
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -4073,10 +4073,10 @@ content:
     rows:
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells: []
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell

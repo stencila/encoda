@@ -58,7 +58,7 @@ export const node = {
             },
             {
               type: 'List',
-              order: 'ascending',
+              order: 'Ascending',
               items: [
                 {
                   type: 'ListItem',
@@ -69,7 +69,7 @@ export const node = {
                     },
                     {
                       type: 'List',
-                      order: 'unordered',
+                      order: 'Unordered',
                       items: [
                         {
                           type: 'ListItem',
@@ -93,7 +93,7 @@ export const node = {
                     },
                     {
                       type: 'List',
-                      order: 'unordered',
+                      order: 'Unordered',
                       items: [
                         {
                           type: 'ListItem',

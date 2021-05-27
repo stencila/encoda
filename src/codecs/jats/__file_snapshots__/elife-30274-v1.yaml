@@ -3481,7 +3481,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3886,7 +3886,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -4322,7 +4322,7 @@ content:
           - type: TableCell
             content:
               - Sample size (n)
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell

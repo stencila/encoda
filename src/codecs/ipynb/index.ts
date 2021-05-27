@@ -832,7 +832,7 @@ async function encodeMimeBundle(
 ): Promise<nbformat.MimeBundle> {
   const [mediaType, data] = await (async (): Promise<[string, string]> => {
     switch (nodeType(node)) {
-      case 'Text':
+      case 'String':
         return ['text/plain', await dump(node, 'text')]
       case 'ImageObject': {
         const image = node as schema.ImageObject

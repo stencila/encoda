@@ -2572,7 +2572,7 @@ content:
             colspan: 3
             content:
               - Percent contribution
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2590,7 +2590,7 @@ content:
               - type: Emphasis
                 content:
                   - Ziziphus spinachristi
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3276,7 +3276,7 @@ content:
                 content:
                   - Ziziphus spinachristi
               - ' in this study).'
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - |-

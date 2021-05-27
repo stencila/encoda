@@ -5,8 +5,8 @@
         <Boolean>false</Boolean>
         <Number>42</Number>
         <Number>3.14</Number>
-        <Text>a string</Text>
-        <Text>with special characters &lt; &gt; &amp; "</Text>
+        <String>a string</String>
+        <String>with special characters &lt; &gt; &amp; "</String>
         <Array/>
         <Array>
             <Number>1</Number>
@@ -21,11 +21,11 @@
         </Object>
         <Person>
             <Array key="givenNames">
-                <Text>Joe</Text>
-                <Text>Jake</Text>
+                <String>Joe</String>
+                <String>Jake</String>
             </Array>
             <Array key="familyNames">
-                <Text>Jones</Text>
+                <String>Jones</String>
             </Array>
         </Person>
         <Article>
@@ -33,8 +33,8 @@
                 <Paragraph>
                     <Array key="content">
                         <CodeExpression>
-                            <Text key="programmingLanguage">python</Text>
-                            <Text key="text">6 * 7</Text>
+                            <String key="programmingLanguage">python</String>
+                            <String key="text">6 * 7</String>
                         </CodeExpression>
                     </Array>
                 </Paragraph>

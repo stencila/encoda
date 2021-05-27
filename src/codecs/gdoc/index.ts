@@ -332,8 +332,8 @@ function decodeListItem(
   const order =
     typeof nestingLevel.glyphType === 'undefined' ||
     nestingLevel.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
-      ? 'unordered'
-      : 'ascending'
+      ? 'Unordered'
+      : 'Ascending'
   const newList = stencila.list({ items: [listItem], order })
 
   if (listLevel === 0) {

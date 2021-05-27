@@ -1476,7 +1476,7 @@ content:
                     target: '#FN1'
                     content:
                       - '1'
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -2192,7 +2192,7 @@ content:
                 target: ref-2
                 content:
                   - '2'
-        rowType: header
+        rowType: Header
       - type: TableRow
         cells:
           - type: TableCell
@@ -3542,7 +3542,7 @@ content:
               - >-
                 , missing data/empty cells correspond to values outside
                 calibration (CBD) or not measured)
-    order: unordered
+    order: Unordered
   - type: Paragraph
     content:
       - |-

@@ -11,7 +11,7 @@ test('checked list items in Markdown are decoded and redndered to HTML', async (
   `
 
   const list = schema.list({
-    order: 'unordered',
+    order: 'Unordered',
     items: [
       schema.listItem({
         isChecked: true,

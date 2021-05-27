@@ -174,7 +174,7 @@ export default article({
     },
     {
       type: 'List',
-      order: 'unordered',
+      order: 'Unordered',
       items: [
         { type: 'ListItem', content: ['One'] },
         { type: 'ListItem', content: ['Two'] },
@@ -183,7 +183,7 @@ export default article({
     },
     {
       type: 'List',
-      order: 'ascending',
+      order: 'Ascending',
       items: [
         { type: 'ListItem', content: ['First'] },
         { type: 'ListItem', content: ['Second'] },
