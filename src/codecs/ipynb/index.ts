@@ -25,14 +25,12 @@ import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json'
 import betterAjvErrors from 'better-ajv-errors'
 import { dump, load } from '../..'
 import { logWarnLoss } from '../../log'
-import { coerce } from '../../util/coerce'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import {
   ensureBlockContentArray,
   ensureBlockContentArrayOrUndefined,
 } from '../../util/content/ensureBlockContentArray'
 import * as dataUri from '../../util/dataUri'
-import { getSchema } from '../../util/schemas'
 import * as vfile from '../../util/vfile'
 import { PlotlyCodec } from '../plotly'
 import { TxtCodec } from '../txt'
@@ -293,30 +291,44 @@ async function decodeMetadata(
   // Decode `authors` array
   const decodedAuthors =
     authors !== undefined
-      ? await Promise.all(
-          authors.map((author) => {
-            if (schema.isA('Person', author)) {
-              // When encoding `name` is calculated from `givenNames`
-              // and `familyNames` to fit the IPYNB schema. Remove
-              // it if possible to avoid redundancy and have full
-              // reversibility of encoding / decoding
-              const { name, ...rest } = author as schema.Person
-              if ('givenNames' in rest || 'familyNames' in rest) return rest
-              else return author
-            }
-            if (schema.isA('Organization', author)) {
-              return author
-            }
-            return typeof author === 'string'
-              ? (load(author, 'person') as Promise<schema.Person>)
-              : coerce(author, 'Person')
-          })
-        )
+      ? ((
+          await Promise.all(
+            authors.map(
+              async (
+                author
+              ): Promise<schema.Person | schema.Organization | undefined> => {
+                if (schema.isA('Person', author)) {
+                  // When encoding `name` is calculated from `givenNames`
+                  // and `familyNames` to fit the IPYNB schema. Remove
+                  // it if possible to avoid redundancy and have full
+                  // reversibility of encoding / decoding
+                  const { name, ...rest } = author as schema.Person
+                  if ('givenNames' in rest || 'familyNames' in rest) return rest
+                  else return author
+                } else if (schema.isA('Organization', author)) {
+                  return author
+                } else if (typeof author === 'object') {
+                  return {
+                    type: 'Person',
+                    ...(author as Omit<schema.Person, 'type'>),
+                  } as schema.Person
+                } else if (typeof author === 'string') {
+                  return load(author, 'person') as Promise<schema.Person>
+                } else {
+                  return undefined
+                }
+              }
+            )
+          )
+        ).filter((author) => author !== undefined) as (
+          | schema.Person
+          | schema.Organization
+        )[])
       : undefined
 
   // Sort other properties of metadata into those that
   // are properties of an article, and those that are not
-  const articleSchema = await getSchema('Article')
+  const articleSchema = (await schema.jsonSchemas()).Article
   const propertyNames = Object.keys({
     ...articleSchema.properties,
     ...articleSchema.propertyAliases,

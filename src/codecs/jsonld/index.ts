@@ -7,7 +7,6 @@
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
 import jsonld from 'jsonld'
-import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
 import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
@@ -115,10 +114,7 @@ export class JsonLdCodec extends Codec implements Codec {
       return node
     })
 
-    // Coerce types so that the data fits the Stencila schema
-    // e.g. singleton vs arrays
-    const coerced = await coerce(transformed)
-    return coerced
+    return transformed
   }
 
   /**

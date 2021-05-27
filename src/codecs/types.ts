@@ -1,10 +1,11 @@
-import * as stencila from '@stencila/schema'
-import { coerce } from '../util/coerce'
-import { reshape } from '../util/reshape'
+import { Jesta, schema } from '@stencila/jesta'
 import { fromFiles } from '../util/media/fromFiles'
 import { resolveFiles } from '../util/media/resolveFiles'
 import { toFiles } from '../util/media/toFiles'
+import { reshape } from '../util/reshape'
 import * as vfile from '../util/vfile'
+
+const jesta = new Jesta()
 
 /**
  * Encoding options that are common to all codecs.
@@ -80,7 +81,7 @@ export interface CommonDecodeOptions {
    * This option allows the user to be explicit about which node type
    * they expect content to be decode to.
    */
-  asType?: keyof stencila.Types
+  asType?: keyof schema.Types
 
   /**
    * Should the decoded node have the `coerce` function applied to it?
@@ -172,7 +173,7 @@ export abstract class Codec<
   public abstract readonly decode: (
     file: vfile.VFile,
     options?: DecodeOptions
-  ) => Promise<stencila.Node>
+  ) => Promise<schema.Node>
 
   /**
    * Encode a `stencila.Node` to a `VFile`.
@@ -182,7 +183,7 @@ export abstract class Codec<
    * @returns A promise that resolves to a `VFile`
    */
   public abstract readonly encode: (
-    node: stencila.Node,
+    node: schema.Node,
     options?: EncodeOptions
   ) => Promise<vfile.VFile>
 
@@ -200,11 +201,11 @@ export abstract class Codec<
   public async load(
     content: string,
     options?: DecodeOptions
-  ): Promise<stencila.Node> {
+  ): Promise<schema.Node> {
     const { shouldCoerce = true, shouldReshape = true } = options ?? {}
 
     let node = await this.decode(vfile.load(content), options)
-    if (shouldCoerce) node = await coerce(node)
+    if (shouldCoerce) node = await jesta.validate(node, true)
     if (shouldReshape) node = await reshape(node)
     return node
   }
@@ -225,9 +226,9 @@ export abstract class Codec<
    * @param options Encoding options
    */
   public preDump(
-    node: stencila.Node,
+    node: schema.Node,
     options?: EncodeOptions
-  ): Promise<stencila.Node> {
+  ): Promise<schema.Node> {
     const { isBundle = true } = { ...options }
     return isBundle ? fromFiles(node) : Promise.resolve(node)
   }
@@ -243,7 +244,7 @@ export abstract class Codec<
    * @returns A promise that resolves to a `string`
    */
   public async dump(
-    node: stencila.Node,
+    node: schema.Node,
     options?: EncodeOptions
   ): Promise<string> {
     return vfile.dump(
@@ -265,11 +266,11 @@ export abstract class Codec<
   public async read(
     filePath: string,
     options?: DecodeOptions
-  ): Promise<stencila.Node> {
+  ): Promise<schema.Node> {
     const { shouldCoerce = true, shouldReshape = true } = options ?? {}
 
     let node = await this.decode(await vfile.read(filePath), options)
-    if (shouldCoerce) node = await coerce(node)
+    if (shouldCoerce) node = await jesta.validate(node)
     if (shouldReshape) node = await reshape(node)
     return resolveFiles(node, filePath)
   }
@@ -290,10 +291,10 @@ export abstract class Codec<
    * @param options Encoding options
    */
   public preWrite(
-    node: stencila.Node,
+    node: schema.Node,
     filePath: string,
     options?: EncodeOptions
-  ): Promise<stencila.Node> {
+  ): Promise<schema.Node> {
     const { isBundle = false } = { ...options }
     return isBundle
       ? fromFiles(node)
@@ -311,7 +312,7 @@ export abstract class Codec<
    * @param options Encoding options
    */
   public async write(
-    node: stencila.Node,
+    node: schema.Node,
     filePath: string,
     options?: EncodeOptions
   ): Promise<void> {

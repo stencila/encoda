@@ -369,7 +369,7 @@ const kitchenSink: testCase = {
       },
       {
         type: 'List',
-        order: 'unordered',
+        order: 'Unordered',
         items: [
           {
             type: 'ListItem',
@@ -383,7 +383,7 @@ const kitchenSink: testCase = {
       },
       {
         type: 'List',
-        order: 'ascending',
+        order: 'Ascending',
         items: [
           {
             type: 'ListItem',
