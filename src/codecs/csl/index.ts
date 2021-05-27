@@ -10,7 +10,11 @@ import Cite from 'citation-js'
 import crypto from 'crypto'
 import Csl from 'csl-json'
 import path from 'path'
-import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
+import {
+  logErrorNodeType,
+  logWarnLoss,
+  logWarnLossIfAny,
+} from '../../util/logging'
 import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'

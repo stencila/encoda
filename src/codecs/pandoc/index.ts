@@ -26,7 +26,7 @@ import { makeBy } from 'fp-ts/lib/Array'
 import path from 'path'
 import tempy from 'tempy'
 import { read } from '../..'
-import { logWarnLossIfAny } from '../../log'
+import { logWarnLossIfAny } from '../../util/logging'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import {
   ensureBlockContentArray,

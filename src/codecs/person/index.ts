@@ -18,7 +18,7 @@ import * as stencila from '@stencila/schema'
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
-import log from '../../log'
+import log from '../../util/logging'
 import * as vfile from '../../util/vfile'
 import { OrcidCodec } from '../orcid'
 import { Codec } from '../types'

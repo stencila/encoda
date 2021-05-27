@@ -1,4 +1,4 @@
-import * as log from '../log'
+import * as log from '../util/logging'
 import { shutdown } from '../'
 
 // Force TTY style output for better log readability

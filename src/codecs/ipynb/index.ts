@@ -21,7 +21,7 @@
 import { getLogger } from '@stencila/logga'
 import schema, { isEntity, nodeType } from '@stencila/schema'
 import { dump, load } from '../..'
-import { logWarnLoss } from '../../log'
+import { logWarnLoss } from '../../util/logging'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import {
   ensureBlockContentArray,

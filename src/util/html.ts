@@ -14,7 +14,7 @@ import jsdom from 'jsdom'
 import path from 'path'
 import { toFile } from './uri'
 import { isPath } from './vfile'
-import log from '../log'
+import log from './logging'
 
 const JSDOM = new jsdom.JSDOM()
 
