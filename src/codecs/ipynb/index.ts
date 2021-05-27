@@ -20,9 +20,6 @@
 
 import { getLogger } from '@stencila/logga'
 import schema, { isEntity, nodeType } from '@stencila/schema'
-import Ajv from 'ajv'
-import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json'
-import betterAjvErrors from 'better-ajv-errors'
 import { dump, load } from '../..'
 import { logWarnLoss } from '../../log'
 import { ensureArticle } from '../../util/content/ensureArticle'
@@ -37,7 +34,6 @@ import { TxtCodec } from '../txt'
 import { Codec } from '../types'
 import { VegaCodec } from '../vega'
 import * as nbformat3 from './nbformat-v3'
-import nbformat3Schema from './nbformat-v3.schema.json'
 import * as nbformat4 from './nbformat-v4'
 import nbformat4Schema from './nbformat-v4.schema.json'
 
@@ -127,7 +123,6 @@ export class IpynbCodec extends Codec implements Codec {
   public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const json = await vfile.dump(file)
     const ipynb = JSON.parse(json)
-    await validateNotebook(ipynb)
     return decodeNotebook(ipynb, ipynb.nbformat)
   }
 
@@ -139,69 +134,9 @@ export class IpynbCodec extends Codec implements Codec {
    */
   public readonly encode = async (node: schema.Node): Promise<vfile.VFile> => {
     const ipynb = await encodeNode(node)
-    await validateNotebook(ipynb)
     const json = JSON.stringify(ipynb, null, '  ')
     return vfile.load(json)
   }
-}
-
-/**
- * Validation functions for `nbformat` `v3` and `v4`
- */
-const validators = new Ajv({
-  // For use with draft-04 schemas
-  schemaId: 'auto',
-  // For better error reporting
-  jsonPointers: true,
-})
-validators.addMetaSchema(jsonSchemaDraft04)
-
-/**
- * Get a `nbformat` validator.
- */
-function getValidator(nbformat: number): Ajv.ValidateFunction {
-  const schemaKey = `nbformat-v${nbformat}.schema.json`
-  let validator = validators.getSchema(schemaKey)
-  if (validator === undefined) {
-    try {
-      const schema = nbformat === 3 ? nbformat3Schema : nbformat4Schema
-      validators.addSchema(schema, schemaKey)
-      validator = validators.getSchema(schemaKey)
-    } catch (error) {
-      log.error(`Error when attempting to add schema: ${error.message}`)
-    }
-  }
-  if (validator === undefined) {
-    throw new Error(`Error attempting to create Jupyter Notebook validator`)
-  }
-  return validator
-}
-
-/**
- * Validate a notebook against a version of `nbformat` JSON Schema
- *
- * This function only logs a warning if the notebook does not validate
- * against the schema. It is intended to provide additional
- * information for debugging other subsequent errors with decoding
- * if a notebook is corrupted.
- */
-function validateNotebook(
-  notebook: nbformat3.Notebook | nbformat4.Notebook
-): Promise<void> {
-  const validator = getValidator(notebook.nbformat)
-  if (!validator(notebook)) {
-    const message = (betterAjvErrors(
-      validator.schema,
-      notebook,
-      validator.errors,
-      {
-        format: 'cli',
-        indent: 2,
-      }
-    ) as unknown) as string
-    log.warn(`Notebook is not valid:\n${message}`)
-  }
-  return Promise.resolve()
 }
 
 /**
@@ -399,7 +334,7 @@ function encodeMetadata(
   }
 
   if (meta !== undefined) {
-    const notebookSchema = getValidator(4).schema as {
+    const notebookSchema = nbformat4Schema as {
       properties: { metadata: Record<string, unknown> }
     }
     const metadataNames = Object.keys(notebookSchema?.properties?.metadata)
