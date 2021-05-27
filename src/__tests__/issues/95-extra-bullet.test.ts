@@ -19,7 +19,7 @@ test('issue 95: extra bullet in blockquote', async () => {
         content: [
           {
             type: 'List',
-            order: 'unordered',
+            order: 'Unordered',
             items: [
               {
                 type: 'ListItem',

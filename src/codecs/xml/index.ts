@@ -6,7 +6,6 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import { getVersion as getSchemaVersion } from '../../util/schemas'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { Codec, CommonEncodeOptions } from '../types'
@@ -85,16 +84,16 @@ export const decodeDoc = (doc: xml.Element): stencila.Node => {
  * @param node The `Node` to encode
  * @param standalone Should the document be a standalone XML document?
  */
-export const encodeDoc = async (
+export const encodeDoc = (
   node: stencila.Node,
   standalone = false
-): Promise<xml.Element> => {
+): xml.Element => {
   const root = encodeNode(node)
 
   const stencila = xml.elem(
     'stencila',
     {
-      xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml`,
+      xmlns: `https://schema.stenci.la/v1/xml`,
     },
     root
   )
@@ -128,7 +127,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
       return xml.text(elem) === 'true'
     case 'Number':
       return parseFloat(xml.text(elem))
-    case 'Text':
+    case 'String':
       return xml.text(elem)
     case 'Array':
       return elements.map(decodeElem)

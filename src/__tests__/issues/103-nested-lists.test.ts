@@ -16,7 +16,7 @@ const article: stencila.Article = {
   content: [
     {
       type: 'List',
-      order: 'ascending',
+      order: 'Ascending',
       items: [
         {
           type: 'ListItem',
@@ -24,7 +24,7 @@ const article: stencila.Article = {
             { type: 'Paragraph', content: ['Fruit'] },
             {
               type: 'List',
-              order: 'unordered',
+              order: 'Unordered',
               items: [
                 {
                   type: 'ListItem',
@@ -48,7 +48,7 @@ const article: stencila.Article = {
             { type: 'Paragraph', content: ['Dairy'] },
             {
               type: 'List',
-              order: 'unordered',
+              order: 'Unordered',
               items: [
                 {
                   type: 'ListItem',

@@ -641,7 +641,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'List',
-        order: 'unordered',
+        order: 'Unordered',
         items: [
           {
             type: 'ListItem',
@@ -674,7 +674,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'List',
-        order: 'ascending',
+        order: 'Ascending',
         items: [
           {
             type: 'ListItem',
@@ -707,7 +707,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'List',
-        order: 'unordered',
+        order: 'Unordered',
         items: [
           {
             type: 'ListItem',
@@ -743,7 +743,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'List',
-        order: 'ascending',
+        order: 'Ascending',
         items: [
           {
             type: 'ListItem',

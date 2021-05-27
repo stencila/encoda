@@ -47,7 +47,7 @@ export const node = {
   content: [
     {
       type: 'List',
-      order: 'unordered',
+      order: 'Unordered',
       items: [
         {
           type: 'ListItem',
