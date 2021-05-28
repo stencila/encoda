@@ -1,6 +1,5 @@
-import { Jesta } from '@stencila/jesta'
+import { Jesta, Manifest, schema } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
@@ -13,6 +12,8 @@ import {
 } from './codecs/types'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
+
+import manifest from '../codemeta.json'
 
 const log = getLogger('encoda')
 
@@ -240,7 +241,7 @@ export async function load<Options extends CommonDecodeOptions>(
   content: string,
   format: string,
   options: Options = commonDecodeDefaults as Options
-): Promise<stencila.Node> {
+): Promise<schema.Node> {
   const codec = await match(content, format)
   return codec.load(content, { format, ...options })
 }
@@ -253,7 +254,7 @@ export async function load<Options extends CommonDecodeOptions>(
  * @param options Encoding options.
  */
 export async function dump<Options extends CommonEncodeOptions>(
-  node: stencila.Node,
+  node: schema.Node,
   format: string,
   options: Options = commonEncodeDefaults as Options
 ): Promise<string> {
@@ -273,7 +274,7 @@ export async function read<Options extends CommonDecodeOptions>(
   source: string,
   format?: string,
   options: Options = commonDecodeDefaults as Options
-): Promise<stencila.Node> {
+): Promise<schema.Node> {
   const codec = await match(source, format)
   return codec.read(source, { format, ...options })
 }
@@ -287,7 +288,7 @@ export async function read<Options extends CommonDecodeOptions>(
  * @param options Encoding options.
  */
 export async function write<Options extends CommonEncodeOptions>(
-  node: stencila.Node,
+  node: schema.Node,
   filePath: string,
   options: Options = commonEncodeDefaults as Options
 ): Promise<void> {
@@ -388,17 +389,17 @@ const formats = [codecList, 'rmd']
  * Extends Jesta's method schema with all the formats
  * supported by Encoda.
  */
-export async function decode_(
+export async function decode(
   this: Encoda,
   content: string,
   format: string | undefined
-): Promise<stencila.Node> {
+): Promise<schema.Node> {
   const codec = await match(content, format)
   return codec.decode(vfile.load(content))
 }
-decode_.schema = jesta.decode.schema
+decode.schema = jesta.decode.schema
 // @ts-ignore
-decode_.schema.properties.format.enum = formats
+decode.schema.properties.format.enum = formats
 
 /**
  * Implementation of Stencila plugin method `encode`.
@@ -408,17 +409,17 @@ decode_.schema.properties.format.enum = formats
  * Extends Jesta's method schema with all the formats
  * supported by Encoda.
  */
-export async function encode_(
+export async function encode(
   this: Encoda,
-  node: stencila.Node,
+  node: schema.Node,
   format: string
 ): Promise<string> {
   const codec = await match(undefined, format)
   return vfile.dump(await codec.encode(node))
 }
-encode_.schema = jesta.encode.schema
+encode.schema = jesta.encode.schema
 // @ts-ignore
-encode_.schema.properties.format.enum = formats
+encode.schema.properties.format.enum = formats
 
 /**
  * Implementation of Stencila plugin method `convert`.
@@ -436,8 +437,9 @@ convert_.schema.properties.from.enum = formats
 convert_.schema.properties.to.enum = formats
 
 export class Encoda extends Jesta {
-  decode = decode_
-  encode = encode_
+  manifest = (manifest as unknown) as Manifest
+  decode = decode
+  encode = encode
   convert = convert_
 }
 

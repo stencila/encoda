@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import callsites from 'callsites'
 import fs from 'fs-extra'
 import * as nock from 'nock'
@@ -31,7 +31,7 @@ export const readFixture = async (filename: string): Promise<vfile.VFile> =>
  * Decode a fixture and JSON stringify it
  */
 export const fixtureToJson = (
-  decode: (file: vfile.VFile) => Promise<stencila.Node>
+  decode: (file: vfile.VFile) => Promise<schema.Node>
 ) => async (filename: string): Promise<string> =>
   JSON.stringify(
     await decode(await vfile.read(fixture(filename, 3))),
@@ -43,8 +43,8 @@ export const fixtureToJson = (
  * Encode a node to a string
  */
 export const nodeToString = (
-  encode: (node: stencila.Node) => Promise<vfile.VFile>
-) => async (node: stencila.Node): Promise<string> =>
+  encode: (node: schema.Node) => Promise<vfile.VFile>
+) => async (node: schema.Node): Promise<string> =>
   await vfile.dump(await encode(node))
 
 /**

@@ -9,29 +9,21 @@ import BinWrapper from 'bin-wrapper'
 import fs from 'fs-extra'
 import path from 'path'
 import appHome from '../../util/app/home'
-import isPackaged from '../../util/app/isPackaged'
 import isCompiled from '../../util/app/isCompiled'
 
 const version = '2.9.2'
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
 
-const home = path.join(
+/**
+ * The folder where the binary is to be installed
+ */
+const binaryDir = path.join(
   appHome,
-  ...(isPackaged ? ['node_modules', '@stencila', 'encoda'] : [])
-)
-
-export const binary = new BinWrapper()
-  .src(`${base}-linux-amd64.tar.gz`, 'linux', 'x64')
-  .src(`${base}-macOS.zip`, 'darwin')
-  .src(`${base}-windows-i386.zip`, 'win32', 'x32')
-  .src(`${base}-windows-x86_64.zip`, 'win32', 'x64')
-  .dest(path.join(home, 'dist', 'codecs', 'pandoc', 'binary'))
-  .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
-  .version(version)
-
-export const citeprocBinaryPath = path.join(
-  binary.dest(),
-  process.platform === 'win32' ? 'pandoc-citeproc.exe' : 'bin/pandoc-citeproc'
+  'dist',
+  'src',
+  'codecs',
+  'pandoc',
+  'binary'
 )
 
 /**
@@ -39,10 +31,25 @@ export const citeprocBinaryPath = path.join(
  * Instructs Pandoc where to find templates and other assets.
  */
 export const dataDir = path.join(
-  home,
-  isCompiled ? 'dist' : 'src',
+  appHome,
+  ...(isCompiled ? ['dist'] : []),
+  'src',
   'codecs',
   'pandoc'
+)
+
+export const binary = new BinWrapper()
+  .src(`${base}-linux-amd64.tar.gz`, 'linux', 'x64')
+  .src(`${base}-macOS.zip`, 'darwin')
+  .src(`${base}-windows-i386.zip`, 'win32', 'x32')
+  .src(`${base}-windows-x86_64.zip`, 'win32', 'x64')
+  .dest(binaryDir)
+  .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
+  .version(version)
+
+export const citeprocBinaryPath = path.join(
+  binaryDir,
+  process.platform === 'win32' ? 'pandoc-citeproc.exe' : 'bin/pandoc-citeproc'
 )
 
 /**

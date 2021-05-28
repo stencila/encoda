@@ -1,0 +1,432 @@
+{
+  "name": "encoda",
+  "softwareVersion": "",
+  "description": "Stencila plugin for document format conversion",
+  "installUrl": [
+    "https://www.npmjs.com/package/@stencila/encoda",
+    "https://github.com/stencila/encoda/releases"
+  ],
+  "featureList": [
+    {
+      "title": "convert",
+      "type": "object",
+      "required": ["input", "output"],
+      "properties": {
+        "input": {
+          "description": "The URL to read content from.",
+          "type": "string",
+          "pattern": "^(file|https?|stdio|stdin|string)://.*"
+        },
+        "output": {
+          "description": "The URL to write the content to.",
+          "type": "string",
+          "pattern": "^(file|stdio|stdout|string)://.*"
+        },
+        "from": {
+          "description": "Format to import the document from. Defaults to the file extension (or media type, for remote URLs).",
+          "type": "string",
+          "enum": [
+            [
+              "elife",
+              "plos",
+              "doi",
+              "orcid",
+              "http",
+              "dir",
+              "dar",
+              "csv",
+              "ods",
+              "tdp",
+              "xlsx",
+              "docx",
+              "gdoc",
+              "html",
+              "ipynb",
+              "jats",
+              "jats-pandoc",
+              "latex",
+              "md",
+              "odt",
+              "pdf",
+              "txt",
+              "xmd",
+              "mathml",
+              "tex",
+              "dmagic",
+              "rpng",
+              "png",
+              "plotly",
+              "yaml",
+              "pandoc",
+              "json5",
+              "jsonld",
+              "json",
+              "xml"
+            ],
+            "rmd"
+          ]
+        },
+        "to": {
+          "description": "Format to export the documents to. Defaults to the file extension.",
+          "type": "string",
+          "enum": [
+            [
+              "elife",
+              "plos",
+              "doi",
+              "orcid",
+              "http",
+              "dir",
+              "dar",
+              "csv",
+              "ods",
+              "tdp",
+              "xlsx",
+              "docx",
+              "gdoc",
+              "html",
+              "ipynb",
+              "jats",
+              "jats-pandoc",
+              "latex",
+              "md",
+              "odt",
+              "pdf",
+              "txt",
+              "xmd",
+              "mathml",
+              "tex",
+              "dmagic",
+              "rpng",
+              "png",
+              "plotly",
+              "yaml",
+              "pandoc",
+              "json5",
+              "jsonld",
+              "json",
+              "xml"
+            ],
+            "rmd"
+          ]
+        },
+        "cache": {
+          "description": "Use and store cached content (for http:// URLs only).",
+          "type": "boolean"
+        },
+        "upcast": {
+          "description": "Upcast the document after it is imported?",
+          "type": "boolean",
+          "const": false
+        },
+        "downcast": {
+          "description": "Downcast the document before it is exported?",
+          "type": "boolean",
+          "const": false
+        },
+        "validate": {
+          "description": "Validate the document after it is imported?",
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    {
+      "title": "decode",
+      "description": "Decode content of a specific format into a Stencila node.",
+      "required": ["content", "format"],
+      "properties": {
+        "content": {
+          "description": "The content to be decoded",
+          "type": "string"
+        },
+        "format": {
+          "description": "The format to be decoded from",
+          "enum": [
+            [
+              "elife",
+              "plos",
+              "doi",
+              "orcid",
+              "http",
+              "dir",
+              "dar",
+              "csv",
+              "ods",
+              "tdp",
+              "xlsx",
+              "docx",
+              "gdoc",
+              "html",
+              "ipynb",
+              "jats",
+              "jats-pandoc",
+              "latex",
+              "md",
+              "odt",
+              "pdf",
+              "txt",
+              "xmd",
+              "mathml",
+              "tex",
+              "dmagic",
+              "rpng",
+              "png",
+              "plotly",
+              "yaml",
+              "pandoc",
+              "json5",
+              "jsonld",
+              "json",
+              "xml"
+            ],
+            "rmd"
+          ]
+        }
+      },
+      "interruptible": false
+    },
+    {
+      "title": "encode",
+      "description": "Encode a Stencila node to content of a specific format.",
+      "required": ["node", "format"],
+      "properties": {
+        "node": {
+          "description": "The node to be encoded"
+        },
+        "format": {
+          "description": "The format to be encoded to",
+          "enum": [
+            [
+              "elife",
+              "plos",
+              "doi",
+              "orcid",
+              "http",
+              "dir",
+              "dar",
+              "csv",
+              "ods",
+              "tdp",
+              "xlsx",
+              "docx",
+              "gdoc",
+              "html",
+              "ipynb",
+              "jats",
+              "jats-pandoc",
+              "latex",
+              "md",
+              "odt",
+              "pdf",
+              "txt",
+              "xmd",
+              "mathml",
+              "tex",
+              "dmagic",
+              "rpng",
+              "png",
+              "plotly",
+              "yaml",
+              "pandoc",
+              "json5",
+              "jsonld",
+              "json",
+              "xml"
+            ],
+            "rmd"
+          ]
+        },
+        "theme": {
+          "description": "The theme for the exported content (only applies to some formats)",
+          "type": "string"
+        }
+      },
+      "interruptible": false
+    },
+    {
+      "title": "get",
+      "description": "Get a variable from a document.",
+      "required": ["document", "name"],
+      "properties": {
+        "document": {
+          "description": "The id of the document to get the variable from.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the variable.",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "import",
+      "description": "Import a document from a URL.",
+      "required": ["input"],
+      "properties": {
+        "input": {
+          "description": "The URL to read content from.",
+          "type": "string",
+          "pattern": "^(file|https?|stdio|stdin|string)://.*"
+        },
+        "format": {
+          "description": "Format to import the document from. Defaults to the file extension (or media type, for remote URLs).",
+          "type": "string",
+          "enum": [
+            [
+              "elife",
+              "plos",
+              "doi",
+              "orcid",
+              "http",
+              "dir",
+              "dar",
+              "csv",
+              "ods",
+              "tdp",
+              "xlsx",
+              "docx",
+              "gdoc",
+              "html",
+              "ipynb",
+              "jats",
+              "jats-pandoc",
+              "latex",
+              "md",
+              "odt",
+              "pdf",
+              "txt",
+              "xmd",
+              "mathml",
+              "tex",
+              "dmagic",
+              "rpng",
+              "png",
+              "plotly",
+              "yaml",
+              "pandoc",
+              "json5",
+              "jsonld",
+              "json",
+              "xml"
+            ],
+            "rmd"
+          ]
+        },
+        "cache": {
+          "description": "Use and store cached content (for http:// URLs only).",
+          "type": "boolean"
+        },
+        "upcast": {
+          "description": "Upcast the document after it is imported?",
+          "type": "boolean",
+          "const": false
+        },
+        "validate": {
+          "description": "Validate the document after it is imported?",
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    {
+      "title": "pull",
+      "description": "Pull file/s from a URL to the file system",
+      "required": ["input", "output"],
+      "properties": {
+        "input": {
+          "description": "The URL to fetch.",
+          "type": "string",
+          "pattern": "^(https?|file|stdio|stdin|string)://.*"
+        },
+        "output": {
+          "description": "The file path to write to",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "read",
+      "description": "Read content from a URL.",
+      "required": ["input"],
+      "properties": {
+        "input": {
+          "description": "The URL to read content from.",
+          "type": "string",
+          "pattern": "^(file|https?|stdio|stdin|string)://.*"
+        },
+        "cache": {
+          "description": "Use and store cached content (for http:// URLs only).",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "title": "select",
+      "description": "Select child nodes from a node.",
+      "required": ["node", "query"],
+      "properties": {
+        "node": {
+          "description": "The node to select from."
+        },
+        "query": {
+          "description": "The query to run against the node.",
+          "type": "string"
+        },
+        "lang": {
+          "description": "The language that the query is written in.",
+          "enum": ["simplepath"]
+        }
+      }
+    },
+    {
+      "title": "set",
+      "description": "Set a variable in a document.",
+      "required": ["document", "name", "value"],
+      "properties": {
+        "document": {
+          "description": "The id of the document to set the variable in.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the variable to set.",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value to to set the variable to."
+        }
+      }
+    },
+    {
+      "title": "validate",
+      "description": "Validate a node against the Stencila Schema.",
+      "required": ["node"],
+      "properties": {
+        "node": {
+          "description": "The node to validate."
+        },
+        "force": {
+          "description": "Coerce the node to ensure it is valid (e.g. dropping properties)?",
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    {
+      "title": "write",
+      "description": "Write content to a URL.",
+      "required": ["content", "output"],
+      "properties": {
+        "content": {
+          "description": "The content to write",
+          "type": "string"
+        },
+        "output": {
+          "description": "The URL to write the content to.",
+          "type": "string",
+          "pattern": "^(file|stdio|stdout|string)://.*"
+        }
+      }
+    }
+  ]
+}

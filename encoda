@@ -4,4 +4,4 @@
 # during development of this repo
 # change into the current directory of this script so it can be run from anywhere
 cd "$(dirname "$0")"
-npm run cli -- "$@"
+npm run start -- "$@"
