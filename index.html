@@ -80,7 +80,6 @@
 							<li><a href="#converting-files">Converting files</a></li>
 							<li><a href="#converting-folders">Converting folders</a></li>
 							<li><a href="#converting-command-line-input">Converting command line input</a></li>
-							<li><a href="#creating-zip-archives">Creating zip archives</a></li>
 							<li><a href="#using-with-executa">Using with Executa</a></li>
 						</ul>
 					</li>
@@ -558,10 +557,6 @@
 				<p>You can send output to the console by using <code>-</code> as the second argument and specifying the <code>--to</code> format e.g.</p>
 				<pre><code class="language-bash"><span style="color: #000000">encoda convert paragraph.md - --to yaml</span>
 </code></pre>
-				<a href="#creating-zip-archives" id="creating-zip-archives" style="color: inherit; text-decoration: none;">
-					<h3>Creating zip archives</h3>
-				</a>
-				<p>Use the <code>--zip</code> option to create a Zip archive with the outputs of conversion. With <code>--zip=yes</code> a zip archive will always be created. With <code>--zip=maybe</code>, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.</p>
 				<table>
 					<thead>
 						<tr>
@@ -717,7 +712,7 @@
 <span style="color: #008000">// Do some things that connect to the interwebs</span>
 <span style="color: #795E26">stopRecording</span><span style="color: #000000">()</span>
 </code></pre>
-				<p>Note that the <code>util/http</code> module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. <code>rm -rf /tmp/stencila/encoda/cache/</code>.</p>
+				<p>Note that the HTTP fetcher implements caching so that you may need to remove the cache for the recording of fixtures to work e.g. <code>rm -rf /tmp/stencila/encoda/cache/</code>.</p>
 				<p>If there are changes in the URLs that your test fetches, or you want to check that your test is still works against an external API that may have changed, remove the Nock recording and rerun the test e.g.,</p>
 				<pre><code class="language-sh"><span style="color: #000000">rm src/codecs/elife/__fixtures__/nock-record-*.json</span>
 <span style="color: #000000">npx jest src/codecs/elife/ --testTimeout 30000</span>
@@ -831,9 +826,6 @@
 						<a href="modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/cli.html">cli</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/codecs_bib.html">codecs/bib</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -880,6 +872,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/codecs_ipynb.html">codecs/ipynb</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/codecs_ipynb_nbformat.html">codecs/ipynb/nbformat</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/codecs_ipynb_nbformat_v3.html">codecs/ipynb/nbformat-<wbr>v3</a>
@@ -987,25 +982,13 @@
 						<a href="modules/codecs_yaml.html">codecs/yaml</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/encoda.html">encoda</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/index.html">index</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/lib.html">lib</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/log.html">log</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/process.html">process</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/util.html">util</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/util_app_cache.html">util/app/cache</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/util_app_data.html">util/app/data</a>
@@ -1018,9 +1001,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/util_app_ispackaged.html">util/app/is<wbr>Packaged</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/util_coerce.html">util/coerce</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/util_content_ensurearticle.html">util/content/ensure<wbr>Article</a>
@@ -1044,10 +1024,10 @@
 						<a href="modules/util_html.html">util/html</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/util_http.html">util/http</a>
+						<a href="modules/util_identifiers.html">util/identifiers</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/util_identifiers.html">util/identifiers</a>
+						<a href="modules/util_logging.html">util/logging</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/util_media_copyfile.html">util/media/copy<wbr>File</a>
@@ -1083,9 +1063,6 @@
 						<a href="modules/util_reshape.html">util/reshape</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/util_schemas.html">util/schemas</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/util_transform.html">util/transform</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1095,9 +1072,6 @@
 						<a href="modules/util_uri.html">util/uri</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/util_validate.html">util/validate</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/util_vfile.html">util/vfile</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1105,9 +1079,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/util_xslt.html">util/xslt</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/util_zip.html">util/zip</a>
 					</li>
 				</ul>
 			</nav>
