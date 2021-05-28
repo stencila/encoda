@@ -6,7 +6,7 @@ import mime from 'mime'
 import path from 'path'
 import tempy from 'tempy'
 import * as dataUri from './dataUri'
-import { download } from './http'
+import { http } from '@stencila/jesta'
 import { copyFile } from './media/copyFile'
 
 /**
@@ -26,7 +26,7 @@ export async function toFile(
   if (dataUri.match(uri)) {
     return dataUri.toFile(uri, filePath)
   } else if (uri.startsWith('http')) {
-    await download(uri, filePath)
+    await http.download(uri, filePath)
   } else {
     await copyFile(uri, filePath)
   }

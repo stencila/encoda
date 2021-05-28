@@ -7,7 +7,7 @@
 import stencila from '@stencila/schema'
 import { JatsCodec } from '../jats'
 import * as xml from '../../util/xml'
-import * as http from '../../util/http'
+import { encoda } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import fs from 'fs-extra'
@@ -68,8 +68,7 @@ export class PlosCodec extends Codec implements Codec {
     const { journal, doi } = this.decodeIdentifier(content)
 
     const url = `http://journals.plos.org/${journal}/article/file?id=${doi}&type=manuscript`
-    const response = await http.get(url)
-    const jatsContent = response.body
+    const [jatsContent] = await encoda.read(url)
     const doc = xml.load(jatsContent)
 
     const dir = tempy.directory()
@@ -90,7 +89,7 @@ export class PlosCodec extends Codec implements Codec {
               `figure/image?id=${doi}.${id}&size=medium`)
         const filename = `${id}.png`
         const filepath = path.join(dir, filename)
-        await http.download(url, filepath)
+        await encoda.pull(url, filepath)
         if (graphic.attributes !== undefined) {
           graphic.attributes['xlink:href'] = filepath
           graphic.attributes['mime-subtype'] = 'png'

@@ -33,7 +33,7 @@ import {
   ensureBlockContentArrayOrUndefined,
 } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
-import { http } from '../../util/http'
+import { http } from '@stencila/jesta'
 import transform, { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { decodeCsl, encodeCsl } from '../csl'
@@ -1692,7 +1692,7 @@ async function encodeRpng(
     app: 'Encoda',
     node,
   })
-  const { url: linkUrl } = await http
+  const { url: linkUrl } = await http.client
     .post('https://hub.stenci.la/api/nodes', {
       headers: {
         Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,

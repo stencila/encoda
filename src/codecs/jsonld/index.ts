@@ -7,7 +7,7 @@
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
 import jsonld from 'jsonld'
-import * as http from '../../util/http'
+import { http } from '@stencila/jesta'
 import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'

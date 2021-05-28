@@ -19,7 +19,7 @@ import * as stencila from '@stencila/schema'
 import { docs_v1 as GDocT } from 'googleapis'
 import tempy from 'tempy'
 import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
-import { http, download } from '../../util/http'
+import { http } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import { DocxCodec } from '../docx'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
@@ -114,7 +114,7 @@ class FetchToFile {
 
   public get(url: string, ext = ''): string {
     const filePath = tempy.file({ extension: ext })
-    this.requests.push(download(url, filePath))
+    this.requests.push(http.download(url, filePath))
     return filePath
   }
 
@@ -464,7 +464,7 @@ async function decodeInlineObjectElement(
               Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,
             }
           : {}
-      const node = await http.get(url, { headers }).json()
+      const node = await http.client.get(url, { headers }).json()
       return (node as { node: stencila.Entity }).node
     } catch {
       log.warn(`Error fetching node from ${url}`)

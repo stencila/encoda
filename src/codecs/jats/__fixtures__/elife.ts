@@ -5,7 +5,7 @@
  */
 
 import * as xml from '../../../util/xml'
-import * as http from '../../../util/http'
+import { encoda } from '../../..'
 import fs from 'fs-extra'
 import path from 'path'
 
@@ -23,8 +23,8 @@ import path from 'path'
  */
 const create = async (id: number, version: number = 1) => {
   const url = `https://elifesciences.org/articles/${id}v${version}.xml`
-  const jats = await http.get(url)
-  const doc = xml.load(jats.body) as xml.Element
+  const [jats] = await encoda.read(url)
+  const doc = xml.load(jats) as xml.Element
 
   // Check that there is a <body> element, some don't have one
   if (xml.all(doc, 'body').length === 0) {
@@ -44,7 +44,7 @@ const create = async (id: number, version: number = 1) => {
       const filename = href
         .replace(`elife-${id}-`, '')
         .replace(`-v${version}.tif`, '.jpg')
-      await http.download(url, path.join(dir, filename))
+      await encoda.pull(url, path.join(dir, filename))
       if (graphic.attributes !== undefined)
         graphic.attributes['xlink:href'] = filename
     }

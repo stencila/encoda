@@ -5,10 +5,10 @@
  */
 
 import schema from '@stencila/schema'
-import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { decodeCrossrefCsl } from '../crossref'
 import { Codec } from '../types'
+import { encoda } from '../..'
 
 /**
  * Codec for Digital Object Identifiers (DOI)
@@ -17,7 +17,7 @@ import { Codec } from '../types'
  * the `CSLCodec` which is in turn based on `citation-js` and
  * fetches metadata for a DOI from https://data.crossref.org.
  * However, to use caching and retries it was switched to
- * using our own `util/http` module and fetching data from
+ * using our own HTTP module and fetching data from
  * Crossref directly (with `decodeCsl` used for response data translation).
  */
 export class DoiCodec extends Codec implements Codec {
@@ -39,8 +39,8 @@ export class DoiCodec extends Codec implements Codec {
     if (match === null) throw new Error('Unable to parse content as a DOI')
     const doi = match[4]
 
-    const response = await http.get(`https://api.crossref.org/works/${doi}`)
-    const csl = JSON.parse(response.body).message
+    const [json] = await encoda.read(`https://api.crossref.org/works/${doi}`)
+    const csl = JSON.parse(json).message
 
     return csl !== undefined ? decodeCrossrefCsl(csl) : null
   }

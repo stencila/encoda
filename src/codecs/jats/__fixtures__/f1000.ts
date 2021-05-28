@@ -9,14 +9,14 @@
  */
 
 import * as xml from '../../../util/xml'
-import * as http from '../../../util/http'
+import { encoda } from '../../..'
 import fs from 'fs-extra'
 import path from 'path'
 
 const create = async (id: string, version: number = 1) => {
   const url = `https://f1000research.com/articles/${id}/v${version}/xml`
-  const jats = await http.get(url)
-  const doc = xml.load(jats.body) as xml.Element
+  const [jats] = await encoda.read(url)
+  const doc = xml.load(jats) as xml.Element
 
   const dir = `f1000-${id}-v${version}`
   await fs.ensureDir(dir)

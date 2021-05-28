@@ -4,12 +4,12 @@
  * @module codecs/http
  */
 
+import { http } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
-import path from 'path'
 import contentType from 'content-type'
+import path from 'path'
 import { load } from '../..'
-import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 

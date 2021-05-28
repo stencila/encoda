@@ -7,7 +7,7 @@
 import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
 import { load } from '../..'
-import * as http from '../../util/http'
+import { http } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 

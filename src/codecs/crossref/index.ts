@@ -6,7 +6,7 @@
 
 import schema from '@stencila/schema'
 import crypto from 'crypto'
-import * as http from '../../util/http'
+import { http } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { decodeCsl } from '../csl'
