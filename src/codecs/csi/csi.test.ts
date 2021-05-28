@@ -1,10 +1,10 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import { CsiCodec } from '.'
 
 const csi = new CsiCodec()
 const decode = async (text: string) => csi.decode(await vfile.load(text))
-const encode = async (node: stencila.Node) => vfile.dump(await csi.encode(node))
+const encode = async (node: schema.Node) => vfile.dump(await csi.encode(node))
 
 test('decode', async () => {
   expect(await decode('a')).toEqual(['a'])

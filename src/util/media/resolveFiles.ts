@@ -2,7 +2,7 @@
  * @module util/media/resolveFiles
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import fs from 'fs'
 import path from 'path'
 import { transformSync } from '../transform'

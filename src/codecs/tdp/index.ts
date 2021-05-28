@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 // @ts-ignore
 import datapackage from 'datapackage'
 import { dump } from '../..'
@@ -41,7 +41,7 @@ export class TDPCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile
     // eslint-disable-next-line @typescript-eslint/require-await
-  ): Promise<stencila.Node> => {
+  ): Promise<schema.Node> => {
     let pkg: datapackage.Package
     if (file.path) {
       pkg = await datapackage.Package.load(file.path)
@@ -53,11 +53,11 @@ export class TDPCodec extends Codec implements Codec {
     const parts = await Promise.all(
       pkg.resources.map(async (resource: datapackage.Resource) =>
         decodeResource(resource)
-      ) as Promise<stencila.Datatable>[]
+      ) as Promise<schema.Datatable>[]
     )
 
     // Collection or Datatable ?
-    let node: stencila.Datatable | stencila.Collection
+    let node: schema.Datatable | schema.Collection
     if (parts.length === 1) {
       node = parts[0]
     } else {
@@ -73,7 +73,7 @@ export class TDPCodec extends Codec implements Codec {
       // Convert a https://frictionlessdata.io/specs/data-package/#licenses
       // to a https://schema.org/license property
       node.licenses = desc.licenses.map((object: any) => {
-        const license: stencila.CreativeWork = { type: 'CreativeWork' }
+        const license: schema.CreativeWork = { type: 'CreativeWork' }
         if (object.name) license.name = object.name
         if (object.path) license.url = object.path
         if (object.title) license.alternateNames = [object.title]
@@ -85,10 +85,10 @@ export class TDPCodec extends Codec implements Codec {
   }
 
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     { filePath }: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const cw = node as stencila.CreativeWork
+    const cw = node as schema.CreativeWork
 
     // Create a package descriptor from meta-data
     const desc: { [key: string]: any } = {
@@ -101,7 +101,7 @@ export class TDPCodec extends Codec implements Codec {
     if (cw.description) desc.description = cw.description
     if (cw.licenses) {
       desc.licenses = cw.licenses.map(
-        (license: string | stencila.CreativeWork) => {
+        (license: string | schema.CreativeWork) => {
           if (typeof license === 'string') {
             // Since name is required...
             return { name: license }
@@ -119,7 +119,7 @@ export class TDPCodec extends Codec implements Codec {
     // Encode Datatable into resource descriptors
     const resources: datapackage.Resource[] = []
     if (cw.type === 'Collection') {
-      const collection = cw as stencila.Collection
+      const collection = cw as schema.Collection
       if (collection.parts) {
         for (const part of collection.parts) {
           if (part.type !== 'Datatable') {
@@ -164,7 +164,7 @@ export class TDPCodec extends Codec implements Codec {
  */
 async function decodeResource(
   resource: datapackage.Resource
-): Promise<stencila.Datatable> {
+): Promise<schema.Datatable> {
   // Read in the data
   let data: any[]
   try {
@@ -205,9 +205,9 @@ async function decodeResource(
  * @returns A resource
  */
 async function encodeCreativeWork(
-  cw: stencila.CreativeWork
+  cw: schema.CreativeWork
 ): datapackage.Resource {
-  const datatable = cw as stencila.Datatable
+  const datatable = cw as schema.Datatable
 
   const schema = {
     fields: datatable.columns.map(encodeDatatableColumn),
@@ -236,7 +236,7 @@ async function encodeCreativeWork(
 function decodeField(
   field: datapackage.Field,
   values: any[]
-): stencila.DatatableColumn {
+): schema.DatatableColumn {
   // Decode constraints
   const constraints = field.constraints || {}
   const items = decodeFieldConstraints(constraints)
@@ -258,17 +258,17 @@ function decodeField(
   }
 
   // Build the column validator
-  const validator = stencila.arrayValidator(items)
+  const validator = schema.arrayValidator(items)
   if (constraints.unique) validator.uniqueItems = true
 
-  return stencila.datatableColumn({ name: field.name, values, validator })
+  return schema.datatableColumn({ name: field.name, values, validator })
 }
 
 /**
  * Encode a `stencila.DatatableColumn` to a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field)
  */
 function encodeDatatableColumn(
-  column: stencila.DatatableColumn
+  column: schema.DatatableColumn
 ): datapackage.Field {
   const { name, validator } = column
   const field = { name }
@@ -390,11 +390,11 @@ interface ColumnTypeFormatConstraints {
 }
 
 function encodeDatatableColumnValidator(
-  schema: stencila.ArrayValidator
+  validator: schema.ArrayValidator
 ): ColumnTypeFormatConstraints {
   // TODO: this method needs checking and refactoring since changing to
   //  ArraySchema
-  const items = schema.itemsValidator
+  const items = validator.itemsValidator
 
   if (items === undefined)
     return {
@@ -405,11 +405,12 @@ function encodeDatatableColumnValidator(
 
   const constraints: { [key: string]: any } = {}
 
-  constraints.required = schema.minItems !== undefined && schema.minItems > 0
+  constraints.required =
+    validator.minItems !== undefined && validator.minItems > 0
 
   let type
   let format
-  switch (stencila.nodeType(items)) {
+  switch (schema.nodeType(items)) {
     case 'ConstantValidator':
       type = 'object'
       break
@@ -423,7 +424,7 @@ function encodeDatatableColumnValidator(
       type = 'integer'
       break
     case 'StringValidator': {
-      const stringValidator = items as stencila.StringValidator
+      const stringValidator = items as schema.StringValidator
       if (stringValidator.minLength)
         constraints.minLength = stringValidator.minLength
       if (stringValidator.maxLength)
@@ -448,7 +449,7 @@ function encodeDatatableColumnValidator(
       break
     }
     case 'EnumValidator': {
-      const enumValidator = items as stencila.EnumValidator
+      const enumValidator = items as schema.EnumValidator
       if (enumValidator.values) constraints.enum = enumValidator.values
       type = 'string'
       break
@@ -463,8 +464,8 @@ function encodeDatatableColumnValidator(
       type = 'any'
   }
 
-  if (schema.minItems) constraints.minimum = schema.minItems
-  if (schema.maxItems) constraints.maximum = schema.maxItems
+  if (validator.minItems) constraints.minimum = validator.minItems
+  if (validator.maxItems) constraints.maximum = validator.maxItems
 
   return { type, format, constraints }
 }

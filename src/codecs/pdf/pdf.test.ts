@@ -1,6 +1,6 @@
 import { fixture, output } from '../../__tests__/helpers'
 import { PdfCodec } from '.'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { MdCodec } from '../md'
 
 const mdCodec = new MdCodec()
@@ -10,16 +10,16 @@ describe('decode', () => {
   test('meta data from info dict', async () => {
     const { title, authors, keywords, dateCreated } = (await pdfCodec.read(
       fixture('external.pdf')
-    )) as stencila.CreativeWork
+    )) as schema.CreativeWork
     expect(title).toEqual(
       'Test reading meta data from an externally created PDF'
     )
     expect(authors).toEqual([
-      stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] }),
+      schema.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] }),
     ])
     expect(keywords).toEqual(['test', 'pdf', 'externally', 'created'])
     expect(dateCreated).toEqual(
-      stencila.date({ value: '2019-10-13T11:00:00.000Z' })
+      schema.date({ value: '2019-10-13T11:00:00.000Z' })
     )
   })
 })

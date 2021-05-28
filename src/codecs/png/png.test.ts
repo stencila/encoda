@@ -1,4 +1,4 @@
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 import {
   pythonCodeChunk,

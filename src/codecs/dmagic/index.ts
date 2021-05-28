@@ -4,7 +4,7 @@
  * @module codecs/dmagic
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import fs from 'fs-extra'
 import path from 'path'
 import * as vfile from '../../util/vfile'
@@ -29,7 +29,7 @@ export class DMagicCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public readonly decode = (): Promise<stencila.Node> => {
+  public readonly decode = (): Promise<schema.Node> => {
     throw new Error('Decoding of Demo Magic scripts is not supported.')
   }
 
@@ -42,7 +42,7 @@ export class DMagicCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions = {
       ...this.commonEncodeDefaults,
       isStandalone: true,
@@ -75,14 +75,14 @@ let demoMagicSh: string | undefined
 /**
  * Encode a Stencila `Node` as a Demo Magic Bash string.
  */
-async function encodeNode(node: stencila.Node): Promise<string> {
+async function encodeNode(node: schema.Node): Promise<string> {
   if (node === null || typeof node !== 'object') return ''
 
-  if (stencila.isA('Heading', node)) {
+  if (schema.isA('Heading', node)) {
     return `h "${escapedText(node.content)}"\n\n`
-  } else if (stencila.isA('Paragraph', node)) {
+  } else if (schema.isA('Paragraph', node)) {
     return `pa "${escapedText(node.content)}"\n\n`
-  } else if (stencila.isA('CodeBlock', node)) {
+  } else if (schema.isA('CodeBlock', node)) {
     const { programmingLanguage, meta = {}, text } = node
     if (
       programmingLanguage !== undefined &&
@@ -110,6 +110,6 @@ async function encodeNode(node: stencila.Node): Promise<string> {
 /**
  * Generate escaped text suitable for inserting into Bash
  */
-function escapedText(content: stencila.InlineContent[]): string {
+function escapedText(content: schema.InlineContent[]): string {
   return content.map(TxtCodec.stringify).join('').replace(/`/g, '\\`')
 }

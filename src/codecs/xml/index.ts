@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { Codec, CommonEncodeOptions } from '../types'
@@ -27,9 +27,7 @@ export class XmlCodec extends Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
     let doc
     try {
@@ -53,7 +51,7 @@ export class XmlCodec extends Codec {
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const doc = encodeDoc(node, options.isStandalone)
@@ -67,7 +65,7 @@ export class XmlCodec extends Codec {
  *
  * @param doc The top level XML element to decode
  */
-export const decodeDoc = (doc: xml.Element): stencila.Node => {
+export const decodeDoc = (doc: xml.Element): schema.Node => {
   const stencila = xml.first(doc, 'stencila')
   if (stencila?.elements !== undefined && stencila.elements.length === 1) {
     const root = stencila.elements[0]
@@ -85,7 +83,7 @@ export const decodeDoc = (doc: xml.Element): stencila.Node => {
  * @param standalone Should the document be a standalone XML document?
  */
 export const encodeDoc = (
-  node: stencila.Node,
+  node: schema.Node,
   standalone = false
 ): xml.Element => {
   const root = encodeNode(node)
@@ -118,7 +116,7 @@ export const encodeDoc = (
  *
  * @param elem The XML element to decode
  */
-export const decodeElem = (elem: xml.Element): stencila.Node => {
+export const decodeElem = (elem: xml.Element): schema.Node => {
   const { name, elements = [] } = elem
   switch (name) {
     case 'Null':
@@ -153,8 +151,8 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
  * @param node The node to encode
  * @param key The `key` attribute to be added to the element
  */
-export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
-  const type = stencila.nodeType(node)
+export const encodeNode = (node: schema.Node, key?: string): xml.Element => {
+  const type = schema.nodeType(node)
   if (node === null) {
     return xml.elem(type, { key })
   }
@@ -162,7 +160,7 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
     return xml.elem(type, { key }, node.toString())
   }
   if (type === 'Array') {
-    const array = node as stencila.Node[]
+    const array = node as schema.Node[]
     const items = array.map((node) => encodeNode(node))
     return xml.elem(type, { key }, ...items)
   }

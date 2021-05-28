@@ -12,7 +12,7 @@ import {
 import { snapshot } from '../../__tests__/helpers'
 import { PngCodec } from '../png'
 import { extract, has, insert, RpngCodec } from './'
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 
 const pngCodec = new PngCodec()
 const rpngCodec = new RpngCodec()

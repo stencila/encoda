@@ -2,7 +2,7 @@
  * @module util/transform
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 
 /**
  * Transform a `Node` by applying a transformer function to
@@ -24,22 +24,22 @@ import * as stencila from '@stencila/schema'
  * @param recurse If a node is transformed, should transformation be performed on its children?
  */
 export default async function transform(
-  rootNode: stencila.Node,
+  rootNode: schema.Node,
   transformer: (
-    node: stencila.Node,
-    parent?: stencila.Node
-  ) => Promise<stencila.Node>,
+    node: schema.Node,
+    parent?: schema.Node
+  ) => Promise<schema.Node>,
   recurse = false
-): Promise<stencila.Node> {
+): Promise<schema.Node> {
   async function walk(
-    node: stencila.Node,
-    parent?: stencila.Node
-  ): Promise<stencila.Node> {
+    node: schema.Node,
+    parent?: schema.Node
+  ): Promise<schema.Node> {
     const transformed = await transformer(node, parent)
 
     if (
       (transformed !== node && !recurse) ||
-      stencila.isPrimitive(transformed) ||
+      schema.isPrimitive(transformed) ||
       transformed === undefined
     )
       return transformed
@@ -68,13 +68,13 @@ export default async function transform(
  * Synchronous version of `transform`.
  */
 export function transformSync(
-  node: stencila.Node,
-  transformer: (node: stencila.Node) => stencila.Node | undefined
-): stencila.Node {
-  function walk(node: stencila.Node): stencila.Node | undefined {
+  node: schema.Node,
+  transformer: (node: schema.Node) => schema.Node | undefined
+): schema.Node {
+  function walk(node: schema.Node): schema.Node | undefined {
     const transformed = transformer(node)
 
-    if (stencila.isPrimitive(transformed) || transformed === undefined)
+    if (schema.isPrimitive(transformed) || transformed === undefined)
       return transformed
 
     if (Array.isArray(transformed)) {

@@ -2,7 +2,7 @@
  * @module util/orderProperties
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { transformSync } from './transform'
 
 /**
@@ -13,11 +13,11 @@ import { transformSync } from './transform'
  * the order properties were defined in code) and human readable
  * (e.g. `type` first, often long `content` last).
  */
-export default function orderProperties(node: stencila.Node): stencila.Node {
+export default function orderProperties(node: schema.Node): schema.Node {
   return transformSync(
     node,
-    (node: stencila.Node): stencila.Node => {
-      if (!stencila.isEntity(node)) return node
+    (node: schema.Node): schema.Node => {
+      if (!schema.isEntity(node)) return node
       const { type, id, meta, content, ...rest } = node as any
       return {
         // The node type and id are always first

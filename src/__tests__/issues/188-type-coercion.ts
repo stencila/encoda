@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { JatsCodec } from '../../codecs/jats'
 import { JsonCodec } from '../../codecs/json'
 import { MdCodec } from '../../codecs/md'
@@ -53,7 +53,7 @@ test('188-type-coercion-weirdness', async () => {
     }
   ]
 }`
-  const table = (await jsonCodec.load(json)) as stencila.Table
+  const table = (await jsonCodec.load(json)) as schema.Table
 
   expect(table?.rows?.[0].cells?.[0].content[0]).toBe(true)
   expect(table?.rows?.[0].cells?.[1].content[0]).toBe(2)

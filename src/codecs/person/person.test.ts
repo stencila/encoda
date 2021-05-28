@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { dump } from '../../util/vfile'
 import { nockRecord } from '../../__tests__/helpers'
 import { PersonCodec } from './'
@@ -52,7 +52,7 @@ const jill = {
 
 describe('decode', () => {
   it('handles various name parts', async () => {
-    let person = stencila.person()
+    let person = schema.person()
 
     person.familyNames = ['Jones']
     expect(await decode('Jones')).toEqual(person)
@@ -96,8 +96,8 @@ describe('decode', () => {
   })
 
   it('returns an empty person if name can not be parsed', async () => {
-    expect(await decode('')).toEqual(stencila.person())
-    expect(await decode('#@&%')).toEqual(stencila.person())
+    expect(await decode('')).toEqual(schema.person())
+    expect(await decode('#@&%')).toEqual(schema.person())
   })
 })
 

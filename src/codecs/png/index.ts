@@ -4,7 +4,7 @@
  * @module codecs/png
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import tempy from 'tempy'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'

@@ -1,4 +1,4 @@
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { ensureInlineContentArray } from './ensureInlineContentArray'
 
 describe('Ensures an array of inline content', () => {

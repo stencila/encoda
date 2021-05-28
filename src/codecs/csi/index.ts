@@ -4,7 +4,7 @@
  * @module codecs/csi
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
@@ -16,14 +16,12 @@ export class CsiCodec extends Codec implements Codec {
 
   public readonly extNames = ['csi']
 
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const csi = await vfile.dump(file)
     return csi.split(/\s*,\s*/)
   }
 
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
     const items = Array.isArray(node) ? node : [node]
     const csi = items
       .map((item) =>

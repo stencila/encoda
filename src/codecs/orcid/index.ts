@@ -4,10 +4,10 @@
  * @module codecs/orcid
  */
 
-import * as stencila from '@stencila/schema'
+import { schema, http } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
 import { load } from '../..'
-import { http } from '@stencila/jesta'
+
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
@@ -28,7 +28,7 @@ export class OrcidCodec extends Codec implements Codec {
 
   public readonly decode = async (
     file: vfile.VFile | string
-  ): Promise<stencila.Node> => {
+  ): Promise<schema.Node> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
     const match = OrcidCodec.regex.exec(content)
     if (match !== null) {
@@ -48,7 +48,7 @@ export class OrcidCodec extends Codec implements Codec {
     } else {
       log.error('Unable to parse content as ORCID')
     }
-    return stencila.person()
+    return schema.person()
   }
 
   public readonly encode = (): Promise<vfile.VFile> => {

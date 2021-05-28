@@ -3,7 +3,7 @@
  * See `./md.test.ts` for unit tests, including for decoding.
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { MdCodec } from '.'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'

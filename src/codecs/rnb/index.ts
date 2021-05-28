@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import fs from 'fs-extra'
 import { all, elem, first, load, text } from '../../util/html'
 import * as vfile from '../../util/vfile'
@@ -38,9 +38,7 @@ export class RnbCodec extends Codec implements Codec {
   /**
    * Decode a R Notebook file to a Stencila `Article`
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const rnb = await vfile.dump(file)
 
     // Replace delimiting comments with opening and closing HTML tags
@@ -78,7 +76,7 @@ export class RnbCodec extends Codec implements Codec {
 
     // Decode the Rmd as an `Article` to obtain any meta-data from YAML header
     const article = await rmdCodec.decode(vfile.load(rmd))
-    if (!stencila.isA('Article', article)) {
+    if (!schema.isA('Article', article)) {
       log.error('Unable to parse R Notebook embedded Rmd')
       return null
     }

@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
@@ -109,7 +109,7 @@ describe('encode', () => {
 })
 
 const flat = path.join(__dirname, '__fixtures__', 'flat')
-const flatNode: stencila.Collection = {
+const flatNode: schema.Collection = {
   type: 'Collection',
   name: 'flat',
   parts: [
@@ -135,7 +135,7 @@ const flatNode: stencila.Collection = {
 }
 
 const shallow = path.join(__dirname, '__fixtures__', 'shallow')
-const shallowNode: stencila.Collection = {
+const shallowNode: schema.Collection = {
   type: 'Collection',
   name: 'shallow',
   parts: [
@@ -244,12 +244,12 @@ const deepTree = {
  * Get the paths of the files from the tree
  */
 function nodes(
-  work: stencila.CreativeWork,
+  work: schema.CreativeWork,
   path: string = '',
   collect: string[] = []
 ): any {
   if (work.type === 'Collection') {
-    const collection = work as stencila.Collection
+    const collection = work as schema.Collection
     for (const part of collection.parts)
       nodes(part, path + work.name + '/', collect)
   } else {
@@ -262,12 +262,12 @@ function nodes(
  * Get the paths of the "main" files from the tree
  */
 function mains(
-  work: stencila.CreativeWork,
+  work: schema.CreativeWork,
   path: string = '',
   collect: string[] = []
 ): any {
   if (work.type === 'Collection') {
-    const collection = work as stencila.Collection
+    const collection = work as schema.Collection
     for (const part of collection.parts)
       mains(part, path + work.name + '/', collect)
   } else {
@@ -280,9 +280,9 @@ function mains(
  * Generate a more dense tree with just names on leaf nodes
  * for comparing actual vs expected decoded trees.
  */
-function tree(work: stencila.CreativeWork): any {
+function tree(work: schema.CreativeWork): any {
   if (work.type === 'Collection') {
-    const coll = work as stencila.Collection
+    const coll = work as schema.Collection
     return {
       name: coll.name,
       parts: coll.parts.map(tree),

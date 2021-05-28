@@ -14,7 +14,7 @@
  */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
@@ -42,7 +42,7 @@ export class PersonCodec extends Codec implements Codec {
    */
   public readonly decode = async (
     file: vfile.VFile | string
-  ): Promise<stencila.Person> => {
+  ): Promise<schema.Person> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
 
     // If there appears to be an ORCID, use that.
@@ -55,7 +55,7 @@ export class PersonCodec extends Codec implements Codec {
         const person = await orcid.decode(match[0])
         // ORCID decoding is only deemed successful if returns
         // a person with a least one family name
-        if (stencila.isA('Person', person))
+        if (schema.isA('Person', person))
           if (person.familyNames !== undefined && person.familyNames.length > 0)
             return person
       } catch (error) {
@@ -67,7 +67,7 @@ export class PersonCodec extends Codec implements Codec {
     // If not, parse string into parts
     const { name, email, url } = parseAuthor(content)
     const { title, first, middle, last, suffix } = parseFullName(name)
-    return stencila.person({
+    return schema.person({
       givenNames:
         first.length > 0
           ? [first, ...(middle.length > 0 ? [middle] : [])]
@@ -86,10 +86,10 @@ export class PersonCodec extends Codec implements Codec {
    * @param node The `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
     let content = ''
 
-    if (stencila.isA('Person', node)) {
+    if (schema.isA('Person', node)) {
       if (node.honorificPrefix) content += node.honorificPrefix
       if (node.givenNames) content += ' ' + node.givenNames.join(' ')
       if (node.familyNames) content += ' ' + node.familyNames.join(' ')
@@ -99,7 +99,7 @@ export class PersonCodec extends Codec implements Codec {
       content = content.trim()
     } else {
       log.warn(
-        `Expected a node of type "Person", got a node of type "${stencila.nodeType(
+        `Expected a node of type "Person", got a node of type "${schema.nodeType(
           node
         )}"`
       )

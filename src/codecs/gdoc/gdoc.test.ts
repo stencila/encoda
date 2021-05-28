@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { GDocCodec } from '.'
 import { fixture, nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
@@ -17,7 +17,7 @@ describe('decode', () => {
       await gdoc2node({
         title: 'The title',
       })
-    ).toEqual(stencila.article({ title: 'The title' }))
+    ).toEqual(schema.article({ title: 'The title' }))
   })
 
   test('title: override with a TITLE styled paragraph', async () => {
@@ -36,14 +36,14 @@ describe('decode', () => {
         },
       })
     ).toEqual(
-      stencila.article({
+      schema.article({
         title: 'The actual title!',
       })
     )
   })
 
   test('title: is not set if neither present', async () => {
-    expect(await gdoc2node({})).toEqual(stencila.article({}))
+    expect(await gdoc2node({})).toEqual(schema.article({}))
   })
 
   test('kitchenSink', async () =>

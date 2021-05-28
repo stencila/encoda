@@ -4,7 +4,7 @@
  * @module codecs/csl
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 // @ts-ignore
 import Cite from 'citation-js'
 import crypto from 'crypto'

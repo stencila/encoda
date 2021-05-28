@@ -4,7 +4,7 @@
  * @module codecs/csv
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
 import * as papaparse from 'papaparse'
 import { range } from 'fp-ts/lib/Array'
@@ -17,9 +17,7 @@ const log = getLogger('encoda:csv')
 export class CsvCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/csv']
 
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const csv = await vfile.dump(file)
 
     // Trim trailing newline
@@ -67,7 +65,7 @@ export class CsvCodec extends Codec implements Codec {
 
     // Create columns with pre-allocated array of correct length
     const columns = columnNames.map((name) => {
-      return stencila.datatableColumn({
+      return schema.datatableColumn({
         name,
         values: Array(rowNum),
       })
@@ -83,13 +81,13 @@ export class CsvCodec extends Codec implements Codec {
       }
     }
 
-    return stencila.datatable({ columns })
+    return schema.datatable({ columns })
   }
 
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    if (!stencila.isA('Datatable', node)) {
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
+    if (!schema.isA('Datatable', node)) {
       log.error(
-        `When encoding to CSV expected a Datatable, but got a ${stencila.nodeType(
+        `When encoding to CSV expected a Datatable, but got a ${schema.nodeType(
           node
         )}`
       )

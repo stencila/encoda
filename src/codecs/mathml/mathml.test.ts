@@ -1,4 +1,4 @@
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { MathMLCodec, normalize } from '.'
 import {
   asciimathBlock,

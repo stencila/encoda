@@ -2,7 +2,7 @@
  * @module util/media/toFiles
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import path from 'path'
 import transform from '../transform'
 import { toFile } from '../uri'

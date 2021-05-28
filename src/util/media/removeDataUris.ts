@@ -2,7 +2,7 @@
  * @module util/media/removeDataUris
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { transformSync } from '../transform'
 
 /**

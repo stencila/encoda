@@ -4,7 +4,7 @@
  * @module codecs/date
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import { getLogger } from '@stencila/logga'
@@ -12,9 +12,7 @@ import { getLogger } from '@stencila/logga'
 const log = getLogger('encoda:date')
 
 export class DateCodec extends Codec implements Codec {
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
 
     // If the content is already valid ISO 8601 then just return it
@@ -29,7 +27,7 @@ export class DateCodec extends Codec implements Codec {
         content
       )
     ) {
-      return stencila.date({ value: content })
+      return schema.date({ value: content })
     }
 
     // Date needs parsing
@@ -40,7 +38,7 @@ export class DateCodec extends Codec implements Codec {
     if (isNaN(date.getTime())) date = new Date(content)
     if (isNaN(date.getTime())) {
       log.warn(`Unable to decode content to date: "${content}"`)
-      return stencila.date({ value: '' })
+      return schema.date({ value: '' })
     }
 
     // After parsing the date shorten it a much as possible
@@ -50,11 +48,11 @@ export class DateCodec extends Codec implements Codec {
     let value = date.toISOString()
     if (value.endsWith('T00:00:00.000Z')) value = value.substring(0, 10)
 
-    return stencila.date({ value })
+    return schema.date({ value })
   }
 
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const iso = stencila.isA('Date', node) ? node.value : ''
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
+    const iso = schema.isA('Date', node) ? node.value : ''
     return Promise.resolve(vfile.load(iso))
   }
 }

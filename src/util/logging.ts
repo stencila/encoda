@@ -1,5 +1,5 @@
 import * as logga from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { deleteAt } from 'fp-ts/lib/Record'
 
 const log = logga.getLogger('encoda')
@@ -68,14 +68,14 @@ export const logWarnLoss = (
 export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
-  node: stencila.Node,
+  node: schema.Node,
   lost: object
 ): void => {
   const rest = deleteAt('type')(lost)
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(
-      `${codec}:${op} Properties of \`${stencila.nodeType(
+      `${codec}:${op} Properties of \`${schema.nodeType(
         node
       )}\` not supported: ${properties.map((prop) => `\`${prop}\``).join(', ')}`
     )
@@ -94,10 +94,10 @@ export const logErrorNodeType = (
   codec: string,
   op: CodecOperation,
   types: string,
-  node: stencila.Node
+  node: schema.Node
 ): void => {
   log.error(
-    `${codec}:${op} Expecting node of type ${types} but got node of type ${stencila.nodeType(
+    `${codec}:${op} Expecting node of type ${types} but got node of type ${schema.nodeType(
       node
     )}`
   )

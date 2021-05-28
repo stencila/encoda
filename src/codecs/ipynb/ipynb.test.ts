@@ -1,4 +1,4 @@
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { removeDataUris } from '../../util/media/removeDataUris'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'

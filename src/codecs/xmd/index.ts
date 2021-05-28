@@ -4,7 +4,7 @@
  * @module codecs/xmd
  */
 
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import crypto from 'crypto'
 import { dump } from '../..'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
@@ -24,9 +24,7 @@ export class XmdCodec extends Codec implements Codec {
    *
    * @param file The `VFile` to decode
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     let xmd = await vfile.dump(file)
     xmd = decodeInlineChunk(xmd)
     xmd = decodeNestedChunks(xmd)
@@ -53,7 +51,7 @@ export class XmdCodec extends Codec implements Codec {
    * @param node The Stencila node to encode
    */
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions & { strict?: boolean } = this
       .commonEncodeDefaults
   ): Promise<vfile.VFile> => {
@@ -61,20 +59,20 @@ export class XmdCodec extends Codec implements Codec {
 
     const transformed = transformSync(
       node,
-      (node: stencila.Node): stencila.Node => {
-        if (stencila.isA('CodeExpression', node)) {
+      (node: schema.Node): schema.Node => {
+        if (schema.isA('CodeExpression', node)) {
           const { text, programmingLanguage } = node
-          return stencila.codeFragment({
+          return schema.codeFragment({
             text:
               programmingLanguage !== undefined
                 ? `${programmingLanguage} ${text}`
                 : text,
           })
         }
-        if (stencila.isA('CodeChunk', node)) {
+        if (schema.isA('CodeChunk', node)) {
           const { text, programmingLanguage, caption, label, meta } = node
 
-          const block = stencila.codeBlock({
+          const block = schema.codeBlock({
             text,
             programmingLanguage,
           })
@@ -103,7 +101,7 @@ export class XmdCodec extends Codec implements Codec {
                   ...block,
                   meta: { 'fig.cap': `(ref:${refId}) `, ...meta },
                 },
-                stencila.paragraph({
+                schema.paragraph({
                   content: [
                     `(ref:${refId}) `,
                     ...ensureInlineContentArray(caption),

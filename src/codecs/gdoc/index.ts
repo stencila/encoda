@@ -15,11 +15,11 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema, http } from '@stencila/jesta'
 import { docs_v1 as GDocT } from 'googleapis'
 import tempy from 'tempy'
 import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
-import { http } from '@stencila/jesta'
+
 import * as vfile from '../../util/vfile'
 import { DocxCodec } from '../docx'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
@@ -53,7 +53,7 @@ export class GDocCodec
   public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = { fetch: true }
-  ): Promise<stencila.Node> => {
+  ): Promise<schema.Node> => {
     const json = await vfile.dump(file)
     const gdoc = JSON.parse(json)
     return decodeDocument(gdoc, options.fetch)
@@ -67,7 +67,7 @@ export class GDocCodec
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     return new DocxCodec().encode(node, options, {
@@ -85,7 +85,7 @@ export class GDocCodec
    * do NOT get written to a sibling folder (since they are embedded
    * in the DOCX file during encoding).
    */
-  public preWrite(node: stencila.Node): Promise<stencila.Node> {
+  public preWrite(node: schema.Node): Promise<schema.Node> {
     return Promise.resolve(node)
   }
 }
@@ -161,19 +161,19 @@ function assertDefined<T>(value: T | null | undefined): T | never {
 async function decodeDocument(
   doc: GDocT.Schema$Document,
   fetch: boolean
-): Promise<stencila.Node> {
+): Promise<schema.Node> {
   decodingGDoc = { ...doc, listDepth: 0 }
 
   // Create a fetcher for remove resources
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
-  let title: string | stencila.InlineContent[] | undefined =
+  let title: string | schema.InlineContent[] | undefined =
     typeof doc.title === 'string' ? doc.title : undefined
 
   // Decode the content, if any
-  let content: stencila.Node[] = []
-  const lists: { [key: string]: stencila.List[] } = {}
+  let content: schema.Node[] = []
+  const lists: { [key: string]: schema.List[] } = {}
   if (doc.body?.content) {
     content = (
       await Promise.all(
@@ -184,7 +184,7 @@ async function decodeDocument(
               const block = await decodeParagraph(para, lists)
 
               // Ignore empty paragraphs
-              if (stencila.isParagraph(block)) {
+              if (schema.isParagraph(block)) {
                 const { content } = block
                 if (
                   content.length === 0 ||
@@ -197,7 +197,7 @@ async function decodeDocument(
 
               // If this para has the `Title` style then use it's content
               // as the title of the article (overrides doc.title)
-              if (stencila.isParagraph(block) && para.paragraphStyle) {
+              if (schema.isParagraph(block) && para.paragraphStyle) {
                 const styleType = para.paragraphStyle.namedStyleType
                 if (styleType && styleType === 'TITLE') {
                   const { content } = block
@@ -222,13 +222,13 @@ async function decodeDocument(
           }
         )
       )
-    ).filter((node) => node !== undefined) as stencila.Node[]
+    ).filter((node) => node !== undefined) as schema.Node[]
   }
 
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return stencila.article({
+  return schema.article({
     title: title ?? undefined,
     content: ensureBlockContentArrayOrUndefined(content),
   })
@@ -244,8 +244,8 @@ async function decodeDocument(
  */
 async function decodeParagraph(
   para: GDocT.Schema$Paragraph,
-  lists: { [key: string]: stencila.List[] }
-): Promise<stencila.Node | undefined> {
+  lists: { [key: string]: schema.List[] }
+): Promise<schema.Node | undefined> {
   const { elements = [], paragraphStyle, bullet } = para
 
   const content = await Promise.all(elements.map(decodeParagraphElement))
@@ -254,22 +254,19 @@ async function decodeParagraph(
   // so return that. Filtering is necessary to remove empty strings that
   // are sometimes created during decoding.
   const visibleContent = content.filter((node) => node !== '')
-  if (
-    visibleContent.length === 1 &&
-    stencila.isBlockContent(visibleContent[0])
-  ) {
+  if (visibleContent.length === 1 && schema.isBlockContent(visibleContent[0])) {
     return visibleContent[0]
   }
 
   // Ensure that now only have inline content, for the following node types
-  const inlineContent = content.filter(stencila.isInlineContent)
+  const inlineContent = content.filter(schema.isInlineContent)
 
   if (paragraphStyle) {
     const styleType = paragraphStyle.namedStyleType
     if (styleType) {
       const match = /^HEADING_(\d)$/.exec(styleType)
       if (match) {
-        return stencila.heading({
+        return schema.heading({
           content: inlineContent,
           depth: parseInt(match[1], 10),
         })
@@ -279,7 +276,7 @@ async function decodeParagraph(
 
   if (bullet) return decodeListItem(para, inlineContent, lists)
 
-  return stencila.paragraph({ content: inlineContent })
+  return schema.paragraph({ content: inlineContent })
 }
 
 /**
@@ -291,9 +288,9 @@ async function decodeParagraph(
  */
 function decodeListItem(
   para: GDocT.Schema$Paragraph,
-  content: stencila.InlineContent[],
-  lists: { [key: string]: stencila.List[] }
-): stencila.List | undefined {
+  content: schema.InlineContent[],
+  lists: { [key: string]: schema.List[] }
+): schema.List | undefined {
   const bullet = assertDefined(para.bullet)
   // The list and the depth in that list that this
   // list item lives at
@@ -301,8 +298,8 @@ function decodeListItem(
   const listLevel = bullet.nestingLevel ?? 0
 
   // The item to add to a list
-  const listItem = stencila.listItem({
-    content: [stencila.paragraph({ content })],
+  const listItem = schema.listItem({
+    content: [schema.paragraph({ content })],
   })
 
   // If we have jumped up a level then it means that
@@ -334,7 +331,7 @@ function decodeListItem(
     nestingLevel.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
       ? 'Unordered'
       : 'Ascending'
-  const newList = stencila.list({ items: [listItem], order })
+  const newList = schema.list({ items: [listItem], order })
 
   if (listLevel === 0) {
     // Register the new list so other items can be added.
@@ -353,26 +350,26 @@ function decodeListItem(
 /**
  * Decode a GDoc `Table` element to a Stencila `Table`.
  */
-async function decodeTable(table: GDocT.Schema$Table): Promise<stencila.Table> {
+async function decodeTable(table: GDocT.Schema$Table): Promise<schema.Table> {
   return {
     type: 'Table',
     rows: await Promise.all(
       (table.tableRows ?? []).map(
-        async (row: GDocT.Schema$TableRow): Promise<stencila.TableRow> => {
+        async (row: GDocT.Schema$TableRow): Promise<schema.TableRow> => {
           return {
             type: 'TableRow',
             cells: await Promise.all(
               (row.tableCells ?? []).map(
                 async (
                   cell: GDocT.Schema$TableCell
-                ): Promise<stencila.TableCell> => {
+                ): Promise<schema.TableCell> => {
                   return {
                     type: 'TableCell',
                     content: await Promise.all(
                       (cell.content ?? []).map(
                         async (
                           elem: GDocT.Schema$StructuralElement
-                        ): Promise<stencila.InlineContent> => {
+                        ): Promise<schema.InlineContent> => {
                           if (elem.paragraph) {
                             const { elements } = elem.paragraph
                             if (elements) {
@@ -380,7 +377,7 @@ async function decodeTable(table: GDocT.Schema$Table): Promise<stencila.Table> {
                                 await Promise.all(
                                   elements.map(decodeParagraphElement)
                                 )
-                              ).filter(stencila.isInlineContent)[0]
+                              ).filter(schema.isInlineContent)[0]
                             }
                           }
                           log.warn(
@@ -404,7 +401,7 @@ async function decodeTable(table: GDocT.Schema$Table): Promise<stencila.Table> {
 /**
  * Decode a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
  */
-function decodeSectionBreak(): stencila.ThematicBreak {
+function decodeSectionBreak(): schema.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
@@ -416,7 +413,7 @@ function decodeSectionBreak(): stencila.ThematicBreak {
  */
 async function decodeParagraphElement(
   elem: GDocT.Schema$ParagraphElement
-): Promise<stencila.Entity | stencila.InlineContent> {
+): Promise<schema.Entity | schema.InlineContent> {
   // The paragraph element has one of these union fields
   if (elem.textRun) {
     return decodeTextRun(elem.textRun)
@@ -450,7 +447,7 @@ async function decodeParagraphElement(
  */
 async function decodeInlineObjectElement(
   elem: GDocT.Schema$InlineObjectElement
-): Promise<stencila.Entity> {
+): Promise<schema.Entity> {
   // Check if there is a link to a node
   const url = elem.textStyle?.link?.url
   if (
@@ -465,7 +462,7 @@ async function decodeInlineObjectElement(
             }
           : {}
       const node = await http.client.get(url, { headers }).json()
-      return (node as { node: stencila.Entity }).node
+      return (node as { node: schema.Entity }).node
     } catch {
       log.warn(`Error fetching node from ${url}`)
     }
@@ -489,7 +486,7 @@ async function decodeInlineObjectElement(
     } catch {
       // continue
     }
-    if (node !== undefined && stencila.isEntity(node)) {
+    if (node !== undefined && schema.isEntity(node)) {
       // If the description contains a Stencila entity then
       // return it
       return node
@@ -500,7 +497,7 @@ async function decodeInlineObjectElement(
     return decodeImage(embeddedObject, embeddedObject.imageProperties)
   } else {
     log.warn(`Unhandled embedded object type ${JSON.stringify(embeddedObject)}`)
-    return stencila.imageObject({ contentUrl: '' })
+    return schema.imageObject({ contentUrl: '' })
   }
 }
 
@@ -515,12 +512,12 @@ function decodeTextRun(
   textRun: GDocT.Schema$TextRun
 ):
   | string
-  | stencila.Emphasis
-  | stencila.Strong
-  | stencila.Delete
-  | stencila.Link
-  | stencila.Subscript
-  | stencila.Superscript {
+  | schema.Emphasis
+  | schema.Strong
+  | schema.Delete
+  | schema.Link
+  | schema.Subscript
+  | schema.Superscript {
   const { textStyle } = textRun
   const textContent = assertDefined(textRun.content)
   const text = textContent.endsWith('\n')
@@ -530,14 +527,14 @@ function decodeTextRun(
 
   if (textStyle) {
     if (textStyle.link)
-      return stencila.link({ content, target: textStyle.link.url ?? '' })
+      return schema.link({ content, target: textStyle.link.url ?? '' })
     if (textStyle.baselineOffset === 'SUPERSCRIPT')
-      return stencila.superscript({ content })
+      return schema.superscript({ content })
     if (textStyle.baselineOffset === 'SUBSCRIPT')
-      return stencila.subscript({ content })
-    if (textStyle.strikethrough) return stencila.del({ content })
-    if (textStyle.bold) return stencila.strong({ content })
-    if (textStyle.italic) return stencila.emphasis({ content })
+      return schema.subscript({ content })
+    if (textStyle.strikethrough) return schema.del({ content })
+    if (textStyle.bold) return schema.strong({ content })
+    if (textStyle.italic) return schema.emphasis({ content })
   }
 
   return text
@@ -552,13 +549,13 @@ function decodeTextRun(
 function decodeImage(
   embeddedObject: GDocT.Schema$EmbeddedObject,
   imageProperties: GDocT.Schema$ImageProperties
-): stencila.ImageObject {
+): schema.ImageObject {
   const { title, description } = embeddedObject
   const contentUri = imageProperties.contentUri ?? ''
   const contentUrl = contentUri.startsWith('http')
     ? decodingFetcher(contentUri)
     : contentUri
-  return stencila.imageObject({
+  return schema.imageObject({
     contentUrl,
     title: title !== null ? title : undefined,
     text: description !== null ? description : undefined,

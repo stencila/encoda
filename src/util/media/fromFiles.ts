@@ -2,7 +2,7 @@
  * @module util/media/fromFiles
  */
 
-import * as schema from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import * as dataUri from '../dataUri'
 import transform from '../transform'
 

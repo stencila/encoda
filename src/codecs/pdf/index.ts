@@ -4,7 +4,7 @@
  * @module codecs/pdf
  */
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import { schema } from '@stencila/jesta'
 import { PDFDocument, PDFName, PDFStream } from 'pdf-lib'
 import { dump, load } from '../..'
 import * as puppeteer from '../../util/puppeteer'
@@ -36,9 +36,7 @@ export class PdfCodec extends Codec {
    * @param file The PDF file to decode
    * @returns A promise that resolves to a `Node`
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
     const pdf = await PDFDocument.load(new Uint8Array(buffer))
 
@@ -56,7 +54,7 @@ export class PdfCodec extends Codec {
       dateCreated,
       dateModified,
     } = await decodeMetadata(meta)
-    return stencila.creativeWork({
+    return schema.creativeWork({
       authors,
       title,
       keywords,
@@ -73,7 +71,7 @@ export class PdfCodec extends Codec {
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // Generate HTML that will be used to render the PDF.
@@ -137,28 +135,28 @@ interface PdfMetadata {
 const decodeMetadata = async (
   metadata: PdfMetadata
   // eslint-disable-next-line @typescript-eslint/require-await
-): Promise<stencila.CreativeWork> => {
+): Promise<schema.CreativeWork> => {
   const { title, authors, keywords, dateCreated, dateModified } = metadata
 
   let people
   if (authors !== undefined) {
     people = await Promise.all(
       authors.map(
-        async (author) => load(author, 'person') as Promise<stencila.Person>
+        async (author) => load(author, 'person') as Promise<schema.Person>
       )
     )
   }
-  return stencila.creativeWork({
+  return schema.creativeWork({
     title,
     authors: people,
     keywords,
     dateCreated:
       dateCreated !== undefined
-        ? stencila.date({ value: dateCreated.toISOString() })
+        ? schema.date({ value: dateCreated.toISOString() })
         : undefined,
     dateModified:
       dateModified !== undefined
-        ? stencila.date({ value: dateModified.toISOString() })
+        ? schema.date({ value: dateModified.toISOString() })
         : undefined,
   })
 }
@@ -167,14 +165,14 @@ const decodeMetadata = async (
  * Encode PDF metadata in a `Node` in the form handled by
  * either XMP or PDF info dict.
  */
-const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
+const encodeMetadata = async (node: schema.Node): Promise<PdfMetadata> => {
   let title
   let authors
   let keywords
   let dateCreated
   let dateModified
   const dateCurrent = new Date()
-  if (stencila.isCreativeWork(node)) {
+  if (schema.isCreativeWork(node)) {
     ;({ title, authors, keywords, dateCreated, dateModified } = node)
   }
 
@@ -185,7 +183,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
   if (authors !== undefined) {
     authors = await Promise.all(
       authors.map((author) => {
-        if (stencila.isA('Person', author)) return dump(author, 'person')
+        if (schema.isA('Person', author)) return dump(author, 'person')
         else return author.name ?? author.legalName ?? ''
       })
     )
@@ -225,7 +223,7 @@ const creatorTool = 'Stencila Encoda https://github.com/stencila/encoda'
  *
  * @param pdf The PDF document to decode XMP metadata from
  */
-function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | void> {
+function decodeXmp(pdf: PDFDocument): Promise<schema.Node | void> {
   let metadata
   try {
     metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
@@ -255,7 +253,7 @@ function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | void> {
 function encodeXmp(
   pdf: PDFDocument,
   meta: PdfMetadata,
-  node: stencila.Node
+  node: schema.Node
 ): void {
   const {
     title,
