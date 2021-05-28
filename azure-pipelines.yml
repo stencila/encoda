@@ -65,6 +65,8 @@ jobs:
         displayName: 'Build package'
 
   - job: test_docker
+    # Temporarily skip
+    condition: 'false'
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -78,7 +80,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: release
-    dependsOn: [test, test_docker]
+    dependsOn: [test] # Skipping temporarily: , test_docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
