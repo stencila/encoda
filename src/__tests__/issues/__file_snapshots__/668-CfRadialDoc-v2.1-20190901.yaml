@@ -1,39 +1,9 @@
 type: Article
 references:
-  - type: Article
-    authors:
-      - type: Person
-        familyNames:
-          - Axford
-        givenNames:
-          - D. N.
-    datePublished:
-      type: Date
-      value: 1968,8
-    identifiers:
-      - type: PropertyValue
-        name: doi
-        propertyID: https://registry.identifiers.org/registry/doi
-        value: 10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
-    isPartOf:
-      type: PublicationIssue
-      isPartOf:
-        type: PublicationVolume
-        isPartOf:
-          type: Periodical
-          name: Journal of Applied Meteorology
-        volumeNumber: 7
-      issueNumber: 4
-    pageEnd: 666
-    pageStart: 645
-    publisher:
-      type: Organization
-      name: American Meteorological Society
-    title: >-
-      On the Accuracy of Wind Measurements Using an Inertial Platform in an
-      Aircraft, and an Example of a Measurement of the Vertical Mesostructure of
-      the Atmosphere
-    url: http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
+  - >-
+    Axford, D. N., 1968: On the accuracy of wind measurements using an inertial
+    platform in an aircraft, and an example of a measurement of the vertical
+    structure of the atmosphere. J. Appl. Meteor., 7, 645-666.
   - type: CreativeWork
     id: ref2
     authors:
@@ -63,53 +33,10 @@ references:
       name: Elsevier
     title: Weather Echo Signals
     url: http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0
-  - type: Article
-    authors:
-      - type: Person
-        familyNames:
-          - Lee
-        givenNames:
-          - Wen-Chau
-      - type: Person
-        familyNames:
-          - Dodge
-        givenNames:
-          - Peter
-      - type: Person
-        familyNames:
-          - Marks
-        givenNames:
-          - Frank D.
-        honorificSuffix: Jr.
-      - type: Person
-        familyNames:
-          - Hildebrand
-        givenNames:
-          - Peter H.
-    datePublished:
-      type: Date
-      value: 1994,4
-    identifiers:
-      - type: PropertyValue
-        name: doi
-        propertyID: https://registry.identifiers.org/registry/doi
-        value: 10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
-    isPartOf:
-      type: PublicationIssue
-      isPartOf:
-        type: PublicationVolume
-        isPartOf:
-          type: Periodical
-          name: Journal of Atmospheric and Oceanic Technology
-        volumeNumber: 11
-      issueNumber: 2
-    pageEnd: 578
-    pageStart: 572
-    publisher:
-      type: Organization
-      name: American Meteorological Society
-    title: Mapping of Airborne Doppler Radar Data
-    url: http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
+  - >-
+    Lee, W., P. Dodge, F. D. Marks Jr. and P. Hildebrand, 1994: Mapping of
+    Airborne Doppler Radar Data. Journal of Oceanic and Atmospheric Technology,
+    11, 572 – 578.
   - >-
     Michelson D.B., Lewandowski R., Szewczykowski M., Beekhuis H., and Haase G.,
     2014: EUMETNET OPERA weather radar information model for implementation with
