@@ -1,3 +1,4 @@
+import { Jesta } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
@@ -15,8 +16,6 @@ import * as vfile from './util/vfile'
 import * as zip from './util/zip'
 
 const log = getLogger('encoda')
-
-type VFile = vfile.VFile
 
 /**
  * To read or write from the STDIO a special `filePath` value of `-` can
@@ -233,47 +232,6 @@ export async function handled(
 }
 
 /**
- * Decode a virtual file to a `stencila.Node`
- *
- * @param file The `VFile` to decode
- * @param content The file path
- * @param format The media type
- */
-export async function decode<Options extends CommonDecodeOptions>(
-  file: VFile,
-  content?: string,
-  options: Options = commonDecodeDefaults as Options
-): Promise<stencila.Node> {
-  const { format } = options
-  const codec = await match(content, format)
-  return codec.decode(file, options)
-}
-
-/**
- * Encode (i.e. serialize) a `stencila.Node` to a virtual file.
- *
- * @param node The node to encode
- * @param options Encoding options. Should include at least one of:
- *    - filePath The file path to encode the node to.
- *               Only required for some codecs e.g. those encoding to more than one file.
- *    - format The format to encode the node as.
- *             If undefined then determined from filePath or file path.
- */
-export async function encode<Options extends CommonEncodeOptions>(
-  node: stencila.Node,
-  options: Options = commonEncodeDefaults as Options
-): Promise<VFile> {
-  const { filePath, format } = options
-  if ((filePath ?? format) === undefined) {
-    throw new Error(
-      'At least one of "filePath" or "format" option must be provided'
-    )
-  }
-  const codec = await match(filePath, format, true)
-  return codec.encode(node, options)
-}
-
-/**
  * Load a `stencila.Node` from a string of content.
  *
  * @param content The content to load.
@@ -428,3 +386,74 @@ export async function convert(
 export async function shutdown(): Promise<void> {
   await puppeteer.shutdown()
 }
+
+/// ////////////////////////////////////////////////////////////////////////////
+
+const jesta = new Jesta()
+
+const formats = [codecList, 'rmd']
+
+/**
+ * Implementation of Stencila plugin method `decode`.
+ *
+ * Delegates to the codec that matches the input format
+ * with the content loaded into a `VFile`.
+ * Extends Jesta's method schema with all the formats
+ * supported by Encoda.
+ */
+export async function decode_(
+  this: Encoda,
+  content: string,
+  format: string | undefined
+): Promise<stencila.Node> {
+  const codec = await match(content, format)
+  return codec.decode(vfile.load(content))
+}
+decode_.schema = jesta.decode.schema
+// @ts-ignore
+decode_.schema.properties.format.enum = formats
+
+/**
+ * Implementation of Stencila plugin method `encode`.
+ *
+ * Delegates to the codec that matches the output format
+ * and dumps the `VFile` content to a string.
+ * Extends Jesta's method schema with all the formats
+ * supported by Encoda.
+ */
+export async function encode_(
+  this: Encoda,
+  node: stencila.Node,
+  format: string
+): Promise<string> {
+  const codec = await match(undefined, format)
+  return vfile.dump(await codec.encode(node))
+}
+encode_.schema = jesta.encode.schema
+// @ts-ignore
+encode_.schema.properties.format.enum = formats
+
+/**
+ * Implementation of Stencila plugin method `convert`.
+ *
+ * Override necessary for binary formats such as `docx` to allow
+ * codecs to do reading and writing of files (via a `Vfile`)
+ * rather than always using Jesta's implementations of `read` and `write`.
+ *
+ * Extends Jesta's method schema with all the formats supported by Encoda.
+ */
+const convert_ = jesta.convert
+// @ts-ignore
+convert_.schema.properties.from.enum = formats
+// @ts-ignore
+convert_.schema.properties.to.enum = formats
+
+export class Encoda extends Jesta {
+  decode = decode_
+  encode = encode_
+  convert = convert_
+}
+
+export const encoda = new Encoda()
+
+if (require.main === module) encoda.cli()
