@@ -1,6 +1,6 @@
 {
   "name": "encoda",
-  "softwareVersion": "",
+  "softwareVersion": "0.117.0",
   "description": "Stencila plugin for document format conversion",
   "installUrl": [
     "https://www.npmjs.com/package/@stencila/encoda",
@@ -10,7 +10,10 @@
     {
       "title": "convert",
       "type": "object",
-      "required": ["input", "output"],
+      "required": [
+        "input",
+        "output"
+      ],
       "properties": {
         "input": {
           "description": "The URL to read content from.",
@@ -134,7 +137,10 @@
     {
       "title": "decode",
       "description": "Decode content of a specific format into a Stencila node.",
-      "required": ["content", "format"],
+      "required": [
+        "content",
+        "format"
+      ],
       "properties": {
         "content": {
           "description": "The content to be decoded",
@@ -189,7 +195,10 @@
     {
       "title": "encode",
       "description": "Encode a Stencila node to content of a specific format.",
-      "required": ["node", "format"],
+      "required": [
+        "node",
+        "format"
+      ],
       "properties": {
         "node": {
           "description": "The node to be encoded"
@@ -247,7 +256,10 @@
     {
       "title": "get",
       "description": "Get a variable from a document.",
-      "required": ["document", "name"],
+      "required": [
+        "document",
+        "name"
+      ],
       "properties": {
         "document": {
           "description": "The id of the document to get the variable from.",
@@ -262,7 +274,9 @@
     {
       "title": "import",
       "description": "Import a document from a URL.",
-      "required": ["input"],
+      "required": [
+        "input"
+      ],
       "properties": {
         "input": {
           "description": "The URL to read content from.",
@@ -332,7 +346,10 @@
     {
       "title": "pull",
       "description": "Pull file/s from a URL to the file system",
-      "required": ["input", "output"],
+      "required": [
+        "input",
+        "output"
+      ],
       "properties": {
         "input": {
           "description": "The URL to fetch.",
@@ -348,7 +365,9 @@
     {
       "title": "read",
       "description": "Read content from a URL.",
-      "required": ["input"],
+      "required": [
+        "input"
+      ],
       "properties": {
         "input": {
           "description": "The URL to read content from.",
@@ -364,7 +383,10 @@
     {
       "title": "select",
       "description": "Select child nodes from a node.",
-      "required": ["node", "query"],
+      "required": [
+        "node",
+        "query"
+      ],
       "properties": {
         "node": {
           "description": "The node to select from."
@@ -375,14 +397,20 @@
         },
         "lang": {
           "description": "The language that the query is written in.",
-          "enum": ["simplepath"]
+          "enum": [
+            "simplepath"
+          ]
         }
       }
     },
     {
       "title": "set",
       "description": "Set a variable in a document.",
-      "required": ["document", "name", "value"],
+      "required": [
+        "document",
+        "name",
+        "value"
+      ],
       "properties": {
         "document": {
           "description": "The id of the document to set the variable in.",
@@ -400,7 +428,9 @@
     {
       "title": "validate",
       "description": "Validate a node against the Stencila Schema.",
-      "required": ["node"],
+      "required": [
+        "node"
+      ],
       "properties": {
         "node": {
           "description": "The node to validate."
@@ -415,7 +445,10 @@
     {
       "title": "write",
       "description": "Write content to a URL.",
-      "required": ["content", "output"],
+      "required": [
+        "content",
+        "output"
+      ],
       "properties": {
         "content": {
           "description": "The content to write",

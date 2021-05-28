@@ -1,3 +1,22 @@
+# [0.117.0](https://github.com/stencila/encoda/compare/v0.116.1...v0.117.0) (2021-05-28)
+
+
+### Bug Fixes
+
+* More fixes for changes in types ([e4eb1d7](https://github.com/stencila/encoda/commit/e4eb1d7bc17580e76d26c9a934333eea874b17a5))
+* Upgrade to latest Schema version ([1d9f7c3](https://github.com/stencila/encoda/commit/1d9f7c3dc22957a42e685811432ed45dbbf8e9d6))
+* **dependencies:** update dependency @stencila/schema to ^1.7.1 ([5aa0c3c](https://github.com/stencila/encoda/commit/5aa0c3caa7d97c51afe26388394eb35400c6f980))
+* **dependencies:** update dependency citation-js to ^0.5.1 ([6c6da39](https://github.com/stencila/encoda/commit/6c6da39333817a9da9f4442a77aa5435673d861e))
+* **dependencies:** update dependency jsdom to ^16.6.0 ([edbbdf3](https://github.com/stencila/encoda/commit/edbbdf323aa45e199046d37c7f52312322b85e2f))
+* **dependencies:** update dependency xlsx to ^0.17.0 ([a5a59ae](https://github.com/stencila/encoda/commit/a5a59ae84d91f2ce3d4f65665ae26260b3b6d127))
+* **IPYNB:** Do not validate notebooks ([c77e44a](https://github.com/stencila/encoda/commit/c77e44a367da43879fefe5616a6af3554d6864b4))
+* **Reshape:** Apply rules to any inline content, not just paragraphs ([e805b60](https://github.com/stencila/encoda/commit/e805b608a7b188e6031054a2823b13d479f007af))
+
+
+### Features
+
+* **Plugin:** Add codemeta.json and setup to act as a plugin ([ce34372](https://github.com/stencila/encoda/commit/ce34372095b0413c0cbf3043fab3b96feeb61cd3))
+
 ## [0.116.1](https://github.com/stencila/encoda/compare/v0.116.0...v0.116.1) (2021-05-10)
 
 
