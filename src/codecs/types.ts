@@ -22,7 +22,6 @@ export interface CommonEncodeOptions {
   filePath?: string
   isStandalone?: boolean
   isBundle?: boolean
-  shouldZip?: 'yes' | 'no' | 'maybe'
   theme?: string
 }
 
@@ -35,12 +34,11 @@ export interface CommonEncodeOptions {
  * enforce consistency however.
  */
 type CommonEncodeDefaults = Required<
-  Pick<CommonEncodeOptions, 'isStandalone' | 'isBundle' | 'shouldZip' | 'theme'>
+  Pick<CommonEncodeOptions, 'isStandalone' | 'isBundle' | 'theme'>
 >
 export const commonEncodeDefaults: CommonEncodeDefaults = {
   isStandalone: false,
   isBundle: false,
-  shouldZip: 'no',
   theme: 'stencila',
 }
 

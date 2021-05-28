@@ -11,26 +11,26 @@
 
 <!-- toc -->
 
-- [Introduction](#introduction)
-- [Formats](#formats)
-- [Publishers](#publishers)
-- [Install](#install)
-- [Use](#use)
-  - [Converting files](#converting-files)
-  - [Converting folders](#converting-folders)
-  - [Converting command line input](#converting-command-line-input)
-  - [Creating zip archives](#creating-zip-archives)
-  - [Using with Executa](#using-with-executa)
-- [Documentation](#documentation)
-- [Develop](#develop)
-- [Testing](#testing)
-  - [Running tests locally](#running-tests-locally)
-  - [Running test in Docker](#running-test-in-docker)
-- [Writing tests](#writing-tests)
-  - [Recording and using network fixtures](#recording-and-using-network-fixtures)
-- [Contribute](#contribute)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
+- [Encoda](#encoda) - [Codecs for structured, semantic, composable, and executable documents](#codecs-for-structured-semantic-composable-and-executable-documents)
+  - [Introduction](#introduction)
+  - [Formats](#formats)
+  - [Publishers](#publishers)
+  - [Install](#install)
+  - [Use](#use)
+    - [Converting files](#converting-files)
+    - [Converting folders](#converting-folders)
+    - [Converting command line input](#converting-command-line-input)
+    - [Using with Executa](#using-with-executa)
+  - [Documentation](#documentation)
+  - [Develop](#develop)
+  - [Testing](#testing)
+    - [Running tests locally](#running-tests-locally)
+    - [Running test in Docker](#running-test-in-docker)
+  - [Writing tests](#writing-tests)
+    - [Recording and using network fixtures](#recording-and-using-network-fixtures)
+  - [Contribute](#contribute)
+  - [Contributors](#contributors)
+  - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
 
@@ -307,10 +307,6 @@ You can send output to the console by using `-` as the second argument and speci
 ```bash
 encoda convert paragraph.md - --to yaml
 ```
-
-### Creating zip archives
-
-Use the `--zip` option to create a Zip archive with the outputs of conversion. With `--zip=yes` a zip archive will always be created. With `--zip=maybe`, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.
 
 | Option         | Description                                                                                                                                                                                                                                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

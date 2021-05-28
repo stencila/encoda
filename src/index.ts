@@ -13,7 +13,6 @@ import {
 } from './codecs/types'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
-import * as zip from './util/zip'
 
 const log = getLogger('encoda')
 
@@ -325,7 +324,6 @@ export async function convert(
   else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
-  const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
   const files: string[] = []
   for (const outputPath of outputPaths) {
     // Explicitly deal with output to stdout indicator
@@ -357,21 +355,10 @@ export async function convert(
     // The `to` option only applies to the first output
     to = undefined
 
-    // Return the path of the last output file,
-    // or the zip file, if one was produced.
+    // Return the path of the last output file
     index += 1
     if (index === outputPaths.length) {
-      if (shouldZip === 'yes' || (files.length > 1 && shouldZip === 'maybe')) {
-        const first = outputPaths[0]
-        let zipName = 'output.zip'
-        let outputDir = ''
-        if (outputPaths.length === 1 && first !== undefined) {
-          const { dir, name } = path.parse(first)
-          zipName = path.join(dir, name + '.zip')
-          outputDir = dir
-        }
-        return zip.create(zipName, files, { remove: true, dir: outputDir })
-      } else return outputPath
+      return outputPath
     }
   }
 }
