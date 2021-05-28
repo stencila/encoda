@@ -53,14 +53,16 @@ jobs:
           # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
           NODE_OPTIONS: --max_old_space_size=4000
 
-      - script: npm run build
-        displayName: 'Build package'
-
       # Only upload coverage on Linux (fails on Windows and largely
       # unnecessary to duplicate by OS anyway)
       - script: bash <(curl -s https://codecov.io/bash)
         condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Upload coverage'
+
+      # Only test that the package can be built OK when on Linux
+      - script: npm run build
+        condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
+        displayName: 'Build package'
 
   - job: test_docker
     pool:
