@@ -52,13 +52,13 @@ export class XmlCodec extends Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
+  public readonly encode = (
     node: stencila.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const doc = await encodeDoc(node, options.isStandalone)
+    const doc = encodeDoc(node, options.isStandalone)
     const content = xml.dump(doc, { spaces: 4 })
-    return vfile.load(content)
+    return Promise.resolve(vfile.load(content))
   }
 }
 

@@ -115,7 +115,7 @@ export class PdfCodec extends Codec {
     const pdf = await PDFDocument.load(new Uint8Array(buffer))
     const metadata = await encodeMetadata(node)
     encodeInfoDict(pdf, metadata)
-    await encodeXmp(pdf, metadata, node)
+    encodeXmp(pdf, metadata, node)
     const bytes = await pdf.save()
 
     return vfile.load(Buffer.from(bytes))
@@ -252,11 +252,11 @@ function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | void> {
  * @param pdf The PDF document to add XMP metadata to
  * @param node The node to encode
  */
-async function encodeXmp(
+function encodeXmp(
   pdf: PDFDocument,
   meta: PdfMetadata,
   node: stencila.Node
-): Promise<void> {
+): void {
   const {
     title,
     authors,
@@ -267,7 +267,7 @@ async function encodeXmp(
   } = meta
 
   // Dump the entire node as an XML document to put into XMP
-  const nodeDoc = await encodeXmlDoc(node)
+  const nodeDoc = encodeXmlDoc(node)
   const nodeXML = xml.dump(nodeDoc)
 
   /**
