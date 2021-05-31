@@ -105,8 +105,8 @@
   },
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
-    "@stencila/dev-config": "2.0.7",
-    "@testing-library/dom": "7.30.4",
+    "@stencila/dev-config": "2.0.12",
+    "@testing-library/dom": "7.31.0",
     "@testing-library/jest-dom": "5.12.0",
     "@types/async-lock": "1.1.2",
     "@types/content-type": "1.1.3",
@@ -136,19 +136,19 @@
     "delay": "5.0.0",
     "dependency-check": "4.1.0",
     "googleapis": "74.2.0",
-    "jest": "27.0.1",
+    "jest": "27.0.3",
     "jest-file-snapshot": "0.5.0",
-    "jest-matcher-utils": "27.0.1",
+    "jest-matcher-utils": "27.0.2",
     "json-schema-to-typescript": "10.1.4",
     "markdown-toc": "1.2.0",
     "nock": "13.0.11",
     "pa11y": "6.0.0",
     "pkg": "5.2.1",
     "structured-data-testing-tool": "4.5.0",
-    "ts-jest": "27.0.0",
+    "ts-jest": "27.0.2",
     "ts-node": "10.0.0",
     "typedoc": "0.20.36",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   },
   "commitlint": {
     "extends": [
