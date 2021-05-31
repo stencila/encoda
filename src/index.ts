@@ -376,10 +376,12 @@ export async function shutdown(): Promise<void> {
 }
 
 /// ////////////////////////////////////////////////////////////////////////////
+// Implementation of plugin interface by extending Jesta
 
 const jesta = new Jesta()
 
-const formats = [codecList, 'rmd']
+// Extend codecs list with some other aliases
+const formats = [...codecList, 'rmd']
 
 /**
  * Implementation of Stencila plugin method `decode`.
