@@ -30,7 +30,7 @@ jobs:
         fetchDepth: 10
         displayName: 'Checkout repo'
 
-      - script: npm install
+      - script: npm ci
         displayName: 'Install dependencies'
 
       - script: npm run lint
