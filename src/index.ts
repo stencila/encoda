@@ -13,7 +13,7 @@ import {
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
 
-import manifest from '../codemeta.json'
+import manifest from './codemeta.json'
 
 const log = getLogger('encoda')
 

@@ -24,8 +24,8 @@
     "start": "ts-node --files src",
     "cli:debug": "node --require ./ts-node-register.js --inspect=9229 src --debug=1",
     "build": "npm run build:codemeta && npm run build:dist && npm run build:bin",
-    "build:codemeta": "ts-node src update codemeta.json",
-    "build:dist": "tsc -p tsconfig.prod.json && cp codemeta.json dist/ && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
+    "build:codemeta": "ts-node src update src/codemeta.json",
+    "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
     "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/src/codecs/csl/styles/",
     "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/src/codecs/dmagic/",
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/src/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/src/codecs/pandoc/templates/",
@@ -248,7 +248,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "sed -i -e 's!\"softwareVersion\": .*!\"softwareVersion\": \"${nextRelease.version}\",!' codemeta.json"
+          "prepareCmd": "sed -i -e 's!\"softwareVersion\": .*!\"softwareVersion\": \"${nextRelease.version}\",!' src/codemeta.json"
         }
       ],
       [
@@ -257,7 +257,7 @@
           "assets": [
             "CHANGELOG.md",
             "package.json",
-            "codemeta.json"
+            "src/codemeta.json"
           ]
         }
       ],
