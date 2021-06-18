@@ -44,6 +44,7 @@ import { plotlyMediaType } from '../plotly'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 import { isVegaMediaType, vegaMediaType } from '../vega'
+import { ensureNodeArray } from '../../util/content/ensureNodeArray'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -1355,7 +1356,7 @@ function encodeCreativeWork(
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
-    encodeNodes(content, state)
+    encodeNodes(ensureNodeArray(content), state)
   )
 }
 
@@ -1870,7 +1871,7 @@ function encodeFigure(
     encodeMaybe(label, (label) =>
       h('label', microdataProperty('label'), label)
     ),
-    encodeNodes(content, state),
+    encodeNodes(ensureNodeArray(content), state),
     encodeMaybe(caption, (caption) =>
       h(
         'figcaption',

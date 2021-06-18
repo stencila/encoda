@@ -396,6 +396,8 @@ async function reshapeCreativeWork(
       index += step - 1
     }
 
+    // TODO Remove this ts-ignore
+    // @ts-ignore
     if (node !== undefined) newContent.push(node)
   }
 

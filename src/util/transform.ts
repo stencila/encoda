@@ -39,8 +39,8 @@ export default async function transform(
 
     if (
       (transformed !== node && !recurse) ||
-      schema.isPrimitive(transformed) ||
-      transformed === undefined
+      typeof transformed !== 'object' ||
+      transformed === null
     )
       return transformed
 
@@ -74,7 +74,7 @@ export function transformSync(
   function walk(node: schema.Node): schema.Node | undefined {
     const transformed = transformer(node)
 
-    if (schema.isPrimitive(transformed) || transformed === undefined)
+    if (typeof transformed !== 'object' || transformed === null)
       return transformed
 
     if (Array.isArray(transformed)) {
