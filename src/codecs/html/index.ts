@@ -8,7 +8,6 @@ import { getLogger } from '@stencila/logga'
 import stencila, {
   isA,
   isInlineContent,
-  markTypes,
   microdata,
   microdataItemtype,
   microdataProperty,
@@ -2357,9 +2356,9 @@ function encodeThematicBreak(): HTMLHRElement {
 /**
  * Decode an inline element e.g `<em>` to a `Mark` node e.g. `Emphasis`.
  */
-function decodeMark<Type extends keyof typeof markTypes>(
+function decodeMark(
   elem: HTMLElement,
-  type: Type
+  type: stencila.Mark['type']
 ): stencila.Mark {
   return { type, content: decodeInlineChildNodes(elem) }
 }

@@ -1792,10 +1792,10 @@ function populateBibrContent(rid: string, state: EncodeState): void {
  * Deocde a JATS `<italic>`, `<bold>` etc node as a Stencila `Mark` node
  * of `Type` e.g. `Strong`.
  */
-function decodeMark<Type extends keyof typeof stencila.markTypes>(
+function decodeMark(
   elem: xml.Element,
   state: DecodeState,
-  type: Type
+  type: stencila.Mark['type']
 ): stencila.Mark[] {
   return [
     {
