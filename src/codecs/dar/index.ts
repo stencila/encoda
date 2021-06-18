@@ -67,12 +67,12 @@ export class DarCodec extends Codec implements Codec {
 
     // Generate promises for each document and its assets
     const nodes =
-      stencila.isCreativeWork(node) && node.type === 'Collection'
+      stencila.isIn('CreativeWorkTypes', node) && node.type === 'Collection'
         ? node.parts ?? []
         : [node]
     const promises = nodes.map(async (node, index) => {
       const fileId =
-        stencila.isCreativeWork(node) && node.name !== undefined
+        stencila.isIn('CreativeWorkTypes', node) && node.name !== undefined
           ? node.name
           : `${stencila.nodeType(node).toLowerCase()}-${index}`
       if (stencila.isA('Datatable', node)) {

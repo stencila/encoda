@@ -6,7 +6,7 @@ import { ensureBlockContent } from './ensureBlockContent'
  * node if necessary.
  */
 export const ensureArticle = (node: stencila.Node): stencila.Article => {
-  return stencila.isArticle(node)
+  return stencila.isA('Article', node)
     ? node
     : stencila.article({ content: [ensureBlockContent(node)] })
 }

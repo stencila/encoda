@@ -3,7 +3,7 @@
  *
  * @module codecs/rpng
  */
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { getRpngSymbolSize } from '@stencila/thema'
 import fs from 'fs-extra'
 import Jimp from 'jimp'

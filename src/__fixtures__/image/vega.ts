@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { vegaMediaType } from '../../codecs/vega'
 import { tinyImageUrl } from './tiny'
 

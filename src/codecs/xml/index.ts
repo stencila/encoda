@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { Codec, CommonEncodeOptions } from '../types'

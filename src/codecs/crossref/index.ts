@@ -164,7 +164,7 @@ function encodeNode(
 ): xml.Element | undefined {
   if (schema.isA('Review', node)) {
     return encodePeerReview(node, doi, url)
-  } else if (schema.isCreativeWork(node)) {
+  } else if (schema.isIn('CreativeWorkTypes', node)) {
     return encodePostedContent(node, doi, url)
   }
   log.error(`Unhandled node type ${schema.nodeType(node)}`)
@@ -201,7 +201,7 @@ function encodePeerReview(
   if (itemReviewed === undefined)
     throw new Error('Review must habe an `itemReviewed` property')
 
-  if (!schema.isCreativeWork(itemReviewed))
+  if (!schema.isIn('CreativeWorkTypes', itemReviewed))
     throw new Error(
       `Item reviewed must be a CreativeWork, got a ${schema.nodeType(
         itemReviewed

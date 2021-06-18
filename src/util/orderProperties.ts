@@ -2,7 +2,7 @@
  * @module util/orderProperties
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { transformSync } from './transform'
 
 /**

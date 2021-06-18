@@ -1,5 +1,6 @@
-import { Jesta, Manifest, schema } from '@stencila/jesta'
+import { Jesta, Manifest } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
+import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'

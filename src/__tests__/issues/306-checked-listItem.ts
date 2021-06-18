@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { MdCodec } from '../../codecs/md'
 import { HTMLCodec } from '../../codecs/html'
 import { snapshot } from '../helpers'

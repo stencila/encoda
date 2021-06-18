@@ -14,7 +14,7 @@
  */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'

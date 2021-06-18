@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { plotlyMediaType } from '../../codecs/plotly'
 import { tinyImageUrl } from './tiny'
 

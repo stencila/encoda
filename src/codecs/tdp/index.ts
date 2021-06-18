@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import { dump } from '../..'

@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import path from 'path'
 import { GDocCodec } from '../../codecs/gdoc'
 import { MdCodec } from '../../codecs/md'

@@ -7,8 +7,6 @@
 import { getLogger } from '@stencila/logga'
 import stencila, {
   isA,
-  isArticle,
-  isCreativeWork,
   isInlineContent,
   markTypes,
   microdata,
@@ -374,7 +372,7 @@ export const beautify = (html: string): string =>
 const getArticleMetaData = (
   node: stencila.Node
 ): Exclude<stencila.Article, 'content'> => {
-  const article = isArticle(node) ? node : stencila.article()
+  const article = stencila.isA('Article', node) ? node : stencila.article()
   const { content, ...metadata } = article
   return metadata
 }
@@ -1273,9 +1271,11 @@ function encodeReferencesProperty(
             ? h('a', { itemprop: 'url', href: url }, titleElem)
             : titleElem,
           encodeIsPartOfProperty(isPartOf),
-          stencila.isArticle(ref) ? encodePaginationProperties(ref) : undefined,
+          stencila.isA('Article', ref)
+            ? encodePaginationProperties(ref)
+            : undefined,
           encodePublisherProperty(publisher),
-          stencila.isArticle(ref) ? encodeImageProperty(ref) : undefined,
+          stencila.isA('Article', ref) ? encodeImageProperty(ref) : undefined,
           encodeIdentifiersProperty(identifiers)
         )
       })
@@ -1769,7 +1769,7 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
       const number = encodeCiteNumeric(reference, state.references)
       contentElems = [h('span', number)]
 
-      if (stencila.isCreativeWork(reference)) {
+      if (stencila.isIn('CreativeWorkTypes', reference)) {
         const authors = encodeCiteAuthors(reference)
         // For theming, always add authors span so that year span is
         // always the third span (if present)
@@ -1888,7 +1888,7 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const meta = decodeDataAttrs(collection)
   const parts = flatten(
     [...collection.childNodes].map(decodeChildNodes)
-  ).filter(isCreativeWork)
+  ).filter(stencila.isMember('CreativeWorkTypes'))
   return stencila.collection({ meta, parts })
 }
 

@@ -2,7 +2,7 @@
  * @module util/transform
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 
 /**
  * Transform a `Node` by applying a transformer function to

@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isCreativeWork } from '@stencila/schema'
+import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
@@ -76,7 +76,7 @@ export class DirCodec
   public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = {}
-  ): Promise<stencila.Collection> => {
+  ): Promise<schema.Collection> => {
     let {
       patterns = ['**/*'],
       mainNames = ['main', 'index', 'README'],
@@ -84,7 +84,7 @@ export class DirCodec
     if (typeof patterns === 'string') patterns = patterns.split(/\s+/)
     if (typeof mainNames === 'string') mainNames = mainNames.split(/\s+/)
 
-    const root: stencila.Collection = {
+    const root: schema.Collection = {
       type: 'Collection',
       parts: [],
     }
@@ -124,7 +124,7 @@ export class DirCodec
       await Promise.all(
         routes.map(async (route) => {
           const node = await read(path.join(dirPath, ...route))
-          if (isCreativeWork(node)) {
+          if (schema.isIn('CreativeWorkTypes', node)) {
             const { name } = path.parse(route[route.length - 1])
             const depth = route.length - 1
             return {
@@ -142,7 +142,7 @@ export class DirCodec
       // Remove files that were not decoded as creative works
       // (using reduce instead of filter to keep Typescript happy)
       .reduce(
-        (prev: { route: string[]; node: stencila.CreativeWork }[], curr) =>
+        (prev: { route: string[]; node: schema.CreativeWork }[], curr) =>
           curr ? [...prev, curr] : prev,
         []
       )
@@ -151,7 +151,7 @@ export class DirCodec
     const sorted = nodes.sort((a, b) => (a.route < b.route ? -1 : 1))
 
     // Organize nodes into nested collections of CreativeWorks
-    const collections = new Map<string, stencila.Collection>()
+    const collections = new Map<string, schema.Collection>()
     collections.set('', root)
     for (const { route, node } of sorted) {
       let parent = root
@@ -198,31 +198,31 @@ export class DirCodec
   }
 
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     options: EncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath ?? tempy.directory()
     const format = options.fileFormat ?? 'html'
 
     // Wrap to a collection as necessary
-    const cw = stencila.isCreativeWork(node)
+    const cw = schema.isIn('CreativeWorkTypes', node)
       ? node
-      : stencila.creativeWork({ content: [node] })
-    const root = stencila.isA('Collection', cw)
-      ? (node as stencila.Collection)
-      : stencila.collection({ parts: [cw] })
+      : schema.creativeWork({ content: [node] })
+    const root = schema.isA('Collection', cw)
+      ? (node as schema.Collection)
+      : schema.collection({ parts: [cw] })
 
     // Create a flattened list of nodes and their routes and
     // add `meta.root` to point to the root collection
     const parts = walk(root)
     function walk(
-      node: stencila.CreativeWork,
+      node: schema.CreativeWork,
       route: string[] = []
     ): {
       route: string[]
-      node: stencila.CreativeWork
+      node: schema.CreativeWork
     }[] {
-      if (stencila.isA('Collection', node)) {
+      if (schema.isA('Collection', node)) {
         return node.parts
           .map((child) => walk(child, [...route, node.name ?? '']))
           .reduce((prev, curr) => [...prev, ...curr], [])
@@ -252,8 +252,8 @@ export class DirCodec
     // Output the root `Collection` as JSON so that is can be used as
     // a 'sitemap' for the directory. But to minimize size remove
     // any `content`.
-    function strip(node: stencila.CreativeWork): stencila.CreativeWork {
-      if (stencila.isA('Collection', node)) {
+    function strip(node: schema.CreativeWork): schema.CreativeWork {
+      if (schema.isA('Collection', node)) {
         return {
           ...node,
           parts: node.parts.map((child) => strip(child)),
@@ -285,7 +285,7 @@ export class DirCodec
   public async read(
     source: string,
     options?: DecodeOptions
-  ): Promise<stencila.Collection> {
+  ): Promise<schema.Collection> {
     return this.decode(vfile.create(source), options)
   }
 }

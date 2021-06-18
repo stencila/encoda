@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { transformSync } from './transform'
 import {
   hasContent,
@@ -12,7 +12,7 @@ import {
  * `title`, `authors`, `references` etc from its `content`.
  */
 export function reshape(node: schema.Node): Promise<schema.Node> {
-  if (schema.isCreativeWork(node)) return reshapeCreativeWork(node)
+  if (schema.isIn('CreativeWorkTypes', node)) return reshapeCreativeWork(node)
   return Promise.resolve(node)
 }
 
@@ -23,7 +23,7 @@ async function reshapeCreativeWork(
   work: schema.CreativeWork
 ): Promise<schema.CreativeWork> {
   const { content = [] } = work
-  const newContent: schema.CreativeWork['content'] = []
+  const newContent: schema.BlockContent[] = []
 
   const titleStyles = ['title']
   const codeStyles = ['code', 'code block']
@@ -68,7 +68,7 @@ async function reshapeCreativeWork(
       work.authors === undefined &&
       newContent.length === 0 &&
       schema.isA('Paragraph', node) &&
-      node.content.filter(schema.is('Superscript')).length > 0
+      node.content.filter(schema.isType('Superscript')).length > 0
     ) {
       const affiliations = new Map<schema.Person, string[]>()
 
@@ -553,7 +553,7 @@ function decodeNumericCites(
               // Get generate an id for the reference
               const ref = references[num - 1]
               let id = `ref${num}`
-              if (schema.isCreativeWork(ref)) {
+              if (schema.isIn('CreativeWorkTypes', ref)) {
                 if (ref.id !== undefined) id = ref.id
                 else ref.id = id
               }

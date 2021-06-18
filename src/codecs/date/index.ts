@@ -4,7 +4,7 @@
  * @module codecs/date
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import { getLogger } from '@stencila/logga'

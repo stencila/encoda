@@ -339,7 +339,7 @@ function encodeNode(
         ? {
             ...rest,
             references: references
-              .filter(stencila.isCreativeWork)
+              .filter(stencila.isMember('CreativeWorkTypes'))
               .map((ref) => encodeCsl(ref, 'json')),
           }
         : rest
@@ -1080,7 +1080,10 @@ function decodeInline(elem: Pandoc.Inline): stencila.InlineContent {
   // Already decoded elements (e.g. in `decodeDocumentAsync`)
   // Allow for blocks such as `CodeChunk` nodes which may be wrapped in
   // a paragraph. See also `decodePara`
-  if (stencila.isInlineContent(elem) || stencila.isBlockContent(elem))
+  if (
+    stencila.isEntity(elem) &&
+    (stencila.isInlineContent(elem) || stencila.isBlockContent(elem))
+  )
     return elem as stencila.InlineContent
 
   switch (elem.t) {

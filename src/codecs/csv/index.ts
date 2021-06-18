@@ -4,7 +4,7 @@
  * @module codecs/csv
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
 import * as papaparse from 'papaparse'
 import { range } from 'fp-ts/lib/Array'

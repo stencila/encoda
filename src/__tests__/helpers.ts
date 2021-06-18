@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import callsites from 'callsites'
 import fs from 'fs-extra'
 import * as nock from 'nock'

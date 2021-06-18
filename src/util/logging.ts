@@ -1,5 +1,5 @@
 import * as logga from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { deleteAt } from 'fp-ts/lib/Record'
 
 const log = logga.getLogger('encoda')

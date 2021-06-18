@@ -1,4 +1,5 @@
-import { Jesta, schema } from '@stencila/jesta'
+import { Jesta } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { fromFiles } from '../util/media/fromFiles'
 import { resolveFiles } from '../util/media/resolveFiles'
 import { toFiles } from '../util/media/toFiles'

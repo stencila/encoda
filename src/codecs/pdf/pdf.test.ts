@@ -1,6 +1,6 @@
 import { fixture, output } from '../../__tests__/helpers'
 import { PdfCodec } from '.'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { MdCodec } from '../md'
 
 const mdCodec = new MdCodec()

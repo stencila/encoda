@@ -4,7 +4,7 @@
  * @module codecs/pdf
  */
 import { getLogger } from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { PDFDocument, PDFName, PDFStream } from 'pdf-lib'
 import { dump, load } from '../..'
 import * as puppeteer from '../../util/puppeteer'
@@ -172,7 +172,7 @@ const encodeMetadata = async (node: schema.Node): Promise<PdfMetadata> => {
   let dateCreated
   let dateModified
   const dateCurrent = new Date()
-  if (schema.isCreativeWork(node)) {
+  if (schema.isIn('CreativeWorkTypes', node)) {
     ;({ title, authors, keywords, dateCreated, dateModified } = node)
   }
 
