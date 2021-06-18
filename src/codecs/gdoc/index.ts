@@ -184,7 +184,7 @@ async function decodeDocument(
               const block = await decodeParagraph(para, lists)
 
               // Ignore empty paragraphs
-              if (schema.isParagraph(block)) {
+              if (schema.isA('Paragraph', block)) {
                 const { content } = block
                 if (
                   content.length === 0 ||
@@ -197,7 +197,7 @@ async function decodeDocument(
 
               // If this para has the `Title` style then use it's content
               // as the title of the article (overrides doc.title)
-              if (schema.isParagraph(block) && para.paragraphStyle) {
+              if (schema.isA('Paragraph', block) && para.paragraphStyle) {
                 const styleType = para.paragraphStyle.namedStyleType
                 if (styleType && styleType === 'TITLE') {
                   const { content } = block
