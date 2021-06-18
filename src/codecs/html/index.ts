@@ -2267,7 +2267,11 @@ function encodeTableCell(
   state: EncodeState,
   tag: 'td' | 'th' = 'td'
 ): HTMLTableDataCellElement {
-  return h(tag, { attrs: microdata(cell) }, encodeNodes(cell.content, state))
+  return h(
+    tag,
+    { attrs: microdata(cell) },
+    encodeNodes(cell.content ?? [], state)
+  )
 }
 
 /**

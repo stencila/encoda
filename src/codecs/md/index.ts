@@ -1253,7 +1253,7 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
           type: 'tableRow',
           children: row.cells.map(
             (cell: stencila.TableCell): MDAST.TableCell => {
-              const content = ensureInlineContentArray(cell.content)
+              const content = ensureInlineContentArray(cell.content ?? [])
               // If there is only one node in the table cell and it is
               // a primitive e.g. a number, or boolean then encode it
               // as a string rather than as the special `!number` etc inline

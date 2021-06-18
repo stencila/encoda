@@ -1981,7 +1981,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
             return elem(
               'th',
               ...row.cells.map((cell) => {
-                return encodeDefault('th', cell.content, state)
+                return encodeDefault('th', cell.content ?? [], state)
               })
             )
           })
@@ -1992,7 +1992,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
             return elem(
               'tr',
               ...row.cells.map((cell) => {
-                return encodeDefault('td', cell.content, state)
+                return encodeDefault('td', cell.content ?? [], state)
               })
             )
           })

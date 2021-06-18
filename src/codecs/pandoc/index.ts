@@ -858,7 +858,7 @@ function encodeTable(table: stencila.Table): Pandoc.Table {
   let head: Pandoc.TableCell[] = []
   if (table.rows.length > 0) {
     head = table.rows[0].cells.map((cell) =>
-      encodeBlocks(ensureBlockContentArray(cell.content))
+      encodeBlocks(ensureBlockContentArray(cell.content ?? []))
     )
   }
 
@@ -866,7 +866,7 @@ function encodeTable(table: stencila.Table): Pandoc.Table {
   if (table.rows.length > 1) {
     rows = table.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell) =>
-        encodeBlocks(ensureBlockContentArray(cell.content))
+        encodeBlocks(ensureBlockContentArray(cell.content ?? []))
       )
     })
   }
