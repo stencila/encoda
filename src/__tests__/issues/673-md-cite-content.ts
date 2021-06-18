@@ -10,7 +10,7 @@ import { XmdCodec } from '../../codecs/xmd'
  * Tests that `content` for `Cite` nodes in `.rmd` and `.ipynb` files
  * is populated when converted to `.html`.
  */
-test('issue 673: resolve citations in R Markdown and Jupyter Notebooks', async () => {
+test.skip('issue 673: resolve citations in R Markdown and Jupyter Notebooks', async () => {
   const xmdCodec = new XmdCodec()
   const ipynbCodec = new IpynbCodec()
   const htmlCodec = new HTMLCodec()

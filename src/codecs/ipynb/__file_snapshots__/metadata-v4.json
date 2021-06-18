@@ -27,18 +27,13 @@
     },
     {
       "type": "Person",
-      "affiliations": [
-        {
-          "type": "Organization",
-          "name": "Brown University"
-        }
-      ],
-      "familyNames": [
-        "Carberry"
-      ],
-      "givenNames": [
-        "Janet"
-      ]
+      "affiliations": {
+        "type": "Organization",
+        "name": "Brown University"
+      },
+      "favoriteColour": "red",
+      "firstName": "Janet",
+      "lastName": "Carberry"
     }
   ],
   "title": "Article title",

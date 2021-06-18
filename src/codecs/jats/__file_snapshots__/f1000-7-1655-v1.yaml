@@ -170,9 +170,9 @@ fundedBy:
         name: Wellcome Trust
     identifiers:
       - type: PropertyValue
-        value: 108758
+        value: '108758'
       - type: PropertyValue
-        value: 98321
+        value: '098321'
 identifiers:
   - type: PropertyValue
     name: doi
@@ -181,7 +181,7 @@ identifiers:
   - type: PropertyValue
     name: elocation-id
     propertyID: https://registry.identifiers.org/registry/elocation-id
-    value: 1655
+    value: '1655'
 isPartOf:
   type: PublicationVolume
   isPartOf:
@@ -197,7 +197,7 @@ isPartOf:
       type: Organization
       name: F1000 Research Limited
     title: F1000Research
-  volumeNumber: 7
+  volumeNumber: '7'
 keywords:
   - peer review
   - scholarly publishing
@@ -253,7 +253,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 30158621
+        value: '30158621'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -285,7 +285,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28580134
+        value: '28580134'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -293,7 +293,7 @@ references:
       - type: PropertyValue
         name: pmcid
         propertyID: https://registry.identifiers.org/registry/pmcid
-        value: 5967747
+        value: '5967747'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -509,7 +509,7 @@ content:
     items:
       - type: ListItem
         content:
-          - 1
+          - '1. '
           - type: Paragraph
             content:
               - >-
@@ -522,7 +522,7 @@ content:
                 to tag this content appropriately.
       - type: ListItem
         content:
-          - 2
+          - '2. '
           - type: Paragraph
             content:
               - >-
@@ -531,7 +531,7 @@ content:
                 component of the XML.
       - type: ListItem
         content:
-          - 3
+          - '3. '
           - type: Paragraph
             content:
               - >-
@@ -709,7 +709,7 @@ content:
       - type: Cite
         target: ref-1
         content:
-          - 2008
+          - '2008'
       - ' April), included the following types of article instances:'
   - type: List
     items:
@@ -802,7 +802,7 @@ content:
     items:
       - type: ListItem
         content:
-          - 1
+          - '1. '
           - type: Paragraph
             content:
               - >-
@@ -811,7 +811,7 @@ content:
                 to the PDF)
       - type: ListItem
         content:
-          - 2
+          - '2. '
           - type: Paragraph
             content:
               - >-

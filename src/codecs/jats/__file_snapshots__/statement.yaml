@@ -15,7 +15,8 @@ content:
     id: statement2
     claimType: Theorem
     label: Theorem 1
-    title: Theorem 1
+    title:
+      - Theorem 1
     content:
       - type: Paragraph
         content:

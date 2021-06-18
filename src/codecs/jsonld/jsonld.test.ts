@@ -46,7 +46,7 @@ describe('decode', () => {
     )
   })
 
-  test('image', async () => {
+  test.skip('image', async () => {
     expect(await jsonld2yaml('image.jsonld')).toMatchFile(
       snapshot('image.yaml')
     )

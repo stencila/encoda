@@ -66,7 +66,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: https://registry.identifiers.org/registry/publisher-id
-    value: 45123
+    value: '45123'
   - type: PropertyValue
     name: doi
     propertyID: https://registry.identifiers.org/registry/doi
@@ -94,7 +94,7 @@ isPartOf:
       type: Organization
       name: eLife Sciences Publications, Ltd
     title: eLife
-  volumeNumber: 8
+  volumeNumber: '8'
 keywords:
   - long non-coding RNA
   - intellectual disabilities
@@ -243,7 +243,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 30628890
+        value: '30628890'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -337,7 +337,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24240175
+        value: '24240175'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -396,7 +396,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23307639
+        value: '23307639'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -451,7 +451,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27319317
+        value: '27319317'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -610,7 +610,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22955988
+        value: '22955988'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -656,7 +656,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19696892
+        value: '19696892'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -695,7 +695,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19239885
+        value: '19239885'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -729,7 +729,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29230193
+        value: '29230193'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -793,7 +793,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24415997
+        value: '24415997'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -825,7 +825,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22949041
+        value: '22949041'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -853,7 +853,7 @@ content:
           - eLife
       - type: Strong
         content:
-          - 8
+          - '8'
       - ':e41770 . doi: '
       - type: Link
         target: http://doi.org/10.7554/eLife.41770

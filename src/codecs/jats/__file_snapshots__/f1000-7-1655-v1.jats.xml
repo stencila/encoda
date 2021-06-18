@@ -247,13 +247,13 @@
             <title>Peer review materials need to “stand alone”</title>
             <p>In order to advance the transparency and recognition of peer review materials, we agreed these peer review materials need to stand alone from the main article for the purposes of, for example, credit and citation. Ideally, each content item should have its own DOI (as per the recently enhanced Crossref schema). We identified three levels of achieving this, with level 1 being the basic and least preferred option, but probably currently the most achievable and pragmatic:</p>
             <list list-type="bullet">
-                <list-item>1
+                <list-item>1. 
                     <p>Peer review materials are attached to the article as a single or numerous PDFs. Whether these materials are pulled together into one document or attached as separate documents, there should be some defined mechanism in the JATS XML tagging that would support the capture of any available metadata and identify these files in a machine-readable and interoperable way for publishers to tag this content appropriately.</p>
                 </list-item>
-                <list-item>2
+                <list-item>2. 
                     <p>Peer review materials are appended to the article within the full text (so all is machine readable) as a sub-article component of the XML.</p>
                 </list-item>
-                <list-item>3
+                <list-item>3. 
                     <p>Peer review materials are full-text XML “articles” or “commentaries” in their own right that link bidirectionally to the main article.</p>
                 </list-item>
             </list>
@@ -347,10 +347,10 @@
             <title>Overarching document type</title>
             <p>Review documents may be supplied as:</p>
             <list list-type="bullet">
-                <list-item>1
+                <list-item>1. 
                     <p>sub-articles &lt;sub-article&gt; to the article being reviewed (sub-articles may be full-text XML or XML metadata plus a link to the PDF)</p>
                 </list-item>
-                <list-item>2
+                <list-item>2. 
                     <p>independent articles &lt;article&gt; (with the appropriate &lt;related-article&gt; links – Peer Reviews MUST link to the version of the article they are reviewing and Author Replies; Decision Letters MUST link to the version of the article they are passing judgment on; and Author Replies MUST link to each Review/Decision Letter it is addressing)</p>
                 </list-item>
             </list>

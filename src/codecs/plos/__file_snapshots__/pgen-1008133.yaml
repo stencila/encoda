@@ -6136,460 +6136,67 @@ content:
     depth: 1
     content:
       - Supporting information
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s001
-        contentUrl: ''
-        text: S1 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - >-
-                (A) qRT-PCR showing transcript levels of a selected group of
-                genes in wing discs expressing RA
-              - type: Superscript
-                content:
-                  - CS
-              - ' or '
-              - type: Emphasis
-                content:
-                  - myc
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - ' with '
-              - type: Emphasis
-                content:
-                  - en-Gal4
-              - ' or '
-              - type: Emphasis
-                content:
-                  - bx-Gal4
-              - >-
-                . Results are expressed as fold induction relative to control
-                wing discs. (B) Signaling pathways affected in RA expressing
-                wing discs. (C) Venn diagrams showing overlap between
-                differentially expressed genes in RA-expressing cells and
-                previously identified p53 target genes (Akdemir et al., 2007;
-                van Bergeijk et al., 2012).
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s002
-        contentUrl: ''
-        text: S2 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - >-
-                (A) List of genes coding for extracellular proteins that were
-                differentially expressed in RA-expressing cells and
-                corresponding fold change. (B) Histogram plotting normalized
-                area and cell density of the anterior (A) compartment of adult
-                wings from individuals expressing RA
-              - type: Superscript
-                content:
-                  - CS
-              - ' with '
-              - type: Emphasis
-                content:
-                  - hh
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - ' in '
-              - type: Emphasis
-                content:
-                  - eiger
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - 3/3
-              - ' mutants. ** p<0.01. (C) Wing imaginal discs from individuals expressing RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' along with '
-              - type: Emphasis
-                content:
-                  - eiger
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - ' under the control of '
-              - type: Emphasis
-                content:
-                  - en-Gal4
-              - ' and stained to visualize PH3 levels. (D) Histogram plotting normalized area of the anterior (A, grey bars) and posterior (P, blue bars) compartments of adult wings from individuals expressing the indicated transgenes with '
-              - type: Emphasis
-                content:
-                  - en
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - .
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s003
-        contentUrl: ''
-        text: S3 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - '(A) Expression pattern of '
-              - type: Emphasis
-                content:
-                  - egr
-              - '-lacZ ['
-              - type: Cite
-                target: pgen-1008133-ref030
-                content:
-                  - '30'
-              - '] and Eiger-GFP ['
-              - type: Cite
-                target: pgen-1008133-ref030
-                content:
-                  - '30'
-              - ','
-              - type: Cite
-                target: pgen-1008133-ref031
-                content:
-                  - '31'
-              - >-
-                ] reporters in the eye and wing imaginal discs of wild-type
-                larvae. (B) Wing discs carrying Eiger-GFP protein trap and
-                stained to visualize GFP (green). 
-              - type: Emphasis
-                content:
-                  - dmyc
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - >-
-                -expressing cells displayed increased levels of Eiger-GFP. (C)
-                qRT-PCR plotting 
-              - type: Emphasis
-                content:
-                  - rpr
-              - ', '
-              - type: Emphasis
-                content:
-                  - corp
-              - ', '
-              - type: Emphasis
-                content:
-                  - xrp1
-              - ' and '
-              - type: Emphasis
-                content:
-                  - damm
-              - ' mRNA levels in wing discs expressing RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' or RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' plus Dmp53'
-              - type: Superscript
-                content:
-                  - H159N
-              - ' with '
-              - type: Emphasis
-                content:
-                  - en-Gal4
-              - >-
-                . Results are expressed as fold induction respect to control
-                wing discs (en>+).
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s004
-        contentUrl: ''
-        text: S4 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - '(A) qRT-PCR showing '
-              - type: Emphasis
-                content:
-                  - mmp1
-              - ' and '
-              - type: Emphasis
-                content:
-                  - puc
-              - ' mRNA levels in wing discs expressing the indicated transgenes under the control of '
-              - type: Emphasis
-                content:
-                  - en-Gal4
-              - ' relative to control wing discs (en>+). (B) Wing discs labeled to visualize Mmp1 protein expression from individuals expressing '
-              - type: Emphasis
-                content:
-                  - dmyc
-              - type: Superscript
-                content:
-                  - RNAi
-              - ' under the control of '
-              - type: Emphasis
-                content:
-                  - ap
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - >-
-                . (C-D) Histogram plotting normalized area (C) or density values
-                (D) of the anterior (A, grey bars) and posterior (P, blue bars)
-                compartments of adult wings from individuals expressing the
-                indicated transgenes with 
-              - type: Emphasis
-                content:
-                  - en
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - .
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s005
-        contentUrl: ''
-        text: S5 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - '(A-B) qRT-PCR showing '
-              - type: Emphasis
-                content:
-                  - dilp8
-              - ' or '
-              - type: Emphasis
-                content:
-                  - egr
-              - ' transcript levels in wing discs expressing RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' or RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' plus '
-              - type: Emphasis
-                content:
-                  - xrp1
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - ' with '
-              - type: Emphasis
-                content:
-                  - bx-Gal4
-              - >-
-                . Results are expressed as fold induction respect to control
-                wing discs (bx>+). (C) Histogram plotting normalized cell
-                density values of the anterior (A, grey bars) and posterior (P,
-                blue bars) compartments of adult wings from individuals
-                expressing RA
-              - type: Superscript
-                content:
-                  - CS
-              - ' and '
-              - type: Emphasis
-                content:
-                  - dilp8
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - ' with '
-              - type: Emphasis
-                content:
-                  - en
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - >-
-                . (D) Wing discs carrying Dilp8-GFP and expressing the indicated
-                transgenes with 
-              - type: Emphasis
-                content:
-                  - ap-Gal4
-              - ' were labeled to visualize GFP (green or grey) and myrTomato (red). Expression of Bsk'
-              - type: Superscript
-                content:
-                  - DN
-              - ' largely blocked upregulation of Dilp8-GFP levels observed in dMyc depleted cells. (E) Wing discs carrying Dilp8-GFP and expressing RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' with '
-              - type: Emphasis
-                content:
-                  - ap-Gal4
-              - ' were labeled to visualize GFP (green or grey) and myrTomato (red). Upregulation of Dilp8-GFP levels upon RA'
-              - type: Superscript
-                content:
-                  - CS
-              - ' expression was still observed following antioxidant or vehicle treatment.'
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s006
-        contentUrl: ''
-        text: S6 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content: []
-          - type: Paragraph
-            content:
-              - '(A) Wing discs carrying the '
-              - type: Emphasis
-                content:
-                  - gstD1
-              - '-GFP reporter and expressing the indicated transgenes with '
-              - type: Emphasis
-                content:
-                  - ap
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - ' were labeled to visualize GFP (green or grey) and myrTomato (red). (B) BrdU incorporation assay in larval wing discs from individuals expressing GFP along with the indicated transgenes under the control of '
-              - type: Emphasis
-                content:
-                  - ci
-              - '-'
-              - type: Emphasis
-                content:
-                  - Gal4
-              - >-
-                . Anti-dMyc staining (green) showed efficiency of gene depletion
-                upon 
-              - type: Emphasis
-                content:
-                  - dmyc
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - RNAi
-              - ' expression.'
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s007
-        contentUrl: ''
-        text: S1 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - List of genes differentially expressed between RA
-              - type: Superscript
-                content:
-                  - CS
-              - '-expressing and wild-type cells.'
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s008
-        contentUrl: ''
-        text: S2 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                List of genes encoding for known or predicted secreted molecules
-                and their corresponding transgenic RNAi lines used for the
-                screen.
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s009
-        contentUrl: ''
-        text: S3 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Signaling pathways affected in RA
-              - type: Superscript
-                content:
-                  - CS
-              - '-expressing cells.'
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pgen-1008133-s010
-        contentUrl: ''
-        text: S4 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - List of primers used in this study.
-          - type: Paragraph
-            content:
-              - (PDF)
+  - >-
+    (A) qRT-PCR showing transcript levels of a selected group of genes in wing
+    discs expressing RACS or mycRNAi with en-Gal4 or bx-Gal4. Results are
+    expressed as fold induction relative to control wing discs. (B) Signaling
+    pathways affected in RA expressing wing discs. (C) Venn diagrams showing
+    overlap between differentially expressed genes in RA-expressing cells and
+    previously identified p53 target genes (Akdemir et al., 2007; van Bergeijk
+    et al., 2012).(TIF)
+  - >-
+    (A) List of genes coding for extracellular proteins that were differentially
+    expressed in RA-expressing cells and corresponding fold change. (B)
+    Histogram plotting normalized area and cell density of the anterior (A)
+    compartment of adult wings from individuals expressing RACS with hh-Gal4 in
+    eiger3/3 mutants. ** p<0.01. (C) Wing imaginal discs from individuals
+    expressing RACS along with eigerRNAi under the control of en-Gal4 and
+    stained to visualize PH3 levels. (D) Histogram plotting normalized area of
+    the anterior (A, grey bars) and posterior (P, blue bars) compartments of
+    adult wings from individuals expressing the indicated transgenes with
+    en-Gal4.(TIF)
+  - >-
+    (A) Expression pattern of egr-lacZ [30] and Eiger-GFP [30,31] reporters in
+    the eye and wing imaginal discs of wild-type larvae. (B) Wing discs carrying
+    Eiger-GFP protein trap and stained to visualize GFP (green).
+    dmycRNAi-expressing cells displayed increased levels of Eiger-GFP. (C)
+    qRT-PCR plotting rpr, corp, xrp1 and damm mRNA levels in wing discs
+    expressing RACS or RACS plus Dmp53H159N with en-Gal4. Results are expressed
+    as fold induction respect to control wing discs (en>+).(TIF)
+  - >-
+    (A) qRT-PCR showing mmp1 and puc mRNA levels in wing discs expressing the
+    indicated transgenes under the control of en-Gal4 relative to control wing
+    discs (en>+). (B) Wing discs labeled to visualize Mmp1 protein expression
+    from individuals expressing dmycRNAi under the control of ap-Gal4. (C-D)
+    Histogram plotting normalized area (C) or density values (D) of the anterior
+    (A, grey bars) and posterior (P, blue bars) compartments of adult wings from
+    individuals expressing the indicated transgenes with en-Gal4.(TIF)
+  - >-
+    (A-B) qRT-PCR showing dilp8 or egr transcript levels in wing discs
+    expressing RACS or RACS plus xrp1RNAi with bx-Gal4. Results are expressed as
+    fold induction respect to control wing discs (bx>+). (C) Histogram plotting
+    normalized cell density values of the anterior (A, grey bars) and posterior
+    (P, blue bars) compartments of adult wings from individuals expressing RACS
+    and dilp8RNAi with en-Gal4. (D) Wing discs carrying Dilp8-GFP and expressing
+    the indicated transgenes with ap-Gal4 were labeled to visualize GFP (green
+    or grey) and myrTomato (red). Expression of BskDN largely blocked
+    upregulation of Dilp8-GFP levels observed in dMyc depleted cells. (E) Wing
+    discs carrying Dilp8-GFP and expressing RACS with ap-Gal4 were labeled to
+    visualize GFP (green or grey) and myrTomato (red). Upregulation of Dilp8-GFP
+    levels upon RACS expression was still observed following antioxidant or
+    vehicle treatment.(TIF)
+  - >-
+    (A) Wing discs carrying the gstD1-GFP reporter and expressing the indicated
+    transgenes with ap-Gal4 were labeled to visualize GFP (green or grey) and
+    myrTomato (red). (B) BrdU incorporation assay in larval wing discs from
+    individuals expressing GFP along with the indicated transgenes under the
+    control of ci-Gal4. Anti-dMyc staining (green) showed efficiency of gene
+    depletion upon dmycRNAi expression.(TIF)
+  - >-
+    List of genes differentially expressed between RACS-expressing and wild-type
+    cells.(PDF)
+  - >-
+    List of genes encoding for known or predicted secreted molecules and their
+    corresponding transgenic RNAi lines used for the screen.(PDF)
+  - Signaling pathways affected in RACS-expressing cells.(PDF)
+  - List of primers used in this study.(PDF)

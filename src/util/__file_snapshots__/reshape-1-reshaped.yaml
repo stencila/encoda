@@ -44,8 +44,8 @@ references:
         isPartOf:
           type: Periodical
           name: Journal of Open Source Software
-        volumeNumber: 5
-      issueNumber: 55
+        volumeNumber: '5'
+      issueNumber: '55'
     pagination: '2693'
     publisher:
       type: Organization
@@ -77,8 +77,8 @@ references:
         isPartOf:
           type: Periodical
           name: Journal of Open Source Software
-        volumeNumber: 5
-      issueNumber: 55
+        volumeNumber: '5'
+      issueNumber: '55'
     pagination: '2797'
     publisher:
       type: Organization
@@ -125,10 +125,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - 1
+              - '1'
           - type: TableCell
             content:
-              - 2
+              - '2'
   - type: Paragraph
     content:
       - The caption can be after e.g.
@@ -152,10 +152,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - 3
+              - '3'
           - type: TableCell
             content:
-              - 4
+              - '4'
   - type: Paragraph
     content:
       - Captions can also be indicated by emphasis or string emphasis e.g.
@@ -178,10 +178,10 @@ content:
         cells:
           - type: TableCell
             content:
-              - 3
+              - '3'
           - type: TableCell
             content:
-              - 4
+              - '4'
   - type: Heading
     depth: 2
     content:

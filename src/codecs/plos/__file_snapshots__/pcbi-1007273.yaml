@@ -4772,131 +4772,29 @@ content:
     depth: 1
     content:
       - Supporting information
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s001
-        contentUrl: ''
-        text: S1 Text
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Best buddy scoring effectiveness and commands used run SALSA2
-                and 3D-DNA.
-          - type: Paragraph
-            content:
-              - (DOCX)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s002
-        contentUrl: ''
-        text: S1 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Precision at different cutoffs for Hi-C links.
-          - type: Paragraph
-            content:
-              - >-
-                The plot on the left shows the curve for the SALSA2 best buddy
-                weight cutoffs and the plot on the right shows the curve for a
-                fixed Hi-C pair count cutoff, used in SALSA1, across changing
-                coverage.
-          - type: Paragraph
-            content:
-              - (PNG)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s003
-        contentUrl: ''
-        text: S2 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Distribution of the distance between the predicted misassembly
-                location to the actual misassembly location in the simulated
-                data.
-          - type: Paragraph
-            content:
-              - (PNG)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s004
-        contentUrl: ''
-        text: S1 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Sensitivity and specificity for contigs correction for different
-                contig sizes.
-          - type: Paragraph
-            content:
-              - (DOCX)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s005
-        contentUrl: ''
-        text: S2 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Sensitivity and specificity for scaffold misjoin correction for
-                different contig sizes joined in a scaffold.
-          - type: Paragraph
-            content:
-              - (DOCX)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s006
-        contentUrl: ''
-        text: S3 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Scaffold statistics while scaffolding An. funestus deduplicated
-                assembly.
-          - type: Paragraph
-            content:
-              - The input assembly had contig N50 of 631.72 kbp.
-          - type: Paragraph
-            content:
-              - (DOCX)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pcbi-1007273-s007
-        contentUrl: ''
-        text: S4 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Scaffold statistics while scaffolding An. funestus assembly with
-                duplications.
-          - type: Paragraph
-            content:
-              - >-
-                The input assembly had contig N50 of 94.25 kbp. We could not
-                compute errors for duplicated assembly as reference genome is
-                primary only and aligning duplicated contigs to haploid
-                reference makes it hard to define true orientation and ordering.
-          - type: Paragraph
-            content:
-              - (DOCX)
+  - >-
+    Best buddy scoring effectiveness and commands used run SALSA2 and
+    3D-DNA.(DOCX)
+  - >-
+    Precision at different cutoffs for Hi-C links.The plot on the left shows the
+    curve for the SALSA2 best buddy weight cutoffs and the plot on the right
+    shows the curve for a fixed Hi-C pair count cutoff, used in SALSA1, across
+    changing coverage.(PNG)
+  - >-
+    Distribution of the distance between the predicted misassembly location to
+    the actual misassembly location in the simulated data.(PNG)
+  - >-
+    Sensitivity and specificity for contigs correction for different contig
+    sizes.(DOCX)
+  - >-
+    Sensitivity and specificity for scaffold misjoin correction for different
+    contig sizes joined in a scaffold.(DOCX)
+  - >-
+    Scaffold statistics while scaffolding An. funestus deduplicated assembly.The
+    input assembly had contig N50 of 631.72 kbp.(DOCX)
+  - >-
+    Scaffold statistics while scaffolding An. funestus assembly with
+    duplications.The input assembly had contig N50 of 94.25 kbp. We could not
+    compute errors for duplicated assembly as reference genome is primary only
+    and aligning duplicated contigs to haploid reference makes it hard to define
+    true orientation and ordering.(DOCX)

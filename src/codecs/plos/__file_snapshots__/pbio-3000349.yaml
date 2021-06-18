@@ -4319,292 +4319,59 @@ content:
     depth: 1
     content:
       - Supporting information
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s001
-        contentUrl: ''
-        text: S1 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Number of components from the PCA and correspondence between the
-                groups.
-          - type: Paragraph
-            content:
-              - >-
-                A. PCA was performed in Group 1 and Group 2 separately. The
-                components with eigenvalues greater than 2.0 (symbols in red)
-                were retained and correlated with pain outcomes. Other
-                components with eigenvalues below 2.0 (white symbols) were used
-                as components of personality and no exploratory analyses were
-                performed with these. B. The PCA performed on the same variables
-                in Group 2 CBP identified the same four components (validation).
-                Scatterplots show strong correspondences between loading values
-                of each component, across the two groups (validation). CBP,
-                chronic back pain; PCA, principal component analysis.
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s002
-        contentUrl: ''
-        text: S2 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Cross-parcellation reproducibility.
-          - type: Paragraph
-            content:
-              - >-
-                A–B. The Power atlas used to derive the neurotraits as presented
-                in 
-              - type: Link
-                relation: fig
-                target: '#pbio-3000349-g003'
-                content:
-                  - Fig 3
-              - >-
-                . C. The Schaefer atlas was used as a second atlas to test the
-                robustness of our results. D. Pain-trait was determined from
-                both positive (
-              - type: Emphasis
-                content:
-                  - r
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - '2'
-              - ' = 0.08; '
-              - type: Emphasis
-                content:
-                  - P
-              - ' = 0.006) and negative ('
-              - type: Emphasis
-                content:
-                  - r
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - '2'
-              - ' = 0.04; '
-              - type: Emphasis
-                content:
-                  - P
-              - ' = 0.04) links and Emote-trait could be determined by positive ('
-              - type: Emphasis
-                content:
-                  - r
-              - type: Superscript
-                content:
-                  - type: Emphasis
-                    content:
-                      - '2'
-              - ' = 0.06; '
-              - type: Emphasis
-                content:
-                  - P
-              - ' = 0.03) but not negative links. E. The interindividual correlations between the cross-validated links from the two atlases showed that the cross-parcellation yielded robust results. This suggests that the neurotraits were not specific to our choice of parcellation scheme and provide evidence that they represent a robust metric. Significance was determined with a permutation test (10,000 permutation). *'
-              - type: Emphasis
-                content:
-                  - P
-              - ' < 0.05, **'
-              - type: Emphasis
-                content:
-                  - P
-              - ' <0.01, ***'
-              - type: Emphasis
-                content:
-                  - P
-              - ' < 0.001.'
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s003
-        contentUrl: ''
-        text: S3 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Other measures of socioeconomic status related with income
-                (displayed when pooling Group 1 and Group 2).
-          - type: Paragraph
-            content:
-              - >-
-                Income depended on race/ethnicity (A) and education (B). HA, AA,
-                WA, HS (≤12 [yoe]), AD (12 yoe > AD < 16 yoe), BD (≥16 yoe). All
-                post-hoc comparisons are Bonferroni corrected for three
-                comparisons. 
-              - type: Superscript
-                content:
-                  - '&'
-              - type: Emphasis
-                content:
-                  - P
-              - ' < 0.08, **'
-              - type: Emphasis
-                content:
-                  - P
-              - ' < 0.01. AA, African American; AD, Associate degree; BD, Bachelor’s degree; HA, Hispanic American, HS, high school; WA, White American; yoe, years of education.'
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s004
-        contentUrl: ''
-        text: S4 Fig
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Traits predisposing patients’ responses to placebo pills.
-          - type: Paragraph
-            content:
-              - >-
-                Character-trait and Aware-trait predisposed patients to the
-                placebo response (% analgesia). Correlation 
-              - type: Emphasis
-                content:
-                  - P
-              - ' values were Bonferroni corrected for four comparisons *'
-              - type: Emphasis
-                content:
-                  - P
-              - ' < 0.05.'
-          - type: Paragraph
-            content:
-              - (TIF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s005
-        contentUrl: ''
-        text: S1 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Basic demographics for both groups.
-          - type: Paragraph
-            content:
-              - 'Group 1 was on average 5 years younger than Group 2 (unpaired '
-              - type: Emphasis
-                content:
-                  - t
-              - ' test'
-              - type: Subscript
-                content:
-                  - (106)
-              - '; '
-              - type: Emphasis
-                content:
-                  - t
-              - ' = 4.67, '
-              - type: Emphasis
-                content:
-                  - P
-              - ' = 0.03). There were no significant differences between the groups for gender, pain duration, or education level.'
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s006
-        contentUrl: ''
-        text: S2 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                List of questionnaires administered to patients for profiling
-                psychological factors and personality traits.
-          - type: Paragraph
-            content:
-              - >-
-                Thirteen self-report measures (36 measures total if divided into
-                respective subscales) were completed at designated visits in the
-                study. The names and abbreviation are provided for each
-                questionnaire, along with the rationale for why each measure was
-                included in our battery.
-          - type: Paragraph
-            content:
-              - (DOCX)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s007
-        contentUrl: ''
-        text: S3 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - >-
-                Baseline values of back pain characteristics in both CBP groups
-                prior to treatment.
-          - type: Paragraph
-            content:
-              - >-
-                There were no differences in absolute scores of pain
-                measurements between the groups, with the exception of physical
-                health (SF-12p), which was higher in Group 1 than in Group 2.
-                CBP, chronic back pain.
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s008
-        contentUrl: ''
-        text: S4 Table
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - 'Details of statistical tests for results shown in Figs '
-              - type: Link
-                relation: fig
-                target: '#pbio-3000349-g001'
-                content:
-                  - '1'
-              - –
-              - type: Link
-                relation: fig
-                target: '#pbio-3000349-g006'
-                content:
-                  - '6'
-              - .
-          - type: Paragraph
-            content:
-              - (PDF)
-  - type: Paragraph
-    content:
-      - type: MediaObject
-        id: pbio-3000349-s009
-        contentUrl: ''
-        text: S1 Data
-        content:
-          - type: Heading
-            depth: 2
-            content:
-              - Data underlying figures.
-          - type: Paragraph
-            content:
-              - (XLSX)
+  - >-
+    Number of components from the PCA and correspondence between the groups.A.
+    PCA was performed in Group 1 and Group 2 separately. The components with
+    eigenvalues greater than 2.0 (symbols in red) were retained and correlated
+    with pain outcomes. Other components with eigenvalues below 2.0 (white
+    symbols) were used as components of personality and no exploratory analyses
+    were performed with these. B. The PCA performed on the same variables in
+    Group 2 CBP identified the same four components (validation). Scatterplots
+    show strong correspondences between loading values of each component, across
+    the two groups (validation). CBP, chronic back pain; PCA, principal
+    component analysis.(TIF)
+  - >-
+    Cross-parcellation reproducibility.A–B. The Power atlas used to derive the
+    neurotraits as presented in Fig 3. C. The Schaefer atlas was used as a
+    second atlas to test the robustness of our results. D. Pain-trait was
+    determined from both positive (r2 = 0.08; P = 0.006) and negative (r2 =
+    0.04; P = 0.04) links and Emote-trait could be determined by positive (r2 =
+    0.06; P = 0.03) but not negative links. E. The interindividual correlations
+    between the cross-validated links from the two atlases showed that the
+    cross-parcellation yielded robust results. This suggests that the
+    neurotraits were not specific to our choice of parcellation scheme and
+    provide evidence that they represent a robust metric. Significance was
+    determined with a permutation test (10,000 permutation). *P < 0.05, **P
+    <0.01, ***P < 0.001.(TIF)
+  - >-
+    Other measures of socioeconomic status related with income (displayed when
+    pooling Group 1 and Group 2).Income depended on race/ethnicity (A) and
+    education (B). HA, AA, WA, HS (≤12 [yoe]), AD (12 yoe > AD < 16 yoe), BD
+    (≥16 yoe). All post-hoc comparisons are Bonferroni corrected for three
+    comparisons. &P < 0.08, **P < 0.01. AA, African American; AD, Associate
+    degree; BD, Bachelor’s degree; HA, Hispanic American, HS, high school; WA,
+    White American; yoe, years of education.(TIF)
+  - >-
+    Traits predisposing patients’ responses to placebo pills.Character-trait and
+    Aware-trait predisposed patients to the placebo response (% analgesia).
+    Correlation P values were Bonferroni corrected for four comparisons *P <
+    0.05.(TIF)
+  - >-
+    Basic demographics for both groups.Group 1 was on average 5 years younger
+    than Group 2 (unpaired t test(106); t = 4.67, P = 0.03). There were no
+    significant differences between the groups for gender, pain duration, or
+    education level.(PDF)
+  - >-
+    List of questionnaires administered to patients for profiling psychological
+    factors and personality traits.Thirteen self-report measures (36 measures
+    total if divided into respective subscales) were completed at designated
+    visits in the study. The names and abbreviation are provided for each
+    questionnaire, along with the rationale for why each measure was included in
+    our battery.(DOCX)
+  - >-
+    Baseline values of back pain characteristics in both CBP groups prior to
+    treatment.There were no differences in absolute scores of pain measurements
+    between the groups, with the exception of physical health (SF-12p), which
+    was higher in Group 1 than in Group 2. CBP, chronic back pain.(PDF)
+  - Details of statistical tests for results shown in Figs 1–6.(PDF)
+  - Data underlying figures.(XLSX)
