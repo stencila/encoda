@@ -107,7 +107,7 @@ export const commonDecodeDefaults: CommonDecodeDefaults = {
   isStandalone: true,
 
   // Coerce by default
-  shouldCoerce: true,
+  shouldCoerce: false,
 
   // Reshape by default
   shouldReshape: true,
@@ -201,7 +201,7 @@ export abstract class Codec<
     content: string,
     options?: DecodeOptions
   ): Promise<schema.Node> {
-    const { shouldCoerce = true, shouldReshape = true } = options ?? {}
+    const { shouldCoerce = false, shouldReshape = true } = options ?? {}
 
     let node = await this.decode(vfile.load(content), options)
     if (shouldCoerce) node = await jesta.validate(node, true)
@@ -266,7 +266,7 @@ export abstract class Codec<
     filePath: string,
     options?: DecodeOptions
   ): Promise<schema.Node> {
-    const { shouldCoerce = true, shouldReshape = true } = options ?? {}
+    const { shouldCoerce = false, shouldReshape = true } = options ?? {}
 
     let node = await this.decode(await vfile.read(filePath), options)
     if (shouldCoerce) node = await jesta.validate(node)
