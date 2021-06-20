@@ -1,6 +1,5 @@
 import schema from '@stencila/schema'
 import { TxtCodec } from '../../codecs/txt'
-import { ensureNodeArray } from './ensureNodeArray'
 
 /**
  * Ensure that all nodes in an array are `InlineContent` by unwrapping them
