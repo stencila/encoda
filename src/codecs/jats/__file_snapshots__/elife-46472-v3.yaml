@@ -4955,7 +4955,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -5141,7 +5141,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -5319,7 +5319,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Paragraph
@@ -5679,7 +5679,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Table
@@ -6251,7 +6251,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Paragraph
@@ -6576,7 +6576,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -6700,7 +6700,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -8890,7 +8890,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading

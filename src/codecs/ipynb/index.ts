@@ -742,7 +742,7 @@ async function decodeMimeBundle(
       // Image mime types as `ImagesObject`
       return schema.imageObject({
         contentUrl: `data:${mimetype};base64,${data}`,
-        format: mimetype,
+        mediaType: mimetype,
       })
     } else if (mimetype === 'text/plain') {
       // Text output, including stdout, is decoded using the `txt` codec

@@ -3290,7 +3290,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Paragraph
@@ -3968,7 +3968,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -3991,7 +3991,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -4022,7 +4022,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -4422,7 +4422,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -4471,7 +4471,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -4514,7 +4514,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -4760,7 +4760,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -4779,7 +4779,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -5079,7 +5079,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -5099,7 +5099,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -5182,7 +5182,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:

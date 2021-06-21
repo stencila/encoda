@@ -413,19 +413,25 @@ content:
     items:
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - Peer review reports, anonymized or with report author names
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - Author responses/Rebuttals
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - Editor decision letters
@@ -509,7 +515,9 @@ content:
     items:
       - type: ListItem
         content:
-          - '1. '
+          - type: Paragraph
+            content:
+              - '1. '
           - type: Paragraph
             content:
               - >-
@@ -522,7 +530,9 @@ content:
                 to tag this content appropriately.
       - type: ListItem
         content:
-          - '2. '
+          - type: Paragraph
+            content:
+              - '2. '
           - type: Paragraph
             content:
               - >-
@@ -531,7 +541,9 @@ content:
                 component of the XML.
       - type: ListItem
         content:
-          - '3. '
+          - type: Paragraph
+            content:
+              - '3. '
           - type: Paragraph
             content:
               - >-
@@ -802,7 +814,9 @@ content:
     items:
       - type: ListItem
         content:
-          - '1. '
+          - type: Paragraph
+            content:
+              - '1. '
           - type: Paragraph
             content:
               - >-
@@ -811,7 +825,9 @@ content:
                 to the PDF)
       - type: ListItem
         content:
-          - '2. '
+          - type: Paragraph
+            content:
+              - '2. '
           - type: Paragraph
             content:
               - >-
@@ -968,19 +984,25 @@ content:
     items:
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - For Peer Reviews, use @contrib-type=“reviewer”
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - For Decision Letters, use @contrib-type=“editor”
       - type: ListItem
         content:
-          - '○ '
+          - type: Paragraph
+            content:
+              - '○ '
           - type: Paragraph
             content:
               - For Author Reply, use @contrib-type=“author”
@@ -1077,31 +1099,41 @@ content:
     items:
       - type: ListItem
         content:
-          - 'a. '
+          - type: Paragraph
+            content:
+              - 'a. '
           - type: Paragraph
             content:
               - <funding-group>
       - type: ListItem
         content:
-          - 'b. '
+          - type: Paragraph
+            content:
+              - 'b. '
           - type: Paragraph
             content:
               - <app>, <app-group>, <ack>, <glossary>, <back>/<sec>
       - type: ListItem
         content:
-          - 'c. '
+          - type: Paragraph
+            content:
+              - 'c. '
           - type: Paragraph
             content:
               - <supplementary-material>, <inline-supplementary-material>
       - type: ListItem
         content:
-          - 'd. '
+          - type: Paragraph
+            content:
+              - 'd. '
           - type: Paragraph
             content:
               - <bio>
       - type: ListItem
         content:
-          - 'e. '
+          - type: Paragraph
+            content:
+              - 'e. '
           - type: Paragraph
             content:
               - >-

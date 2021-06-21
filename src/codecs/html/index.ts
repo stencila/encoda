@@ -30,7 +30,10 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../util/logging'
 import { isDefined } from '../../util'
-import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
+import {
+  ensureBlockContentArray,
+  ensureBlockContentArrayOrUndefined,
+} from '../../util/content/ensureBlockContentArray'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
 import {
@@ -381,7 +384,7 @@ const decodeNodes = (nodes: Node[]): stencila.Node[] =>
   nodes
     .map(decodeNode)
     .reduce(
-      (prev: Node[], curr) => [
+      (prev: stencila.Node[], curr) => [
         ...prev,
         ...(Array.isArray(curr) ? curr : [curr]),
       ],
@@ -2130,7 +2133,9 @@ function encodeList(
  * Decode a `<li>` element to a `stencila.ListItem`.
  */
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
-  return stencila.listItem({ content: decodeChildNodes(li) })
+  return stencila.listItem({
+    content: ensureBlockContentArray(decodeChildNodes(li)),
+  })
 }
 
 /**
@@ -2522,9 +2527,10 @@ function encodeImageObject(
   if (enhanced && content.length > 0) {
     for (const node of content) {
       if (typeof node === 'object' && node !== null && 'mediaType' in node) {
-        if (node.mediaType === plotlyMediaType && 'data' in node) {
+        const { mediaType = '' } = node
+        if (mediaType === plotlyMediaType && 'data' in node) {
           return encodeImageObjectPlotly(image, node.data)
-        } else if (isVegaMediaType(node.mediaType) && 'spec' in node) {
+        } else if (isVegaMediaType(mediaType) && 'spec' in node) {
           return encodeImageObjectVega(image, node.spec)
         }
       }
@@ -2718,7 +2724,7 @@ function encodeArray(value: any[]): HTMLElement {
 /**
  * Decode a `<span itemtype="https://schema.stenci.la/Object>` element to a `object`.
  */
-function decodeObject(elem: HTMLElement): object {
+function decodeObject(elem: HTMLElement): Record<string, unknown> {
   return JSON5.parse(elem.innerHTML.length > 0 ? elem.innerHTML : '{}')
 }
 

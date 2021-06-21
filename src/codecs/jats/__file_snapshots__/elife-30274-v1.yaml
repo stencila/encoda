@@ -2999,7 +2999,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: application/postscript
+        mediaType: application/postscript
         meta:
           inline: false
   - type: Heading
@@ -3241,7 +3241,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: application/postscript
+            mediaType: application/postscript
             meta:
               inline: false
       - type: Figure
@@ -3307,7 +3307,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: application/postscript
+            mediaType: application/postscript
             meta:
               inline: false
       - type: Figure
@@ -3351,7 +3351,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: application/postscript
+            mediaType: application/postscript
             meta:
               inline: false
     meta:
@@ -4709,7 +4709,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: application/postscript
+        mediaType: application/postscript
         meta:
           inline: false
   - type: Paragraph
