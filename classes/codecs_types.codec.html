@@ -349,7 +349,7 @@
 					<div class="tsd-signature tsd-kind-icon">common<wbr>Decode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_types.commondecodeoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">CommonDecodeOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;isStandalone&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;shouldCoerce&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;shouldReshape&quot;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L162">src/codecs/types.ts:162</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L163">src/codecs/types.ts:163</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -364,7 +364,7 @@
 					<div class="tsd-signature tsd-kind-icon">common<wbr>Encode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_types.commonencodeoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">CommonEncodeOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;isStandalone&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;isBundle&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;theme&quot;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L157">src/codecs/types.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L158">src/codecs/types.ts:158</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -379,25 +379,9 @@
 					<div class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">DecodeOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L171">src/codecs/types.ts:171</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L172">src/codecs/types.ts:172</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Decode a <code>VFile</code> to a <code>stencila.Node</code>.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>param</dt>
-							<dd><p>The <code>VFile</code> to decode</p>
-							</dd>
-							<dt>param</dt>
-							<dd><p>Decoding options</p>
-							</dd>
-							<dt>returns</dt>
-							<dd><p>A promise that resolves to a <code>stencila.Node</code></p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -407,16 +391,32 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Decode a <code>VFile</code> to a <code>stencila.Node</code>.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
 												<h5>file: <span class="tsd-signature-type">VFile</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>The <code>VFile</code> to decode</p>
+													</div>
+												</div>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">DecodeOptions</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>Decoding options</p>
+													</div>
+												</div>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										<p>A promise that resolves to a <code>stencila.Node</code></p>
 									</li>
 								</ul>
 							</li>
@@ -429,25 +429,9 @@
 					<div class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EncodeOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L183">src/codecs/types.ts:183</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L184">src/codecs/types.ts:184</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Encode a <code>stencila.Node</code> to a <code>VFile</code>.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>param</dt>
-							<dd><p>The <code>stencila.Node</code> to encode</p>
-							</dd>
-							<dt>param</dt>
-							<dd><p>Encoding options</p>
-							</dd>
-							<dt>returns</dt>
-							<dd><p>A promise that resolves to a <code>VFile</code></p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -457,16 +441,32 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Encode a <code>stencila.Node</code> to a <code>VFile</code>.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
 												<h5>node: <span class="tsd-signature-type">Node</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>The <code>stencila.Node</code> to encode</p>
+													</div>
+												</div>
 											</li>
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">EncodeOptions</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>Encoding options</p>
+													</div>
+												</div>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></h4>
+										<p>A promise that resolves to a <code>VFile</code></p>
 									</li>
 								</ul>
 							</li>
@@ -479,7 +479,7 @@
 					<div class="tsd-signature tsd-kind-icon">ext<wbr>Names<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L144">src/codecs/types.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L145">src/codecs/types.ts:145</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -496,7 +496,7 @@
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Names<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L137">src/codecs/types.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L138">src/codecs/types.ts:138</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -513,7 +513,7 @@
 					<div class="tsd-signature tsd-kind-icon">media<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L130">src/codecs/types.ts:130</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L131">src/codecs/types.ts:131</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -529,17 +529,9 @@
 					<div class="tsd-signature tsd-kind-icon">sniff<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L152">src/codecs/types.ts:152</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L153">src/codecs/types.ts:153</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A function that does <a href="https://en.wikipedia.org/wiki/Content_sniffing">content sniffing</a>
-								to determine if the codec is able to decode the content. As well as raw content, the content
-								string could be a file system path and the codec could do &quot;sniffing&quot; of the file system
-							(e.g. testing if certain files are present in a directory).</p>
-						</div>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -549,6 +541,14 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>A function that does <a href="https://en.wikipedia.org/wiki/Content_sniffing">content sniffing</a>
+													to determine if the codec is able to decode the content. As well as raw content, the content
+													string could be a file system path and the codec could do &quot;sniffing&quot; of the file system
+												(e.g. testing if certain files are present in a directory).</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -575,7 +575,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L244">src/codecs/types.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L245">src/codecs/types.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -613,7 +613,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L199">src/codecs/types.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L200">src/codecs/types.ts:200</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -654,7 +654,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L226">src/codecs/types.ts:226</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L227">src/codecs/types.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -698,7 +698,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L291">src/codecs/types.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L292">src/codecs/types.ts:292</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -747,7 +747,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L264">src/codecs/types.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L265">src/codecs/types.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -788,7 +788,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/1af2db91/src/codecs/types.ts#L312">src/codecs/types.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/ec156c06/src/codecs/types.ts#L313">src/codecs/types.ts:313</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -829,7 +829,7 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="../modules.html">Exports</a>
+						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/codecs_types.html">codecs/types</a>

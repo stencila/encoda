@@ -296,7 +296,7 @@
 					<div class="tsd-signature tsd-kind-icon">_get<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/puppeteer/lib/types.d.ts:321</li>
+							<li>Defined in node_modules/puppeteer/lib/types.d.ts:322</li>
 						</ul>
 					</aside>
 				</section>
@@ -390,7 +390,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:255</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:256</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -451,7 +451,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1685</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1690</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -460,7 +460,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
-									<dd><p>please use <code>on</code> instead.</p>
+									<dd><p>please use {@link EventEmitter.on} instead.</p>
 									</dd>
 								</dl>
 							</div>
@@ -510,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:310</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:311</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +592,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:316</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:317</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -610,14 +610,14 @@
 					<a name="emit" class="tsd-anchor"></a>
 					<h3>emit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventType</span>, eventData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventType</span>, eventData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.emit</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1693</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1698</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -634,7 +634,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> eventData: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> eventData: <span class="tsd-signature-type">unknown</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>any data you&#39;d like to emit with the event</p>
 									</div>
@@ -655,7 +655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:320</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:321</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -678,7 +678,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1707</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1712</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -710,12 +710,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:250</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:251</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a <a href="util_puppeteer.page.html">Page</a> in the default browser context.</p>
+									<p>Promise which resolves to a new <a href="util_puppeteer.page.html">Page</a> object. The Page is created in
+									a default browser context.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="util_puppeteer.page.html" class="tsd-signature-type" data-tsd-kind="Class">Page</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -733,7 +734,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.off</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1675</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1680</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -757,7 +758,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
-							<p><code>this</code> to enable you to chain calls.</p>
+							<p><code>this</code> to enable you to chain method calls.</p>
 						</li>
 					</ul>
 				</section>
@@ -772,7 +773,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.on</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1668</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1673</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -796,7 +797,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
-							<p><code>this</code> to enable you to chain calls.</p>
+							<p><code>this</code> to enable you to chain method calls.</p>
 						</li>
 					</ul>
 				</section>
@@ -811,7 +812,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.once</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1700</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1705</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -835,7 +836,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
-							<p><code>this</code> to enable you to chain calls.</p>
+							<p><code>this</code> to enable you to chain method calls.</p>
 						</li>
 					</ul>
 				</section>
@@ -849,7 +850,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:289</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:290</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -902,7 +903,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1714</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1719</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -921,7 +922,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventEmitter</span></h4>
-							<p><code>this</code> to enable you to chain calls.</p>
+							<p><code>this</code> to enable you to chain method calls.</p>
 						</li>
 					</ul>
 				</section>
@@ -936,7 +937,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1680</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:1685</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -945,7 +946,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
-									<dd><p>please use <code>off</code> instead.</p>
+									<dd><p>please use {@link EventEmitter.off} instead.</p>
 									</dd>
 								</dl>
 							</div>
@@ -972,7 +973,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:264</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:265</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -994,7 +995,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:260</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:261</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1017,7 +1018,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:305</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:306</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1040,7 +1041,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:300</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:301</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1069,7 +1070,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/puppeteer/lib/types.d.ts:279</li>
+									<li>Defined in node_modules/puppeteer/lib/types.d.ts:280</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1206,7 +1207,7 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="../modules.html">Exports</a>
+						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/util_puppeteer.html">util/puppeteer</a>
