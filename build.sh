@@ -3,7 +3,7 @@
 set -e
 
 # Build binaries (see `pkg` in `package.json` for details)
-npx pkg --out-path bin .
+npx pkg --out-path bin --compress Brotli .
 
 # Zip binaries with renaming appropriate to the platform
 cd bin

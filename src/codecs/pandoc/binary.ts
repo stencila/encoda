@@ -17,14 +17,7 @@ const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-
 /**
  * The folder where the binary is to be installed
  */
-const binaryDir = path.join(
-  appHome,
-  'dist',
-  'src',
-  'codecs',
-  'pandoc',
-  'binary'
-)
+const binaryDir = path.join(appHome, 'dist', 'codecs', 'pandoc', 'binary')
 
 /**
  * Equivalent to the Pandoc `--data-dir` flag.
@@ -32,8 +25,7 @@ const binaryDir = path.join(
  */
 export const dataDir = path.join(
   appHome,
-  ...(isCompiled ? ['dist'] : []),
-  'src',
+  isCompiled ? 'dist' : 'src',
   'codecs',
   'pandoc'
 )

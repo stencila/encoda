@@ -1,4 +1,5 @@
-import { Jesta, Manifest } from '@stencila/jesta'
+import { Jesta } from '@stencila/jesta'
+import { Manifest, manifest } from '@stencila/jesta/dist/manifest'
 import { getLogger } from '@stencila/logga'
 import schema from '@stencila/schema'
 import fs from 'fs-extra'
@@ -13,8 +14,6 @@ import {
 } from './codecs/types'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
-
-import manifest from '../codemeta.json'
 
 const log = getLogger('encoda')
 
@@ -440,7 +439,19 @@ convert_.schema.properties.from.enum = formats
 convert_.schema.properties.to.enum = formats
 
 export class Encoda extends Jesta {
-  manifest = (manifest as unknown) as Manifest
+  manifest(): Manifest {
+    return manifest.call(this, {
+      name: 'encoda',
+      softwareVersion: '0.117.0',
+      description: 'Stencila plugin for document format conversion',
+      installUrl: [
+        'https://www.npmjs.com/package/@stencila/encoda',
+        'https://github.com/stencila/encoda/releases',
+      ],
+      featureList: [],
+    })
+  }
+
   decode = decode
   encode = encode
   convert = convert_

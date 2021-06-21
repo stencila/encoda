@@ -10,10 +10,9 @@
 
 import path from 'path'
 import isPackaged from './isPackaged'
-import isCompiled from './isCompiled'
 
 const home = isPackaged
   ? path.dirname(process.execPath)
-  : path.join(__dirname, '..', '..', '..', ...(isCompiled ? ['..'] : []))
+  : path.join(__dirname, '..', '..', '..')
 
 export default home

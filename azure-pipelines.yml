@@ -3,22 +3,22 @@ variables:
     value: '16.x'
 
 jobs:
-  - job: test
+  - job: Test
     strategy:
       matrix:
         linux:
-          image_name: ubuntu-latest
+          IMAGE_NAME: ubuntu-latest
         mac:
-          image_name: macOS-latest
+          IMAGE_NAME: macOS-latest
         windows:
-          image_name: windows-latest
+          IMAGE_NAME: windows-latest
     pool:
-      vmImage: $(image_name)
+      vmImage: $(IMAGE_NAME)
     steps:
       - task: NodeTool@0
         inputs:
           versionSpec: $(NODE_VERSION)
-        displayName: Use Node.js $(NODE_VERSION)
+        displayName: 'Use Node.js $(NODE_VERSION)'
 
       # Do not convert line endings on checkout, otherwise snapshot
       # files fail on Windows.
@@ -35,7 +35,7 @@ jobs:
 
       - script: npm run lint
         condition: eq(variables['agent.os'], 'Linux')
-        displayName: 'Linting'
+        displayName: 'Run linting'
 
       # Run tests with
       #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
@@ -64,14 +64,14 @@ jobs:
         condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Build package'
 
-  - job: test_docker
+  - job: Docker
     # Temporarily skip
     condition: 'false'
     pool:
       vmImage: ubuntu-latest
     steps:
       - task: DockerInstaller@0
-        displayName: 'Install Docker'
+        displayName: 'Use Docker'
 
       - script: |
           set -e
@@ -79,8 +79,8 @@ jobs:
           docker run stencila/encoda
         displayName: 'Run tests in Docker'
 
-  - job: release
-    dependsOn: [test] # Skipping temporarily: , test_docker]
+  - job: Release
+    dependsOn: [Test] # Skipping temporarily: , test_docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
@@ -88,13 +88,12 @@ jobs:
       - task: NodeTool@0
         inputs:
           versionSpec: $(NODE_VERSION)
-        displayName: Use Node.js $(NODE_VERSION)
+        displayName: 'Use Node.js $(NODE_VERSION)'
 
       - script: |
           set -e
-          npm install
-          npm run docs
-          npm run build
+          npm ci
+          mkdir -p docs
           npx semantic-release
         env:
           GIT_AUTHOR_NAME: Stencila CI Bot

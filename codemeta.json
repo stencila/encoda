@@ -249,14 +249,9 @@
       "title": "get",
       "description": "Get a variable from a document.",
       "required": [
-        "document",
         "name"
       ],
       "properties": {
-        "document": {
-          "description": "The id of the document to get the variable from.",
-          "type": "string"
-        },
         "name": {
           "description": "The name of the variable.",
           "type": "string"
@@ -397,15 +392,10 @@
       "title": "set",
       "description": "Set a variable in a document.",
       "required": [
-        "document",
         "name",
         "value"
       ],
       "properties": {
-        "document": {
-          "description": "The id of the document to set the variable in.",
-          "type": "string"
-        },
         "name": {
           "description": "The name of the variable to set.",
           "type": "string"

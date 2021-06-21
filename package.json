@@ -6,8 +6,8 @@
     "install.js",
     "dist"
   ],
-  "bin": "dist/src/index.js",
-  "main": "dist/src/index.js",
+  "bin": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
@@ -23,18 +23,18 @@
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
     "start": "ts-node --files src",
     "cli:debug": "node --require ./ts-node-register.js --inspect=9229 src --debug=1",
-    "build": "npm run build:codemeta && npm run build:dist && npm run build:bin",
-    "build:codemeta": "ts-node src update codemeta.json",
-    "build:dist": "tsc -p tsconfig.prod.json && cp codemeta.json dist/ && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
-    "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/src/codecs/csl/styles/",
-    "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/src/codecs/dmagic/",
-    "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/src/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/src/codecs/pandoc/templates/",
-    "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/src/codecs/tex/",
+    "$comment": "The build script builds everything required to publish a release, including binaries and docs",
+    "build": "npm run build:codemeta && npm run build:dist && npm run build:bin && npm run build:docs",
+    "build:codemeta": "ts-node src manifest > codemeta.json",
+    "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
+    "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/codecs/csl/styles/",
+    "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/codecs/dmagic/",
+    "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
+    "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/codecs/tex/",
     "build:bin": "bash build.sh",
-    "docs": "npm run docs:readme && npm run docs:ts",
-    "docs:readme": "markdown-toc -i --maxdepth=4 README.md",
-    "docs:ts": "typedoc --options typedoc.js ./src",
-    "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
+    "build:docs": "typedoc --options typedoc.js ./src",
+    "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
+    "prepublishOnly": "npm run build"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/encoda#readme",
@@ -46,7 +46,7 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
-    "@stencila/jesta": "^1.10.1",
+    "@stencila/jesta": "^1.10.5",
     "@stencila/logga": "^4.0.0",
     "@stencila/thema": "^2.24.2",
     "appdata-path": "^1.0.0",
@@ -229,9 +229,6 @@
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
   "pkg": {
-    "assets": [
-      "dist/codemeta.json"
-    ],
     "targets": [
       "node16-linux-x64",
       "node16-macos-x64",
@@ -251,7 +248,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "sed -i -e 's!\"softwareVersion\": .*!\"softwareVersion\": \"${nextRelease.version}\",!' codemeta.json"
+          "prepareCmd": "sed -i -e \"s!softwareVersion: .*!softwareVersion: '${nextRelease.version}',!\" src/index.ts"
         }
       ],
       [

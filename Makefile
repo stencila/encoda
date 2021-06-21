@@ -1,32 +1,28 @@
-all: lint format cover build docs
+all: lint format cover build
 
 node_modules: package.json
 	npm install --legacy-peer-deps
 
 setup: node_modules
 
-format: setup
+format:
 	npm run format
 
-lint: setup
+lint:
 	npm run lint
 
-test: setup
+test:
 	npm test
 
-cover: setup
+cover:
 	npm run test:cover
 
-check: setup
+check:
 	npm run check
 
-build: setup
+build:
 	npm run build
 .PHONY: build
 
-docs: setup
-	npm run docs
-.PHONY: docs
-
-clean: setup
+clean:
 	npm run clean
