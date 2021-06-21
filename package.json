@@ -103,6 +103,9 @@
     "xlsx": "^0.17.0",
     "xml-js": "^1.6.11"
   },
+  "peerDependencies": {
+    "@stencila/schema": "^1.9.0"
+  },
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
     "@stencila/dev-config": "2.0.15",

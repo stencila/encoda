@@ -16,7 +16,7 @@ test('issue 84: that a pageBreak in a GDoc gets decoded without error', async ()
     },
     {
       type: 'Paragraph',
-      content: ['* * *', null],
+      content: ['* * *', ''],
     },
     {
       type: 'Paragraph',

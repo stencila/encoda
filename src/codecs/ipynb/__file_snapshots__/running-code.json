@@ -45,7 +45,7 @@
           "text": "Shift-Enter"
         },
         " or pressing the ",
-        null,
+        "",
         " button in the toolbar above:"
       ]
     },
@@ -127,7 +127,7 @@
       "type": "Paragraph",
       "content": [
         "Code is run in a separate process called the Kernel.  The Kernel can be interrupted or restarted.  Try running the following cell and then hit the ",
-        null,
+        "",
         " button in the toolbar above."
       ]
     },
@@ -240,7 +240,7 @@
       "type": "Paragraph",
       "content": [
         "The kernel maintains the state of a notebook's computations. You can reset this state by restarting the kernel. This is done by clicking on the ",
-        null,
+        "",
         " in the toolbar above."
       ]
     },

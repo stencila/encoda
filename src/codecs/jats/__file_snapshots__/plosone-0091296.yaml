@@ -125,8 +125,8 @@ isPartOf:
         type: Organization
         name: Public Library of Science
       title: PLoS ONE
-    volumeNumber: 9
-  issueNumber: 3
+    volumeNumber: '9'
+  issueNumber: '3'
 licenses:
   - type: CreativeWork
     content:
@@ -2269,7 +2269,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -2959,10 +2959,10 @@ content:
               - Male
           - type: TableCell
             content:
-              - 12
+              - '12'
           - type: TableCell
             content:
-              - 15
+              - '15'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2972,10 +2972,10 @@ content:
               - Female
           - type: TableCell
             content:
-              - 4
+              - '4'
           - type: TableCell
             content:
-              - 1
+              - '1'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2986,10 +2986,10 @@ content:
               - Lagoon only
           - type: TableCell
             content:
-              - 5
+              - '5'
           - type: TableCell
             content:
-              - 0
+              - '0'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2999,10 +2999,10 @@ content:
               - Outer reefs only
           - type: TableCell
             content:
-              - 4
+              - '4'
           - type: TableCell
             content:
-              - 0
+              - '0'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3012,10 +3012,10 @@ content:
               - All habitats
           - type: TableCell
             content:
-              - 7
+              - '7'
           - type: TableCell
             content:
-              - 16
+              - '16'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3026,10 +3026,10 @@ content:
               - Line
           - type: TableCell
             content:
-              - 9
+              - '9'
           - type: TableCell
             content:
-              - 13
+              - '13'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3039,10 +3039,10 @@ content:
               - Speargun
           - type: TableCell
             content:
-              - 6
+              - '6'
           - type: TableCell
             content:
-              - 2
+              - '2'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3052,10 +3052,10 @@ content:
               - Net
           - type: TableCell
             content:
-              - 1
+              - '1'
           - type: TableCell
             content:
-              - 1
+              - '1'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3066,10 +3066,10 @@ content:
               - Primary
           - type: TableCell
             content:
-              - 13
+              - '13'
           - type: TableCell
             content:
-              - 2
+              - '2'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3079,10 +3079,10 @@ content:
               - Secondary
           - type: TableCell
             content:
-              - 2
+              - '2'
           - type: TableCell
             content:
-              - 7
+              - '7'
       - type: TableRow
         cells:
           - type: TableCell
@@ -3092,10 +3092,10 @@ content:
               - Tertiary
           - type: TableCell
             content:
-              - 1
+              - '1'
           - type: TableCell
             content:
-              - 7
+              - '7'
   - type: Heading
     id: s2e
     depth: 2
@@ -3732,7 +3732,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -3871,7 +3871,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -3959,7 +3959,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -4043,7 +4043,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -4084,7 +4084,7 @@ content:
               - 'Fisher gender: male'
           - type: TableCell
             content:
-              - 31.4
+              - '31.4'
           - type: TableCell
             content:
               - type: Strong
@@ -4092,10 +4092,10 @@ content:
                   - '0.004'
           - type: TableCell
             content:
-              - 4.8
+              - '4.8'
           - type: TableCell
             content:
-              - 0.582
+              - '0.582'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4103,7 +4103,7 @@ content:
               - 'Fisher gender: female'
           - type: TableCell
             content:
-              - 31.4
+              - '31.4'
           - type: TableCell
             content:
               - type: Strong
@@ -4111,10 +4111,10 @@ content:
                   - '0.008'
           - type: TableCell
             content:
-              - 4.8
+              - '4.8'
           - type: TableCell
             content:
-              - 0.534
+              - '0.534'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4122,7 +4122,7 @@ content:
               - 'Access to habitat: lagoon only'
           - type: TableCell
             content:
-              - 43.1
+              - '43.1'
           - type: TableCell
             content:
               - type: Strong
@@ -4139,10 +4139,10 @@ content:
               - 'Access to habitat: outer reefs only'
           - type: TableCell
             content:
-              - 11.6
+              - '11.6'
           - type: TableCell
             content:
-              - 0.128
+              - '0.128'
           - type: TableCell
             content: []
           - type: TableCell
@@ -4154,10 +4154,10 @@ content:
               - 'Access to habitat: all habitats'
           - type: TableCell
             content:
-              - 13.8
+              - '13.8'
           - type: TableCell
             content:
-              - 0.084
+              - '0.084'
           - type: TableCell
             content: []
           - type: TableCell
@@ -4169,16 +4169,16 @@ content:
               - 'Primary gear type: line'
           - type: TableCell
             content:
-              - 8.9
+              - '8.9'
           - type: TableCell
             content:
-              - 0.266
+              - '0.266'
           - type: TableCell
             content:
-              - 10.2
+              - '10.2'
           - type: TableCell
             content:
-              - 0.124
+              - '0.124'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4186,13 +4186,13 @@ content:
               - 'Primary gear type: speargun'
           - type: TableCell
             content:
-              - 4.8
+              - '4.8'
           - type: TableCell
             content:
-              - 0.542
+              - '0.542'
           - type: TableCell
             content:
-              - 20.3
+              - '20.3'
           - type: TableCell
             content:
               - type: Strong
@@ -4205,16 +4205,16 @@ content:
               - 'Primary gear type: net'
           - type: TableCell
             content:
-              - 6.7
+              - '6.7'
           - type: TableCell
             content:
-              - 0.472
+              - '0.472'
           - type: TableCell
             content:
-              - 5.2
+              - '5.2'
           - type: TableCell
             content:
-              - 0.494
+              - '0.494'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4222,16 +4222,16 @@ content:
               - 'Dependency on fishing: primary'
           - type: TableCell
             content:
-              - 3.3
+              - '3.3'
           - type: TableCell
             content:
-              - 0.662
+              - '0.662'
           - type: TableCell
             content:
-              - 4.4
+              - '4.4'
           - type: TableCell
             content:
-              - 0.644
+              - '0.644'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4239,16 +4239,16 @@ content:
               - 'Dependency on fishing: secondary'
           - type: TableCell
             content:
-              - 6.5
+              - '6.5'
           - type: TableCell
             content:
-              - 0.532
+              - '0.532'
           - type: TableCell
             content:
-              - 8.9
+              - '8.9'
           - type: TableCell
             content:
-              - 0.27
+              - '0.27'
       - type: TableRow
         cells:
           - type: TableCell
@@ -4256,16 +4256,16 @@ content:
               - 'Dependency on fishing: tertiary'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
           - type: TableCell
             content:
-              - 0.89
+              - '0.89'
           - type: TableCell
             content:
-              - 12.4
+              - '12.4'
           - type: TableCell
             content:
-              - 0.084
+              - '0.084'
   - type: Paragraph
     content:
       - >-
@@ -4341,7 +4341,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -4400,7 +4400,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -4499,7 +4499,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple
@@ -4524,7 +4524,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image
+        mediaType: image
         meta:
           inline: false
           linkType: simple

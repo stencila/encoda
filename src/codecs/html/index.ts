@@ -7,10 +7,7 @@
 import { getLogger } from '@stencila/logga'
 import stencila, {
   isA,
-  isArticle,
-  isCreativeWork,
   isInlineContent,
-  markTypes,
   microdata,
   microdataItemtype,
   microdataProperty,
@@ -33,7 +30,10 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../util/logging'
 import { isDefined } from '../../util'
-import { ensureBlockContentArrayOrUndefined } from '../../util/content/ensureBlockContentArray'
+import {
+  ensureBlockContentArray,
+  ensureBlockContentArrayOrUndefined,
+} from '../../util/content/ensureBlockContentArray'
 import { getThemeAssets } from '../../util/html'
 import { fromFiles } from '../../util/media/fromFiles'
 import {
@@ -47,6 +47,7 @@ import { plotlyMediaType } from '../plotly'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 import { isVegaMediaType, vegaMediaType } from '../vega'
+import { ensureNodeArray } from '../../util/content/ensureNodeArray'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -374,7 +375,7 @@ export const beautify = (html: string): string =>
 const getArticleMetaData = (
   node: stencila.Node
 ): Exclude<stencila.Article, 'content'> => {
-  const article = isArticle(node) ? node : stencila.article()
+  const article = stencila.isA('Article', node) ? node : stencila.article()
   const { content, ...metadata } = article
   return metadata
 }
@@ -383,7 +384,7 @@ const decodeNodes = (nodes: Node[]): stencila.Node[] =>
   nodes
     .map(decodeNode)
     .reduce(
-      (prev: Node[], curr) => [
+      (prev: stencila.Node[], curr) => [
         ...prev,
         ...(Array.isArray(curr) ? curr : [curr]),
       ],
@@ -1273,9 +1274,11 @@ function encodeReferencesProperty(
             ? h('a', { itemprop: 'url', href: url }, titleElem)
             : titleElem,
           encodeIsPartOfProperty(isPartOf),
-          stencila.isArticle(ref) ? encodePaginationProperties(ref) : undefined,
+          stencila.isA('Article', ref)
+            ? encodePaginationProperties(ref)
+            : undefined,
           encodePublisherProperty(publisher),
-          stencila.isArticle(ref) ? encodeImageProperty(ref) : undefined,
+          stencila.isA('Article', ref) ? encodeImageProperty(ref) : undefined,
           encodeIdentifiersProperty(identifiers)
         )
       })
@@ -1356,7 +1359,7 @@ function encodeCreativeWork(
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, (date) => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
-    encodeNodes(content, state)
+    encodeNodes(ensureNodeArray(content), state)
   )
 }
 
@@ -1769,7 +1772,7 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): HTMLElement {
       const number = encodeCiteNumeric(reference, state.references)
       contentElems = [h('span', number)]
 
-      if (stencila.isCreativeWork(reference)) {
+      if (stencila.isIn('CreativeWorkTypes', reference)) {
         const authors = encodeCiteAuthors(reference)
         // For theming, always add authors span so that year span is
         // always the third span (if present)
@@ -1871,7 +1874,7 @@ function encodeFigure(
     encodeMaybe(label, (label) =>
       h('label', microdataProperty('label'), label)
     ),
-    encodeNodes(content, state),
+    encodeNodes(ensureNodeArray(content), state),
     encodeMaybe(caption, (caption) =>
       h(
         'figcaption',
@@ -1888,7 +1891,7 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const meta = decodeDataAttrs(collection)
   const parts = flatten(
     [...collection.childNodes].map(decodeChildNodes)
-  ).filter(isCreativeWork)
+  ).filter(stencila.isMember('CreativeWorkTypes'))
   return stencila.collection({ meta, parts })
 }
 
@@ -2130,7 +2133,9 @@ function encodeList(
  * Decode a `<li>` element to a `stencila.ListItem`.
  */
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
-  return stencila.listItem({ content: decodeChildNodes(li) })
+  return stencila.listItem({
+    content: ensureBlockContentArray(decodeChildNodes(li)),
+  })
 }
 
 /**
@@ -2268,7 +2273,11 @@ function encodeTableCell(
   state: EncodeState,
   tag: 'td' | 'th' = 'td'
 ): HTMLTableDataCellElement {
-  return h(tag, { attrs: microdata(cell) }, encodeNodes(cell.content, state))
+  return h(
+    tag,
+    { attrs: microdata(cell) },
+    encodeNodes(cell.content ?? [], state)
+  )
 }
 
 /**
@@ -2357,9 +2366,9 @@ function encodeThematicBreak(): HTMLHRElement {
 /**
  * Decode an inline element e.g `<em>` to a `Mark` node e.g. `Emphasis`.
  */
-function decodeMark<Type extends keyof typeof markTypes>(
+function decodeMark(
   elem: HTMLElement,
-  type: Type
+  type: stencila.Mark['type']
 ): stencila.Mark {
   return { type, content: decodeInlineChildNodes(elem) }
 }
@@ -2518,9 +2527,10 @@ function encodeImageObject(
   if (enhanced && content.length > 0) {
     for (const node of content) {
       if (typeof node === 'object' && node !== null && 'mediaType' in node) {
-        if (node.mediaType === plotlyMediaType && 'data' in node) {
+        const { mediaType = '' } = node
+        if (mediaType === plotlyMediaType && 'data' in node) {
           return encodeImageObjectPlotly(image, node.data)
-        } else if (isVegaMediaType(node.mediaType) && 'spec' in node) {
+        } else if (isVegaMediaType(mediaType) && 'spec' in node) {
           return encodeImageObjectVega(image, node.spec)
         }
       }
@@ -2714,7 +2724,7 @@ function encodeArray(value: any[]): HTMLElement {
 /**
  * Decode a `<span itemtype="https://schema.stenci.la/Object>` element to a `object`.
  */
-function decodeObject(elem: HTMLElement): object {
+function decodeObject(elem: HTMLElement): Record<string, unknown> {
   return JSON5.parse(elem.innerHTML.length > 0 ? elem.innerHTML : '{}')
 }
 

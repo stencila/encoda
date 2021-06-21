@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 
 import { MdCodec } from '../codecs/md'
 import { YamlCodec } from '../codecs/yaml'

@@ -1,9 +1,39 @@
 ---
 references:
-  - >-
-    Axford, D. N., 1968: On the accuracy of wind measurements using an inertial
-    platform in an aircraft, and an example of a measurement of the vertical
-    structure of the atmosphere. J. Appl. Meteor., 7, 645-666.
+  - authors:
+      - familyNames:
+          - Axford
+        givenNames:
+          - D. N.
+        type: Person
+    title: >-
+      On the Accuracy of Wind Measurements Using an Inertial Platform in an
+      Aircraft, and an Example of a Measurement of the Vertical Mesostructure of
+      the Atmosphere
+    datePublished:
+      value: 1968,8
+      type: Date
+    isPartOf:
+      issueNumber: '4'
+      isPartOf:
+        volumeNumber: '7'
+        isPartOf:
+          name: Journal of Applied Meteorology
+          type: Periodical
+        type: PublicationVolume
+      type: PublicationIssue
+    publisher:
+      name: American Meteorological Society
+      type: Organization
+    identifiers:
+      - name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
+        type: PropertyValue
+    url: http://dx.doi.org/10.1175/1520-0450(1968)007<0645:otaowm>2.0.co;2
+    pageStart: '645'
+    pageEnd: '666'
+    type: Article
   - authors:
       - familyNames:
           - DOVIAK
@@ -33,10 +63,53 @@ references:
     url: http://dx.doi.org/10.1016/b978-0-12-221420-2.50009-0
     type: CreativeWork
     id: ref2
-  - >-
-    Lee, W., P. Dodge, F. D. Marks Jr. and P. Hildebrand, 1994: Mapping of
-    Airborne Doppler Radar Data. Journal of Oceanic and Atmospheric Technology,
-    11, 572 – 578.
+  - authors:
+      - familyNames:
+          - Lee
+        givenNames:
+          - Wen-Chau
+        type: Person
+      - familyNames:
+          - Dodge
+        givenNames:
+          - Peter
+        type: Person
+      - familyNames:
+          - Marks
+        givenNames:
+          - Frank D.
+        honorificSuffix: Jr.
+        type: Person
+      - familyNames:
+          - Hildebrand
+        givenNames:
+          - Peter H.
+        type: Person
+    title: Mapping of Airborne Doppler Radar Data
+    datePublished:
+      value: 1994,4
+      type: Date
+    isPartOf:
+      issueNumber: '2'
+      isPartOf:
+        volumeNumber: '11'
+        isPartOf:
+          name: Journal of Atmospheric and Oceanic Technology
+          type: Periodical
+        type: PublicationVolume
+      type: PublicationIssue
+    publisher:
+      name: American Meteorological Society
+      type: Organization
+    identifiers:
+      - name: doi
+        propertyID: https://registry.identifiers.org/registry/doi
+        value: 10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
+        type: PropertyValue
+    url: http://dx.doi.org/10.1175/1520-0426(1994)011<0572:moadrd>2.0.co;2
+    pageStart: '572'
+    pageEnd: '578'
+    type: Article
   - >-
     Michelson D.B., Lewandowski R., Szewczykowski M., Beekhuis H., and Haase G.,
     2014: EUMETNET OPERA weather radar information model for implementation with
@@ -56,7 +129,7 @@ CfRadial2 Data File Format
 
 Version 2.1 - DRAFT
 
-Mike Dixon, EOL, NCAR, Boulder, Colorado, USA!nullMark Curtis, Bureau of Meteorology, Melbourne, Australia!nullDaniel Michelson, Environment and Climate Change Canada, Toronto, Canada
+Mike Dixon, EOL, NCAR, Boulder, Colorado, USAMark Curtis, Bureau of Meteorology, Melbourne, AustraliaDaniel Michelson, Environment and Climate Change Canada, Toronto, Canada
 
 Joe Hardin, PNNL, DOE, Richland, Washington, USA
 
@@ -136,7 +209,7 @@ Updated 2019-09-01
 
 [5.4 The _georeference_ sub-group 30](#the-georeference-sub-group)
 
-[5.5 The _monitoring sub-groups_!number(32)](#the-monitoring-sub-groups)
+[5.5 The _monitoring sub-groups_ 32](#the-monitoring-sub-groups)
 
 [5.6 Field data variables 33](#field-data-variables)
 
@@ -158,7 +231,7 @@ Updated 2019-09-01
 
 [6.1 Spectrum-specific information on sweep 39](#spectrum-specific-information-on-sweep)
 
-[!number(6.2)_spectrum_index_ variable 39](#spectrum_index-variable)
+[6.2 _spectrum_index_ variable 39](#spectrum_index-variable)
 
 [6.3 Spectrum group dimensions 39](#spectrum-group-dimensions)
 
@@ -188,7 +261,7 @@ Updated 2019-09-01
 
 [9.1 Special case – ground-based, stationary and leveled sensors 50](#special-case-ground-based-stationary-and-leveled-sensors)
 
-[9.1.1 LIDARs![](data:image/wmf;base64,183GmgAAAAAAACABwAEECQAAAAD1XgEACQAAA7oAAAAAAGwAAAAAAAUAAAACAQEAAAAFAAAAAQL///8ABQAAAC4BGQAAAAUAAAALAgAAAAAFAAAADALAASABEwAAACYGDwAcAP////8AAE4AEAAAAMD///+m////4AAAAGYBAAALAAAAJgYPAAwATWF0aFR5cGUAACAAbAAAACYGDwDNAE1hdGhUeXBlVVXBAAUBAAUCRFNNVDUAARNXaW5BbGxCYXNpY0NvZGVQYWdlcwARBVRpbWVzIE5ldyBSb21hbgARA1N5bWJvbAARBUNvdXJpZXIgTmV3ABEETVQgRXh0cmEAEgAIIS9Fj0QvQVD0EA9HX0FQ8h8eQVD0FQ9BAPRF9CX0j0JfQQD0EA9DX0EA9I9F9CpfSPSPQQD0EA9A9I9Bf0j0EA9BKl9EX0X0X0X0X0EPDAEAAQABAgICAgACAAEBAQADAAEABAAACgAACwAAACYGDwAMAP////8BAAAAAAAAAAMAAAAAAA==)!number(50)](#lidars)
+[9.1.1 LIDARs![](data:image/wmf;base64,183GmgAAAAAAACABwAEECQAAAAD1XgEACQAAA7oAAAAAAGwAAAAAAAUAAAACAQEAAAAFAAAAAQL///8ABQAAAC4BGQAAAAUAAAALAgAAAAAFAAAADALAASABEwAAACYGDwAcAP////8AAE4AEAAAAMD///+m////4AAAAGYBAAALAAAAJgYPAAwATWF0aFR5cGUAACAAbAAAACYGDwDNAE1hdGhUeXBlVVXBAAUBAAUCRFNNVDUAARNXaW5BbGxCYXNpY0NvZGVQYWdlcwARBVRpbWVzIE5ldyBSb21hbgARA1N5bWJvbAARBUNvdXJpZXIgTmV3ABEETVQgRXh0cmEAEgAIIS9Fj0QvQVD0EA9HX0FQ8h8eQVD0FQ9BAPRF9CX0j0JfQQD0EA9DX0EA9I9F9CpfSPSPQQD0EA9A9I9Bf0j0EA9BKl9EX0X0X0X0X0EPDAEAAQABAgICAgACAAEBAQADAAEABAAACgAACwAAACYGDwAMAP////8BAAAAAAAAAAMAAAAAAA==) 50](#lidars)
 
 [9.1.2 RADARs 50](#radars)
 
@@ -206,7 +279,7 @@ Updated 2019-09-01
 
 [9.4 Coordinate transformation sequence 56](#coordinate-transformation-sequence)
 
-[9.4.1 Transformation from X~i~ to X~a~!number(56)](#transformation-from-xi-to-xa)
+[9.4.1 Transformation from X~i~ to X~a~ 56](#transformation-from-xi-to-xa)
 
 [9.4.2 Rotating from X~a~ to X 57](#rotating-from-xa-to-x)
 
@@ -311,7 +384,7 @@ Radars and lidars are pulsing instruments that either scan in polar coordinates,
 
 A **volume scan** (or simply a **volume)** is defined as a scanning sequence that repeats over time.
 
-Figure 2.1: logical data structure for a volume scan,!nullusing sweep and ray abstractions and 1-D data field arrays
+Figure 2.1: logical data structure for a volume scan,using sweep and ray abstractions and 1-D data field arrays
 
 Figure 2.1 shows an idealized data model for a radar or lidar **volume**, representing the data fields as 1-D arrays on a ray object.
 
@@ -349,7 +422,7 @@ A **ray** contains a number of **fields**, with a value for each **field** at ea
 
 ## Logical organization of data in a volume, using sweeps with 2-D data
 
-Figure 2.2: logical data structure for a volume scan,!nullusing the sweep abstraction with 2-D data fields
+Figure 2.2: logical data structure for a volume scan,using the sweep abstraction with 2-D data fields
 
 In contrast to Figure 2.1, Figure 2.2 shows a modified data model, in which the **sweeps** contain the **field** (moments) data directly, stored as 2-D arrays of \[time]\[range]. This requires that the number of gates be constant for all rays in a sweep.
 
@@ -357,7 +430,7 @@ This is the data model that has been adopted for CfRadial2. Figure 2.3 below has
 
 This representation has the advantage that the 2-D arrays per sweep simplify the data storage mechanism, and allow for more efficient data compression than do 1-D arrays per ray.
 
-Figure 2.3 Data field for a sweep, represented in time and range,!nullwith a constant number of range gates
+Figure 2.3 Data field for a sweep, represented in time and range,with a constant number of range gates
 
 ## Field data byte representation
 
@@ -453,11 +526,11 @@ A number of optional groups are available in the root group, to support radar an
 
 ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAADCAYAAAD2t91RAAAAAXNSR0ICQMB9xQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAAeSURBVCjPY2hsbGQYDBhCMDDsB+L/A4T3wx0yGDAAL4mJM/d2FKwAAAAASUVORK5CYII=)![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAADCAYAAAD2t91RAAAAAXNSR0ICQMB9xQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAAeSURBVCjPY2hsbGQYDBhCMDDsB+L/A4T3wx0yGDAAL4mJM/d2FKwAAAAASUVORK5CYII=)
 
-Figure 3.1: Group structure showing top-level dimensions,!nullattributes, variables and sweep groups
+Figure 3.1: Group structure showing top-level dimensions,attributes, variables and sweep groups
 
 ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAADCAYAAAD2t91RAAAAAXNSR0ICQMB9xQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAAeSURBVCjPY2hsbGQYDBhCMDDsB+L/A4T3wx0yGDAAL4mJM/d2FKwAAAAASUVORK5CYII=)![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAADCAYAAAD2t91RAAAAAXNSR0ICQMB9xQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAAeSURBVCjPY2hsbGQYDBhCMDDsB+L/A4T3wx0yGDAAL4mJM/d2FKwAAAAASUVORK5CYII=)
 
-Figure 3.2: Sweep group structure in more detail, showing!nullsupport for geo-freference metadata for moving platforms,!nullspectra, and monitoring data.!nullOptional groups are in blue.
+Figure 3.2: Sweep group structure in more detail, showingsupport for geo-freference metadata for moving platforms,spectra, and monitoring data.Optional groups are in blue.
 
 Figure 3.3: Optional metadata groups (in blue) in the root group
 
@@ -1317,7 +1390,7 @@ The characteristics are:
 -   the rotation angle _θ_ is 0 in the (Z~a~, X~a~) plane, i.e. along the +X~a~ axis. Rotation increases clockwise from +X, when looking from +Y.
 -   the tilt angle _τ_ is 0 in the (Z~a~, X~a~) plane, positive for +Y~a~.
 
-_**Note that the definition of**_!number(0)_**θ is different from the convention defined in Lee et al. (1994)**_!null_**. Let θ’ be the rotation angle defined in Lee et al. (1994), θ=mod(450°- θ’).**_
+_**Note that the definition of**_ _**θ is different from the convention defined in Lee et al. (1994)**__**. Let θ’ be the rotation angle defined in Lee et al. (1994), θ=mod(450°- θ’).**_
 
 The transformation to **Χ**~a~ coordinates is:
 
@@ -1333,7 +1406,7 @@ The characteristics are:
 >
 > the tilt angle _τ_ is 0 in the (Z~a~, X~a~) plane, positive for +Y~a~.
 
-_**Note that the definition of**_!number(0)_**θ is the convention defined in Lee et al. (1994**_
+_**Note that the definition of**_ _**θ is the convention defined in Lee et al. (1994**_
 
 The transformation to **Χ**~a~ coordinates is:
 

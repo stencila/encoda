@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'

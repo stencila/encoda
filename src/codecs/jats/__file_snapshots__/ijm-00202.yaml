@@ -54,7 +54,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: https://registry.identifiers.org/registry/publisher-id
-    value: 202
+    value: '00202'
   - type: PropertyValue
     name: doi
     propertyID: https://registry.identifiers.org/registry/doi
@@ -80,8 +80,8 @@ isPartOf:
         type: Organization
         name: International Microsimulation Association
       title: International Journal of Microsimulation
-    volumeNumber: 12
-  issueNumber: 2
+    volumeNumber: '12'
+  issueNumber: '2'
 keywords:
   - C63
   - H22
@@ -106,8 +106,8 @@ licenses:
           - >-
             , which permits unrestricted use and redistribution provided that
             the original author and source are credited.
-pageEnd: 86
-pageStart: 68
+pageEnd: '86'
+pageStart: '68'
 references:
   - type: Article
     id: bib1
@@ -1344,7 +1344,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 2.04
+              - '2.04'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1353,7 +1353,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 2.14
+              - '2.14'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1372,28 +1372,28 @@ content:
                       - a/
           - type: TableCell
             content:
-              - 77
+              - '77.0'
           - type: TableCell
             content:
-              - 80.5
+              - '80.5'
           - type: TableCell
             content:
-              - 73.3
+              - '73.3'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
           - type: TableCell
             content:
-              - 74.8
+              - '74.8'
           - type: TableCell
             content:
-              - 78.1
+              - '78.1'
           - type: TableCell
             content:
-              - 71.5
+              - '71.5'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
       - type: TableRow
         cells:
           - type: TableCell
@@ -1413,28 +1413,28 @@ content:
                       - c/
           - type: TableCell
             content:
-              - 14
+              - '14.0'
           - type: TableCell
             content:
-              - 16.5
+              - '16.5'
           - type: TableCell
             content:
-              - 11.2
+              - '11.2'
           - type: TableCell
             content:
-              - 1.5
+              - '1.5'
           - type: TableCell
             content:
-              - 6.7
+              - '6.7'
           - type: TableCell
             content:
-              - 7.5
+              - '7.5'
           - type: TableCell
             content:
-              - 5.9
+              - '5.9'
           - type: TableCell
             content:
-              - 1.3
+              - '1.3'
       - type: TableRow
         cells:
           - type: TableCell
@@ -1454,28 +1454,28 @@ content:
                       - d/
           - type: TableCell
             content:
-              - 9.8
+              - '9.8'
           - type: TableCell
             content:
-              - 10.2
+              - '10.2'
           - type: TableCell
             content:
-              - 9.5
+              - '9.5'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
           - type: TableCell
             content:
-              - 8.7
+              - '8.7'
           - type: TableCell
             content:
-              - 8.7
+              - '8.7'
           - type: TableCell
             content:
-              - 8.8
+              - '8.8'
           - type: TableCell
             content:
-              - 1
+              - '1.0'
       - type: TableRow
         cells:
           - type: TableCell
@@ -1500,28 +1500,28 @@ content:
                       - e/
           - type: TableCell
             content:
-              - 76.1
+              - '76.1'
           - type: TableCell
             content:
-              - 66.9
+              - '66.9'
           - type: TableCell
             content:
-              - 85.7
+              - '85.7'
           - type: TableCell
             content:
-              - 0.8
+              - '0.8'
           - type: TableCell
             content:
-              - 68.5
+              - '68.5'
           - type: TableCell
             content:
-              - 54.8
+              - '54.8'
           - type: TableCell
             content:
-              - 82.6
+              - '82.6'
           - type: TableCell
             content:
-              - 0.7
+              - '0.7'
       - type: TableRow
         cells:
           - type: TableCell
@@ -1549,7 +1549,7 @@ content:
               - One person households
           - type: TableCell
             content:
-              - 21.9
+              - '21.9'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1558,7 +1558,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 11
+              - '11.0'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1572,7 +1572,7 @@ content:
               - Couple without children
           - type: TableCell
             content:
-              - 17.2
+              - '17.2'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1581,7 +1581,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 9
+              - '9.0'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1595,7 +1595,7 @@ content:
               - Couple with children
           - type: TableCell
             content:
-              - 33.2
+              - '33.2'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1604,7 +1604,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 39.9
+              - '39.9'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1618,7 +1618,7 @@ content:
               - Lone-parent family
           - type: TableCell
             content:
-              - 12
+              - '12.0'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1627,7 +1627,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 11.9
+              - '11.9'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1641,7 +1641,7 @@ content:
               - Extended households
           - type: TableCell
             content:
-              - 15.7
+              - '15.7'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1650,7 +1650,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 28.2
+              - '28.2'
           - type: TableCell
             content: []
           - type: TableCell
@@ -1918,7 +1918,7 @@ content:
             relation: fn
             target: '#fn1'
             content:
-              - 1
+              - '1'
           - ']'
   - type: Figure
     id: fig1
@@ -2152,7 +2152,7 @@ content:
             relation: fn
             target: '#fn2'
             content:
-              - 2
+              - '2'
           - ']'
       - ' as in '
       - type: Cite
@@ -2286,22 +2286,22 @@ content:
               - All
           - type: TableCell
             content:
-              - 100
+              - '100'
           - type: TableCell
             content:
-              - 59.8
+              - '59.8'
           - type: TableCell
             content:
-              - 3.7
+              - '3.7'
           - type: TableCell
             content:
-              - 1.9
+              - '1.9'
           - type: TableCell
             content:
-              - 22.5
+              - '22.5'
           - type: TableCell
             content:
-              - 48.9
+              - '48.9'
           - type: TableCell
             content:
               - 124,987
@@ -2312,22 +2312,22 @@ content:
               - Couple, male breadwinner
           - type: TableCell
             content:
-              - 18.4
+              - '18.4'
           - type: TableCell
             content:
-              - 72.4
+              - '72.4'
           - type: TableCell
             content:
-              - 4.1
+              - '4.1'
           - type: TableCell
             content:
-              - 1.4
+              - '1.4'
           - type: TableCell
             content:
-              - 27.3
+              - '27.3'
           - type: TableCell
             content:
-              - 42.5
+              - '42.5'
           - type: TableCell
             content:
               - 22,230
@@ -2338,22 +2338,22 @@ content:
               - Couple, dual earner
           - type: TableCell
             content:
-              - 30.7
+              - '30.7'
           - type: TableCell
             content:
-              - 72.1
+              - '72.1'
           - type: TableCell
             content:
-              - 3.8
+              - '3.8'
           - type: TableCell
             content:
-              - 2.3
+              - '2.3'
           - type: TableCell
             content:
-              - 19.9
+              - '19.9'
           - type: TableCell
             content:
-              - 41.4
+              - '41.4'
           - type: TableCell
             content:
               - 37,082
@@ -2364,22 +2364,22 @@ content:
               - Couple, female breadwinner
           - type: TableCell
             content:
-              - 3.2
+              - '3.2'
           - type: TableCell
             content:
-              - 42.1
+              - '42.1'
           - type: TableCell
             content:
-              - 3.3
+              - '3.3'
           - type: TableCell
             content:
-              - 1.9
+              - '1.9'
           - type: TableCell
             content:
-              - 27.7
+              - '27.7'
           - type: TableCell
             content:
-              - 52.4
+              - '52.4'
           - type: TableCell
             content:
               - 4,033
@@ -2390,22 +2390,22 @@ content:
               - Couple, non-employed
           - type: TableCell
             content:
-              - 7
+              - '7.0'
           - type: TableCell
             content:
-              - 9.1
+              - '9.1'
           - type: TableCell
             content:
-              - 2.6
+              - '2.6'
           - type: TableCell
             content:
-              - 1.7
+              - '1.7'
           - type: TableCell
             content:
-              - 4.5
+              - '4.5'
           - type: TableCell
             content:
-              - 68.5
+              - '68.5'
           - type: TableCell
             content:
               - 9,008
@@ -2416,22 +2416,22 @@ content:
               - Single, male breadwinner
           - type: TableCell
             content:
-              - 3.2
+              - '3.2'
           - type: TableCell
             content:
-              - 20.1
+              - '20.1'
           - type: TableCell
             content:
-              - 1.7
+              - '1.7'
           - type: TableCell
             content:
-              - 1.2
+              - '1.2'
           - type: TableCell
             content:
-              - 31.6
+              - '31.6'
           - type: TableCell
             content:
-              - 47.1
+              - '47.1'
           - type: TableCell
             content:
               - 4,125
@@ -2442,22 +2442,22 @@ content:
               - Single, female breadwinner
           - type: TableCell
             content:
-              - 7.8
+              - '7.8'
           - type: TableCell
             content:
-              - 60.6
+              - '60.6'
           - type: TableCell
             content:
-              - 2.9
+              - '2.9'
           - type: TableCell
             content:
-              - 1.5
+              - '1.5'
           - type: TableCell
             content:
-              - 30.4
+              - '30.4'
           - type: TableCell
             content:
-              - 45.2
+              - '45.2'
           - type: TableCell
             content:
               - 11,225
@@ -2468,22 +2468,22 @@ content:
               - Single, non-employed male
           - type: TableCell
             content:
-              - 1.3
+              - '1.3'
           - type: TableCell
             content:
-              - 3.6
+              - '3.6'
           - type: TableCell
             content:
-              - 1.4
+              - '1.4'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
           - type: TableCell
             content:
-              - 3.9
+              - '3.9'
           - type: TableCell
             content:
-              - 70.2
+              - '70.2'
           - type: TableCell
             content:
               - 1,886
@@ -2494,22 +2494,22 @@ content:
               - Single, non-employed female
           - type: TableCell
             content:
-              - 6.1
+              - '6.1'
           - type: TableCell
             content:
-              - 22
+              - '22.0'
           - type: TableCell
             content:
-              - 2.2
+              - '2.2'
           - type: TableCell
             content:
-              - 1.1
+              - '1.1'
           - type: TableCell
             content:
-              - 9.4
+              - '9.4'
           - type: TableCell
             content:
-              - 65.9
+              - '65.9'
           - type: TableCell
             content:
               - 8,670
@@ -2520,22 +2520,22 @@ content:
               - Couple, male breadwinner, extended
           - type: TableCell
             content:
-              - 4
+              - '4.0'
           - type: TableCell
             content:
-              - 83.1
+              - '83.1'
           - type: TableCell
             content:
-              - 5.8
+              - '5.8'
           - type: TableCell
             content:
-              - 2.3
+              - '2.3'
           - type: TableCell
             content:
-              - 34.2
+              - '34.2'
           - type: TableCell
             content:
-              - 48.5
+              - '48.5'
           - type: TableCell
             content:
               - 4,721
@@ -2546,22 +2546,22 @@ content:
               - Couple, dual earner, extended
           - type: TableCell
             content:
-              - 4.5
+              - '4.5'
           - type: TableCell
             content:
-              - 80.5
+              - '80.5'
           - type: TableCell
             content:
-              - 5.4
+              - '5.4'
           - type: TableCell
             content:
-              - 3.2
+              - '3.2'
           - type: TableCell
             content:
-              - 28.1
+              - '28.1'
           - type: TableCell
             content:
-              - 45.8
+              - '45.8'
           - type: TableCell
             content:
               - 5,268
@@ -2572,25 +2572,25 @@ content:
               - Couple, female breadwinner, extended
           - type: TableCell
             content:
-              - 0.8
+              - '0.8'
           - type: TableCell
             content:
-              - 70.1
+              - '70.1'
           - type: TableCell
             content:
-              - 5.2
+              - '5.2'
           - type: TableCell
             content:
-              - 2.8
+              - '2.8'
           - type: TableCell
             content:
-              - 31.2
+              - '31.2'
           - type: TableCell
             content:
-              - 56.5
+              - '56.5'
           - type: TableCell
             content:
-              - 943
+              - '943'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2598,22 +2598,22 @@ content:
               - Couple, non-employed , extended
           - type: TableCell
             content:
-              - 2.2
+              - '2.2'
           - type: TableCell
             content:
-              - 65.2
+              - '65.2'
           - type: TableCell
             content:
-              - 5
+              - '5.0'
           - type: TableCell
             content:
-              - 2.7
+              - '2.7'
           - type: TableCell
             content:
-              - 14.1
+              - '14.1'
           - type: TableCell
             content:
-              - 66.5
+              - '66.5'
           - type: TableCell
             content:
               - 2,615
@@ -2624,22 +2624,22 @@ content:
               - Single, male breadwinner, extended
           - type: TableCell
             content:
-              - 1.7
+              - '1.7'
           - type: TableCell
             content:
-              - 37.7
+              - '37.7'
           - type: TableCell
             content:
-              - 3.5
+              - '3.5'
           - type: TableCell
             content:
-              - 2.2
+              - '2.2'
           - type: TableCell
             content:
-              - 30.8
+              - '30.8'
           - type: TableCell
             content:
-              - 44.4
+              - '44.4'
           - type: TableCell
             content:
               - 1,976
@@ -2650,22 +2650,22 @@ content:
               - Single, female breadwinner, extended
           - type: TableCell
             content:
-              - 4.1
+              - '4.1'
           - type: TableCell
             content:
-              - 71.8
+              - '71.8'
           - type: TableCell
             content:
-              - 4.4
+              - '4.4'
           - type: TableCell
             content:
-              - 2.2
+              - '2.2'
           - type: TableCell
             content:
-              - 33.7
+              - '33.7'
           - type: TableCell
             content:
-              - 47.9
+              - '47.9'
           - type: TableCell
             content:
               - 5,113
@@ -2676,25 +2676,25 @@ content:
               - Single, non-employed male, extended
           - type: TableCell
             content:
-              - 0.8
+              - '0.8'
           - type: TableCell
             content:
-              - 50.1
+              - '50.1'
           - type: TableCell
             content:
-              - 3.9
+              - '3.9'
           - type: TableCell
             content:
-              - 2
+              - '2.0'
           - type: TableCell
             content:
-              - 19.2
+              - '19.2'
           - type: TableCell
             content:
-              - 65.6
+              - '65.6'
           - type: TableCell
             content:
-              - 974
+              - '974'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2702,22 +2702,22 @@ content:
               - Single, non-employed female, extended
           - type: TableCell
             content:
-              - 4.2
+              - '4.2'
           - type: TableCell
             content:
-              - 62.8
+              - '62.8'
           - type: TableCell
             content:
-              - 4.3
+              - '4.3'
           - type: TableCell
             content:
-              - 2.2
+              - '2.2'
           - type: TableCell
             content:
-              - 20.1
+              - '20.1'
           - type: TableCell
             content:
-              - 65.8
+              - '65.8'
           - type: TableCell
             content:
               - 5,118
@@ -2914,7 +2914,7 @@ content:
             relation: fn
             target: '#fn3'
             content:
-              - 3
+              - '3'
           - ']'
       - ' The '
       - type: Emphasis
@@ -3123,7 +3123,7 @@ content:
               - (0.00005)
           - type: TableCell
             content:
-              - 0.0048
+              - '0.0048'
               - type: Superscript
                 content:
                   - type: Link
@@ -3134,7 +3134,7 @@ content:
               - (0.00007)
           - type: TableCell
             content:
-              - 0.0046
+              - '0.0046'
               - type: Superscript
                 content:
                   - type: Link
@@ -3210,7 +3210,7 @@ content:
               - (0.00008)
           - type: TableCell
             content:
-              - 0.0035
+              - '0.0035'
               - type: Superscript
                 content:
                   - type: Link
@@ -3266,7 +3266,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0205
+              - '0.0205'
               - type: Superscript
                 content:
                   - type: Link
@@ -3288,7 +3288,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0082
+              - '0.0082'
               - type: Superscript
                 content:
                   - type: Link
@@ -3308,7 +3308,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0041
+              - '0.0041'
               - type: Superscript
                 content:
                   - type: Link
@@ -3368,7 +3368,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0574
+              - '0.0574'
               - type: Superscript
                 content:
                   - type: Link
@@ -3388,7 +3388,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0286
+              - '0.0286'
               - type: Superscript
                 content:
                   - type: Link
@@ -3408,7 +3408,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0278
+              - '0.0278'
               - type: Superscript
                 content:
                   - type: Link
@@ -3709,7 +3709,7 @@ content:
               - (0.00004)
           - type: TableCell
             content:
-              - 0.0022
+              - '0.0022'
               - type: Superscript
                 content:
                   - type: Link
@@ -3720,7 +3720,7 @@ content:
               - (0.00006)
           - type: TableCell
             content:
-              - 0.0025
+              - '0.0025'
               - type: Superscript
                 content:
                   - type: Link
@@ -3796,7 +3796,7 @@ content:
               - (0.00007)
           - type: TableCell
             content:
-              - 0.0016
+              - '0.0016'
               - type: Superscript
                 content:
                   - type: Link
@@ -3852,7 +3852,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0201
+              - '0.0201'
               - type: Superscript
                 content:
                   - type: Link
@@ -3874,7 +3874,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0084
+              - '0.0084'
               - type: Superscript
                 content:
                   - type: Link
@@ -3894,7 +3894,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0045
+              - '0.0045'
               - type: Superscript
                 content:
                   - type: Link
@@ -3954,7 +3954,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0665
+              - '0.0665'
               - type: Superscript
                 content:
                   - type: Link
@@ -3974,7 +3974,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0299
+              - '0.0299'
               - type: Superscript
                 content:
                   - type: Link
@@ -3994,7 +3994,7 @@ content:
             content: []
           - type: TableCell
             content:
-              - 0.0302
+              - '0.0302'
               - type: Superscript
                 content:
                   - type: Link

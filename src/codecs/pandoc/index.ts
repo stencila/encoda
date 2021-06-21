@@ -339,7 +339,7 @@ function encodeNode(
         ? {
             ...rest,
             references: references
-              .filter(stencila.isCreativeWork)
+              .filter(stencila.isMember('CreativeWorkTypes'))
               .map((ref) => encodeCsl(ref, 'json')),
           }
         : rest
@@ -858,7 +858,7 @@ function encodeTable(table: stencila.Table): Pandoc.Table {
   let head: Pandoc.TableCell[] = []
   if (table.rows.length > 0) {
     head = table.rows[0].cells.map((cell) =>
-      encodeBlocks(ensureBlockContentArray(cell.content))
+      encodeBlocks(ensureBlockContentArray(cell.content ?? []))
     )
   }
 
@@ -866,7 +866,7 @@ function encodeTable(table: stencila.Table): Pandoc.Table {
   if (table.rows.length > 1) {
     rows = table.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell) =>
-        encodeBlocks(ensureBlockContentArray(cell.content))
+        encodeBlocks(ensureBlockContentArray(cell.content ?? []))
       )
     })
   }
@@ -1080,7 +1080,10 @@ function decodeInline(elem: Pandoc.Inline): stencila.InlineContent {
   // Already decoded elements (e.g. in `decodeDocumentAsync`)
   // Allow for blocks such as `CodeChunk` nodes which may be wrapped in
   // a paragraph. See also `decodePara`
-  if (stencila.isInlineContent(elem) || stencila.isBlockContent(elem))
+  if (
+    stencila.isEntity(elem) &&
+    (stencila.isInlineContent(elem) || stencila.isBlockContent(elem))
+  )
     return elem as stencila.InlineContent
 
   switch (elem.t) {

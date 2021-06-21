@@ -216,7 +216,7 @@ fundedBy:
         name: Pew Charitable Trusts
     identifiers:
       - type: PropertyValue
-        value: 28354
+        value: '00028354'
   - type: MonetaryGrant
     funders:
       - type: Organization
@@ -230,7 +230,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: https://registry.identifiers.org/registry/publisher-id
-    value: 46793
+    value: '46793'
   - type: PropertyValue
     name: doi
     propertyID: https://registry.identifiers.org/registry/doi
@@ -258,7 +258,7 @@ isPartOf:
       type: Organization
       name: eLife Sciences Publications, Ltd
     title: eLife
-  volumeNumber: 8
+  volumeNumber: '8'
 keywords:
   - G-quadruplex
   - G4
@@ -321,7 +321,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26579458
+        value: '26579458'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -463,7 +463,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 10802651
+        value: '10802651'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -545,7 +545,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19519883
+        value: '19519883'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -629,7 +629,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 10446455
+        value: '10446455'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -740,7 +740,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24240700
+        value: '24240700'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -781,7 +781,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21455236
+        value: '21455236'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -880,7 +880,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18299561
+        value: '18299561'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -926,7 +926,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28193767
+        value: '28193767'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -990,7 +990,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22751019
+        value: '22751019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1036,7 +1036,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23422559
+        value: '23422559'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1085,7 +1085,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25033211
+        value: '25033211'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1159,7 +1159,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19237447
+        value: '19237447'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1200,7 +1200,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23325622
+        value: '23325622'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1283,7 +1283,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25268620
+        value: '25268620'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1312,7 +1312,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23842644
+        value: '23842644'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1386,7 +1386,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 15829966
+        value: '15829966'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1422,7 +1422,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22351747
+        value: '22351747'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1504,7 +1504,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23550303
+        value: '23550303'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1538,7 +1538,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21561811
+        value: '21561811'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1595,7 +1595,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26192317
+        value: '26192317'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1631,7 +1631,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21532565
+        value: '21532565'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1680,7 +1680,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21247388
+        value: '21247388'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1756,7 +1756,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22118673
+        value: '22118673'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1817,7 +1817,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29899445
+        value: '29899445'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1896,7 +1896,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26878150
+        value: '26878150'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2006,7 +2006,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18842585
+        value: '18842585'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2053,7 +2053,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 8510758
+        value: '8510758'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2132,7 +2132,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24860646
+        value: '24860646'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2187,7 +2187,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22871734
+        value: '22871734'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2265,7 +2265,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 17954919
+        value: '17954919'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2317,7 +2317,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 17260991
+        value: '17260991'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2352,7 +2352,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27308538
+        value: '27308538'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2412,7 +2412,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27153664
+        value: '27153664'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2475,7 +2475,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28666010
+        value: '28666010'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2519,7 +2519,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27282250
+        value: '27282250'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2558,7 +2558,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22088887
+        value: '22088887'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2652,7 +2652,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 15829967
+        value: '15829967'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2743,7 +2743,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26673716
+        value: '26673716'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2850,7 +2850,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25355519
+        value: '25355519'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2889,7 +2889,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28669924
+        value: '28669924'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2933,7 +2933,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21909941
+        value: '21909941'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -2979,7 +2979,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23937906
+        value: '23937906'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3053,7 +3053,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21586581
+        value: '21586581'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3087,7 +3087,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19922264
+        value: '19922264'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3243,7 +3243,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24122041
+        value: '24122041'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3292,7 +3292,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24647355
+        value: '24647355'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3372,7 +3372,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 8553070
+        value: '8553070'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3421,7 +3421,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22414013
+        value: '22414013'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3506,7 +3506,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27618450
+        value: '27618450'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3550,7 +3550,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28959952
+        value: '28959952'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3619,7 +3619,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24163102
+        value: '24163102'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3688,7 +3688,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 30256975
+        value: '30256975'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3799,7 +3799,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19131956
+        value: '19131956'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3840,7 +3840,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19033363
+        value: '19033363'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -3876,7 +3876,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27002218
+        value: '27002218'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4054,7 +4054,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 15028736
+        value: '15028736'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4140,7 +4140,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25435137
+        value: '25435137'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4209,7 +4209,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 17643112
+        value: '17643112'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4255,7 +4255,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 17322877
+        value: '17322877'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4306,7 +4306,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27571552
+        value: '27571552'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4342,7 +4342,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22388286
+        value: '22388286'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4422,7 +4422,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24225019
+        value: '24225019'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4491,7 +4491,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22538187
+        value: '22538187'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4585,7 +4585,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25925572
+        value: '25925572'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4690,7 +4690,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27693060
+        value: '27693060'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4751,7 +4751,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27215610
+        value: '27215610'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4826,7 +4826,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27980104
+        value: '27980104'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -4881,7 +4881,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27427153
+        value: '27427153'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5032,7 +5032,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24931005
+        value: '24931005'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5102,7 +5102,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23782415
+        value: '23782415'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5153,7 +5153,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26883636
+        value: '26883636'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5197,7 +5197,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27905517
+        value: '27905517'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5316,7 +5316,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25302833
+        value: '25302833'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5451,7 +5451,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21362549
+        value: '21362549'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5482,7 +5482,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19951354
+        value: '19951354'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5576,7 +5576,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18840648
+        value: '18840648'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5686,7 +5686,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 15694335
+        value: '15694335'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5715,7 +5715,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21094158
+        value: '21094158'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5776,7 +5776,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 21986947
+        value: '21986947'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5872,7 +5872,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25284584
+        value: '25284584'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -5986,7 +5986,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 20663931
+        value: '20663931'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6075,7 +6075,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25998713
+        value: '25998713'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6109,7 +6109,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26350216
+        value: '26350216'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6163,7 +6163,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28652249
+        value: '28652249'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6204,7 +6204,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19910308
+        value: '19910308'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6260,7 +6260,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18975896
+        value: '18975896'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6336,7 +6336,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 22306580
+        value: '22306580'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6635,7 +6635,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29625050
+        value: '29625050'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6689,7 +6689,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 11438689
+        value: '11438689'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6786,7 +6786,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 8653691
+        value: '8653691'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6825,7 +6825,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29242641
+        value: '29242641'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6859,7 +6859,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23355908
+        value: '23355908'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -6926,7 +6926,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 14597658
+        value: '14597658'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7047,7 +7047,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18832071
+        value: '18832071'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7133,7 +7133,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27928057
+        value: '27928057'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7434,7 +7434,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 19360080
+        value: '19360080'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7489,7 +7489,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 16288211
+        value: '16288211'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7629,7 +7629,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23521792
+        value: '23521792'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7657,7 +7657,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27899622
+        value: '27899622'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7694,7 +7694,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 16397294
+        value: '16397294'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7728,7 +7728,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27663528
+        value: '27663528'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7792,7 +7792,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 16150737
+        value: '16150737'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7823,7 +7823,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 12042765
+        value: '12042765'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7872,7 +7872,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25364233
+        value: '25364233'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -7953,7 +7953,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 30808951
+        value: '30808951'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8018,7 +8018,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23563309
+        value: '23563309'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8054,7 +8054,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23227454
+        value: '23227454'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8108,7 +8108,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 12234937
+        value: '12234937'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8247,7 +8247,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25079319
+        value: '25079319'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8336,7 +8336,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 30279242
+        value: '30279242'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8372,7 +8372,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 20670277
+        value: '20670277'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8592,7 +8592,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28211448
+        value: '28211448'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8646,7 +8646,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25473964
+        value: '25473964'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8735,7 +8735,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 16381865
+        value: '16381865'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8782,7 +8782,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 14760118
+        value: '14760118'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8838,7 +8838,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29175326
+        value: '29175326'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -8914,7 +8914,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25091051
+        value: '25091051'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -9018,7 +9018,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26748828
+        value: '26748828'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -9355,7 +9355,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -9444,11 +9444,11 @@ content:
       - ' outlines our shRNA screening strategy. To identify shRNAs that are lost between the initial (t0) and final (fF) timepoints, unique 3’-antisense sequences were recovered by PCR and quantified by sequencing. If a gene knockdown compromises cell viability then the associated shRNA will be depleted compared to those targeting non-essential genes: the tF sequence count will be less than t0 thus log'
       - type: Subscript
         content:
-          - 2
+          - '2'
       - " fold change (FC, tF/t0) is negative. A pilot using one shRNA pool established that a tF of 15 population doublings can be used to reveal significant G4-ligand-mediated changes [false discovery rate (FDR)\_≤\_0.05] in shRNA levels using a ligand concentration resulting in 20% cell death (GI"
       - type: Subscript
         content:
-          - 20
+          - '20'
       - ", see Materials\_and\_methods and "
       - type: Link
         relation: fig
@@ -9503,7 +9503,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -9533,7 +9533,7 @@ content:
               - ) Comparison of FDR and log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - 'FC values for a hairpin targeting '
               - type: Emphasis
                 content:
@@ -9543,7 +9543,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -9553,7 +9553,7 @@ content:
       - "To understand the complete spectrum of G4 vulnerabilities, we first considered the combined set of sensitivities to PDS and PhenDC3 together. For the whole library, when individual shRNAs are considered 9509 (~7%) G4-ligand-specific hairpins (i.e. those not in DMSO) were found to be depleted (FDR\_≤\_0.05; log"
       - type: Subscript
         content:
-          - 2
+          - '2'
       - " FC\_<0, "
       - type: Link
         relation: fig
@@ -9572,7 +9572,7 @@ content:
         significantly depleted for that gene (median log
       - type: Subscript
         content:
-          - 2
+          - '2'
       - " FC\_<0). This resulted in the identification of 843 G4 ligand-specific gene knockdowns not present in DMSO ("
       - type: Link
         relation: fig
@@ -9584,7 +9584,7 @@ content:
         sensitisers as those having a median log
       - type: Subscript
         content:
-          - 2
+          - '2'
       - ' FC ≤ −1 ('
       - type: Link
         relation: fig
@@ -9660,7 +9660,7 @@ content:
           - ") significantly depleted genes (50% or three hairpins, FDR\_≤\_0.05, median log"
           - type: Subscript
             content:
-              - 2
+              - '2'
           - "FC\_<\_0) following DMSO, PDS and PhenDC3 treatment and ("
           - type: Strong
             content:
@@ -9670,7 +9670,7 @@ content:
             applying a median log
           - type: Subscript
             content:
-              - 2
+              - '2'
           - FC ≤ −1 cut off. (
           - type: Strong
             content:
@@ -9678,7 +9678,7 @@ content:
           - ) Tables showing the number of depleted hairpins and median log
           - type: Subscript
             content:
-              - 2
+              - '2'
           - 'FC values for: ('
           - type: Strong
             content:
@@ -9708,7 +9708,7 @@ content:
           - ") sensitisers identified as G4-related by text-mining showing the associated PolySearch2 algorithm score and summary of the G4 association. Sensitisers are defined as a gene where 50% or three hairpins were significantly differentially expressed (FDR\_≤\_0.05) with median log"
           - type: Subscript
             content:
-              - 2
+              - '2'
           - 'FC ≤ −1. See also '
           - type: Link
             relation: supplementary-material
@@ -9720,7 +9720,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Paragraph
@@ -9862,7 +9862,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -9966,7 +9966,7 @@ content:
           - ) Median log
           - type: Subscript
             content:
-              - 2
+              - '2'
           - >-
             FC and number of significantly depleted hairpins for G4 sensitisers
             overlapping the COSMIC database for PDS (
@@ -9992,7 +9992,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading
@@ -10100,7 +10100,7 @@ content:
                 or three significantly depleted with median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - ' FC≤ −1). ('
               - type: Strong
                 content:
@@ -10162,7 +10162,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -10241,7 +10241,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -10425,7 +10425,7 @@ content:
                 number of depleted hairpins and median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - >-
                 FC values for four key genes found as both PDS and PhenDC3
                 sensitisers across all the three screens. See also 
@@ -10445,7 +10445,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -10493,7 +10493,7 @@ content:
                 not DMSO and median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - FC ≤ −1). (
               - type: Strong
                 content:
@@ -10513,7 +10513,7 @@ content:
                 significantly depleted with a median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - 'FC ≤ −1). See also '
               - type: Link
                 relation: supplementary-material
@@ -10525,7 +10525,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -10595,7 +10595,7 @@ content:
         relation: fig
         target: '#fig8s2'
         content:
-          - 2
+          - '2'
       - ). For both HT1080 (
       - type: Link
         relation: fig
@@ -10737,49 +10737,25 @@ content:
                 relation: fig
                 target: '#fig8s2'
                 content:
-                  - 2
+                  - '2'
               - ' and '
               - type: Link
                 relation: fig
                 target: '#fig8s3'
                 content:
-                  - 3
+                  - '3'
               - .
           - type: Paragraph
-            content:
-              - type: MediaObject
-                id: fig8sdata1
-                contentUrl: ''
-                text: Figure 8—source data 1.
-                content:
-                  - type: Heading
-                    depth: 3
-                    content:
-                      - Source files for western blots.
-                  - type: Paragraph
-                    content:
-                      - (
-                      - type: Strong
-                        content:
-                          - A
-                      - ) Full length western blots and (
-                      - type: Strong
-                        content:
-                          - B
-                      - >-
-                        ) capillary traces obtained from Compass Software
-                        (Simple Western) for results shown in 
-                      - type: Link
-                        relation: fig
-                        target: '#fig8'
-                        content:
-                          - Figure 8A
-                      - .
+            content: []
+          - >-
+            Source files for western blots.(A) Full length western blots and (B)
+            capillary traces obtained from Compass Software (Simple Western) for
+            results shown in Figure 8A.
         label: Figure 8.
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -10838,7 +10814,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -10857,7 +10833,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -10939,40 +10915,16 @@ content:
                   - J
               - ) GAR1.
           - type: Paragraph
-            content:
-              - type: MediaObject
-                id: fig8s3sdata1
-                contentUrl: ''
-                text: Figure 8—figure supplement 3—source data 1.
-                content:
-                  - type: Heading
-                    depth: 3
-                    content:
-                      - Source files for western blots.
-                  - type: Paragraph
-                    content:
-                      - (
-                      - type: Strong
-                        content:
-                          - A
-                      - ) Full length western blots and (
-                      - type: Strong
-                        content:
-                          - B
-                      - >-
-                        ) capillary traces obtained from Compass Software
-                        (Simple Western) for results shown in 
-                      - type: Link
-                        relation: fig
-                        target: '#fig8s3'
-                        content:
-                          - Figure 8—figure supplement 3A
-                      - .
+            content: []
+          - >-
+            Source files for western blots.(A) Full length western blots and (B)
+            capillary traces obtained from Compass Software (Simple Western) for
+            results shown in Figure 8—figure supplement 3A.
         label: Figure 8—figure supplement 3.
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -11028,7 +10980,7 @@ content:
         relation: fig
         target: '#fig8s3'
         content:
-          - 3
+          - '3'
       - '). While '
       - type: Emphasis
         content:
@@ -11104,7 +11056,7 @@ content:
         MK1775 or pimozide at concentrations surrounding the GI
       - type: Subscript
         content:
-          - 50
+          - '50'
       - ' values and cell viability measured after 96 hr using an end-point ATP luminescence-based assay (CellTiter-Glo, Promega). Combenefit software '
       - type: Cite
         target: bib37
@@ -11135,7 +11087,7 @@ content:
         6.25 μM pimozide, respectively (GI
       - type: Subscript
         content:
-          - 50
+          - '50'
       - " for PDS, MK1775 and pimozide alone\_=\_322 nM, 59 nM and 8.4 μM, respectively). A375 cells showed lower synergy with PDS and MK1775 combination ("
       - type: Link
         relation: fig
@@ -11151,7 +11103,7 @@ content:
       - ), with peak synergy of 15% at 8 μM PDS, 444 nM MK1775 (GI
       - type: Subscript
         content:
-          - 50
+          - '50'
       - " for PDS, MK1775 and pimozide alone\_=\_8.5 μM, 625 nM and 12.2 μM, respectively). The greatest synergy was seen in combinations of PDS and pimozide in A375 cells ("
       - type: Link
         relation: fig
@@ -11208,7 +11160,7 @@ content:
               - ) Numbers of depleted shRNA hairpins and median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - >-
                 FC values for WEE1 and USP1 in the genome-wide and focused
                 screens. (
@@ -11247,13 +11199,13 @@ content:
                 relation: fig
                 target: '#fig9s2'
                 content:
-                  - 2
+                  - '2'
               - ).
         label: Figure 9.
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -11289,7 +11241,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -11341,7 +11293,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -11444,7 +11396,7 @@ content:
               - ) Number of depleted hairpins and median log
               - type: Subscript
                 content:
-                  - 2
+                  - '2'
               - >-
                 FC values for DEAH/DEAD-box helicase genes within the 758 genes
                 identified in the genome-wide screen. Those highlighted in blue
@@ -11496,40 +11448,16 @@ content:
                   - d
               - ' is calculated from five replicates (values are indicative as the model assumes saturation kinetics).'
           - type: Paragraph
-            content:
-              - type: MediaObject
-                id: fig10sdata1
-                contentUrl: ''
-                text: Figure 10—source data 1.
-                content:
-                  - type: Heading
-                    depth: 3
-                    content:
-                      - Source files for western blots.
-                  - type: Paragraph
-                    content:
-                      - (
-                      - type: Strong
-                        content:
-                          - A
-                      - ) Full-length western blots and (
-                      - type: Strong
-                        content:
-                          - B
-                      - >-
-                        ) capillary traces obtained from Compass Software
-                        (Simple Western) for results shown in 
-                      - type: Link
-                        relation: fig
-                        target: '#fig10'
-                        content:
-                          - Figure 10A
-                      - .
+            content: []
+          - >-
+            Source files for western blots.(A) Full-length western blots and (B)
+            capillary traces obtained from Compass Software (Simple Western) for
+            results shown in Figure 10A.
         label: Figure 10.
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
       - type: Figure
@@ -11558,7 +11486,7 @@ content:
         content:
           - type: ImageObject
             contentUrl: ''
-            format: image/tiff
+            mediaType: image/tiff
             meta:
               inline: false
     meta:
@@ -13999,7 +13927,7 @@ content:
         Scientific, cat #10500064) and grown at 37°C in a 5% CO
       - type: Subscript
         content:
-          - 2
+          - '2'
       - ' humidified atmosphere. Cell lines were authenticated using small tandem repeat (STR) profiling and regularly checked to be mycoplasma-free by RNA-capture ELISA. All cell lines tested negative for '
       - type: Emphasis
         content:
@@ -14021,7 +13949,7 @@ content:
         a viable cell concentration of 1–2 × 10
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' cells/mL, with ‘Events to Acquire’ parameter set at 1000 events. Three cell counts were recorded.'
   - type: Heading
     id: s4-3
@@ -14044,15 +13972,15 @@ content:
       - ' were used as 100 mM stocks, dissolved in DMSO (Thermofisher Scientific, cat # 20688). GI'
       - type: Subscript
         content:
-          - 20
+          - '20'
       - ' values were calculated by treating A375 and HT1080 cells with serial dilutions of PDS and PhenDC3 for 96 hr and determining cell death via a CellTitre-Glo One Solution assay (Promega, cat # G8461) according to manufacturer’s protocol. Each serial dilution was replicated four times for two-cell-seeding densities (1000/1500 cells per well). For both densities, curves were plotted averaging the four replicates in Prism (GraphPad v6) using a Non-Linear regression model, ‘dose-response – inhibition’ equation [log(inhibitor) vs. normalised response – variable slope] and GI'
       - type: Subscript
         content:
-          - 20
+          - '20'
       - ' values calculated. The GI'
       - type: Subscript
         content:
-          - 20
+          - '20'
       - ' concentrations used represent an average of three separate assays per cell line and yielded the following concentrations used for the screens - A375: 10 μM PhenDC3 and 1.5 μM PDS; HT1080: 1 μM PhenDC3 and 0.5 μM PDS.'
   - type: Heading
     id: s4-4
@@ -14064,7 +13992,7 @@ content:
       - "The genome-wide screen uses the transOMIC LMN shRNA library against the human protein coding genome, consisting of 113,002 total shRNAs, split between 12 pools for ease-of-handling (approximately 10,000 shRNAs per pool) with an average number of five optimised hairpins per gene. The G4 focused screen consists of a custom shRNA pool (transOMIC\_technologies) with the same LMN vector (8018 shRNAs); this includes 1247 genes (7436 shRNAs) uncovered in the genome-wide screen (751 sensitisers and 496 upregulated genes), 116 additional genes identified from the literature as potentially G4-associated (439 shRNAs) and shRNAs targeting 37 olfactory receptors as non-targeting controls (143 shRNAs). 496 upregulated genes (FDR\_≤\_0.05, 50% or three hairpins; log"
       - type: Subscript
         content:
-          - 2
+          - '2'
       - "FC\_≥\_1) were included to mimic the genome-wide screen on a smaller scale by maintaining the population ratio of sensitisation and resistance. In this custom pool, unlike the commercially available genome-wide library, we capped the number of shRNAs at seven per gene. The backbone of both libraries contains Neo"
       - type: Superscript
         content:
@@ -14095,23 +14023,23 @@ content:
         (2.7 μM, Qiagen cat # 1027423) to increase viral titre and 0.25 M CaCl
       - type: Subscript
         content:
-          - 2
+          - '2'
       - ' in a total volume of 1.5 mL per 15 cm dish and bubbled with 1.5 mL 2 x HBS (50 mM HEPES, 10 mM KCl, 12 mM Dextrose, 280 mM NaCl, 1.5 mM Na'
       - type: Subscript
         content:
-          - 2
+          - '2'
       - PO
       - type: Subscript
         content:
-          - 4
+          - '4'
       - " at pH 7.00) and added to the Platinum-A cells (containing 17mL media) in a dropwise fashion. Immediately before adding the DNA-Pasha-transfection mixture to the Platinum-A cells, chloroquine diphosphate (lysosomal inhibitor, Acros Organics cat # 455200250) was added to the plates at a final concentration 2.5 μM. 14–16 hr after transfection, fresh media was added with 1:1000 1\_M sodium butyrate (Merck, cat # 303410) for enhanced mammalian expression of the shRNA LMN plasmid. Virus was then harvested 48 hr after transfection and filter sterilised (0.45 μM) and stored at 4°C for a maximum of 7 days. Viral titre was determined by performing mock infections and quantifying fluorescent cells, via flow cytometry (MacsQUANT, Miltenyi Biotec Ltd.) 48 hr after infection. For both the genome-wide and focused-screen, 3.6 × 10"
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' target cells were infected with a viral volume predicted to cause 30% infection (MOI 0.3) to minimise multiple shRNA integrations per cell. This provides approximately 10 × 10'
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' shRNA expressing cells (1000-fold shRNA representation). Virus was diluted in serum free media plus polybrene (8 μg/mL) with infections carried out in triplicate and treated as independent replicates hereafter. 48 hr after infection cells antibiotic selection was performed with 800 μg/mL (HT1080) and 1000 μg/mL (A375) geneticin for 7–9 days (antibiotic concentrations were determined from 7-day toxicity curves prior to transfection setup).'
   - type: Heading
     id: s4-6
@@ -14126,15 +14054,15 @@ content:
         PDS, PhenDC3 and DMSO vehicle control, each containing 8–10 × 10
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' cells to maintain 1000-fold hairpin representation. Every 72 hr, cells were trypsinised, counted via Muse Cell Analyzer to determine the number of population doublings, and 10 × 10'
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' (A375 genome-wide and focused) or 8 × 10'
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' (HT1080) cells per replica re-plated in fresh drug/DMSO and media (17 mL media per plate). At all times, sufficient cell numbers were used so that a minimum of 1000 or 800 cells per shRNA was maintained (A375 and HT1080, respectively), to ensure maximal potential for uncovering phenotypic effects from each shRNA hairpin tested '
       - type: Cite
         target: bib66
@@ -14154,7 +14082,7 @@ content:
         replicas each). Therefore, 144 samples of 10 × 10
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' cells were generated to cover the entire screen. For each cell line of the focused screen, 12 samples were generated (t0, DMSO tF, PDS tF, PhenDC3 tF, three replicas each).'
   - type: Heading
     id: s4-7
@@ -14169,7 +14097,7 @@ content:
         (t7 and t15 respectively) and the average log
       - type: Subscript
         content:
-          - 2
+          - '2'
       - "FC (tF/t0) counts for each hairpin were determined as described below. For t7, 13 and 115 shRNAs were significantly altered following PDS and PhenDC3 treatment respectively (FDR\_≤\_0.05). At t15, more hairpins were significantly depleted following PDS and PhenDC3 treatment (746 and 93 shRNAs respectively, excluding those significantly changed in DMSO)."
   - type: Heading
     id: s4-8
@@ -14183,11 +14111,11 @@ content:
         table below. Cell pellets (10 × 10
       - type: Superscript
         content:
-          - 6
+          - '6'
       - ' cells) were resuspended in PBS and genomic DNA extracted using QIAmp DNA Blood Maxi Kit (Qiagen, cat # 51194) according to the manufacturer’s spin protocol, eluted in a final volume of 1200 μL and quantified by Qubit DNA HS Assay Kit (Thermo Fisher Scientific, cat # Q32851). The shRNA inserts were PCR-amplified from all DNA in each sample, in multiple 50 μL reactions each using 1.5 μg gDNA, with KOD Hot Start DNA Polymerase (Merck, cat # 710864) and the following reagents (included within the kit): 5 μL 10 x buffer, 5 μL 2 mM each dNTPs, 4 μL MgSO'
       - type: Subscript
         content:
-          - 4
+          - '4'
       - " (25 mM), 1.5 μL polymerase, 4 μL DMSO. Forward (Mir-F) and reverse (PGKpro-R) primers flanking the loop and antisense sequence of the hairpin region were used at a final concentration of 300 nM. PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 98°C for 35 s, 58°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 1.2 mL of pooled PCR reaction were cleaned-up using QIAquick PCR purification kit (Qiagen, cat # 28104) according to manufacturer’s protocol. 2 μg purified PCR product were PCR amplified in a second step, using forward (P5-Seq-P-Mir-Loop) and reverse (P7-Index-n-TruSeq-PGKpro-R) primers containing the P5 and P7 flowcell adapters, respectively. PCR was performed in 8 × 50 μL reactions each with 500 ng template DNA. The reverse primer contains TruSeq adapter small RNA Indexes for multiplexing and a 6-nucleotide barcode, denoted ‘nnnnnn’ below. PCR reagents were as for the first PCR, with the exception of the primers, which were used at a final concentration 1.5 μM. The second PCR was performed under the following conditions: 98°C for 5 min, then for 25 cycles of 94°C for 35 s, 52°C 35 s\_and 72°C for 35 s, followed by a final extension at 72°C for 5 min. 200 μL of pooled secondary PCR product was cleaned up as previously and the desired product (~340 bp) was extracted using BluePippin (Sage Science) 2% Internal Standard Marker Kit (DF marker 100–600 bp; Sage Science, BDF2010), according to manufacturer’s protocol using a broad range elution (300–400 bp). Individual samples were quantified with a KAPA library quantification kit (KAPA Biosystems, cat # 0796-6014-0001) using a BioRad CFX96 Real Time PCR instrument with no Rox according to manufacturer’s protocols. Libraries were diluted to 4 nM in RNAse free water. For the genome-wide screen samples, 24 libraries (12 pools) and for the focused screen samples, 24 libraries (both cell lines) were combined to create a pooled 4 nM stock, with each sample having a unique TruSeq adapter. The genome-wide screen samples were sequenced in six batches; all focused screen samples were sequenced simultaneously. DNA-Seq libraries were prepared from these samples using the NextSeq Illumina Platform v2 High Output Kit 75 cycles, followed by 36 base pair single-read sequencing performed on an Illumina NextSeq instrument, using a custom sequencing primer."
   - type: Table
     id: inlinetable1
@@ -14374,7 +14302,7 @@ content:
       - ". Fold changes (FC) were then computed for every shRNA, and false discovery rates (FDR) were estimated using the Benjamini-Hochberg method. A gene was defined as significantly differentially represented for a given treatment if at least 50% or a minimum of 3 shRNAs were significant (FDR\_≤\_0.05); sensitisation was additionally determined by applying a log"
       - type: Subscript
         content:
-          - 2
+          - '2'
       - FC ≤ −1.
   - type: Heading
     id: s4-11
@@ -14860,7 +14788,7 @@ content:
         buffer (20 mM HEPES pH7.4, 10 mM NaCl, 3 mM MgCl
       - type: Subscript
         content:
-          - 2
+          - '2'
       - >-
         , 0.2 mM EDTA, 1 mM DTT) plus protease inhibitor (cOmplete mini, Roche
         cat#11836153001), lysed on ice (15 min) and 0.5% Igepal added. Samples
@@ -14870,7 +14798,7 @@ content:
         high-salt buffer (20 mM HEPES pH7.4, 500 mM NaCl, 3 mM MgCl
       - type: Subscript
         content:
-          - 2
+          - '2'
       - >-
         , 0.5% Igepal, 0.2 mM EDTA, 1 mM DTT) plus protease inhibitors, followed
         by lysis on ice with intermittent vortexing (30 min). Lysates were
@@ -14983,11 +14911,11 @@ content:
         450 rpm). Wells were washed three times with ELISA buffer (50 mM K
       - type: Subscript
         content:
-          - 2
+          - '2'
       - HPO
       - type: Subscript
         content:
-          - 4
+          - '4'
       - ' pH 7.4 and 100 mM KCl/100 mM LiCl); 1 min shaking, 450 rpm. Wells were then blocked with 3% (w/v) BSA (Merck, cat# A7030) in ELISA buffer for 1 hr, at room temperature and then incubated with serial dilutions of DDX42 up to 200 nM for 1 hr. Wells were washed three times with 0.1% TWEEN-20 in ELISA buffer and then incubated for 1 hr with anti-GST HRP-conjugated antibody (Abcam AB3416) diluted 1:10,000 in blocking buffer. Wells were again washed three times with ELISA-Tween, and the bound anti-GST HRP detected with TMB substrate (Merck,cat#T4444) for 2 min. Reactions were stopped with 2 M HCl. Absorbance at 450 nm was measured with PheraSTAR plate reader (BMG labtech). Binding curves with standard error of the mean (SEM) were fitted using GraphPad Prism software, using a non-linear regression fit, one site, specific binding model with saturation kinetics. The following equation was used: y=(Bmax*x)/(K'
       - type: Subscript
         content:
@@ -15014,11 +14942,11 @@ content:
       - ' is quoted in 10'
       - type: Superscript
         content:
-          - 5
+          - '5'
       - ' deg cm'
       - type: Superscript
         content:
-          - 2
+          - '2'
       - ' dmol'
       - type: Superscript
         content:

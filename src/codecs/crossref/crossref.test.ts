@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { CrossrefCodec } from '.'
 import * as vfile from '../../util/vfile'
 import { nockRecord, snapshot } from '../../__tests__/helpers'

@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { JatsCodec } from '../../codecs/jats'
 import { snapshot } from '../helpers'
 

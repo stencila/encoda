@@ -54,7 +54,7 @@ content:
                       
           - type: Superscript
             content:
-              - 2
+              - '2'
     content:
       - Deaths in hospitals or with alternative services
       - type: ImageObject
@@ -93,9 +93,7 @@ content:
 
                       ]
                       
-          - type: MediaObject
-            contentUrl: ''
-            format: video/avi
+      - v1 video/avi
     label: FIG. 1.
     content:
       - type: ImageObject

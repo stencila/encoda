@@ -2,7 +2,7 @@
  * @module util/media/removeDataUris
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { transformSync } from '../transform'
 
 /**
@@ -17,7 +17,7 @@ export function removeDataUris(node: schema.Node): schema.Node {
   return transformSync(
     node,
     (node: schema.Node): schema.Node => {
-      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+      if (schema.isIn('MediaObjectTypes', node)) {
         const { contentUrl, ...rest } = node
         if (contentUrl.startsWith('data:')) {
           return {

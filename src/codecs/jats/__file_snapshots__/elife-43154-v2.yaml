@@ -204,7 +204,7 @@ identifiers:
   - type: PropertyValue
     name: publisher-id
     propertyID: https://registry.identifiers.org/registry/publisher-id
-    value: 43154
+    value: '43154'
   - type: PropertyValue
     name: doi
     propertyID: https://registry.identifiers.org/registry/doi
@@ -232,7 +232,7 @@ isPartOf:
       type: Organization
       name: eLife Sciences Publications, Ltd
     title: eLife
-  volumeNumber: 8
+  volumeNumber: '8'
 keywords:
   - causal inference
   - severe malaria
@@ -291,7 +291,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26416757
+        value: '26416757'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -392,7 +392,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18192399
+        value: '18192399'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -805,7 +805,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 28067620
+        value: '28067620'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -910,7 +910,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 23152723
+        value: '23152723'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -944,7 +944,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 29298156
+        value: '29298156'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1015,7 +1015,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25261933
+        value: '25261933'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1049,7 +1049,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24585732
+        value: '24585732'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1100,7 +1100,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 24585735
+        value: '24585735'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1178,7 +1178,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 26686045
+        value: '26686045'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1225,7 +1225,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 18410566
+        value: '18410566'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1303,7 +1303,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 25214480
+        value: '25214480'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1347,7 +1347,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 27040958
+        value: '27040958'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1382,7 +1382,7 @@ references:
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
-        value: 5316621
+        value: '5316621'
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1677,7 +1677,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Paragraph
@@ -1778,7 +1778,7 @@ content:
     content:
       - type: ImageObject
         contentUrl: ''
-        format: image/tiff
+        mediaType: image/tiff
         meta:
           inline: false
   - type: Heading

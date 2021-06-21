@@ -2,7 +2,7 @@
  * @module util/media/toFiles
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import path from 'path'
 import transform from '../transform'
 import { toFile } from '../uri'
@@ -31,7 +31,7 @@ export async function toFiles(
   return transform(
     node,
     async (node: schema.Node): Promise<schema.Node> => {
-      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+      if (schema.isIn('MediaObjectTypes', node)) {
         const { contentUrl, ...rest } = node
 
         if (contentUrl.startsWith('http')) {

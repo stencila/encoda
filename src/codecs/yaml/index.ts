@@ -4,7 +4,7 @@
  * @module codecs/yaml
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import yaml from 'js-yaml'
 import orderProperties from '../../util/orderProperties'
 import * as vfile from '../../util/vfile'

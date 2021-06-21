@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import articleSimple from '../../__fixtures__/article/simple'
 import { snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'

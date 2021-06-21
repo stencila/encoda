@@ -184,7 +184,7 @@ async function decodeDocument(
               const block = await decodeParagraph(para, lists)
 
               // Ignore empty paragraphs
-              if (schema.isParagraph(block)) {
+              if (schema.isA('Paragraph', block)) {
                 const { content } = block
                 if (
                   content.length === 0 ||
@@ -197,7 +197,7 @@ async function decodeDocument(
 
               // If this para has the `Title` style then use it's content
               // as the title of the article (overrides doc.title)
-              if (schema.isParagraph(block) && para.paragraphStyle) {
+              if (schema.isA('Paragraph', block) && para.paragraphStyle) {
                 const styleType = para.paragraphStyle.namedStyleType
                 if (styleType && styleType === 'TITLE') {
                   const { content } = block
@@ -331,7 +331,7 @@ function decodeListItem(
     nestingLevel.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
       ? 'Unordered'
       : 'Ascending'
-  const newList = schema.list({ items: [listItem], order })
+  const newList: schema.List = schema.list({ items: [listItem], order })
 
   if (listLevel === 0) {
     // Register the new list so other items can be added.
@@ -340,7 +340,10 @@ function decodeListItem(
   } else {
     // Add the new list to the parent list item
     const parent = lists[listId][listLevel - 1]
-    assertDefined(parent.items[parent.items.length - 1].content).push(newList)
+    const parentContent = assertDefined(
+      parent.items[parent.items.length - 1].content
+    ) as schema.BlockContent[]
+    parentContent?.push(newList)
     // Register this list so that it too can act as a parent
     lists[listId][listLevel] = newList
     return undefined

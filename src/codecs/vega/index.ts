@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
@@ -180,7 +180,7 @@ export class VegaCodec extends Codec implements Codec {
    * converting back to a Jupyter Notebook from Word)
    */
   public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
-    if (schema.isA('ImageObject', node) && node.content) {
+    if (schema.isA('ImageObject', node) && node.content !== undefined) {
       for (const content of node.content) {
         if (
           typeof content === 'object' &&

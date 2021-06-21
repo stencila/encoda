@@ -18,9 +18,7 @@ import { getLogger } from '@stencila/logga'
 import stencila, {
   isA,
   isBlockContent,
-  isCreativeWork,
-  isListItem,
-  nodeIs,
+  isInTypeMap,
   nodeType,
   TypeMapGeneric,
 } from '@stencila/schema'
@@ -139,8 +137,8 @@ export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> = 
   text: 'text',
 }
 
-const isMdastBlockContent = nodeIs(mdastBlockContentTypes)
-const isMdastPhrasingContent = nodeIs(mdastPhrasingContentTypes)
+const isMdastBlockContent = isInTypeMap(mdastBlockContentTypes)
+const isMdastPhrasingContent = isInTypeMap(mdastPhrasingContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -361,7 +359,7 @@ async function inlineReferences(
   if (fs.existsSync(resolvedPath)) {
     const refs = await bibCodec.read(resolvedPath)
     if (Array.isArray(refs)) {
-      return refs.filter(isCreativeWork)
+      return refs.filter(stencila.isMember('CreativeWorkTypes'))
     } else {
       log.warn(`Error parsing bibliography file: ${resolvedPath}`)
     }
@@ -418,7 +416,7 @@ async function encodePrepare(
   return transform(
     rootNode,
     async (node) => {
-      if (stencila.isArticle(node)) {
+      if (stencila.isA('Article', node)) {
         return await extractReferences(node, options)
       }
       if (
@@ -1052,12 +1050,9 @@ function decodeFigure(ext: Extension): stencila.Figure {
     // it is unwrapped and made the figure's content.
     if (
       media === undefined &&
-      stencila.isParagraph(node) &&
+      stencila.isA('Paragraph', node) &&
       node.content?.length === 1 &&
-      stencila.isInstanceOf<stencila.MediaObject>(
-        stencila.mediaObjectTypes,
-        node.content[0]
-      )
+      stencila.isIn('MediaObjectTypes', node.content[0])
     ) {
       media = node.content[0]
     } else {
@@ -1106,7 +1101,7 @@ function decodeList(list: MDAST.List, context: DecodeContext): stencila.List {
     order: list.ordered ? 'Ascending' : 'Unordered',
     items: list.children
       .map((child) => decodeNode(child, context))
-      .filter(isListItem),
+      .filter(stencila.isType('ListItem')),
   }
 }
 
@@ -1117,7 +1112,9 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'Ascending',
-    children: list.items.filter(isListItem).map(encodeListItem),
+    children: list.items
+      .filter(stencila.isType('ListItem'))
+      .map(encodeListItem),
   }
 }
 
@@ -1256,7 +1253,7 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
           type: 'tableRow',
           children: row.cells.map(
             (cell: stencila.TableCell): MDAST.TableCell => {
-              const content = ensureInlineContentArray(cell.content)
+              const content = ensureInlineContentArray(cell.content ?? [])
               // If there is only one node in the table cell and it is
               // a primitive e.g. a number, or boolean then encode it
               // as a string rather than as the special `!number` etc inline

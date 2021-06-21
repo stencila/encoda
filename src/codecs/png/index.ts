@@ -4,7 +4,7 @@
  * @module codecs/png
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import tempy from 'tempy'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
@@ -89,7 +89,7 @@ export class PngCodec extends Codec implements Codec {
     // nodes such as `Paragraph`, `CodeChunk` etc are not the root
     // node but are instead nested within another node that is the root.
     // See https://github.com/stencila/encoda/issues/545#issuecomment-630564742
-    if (!schema.isCreativeWork(node)) {
+    if (!schema.isIn('CreativeWorkTypes', node)) {
       node = schema.creativeWork({ content: [node] })
     }
 

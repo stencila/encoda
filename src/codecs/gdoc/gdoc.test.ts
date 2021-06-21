@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { GDocCodec } from '.'
 import { fixture, nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'

@@ -2,7 +2,7 @@
  * @module util/transform
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 
 /**
  * Transform a `Node` by applying a transformer function to
@@ -39,14 +39,14 @@ export default async function transform(
 
     if (
       (transformed !== node && !recurse) ||
-      schema.isPrimitive(transformed) ||
-      transformed === undefined
+      typeof transformed !== 'object' ||
+      transformed === null
     )
       return transformed
 
     if (Array.isArray(transformed))
       return transformed.reduce(
-        async (prev, child) => [
+        async (prev: Promise<schema.Node[]>, child) => [
           ...(await prev),
           await walk(child, transformed),
         ],
@@ -74,11 +74,11 @@ export function transformSync(
   function walk(node: schema.Node): schema.Node | undefined {
     const transformed = transformer(node)
 
-    if (schema.isPrimitive(transformed) || transformed === undefined)
+    if (typeof transformed !== 'object' || transformed === null)
       return transformed
 
     if (Array.isArray(transformed)) {
-      return transformed.reduce((prev, child) => {
+      return transformed.reduce((prev: schema.Node[], child) => {
         const trans = walk(child)
         return trans !== undefined ? [...prev, trans] : prev
       }, [])

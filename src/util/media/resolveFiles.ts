@@ -2,7 +2,7 @@
  * @module util/media/resolveFiles
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import fs from 'fs'
 import path from 'path'
 import { transformSync } from '../transform'
@@ -22,7 +22,7 @@ export function resolveFiles(node: schema.Node, docPath: string): schema.Node {
   return transformSync(
     node,
     (node: schema.Node): schema.Node => {
-      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+      if (schema.isIn('MediaObjectTypes', node)) {
         const { contentUrl, ...rest } = node
         if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
           let resolvedPath

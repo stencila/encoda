@@ -2,30 +2,42 @@ type: Person
 id: https://orcid.org/0000-0002-9079-593X
 affiliations:
   - type: Organization
-    alternateNames:
-      - Applied Mathematics and Theoretical Physics
+    alternateNames: Applied Mathematics and Theoretical Physics
     identifiers:
-      - type: PropertyValue
-        propertyID: RINGGOLD
-        value: 2152
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '2152'
     name: University of Cambridge
   - type: Organization
-    alternateNames:
-      - Mathematics
+    alternateNames: Mathematics
     identifiers:
-      - type: PropertyValue
-        propertyID: RINGGOLD
-        value: 2152
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '2152'
     name: University of Cambridge
   - type: Organization
-    alternateNames:
-      - Physics, Mathematics and Astronomy
+    alternateNames: Physics, Mathematics and Astronomy
     identifiers:
-      - type: PropertyValue
-        propertyID: RINGGOLD
-        value: 6469
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '6469'
     name: California Institute of Technology
-familyNames:
-  - Hawking
-givenNames:
-  - Stephen
+familyNames: Hawking
+givenNames: Stephen
+schema:alumniOf:
+  - type: Organization
+    alternateNames: Applied Mathematics and Theoretical Physics
+    identifiers:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '61462'
+    name: University of Cambridge Trinity Hall
+  - type: Organization
+    alternateNames: Natural Science
+    identifiers:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '61504'
+    name: University of Oxford University College Oxford
+schema:mainEntityOfPage:
+  id: https://orcid.org/0000-0002-9079-593X

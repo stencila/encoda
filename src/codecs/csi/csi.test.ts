@@ -1,4 +1,4 @@
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { CsiCodec } from '.'
 

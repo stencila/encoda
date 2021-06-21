@@ -1792,10 +1792,10 @@ function populateBibrContent(rid: string, state: EncodeState): void {
  * Deocde a JATS `<italic>`, `<bold>` etc node as a Stencila `Mark` node
  * of `Type` e.g. `Strong`.
  */
-function decodeMark<Type extends keyof typeof stencila.markTypes>(
+function decodeMark(
   elem: xml.Element,
   state: DecodeState,
-  type: Type
+  type: stencila.Mark['type']
 ): stencila.Mark[] {
   return [
     {
@@ -1826,7 +1826,9 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
       return stencila.listItem({
-        content: decodeElements(item.elements ?? [], state),
+        content: ensureBlockContentArray(
+          decodeElements(item.elements ?? [], state)
+        ),
       })
     }
   )
@@ -1981,7 +1983,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
             return elem(
               'th',
               ...row.cells.map((cell) => {
-                return encodeDefault('th', cell.content, state)
+                return encodeDefault('th', cell.content ?? [], state)
               })
             )
           })
@@ -1992,7 +1994,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
             return elem(
               'tr',
               ...row.cells.map((cell) => {
-                return encodeDefault('td', cell.content, state)
+                return encodeDefault('td', cell.content ?? [], state)
               })
             )
           })
@@ -2224,15 +2226,15 @@ function extractMimetype(elem: xml.Element): string | undefined {
 }
 
 /**
- * Extract the `format` string from `media`, split it into the attributes that
+ * Extract the `mediaType` string from `media`, split it into the attributes that
  * JATS requires, then set them on `attrs`
  */
 function applyMimetype(media: stencila.MediaObject, attrs: Attributes): void {
-  if (media.format === undefined || media.format.length === 0) {
+  if (media.mediaType === undefined || media.mediaType.length === 0) {
     return
   }
 
-  const jatsType = splitMimetype(media.format)
+  const jatsType = splitMimetype(media.mediaType)
   if (jatsType.mimetype) {
     attrs.mimetype = jatsType.mimetype
   }
@@ -2271,7 +2273,7 @@ function decodeGraphic(
   inline: boolean
 ): [stencila.ImageObject] {
   const contentUrl = attr(elem, 'xlink:href') ?? ''
-  const format = extractMimetype(elem)
+  const mediaType = extractMimetype(elem)
   const id = attrOrUndefined(elem, 'id')
 
   const meta: stencila.ImageObject['meta'] = { inline }
@@ -2280,7 +2282,7 @@ function decodeGraphic(
   const usage = attr(elem, 'specific-use')
   if (usage) meta.usage = usage
 
-  return [stencila.imageObject({ contentUrl, format, id, meta })]
+  return [stencila.imageObject({ contentUrl, mediaType, id, meta })]
 }
 
 /**
@@ -2290,7 +2292,7 @@ function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
   return [
     stencila.mediaObject({
       contentUrl: attr(elem, 'xlink:href') ?? '',
-      format: extractMimetype(elem),
+      mediaType: extractMimetype(elem),
     }),
   ]
 }

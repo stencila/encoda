@@ -2,7 +2,7 @@
  * @module util/media/fromFiles
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import * as dataUri from '../dataUri'
 import transform from '../transform'
 
@@ -19,7 +19,7 @@ export async function fromFiles(node: schema.Node): Promise<schema.Node> {
   return transform(
     node,
     async (node: schema.Node): Promise<schema.Node> => {
-      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+      if (schema.isIn('MediaObjectTypes', node)) {
         const { contentUrl, ...rest } = node
         if (
           contentUrl !== '' &&

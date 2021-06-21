@@ -8,7 +8,7 @@
  * - write a file snapshot for inspection
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import isDocker from 'is-docker'
 import os from 'os'
 import pa11y from 'pa11y'

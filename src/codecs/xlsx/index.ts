@@ -198,7 +198,7 @@ const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
   table.rows.reduce(
     (sheet: xlsx.WorkSheet, row) => {
       row.cells.forEach((cell: stencila.TableCell) => {
-        if (cell.name) {
+        if (cell.name && cell.content !== undefined) {
           sheet[cell.name] = encodeCell(cell.content[0])
         }
       })

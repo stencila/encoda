@@ -4,7 +4,7 @@
  * @module codecs/xmd
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import crypto from 'crypto'
 import { dump } from '../..'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'

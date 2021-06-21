@@ -3,7 +3,7 @@
  *
  * @module codecs/mathml
  */
-import stencila from '@stencila/schema'
+import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { Codec } from '../types'
@@ -55,13 +55,11 @@ export class MathMLCodec extends Codec implements Codec {
    *          depending upon the `display` attribute of the top level `<math>`
    *          element. Defaults to `MathFragment` (i.e. `display="inline"`)
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Math> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Math> => {
     const content = await vfile.dump(file)
     const mathml = xml.load(normalize(content))
     const display = xml.attr(xml.child(mathml, 'math'), 'display')
-    return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
+    return (display === 'block' ? schema.mathBlock : schema.mathFragment)({
       mathLanguage: 'mathml',
       text: xml.dump(mathml),
     })
@@ -76,10 +74,8 @@ export class MathMLCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
-    if (!stencila.nodeIs(stencila.mathTypes)(node)) {
+  public readonly encode = async (node: schema.Node): Promise<vfile.VFile> => {
+    if (!schema.isIn('MathTypes', node)) {
       log.error(`Node is not a math node`)
       return vfile.create()
     }

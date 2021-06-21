@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import { all, elem, first, load, text } from '../../util/html'
 import * as vfile from '../../util/vfile'

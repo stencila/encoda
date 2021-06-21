@@ -4,30 +4,22 @@ exports[`decode decodes an orcid to a Person 1`] = `
 Object {
   "affiliations": Array [
     Object {
-      "alternateNames": Array [
-        "Psychoceramics",
-      ],
-      "identifiers": Array [
-        Object {
-          "propertyID": "RINGGOLD",
-          "type": "PropertyValue",
-          "value": 5468,
-        },
-      ],
+      "alternateNames": "Psychoceramics",
+      "identifiers": Object {
+        "propertyID": "RINGGOLD",
+        "type": "PropertyValue",
+        "value": "5468",
+      },
       "name": "Wesleyan University",
       "type": "Organization",
     },
     Object {
-      "alternateNames": Array [
-        "Psychoceramics",
-      ],
-      "identifiers": Array [
-        Object {
-          "propertyID": "RINGGOLD",
-          "type": "PropertyValue",
-          "value": 6752,
-        },
-      ],
+      "alternateNames": "Psychoceramics",
+      "identifiers": Object {
+        "propertyID": "RINGGOLD",
+        "type": "PropertyValue",
+        "value": "6752",
+      },
       "name": "Brown University",
       "type": "Organization",
     },
@@ -37,21 +29,25 @@ Object {
     "J. Carberry",
     "J. S. Carberry",
   ],
-  "familyNames": Array [
-    "Carberry",
-  ],
-  "givenNames": Array [
-    "Josiah",
-  ],
+  "familyNames": "Carberry",
+  "givenNames": "Josiah",
   "id": "https://orcid.org/0000-0002-1825-0097",
-  "identifiers": Array [
+  "identifiers": Object {
+    "propertyID": "Scopus Author ID",
+    "type": "PropertyValue",
+    "value": "7007156898",
+  },
+  "schema:mainEntityOfPage": Object {
+    "id": "https://orcid.org/0000-0002-1825-0097",
+  },
+  "type": "Person",
+  "url": Array [
     Object {
-      "propertyID": "Scopus Author ID",
-      "type": "PropertyValue",
-      "value": 7007156898,
+      "id": "http://library.brown.edu/about/hay/carberry.php",
+    },
+    Object {
+      "id": "http://en.wikipedia.org/wiki/Josiah_Carberry",
     },
   ],
-  "type": "Person",
-  "url": "http://library.brown.edu/about/hay/carberry.php",
 }
 `;

@@ -4,7 +4,7 @@
  * @module codecs/csl
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 // @ts-ignore
 import Cite from 'citation-js'
 import crypto from 'crypto'
@@ -97,7 +97,7 @@ function encodeNode(node: schema.Node, format: string): string {
     // This just makes the string the title of a `CreativeWork`
     return encodeNode(schema.creativeWork({ title: node }), format)
   }
-  if (schema.isCreativeWork(node)) {
+  if (schema.isIn('CreativeWorkTypes', node)) {
     const csl = encodeCsl(node, format)
     const cite = new Cite([csl])
 
@@ -238,7 +238,7 @@ export const encodeCsl = (
   work: schema.CreativeWork,
   format: string
 ): Csl.Data => {
-  if (schema.isArticle(work)) return encodeArticle(work, format)
+  if (schema.isA('Article', work)) return encodeArticle(work, format)
   else {
     logWarnLoss(
       'csl',

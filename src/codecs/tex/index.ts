@@ -5,7 +5,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import schema from '@stencila/schema'
 import AsciiMathParser from 'asciimath2tex'
 import fs from 'fs-extra'
 import path from 'path'
@@ -37,12 +37,10 @@ export class TexCodec extends Codec implements Codec {
    * @returns A promise that resolves to a Stencila `MathFragment`
    *          or `MathBlock` (if it starts with the `\displaystyle` command).
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Math> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Math> => {
     const tex = await vfile.dump(file)
     const display = /^\s*\\displaystyle/.test(tex)
-    return (display ? stencila.mathBlock : stencila.mathFragment)({
+    return (display ? schema.mathBlock : schema.mathFragment)({
       mathLanguage: 'tex',
       text: tex,
     })
@@ -57,10 +55,8 @@ export class TexCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
-    if (!stencila.nodeIs(stencila.mathTypes)(node)) {
+  public readonly encode = async (node: schema.Node): Promise<vfile.VFile> => {
+    if (!schema.isIn('MathTypes', node)) {
       log.error(`Node is not a math node`)
       return vfile.create()
     }

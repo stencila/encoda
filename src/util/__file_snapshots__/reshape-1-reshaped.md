@@ -35,9 +35,9 @@ references:
       value: 2020,11,24
       type: Date
     isPartOf:
-      issueNumber: 55
+      issueNumber: '55'
       isPartOf:
-        volumeNumber: 5
+        volumeNumber: '5'
         isPartOf:
           name: Journal of Open Source Software
           type: Periodical
@@ -68,9 +68,9 @@ references:
       value: 2020,11,24
       type: Date
     isPartOf:
-      issueNumber: 55
+      issueNumber: '55'
       isPartOf:
-        volumeNumber: 5
+        volumeNumber: '5'
         isPartOf:
           name: Journal of Open Source Software
           type: Periodical

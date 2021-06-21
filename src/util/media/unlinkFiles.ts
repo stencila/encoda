@@ -2,7 +2,7 @@
  * @module util/media/unlinkFiles
  */
 
-import { schema } from '@stencila/jesta'
+import schema from '@stencila/schema'
 import { transformSync } from '../transform'
 
 /**
@@ -19,7 +19,7 @@ export function unlinkFiles(node: schema.Node): schema.Node {
   return transformSync(
     node,
     (node: schema.Node): schema.Node => {
-      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+      if (schema.isIn('MediaObjectTypes', node)) {
         const { contentUrl, ...rest } = node
         if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
           return {
