@@ -104,7 +104,7 @@
     "xml-js": "^1.6.11"
   },
   "peerDependencies": {
-    "@stencila/schema": "stencila/schema#pull/272/head"
+    "@stencila/schema": "^1.9.0"
   },
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
