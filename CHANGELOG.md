@@ -1,3 +1,26 @@
+## [0.117.1](https://github.com/stencila/encoda/compare/v0.117.0...v0.117.1) (2021-06-21)
+
+
+### Bug Fixes
+
+* Account for TableCell content potentially being undefined ([758b6ea](https://github.com/stencila/encoda/commit/758b6ea5631b8bf87f0e1e4479b6118b196b66db))
+* Use `MediaObject` `mediaType` rather than `format`; fix for content types ([186096e](https://github.com/stencila/encoda/commit/186096ef0328697db53ce3f7db22eb12c52cb210))
+* **Build:** Avoid src in dist folder ([0105b6a](https://github.com/stencila/encoda/commit/0105b6ad7ba62871f36b8e8147b7b37459c87952)), closes [/github.com/stencila/encoda/pull/957#issue-671741247](https://github.com//github.com/stencila/encoda/pull/957/issues/issue-671741247)
+* **Build:** Do not use compression withing binary ([c0517d4](https://github.com/stencila/encoda/commit/c0517d408f07db9cc62f79310eaaf5342da14649))
+* **Build:** Include dist js in scripts ([d984c93](https://github.com/stencila/encoda/commit/d984c9319174d9fe84f14276d38a405498806e12))
+* **Coercion:** Default to no coercion ([224a378](https://github.com/stencila/encoda/commit/224a37803c37799e56ea60a50d5a4c76663b638f)), closes [#902](https://github.com/stencila/encoda/issues/902)
+* **dependencies:** update dependency @stencila/thema to ^2.24.2 ([b4bf10b](https://github.com/stencila/encoda/commit/b4bf10ba2e84845b3342cb81b0e8ba0518248371))
+* **dependencies:** update dependency globby to ^11.0.4 ([773a2f9](https://github.com/stencila/encoda/commit/773a2f91120f5a59172fdea1a0c102a610dfd51f))
+* **dependencies:** update dependency papaparse to ^5.3.1 ([99ab93f](https://github.com/stencila/encoda/commit/99ab93fb7736e7ba67cfa96998e0e38c549af28e))
+* **dependencies:** update dependency puppeteer to v10 ([de23f29](https://github.com/stencila/encoda/commit/de23f290bc65b91d40fcaea90f174fe049651357))
+* **dependencies:** update dependency trash to ^7.2.0 ([dda2194](https://github.com/stencila/encoda/commit/dda219408e85cb39e64be84e66cd10c5c8359efd))
+* **Deps:** Add Schema to peerDependencies and update type guards ([fbd0214](https://github.com/stencila/encoda/commit/fbd021420bf2d149e80885aa09ac75f91ce6a798))
+* **Deps:** Use Schema 1.9.0 ([13a347a](https://github.com/stencila/encoda/commit/13a347af525d1bfb02d4d5046d8421cecd13abad))
+* **GDoc:** Use isA instead of isParagraph ([ffc83fc](https://github.com/stencila/encoda/commit/ffc83fc9e0d034b3ef4d8351dbe845a310ec6bf1))
+* **HTML & JATS:** Use Mark.type instead of type map ([712d2f5](https://github.com/stencila/encoda/commit/712d2f5bebeeb941e5926a79253e67e43ae45bff))
+* **Manifest:** Fix issue with the way that the plugin manifest was generated ([017aad3](https://github.com/stencila/encoda/commit/017aad3af5dee6671e6ef64c8ac93241d6a1809d))
+* **Typings:** Fixes for changes in typing of CreativeWork content ([1a0fe89](https://github.com/stencila/encoda/commit/1a0fe89c8f7a1ed6f7ecd6d1dadf453fb5c5e379))
+
 # [0.117.0](https://github.com/stencila/encoda/compare/v0.116.1...v0.117.0) (2021-05-28)
 
 
