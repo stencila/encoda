@@ -229,6 +229,9 @@
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
   "pkg": {
+    "scripts": [
+      "dist/**/*.js"
+    ],
     "targets": [
       "node16-linux-x64",
       "node16-macos-x64",
