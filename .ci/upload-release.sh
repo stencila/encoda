@@ -32,7 +32,7 @@ else
     echo "Will create archive $UPLOAD_PATH"
     if [ $ARCHIVE_FORMAT == "zip" ]; then
         if [ -x "$(command -v zip)" ]; then
-            (cd $(dirname $FILE_PATH) && zip -r - $(basename $FILE_PATH)) > $UPLOAD_PATH
+            (cd $(dirname $FILE_PATH) && zip - $(basename $FILE_PATH)) > $UPLOAD_PATH
         else
             7z.exe a -tzip -bb3 -mx=5 $UPLOAD_PATH $FILE_PATH
         fi
