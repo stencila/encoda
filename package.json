@@ -10,6 +10,7 @@
   "main": "dist/index.js",
   "scripts": {
     "install": "node install.js",
+    "postinstall": "patch-package",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
@@ -146,6 +147,7 @@
     "markdown-toc": "1.2.0",
     "nock": "13.1.0",
     "pa11y": "6.0.0",
+    "patch-package": "6.4.7",
     "pkg": "5.2.1",
     "structured-data-testing-tool": "4.5.0",
     "ts-jest": "27.0.3",
