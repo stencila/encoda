@@ -664,18 +664,15 @@
 <span style="color: #795E26">cd</span><span style="color: #000000"> encoda</span>
 <span style="color: #000000">npm install</span>
 </code></pre>
-				<p>You can manually test conversion using the <code>ts-node</code> and the <code>cli.ts</code> script:</p>
-				<pre><code class="language-bash"><span style="color: #000000">npm run cli -- convert simple.md simple.html</span>
+				<p>You can manually test conversion using current TypeScript <code>src</code> using:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm start -- convert simple.md simple.html</span>
 </code></pre>
-				<p>There is a bash script to make that a little shorter and more like real life usage:</p>
-				<pre><code class="language-bash"><span style="color: #000000">./encoda convert simple.md simple.html</span>
+				<p>That can be slow because the TypeScript has to be compiled on the fly (using <code>ts-node</code>). Alternatively, compile the TypeScript to JavaScript first, and then run <code>node</code> on the <code>dist</code> folder:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm run build:dist</span>
+<span style="color: #000000">node dist convert simple.md simple.html</span>
 </code></pre>
-				<p>If that is a bit slow, compile the Typescript to Javascript first and use <code>node</code> directly:</p>
-				<pre><code class="language-bash"><span style="color: #000000">npm run build</span>
-<span style="color: #000000">node dist/cli convert simple.md simple.html</span>
-</code></pre>
-				<p>If you are using VSCode, you can use the <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature">Auto Attach feature</a> to attach to the CLI when running the <code>cli:debug</code> NPM script:</p>
-				<pre><code class="language-bash"><span style="color: #000000">npm run cli:debug -- convert simple.gdoc simple.ipynb</span>
+				<p>If you are using VSCode, you can use the <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature">Auto Attach feature</a> to attach to the CLI when running the <code>debug</code> NPM script:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm run debug -- convert simple.gdoc simple.ipynb</span>
 </code></pre>
 				<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
 					<h2>Testing</h2>
