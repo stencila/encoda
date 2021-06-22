@@ -1,3 +1,11 @@
+## [0.117.2](https://github.com/stencila/encoda/compare/v0.117.1...v0.117.2) (2021-06-22)
+
+
+### Bug Fixes
+
+* **CLI:** Add shebang so that bin command works ([afc2bf2](https://github.com/stencila/encoda/commit/afc2bf2e89f529e0ffc95c997fab5c2bb4311cd1))
+* **dependencies:** update dependency js-beautify to ^1.14.0 ([8a16f3a](https://github.com/stencila/encoda/commit/8a16f3a3260c5b1216705e583253902c4b263e4f))
+
 ## [0.117.1](https://github.com/stencila/encoda/compare/v0.117.0...v0.117.1) (2021-06-21)
 
 
