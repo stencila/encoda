@@ -31,7 +31,7 @@
     "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/codecs/dmagic/",
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
     "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/codecs/tex/",
-    "build:bin": "bash build.sh",
+    "build:bin": "pkg --targets node16 --out-path bin .",
     "build:docs": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
     "prepublishOnly": "npm run build"
@@ -264,25 +264,7 @@
           ]
         }
       ],
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "path": "bin/x86_64-unknown-linux-gnu.tar.gz",
-              "name": "encoda-v${nextRelease.version}-x86_64-unknown-linux-gnu.tar.gz"
-            },
-            {
-              "path": "bin/x86_64-apple-darwin.tar.gz",
-              "name": "encoda-v${nextRelease.version}-x86_64-apple-darwin.tar.gz"
-            },
-            {
-              "path": "bin/x86_64-pc-windows-msvc.zip",
-              "name": "encoda-v${nextRelease.version}-x86_64-pc-windows-msvc.zip"
-            }
-          ]
-        }
-      ],
+      "@semantic-release/github",
       "@qiwi/semantic-release-gh-pages-plugin"
     ]
   },

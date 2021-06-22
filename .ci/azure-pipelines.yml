@@ -1,25 +1,83 @@
+trigger:
+  branches:
+    include:
+      - master
+      # Ensure that CI is triggered for tags
+      - refs/tags/*
+
 variables:
   - name: NODE_VERSION
     value: '16.x'
 
 jobs:
-  - job: Test
-    strategy:
-      matrix:
-        linux:
-          IMAGE_NAME: ubuntu-latest
-        mac:
-          IMAGE_NAME: macOS-latest
-        windows:
-          IMAGE_NAME: windows-latest
+  - job: Linux
     pool:
-      vmImage: $(IMAGE_NAME)
+      vmImage: ubuntu-latest
     steps:
       - task: NodeTool@0
         inputs:
           versionSpec: $(NODE_VERSION)
         displayName: 'Use Node.js $(NODE_VERSION)'
 
+      - script: npm ci
+        displayName: 'Install dependencies'
+
+      - script: npm run lint
+        displayName: 'Run linting'
+
+      # Run tests with
+      #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
+      #   - Fifteen (!) minute test timeout
+      #   - Force exit to prevent hanging
+      # Currently skipping tests on Windows due to weird, unresolvable failures
+      # https://dev.azure.com/stencila/stencila/_build/results?buildId=732&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=0d6dcb53-0957-53aa-c18a-237166af945a&l=532
+      - script: npx jest --coverage --runInBand --testTimeout=900000 --forceExit
+        displayName: 'Run tests'
+        env:
+          # Tell Node.js how much un-garbage-collected-memory it can
+          # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
+          # physical memory at time of writing). Aimed to avoid this:
+          # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
+          NODE_OPTIONS: --max_old_space_size=4000
+
+      - script: bash <(curl -s https://codecov.io/bash)
+        displayName: 'Upload coverage'
+
+      - script: |
+          set -e
+          npm run build
+          bash .ci/upload-release.sh bin/encoda encoda x86_64-unknown-linux-gnu.tar.gz
+        condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+        displayName: 'Build and publish'
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+
+  - job: MacOS
+    pool:
+      vmImage: macOS-latest
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(NODE_VERSION)
+        displayName: 'Use Node.js $(NODE_VERSION)'
+
+      - script: npm ci
+        displayName: 'Install dependencies'
+
+      - script: |
+          set -e
+          npm run build
+          bash .ci/upload-release.sh bin/encoda encoda x86_64-apple-darwin.tar.gz
+        displayName: 'Build and publish'
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+
+  - job: Windows
+    pool:
+      vmImage: ubuntu-latest
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+    steps:
       # Do not convert line endings on checkout, otherwise snapshot
       # files fail on Windows.
       # https://github.com/microsoft/azure-pipelines-yaml/issues/11
@@ -30,39 +88,21 @@ jobs:
         fetchDepth: 10
         displayName: 'Checkout repo'
 
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(NODE_VERSION)
+        displayName: 'Use Node.js $(NODE_VERSION)'
+
       - script: npm ci
         displayName: 'Install dependencies'
 
-      - script: npm run lint
-        condition: eq(variables['agent.os'], 'Linux')
-        displayName: 'Run linting'
-
-      # Run tests with
-      #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
-      #   - Fifteen (!) minute test timeout
-      #   - Force exit to prevent hanging
-      # Currently skipping tests on Windows due to weird, unresolvable failures
-      # https://dev.azure.com/stencila/stencila/_build/results?buildId=732&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=0d6dcb53-0957-53aa-c18a-237166af945a&l=532
-      - script: npx jest --coverage --runInBand --testTimeout=900000 --forceExit
-        condition: ne(variables['agent.os'], 'Windows_NT')
-        displayName: 'Run tests'
+      - script: |
+          set -e
+          npm run build
+          bash .ci/upload-release.sh bin/encoda.exe encoda x86_64-pc-windows-msvc.zip
+        displayName: 'Build and publish'
         env:
-          # Tell Node.js how much un-garbage-collected-memory it can
-          # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
-          # physical memory at time of writing). Aimed to avoid this:
-          # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
-          NODE_OPTIONS: --max_old_space_size=4000
-
-      # Only upload coverage on Linux (fails on Windows and largely
-      # unnecessary to duplicate by OS anyway)
-      - script: bash <(curl -s https://codecov.io/bash)
-        condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
-        displayName: 'Upload coverage'
-
-      # Only test that the package can be built OK when on Linux
-      - script: npm run build
-        condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
-        displayName: 'Build package'
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
 
   - job: Docker
     # Temporarily skip
@@ -80,7 +120,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: Release
-    dependsOn: [Test] # Skipping temporarily: , test_docker]
+    dependsOn: [Linux] # Skipping temporarily: , Docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
