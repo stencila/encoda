@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Jesta } from '@stencila/jesta'
 import { Manifest, manifest } from '@stencila/jesta/dist/manifest'
 import { getLogger } from '@stencila/logga'
