@@ -408,29 +408,23 @@ cd encoda
 npm install
 ```
 
-You can manually test conversion using the `ts-node` and the `cli.ts` script:
+You can manually test conversion using current TypeScript `src` using:
 
 ```bash
-npm run cli -- convert simple.md simple.html
+npm start -- convert simple.md simple.html
 ```
 
-There is a bash script to make that a little shorter and more like real life usage:
+That can be slow because the TypeScript has to be compiled on the fly (using `ts-node`). Alternatively, compile the TypeScript to JavaScript first, and then run `node` on the `dist` folder:
 
 ```bash
-./encoda convert simple.md simple.html
+npm run build:dist
+node dist convert simple.md simple.html
 ```
 
-If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:
+If you are using VSCode, you can use the [Auto Attach feature](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature) to attach to the CLI when running the `debug` NPM script:
 
 ```bash
-npm run build
-node dist/cli convert simple.md simple.html
-```
-
-If you are using VSCode, you can use the [Auto Attach feature](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature) to attach to the CLI when running the `cli:debug` NPM script:
-
-```bash
-npm run cli:debug -- convert simple.gdoc simple.ipynb
+npm run debug -- convert simple.gdoc simple.ipynb
 ```
 
 ## Testing
