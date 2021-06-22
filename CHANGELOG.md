@@ -1,3 +1,10 @@
+## [0.117.3](https://github.com/stencila/encoda/compare/v0.117.2...v0.117.3) (2021-06-22)
+
+
+### Bug Fixes
+
+* **Deps:** Patch jsonld ([322a314](https://github.com/stencila/encoda/commit/322a3148fca7d2e8f2ccb0b346103a4ad97fc948))
+
 ## [0.117.2](https://github.com/stencila/encoda/compare/v0.117.1...v0.117.2) (2021-06-22)
 
 
