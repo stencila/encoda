@@ -1,3 +1,10 @@
+## [0.117.4](https://github.com/stencila/encoda/compare/v0.117.3...v0.117.4) (2021-06-23)
+
+
+### Bug Fixes
+
+* **Binaries:** Bundle Pandoc and Chromium ([0a0ed52](https://github.com/stencila/encoda/commit/0a0ed52d04fa62b26eb2362098bb6d6f37f1872e))
+
 ## [0.117.3](https://github.com/stencila/encoda/compare/v0.117.2...v0.117.3) (2021-06-22)
 
 
