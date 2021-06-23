@@ -5,9 +5,15 @@
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import isDocker from 'is-docker'
-import puppeteer, { Browser, Page } from 'puppeteer'
+import path from 'path'
+import { Browser, Page } from 'puppeteer'
+import isPackaged from './app/isPackaged'
 
 export { Page, Browser }
+
+// For unknown reasons it seems necessary to import like this
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const puppeteer = require('puppeteer')
 
 const log = getLogger('encoda:puppeteer')
 
@@ -15,9 +21,7 @@ const log = getLogger('encoda:puppeteer')
  * The following code is necessary to ensure the Chromium binary can be correctly
  * found when bundled as a binary using [`pkg`](https://github.com/zeit/pkg).
  * See: [`pkg-puppeteer`](https://github.com/rocklau/pkg-puppeteer)
-
-TODO: `puppeteer.executablePath()` is no longer part of the API
-so this is temporarily disabled.
+ */
 
 // Adapts the regex path to work on both Windows and *Nix platforms
 const pathRegex =
@@ -39,10 +43,6 @@ export const executablePath = isPackaged
       )
   : puppeteer.executablePath()
 
-if (!fs.pathExistsSync(executablePath))
-  log.error(`Chromium does not exist in expected location: ${executablePath}`)
-*/
-
 /**
  * Module global Puppeteer instance
  * and mutex lock to prevent conflicts between
@@ -62,10 +62,11 @@ export async function startup(): Promise<Browser> {
   return lock.acquire(
     'browser',
     async (): Promise<Browser> => {
-      if (typeof browser === 'undefined') {
+      if (browser === undefined) {
         log.debug('Launching new browser')
         browser = await puppeteer.launch({
           pipe: true,
+          executablePath,
           args: isDocker()
             ? [
                 // Turn off Chrome's sandbox. The alternative is to make the container privileged
@@ -80,6 +81,9 @@ export async function startup(): Promise<Browser> {
               ]
             : [],
         })
+        if (browser === undefined) {
+          throw new Error('Unable to launch browser instance')
+        }
         log.debug(`Browser launched. pid: ${browser.process()?.pid}`)
       }
       return browser

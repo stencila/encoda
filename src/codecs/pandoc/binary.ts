@@ -8,27 +8,31 @@ import { getLogger } from '@stencila/logga'
 import BinWrapper from 'bin-wrapper'
 import fs from 'fs-extra'
 import path from 'path'
-import appHome from '../../util/app/home'
-import isCompiled from '../../util/app/isCompiled'
+import isPackaged from '../../util/app/isPackaged'
 
 const version = '2.9.2'
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
 
 /**
- * The folder where the binary is to be installed
+ * The folder where the binary is installed
  */
-const binaryDir = path.join(appHome, 'dist', 'codecs', 'pandoc', 'binary')
+const binaryDir = isPackaged
+  ? path.join(
+      path.dirname(process.execPath),
+      'dist',
+      'codecs',
+      'pandoc',
+      'binary'
+    )
+  : path.join(__dirname, '..', '..', '..', 'dist', 'codecs', 'pandoc', 'binary')
 
 /**
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to find templates and other assets.
  */
-export const dataDir = path.join(
-  appHome,
-  isCompiled ? 'dist' : 'src',
-  'codecs',
-  'pandoc'
-)
+export const dataDir = isPackaged
+  ? path.join(path.dirname(process.execPath), 'dist', 'codecs', 'pandoc')
+  : __dirname
 
 export const binary = new BinWrapper()
   .src(`${base}-linux-amd64.tar.gz`, 'linux', 'x64')

@@ -25,14 +25,15 @@
     "start": "ts-node --files src",
     "debug": "node --require ./ts-node-register.js --inspect=9229 src --debug=1",
     "$comment": "The build script builds everything required to publish a release, including binaries and docs",
-    "build": "npm run build:codemeta && npm run build:dist && npm run build:bin && npm run build:docs",
+    "build": "npm run build:codemeta && npm run build:dist && npm run build:assets && npm run build:bin && npm run build:docs",
     "build:codemeta": "ts-node src manifest > codemeta.json",
     "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
     "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/codecs/csl/styles/",
     "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/codecs/dmagic/",
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
     "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/codecs/tex/",
-    "build:bin": "pkg --targets node16 --out-path bin .",
+    "build:assets": "ts-node src/boot.ts",
+    "build:bin": "pkg .",
     "build:docs": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
     "prepublishOnly": "npm run build"
@@ -92,6 +93,7 @@
     "remark-parse": "^8.0.3",
     "remark-stringify": "^8.1.1",
     "remark-sub-super": "^1.0.20",
+    "tar": "^6.1.0",
     "temp-dir": "^2.0.0",
     "tempy": "^1.0.1",
     "to-vfile": "^6.1.0",
@@ -124,7 +126,6 @@
     "@types/jsdom": "16.2.11",
     "@types/json5": "2.2.0",
     "@types/jsonld": "1.5.5",
-    "@types/jszip": "3.4.1",
     "@types/mdast": "3.0.3",
     "@types/mime": "2.0.3",
     "@types/minimist": "1.2.1",
@@ -133,6 +134,7 @@
     "@types/papaparse": "5.2.5",
     "@types/parse-author": "2.0.0",
     "@types/punycode": "2.1.0",
+    "@types/tar": "^4.0.4",
     "@types/testing-library__dom": "7.5.0",
     "@types/unist": "2.0.3",
     "callsites": "3.1.0",
@@ -231,14 +233,12 @@
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
   "pkg": {
-    "scripts": [
-      "dist/**/*.js"
-    ],
+    "outputPath": "bin",
     "targets": [
-      "node16-linux-x64",
-      "node16-macos-x64",
-      "node16-win-x64"
-    ]
+      "node16"
+    ],
+    "scripts": "dist/**/*.js",
+    "assets": "assets.tgz"
   },
   "release": {
     "extends": "@stencila/semantic-release-config",

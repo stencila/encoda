@@ -3,6 +3,7 @@
 **/*.out.*
 *credentials.json
 *token.json
+/assets.tgz
 /bin
 /coverage
 /dist
