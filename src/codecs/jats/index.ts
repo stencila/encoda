@@ -621,7 +621,7 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
 }
 
 /**
- * Decode a JATS `<permissions>` elements into a Stencila `.licenses` property,
+ * Decode a JATS `<permissions>` elements into a Stencila `licenses` property,
  * e.g. in the Article frontmatter or for a figure or media object.
  */
 function decodeLicenses(
