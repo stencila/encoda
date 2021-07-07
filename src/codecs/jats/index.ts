@@ -2163,7 +2163,7 @@ function decodeMath(
   }
 
   const id = attrOrUndefined(formula, 'id')
-
+  const label = textOrUndefined(child(formula, 'label'))
   const altText = attrOrUndefined(mathml, 'alttext')
   const meta = altText !== undefined ? { altText } : undefined
 
@@ -2172,6 +2172,7 @@ function decodeMath(
   return [
     (inline ? stencila.mathFragment : stencila.mathBlock)({
       id,
+      label,
       meta,
       mathLanguage: 'mathml',
       text,
