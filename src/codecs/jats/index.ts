@@ -621,13 +621,14 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
 }
 
 /**
- * Decode a JATS `<permissions>` elements into a Stencila `Article.licenses` property.
+ * Decode a JATS `<permissions>` elements into a Stencila `licenses` property,
+ * e.g. in the Article frontmatter or for a figure or media object.
  */
 function decodeLicenses(
-  front: xml.Element,
+  elem: xml.Element,
   state: DecodeState
 ): stencila.Article['licenses'] {
-  const permissions = first(front, 'permissions')
+  const permissions = first(elem, 'permissions')
   const licenses = all(permissions, 'license')
   if (licenses.length === 0) return undefined
 
@@ -2049,6 +2050,7 @@ function decodeFigure(
 
   const id = decodeInternalId(attr(elem, 'id'))
   const label = textOrUndefined(child(elem, 'label'))
+  const licenses = decodeLicenses(elem, state)
 
   // Get any `caption`
   const captionEl = child(elem, 'caption')
@@ -2064,16 +2066,21 @@ function decodeFigure(
     for (const item of elem.elements) {
       if (
         typeof item.name === 'string' &&
-        !['object-id', 'label', 'caption', 'abstract', 'kwd-group'].includes(
-          item.name
-        )
+        ![
+          'object-id',
+          'label',
+          'caption',
+          'abstract',
+          'kwd-group',
+          'permissions',
+        ].includes(item.name)
       ) {
         content.push(...decodeElement(item, state))
       }
     }
   }
 
-  return [stencila.figure({ id, label, caption, content })]
+  return [stencila.figure({ id, label, caption, content, licenses })]
 }
 
 /**
