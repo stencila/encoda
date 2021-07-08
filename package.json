@@ -278,6 +278,9 @@
     "stabilityDays": 3,
     "masterIssue": true,
     "masterIssueTitle": "Update dependencies",
+    "ignoreDeps": [
+      "@types/unist"
+    ],
     "packageRules": [
       {
         "matchDepTypes": [
