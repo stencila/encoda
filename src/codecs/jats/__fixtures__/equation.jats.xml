@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<article>
+    <front>
+        <article-meta>
+            <contrib-group />
+        </article-meta>
+    </front>
+    <body>
+        <p id="p1">A formula which can be referenced and has a label.</p>
+        <p>
+            <disp-formula id="S0.Ex1">
+                <label>Special-Label</label>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext="a=b" display="block">
+                    <mml:mrow>
+                        <mml:mi>a</mml:mi>
+                        <mml:mo>=</mml:mo>
+                        <mml:mi>b</mml:mi>
+                    </mml:mrow>
+                </mml:math>
+            </disp-formula>
+        </p>
+        <p id="p2">
+            See equation (
+            <xref rid="S0.Ex1">Special-Label</xref>
+            ).
+        </p>
+    </body>
+    <back>
+        <app-group />
+    </back>
+</article>
