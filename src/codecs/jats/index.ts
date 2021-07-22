@@ -1385,6 +1385,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeNote(elem, state)
     case 'statement':
       return decodeStatement(elem, state)
+    case 'disp-quote':
+      return decodeDispQuote(elem, state)
     default:
       log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
       return decodeDefault(elem, state)
@@ -2405,6 +2407,24 @@ function decodeStatement(
       title,
       claimType,
       content: ensureBlockContentArray(content),
+    }),
+  ]
+}
+
+/**
+ * Decode a JATS `<disp-quote>` element as a Stencila `QuoteBlock`.
+ */
+function decodeDispQuote(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.QuoteBlock] {
+  const id = attrOrUndefined(elem, 'id')
+  return [
+    stencila.quoteBlock({
+      id,
+      content: ensureBlockContentArray(
+        decodeElements(elem.elements ?? [], state)
+      ),
     }),
   ]
 }
