@@ -279,7 +279,13 @@
     "masterIssue": true,
     "masterIssueTitle": "Update dependencies",
     "ignoreDeps": [
-      "@types/unist"
+      "@types/unist",
+      "to-vfile",
+      "unified",
+      "unist-util-filter",
+      "unist-util-map",
+      "unist-util-select",
+      "vfile"
     ],
     "packageRules": [
       {
