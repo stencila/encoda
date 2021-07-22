@@ -1,3 +1,10 @@
+## [0.118.1](https://github.com/stencila/encoda/compare/v0.118.0...v0.118.1) (2021-07-22)
+
+
+### Bug Fixes
+
+* **Install:** Move patch-package to dependencies ([03dbd9d](https://github.com/stencila/encoda/commit/03dbd9d2829d3857928b21cfedcb24ba622e3791)), closes [#965](https://github.com/stencila/encoda/issues/965)
+
 # [0.118.0](https://github.com/stencila/encoda/compare/v0.117.4...v0.118.0) (2021-07-08)
 
 
