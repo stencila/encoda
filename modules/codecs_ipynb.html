@@ -287,16 +287,16 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/codecs_ipynb.ipynbcodec.html" class="tsd-kind-icon">Ipynb<wbr>Codec</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/codecs_ipynb.IpynbCodec.html" class="tsd-kind-icon">Ipynb<wbr>Codec</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#decodecodecell" class="tsd-kind-icon">decode<wbr>Code<wbr>Cell</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#decodemultilinestring" class="tsd-kind-icon">decode<wbr>Multiline<wbr>String</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#encodecodechunk" class="tsd-kind-icon">encode<wbr>Code<wbr>Chunk</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#encodemultilinestring" class="tsd-kind-icon">encode<wbr>Multiline<wbr>String</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#decodeCodeCell" class="tsd-kind-icon">decode<wbr>Code<wbr>Cell</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#decodeMultilineString" class="tsd-kind-icon">decode<wbr>Multiline<wbr>String</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#encodeCodeChunk" class="tsd-kind-icon">encode<wbr>Code<wbr>Chunk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="codecs_ipynb.html#encodeMultilineString" class="tsd-kind-icon">encode<wbr>Multiline<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="codecs_ipynb.html#isv3" class="tsd-kind-icon">isv3</a></li>
 							</ul>
 						</section>
@@ -306,16 +306,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="decodecodecell" class="tsd-anchor"></a>
+					<a name="decodeCodeCell" class="tsd-anchor"></a>
 					<h3>decode<wbr>Code<wbr>Cell</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Code<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/codecs_ipynb_nbformat_v3.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/codecs_ipynb_nbformat_v4.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a>, version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">nbformat.Version</span>, language<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.CodeChunk</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Code<wbr>Cell<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><a href="../interfaces/codecs_ipynb_nbformat_v3.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/codecs_ipynb_nbformat_v4.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a>, version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">nbformat.Version</span>, language<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.CodeChunk</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/225cec4b/src/codecs/ipynb/index.ts#L470">src/codecs/ipynb/index.ts:470</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/0e110e3b/src/codecs/ipynb/index.ts#L470">src/codecs/ipynb/index.ts:470</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -330,7 +330,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cell: <a href="../interfaces/codecs_ipynb_nbformat_v3.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/codecs_ipynb_nbformat_v4.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a></h5>
+									<h5>cell: <a href="../interfaces/codecs_ipynb_nbformat_v3.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/codecs_ipynb_nbformat_v4.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a></h5>
 								</li>
 								<li>
 									<h5>version: <span class="tsd-signature-type">nbformat.Version</span><span class="tsd-signature-symbol"> = 4</span></h5>
@@ -344,7 +344,7 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="decodemultilinestring" class="tsd-anchor"></a>
+					<a name="decodeMultilineString" class="tsd-anchor"></a>
 					<h3>decode<wbr>Multiline<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 						<li class="tsd-signature tsd-kind-icon">decode<wbr>Multiline<wbr>String<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nbformat.MultilineString</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
@@ -353,7 +353,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/225cec4b/src/codecs/ipynb/index.ts#L804">src/codecs/ipynb/index.ts:804</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/0e110e3b/src/codecs/ipynb/index.ts#L804">src/codecs/ipynb/index.ts:804</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -372,16 +372,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="encodecodechunk" class="tsd-anchor"></a>
+					<a name="encodeCodeChunk" class="tsd-anchor"></a>
 					<h3>encode<wbr>Code<wbr>Chunk</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Code<wbr>Chunk<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.CodeChunk</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_ipynb_nbformat_v4.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Code<wbr>Chunk<span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.CodeChunk</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_ipynb_nbformat_v4.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/225cec4b/src/codecs/ipynb/index.ts#L516">src/codecs/ipynb/index.ts:516</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/0e110e3b/src/codecs/ipynb/index.ts#L516">src/codecs/ipynb/index.ts:516</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,12 +395,12 @@
 									<h5>chunk: <span class="tsd-signature-type">schema.CodeChunk</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_ipynb_nbformat_v4.codecell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/codecs_ipynb_nbformat_v4.CodeCell.html" class="tsd-signature-type" data-tsd-kind="Interface">CodeCell</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="encodemultilinestring" class="tsd-anchor"></a>
+					<a name="encodeMultilineString" class="tsd-anchor"></a>
 					<h3>encode<wbr>Multiline<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
 						<li class="tsd-signature tsd-kind-icon">encode<wbr>Multiline<wbr>String<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nbformat.MultilineString</span></li>
@@ -409,7 +409,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/225cec4b/src/codecs/ipynb/index.ts#L813">src/codecs/ipynb/index.ts:813</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/0e110e3b/src/codecs/ipynb/index.ts#L813">src/codecs/ipynb/index.ts:813</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -437,7 +437,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/225cec4b/src/codecs/ipynb/index.ts#L98">src/codecs/ipynb/index.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/0e110e3b/src/codecs/ipynb/index.ts#L98">src/codecs/ipynb/index.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -483,19 +483,19 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/codecs_ipynb.ipynbcodec.html" class="tsd-kind-icon">Ipynb<wbr>Codec</a>
+						<a href="../classes/codecs_ipynb.IpynbCodec.html" class="tsd-kind-icon">Ipynb<wbr>Codec</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="codecs_ipynb.html#decodecodecell" class="tsd-kind-icon">decode<wbr>Code<wbr>Cell</a>
+						<a href="codecs_ipynb.html#decodeCodeCell" class="tsd-kind-icon">decode<wbr>Code<wbr>Cell</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="codecs_ipynb.html#decodemultilinestring" class="tsd-kind-icon">decode<wbr>Multiline<wbr>String</a>
+						<a href="codecs_ipynb.html#decodeMultilineString" class="tsd-kind-icon">decode<wbr>Multiline<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="codecs_ipynb.html#encodecodechunk" class="tsd-kind-icon">encode<wbr>Code<wbr>Chunk</a>
+						<a href="codecs_ipynb.html#encodeCodeChunk" class="tsd-kind-icon">encode<wbr>Code<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="codecs_ipynb.html#encodemultilinestring" class="tsd-kind-icon">encode<wbr>Multiline<wbr>String</a>
+						<a href="codecs_ipynb.html#encodeMultilineString" class="tsd-kind-icon">encode<wbr>Multiline<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="codecs_ipynb.html#isv3" class="tsd-kind-icon">isv3</a>
