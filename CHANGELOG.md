@@ -1,3 +1,26 @@
+## [0.118.1](https://github.com/stencila/encoda/compare/v0.118.0...v0.118.1) (2021-07-22)
+
+
+### Bug Fixes
+
+* **Install:** Move patch-package to dependencies ([03dbd9d](https://github.com/stencila/encoda/commit/03dbd9d2829d3857928b21cfedcb24ba622e3791)), closes [#965](https://github.com/stencila/encoda/issues/965)
+
+# [0.118.0](https://github.com/stencila/encoda/compare/v0.117.4...v0.118.0) (2021-07-08)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency plotly.js-dist to ^1.58.5 ([8e45c21](https://github.com/stencila/encoda/commit/8e45c219021d218d15a47b21b0c159615c383b13))
+* **dependencies:** update dependency puppeteer to ^10.1.0 ([7f59669](https://github.com/stencila/encoda/commit/7f59669e240add2ef530c13dada7ab4d141b4eeb))
+* **Deps:** Roll back @types/unist ([fade141](https://github.com/stencila/encoda/commit/fade141ac35544a70f7508803c38578afe7b18da))
+* **JATS:** Tweak comment ([ab8be66](https://github.com/stencila/encoda/commit/ab8be669b76ab61c0518e4da7608c1503befcdcd))
+
+
+### Features
+
+* **JATS:** Add label field to MathBlocks ([7d41d9d](https://github.com/stencila/encoda/commit/7d41d9ded383d70e22d1b8976320098f3f5bb57d))
+* **JATS:** Read permissions element from figures ([e6bec3f](https://github.com/stencila/encoda/commit/e6bec3f4c77a0bba9b9038ce1e7205c458c596c0))
+
 ## [0.117.4](https://github.com/stencila/encoda/compare/v0.117.3...v0.117.4) (2021-06-23)
 
 

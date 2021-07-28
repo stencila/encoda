@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Examples taken from https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/fig.html -->
+<!-- Permissions example adapted from https://jats4r.org/permissions -->
 
 <article>
   <front>
@@ -80,6 +81,33 @@ http://dx.doi.org/10.1063/1.4762852.1</ext-link>
         <graphic specific-use="print" xlink:href="1.4821168.figures.highres.f3.zip" />
         <graphic specific-use="online" xlink:href="1.4821168.figures.online.f3.jpg" />
       </alternatives>
+    </fig>
+
+    <p>Example 6</p>
+    <fig id="fig6">
+      <label>Fig. 6</label>
+      <caption>...</caption>
+      <permissions>
+      <copyright-statement>The National Portrait Gallery, London. All rights reserved</copyright-statement>
+      <copyright-year>2013</copyright-year>
+      <!-- Note: no license element here: all rights reserved. -->
+      </permissions>
+      <graphic xlink:href="images/fig1"/>
+    </fig>
+
+    <p>Example 7</p>
+    <fig id="fig7" position="float">
+      <label>Figure 7.</label>
+      <caption> . . . </caption>
+      <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="elife00013f002"/>
+      <permissions>
+      <copyright-statement>© 2012, Alegado et al</copyright-statement>
+      <copyright-year>2012</copyright-year>
+      <copyright-holder>Alegado et al</copyright-holder>
+      <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+      <license-p>Figure 7 is distributed under ...</license-p>
+      </license>
+      </permissions>
     </fig>
 
   </body>

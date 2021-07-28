@@ -36,7 +36,6 @@ const htmlCodec = new HTMLCodec()
 
 const articles: [string, string | schema.Article, number, string[]][] = [
   ['kitchen-sink-article', kitchenSinkArticle, 1, []],
-  ['math-article', mathArticle, 1, []],
   ['jupyter-notebook-simple', jupyterNotebookSimple, 1, []],
   ['r-notebook-simple', rNotebookSimple, 1, []],
   [
@@ -136,7 +135,7 @@ describe('Articles', () => {
           !ignoreSelectorRegex.test(selector) &&
           !ignoreCodes.includes(code)
         )
-          fail(`${selector}: ${code}: ${message}`)
+          throw new Error(`${selector}: ${code}: ${message}`)
       })
     }
   )

@@ -4505,6 +4505,7 @@ content:
         ]:
   - type: MathBlock
     id: pone.0216012.e001
+    label: (1)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M1"><mml:mtable
@@ -4598,6 +4599,7 @@ content:
          is governed by the hydraulic analogue of Ohm’s law
   - type: MathBlock
     id: pone.0216012.e002
+    label: (2)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M2"><mml:mtable
@@ -7872,6 +7874,7 @@ content:
         generic resistance of each component of the circuit
   - type: MathBlock
     id: pone.0216012.e016
+    label: (3)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M16"><mml:mtable
@@ -7998,6 +8001,7 @@ content:
          we then write
   - type: MathBlock
     id: pone.0216012.e021
+    label: (4)
     mathLanguage: mathml
     text: >-
       <mml:math display="block"
@@ -8015,6 +8019,7 @@ content:
         where,
   - type: MathBlock
     id: pone.0216012.e022
+    label: (5)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M22"><mml:mtable
@@ -11551,6 +11556,7 @@ content:
         between the corresponding flow rates, namely
   - type: MathBlock
     id: pone.0216012.e049
+    label: (6)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M49"><mml:mtable
@@ -11569,6 +11575,7 @@ content:
         Then it follows that
   - type: MathBlock
     id: pone.0216012.e050
+    label: (7)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M50"><mml:mtable
@@ -11587,6 +11594,7 @@ content:
         which implies that
   - type: MathBlock
     id: pone.0216012.e051
+    label: (8)
     mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M51"><mml:mtable

@@ -136,3 +136,40 @@ content:
         meta:
           inline: false
           usage: print
+  - type: Paragraph
+    content:
+      - Example 6
+  - type: Figure
+    id: fig6
+    caption:
+      - type: Paragraph
+        content:
+          - ...
+    label: Fig. 6
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
+      - Example 7
+  - type: Figure
+    id: fig7
+    caption:
+      - type: Paragraph
+        content:
+          - ' . . . '
+    label: Figure 7.
+    licenses:
+      - type: CreativeWork
+        url: http://creativecommons.org/licenses/by/4.0/
+        content:
+          - type: Paragraph
+            content:
+              - Figure 7 is distributed under ...
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        meta:
+          inline: false
