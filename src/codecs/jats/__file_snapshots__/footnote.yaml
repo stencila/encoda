@@ -1,0 +1,31 @@
+type: Article
+description:
+  - The abstract can contain a footnote.
+  - type: Note
+    id: note-1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        id: footnote1
+        content:
+          - A footnote from the abstract.
+identifiers: []
+title: Untitled
+meta: {}
+content:
+  - type: Paragraph
+    content:
+      - Further
+      - type: Note
+        id: note-2
+        noteType: Footnote
+        content:
+          - type: Paragraph
+            id: footnote2
+            content:
+              - 'An '
+              - type: Strong
+                content:
+                  - important
+              - ' footnote.'
+      - ' thoughts below.'
