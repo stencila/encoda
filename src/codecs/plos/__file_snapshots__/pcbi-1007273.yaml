@@ -2034,13 +2034,15 @@ meta:
       Selvaraj are employees of Arima Genomics, a company commercializing Hi-C
       DNA sequencing technologies.
 content:
-  - type: Paragraph
+  - type: QuoteBlock
     content:
-      - 'This is a '
-      - type: Emphasis
+      - type: Paragraph
         content:
-          - PLOS Computational Biology
-      - ' Methods paper.'
+          - 'This is a '
+          - type: Emphasis
+            content:
+              - PLOS Computational Biology
+          - ' Methods paper.'
   - type: Heading
     id: sec001
     depth: 1
