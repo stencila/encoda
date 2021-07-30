@@ -1,3 +1,15 @@
+# [0.119.0](https://github.com/stencila/encoda/compare/v0.118.1...v0.119.0) (2021-07-30)
+
+
+### Bug Fixes
+
+* **JATS:** Update tests ([40ad744](https://github.com/stencila/encoda/commit/40ad744749c97241a0c88f6cd70c3125ae43dc61))
+
+
+### Features
+
+* **JATS:** Add decoder for `<disp-quote>` ([5423150](https://github.com/stencila/encoda/commit/54231502dc1bb071e45d8a1cb4ac9f54b23e5c60))
+
 ## [0.118.1](https://github.com/stencila/encoda/compare/v0.118.0...v0.118.1) (2021-07-22)
 
 
