@@ -1,3 +1,10 @@
+## [0.119.4](https://github.com/stencila/encoda/compare/v0.119.3...v0.119.4) (2021-11-16)
+
+
+### Bug Fixes
+
+* **Build:** Remove deprecated script ([b0c7a4a](https://github.com/stencila/encoda/commit/b0c7a4acc9132c10d325577572e4cdea129e564c))
+
 ## [0.119.3](https://github.com/stencila/encoda/compare/v0.119.2...v0.119.3) (2021-11-16)
 
 
