@@ -1,3 +1,10 @@
+## [0.119.3](https://github.com/stencila/encoda/compare/v0.119.2...v0.119.3) (2021-11-16)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update deps ([a9f0330](https://github.com/stencila/encoda/commit/a9f03308a9ae62e21a8a96815d87779e37bc18d5))
+
 ## [0.119.2](https://github.com/stencila/encoda/compare/v0.119.1...v0.119.2) (2021-11-16)
 
 
