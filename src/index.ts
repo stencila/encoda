@@ -7,7 +7,6 @@ import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
-import { boot } from './boot'
 import {
   Codec,
   commonDecodeDefaults,
@@ -463,11 +462,5 @@ export class Encoda extends Jesta {
 export const encoda = new Encoda()
 
 if (require.main === module) {
-  boot()
-    .then(() => {
-      encoda.cli()
-    })
-    .catch((error) => {
-      throw error
-    })
+  encoda.cli()
 }

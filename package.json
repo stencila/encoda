@@ -32,8 +32,6 @@
     "build:dmagic-assets": "cp src/codecs/dmagic/*.sh dist/codecs/dmagic/",
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
     "build:tex-assets": "cp -r src/codecs/tex/*.xsl dist/codecs/tex/",
-    "build:assets": "ts-node src/boot.ts",
-    "build:bin": "pkg .",
     "build:docs": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
     "prepublishOnly": "npm run build"
@@ -75,7 +73,7 @@
     "jsonld": "^5.2.0",
     "mathjax-node": "^2.1.1",
     "mdast-util-compact": "^3.0.0",
-    "mime": "^2.6.0",
+    "mime": "^3.0.0",
     "minimist": "^1.2.5",
     "papaparse": "^5.3.1",
     "parse-author": "^2.0.0",
@@ -150,7 +148,6 @@
     "markdown-toc": "1.2.0",
     "nock": "13.2.1",
     "pa11y": "6.1.0",
-    "pkg": "5.4.1",
     "structured-data-testing-tool": "4.5.0",
     "ts-jest": "27.0.7",
     "ts-node": "10.4.0",
@@ -232,14 +229,6 @@
     }
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
-  "pkg": {
-    "outputPath": "bin",
-    "targets": [
-      "node16"
-    ],
-    "scripts": "dist/**/*.js",
-    "assets": "assets.tgz"
-  },
   "release": {
     "extends": "@stencila/semantic-release-config",
     "branches": [
