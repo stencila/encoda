@@ -105,8 +105,6 @@ jobs:
           GITHUB_TOKEN: $(GITHUB_TOKEN)
 
   - job: Docker
-    # Temporarily skip
-    condition: 'false'
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -120,7 +118,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: Release
-    dependsOn: [Linux] # Skipping temporarily: , Docker]
+    dependsOn: [Linux, Docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
