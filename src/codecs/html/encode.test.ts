@@ -125,7 +125,7 @@ describe('Articles', () => {
       ].concat(ignoreChecks)
       // Temporarily skip Web Component structure (not controlled by this repo)
       // See https://github.com/stencila/designa/issues/37
-      const ignoreSelectorRegex = /stencila-code-chunk/
+      const ignoreSelectorRegex = /stencila-code-chunk|stencila-code-expression/
 
       const { issues = [] } = await pa11y(file, { runners: ['axe', 'htmlcs'] })
       issues.forEach((result: any) => {
