@@ -1,3 +1,14 @@
+## [0.119.2](https://github.com/stencila/encoda/compare/v0.119.1...v0.119.2) (2021-11-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.24.4 ([a01cdd0](https://github.com/stencila/encoda/commit/a01cdd0719b6bd62fc125781030fcc8e252f00ab))
+* **dependencies:** update dependency mime to ^2.6.0 ([3465a03](https://github.com/stencila/encoda/commit/3465a03be977abf680dc7c846df556eda4396a19))
+* **dependencies:** update dependency pdf-lib to ^1.17.1 ([519f986](https://github.com/stencila/encoda/commit/519f9863fb0c7c7c0f9e69fe8de3f8cdd888cd10))
+* **dependencies:** update dependency xlsx to ^0.17.4 ([b1ae255](https://github.com/stencila/encoda/commit/b1ae255cfbb09924c64b3d6f4a4e6497028100b3))
+* **Dependencies:** Update deps ([eec2e59](https://github.com/stencila/encoda/commit/eec2e59d4e2286833a96f1e44c8dac872cf7ffc5))
+
 ## [0.119.1](https://github.com/stencila/encoda/compare/v0.119.0...v0.119.1) (2021-11-16)
 
 
