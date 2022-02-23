@@ -38,75 +38,12 @@ jobs:
           # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
           # physical memory at time of writing). Aimed to avoid this:
           # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
-          NODE_OPTIONS: --max_old_space_size=4000
+          NODE_OPTIONS: --max_old_space_size=6000
 
       - script: bash <(curl -s https://codecov.io/bash)
         displayName: 'Upload coverage'
 
-      - script: |
-          set -e
-          npm run build
-          bash .ci/upload-release.sh bin/encoda encoda x86_64-unknown-linux-gnu.tar.gz
-        condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-        displayName: 'Build and publish'
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-
-  - job: MacOS
-    pool:
-      vmImage: macOS-latest
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-    steps:
-      - task: NodeTool@0
-        inputs:
-          versionSpec: $(NODE_VERSION)
-        displayName: 'Use Node.js $(NODE_VERSION)'
-
-      - script: npm ci
-        displayName: 'Install dependencies'
-
-      - script: |
-          set -e
-          npm run build
-          bash .ci/upload-release.sh bin/encoda encoda x86_64-apple-darwin.tar.gz
-        displayName: 'Build and publish'
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-
-  - job: Windows
-    pool:
-      vmImage: ubuntu-latest
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-    steps:
-      # Do not convert line endings on checkout, otherwise snapshot
-      # files fail on Windows.
-      # https://github.com/microsoft/azure-pipelines-yaml/issues/11
-      - script: git config --global core.autocrlf false
-        displayName: "Configure Git's conversion of line endings"
-
-      - checkout: self
-        fetchDepth: 10
-        displayName: 'Checkout repo'
-
-      - task: NodeTool@0
-        inputs:
-          versionSpec: $(NODE_VERSION)
-        displayName: 'Use Node.js $(NODE_VERSION)'
-
-      - script: npm ci
-        displayName: 'Install dependencies'
-
-      - script: |
-          set -e
-          npm run build
-          bash .ci/upload-release.sh bin/encoda.exe encoda x86_64-pc-windows-msvc.zip
-        displayName: 'Build and publish'
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-
   - job: Docker
-    # Temporarily skip
-    condition: 'false'
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -120,7 +57,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: Release
-    dependsOn: [Linux] # Skipping temporarily: , Docker]
+    dependsOn: [Linux, Docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest

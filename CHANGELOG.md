@@ -1,3 +1,42 @@
+## [0.119.4](https://github.com/stencila/encoda/compare/v0.119.3...v0.119.4) (2021-11-16)
+
+
+### Bug Fixes
+
+* **Build:** Remove deprecated script ([b0c7a4a](https://github.com/stencila/encoda/commit/b0c7a4acc9132c10d325577572e4cdea129e564c))
+
+## [0.119.3](https://github.com/stencila/encoda/compare/v0.119.2...v0.119.3) (2021-11-16)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update deps ([a9f0330](https://github.com/stencila/encoda/commit/a9f03308a9ae62e21a8a96815d87779e37bc18d5))
+
+## [0.119.2](https://github.com/stencila/encoda/compare/v0.119.1...v0.119.2) (2021-11-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/thema to ^2.24.4 ([a01cdd0](https://github.com/stencila/encoda/commit/a01cdd0719b6bd62fc125781030fcc8e252f00ab))
+* **dependencies:** update dependency mime to ^2.6.0 ([3465a03](https://github.com/stencila/encoda/commit/3465a03be977abf680dc7c846df556eda4396a19))
+* **dependencies:** update dependency pdf-lib to ^1.17.1 ([519f986](https://github.com/stencila/encoda/commit/519f9863fb0c7c7c0f9e69fe8de3f8cdd888cd10))
+* **dependencies:** update dependency xlsx to ^0.17.4 ([b1ae255](https://github.com/stencila/encoda/commit/b1ae255cfbb09924c64b3d6f4a4e6497028100b3))
+* **Dependencies:** Update deps ([eec2e59](https://github.com/stencila/encoda/commit/eec2e59d4e2286833a96f1e44c8dac872cf7ffc5))
+
+## [0.119.1](https://github.com/stencila/encoda/compare/v0.119.0...v0.119.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency fp-ts to ^2.11.5 ([ae2eb6f](https://github.com/stencila/encoda/commit/ae2eb6fb23366a7950fb1e8468f1854e762dba18))
+* **dependencies:** update dependency github-slugger to ^1.4.0 ([a72887d](https://github.com/stencila/encoda/commit/a72887d1018398ad29d6a8a1647b1978e23a4324))
+* **dependencies:** update dependency jsdom to ^16.7.0 ([ecae3da](https://github.com/stencila/encoda/commit/ecae3dac8445094960649d65fec84f17a56386fa))
+* **dependencies:** update dependency parse-full-name to ^1.2.6 ([0591f63](https://github.com/stencila/encoda/commit/0591f636854e9b7b90a86b2761bc40bac81c4fe8))
+* **dependencies:** update dependency pdf-lib to ^1.17.0 ([2f2fadd](https://github.com/stencila/encoda/commit/2f2fadd43e8767bc58984b1595aba68b93ed9d14))
+* **dependencies:** update dependency puppeteer to ^10.4.0 ([90d7980](https://github.com/stencila/encoda/commit/90d7980abff6dd7809074b9dbed01494b9de9df5))
+* **dependencies:** update dependency tar to ^6.1.11 ([44ed366](https://github.com/stencila/encoda/commit/44ed3661a1750bf24055579a99eeb5e3bf7dd36e))
+* **dependencies:** update dependency xlsx to ^0.17.3 ([1468046](https://github.com/stencila/encoda/commit/146804658141921c1deafead9221f8c4f3505b02))
+
 # [0.119.0](https://github.com/stencila/encoda/compare/v0.118.1...v0.119.0) (2021-07-30)
 
 
