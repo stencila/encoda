@@ -175,14 +175,10 @@ describe('encode+decode', () => {
     const ipynb = await ipynbCodec.dump(node)
     const decoded = await ipynbCodec.load(ipynb)
     if (compare === 'meta') {
-      const {
-        content: decodedContent,
-        ...decodededRest
-      } = decoded as schema.Article
-      const {
-        content: expectedContent,
-        ...expectedRest
-      } = node as schema.Article
+      const { content: decodedContent, ...decodededRest } =
+        decoded as schema.Article
+      const { content: expectedContent, ...expectedRest } =
+        node as schema.Article
       expect(decodededRest).toEqual(expectedRest)
     } else expect(decoded).toEqual(node)
   })

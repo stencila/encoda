@@ -1,15 +1,14 @@
 export const isDefined = <T>(n: T): n is NonNullable<typeof n> => n != null
 
-export const reduceNonNullable = <A, B>(callback: (sourceNode: A) => B) => (
-  convertedNodes: NonNullable<B>[] = [],
-  sourceNode?: A
-): NonNullable<B>[] => {
-  const decodedNode =
-    sourceNode !== undefined ? callback(sourceNode) : undefined
-  return isDefined(decodedNode)
-    ? [...convertedNodes, decodedNode]
-    : convertedNodes
-}
+export const reduceNonNullable =
+  <A, B>(callback: (sourceNode: A) => B) =>
+  (convertedNodes: NonNullable<B>[] = [], sourceNode?: A): NonNullable<B>[] => {
+    const decodedNode =
+      sourceNode !== undefined ? callback(sourceNode) : undefined
+    return isDefined(decodedNode)
+      ? [...convertedNodes, decodedNode]
+      : convertedNodes
+  }
 
 /**
  * Removes all properties that are undefined from a given object.

@@ -16,24 +16,21 @@ import transform from '../transform'
  * See https://github.com/GoogleChrome/puppeteer/issues/1643.
  */
 export async function fromFiles(node: schema.Node): Promise<schema.Node> {
-  return transform(
-    node,
-    async (node: schema.Node): Promise<schema.Node> => {
-      if (schema.isIn('MediaObjectTypes', node)) {
-        const { contentUrl, ...rest } = node
-        if (
-          contentUrl !== '' &&
-          !contentUrl.startsWith('http') &&
-          !contentUrl.startsWith('data:')
-        ) {
-          const data = await dataUri.fromFile(contentUrl)
-          return {
-            ...rest,
-            contentUrl: data.dataUri,
-          }
+  return transform(node, async (node: schema.Node): Promise<schema.Node> => {
+    if (schema.isIn('MediaObjectTypes', node)) {
+      const { contentUrl, ...rest } = node
+      if (
+        contentUrl !== '' &&
+        !contentUrl.startsWith('http') &&
+        !contentUrl.startsWith('data:')
+      ) {
+        const data = await dataUri.fromFile(contentUrl)
+        return {
+          ...rest,
+          contentUrl: data.dataUri,
         }
       }
-      return node
     }
-  )
+    return node
+  })
 }

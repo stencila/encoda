@@ -2,7 +2,7 @@
  * Get the error message from an error
  *
  * From https://kentcdodds.com/blog/get-a-catch-block-error-message-with-typescript
- * 
+ *
  * @module
  */
 

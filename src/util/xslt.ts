@@ -105,8 +105,10 @@ export class Processor {
         const wrap = `<wrap ${attrs}>${xml}</wrap>`
 
         // Parse the input document and send back any errors
-        const input = domParser.parseFromString(wrap, 'text/xml')
-          .firstElementChild
+        const input = domParser.parseFromString(
+          wrap,
+          'text/xml'
+        ).firstElementChild
         if (input === null) return `Error parsing XML: ${xml}`
         const error = input.querySelector('parsererror')
         if (error !== null) return error.textContent

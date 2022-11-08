@@ -39,15 +39,12 @@ export class LatexCodec extends Codec implements Codec {
       }
     )
 
-    return transform(
-      root,
-      async (node): Promise<schema.Node> => {
-        if (schema.isA('CodeBlock', node)) return await decodeCodeBlock(node)
-        if (schema.isA('CodeFragment', node)) return decodeCodeFragment(node)
-        if (schema.isA('MathBlock', node)) return decodeMathBlock(node)
-        return node
-      }
-    )
+    return transform(root, async (node): Promise<schema.Node> => {
+      if (schema.isA('CodeBlock', node)) return await decodeCodeBlock(node)
+      if (schema.isA('CodeFragment', node)) return decodeCodeFragment(node)
+      if (schema.isA('MathBlock', node)) return decodeMathBlock(node)
+      return node
+    })
   }
 
   public readonly encode = async (
@@ -142,9 +139,7 @@ function decodeCodeFragment(
  * Note will return modified `programmingLanguage` and/or `exec`
  * which strips the executable flag (if present).
  */
-function checkIfExecutable(
-  node: schema.CodeBlock | schema.CodeFragment
-): {
+function checkIfExecutable(node: schema.CodeBlock | schema.CodeFragment): {
   isExecutable: boolean
   programmingLanguage?: string
   meta?: Record<string, unknown>

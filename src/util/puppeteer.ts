@@ -59,36 +59,33 @@ const lock = new AsyncLock()
  * singleton browser instance.
  */
 export async function startup(): Promise<Browser> {
-  return lock.acquire(
-    'browser',
-    async (): Promise<Browser> => {
+  return lock.acquire('browser', async (): Promise<Browser> => {
+    if (browser === undefined) {
+      log.debug('Launching new browser')
+      browser = await puppeteer.launch({
+        pipe: true,
+        executablePath,
+        args: isDocker()
+          ? [
+              // Turn off Chrome's sandbox. The alternative is to make the container privileged
+              // by adding `--cap-add=SYS_ADMIN` to `docker run`. But in the context's that Encoda normally
+              // runs within a container, this is even more undesirable.
+              // See the following for discussion https://github.com/docker/for-linux/issues/496#issuecomment-441149510
+              '--no-sandbox',
+              '--disable-setuid-sandbox',
+              // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
+              // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
+              '--disable-dev-shm-usage',
+            ]
+          : [],
+      })
       if (browser === undefined) {
-        log.debug('Launching new browser')
-        browser = await puppeteer.launch({
-          pipe: true,
-          executablePath,
-          args: isDocker()
-            ? [
-                // Turn off Chrome's sandbox. The alternative is to make the container privileged
-                // by adding `--cap-add=SYS_ADMIN` to `docker run`. But in the context's that Encoda normally
-                // runs within a container, this is even more undesirable.
-                // See the following for discussion https://github.com/docker/for-linux/issues/496#issuecomment-441149510
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
-                // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
-                '--disable-dev-shm-usage',
-              ]
-            : [],
-        })
-        if (browser === undefined) {
-          throw new Error('Unable to launch browser instance')
-        }
-        log.debug(`Browser launched. pid: ${browser.process()?.pid}`)
+        throw new Error('Unable to launch browser instance')
       }
-      return browser
+      log.debug(`Browser launched. pid: ${browser.process()?.pid}`)
     }
-  )
+    return browser
+  })
 }
 
 /**
@@ -103,17 +100,14 @@ export async function page(): Promise<Page> {
  * Close the browser.
  */
 export async function shutdown(): Promise<void> {
-  await lock.acquire(
-    'browser',
-    async (): Promise<void> => {
-      if (browser !== undefined) {
-        log.debug(`Closing browser. pid: ${browser.process()?.pid}`)
-        await browser.close()
-        log.debug('Browser closed')
-        browser = undefined
-      }
+  await lock.acquire('browser', async (): Promise<void> => {
+    if (browser !== undefined) {
+      log.debug(`Closing browser. pid: ${browser.process()?.pid}`)
+      await browser.close()
+      log.debug('Browser closed')
+      browser = undefined
     }
-  )
+  })
 }
 
 // Always shutdown before exiting the Node process

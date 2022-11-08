@@ -348,9 +348,10 @@ async function reshapeCreativeWork(
           text = text.replace(/^\s*\d+\s*[.,:;]*\s*/, '')
 
           // Look for a DOI
-          const match = /\b((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)/i.exec(
-            text
-          )
+          const match =
+            /\b((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)/i.exec(
+              text
+            )
           if (match) {
             // Remove trailing punctuation (if any)
             let doi = match[4]
@@ -405,21 +406,18 @@ async function reshapeCreativeWork(
 
   const { references } = work
   if (references !== undefined) {
-    transformSync(
-      work,
-      (node): schema.Node => {
-        if (
-          schema.isEntity(node) &&
-          hasContent(node) &&
-          isInlineContentArray(node.content)
-        ) {
-          const content = node.content
-          node.content = decodeNumericCites(content, references)
-          node.content = groupCitesIntoGiteGroup(content)
-        }
-        return node
+    transformSync(work, (node): schema.Node => {
+      if (
+        schema.isEntity(node) &&
+        hasContent(node) &&
+        isInlineContentArray(node.content)
+      ) {
+        const content = node.content
+        node.content = decodeNumericCites(content, references)
+        node.content = groupCitesIntoGiteGroup(content)
       }
-    )
+      return node
+    })
   }
 
   return work

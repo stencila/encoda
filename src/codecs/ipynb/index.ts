@@ -480,7 +480,12 @@ export async function decodeCodeCell(
 
   if (source.length === 0 && outputs.length === 0) return undefined
 
-  const { id, label, caption: cap, ...rest } = metadata as {
+  const {
+    id,
+    label,
+    caption: cap,
+    ...rest
+  } = metadata as {
     id?: string
     label?: string
     caption?: string | schema.Node[]

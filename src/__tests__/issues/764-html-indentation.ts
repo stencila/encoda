@@ -17,8 +17,7 @@ test('issue 764: indentation of certain HTML elements', async () => {
           givenNames: ['L', 'Michelle'],
           affiliations: [
             schema.organization({
-              name:
-                'University of Georgia, Bioexpression and Fermentation Facility',
+              name: 'University of Georgia, Bioexpression and Fermentation Facility',
               address: schema.postalAddress({
                 addressLocality: 'Georgia',
                 addressCountry: 'United States',

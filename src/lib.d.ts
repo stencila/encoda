@@ -30,9 +30,10 @@ declare module 'png-chunk-text' {
   type Value = string | object
 
   export function encode(key: string, value: Value): Chunk
-  export function decode(
-    chunk: Uint8Array | Buffer
-  ): { keyword: string; text: string }
+  export function decode(chunk: Uint8Array | Buffer): {
+    keyword: string
+    text: string
+  }
 }
 
 declare module 'length-prefixed-stream' {

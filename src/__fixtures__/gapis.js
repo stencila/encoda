@@ -48,11 +48,8 @@ async function authorize() {
         // Authorize a client with credentials, then call the Google Docs API.
         credentials = JSON.parse(content)
 
-        const {
-          client_secret,
-          client_id,
-          redirect_uris,
-        } = credentials.installed
+        const { client_secret, client_id, redirect_uris } =
+          credentials.installed
         const oAuth2Client = new google.auth.OAuth2(
           client_id,
           client_secret,
@@ -122,7 +119,9 @@ async function docsCreate(filePath) {
   const stream = new Readable()
   stream.push(html)
   stream.push(null)
-  const result = await (await drive()).files.create({
+  const result = await (
+    await drive()
+  ).files.create({
     resource: {
       name: node.title || 'Untitled',
       mimeType: 'application/vnd.google-apps.document',

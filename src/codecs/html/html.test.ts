@@ -242,8 +242,7 @@ describe.skip('Encode & Decode references', () => {
           person({
             givenNames: ['R'],
             familyNames: ['Farhadifar'],
-            url:
-              'https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22',
+            url: 'https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22',
           }),
         ],
       }),

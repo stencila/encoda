@@ -47,13 +47,8 @@ export class PdfCodec extends Codec {
     // Fallback to extracting meta-data from info dict
     log.warn('PDF file does not appear to be a Reproducible-PDF')
     const meta = decodeInfoDict(pdf)
-    const {
-      title,
-      authors,
-      keywords,
-      dateCreated,
-      dateModified,
-    } = await decodeMetadata(meta)
+    const { title, authors, keywords, dateCreated, dateModified } =
+      await decodeMetadata(meta)
     return schema.creativeWork({
       authors,
       title,
@@ -255,14 +250,8 @@ function encodeXmp(
   meta: PdfMetadata,
   node: schema.Node
 ): void {
-  const {
-    title,
-    authors,
-    keywords,
-    dateCreated,
-    dateModified,
-    dateCurrent,
-  } = meta
+  const { title, authors, keywords, dateCreated, dateModified, dateCurrent } =
+    meta
 
   // Dump the entire node as an XML document to put into XMP
   const nodeDoc = encodeXmlDoc(node)

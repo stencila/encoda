@@ -29,7 +29,8 @@ export class PersonCodec extends Codec implements Codec {
 
   public readonly extNames = ['person']
 
-  public static regex = /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/
+  public static regex =
+    /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/
 
   public readonly sniff = (content: string): Promise<boolean> => {
     return Promise.resolve(PersonCodec.regex.exec(content) !== null)

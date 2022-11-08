@@ -17,7 +17,8 @@ import tempy from 'tempy'
 const jats = new JatsCodec()
 
 export class PlosCodec extends Codec implements Codec {
-  private static regex = /^\s*((doi\s*:?\s*)|(https?:\/\/doi.org\/)|(https:\/\/journals\.plos\.org\/([a-z]+)\/article\?id=))?(10\.1371\/journal\.([a-z]+)\.\d+)\s*$/i
+  private static regex =
+    /^\s*((doi\s*:?\s*)|(https?:\/\/doi.org\/)|(https:\/\/journals\.plos\.org\/([a-z]+)\/article\?id=))?(10\.1371\/journal\.([a-z]+)\.\d+)\s*$/i
 
   public readonly sniff = (content: string): Promise<boolean> => {
     return Promise.resolve(PlosCodec.regex.exec(content) !== null)

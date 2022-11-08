@@ -302,9 +302,7 @@ function ztxtEncode(
 /**
  * Decode PNG `zTXt` chunk data.
  */
-function ztxtDecode(
-  data: Uint8Array | Buffer
-): {
+function ztxtDecode(data: Uint8Array | Buffer): {
   keyword: string
   text: string
 } {

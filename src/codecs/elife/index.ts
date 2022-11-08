@@ -19,7 +19,8 @@ const log = getLogger('encoda:elife')
 const jats = new JatsCodec()
 
 export class ElifeCodec extends Codec implements Codec {
-  private static regex = /^\s*((elife\s*:?\s*)|(https?:\/\/elifesciences\.org\/articles\/))(\d{5})(v(\d))?\s*$/i
+  private static regex =
+    /^\s*((elife\s*:?\s*)|(https?:\/\/elifesciences\.org\/articles\/))(\d{5})(v(\d))?\s*$/i
 
   public readonly sniff = (content: string): Promise<boolean> => {
     return Promise.resolve(ElifeCodec.regex.exec(content) !== null)

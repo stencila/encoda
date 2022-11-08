@@ -14,19 +14,16 @@ import { transformSync } from '../transform'
  * @see unlinkFiles
  */
 export function removeDataUris(node: schema.Node): schema.Node {
-  return transformSync(
-    node,
-    (node: schema.Node): schema.Node => {
-      if (schema.isIn('MediaObjectTypes', node)) {
-        const { contentUrl, ...rest } = node
-        if (contentUrl.startsWith('data:')) {
-          return {
-            ...rest,
-            contentUrl: '',
-          }
+  return transformSync(node, (node: schema.Node): schema.Node => {
+    if (schema.isIn('MediaObjectTypes', node)) {
+      const { contentUrl, ...rest } = node
+      if (contentUrl.startsWith('data:')) {
+        return {
+          ...rest,
+          contentUrl: '',
         }
       }
-      return node
     }
-  )
+    return node
+  })
 }

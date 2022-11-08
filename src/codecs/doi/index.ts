@@ -27,7 +27,8 @@ export class DoiCodec extends Codec implements Codec {
 
   // See https://www.crossref.org/blog/dois-and-matching-regular-expressions/
   // for notes on DOI matching
-  private static regex = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
+  private static regex =
+    /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
 
   public readonly sniff = (content: string): Promise<boolean> => {
     return Promise.resolve(DoiCodec.regex.exec(content) !== null)

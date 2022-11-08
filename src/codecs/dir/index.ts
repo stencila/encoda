@@ -54,7 +54,8 @@ export interface DecodeOptions extends CommonDecodeOptions {
 
 export class DirCodec
   extends Codec<EncodeOptions, DecodeOptions>
-  implements Codec<EncodeOptions, DecodeOptions> {
+  implements Codec<EncodeOptions, DecodeOptions>
+{
   public readonly extNames = ['dir']
 
   /**
@@ -77,10 +78,8 @@ export class DirCodec
     file: vfile.VFile,
     options: DecodeOptions = {}
   ): Promise<schema.Collection> => {
-    let {
-      patterns = ['**/*'],
-      mainNames = ['main', 'index', 'README'],
-    } = options
+    let { patterns = ['**/*'], mainNames = ['main', 'index', 'README'] } =
+      options
     if (typeof patterns === 'string') patterns = patterns.split(/\s+/)
     if (typeof mainNames === 'string') mainNames = mainNames.split(/\s+/)
 

@@ -121,21 +121,22 @@ export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   thematicBreak: 'thematicBreak',
 }
 
-export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> = {
-  break: 'break',
-  delete: 'delete',
-  emphasis: 'emphasis',
-  footnote: 'footnote',
-  footnoteReference: 'footnoteReference',
-  html: 'html',
-  image: 'image',
-  imageReference: 'imageReference',
-  inlineCode: 'inlineCode',
-  link: 'link',
-  linkReference: 'linkReference',
-  strong: 'strong',
-  text: 'text',
-}
+export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> =
+  {
+    break: 'break',
+    delete: 'delete',
+    emphasis: 'emphasis',
+    footnote: 'footnote',
+    footnoteReference: 'footnoteReference',
+    html: 'html',
+    image: 'image',
+    imageReference: 'imageReference',
+    inlineCode: 'inlineCode',
+    link: 'link',
+    linkReference: 'linkReference',
+    strong: 'strong',
+    text: 'text',
+  }
 
 const isMdastBlockContent = isInTypeMap(mdastBlockContentTypes)
 const isMdastPhrasingContent = isInTypeMap(mdastPhrasingContentTypes)
@@ -486,7 +487,7 @@ function decodeNode(node: UNIST.Node, context: DecodeContext): stencila.Node {
       return decodeText(node as MDAST.Text)
     case 'inline-extension':
     case 'block-extension': {
-      const ext = (node as unknown) as Extension
+      const ext = node as unknown as Extension
       switch (ext.name) {
         case 'chunk':
           return decodeCodeChunk(ext)
@@ -1247,33 +1248,29 @@ function encodeTable(table: stencila.Table): MDAST.Table | Extension {
 
   return {
     type: 'table',
-    children: table.rows.map(
-      (row: stencila.TableRow): MDAST.TableRow => {
-        return {
-          type: 'tableRow',
-          children: row.cells.map(
-            (cell: stencila.TableCell): MDAST.TableCell => {
-              const content = ensureInlineContentArray(cell.content ?? [])
-              // If there is only one node in the table cell and it is
-              // a primitive e.g. a number, or boolean then encode it
-              // as a string rather than as the special `!number` etc inline
-              // extensions (which are aimed at distinguishing primitives in
-              // amongst other inline content)
-              const children =
-                content.length === 1 &&
-                stencila.isPrimitive(content[0]) &&
-                content[0] !== null
-                  ? [encodeString(`${content[0]}`)]
-                  : content.map(encodeInlineContent).flat()
-              return {
-                type: 'tableCell',
-                children,
-              }
-            }
-          ),
-        }
+    children: table.rows.map((row: stencila.TableRow): MDAST.TableRow => {
+      return {
+        type: 'tableRow',
+        children: row.cells.map((cell: stencila.TableCell): MDAST.TableCell => {
+          const content = ensureInlineContentArray(cell.content ?? [])
+          // If there is only one node in the table cell and it is
+          // a primitive e.g. a number, or boolean then encode it
+          // as a string rather than as the special `!number` etc inline
+          // extensions (which are aimed at distinguishing primitives in
+          // amongst other inline content)
+          const children =
+            content.length === 1 &&
+            stencila.isPrimitive(content[0]) &&
+            content[0] !== null
+              ? [encodeString(`${content[0]}`)]
+              : content.map(encodeInlineContent).flat()
+          return {
+            type: 'tableCell',
+            children,
+          }
+        }),
       }
-    ),
+    }),
   }
 }
 
@@ -1338,7 +1335,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
  */
 function decodeCite(literal: MDAST.Literal): stencila.Cite {
   // Use `cite` constructor to remove undefined properties
-  return stencila.cite((literal.data as unknown) as stencila.Cite)
+  return stencila.cite(literal.data as unknown as stencila.Cite)
 }
 
 /**
@@ -1380,7 +1377,7 @@ function encodeCite(cite: stencila.Cite): MDAST.HTML {
  */
 function decodeCiteGroup(literal: MDAST.Literal): stencila.CiteGroup {
   // Use `cite` constructor on each item to remove undefined properties
-  const { items } = (literal.data as unknown) as stencila.CiteGroup
+  const { items } = literal.data as unknown as stencila.CiteGroup
   return stencila.citeGroup({ items: items.map((item) => stencila.cite(item)) })
 }
 

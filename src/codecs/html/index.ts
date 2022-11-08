@@ -132,24 +132,24 @@ const encodeMaybe = <T>(
  * @param {HTMLElement} el - HTML element to search within
  * @param {string} itemprop - Value of the `itemprop` attribute to find
  */
-const propSelector = (el: HTMLElement) => (
-  itemprop: string
-): HTMLElement | undefined => {
-  const match = el.querySelector<HTMLElement>(`[itemprop=${itemprop}]`)
-  return match ?? undefined
-}
+const propSelector =
+  (el: HTMLElement) =>
+  (itemprop: string): HTMLElement | undefined => {
+    const match = el.querySelector<HTMLElement>(`[itemprop=${itemprop}]`)
+    return match ?? undefined
+  }
 
 /**
  * Given a string tries to find and return all HTML element with a matching `itemprop` attribute valu
  * @param {HTMLElement} el - HTML element to search within
  * @param {string} itemprop - Value of the `itemprop` attribute to find
  */
-const propSelectorAll = (el: HTMLElement) => (
-  itemprop: string
-): HTMLElement[] => {
-  const match = el.querySelectorAll<HTMLElement>(`[itemprop=${itemprop}]`)
-  return match.length > 0 ? [...match] : []
-}
+const propSelectorAll =
+  (el: HTMLElement) =>
+  (itemprop: string): HTMLElement[] => {
+    const match = el.querySelectorAll<HTMLElement>(`[itemprop=${itemprop}]`)
+    return match.length > 0 ? [...match] : []
+  }
 
 /**
  * Given a string tries to find and return an HTML element with a matching `itemprop` attribute value.
@@ -157,12 +157,12 @@ const propSelectorAll = (el: HTMLElement) => (
  * @param {HTMLElement} el - HTML element to search within
  * @param {string} itemprop - Value of the `itemprop` attribute to find
  */
-const propValue = (el: HTMLElement) => (
-  itemprop: string
-): string | undefined => {
-  const match = propSelector(el)(itemprop)
-  return match?.textContent ?? undefined
-}
+const propValue =
+  (el: HTMLElement) =>
+  (itemprop: string): string | undefined => {
+    const match = propSelector(el)(itemprop)
+    return match?.textContent ?? undefined
+  }
 
 /**
  * Given a list of itemprop values, tries to find and return the matching HTML element's `textContent`.
@@ -170,22 +170,22 @@ const propValue = (el: HTMLElement) => (
  * @param {HTMLElement} el - HTML element to search within
  * @param {string} itemprops - Value of the `itemprop` attribute to find
  */
-const propsToValues = (el: HTMLElement) => (
-  itemprops: string[]
-): { [key: string]: string | number } => {
-  const selector = propSelector(el)
+const propsToValues =
+  (el: HTMLElement) =>
+  (itemprops: string[]): { [key: string]: string | number } => {
+    const selector = propSelector(el)
 
-  return itemprops.reduce(
-    (foundProps: { [key: string]: string | number }, prop) => {
-      const match = selector(prop)
-      const value = match?.textContent
-      return typeof value === 'string'
-        ? { ...foundProps, [prop]: value }
-        : foundProps
-    },
-    {}
-  )
-}
+    return itemprops.reduce(
+      (foundProps: { [key: string]: string | number }, prop) => {
+        const match = selector(prop)
+        const value = match?.textContent
+        return typeof value === 'string'
+          ? { ...foundProps, [prop]: value }
+          : foundProps
+      },
+      {}
+    )
+  }
 
 /**
  * It is necessary to maintain some state during encoding.
@@ -761,16 +761,14 @@ async function generateHtmlElement(
       ...themeCss,
       ...themeJs,
       h('script', {
-        src:
-          'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.esm.js',
+        src: 'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.esm.js',
         type: 'module',
       }),
       h('script', {
         attrs: {
           nomodule: '',
         },
-        src:
-          'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
+        src: 'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
         type: 'text/javascript',
       })
     ),
@@ -1712,7 +1710,8 @@ function encodeQuoteBlock(
 }
 
 // Regex to test if a string is a URL. Thanks to https://stackoverflow.com/a/3809435
-const urlRegex = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
+const urlRegex =
+  /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
 
 export const decodeHref = (href?: string | null): string => {
   if (!isDefined(href)) return '#'

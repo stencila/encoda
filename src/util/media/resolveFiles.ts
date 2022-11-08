@@ -19,31 +19,28 @@ import { transformSync } from '../transform'
  * @see toFiles
  */
 export function resolveFiles(node: schema.Node, docPath: string): schema.Node {
-  return transformSync(
-    node,
-    (node: schema.Node): schema.Node => {
-      if (schema.isIn('MediaObjectTypes', node)) {
-        const { contentUrl, ...rest } = node
-        if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
-          let resolvedPath
-          if (path.isAbsolute(contentUrl)) {
-            // Already absolute, no need to do anything
-            resolvedPath = contentUrl
-          } else if (fs.existsSync(contentUrl)) {
-            // Path is relative to the cwd, so make it absolute
-            resolvedPath = path.resolve(contentUrl)
-          } else {
-            // Path could be relative to the document, so try that
-            // as a last resort
-            resolvedPath = path.resolve(path.dirname(docPath), contentUrl)
-          }
-          return {
-            ...rest,
-            contentUrl: resolvedPath,
-          }
+  return transformSync(node, (node: schema.Node): schema.Node => {
+    if (schema.isIn('MediaObjectTypes', node)) {
+      const { contentUrl, ...rest } = node
+      if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
+        let resolvedPath
+        if (path.isAbsolute(contentUrl)) {
+          // Already absolute, no need to do anything
+          resolvedPath = contentUrl
+        } else if (fs.existsSync(contentUrl)) {
+          // Path is relative to the cwd, so make it absolute
+          resolvedPath = path.resolve(contentUrl)
+        } else {
+          // Path could be relative to the document, so try that
+          // as a last resort
+          resolvedPath = path.resolve(path.dirname(docPath), contentUrl)
+        }
+        return {
+          ...rest,
+          contentUrl: resolvedPath,
         }
       }
-      return node
     }
-  )
+    return node
+  })
 }

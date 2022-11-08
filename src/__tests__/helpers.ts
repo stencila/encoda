@@ -30,22 +30,22 @@ export const readFixture = async (filename: string): Promise<vfile.VFile> =>
 /**
  * Decode a fixture and JSON stringify it
  */
-export const fixtureToJson = (
-  decode: (file: vfile.VFile) => Promise<schema.Node>
-) => async (filename: string): Promise<string> =>
-  JSON.stringify(
-    await decode(await vfile.read(fixture(filename, 3))),
-    null,
-    '  '
-  )
+export const fixtureToJson =
+  (decode: (file: vfile.VFile) => Promise<schema.Node>) =>
+  async (filename: string): Promise<string> =>
+    JSON.stringify(
+      await decode(await vfile.read(fixture(filename, 3))),
+      null,
+      '  '
+    )
 
 /**
  * Encode a node to a string
  */
-export const nodeToString = (
-  encode: (node: schema.Node) => Promise<vfile.VFile>
-) => async (node: schema.Node): Promise<string> =>
-  await vfile.dump(await encode(node))
+export const nodeToString =
+  (encode: (node: schema.Node) => Promise<vfile.VFile>) =>
+  async (node: schema.Node): Promise<string> =>
+    await vfile.dump(await encode(node))
 
 /**
  * Get the full path to a file in the `__file_snapshots__` sibling directory

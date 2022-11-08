@@ -41,7 +41,8 @@ interface DecodeOptions extends CommonDecodeOptions {
  */
 export class GDocCodec
   extends Codec<{}, DecodeOptions>
-  implements Codec<{}, DecodeOptions> {
+  implements Codec<{}, DecodeOptions>
+{
   public readonly mediaTypes = ['application/vnd.google-apps.document']
 
   /**

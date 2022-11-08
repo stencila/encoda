@@ -28,32 +28,27 @@ export async function toFiles(
   const docDir = path.dirname(path.resolve(docPath))
   const mediaDir = path.resolve(docPath + '.media')
   let count = 0
-  return transform(
-    node,
-    async (node: schema.Node): Promise<schema.Node> => {
-      if (schema.isIn('MediaObjectTypes', node)) {
-        const { contentUrl, ...rest } = node
+  return transform(node, async (node: schema.Node): Promise<schema.Node> => {
+    if (schema.isIn('MediaObjectTypes', node)) {
+      const { contentUrl, ...rest } = node
 
-        if (contentUrl.startsWith('http')) {
-          if (!protocols.includes('http')) return node
-        } else if (contentUrl.startsWith('data')) {
-          if (!protocols.includes('data')) return node
-        } else if (!protocols.includes('file')) return node
+      if (contentUrl.startsWith('http')) {
+        if (!protocols.includes('http')) return node
+      } else if (contentUrl.startsWith('data')) {
+        if (!protocols.includes('data')) return node
+      } else if (!protocols.includes('file')) return node
 
-        const filePath = path.join(
-          mediaDir,
-          contentUrl.startsWith('data')
-            ? `${count++}`
-            : path.basename(contentUrl)
-        )
+      const filePath = path.join(
+        mediaDir,
+        contentUrl.startsWith('data') ? `${count++}` : path.basename(contentUrl)
+      )
 
-        await toFile(contentUrl, filePath)
-        return {
-          ...rest,
-          contentUrl: path.relative(docDir, filePath),
-        }
+      await toFile(contentUrl, filePath)
+      return {
+        ...rest,
+        contentUrl: path.relative(docDir, filePath),
       }
-      return node
     }
-  )
+    return node
+  })
 }
