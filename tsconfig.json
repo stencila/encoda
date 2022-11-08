@@ -4,7 +4,6 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "./dist",
-    "allowJs": true,
-    "types": ["node", "jest", "jest-matcher-utils", "jest-file-snapshot"]
+    "allowJs": true
   }
 }
