@@ -35,7 +35,7 @@ jobs:
           # allow for to prevent it running out (in Mb; Azure build agents have 6Gb
           # physical memory at time of writing). Aimed to avoid this:
           # https://dev.azure.com/stencila/stencila/_build/results?buildId=407&view=logs&j=93a04636-06ca-5d49-4f23-e6072abf78a3&t=b0cbcd7c-6809-5fdc-290f-01474a85fb2e&l=226
-          NODE_OPTIONS: --max_old_space_size=6000
+          NODE_OPTIONS: --max_old_space_size=8192
 
       - script: bash <(curl -s https://codecov.io/bash)
         displayName: 'Upload coverage'
