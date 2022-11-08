@@ -38,6 +38,10 @@ authors:
     givenNames:
       - Pramod
       - P.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-0108-7585
 dateAccepted:
   type: Date
   value: '2017-05-15'

@@ -18,6 +18,10 @@ authors:
     givenNames:
       - Katherine
       - G
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-4997-0150
   - type: Person
     affiliations:
       - type: Organization
@@ -46,6 +50,10 @@ authors:
       - Adhikari
     givenNames:
       - Santosh
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-1501-2106
   - type: Person
     affiliations:
       - type: Organization
@@ -59,6 +67,10 @@ authors:
       - Cuesta
     givenNames:
       - Sergio
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0001-9806-2805
   - type: Person
     affiliations:
       - type: Organization
@@ -75,6 +87,10 @@ authors:
       - Antonio
     givenNames:
       - Marco
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-7321-1867
   - type: Person
     affiliations:
       - type: Organization
@@ -100,6 +116,10 @@ authors:
     givenNames:
       - Gregory
       - J
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-4021-3898
   - type: Person
     affiliations:
       - type: Organization
@@ -112,6 +132,10 @@ authors:
       - Tannahill
     givenNames:
       - David
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-3811-6864
   - type: Person
     affiliations:
       - type: Organization
@@ -144,6 +168,10 @@ authors:
       - Balasubramanian
     givenNames:
       - Shankar
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-0281-5815
 dateAccepted:
   type: Date
   value: '2019-06-17'

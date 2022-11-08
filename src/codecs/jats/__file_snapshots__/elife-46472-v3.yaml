@@ -23,6 +23,10 @@ authors:
     givenNames:
       - Alexandra
       - M
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-4045-1888
   - type: Person
     affiliations:
       - type: Organization
@@ -40,6 +44,10 @@ authors:
       - Reed
     givenNames:
       - Cheryl
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-8798-2347
   - type: Person
     affiliations:
       - type: Organization
@@ -131,6 +139,10 @@ authors:
     givenNames:
       - Kim
       - A
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-0109-7345
   - type: Person
     affiliations:
       - type: Organization
@@ -206,6 +218,10 @@ authors:
     givenNames:
       - Tamara
       - J
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-7350-6323
 dateAccepted:
   type: Date
   value: '2019-07-04'

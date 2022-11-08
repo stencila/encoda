@@ -60,6 +60,10 @@ authors:
       - C
       - Conover
     honorificSuffix: Jr
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-3758-2425
   - type: Person
     affiliations:
       - type: Organization
@@ -131,6 +135,10 @@ authors:
           - Denis
         givenNames:
           - Alexandria
+        identifiers:
+          - type: PropertyValue
+            propertyID: https://registry.identifiers.org/registry/orcid
+            value: http://orcid.org/0000-0002-1210-2309
       - type: Person
         affiliations:
           - type: Organization
@@ -156,6 +164,10 @@ authors:
         givenNames:
           - Timothy
           - M
+        identifiers:
+          - type: PropertyValue
+            propertyID: https://registry.identifiers.org/registry/orcid
+            value: http://orcid.org/0000-0002-4959-5143
     name: 'Reproducibility Project: Cancer Biology'
 dateAccepted:
   type: Date

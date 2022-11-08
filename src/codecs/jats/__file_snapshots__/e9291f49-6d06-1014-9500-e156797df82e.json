@@ -109,6 +109,13 @@
       ],
       "givenNames": [
         "Pierre-Damien"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0003-3502-4814"
+        }
       ]
     },
     {
@@ -155,6 +162,13 @@
       ],
       "givenNames": [
         "Lluis"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-1283-9503"
+        }
       ]
     },
     {
@@ -220,6 +234,13 @@
       ],
       "givenNames": [
         "Kristina"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0003-1247-4265"
+        }
       ]
     }
   ],

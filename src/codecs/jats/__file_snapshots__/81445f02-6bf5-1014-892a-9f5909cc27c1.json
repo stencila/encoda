@@ -157,6 +157,13 @@
       ],
       "givenNames": [
         "Fanis"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0003-0467-8444"
+        }
       ]
     },
     {
@@ -203,6 +210,13 @@
       ],
       "givenNames": [
         "Kuanyu"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0001-9738-049X"
+        }
       ]
     }
   ],

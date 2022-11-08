@@ -869,6 +869,16 @@ function decodeContrib(
     const emails = all(contrib, 'email')
     if (emails.length) contributor.emails = emails.map(text)
 
+    const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
+    if (orcid) {
+      contributor.identifiers = [stencila.propertyValue(
+        {
+          propertyID: encodeIdentifierTypeUri('orcid'),
+          value: text(orcid)
+        }
+      )]
+    }
+
     let affiliations: stencila.Organization[] = []
 
     const affs = all(contrib, 'aff')

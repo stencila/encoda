@@ -118,6 +118,10 @@ authors:
       - Candelier
     givenNames:
       - Raphaël
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1523-6249
   - type: Person
     affiliations:
       - type: Organization
@@ -134,6 +138,10 @@ authors:
       - Debrégeas
     givenNames:
       - Georges
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-3698-4497
 dateAccepted:
   type: Date
   value: '2020-01-02'

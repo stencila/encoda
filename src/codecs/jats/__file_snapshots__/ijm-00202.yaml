@@ -19,6 +19,10 @@ authors:
       - Bucheli
     givenNames:
       - Marisa
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-0159-4712
   - type: Person
     affiliations:
       - type: Organization
@@ -33,6 +37,10 @@ authors:
       - Olivieri
     givenNames:
       - Cecilia
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-3388-0828
 datePublished:
   type: Date
   value: '2020-07-17'

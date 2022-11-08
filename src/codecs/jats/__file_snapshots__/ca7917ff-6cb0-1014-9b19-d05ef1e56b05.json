@@ -43,6 +43,13 @@
       ],
       "givenNames": [
         "Pierre-Yves"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-6309-3502"
+        }
       ]
     },
     {
@@ -62,6 +69,13 @@
       ],
       "givenNames": [
         "Pierre"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0001-5087-5866"
+        }
       ]
     },
     {
@@ -82,6 +96,13 @@
       "givenNames": [
         "Michael",
         "D."
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-5440-986X"
+        }
       ]
     }
   ],

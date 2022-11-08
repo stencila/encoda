@@ -45,6 +45,13 @@
       "givenNames": [
         "Veronica",
         "L."
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0003-0500-5639"
+        }
       ]
     },
     {
@@ -73,6 +80,13 @@
       "givenNames": [
         "Nicky",
         "M."
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-4179-6995"
+        }
       ]
     },
     {
@@ -93,6 +107,13 @@
       "givenNames": [
         "Stacey",
         "L."
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0001-6813-6682"
+        }
       ]
     }
   ],
