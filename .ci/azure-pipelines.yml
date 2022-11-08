@@ -22,9 +22,6 @@ jobs:
       - script: npm ci
         displayName: 'Install dependencies'
 
-      - script: npm run lint
-        displayName: 'Run linting'
-
       # Run tests with
       #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
       #   - Fifteen (!) minute test timeout
@@ -44,6 +41,7 @@ jobs:
         displayName: 'Upload coverage'
 
   - job: Docker
+    condition: false # Currently skipped
     pool:
       vmImage: ubuntu-latest
     steps:
