@@ -4710,3 +4710,12 @@ content:
     List of co-evolving genes.Column A describes the cluster number. Column B to
     D describes various identifiers and attributes of the genes used. Column E
     denotes the GCI.(XLSX)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        The work was supported by a research grant provided by Department of
+        Biotechnology, Government of India (Grant No: BT/EB/PAN IIT/2012).

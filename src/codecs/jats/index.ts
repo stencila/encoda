@@ -299,13 +299,17 @@ function decodeArticle(article: xml.Element): stencila.Article {
     child(article, 'front'),
     state
   )
-  const { meta: metaBack, ...back } = decodeBack(child(article, 'back'))
-  const metaAll = { ...metaFront, ...metaBack }
+
+  const body = decodeBody(child(article, 'body'), state)
+
+  const { references, ack } = decodeBack(child(article, 'back'), state)
+
+  const metaAll = { ...metaFront }
   const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
 
-  const content = decodeBody(child(article, 'body'), state)
+  const content = [...(body ?? []), ...(ack ?? [])]
 
-  return stencila.article({ ...front, ...back, meta, content })
+  return stencila.article({ ...front, references, meta, content })
 }
 
 /**
@@ -871,12 +875,12 @@ function decodeContrib(
 
     const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
     if (orcid) {
-      contributor.identifiers = [stencila.propertyValue(
-        {
+      contributor.identifiers = [
+        stencila.propertyValue({
           propertyID: encodeIdentifierTypeUri('orcid'),
-          value: text(orcid)
-        }
-      )]
+          value: text(orcid),
+        }),
+      ]
     }
 
     let affiliations: stencila.Organization[] = []
@@ -1059,11 +1063,40 @@ function decodeAff(aff: xml.Element): stencila.Organization {
  * Decode a JATS `<back>` element into properties of a Stencila `Article`
  */
 function decodeBack(
-  back: xml.Element | null
-): Pick<stencila.Article, 'references' | 'meta'> {
-  if (back === null) return {}
-  const references = decodeReferences(first(back, 'ref-list'))
-  return { references }
+  elem: xml.Element | null,
+  state: DecodeState
+): {
+  references?: stencila.Article['references']
+  ack?: stencila.BlockContent[]
+} {
+  if (elem === null) return {}
+
+  const references = decodeReferences(first(elem, 'ref-list'))
+  const ack = decodeAck(first(elem, 'ack'), state)
+
+  return { references, ack }
+}
+
+/**
+ * Decode a JATS `<ack>` element to a Stencila `BlockContent`
+ * including a `Acknowledgements` heading
+ *
+ * Any existing <title> (e.g. ACKNOW... all caps) or <label> (e.g. numeric section number) elements are ignored.
+ */
+function decodeAck(
+  elem: xml.Element | null,
+  state: DecodeState
+): stencila.BlockContent[] | undefined {
+  if (elem === null) return undefined
+
+  const filtered = (elem.elements ?? []).filter(
+    (elem) => elem.name !== 'title' && elem.name !== 'label'
+  )
+  const blocks = ensureBlockContentArray(decodeElements(filtered, state))
+  return [
+    stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
+    ...blocks,
+  ]
 }
 
 /**
