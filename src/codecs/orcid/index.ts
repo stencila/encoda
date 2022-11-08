@@ -7,6 +7,7 @@
 import { schema, http } from '@stencila/jesta'
 import { getLogger } from '@stencila/logga'
 import { load } from '../..'
+import { getErrorMessage } from '../../util/errors'
 
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
@@ -18,7 +19,8 @@ export class OrcidCodec extends Codec implements Codec {
 
   public readonly extNames = ['orcid']
 
-  public static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
+  public static regex =
+    /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
   public static apiVersion = 'v3.0'
 
@@ -43,7 +45,9 @@ export class OrcidCodec extends Codec implements Codec {
         if (response.statusCode === 200 && response.body.length > 0)
           return load(response.body, 'jsonld')
       } catch (error) {
-        log.error(`Error fetching or decoding JSON-LD: ${error.message}`)
+        log.error(
+          `Error fetching or decoding JSON-LD: ${getErrorMessage(error)}`
+        )
       }
     } else {
       log.error('Unable to parse content as ORCID')

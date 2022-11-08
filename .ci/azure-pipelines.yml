@@ -7,7 +7,7 @@ trigger:
 
 variables:
   - name: NODE_VERSION
-    value: '16.x'
+    value: '18.x'
 
 jobs:
   - job: Linux

@@ -33,7 +33,7 @@ export class XmlCodec extends Codec {
     try {
       doc = xml.load(content)
     } catch (error) {
-      log.error(error)
+      log.error(error as Error)
       return null
     }
     const node = decodeDoc(doc)

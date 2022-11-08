@@ -18,6 +18,7 @@ import schema from '@stencila/schema'
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
+import { getErrorMessage } from '../../util/errors'
 import log from '../../util/logging'
 import * as vfile from '../../util/vfile'
 import { OrcidCodec } from '../orcid'
@@ -60,7 +61,7 @@ export class PersonCodec extends Codec implements Codec {
             return person
       } catch (error) {
         // Log a warning (e.g. due to no network connection) but continue
-        log.warn(`Error attempting to decode ORCID: ${error.message}`)
+        log.warn(`Error attempting to decode ORCID: ${getErrorMessage(error)}`)
       }
     }
 

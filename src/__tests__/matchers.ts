@@ -45,6 +45,7 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
             file.path
           )}`
         else extra = `\n\nthe generated content was: ${file.contents}`
+        // @ts-expect-error because error is of unknown type
         return error.message + extra
       },
       pass: false,

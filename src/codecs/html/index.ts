@@ -2743,7 +2743,7 @@ function decodeEntity(elem: HTMLElement): stencila.Entity {
   try {
     return JSON5.parse(json)
   } catch (error) {
-    const { stack } = error
+    const { stack } = error as Error
     log.error({
       message: `Error parsing JSON: ${json}`,
       stack,

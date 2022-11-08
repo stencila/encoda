@@ -10,6 +10,7 @@ import Cite from 'citation-js'
 import crypto from 'crypto'
 import Csl from 'csl-json'
 import path from 'path'
+import { getErrorMessage } from '../../util/errors'
 import {
   logErrorNodeType,
   logWarnLoss,
@@ -48,7 +49,9 @@ export class CSLCodec extends Codec implements Codec {
       csls = await Cite.inputAsync(content, { forceType: format })
     } catch (error) {
       throw new Error(
-        `Error when parsing content of format ${format}: ${error.message}`
+        `Error when parsing content of format ${format}: ${getErrorMessage(
+          error
+        )}`
       )
     }
 
@@ -75,7 +78,7 @@ export class CSLCodec extends Codec implements Codec {
 
     let content = ''
     if (Array.isArray(node)) {
-      content = node.reduce(
+      content = (node as Node[]).reduce(
         (ns: string, n: schema.Node) => ns + encodeNode(n, format),
         ''
       )

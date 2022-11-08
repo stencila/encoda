@@ -61,8 +61,9 @@ export async function install(): Promise<void> {
   try {
     // Try to run the binary
     await binary.run()
-  } catch (error) {
-    if (error.name === 'InvalidBinaryVersion') {
+  } catch (err) {
+    const error = err as { name?: string }
+    if (error?.name === 'InvalidBinaryVersion') {
       // Incorrect version, so remove it, and try again
       log.info(`Removing previous version of Pandoc`)
       await fs.remove(binary.dest())

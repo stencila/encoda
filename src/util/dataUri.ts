@@ -2,7 +2,7 @@
  * @module util/dataUri
  */
 
-import { getLogger } from '@stencila/logga'
+import { getLogger, LogEvent } from '@stencila/logga'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
@@ -62,7 +62,8 @@ export async function fromFile(
   let data = ''
   try {
     data = await fs.readFile(filePath, 'base64')
-  } catch (error) {
+  } catch (err) {
+    const error = err as LogEvent & { code: string }
     if (error.code === 'ENOENT') {
       log.warn(`Image file does not exist, ignoring: ${filePath}`)
     } else {

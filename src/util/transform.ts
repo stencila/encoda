@@ -45,7 +45,7 @@ export default async function transform(
       return transformed
 
     if (Array.isArray(transformed))
-      return transformed.reduce(
+      return (transformed as Node[]).reduce(
         async (prev: Promise<schema.Node[]>, child) => [
           ...(await prev),
           await walk(child, transformed),
@@ -78,7 +78,7 @@ export function transformSync(
       return transformed
 
     if (Array.isArray(transformed)) {
-      return transformed.reduce((prev: schema.Node[], child) => {
+      return (transformed as Node[]).reduce((prev: schema.Node[], child) => {
         const trans = walk(child)
         return trans !== undefined ? [...prev, trans] : prev
       }, [])

@@ -14,6 +14,7 @@ import {
   commonEncodeDefaults,
   CommonEncodeOptions,
 } from './codecs/types'
+import { getErrorMessage } from './util/errors'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
 
@@ -153,17 +154,18 @@ export async function match(
           return new exports[C]()
         }
       }
-    } catch (error) {
+    } catch (err) {
       // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
       // is normal behavior and doing so causes unnecessary noise and anxiety :)
       // (But do warn if a module other than that looked for was not found!)
+      const error = err as { code?: string }
       if (
         !(
           error.code === 'MODULE_NOT_FOUND' &&
-          error.message.includes(name) === true
+          getErrorMessage(error).includes(name) === true
         )
       )
-        log.warn(error)
+        log.warn(error as Error)
     }
   }
 

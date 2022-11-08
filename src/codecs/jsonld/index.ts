@@ -56,7 +56,7 @@ const documentLoader = async (url: string): Promise<any> => {
       },
     })
   } catch (error) {
-    log.error(error)
+    log.error(error as Error)
     return null
   }
   // Cache and return document

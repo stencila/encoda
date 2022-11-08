@@ -24,6 +24,7 @@ import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
+import { getErrorMessage } from '../../util/errors'
 import { encodeIdentifierTypeUri } from '../../util/identifiers'
 import { encodeCiteAuthorsYear } from '../../util/references'
 import transform from '../../util/transform'
@@ -93,7 +94,8 @@ export class JatsCodec extends Codec implements Codec {
       const stat = await fs.stat(content)
       if (stat.isFile()) content = await fs.readFile(content, 'utf8')
     }
-    const regex = /<!DOCTYPE\s+article\s+PUBLIC\s+"|'-\/\/NLM\/\/DTD JATS \(Z39\.96\)/
+    const regex =
+      /<!DOCTYPE\s+article\s+PUBLIC\s+"|'-\/\/NLM\/\/DTD JATS \(Z39\.96\)/
     return regex.test(content)
   }
 
@@ -907,9 +909,7 @@ function decodeContrib(
  * node types of the `Article.authors` property) into
  * a JATS `<contrib contrib-type = "author">` element.
  */
-function encodeAuthor(
-  author: stencila.Person | stencila.Organization
-): {
+function encodeAuthor(author: stencila.Person | stencila.Organization): {
   auth: xml.Element
   affs: xml.Element[]
 } {
@@ -1826,15 +1826,13 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const type = attr(elem, 'list-type')
   const order =
     type === 'bullet' || type === 'simple' ? 'Unordered' : 'Ascending'
-  const items = all(elem, 'list-item').map(
-    (item): stencila.ListItem => {
-      return stencila.listItem({
-        content: ensureBlockContentArray(
-          decodeElements(item.elements ?? [], state)
-        ),
-      })
-    }
-  )
+  const items = all(elem, 'list-item').map((item): stencila.ListItem => {
+    return stencila.listItem({
+      content: ensureBlockContentArray(
+        decodeElements(item.elements ?? [], state)
+      ),
+    })
+  })
   return [stencila.list({ items, order })]
 }
 
@@ -2197,7 +2195,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
       const root = xml.load(text)
       if (root?.elements?.length) inner = root.elements[0]
     } catch (error) {
-      log.error(`Error parsing MathML:\n${error.message}\n${text}`)
+      log.error(`Error parsing MathML:\n${getErrorMessage(error)}\n${text}`)
     }
   }
 
@@ -2371,9 +2369,10 @@ function decodeStatement(
 
   let claimType
   if (label !== undefined) {
-    const match = /\b(Statement|Theorem|Lemma|Proof|Postulate|Hypothesis|Proposition|Corollary)\b/i.exec(
-      label
-    )
+    const match =
+      /\b(Statement|Theorem|Lemma|Proof|Postulate|Hypothesis|Proposition|Corollary)\b/i.exec(
+        label
+      )
     if (match) {
       const type = match[0]
       claimType = (type.charAt(0).toUpperCase() +

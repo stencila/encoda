@@ -169,7 +169,8 @@ async function decodeResource(
   let data: any[]
   try {
     data = await resource.read()
-  } catch (error) {
+  } catch (err) {
+    const error = err as { multiple: boolean; errors: Error[] }
     if (error.multiple) {
       for (const err of error.errors) logger.error(err)
     }
@@ -274,9 +275,8 @@ function encodeDatatableColumn(
   const field = { name }
   if (!validator) return field
 
-  const { type, format, constraints } = encodeDatatableColumnValidator(
-    validator
-  )
+  const { type, format, constraints } =
+    encodeDatatableColumnValidator(validator)
   if (validator.uniqueItems) constraints.unique = true
 
   return { ...field, type, format, constraints }
@@ -360,9 +360,9 @@ export function decodeFieldTypeFormat(
  * Note that the the `unique` constraints are handled elsewhere. Only constraints that
  * apply to items should be returned here.
  */
-export function decodeFieldConstraints(constraints: {
+export function decodeFieldConstraints(constraints: { [key: string]: any }): {
   [key: string]: any
-}): { [key: string]: any } {
+} {
   const items: { [key: string]: any } = {}
   if (constraints.minimum) items.minimum = constraints.minimum
   if (constraints.maximum) items.maximum = constraints.maximum

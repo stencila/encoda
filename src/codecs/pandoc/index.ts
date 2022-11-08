@@ -321,9 +321,10 @@ async function decodeDocument(
  * converted to CSL JSON and included in the Pandoc document's
  * `meta` so that `pandoc-citeproc` can recognize them.
  */
-function encodeNode(
-  node: stencila.Node
-): { standalone: boolean; pdoc: Pandoc.Document } {
+function encodeNode(node: stencila.Node): {
+  standalone: boolean
+  pdoc: Pandoc.Document
+} {
   let standalone = false
   let meta: Pandoc.Meta = {}
   let blocks: Pandoc.Block[] = []
@@ -377,14 +378,10 @@ export async function decodeMeta(
   meta: Pandoc.Meta,
   docPath?: string
 ): Promise<Record<string, stencila.Node>> {
-  const {
-    title,
-    author,
-    date,
-    bibliography,
-    references,
-    ...rest
-  } = objectMap(meta, (_, value) => decodeMetaValue(value))
+  const { title, author, date, bibliography, references, ...rest } = objectMap(
+    meta,
+    (_, value) => decodeMetaValue(value)
+  )
 
   if (title !== undefined) {
     rest.title =
@@ -1511,12 +1508,8 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
   const citations = cite.c[0]
 
   const cites = citations.map((citation) => {
-    const {
-      citationId,
-      citationMode,
-      citationPrefix,
-      citationSuffix,
-    } = citation
+    const { citationId, citationMode, citationPrefix, citationSuffix } =
+      citation
     return stencila.cite({
       target: citationId,
       citationMode:
@@ -1695,14 +1688,14 @@ async function encodeRpng(
     app: 'Encoda',
     node,
   })
-  const { url: linkUrl } = await http.client
+  const { url: linkUrl } = (await http.client
     .post('https://hub.stenci.la/api/nodes', {
       headers: {
         Authorization: `Token ${process.env.STENCILA_API_TOKEN}`,
       },
       body: json,
     })
-    .json()
+    .json()) as { url: string }
 
   return {
     t: 'Link',
