@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`issue 700: Handle inline elements in Article description does not nest inline elements inside extra paragraphs 1`] = `
-"<section data-itemprop=\\"description\\">
-    <h2 data-itemtype=\\"http://schema.stenci.la/Heading\\">Abstract</h2>
-    <meta itemprop=\\"description\\" content=\\"Paragraph with  a link and let's throw in our 1 st superscript shall we?\\">
-    <p itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Paragraph\\">Paragraph with <a href=\\"http://stenci.la\\" itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Link\\">a link</a>and
-      let's throw in our 1<sup itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Superscript\\">st</sup>superscript shall we?</p>
+"<section data-itemprop="description">
+    <h2 data-itemtype="http://schema.stenci.la/Heading">Abstract</h2>
+    <meta itemprop="description" content="Paragraph with  a link and let's throw in our 1 st superscript shall we?">
+    <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Paragraph with <a href="http://stenci.la" itemscope="" itemtype="http://schema.stenci.la/Link">a link</a>and
+      let's throw in our 1<sup itemscope="" itemtype="http://schema.stenci.la/Superscript">st</sup>superscript shall we?</p>
   </section>"
 `;
 
 exports[`issue 700: Handle inline elements in Article description does not wrap the description if it is already a paragraph 1`] = `
-"<section data-itemprop=\\"description\\">
-    <h2 data-itemtype=\\"http://schema.stenci.la/Heading\\">Abstract</h2>
-    <meta itemprop=\\"description\\" content=\\"Paragraph with a linkand let's throw in our 1stsuperscript shall we?\\">
-    <p itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Paragraph\\">Paragraph with <a href=\\"http://stenci.la\\" itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Link\\">a link</a>and
-      let's throw in our 1<sup itemscope=\\"\\" itemtype=\\"http://schema.stenci.la/Superscript\\">st</sup>superscript shall we?</p>
+"<section data-itemprop="description">
+    <h2 data-itemtype="http://schema.stenci.la/Heading">Abstract</h2>
+    <meta itemprop="description" content="Paragraph with a linkand let's throw in our 1stsuperscript shall we?">
+    <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Paragraph with <a href="http://stenci.la" itemscope="" itemtype="http://schema.stenci.la/Link">a link</a>and
+      let's throw in our 1<sup itemscope="" itemtype="http://schema.stenci.la/Superscript">st</sup>superscript shall we?</p>
   </section>"
 `;

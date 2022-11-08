@@ -3,9 +3,9 @@
 exports[`encode works on flat collection 1`] = `
 "<dar>
     <documents>
-        <document id=\\"one\\" type=\\"article\\" path=\\"one.jats.xml\\"></document>
-        <document id=\\"two\\" type=\\"article\\" path=\\"two.jats.xml\\"></document>
-        <document id=\\"three\\" type=\\"article\\" path=\\"three.jats.xml\\"></document>
+        <document id="one" type="article" path="one.jats.xml"></document>
+        <document id="two" type="article" path="two.jats.xml"></document>
+        <document id="three" type="article" path="three.jats.xml"></document>
     </documents>
     <assets></assets>
 </dar>"
@@ -14,11 +14,11 @@ exports[`encode works on flat collection 1`] = `
 exports[`encode works on mixed collection 1`] = `
 "<dar>
     <documents>
-        <document id=\\"one\\" type=\\"article\\" path=\\"one.jats.xml\\"></document>
-        <document id=\\"three\\" type=\\"article\\" path=\\"three.jats.xml\\"></document>
+        <document id="one" type="article" path="one.jats.xml"></document>
+        <document id="three" type="article" path="three.jats.xml"></document>
     </documents>
     <assets>
-        <asset id=\\"two\\" type=\\"text/csv\\" path=\\"two.csv\\" sync=\\"true\\"></asset>
+        <asset id="two" type="text/csv" path="two.csv" sync="true"></asset>
     </assets>
 </dar>"
 `;
@@ -26,11 +26,11 @@ exports[`encode works on mixed collection 1`] = `
 exports[`encode works with multiple media asset protocols 1`] = `
 "<dar>
     <documents>
-        <document id=\\"creativework-0\\" type=\\"article\\" path=\\"creativework-0.jats.xml\\"></document>
+        <document id="creativework-0" type="article" path="creativework-0.jats.xml"></document>
     </documents>
     <assets>
-        <asset id=\\"creativework-0-0\\" type=\\"image/png\\" path=\\"creativework-0-0\\" sync=\\"false\\"></asset>
-        <asset id=\\"creativework-0-1\\" type=\\"image/png\\" path=\\"creativework-0-1.png\\" sync=\\"false\\"></asset>
+        <asset id="creativework-0-0" type="image/png" path="creativework-0-0" sync="false"></asset>
+        <asset id="creativework-0-1" type="image/png" path="creativework-0-1.png" sync="false"></asset>
     </assets>
 </dar>"
 `;

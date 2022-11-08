@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`decode decodes an orcid to a Person 1`] = `
-Object {
-  "affiliations": Array [
-    Object {
+{
+  "affiliations": [
+    {
       "alternateNames": "Psychoceramics",
-      "identifiers": Object {
+      "identifiers": {
         "propertyID": "RINGGOLD",
         "type": "PropertyValue",
         "value": "5468",
@@ -13,9 +13,9 @@ Object {
       "name": "Wesleyan University",
       "type": "Organization",
     },
-    Object {
+    {
       "alternateNames": "Psychoceramics",
-      "identifiers": Object {
+      "identifiers": {
         "propertyID": "RINGGOLD",
         "type": "PropertyValue",
         "value": "6752",
@@ -24,7 +24,7 @@ Object {
       "type": "Organization",
     },
   ],
-  "alternateNames": Array [
+  "alternateNames": [
     "Josiah Stinkney Carberry",
     "J. Carberry",
     "J. S. Carberry",
@@ -32,20 +32,20 @@ Object {
   "familyNames": "Carberry",
   "givenNames": "Josiah",
   "id": "https://orcid.org/0000-0002-1825-0097",
-  "identifiers": Object {
+  "identifiers": {
     "propertyID": "Scopus Author ID",
     "type": "PropertyValue",
     "value": "7007156898",
   },
-  "schema:mainEntityOfPage": Object {
+  "schema:mainEntityOfPage": {
     "id": "https://orcid.org/0000-0002-1825-0097",
   },
   "type": "Person",
-  "url": Array [
-    Object {
+  "url": [
+    {
       "id": "http://library.brown.edu/about/hay/carberry.php",
     },
-    Object {
+    {
       "id": "http://en.wikipedia.org/wiki/Josiah_Carberry",
     },
   ],
