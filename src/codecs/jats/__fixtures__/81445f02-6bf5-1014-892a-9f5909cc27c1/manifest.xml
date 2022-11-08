@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="497502v1">
+<title>Aging-related iron deposit prevents the benefits of HRT from late postmenopausal atherosclerosis</title>
+<instance media-type="application/xml" href="content/497502.xml"/>
+<instance media-type="application/pdf" href="content/497502.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="transfer" type="transfer-details">
+<title>MECA Transfer Info</title>
+<instance media-type="application/meca-xfer+xml" href="transfer.xml"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1</title>
+<instance media-type="image/tiff" href="content/497502v1_fig1.tif"/>
+</item>
+<item id="fig2" type="figure">
+<title>Figure 2</title>
+<instance media-type="image/tiff" href="content/497502v1_fig2.tif"/>
+</item>
+<item id="fig3" type="figure">
+<title>Figure 3</title>
+<instance media-type="image/tiff" href="content/497502v1_fig3.tif"/>
+</item>
+<item id="fig4" type="figure">
+<title>Figure 4</title>
+<instance media-type="image/tiff" href="content/497502v1_fig4.tif"/>
+</item>
+<item id="fig5" type="figure">
+<title>Figure 5</title>
+<instance media-type="image/tiff" href="content/497502v1_fig5.tif"/>
+</item>
+<item id="fig6" type="figure">
+<title>Figure 6</title>
+<instance media-type="image/tiff" href="content/497502v1_fig6.tif"/>
+</item>
+<item id="fig7" type="figure">
+<title>Figure 7</title>
+<instance media-type="image/tiff" href="content/497502v1_fig7.tif"/>
+</item>
+<item id="figS1" type="figure">
+<title>Figure S1</title>
+<instance media-type="image/tiff" href="content/497502v1_figS1.tif"/>
+</item>
+<item id="figS2" type="figure">
+<title>Figure S2</title>
+<instance media-type="image/tiff" href="content/497502v1_figS2.tif"/>
+</item>
+<item id="figS3" type="figure">
+<title>Figure S3</title>
+<instance media-type="image/tiff" href="content/497502v1_figS3.tif"/>
+</item>
+</manifest>

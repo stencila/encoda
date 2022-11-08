@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="22275761v1">
+<title>The role of adolescent lifestyle habits in biological aging: A prospective twin study</title>
+<instance media-type="application/xml" href="content/22275761.xml"/>
+<instance media-type="application/pdf" href="content/22275761.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="transfer" type="transfer-details">
+<title>MECA Transfer Info</title>
+<instance media-type="application/meca-xfer+xml" href="transfer.xml"/>
+</item>
+<item id="supp1" type="supplement">
+<title>Supplementary material</title>
+<instance media-type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="content/supplements/275761_file03.docx"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1</title>
+<instance media-type="image/tiff" href="content/22275761v1_fig1.tif"/>
+</item>
+<item id="fig2" type="figure">
+<title>Figure 2</title>
+<instance media-type="image/tiff" href="content/22275761v1_fig2.tif"/>
+</item>
+<item id="fig3" type="figure">
+<title>Figure 3</title>
+<instance media-type="image/tiff" href="content/22275761v1_fig3.tif"/>
+</item>
+<item id="fig4" type="figure">
+<title>Figure 4</title>
+<instance media-type="image/tiff" href="content/22275761v1_fig4.tif"/>
+</item>
+<item id="tbl1" type="table">
+<title>Table 1</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl1.tif"/>
+</item>
+<item id="tbl1a" type="table">
+<title>Table 1</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl1a.tif"/>
+</item>
+<item id="tbl2" type="table">
+<title>Table 2</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl2.tif"/>
+</item>
+<item id="tbl3" type="table">
+<title>Table 3</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl3.tif"/>
+</item>
+<item id="tbl4" type="table">
+<title>Table 4</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl4.tif"/>
+</item>
+<item id="tbl4a" type="table">
+<title>Table 4</title>
+<instance media-type="image/tiff" href="content/22275761v1_tbl4a.tif"/>
+</item>
+<item id="inline1" type="equation">
+<instance media-type="image/gif" href="content/22275761v1_inline1.gif"/>
+</item>
+<item id="inline2" type="equation">
+<instance media-type="image/gif" href="content/22275761v1_inline2.gif"/>
+</item>
+<item id="inline3" type="equation">
+<instance media-type="image/gif" href="content/22275761v1_inline3.gif"/>
+</item>
+</manifest>

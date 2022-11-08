@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="493855v1">
+<title>Selection and the direction of phenotypic evolution</title>
+<instance media-type="application/xml" href="content/493855.xml"/>
+<instance media-type="application/pdf" href="content/493855.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="transfer" type="transfer-details">
+<title>MECA Transfer Info</title>
+<instance media-type="application/meca-xfer+xml" href="transfer.xml"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1</title>
+<instance media-type="image/tiff" href="content/493855v1_fig1.tif"/>
+</item>
+<item id="fig2" type="figure">
+<title>Figure 2</title>
+<instance media-type="image/tiff" href="content/493855v1_fig2.tif"/>
+</item>
+<item id="fig3" type="figure">
+<title>Figure 3</title>
+<instance media-type="image/tiff" href="content/493855v1_fig3.tif"/>
+</item>
+<item id="fig4" type="figure">
+<title>Figure 4</title>
+<instance media-type="image/tiff" href="content/493855v1_fig4.tif"/>
+</item>
+<item id="fig5" type="figure">
+<title>Figure 5</title>
+<instance media-type="image/tiff" href="content/493855v1_fig5.tif"/>
+</item>
+<item id="fig6" type="figure">
+<title>Figure 6</title>
+<instance media-type="image/tiff" href="content/493855v1_fig6.tif"/>
+</item>
+<item id="fig7" type="figure">
+<title>Figure 7</title>
+<instance media-type="image/tiff" href="content/493855v1_fig7.tif"/>
+</item>
+<item id="figS1" type="figure">
+<title>Figure S1</title>
+<instance media-type="image/tiff" href="content/493855v1_figS1.tif"/>
+</item>
+<item id="figS2" type="figure">
+<title>Figure S2</title>
+<instance media-type="image/tiff" href="content/493855v1_figS2.tif"/>
+</item>
+<item id="figS3" type="figure">
+<title>Figure S3</title>
+<instance media-type="image/tiff" href="content/493855v1_figS3.tif"/>
+</item>
+<item id="figS4" type="figure">
+<title>Figure S4</title>
+<instance media-type="image/tiff" href="content/493855v1_figS4.tif"/>
+</item>
+<item id="figS5" type="figure">
+<title>Figure S5</title>
+<instance media-type="image/tiff" href="content/493855v1_figS5.tif"/>
+</item>
+<item id="figS6" type="figure">
+<title>Figure S6</title>
+<instance media-type="image/tiff" href="content/493855v1_figS6.tif"/>
+</item>
+<item id="figS7" type="figure">
+<title>Figure S7</title>
+<instance media-type="image/tiff" href="content/493855v1_figS7.tif"/>
+</item>
+<item id="figS8" type="figure">
+<title>Figure S8</title>
+<instance media-type="image/tiff" href="content/493855v1_figS8.tif"/>
+</item>
+<item id="tbl1" type="table">
+<title>Table 1</title>
+<instance media-type="image/tiff" href="content/493855v1_tbl1.tif"/>
+</item>
+<item id="tbl2" type="table">
+<title>Table 2</title>
+<instance media-type="image/tiff" href="content/493855v1_tbl2.tif"/>
+</item>
+<item id="tbl3" type="table">
+<title>Table 3</title>
+<instance media-type="image/tiff" href="content/493855v1_tbl3.tif"/>
+</item>
+<item id="tbl4" type="table">
+<title>Table 4</title>
+<instance media-type="image/tiff" href="content/493855v1_tbl4.tif"/>
+</item>
+<item id="eqn1" type="equation">
+<title>Equation 1</title>
+<instance media-type="image/gif" href="content/493855v1_eqn1.gif"/>
+</item>
+<item id="eqn2" type="equation">
+<title>Equation 2</title>
+<instance media-type="image/gif" href="content/493855v1_eqn2.gif"/>
+</item>
+<item id="eqn3" type="equation">
+<title>Equation 3</title>
+<instance media-type="image/gif" href="content/493855v1_eqn3.gif"/>
+</item>
+<item id="eqn4" type="equation">
+<title>Equation 4</title>
+<instance media-type="image/gif" href="content/493855v1_eqn4.gif"/>
+</item>
+<item id="eqn5" type="equation">
+<title>Equation 5</title>
+<instance media-type="image/gif" href="content/493855v1_eqn5.gif"/>
+</item>
+<item id="eqn6" type="equation">
+<title>Equation 6</title>
+<instance media-type="image/gif" href="content/493855v1_eqn6.gif"/>
+</item>
+<item id="eqn7" type="equation">
+<title>Equation 7</title>
+<instance media-type="image/gif" href="content/493855v1_eqn7.gif"/>
+</item>
+<item id="eqn8" type="equation">
+<title>Equation 8</title>
+<instance media-type="image/gif" href="content/493855v1_eqn8.gif"/>
+</item>
+<item id="eqn9" type="equation">
+<title>Equation 9</title>
+<instance media-type="image/gif" href="content/493855v1_eqn9.gif"/>
+</item>
+<item id="eqn10" type="equation">
+<title>Equation 10</title>
+<instance media-type="image/gif" href="content/493855v1_eqn10.gif"/>
+</item>
+<item id="eqn11" type="equation">
+<title>Equation 11</title>
+<instance media-type="image/gif" href="content/493855v1_eqn11.gif"/>
+</item>
+<item id="eqn12" type="equation">
+<title>Equation 12</title>
+<instance media-type="image/gif" href="content/493855v1_eqn12.gif"/>
+</item>
+<item id="inline1" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline1.gif"/>
+</item>
+<item id="inline2" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline2.gif"/>
+</item>
+<item id="inline3" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline3.gif"/>
+</item>
+<item id="inline4" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline4.gif"/>
+</item>
+<item id="inline5" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline5.gif"/>
+</item>
+<item id="inline6" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline6.gif"/>
+</item>
+<item id="inline7" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline7.gif"/>
+</item>
+<item id="inline8" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline8.gif"/>
+</item>
+<item id="inline9" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline9.gif"/>
+</item>
+<item id="inline10" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline10.gif"/>
+</item>
+<item id="inline11" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline11.gif"/>
+</item>
+<item id="inline12" type="equation">
+<instance media-type="image/gif" href="content/493855v1_inline12.gif"/>
+</item>
+</manifest>

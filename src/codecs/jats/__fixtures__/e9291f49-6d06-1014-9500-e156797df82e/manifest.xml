@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="501569v1">
+<title>Hepatic lipid overload potentiates biliary epithelial cell activation via E2Fs</title>
+<instance media-type="application/xml" href="content/501569.xml"/>
+<instance media-type="application/pdf" href="content/501569.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="transfer" type="transfer-details">
+<title>MECA Transfer Info</title>
+<instance media-type="application/meca-xfer+xml" href="transfer.xml"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1</title>
+<instance media-type="image/tiff" href="content/501569v1_fig1.tif"/>
+</item>
+<item id="fig2" type="figure">
+<title>Figure 2</title>
+<instance media-type="image/tiff" href="content/501569v1_fig2.tif"/>
+</item>
+<item id="fig3" type="figure">
+<title>Figure 3</title>
+<instance media-type="image/tiff" href="content/501569v1_fig3.tif"/>
+</item>
+<item id="fig4" type="figure">
+<title>Figure 4</title>
+<instance media-type="image/tiff" href="content/501569v1_fig4.tif"/>
+</item>
+<item id="figs1" type="figure">
+<title>Figure 1 - figure supplement 1</title>
+<instance media-type="image/tiff" href="content/501569v1_figs1.tif"/>
+</item>
+<item id="figs2" type="figure">
+<title>Figure 2 - figure supplement 1</title>
+<instance media-type="image/tiff" href="content/501569v1_figs2.tif"/>
+</item>
+<item id="figs3" type="figure">
+<title>Figure 3 - figure supplement 1</title>
+<instance media-type="image/tiff" href="content/501569v1_figs3.tif"/>
+</item>
+<item id="figs4" type="figure">
+<title>Figure 4 - figure supplement 1</title>
+<instance media-type="image/tiff" href="content/501569v1_figs4.tif"/>
+</item>
+<item id="tbls3" type="table">
+<title>Appendix 1 - Table 3</title>
+<instance media-type="image/tiff" href="content/501569v1_tbls3.tif"/>
+</item>
+</manifest>

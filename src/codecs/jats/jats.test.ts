@@ -17,8 +17,10 @@ import {
   postalAddress,
   Organization,
 } from '@stencila/schema'
+import { JsonCodec } from '../json'
 
 const jats = new JatsCodec()
+const json = new JsonCodec()
 const yaml = new YamlCodec()
 
 const { sniff } = jats
@@ -103,6 +105,19 @@ test.each([
       isStandalone: true,
     })
   ).toMatchFile(snapshot(`${name}.jats.xml`))
+})
+
+// Tests of MECA to JSON
+test.each([
+  ['06908fc3-73df-1014-bb56-a21daa237ef0', '493855.xml'],
+  ['48c60452-6c66-1014-adf9-c7b61873ecd3', '498369.xml'],
+  ['81445f02-6bf5-1014-892a-9f5909cc27c1', '497502.xml'],
+  ['ca7917ff-6cb0-1014-9b19-d05ef1e56b05', '468444.xml'],
+  ['d6f14042-6db3-1014-b228-f9da7cb8e4cc', '22275761.xml'],
+  ['e9291f49-6d06-1014-9500-e156797df82e', '501569.xml'],
+])('decode + encode : %s', async (meca, file) => {
+  const node = unlinkFiles(await jats.read(fixture(`${meca}/content/${file}`)))
+  expect(await json.dump(node)).toMatchFile(snapshot(`${meca}.json`))
 })
 
 describe('authors', () => {

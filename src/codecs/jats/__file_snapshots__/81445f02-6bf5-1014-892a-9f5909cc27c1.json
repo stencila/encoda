@@ -1,0 +1,5460 @@
+{
+  "type": "Article",
+  "about": [
+    {
+      "type": "DefinedTerm",
+      "name": "New Results"
+    }
+  ],
+  "authors": [
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School"
+        }
+      ],
+      "familyNames": [
+        "Xu"
+      ],
+      "givenNames": [
+        "Tianze"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School"
+        }
+      ],
+      "familyNames": [
+        "Cai"
+      ],
+      "givenNames": [
+        "Jing"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School"
+        }
+      ],
+      "familyNames": [
+        "Wang"
+      ],
+      "givenNames": [
+        "Lei"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "Jiangsu Key Laboratory of Molecular Medicine, Medical School of Nanjing University"
+        }
+      ],
+      "familyNames": [
+        "Xu"
+      ],
+      "givenNames": [
+        "Li"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "Jiangsu Key Laboratory of Molecular Medicine, Medical School of Nanjing University"
+        }
+      ],
+      "familyNames": [
+        "Zhao"
+      ],
+      "givenNames": [
+        "Hongting"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "Department of Nutrition, School of Public Health, School of Medicine, Zhejiang University"
+        }
+      ],
+      "familyNames": [
+        "Wang"
+      ],
+      "givenNames": [
+        "Fudi"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Israel"
+          },
+          "name": "Faculty of Biotechnology and Food Engineering, Technion Israel Institute of Technology"
+        }
+      ],
+      "familyNames": [
+        "Meyron-Holtz"
+      ],
+      "givenNames": [
+        "Esther"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Mexico"
+          },
+          "name": "Department of Physiology, Biophysics and Neuroscience"
+        }
+      ],
+      "familyNames": [
+        "Missirlis"
+      ],
+      "givenNames": [
+        "Fanis"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School"
+        }
+      ],
+      "familyNames": [
+        "Qiao"
+      ],
+      "givenNames": [
+        "Tong"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School"
+        },
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "P. R. China"
+          },
+          "name": "Jiangsu Key Laboratory of Molecular Medicine, Medical School of Nanjing University"
+        }
+      ],
+      "familyNames": [
+        "Li"
+      ],
+      "givenNames": [
+        "Kuanyu"
+      ]
+    }
+  ],
+  "dateAccepted": {
+    "type": "Date",
+    "value": "2022-06-25"
+  },
+  "datePublished": {
+    "type": "Date",
+    "value": "2022-00-00"
+  },
+  "dateReceived": {
+    "type": "Date",
+    "value": "2022-06-24"
+  },
+  "description": [
+    "Postmenopausal atherosclerosis has been attributed to estrogen deficiency. The beneficial effect of hormone replacement therapy (HRT), however, is lost in late postmenopausal women with atherogenesis. We asked whether aging-related iron accumulation affects estrogen receptor α (ERα) expression explaining HRT inefficacy. A negative correlation between aging-related systemic iron deposition and ERα expression in postmenopausal AS patients was established. In an ovariectomized ApoE",
+    {
+      "type": "Superscript",
+      "content": [
+        "-/-"
+      ]
+    },
+    " mouse model, estradiol treatment had contrasting effects on ERα expression in early versus late postmenopausal mice. ERα expression was inhibited by iron treatment in cell culture and iron-overloaded mice. Combined treatment with estradiol and iron further decreased ERα expression, mediated by iron-regulated E3 ligase Mdm2. In line with these observations, cellular cholesterol efflux was reduced and endothelial homeostasis was disrupted and, consequently, atherosclerosis was aggravated. Accordingly, systemic iron chelation attenuated estradiol-triggered progressive atherosclerosis in late postmenopausal mice. Thus, iron and estradiol together downregulate ERα through Mdm2-mediated proteolysis, explaining failures of HRT in late postmenopausal subjects with aging-related iron accumulation. HRT is recommended immediately after menopause along with appropriate iron chelation to protect from atherosclerosis."
+  ],
+  "identifiers": [
+    {
+      "type": "PropertyValue",
+      "name": "doi",
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "10.1101/2022.06.24.497502"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "elocation-id",
+      "propertyID": "https://registry.identifiers.org/registry/elocation-id",
+      "value": "2022.06.24.497502"
+    }
+  ],
+  "isPartOf": {
+    "type": "Periodical",
+    "identifiers": [
+      {
+        "type": "PropertyValue",
+        "name": "publisher-id",
+        "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+        "value": "BIORXIV"
+      }
+    ],
+    "issns": [],
+    "publisher": {
+      "type": "Organization",
+      "name": "Cold Spring Harbor Laboratory"
+    },
+    "title": "bioRxiv"
+  },
+  "keywords": [
+    "Atherosclerosis",
+    "iron metabolism",
+    "post menopause",
+    "estrogen receptor α",
+    "hormone replacement therapy"
+  ],
+  "licenses": [
+    {
+      "type": "CreativeWork",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "content": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "This pre-print is available under a Creative Commons License (Attribution 4.0 International), CC BY 4.0, as described at ",
+            {
+              "type": "Link",
+              "target": "http://creativecommons.org/licenses/by/4.0/",
+              "content": [
+                "http://creativecommons.org/licenses/by/4.0/"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "Article",
+      "id": "c1",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Int J Mol Sci"
+      },
+      "pageStart": 21,
+      "title": "The Role of Estrogen Receptors in Cardiovascular Disease"
+    },
+    {
+      "type": "Article",
+      "id": "c2",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Journal of sports sciences"
+      },
+      "pageEnd": 11,
+      "pageStart": 1,
+      "title": "Iron status in athletic females, a shift in perspective on an old paradigm"
+    },
+    {
+      "type": "Article",
+      "id": "c3",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Arterioscler Thromb Vasc Biol"
+        },
+        "volumeNumber": 34
+      },
+      "pageEnd": 1485,
+      "pageStart": 1477,
+      "title": "Estrogen effects on vascular inflammation are age dependent: role of estrogen receptors"
+    },
+    {
+      "type": "Article",
+      "id": "c4",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of physiology and biochemistry"
+        },
+        "volumeNumber": 74
+      },
+      "pageEnd": 343,
+      "pageStart": 335,
+      "title": "Protective effects of mitochondrion- targeted peptide SS-31 against hind limb ischemia-reperfusion injury"
+    },
+    {
+      "type": "Article",
+      "id": "c5",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell & bioscience"
+        },
+        "volumeNumber": 10
+      },
+      "pageStart": 137,
+      "title": "Iron accumulation in macrophages promotes the formation of foam cells and development of atherosclerosis"
+    },
+    {
+      "type": "Article",
+      "id": "c6",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "International journal of molecular sciences"
+      },
+      "pageStart": 21,
+      "title": "Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells"
+    },
+    {
+      "type": "Article",
+      "id": "c7",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Accounts of chemical research"
+        },
+        "volumeNumber": 54
+      },
+      "pageEnd": 1093,
+      "pageStart": 1080,
+      "title": "Strategy for Treatment of Infected Diabetic Foot Ulcers"
+    },
+    {
+      "type": "Article",
+      "id": "c8",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2010"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "The American Journal of Pathology"
+        },
+        "volumeNumber": 176
+      },
+      "pageEnd": 1017,
+      "pageStart": 1006,
+      "title": "Iron-Dependent Regulation of MDM2 Influences p53 Activity and Hepatic Carcinogenesis"
+    },
+    {
+      "type": "Article",
+      "id": "c9",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2007"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cancer Res"
+        },
+        "volumeNumber": 67
+      },
+      "pageEnd": 5521,
+      "pageStart": 5513,
+      "title": "Differential regulation of estrogen receptor alpha turnover and transactivation by Mdm2 and stress-inducing agents"
+    },
+    {
+      "type": "Article",
+      "id": "c10",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2001"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Oncogene"
+        },
+        "volumeNumber": 20
+      },
+      "pageEnd": 87,
+      "pageStart": 77,
+      "title": "Role of direct interaction in BRCA1 inhibition of estrogen receptor activity"
+    },
+    {
+      "type": "Article",
+      "id": "c11",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "The Journal of clinical endocrinology and metabolism"
+        },
+        "volumeNumber": 94
+      },
+      "pageEnd": 3520,
+      "pageStart": 3513,
+      "title": "Vascular endothelial estrogen receptor alpha is modulated by estrogen status and related to endothelial function and endothelial nitric oxide synthase in healthy women"
+    },
+    {
+      "type": "Article",
+      "id": "c12",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cellular physiology and biochemistry : international journal of experimental cellular physiology, biochemistry, and pharmacology"
+        },
+        "volumeNumber": 50
+      },
+      "pageEnd": 720,
+      "pageStart": 706,
+      "title": "High Glucose Promotes Epithelial- Mesenchymal Transition of Uterus Endometrial Cancer Cells by Increasing ER/GLUT4-Mediated VEGF Secretion"
+    },
+    {
+      "type": "Article",
+      "id": "c13",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2002"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "JAMA"
+        },
+        "volumeNumber": 287
+      },
+      "pageEnd": 597,
+      "pageStart": 591,
+      "title": "Quality-of-life and depressive symptoms in postmenopausal women after receiving hormone therapy: results from the Heart and Estrogen/Progestin Replacement Study (HERS) trial"
+    },
+    {
+      "type": "Article",
+      "id": "c14",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "1997"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "FEBS Letters"
+        },
+        "volumeNumber": 420
+      },
+      "pageEnd": 27,
+      "pageStart": 25,
+      "title": "Oncoprotein MDM2 is a ubiquitin ligase E3 for tumor suppressor p53"
+    },
+    {
+      "type": "Article",
+      "id": "c15",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Gene"
+        },
+        "volumeNumber": 511
+      },
+      "pageEnd": 403,
+      "pageStart": 398,
+      "title": "Estrogen regulates iron homeostasis through governing hepatic hepcidin expression via an estrogen response element"
+    },
+    {
+      "type": "Article",
+      "id": "c16",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Bone"
+        },
+        "volumeNumber": 55
+      },
+      "pageEnd": 460,
+      "pageStart": 458,
+      "title": "Dancing with sex hormones, could iron contribute to the gender difference in osteoporosis?"
+    },
+    {
+      "type": "Article",
+      "id": "c17",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLoS One"
+        },
+        "volumeNumber": 7
+      },
+      "title": "Estrogen regulates hepcidin expression via GPR30-BMP6-dependent signaling in hepatocytes"
+    },
+    {
+      "type": "Article",
+      "id": "c18",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2006"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Mol Endocrinol"
+        },
+        "volumeNumber": 20
+      },
+      "pageEnd": 2214,
+      "pageStart": 2199,
+      "title": "Molecular mechanism of inhibitory aryl hydrocarbon receptor-estrogen receptor/Sp1 cross talk in breast cancer cells"
+    },
+    {
+      "type": "Article",
+      "id": "c19",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Scientific reports"
+        },
+        "volumeNumber": 8
+      },
+      "pageStart": 5118,
+      "title": "Iron regulatory protein deficiency compromises mitochondrial function in murine embryonic fibroblasts"
+    },
+    {
+      "type": "Article",
+      "id": "c20",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nat Rev Endocrinol"
+        },
+        "volumeNumber": 13
+      },
+      "pageEnd": 231,
+      "pageStart": 220,
+      "title": "Hormone-replacement therapy: current thinking"
+    },
+    {
+      "type": "Article",
+      "id": "c21",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Hormones & cancer"
+        },
+        "volumeNumber": 11
+      },
+      "pageEnd": 147,
+      "pageStart": 129,
+      "title": "Intrinsic and Extrinsic Factors Governing the Transcriptional Regulation of ESR1"
+    },
+    {
+      "type": "Article",
+      "id": "c22",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of cellular and molecular medicine"
+        },
+        "volumeNumber": 24
+      },
+      "pageEnd": 1140,
+      "pageStart": 1128,
+      "title": "Fibroblast growth factor-2/platelet-derived growth factor enhances atherosclerotic plaque stability"
+    },
+    {
+      "type": "Article",
+      "id": "c23",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Adv Res"
+        },
+        "volumeNumber": 28
+      },
+      "pageEnd": 164,
+      "pageStart": 149,
+      "title": "Estrogen prevent atherosclerosis by attenuating endothelial cell pyroptosis via activation of estrogen receptor alpha- mediated autophagy"
+    },
+    {
+      "type": "Article",
+      "id": "c24",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nat Rev Immunol"
+        },
+        "volumeNumber": 13
+      },
+      "pageEnd": 721,
+      "pageStart": 709,
+      "title": "Macrophages in atherosclerosis: a dynamic balance"
+    },
+    {
+      "type": "Article",
+      "id": "c25",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pharmacology & therapeutics"
+        },
+        "volumeNumber": 203
+      },
+      "pageStart": 107387,
+      "title": "The endothelial mineralocorticoid receptor: Contributions to sex differences in cardiovascular disease"
+    },
+    {
+      "type": "Article",
+      "id": "c26",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Circulation research"
+        },
+        "volumeNumber": 109
+      },
+      "pageEnd": 696,
+      "pageStart": 687,
+      "title": "Estrogen signaling and cardiovascular disease"
+    },
+    {
+      "type": "Article",
+      "id": "c27",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Science"
+        },
+        "volumeNumber": 306
+      },
+      "pageEnd": 2093,
+      "pageStart": 2090,
+      "title": "Hepcidin regulates cellular iron efflux by binding to ferroportin and inducing its internalization"
+    },
+    {
+      "type": "Article",
+      "id": "c28",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Molecular and cellular biology"
+        },
+        "volumeNumber": 24
+      },
+      "pageEnd": 4612,
+      "pageStart": 4605,
+      "title": "Molecular and cellular determinants of estrogen receptor alpha expression"
+    },
+    {
+      "type": "Article",
+      "id": "c29",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell Signal"
+        },
+        "volumeNumber": 27
+      },
+      "pageEnd": 942,
+      "pageStart": 934,
+      "title": "Estrogen contributes to regulating iron metabolism through governing ferroportin signaling via an estrogen response element"
+    },
+    {
+      "type": "Article",
+      "id": "c30",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Proceedings of the National Academy of Sciences of the United States of America"
+        },
+        "volumeNumber": 108
+      },
+      "pageEnd": 16462,
+      "pageStart": 16457,
+      "title": "Myeloid-specific estrogen receptor alpha deficiency impairs metabolic homeostasis and accelerates atherosclerotic lesion development"
+    },
+    {
+      "type": "Article",
+      "id": "c31",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Mol Cell Endocrinol"
+        },
+        "volumeNumber": 389
+      },
+      "pageEnd": 12,
+      "pageStart": 7,
+      "title": "Oophorectomy, estrogen, and dementia: a 2014 update"
+    },
+    {
+      "type": "Article",
+      "id": "c32",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2002"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "JAMA"
+        },
+        "volumeNumber": 288
+      },
+      "pageEnd": 333,
+      "pageStart": 321,
+      "title": "Risks and benefits of estrogen plus progestin in healthy postmenopausal women: principal results From the Women’s Health Initiative randomized controlled trial"
+    },
+    {
+      "type": "Article",
+      "id": "c33",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2001"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Biochem Biophys Res Commun"
+        },
+        "volumeNumber": 281
+      },
+      "pageEnd": 265,
+      "pageStart": 259,
+      "title": "MDM2 enhances the function of estrogen receptor alpha in human breast cancer cells"
+    },
+    {
+      "type": "Article",
+      "id": "c34",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "1981"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "The Lancet"
+        },
+        "volumeNumber": 317
+      },
+      "pageEnd": 1294,
+      "pageStart": 1293,
+      "title": "Iron and the Sex Difference in Heart Disease Risk"
+    },
+    {
+      "type": "Article",
+      "id": "c35",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2003"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "American Heart Journal"
+        },
+        "volumeNumber": 145
+      },
+      "pageEnd": 194,
+      "pageStart": 190,
+      "title": "Are menstruating women protected from heart disease because of, or in spite of, estrogen? Relevance to the iron hypothesis"
+    },
+    {
+      "type": "Article",
+      "id": "c36",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Clin Breast Cancer"
+        },
+        "volumeNumber": 17
+      },
+      "pageEnd": 10,
+      "pageStart": 1,
+      "title": "Mechanisms that Increase Stability of Estrogen Receptor Alpha in Breast Cancer"
+    },
+    {
+      "type": "Article",
+      "id": "c37",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Trends in endocrinology and metabolism: TEM"
+        },
+        "volumeNumber": 31
+      },
+      "pageEnd": 784,
+      "pageStart": 773,
+      "title": "Estrogen-Mediated Gaseous Signaling Molecules in Cardiovascular Disease"
+    },
+    {
+      "type": "Article",
+      "id": "c38",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European heart journal"
+        },
+        "volumeNumber": 41
+      },
+      "pageEnd": 2695,
+      "pageStart": 2681,
+      "title": "Atherosclerosis is aggravated by iron overload and ameliorated by dietary and pharmacological iron restriction"
+    },
+    {
+      "type": "Article",
+      "id": "c39",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Paediatric and perinatal epidemiology"
+        },
+        "volumeNumber": 23
+      },
+      "pageEnd": 184,
+      "pageStart": 171,
+      "title": "BioCycle study: design of the longitudinal study of the oxidative stress and hormone variation during the menstrual cycle"
+    },
+    {
+      "type": "Article",
+      "id": "c40",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell death & disease"
+        },
+        "volumeNumber": 12
+      },
+      "pageStart": 254,
+      "title": "CTRP12 ameliorates atherosclerosis by promoting cholesterol efflux and inhibiting inflammatory response via the miR-155-5p/LXRα pathway"
+    },
+    {
+      "type": "Article",
+      "id": "c41",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of atherosclerosis and thrombosis"
+        },
+        "volumeNumber": 23
+      },
+      "pageStart": 1201,
+      "title": "Iron Together with Lipid Downregulates Protein Levels of Ceruloplasmin in Macrophages Associated with Rapid Foam Cell Formation"
+    },
+    {
+      "type": "Article",
+      "id": "c42",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Frontiers in cell and developmental biology"
+        },
+        "volumeNumber": 9
+      },
+      "pageStart": 641852,
+      "title": "Relationship Between Autophagy and Metabolic Syndrome Characteristics in the Pathogenesis of Atherosclerosis"
+    },
+    {
+      "type": "Article",
+      "id": "c43",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Endocrinology"
+        },
+        "volumeNumber": 153
+      },
+      "pageEnd": 3178,
+      "pageStart": 3170,
+      "title": "17beta-Estradiol inhibits iron hormone hepcidin through an estrogen responsive element half-site"
+    },
+    {
+      "type": "Article",
+      "id": "c44",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2007"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Womens Health (Lond"
+        },
+        "volumeNumber": 3
+      },
+      "pageEnd": 194,
+      "pageStart": 173,
+      "title": "Meta-analyses of the effect of hormone treatment on cognitive function in postmenopausal women"
+    },
+    {
+      "type": "Article",
+      "id": "c45",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology"
+        },
+        "volumeNumber": 34
+      },
+      "pageEnd": 2311,
+      "pageStart": 2301,
+      "title": "Mdm2 is a target and mediator of IRP2 in cell growth control"
+    },
+    {
+      "type": "Article",
+      "id": "c46",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "The Journal of clinical investigation"
+        },
+        "volumeNumber": 129
+      },
+      "pageEnd": 2350,
+      "pageStart": 2333,
+      "title": "CB1 agonism prolongs therapeutic window for hormone replacement in ovariectomized mice"
+    },
+    {
+      "type": "Article",
+      "id": "c47",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Aging"
+      },
+      "pageStart": 13,
+      "title": "Melatonin attenuates smoking-induced atherosclerosis by activating the Nrf2 pathway via NLRP3 inflammasomes in endothelial cells"
+    },
+    {
+      "type": "Article",
+      "id": "c48",
+      "authors": [],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature reviews Cancer"
+        },
+        "volumeNumber": 14
+      },
+      "pageEnd": 38,
+      "pageStart": 26,
+      "title": "Links between oestrogen receptor activation and proteolysis: relevance to hormone-regulated cancer therapy"
+    }
+  ],
+  "title": "Aging-related iron deposit prevents the benefits of HRT from late postmenopausal atherosclerosis",
+  "meta": {
+    "authorNotes": [
+      "*Tianze Xu and Jing Cai contributed equally to this work"
+    ]
+  },
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "1."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s1",
+      "depth": 1,
+      "content": [
+        "Introduction"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Atherosclerosis (AS) is the leading cause of cardiovascular disease-associated death worldwide ",
+        {
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Moss ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2019"
+          ]
+        },
+        ". It has been well recognized that postmenopausal women confront an increasing risk of AS owing to estrogen deficiency and disturbance of the estrogen receptor (ER) regulatory network ",
+        {
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Moss ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2019"
+          ]
+        },
+        ". Nevertheless, the therapeutic effect of hormone replacement therapy (HRT) remains controversial. Women’s Health Initiative and the Heart and Estrogen/Progestin Replacement Study reported that the atheroprotective effect of HRT in the late postmenopausal women (commonly ages over 65) is lost or even worsened ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c13",
+              "content": [
+                "Hlatky ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2002"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c31",
+              "content": [
+                "Rocca ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c32",
+              "content": [
+                "Rossouw ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2002"
+              ]
+            }
+          ]
+        },
+        ". The underlying mechanism may be triggered by aging, which reduces the protection afforded by estrogen, particularly estradiol (E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In general, the atheroprotective effect of estrogen is attributed to its interaction with estrogen receptor α (ERα), which participates in foam cell formation and vascular remodeling ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Murphy, 2011"
+          ]
+        },
+        ". ERα deletion is reported to induce adiposity and increase atherosclerotic lesion size since the promoters of lipid metabolism-related genes, such as ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Tgm2"
+          ]
+        },
+        ", ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE,"
+          ]
+        },
+        " and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Abca1"
+          ]
+        },
+        ", contain ERα binding sites ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "Ribas ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2011"
+          ]
+        },
+        ". In addition, estrogen binds to ERα tethered to the plasma membrane, which can stimulate vasodilatation via an endothelial nitric oxide synthase (eNOS)-dependent pathway",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c11",
+              "content": [
+                "Gavin ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c37",
+              "content": [
+                "Teoh ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            }
+          ]
+        },
+        ". Moreover, VEGF promotes angiogenesis and is transcriptionally regulated by the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-ERα complex ",
+        {
+          "type": "Cite",
+          "target": "c12",
+          "content": [
+            "Gu ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2018"
+          ]
+        },
+        ". ERα expression decreases after menopause ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c11",
+              "content": [
+                "Gavin ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c46",
+              "content": [
+                "Zhang ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2019"
+              ]
+            }
+          ]
+        },
+        ", suggesting the critical role of ERα in blood vessel function in healthy pre- and postmenopausal women. Despite the above, few studies have focused on the regulation of ERα in postmenopausal women on HRT."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Upon binding, estrogen functions as an ERα activator ",
+        {
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Lung ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        " and initiates ERα dimerization and translocation into the nucleus. Estrogen treatment ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "in vitro"
+          ]
+        },
+        " leads to a marked increase in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Esr1"
+          ]
+        },
+        " (gene that encodes ERα) mRNA through the binding of the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-ERα complex to estrogen-responsive elements (EREs) in the promoter region of ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Esr1"
+          ]
+        },
+        " ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Pinzone ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2004"
+          ]
+        },
+        ". Estrogen binding to ERα also rapidly stimulates ubiquitination and proteasomal degradation of ERα ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Pinzone ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2004"
+          ]
+        },
+        ". Ubiquitination-dependent ERα cycling on and off the ERE promoter sites to activate or prevent target gene transcription depends on the presence of estrogen at an adequate concentration ",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Zhou & Slingerland, 2014"
+          ]
+        },
+        ". Ubiquitin ligases that have been implicated in ERα regulation include BRCA1, MDM2, SKP1–CUL1–F-box S-phase kinase-associated protein 2 (SCF",
+        {
+          "type": "Superscript",
+          "content": [
+            "SKP2"
+          ]
+        },
+        "), and E6-associated protein (E6AP), all of which promote estrogen-induced transcriptional activity with cell-type selectivity ",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Zhou & Slingerland, 2014"
+          ]
+        },
+        ". Of these, MDM2 is a single-subunit RING finger E3 protein, which does not always inversely correlate with ERα levels in cancer cells ",
+        {
+          "type": "Cite",
+          "target": "c9",
+          "content": [
+            "Duong ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2007"
+          ]
+        },
+        ". The relationship between MDM2 and ERα in other contexts and cell types remains elusive."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Estrogen also regulates systemic iron homeostasis through hepcidin, an antimicrobial peptide of 25 amino acids that mediates endocytosis and degradation of the ferrous iron exporter ferroportin 1 (Fpn1) ",
+        {
+          "type": "Cite",
+          "target": "c27",
+          "content": [
+            "Nemeth ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2004"
+          ]
+        },
+        ". The dimeric E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-ERα complex binds to an ERE site within the promoter of the hepcidin gene (",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Hamp"
+          ]
+        },
+        ") to inhibit its expression ",
+        {
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Hou ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2012"
+          ]
+        },
+        ". Hence, E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " elevates circulating iron to compensate for blood loss during menstruation ",
+        {
+          "type": "Cite",
+          "target": "c2",
+          "content": [
+            "Badenhorst ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2021"
+          ]
+        },
+        ". However, E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " declines by over 90% after menopause, while systemic iron content increases slowly by steady iron uptake over the years. Serum ferritin in postmenopausal women increased by 2-3 times compared with premenopausal women ",
+        {
+          "type": "Cite",
+          "target": "c16",
+          "content": [
+            "Huang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2013"
+          ]
+        },
+        ". We and others have previously reported that iron overload is a risk factor for atherosclerosis ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c5",
+              "content": [
+                "Cai ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Vinchi ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            }
+          ]
+        },
+        ". Our study relied on using the proatherogenic ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        "mouse model, which we can manipulate genetically to cause iron overload ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        ". We aimed to investigate the impact of aging-related iron accumulation on the therapeutic effect of HRT on AS and explore the underlying mechanisms. First, we corroborated on a new cohort of postmenopausal AS patients that a negative correlation between high concentrations of serum-iron and -ferritin and low expression of ERα exists. We hypothesized that gradual iron accumulation in postmenopausal women could explain poor HRT efficacy when applied at a late stage."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We used ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " aging female mice or ovariectomized (OVX) young mice as estrogen-deficient AS models to examine ERα expression with respect to HRT efficacy and the genetic iron-overload mice in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " background (",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        ") to address the relation of iron metabolism and HRT efficacy. We found that ERα expression positively responded to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration under low or normal iron conditions and negatively responded to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration under high iron conditions. Our results explain the puzzle of HRT in early and late postmenopausal women, and the reason is the accelerated ERα proteolysis through iron-mediated upregulation of ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Mdm2"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2",
+      "depth": 1,
+      "content": [
+        "Methods and Materials"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.1"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2a",
+      "depth": 2,
+      "content": [
+        "Participants"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Participants in this study included 20 postmenopausal (at least one year since menopause, without HRT) AS patients aged 54-84 years, recruited from the Vascular Surgery Department, The Affiliated Drum Tower Hospital, Nanjing University Medical School. Patients were divided into early (55-65 years old) and late (>65 years old) groups since menopause for over ten years was defined as late post-menopause. Twenty fasting serum samples were collected at the outpatient service. Of them, eight patients, undergoing carotid endarterectomy, were recruited, and plaque samples were collected immediately after separation. Exclusion criteria included the current use of oral contraceptives or other medications. Further details on the exclusion criteria were referenced ",
+        {
+          "type": "Cite",
+          "target": "c39",
+          "content": [
+            "Wactawski-Wende ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2009"
+          ]
+        },
+        ". This study complies with the Declaration of Helsinki, and the Institutional Review Board of Nanjing Drum Tower Hospital, the Affiliated Hospital of Nanjing University Medical School, approved the study. All patients provided written informed consent."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.2"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2b",
+      "depth": 2,
+      "content": [
+        "Animals"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " mice were obtained from the Model Animal Research Center of Nanjing University (Nanjing, China). ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        " mice on the C57BL/6J background were generated in our previous study ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        ". For the control experiments included in Results 2 and 6, female ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " mice at the age of 8 weeks (defined as premenopausal) were anesthetized and bilaterally ovariectomized through a 1 cm dorsal incision. After surgery, mice were allowed to recover for one week and randomly divided into early and late groups. For each group, mice were fed a high-fat diet (0.2% cholesterol and 20% fat) and injected with saline, E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " (3 μg/kg every other day, Solarbio, Beijing, China), or E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "+DFP (80 mg/kg daily, Sigma–Aldrich, St. Louis, MO) for eight weeks from week nine as the early OVX group or week 21 as the late OVX group."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "For the control experiments included in Result 3, female ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        "and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        " mice were ovariectomized at the age of 16 or 40 weeks. E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " injection (3 μg/kg every other day) was performed one week after surgery for eight weeks. All animals were housed and fed standard chow in the SPF animal facility with an average 12 h light-and-dark cycle and under controlled temperature conditions (25°C). The mice were anesthetized with an intraperitoneal injection of pentobarbital sodium (40 mg/kg) and euthanized by cervical dislocation for sample collection. The protocols were approved by the Animal Investigation Ethics Committee of The Affiliated Drum Tower Hospital of Nanjing University Medical School and were performed according to the Guidelines for the Care and Use of Laboratory Animals published by the National Institutes of Health, USA."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.3"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2c",
+      "depth": 2,
+      "content": [
+        "Cell culture"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "J774a.1 cells, HUVECs, and MCF-7 cells were purchased from Cellcook (Guangzhou, China) and cultured in DMEM (Gibco, Life Technologies, UK) supplemented with 10% fetal bovine serum (FBS). Peritoneal macrophages were collected from peritoneal exudates three days after injecting 8-week-old mice with 0.3 ml of 4% BBL thioglycollate, Brewer modified (BD Biosciences, Shanghai, China), and then cultured in RPMI 1640 medium supplemented with 10% (FBS) for 8 h. Macrophages were cultured in a medium containing 50 μg/ml human oxidized low-density lipoprotein (oxLDL) in the presence of 1 μM E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        ", 100 μM ferric ammonium citrate (FAC), 350 μM DFP or indicated combination for 48 h as needed."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Oil Red O staining was performed to evaluate foam cell formation. The quantification was carried out with the following formula: relative average area of the fat droplet (%) = Target (Area of fat droplets/Numbers of cells)/Control (Area of fat droplets/Number of cells)*100%. The area was analyzed by ImageJ software. Angiogenesis assays were performed to evaluate angiogenic capacity. Cellular iron levels were estimated using ferrozine assays. The protein levels of ERα, ABCA1, VEGF, TfR1, and Ft-L were determined by Western blot analysis."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.4"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2d",
+      "depth": 2,
+      "content": [
+        "Isolation of peritoneal macrophages from mice"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The mice were intraperitoneally injected with 4% starch broth (NaCl 0.5 g, beef extract 0.3 g, peptone 1.0 g, and starch 3.0 g in 100 ml of distilled H",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "O) 3 days before euthanasia. After anesthesia, the abdominal skin was carefully cut to 1 cm, and 5-8 ml PBS with 3% FBS was injected into the enterocoele. After 10 min of massage, the liquid was extracted and centrifuged (1000 rpm, 5 min). The sediment was then plated into 6-well plates for attachment or cryopreserved for further assays."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.5"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2e",
+      "depth": 2,
+      "content": [
+        "Blood samples and tissue collection"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The mice were anesthetized with an intraperitoneal injection of pentobarbital sodium (40 mg/kg) and euthanized by cervical dislocation. Blood was drawn from the inferior vena cava and collected in heparinized tubes. Plasma was prepared by centrifugation (1200 ×g) for 15 min at 4°C. Plasma samples were then stored at -80°C for the determination of serum iron, lipid and cytokine levels. The mice were then perfused with 4°C saline through the left ventricle. After perfusion, the arteries, hearts, livers, and spleens were harvested. The samples were fixed in 4% paraformaldehyde or quickly frozen at -80°C for further analysis."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.6"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2f",
+      "depth": 2,
+      "content": [
+        "Serum lipid content and lesion area in the aorta and the aortic root"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Lipid content was determined with Oil Red O to stain the aorta. To assess the atherosclerotic lesion area, the aorta was analyzed from the aorta arch to the abdominal aortic bifurcation. The quantification of lesion area and size was performed using ImageJ software. Serum cholesterol and triglycerides were measured by the clinical laboratory of Nanjing Drum Tower Hospital using an autochemical analyser (Beckman Coulter AU5421, CA)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.7"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2g",
+      "depth": 2,
+      "content": [
+        "Immunohistochemistry (IHC) and Prussian blue staining"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Sections of mouse aortic valve or patient carotid artery plaques were used to assess the plaque iron composition by IHC staining for Ft-L and Prussian blue staining with DAB enhancement for ferric iron. The primary antibody against Ft-L was made using recombinant human Ft-L subunit as antigen by GenScript (Nanjing, China)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Images were captured under a light microscope (Leica, Germany). For quantitative analysis of images, three sections per animal at intervals of 30 μm were analyzed. The intensity of positive staining was analyzed by ImageJ software."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.8"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2h",
+      "depth": 2,
+      "content": [
+        "Iron assays"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Deparaffinized tissue sections were stained with Prussian blue staining for nonheme iron as previously described ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Wang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2016"
+          ]
+        },
+        ". Serum iron was measured by the clinical laboratory of Nanjing Drum Tower Hospital using an autochemical analyser (Beckman Coulter AU5421, CA). Total nonheme iron in the tissues was measured by colorimetric ferrozine-based assays as previously described ",
+        {
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Li ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2018"
+          ]
+        },
+        ". Briefly, 22 μl concentrated HCl (11.6 M) was added to 100 μl of homogenized tissue samples (approximately 500 μg total protein). The sample was then heated at 95°C for 20 min, followed by centrifugation at 12000 g for 10 min. The supernatant was transferred into a clean tube. Ascorbate was added to reduce the Fe3",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " into Fe2",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ". After 2 min of incubation at room temperature, ferrozine and saturated ammonium acetate (NH4Ac) were sequentially added to each tube, and the absorbance was measured at 570 nm (BioTek ELx800, Shanghai, China) within 30 min."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.9"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2i",
+      "depth": 2,
+      "content": [
+        "Determination of eNOS and ferritin by ELISA"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "eNOS (Abcam, Cambridge, MA) and ferritin (USBiological, #F4015-11, Swampscott, MA) were detected by ELISA according to the manufacturer’s protocols."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.10"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2j",
+      "depth": 2,
+      "content": [
+        "Western blotting"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Protein lysates were run in gels and transferred to membranes as previously reported ",
+        {
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2018"
+          ]
+        },
+        ". The membranes were probed using antibodies directed against ERα, eNOS and VEGF purchased from Servicebio (Wuhan, China), ABCA1, BRCA1, AHR, and SOD2 from Abcam, TfR1 from ProteinTech Group Inc. (Chicago, IL), GAPDH from Bioworld Tech. (St. Louis Park, MN), ferritin L (Ft-L) made by using purified human ferritin L subunit as antigen by GenScript (Nanjing, China)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.11"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2k",
+      "depth": 2,
+      "content": [
+        "Detection of catalase enzymatic activity"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The activities of catalase were measured following the manufacturer’s protocols of the CAT assay kit (Jiancheng Bioengineering, Nanjing, China)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.22"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2l",
+      "depth": 2,
+      "content": [
+        "Quantitative real-time PCR (qRT–PCR)"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Total cellular RNA was isolated from peritoneal macrophages using TRIzol (Invitrogen, Carlsbad, CA) and reversely transcribed to cDNA. qRT–PCR experiments were performed with SYBR Green PCR master mixture (Thermo Fisher Scientific). The primer sequences were as follows: 5’-TTATGGGGTCTGGTCCTGTG-3’ and 5’-CATCTCTCTGACGCTTGTGC-3’ for ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Esr1"
+          ]
+        },
+        ", 5’-GCCACTGCCGCATCCTCTTC-3’ and 5’-AGCCTCAGGGCATCGGAACC-3’ for ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Actin"
+          ]
+        },
+        ", and 5’-TGTCTGTGTCTACCGAGGGTG-3’ and 5’-TCCAACGGACTTTAACAACTTCA-3’ for ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Mdm2"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.13"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2m",
+      "depth": 2,
+      "content": [
+        "Immunoprecipitation (IP) and detection of ubiquitin"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "ERα proteins were immunoprecipitated from J774a.1 cell lysates according to the manufacturer’s protocols (11204D, Invitrogen). The ERα antibody was the same as that used for Western blotting and was purchased from Santa Cruz (1:200 dilution). Western blotting was used to detect the efficiency of IP and the level of ubiquitin."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.14"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2n",
+      "depth": 2,
+      "content": [
+        "Angiogenesis assays"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Matrigel (50 μL/well) was transferred to a 96-well plate, followed by inoculation of HUVECs (2 × 10",
+        {
+          "type": "Superscript",
+          "content": [
+            "4"
+          ]
+        },
+        " cells) and treatment with the medicines described in the cell culture. After 8 hours, images were captured with an inverted microscope. The extent of tube formation was assessed by measuring branch points and capillary length using the ‘Angiogenesis Analyser’ plug-in designed by Gilles Carpentier with ImageJ software."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "2.15"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2o",
+      "depth": 2,
+      "content": [
+        "Statistical analysis"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "All experiments were randomized and blinded. All the data are presented as the mean ± SD. A two-tailed Student’s t-test (for two groups) or one-way analysis of variance followed by multiple comparisons test with Bonferroni correction (for more than two groups) was performed by using SPSS 17.0 (SPSS Inc, Chicago, IL). P < 0.05 indicated statistical significance."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3",
+      "depth": 1,
+      "content": [
+        "Results"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.1"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3a",
+      "depth": 2,
+      "content": [
+        "ERα protein abundance correlates inversely with systemic and local plaque iron content in aging postmenopausal women with AS"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To build the link between iron contents and ERα levels in different postmenopausal stages, we collected 8 plaques and 20 blood samples from postmenopausal AS patients, divided a half into Early (55-65 years old, n=4/10, plaque/blood samples) and another half into Late (>66 years old, n=4/10) Post-Menopausal groups, EPM and LPM, respectively. Ferritin was evaluated by IHC, ELISA, and immunoblotting, and iron was evaluated by DAB-enhanced Prussian blue staining. As expected, both ferritin and iron levels were significantly increased in plaques and serum of the LPM, compared to the EPM (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1A-C, E"
+          ]
+        },
+        "). In addition, serum cholesterol and triglycerides were elevated in the LPM (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1D"
+          ]
+        },
+        "). By contrast, plaque ERα expression was lower in the EPM than in the LPM (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1E"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "ERα levels were negatively associated with iron content in human plaques."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Ferritin (Ft-L), revealed by immunohistochemistry, and iron content, revealed by DAB-enhanced Prussian blue staining, in plaque paraffin sections of 8 postmenopausal patients. The upper panel: the early postmenopausal (EPM) group (P1-P4, < 65 years old); the lower panel: the late postmenopausal (LPM) group (P5-P8, > 65 years old). (B) Serum iron in EPM (blue) and LPM (magenta) patients, measured by using an autochemical analyser (Beckman Coulter AU5421, CA). n=10/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001. (C) Serum ferritin levels detected by ELISA. n=10/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001. (D) Serum total cholesterol (left) and total triglyceride (right) levels. n=10/group, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, ** ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (E) ERα and Ft-L expression in plaques measured by Western blotting. The samples are the same as in (A). (F) The plotted and calculated Pearson correlation coefficient (",
+            {
+              "type": "Emphasis",
+              "content": [
+                "r ="
+              ]
+            },
+            " -0.7205) between the plaque Ft-L and ERα levels (n=8, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " = 0.0438)."
+          ]
+        }
+      ],
+      "label": "Figure 1",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Pearson correlation analysis between ERα and ferritin levels in the plaques confirmed that ERα levels were negatively correlated with iron levels (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1F"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.2"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3b",
+      "depth": 2,
+      "content": [
+        "AS aggravates in E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-treated LPM ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " mice with reduced ERα expression and accumulation of body iron"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To determine whether the effect of HRT was atheroprotective in postmenopausal females, ovariectomy (OVX) was performed to mimic post-menopause in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " female mice at eight weeks of age (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2A"
+          ]
+        },
+        "). The mice started to be fed high-fat chow one week post OVX. Ages of 9 weeks and 21 weeks were considered as EPM and LPM stages, respectively. Although peritoneal E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " injection in the EPM significantly reduced plaque formation, it remarkably promoted atherosclerotic development in the late application (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2B"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "2C"
+          ]
+        },
+        "), exactly as observed in humans ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c13",
+              "content": [
+                "Hlatky ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2002"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c32",
+              "content": [
+                "Rossouw ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2002"
+              ]
+            }
+          ]
+        },
+        ". We then detected aortic ERα expression to evaluate whether ERα was responsive to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment. The results showed markedly lower ERα protein levels in the LPM mice than in the EPM mice (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2D"
+          ]
+        },
+        "). More strikingly, ERα expression was further reduced in LPM mice after E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment but remained constantly high in EPM mice (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2D"
+          ]
+        },
+        "). It has been reported that ERα protects against atherosclerosis by promoting lipid efflux and endothelial homeostasis ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c40",
+              "content": [
+                "Wang ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2021"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c47",
+              "content": [
+                "Zhao ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2021"
+              ]
+            }
+          ]
+        },
+        ". Hence, we assessed three ERα downstream proteins, ABCA1, a lipid exporter whose gene promoter is predicted to have ERE, VEGF, an activator of angiogenesis, and eNOS, a modulator of vasoconstriction and vascular repair. They were all positively correlated with ERα expression (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2D"
+          ]
+        },
+        "). Macrophage-derived foam cell formation is crucial in the development of atherogenesis ",
+        {
+          "type": "Cite",
+          "target": "c42",
+          "content": [
+            "Xu ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2021"
+          ]
+        },
+        ". We therefore isolated peritoneal macrophages from early and late OVX mice after E2 treatment and surprisingly found that the expression of ERα, ABCA1, and VEGF responded to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment similarly as observed in aortic tissue (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2E"
+          ]
+        },
+        "). In line with this observation, serum cholesterol and triglycerides negatively correlated with ERα and ABCA1 (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2F"
+          ]
+        },
+        "). Our previous data have demonstrated that macrophage iron plays a critical role in the development of AS ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        "; therefore, iron-related proteins were monitored."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "Atherosclerosis was aggravated in E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-treated late postmenopausal ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                }
+              ]
+            },
+            " mice with lower ERα expression."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Flow diagram of mouse modeling. Early E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-treatment group: OVX at 8 weeks old, one-week recovery, E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment for 8 weeks; late E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-treatment group: OVX at 8 weeks old, E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment from 21 weeks old to 29 weeks old for 8 weeks. Saline is vehicle control. Mice were fed high-fat chow from 9 weeks old. (B) Oil red O-stained aortic lesions in ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                }
+              ]
+            },
+            " mice after E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment for 8 weeks in the EPM or LPM group. (C) Statistical analysis of the area of atherosclerotic plaque in the aorta. n = 4/group, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, ** ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (D) The expression of iron-related or ERα-targeted proteins in the aorta, detected by Western blotting. (E) Protein expression in peritoneal macrophages detected by Western blotting. Macrophages were isolated from 4 mouse groups (early/late ± E2, details see ",
+            {
+              "type": "Strong",
+              "content": [
+                "Materials and Methods"
+              ]
+            },
+            "). (F) Serum total cholesterol and total triglyceride levels in the 4 mouse groups. Pre: serum samples before OVX as a control group. n=6/group, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, ** ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (G) Iron content in aorta and liver, detected by ferrozine assays. n = 6/group, ****",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.0001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. (H) Serum iron in different groups, detected by using an autochemical analyser (Beckman Coulter AU5421). n = 6/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. Student’s ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t-test"
+              ]
+            },
+            " analysis was used for C, F, G, and H."
+          ]
+        }
+      ],
+      "label": "Figure 2",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Ferritin was reduced in response to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment in the EPM stage. In contrast, ferritin remained high in the late stage after E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment in both aortae and isolated macrophages (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2D"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "2E"
+          ]
+        },
+        "), which could be explained by the response of Fpn1 expression that was decreased in the EPM stage but not in the LPM stage. Both serum and tissue iron levels were significantly higher in the LPM mice (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2G"
+          ]
+        },
+        "-",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "2H"
+          ]
+        },
+        ", LPM vs. EPM without E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment). Interestingly, E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment elevated serum iron while lowering tissue iron in both EPM and LPM stages (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2G-H"
+          ]
+        },
+        ", E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment vs. saline) suggesting impaired iron homeostasis in the plaque area, particularly in macrophages (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2E"
+          ]
+        },
+        ") and confirming that estrogen modulates iron homeostasis as previously suggested ",
+        {
+          "type": "Cite",
+          "target": "c43",
+          "content": [
+            "Yang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2012"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.3"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3c",
+      "depth": 2,
+      "content": [
+        "E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " downregulates ERα expression in an iron-dependent manner"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Next, we aimed to identify whether aging or iron overload alone could trigger a decrease in ERα expression ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "in vivo"
+          ]
+        },
+        ". To address this question, myeloid-specific ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Fpn1"
+          ]
+        },
+        " knockout mice (",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        ") were used as a macrophage-iron overload model in the ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " background ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        ". This double knockout (KO) model is considered relevant for AS studies due to the accumulation of a large number of macrophages in plaques, which contributes to the progression of atherosclerosis ",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Moore ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2013"
+          ]
+        },
+        ". OVX was performed in female mice fed standard chow at 16 weeks or 40 weeks of age, and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " was injected to model HRT, as illustrated in ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3A"
+          ]
+        },
+        ". ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figures 3B"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "3C"
+          ]
+        },
+        " show the severity of atherosclerosis, which was significantly enhanced in the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-treated groups at both ages compared to the saline groups of ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        ". Notably, macrophage ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Fpn1"
+          ]
+        },
+        " KO mice displayed a larger lesion area after E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment at the EPM and LPM stages (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3C"
+          ]
+        },
+        "), suggesting a dominant influence of iron on the effects of the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment. In particular, the specific iron overload in macrophages, characteristic of the mouse model used, was sufficient to cause a significant increase in the lesion area in the LPM group (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3C"
+          ]
+        },
+        ", lower panel), reproducing previous observations ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        ". We then examined the iron status in tissues and serum. Iron levels in tissues (aorta/liver) were higher in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        " compared to ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        " mice, as revealed by ferrozine assays (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A"
+          ]
+        },
+        " for EPM groups and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3E"
+          ]
+        },
+        " for LPM groups) and further supported by higher ferritin content (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1B"
+          ]
+        },
+        " for EPM and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3D"
+          ]
+        },
+        " for LPM). On the contrary, serum iron was lower in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            "Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        " mice at the EPM and LPM stages (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3F"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "S1C"
+          ]
+        },
+        "). However, E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration did not significantly reduce the ferritin levels and iron levels in the aorta and liver (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3D"
+          ]
+        },
+        ", ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "3E"
+          ]
+        },
+        ", and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A"
+          ]
+        },
+        "), confirming that Fpn1 acts as an iron exporter and that macrophages play a crucial role in response to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment. E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration significantly increased serum iron levels in the LPM group (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3F"
+          ]
+        },
+        ") and mildly increased serum iron levels in the EPM group (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1C"
+          ]
+        },
+        "), suggesting that other factors besides iron also contribute to the aging-related physiological changes in the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment response. Of note, ERα was downregulated in the aorta of the ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        "mice and further downregulated by E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment, accompanied by reduced expression of ABCA1 and VEGF (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3B"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1B"
+          ]
+        },
+        "), suggesting that both iron alone and iron plus E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " could downregulate ERα expression in macrophages. Consistent with the severity of atherosclerosis and the alteration of ERα and its target gene ABCA1, serum cholesterol and triglycerides were increased in the ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        "mice and further increased by E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3G"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-triggered ERα deficiency was observed in a genetic iron overload mouse model at postmenopausal age."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Flow diagram of mouse modeling. Early groups: OVX at 16 weeks old, one-week recovery, ± E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment for 8 weeks; late groups: OVX at 40 weeks old, one-week recovery, ± E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment for 8 weeks. Saline is vehicle control. The mice were fed with normal chow. (B) Oil red O-stained aortic lesions in ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                }
+              ]
+            },
+            "and ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                },
+                " Fpn1",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "LysM/LysM"
+                  ]
+                }
+              ]
+            },
+            " mice after E2 treatment for 8 weeks in the EPM or LPM groups as indicated. (C) The lesion area in the aorta. n = 4/group, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. (D) The expression of iron-related or ERα-targeted proteins in the aorta, detected by Western blotting. (E) The iron content of the aorta and liver detected by ferrozine assays. n = 6/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (F) Serum iron level in different groups. n = 6/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (G) Serum total cholesterol and total triglyceride levels. n=6/group, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, ** ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. The samples for D-G were from 49-week-old ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                }
+              ]
+            },
+            " and ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                },
+                " Fpn1",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "LysM/LysM"
+                  ]
+                }
+              ]
+            },
+            " mice. Student’s ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t-test"
+              ]
+            },
+            " analysis was used for C, E, F, and G."
+          ]
+        }
+      ],
+      "label": "Figure 3",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.4"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3d",
+      "depth": 2,
+      "content": [
+        "E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment potentiates iron-induced downregulation of ERα in both macrophages and endothelial cells"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To further validate the interaction between iron and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " on ERα downregulation in different cell types, we used primary peritoneal macrophages from C57BL/6 female mice, the macrophage-like cell line J774a.1, and human umbilical vein endothelial cells (HUVECs). The cells were treated with E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        ", ferric ammonium citrate (FAC, an iron source), and/or deferiprone (DFP, an iron chelator). Downregulation of ERα expression triggered by FAC with or without E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " was observed in time- and concentration-dependent manners (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4A"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "4B"
+          ]
+        },
+        "). Such downregulation was confirmed in all tested cell types and could be partially suppressed by iron chelation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4C"
+          ]
+        },
+        ", ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "4D"
+          ]
+        },
+        ", ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "4E"
+          ]
+        },
+        ", and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "4F"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig4",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment potentiates iron-induced downregulation of ERα ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "in vitro"
+              ]
+            },
+            "."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A-B) ERα expression in the presence or absence of E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " under different iron concentration conditions (A) or in the time course (B). Quantification was carried out using ImageJ. Two-way ANOVA was used. (C) The rescue effect of iron chelation on the downregulation of ERα by FAC or FAC plus E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            ". (D) The intracellular iron content in J774a.1 under different iron-concentration conditions in the presence or absence of E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            ", detected by ferrozine assays. n = 4, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. (E, F) ERα expression in peritoneal macrophages (E) and HUVECs (F) under the indicated iron and E2 conditions. A, B, C, E, and F are data from Western blotting. Numbers indicate the relative intensity of ERα n=4. (G) Oil red O-stained J774a.1 cells after treatment with FAC and/or E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " (left) with the quantified droplets (right). scale bar = 25 μm, n = 4, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001. (H) HUVEC angiogenesis assays, revealed by the number of branch points (left) and capillary length (right). n = 4, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (I) eNOS level in HUVEC, assessed by ELISA. n = 4, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001. The student’s ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t-test"
+              ]
+            },
+            " analysis was used for G - I."
+          ]
+        }
+      ],
+      "label": "Figure 4",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To examine the capacity of lipid export when ERα was downregulated, we loaded J774a.1 with oxidized low-density lipoprotein (oxLDL) and observed significantly more lipid accumulation in the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-treated plus iron overload group than in the other groups (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4G"
+          ]
+        },
+        "), suggesting a tendency of macrophages to be converted into foam cells. Angiogenesis assays were also performed and showed that E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2,"
+          ]
+        },
+        " together with iron, inhibited angiogenesis (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4H"
+          ]
+        },
+        "), which has been demonstrated to increase the risk of macrophage adhesion and intraplaque hemorrhage ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c7",
+              "content": [
+                "Chang & Nguyen, 2021"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c22",
+              "content": [
+                "Mao ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            }
+          ]
+        },
+        ". The reduced levels of eNOS were also revealed by ELISA in HUVECs treated with E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " and iron (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4I"
+          ]
+        },
+        "). Overall, our data strongly support that both macrophages and endothelial cells are the effectors of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " in iron-mediated worsening by downregulation of ERα in the development of AS."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.5"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3e",
+      "depth": 2,
+      "content": [
+        "Proteasome-mediated ERα degradation results from the interactive effects of iron overload and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment mediated by the E3 ligase Mdm2"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We wondered how excess iron and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " together downregulated ERα expression. To elucidate the underlying mechanism, we first searched for what regulates ERα expression. It was reported that the downregulation of ERα could be attributed to methylation of its promoter region, which could be induced by oxidative stress ",
+        {
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Lung ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        ". Because iron overload has been massively correlated with oxidative stress, two relevant antioxidative enzymes, catalase (CAT) and superoxide dismutase (SOD) 2, were evaluated. The results did not show a significant difference between the control and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "/FAC treatments (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "Figure S2A"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "S2B"
+          ]
+        },
+        "). In addition, the mRNA level of ERα was examined and barely showed significant changes after FAC and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "Figure S2C"
+          ]
+        },
+        "), suggesting posttranscriptional regulation of ERα better explained the decreased presence of the receptor after iron and/or E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "As stated previously, ERα may be regulated through an estrogen-ERα binding-dependent ubiquitination signaling pathway for degradation and estrogen recycling. To test this possibility, we treated J774a.1 cells with MG132, a proteasome inhibitor, and observed that ERα protein levels were significantly elevated in the presence of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " and excess iron (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5A"
+          ]
+        },
+        "). Treatment with cycloheximide (CHX), an inhibitor of eukaryotic translation, showed that the half-life of ERα was shortened in the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " + FAC group (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5B"
+          ]
+        },
+        "), suggesting a faster turnover rate of ERα in the presence of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " plus excess iron, verifying the activation of ERα proteasome degradation pathway ",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Zhou & Slingerland, 2014"
+          ]
+        },
+        ". We then detected the ubiquitination levels of ERα by immunoprecipitation and immunoblotting. The results showed much more ubiquitinated and degraded ERα in the presence of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " and excess iron than in other conditions (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5C"
+          ]
+        },
+        "), further supporting the proteolysis-dependent pathway for ERα degradation. We then tested a few E3 ligases (BRCA1, AHR, and Mdm2) in J774a.1, which were supposed to regulate ERα ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c10",
+              "content": [
+                "Fan ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2001"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c18",
+              "content": [
+                "Khan ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c33",
+              "content": [
+                "Saji ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2001"
+              ]
+            }
+          ]
+        },
+        ", and did not find a negative correlation between BRCA1/AHR and ERα in response to FAC or E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "+FAC treatments (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS3",
+          "content": [
+            "Figure S3A"
+          ]
+        },
+        "). However, ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Mdm2"
+          ]
+        },
+        " was upregulated in the FAC and E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "+FAC groups (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5D"
+          ]
+        },
+        "). When cells J774a.1 and HUVECs were treated with Nutlin-3, a well-known Mdm2 inhibitor, ERα exhibited iron-dependent Mdm2-mediated degradation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5E"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "5F"
+          ]
+        },
+        "). Amazingly and consistently, Mdm2 expression was upregulated at the LPM stage compared with the EPM stage both in the aorta of female mice and in plaques of AS patients (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figures 5G"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "5H"
+          ]
+        },
+        "), which is exactly opposite to ERα expression (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1E"
+          ]
+        },
+        "). And this effect was significantly enhanced at the LPM stage mice when E2 was administrated (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5G"
+          ]
+        },
+        ", ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "2D"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "2E"
+          ]
+        },
+        "). Our results indicate that Mdm2 is responsible for E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-triggered ERα deficiency under iron overload condition or in LPM women."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig5",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "The interactive effects of iron overload and E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment on ERα downregulation are mediated by the E3 ligase MDM2."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Evaluation of ERα proteasome-dependent degradation in J774a.1 cells by western blotting. MG132: 10 μM. n=4. (B) ERα turnover rate in J774a.1 cells under FAC or E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "+FAC conditions, detected by western blotting after 20 μM cycloheximide (CHX) treatment. *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05 using two-way ANOVA (C) Ubiquitination of ERα, evaluated by western blotting (anti-ubiquitin) following immunoprecipitation against ERα antibody. n = 3, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. (D) Relative ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Mdm"
+              ]
+            },
+            "2 mRNA expression in J774a.1 cells, assessed by qPCR, n = 4, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (E) The protein levels of ERα in the presence of FAC or FAC plus E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " in J774a.1 cells after treatment of Nutlin-3, a specific antagonist of Mdm2. n=3. (F) The protein levels of ERα in the presence of FAC or FAC plus E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " in HUVECs after treatment of Nutlin-3. n=3. (G) Mdm2 protein expression in the aortas of mice in the EPM or LPM stage, as detected by western blotting. n=3/group. (H) MDM2 protein levels in patient plaques, detected by western blotting and quantified with ImageJ. n=4/group, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001. Student’s ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t-test"
+              ]
+            },
+            " analysis was used for B, E, and H."
+          ]
+        }
+      ],
+      "label": "Figure 5",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "3.6"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3f",
+      "depth": 2,
+      "content": [
+        "Iron restriction therapy restores ERα levels and attenuates E2-triggered progressive atherosclerosis in late postmenopausal mice"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To further verify whether iron overload is responsible for the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-induced downregulation of ERα and progressive atherosclerosis in LPM mice, we evaluated the effects of iron restriction. Twenty-one-week-old female ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        "mice, OVX-ed at eight weeks of age, received iron chelation therapy through peritoneal injection of DFP (80 mg/kg) daily for eight weeks (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6A"
+          ]
+        },
+        "). Similar to the definition used in ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2, 13"
+          ]
+        },
+        " weeks after OVX was considered as the LPM stage. Indeed, iron chelation attenuated the plaque-accelerated development of AS (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6B"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "6C"
+          ]
+        },
+        "). The contents of serum cholesterol and triglycerides compared with those in the E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-only group were significantly diminished (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6D"
+          ]
+        },
+        "). Consistent with previous data (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figures 2"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "3"
+          ]
+        },
+        "), ferrozine assays proved decreased iron deposition in tissues but increased iron in serum post E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " application (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6E-F"
+          ]
+        },
+        "). Although DFP administration reduced the tissue and serum iron levels, it did not induce anemia (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6E-F"
+          ]
+        },
+        "), which was comparable to the mice at EPM (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2G and H"
+          ]
+        },
+        "). We then detected aortic ERα expression and found significant upregulation by iron restriction, along with the upregulation of ABCA1 and VEGF (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6G"
+          ]
+        },
+        "). In contrast, iron chelation by DFP significantly reduced Mdm2 expression (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6G"
+          ]
+        },
+        "). In agreement with our previous findings in cell-based assays, these results corroborate the concept that late postmenopausal HRT-induced ERα deficiency is, at least partially, iron overload-mediated. Thus, the non-atheroprotective effects of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " in the LPM result from aging-mediated iron accumulation."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig6",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "Iron restriction therapy restored ERα levels and attenuated E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-triggered progressive atherosclerosis in late postmenopausal mice."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Flow diagram of mouse modeling. The mice were ovariectomized at 8 weeks old and E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " or E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "+DFP treated from 21 weeks old to 29 weeks old for 8 weeks. Saline is vehicle control. Mice were fed high-fat chow one week after OVX. Thirteen weeks post-OVX is considered as late post-menopause. (B) Oil red O-stained aortic lesions in ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                }
+              ]
+            },
+            " mice treated with E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " or E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "+DFP as indicated. (C) The quantified lesion area of atherosclerotic plaques in the aorta from B. n=4, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (D) Serum total cholesterol and total triglyceride levels. n=6, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, ** ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (E) The iron content in the aorta and liver, detected by ferrozine assays. n = 6, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. (F) Determination of serum iron in different groups. n = 6, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (G) Protein expression in the aorta, detected by western blotting (left) and quantified with ImageJ (right). ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05. The student’s ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t-"
+              ]
+            },
+            "test analysis was used for C - G."
+          ]
+        }
+      ],
+      "label": "Figure 6",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "4."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4",
+      "depth": 1,
+      "content": [
+        "Discussion"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Estrogen has long been considered atheroprotective and responsible for the low morbidity of cardiovascular diseases in premenopausal women ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c20",
+              "content": [
+                "Lobo, 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c25",
+              "content": [
+                "Moss ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2019"
+              ]
+            }
+          ]
+        },
+        ". However, epidemiological studies of the Women’s Health Initiative question the beneficial effects of late postmenopausal HRT ",
+        {
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Hlatky ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2002"
+          ]
+        },
+        ". Although one hypothesis to explain this observation may be that iron potentiates the adverse effects of estrogen in AS ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c34",
+              "content": [
+                "Sullivan, 1981"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c35",
+              "content": [
+                "Sullivan, 2003"
+              ]
+            }
+          ]
+        },
+        ", a comprehensive ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "in vivo"
+          ]
+        },
+        " study to test this hypothesis was missing. We reported previously that the developmental course of atherosclerosis was highly accelerated in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            },
+            " Fpn1",
+            {
+              "type": "Superscript",
+              "content": [
+                "LysM/LysM"
+              ]
+            }
+          ]
+        },
+        " mice compared with ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        "",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2020"
+          ]
+        },
+        ". Our present study provides the first experimental evidence that iron overload facilitates ERα proteolysis, which is potentiated in the presence of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " and reverses the anti-atherogenic effect of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig7",
+          "content": [
+            "Figure 7"
+          ]
+        },
+        "). Our results support the benefit of early application of estrogen post-menopause. We propose that the combination of HRT and iron restriction therapy may be a long-term strategy for the preventive effects of E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " from the development of AS in post-menopausal women."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig7",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Schematic model for the effects of postmenopausal iron accumulation with or without HRT on AS severity through modulating ERα expression."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Iron accumulation occurs naturally and gradually after menopause. In EPM, iron retention was mild, and ERα was responsive to HRT application to achieve protective effects (A). However, when iron overload is significant in LPM, Mdm2 is upregulated along with ERα downregulation (B). This negative correlation is potentiated by the application of HRT and iron accumulation with aging. Therefore, HRT use avails to aggravate the progression of AS in the LPM period. Iron chelation, however, reverses the adverse effect of HRT and attenuates the accelerated development of AS (A), suggesting a protective role of appropriate iron restriction in the LPM stage."
+          ]
+        }
+      ],
+      "label": "Figure 7",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The controversy of whether or not to proceed with HRT in postmenopausal women is fueled by an increased, although small, risk of breast cancer and from the potentially harmful effect on cardiovascular outcomes ",
+        {
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Lobo, 2017"
+          ]
+        },
+        ". Previous randomized trials did not consider the ages sorting out EPM from LPM and have not excluded subjects with iron depletion or loss in the recruited post-menopausal subjects ",
+        {
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Sullivan, 2003"
+          ]
+        },
+        ". We sorted the recruited female AS volunteers from the Department of Vascular Surgery of Nanjing Drum Tower Hospital as EPM and LPM groups to reveal whether aging-associated iron deposition correlates with ERα expression. The negative correlation between systemic iron status and intraplaque ERα expression was validated, which prompted us to address the role of iron in ERα expression."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Previous efforts focused more on the role of estrogen in iron metabolism (primarily the hepcidin/Fpn axis) and not ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "vice versa"
+          ]
+        },
+        " ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c15",
+              "content": [
+                "Hou ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c17",
+              "content": [
+                "Ikeda ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c43",
+              "content": [
+                "Yang ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            }
+          ]
+        },
+        ". Both genes encoding hepcidin and Fpn are inhibited by E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment through an estrogen-responsive element (ERE) ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c15",
+              "content": [
+                "Hou ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c29",
+              "content": [
+                "Qian ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c43",
+              "content": [
+                "Yang ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            }
+          ]
+        },
+        ". However, it was also reported that hepcidin expression decreased in the livers of OVX mice through a GPR30-BMP6-dependent mechanism, independent of the ERE-mediated E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-ERα pathway ",
+        {
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Ikeda ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2012"
+          ]
+        },
+        ". Though the difference in hepcidin expression in OVX mice ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c3",
+              "content": [
+                "Bowling ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c11",
+              "content": [
+                "Gavin ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c15",
+              "content": [
+                "Hou ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c17",
+              "content": [
+                "Ikeda ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                "., 2012"
+              ]
+            }
+          ]
+        },
+        ", the consistent with this study here is that aging, OVX, and genetic manipulation of Fpn induced progressive iron retention in tissues, accompanied by reduced ERα expression. E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration further enhanced this reduction in ERα levels under the above-mentioned conditions. Overall, high ERα levels are found in reproductive women, despite fluctuations caused by the periodic estrogen wave and blood loss in reproductive women ",
+        {
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Gavin ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2009"
+          ]
+        },
+        ". The aging process, particularly in late postmenopausal women, progressively elevates iron levels which we show, downregulates ERα, resulting in insufficient ERα to respond to E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " treatment. Therefore, HRT is unlikely to result in an effective outcome in LPM women as in EPM women unless it is coupled with an iron-chelating scheme. This is because aggravated AS in LPM women is, at least partially, the result of age-related iron accumulation. We demonstrated the effectiveness of iron chelation in improving HRT outcomes in the mouse model, but further work is required to translate this finding for clinical practice."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "ERα is the main effector of estrogen on cardiovascular function ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c1",
+              "content": [
+                "Aryan ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c23",
+              "content": [
+                "Meng ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2021"
+              ]
+            }
+          ]
+        },
+        ". We wondered how iron downregulated ERα. Since several E3 ubiquitin ligases (",
+        {
+          "type": "Emphasis",
+          "content": [
+            "i.e"
+          ]
+        },
+        "., CHIP, E6AP, BRCA1, BARD1, SKP2, and Mdm2) have been found to catalyze the covalent binding of ubiquitin to lysine residues of ERα (reviewed in ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Tecalco-Cruz & Ramirez-Jarquin, 2017"
+          ]
+        },
+        ", we tested them and found that Mdm2 is responsive to iron treatment in cells and mice and negatively correlated with ERα, particularly under high iron conditions. Furthermore, we showed that Mdm2 is a negative regulator of ERα."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Our findings may be context specific, as some differences are noted in its studied roles in some cancer cell types ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c8",
+              "content": [
+                "Dongiovanni ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2010"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c45",
+              "content": [
+                "Zhang ",
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "et al"
+                  ]
+                },
+                ", 2020"
+              ]
+            }
+          ]
+        },
+        ". Mdm2 acts as a ubiquitin ligase E3 to p53 in SV40 hepatocytes ",
+        {
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "Honda ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 1997"
+          ]
+        },
+        " and has been shown to act as a direct coactivator of ERα function in ERα-positive breast cancer ",
+        {
+          "type": "Cite",
+          "target": "c33",
+          "content": [
+            "Saji ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2001"
+          ]
+        },
+        ". Nevertheless, iron-dependent downregulation was revealed in leukemia cell lines and primary human cells derived from acute myeloid leukemia patients ",
+        {
+          "type": "Cite",
+          "target": "c6",
+          "content": [
+            "Calabrese ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        ", suggesting a cell-type-specific regulation of Mdm2 by iron. In our study, the downregulation of Mdm2 by E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " occurred in the context of iron overload both ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "in vivo"
+          ]
+        },
+        " and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "in vitro"
+          ]
+        },
+        ", concluding that Mdm2 is the critical mediator that participates in iron overload triggered ERα loss."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In summary, this study demonstrates the impact of iron overload in E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        "-mediated ERα proteolysis and its critical consequence on the outcome of HRT. With the efficacy of HRT challenged by “the window of opportunity” theory ",
+        {
+          "type": "Cite",
+          "target": "c44",
+          "content": [
+            "Yesufu ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2007"
+          ]
+        },
+        ", it is vital to explore therapies that maintain ERα expression mediating the protective effects of estrogen. Although further work is needed to determine whether iron restriction therapy is clinically relevant in combination with HRT for the intervention of postmenopausal atherosclerosis as a long-term strategy, this paper provides guidance for optimizing the timing HRT intervention and supportive nutrient management."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "5."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Funding"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "This work was supported by the National Natural Science Foundation of China [grant numbers: 31871201, 81870348]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "6."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Conflict of Interest"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "none declared."
+      ]
+    }
+  ]
+}

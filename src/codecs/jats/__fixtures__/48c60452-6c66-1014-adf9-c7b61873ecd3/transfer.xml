@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE transfer SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Transfer/Transfer.dtd">
+<transfer xmlns="http://www.manuscriptexchange.org" version="1.0" id="48c60452-6c66-1014-adf9-c7b61873ecd3" reference="/biorxiv/early/2022/07/02/2022.06.30.498369.atom">
+<source>
+<service-provider>
+<id>TechSet</id>
+<contact role="Customer Support">
+<contact-name>
+<surname>Hassain</surname>
+</contact-name>
+<email>hassain@novatechset.com</email>
+</contact>
+</service-provider>
+</source>
+<destination>
+<service-provider>
+<id>HighWire eXpress</id>
+<contact role="Production Support">
+<name>
+<surname>Abbott</surname>
+<given-names>Christopher</given-names>
+</name>
+<email>cabbott@highwire.org</email>
+</contact>
+</service-provider>
+<publication type="preprint-server">
+<title>bioRxiv</title>
+<acronym>bioRxiv</acronym>
+<contact role="Journal Contact">
+<name>
+<surname>Black</surname>
+<given-names>Kevin-John</given-names>
+</name>
+<email>black@cshl.edu</email>
+<phone></phone>
+</contact>
+</publication>
+</destination>
+</transfer>
