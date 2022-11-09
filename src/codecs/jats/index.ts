@@ -1117,10 +1117,8 @@ function decodeAck(
  * the sections are mostly decoded verbatim.
  *
  * The <title> is treated as the h1 for the section.
- * Any other heading in the section are treated as follows:
- * 
- * - if they have the same content as the title they are dropped (otherwise there would be duplication)
- * - demoted to h2
+ * Any other heading in the section are dropped if they have the same content
+ * as the title (otherwise there can be duplication).
  */
 function decodeBackSec(
   elems: xml.Element[],
