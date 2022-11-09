@@ -15000,3 +15000,257 @@ content:
         thank the staff of the Genomic, Flow Cytometry, Research Instrumentation
         and Biorepository core facilities at CRUK Cambridge Institute and
         members of the Balasubramanian and Hannon Lab for helpful discussions.
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Additional information
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Competing interests
+  - type: Note
+    id: conf1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - No competing interests declared
+  - type: Note
+    id: conf2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Is associated with transOMIC Technologies, who have commercialised
+            libraries constructed using the shERWOOD and ultramiR design
+            strategies.
+  - type: Note
+    id: conf3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Is founder, adviser and shareholder of Cambridge Epigenetix Ltd.
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Author contributions
+  - type: Note
+    id: con1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Supervision,
+            Validation, Investigation, Visualization, Methodology,
+            Writing—original draft, Writing—review and editing, Designed and
+            performed the genome-wide shRNA screen, library preparation and
+            sequencing, Designed the focused RNAi screens, Performed the GO and
+            Cytoscape analyses, Designed and performed the clonogenic assays and
+            DDX42 binding experiments
+  - type: Note
+    id: con2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Writing—review and editing, Designed and performed the genome-wide
+            shRNA screen, library preparation and sequencing, Designed and
+            performed the focused RNAi screens, Performed the GO and Cytoscape
+            analyses, Designed and performed the drug synergy and DDX42 binding
+            experiments
+  - type: Note
+    id: con3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Writing—review and editing, Designed and performed the drug synergy
+            experiments
+  - type: Note
+    id: con4
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Software, Formal analysis,
+            Validation, Methodology, Writing—original draft, Writing—review and
+            editing, Performed the computational analyses on all RNAi screens
+  - type: Note
+    id: con5
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Data curation, Formal analysis,
+            Methodology, Writing—original draft, Writing—review and editing,
+            Synthesised all the G4 ligands
+  - type: Note
+    id: con6
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Resources, Software, Formal analysis, Methodology, Writing—review
+            and editing
+  - type: Note
+    id: con7
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Supervision, Methodology,
+            Writing—original draft, Writing—review and editing
+  - type: Note
+    id: con8
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Software, Formal analysis,
+            Supervision, Methodology, Writing—original draft, Project
+            administration, Writing—review and editing
+  - type: Note
+    id: con9
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Formal analysis, Supervision, Funding
+            acquisition, Methodology, Writing—original draft, Project
+            administration, Writing—review and editing
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Additional files
+  - type: MediaObject
+    id: supp1
+    contentUrl: ''
+    text: Supplementary file 1.
+    content:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Supporting data for '
+          - type: Link
+            relation: fig
+            target: '#fig3'
+            content:
+              - Figure 3
+          - –
+          - type: Link
+            relation: fig
+            target: '#fig7'
+            content:
+              - '7'
+          - .
+      - type: Paragraph
+        content:
+          - >-
+            List of shRNAs/genes from venn diagrams and table statistics for
+            KEGG, GO, DGIDb and Protein Domains analyses from 
+          - type: Link
+            relation: fig
+            target: '#fig3'
+            content:
+              - Figures 3
+          - –
+          - type: Link
+            relation: fig
+            target: '#fig7'
+            content:
+              - '7'
+          - >-
+            . Each data tab is labelled with its corresponding originating
+            figure.
+  - type: MediaObject
+    id: supp2
+    contentUrl: ''
+    text: Supplementary file 2.
+    content:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Supporting data for '
+          - type: Link
+            relation: fig
+            target: '#fig6s1'
+            content:
+              - Figure 6—figure supplement 1
+          - ' and '
+          - type: Link
+            relation: fig
+            target: '#fig7s1'
+            content:
+              - Figure 7—figure supplement 1
+          - .
+      - type: Paragraph
+        content:
+          - >-
+            List of shRNAs/genes from venn diagrams and table statistics for GO
+            analyses from 
+          - type: Link
+            relation: fig
+            target: '#fig6s1'
+            content:
+              - Figure 6—figure supplement 1
+          - ' and '
+          - type: Link
+            relation: fig
+            target: '#fig7s1'
+            content:
+              - Figure 7—figure supplement 1
+          - >-
+            . Each data tab is labelled with its corresponding originating
+            figure.
+  - type: MediaObject
+    id: transrepform
+    contentUrl: ''
+    text: Transparent reporting form
+  - type: Heading
+    id: s7
+    depth: 1
+    content:
+      - Data availability
+  - type: Paragraph
+    content:
+      - >-
+        Sequencing data have been deposited in ArrayExpress under the accession
+        number E-MTAB-6367.
+  - type: Paragraph
+    content:
+      - 'The following dataset was generated:'
+  - type: Paragraph
+    content:
+      - Mulhearn
+      - DS
+      - Zyner
+      - KG
+      - Martinez
+      - Cuesta S
+      - Balasubramanian
+      - S
+      - '2019'
+      - >-
+        Systematic identification of G-quadruplex sensitive lethality by
+        genome-wide genetic screening
+      - ArrayExpress
+      - E-MTAB-6367

@@ -4437,6 +4437,725 @@
       "content": [
         "This work was supported by grants from the National Science Foundation (IOS 1238040) and the U.S. Department of Agriculture-National Institute of Food and Agriculture (CA-D-PLB-2259-H) to SLH. We thank Chris Brooks, Hongtao Zhang, and Cassandra Baker for help tending to and running experiments on sunflowers; Julin Maloof and John Davis for helpful discussions and statistical and scripting advice; and Mike Covington for his R script to generate polar plots."
       ]
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Video Legends"
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Video 1"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Anthesis on a capitulum maintained in light/dark cycles (16 hours light, 8 hours dark) at a constant 25°C."
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Video 2"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Anthesis on a capitulum maintained in constant darkness and temperature (25°C)."
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Video 3"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Anthesis on a capitulum maintained in constant light and temperature (25°C)."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Sunflower Anthesis is Rhythmic in Different Photoperiodic Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(a, b)"
+              ]
+            },
+            " Timing of ovary, stamen, and style growth for florets on a capitulum in ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " LD|25°C (12h:12h) and ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " LD|25°C (19.5h:4.5h), representing growth for >5% of florets in a pseudowhorl (n=4 capitula for each condition). Plants were grown in LD|25°C (16h:8h) and then transferred to the indicated photoperiods at time 0. White dots are individual observations of growth, and colored bars group growth for organs within a pseudowhorl. Periods of dark exposure are shown with grey boxes."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Sunflower Capitulum Development in Various Environmental Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Images of sunflower capitula grown in ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " LD|25°C (16h:8h), ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " LD|25°C (12h:12h), ",
+            {
+              "type": "Strong",
+              "content": [
+                "(c)"
+              ]
+            },
+            " LD|25°C with dark ZT 16-20.5, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(d)"
+              ]
+            },
+            " DD|25°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(e)"
+              ]
+            },
+            " LL|25°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(f)"
+              ]
+            },
+            " DD|18°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(g)"
+              ]
+            },
+            " DD|30°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(h)"
+              ]
+            },
+            " LL|30°-18°C (16h:8h), ",
+            {
+              "type": "Strong",
+              "content": [
+                "(i)"
+              ]
+            },
+            " DD|30°-18°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(j)"
+              ]
+            },
+            " LDLD|25°C (6h:6h:4h:8h), and ",
+            {
+              "type": "Strong",
+              "content": [
+                "(k)"
+              ]
+            },
+            " LDLD|25°C (6h:6h:6h:6h). All images were taken 2 hours after subjective dawn relative to their entrainment conditions of LD|25°C (16h:8h), but at various numbers of days after transfer to the new environmental conditions."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 2.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Pseudowhorl Coordination Persists for Multiple Days in Constant Dark Free-running Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Timing of active growth for all florets along parastichies within pseudowhorl 4 of sunflowers after transfer to DD|25°C (n=4 parastichies)."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 3.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS4",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Rates of Floral Organ Maturation are Dependent on Environmental Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " Total time for florets within the indicated pseudowhorls to complete anthesis, compiled from the individual floret timing for: LD|25°C (16h:8h) (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig2",
+              "content": [
+                "Fig. 2E"
+              ]
+            },
+            "); LL|25°C (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig6",
+              "content": [
+                "Fig. 6B"
+              ]
+            },
+            "); DD|25°C PW2 (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig3",
+              "content": [
+                "Fig. 3C"
+              ]
+            },
+            "); DD|25°C PW4 (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS3",
+              "content": [
+                "Supplemental Fig. 3"
+              ]
+            },
+            "); LL|30°-18°C (16h:8h) (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig6",
+              "content": [
+                "Fig. 6D"
+              ]
+            },
+            "); and DD|30°-18°C (16h:8h) (Supplemental Fig. 10B). ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " Average time required for completion of maturation of individual florets, calculated from above data. Florets were selected from the same pseudowhorl (except in LL|25°C). Error bars indicate standard deviation. Different letters indicate statistically significant differences by one-way ANOVA with post-hoc Tukey HSD test (",
+            {
+              "type": "Emphasis",
+              "content": [
+                "P"
+              ]
+            },
+            " < 0.001)."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 4.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS5",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Phase of Organ Growth Resets Rapidly to New Entrainment Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Plants were transitioned from LD|25°C (16h:8h) to 19.5h light:4.5 h dark at various times of the subjective day or night. New times of dark onset are indicated with grey boxes and labeled relative to the original entrainment condition. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a-g)"
+              ]
+            },
+            " Left plots are as described for ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS1",
+              "content": [
+                "Supplemental Fig 1"
+              ]
+            },
+            ". On the right plots, the timing of active organ growth for pseudowhorls 3 and later are superimposed on a 24-hour circular clock. Dots represent individual observations of growth, arrow angles represent average phases of growth, and arrow lengths represents precision of timing. (n=3-4 capitula for each condition). ",
+            {
+              "type": "Strong",
+              "content": [
+                "(h)"
+              ]
+            },
+            " Timing of active style growth in LD|25°C with the new short night at the indicated times (relative to the original entrainment condition; n = 3-4 capitula per condition). ",
+            {
+              "type": "Strong",
+              "content": [
+                "(i)"
+              ]
+            },
+            " Average times of growth for ovaries, stamens, and styles in pseudowhorls (PW) 3-6 for all indicated conditions. x-axis indicates phase of start-of-darkness for each condition relative to the original entrainment conditions. y-axis indicates phase of average organ growth relative to the start of the 4.5 hr dark treatment in the new entrainment conditions. Error bars indicate standard deviation. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(j)"
+              ]
+            },
+            " Average difference in hours from the start of pseudowhorl 2 ovary growth and the start of pseudowhorl 3 ovary growth (y-axis) for each dark treatment condition (x-axis). Yellow dots represent mean differences, and the yellow ribbon represents standard deviation. Dotted line separates dark treatments given during the subjective night and the subjective day."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 5.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS6",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Number of Florets in a Pseudowhorl Not Altered After Delay in Anthesis."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Average number of florets beginning anthesis along a parastichy and within a pseudowhorl for the indicated conditions (n = 12-19 parastichies per condition). At ZT 24, only condition LD|25°C with dark during ZT 16-20.5 had a new pseudowhorl undergoing anthesis. Error bars represent standard deviation. Different letters in table indicate statistically significant different groups within a time point, one-way ANOVA with post-hoc Tukey HSD test (",
+            {
+              "type": "Emphasis",
+              "content": [
+                "P"
+              ]
+            },
+            " < 0.001)."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 6.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS7",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Frequency Demultiplication in Anthesis Requires a Dominant Night."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Timing of ovary, stamen, and style growth for florets on a capitulum with two cycles of light and dark each day. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " When one dark period is longer than the other (LDLD|25°C (6h L:6h D:4h L:8h D)), floret development only responds to the longer dark period. Individual polar plots are shown for each successive pseudowhorl. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " When the two dark periods are of equal length (LDLD|25°C (6h L:6h D:6h L:6h D)), development is uncoordinated, with two distinct phases of growth within each pseudowhorl (n = 3 capitula per condition). See text for further description. Black lines link together floret organs within one pseudowhorl. Plots are otherwise as described for ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS1",
+              "content": [
+                "Supplemental Fig. 1"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 7.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS8",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Relative Phases of Floret Development in Different Environmental Conditions."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Phases after 48 hours in new entrainment conditions are depicted for organ growth in pseudowhorls 3 – 6 for conditions ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " LD|25°C (12h:12h), ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " LD|25°C (16h:8h), ",
+            {
+              "type": "Strong",
+              "content": [
+                "(c)"
+              ]
+            },
+            " LL|25°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(d)"
+              ]
+            },
+            " DD|25°C, ",
+            {
+              "type": "Strong",
+              "content": [
+                "(e)"
+              ]
+            },
+            " LL|30°-18°C (16h:8h), and ",
+            {
+              "type": "Strong",
+              "content": [
+                "(f)"
+              ]
+            },
+            " DD|30°-18°C (n = 3-4 capitula per condition). Polar plots are as described for ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS5",
+              "content": [
+                "Supplemental Fig. 5"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 8.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS9",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Sunflower Anthesis is Impaired in Constant Light."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(a, c)"
+              ]
+            },
+            " Timing of ovary, stamen, and style growth for florets on a capitulum ",
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " LL|25°C (n=3 capitula) and ",
+            {
+              "type": "Strong",
+              "content": [
+                "(c)"
+              ]
+            },
+            " LL|30°-18°C (16h:8h) (n=3 capitula), representing growth for >5% of florets in a pseudowhorl (n=3). Plots are as described for ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS1",
+              "content": [
+                "Supplemental Fig. 1"
+              ]
+            },
+            ". ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b, d)"
+              ]
+            },
+            " Timing of active growth of individual florets along a parastichy 24 hours after transfer to ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " LL|25°C for 10 florets per parastichy, and ",
+            {
+              "type": "Strong",
+              "content": [
+                "(d)"
+              ]
+            },
+            " LL|30°-18°C (16h:8h) for all florets along a parastichy within pseudowhorl 2 (n = 4 parastichies). Different temperatures are indicated by pink (30°C), white (25°C), and blue (18°C) backgrounds."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 9.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS10",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Thermocycles in Constant Dark Strengthen Coordination of Rhythms of Floret Development."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(a)"
+              ]
+            },
+            " Timing of ovary, stamen, style, and start-of-style growth for florets on a capitulum in DD|30°-18°C (16h:8h) (n=3 capitula). ",
+            {
+              "type": "Strong",
+              "content": [
+                "(b)"
+              ]
+            },
+            " Timing of active growth for all florets along a parastichy within pseudowhorl 2 after transfer to DD|30°-18°C (16h:8h) (n = 4 parastichies). Plots are as described for ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS1",
+              "content": [
+                "Supplemental Fig 1"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Supplemental Figure 10.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Table",
+      "id": "tblS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Circadian Parameters for Anthesis in Different Environmental Conditions"
+          ]
+        }
+      ],
+      "label": "Supplemental Table 1.",
+      "rows": []
+    },
+    {
+      "type": "Table",
+      "id": "tblS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Time Between Initiation of PW2 and PW3"
+          ]
+        }
+      ],
+      "label": "Supplemental Table 2.",
+      "rows": []
     }
   ]
 }

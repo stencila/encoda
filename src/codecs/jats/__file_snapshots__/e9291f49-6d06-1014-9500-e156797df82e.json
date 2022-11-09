@@ -4493,6 +4493,546 @@
       "content": [
         "We thank the platforms of the SV faculty for support, Sabrina Bichet, Fabiana Fraga, and Jéromine Imbach for technical assistance, and Yu Sun for the critical review of manuscript figures. This work was funded by the Kristian Gerhard Jebsen Foundation and the Ecole Polytechnique Fédérale de Lausanne (EPFL)."
       ]
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Author contributions"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "E.Y. and K.S. conceived and designed the project. G.S. and A.P. helped with experiment planning and manuscript preparation. E.Y. performed the experiments, analyzed the data, and wrote the original manuscript draft. G.E.A. performed bioinformatics analysis under the supervision of J.A.. A.J. generated the FACS figure. P.D.D. and K.H. provided the ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "E2f1"
+          ]
+        },
+        {
+          "type": "Superscript",
+          "content": [
+            "+/+"
+          ]
+        },
+        " and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "E2f1"
+          ]
+        },
+        {
+          "type": "Superscript",
+          "content": [
+            "-/-"
+          ]
+        },
+        " liver samples under the supervision of L.F.. K.S. supervised the work. The manuscript was edited by all co-authors."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Declaration of interests"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The authors declare no competing interests."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "",
+      "depth": 1,
+      "content": [
+        "Figure Supplements and Legends:"
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figs1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Further characterization of lipid accumulation in BECs."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(A)"
+              ]
+            },
+            " Scheme depicting FA mix treatment for already grown BEC-organoids for 4 days. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(B)"
+              ]
+            },
+            " Representative brightfield and immunofluorescence (IF) images of lipids (BODIPY) and ACTIN co-staining, relative to panel A. n=4. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(C)"
+              ]
+            },
+            " Measurement of triglyceride concentration upon FA mix treatment relative to panel A, normalized by protein amount. n=4. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(D)"
+              ]
+            },
+            " Cell-titer Glo measurement for viability detection relative to panel A. n=4. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(E)"
+              ]
+            },
+            " Representative images of CD/HFD-fed mouse livers and hematoxylin and eosin (H&E) staining and the final body-weight measurement at the end of the experiment. n=10. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(F)"
+              ]
+            },
+            " Representative Oil Red O staining, relative to panel E. n=8. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(G- H)"
+              ]
+            },
+            " Representative cleaved caspase 3 stainings, relative to panel E ",
+            {
+              "type": "Strong",
+              "content": [
+                "(G)"
+              ]
+            },
+            " and quantification of apoptotic cells in bile ducts ",
+            {
+              "type": "Strong",
+              "content": [
+                "(H)"
+              ]
+            },
+            ". n=3."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Data are shown as mean ± SD. Absence of stars or ns, not significant (p > 0.05); *p < 0.05; ***p < 0.001; one-way ANOVA with Dunnet’s test (C, D) or unpaired, two-tailed Student’s t-test (E) were used. PV, portal vein. Arrowheads mark bile ducts. Scale bars, 100 μm (B-E), 50 μm (G-IF), and 20 μm (F, G-brightfield)."
+          ]
+        }
+      ],
+      "label": "Figure 1 - figure supplement 1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figs2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "RNA-seq analysis of EPCAM",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " BECs upon HFD."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(A)"
+              ]
+            },
+            " FACS gating strategy for isolation of CD45",
+            {
+              "type": "Superscript",
+              "content": [
+                "−"
+              ]
+            },
+            "/CD11b",
+            {
+              "type": "Superscript",
+              "content": [
+                "−"
+              ]
+            },
+            "/CD31",
+            {
+              "type": "Superscript",
+              "content": [
+                "−"
+              ]
+            },
+            "/EpCAM",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " BECs: individual cells were sequentially gated based on cell size (FSC versus SSC) and singlets. BECs were then selected based on EPCAM positivity after excluding leukocytes (CD45",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "), myeloid cells (CD11b",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "), and endothelial cells (CD31",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "), yielding a population of single CD45",
+            {
+              "type": "Superscript",
+              "content": [
+                "-"
+              ]
+            },
+            "/CD11b",
+            {
+              "type": "Superscript",
+              "content": [
+                "-"
+              ]
+            },
+            "/ CD31",
+            {
+              "type": "Superscript",
+              "content": [
+                "-"
+              ]
+            },
+            "/EPCAM",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " BECs."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(B)"
+              ]
+            },
+            " Principal component analysis (PCA) of mRNAs measured in mice fed CD or HFD by RNA- seq. n= 5 for CD, n=7 for HFD. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(C)"
+              ]
+            },
+            " Volcano plot of HFD vs CD differential analysis. Top 20 differentially expressed genes were labeled. Blue dots represent downregulated genes (log2(FC) < −1 & adj. p-value < 0.05). Red dots represent upregulated genes (log2(FC) > 1 & adj. p-value < 0.05). Grey dots represent genes not changing significantly. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(D)"
+              ]
+            },
+            " Box plot representing the differential gene expression of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Ncam1"
+              ]
+            },
+            ". n= 5 for CD, n=7 for HFD. The Y-axis depicts log2(cpm+1) values. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(E)"
+              ]
+            },
+            " Gene set enrichment analysis (GSEA) of KEGG terms. Top 15 enriched pathways (sorted by q-value). q-value: false discovery rate adjusted p-values. NES: normalized enrichment score."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Data are shown as mean ± SD. Unpaired two-tailed Student’s t-test was used."
+          ]
+        }
+      ],
+      "label": "Figure 2 - figure supplement 1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figs3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Extended analysis of BECs upon HFD, DDC, and during BEC-organoid formation."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(A)"
+              ]
+            },
+            " Over-representation analysis results. Top 15 enriched biological processes (BP) upon HFD (own data) and DDC (GSE125688) treatment in BECs. q-value: false discovery rate adjusted p-values, counts: number of found genes within a given gene set. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(B)"
+              ]
+            },
+            " Heatmap of E2F1-4 target genes from TF gene sets. Genes with absolute fold change lower than 0.5 were not shown. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(C)"
+              ]
+            },
+            " GO over-representation analysis of upregulated BP during the process of organoid formation from single BECs (Organoids vs T0) (GSE123133)."
+          ]
+        }
+      ],
+      "label": "Figure 3 - figure supplement 1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figs4",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "E2F activation correlates with increased glycolysis."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(A)"
+              ]
+            },
+            " Over-representation analysis results. Top 22 enriched KEGG and EHMN pathways during the process of organoid formation from single BECs (Organoids vs T0) (GSE123133). q-value: false discovery rate adjusted p-values, counts: number of found genes within a given gene set. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(B-C)"
+              ]
+            },
+            " Seahorse Substrate Oxidation Assay using BPTES, n=8 ",
+            {
+              "type": "Strong",
+              "content": [
+                "(B)"
+              ]
+            },
+            ", or Etomoxir, n=7 for control (Ctrl) and n=8 for inhibitor conditions ",
+            {
+              "type": "Strong",
+              "content": [
+                "(C)"
+              ]
+            },
+            " in CD-derived BEC-organoids. ",
+            {
+              "type": "Strong",
+              "content": [
+                "(D-E)"
+              ]
+            },
+            " Scheme depicting Seahorse Glycolytic Rate Assay ",
+            {
+              "type": "Strong",
+              "content": [
+                "(D),"
+              ]
+            },
+            " and Mito Stress Test ",
+            {
+              "type": "Strong",
+              "content": [
+                "(E)"
+              ]
+            },
+            ". ",
+            {
+              "type": "Strong",
+              "content": [
+                "(F-G)"
+              ]
+            },
+            " Oxygen consumption rate (OCR) ",
+            {
+              "type": "Strong",
+              "content": [
+                "(F)"
+              ]
+            },
+            ", and basal and maximal respiration ",
+            {
+              "type": "Strong",
+              "content": [
+                "(G)"
+              ]
+            },
+            " measured using Seahorse XF Mito Stress Test. Relative to panel C. n=14."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Data are shown as mean ± SD (SEM for F). absence of stars or ns, non-significant (p-value > 0.05);"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "****p < 0.0001; two-way ANOVA with Sidak’s test (B, C, G) was used."
+          ]
+        }
+      ],
+      "label": "Figure 4 - figure supplement 1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "",
+      "depth": 1,
+      "content": [
+        "Table Supplements and Legends"
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Appendix 1 - Table 1. Differential expression analysis results of EPCAM",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " BECs upon HFD. Related to Figure 2."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        {
+          "type": "Strong",
+          "content": [
+            "Appendix 1 - Table 2. Over-representation analysis of upregulated and downregulated genes in HFD, DDC, and BEC-organoid formation datasets. Related to ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig3",
+              "content": [
+                "Figure 3"
+              ]
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Table",
+      "id": "tbls3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Primers used for qPCR analysis."
+          ]
+        }
+      ],
+      "label": "Appendix 1 - Table 3.",
+      "rows": []
     }
   ]
 }

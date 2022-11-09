@@ -1721,7 +1721,7 @@
       "id": "s1",
       "depth": 1,
       "content": [
-        "INTRODUCTION"
+        "Introduction"
       ]
     },
     {
@@ -2308,7 +2308,7 @@
       "id": "s2",
       "depth": 1,
       "content": [
-        "RESULTS"
+        "Results"
       ]
     },
     {
@@ -3669,7 +3669,7 @@
       "id": "s3",
       "depth": 1,
       "content": [
-        "DISCUSSION"
+        "Discussion"
       ]
     },
     {
@@ -3863,7 +3863,7 @@
       "id": "s4",
       "depth": 1,
       "content": [
-        "MATERIALS AND METHODS"
+        "Materials and methods"
       ]
     },
     {
@@ -4177,6 +4177,352 @@
       "type": "Paragraph",
       "content": [
         "We thank Celia Lau for the original SEZ diagram models, and members of the Gordon lab for comments on the manuscript. This work was funded by Natural Sciences and Engineering Research Council (NSERC) grants RGPIN-2016–03857 and RGPAS 492846–16."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Data availability"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "All data are available in the manuscript and Supplementary Information, or are available upon request from the corresponding author."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Author contributions"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "M.J, P.Y.M, and M.D.G conceived the project. M.J and M.D.G wrote the manuscript. M.J performed all experiments, analyzed the data, and made the figures. P.Y.M and P.J offered experimental advice. M.D.G supervised the project."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s7",
+      "depth": 1,
+      "content": [
+        "Declaration of interests"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The authors declare no competing interests."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s8",
+      "depth": 1,
+      "content": [
+        "Supplemental information"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Supplemental information includes 3 figures."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s9",
+      "depth": 1,
+      "content": [
+        "Supplemental Information"
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Gustatory receptor neuron activation produces reward and punishment signals in taste memory formation."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Projections from ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "GR66a, Gr43a, PPK23"
+              ]
+            },
+            {
+              "type": "Superscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "Glut"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Emphasis",
+              "content": [
+                "and GR64f"
+              ]
+            },
+            " GRNs. (B) Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr66a>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal in the long-lasting taste memory assay with or without retinal (n=19-21). (C) Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "PPK23"
+              ]
+            },
+            {
+              "type": "Superscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "Glut"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Emphasis",
+              "content": [
+                ">CsChrimson"
+              ]
+            },
+            " flies in the short-term taste memory assay with or without retinal (n=22-30). (D, E) Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr64f>CsChrimson"
+              ]
+            },
+            " flies in the short-term (n=28-36) (D) and long-lasting (n=13-21) (E) taste memory assay with or without retinal. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test: *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001."
+          ]
+        }
+      ],
+      "label": "Figure S1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Taste memories are specific to the CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Schematic outlining STM assay and MB compartments innervated by PAM driver R58E02. Preference index of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the STM assay when monopotassium glutamate (MPG) is used as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " (n=16-19). (B) Preference index of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the STM assay with salt as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and MPG as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "-"
+              ]
+            },
+            " (n=16-19). (C) Preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the short-term memory assay when the CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " (NaCl) is switched for to the novel tastant (N.T.) MPG during testing (n=21-30). Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test, : *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05."
+          ]
+        }
+      ],
+      "label": "Figure S2:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Activation of discrete PAM subpopulations induces distinct types of taste memories."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A, B) Schematic outlining STM and LTM assays, and an alternate PAM-α1 driver, innervating the α1 compartment of the horizontal MB lobe. Preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB299B>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal in the short-term (n=18-23) (A) and long-term (n=22-28) (B) memory assays compared to controls. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test: **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (n=18-26)"
+          ]
+        }
+      ],
+      "label": "Figure S3:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
       ]
     }
   ]

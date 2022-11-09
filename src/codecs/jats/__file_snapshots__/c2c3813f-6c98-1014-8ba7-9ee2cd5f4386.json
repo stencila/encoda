@@ -9087,6 +9087,443 @@
         },
         "mouse line, Dr. Daniel J. Tancredi (UC Davis) for providing advice on statistical data analysis, and Drs. Scott Fishman and David J. Copenhaver (UC Davis Pain Clinic) for valuable discussions of potential therapeutical applications of the designed peptides."
       ]
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Funding"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "National Institute of Neurological Disorders and Stroke HEAL Initiative Grant UG3NS114956 (VY-Y, HW, JTS, BH, KW)."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Competing interests"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "V.Y.-Y., H.W., P.T.N, H.M.N., K.M.W., J.T.S., and B.H. are named inventors on a patent application entitled “Peptides targeting sodium channels to treat pain” based on this research, filed by the University of California."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s7",
+      "depth": 1,
+      "content": [
+        "Data and materials availability"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "All data associated with this study are present in the paper or the Supplementary Materials."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig1S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Molecular dynamics simulations setup for ProTx-II - human Nav1.7 complex. Molecular dynamics simulation of the NavAb/hNav1.7 - proTxII complex. (",
+            {
+              "type": "Strong",
+              "content": [
+                "A"
+              ]
+            },
+            ") A simulation system containing NavAb/hNav1.7 chimeric channel (yellow ribbon), proTx-II (magenta ribbon), POPC lipid (blue blob), sodium ions (yellow sphere), chloride ion (green sphere), water (transparent surface). (",
+            {
+              "type": "Strong",
+              "content": [
+                "B"
+              ]
+            },
+            ") Heatmap showing fractional contacts of proTx-II residues with the surrounding environment categorized as lipid tail, lipid head, VSDII, and water normalized over the time course of the simulation."
+          ]
+        }
+      ],
+      "label": "Figure 1—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig1S2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Multiple sequence alignment of the wild-type ProTx-II and homologous peptide toxins. Each peptide toxin sequence name includes 4 letter PDB ID code for the corresponding structure."
+          ]
+        }
+      ],
+      "label": "Figure 1—figure supplement 2.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig2S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Sequence alignment of human Nav channel voltage-sensing domain II extracellular regions. Sequence alignment of the extracellular S1-S2 of the VSD-II (top panel) and the extracellular S3-S4 (bottom panel) regions of human Nav channels."
+          ]
+        }
+      ],
+      "label": "Figure 2—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig3S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Rosetta design of ProTx-II peptides. Computational design of ProTx-II variants. (",
+            {
+              "type": "Strong",
+              "content": [
+                "A"
+              ]
+            },
+            ") Structural mapping of design restrictions categorized as disulfide positions (yellow), fixed identity positions (black), disallowed acidic identity positions (blue), and free design positions (orange). (",
+            {
+              "type": "Strong",
+              "content": [
+                "B"
+              ]
+            },
+            ") Rosetta top design sequences and the consensus design sequence (represented as sequence logo) are colored under the design restriction scheme."
+          ]
+        }
+      ],
+      "label": "Figure 3—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig3S2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Selectivity of PTx2-3064 and PTx2-3066. At 10 µM, PTx2-3064 blocked ∼92%, ∼66%, and ∼25% of currents conducted by hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.2, hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.4, and hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.5, respectively. At the same concentration, PTx2-3066 blocked ∼41%, ∼34%, and ∼1% of currents conducted by hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.2, hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.4, and hNa",
+            {
+              "type": "Subscript",
+              "content": [
+                "V"
+              ]
+            },
+            "1.5, respectively. Data are represented as mean ± standard deviation derived from 3 individually recorded cells."
+          ]
+        }
+      ],
+      "label": "Figure 3—figure supplement 2.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig4S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Selectivity of PTx2-3127 and PTx2-3128 for hNav1.7 over other sodium channels. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Top pane"
+              ]
+            },
+            "l, Data denoted as the mean of individual IC",
+            {
+              "type": "Subscript",
+              "content": [
+                "50"
+              ]
+            },
+            "’s (in nM) derived from recordings of 3 or more cells for each peptide. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Bottom panels"
+              ]
+            },
+            ", Exemplifying current traces before (black traces) and after saturated with 10 µM (purple traces) of PTx2-3127 and PTx2-3128 peptides."
+          ]
+        }
+      ],
+      "label": "Figure 4—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig4S2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Mechanism of action of PTx2-3127. (A) Plots of current-voltage relationship of normalized hNav1.7 currents measured in control cells (black, n = 10) and cells exposed to 50 nM of PTx2-3127 (red, n = 8). Cells were stepped in 5-mV increments from -120 mV to +70 mV from a holding potential of -120 mV for 10 ms. (B) Voltage-dependent activation curves are derived from the data shown in (A). PTx2-3127 causes a statistically significant depolarized shift in steady-state activation in the depolarizing direction. For control cells, the V",
+            {
+              "type": "Subscript",
+              "content": [
+                "1/2"
+              ]
+            },
+            " of activation is -28.1 ± 0.9 mV, and the slope factor k is 5.0 ± 0.5 mV; for PTx2-3127-treated cells, the V",
+            {
+              "type": "Subscript",
+              "content": [
+                "1/2"
+              ]
+            },
+            " of activation is -17.3 ± 3.9 mV, and the slope factor k is 2.4 ± 0.2 mV. (C) Normalized steady-state inactivation curves measured control cells (black, n = 12) and cells exposed to 50 nM PTx2-3127 (red, n = 6). PTx2-3127 causes a statically significant shift in steady-state inactivation in the hyperpolarized direction. For control cells, the V",
+            {
+              "type": "Subscript",
+              "content": [
+                "1/2"
+              ]
+            },
+            " of inactivation is -71.2 ± 0.9 mV, and the slope factor k is 5.8 ± 0.1 mV; for PTx2-3127-treated cells, the V",
+            {
+              "type": "Subscript",
+              "content": [
+                "1/2"
+              ]
+            },
+            " of inactivation is -76.2 ± 2.5 mV, and the slope factor k is 7.3 ± 0.3 mV. Cells were stepped in 10-mV increments from -120 mV to 30 mV for 500 ms followed by a test pulse to -10 mV for 30 ms. All recordings were performed in a time-matched manner, and normalized conductances and currents were fit to a Boltzmann function, and are shown as means ± SEM."
+          ]
+        }
+      ],
+      "label": "Figure 4—figure supplement 2.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig5S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Selectivity of PTx2-3258 for hNav1.7 over other sodium channels. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Top panel"
+              ]
+            },
+            ", Data denoted as mean of individual IC",
+            {
+              "type": "Subscript",
+              "content": [
+                "50"
+              ]
+            },
+            "’s (in nM) derived from recordings of 3 or more cells for each peptide. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Bottom panel"
+              ]
+            },
+            ", Representative current traces before (black traces) and after saturated with 10 µM (purple traces) of PTx2-3258 peptide."
+          ]
+        }
+      ],
+      "label": "Figure 5—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig5S2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Stability of the wild-type ProTx-II, PTx2-3127, and PTx2-3128 in Artificial Cerebrospinal Fluid. The plots of the average area under the curve at 214 nm and 280 nm versus time for the stability of the wild-type ProTx-II (",
+            {
+              "type": "Strong",
+              "content": [
+                "A"
+              ]
+            },
+            "), PTx2-3127 (",
+            {
+              "type": "Strong",
+              "content": [
+                "B"
+              ]
+            },
+            "), and PTx2-3258 (",
+            {
+              "type": "Strong",
+              "content": [
+                "C"
+              ]
+            },
+            ")."
+          ]
+        }
+      ],
+      "label": "Figure 5—figure supplement 2.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig6S1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Efficacy of PTx2-3127 on rheobase and action potentials in mouse DRG neurons. (",
+            {
+              "type": "Strong",
+              "content": [
+                "A"
+              ]
+            },
+            ") Current clamp recording of TTX insensitive NP1 action potentials with 3 Hz stimuli in vehicle, 1 µM PTx2-3127 and 1 µM TTX. (",
+            {
+              "type": "Strong",
+              "content": [
+                "B"
+              ]
+            },
+            ") Rheobase of TTX insensitive NP1 neurons before PTx2-3127 or vehicle and in TTX. Red points and lines indicate that neurons were in PTx2-3127 before TTX while blue points and lines indicate that neurons were in vehicle before TTX. p values calculated by Students T-test."
+          ]
+        }
+      ],
+      "label": "Figure 6—figure supplement 1.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }

@@ -5469,6 +5469,162 @@
       "content": [
         "none declared."
       ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            "-triggered ERα deficiency was observed in ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "ApoE",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "-/-"
+                  ]
+                },
+                " Fpn1",
+                {
+                  "type": "Superscript",
+                  "content": [
+                    "LysM/LysM"
+                  ]
+                }
+              ]
+            },
+            " at early post-menopause (25 weeks old)."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Iron content of aorta and liver detected by ferrozine assays. n = 4, ****",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.0001. (B) ABCA-1, ERα, VEGF and Ft-L protein expression of aorta were detected. (F) Serum iron in different groups. n = 6, *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05."
+          ]
+        }
+      ],
+      "label": "Figure S1",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "No significant oxidative-stress was raised by application of E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " and iron within the indicated concentration."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) SOD2 protein levels of J774a.1 post treatments with FAC/DFP in the presence/absence of E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            ". (B) The enzymatic activity of catalase in J774a.1. n=4. (C) Relative ERα mRNA expression of J774a.1 treated with different concentrations of FAC in the presence/absence of E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            ", assessed by qPCR. n = 5."
+          ]
+        }
+      ],
+      "label": "Figure S2",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "E3-ligase responses to iron and E",
+            {
+              "type": "Subscript",
+              "content": [
+                "2"
+              ]
+            },
+            " treatment in different cell types."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) BRCA1 and AHR protein expressions in J774a.1 were detected. (B) The protein expression of ERα and its related E3 ligase, BRCA1 and AHR, was detected in MCF-7 cell line. n=4"
+          ]
+        }
+      ],
+      "label": "Figure S3",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }

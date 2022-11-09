@@ -19,6 +19,8 @@ import stencila, { isA } from '@stencila/schema'
 import crypto from 'crypto'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
+import { BlockContent } from 'mdast'
+import { sentenceCase } from 'sentence-case'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
@@ -302,12 +304,15 @@ function decodeArticle(article: xml.Element): stencila.Article {
 
   const body = decodeBody(child(article, 'body'), state)
 
-  const { references, ack } = decodeBack(child(article, 'back'), state)
+  const { references, content: backContent } = decodeBack(
+    child(article, 'back'),
+    state
+  )
 
   const metaAll = { ...metaFront }
   const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
 
-  const content = [...(body ?? []), ...(ack ?? [])]
+  const content = [...(body ?? []), ...(backContent ?? [])]
 
   return stencila.article({ ...front, references, meta, content })
 }
@@ -1067,14 +1072,19 @@ function decodeBack(
   state: DecodeState
 ): {
   references?: stencila.Article['references']
-  ack?: stencila.BlockContent[]
+  content?: stencila.BlockContent[]
 } {
   if (elem === null) return {}
 
   const references = decodeReferences(first(elem, 'ref-list'))
-  const ack = decodeAck(first(elem, 'ack'), state)
 
-  return { references, ack }
+  const ack = decodeAck(first(elem, 'ack'), state) ?? []
+  const sections = decodeBackSec(
+    elem.elements?.filter((elem) => elem.name === 'sec') ?? [],
+    state
+  )
+
+  return { references, content: [...ack, ...sections] }
 }
 
 /**
@@ -1097,6 +1107,41 @@ function decodeAck(
     stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
     ...blocks,
   ]
+}
+
+/**
+ * Decode a JATS `<back> <sec>` element to a Stencila `BlockContent`
+ *
+ * Backmatter sections are used for a variety of purposes included supplementary figures
+ * and data availability statements. No attempt is made to differentiate between these and unlike with <ack>
+ * the sections are mostly decoded verbatim.
+ *
+ * The <title> is treated as the h1 for the section.
+ * Any other heading in the section are treated as follows:
+ * 
+ * - if they have the same content as the title they are dropped (otherwise there would be duplication)
+ * - demoted to h2
+ */
+function decodeBackSec(
+  elems: xml.Element[],
+  state: DecodeState
+): stencila.BlockContent[] {
+  return elems.reduce((prev: stencila.BlockContent[], elem) => {
+    const nodes = decodeElement(elem, state) as stencila.BlockContent[]
+    const node = nodes[0]
+    if (nodes.length === 1 && node?.type === 'Heading') {
+      const alreadyExists =
+        prev.findIndex(
+          (existing) =>
+            existing.type === 'Heading' &&
+            existing.content[0] === node.content[0]
+        ) >= 0
+      if (alreadyExists) {
+        return prev
+      }
+    }
+    return [...prev, ...nodes]
+  }, [])
 }
 
 /**
@@ -1607,6 +1652,9 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
  * implies a nested section. This is more likely to ensure conformance with
  * the following rule if the document is encoded to HTML:
  * https://dequeuniversity.com/rules/axe/3.5/heading-order
+ *
+ * For consistency, across documents all caps titles are converted to
+ * sentence case.
  */
 function decodeHeading(
   elem: xml.Element,
@@ -1617,9 +1665,17 @@ function decodeHeading(
     ancestorElem.name === 'sec'
       ? [sectionDepth, sectionId]
       : [sectionDepth + 1, undefined]
+  let content = decodeInlineContent(elem.elements ?? [], state)
+  if (
+    content.length === 1 &&
+    typeof content[0] === 'string' &&
+    content[0].toUpperCase() == content[0]
+  ) {
+    content = [sentenceCase(content[0])]
+  }
   return [
     stencila.heading({
-      content: decodeInlineContent(elem.elements ?? [], state),
+      content,
       depth,
       id,
     }),

@@ -6602,6 +6602,498 @@
       "content": [
         "We thank I. Chelo, H. Gendrot, T. Guzella and L. Noble for help with worm handling, data acquisition or data analysis; L. Noble, P. Phillips and P. de Villemereuil for discussion. This work was supported by the European Research Council (ERC-St-243285) and the Agence Nationale pour la Recherche (ANR-14-ACHN-0032-01, ANR-17-CE02-0017-01)."
       ]
+    },
+    "7",
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Author contributions"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Data acquisition BA; Software implementation and data analysis FM; funding acquisition and project administration HT; Conceptualization, writing, editing and correspondence: FM, HT."
+      ]
+    },
+    "9",
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Supplementary Figures"
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            "-matrix of the ancestral population A6140. ",
+            {
+              "type": "Strong",
+              "content": [
+                "A. G"
+              ]
+            },
+            " matrix estimates in the low salt environment, bottom six entries indicating the genetic variances of transition rates, top 15 entries indicating the the genetic covariances between transition rates. Colored intervals and bars show 80% and 95% credible intervals of the posterior distribution, dots the mean (see Methods). In grey, the expected genetic (co)variances due to sampling a finite number of inbred lines, following ",
+            {
+              "type": "Cite",
+              "target": "c51",
+              "content": [
+                "Morrissey and Bonnet (2019)"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Figure S1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Experimental evolution of locomotion behavior. Small colored dots show the estimated transition rates in low salt for each line from the ancestral population A6140 (grey) and three replicate GA[1,2,4] populations at generation 50 (red). Least square estimates of the mean and 95% confidence intervals are shown in circles and error bars. Divergence between ancestral and the 3 replicate populations is shown by asterisks (LRT ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "χ"
+              ]
+            },
+            {
+              "type": "Superscript",
+              "content": [
+                "2"
+              ]
+            },
+            ", P-value <0.05 *, <0.01 **, < 0.001 ***; ",
+            {
+              "type": "Link",
+              "relation": "table",
+              "target": "#tbl4",
+              "content": [
+                "Table 4"
+              ]
+            },
+            "). Divergence per replicate population can be found in ",
+            {
+              "type": "Link",
+              "relation": "table",
+              "target": "#tbl3",
+              "content": [
+                "Table 3"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Figure S2:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Evolution of the ",
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            " matrix in the high salt environment. Bottom six entries indicate the diagonal estimates the genetic variances of transition rates, top 15 entries indicate the off-diagonal estimates of genetic covariances between transition rates. Orange (blues) indicate estimates of ancestral (derived) populations, with colored bars showing 80% and 95% credible intervals of the posterior distribution, dots the mean."
+          ]
+        }
+      ],
+      "label": "Figure S3:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS4",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            " matrix evolution in high salt. ",
+            {
+              "type": "Strong",
+              "content": [
+                "A"
+              ]
+            },
+            ". Eigentensor analysis of all four ancestral and derived ",
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            " matrices following ",
+            {
+              "type": "Cite",
+              "target": "c1",
+              "content": [
+                "Aguirre et al. (2014)"
+              ]
+            },
+            " and ",
+            {
+              "type": "Cite",
+              "target": "c51",
+              "content": [
+                "Morrissey and Bonnet (2019)"
+              ]
+            },
+            ". Shown are the first three eigentensor values encompassing most of the differences between ",
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            " matrices, with only the first one ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "E"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                "1"
+              ]
+            },
+            " containing more genetic variation than expected with our sample sizes. Colored bars show 80% and 95% credible intervals of the posterior distribution, dots and stars the mean."
+          ]
+        }
+      ],
+      "label": "Figure S4:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS5",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Genetic divergence during evolution. For the first eigentensor ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "E"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                "1"
+              ]
+            },
+            " from ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS4",
+              "content": [
+                "Supplementary Figure S4B"
+              ]
+            },
+            ", further decomposition shows that its first eigenvector (",
+            {
+              "type": "Emphasis",
+              "content": [
+                "e"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                "11"
+              ]
+            },
+            ") explains 83% of the genetic differences between all populations populations (eigenvalues in y-axis). Colored bars show 80% and 95% credible intervals of the posterior distribution, dots the mean. For the second eigenvector ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "e"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                "11"
+              ]
+            },
+            " of the first eigentensor ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "E"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                "1"
+              ]
+            },
+            ", there was also a reduction of genetic variation between A6140 and GA populations though only accounting for 8% of genetic divergence (not shown)."
+          ]
+        }
+      ],
+      "label": "Figure S5:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS6",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Ancestral phenotypic plasticity and phenotypic divergence. Angles between Δ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "P"
+              ]
+            },
+            " and Δ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "D"
+              ]
+            },
+            " among replicate GA populations or for each one of them are shown from top to bottom. Least square estimates of the mean, 80% and 95% confidence interval are represented by dots and colored error bars."
+          ]
+        }
+      ],
+      "label": "Figure S6:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS7",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Ancestral ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "G"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "qw"
+                  ]
+                }
+              ]
+            },
+            " matrix with fitness. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "G"
+              ]
+            },
+            {
+              "type": "Subscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "qw"
+                  ]
+                }
+              ]
+            },
+            " matrix estimates are compared with ",
+            {
+              "type": "Strong",
+              "content": [
+                "G"
+              ]
+            },
+            " matrix estimates (",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig2",
+              "content": [
+                "Figure 2"
+              ]
+            },
+            " and ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#figS1",
+              "content": [
+                "Supplementary Figure S1"
+              ]
+            },
+            ") for the ancestral population in low (blue) and high (red) salt environments. Bottom six entries indicate the diagonal estimates the genetic variances of transition rates, middle 15 entries indicate the off-diagonal estimates of genetic covariances between transition rates. Top 7 entries indicate the genetic covariances between transition rates and relative fertility or the genetic variance in relative fertility (as in ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig6",
+              "content": [
+                "Figure 6"
+              ]
+            },
+            "). Genetic (co)variances estimates are very similar to those presented in ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig2",
+              "content": [
+                "Figure 2B"
+              ]
+            },
+            "."
+          ]
+        }
+      ],
+      "label": "Figure S7:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS8",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "Magnitude of phenotypic divergence. The ratio between the expected phenotypic divergence (",
+            {
+              "type": "Emphasis",
+              "content": [
+                "s"
+              ]
+            },
+            ", from ",
+            {
+              "type": "Link",
+              "relation": "fig",
+              "target": "#fig6",
+              "content": [
+                "Figure 6"
+              ]
+            },
+            ") with the observed phenotypic divergence (Δ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "D"
+              ]
+            },
+            ") is plotted for all transition rates for each GA replicate. Error bars show 80% and 95% credible intervals, obtained by sampling the posterior distributions; dots the mean. When this ratio falls to zero we cannot predict phenotypic divergence. On average predicted phenotypic divergence would have been achieved in 1.3 generations, much sooner than when GA populations were measured at generation 50."
+          ]
+        }
+      ],
+      "label": "Figure S8:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }

@@ -1721,7 +1721,7 @@
       "id": "s1",
       "depth": 1,
       "content": [
-        "INTRODUCTION"
+        "Introduction"
       ]
     },
     {
@@ -1976,7 +1976,7 @@
       "id": "s2",
       "depth": 1,
       "content": [
-        "RESULTS"
+        "Results"
       ]
     },
     {
@@ -3890,7 +3890,7 @@
       "id": "s3",
       "depth": 1,
       "content": [
-        "DISCUSSION"
+        "Discussion"
       ]
     },
     {
@@ -4341,7 +4341,7 @@
       "id": "s4",
       "depth": 1,
       "content": [
-        "MATERIALS AND METHODS"
+        "Materials and methods"
       ]
     },
     {
@@ -5293,6 +5293,848 @@
       "content": [
         "The authors would like to express their gratitude to the organ donors and their families who allowed the collection of samples for research under sad circumstances. The authors would also like to thank Prof. Pascal Leprince, Dr. Guillaume Lebreton, and Dr. Marina Rigolet of the cardiac surgery team, Prof. Bruno Riou and the graft coordination team of the Pitié-Salpêtrière hospital for their invaluable contribution to sample collection. The authors thank the UMR 8199 LIGAN-PM Genomics platform (Lille, France) for efficient sequencing. We also thank Thierry Mora, and Aleksandra Walczak for helpful discussion."
       ]
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Funding"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "This work was primarily funded by:"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "TRiPoD ERC-Advanced EU grant 322856 (DK)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "LabEx Transimmunom ANR-11-IDEX-0004-02 (DK)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "RHU iMAP ANR-16-RHUS-0001 (DK)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Besides, ZZ was supported by the JDRF Postdoctoral Fellowship 3-PDF-2020-942-A-N and RM by the Agence Nationale de la Recherche ANR-19-CE15-0014-01 and Fondation pour la Recherche Médicale EQU20193007831."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s7",
+      "depth": 1,
+      "content": [
+        "Author contributions"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Conceptualization: DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Data curation: VQ, PB, PS, HPP."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Data Analyses: VQ, PB, FM, VM, PS, HV, ZZ, HPP."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Funding acquisition: DK"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Investigation: VQ, PB, VM, PS, HV, FM, NC, MBS, HPP, BC, HV, ZZ, BB, MS, EMF."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Methodology: VQ, DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Project administration: VQ, DK. Resources: VQ, PB."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Software: VQ, PB, PS, HPP."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Supervision: DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Validation: DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Visualization: VQ, DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Writing – original draft: VQ, DK."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Writing – review & editing: VQ, DK."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s8",
+      "depth": 1,
+      "content": [
+        "Competing interests"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The authors declare no competing financial interests."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s9",
+      "depth": 1,
+      "content": [
+        "Data and materials availability"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Datasets from VDJdb were downloaded from ",
+        {
+          "type": "Link",
+          "target": "https://vdjdb.cdr3.net",
+          "content": [
+            "https://vdjdb.cdr3.net"
+          ]
+        },
+        ". Datasets from McPAS-TCR were downloaded from ",
+        {
+          "type": "Link",
+          "target": "http://friedmanlab.weizmann.ac.il/McPAS-TCR/",
+          "content": [
+            "http://friedmanlab.weizmann.ac.il/McPAS-TCR/"
+          ]
+        },
+        ". We manually curated these datasets to be sure to use only βCDR3s from CD8 tetramer-specific cells."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Single-cell datasets from 10X genomics were downloaded from ",
+        {
+          "type": "Link",
+          "target": "https://support.10xgenomics.com/single-cell-vdj/datasets",
+          "content": [
+            "https://support.10xgenomics.com/single-cell-vdj/datasets"
+          ]
+        },
+        " (‘Application Note - A New Way of Exploring Immunity’ section, datasets ‘CD8+ T cells of Healthy Donor’ 1–4, available under the Creative Commons Attribution license)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Data from the donors are available on request to the authors."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Dotplot of thymocytes sorting."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": []
+        },
+        {
+          "type": "List",
+          "items": [
+            {
+              "type": "ListItem",
+              "content": [
+                {
+                  "type": "Paragraph",
+                  "content": [
+                    "Dotplot of thymocytes sorting. Cells from the different patients were sorted according to their phenotypes: CD3+CD4-CD8+ for ThyCD8, CD3+CD4+CD8+ for DPCD3+ and CD3-CD4+CD8+ for DPCD3-."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ListItem",
+              "content": [
+                {
+                  "type": "Paragraph",
+                  "content": [
+                    "Networks of βCDR3s specific for GILGFVFTL from influenza (orange), GLCTLVAML from Epstein-Barr virus (green) and FPRPWLHGL from human immunodeficiency virus (blue) are shown. These βCDR3s are from TCRs identified on CD8 T lymphocytes isolated with class I tetramer loaded with the indicated peptides(",
+                    {
+                      "type": "Emphasis",
+                      "content": [
+                        {
+                          "type": "Cite",
+                          "target": "c27",
+                          "content": [
+                            "27"
+                          ]
+                        },
+                        ", ",
+                        {
+                          "type": "Cite",
+                          "target": "c28",
+                          "content": [
+                            "28"
+                          ]
+                        }
+                      ]
+                    },
+                    "). Each node represents a clonotype. Two different clonotypes are connected if their βCDR3s differ by at most one amino acid (LD≤1)."
+                  ]
+                }
+              ]
+            }
+          ],
+          "order": "Ascending"
+        }
+      ],
+      "label": "Figure S1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Properties of thymocytes’ TCRs"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "βCDR3 network during thymopoiesis. Representation of the 18,000 most frequent βCDR3 networks from DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes of eight donors (Pn)."
+          ]
+        }
+      ],
+      "label": "Figure S2:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A-B) Clustered αCDR3s from DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes. Analyses were performed on the first 18,000 most frequent αCDR3s per sample (n=6 for DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and n=10 for CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes). (A) Percentage of clustered αCDR3s. (mean±s.e.m., *p=0.016, Mann-Whitney test). (B) Degree of clustered αCDR3s. (mean±s.e.m., ****p<0.0001, Mann-Whitney test)."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(C) Correlation between ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Pgen"
+              ]
+            },
+            " and βCDR3 number of connections in the CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocyte repertoire. The contour plots represent the generation probability as a function of βCDR3 connections in the CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes for donors P11 to P36. Linear regression curves between ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Pgen"
+              ]
+            },
+            " and number of connections are represented as red dashed lines (“y” represents the regression curve’s equation). The Pearson correlation coefficient “R” and p-value “p” are calculated for each individual."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(D-E) Clonogram representation of TCR Vβ (E) and Jβ (F) usage in clustered versus dispersed CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes. The bar plots represent the mean percentage of TCR Vβ (left) and Jβ (right) in dispersed (light grey) versus clustered (dark grey). (* p<0.01, multiple t-test)."
+          ]
+        }
+      ],
+      "label": "Supplementary Figure 3.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS4",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Publicness of thymocytes’ CDR3s"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) βCDR3 sharing between individuals. Pie charts represent the sharing between individuals before (DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            ") and after thymic selection (CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "). Colours represent the dispersed (grey) or clustered (blue) CDR3s. Sharing was analyzed within the 10 donors for which there were at least 18,000 βCDR3s in DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and in CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(B) Enrichment of public lllCDR3s in the CD8+ thymocyte repertoires. Representation of the generation probability as a function of lllCDR3 connections in individuals (Pn). The contour plots represent shared (blue) or private (grey) lllCDR3s. The Pearson correlation coefficient “R” and p-value “p” are calculated for each group. The black dotted lines delimit the threshold for the 2.5% sequences with the higher Pgen and connection. lllCDR3s with both the highest Pgen and connections are also the most public for 12 out of 12 individuals (p<0.0001, two-tailed Fisher test)."
+          ]
+        }
+      ],
+      "label": "Figure S4.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS5",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Virus specificities of thymocytes’ CDR3s"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Enrichment of virus-specific lllCDR3s in the CD8+ thymocyte repertoire. Representation of the generation probability as a function of lllCDR3 connections in individuals (Pn). The contour plots represent lllCDR3s from TCRs identified as virus-specific based on tetramer identification14,15 (red) or with unknown specificity (grey). The Pearson correlation coefficient “R” and p-value “p” are calculated for each group. The black dotted lines delimit the threshold for the 2.5% sequences with both higher Pgen and degree of connection. lllCDR3s with both the highest Pgen and connections were also the most virus-specific for 11 out of 12 individuals (p-value <0.0001, two-tailed Chi-square test)."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(B) Virus-specific CDR3s among DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and ThyCD8 cells. Barplots represent the percentage of CDR3s from TCR identified as virus-specific based on tetramer binding(",
+            {
+              "type": "Emphasis",
+              "content": [
+                {
+                  "type": "Cite",
+                  "target": "c27",
+                  "content": [
+                    "27"
+                  ]
+                },
+                ", ",
+                {
+                  "type": "Cite",
+                  "target": "c28",
+                  "content": [
+                    "28"
+                  ]
+                }
+              ]
+            },
+            "). For each panel, calculation is done on dispersed (left boxplot) or clustered (right boxplot) CDR3s. Colours correspond to different viral specificities."
+          ]
+        }
+      ],
+      "label": "Figure S5.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS6",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Sharing of virus specific thymocytes’ CDR3s"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Network of clustered nodes from the first top ranking 18,000 CDR3s. For each individual, we plot CDR3s as viral-associated (red) either if they are in the public database (line 1 and 2) or if they have a LD≤ 1 with a CDR3 of the public database (line 3 and 4)."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(B) Sharing of virus-associated CDR3s. The virus-associated CDR3s are highly shared between individuals."
+          ]
+        }
+      ],
+      "label": "Figure S6.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS7",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Binding properties of single cell TCRs"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": []
+        },
+        {
+          "type": "List",
+          "items": [
+            {
+              "type": "ListItem",
+              "content": [
+                {
+                  "type": "Paragraph",
+                  "content": [
+                    "Network of tetramer-binding CDR3s from public database (VDJdb) identifying CDR3s with multiple viral specificities. Each dot represents a single CDR3. Dot are connected by edges defined by Levenshtein distance of ≤1 (one AA substitution/insertion/deletion). Each dot represents a CDR3 with at least 2 specificities for 2 different viruses. The colors are related to a specific virus. The specificities of these CDR3 were identified by tetramer staining."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ListItem",
+              "content": [
+                {
+                  "type": "Paragraph",
+                  "content": [
+                    "Venn diagram representing specificities for 5 different viruses of the 13,557 unique virus-associated CDR3s (those from ",
+                    {
+                      "type": "Link",
+                      "relation": "fig",
+                      "target": "#fig3",
+                      "content": [
+                        "Figure 3e"
+                      ]
+                    },
+                    ", LD≤1)."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ListItem",
+              "content": [
+                {
+                  "type": "Paragraph",
+                  "content": [
+                    "MDS representation of MH dissimilarity index for EBV repertoire. The MH index are calculated for each repertoire specific of EBV antigen (n=16). Each point represents a patient and each color an antigen."
+                  ]
+                }
+              ]
+            }
+          ],
+          "order": "Ascending"
+        }
+      ],
+      "label": "Figure S7.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS8",
+      "caption": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "βCDR3s drive polyspecificity. Heatmap of the binding score for different dextramers of different TCRs using the same CASSIRSSYEQYF βCDR3, in two donors. The recognition properties are remarkably similar whatever the βCDR3. The polyspecificity is oriented towards the recognition of common viruses such as influenza, EBV, CMV."
+          ]
+        }
+      ],
+      "label": "Figure S8.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS9",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Gating strategy for sorting effector memory (emCD8) Dextramer positive cells."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "CD8 were previously enriched from cytapheresis PBMC. Gating strategy of the sorting of Cytomegalovirus (A) or Epstein Barr Virus (B) dextramère positive effector memory CD8 (emCD8) from CD8 enriched fraction of PBMC’s donor after excluding doublets. emCD8 cells are CD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " CD45RA",
+            {
+              "type": "Superscript",
+              "content": [
+                "−"
+              ]
+            },
+            " cells."
+          ]
+        }
+      ],
+      "label": "Figure S9.",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS10",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Polyspecific properties of anti-CMV cytotoxic cells."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(A)"
+              ]
+            },
+            " PBMC were stimulated in vitro using Peptivator CMV pp65 (that consists mainly of 15-mer peptides with 11-amino acid overlap, covering the complete sequence of the pp65 protein) and cultured for 25 days. Selected CTL were then restimulated in the presence of either Peptivator CMV pp65, Peptivator CMV IE-1, EBV-BZLF1 or Peptivator EBV EBNA-1."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "(B)"
+              ]
+            },
+            " Polyspecificity is dependent of peptide level. We represent the % of cells secreting IFNγ as a function of peptides concentration. For pp65 CMV peptide (red) and BZLF-1 EBV peptide (blue), the level of IFN is different and depends of the concentration of the peptides, suggesting different affinity for the peptides. These observations were made with cells from 5 different donors."
+          ]
+        }
+      ],
+      "label": "Figure S10.",
+      "content": []
+    },
+    {
+      "type": "Table",
+      "id": "tblS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Enrichment of public βCDR3s in CD8+ thymocytes vs DPCD3+."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Contingency table for the Chi-square analysis performed with Yates’ correction to test the null hypothesis of independence between the sharing of βCDR3s (Public or Private) vs the cell phenotype (DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "). We performed this test in the 10 donors for which we have 18,000 βCDR3s in both DPCD3",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and CD8",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " thymocytes. A βCDR3 is defined as public if it is found at least once in the 18,000 βCDR3s of the same cell phenotype from other donors. The results (p-value < 0.0001) rejected the null hypothesis, thereby indicating the interdependency of the two variables."
+          ]
+        }
+      ],
+      "label": "Supplementary table 1.",
+      "rows": []
+    },
+    {
+      "type": "Table",
+      "id": "tblS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Enrichment of virus-specific lllCDR3s from databases14,15 in clustered CD8+ thymocytes."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Contingency table for the Chi-square analysis performed with Yates’ correction to test the null hypothesis of independence between the specificity of βCDR3s (Virus Tet+ and Unknown specificities) vs the connection of βCDR3 (“clustered” and “dispersed”) in all the CD8+ thymocytes from 12 donors. The results (p-value < 0.0001) rejected the null hypothesis, thereby indicating the interdependency of the two variables."
+          ]
+        }
+      ],
+      "label": "Supplementary table 2.",
+      "rows": []
+    },
+    {
+      "type": "Table",
+      "id": "tblS3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "List of peptides represented on the chord plot. Related to 4G right."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "The table is organized according to the clockwise order of the chord plot segments."
+          ]
+        }
+      ],
+      "label": "Table S3.",
+      "rows": []
     }
   ]
 }
