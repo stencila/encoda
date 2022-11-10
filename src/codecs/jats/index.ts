@@ -19,7 +19,6 @@ import stencila, { isA } from '@stencila/schema'
 import crypto from 'crypto'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
-import { BlockContent } from 'mdast'
 import { sentenceCase } from 'sentence-case'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
@@ -876,6 +875,23 @@ function decodeContrib(
     const contributor = name ? decodeName(name) : stencila.person()
 
     const emails = all(contrib, 'email')
+
+    // If the author is a corresponding author then attempt to get their email
+    // from the linked <corresp> element with the id in the <xref>
+    const correspId = first(contrib, 'xref', { 'ref-type': 'corresp' })
+      ?.attributes?.rid
+    if (correspId) {
+      console.log('correspId', correspId)
+      const email = first(
+        first(state.article, 'corresp', { id: correspId }),
+        'email'
+      )
+      if (email) {
+        console.log('email', email)
+        emails.push(email)
+      }
+    }
+
     if (emails.length) contributor.emails = emails.map(text)
 
     const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
