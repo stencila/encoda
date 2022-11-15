@@ -567,7 +567,76 @@
     {
       "type": "Article",
       "id": "c1",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Adams"
+          ],
+          "givenNames": [
+            "G.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pall"
+          ],
+          "givenNames": [
+            "P.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Grauer"
+          ],
+          "givenNames": [
+            "S.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhou"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ballard"
+          ],
+          "givenNames": [
+            "J.",
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vavrek"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tellers"
+          ],
+          "givenNames": [
+            "D.",
+            "M."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2022"
@@ -599,7 +668,45 @@
     {
       "type": "Article",
       "id": "c2",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ahern"
+          ],
+          "givenNames": [
+            "C.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Payandeh"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bosmans"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chanda"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2016"
@@ -631,7 +738,48 @@
     {
       "type": "Article",
       "id": "c3",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Alford"
+          ],
+          "givenNames": [
+            "R.",
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fleming"
+          ],
+          "givenNames": [
+            "P.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fleming"
+          ],
+          "givenNames": [
+            "K.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gray"
+          ],
+          "givenNames": [
+            "J.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2020"
@@ -663,7 +811,17 @@
     {
       "type": "Article",
       "id": "c4",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Backryd"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -695,7 +853,46 @@
     {
       "type": "Article",
       "id": "c5",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Basbaum"
+          ],
+          "givenNames": [
+            "A.",
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bautista"
+          ],
+          "givenNames": [
+            "D.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scherrer"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Julius"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2009"
@@ -727,7 +924,73 @@
     {
       "type": "Article",
       "id": "c6",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Beckley"
+          ],
+          "givenNames": [
+            "J.",
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pajouhesh"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Luu"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Klas"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Delwig"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Monteleone"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mulcahy"
+          ],
+          "givenNames": [
+            "J.",
+            "V."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2021"
@@ -759,7 +1022,76 @@
     {
       "type": "Article",
       "id": "c7",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bender"
+          ],
+          "givenNames": [
+            "B.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cisneros"
+          ],
+          "givenNames": [
+            "A"
+          ],
+          "honorificSuffix": "3rd"
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Duran"
+          ],
+          "givenNames": [
+            "A.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Finn"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fu"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lokits"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moretti"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2016"
@@ -791,7 +1123,57 @@
     {
       "type": "Article",
       "id": "c8",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bennett"
+          ],
+          "givenNames": [
+            "D.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Clark"
+          ],
+          "givenNames": [
+            "A.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huang"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -823,7 +1205,63 @@
     {
       "type": "Article",
       "id": "c9",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Beyreuther"
+          ],
+          "givenNames": [
+            "B.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Freitag"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Heers"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Krebsfanger"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scharfenecker"
+          ],
+          "givenNames": [
+            "U."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stohr"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2007"
@@ -855,7 +1293,37 @@
     {
       "type": "Article",
       "id": "c10",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bhattacharya"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wickenden"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chaplan"
+          ],
+          "givenNames": [
+            "S.",
+            "R"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2009"
@@ -887,7 +1355,47 @@
     {
       "type": "Article",
       "id": "c11",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Black"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Frezel"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2012"
@@ -914,7 +1422,56 @@
     {
       "type": "Article",
       "id": "c12",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Black"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nikolajsen"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kroner"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jensen"
+          ],
+          "givenNames": [
+            "T.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2008"
@@ -946,7 +1503,27 @@
     {
       "type": "Article",
       "id": "c13",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bosmans"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Swartz"
+          ],
+          "givenNames": [
+            "K.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2010"
@@ -978,7 +1555,45 @@
     {
       "type": "Article",
       "id": "c14",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Braden"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stratton"
+          ],
+          "givenNames": [
+            "H.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Salvemini"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khanna"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2022"
@@ -1005,7 +1620,75 @@
     {
       "type": "Article",
       "id": "c15",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cardoso"
+          ],
+          "givenNames": [
+            "F.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dekan"
+          ],
+          "givenNames": [
+            "Z."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rosengren"
+          ],
+          "givenNames": [
+            "K.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Erickson"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vetter"
+          ],
+          "givenNames": [
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Deuis"
+          ],
+          "givenNames": [
+            "J.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lewis"
+          ],
+          "givenNames": [
+            "R.",
+            "J."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -1037,7 +1720,38 @@
     {
       "type": "Article",
       "id": "c16",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Catterall"
+          ],
+          "givenNames": [
+            "W.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Goldin"
+          ],
+          "givenNames": [
+            "A.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2005"
@@ -1062,7 +1776,65 @@
     {
       "type": "Article",
       "id": "c17",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chang"
+          ],
+          "givenNames": [
+            "W."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Berta"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "Y.",
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lee"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lee"
+          ],
+          "givenNames": [
+            "S.",
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ji"
+          ],
+          "givenNames": [
+            "R.",
+            "R"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -1094,7 +1866,75 @@
     {
       "type": "Article",
       "id": "c18",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Clairfeuille"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cloake"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Infield"
+          ],
+          "givenNames": [
+            "D.",
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Llongueras"
+          ],
+          "givenNames": [
+            "J.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Arthur"
+          ],
+          "givenNames": [
+            "C.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Z.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Payandeh"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -1116,7 +1956,74 @@
     {
       "type": "Article",
       "id": "c19",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cox"
+          ],
+          "givenNames": [
+            "J.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Reimann"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nicholas"
+          ],
+          "givenNames": [
+            "A.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Thornton"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Roberts"
+          ],
+          "givenNames": [
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Springell"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Woods"
+          ],
+          "givenNames": [
+            "C.",
+            "G."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2006"
@@ -1148,7 +2055,38 @@
     {
       "type": "Article",
       "id": "c20",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2004"
@@ -1180,7 +2118,76 @@
     {
       "type": "Article",
       "id": "c21",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Deer"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rauck"
+          ],
+          "givenNames": [
+            "R.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Saulino"
+          ],
+          "givenNames": [
+            "M.",
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wallace"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Grigsby"
+          ],
+          "givenNames": [
+            "E.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McDowell"
+          ],
+          "givenNames": [
+            "G.",
+            "C."
+          ],
+          "honorificSuffix": "2nd"
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -1212,7 +2219,48 @@
     {
       "type": "Article",
       "id": "c22",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Black"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2007"
@@ -1244,7 +2292,48 @@
     {
       "type": "Article",
       "id": "c23",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Black"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2010"
@@ -1272,7 +2361,47 @@
     {
       "type": "Article",
       "id": "c24",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Black"
+          ],
+          "givenNames": [
+            "J.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2013"
@@ -1304,7 +2433,18 @@
     {
       "type": "Article",
       "id": "c25",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Drucker"
+          ],
+          "givenNames": [
+            "D.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2020"
@@ -1336,7 +2476,47 @@
     {
       "type": "Article",
       "id": "c26",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dussor"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zylka"
+          ],
+          "givenNames": [
+            "M.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Anderson"
+          ],
+          "givenNames": [
+            "D.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McCleskey"
+          ],
+          "givenNames": [
+            "E.",
+            "W"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2008"
@@ -1368,7 +2548,63 @@
     {
       "type": "Article",
       "id": "c27",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dustrude"
+          ],
+          "givenNames": [
+            "E.",
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moutal"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yang"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khanna"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khanna"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2016"
@@ -1398,7 +2634,66 @@
     {
       "type": "Article",
       "id": "c28",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Estacion"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Harty"
+          ],
+          "givenNames": [
+            "T.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Choi"
+          ],
+          "givenNames": [
+            "J.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tyrrell"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2009"
@@ -1430,7 +2725,75 @@
     {
       "type": "Article",
       "id": "c29",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fertleman"
+          ],
+          "givenNames": [
+            "C.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Baker"
+          ],
+          "givenNames": [
+            "M.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Parker"
+          ],
+          "givenNames": [
+            "K.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moffatt"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Elmslie"
+          ],
+          "givenNames": [
+            "F.",
+            "V."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Abrahamsen"
+          ],
+          "givenNames": [
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rees"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2006"
@@ -1462,7 +2825,35 @@
     {
       "type": "Article",
       "id": "c30",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Flinspach"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Neff"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -1472,7 +2863,73 @@
     {
       "type": "Article",
       "id": "c31",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Flinspach"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Xu"
+          ],
+          "givenNames": [
+            "Q."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Piekarz"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fellows"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hagan"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gibbs"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wickenden"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2017"
@@ -1499,7 +2956,73 @@
     {
       "type": "Article",
       "id": "c32",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gingras"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Smith"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Matson"
+          ],
+          "givenNames": [
+            "D.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Johnson"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nye"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Couture"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McDonough"
+          ],
+          "givenNames": [
+            "S.",
+            "I."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2014"
@@ -1529,7 +3052,75 @@
     {
       "type": "Article",
       "id": "c33",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Goldberg"
+          ],
+          "givenNames": [
+            "Y.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Price"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Namdari"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cohen"
+          ],
+          "givenNames": [
+            "C.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lamers"
+          ],
+          "givenNames": [
+            "M.",
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Winters"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hayden"
+          ],
+          "givenNames": [
+            "M.",
+            "R."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2012"
@@ -1561,7 +3152,35 @@
     {
       "type": "Article",
       "id": "c34",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Graham"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mushin"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kirkpatrick"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2004"
@@ -1593,7 +3212,57 @@
     {
       "type": "Article",
       "id": "c35",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Herzog"
+          ],
+          "givenNames": [
+            "R.",
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ghassemi"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2003"
@@ -1621,7 +3290,28 @@
     {
       "type": "Article",
       "id": "c36",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huang"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "MacKerell"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ],
+          "honorificSuffix": "Jr"
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2013"
@@ -1653,7 +3343,35 @@
     {
       "type": "Article",
       "id": "c37",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hutson"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Backonja"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Knurr"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -1685,7 +3403,75 @@
     {
       "type": "Article",
       "id": "c38",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Iacob"
+          ],
+          "givenNames": [
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hagn"
+          ],
+          "givenNames": [
+            "E.",
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sindt"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Brogan"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tadler"
+          ],
+          "givenNames": [
+            "S.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kennington"
+          ],
+          "givenNames": [
+            "K.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Junkins"
+          ],
+          "givenNames": [
+            "S.",
+            "R."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -1717,7 +3503,66 @@
     {
       "type": "Article",
       "id": "c39",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jiang"
+          ],
+          "givenNames": [
+            "W."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hardy"
+          ],
+          "givenNames": [
+            "D.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Phillips"
+          ],
+          "givenNames": [
+            "J.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mackerell"
+          ],
+          "givenNames": [
+            "A.",
+            "D."
+          ],
+          "honorificSuffix": "Jr."
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schulten"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Roux"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2011"
@@ -1749,7 +3594,45 @@
     {
       "type": "Article",
       "id": "c40",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jo"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Iyer"
+          ],
+          "givenNames": [
+            "V.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Im"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2008"
@@ -1781,7 +3664,48 @@
     {
       "type": "Article",
       "id": "c41",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kaczorowski"
+          ],
+          "givenNames": [
+            "G.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McManus"
+          ],
+          "givenNames": [
+            "O.",
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Priest"
+          ],
+          "givenNames": [
+            "B.",
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Garcia"
+          ],
+          "givenNames": [
+            "M.",
+            "L"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2008"
@@ -1813,7 +3737,35 @@
     {
       "type": "Article",
       "id": "c42",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kandil"
+          ],
+          "givenNames": [
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Melikman"
+          ],
+          "givenNames": [
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Adinoff"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2017"
@@ -1843,7 +3795,44 @@
     {
       "type": "Article",
       "id": "c43",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Klugbauer"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lacinova"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Flockerzi"
+          ],
+          "givenNames": [
+            "V."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hofmann"
+          ],
+          "givenNames": [
+            "F"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "1995"
@@ -1875,7 +3864,64 @@
     {
       "type": "Article",
       "id": "c44",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kuhlman"
+          ],
+          "givenNames": [
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dantas"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ireton"
+          ],
+          "givenNames": [
+            "G.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Varani"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stoddard"
+          ],
+          "givenNames": [
+            "B.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Baker"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2003"
@@ -1900,7 +3946,75 @@
     {
       "type": "Article",
       "id": "c45",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Leman"
+          ],
+          "givenNames": [
+            "J.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Weitzner"
+          ],
+          "givenNames": [
+            "B.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lewis"
+          ],
+          "givenNames": [
+            "S.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Adolf-Bryfogle"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Alam"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Alford"
+          ],
+          "givenNames": [
+            "R.",
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bonneau"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2020"
@@ -1932,7 +4046,76 @@
     {
       "type": "Article",
       "id": "c46",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "North"
+          ],
+          "givenNames": [
+            "R.",
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rhines"
+          ],
+          "givenNames": [
+            "L.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tatsui"
+          ],
+          "givenNames": [
+            "C.",
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rao"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Edwards"
+          ],
+          "givenNames": [
+            "D.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dougherty"
+          ],
+          "givenNames": [
+            "P.",
+            "M."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -1964,7 +4147,27 @@
     {
       "type": "Article",
       "id": "c47",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wood"
+          ],
+          "givenNames": [
+            "J.",
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2011"
@@ -1991,7 +4194,75 @@
     {
       "type": "Article",
       "id": "c48",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Maguire"
+          ],
+          "givenNames": [
+            "J.",
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Haddox"
+          ],
+          "givenNames": [
+            "H.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Strickland"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Halabiya"
+          ],
+          "givenNames": [
+            "S.",
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Coventry"
+          ],
+          "givenNames": [
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Griffin"
+          ],
+          "givenNames": [
+            "J.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kuhlman"
+          ],
+          "givenNames": [
+            "B."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2021"
@@ -2023,7 +4294,18 @@
     {
       "type": "Article",
       "id": "c49",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mogil"
+          ],
+          "givenNames": [
+            "J.",
+            "S"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2009"
@@ -2055,7 +4337,75 @@
     {
       "type": "Article",
       "id": "c50",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moyer"
+          ],
+          "givenNames": [
+            "B.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Murray"
+          ],
+          "givenNames": [
+            "J.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ligutti"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Andrews"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Favreau"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jordan"
+          ],
+          "givenNames": [
+            "J.",
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Miranda"
+          ],
+          "givenNames": [
+            "L.",
+            "P."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -2085,7 +4435,18 @@
     {
       "type": "Article",
       "id": "c51",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mulroy"
+          ],
+          "givenNames": [
+            "M.",
+            "F"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2002"
@@ -2110,7 +4471,73 @@
     {
       "type": "Article",
       "id": "c52",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Murray"
+          ],
+          "givenNames": [
+            "J.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ligutti"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zou"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Poppe"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Miranda"
+          ],
+          "givenNames": [
+            "L.",
+            "P."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -2142,7 +4569,18 @@
     {
       "type": "Article",
       "id": "c53",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nahin"
+          ],
+          "givenNames": [
+            "R.",
+            "L"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -2174,7 +4612,77 @@
     {
       "type": "Article",
       "id": "c54",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nassar"
+          ],
+          "givenNames": [
+            "M.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stirling"
+          ],
+          "givenNames": [
+            "L.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Forlani"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Baker"
+          ],
+          "givenNames": [
+            "M.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Matthews"
+          ],
+          "givenNames": [
+            "E.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dickenson"
+          ],
+          "givenNames": [
+            "A.",
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wood"
+          ],
+          "givenNames": [
+            "J.",
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2004"
@@ -2206,7 +4714,28 @@
     {
       "type": "Article",
       "id": "c55",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Neff"
+          ],
+          "givenNames": [
+            "R.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wickenden"
+          ],
+          "givenNames": [
+            "A.",
+            "D"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2021"
@@ -2238,7 +4767,71 @@
     {
       "type": "Article",
       "id": "c56",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pan"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Z."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huang"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huang"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gao"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yan"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -2260,7 +4853,77 @@
     {
       "type": "Article",
       "id": "c57",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Park"
+          ],
+          "givenNames": [
+            "J.",
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Carlin"
+          ],
+          "givenNames": [
+            "K.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ilyin"
+          ],
+          "givenNames": [
+            "V.",
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Musza"
+          ],
+          "givenNames": [
+            "L.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Blake"
+          ],
+          "givenNames": [
+            "P.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kyle"
+          ],
+          "givenNames": [
+            "D.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2014"
@@ -2292,7 +4955,27 @@
     {
       "type": "Article",
       "id": "c58",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Payandeh"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hackos"
+          ],
+          "givenNames": [
+            "D.",
+            "H"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -2320,7 +5003,45 @@
     {
       "type": "Article",
       "id": "c59",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Payandeh"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scheuer"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zheng"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Catterall"
+          ],
+          "givenNames": [
+            "W.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2011"
@@ -2352,7 +5073,47 @@
     {
       "type": "Article",
       "id": "c60",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ragsdale"
+          ],
+          "givenNames": [
+            "D.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McPhee"
+          ],
+          "givenNames": [
+            "J.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scheuer"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Catterall"
+          ],
+          "givenNames": [
+            "W.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "1994"
@@ -2377,7 +5138,75 @@
     {
       "type": "Article",
       "id": "c61",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Reimann"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cox"
+          ],
+          "givenNames": [
+            "J.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Belfer"
+          ],
+          "givenNames": [
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Diatchenko"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zaykin"
+          ],
+          "givenNames": [
+            "D.",
+            "V."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McHale"
+          ],
+          "givenNames": [
+            "D.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Woods"
+          ],
+          "givenNames": [
+            "C.",
+            "G."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2010"
@@ -2409,7 +5238,38 @@
     {
       "type": "Article",
       "id": "c62",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rush"
+          ],
+          "givenNames": [
+            "A.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2007"
@@ -2437,7 +5297,38 @@
     {
       "type": "Article",
       "id": "c63",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ryckaert"
+          ],
+          "givenNames": [
+            "J.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ciccotti"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Berendsen"
+          ],
+          "givenNames": [
+            "H.",
+            "J.",
+            "C"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "1977"
@@ -2469,7 +5360,75 @@
     {
       "type": "Article",
       "id": "c64",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schmalhofer"
+          ],
+          "givenNames": [
+            "W.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Calhoun"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Burrows"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bailey"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kohler"
+          ],
+          "givenNames": [
+            "M.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Weinglass"
+          ],
+          "givenNames": [
+            "A.",
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Priest"
+          ],
+          "givenNames": [
+            "B.",
+            "T."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2008"
@@ -2501,7 +5460,53 @@
     {
       "type": "Article",
       "id": "c65",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Seal"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Becker"
+          ],
+          "givenNames": [
+            "W."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tighe"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rife"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2017"
@@ -2533,7 +5538,53 @@
     {
       "type": "Article",
       "id": "c66",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lei"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yan"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -2565,7 +5616,53 @@
     {
       "type": "Article",
       "id": "c67",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lei"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yan"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -2587,7 +5684,62 @@
     {
       "type": "Article",
       "id": "c68",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhou"
+          ],
+          "givenNames": [
+            "Q."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pan"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Z."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yan"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2017"
@@ -2617,7 +5769,65 @@
     {
       "type": "Article",
       "id": "c69",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shields"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cheng"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Uceyler"
+          ],
+          "givenNames": [
+            "N."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sommer"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2012"
@@ -2649,7 +5859,37 @@
     {
       "type": "Article",
       "id": "c70",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shiers"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Klein"
+          ],
+          "givenNames": [
+            "R.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Price"
+          ],
+          "givenNames": [
+            "T.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2020"
@@ -2681,7 +5921,47 @@
     {
       "type": "Article",
       "id": "c71",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Smith"
+          ],
+          "givenNames": [
+            "J.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Alphy"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Blumenthal"
+          ],
+          "givenNames": [
+            "K.",
+            "M"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2007"
@@ -2713,7 +5993,74 @@
     {
       "type": "Article",
       "id": "c72",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Treede"
+          ],
+          "givenNames": [
+            "R.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rief"
+          ],
+          "givenNames": [
+            "W."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Barke"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aziz"
+          ],
+          "givenNames": [
+            "Q."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bennett"
+          ],
+          "givenNames": [
+            "M.",
+            "I."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Benoliel"
+          ],
+          "givenNames": [
+            "R."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "S.",
+            "J."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2015"
@@ -2745,7 +6092,82 @@
     {
       "type": "Article",
       "id": "c73",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "van",
+            "der",
+            "Wal"
+          ],
+          "givenNames": [
+            "S.",
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "van",
+            "den",
+            "Heuvel"
+          ],
+          "givenNames": [
+            "S.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Radema"
+          ],
+          "givenNames": [
+            "S.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "van",
+            "Berkum"
+          ],
+          "givenNames": [
+            "B.",
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vaneker"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Steegers"
+          ],
+          "givenNames": [
+            "M.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vissers"
+          ],
+          "givenNames": [
+            "K.",
+            "C."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2016"
@@ -2777,7 +6199,58 @@
     {
       "type": "Article",
       "id": "c74",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Walia"
+          ],
+          "givenNames": [
+            "K.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khan"
+          ],
+          "givenNames": [
+            "E.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ko"
+          ],
+          "givenNames": [
+            "D.",
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Raza"
+          ],
+          "givenNames": [
+            "S.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khan"
+          ],
+          "givenNames": [
+            "Y.",
+            "N"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2004"
@@ -2809,7 +6282,28 @@
     {
       "type": "Article",
       "id": "c75",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zamponi"
+          ],
+          "givenNames": [
+            "G.",
+            "W"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2014"
@@ -2841,7 +6335,37 @@
     {
       "type": "Article",
       "id": "c76",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wiffen"
+          ],
+          "givenNames": [
+            "P.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Derry"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moore"
+          ],
+          "givenNames": [
+            "R.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2011"
@@ -2867,7 +6391,47 @@
     {
       "type": "Article",
       "id": "c77",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wiffen"
+          ],
+          "givenNames": [
+            "P.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Derry"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moore"
+          ],
+          "givenNames": [
+            "R.",
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kalso"
+          ],
+          "givenNames": [
+            "E.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2014"
@@ -2893,7 +6457,73 @@
     {
       "type": "Article",
       "id": "c78",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "B."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Murray"
+          ],
+          "givenNames": [
+            "J.",
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Andrews"
+          ],
+          "givenNames": [
+            "K.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sham"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Long"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aral"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Biswas"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2018"
@@ -2925,7 +6555,54 @@
     {
       "type": "Article",
       "id": "c79",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wulff"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Christophersen"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Colussi"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chandy"
+          ],
+          "givenNames": [
+            "K.",
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yarov-Yarovoy"
+          ],
+          "givenNames": [
+            "V"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -2947,7 +6624,56 @@
     {
       "type": "Article",
       "id": "c80",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Xiao"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Blumenthal"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jackson"
+          ],
+          "givenNames": [
+            "J.",
+            "O"
+          ],
+          "honorificSuffix": "2nd"
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liang"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cummins"
+          ],
+          "givenNames": [
+            "T.",
+            "R."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2010"
@@ -2979,7 +6705,72 @@
     {
       "type": "Article",
       "id": "c81",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Xu"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rohou"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Arthur"
+          ],
+          "givenNames": [
+            "C.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tzakoniati"
+          ],
+          "givenNames": [
+            "F."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wong"
+          ],
+          "givenNames": [
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Payandeh"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -3001,7 +6792,73 @@
     {
       "type": "Article",
       "id": "c82",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dib-Hajj"
+          ],
+          "givenNames": [
+            "S.",
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tyrrell"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Estacion"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waxman"
+          ],
+          "givenNames": [
+            "S.",
+            "G"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2012"
@@ -3028,7 +6885,71 @@
     {
       "type": "Article",
       "id": "c83",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Xu"
+          ],
+          "givenNames": [
+            "Z."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ma"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2004"
@@ -3053,7 +6974,65 @@
     {
       "type": "Article",
       "id": "c84",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yarov-Yarovoy"
+          ],
+          "givenNames": [
+            "V."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Brown"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sharp"
+          ],
+          "givenNames": [
+            "E.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Clare"
+          ],
+          "givenNames": [
+            "J.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scheuer"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Catterall"
+          ],
+          "givenNames": [
+            "W.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2001"
@@ -3078,7 +7057,64 @@
     {
       "type": "Article",
       "id": "c85",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yarov-Yarovoy"
+          ],
+          "givenNames": [
+            "V."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "McPhee"
+          ],
+          "givenNames": [
+            "J.",
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Idsvoog"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pate"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scheuer"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Catterall"
+          ],
+          "givenNames": [
+            "W.",
+            "A"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2002"
@@ -3103,7 +7139,62 @@
     {
       "type": "Article",
       "id": "c86",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zeng"
+          ],
+          "givenNames": [
+            "X."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Deng"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lin"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yuan"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pi"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liang"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2007"
@@ -3135,7 +7226,74 @@
     {
       "type": "Article",
       "id": "c87",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "M.",
+            "M."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wilson"
+          ],
+          "givenNames": [
+            "M.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Azam"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gajewiak"
+          ],
+          "givenNames": [
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rivier"
+          ],
+          "givenNames": [
+            "J.",
+            "E."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bulaj"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yoshikami"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2013"
@@ -3167,7 +7325,65 @@
     {
       "type": "Article",
       "id": "c88",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zheng"
+          ],
+          "givenNames": [
+            "Y."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bai"
+          ],
+          "givenNames": [
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Trimmer"
+          ],
+          "givenNames": [
+            "J.",
+            "S."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bean"
+          ],
+          "givenNames": [
+            "B.",
+            "P."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ginty"
+          ],
+          "givenNames": [
+            "D.",
+            "D"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2019"
@@ -3199,7 +7415,38 @@
     {
       "type": "Article",
       "id": "c89",
-      "authors": [],
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zylka"
+          ],
+          "givenNames": [
+            "M.",
+            "J."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rice"
+          ],
+          "givenNames": [
+            "F.",
+            "L."
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Anderson"
+          ],
+          "givenNames": [
+            "D.",
+            "J"
+          ]
+        }
+      ],
       "datePublished": {
         "type": "Date",
         "value": "2005"

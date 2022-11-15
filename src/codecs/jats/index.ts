@@ -1210,9 +1210,11 @@ function decodeReference(
 
   let authors: stencila.CreativeWork['authors'] = all(elem, [
     'name',
+    'string-name',
     'collab',
   ]).map((authorElem) => {
-    if (authorElem.name === 'name') return decodeName(authorElem)
+    if (authorElem.name === 'name' || authorElem.name === 'string-name')
+      return decodeName(authorElem)
     else return stencila.organization({ name: textOrUndefined(authorElem) })
   })
   // If no authors identified using `<name>` elements
