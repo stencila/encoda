@@ -325,7 +325,7 @@ export async function convert(
 
   const node = await read(input, from, decodeOptions)
 
-  if (outputPaths === undefined) outputPaths = [STDIO_PATH]
+  if (outputPaths === undefined) outputPaths = []
   else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
