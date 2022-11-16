@@ -2002,18 +2002,54 @@ function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
 
 /**
  * Decode a JATS `<table-wrap>` element to a Stencila `Table` node.
+ *
+ * In some JATS, there is no actual table but rather and image of the table.
+ * For those we return a `Figure` but one which usually has a label begginning
+ * with 'Table'.
  */
 function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
-): [stencila.Table] {
+): (stencila.Table | stencila.Figure)[] {
   state = { ...state, ancestorElem: elem }
+
+  const id = decodeInternalId(attr(elem, 'id'))
+  const label = textOrUndefined(child(elem, 'label'))
 
   const cap = child(elem, 'caption')
   const caption =
     cap !== null && Array.isArray(cap.elements)
       ? ensureBlockContentArray(decodeElements(cap.elements, state))
       : undefined
+
+  const description = all(elem, 'fn').map((fn) => {
+    // Convert each footnote into block content (usually a paragraph),
+    // and possibly with an id and footnote type
+    const footnoteType = attr(fn, 'fn-type')
+    const id = attr(fn, 'id')
+
+    let block: stencila.BlockContent
+    const nodes = decodeElements(fn.elements ?? [], state)
+    if (nodes.length === 1) {
+      // Just one node in footnote (usually a single paragraph),
+      // so ensure that it a block and use that.
+      block = ensureBlockContent(nodes[0])
+    } else {
+      // More than one node, perhaps a label and a paragraph
+      // so merge them into a single paragraph
+      block = stencila.paragraph({
+        content: ensureInlineContentArray(nodes),
+      })
+    }
+    // Add id and footnote type to the block
+    block = {
+      ...block,
+      ...(id && { id }),
+      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
+    }
+
+    return block
+  })
 
   const thead = first(elem, 'thead')
   const theadTrs = all(thead, 'tr')
@@ -2066,44 +2102,30 @@ function decodeTableWrap(
         })
       : []
 
-  const description = all(elem, 'fn').map((fn) => {
-    // Convert each footnote into block content (usually a paragraph),
-    // and possibly with an id and footnote type
-    const footnoteType = attr(fn, 'fn-type')
-    const id = attr(fn, 'id')
+  if (headerRows.length > 0 || bodyRows.length > 0)
+    return [
+      stencila.table({
+        id,
+        label,
+        caption,
+        rows: [...headerRows, ...bodyRows],
+        ...(description.length && { description }),
+      }),
+    ]
 
-    let block: stencila.BlockContent
-    const nodes = decodeElements(fn.elements ?? [], state)
-    if (nodes.length === 1) {
-      // Just one node in footnote (usually a single paragraph),
-      // so ensure that it a block and use that.
-      block = ensureBlockContent(nodes[0])
-    } else {
-      // More than one node, perhaps a label and a paragraph
-      // so merge them into a single paragraph
-      block = stencila.paragraph({
-        content: ensureInlineContentArray(nodes),
-      })
-    }
-    // Add id and footnote type to the block
-    block = {
-      ...block,
-      ...(id && { id }),
-      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
-    }
+  const graphic = first(elem, 'graphic')
+  if (graphic) {
+    return [
+      stencila.figure({
+        id,
+        label,
+        caption,
+        content: decodeGraphic(graphic, false),
+      }),
+    ]
+  }
 
-    return block
-  })
-
-  return [
-    stencila.table({
-      id: decodeInternalId(attr(elem, 'id')),
-      label: textOrUndefined(child(elem, 'label')),
-      caption,
-      rows: [...headerRows, ...bodyRows],
-      ...(description.length && { description }),
-    }),
-  ]
+  return []
 }
 
 /**

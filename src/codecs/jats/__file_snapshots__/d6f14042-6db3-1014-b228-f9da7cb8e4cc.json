@@ -5728,7 +5728,7 @@
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tbl1",
       "caption": [
         {
@@ -5739,7 +5739,15 @@
         }
       ],
       "label": "Table 1.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
       "type": "Paragraph",
@@ -5792,7 +5800,7 @@
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tbl2",
       "caption": [
         {
@@ -5803,7 +5811,15 @@
         }
       ],
       "label": "Table 2.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
       "type": "Heading",
@@ -5837,7 +5853,7 @@
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tbl3",
       "caption": [
         {
@@ -5848,7 +5864,15 @@
         }
       ],
       "label": "Table 3.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
       "type": "Paragraph",
@@ -6025,7 +6049,7 @@
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tbl4",
       "caption": [
         {
@@ -6036,7 +6060,15 @@
         }
       ],
       "label": "Table 4.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
       "type": "Paragraph",

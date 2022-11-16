@@ -7576,7 +7576,7 @@
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tblS1",
       "caption": [
         {
@@ -7588,10 +7588,18 @@
         }
       ],
       "label": "Supplemental Table 1.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tblS2",
       "caption": [
         {
@@ -7603,7 +7611,15 @@
         }
       ],
       "label": "Supplemental Table 2.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }

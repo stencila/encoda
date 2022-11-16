@@ -10773,27 +10773,23 @@
       ]
     },
     {
-      "type": "Paragraph",
+      "type": "Heading",
+      "depth": 1,
       "content": [
+        "Appendix 1 - Table 2. Over-representation analysis of upregulated and downregulated genes in HFD, DDC, and BEC-organoid formation datasets. Related to ",
         {
-          "type": "Strong",
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
           "content": [
-            "Appendix 1 - Table 2. Over-representation analysis of upregulated and downregulated genes in HFD, DDC, and BEC-organoid formation datasets. Related to ",
-            {
-              "type": "Link",
-              "relation": "fig",
-              "target": "#fig3",
-              "content": [
-                "Figure 3"
-              ]
-            },
-            "."
+            "Figure 3"
           ]
-        }
+        },
+        "."
       ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tbls3",
       "caption": [
         {
@@ -10805,7 +10801,15 @@
         }
       ],
       "label": "Appendix 1 - Table 3.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }

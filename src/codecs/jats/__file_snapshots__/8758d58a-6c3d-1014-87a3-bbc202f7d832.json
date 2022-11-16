@@ -10780,7 +10780,7 @@
       "content": []
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tblS1",
       "caption": [
         {
@@ -10826,10 +10826,18 @@
         }
       ],
       "label": "Supplementary table 1.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tblS2",
       "caption": [
         {
@@ -10847,10 +10855,18 @@
         }
       ],
       "label": "Supplementary table 2.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     },
     {
-      "type": "Table",
+      "type": "Figure",
       "id": "tblS3",
       "caption": [
         {
@@ -10868,7 +10884,15 @@
         }
       ],
       "label": "Table S3.",
-      "rows": []
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
     }
   ]
 }
