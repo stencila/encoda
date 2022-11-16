@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isA } from '@stencila/schema'
+import stencila, { isA, thematicBreak } from '@stencila/schema'
 import crypto from 'crypto'
 import { closest } from 'fastest-levenshtein'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
@@ -1130,7 +1130,7 @@ function decodeBack(
   const references = decodeReferences(first(elem, 'ref-list'))
 
   const ack = decodeAck(first(elem, 'ack'), state) ?? []
-  const sections = decodeBackSec(
+  const sections = decodeBackSecs(
     elem.elements?.filter((elem) => elem.name === 'sec') ?? [],
     state
   )
@@ -1171,14 +1171,14 @@ function decodeAck(
  * Any other heading in the section are dropped if they have the same content
  * as the title (otherwise there can be duplication).
  */
-function decodeBackSec(
+function decodeBackSecs(
   elems: xml.Element[],
   state: DecodeState
 ): stencila.BlockContent[] {
   return elems.reduce((prev: stencila.BlockContent[], elem) => {
-    const nodes = decodeElement(elem, state) as stencila.BlockContent[]
-    const node = nodes[0]
-    if (nodes.length === 1 && node?.type === 'Heading') {
+    const blocks = decodeElement(elem, state) as stencila.BlockContent[]
+    const node = blocks[0]
+    if (blocks.length === 1 && node?.type === 'Heading') {
       const alreadyExists =
         prev.findIndex(
           (existing) =>
@@ -1189,7 +1189,7 @@ function decodeBackSec(
         return prev
       }
     }
-    return [...prev, ...nodes]
+    return [...prev, stencila.thematicBreak(), ...blocks]
   }, [])
 }
 
