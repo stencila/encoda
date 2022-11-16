@@ -9,7 +9,6 @@
   "bin": "dist/index.js",
   "main": "dist/index.js",
   "scripts": {
-    "install": "node install.js",
     "postinstall": "patch-package",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
