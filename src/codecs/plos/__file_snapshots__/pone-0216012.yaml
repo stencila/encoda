@@ -71,10 +71,16 @@ authors:
           Department of Electrical Engineering and Computer Science, Department
           of Mathematics, University of Missouri, Columbia, MO, United States of
           America
+    emails:
+      - guidobonig@missouri.edu
     familyNames:
       - Guidoboni
     givenNames:
       - Giovanna
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-7470-0171
 dateAccepted:
   type: Date
   value: '2019-07-08'
@@ -13637,3 +13643,14 @@ content:
         results obtained on the model validation, it would be important to
         perform a sensitivity analysis on the paramater space to better assess
         the robustness of the model and direct its future extensions.
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        This work has been partially supported by the award NSF
+        DMS-1853222/1853303, the Chair Gutenberg funds of the Cercle Gutenberg
+        (France) and the Labex IRMIA and the IdEx Unistra (University of
+        Strasbourg, France).
