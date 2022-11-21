@@ -18,6 +18,10 @@ authors:
     givenNames:
       - Katherine
       - G
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-4997-0150
   - type: Person
     affiliations:
       - type: Organization
@@ -46,6 +50,10 @@ authors:
       - Adhikari
     givenNames:
       - Santosh
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-1501-2106
   - type: Person
     affiliations:
       - type: Organization
@@ -59,6 +67,10 @@ authors:
       - Cuesta
     givenNames:
       - Sergio
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0001-9806-2805
   - type: Person
     affiliations:
       - type: Organization
@@ -75,6 +87,10 @@ authors:
       - Antonio
     givenNames:
       - Marco
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-7321-1867
   - type: Person
     affiliations:
       - type: Organization
@@ -100,6 +116,10 @@ authors:
     givenNames:
       - Gregory
       - J
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-4021-3898
   - type: Person
     affiliations:
       - type: Organization
@@ -112,6 +132,10 @@ authors:
       - Tannahill
     givenNames:
       - David
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-3811-6864
   - type: Person
     affiliations:
       - type: Organization
@@ -144,6 +168,10 @@ authors:
       - Balasubramanian
     givenNames:
       - Shankar
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-0281-5815
 dateAccepted:
   type: Date
   value: '2019-06-17'
@@ -14954,3 +14982,278 @@ content:
       - >-
         ). The absorbance of the buffer was subtracted from the recorded
         spectra.
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        The Balasubramanian laboratory is supported by core funding
+        (C14303/A17197) and programme grant funding (C9681/A18618) from Cancer
+        Research UK. SB is a Senior Investigator of the Wellcome Trust (grant
+        no. 209441/z/17/z). GJH is supported by core funding from Cancer
+        Research UK (A21143) and a Royal Society Research Professorship
+        (RP130039). NE was supported by a grant from the Pew Charitable Trusts
+        (00028354). Authors would like to thank Dr Isaac Johnson for help
+        regarding the clonogenic survival assays. Authors would also like to
+        thank the staff of the Genomic, Flow Cytometry, Research Instrumentation
+        and Biorepository core facilities at CRUK Cambridge Institute and
+        members of the Balasubramanian and Hannon Lab for helpful discussions.
+  - type: ThematicBreak
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Additional information
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Competing interests
+  - type: Note
+    id: conf1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - No competing interests declared
+  - type: Note
+    id: conf2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Is associated with transOMIC Technologies, who have commercialised
+            libraries constructed using the shERWOOD and ultramiR design
+            strategies.
+  - type: Note
+    id: conf3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Is founder, adviser and shareholder of Cambridge Epigenetix Ltd.
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Author contributions
+  - type: Note
+    id: con1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Supervision,
+            Validation, Investigation, Visualization, Methodology,
+            Writing—original draft, Writing—review and editing, Designed and
+            performed the genome-wide shRNA screen, library preparation and
+            sequencing, Designed the focused RNAi screens, Performed the GO and
+            Cytoscape analyses, Designed and performed the clonogenic assays and
+            DDX42 binding experiments
+  - type: Note
+    id: con2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Writing—review and editing, Designed and performed the genome-wide
+            shRNA screen, library preparation and sequencing, Designed and
+            performed the focused RNAi screens, Performed the GO and Cytoscape
+            analyses, Designed and performed the drug synergy and DDX42 binding
+            experiments
+  - type: Note
+    id: con3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Writing—review and editing, Designed and performed the drug synergy
+            experiments
+  - type: Note
+    id: con4
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Software, Formal analysis,
+            Validation, Methodology, Writing—original draft, Writing—review and
+            editing, Performed the computational analyses on all RNAi screens
+  - type: Note
+    id: con5
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Data curation, Formal analysis,
+            Methodology, Writing—original draft, Writing—review and editing,
+            Synthesised all the G4 ligands
+  - type: Note
+    id: con6
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Resources, Software, Formal analysis, Methodology, Writing—review
+            and editing
+  - type: Note
+    id: con7
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Supervision, Methodology,
+            Writing—original draft, Writing—review and editing
+  - type: Note
+    id: con8
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Software, Formal analysis,
+            Supervision, Methodology, Writing—original draft, Project
+            administration, Writing—review and editing
+  - type: Note
+    id: con9
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Formal analysis, Supervision, Funding
+            acquisition, Methodology, Writing—original draft, Project
+            administration, Writing—review and editing
+  - type: ThematicBreak
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Additional files
+  - type: MediaObject
+    id: supp1
+    contentUrl: ''
+    text: Supplementary file 1.
+    content:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Supporting data for '
+          - type: Link
+            relation: fig
+            target: '#fig3'
+            content:
+              - Figure 3
+          - –
+          - type: Link
+            relation: fig
+            target: '#fig7'
+            content:
+              - '7'
+          - .
+      - type: Paragraph
+        content:
+          - >-
+            List of shRNAs/genes from venn diagrams and table statistics for
+            KEGG, GO, DGIDb and Protein Domains analyses from 
+          - type: Link
+            relation: fig
+            target: '#fig3'
+            content:
+              - Figures 3
+          - –
+          - type: Link
+            relation: fig
+            target: '#fig7'
+            content:
+              - '7'
+          - >-
+            . Each data tab is labelled with its corresponding originating
+            figure.
+  - type: MediaObject
+    id: supp2
+    contentUrl: ''
+    text: Supplementary file 2.
+    content:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Supporting data for '
+          - type: Link
+            relation: fig
+            target: '#fig6s1'
+            content:
+              - Figure 6—figure supplement 1
+          - ' and '
+          - type: Link
+            relation: fig
+            target: '#fig7s1'
+            content:
+              - Figure 7—figure supplement 1
+          - .
+      - type: Paragraph
+        content:
+          - >-
+            List of shRNAs/genes from venn diagrams and table statistics for GO
+            analyses from 
+          - type: Link
+            relation: fig
+            target: '#fig6s1'
+            content:
+              - Figure 6—figure supplement 1
+          - ' and '
+          - type: Link
+            relation: fig
+            target: '#fig7s1'
+            content:
+              - Figure 7—figure supplement 1
+          - >-
+            . Each data tab is labelled with its corresponding originating
+            figure.
+  - type: MediaObject
+    id: transrepform
+    contentUrl: ''
+    text: Transparent reporting form
+  - type: ThematicBreak
+  - type: Heading
+    id: s7
+    depth: 1
+    content:
+      - Data availability
+  - type: Paragraph
+    content:
+      - >-
+        Sequencing data have been deposited in ArrayExpress under the accession
+        number E-MTAB-6367.
+  - type: Paragraph
+    content:
+      - 'The following dataset was generated:'
+  - type: Paragraph
+    content:
+      - Mulhearn
+      - DS
+      - Zyner
+      - KG
+      - Martinez
+      - Cuesta S
+      - Balasubramanian
+      - S
+      - '2019'
+      - >-
+        Systematic identification of G-quadruplex sensitive lethality by
+        genome-wide genetic screening
+      - ArrayExpress
+      - E-MTAB-6367
