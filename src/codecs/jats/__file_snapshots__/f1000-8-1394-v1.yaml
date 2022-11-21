@@ -6,6 +6,8 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+    emails:
+      - lachenmeier@web.de
     familyNames:
       - Lachenmeier
     givenNames:
@@ -3553,3 +3555,13 @@ content:
         content:
           - Creative Commons Zero “No rights reserved” data waiver
       - ' (CC0 1.0 Public domain dedication).'
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        The authors would like to thank Sylvia Ullrich, Jutta Neumeister and
+        Ingrid Kübel for their excellent technical support, sample preparation
+        and measurements using LC-MS.

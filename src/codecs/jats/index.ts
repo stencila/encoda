@@ -15,10 +15,12 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isA } from '@stencila/schema'
+import stencila, { isA, thematicBreak } from '@stencila/schema'
 import crypto from 'crypto'
+import { closest } from 'fastest-levenshtein'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
+import { sentenceCase } from 'sentence-case'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
@@ -299,13 +301,20 @@ function decodeArticle(article: xml.Element): stencila.Article {
     child(article, 'front'),
     state
   )
-  const { meta: metaBack, ...back } = decodeBack(child(article, 'back'))
-  const metaAll = { ...metaFront, ...metaBack }
+
+  const body = decodeBody(child(article, 'body'), state)
+
+  const { references, content: backContent } = decodeBack(
+    child(article, 'back'),
+    state
+  )
+
+  const metaAll = { ...metaFront }
   const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
 
-  const content = decodeBody(child(article, 'body'), state)
+  const content = [...(body ?? []), ...(backContent ?? [])]
 
-  return stencila.article({ ...front, ...back, meta, content })
+  return stencila.article({ ...front, references, meta, content })
 }
 
 /**
@@ -866,8 +875,69 @@ function decodeContrib(
     const name = child(contrib, ['name', 'string-name'])
     const contributor = name ? decodeName(name) : stencila.person()
 
-    const emails = all(contrib, 'email')
-    if (emails.length) contributor.emails = emails.map(text)
+    const emails = all(contrib, 'email').map(text)
+
+    // If the author is a corresponding author then attempt to get their email
+    // from the linked <corresp> element with the id in the <xref>
+    const correspId = first(contrib, 'xref', { 'ref-type': 'corresp' })
+      ?.attributes?.rid
+    if (correspId) {
+      const correspEmails = all(
+        first(state.article, 'corresp', { id: correspId }),
+        'email'
+      )
+      if (correspEmails.length == 1) {
+        // If there is only one <email> element then use that
+        emails.push(text(correspEmails[0]))
+      } else if (correspEmails.length > 1) {
+        // Sometimes the same <corresp> element is used for multiple authors
+        // so find the first email that has both the authors first and last name,
+        // first initial and last name, or last name (try all these in case there are authors with
+        // the same last name). Fallback to using the email address which is closest
+        // to the last name (e.g. truncated names in emails or emails that are ascii versions
+        // of names with diacritics).
+
+        const addresses = correspEmails.map((email) =>
+          text(email).toLowerCase()
+        )
+        const names = addresses.map((email) => email.split('@')[0])
+        const givenName = `${contributor.givenNames?.[0]}`.toLowerCase()
+        const familyName = `${contributor.familyNames?.[0]}`.toLowerCase()
+
+        let index = names.findIndex(
+          (email) => email.includes(givenName) && email.includes(familyName)
+        )
+        if (index < 0) {
+          index = names.findIndex(
+            (email) =>
+              email.includes(givenName[0]) && email.includes(familyName)
+          )
+        }
+        if (index < 0) {
+          index = names.findIndex((email) => email.includes(familyName))
+        }
+        if (index < 0) {
+          const name = closest(familyName, names)
+          index = names.indexOf(name)
+        }
+
+        if (index >= 0) {
+          emails.push(addresses[index])
+        }
+      }
+    }
+
+    if (emails.length > 0) contributor.emails = emails
+
+    const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
+    if (orcid) {
+      contributor.identifiers = [
+        stencila.propertyValue({
+          propertyID: encodeIdentifierTypeUri('orcid'),
+          value: text(orcid),
+        }),
+      ]
+    }
 
     let affiliations: stencila.Organization[] = []
 
@@ -1049,11 +1119,78 @@ function decodeAff(aff: xml.Element): stencila.Organization {
  * Decode a JATS `<back>` element into properties of a Stencila `Article`
  */
 function decodeBack(
-  back: xml.Element | null
-): Pick<stencila.Article, 'references' | 'meta'> {
-  if (back === null) return {}
-  const references = decodeReferences(first(back, 'ref-list'))
-  return { references }
+  elem: xml.Element | null,
+  state: DecodeState
+): {
+  references?: stencila.Article['references']
+  content?: stencila.BlockContent[]
+} {
+  if (elem === null) return {}
+
+  const references = decodeReferences(first(elem, 'ref-list'))
+
+  const ack = decodeAck(first(elem, 'ack'), state) ?? []
+  const sections = decodeBackSecs(
+    elem.elements?.filter((elem) => elem.name === 'sec') ?? [],
+    state
+  )
+
+  return { references, content: [...ack, ...sections] }
+}
+
+/**
+ * Decode a JATS `<ack>` element to a Stencila `BlockContent`
+ * including a `Acknowledgements` heading
+ *
+ * Any existing <title> (e.g. ACKNOW... all caps) or <label> (e.g. numeric section number) elements are ignored.
+ */
+function decodeAck(
+  elem: xml.Element | null,
+  state: DecodeState
+): stencila.BlockContent[] | undefined {
+  if (elem === null) return undefined
+
+  const filtered = (elem.elements ?? []).filter(
+    (elem) => elem.name !== 'title' && elem.name !== 'label'
+  )
+  const blocks = ensureBlockContentArray(decodeElements(filtered, state))
+  return [
+    stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
+    ...blocks,
+  ]
+}
+
+/**
+ * Decode a JATS `<back> <sec>` element to a Stencila `BlockContent`
+ *
+ * Backmatter sections are used for a variety of purposes included supplementary figures
+ * and data availability statements. No attempt is made to differentiate between these and unlike with <ack>
+ * the sections are mostly decoded verbatim.
+ *
+ * The <title> is treated as the h1 for the section.
+ * Any other heading in the section are dropped if they have the same content
+ * as the title (otherwise there can be duplication).
+ */
+function decodeBackSecs(
+  elems: xml.Element[],
+  state: DecodeState
+): stencila.BlockContent[] {
+  return elems.reduce((prev: stencila.BlockContent[], elem) => {
+    const blocks = decodeElement(elem, state) as stencila.BlockContent[]
+    const node = blocks[0]
+    if (blocks.length === 1 && node?.type === 'Heading') {
+      const alreadyExists =
+        prev.findIndex(
+          (existing) =>
+            existing.type === 'Heading' &&
+            existing.content[0] === node.content[0]
+        ) >= 0
+      if (alreadyExists) {
+        return prev
+      }
+    }
+    return [...prev, stencila.thematicBreak(), ...blocks]
+  }, [])
 }
 
 /**
@@ -1108,9 +1245,11 @@ function decodeReference(
 
   let authors: stencila.CreativeWork['authors'] = all(elem, [
     'name',
+    'string-name',
     'collab',
   ]).map((authorElem) => {
-    if (authorElem.name === 'name') return decodeName(authorElem)
+    if (authorElem.name === 'name' || authorElem.name === 'string-name')
+      return decodeName(authorElem)
     else return stencila.organization({ name: textOrUndefined(authorElem) })
   })
   // If no authors identified using `<name>` elements
@@ -1564,6 +1703,9 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
  * implies a nested section. This is more likely to ensure conformance with
  * the following rule if the document is encoded to HTML:
  * https://dequeuniversity.com/rules/axe/3.5/heading-order
+ *
+ * For consistency, across documents all caps titles are converted to
+ * sentence case.
  */
 function decodeHeading(
   elem: xml.Element,
@@ -1574,9 +1716,17 @@ function decodeHeading(
     ancestorElem.name === 'sec'
       ? [sectionDepth, sectionId]
       : [sectionDepth + 1, undefined]
+  let content = decodeInlineContent(elem.elements ?? [], state)
+  if (
+    content.length === 1 &&
+    typeof content[0] === 'string' &&
+    content[0].toUpperCase() == content[0]
+  ) {
+    content = [sentenceCase(content[0])]
+  }
   return [
     stencila.heading({
-      content: decodeInlineContent(elem.elements ?? [], state),
+      content,
       depth,
       id,
     }),
@@ -1852,18 +2002,54 @@ function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
 
 /**
  * Decode a JATS `<table-wrap>` element to a Stencila `Table` node.
+ *
+ * In some JATS, there is no actual table but rather and image of the table.
+ * For those we return a `Figure` but one which usually has a label begginning
+ * with 'Table'.
  */
 function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
-): [stencila.Table] {
+): (stencila.Table | stencila.Figure)[] {
   state = { ...state, ancestorElem: elem }
+
+  const id = decodeInternalId(attr(elem, 'id'))
+  const label = textOrUndefined(child(elem, 'label'))
 
   const cap = child(elem, 'caption')
   const caption =
     cap !== null && Array.isArray(cap.elements)
       ? ensureBlockContentArray(decodeElements(cap.elements, state))
       : undefined
+
+  const description = all(elem, 'fn').map((fn) => {
+    // Convert each footnote into block content (usually a paragraph),
+    // and possibly with an id and footnote type
+    const footnoteType = attr(fn, 'fn-type')
+    const id = attr(fn, 'id')
+
+    let block: stencila.BlockContent
+    const nodes = decodeElements(fn.elements ?? [], state)
+    if (nodes.length === 1) {
+      // Just one node in footnote (usually a single paragraph),
+      // so ensure that it a block and use that.
+      block = ensureBlockContent(nodes[0])
+    } else {
+      // More than one node, perhaps a label and a paragraph
+      // so merge them into a single paragraph
+      block = stencila.paragraph({
+        content: ensureInlineContentArray(nodes),
+      })
+    }
+    // Add id and footnote type to the block
+    block = {
+      ...block,
+      ...(id && { id }),
+      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
+    }
+
+    return block
+  })
 
   const thead = first(elem, 'thead')
   const theadTrs = all(thead, 'tr')
@@ -1916,44 +2102,30 @@ function decodeTableWrap(
         })
       : []
 
-  const description = all(elem, 'fn').map((fn) => {
-    // Convert each footnote into block content (usually a paragraph),
-    // and possibly with an id and footnote type
-    const footnoteType = attr(fn, 'fn-type')
-    const id = attr(fn, 'id')
+  if (headerRows.length > 0 || bodyRows.length > 0)
+    return [
+      stencila.table({
+        id,
+        label,
+        caption,
+        rows: [...headerRows, ...bodyRows],
+        ...(description.length && { description }),
+      }),
+    ]
 
-    let block: stencila.BlockContent
-    const nodes = decodeElements(fn.elements ?? [], state)
-    if (nodes.length === 1) {
-      // Just one node in footnote (usually a single paragraph),
-      // so ensure that it a block and use that.
-      block = ensureBlockContent(nodes[0])
-    } else {
-      // More than one node, perhaps a label and a paragraph
-      // so merge them into a single paragraph
-      block = stencila.paragraph({
-        content: ensureInlineContentArray(nodes),
-      })
-    }
-    // Add id and footnote type to the block
-    block = {
-      ...block,
-      ...(id && { id }),
-      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
-    }
+  const graphic = first(elem, 'graphic')
+  if (graphic) {
+    return [
+      stencila.figure({
+        id,
+        label,
+        caption,
+        content: decodeGraphic(graphic, false),
+      }),
+    ]
+  }
 
-    return block
-  })
-
-  return [
-    stencila.table({
-      id: decodeInternalId(attr(elem, 'id')),
-      label: textOrUndefined(child(elem, 'label')),
-      caption,
-      rows: [...headerRows, ...bodyRows],
-      ...(description.length && { description }),
-    }),
-  ]
+  return []
 }
 
 /**

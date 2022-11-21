@@ -4,6 +4,8 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "./dist",
-    "allowJs": true
+    "allowJs": true,
+    // This seems to be necessary to avoid occasional TypeScript errors when running tests
+    "types": ["node", "jest", "jest-matcher-utils", "jest-file-snapshot"]
   }
 }

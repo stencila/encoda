@@ -13,6 +13,10 @@ authors:
       - Vachon-Presseau
     givenNames:
       - Etienne
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-8681-3154
   - type: Person
     affiliations:
       - type: Organization
@@ -28,6 +32,10 @@ authors:
     givenNames:
       - Sara
       - E.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-7531-4421
   - type: Person
     affiliations:
       - type: Organization
@@ -39,6 +47,10 @@ authors:
     givenNames:
       - Taha
       - B.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-3373-7597
   - type: Person
     affiliations:
       - type: Organization
@@ -87,11 +99,17 @@ authors:
         name: >-
           Department of Anesthesia, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
+    emails:
+      - a-apkarian@northwestern.edu
     familyNames:
       - Apkarian
     givenNames:
       - A.
       - Vania
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-9788-7458
 dateAccepted:
   type: Date
   value: '2019-07-16'
@@ -4288,7 +4306,7 @@ content:
     id: sec030
     depth: 2
     content:
-      - ICC
+      - Icc
   - type: Paragraph
     content:
       - >-
@@ -4375,3 +4393,13 @@ content:
     was higher in Group 1 than in Group 2. CBP, chronic back pain.(PDF)
   - Details of statistical tests for results shown in Figs 1–6.(PDF)
   - Data underlying figures.(XLSX)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        We are thankful to all Apkarian lab members who contributed to this
+        study with their time and resources. We would also like to thank all the
+        patients who participated in this study.

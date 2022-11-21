@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="500925v1">
+<title>Computational design of peptides to target NaV1.7 channel with high potency and selectivity for the treatment of pain</title>
+<instance media-type="application/xml" href="content/500925.xml"/>
+<instance media-type="application/pdf" href="content/500925.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="transfer" type="transfer-details">
+<title>MECA Transfer Info</title>
+<instance media-type="application/meca-xfer+xml" href="transfer.xml"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig1.tif"/>
+</item>
+<item id="fig2" type="figure">
+<title>Figure 2</title>
+<instance media-type="image/tiff" href="content/500925v1_fig2.tif"/>
+</item>
+<item id="fig3" type="figure">
+<title>Figure 3</title>
+<instance media-type="image/tiff" href="content/500925v1_fig3.tif"/>
+</item>
+<item id="fig4" type="figure">
+<title>Figure 4</title>
+<instance media-type="image/tiff" href="content/500925v1_fig4.tif"/>
+</item>
+<item id="fig5" type="figure">
+<title>Figure 5</title>
+<instance media-type="image/tiff" href="content/500925v1_fig5.tif"/>
+</item>
+<item id="fig6" type="figure">
+<title>Figure 6</title>
+<instance media-type="image/tiff" href="content/500925v1_fig6.tif"/>
+</item>
+<item id="fig7" type="figure">
+<title>Figure 7</title>
+<instance media-type="image/tiff" href="content/500925v1_fig7.tif"/>
+</item>
+<item id="fig8" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_fig8.tif"/>
+</item>
+<item id="ufig1" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig1.tif"/>
+</item>
+<item id="ufig2" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig2.tif"/>
+</item>
+<item id="ufig3" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig3.tif"/>
+</item>
+<item id="ufig4" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig4.tif"/>
+</item>
+<item id="ufig5" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig5.tif"/>
+</item>
+<item id="ufig5a" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig5a.tif"/>
+</item>
+<item id="ufig5b" type="figure">
+<title>Figure 8</title>
+<instance media-type="image/tiff" href="content/500925v1_ufig5b.tif"/>
+</item>
+<item id="fig1S1" type="figure">
+<title>Figure 1&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig1S1.tif"/>
+</item>
+<item id="fig1S2" type="figure">
+<title>Figure 1&#x2014;figure supplement 2</title>
+<instance media-type="image/tiff" href="content/500925v1_fig1S2.tif"/>
+</item>
+<item id="fig2S1" type="figure">
+<title>Figure 2&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig2S1.tif"/>
+</item>
+<item id="fig3S1" type="figure">
+<title>Figure 3&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig3S1.tif"/>
+</item>
+<item id="fig3S2" type="figure">
+<title>Figure 3&#x2014;figure supplement 2</title>
+<instance media-type="image/tiff" href="content/500925v1_fig3S2.tif"/>
+</item>
+<item id="fig4S1" type="figure">
+<title>Figure 4&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig4S1.tif"/>
+</item>
+<item id="fig4S2" type="figure">
+<title>Figure 4&#x2014;figure supplement 2</title>
+<instance media-type="image/tiff" href="content/500925v1_fig4S2.tif"/>
+</item>
+<item id="fig5S1" type="figure">
+<title>Figure 5&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig5S1.tif"/>
+</item>
+<item id="fig5S2" type="figure">
+<title>Figure 5&#x2014;figure supplement 2</title>
+<instance media-type="image/tiff" href="content/500925v1_fig5S2.tif"/>
+</item>
+<item id="fig6S1" type="figure">
+<title>Figure 6&#x2014;figure supplement 1</title>
+<instance media-type="image/tiff" href="content/500925v1_fig6S1.tif"/>
+</item>
+<item id="tbl1" type="table">
+<title>Table 1</title>
+<instance media-type="image/tiff" href="content/500925v1_tbl1.tif"/>
+</item>
+<item id="tbl2" type="table">
+<title>Table 2</title>
+<instance media-type="image/tiff" href="content/500925v1_tbl2.tif"/>
+</item>
+<item id="tbl3" type="table">
+<title>Table 3</title>
+<instance media-type="image/tiff" href="content/500925v1_tbl3.tif"/>
+</item>
+<item id="tbl3a" type="table">
+<title>Table 3</title>
+<instance media-type="image/tiff" href="content/500925v1_tbl3a.tif"/>
+</item>
+<item id="tblS1" type="table">
+<title>Table 3</title>
+<instance media-type="image/tiff" href="content/500925v1_tblS1.tif"/>
+</item>
+</manifest>

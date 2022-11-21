@@ -33,11 +33,17 @@ authors:
         name: >-
           Wadhwani Research Center for Bioengineering, Indian Institute of
           Technology Bombay, Powai, Mumbai, India
+    emails:
+      - wangikar@iitb.ac.in
     familyNames:
       - Wangikar
     givenNames:
       - Pramod
       - P.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-0108-7585
 dateAccepted:
   type: Date
   value: '2017-05-15'
@@ -4706,3 +4712,12 @@ content:
     List of co-evolving genes.Column A describes the cluster number. Column B to
     D describes various identifiers and attributes of the genes used. Column E
     denotes the GCI.(XLSX)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        The work was supported by a research grant provided by Department of
+        Biotechnology, Government of India (Grant No: BT/EB/PAN IIT/2012).

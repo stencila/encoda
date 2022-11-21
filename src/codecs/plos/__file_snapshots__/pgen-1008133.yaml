@@ -14,6 +14,10 @@ authors:
     givenNames:
       - Juan
       - A.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-8688-1309
   - type: Person
     affiliations:
       - type: Organization
@@ -35,6 +39,10 @@ authors:
     givenNames:
       - María
       - C.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-4244-696X
   - type: Person
     affiliations:
       - type: Organization
@@ -49,6 +57,10 @@ authors:
       - Ariel
     givenNames:
       - Federico
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-8478-8808
   - type: Person
     affiliations:
       - type: Organization
@@ -59,10 +71,16 @@ authors:
         name: >-
           Institucio Catalana de Recerca i Estudis Avançats (ICREA), Barcelona,
           Spain
+    emails:
+      - marco.milan@irbbarcelona.org
     familyNames:
       - Milán
     givenNames:
       - Marco
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-7111-6444
   - type: Person
     affiliations:
       - type: Organization
@@ -73,10 +91,16 @@ authors:
         name: >-
           Facultad de Bioquímica y Ciencias Biológicas, Universidad Nacional del
           Litoral (UNL), Santa Fe, Argentina
+    emails:
+      - adekanty@santafe-conicet.gov.ar
     familyNames:
       - Dekanty
     givenNames:
       - Andrés
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-0587-0449
 dateAccepted:
   type: Date
   value: '2019-08-07'
@@ -6200,3 +6224,17 @@ content:
     corresponding transgenic RNAi lines used for the screen.(PDF)
   - Signaling pathways affected in RACS-expressing cells.(PDF)
   - List of primers used in this study.(PDF)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        We thank Daniel Gonzalez, Pablo Wappner, Fernanda Ceriani and Andrés
+        Garelli for support and reagents, the Developmental Studies Hybridoma
+        Bank, the Vienna 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' Resource Center (VDRC) and the Bloomington Stock Center for antibodies and fly strains. We thank Agustin Arce for help with the microarray analyses, and Leandro Lucero for guidance in the ChIP experiments.'

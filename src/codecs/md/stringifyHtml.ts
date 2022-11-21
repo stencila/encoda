@@ -22,12 +22,15 @@ const selfClosingTags = [
   'wbr',
 ]
 
+// @ts-ignore
 const parentNodeGuard = (n: Node): n is Parent => Array.isArray(n.children)
 
 const joinHTML = (tree: Node[]): string =>
   tree.reduce((acc: string, node: Node) => {
     let value = ''
+    // @ts-ignore
     if (typeof node.value === 'string') {
+      // @ts-ignore
       value = node.value
     } else {
       log.warn(
@@ -66,11 +69,13 @@ const getClosingTagIdx = (tree: Node[]): O.Option<number> => {
   // same HTML tags like `<div><div>content</div></div>`
   let stack = 0
   return A.findIndex((node: Node) => {
+    // @ts-ignore
     if (typeof node.value !== 'string') return false
 
     // Split HTML tags into two lists, one for opening and one for closings tags. We use the difference in their
     // lengths to determine if there are any unclosed HTML tags, and if we should continue consuming the value of
     // the next Node.
+    // @ts-ignore
     const groupedTags = A.partition(isOpeningTag)(getTags(node.value))
     stack += groupedTags.right.length - groupedTags.left.length
 
@@ -99,10 +104,12 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
       }
 
       // Recursively call `stringifyHTML` if the Node has children of its own
+      // @ts-ignore
       if (node.children !== undefined) {
         return [...innerTree, stringifyHTML(node)]
       }
 
+      // @ts-ignore
       if (node.type === 'html' && typeof node.value === 'string') {
         // Find the node index containing corresponding closing HTML tag.
         const subsequentNodes = A.dropLeft(idx)(tree.children)
@@ -124,5 +131,6 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
     []
   )
 
+  // @ts-ignore
   return { ...tree, children }
 }

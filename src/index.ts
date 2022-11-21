@@ -325,8 +325,9 @@ export async function convert(
 
   const node = await read(input, from, decodeOptions)
 
-  if (outputPaths === undefined) outputPaths = [STDIO_PATH]
-  else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
+  if (outputPaths === undefined || outputPaths.length == 0) {
+    return await dump(node, to ?? 'txt', encodeOptions)
+  } else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
   const files: string[] = []
@@ -339,7 +340,6 @@ export async function convert(
     if (outputPath === STDIO_PATH) {
       const content = await dump(node, to ?? 'txt', encodeOptions)
       console.log(content)
-      if (outputPaths.length > 0) return content
       continue
     }
 

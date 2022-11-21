@@ -1,0 +1,7037 @@
+{
+  "type": "Article",
+  "about": [
+    {
+      "type": "DefinedTerm",
+      "name": "New Results"
+    }
+  ],
+  "authors": [
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Canada"
+          },
+          "name": "Department of Zoology and Life Sciences Institute, University of British Columbia"
+        }
+      ],
+      "familyNames": [
+        "Jelen"
+      ],
+      "givenNames": [
+        "Meghan"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Canada"
+          },
+          "name": "Department of Zoology and Life Sciences Institute, University of British Columbia"
+        }
+      ],
+      "familyNames": [
+        "Musso"
+      ],
+      "givenNames": [
+        "Pierre-Yves"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-6309-3502"
+        }
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Canada"
+          },
+          "name": "Department of Zoology and Life Sciences Institute, University of British Columbia"
+        }
+      ],
+      "familyNames": [
+        "Junca"
+      ],
+      "givenNames": [
+        "Pierre"
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0001-5087-5866"
+        }
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Canada"
+          },
+          "name": "Department of Zoology and Life Sciences Institute, University of British Columbia"
+        }
+      ],
+      "emails": [
+        "gordon@zoology.ubc.ca"
+      ],
+      "familyNames": [
+        "Gordon"
+      ],
+      "givenNames": [
+        "Michael",
+        "D."
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "propertyID": "https://registry.identifiers.org/registry/orcid",
+          "value": "http://orcid.org/0000-0002-5440-986X"
+        }
+      ]
+    }
+  ],
+  "dateAccepted": {
+    "type": "Date",
+    "value": "2022-06-29"
+  },
+  "datePublished": {
+    "type": "Date",
+    "value": "2022-00-00"
+  },
+  "dateReceived": {
+    "type": "Date",
+    "value": "2021-11-12"
+  },
+  "description": [
+    "Tastes are typically thought to evoke innate appetitive or aversive behaviours, prompting food acceptance or rejection. However, research in ",
+    {
+      "type": "Emphasis",
+      "content": [
+        "Drosophila melanogaster"
+      ]
+    },
+    " indicates that taste responses can be modified through experience-dependent changes in mushroom body circuits. In this study, we develop a novel taste learning paradigm using closed-loop optogenetics. We find that appetitive and aversive taste memories can be formed by pairing gustatory stimuli with optogenetic activation of sensory or dopaminergic neurons associated with reward or punishment. As with olfactory memories, distinct dopaminergic subpopulations drive the parallel formation of short- and long-term appetitive memories. Long-term memories are protein synthesis-dependent and have energetic requirements that are satisfied by a variety of caloric food sources or by direct stimulation of MB-MP1 dopaminergic neurons. Our paradigm affords new opportunities to probe plasticity mechanisms within the taste system and understand the extent to which taste responses depend on experience."
+  ],
+  "identifiers": [
+    {
+      "type": "PropertyValue",
+      "name": "doi",
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "10.1101/2021.11.12.468444"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "elocation-id",
+      "propertyID": "https://registry.identifiers.org/registry/elocation-id",
+      "value": "2021.11.12.468444"
+    }
+  ],
+  "isPartOf": {
+    "type": "Periodical",
+    "identifiers": [
+      {
+        "type": "PropertyValue",
+        "name": "publisher-id",
+        "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+        "value": "BIORXIV"
+      }
+    ],
+    "issns": [],
+    "publisher": {
+      "type": "Organization",
+      "name": "Cold Spring Harbor Laboratory"
+    },
+    "title": "bioRxiv"
+  },
+  "licenses": [
+    {
+      "type": "CreativeWork",
+      "url": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "content": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "This pre-print is available under a Creative Commons License (Attribution-NonCommercial-NoDerivs 4.0 International), CC BY-NC-ND 4.0, as described at ",
+            {
+              "type": "Link",
+              "target": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+              "content": [
+                "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "Article",
+      "id": "c1",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Herb"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ogueta"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Siwanowicz"
+          ],
+          "givenNames": [
+            "I"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Templier"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Friedrich"
+          ],
+          "givenNames": [
+            "AB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ito"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scholz"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1371/journal.pgen.1002768"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLoS Genet"
+        },
+        "volumeNumber": 8
+      },
+      "title": "Three Dopamine Pathways Induce Aversive Odor Memories with Different Stability"
+    },
+    {
+      "type": "Article",
+      "id": "c2",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.16135"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 5
+      },
+      "title": "Dopaminergic neurons write and update memories with cell-type-specific rules"
+    },
+    {
+      "type": "Article",
+      "id": "c3",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sitaraman"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ichinose"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kaun"
+          ],
+          "givenNames": [
+            "KR"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vogt"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Belliart-Guérin"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Plaçais"
+          ],
+          "givenNames": [
+            "P-Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Robie"
+          ],
+          "givenNames": [
+            "AA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yamagata"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schnaitmann"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rowell"
+          ],
+          "givenNames": [
+            "WJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Johnston"
+          ],
+          "givenNames": [
+            "RM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ngo"
+          ],
+          "givenNames": [
+            "T-TB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chen"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Korff"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nitabach"
+          ],
+          "givenNames": [
+            "MN"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Heberlein"
+          ],
+          "givenNames": [
+            "U"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Branson"
+          ],
+          "givenNames": [
+            "KM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.04580"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 3
+      },
+      "title": "Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c4",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Breslin"
+          ],
+          "givenNames": [
+            "PAS"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davidson"
+          ],
+          "givenNames": [
+            "TL"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Grill"
+          ],
+          "givenNames": [
+            "HJ."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "1990"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/0031-9384(90)90122-K"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Physiol Behav"
+        },
+        "volumeNumber": 47
+      },
+      "pageEnd": 538,
+      "pageStart": 535,
+      "title": "Conditioned reversal of reactions to normally avoided tastes"
+    },
+    {
+      "type": "Article",
+      "id": "c5",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Burke"
+          ],
+          "givenNames": [
+            "CJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waddell"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2011.03.032"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 21
+      },
+      "pageEnd": 750,
+      "pageStart": 746,
+      "title": "Remembering Nutrient Quality of Sugar in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c6",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chen"
+          ],
+          "givenNames": [
+            "Y-CD"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dahanukar"
+          ],
+          "givenNames": [
+            "A."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1007/s00018-019-03320-0"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell Mol Life Sci"
+        },
+        "volumeNumber": 77
+      },
+      "pageEnd": 1101,
+      "pageStart": 1087,
+      "title": "Recent advances in the genetic basis of taste detection in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c7",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chu"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chui"
+          ],
+          "givenNames": [
+            "V"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mann"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gordon"
+          ],
+          "givenNames": [
+            "MD."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2014.07.020"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 24
+      },
+      "pageEnd": 1984,
+      "pageStart": 1978,
+      "title": "Presynaptic Gain Control Drives Sweet and Bitter Taste Integration in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c8",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Claridge-Chang"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Roorda"
+          ],
+          "givenNames": [
+            "RD"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vrontou"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sjulson"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hirsh"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Miesenböck"
+          ],
+          "givenNames": [
+            "G."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2009.08.034"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 139
+      },
+      "pageEnd": 415,
+      "pageStart": 405,
+      "title": "Writing Memories with Light-Addressable Reinforcement Circuitry"
+    },
+    {
+      "type": "Article",
+      "id": "c9",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cohn"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Morantte"
+          ],
+          "givenNames": [
+            "I"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ruta"
+          ],
+          "givenNames": [
+            "V."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2015.11.019"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 163
+      },
+      "pageEnd": 1755,
+      "pageStart": 1742,
+      "title": "Coordinated and Compartmentalized Neuromodulation Shapes Sensory Processing in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c10",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Colomb"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kaiser"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chabaud"
+          ],
+          "givenNames": [
+            "M-A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1111/j.1601-183X.2009.00482.x"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Genes Brain Behav"
+        },
+        "volumeNumber": 8
+      },
+      "pageEnd": 415,
+      "pageStart": 407,
+      "title": "Parametric and genetic analysis of Drosophila appetitive long-term memory and sugar motivation"
+    },
+    {
+      "type": "Article",
+      "id": "c11",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Corrales-Carvajal"
+          ],
+          "givenNames": [
+            "VM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Faisal"
+          ],
+          "givenNames": [
+            "AA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ribeiro"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.19920"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 5
+      },
+      "title": "Internal states drive nutrient homeostasis by modulating exploration-exploitation trade-off"
+    },
+    {
+      "type": "Article",
+      "id": "c12",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Crittenden"
+          ],
+          "givenNames": [
+            "JR"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Skoulakis"
+          ],
+          "givenNames": [
+            "EMC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Han"
+          ],
+          "givenNames": [
+            "K-A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kalderon"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davis"
+          ],
+          "givenNames": [
+            "RL."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "1998"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "E R N N G"
+        },
+        "volumeNumber": 14
+      },
+      "title": "Tripartite Mushroom Body Architecture Revealed by Antigenic Markers"
+    },
+    {
+      "type": "Article",
+      "id": "c13",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dahanukar"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lei"
+          ],
+          "givenNames": [
+            "Y-T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kwon"
+          ],
+          "givenNames": [
+            "JY"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Carlson"
+          ],
+          "givenNames": [
+            "JR."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2007"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2007.10.024"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 56
+      },
+      "pageEnd": 516,
+      "pageStart": 503,
+      "title": "Two Gr Genes Underlie Sugar Reception in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c14",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "de",
+            "Tredern"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rabah"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pasquer"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Minatchy"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2021"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.celrep.2021.109620"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell Rep"
+        },
+        "volumeNumber": 36
+      },
+      "pageStart": 109620,
+      "title": "Glial glucose fuels the neuronal pentose phosphate pathway for long-term memory"
+    },
+    {
+      "type": "Article",
+      "id": "c15",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dweck"
+          ],
+          "givenNames": [
+            "HKM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Talross"
+          ],
+          "givenNames": [
+            "GJS"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Luo"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ebrahim"
+          ],
+          "givenNames": [
+            "SAM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Carlson"
+          ],
+          "givenNames": [
+            "JR."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2022"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2022.02.063"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 32
+      },
+      "pageEnd": 1787,
+      "pageStart": 1776,
+      "title": "Ir56b is an atypical ionotropic receptor that underlies appetitive salt response in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c16",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Figueroa"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gasalla"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Müller"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dwyer"
+          ],
+          "givenNames": [
+            "D."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2020"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.physbeh.2020.112976"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Physiol Behav"
+        },
+        "volumeNumber": 223
+      },
+      "pageStart": 112976,
+      "title": "Socially conditioned flavor preferences with fluids: Transfer with solid foods, palatability, and testing constraints"
+    },
+    {
+      "type": "Article",
+      "id": "c17",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Forestell"
+          ],
+          "givenNames": [
+            "CA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "LoLordo"
+          ],
+          "givenNames": [
+            "VM."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2000"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1006/lmot.1999.1048"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Learn Motiv"
+        },
+        "volumeNumber": 31
+      },
+      "pageEnd": 179,
+      "pageStart": 153,
+      "title": "Can Orally Consumed Calories Condition Preferences for Relatively Unacceptable Tastes?"
+    },
+    {
+      "type": "Article",
+      "id": "c18",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fujita"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimura"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2011.03.058"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 21
+      },
+      "pageEnd": 755,
+      "pageStart": 751,
+      "title": "Drosophila Evaluates and Learns the Nutritional Value of Sugars"
+    },
+    {
+      "type": "Article",
+      "id": "c19",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gervasi"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tchénio"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2010"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2010.01.014"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 65
+      },
+      "pageEnd": 529,
+      "pageStart": 516,
+      "title": "PKA Dynamics in a Drosophila Learning Center: Coincidence Detection by Rutabaga Adenylyl Cyclase and Spatial Regulation by Dunce Phosphodiesterase"
+    },
+    {
+      "type": "Article",
+      "id": "c20",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ichinose"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yamagata"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Abe"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.10719"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 4
+      },
+      "title": "Reward signal in a recurrent circuit drives appetitive long-term memory formation"
+    },
+    {
+      "type": "Article",
+      "id": "c21",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Inagaki"
+          ],
+          "givenNames": [
+            "HK"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ben-Tabou",
+            "de-Leon"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wong"
+          ],
+          "givenNames": [
+            "AM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jagadish"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ishimoto"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Barnea"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kitamoto"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Axel"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Anderson"
+          ],
+          "givenNames": [
+            "DJ."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2011.12.022"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 148
+      },
+      "pageEnd": 595,
+      "pageStart": 583,
+      "title": "Visualizing Neuromodulation In Vivo: TANGO-Mapping of Dopamine Signaling Reveals Appetite Control of Sugar Sensing"
+    },
+    {
+      "type": "Article",
+      "id": "c22",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Inagaki"
+          ],
+          "givenNames": [
+            "HK"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Panse"
+          ],
+          "givenNames": [
+            "KM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Anderson"
+          ],
+          "givenNames": [
+            "DJ."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2014.09.032"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 84
+      },
+      "pageEnd": 820,
+      "pageStart": 806,
+      "title": "Independent, Reciprocal Neuromodulatory Control of Sweet and Bitter Taste Sensitivity during Starvation in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c23",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jaeger"
+          ],
+          "givenNames": [
+            "AH"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stanley"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Weiss"
+          ],
+          "givenNames": [
+            "ZF"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Musso"
+          ],
+          "givenNames": [
+            "P-Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chan"
+          ],
+          "givenNames": [
+            "RC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Feldman-Kiss"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gordon"
+          ],
+          "givenNames": [
+            "MD."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.37167"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 7
+      },
+      "title": "A complex peripheral code for salt taste in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c24",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Keene"
+          ],
+          "givenNames": [
+            "AC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Masek"
+          ],
+          "givenNames": [
+            "P."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuroscience.2012.07.028"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuroscience"
+        },
+        "volumeNumber": 222
+      },
+      "pageEnd": 180,
+      "pageStart": 173,
+      "title": "Optogenetic induction of aversive taste memory"
+    },
+    {
+      "type": "Article",
+      "id": "c25",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kirkhart"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.23386"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 6
+      },
+      "title": "Long-range projection neurons in the taste circuit of Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c26",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kirkhart"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1523/JNEUROSCI.3930-14.2015"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Neurosci"
+        },
+        "volumeNumber": 35
+      },
+      "pageEnd": 5958,
+      "pageStart": 5950,
+      "title": "Gustatory Learning and Processing in the Drosophila Mushroom Bodies"
+    },
+    {
+      "type": "Article",
+      "id": "c27",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kirkhart"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1523/JNEUROSCI.3930-14.2015"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Neurosci"
+        },
+        "volumeNumber": 35
+      },
+      "pageEnd": 5958,
+      "pageStart": 5950,
+      "title": "Gustatory Learning and Processing in the Drosophila Mushroom Bodies"
+    },
+    {
+      "type": "Article",
+      "id": "c28",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Krashes"
+          ],
+          "givenNames": [
+            "MJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "DasGupta"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vreede"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "White"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Armstrong"
+          ],
+          "givenNames": [
+            "JD"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waddell"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2009.08.035"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 139
+      },
+      "pageEnd": 427,
+      "pageStart": 416,
+      "title": "A Neural Circuit Mechanism Integrating Motivational State with Memory Expression in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c29",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "LeDue"
+          ],
+          "givenNames": [
+            "EE"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mann"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Koch"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chu"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dakin"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gordon"
+          ],
+          "givenNames": [
+            "MD."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2016.08.028"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 26
+      },
+      "pageEnd": 2861,
+      "pageStart": 2854,
+      "title": "Starvation-Induced Depotentiation of Bitter Taste in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c30",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yamagata"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pfeiffer"
+          ],
+          "givenNames": [
+            "BD"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Friedrich"
+          ],
+          "givenNames": [
+            "AB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Siwanowicz"
+          ],
+          "givenNames": [
+            "I"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nature11304"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature"
+        },
+        "volumeNumber": 488
+      },
+      "pageEnd": 516,
+      "pageStart": 512,
+      "title": "A subset of dopamine neurons signals reward for odour memory in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c31",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "Q"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tabuchi"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wu"
+          ],
+          "givenNames": [
+            "MN."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2016"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2016.04.013"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 165
+      },
+      "pageEnd": 1360,
+      "pageStart": 1347,
+      "title": "Sleep Drive Is Encoded by Neural Plastic Changes in a Dedicated Circuit"
+    },
+    {
+      "type": "Article",
+      "id": "c32",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mao"
+          ],
+          "givenNames": [
+            "Z"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davis"
+          ],
+          "givenNames": [
+            "RL."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.3389/neuro.04.005.2009"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Front Neural Circuits"
+        },
+        "volumeNumber": 3
+      },
+      "title": "Eight different types of dopaminergic neurons innervate the Drosophila mushroom body neuropil: anatomical and physiological heterogeneity"
+    },
+    {
+      "type": "Article",
+      "id": "c33",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Marella"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fischler"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kong"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Asgarian"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rueckert"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2006"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2005.11.037"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 49
+      },
+      "pageEnd": 295,
+      "pageStart": 285,
+      "title": "Imaging Taste Responses in the Fly Brain Reveals a Functional Map of Taste Category and Behavior"
+    },
+    {
+      "type": "Article",
+      "id": "c34",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Marella"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mann"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2011.12.032"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 73
+      },
+      "pageEnd": 950,
+      "pageStart": 941,
+      "title": "Dopaminergic Modulation of Sucrose Acceptance Behavior in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c35",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Masek"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2010"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1073/pnas.1009318107"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Proc Natl Acad Sci"
+        },
+        "volumeNumber": 107
+      },
+      "pageEnd": 14838,
+      "pageStart": 14833,
+      "title": "Limited taste discrimination in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c36",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Masek"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Worden"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Keene"
+          ],
+          "givenNames": [
+            "AC."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2015.04.027"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 25
+      },
+      "pageEnd": 1541,
+      "pageStart": 1535,
+      "title": "A Dopamine-Modulated Neural Circuit Regulating Aversive Taste Memory in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c37",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Musso"
+          ],
+          "givenNames": [
+            "P-Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Junca"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jelen"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Feldman-Kiss"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chan"
+          ],
+          "givenNames": [
+            "RC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gordon"
+          ],
+          "givenNames": [
+            "MD."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2019"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.45636"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 8
+      },
+      "title": "Closed-loop optogenetic activation of peripheral or central neurons modulates feeding in freely moving Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c38",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Musso"
+          ],
+          "givenNames": [
+            "P-Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tchenio"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.celrep.2015.01.036"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell Rep"
+        },
+        "volumeNumber": 10
+      },
+      "pageEnd": 1031,
+      "pageStart": 1023,
+      "title": "Delayed Dopamine Signaling of Energy Level Builds Appetitive Long-Term Memory in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c39",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pavlowsky"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schor"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2018.04.040"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 28
+      },
+      "pageEnd": 1793,
+      "pageStart": 1783,
+      "title": "A GABAergic Feedback Shapes Dopaminergic Input on the Drosophila Mushroom Body to Promote Appetitive Long-Term Memory"
+    },
+    {
+      "type": "Article",
+      "id": "c40",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Perisse"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yin"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lin"
+          ],
+          "givenNames": [
+            "AC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lin"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huetteroth"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Waddell"
+          ],
+          "givenNames": [
+            "S."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2013.07.045"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 79
+      },
+      "pageEnd": 956,
+      "pageStart": 945,
+      "title": "Different Kenyon Cell Populations Drive Learned Approach and Avoidance in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c41",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "de",
+            "Tredern"
+          ],
+          "givenNames": [
+            "É"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scheunemann"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Trannoy"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Goguel"
+          ],
+          "givenNames": [
+            "V"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Han"
+          ],
+          "givenNames": [
+            "K-A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Isabel"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/ncomms15510"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nat Commun"
+        },
+        "volumeNumber": 8
+      },
+      "pageStart": 15510,
+      "title": "Upregulated energy metabolism in the Drosophila mushroom body is the trigger for long-term memory"
+    },
+    {
+      "type": "Article",
+      "id": "c42",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Trannoy"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Isabel"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Siwanowicz"
+          ],
+          "givenNames": [
+            "I"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Belliart-Guérin"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vernier"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Birman"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2012"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/nn.3055"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nat Neurosci"
+        },
+        "volumeNumber": 15
+      },
+      "pageEnd": 599,
+      "pageStart": 592,
+      "title": "Slow oscillations in two pairs of dopaminergic neurons gate long-term memory formation in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c43",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Saunders"
+          ],
+          "givenNames": [
+            "BT"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Richard"
+          ],
+          "givenNames": [
+            "JM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Margolis"
+          ],
+          "givenNames": [
+            "EB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Janak"
+          ],
+          "givenNames": [
+            "PH."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1038/s41593-018-0191-4"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nat Neurosci"
+        },
+        "volumeNumber": 21
+      },
+      "pageEnd": 1083,
+      "pageStart": 1072,
+      "title": "Dopamine neurons create Pavlovian conditioned stimuli with circuit-defined motivational properties"
+    },
+    {
+      "type": "Article",
+      "id": "c44",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schwaerzel"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Monastirioti"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scholz"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Friggi-Grelin"
+          ],
+          "givenNames": [
+            "F"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Birman"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Heisenberg"
+          ],
+          "givenNames": [
+            "M."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2003"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1523/JNEUROSCI.23-33-10495.2003"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Neurosci"
+        },
+        "volumeNumber": 23
+      },
+      "pageEnd": 10502,
+      "pageStart": 10495,
+      "title": "Dopamine and Octopamine Differentiate between Aversive and Appetitive Olfactory Memories in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c45",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Steck"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Walker"
+          ],
+          "givenNames": [
+            "SJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Itskov"
+          ],
+          "givenNames": [
+            "PM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Baltazar"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moreira"
+          ],
+          "givenNames": [
+            "J-M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ribeiro"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2018"
+      },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Internal amino acid state modulates yeast taste neurons to support protein homeostasis in Drosophila"
+        },
+        "volumeNumber": 29
+      },
+      "title": "SteckK, WalkerSJ, ItskovPM, BaltazarC, MoreiraJ-M, RibeiroC.2018. Internal amino acid state modulates yeast taste neurons to support protein homeostasis in Drosophila29."
+    },
+    {
+      "type": "Article",
+      "id": "c46",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Stocker"
+          ],
+          "givenNames": [
+            "RF."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "1994"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1007/BF00305372"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell Tissue Res"
+        },
+        "volumeNumber": 275
+      },
+      "pageEnd": 26,
+      "pageStart": 3,
+      "title": "The organization of the chemosensory system in Drosophila melanogaster: a rewiew"
+    },
+    {
+      "type": "Article",
+      "id": "c47",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanaka"
+          ],
+          "givenNames": [
+            "NK"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ito"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2008"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1002/cne.21692"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Comp Neurol"
+        },
+        "volumeNumber": 508
+      },
+      "pageEnd": 755,
+      "pageStart": 711,
+      "title": "Neuronal assemblies of the Drosophila mushroom body"
+    },
+    {
+      "type": "Article",
+      "id": "c48",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tauber"
+          ],
+          "givenNames": [
+            "JM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Brown"
+          ],
+          "givenNames": [
+            "EB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yurgel"
+          ],
+          "givenNames": [
+            "ME"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Masek"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Keene"
+          ],
+          "givenNames": [
+            "AC."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2017"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1371/journal.pgen.1007059"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLOS Genet"
+        },
+        "volumeNumber": 13
+      },
+      "title": "A subset of sweet-sensing neurons identified by IR56d are necessary and sufficient for fatty acid taste"
+    },
+    {
+      "type": "Article",
+      "id": "c49",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Thorne"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chromey"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bray"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Amrein"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2004.05.019"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 14
+      },
+      "pageEnd": 1079,
+      "pageStart": 1065,
+      "title": "Taste Perception and Coding in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c50",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tomchik"
+          ],
+          "givenNames": [
+            "SM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davis"
+          ],
+          "givenNames": [
+            "RL."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2009"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.neuron.2009.09.029"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuron"
+        },
+        "volumeNumber": 64
+      },
+      "pageEnd": 521,
+      "pageStart": 510,
+      "title": "Dynamics of Learning-Related cAMP Signaling and Stimulus Integration in the Drosophila Olfactory Pathway"
+    },
+    {
+      "type": "Article",
+      "id": "c51",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Trannoy"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Redt-Clouet"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dura"
+          ],
+          "givenNames": [
+            "J-M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2011"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cub.2011.08.032"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Curr Biol"
+        },
+        "volumeNumber": 21
+      },
+      "pageEnd": 1653,
+      "pageStart": 1647,
+      "title": "Parallel Processing of Appetitive Short-and Long-Term Memories In Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c52",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Vogt"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Schnaitmann"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dylla"
+          ],
+          "givenNames": [
+            "KV"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Knapek"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2014"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.7554/eLife.02395"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "eLife"
+        },
+        "volumeNumber": 3
+      },
+      "title": "Shared mushroom body circuits underlie visual and olfactory memories in Drosophila"
+    },
+    {
+      "type": "Article",
+      "id": "c53",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wadhera"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Capaldi",
+            "Phillips"
+          ],
+          "givenNames": [
+            "ED"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wilkie"
+          ],
+          "givenNames": [
+            "LM."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.appet.2015.06.016"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Appetite"
+        },
+        "volumeNumber": 93
+      },
+      "pageEnd": 84,
+      "pageStart": 75,
+      "title": "Teaching children to like and eat vegetables"
+    },
+    {
+      "type": "Article",
+      "id": "c54",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "Z"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Singhvi"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kong"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scott"
+          ],
+          "givenNames": [
+            "K."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2004"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1016/j.cell.2004.06.011"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Cell"
+        },
+        "volumeNumber": 117
+      },
+      "pageEnd": 991,
+      "pageStart": 981,
+      "title": "Taste Representations in the Drosophila Brain"
+    },
+    {
+      "type": "Article",
+      "id": "c55",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yamagata"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ichinose"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Aso"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "P-Y"
+          ],
+          "givenNames": [
+            "Plaçais"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Friedrich"
+          ],
+          "givenNames": [
+            "AB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sima"
+          ],
+          "givenNames": [
+            "RJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Preat"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rubin"
+          ],
+          "givenNames": [
+            "GM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanimoto"
+          ],
+          "givenNames": [
+            "H."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2015"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1073/pnas.1421930112"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Proc Natl Acad Sci"
+        },
+        "volumeNumber": 112
+      },
+      "pageEnd": 583,
+      "pageStart": 578,
+      "title": "Distinct dopamine neurons mediate reward signals for short-and long-term memories"
+    },
+    {
+      "type": "Article",
+      "id": "c56",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "YV"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ni"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Montell"
+          ],
+          "givenNames": [
+            "C."
+          ]
+        }
+      ],
+      "datePublished": {
+        "type": "Date",
+        "value": "2013"
+      },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "doi",
+          "propertyID": "https://registry.identifiers.org/registry/doi",
+          "value": "10.1126/science.1234133"
+        }
+      ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Science"
+        },
+        "volumeNumber": 340
+      },
+      "pageEnd": 1338,
+      "pageStart": 1334,
+      "title": "The Molecular Basis for Attractive Salt-Taste Coding in Drosophila"
+    }
+  ],
+  "title": [
+    "Optogenetic induction of appetitive and aversive taste memories in ",
+    {
+      "type": "Emphasis",
+      "content": [
+        "Drosophila"
+      ]
+    }
+  ],
+  "meta": {},
+  "content": [
+    {
+      "type": "Heading",
+      "id": "s1",
+      "depth": 1,
+      "content": [
+        "Introduction"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Food selection is influenced by a complex set of factors including external sensory input, interoceptive circuits signaling internal state, and plasticity driven by past feeding experiences. The gustatory system plays a critical role in evaluating the nutritional qualities of foods, and is generally thought to evoke innate appetitive or aversive behavioural responses. However, the degree to which taste processing can be modified by learning is unclear."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In flies, taste detection is mediated by gustatory receptor neurons (GRNs) located on the proboscis, pharynx, legs, wing margins, and ovipositor ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Stocker, 1994"
+          ]
+        },
+        ". GRNs express a range of chemosensory receptors for detecting sugars, bitters, salts, and other contact chemical cues ",
+        {
+          "type": "Cite",
+          "target": "c6",
+          "content": [
+            "Chen and Dahanukar, 2020"
+          ]
+        },
+        ". GRNs project to the subesophageal zone (SEZ) of the fly brain, where taste information is segregated based on modality, valence, and organ of detection ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c33",
+              "content": [
+                "Marella et al., 2006"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c49",
+              "content": [
+                "Thorne et al., 2004"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c54",
+              "content": [
+                "Wang et al., 2004"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Although the valence of a specific taste is generally set, the intensity of the response can vary according to a variety of factors, including internal state. For example, starvation increases a fly’s sensitivity to sweet tastes and blunts bitter responses through direct modulation of GRN activity ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c22",
+              "content": [
+                "Inagaki et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c21",
+              "content": [
+                "2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c29",
+              "content": [
+                "LeDue et al., 2016"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c34",
+              "content": [
+                "Marella et al., 2012"
+              ]
+            }
+          ]
+        },
+        ". Moreover, flies lacking essential nutrients such as amino acids and salts exhibit increased nutrient-specific preference towards protein and salt-rich foods ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c11",
+              "content": [
+                "Corrales-Carvajal et al., 2016"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c23",
+              "content": [
+                "Jaeger et al., 2018"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c45",
+              "content": [
+                "Steck et al., 2018"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In addition to internal state-dependent changes in nutrient drive, fly taste responses can be altered by experience. Most notably, short-term taste-specific suppression of appetitive responses can be achieved through pairing with either bitter taste or noxious heat ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c24",
+              "content": [
+                "Keene and Masek, 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015a"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c36",
+              "content": [
+                "Masek et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c48",
+              "content": [
+                "Tauber et al., 2017"
+              ]
+            }
+          ]
+        },
+        ". This plasticity requires an integrative memory association area called the mushroom body (MB), which is known to represent stimuli of different modalities, including taste ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c24",
+              "content": [
+                "Keene and Masek, 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015a"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c36",
+              "content": [
+                "Masek et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Thus, while taste responses are carried out by innate circuits, they also exhibit experience-dependent changes driven by the adaptable networks of the MB ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c10",
+              "content": [
+                "Colomb et al., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015a"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c28",
+              "content": [
+                "Krashes et al., 2009"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The MB is composed of approximately ∼4,000 intrinsic Kenyon cells (KCs), whose dendrites receive inputs from different sensory systems ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015a"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c44",
+              "content": [
+                "Schwaerzel et al., 2003"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c47",
+              "content": [
+                "Tanaka et al., 2008"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c52",
+              "content": [
+                "Vogt et al., 2014"
+              ]
+            }
+          ]
+        },
+        ". KCs form ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "en passant"
+          ]
+        },
+        " synapses with mushroom body output neurons (MBONs), and MBONS send projections to neuropils outside of the MB to modulate behavioural output ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c12",
+              "content": [
+                "Crittenden et al., 1998"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c47",
+              "content": [
+                "Tanaka et al., 2008"
+              ]
+            }
+          ]
+        },
+        ". Heterogeneous dopaminergic neurons (DANs) project to specific MB compartments and are activated in response to rewarding or punishing stimuli ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c5",
+              "content": [
+                "Burke and Waddell, 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c19",
+              "content": [
+                "Gervasi et al., 2010"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c32",
+              "content": [
+                "Mao and Davis, 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c50",
+              "content": [
+                "Tomchik and Davis, 2009"
+              ]
+            }
+          ]
+        },
+        ". Coincident KC activation and release of dopamine results in the depression of corresponding KC-MBON synapses and skews the MB network towards approach or avoidance behaviours ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c3",
+              "content": [
+                "Aso et al., 2014"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c9",
+              "content": [
+                "Cohn et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c40",
+              "content": [
+                "Perisse et al., 2013"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Interestingly, direct activation of DANs can function as an Unconditioned Stimulus (US) in some ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Drosophila"
+          ]
+        },
+        " associative learning paradigms ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c1",
+              "content": [
+                "Aso et al., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c8",
+              "content": [
+                "Claridge-Chang et al., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c10",
+              "content": [
+                "Colomb et al., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c30",
+              "content": [
+                "Liu et al., 2012"
+              ]
+            }
+          ]
+        },
+        ". Optogenetic or thermogenetic activation of the Protocerebral Anterior Medial (PAMs) neurons, a rewarding DAN subpopulation, following or in coincidence with an odor Conditioned Stimulus (CS) results in the formation of an appetitive memory, while activation of punishing PPL1 DANs leads to the formation of an aversive memory ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c36",
+              "content": [
+                "Masek et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c55",
+              "content": [
+                "Yamagata et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Similarly, phasic optogenetic activation of specific dopaminergic subsets in the absence of a physical reward can lead to the formation of conditioned behaviours in mice ",
+        {
+          "type": "Cite",
+          "target": "c43",
+          "content": [
+            "Saunders et al., 2018"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Appetitive Short- and Long-Term Memories (STM; LTM) are formed by independent PAM subpopulations, with the nutritional value of the sugar reward and satiation state of the fly contributing to the strength of the association ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c5",
+              "content": [
+                "Burke and Waddell, 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c10",
+              "content": [
+                "Colomb et al., 2009"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c55",
+              "content": [
+                "Yamagata et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Whereas STM may be formed under more flexible conditions with a sweet tasting reward, the formation of LTM requires a nutritious sugar ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c5",
+              "content": [
+                "Burke and Waddell, 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Caloric sugars gate memory consolidation by promoting sustained rhythmic activity of MB-MP1 DANs ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c41",
+              "content": [
+                "Plaçais et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c30",
+              "content": [
+                "2012"
+              ]
+            }
+          ]
+        },
+        ". Interestingly, this signaling may occur up to 5 hours post-ingestion, suggesting that there is a critical time window for the formation of LTM ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c39",
+              "content": [
+                "Pavlowsky et al., 2018"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Although flies are known to exhibit aversive short-term taste memories, where appetitive taste responses are diminished through punishment ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c25",
+              "content": [
+                "Kim et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c36",
+              "content": [
+                "Masek et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c35",
+              "content": [
+                "Masek and Scott, 2010"
+              ]
+            }
+          ]
+        },
+        ", the full extent to which taste behaviours are modifiable by learning is unknown. Can taste responses be enhanced by appetitive conditioning? Can flies form long-term memories about taste? These are difficult questions to answer using traditional methods for several reasons. First, appetitive association paradigms generally rely on food as the US, which could interfere with the representation of a taste CS and also modify future taste behaviours through changes in satiety state. Second, repeated temporal pairing of a taste CS with a US is difficult to achieve in flies without immobilization, making long-lasting memories difficult to test. To circumvent these issues, we developed an optogenetic learning paradigm that facilitates rapid, repeated CS/US pairing while maintaining similar satiation states between groups. In this paradigm, we couple a taste (the CS) with optogenetic GRN or dopaminergic neuron stimulation (the US) in order to study conditioned taste responses or ‘taste memories’. For the purpose of our study, we will define a taste memory as a measurable change in a fly’s behavioural response to a previously encountered taste stimulus."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Using our novel paradigm, we show that flies are capable of forming both appetitive and aversive short- and long-term taste memories. As in olfaction, appetitive taste memories are driven by discrete PAM populations, and activation of a single PAM subpopulation is sufficient to induce appetitive LTM. The formation of appetitive LTM requires ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "de novo"
+          ]
+        },
+        " protein synthesis and is contingent on caloric intake. Moreover, sugar, certain amino acids, and lactic acid can provide the energy required to support LTM formation, and this requirement is also satisfied by thermogenetic activation of MB-MP1 neurons."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2",
+      "depth": 1,
+      "content": [
+        "Results"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2a",
+      "depth": 2,
+      "content": [
+        "Pairing GRN activation with a food source leads to taste memory formation"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We previously developed a system called the sip-triggered optogenetic behavioural enclosure (STROBE), in which individual flies are placed in an arena with free access to two odorless food sources ",
+        {
+          "type": "Cite",
+          "target": "c37",
+          "content": [
+            "Musso et al., 2019"
+          ]
+        },
+        ". Interactions (mostly sips) with one food source triggers nearly instantaneous activation of a red LED, which can be used for optogenetic stimulation of neurons expressing CsChrimson. We reasoned that, if sipping on a tastant (the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ") triggers activation of neurons that provide either positive or negative reinforcement, we may observe a change in the number of interactions a fly initiates upon subsequent exposure to the same CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1A"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "GRNs produce punishment and reward signals capable of facilitating taste memory formation."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "("
+              ]
+            },
+            "A) Diagram outlining STROBE memory paradigm. ",
+            "Training:",
+            " starved flies freely interact with a LED-activating tastant for 40 minutes. ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "CsChrimson"
+              ]
+            },
+            " induces bitter or sweet neuron stimulation upon LED-activation, pairing feeding with punishment or reward. ",
+            "Testing:",
+            " associative memory is measured by assessing preference for the tastant compared to agar for a 1-hour time period. (B) Schematic of aversive and appetitive STM and LLM timelines and a diagram of activated bitter and sweet neurons in the SEZ. (C) Preference indices (left) and tastant interaction numbers (right) for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr66a>CsChrimson"
+              ]
+            },
+            " flies compared to genetic controls during training and 10 minutes later upon testing. (D) Cumulative average preference indices over the course of testing in (C), (n=16-30). (E) Preference index (left) and interactions numbers (right) for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr43a>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal compared to controls in the short-term memory assay. (F) Preference index of flies in (E) throughout testing (n= 12-23). (G) Preference index (left) and interactions numbers (right) for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr43a>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal compared to controls in the long-lasting memory assay. (H) Average preference index as a function of time for the testing period of flies in the long-lasting memory assay (n= 14-30). Preference index is mean ± SEM, One-way ANOVA, Dunnett’s post hoc test: **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, ****",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.0001."
+          ]
+        }
+      ],
+      "label": "Figure 1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We began by testing the efficacy of the STROBE in inducing aversive and appetitive memories through optogenetic activation of bitter and sweet GRNs, respectively (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1B"
+          ]
+        },
+        "). Bitter GRN stimulation is known to activate PPL1 DANs, while sweet GRNs activate PAMs ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c24",
+              "content": [
+                "Keene and Masek, 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c26",
+              "content": [
+                "Kirkhart and Scott, 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c30",
+              "content": [
+                "Liu et al., 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c36",
+              "content": [
+                "Masek et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Moreover, bitter or sweet GRN activation with ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr66a-"
+          ]
+        },
+        " or ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr43a-Gal4"
+          ]
+        },
+        " is sufficient for STM induction in taste and olfactory associative learning paradigms ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c24",
+              "content": [
+                "Keene and Masek, 2012"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c55",
+              "content": [
+                "Yamagata et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Therefore, we tested whether pairing GRN activation with feeding on a single taste modality could create an associative taste memory that altered subsequent behaviour to the taste."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In the aversive taste memory paradigm, interactions with 25 mM sucrose (CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ") during training triggered LED activation of Gr66a bitter neurons expressing CsChrimson (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A"
+          ]
+        },
+        "), which led to CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " avoidance relative to plain agar (CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "-"
+          ]
+        },
+        ") (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1C"
+          ]
+        },
+        "). During testing, we disable the STROBE lights and measured preference towards 25 mM sucrose (CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ") relative to agar (CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "-"
+          ]
+        },
+        ") to see if flies have formed aversive taste memories. Indeed, ten minutes after training, flies that experienced bitter GRN activation during training showed a lower sugar preference than control flies of the same genotype that were not fed the obligate CsChrimson cofactor all-",
+        {
+          "type": "Emphasis",
+          "content": [
+            "trans"
+          ]
+        },
+        "-retinal, and retinal-fed control genotypes carrying either the Gal4 or UAS alone. This preference change reflected a non-significant trend towards decreased interactions with the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " compared to controls (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1C"
+          ]
+        },
+        "). Examining the preference indices over time revealed that both trained flies and controls exhibited similar sugar preference after the first 30 minutes of testing, but the difference between groups emerged from a steady increase in sugar preference in the control group while trained flies’ preference remained stable (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1D"
+          ]
+        },
+        "). A similar effect was produced by the activation of PPK23",
+        {
+          "type": "Superscript",
+          "content": [
+            "glut"
+          ]
+        },
+        " ‘high salt’ GRNs, which also carries a negative valence in salt-satiated flies (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A, C"
+          ]
+        },
+        "). Importantly, these effects are not due to heightened satiety in trained flies because training in this paradigm is associated with fewer food interactions than controls."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "For appetitive training, we chose 75 mM NaCl as the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ", since flies show neither strong attraction nor aversion to this concentration of salt ",
+        {
+          "type": "Cite",
+          "target": "c56",
+          "content": [
+            "Zhang et al., 2013"
+          ]
+        },
+        ". Interactions with the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " in this paradigm triggered optogenetic activation of sweet neurons, either with ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr43a-Gal4"
+          ]
+        },
+        ", which labels a subset of leg and pharyngeal sweet neurons in addition to fructose-sensitive neurons in the protocerebrum, or ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr64f-Gal4"
+          ]
+        },
+        ", which labels most peripheral sweet GRNs (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A"
+          ]
+        },
+        "). In both cases, sweet GRN activation produced an increased preference for the salt CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " during training and also testing 10-minutes later. (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1E"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1C"
+          ]
+        },
+        "). The increased preference is evident early during testing and maintained throughout the testing phase (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1F"
+          ]
+        },
+        "). Like the aversive memory paradigm, the effects of appetitive conditioning cannot easily be explained through changes in internal state, since trained flies interacted more with the food during training and therefore should have a lower salt drive during testing. Interestingly, refeeding flies with standard medium directly after training in the appetitive paradigm led to a long-lasting preference for the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ", revealed by testing 24-hours later (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig1",
+          "content": [
+            "Figure 1G, 1H"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1E"
+          ]
+        },
+        "). This stands in contrast to the aversive paradigm, where reduced preference for sugar following bitter GRN activation was absent 24 hours later (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS1",
+          "content": [
+            "Figure S1A, B"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2b",
+      "depth": 2,
+      "content": [
+        "DAN activation is sufficient for the induction of short and long-lasting taste memories"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We next asked whether direct activation of DANs during feeding could drive the formation of taste memories. Aversive short-term taste memory depends on multiple PPL1 DANs, including PPL1-α’2 α2 and PPL1-α3 ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        ", while appetitive short-term taste memories have not been previously reported. We first tested whether activating PPL1 DANs coincident with tastant interactions would lead to STM formation in the STROBE. Stimulation of PPL1 neurons reduced sucrose preference during training, and a reduced preference was also observed during short-term memory testing 10 minutes later (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2A"
+          ]
+        },
+        "). This decreased preference was sustained throughout the entire period of testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2B"
+          ]
+        },
+        "). Interestingly, unlike activation of bitter sensory neurons, PPL1 activation also produced a long-lasting aversive memory that was expressed 24 hours after training and remained stable through the duration of testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2C, D"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "PPL1 and PAM neural activation is sufficient for the induction of short and long-lasting taste memories."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A, B) Paradigm timeline schematic and MB model indicating PPL1 compartments activated by optogenetics. Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB504B>CsChrimson"
+              ]
+            },
+            " flies and controls as an average (A), and over time (B) in the short-term memory assay (n=19-31). (C, D) Schematic for the long-lasting memory assay, and preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB504B>CsChrimson"
+              ]
+            },
+            " flies compared to genetic controls as an average (C), and corresponding time curve (D) for the duration of testing (n=20-33). (E, F) Assay timeline, and MB model with activated PAM compartments highlighted. Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies comparted to controls (E) and as a function of time (F) in the short-term memory assay (n=25-38). (G, H) Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies compared to controls (E) and over the total duration of testing (F) in the long-lasting memory assay (n=17-35). Preference indices are mean ± SEM, One-way ANOVA, Dunnett’s post hoc test: *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001."
+          ]
+        }
+      ],
+      "label": "Figure 2:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To test the effect of appetitive DAN activation, we used flies expressing CsChrimson in PAM neurons under control of ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R58E02-Gal4"
+          ]
+        },
+        ". Intriguingly, although optogenetic activation of PAM neurons signals reward to the MB, it did not affect preference towards light-paired 75 mM NaCl (CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ") during training. Nonetheless, this pairing resulted in appetitive memory expression during testing 10 minutes and 24 hours after training (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2E, G"
+          ]
+        },
+        "). These taste memories were stable throughout the entire duration of testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2F, H"
+          ]
+        },
+        "). Thus, optogenetic activation of PAM neurons in the STROBE was able to write both short- and long-lasting appetitive taste memories in the absence of acute effects on feeding. Importantly, flies are also able to form appetitive memories to an alternative CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " tastant, monopotassium glutamate (MPG) (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "Figure S2A"
+          ]
+        },
+        "). Taste memories were specific for CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " taste identity, as flies trained with NaCl as the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " and MPG as the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "-"
+          ]
+        },
+        " showed a clear preference for NaCl during testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "Figure S2B"
+          ]
+        },
+        "). Moreover, flies trained with NaCl as the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " do not show an elevated preference to MPG when it is introduced as a novel tastant during testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS2",
+          "content": [
+            "Figure S2C"
+          ]
+        },
+        "). In addition to demonstrating specificity for the CS",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        ", these experiments show that the observed change in behavior is not a memory of food position within the arena."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Consistent with long-term olfactory memories induced by DAN activation, we found long-lasting taste memory required an energetic food source, and therefore flies were refed for a brief period after training (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2G"
+          ]
+        },
+        "). Flies that were fed 7 hours post-training, after the memory consolidation time period defined in olfactory memory, did not express taste memories during testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig2",
+          "content": [
+            "Figure 2G"
+          ]
+        },
+        ") ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        ". Thus, the contingencies governing the formation and expression of taste memories in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Drosophila"
+          ]
+        },
+        " seem to be similar to those previously discovered for olfaction."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2c",
+      "depth": 2,
+      "content": [
+        "The MB is required for the formation of short- and long-lasting taste memories"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Prior research indicates that the intrinsic neurons of the MB are required for aversive taste memory formation ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        ". To confirm that the MB is required for appetitive taste memory formation, we silenced this neuropil throughout both our short-term and long-lasting memory assays using tetanus toxin expressed under control of the pan-MB driver ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R13F02-LexA"
+          ]
+        },
+        ". After pairing Gr43a activation with NaCl feeding, flies with silenced MBs did not exhibit elevated preference for salt during testing 10 minutes or 24 hours later. (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3A, B"
+          ]
+        },
+        "). Similarly, PAM activation during feeding led to a sustained increase in preference for the NaCl tastant in control groups for both the STM and long-lasting memory assay, but not in flies with silenced MBs (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3C, D"
+          ]
+        },
+        "). These findings indicate that MB intrinsic neurons play a pivotal role in the formation of appetitive taste memories (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3F"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "The MB is required for the formation of short- and long-term taste memories"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A, B) Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr43a>CsChrimson"
+              ]
+            },
+            " flies in the short-term (n=16-34) (A) and long-lasting (n=13-27) (B) memory assays when the MB is silenced, compared to controls. (C, D) Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies when the MB is silenced in the short-term (n=24-28)(C) and long-lasting (n=17-23) (D) memory paradigms, compared to controls. (E) Preference indices in the long-lasting memory assay for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies fed protein synthesis inhibitor cycloheximide compared to vehicle-fed controls (n=17-22). (F) Model of appetitive taste memory formation via GRN/PAM activation. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test/One-way ANOVA, Dunnett’s post hoc test: *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01."
+          ]
+        }
+      ],
+      "label": "Figure 3:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To assess whether the molecular underpinnings of 24-hour appetitive taste memory are consistent with classic olfactory LTM, which requires ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "de novo"
+          ]
+        },
+        " protein synthesis during memory consolidation, we fed flies all-",
+        {
+          "type": "Emphasis",
+          "content": [
+            "trans-"
+          ]
+        },
+        "retinal laced with the protein synthesis inhibitor cycloheximide (CXM) ",
+        {
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Colomb et al., 2009"
+          ]
+        },
+        ". As expected, flies fed CXM prior to training were unable to form long-term taste memories, in contrast to vehicle controls (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3E"
+          ]
+        },
+        "). These results confirm that the taste memories being formed are protein synthesis dependent, and can be considered long-term memories (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig3",
+          "content": [
+            "Figure 3F"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2d",
+      "depth": 2,
+      "content": [
+        "Distinct PAM subpopulations induce appetitive short- and long-term taste memories"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Distinct, non-overlapping subpopulations of PAM neurons, labeled by ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R48B04-Gal4"
+          ]
+        },
+        " and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R15A04-Gal4"
+          ]
+        },
+        ", mediate the formation of appetitive short- and long-term olfactory memories, respectively ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
+          ]
+        },
+        ". Moreover, it has been hypothesized that two differential reinforcing effects of sugar reward – sweet taste and nutrition, are encoded by these segregated STM and LTM neural populations ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
+          ]
+        },
+        ". We tested both populations in our appetitive STROBE memory assays to determine if the activation of these separate PAM clusters would support the formation of parallel short- and long-term taste memories. ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R48B04>CsChrimson"
+          ]
+        },
+        " flies formed appetitive short-term but not long-term taste memories, as shown by the higher salt preference of flies expressing active CsChrimson during STM testing but not LTM testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4A, B"
+          ]
+        },
+        "). Conversely, activation of ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R15A04-Gal4"
+          ]
+        },
+        " neurons produced LTM but not STM (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4C, D"
+          ]
+        },
+        "). These results indicate that, much like appetitive olfactory memory, short- and long-term taste memories are formed in parallel by discrete PAM sub-populations."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig4",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "Discrete non-overlapping PAM subpopulations induce appetitive short- and long-term taste memories."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A, B) PAM subpopulation R48B04 innervates highlighted MB compartments (left), and preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R48B04>CsChrimson"
+              ]
+            },
+            " flies for 75mM NaCl is tested in the short-term (n=21-28) (A), and long-term (n=15-17) (B) memory assays with or without retinal. (C, D). PAM subpopulation R15A04 innervates non-overlapping MB sub-regions compared to R48B04. Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R15A04>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans"
+              ]
+            },
+            "-retinal in the short-term (n=11-15) (C) and long-term (n=20-27) (D) taste memory assays with or without retinal. (E, F) PAM-α1 innervates a single compartment in the MB. Preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB043B>CsChrimson"
+              ]
+            },
+            " flies in the short-term (n=11-14) (E) and long-term (n=19-22) (F) memory assays with or without retinal. (G, H) PAM-β2β′2a synapses on the highlighted MB compartment. Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB301B>CsChrimson"
+              ]
+            },
+            " flies during the short-term (n=20-27) (G) and long-term (n=10-15) (H) memory assays with or without retinal. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test: **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01."
+          ]
+        }
+      ],
+      "label": "Figure 4:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Next, we wondered whether activation of a single PAM cell subtype, PAM-α1, would be sufficient to induce taste memories. PAM-α1 neurons project to an MB compartment innervated by MBON-α1, which in turn feeds back onto PAM-α1 to form a recurrent reward loop necessary for the formation of appetitive olfactory LTM ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c2",
+              "content": [
+                "Aso and Rubin, 2016"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c20",
+              "content": [
+                "Ichinose et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Consistent with its role in olfactory memory, activation of this PAM cell type in the STROBE with drivers ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "MB043B-Gal4"
+          ]
+        },
+        " or ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "MB299B-Gal4"
+          ]
+        },
+        " was sufficient to drive appetitive long-term, but not short-term, taste memory formation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4E, F"
+          ]
+        },
+        " and ",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#figS3",
+          "content": [
+            "Figure S3A, B"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Interestingly, activation of another PAM subset labelled by ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "MB301B-Gal4"
+          ]
+        },
+        " produced a higher preference for the salt CS during training, yet no sustained changes in taste preference during short- or long-term memory testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig4",
+          "content": [
+            "Figure 4G, H"
+          ]
+        },
+        "). This demonstrates that the reward signaling associated with PAM cell activation occurs on multiple timescales to produce acute, short-, or long-term changes in behavior. Notably, the trend toward lower salt preference during testing in this experiment may reflect reduced salt drive due to increased salt consumption during training."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s2e",
+      "depth": 2,
+      "content": [
+        "Caloric food sources are required for the formation of associative long-term taste memories"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Because refeeding with standard fly medium shortly after training is permissive for the consolidation of appetitive long-term taste memories, we next asked what types of nutrients would support memory formation. As expected, refeeding with L-glucose, a non-caloric sugar, did not lead to the formation of associative long-term taste memories (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5A, B"
+          ]
+        },
+        "). However, along with sucrose, refeeding with lactic acid, yeast extract, and L-alanine promoted long-term memory, while L-aspartic acid did not. These results indicate that in addition to sucrose, other caloric nutrients can provide sufficient energy for long-term taste memory formation. Moreover, 7-hour delayed refeeding of each nutrient failed to support memory formation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig5",
+          "content": [
+            "Figure 5B"
+          ]
+        },
+        "). Thus, similar to olfactory LTM, the formation of appetitive taste LTM is dependent on an energy source being readily available during the memory consolidation window ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c18",
+              "content": [
+                "Fujita and Tanimura, 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            }
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig5",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "Caloric food sources are required for the formation of associative long-term taste memories."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Graphic of the timeline followed for the long-term taste memory paradigm, and the MB compartments innervated by PAM driver ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02-Gal4"
+              ]
+            },
+            ". (B, C) Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " and control flies during training (B), and testing (C), after being refed with a caloric or non-caloric medium (n=13-28). Preference indices are mean ± SEM, One-way ANOVA, Dunnett’s post hoc test: *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01."
+          ]
+        }
+      ],
+      "label": "Figure 5:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Our findings concerning the formation and expression of appetitive taste LTM bear striking similarities to those of olfactory LTM in terms of MB circuitry, dependence on protein synthesis, and energetic requirements. This led us to wonder if the energy gating performed by MB-MP1 neurons, which signal onto the mushroom body and promote energy flux in MB neurons during LTM, perform a similar function in taste memory ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c38",
+              "content": [
+                "Musso et al., 2015"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c41",
+              "content": [
+                "Plaçais et al., 2017"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c30",
+              "content": [
+                "2012"
+              ]
+            }
+          ]
+        },
+        ". To test this hypothesis, we activated MB-MP1 neurons directly after training using ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "UAS-TRPA1"
+          ]
+        },
+        " and delayed refeeding to outside the memory consolidation window. Compared to genetic controls, flies in which MB-MP1 neurons were activated post training showed significantly elevated memory scores during testing (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6A, B"
+          ]
+        },
+        "). This confirms that MB-MP1 activation is sufficient to drive memory consolidation during long-term appetitive taste memory formation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6C"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "fig6",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "MB-MP1 neuron activation post-training replaces energy signal required for the formation of LTM."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Graphic of timeline followed for the LTM taste assay with thermogenetic activation of MB-MP1 neurons. Preference indices during training and testing for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal, with MB-MP1 neurons thermogenetically activated post training using ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R30E11>TRPA1"
+              ]
+            },
+            ", compared to controls without MB-MP1 activation (n=18-29). (C) Schematic depicting summary of research. Preference indices are mean ± SEM, One-way ANOVA, Dunnett’s post hoc test: **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01."
+          ]
+        }
+      ],
+      "label": "Figure 6:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s3",
+      "depth": 1,
+      "content": [
+        "Discussion"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Gustation plays a vital role in determining the suitability of foods for ingestion. Yet, little is known about how experience influences higher-order taste representations and contributes to the continuous refinement of food selection. In fact, a memory system for the recollection of appetitive taste memories has not been described in flies. In this study, we use the STROBE to establish a novel learning paradigm and further investigate the formation and expression of taste memories. We demonstrate that flies are capable of forming short- and long-term appetitive and aversive taste memories towards two key nutrients – salt, and sugar. Much like olfactory memory, associative taste memory formation occurs within the MB and follows many of the same circuit and energetic principles."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We observed both positive and negative taste memories following optogenetic GRN stimulation concurrent with taste detection. The activation of bitter GRNs paired with sucrose led to the formation of STM, which agrees with previous research demonstrating that thermogenetic stimulation of bitter GRNs can act as a negative US, and lead to taste learning in short-term paradigms ",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Keene and Masek, 2012"
+          ]
+        },
+        ". Notably, although activation of sweet GRNs prompted both STM and LTM formation, bitter GRN activation was not sufficient for the formation of LTM in our assay. One possible explanation is that because bitter GRN activation strongly inhibits feeding, the number of pairings between sugar taste and bitter activation was insufficient to induce LTM. Consistent with this idea, PPL1 activation, which induced LTM, is less aversive during training and therefore allows more associations."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Although aversive taste memories have been established, evidence for appetitive taste memories has been sparse. Rats’ hedonic response to bitter compounds can be made more positive through pairing with sugar, and human studies suggest that children’s taste palates are malleable based on positive experiences with bitter vegetables ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c4",
+              "content": [
+                "Breslin et al., 1990"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c16",
+              "content": [
+                "Figueroa et al., 2020"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c17",
+              "content": [
+                "Forestell and LoLordo, 2000"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c53",
+              "content": [
+                "Wadhera et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Thus, despite the difficulties of measuring taste memories in the lab, appetitive taste plasticity is very likely an ethologically important process."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The enhancement of salt palatability following co-incident activation of sweet taste may be surprising, given that NaCl on its own activates sweet GRNs ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c23",
+              "content": [
+                "Jaeger et al., 2018"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c33",
+              "content": [
+                "Marella et al., 2006"
+              ]
+            }
+          ]
+        },
+        ". However, salt activates only about one third of sweet GRNs ",
+        {
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Dweck et al., 2022"
+          ]
+        },
+        ", and thus appetitive memory formation may be driven by strong activation of the broader sweet neuron population. Nevertheless, directly stimulating DANs as the flies experienced taste inputs through feeding afforded us the ability to reduce this complication and also interrogate the roles of specific DAN populations. Taking a hypothesis driven approach, we confirmed that PAM neural subpopulations reinforce taste percepts much like olfactory inputs, and that short- and long-term memories are processed by distinct subpopulations. For example, activating β’2, γ4, and γ5 compartments with ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R48B04-Gal4"
+          ]
+        },
+        " produces STM in both olfactory and taste paradigms, while activation of α1, β’1, β2, and γ5 with ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R15A04-Gal4"
+          ]
+        },
+        " produces LTM in both. These results confirm that appetitive STM and LTM are processed in parallel in the MB ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "target": "c51",
+              "content": [
+                "Trannoy et al., 2011"
+              ]
+            },
+            {
+              "type": "Cite",
+              "target": "c55",
+              "content": [
+                "Yamagata et al., 2015"
+              ]
+            }
+          ]
+        },
+        ". Given that tastes, like odours, activate the KC calyces ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015a"
+          ]
+        },
+        ", we speculate that optogenetic stimulation of PAM neurons during feeding modulates the strength of KC-MBON synaptic connections. Notably, activation of single PAM cell type produced different forms of memory in the STROBE. For example, stimulating PAM-α1 neurons during feeding drives appetitive taste LTM, while activation of PAM-β’1 was immediately rewarding."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "A unique aspect of our long-term taste learning paradigm is that we uncoupled the US from a caloric food source. By doing this we were able to probe the energetic constraints gating LTM formation. For years it has been reported that long-term memory formation in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Drosophila"
+          ]
+        },
+        " requires the intake of caloric sugar. Here, we demonstrate that the caloric requirements of long-term memory formation can be quenched by food sources other than sucrose, including lactic acid and yeast extract. Moreover, it seems that at least one amino-acid, L-alanine, is able to provide adequate energy, while L-aspartic acid cannot. We theorize that these foods may provide flies readily accessible energy, as neurons are able to metabolize both lactic acid and L-alanine into pyruvate to fuel the production of ATP via oxidative phosphorylation ",
+        {
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "de Tredern et al., 2021"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Energy gating in the MB is thought to be regulated by the MB-MP1-DANs. MB-MP1 neuron oscillations activate increased mitochondrial energy flux within the KCs, which is both necessary and sufficient to support LTM ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Plaçais et al., 2017"
+          ]
+        },
+        ". To demonstrate sufficiency in our assay, we activated MB-MP1 neurons with TRPA1 directly after fly training, which effectively substitutes for a caloric food source and allows LTM formation (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#fig6",
+          "content": [
+            "Figure 6C"
+          ]
+        },
+        "). These results suggest that MB-MP1 neurons integrate energy signals during formation of multiple types of LTM and may be influenced by a variety of caloric foods."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Overall, our results suggest that lasting changes in the value of specific tastes can occur in response to temporal association with appetitive or aversive stimuli, raising the possibility that such plasticity plays an important role in animals’ ongoing taste responses. Future experiments using the STROBE paradigm could further probe the molecular and circuit mechanisms underlying taste memories and advance our understanding of how taste preferences may be shaped by experience over an animal’s lifetime."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4",
+      "depth": 1,
+      "content": [
+        "Materials and methods"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4a",
+      "depth": 2,
+      "content": [
+        "Fly strains"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Fly stocks were raised on a standard cornmeal diet at 25°C, 70% relative humidity. For neuronal activation, ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "20XUAS-IVS-CsChrimson"
+          ]
+        },
+        ".",
+        {
+          "type": "Emphasis",
+          "content": [
+            "mVenus"
+          ]
+        },
+        " (BDCS, stock number: 55135) was used. Dopaminergic PAM expression was targeted using previously described lines: ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R58E02-GAL4"
+          ]
+        },
+        " ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R58E02-LexA, R48B04-GAL4, R15A04-GAL4, R13F02-LexA"
+          ]
+        },
+        ", and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "R30E11-LexA"
+          ]
+        },
+        " obtained from Bloomington (BDCS, stock numbers: 52740, 50347, 48671, 52460, 54209); and MB split-GAL4 lines ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "MB043B-GAL4, MB504B-GAL4, MB299B-GAL4, MB301B-GAL4"
+          ]
+        },
+        " from Janelia Research Campus ",
+        {
+          "type": "Cite",
+          "target": "c3",
+          "content": [
+            "Aso et al., 2014"
+          ]
+        },
+        ". GRN expression was driven using ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr43a-GAL4, Gr64f-GAL4"
+          ]
+        },
+        " ",
+        {
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Dahanukar et al., 2007"
+          ]
+        },
+        ", ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Gr66a-GAL4"
+          ]
+        },
+        " ",
+        {
+          "type": "Cite",
+          "target": "c54",
+          "content": [
+            "Wang et al., 2004"
+          ]
+        },
+        ", and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "PPK23"
+          ]
+        },
+        {
+          "type": "Superscript",
+          "content": [
+            {
+              "type": "Emphasis",
+              "content": [
+                "glut"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Emphasis",
+          "content": [
+            "-GAL4"
+          ]
+        },
+        " (",
+        {
+          "type": "Emphasis",
+          "content": [
+            "PPK23-GAL4, Gr66a-LexA::VP16, LexAop-Gal80"
+          ]
+        },
+        " ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Jaeger et al., 2018"
+          ]
+        },
+        ". ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "LexAop-tnt"
+          ]
+        },
+        " was previously described ",
+        {
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Liu et al., 2016"
+          ]
+        },
+        ". For temperature activation experiments ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "LexAop-TrpA1"
+          ]
+        },
+        " was used ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "Liu et al., 2012"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4b",
+      "depth": 2,
+      "content": [
+        "STROBE experiments"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Mated female ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Drosophila"
+          ]
+        },
+        " were collected 2-3 days post eclosion and transferred into vials containing 1 ml of standard cornmeal medium supplemented with 1 mM all-",
+        {
+          "type": "Emphasis",
+          "content": [
+            "trans"
+          ]
+        },
+        "-retinal (Sigma #R2500) or an ethanol vehicle control. Flies were maintained on this diet for 2 days in a dark environment. 24 hours prior to experimentation flies were starved at 25°C, 70% relative humidity, on 1% agar supplemented with 1 mM all-",
+        {
+          "type": "Emphasis",
+          "content": [
+            "trans"
+          ]
+        },
+        "-retinal or ethanol vehicle control."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4c",
+      "depth": 2,
+      "content": [
+        "STROBE training protocol"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "During the training phase for the short-term memory experiments the STROBE was loaded with 4 µL of tastant (salt: Sigma #S7653 or sucrose: Sigma #S7903) on channel 1 and 4 µL 1% agar on channel 2. The red LED was triggered only when a fly interacted with the tastant in channel 1. The duration of the training period was 40 minutes. For the STM training protocol, flies were then transferred to clean empty vials for 10 minutes while the experimental apparatus was cleaned. The training and testing phases of LTM experiments were performed as described for the STM experiments with the following exception: after the 40-minute training period flies, were transferred individually into vials containing standard cornmeal diet or nutrient of interest (sucrose: Sigma #S7903, L-glucose: Sigma #G5500, lactic acid: Sigma #69785, yeast extract: Sigma #Y1625, L-alanine: Sigma #05129, L-aspartic acid: Sigma #11230) and allowed to feed for 1 hour. They were then transferred into 1% agar starvation vials and kept at 18°C until the testing component of the experiment. For MB-MB1 activation experiments, after training flies were placed at 29°C, 70% relative humidity for 1 hour on 1% agar starvation vials. They were then transferred to 18°C and refed 8 hours later, outside of the memory consolidation. After 1 hour of feeding they were once again transferred into 1% agar starvation vials and kept at 18°C until the retrieval component of the experiment. The preference index for each individual fly was calculated as: (sips from channel 1 – sips from channel 2)/(sips from channel 1 + sips from channel 2). All experiments were performed with a light intensity of 11.2mW/cm",
+        {
+          "type": "Superscript",
+          "content": [
+            "2"
+          ]
+        },
+        " at 25°C, 70% relative humidity."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4d",
+      "depth": 2,
+      "content": [
+        "STROBE testing protocol"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "During testing, 4 µL of the same tastant (salt: Sigma #S7653, sucrose: Sigma #S7903, MPG: Sigma #G1501) was reloaded into channel one and 4 µL of 1% agar on channel 2. The optogenetic component of the system was deactivated such the red LED would no longer trigger if a fly interacted with the tastant. Flies were reloaded individually into the same arenas. The duration of the testing phase was 1 hour. The preference index for each individual fly was calculated as: (sips from channel 1 – sips from channel 2)/(sips from channel 1 + sips from channel 2)."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4e",
+      "depth": 2,
+      "content": [
+        "Immunofluorescence microscopy"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Brain staining protocols were performed as previously described ",
+        {
+          "type": "Cite",
+          "target": "c7",
+          "content": [
+            "Chu et al., 2014"
+          ]
+        },
+        ". Briefly, brains were fixed for 1 hour in 4% paraformaldehyde and dissected in PBS + 0.1% TritonX. After dissection brains were blocked in 5% NGS diluted with PBST for 1 hour. Brains were probed overnight at 4°C using the following primary antibody dilutions: rabbit anti-GFP (1:1000, Invitrogen #A11122), and mouse anti-brp (1:50, DSHB #nc82). After a 1hour wash period secondary antibodies goat anti-rabbit Alexa-488 (1:200, Invitrogen #A11008) and goat anti-mouse Alexa-568 (1:200, Invitrogen #A11030) were applied and incubated for 1 hour at room temperature to detect primary antibody binding. Slowfade gold was used as an antifade mounting medium."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Slides were imaged under a 25x water immersion objective using a Leica SP5 II Confocal microscope. All images were taken sequentially with a z-stack step size at 1 µm, a line average of 2, speed of 200 Hz, and a resolution of 1024 × 1024 pixels. Image J was used to compile slices into a maximum intensity projection",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Jaeger et al., 2018"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "s4f",
+      "depth": 2,
+      "content": [
+        "Statistical analysis"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "All statistical analyses were executed using GraphPad Prism 6 software. Sample size and statistical tests performed are provided in the Figure legends. For Dunnett’s post hoc analyses, the experimental group was compared to all controls and the highest p-value reported over the experimental bar. Replicates are biological replicates, using different individual flies from 2 or more crosses. Sample sizes were based on previous experiments in which effect size was determined. Data was excluded on the basis of STROBE technical malfunctions for individual flies and criteria for data exclusion are as follows: i) if the light system was not working during training for individual arenas ii) if during training or testing a fly did not meet a standard minimum # of interactions for that genotype iii) if during training or testing the STROBE recorded an abnormally large # of interactions for that genotype iiii) technical malfunctions due to high channel capacitance baseline activity v) if a fly was dead in an arena."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "",
+      "depth": 1,
+      "content": [
+        "Supporting information"
+      ]
+    },
+    "supplements/468444_file02.pdf Supplemental figures",
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Acknowledgements"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "We thank Celia Lau for the original SEZ diagram models, and members of the Gordon lab for comments on the manuscript. This work was funded by Natural Sciences and Engineering Research Council (NSERC) grants RGPIN-2016–03857 and RGPAS 492846–16."
+      ]
+    },
+    {
+      "type": "ThematicBreak"
+    },
+    {
+      "type": "Heading",
+      "id": "s5",
+      "depth": 1,
+      "content": [
+        "Data availability"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "All data are available in the manuscript and Supplementary Information, or are available upon request from the corresponding author."
+      ]
+    },
+    {
+      "type": "ThematicBreak"
+    },
+    {
+      "type": "Heading",
+      "id": "s6",
+      "depth": 1,
+      "content": [
+        "Author contributions"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "M.J, P.Y.M, and M.D.G conceived the project. M.J and M.D.G wrote the manuscript. M.J performed all experiments, analyzed the data, and made the figures. P.Y.M and P.J offered experimental advice. M.D.G supervised the project."
+      ]
+    },
+    {
+      "type": "ThematicBreak"
+    },
+    {
+      "type": "Heading",
+      "id": "s7",
+      "depth": 1,
+      "content": [
+        "Declaration of interests"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The authors declare no competing interests."
+      ]
+    },
+    {
+      "type": "ThematicBreak"
+    },
+    {
+      "type": "Heading",
+      "id": "s8",
+      "depth": 1,
+      "content": [
+        "Supplemental information"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Supplemental information includes 3 figures."
+      ]
+    },
+    {
+      "type": "ThematicBreak"
+    },
+    {
+      "type": "Heading",
+      "id": "s9",
+      "depth": 1,
+      "content": [
+        "Supplemental Information"
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS1",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Gustatory receptor neuron activation produces reward and punishment signals in taste memory formation."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Projections from ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "GR66a, Gr43a, PPK23"
+              ]
+            },
+            {
+              "type": "Superscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "Glut"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Emphasis",
+              "content": [
+                "and GR64f"
+              ]
+            },
+            " GRNs. (B) Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr66a>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal in the long-lasting taste memory assay with or without retinal (n=19-21). (C) Preference indices for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "PPK23"
+              ]
+            },
+            {
+              "type": "Superscript",
+              "content": [
+                {
+                  "type": "Emphasis",
+                  "content": [
+                    "Glut"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Emphasis",
+              "content": [
+                ">CsChrimson"
+              ]
+            },
+            " flies in the short-term taste memory assay with or without retinal (n=22-30). (D, E) Preference index for ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "Gr64f>CsChrimson"
+              ]
+            },
+            " flies in the short-term (n=28-36) (D) and long-lasting (n=13-21) (E) taste memory assay with or without retinal. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test: *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05, **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01, ***",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.001."
+          ]
+        }
+      ],
+      "label": "Figure S1:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS2",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Taste memories are specific to the CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            "."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A) Schematic outlining STM assay and MB compartments innervated by PAM driver R58E02. Preference index of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the STM assay when monopotassium glutamate (MPG) is used as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " (n=16-19). (B) Preference index of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the STM assay with salt as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " and MPG as a CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "-"
+              ]
+            },
+            " (n=16-19). (C) Preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "R58E02>CsChrimson"
+              ]
+            },
+            " flies in the short-term memory assay when the CS",
+            {
+              "type": "Superscript",
+              "content": [
+                "+"
+              ]
+            },
+            " (NaCl) is switched for to the novel tastant (N.T.) MPG during testing (n=21-30). Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test, : *",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.05."
+          ]
+        }
+      ],
+      "label": "Figure S2:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "figS3",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 2,
+          "content": [
+            "Activation of discrete PAM subpopulations induces distinct types of taste memories."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(A, B) Schematic outlining STM and LTM assays, and an alternate PAM-α1 driver, innervating the α1 compartment of the horizontal MB lobe. Preference indices of ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "MB299B>CsChrimson"
+              ]
+            },
+            " flies fed all-",
+            {
+              "type": "Emphasis",
+              "content": [
+                "trans-"
+              ]
+            },
+            "retinal in the short-term (n=18-23) (A) and long-term (n=22-28) (B) memory assays compared to controls. Preference indices are mean ± SEM, ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "t"
+              ]
+            },
+            "-test: **",
+            {
+              "type": "Emphasis",
+              "content": [
+                "p"
+              ]
+            },
+            " < 0.01. (n=18-26)"
+          ]
+        }
+      ],
+      "label": "Figure S3:",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "",
+          "meta": {
+            "inline": false
+          }
+        }
+      ]
+    }
+  ]
+}

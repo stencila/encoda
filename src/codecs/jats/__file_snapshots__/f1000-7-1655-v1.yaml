@@ -6,6 +6,8 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+    emails:
+      - beck@ncbi.nlm.nih.gov
     familyNames:
       - Beck
     givenNames:
@@ -13,6 +15,8 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+    emails:
+      - kathryn.funk@nih.gov
     familyNames:
       - Funk
     givenNames:
@@ -20,6 +24,8 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+    emails:
+      - m.harrison@elifesciences.org
     familyNames:
       - Harrison
     givenNames:
@@ -27,6 +33,8 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+    emails:
+      - mcentyre@ebi.ac.uk
     familyNames:
       - McEntyre
     givenNames:
@@ -1236,3 +1244,33 @@ content:
   - type: Paragraph
     content:
       - No data are associated with this article.
+  - type: ThematicBreak
+  - type: Heading
+    id: SM
+    depth: 1
+    content:
+      - Supplementary material
+  - type: Heading
+    depth: 1
+    content:
+      - Supplementary File 1. Workshop agenda and notes from the meeting.
+  - type: Paragraph
+    content:
+      - type: Link
+        target: >-
+          https://f1000researchdata.s3.amazonaws.com/supplementary/16460/023285ab-1492-4902-acad-db913e9621a4_Supplementary_file_1_workshop_agenda_and_meeting_notes.docx
+        content:
+          - Click here to access the data
+  - type: Heading
+    depth: 1
+    content:
+      - >-
+        Supplementary File 2. Current processes of the different journals
+        represented at the meeting.
+  - type: Paragraph
+    content:
+      - type: Link
+        target: >-
+          https://f1000researchdata.s3.amazonaws.com/supplementary/16460/9c4e431b-9afe-4ea9-bcf4-c16f5da9477c_Supplementary_file_2_Current_process.xlsx
+        content:
+          - Click here to access the data

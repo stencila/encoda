@@ -13,6 +13,10 @@ authors:
       - Rodríguez-Mora
     givenNames:
       - Sara
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-2467-116X
   - type: Person
     affiliations:
       - type: Organization
@@ -24,6 +28,10 @@ authors:
       - Wit
     givenNames:
       - Flore
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-0241-0751
   - type: Person
     affiliations:
       - type: Organization
@@ -60,6 +68,10 @@ authors:
     givenNames:
       - María
       - Rosa
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-4183-2773
   - type: Person
     affiliations:
       - type: Organization
@@ -80,6 +92,10 @@ authors:
       - Martí
     givenNames:
       - Pilar
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1022-9314
   - type: Person
     affiliations:
       - type: Organization
@@ -90,6 +106,10 @@ authors:
       - Rocha
     givenNames:
       - Susana
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-1258-9396
   - type: Person
     affiliations:
       - type: Organization
@@ -100,6 +120,10 @@ authors:
       - Vigón
     givenNames:
       - Lorena
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-6405-4054
   - type: Person
     affiliations:
       - type: Organization
@@ -110,6 +134,10 @@ authors:
       - Christ
     givenNames:
       - Frauke
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-9580-3874
   - type: Person
     affiliations:
       - type: Organization
@@ -120,6 +148,10 @@ authors:
       - Debyser
     givenNames:
       - Zeger
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-3982-1565
   - type: Person
     affiliations:
       - type: Organization
@@ -135,16 +167,26 @@ authors:
     givenNames:
       - Juan
       - Jesús
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-0532-2872
   - type: Person
     affiliations:
       - type: Organization
         name: >-
           AIDS Immunopathogenesis Unit, National Center of Microbiology,
           Instituto de Salud Carlos III, Madrid, Spain
+    emails:
+      - mcoiras@isciii.es
     familyNames:
       - Coiras
     givenNames:
       - Mayte
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-6464-5770
   - type: Person
     affiliations:
       - type: Organization
@@ -155,10 +197,16 @@ authors:
         name: >-
           Infectious Diseases Unit, IBIDAPS, Hospital Clínic, University of
           Barcelona, Spain
+    emails:
+      - ppalcami@isciii.es
     familyNames:
       - Alcamí
     givenNames:
       - José
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-0023-7377
 dateAccepted:
   type: Date
   value: '2019-07-03'
@@ -5424,3 +5472,18 @@ content:
     antibody (red). Scale bar: 10 μm. (C) The mRNA levels were determined b
     RT-qPCR. Error bars represent the standard deviation.(TIF)
   - Materials and methods.(DOCX)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        The authors thank all the LGMD1F patients and Association “Conquistando
+        Escalones” for their good disposition and extraordinary cooperation. We
+        greatly appreciate the secretarial assistance of Mrs Olga Palao. We
+        thank Dr. Michael James Mcconnell (National Center of Microbiology,
+        Instituto de Salud Carlos III) for helpful discussion about this
+        manuscript. We thank the Centro Regional de Transfusión from the
+        Complejo Hospitalario de Toledo (Toledo, Spain) for supplying the buffy
+        coats from healthy donors.

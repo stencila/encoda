@@ -9,6 +9,8 @@ authors:
         name: >-
           ARC Center of Excellence for Coral Reef Studies, James Cook
           University, Townsville, Queensland, Australia
+    emails:
+      - jan.robinson@my.jcu.edu.au
     familyNames:
       - Robinson
     givenNames:
@@ -5101,3 +5103,14 @@ content:
         content:
           - '[34]'
       - .
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        We thank all the fishers, community chairmen, and clan leaders of Ahus,
+        Muluk and Wadau who supported our work. Thanks to Wesley Watt of the
+        Wildlife Conservation Society, David Feary, Andrew Bauman, Cindy
+        Hutchery and Tessa Hempsen for field and logistical support.

@@ -13,11 +13,17 @@ authors:
         name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
+    emails:
+      - stijeleopold@gmail.com
     familyNames:
       - Leopold
     givenNames:
       - Stije
       - J.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-0482-5689
   - type: Person
     affiliations:
       - type: Organization
@@ -28,11 +34,17 @@ authors:
         name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
+    emails:
+      - jwatowatson@gmail.com
     familyNames:
       - Watson
     givenNames:
       - James
       - A.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-5524-0325
   - type: Person
     affiliations:
       - type: Organization
@@ -55,6 +67,10 @@ authors:
     givenNames:
       - Julie
       - A.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-2660-2013
   - type: Person
     affiliations:
       - type: Organization
@@ -93,6 +109,10 @@ authors:
       - Nicholas
       - P.
       - J.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-2309-1171
   - type: Person
     affiliations:
       - type: Organization
@@ -108,6 +128,10 @@ authors:
     givenNames:
       - Arjen
       - M.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-5190-2395
   - type: Person
     affiliations:
       - type: Organization
@@ -118,11 +142,17 @@ authors:
         name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
+    emails:
+      - nickw@tropmedres.ac
     familyNames:
       - White
     givenNames:
       - Nicholas
       - J.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1897-1978
 dateAccepted:
   type: Date
   value: '2019-07-25'
@@ -4561,3 +4591,15 @@ content:
     Inclusion criteria for the studies used in the pooled data analysis.HCT,
     haematocrit; SB, serum bilirubin; SBP, systolic blood pressure; SC, serum
     creatinine; UO, urine output.(XLSX)
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        We are very grateful to the many investigators and medical staff who
+        planned and executed these detailed clinical studies. These studies were
+        conducted or coordinated by the Mahidol Oxford Research Unit based in
+        Bangkok and the Oxford University Clinical Research Unit in Ho Chi Minh
+        City.

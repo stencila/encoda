@@ -118,6 +118,10 @@ authors:
       - Candelier
     givenNames:
       - Raphaël
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1523-6249
   - type: Person
     affiliations:
       - type: Organization
@@ -134,6 +138,10 @@ authors:
       - Debrégeas
     givenNames:
       - Georges
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0003-3698-4497
 dateAccepted:
   type: Date
   value: '2020-01-02'
@@ -6100,3 +6108,163 @@ content:
         content:
           - Figure 3H–I
       - ).
+  - type: Heading
+    depth: 1
+    content:
+      - Acknowledgements
+  - type: Paragraph
+    content:
+      - >-
+        We thank the IBPS fish facility staff, and in particular Alex Bois and
+        Stéphane Tronche, for their help with the fish maintenance. We are
+        grateful to Raphaël Voituriez for fruitful discussions on the
+        theoretical aspects. This work was funded by the CNRS and Sorbonne
+        University, and supported in part by the National Science Foundation
+        under Grant No. NSF PHY-1748958.
+  - type: ThematicBreak
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Additional information
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Competing interests
+  - type: Note
+    id: conf1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - No competing interests declared
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Author contributions
+  - type: Note
+    id: con1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Conceptualization, Data curation, Formal analysis, Investigation
+  - type: Note
+    id: con2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Formal analysis, Investigation
+  - type: Note
+    id: con3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Data curation, Investigation
+  - type: Note
+    id: con4
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Data curation, Methodology
+  - type: Note
+    id: con5
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Investigation, Methodology
+  - type: Note
+    id: con6
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Conceptualization, Supervision, Methodology
+  - type: Note
+    id: con7
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Supervision, Visualization,
+            Methodology
+  - type: Note
+    id: con8
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Conceptualization, Formal analysis, Supervision
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Ethics
+  - type: Note
+    id: fn1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Animal experimentation: All experiments were approved by Le Comité
+            d'Éthique pour l'Expérimentation Animale Charles Darwin C2EA-05
+            (02601.01).
+  - type: ThematicBreak
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Additional files
+  - type: MediaObject
+    id: transrepform
+    contentUrl: ''
+    text: Transparent reporting form
+  - type: ThematicBreak
+  - type: Heading
+    id: s7
+    depth: 1
+    content:
+      - Data availability
+  - type: Paragraph
+    content:
+      - 'Data and analysis codes are available at Dryad Digital Repository, DOI: '
+      - type: Link
+        target: https://doi.org/10.5061/dryad.v9s4mw6qx
+        content:
+          - https://doi.org/10.5061/dryad.v9s4mw6qx
+      - .
+  - type: Paragraph
+    content:
+      - 'The following dataset was generated:'
+  - type: Paragraph
+    content:
+      - Debregeas
+      - G
+      - Karpenko
+      - S
+      - Wolf
+      - S
+      - Lafaye
+      - J
+      - Le
+      - Goc G
+      - Panier
+      - T
+      - Candelier
+      - R
+      - Bormuth
+      - V
+      - '2019'
+      - >-
+        From behavior to circuit modeling of light-seeking navigation in
+        Zebrafish larvae
+      - Dryad Digital Repository
+      - 10.5061/dryad.v9s4mw6qx

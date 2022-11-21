@@ -18,6 +18,10 @@ authors:
       - Ghurye
     givenNames:
       - Jay
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-1381-4081
   - type: Person
     affiliations:
       - type: Organization
@@ -29,6 +33,10 @@ authors:
       - Rhie
     givenNames:
       - Arang
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-9809-8127
   - type: Person
     affiliations:
       - type: Organization
@@ -41,6 +49,10 @@ authors:
     givenNames:
       - Brian
       - P.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-8431-1428
   - type: Person
     affiliations:
       - type: Organization
@@ -67,6 +79,10 @@ authors:
       - Pop
     givenNames:
       - Mihai
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-9617-5304
   - type: Person
     affiliations:
       - type: Organization
@@ -74,11 +90,17 @@ authors:
           Genome Informatics Section, Computational and Statistical Genomics
           Branch, National Human Genome Research Institute, National Institute
           of Health, Bethesda, Maryland, United States of America
+    emails:
+      - adam.phillippy@nih.gov
     familyNames:
       - Phillippy
     givenNames:
       - Adam
       - M.
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0003-2983-8934
   - type: Person
     affiliations:
       - type: Organization
@@ -86,10 +108,16 @@ authors:
           Genome Informatics Section, Computational and Statistical Genomics
           Branch, National Human Genome Research Institute, National Institute
           of Health, Bethesda, Maryland, United States of America
+    emails:
+      - sergey.koren@nih.gov
     familyNames:
       - Koren
     givenNames:
       - Sergey
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1472-8962
 dateAccepted:
   type: Date
   value: '2019-07-18'

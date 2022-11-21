@@ -34,6 +34,10 @@ authors:
     givenNames:
       - James
       - A
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-5524-0325
   - type: Person
     affiliations:
       - type: Organization
@@ -65,6 +69,10 @@ authors:
     givenNames:
       - Stije
       - J
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: https://orcid.org/0000-0002-0482-5689
   - type: Person
     affiliations:
       - type: Organization
@@ -83,6 +91,10 @@ authors:
     givenNames:
       - Julie
       - A
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-2660-2013
   - type: Person
     affiliations:
       - type: Organization
@@ -130,6 +142,10 @@ authors:
     givenNames:
       - Arjen
       - M
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0001-5190-2395
   - type: Person
     affiliations:
       - type: Organization
@@ -150,6 +166,10 @@ authors:
     givenNames:
       - Nicholas
       - J
+    identifiers:
+      - type: PropertyValue
+        propertyID: https://registry.identifiers.org/registry/orcid
+        value: http://orcid.org/0000-0002-1897-1978
 dateAccepted:
   type: Date
   value: '2019-01-22'
@@ -2416,6 +2436,111 @@ content:
         content:
           - Watson and Leopold, 2019
       - '; copy archived at '
+      - type: Link
+        target: https://github.com/elifesciences-publications/SevereMalariaAnalysis
+        content:
+          - https://github.com/elifesciences-publications/SevereMalariaAnalysis
+      - ).
+  - type: ThematicBreak
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Additional information
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Competing interests
+  - type: Note
+    id: conf1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - No competing interests declared
+  - type: Heading
+    id: s6
+    depth: 1
+    content:
+      - Author contributions
+  - type: Note
+    id: con1
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Software, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Project administration, Writing—review and editing
+  - type: Note
+    id: con2
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Data curation, Formal analysis, Validation,
+            Investigation, Visualization, Methodology, Writing—original draft,
+            Project administration, Writing—review and editing
+  - type: Note
+    id: con3
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Supervision, Methodology, Writing—review and editing
+  - type: Note
+    id: con4
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Resources, Funding acquisition, Validation, Writing—review and
+            editing
+  - type: Note
+    id: con5
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - Resources, Supervision, Validation, Writing—review and editing
+  - type: Note
+    id: con6
+    noteType: Footnote
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            Conceptualization, Resources, Supervision, Funding acquisition,
+            Validation, Writing—review and editing
+  - type: ThematicBreak
+  - type: Heading
+    id: s5
+    depth: 1
+    content:
+      - Additional files
+  - type: MediaObject
+    id: transrepform
+    contentUrl: ''
+    text: Transparent reporting form
+  - type: Heading
+    id: s7
+    depth: 2
+    content:
+      - Data availability
+  - type: Paragraph
+    content:
+      - >-
+        This manuscript is a methodology paper; no new data were generated. The
+        code for the simulation study can be found on the github repository at 
+      - type: Link
+        target: https://github.com/Stije/SevereMalariaAnalysis
+        content:
+          - https://github.com/Stije/SevereMalariaAnalysis
+      - ' (copy archived at '
       - type: Link
         target: https://github.com/elifesciences-publications/SevereMalariaAnalysis
         content:
