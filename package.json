@@ -25,7 +25,7 @@
     "start": "ts-node --files src",
     "debug": "node --require ./ts-node-register.js --inspect=9229 src --debug=1",
     "$comment": "The build script builds everything required to publish a release, including binaries and docs",
-    "build": "npm run build:codemeta && npm run build:dist && npm run build:bin && npm run build:docs",
+    "build": "npm run build:codemeta && npm run build:dist && npm run build:docs",
     "build:codemeta": "ts-node src manifest > codemeta.json",
     "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets && npm run build:dmagic-assets && npm run build:pandoc-assets && npm run build:tex-assets",
     "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/codecs/csl/styles/",
