@@ -110,6 +110,7 @@ export class MdCodec extends Codec implements Codec {
 
 const whiteSpaceRegEx = /(^|[^\n\s])[\n]+\s*(?![\n])/g
 
+// @ts-ignore
 export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   blockquote: 'blockquote',
   code: 'code',
@@ -121,6 +122,7 @@ export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   thematicBreak: 'thematicBreak',
 }
 
+// @ts-ignore
 export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> =
   {
     break: 'break',
@@ -322,6 +324,7 @@ function loadFrontmatter(root: MDAST.Root): Frontmatter {
     (child) => child.type === 'yaml'
   )
   const frontmatter = yaml.load(
+    // @ts-ignore
     typeof frontmatterYaml?.value === 'string' ? frontmatterYaml.value : ''
   )
   return typeof frontmatter === 'object' ? (frontmatter as Frontmatter) : {}
@@ -846,6 +849,7 @@ function decodeBlockquote(
 ): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
+    // @ts-ignore
     content: block.children.map((child) => decodeBlockContent(child, context)),
   }
 }
@@ -1126,6 +1130,7 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
   const { isChecked, content = [] } = listItem
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
+    // @ts-ignore
     children: content.map((child) => {
       const mdast = encodeNode(child)[0]
       if (isMdastBlockContent(mdast)) return mdast
