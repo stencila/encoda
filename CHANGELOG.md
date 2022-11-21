@@ -1,3 +1,24 @@
+## [0.119.5](https://github.com/stencila/encoda/compare/v0.119.4...v0.119.5) (2022-11-21)
+
+
+### Bug Fixes
+
+* **Build:** Reinstate install script ([b7fe89c](https://github.com/stencila/encoda/commit/b7fe89c5a68af444618fa71c92ee0987fa68bce2))
+* **Convert function:** Do not default to outputting to stdout when `outputPaths` is undefined ([0349fbf](https://github.com/stencila/encoda/commit/0349fbf354a4c895b9f39ccea18dda093663a731))
+* **Convert function:** Return content when no output path defined ([0ea7388](https://github.com/stencila/encoda/commit/0ea73882f907802559b6713b187140bb0371452c))
+* **Dependencies:** Minor version upgrades of dependencies ([db7d7dd](https://github.com/stencila/encoda/commit/db7d7dd55fba8f6a414b82bdf9e55efc44291ec9))
+* **Dependencies:** Updates with `npm audit fix` ([d717531](https://github.com/stencila/encoda/commit/d717531c534f157f02674da8cfd03cb351a9fee8))
+* Fix typings (mostly to do with `Error`) and update some dev dependencies ([fa1fad9](https://github.com/stencila/encoda/commit/fa1fad9fb50e52c28caeee9de06113e0344b5a59))
+* **JATS:** Also decode `<string-name>` elements as authors ([83086a3](https://github.com/stencila/encoda/commit/83086a3fce36926417cc0504860f1b0c777cd544))
+* **JATS:** Decode `<table-wap>` with `<graphic>` to a `Figure` ([dc48537](https://github.com/stencila/encoda/commit/dc48537e2ad16a58da9a987882eb5413957f22f2))
+* **JATS:** Decode backmatter sections; convert all caps headings to sentence case ([79ed21f](https://github.com/stencila/encoda/commit/79ed21f477329e599f2161851940cb3b5849a483))
+* **JATS:** Extract acknowledgements from `<back>` ([e5c9db2](https://github.com/stencila/encoda/commit/e5c9db22d0b70956c1ea7e698dda3d8f2a2e88f4))
+* **JATS:** Extract author ORCIDs ([3e161c5](https://github.com/stencila/encoda/commit/3e161c5e7fbcb5c1918d4750317725dcec9a1d83))
+* **JATS:** Follow `xref`s to `corresp` element to capture corresponding author emails ([d3e0057](https://github.com/stencila/encoda/commit/d3e0057232eb1c26c75d053a6d11669d9feb053a))
+* **JATS:** Insert `ThematicBreak` before back sections ([5971de5](https://github.com/stencila/encoda/commit/5971de5b9d8f7f03be2fcec8093dbf548282c713))
+* **JATS:** Match corresponding email to author name/s ([3effdaf](https://github.com/stencila/encoda/commit/3effdaf392c76e05a7b288224a3c483c4327444d))
+* **Release:** Install missing release dependencies ([d6ac4b9](https://github.com/stencila/encoda/commit/d6ac4b965aff56ff505e52f07155a25ad3eb6909))
+
 ## [0.119.4](https://github.com/stencila/encoda/compare/v0.119.3...v0.119.4) (2021-11-16)
 
 
