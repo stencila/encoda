@@ -1,3 +1,10 @@
+## [0.119.6](https://github.com/stencila/encoda/compare/v0.119.5...v0.119.6) (2022-11-21)
+
+
+### Bug Fixes
+
+* **Release:** Fix release build ([67648c6](https://github.com/stencila/encoda/commit/67648c64e35359e5a0fa49dc2d4af64924bf7a39))
+
 ## [0.119.5](https://github.com/stencila/encoda/compare/v0.119.4...v0.119.5) (2022-11-21)
 
 
