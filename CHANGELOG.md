@@ -1,3 +1,11 @@
+## [0.119.7](https://github.com/stencila/encoda/compare/v0.119.6...v0.119.7) (2023-01-04)
+
+
+### Bug Fixes
+
+* **Dependencies:** NPM audit fix ([3ff593b](https://github.com/stencila/encoda/commit/3ff593b5495afe0d0f5454c78c56cb2a11eaa032))
+* **Dependencies:** Update `json5` and `tar` ([7df51ca](https://github.com/stencila/encoda/commit/7df51cab61ca0078a694b62058f4153e9cfc7b1d))
+
 ## [0.119.6](https://github.com/stencila/encoda/compare/v0.119.5...v0.119.6) (2022-11-21)
 
 
