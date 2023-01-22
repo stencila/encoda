@@ -1067,10 +1067,12 @@ export function decodeAff(aff: xml.Element): stencila.Organization {
   const url = textOrUndefined(child(aff, 'uri'))
 
   // Get any extra, non-wrapped, text
-  const extraText = aff.elements
-    ?.filter((elem) => elem.type === 'text')
-    .map((elem) => elem.text)
-    .join() ?? ''
+  const extraText =
+    aff.elements
+      ?.filter((elem) => elem.type === 'text')
+      .map((elem) => elem.text)
+      .join()
+      .trim() ?? ''
 
   let name = textOrUndefined(institutions[0] ?? null)
   if (name === undefined && addressComponents.length > 0) {
@@ -1081,7 +1083,7 @@ export function decodeAff(aff: xml.Element): stencila.Organization {
 
   // Add the extra text, removing any spaces and trailing commas (e.g. those
   // that separate the text from the address elements)
-  name += extraText.trim()
+  name = name ? name + extraText : extraText
   if (name?.endsWith(',')) {
     name = name.slice(0, -1)
   }

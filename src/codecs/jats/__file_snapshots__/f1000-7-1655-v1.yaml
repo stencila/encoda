@@ -6,6 +6,9 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: >-
+          National Center for Biotechnology Information, National Library of
+          Medicine, National Institutes of Health, Bethesda, MD, 20894, USA
     emails:
       - beck@ncbi.nlm.nih.gov
     familyNames:
@@ -15,6 +18,9 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: >-
+          National Center for Biotechnology Information, National Library of
+          Medicine, National Institutes of Health, Bethesda, MD, 20894, USA
     emails:
       - kathryn.funk@nih.gov
     familyNames:
@@ -24,6 +30,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: eLife Sciences Publications, Ltd, Cambridge, UK
     emails:
       - m.harrison@elifesciences.org
     familyNames:
@@ -33,6 +40,9 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: >-
+          European Bioinformatics Institute (EMBL-EBI), Wellcome Trust Genome
+          Campus, Hinxton, Cambridge, UK
     emails:
       - mcentyre@ebi.ac.uk
     familyNames:
@@ -42,6 +52,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: BMJ, London, UK
     familyNames:
       - Breen
     givenNames:
@@ -49,6 +60,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: eLife Sciences Publications, Ltd, Cambridge, UK
     familyNames:
       - Collings
     givenNames:
@@ -56,6 +68,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: SpringerNature, London, UK
     familyNames:
       - Donohoe
     givenNames:
@@ -63,6 +76,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: F1000, London, UK
     familyNames:
       - Evans
     givenNames:
@@ -70,6 +84,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: SpringerNature, London, UK
     familyNames:
       - Flintoft
     givenNames:
@@ -77,6 +92,9 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: >-
+          European Bioinformatics Institute (EMBL-EBI), Wellcome Trust Genome
+          Campus, Hinxton, Cambridge, UK
     familyNames:
       - Hamelers
     givenNames:
@@ -84,6 +102,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: The Royal Society, London, UK
     familyNames:
       - Hurst
     givenNames:
@@ -91,6 +110,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: EMBO, Heidelberg, Germany
     familyNames:
       - Lemberger
     givenNames:
@@ -98,6 +118,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: Crossref, Oxford, UK
     familyNames:
       - Lin
     givenNames:
@@ -105,6 +126,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: PLOS, Cambridge, UK
     familyNames:
       - O'Connor
     givenNames:
@@ -112,6 +134,9 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: >-
+          European Bioinformatics Institute (EMBL-EBI), Wellcome Trust Genome
+          Campus, Hinxton, Cambridge, UK
     familyNames:
       - Parkin
     givenNames:
@@ -119,6 +144,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: BMJ, London, UK
     familyNames:
       - Parker
     givenNames:
@@ -126,6 +152,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: eLife Sciences Publications, Ltd, Cambridge, UK
     familyNames:
       - Rodgers
     givenNames:
@@ -133,6 +160,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: SpringerNature, London, UK
     familyNames:
       - Skipper
     givenNames:
@@ -140,6 +168,7 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
+        name: PeerJ, London, UK
     familyNames:
       - Stoner
     givenNames:

@@ -77,7 +77,7 @@ describe('encode: Math', () => {
   })
 })
 
-test.only('decode: affiliation retains content not in <institution> or address elements', () => {
+test('decode: affiliation retains content not in <institution> or address elements', () => {
   const aff = xml.load(`
     <aff id="a3">
       <label>3</label>
