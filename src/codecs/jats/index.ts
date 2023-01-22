@@ -1055,7 +1055,7 @@ function encodeName(person: stencila.Person): xml.Element {
  * assuming that they are ordered hierarchically i.e. that the first
  * is a part of the second etc. See https://github.com/stencila/encoda/issues/458
  */
-function decodeAff(aff: xml.Element): stencila.Organization {
+export function decodeAff(aff: xml.Element): stencila.Organization {
   const institutions = children(aff, 'institution')
   let addressComponents = all(aff, [
     'addr-line',
@@ -1066,11 +1066,24 @@ function decodeAff(aff: xml.Element): stencila.Organization {
   ])
   const url = textOrUndefined(child(aff, 'uri'))
 
+  // Get any extra, non-wrapped, text
+  const extraText = aff.elements
+    ?.filter((elem) => elem.type === 'text')
+    .map((elem) => elem.text)
+    .join() ?? ''
+
   let name = textOrUndefined(institutions[0] ?? null)
   if (name === undefined && addressComponents.length > 0) {
     const [first, ...rest] = addressComponents
     name = text(first)
     addressComponents = rest
+  }
+
+  // Add the extra text, removing any spaces and trailing commas (e.g. those
+  // that separate the text from the address elements)
+  name += extraText.trim()
+  if (name?.endsWith(',')) {
+    name = name.slice(0, -1)
   }
 
   const parentOrganization =

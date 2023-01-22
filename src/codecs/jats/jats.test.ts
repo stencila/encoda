@@ -1,5 +1,5 @@
 import path from 'path'
-import { JatsCodec } from '.'
+import { decodeAff, JatsCodec } from '.'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import {
   asciimathFragment,
@@ -18,6 +18,7 @@ import {
   Organization,
 } from '@stencila/schema'
 import { JsonCodec } from '../json'
+import * as xml from '../../util/xml'
 
 const jats = new JatsCodec()
 const json = new JsonCodec()
@@ -73,6 +74,26 @@ describe('encode: Math', () => {
     expect(await jats.dump(texBlock, { isStandalone: false })).toMatchFile(
       snapshot('math-tex-block.jats.xml')
     )
+  })
+})
+
+test.only('decode: affiliation retains content not in <institution> or address elements', () => {
+  const aff = xml.load(`
+    <aff id="a3">
+      <label>3</label>
+      <institution>Université; de Paris, Institut Cochin</institution>
+      , CNRS, INSERM, Paris,
+      <country>France</country>
+    </aff>
+  `).elements?.[0]!
+
+  expect(decodeAff(aff)).toEqual({
+    type: 'Organization',
+    name: 'Université; de Paris, Institut Cochin, CNRS, INSERM, Paris',
+    address: {
+      type: 'PostalAddress',
+      addressCountry: 'France',
+    },
   })
 })
 
