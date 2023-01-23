@@ -316,15 +316,18 @@ async function reshapeCreativeWork(
         index++
       }
 
-      // Separate figure label and caption
-      const [label, caption] = separateLabelCaption(captionPara, 'Figure')
+      // Only make into a figure if a caption was found
+      if (captionPara) {
+        // Separate figure label and caption
+        const [label, caption] = separateLabelCaption(captionPara, 'Figure')
 
-      // Transform into a Figure
-      node = schema.figure({
-        content: node.content,
-        label,
-        caption,
-      })
+        // Transform into a Figure
+        node = schema.figure({
+          content: node.content,
+          label,
+          caption,
+        })
+      }
     }
 
     // If node (or it's replacement) is bibliography heading and the article
