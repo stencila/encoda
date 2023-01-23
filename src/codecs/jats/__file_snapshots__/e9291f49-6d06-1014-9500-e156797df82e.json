@@ -4,6 +4,27 @@
     {
       "type": "DefinedTerm",
       "name": "New Results"
+    },
+    {
+      "type": "Note",
+      "meta": {
+        "notes-type": "competing-interest-statement"
+      },
+      "content": [
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "Competing Interest Statement"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "The authors have declared no competing interest."
+          ]
+        }
+      ]
     }
   ],
   "authors": [

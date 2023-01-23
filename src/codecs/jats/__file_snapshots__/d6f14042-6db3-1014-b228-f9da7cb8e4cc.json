@@ -1,5 +1,124 @@
 {
   "type": "Article",
+  "about": [
+    {
+      "type": "Note",
+      "meta": {
+        "notes-type": "competing-interest-statement"
+      },
+      "content": [
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "Competing Interest Statement"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "The authors have declared no competing interest."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Note",
+      "meta": {
+        "notes-type": "financial-disclosure"
+      },
+      "content": [
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "Funding Statement"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "This work was supported by the Academy of Finland (213506, 265240, 263278, 312073 to J.K., 297908 to M.O. and 341750, 346509 to E.S.), EC FP5 GenomEUtwin (J.K.), National Institutes of Health/National Heart, Lung, and Blood Institute (grant HL104125), EC MC ITN Project EPITRAIN (J.K. and M.O.), the University of Helsinki Research Funds (M.O.), Sigrid Juselius Foundation (J.K. and M.O.), Yrjö Jahnsson Foundation (6868), Juho Vainio Foundation (E.S.) and Püivikki and Sakari Sohlberg Foundation (E.S.).\r\n"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Note",
+      "meta": {
+        "notes-type": "disclosures"
+      },
+      "content": [
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "Author Declarations"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "I confirm all relevant ethical guidelines have been followed, and any necessary IRB and/or ethics committee approvals have been obtained."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "The details of the IRB/oversight body that provided approval or exemption for the research described are given below:"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "The ethics committees of the University of Helsinki and Helsinki University Central Hospital gave ethical approval for this work"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "I confirm that all necessary patient/participant consent has been obtained and the appropriate institutional forms have been archived, and that any patient/participant/sample identifiers included were not known to anyone (e.g., hospital staff, patients or participants themselves) outside the research group so cannot be used to identify individuals."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "I understand that all clinical trials and any other prospective interventional studies must be registered with an ICMJE-approved registry, such as ClinicalTrials.gov. I confirm that any such study reported in the manuscript has been registered and the trial registration ID is provided (note: if posting a prospective study registered retrospectively, please provide a statement in the trial ID field explaining why the study was not registered in advance)."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Yes"
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "I have followed all appropriate research reporting guidelines and uploaded the relevant EQUATOR Network research reporting checklist(s) and other pertinent material as supplementary files, if applicable."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "Yes"
+          ]
+        }
+      ]
+    }
+  ],
   "authors": [
     {
       "type": "Person",

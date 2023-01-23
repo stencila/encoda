@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isA, thematicBreak } from '@stencila/schema'
+import stencila, { isA, ThingTypes } from '@stencila/schema'
 import crypto from 'crypto'
 import { closest } from 'fastest-levenshtein'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
@@ -297,7 +297,7 @@ function decodeMaybe<Type extends stencila.Node>(
 function decodeArticle(article: xml.Element): stencila.Article {
   const state: DecodeState = initialDecodeState(article)
 
-  const { meta: metaFront, ...front } = decodeFront(
+  const { meta: frontMeta, ...frontProps } = decodeFront(
     child(article, 'front'),
     state
   )
@@ -309,12 +309,12 @@ function decodeArticle(article: xml.Element): stencila.Article {
     state
   )
 
-  const metaAll = { ...metaFront }
-  const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
-
   const content = [...(body ?? []), ...(backContent ?? [])]
 
-  return stencila.article({ ...front, references, meta, content })
+  const meta =
+    Object.keys({ ...frontMeta }).length > 0 ? { ...frontMeta } : undefined
+
+  return stencila.article({ ...frontProps, references, content, meta })
 }
 
 /**
@@ -383,6 +383,12 @@ function decodeFront(
   | 'genre'
 > {
   const subjGroups = all(front, 'subj-group')
+  const notes = all(first(front, 'notes'), 'notes')
+  let about = [
+    ...decodeAbout(subjGroups),
+    ...decodeNotes(notes, state),
+  ] as ThingTypes[]
+
   return front === null
     ? {}
     : {
@@ -400,7 +406,7 @@ function decodeFront(
         meta: decodeMetaFront(front),
         pageStart: decodePageStart(front),
         pageEnd: decodePageEnd(front),
-        about: decodeAbout(subjGroups),
+        about: about.length > 0 ? about : undefined,
         genre: decodeGenres(subjGroups),
       }
 }
@@ -416,7 +422,7 @@ const emptySafeString = (str: string | undefined): string | undefined =>
  * Decode a JATS `<subj-group>` if attribute 'subj-group-type' includes
  * about types elements to a Stencila `Article.about`.
  */
-function decodeAbout(subjectGroups: xml.Element[]): stencila.Article['about'] {
+function decodeAbout(subjectGroups: xml.Element[]): stencila.DefinedTerm[] {
   const ABOUT_TYPES = [
     'subject',
     'discipline',
@@ -426,7 +432,7 @@ function decodeAbout(subjectGroups: xml.Element[]): stencila.Article['about'] {
     'taxonomy',
     'heading',
   ]
-  const about = subjectGroups
+  return subjectGroups
     .map((elem) => {
       const type = attr(elem, 'subj-group-type') ?? ''
       const subject = child(elem, ['subject'])
@@ -438,7 +444,31 @@ function decodeAbout(subjectGroups: xml.Element[]): stencila.Article['about'] {
         : undefined
     })
     .filter(isDefined)
-  return about.length ? about : undefined
+}
+
+/**
+ * Decode JATS `<front> <note>` elements to Stencila `Note`s.
+ */
+function decodeNotes(
+  notes: xml.Element[],
+  state: DecodeState
+): stencila.Note[] {
+  return notes
+    .map((elem) => {
+      const notesType = attr(elem, 'notes-type')
+      const meta = notesType
+        ? {
+            'notes-type': notesType,
+          }
+        : undefined
+      const content = decodeElement(elem, state) as stencila.BlockContent[]
+
+      return stencila.note({
+        meta,
+        content,
+      })
+    })
+    .filter(isDefined)
 }
 
 /**
