@@ -1144,45 +1144,27 @@ function decodeBack(
 
   const references = decodeReferences(first(elem, 'ref-list'))
 
-  const ack = decodeAck(first(elem, 'ack'), state) ?? []
   const sections = decodeBackSecs(
-    elem.elements?.filter((elem) => elem.name === 'sec') ?? [],
+    elem.elements?.filter(
+      (elem) => elem.name === 'ack' || elem.name === 'sec'
+    ) ?? [],
     state
   )
 
-  return { references, content: [...ack, ...sections] }
+  return { references, content: sections }
 }
 
 /**
- * Decode a JATS `<ack>` element to a Stencila `BlockContent`
- * including a `Acknowledgements` heading
- *
- * Any existing <title> (e.g. ACKNOW... all caps) or <label> (e.g. numeric section number) elements are ignored.
- */
-function decodeAck(
-  elem: xml.Element | null,
-  state: DecodeState
-): stencila.BlockContent[] | undefined {
-  if (elem === null) return undefined
-
-  const filtered = (elem.elements ?? []).filter(
-    (elem) => elem.name !== 'title' && elem.name !== 'label'
-  )
-  const blocks = ensureBlockContentArray(decodeElements(filtered, state))
-  return [
-    stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
-    ...blocks,
-  ]
-}
-
-/**
- * Decode a JATS `<back> <sec>` element to a Stencila `BlockContent`
+ * Decode JATS <back> <ack> or <sec> elements to Stencila `BlockContent`s
  *
  * Backmatter sections are used for a variety of purposes included supplementary figures
  * and data availability statements. No attempt is made to differentiate between these and unlike with <ack>
  * the sections are mostly decoded verbatim.
  *
- * The <title> is treated as the h1 for the section.
+ * For <ack> elements, any existing <title> (e.g. ACKNOW... all caps) or <label> (e.g. numeric section number)
+ * elements are ignored and a h1 with 'Acknowledgements' is inserted
+ *
+ * For <sec> elements, any <title> is treated as the h1 for the section.
  * Any other heading in the section are dropped if they have the same content
  * as the title (otherwise there can be duplication).
  */
@@ -1191,20 +1173,37 @@ function decodeBackSecs(
   state: DecodeState
 ): stencila.BlockContent[] {
   return elems.reduce((prev: stencila.BlockContent[], elem) => {
-    const blocks = decodeElement(elem, state) as stencila.BlockContent[]
-    const node = blocks[0]
-    if (blocks.length === 1 && node?.type === 'Heading') {
-      const alreadyExists =
-        prev.findIndex(
-          (existing) =>
-            existing.type === 'Heading' &&
-            existing.content[0] === node.content[0]
-        ) >= 0
-      if (alreadyExists) {
-        return prev
+    if (elem.name == 'ack') {
+      const filtered = (elem.elements ?? []).filter(
+        (elem) => elem.name !== 'title' && elem.name !== 'label'
+      )
+
+      const blocks = ensureBlockContentArray(decodeElements(filtered, state))
+
+      return [
+        ...prev,
+        stencila.thematicBreak(),
+        stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
+        ...blocks,
+      ]
+    } else {
+      const blocks = decodeElement(elem, state) as stencila.BlockContent[]
+
+      const node = blocks[0]
+      if (blocks.length === 1 && node?.type === 'Heading') {
+        const alreadyExists =
+          prev.findIndex(
+            (existing) =>
+              existing.type === 'Heading' &&
+              existing.content[0] === node.content[0]
+          ) >= 0
+        if (alreadyExists) {
+          return prev
+        }
       }
+
+      return [...prev, stencila.thematicBreak(), ...blocks]
     }
-    return [...prev, stencila.thematicBreak(), ...blocks]
   }, [])
 }
 
