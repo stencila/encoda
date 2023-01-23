@@ -127,7 +127,7 @@
             <title>Modified Hamming distance</title>
             <p>To test if any of the profile pairs are mutually exclusive, we modified the conventional Hamming distance by ignoring the elements of profiles where both the proteins are absent. The modified formula of Hamming distance is:
 </p>
-            <display-formula>
+            <disp-formula>
                 <mml:math display="block" id="M1">
                     <mml:mi>d</mml:mi>
                     <mml:mo>=</mml:mo>
@@ -249,7 +249,7 @@
                         </mml:mrow>
                     </mml:mfrac>
                 </mml:math>
-            </display-formula>
+            </disp-formula>
             <p>
 where,
 </p>

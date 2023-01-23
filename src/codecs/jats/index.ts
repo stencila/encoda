@@ -2369,7 +2369,7 @@ function decodeMath(
 
 /**
  * Encode a Stencila `Math` node as a JATS `<inline-formula>` or
- * `<display-formula>` element.
+ * `<disp-formula>` element.
  */
 function encodeMath(math: stencila.Math): xml.Element[] {
   const { mathLanguage, text = '' } = math
@@ -2388,7 +2388,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
 
   return [
     elem(
-      math.type === 'MathFragment' ? 'inline-formula' : 'display-formula',
+      math.type === 'MathFragment' ? 'inline-formula' : 'disp-formula',
       inner
     ),
   ]

@@ -3366,7 +3366,7 @@
                     </mml:math>
                 </inline-formula> in the form:
             </p>
-            <display-formula>
+            <disp-formula>
                 <mml:math id="m1">
                     <mml:mrow>
                         <mml:mrow>
@@ -3523,9 +3523,9 @@
                         </mml:mrow>
                     </mml:mrow>
                 </mml:math>
-            </display-formula>
+            </disp-formula>
             <p>using</p>
-            <display-formula>
+            <disp-formula>
                 <mml:math id="m2">
                     <mml:mrow>
                         <mml:msub>
@@ -3756,9 +3756,9 @@
                         </mml:mfrac>
                     </mml:mrow>
                 </mml:math>
-            </display-formula>
+            </disp-formula>
             <p>and</p>
-            <display-formula>
+            <disp-formula>
                 <mml:math id="m3">
                     <mml:mrow>
                         <mml:msub>
@@ -3842,9 +3842,9 @@
                         </mml:mfrac>
                     </mml:mrow>
                 </mml:math>
-            </display-formula>
+            </disp-formula>
             <p>with</p>
-            <display-formula>
+            <disp-formula>
                 <mml:math id="m4">
                     <mml:mrow>
                         <mml:mrow>
@@ -3892,7 +3892,7 @@
                         </mml:mrow>
                     </mml:mrow>
                 </mml:math>
-            </display-formula>
+            </disp-formula>
             <p>To evaluate the mean and variance of the forward and turn bouts under various visual contexts, the distributions in different bins were also fitted with a constrained double-Gaussian model as in (1). The stereovisual data distributions were fitted with two additional mean terms 
                 <inline-formula>
                     <mml:math id="inf188">
