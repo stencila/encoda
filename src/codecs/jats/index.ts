@@ -205,7 +205,7 @@ async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
  * An alternative approach would be to make the functions
  * methods of a class (e.g. the `JatsCodec` class).
  */
-interface DecodeState {
+export interface DecodeState {
   /**
    * The current `<article>` element. Used for
    * getting the target of internal references.
@@ -2257,11 +2257,15 @@ function encodeFigGroup(
 
 /**
  * Decode a JATS `<fig>` element to a Stencila `Figure` node.
+ *
+ * Sometimes the <fig> element is used for tables (where the table is represented
+ * as an image). So, if the <label> starts with 'Table', this function will return
+ * a table with the image(s) in the `content` property.
  */
-function decodeFigure(
+export function decodeFigure(
   elem: xml.Element,
   state: DecodeState
-): [stencila.Figure] {
+): [stencila.Figure | stencila.Table] {
   state = { ...state, ancestorElem: elem }
 
   const id = decodeInternalId(attr(elem, 'id'))
@@ -2296,7 +2300,11 @@ function decodeFigure(
     }
   }
 
-  return [stencila.figure({ id, label, caption, content, licenses })]
+  return [
+    label?.startsWith('Table')
+      ? stencila.table({ id, label, caption, content, licenses, rows: [] })
+      : stencila.figure({ id, label, caption, content, licenses }),
+  ]
 }
 
 /**

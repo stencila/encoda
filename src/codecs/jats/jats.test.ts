@@ -1,5 +1,5 @@
 import path from 'path'
-import { decodeAff, JatsCodec } from '.'
+import { decodeAff, decodeFigure, DecodeState, JatsCodec } from '.'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import {
   asciimathFragment,
@@ -94,6 +94,48 @@ test('decode: affiliation retains content not in <institution> or address elemen
       type: 'PostalAddress',
       addressCountry: 'France',
     },
+  })
+})
+
+test('decode: <fig> element that is actually a table', () => {
+  const fig = xml.load(`
+    <fig id="tbl1" orientation="portrait" position="float">
+      <label>Table 1.</label>
+      <caption><p>Descriptive statistics of the adolescent lifestyle-related variables in all twins and in the subsample of twins with information on biological aging.</p></caption>
+      <graphic xlink:href="22275761v1_tbl1.tif"/>
+      <graphic xlink:href="22275761v1_tbl1a.tif"/>
+    </fig>
+`).elements?.[0]!
+
+  expect(decodeFigure(fig, {} as DecodeState)[0]).toEqual({
+    type: 'Table',
+    id: 'tbl1',
+    label: 'Table 1.',
+    caption: [
+      {
+        type: 'Paragraph',
+        content: [
+          'Descriptive statistics of the adolescent lifestyle-related variables in all twins and in the subsample of twins with information on biological aging.',
+        ],
+      },
+    ],
+    content: [
+      {
+        type: 'ImageObject',
+        contentUrl: '22275761v1_tbl1.tif',
+        meta: {
+          inline: false,
+        },
+      },
+      {
+        type: 'ImageObject',
+        contentUrl: '22275761v1_tbl1a.tif',
+        meta: {
+          inline: false,
+        },
+      },
+    ],
+    rows: [],
   })
 })
 
