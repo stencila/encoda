@@ -1738,6 +1738,9 @@ references:
       value: '2018'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '645'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.3389/fphar.2018.00645
@@ -2036,6 +2039,9 @@ references:
       type: Date
       value: '2019'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: '155'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -2337,6 +2343,9 @@ references:
       value: '2018'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e1007503
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1371/journal.pgen.1007503
@@ -2507,6 +2516,9 @@ references:
       type: Date
       value: '2018'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: '953'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -2754,6 +2766,9 @@ references:
       type: Date
       value: '2018'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: '279'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -3298,6 +3313,9 @@ references:
       value: '2016'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '34703'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1038/srep34703
@@ -3608,6 +3626,9 @@ references:
       value: '2017'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '987'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.3389/fphar.2017.00987
@@ -3823,6 +3844,9 @@ references:
       value: '2016'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '493'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.3389/fnins.2016.00493
@@ -3879,6 +3903,9 @@ references:
       type: Date
       value: '2019'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e12533
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -3953,6 +3980,9 @@ references:
       type: Date
       value: '2016'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e0152581
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi

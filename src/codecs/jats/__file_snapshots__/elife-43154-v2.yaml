@@ -819,6 +819,9 @@ references:
       value: '2017'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e15085
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.7554/eLife.15085
@@ -923,6 +926,9 @@ references:
       type: Date
       value: '2012'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e1001339
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi

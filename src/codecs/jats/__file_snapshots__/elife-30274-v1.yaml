@@ -302,6 +302,9 @@ references:
       value: '2006'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '1080'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1136/bmj.332.7549.1080
@@ -374,6 +377,9 @@ references:
       type: Date
       value: '2015'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e04024
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -563,6 +569,9 @@ references:
       value: '2014'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e04333
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.7554/eLife.04333
@@ -660,6 +669,9 @@ references:
       type: Date
       value: '2016'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: '11903'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -1124,6 +1136,9 @@ references:
       value: '2016'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '28994'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1038/srep28994
@@ -1403,6 +1418,9 @@ references:
       type: Date
       value: '2016'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e15161
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -1795,6 +1813,9 @@ references:
       type: Date
       value: '2014'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: a014191
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi

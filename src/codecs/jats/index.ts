@@ -1368,7 +1368,18 @@ function decodeReference(
     publisher = stencila.organization({ name: publisherName, address })
   }
 
-  let identifiers: stencila.CreativeWork['identifiers'] = all(elem, 'pub-id')
+  const eLocation = all(elem, 'elocation-id')
+    .map((elem) => {
+      const name = 'elocation-id'
+      const value = text(elem)
+      return stencila.propertyValue({
+        name,
+        value,
+      })
+    })
+    .filter(isDefined)
+
+  const pubIds = all(elem, 'pub-id')
     .map((elem) => {
       const name = attr(elem, 'pub-id-type') ?? undefined
       const propertyID = encodeIdentifierTypeUri(name)
@@ -1382,6 +1393,11 @@ function decodeReference(
         : undefined
     })
     .filter(isDefined)
+
+  let identifiers: stencila.CreativeWork['identifiers'] = [
+    ...eLocation,
+    ...pubIds,
+  ]
   if (identifiers.length === 0) identifiers = undefined
 
   return stencila.article({

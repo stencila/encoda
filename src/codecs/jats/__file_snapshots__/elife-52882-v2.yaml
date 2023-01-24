@@ -443,6 +443,9 @@ references:
       value: '2011'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '2011'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.3389/fnsys.2011.00101
@@ -758,6 +761,9 @@ references:
       value: '2016'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e12741
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.7554/eLife.12741
@@ -1043,6 +1049,9 @@ references:
       value: '1995'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '631'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1017/S0140525X0004022X
@@ -1077,6 +1086,9 @@ references:
       type: Date
       value: '2015'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e0128668
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -1483,6 +1495,9 @@ references:
       value: '2015'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e0139521
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1371/journal.pone.0139521
@@ -1790,6 +1805,9 @@ references:
       type: Date
       value: '2012'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e32295
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
@@ -2250,6 +2268,9 @@ references:
       value: '2008'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e1000028
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1371/journal.pcbi.1000028
@@ -2311,6 +2332,9 @@ references:
       type: Date
       value: '2018'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e38740
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
