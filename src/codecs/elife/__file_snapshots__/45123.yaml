@@ -241,6 +241,9 @@ references:
       value: '2019'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e41770
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.7554/eLife.41770
@@ -449,6 +452,9 @@ references:
       value: '2016'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '28396'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1038/srep28396
@@ -654,6 +660,9 @@ references:
       value: '2009'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e1000617
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1371/journal.pgen.1000617
@@ -727,6 +736,9 @@ references:
       value: '2017'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: '629'
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.3389/fneur.2017.00629
@@ -790,6 +802,9 @@ references:
       type: Date
       value: '2013'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: '53'
       - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
