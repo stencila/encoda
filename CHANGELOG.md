@@ -1,3 +1,23 @@
+# [0.120.0](https://github.com/stencila/encoda/compare/v0.119.7...v0.120.0) (2023-01-30)
+
+
+### Bug Fixes
+
+* **Dependencies:** NPM audit fix ([aed1724](https://github.com/stencila/encoda/commit/aed172433e9f950b9070c21610676e9b5e66f3ea))
+* **Deps:** Update `content-type` ([6704c3a](https://github.com/stencila/encoda/commit/6704c3a44fd79a4a22b84d34e78347a43476e849))
+* **JATS:** Allow for no <institution> element; update snapshots ([cde3384](https://github.com/stencila/encoda/commit/cde33849836ceab4f4943594af829d3542e7cacc))
+* **JATS:** Decode `<fig>` elements as a `Table` if `label` starts with 'Table' ([2ada6a6](https://github.com/stencila/encoda/commit/2ada6a62f67a1b34ec1dffc919ba215bc87b0035))
+* **JATS:** Decode `<notes>` into an article's `about` property ([ec410f0](https://github.com/stencila/encoda/commit/ec410f01c2993a0e556f5e3f33d8de4766430f94))
+* **JATS:** Retain affiliation content not in <institution> element ([cdc4fc1](https://github.com/stencila/encoda/commit/cdc4fc17333474d98b3b82b742b84558ac635022))
+* **JATS:** Treat <ack> like other <back> elements ([cd9dbc6](https://github.com/stencila/encoda/commit/cd9dbc6e7cba9f0d1dc62daced6d71864483083e))
+* **JATS:** Use correct tag name for <disp-formula> ([3bd4c5d](https://github.com/stencila/encoda/commit/3bd4c5df8fb602b21d1e43ff708c249a193c0155))
+* **Reshaping:** Only convert an image paragraph into a figure if a caption is found\n\nCloses https://github.com/elifesciences/enhanced-preprints-issues/issues/362 ([ec09ec4](https://github.com/stencila/encoda/commit/ec09ec4bd6c7da8b586939ad842fb01effa02407))
+
+
+### Features
+
+* **JATS:** Capture `<elocation-id>` in references ([6bd2758](https://github.com/stencila/encoda/commit/6bd2758e6acc487c3f67a3d67cd0f49537808649))
+
 ## [0.119.7](https://github.com/stencila/encoda/compare/v0.119.6...v0.119.7) (2023-01-04)
 
 
