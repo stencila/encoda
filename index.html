@@ -20,7 +20,7 @@
 <a href="#codecs-for-structured-semantic-composable-and-executable-documents" id="codecs-for-structured-semantic-composable-and-executable-documents" style="color: inherit; text-decoration: none;">
   <h5>Codecs for structured, semantic, composable, and executable documents</h5>
 </a>
-<p><a href="https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&amp;branchName=master"><img src="https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master" alt="Build status"></a>
+<p><a href="https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&branchName=master"><img src="https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master" alt="Build status"></a>
 <a href="https://codecov.io/gh/stencila/encoda"><img src="https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg" alt="Code coverage"></a>
 <a href="https://www.npmjs.com/package/@stencila/encoda"><img src="https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat" alt="NPM"></a>
 <a href="https://stencila.github.io/encoda/"><img src="https://img.shields.io/badge/docs-latest-blue.svg" alt="Docs"></a></p>
@@ -378,10 +378,10 @@
   <h2>Publishers</h2>
 </a>
 <p>Several of the codecs in Encoda, deal with fetching content from a particular publisher. For example, to get an eLife article and read it in Markdown:</p>
-<pre><code class="language-bash"><span class="hl-0">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</span>
+<pre><code class="language-bash"><span class="hl-0">stencila </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">https://elifesciences.org/articles/45187v2</span><span class="hl-0"> </span><span class="hl-1">ye-et-al-2019.md</span>
 </code></pre>
 <p>Some of these publisher codecs deal with meta data. e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">stencila convert </span><span class="hl-1">&quot;Watson and Crick 1953&quot;</span><span class="hl-0"> - --from crossref --to yaml</span>
+<pre><code class="language-bash"><span class="hl-0">stencila </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">&quot;Watson and Crick 1953&quot;</span><span class="hl-0"> </span><span class="hl-1">-</span><span class="hl-0"> </span><span class="hl-1">--from</span><span class="hl-0"> </span><span class="hl-1">crossref</span><span class="hl-0"> </span><span class="hl-1">--to</span><span class="hl-0"> </span><span class="hl-1">yaml</span>
 </code></pre>
 <pre><code class="language-yaml"><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">Article</span><br/><span class="hl-2">title</span><span class="hl-0">: </span><span class="hl-3">Genetical Implications of the Structure of Deoxyribonucleic Acid</span><br/><span class="hl-2">authors</span><span class="hl-0">:</span><br/><span class="hl-0">  - </span><span class="hl-2">familyNames</span><span class="hl-0">:</span><br/><span class="hl-0">      - </span><span class="hl-3">WATSON</span><br/><span class="hl-0">    </span><span class="hl-2">givenNames</span><span class="hl-0">:</span><br/><span class="hl-0">      - </span><span class="hl-3">J. D.</span><br/><span class="hl-0">    </span><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">Person</span><br/><span class="hl-0">  - </span><span class="hl-2">familyNames</span><span class="hl-0">:</span><br/><span class="hl-0">      - </span><span class="hl-3">CRICK</span><br/><span class="hl-0">    </span><span class="hl-2">givenNames</span><span class="hl-0">:</span><br/><span class="hl-0">      - </span><span class="hl-3">F. H. C.</span><br/><span class="hl-0">    </span><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">Person</span><br/><span class="hl-2">datePublished</span><span class="hl-0">: </span><span class="hl-3">&#39;1953,5&#39;</span><br/><span class="hl-2">isPartOf</span><span class="hl-0">:</span><br/><span class="hl-0">  </span><span class="hl-2">issueNumber</span><span class="hl-0">: </span><span class="hl-3">&#39;4361&#39;</span><br/><span class="hl-0">  </span><span class="hl-2">isPartOf</span><span class="hl-0">:</span><br/><span class="hl-0">    </span><span class="hl-2">volumeNumber</span><span class="hl-0">: </span><span class="hl-3">&#39;171&#39;</span><br/><span class="hl-0">    </span><span class="hl-2">isPartOf</span><span class="hl-0">:</span><br/><span class="hl-0">      </span><span class="hl-2">title</span><span class="hl-0">: </span><span class="hl-3">Nature</span><br/><span class="hl-0">      </span><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">Periodical</span><br/><span class="hl-0">    </span><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">PublicationVolume</span><br/><span class="hl-0">  </span><span class="hl-2">type</span><span class="hl-0">: </span><span class="hl-3">PublicationIssue</span>
 </code></pre>
@@ -471,7 +471,7 @@
   <h2>Install</h2>
 </a>
 <p>The easiest way to use Encoda is to install the <a href="https://github.com/stencila/stencila"><code>stencila</code> command line tool</a>. Encoda powers <code>stencila convert</code>, and other commands, in that CLI. However, the version of Encoda in <code>stencila</code>, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:</p>
-<pre><code class="language-bash"><span class="hl-0">npm install @stencila/encoda --global</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">install</span><span class="hl-0"> </span><span class="hl-1">@stencila/encoda</span><span class="hl-0"> </span><span class="hl-1">--global</span>
 </code></pre>
 
 <a href="#use" id="use" style="color: inherit; text-decoration: none;">
@@ -482,30 +482,30 @@
 <a href="#converting-files" id="converting-files" style="color: inherit; text-decoration: none;">
   <h3>Converting files</h3>
 </a>
-<pre><code class="language-bash"><span class="hl-0">encoda convert notebook.ipynb notebook.docx</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">notebook.ipynb</span><span class="hl-0"> </span><span class="hl-1">notebook.docx</span>
 </code></pre>
 <p>Encoda will determine the input and output formats based on the file extensions. You can override these using the <code>--from</code> and <code>--to</code> options. e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">encoda convert notebook.ipynb notebook.xml --to jats</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">notebook.ipynb</span><span class="hl-0"> </span><span class="hl-1">notebook.xml</span><span class="hl-0"> </span><span class="hl-1">--to</span><span class="hl-0"> </span><span class="hl-1">jats</span>
 </code></pre>
 <p>You can also convert to more than one file / format (in this case the <code>--to</code> argument only applies to the first output file) e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">encoda convert report.docx report.Rmd report.html report.jats</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">report.docx</span><span class="hl-0"> </span><span class="hl-1">report.Rmd</span><span class="hl-0"> </span><span class="hl-1">report.html</span><span class="hl-0"> </span><span class="hl-1">report.jats</span>
 </code></pre>
 
 <a href="#converting-folders" id="converting-folders" style="color: inherit; text-decoration: none;">
   <h3>Converting folders</h3>
 </a>
 <p>You can decode an entire directory into a <code>Collection</code>. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the <code>Collection</code> using the <code>dir</code> codec into a tree of HTML files e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">encoda convert myproject myproject-published --to dir --pattern </span><span class="hl-1">&#39;**/*.{rmd, csv}&#39;</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">myproject</span><span class="hl-0"> </span><span class="hl-1">myproject-published</span><span class="hl-0"> </span><span class="hl-1">--to</span><span class="hl-0"> </span><span class="hl-1">dir</span><span class="hl-0"> </span><span class="hl-1">--pattern</span><span class="hl-0"> </span><span class="hl-1">&#39;**/*.{rmd, csv}&#39;</span>
 </code></pre>
 
 <a href="#converting-command-line-input" id="converting-command-line-input" style="color: inherit; text-decoration: none;">
   <h3>Converting command line input</h3>
 </a>
 <p>You can also read content from the first argument. In that case, you&#39;ll need to specifying the <code>--from</code> format e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">encoda convert </span><span class="hl-1">&quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot;</span><span class="hl-0"> --from json5 paragraph.md</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">&quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot;</span><span class="hl-0"> </span><span class="hl-1">--from</span><span class="hl-0"> </span><span class="hl-1">json5</span><span class="hl-0"> </span><span class="hl-1">paragraph.md</span>
 </code></pre>
 <p>You can send output to the console by using <code>-</code> as the second argument and specifying the <code>--to</code> format e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">encoda convert paragraph.md - --to yaml</span>
+<pre><code class="language-bash"><span class="hl-0">encoda </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">paragraph.md</span><span class="hl-0"> </span><span class="hl-1">-</span><span class="hl-0"> </span><span class="hl-1">--to</span><span class="hl-0"> </span><span class="hl-1">yaml</span>
 </code></pre>
 <table>
 <thead>
@@ -544,10 +544,10 @@
   <h3>Using with Executa</h3>
 </a>
 <p>Encoda exposes the <code>decode</code> and <code>encode</code> methods of the <a href="https://github.com/stencila/executa">Executa</a> API. Register Encoda so that it can be discovered by other executors on your machine,</p>
-<pre><code class="language-bash"><span class="hl-0">npm run register</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">run</span><span class="hl-0"> </span><span class="hl-1">register</span>
 </code></pre>
 <p>You can then use Encoda as a plugin for Executa that provides additional format conversion capabilities. For example, you can use the <code>query</code> REPL on a Markdown document:</p>
-<pre><code class="language-bash"><span class="hl-0">npx executa query CHANGELOG.md --repl</span>
+<pre><code class="language-bash"><span class="hl-0">npx </span><span class="hl-1">executa</span><span class="hl-0"> </span><span class="hl-1">query</span><span class="hl-0"> </span><span class="hl-1">CHANGELOG.md</span><span class="hl-0"> </span><span class="hl-1">--repl</span>
 </code></pre>
 <p>You can then use the REPL to explore the structure of the document and do things like create summary documents from it. For example, lets say from some reason we wanted to create a short JATS XML file with the five most recent releases of this package:</p>
 <pre><code><span class="hl-4">jmp</span><span class="hl-0"> &gt; %</span><span class="hl-4">format</span><span class="hl-0"> </span><span class="hl-4">jats</span><br/><span class="hl-4">jmp</span><span class="hl-0"> &gt; %</span><span class="hl-4">dest</span><span class="hl-0"> </span><span class="hl-4">latest</span><span class="hl-0">-</span><span class="hl-4">releases</span><span class="hl-0">.</span><span class="hl-4">jats</span><span class="hl-0">.</span><span class="hl-4">xml</span><br/><span class="hl-4">jmp</span><span class="hl-0"> &gt; {</span><span class="hl-4">type:</span><span class="hl-0"> </span><span class="hl-1">&#39;Article&#39;</span><span class="hl-0">, </span><span class="hl-4">content:</span><span class="hl-0"> </span><span class="hl-4">content</span><span class="hl-0">[? </span><span class="hl-4">type</span><span class="hl-0">==</span><span class="hl-1">`Heading`</span><span class="hl-0"> &amp;&amp; </span><span class="hl-4">depth</span><span class="hl-0">==</span><span class="hl-1">`1`</span><span class="hl-0">] | [</span><span class="hl-5">1</span><span class="hl-0">:</span><span class="hl-5">5</span><span class="hl-0">]}</span>
@@ -556,7 +556,7 @@
 <pre><code class="language-xml"><span class="hl-6">&lt;?</span><span class="hl-2">xml</span><span class="hl-7"> version</span><span class="hl-0">=</span><span class="hl-3">&quot;1.0&quot;</span><span class="hl-7"> encoding</span><span class="hl-0">=</span><span class="hl-3">&quot;utf-8&quot;</span><span class="hl-6">?&gt;</span><br/><span class="hl-6">&lt;!</span><span class="hl-8">DOCTYPE</span><span class="hl-0"> </span><span class="hl-8">article</span><span class="hl-0"> PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;</span><span class="hl-6">&gt;</span><br/><span class="hl-6">&lt;</span><span class="hl-2">article</span><span class="hl-0"> </span><span class="hl-7">xmlns:xlink</span><span class="hl-0">=</span><span class="hl-3">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="hl-0"> </span><span class="hl-7">article-type</span><span class="hl-0">=</span><span class="hl-3">&quot;research-article&quot;</span><span class="hl-6">&gt;</span><br/><span class="hl-0">    </span><span class="hl-6">&lt;</span><span class="hl-2">front</span><span class="hl-6">&gt;</span><br/><span class="hl-0">        </span><span class="hl-6">&lt;</span><span class="hl-2">title-group</span><span class="hl-6">&gt;</span><br/><span class="hl-0">            </span><span class="hl-6">&lt;</span><span class="hl-2">article-title</span><span class="hl-6">/&gt;</span><br/><span class="hl-0">        </span><span class="hl-6">&lt;/</span><span class="hl-2">title-group</span><span class="hl-6">&gt;</span><br/><span class="hl-0">        </span><span class="hl-6">&lt;</span><span class="hl-2">contrib-group</span><span class="hl-6">/&gt;</span><br/><span class="hl-0">    </span><span class="hl-6">&lt;/</span><span class="hl-2">front</span><span class="hl-6">&gt;</span><br/><span class="hl-0">    </span><span class="hl-6">&lt;</span><span class="hl-2">body</span><span class="hl-6">&gt;</span><br/><span class="hl-0">        </span><span class="hl-6">&lt;</span><span class="hl-2">sec</span><span class="hl-6">&gt;</span><br/><span class="hl-0">            </span><span class="hl-6">&lt;</span><span class="hl-2">title</span><span class="hl-6">&gt;</span><br/><span class="hl-0">                </span><span class="hl-6">&lt;</span><span class="hl-2">ext-link</span><span class="hl-0"> </span><span class="hl-7">ext-link-type</span><span class="hl-0">=</span><span class="hl-3">&quot;uri&quot;</span><span class="hl-0"> </span><span class="hl-7">xlink:href</span><span class="hl-0">=</span><span class="hl-3">&quot;https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0&quot;</span><span class="hl-6">&gt;</span><span class="hl-0">0.80.0</span><span class="hl-6">&lt;/</span><span class="hl-2">ext-link</span><span class="hl-6">&gt;</span><span class="hl-0"> (2019-09-30)</span><br/><span class="hl-0">            </span><span class="hl-6">&lt;/</span><span class="hl-2">title</span><span class="hl-6">&gt;</span><br/><span class="hl-0">        </span><span class="hl-6">&lt;/</span><span class="hl-2">sec</span><span class="hl-6">&gt;</span><br/><span class="hl-0">...</span>
 </code></pre>
 <p>You can query a document in any format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and get the names of it&#39;s columns:</p>
-<pre><code class="language-bash"><span class="hl-0">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl</span><br/><span class="hl-0">🛈 INFO  encoda:http Fetching </span><span class="hl-1">&quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;</span><br/><span class="hl-0">jmp &gt; columns[].name</span><br/><span class="hl-0">[</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;SetID&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Number&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Variant&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Theme&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Subtheme&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Year&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Name&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Minifigs&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Pieces&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;UKPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;USPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;CAPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;EUPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;ImageURL&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Owned&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Wanted&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;QtyOwned&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">]</span><br/><span class="hl-0">jmp &gt;</span>
+<pre><code class="language-bash"><span class="hl-0">npx </span><span class="hl-1">executa</span><span class="hl-0"> </span><span class="hl-1">query</span><span class="hl-0"> </span><span class="hl-1">https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv</span><span class="hl-0"> </span><span class="hl-1">--repl</span><br/><span class="hl-0">🛈 </span><span class="hl-1">INFO</span><span class="hl-0">  </span><span class="hl-1">encoda:http</span><span class="hl-0"> </span><span class="hl-1">Fetching</span><span class="hl-0"> </span><span class="hl-1">&quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;</span><br/><span class="hl-0">jmp &gt; </span><span class="hl-1">columns[].name</span><br/><span class="hl-0">[</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;SetID&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Number&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Variant&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Theme&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Subtheme&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Year&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Name&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Minifigs&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Pieces&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;UKPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;USPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;CAPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;EUPrice&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;ImageURL&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Owned&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;Wanted&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&#39;QtyOwned&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">]</span><br/><span class="hl-0">jmp &gt;</span>
 </code></pre>
 <p>See the <code>%help</code> REPL command for more examples.</p>
 <p>Note: If you have <a href="https://github.com/stencila/executa"><code>executa</code></a> installed globally, then the <code>npx</code> prefix above is not necessary.</p>
@@ -571,16 +571,16 @@
 </a>
 <p>Check how to <a href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md">contribute back to the project</a>. All PRs are most welcome! Thank you!</p>
 <p>Clone the repository and install a development environment:</p>
-<pre><code class="language-bash"><span class="hl-0">git clone https://github.com/stencila/encoda.git</span><br/><span class="hl-9">cd</span><span class="hl-0"> encoda</span><br/><span class="hl-0">npm install</span>
+<pre><code class="language-bash"><span class="hl-0">git </span><span class="hl-1">clone</span><span class="hl-0"> </span><span class="hl-1">https://github.com/stencila/encoda.git</span><br/><span class="hl-9">cd</span><span class="hl-0"> </span><span class="hl-1">encoda</span><br/><span class="hl-0">npm </span><span class="hl-1">install</span>
 </code></pre>
 <p>You can manually test conversion using current TypeScript <code>src</code> using:</p>
-<pre><code class="language-bash"><span class="hl-0">npm start -- convert simple.md simple.html</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">start</span><span class="hl-0"> </span><span class="hl-1">--</span><span class="hl-0"> </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">simple.md</span><span class="hl-0"> </span><span class="hl-1">simple.html</span>
 </code></pre>
 <p>That can be slow because the TypeScript has to be compiled on the fly (using <code>ts-node</code>). Alternatively, compile the TypeScript to JavaScript first, and then run <code>node</code> on the <code>dist</code> folder:</p>
-<pre><code class="language-bash"><span class="hl-0">npm run build:dist</span><br/><span class="hl-0">node dist convert simple.md simple.html</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">run</span><span class="hl-0"> </span><span class="hl-1">build:dist</span><br/><span class="hl-0">node </span><span class="hl-1">dist</span><span class="hl-0"> </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">simple.md</span><span class="hl-0"> </span><span class="hl-1">simple.html</span>
 </code></pre>
 <p>If you are using VSCode, you can use the <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature">Auto Attach feature</a> to attach to the CLI when running the <code>debug</code> NPM script:</p>
-<pre><code class="language-bash"><span class="hl-0">npm run debug -- convert simple.gdoc simple.ipynb</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">run</span><span class="hl-0"> </span><span class="hl-1">debug</span><span class="hl-0"> </span><span class="hl-1">--</span><span class="hl-0"> </span><span class="hl-1">convert</span><span class="hl-0"> </span><span class="hl-1">simple.gdoc</span><span class="hl-0"> </span><span class="hl-1">simple.ipynb</span>
 </code></pre>
 
 <a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
@@ -591,26 +591,26 @@
   <h3>Running tests locally</h3>
 </a>
 <p>Run the test suite using:</p>
-<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-9">test</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">test</span>
 </code></pre>
 <p>Or, run a single test file e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">npx jest tests/xlsx.test.ts --watch</span>
+<pre><code class="language-bash"><span class="hl-0">npx </span><span class="hl-1">jest</span><span class="hl-0"> </span><span class="hl-1">tests/xlsx.test.ts</span><span class="hl-0"> </span><span class="hl-1">--watch</span>
 </code></pre>
 <p>To display debug logs during testing set the environment variable <code>DEBUG=1</code>, e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">DEBUG=1 npm </span><span class="hl-9">test</span>
+<pre><code class="language-bash"><span class="hl-4">DEBUG</span><span class="hl-0">=</span><span class="hl-5">1</span><span class="hl-0"> npm test</span>
 </code></pre>
 <p>To get coverage statistics:</p>
-<pre><code class="language-bash"><span class="hl-0">npm run cover</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">run</span><span class="hl-0"> </span><span class="hl-1">cover</span>
 </code></pre>
 <p>There&#39;s also a <code>Makefile</code> if you prefer to run tasks that way e.g.</p>
-<pre><code class="language-bash"><span class="hl-0">make lint cover</span>
+<pre><code class="language-bash"><span class="hl-0">make </span><span class="hl-1">lint</span><span class="hl-0"> </span><span class="hl-1">cover</span>
 </code></pre>
 
 <a href="#running-test-in-docker" id="running-test-in-docker" style="color: inherit; text-decoration: none;">
   <h3>Running test in Docker</h3>
 </a>
 <p>You can also test this package using with a Docker container:</p>
-<pre><code class="language-bash"><span class="hl-0">npm run test:docker</span>
+<pre><code class="language-bash"><span class="hl-0">npm </span><span class="hl-1">run</span><span class="hl-0"> </span><span class="hl-1">test:docker</span>
 </code></pre>
 
 <a href="#writing-tests" id="writing-tests" style="color: inherit; text-decoration: none;">
@@ -625,7 +625,7 @@
 </code></pre>
 <p>Note that the HTTP fetcher implements caching so that you may need to remove the cache for the recording of fixtures to work e.g. <code>rm -rf /tmp/stencila/encoda/cache/</code>.</p>
 <p>If there are changes in the URLs that your test fetches, or you want to check that your test is still works against an external API that may have changed, remove the Nock recording and rerun the test e.g.,</p>
-<pre><code class="language-sh"><span class="hl-0">rm src/codecs/elife/__fixtures__/nock-record-*.json</span><br/><span class="hl-0">npx jest src/codecs/elife/ --testTimeout 30000</span>
+<pre><code class="language-sh"><span class="hl-0">rm </span><span class="hl-1">src/codecs/elife/__fixtures__/nock-record-</span><span class="hl-8">*</span><span class="hl-1">.json</span><br/><span class="hl-0">npx </span><span class="hl-1">jest</span><span class="hl-0"> </span><span class="hl-1">src/codecs/elife/</span><span class="hl-0"> </span><span class="hl-1">--testTimeout</span><span class="hl-0"> </span><span class="hl-5">30000</span>
 </code></pre>
 
 <a href="#contribute" id="contribute" style="color: inherit; text-decoration: none;">
