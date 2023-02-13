@@ -806,7 +806,7 @@ function decodeHistory(
  * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
  */
 function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
-  // Simply extract all footnotes withing the <author-notes> element as plain text
+  // Simply extract all footnotes within the <author-notes> element as plain text
   const authorNotes = all(first(front, 'author-notes'), 'fn')
     .map(textOrUndefined)
     .filter(isDefined)
@@ -1249,7 +1249,14 @@ function decodeReferences(
   return all(elem, 'ref').reduce((prev: stencila.CreativeWork[], ref) => {
     const citation = child(ref, ['element-citation', 'mixed-citation'])
     return citation
-      ? [...prev, decodeReference(citation, attr(ref, 'id'))]
+      ? [
+          ...prev,
+          decodeReference(
+            citation,
+            attr(ref, 'id'),
+            textOrUndefined(child(ref, 'label'))
+          ),
+        ]
       : prev
   }, [])
 }
@@ -1282,7 +1289,8 @@ function encodeReferences(
  */
 function decodeReference(
   elem: xml.Element,
-  ident: string | null
+  ident: string | null,
+  label: string | undefined
 ): stencila.CreativeWork {
   const publicationType = attr(elem, 'publication-type')
   const id = decodeInternalId(ident)
@@ -1400,6 +1408,8 @@ function decodeReference(
   ]
   if (identifiers.length === 0) identifiers = undefined
 
+  const meta = typeof label === 'string' ? { label } : undefined
+
   return stencila.article({
     id,
     authors,
@@ -1411,6 +1421,7 @@ function decodeReference(
     publisher,
     identifiers,
     url,
+    meta,
   })
 }
 

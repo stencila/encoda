@@ -251,6 +251,8 @@ references:
     title: >-
       P53 in Survival, Death and Metabolic Health: a Lifeguard With a Licence To
       Kill
+    meta:
+      label: '1'
   - type: Article
     id: pgen-1008133-ref002
     authors:
@@ -279,6 +281,8 @@ references:
         name: Mech Dev. Elsevier
       volumeNumber: 53
     title: 'Regulation and function of p53 : a perspective from Drosophila studies'
+    meta:
+      label: '2'
   - type: Article
     id: pgen-1008133-ref003
     authors:
@@ -304,6 +308,8 @@ references:
     pageEnd: 1078
     pageStart: 1062
     title: Putting p53 in Context
+    meta:
+      label: '3'
   - type: Article
     id: pgen-1008133-ref004
     authors:
@@ -349,6 +355,8 @@ references:
     pageEnd: 60
     pageStart: 449
     title: Non-cell-autonomous tumor suppression by p53
+    meta:
+      label: '4'
   - type: Article
     id: pgen-1008133-ref005
     authors:
@@ -387,6 +395,8 @@ references:
     title: >-
       Selective evolution of stromal mesenchyme with p53 loss in response to
       epithelial tumorigenesis
+    meta:
+      label: '5'
   - type: Article
     id: pgen-1008133-ref006
     authors:
@@ -432,6 +442,8 @@ references:
     pageEnd: 2551
     pageStart: 2543
     title: Breast-Cancer Stromal Cells with TP53 Mutations and Nodal Metastases
+    meta:
+      label: '6'
   - type: Article
     id: pgen-1008133-ref007
     authors:
@@ -479,6 +491,8 @@ references:
     title: >-
       Evidence for nonautonomous effect of p53 tumor suppressor in
       carcinogenesis
+    meta:
+      label: '7'
   - type: Article
     id: pgen-1008133-ref008
     authors:
@@ -524,6 +538,8 @@ references:
     pageEnd: 667
     pageStart: 657
     title: Senescence of Activated Stellate Cells Limits Liver Fibrosis
+    meta:
+      label: '8'
   - type: Article
     id: pgen-1008133-ref009
     authors:
@@ -571,6 +587,8 @@ references:
     title: >-
       Senescence and tumour clearance is triggered by p53 restoration in murine
       liver carcinomas
+    meta:
+      label: '9'
   - type: Article
     id: pgen-1008133-ref010
     authors:
@@ -617,6 +635,8 @@ references:
     title: >-
       Control of signaling-mediated clearance of apoptotic cells by the tumor
       suppressor p53
+    meta:
+      label: '10'
   - type: Article
     id: pgen-1008133-ref011
     authors:
@@ -664,6 +684,8 @@ references:
     title: >-
       Drosophila p53 isoforms differentially regulate apoptosis and
       apoptosis-induced proliferation
+    meta:
+      label: '11'
   - type: Article
     id: pgen-1008133-ref012
     authors:
@@ -696,6 +718,8 @@ references:
     title: >-
       Compensatory proliferation in Drosophila imaginal discs requires
       Dronc-dependent p53 activity
+    meta:
+      label: '12'
   - type: Article
     id: pgen-1008133-ref013
     authors:
@@ -723,6 +747,8 @@ references:
     title: >-
       Maintenance of imaginal disc plasticity and regenerative potential in
       Drosophila by p53
+    meta:
+      label: '13'
   - type: Article
     id: pgen-1008133-ref014
     authors:
@@ -772,6 +798,8 @@ references:
     title: >-
       Supercompetitor status of drosophila Myc cells requires p53 as a Fitness
       sensor to reprogram metabolism and promote viability
+    meta:
+      label: '14'
   - type: Article
     id: pgen-1008133-ref015
     authors:
@@ -805,6 +833,8 @@ references:
     title: >-
       Chronic activation of JNK JAK/STAT and oxidative stress signalling causes
       the loser cell status
+    meta:
+      label: '15'
   - type: Article
     id: pgen-1008133-ref016
     authors:
@@ -837,6 +867,8 @@ references:
     title: >-
       MicroRNA-Mediated Regulation of Dp53 in the Drosophila Fat Body
       Contributes to Metabolic Adaptation to Nutrient Deprivation
+    meta:
+      label: '16'
   - type: Article
     id: pgen-1008133-ref017
     authors:
@@ -867,6 +899,8 @@ references:
     title: >-
       A dp53-dependent mechanism involved in coordinating tissue growth in
       Drosophila
+    meta:
+      label: '17'
   - type: Article
     id: pgen-1008133-ref018
     authors:
@@ -897,6 +931,8 @@ references:
     pageEnd: 10226
     pageStart: 10222
     title: Cell interactions in the control of size in Drosophila wings
+    meta:
+      label: '18'
   - type: Article
     id: pgen-1008133-ref019
     authors:
@@ -934,6 +970,8 @@ references:
     title: >-
       Intra-organ growth coordination in Drosophila is mediated by systemic
       ecdysone signaling
+    meta:
+      label: '19'
   - type: Article
     id: pgen-1008133-ref020
     authors:
@@ -977,6 +1015,8 @@ references:
       Growth Coordination During Drosophila melanogaster Imaginal Disc
       Regeneration Is Mediated by Signaling Through the Relaxin Receptor Lgr3 in
       the Prothoracic Gland
+    meta:
+      label: '20'
   - type: Article
     id: pgen-1008133-ref021
     authors:
@@ -1004,6 +1044,8 @@ references:
     title: >-
       The coordination of growth among Drosophila organs in response to
       localized growth-perturbation
+    meta:
+      label: '21'
   - type: Article
     id: pgen-1008133-ref022
     authors:
@@ -1049,6 +1091,8 @@ references:
     pageEnd: 18
     pageStart: 3009
     title: Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway
+    meta:
+      label: '22'
   - type: Article
     id: pgen-1008133-ref023
     authors:
@@ -1082,6 +1126,8 @@ references:
       Evolution of TNF signaling mechanisms: JNK-dependent apoptosis triggered
       by Eiger, the Drosophila homolog of the TNF superfamily
     url: http://www.ncbi.nlm.nih.gov/pubmed/12176339
+    meta:
+      label: '23'
   - type: Article
     id: pgen-1008133-ref024
     authors:
@@ -1114,6 +1160,8 @@ references:
     title: >-
       Systemic signalling and local effectors in developmental stability, body
       symmetry, and size
+    meta:
+      label: '24'
   - type: Article
     id: pgen-1008133-ref025
     authors:
@@ -1139,6 +1187,8 @@ references:
     pageEnd: 10
     pageStart: 1003
     title: The interplay between morphogens and tissue growth
+    meta:
+      label: '25'
   - type: Article
     id: pgen-1008133-ref026
     authors:
@@ -1179,6 +1229,8 @@ references:
     pageEnd: 93
     pageStart: 5184
     title: p53 directs focused genomic responses in Drosophila
+    meta:
+      label: '26'
   - type: Article
     id: pgen-1008133-ref027
     authors:
@@ -1218,6 +1270,8 @@ references:
     title: >-
       Genome-wide expression analysis identifies a modulator of ionizing
       radiation-induced p53-independent apoptosis in Drosophila melanogaster
+    meta:
+      label: '27'
   - type: Article
     id: pgen-1008133-ref028
     authors:
@@ -1248,6 +1302,8 @@ references:
     title: >-
       Apoptotic cells can induce non-autonomous apoptosis through the TNF
       pathway
+    meta:
+      label: '28'
   - type: Article
     id: pgen-1008133-ref029
     authors:
@@ -1278,6 +1334,8 @@ references:
     pageEnd: 6
     pageStart: 5691
     title: Developmental parameters of cell death in the wing disc of Drosophila
+    meta:
+      label: '29'
   - type: Article
     id: pgen-1008133-ref030
     authors:
@@ -1306,6 +1364,8 @@ references:
         name: Proc Natl Acad Sci
       volumeNumber: 114
     title: Feedback amplification loop drives malignant growth in epithelial tissues
+    meta:
+      label: '30'
   - type: Article
     id: pgen-1008133-ref031
     authors:
@@ -1351,6 +1411,8 @@ references:
     title: >-
       A genome-wide resource for the analysis of protein localisation in
       Drosophila
+    meta:
+      label: '31'
   - type: Article
     id: pgen-1008133-ref032
     authors:
@@ -1396,6 +1458,8 @@ references:
       type: Periodical
       name: Mol Biol Cell
     title: Drosophila p53 directs non-apoptotic programs in postmitotic tissue
+    meta:
+      label: '32'
   - type: Article
     id: pgen-1008133-ref033
     authors:
@@ -1428,6 +1492,8 @@ references:
     title: >-
       Origin and proliferation of blastema cells during regeneration of
       Drosophila wing imaginal discs
+    meta:
+      label: '33'
   - type: Article
     id: pgen-1008133-ref034
     authors:
@@ -1470,6 +1536,8 @@ references:
     title: >-
       Aneuploidy-induced delaminating cells drive tumorigenesis in Drosophila
       epithelia
+    meta:
+      label: '34'
   - type: Article
     id: pgen-1008133-ref035
     authors:
@@ -1502,6 +1570,8 @@ references:
     title: >-
       Loss of cell polarity drives tumor growth and invasion through JNK
       activation in Drosophila
+    meta:
+      label: '35'
   - type: Article
     id: pgen-1008133-ref036
     authors:
@@ -1529,6 +1599,8 @@ references:
     title: >-
       JNK- and Fos-regulated Mmp1 expression cooperates with Ras to induce
       invasive tumors in Drosophila
+    meta:
+      label: '36'
   - type: Article
     id: pgen-1008133-ref037
     authors:
@@ -1574,6 +1646,8 @@ references:
     pageEnd: 18
     pageStart: 1
     title: Localized JNK signaling regulates organ size during development
+    meta:
+      label: '37'
   - type: Article
     id: pgen-1008133-ref038
     authors:
@@ -1621,6 +1695,8 @@ references:
     title: >-
       JNK-dependent cell cycle stalling in G2 promotes survival and
       senescence-like phenotypes in tissue stress
+    meta:
+      label: '38'
   - type: Article
     id: pgen-1008133-ref039
     authors:
@@ -1668,6 +1744,8 @@ references:
     title: >-
       The Drosophila TNF receptor Grindelwald couples loss of cell polarity and
       neoplastic growth
+    meta:
+      label: '39'
   - type: Article
     id: pgen-1008133-ref040
     authors:
@@ -1700,6 +1778,8 @@ references:
     title: >-
       Secreted peptide Dilp8 coordinates Drosophila tissue growth with
       developmental timing
+    meta:
+      label: '40'
   - type: Article
     id: pgen-1008133-ref041
     authors:
@@ -1742,6 +1822,8 @@ references:
     title: >-
       Imaginal discs secrete insulin-like peptide 8 to mediate plasticity of
       growth and maturation
+    meta:
+      label: '41'
   - type: Article
     id: pgen-1008133-ref042
     authors:
@@ -1778,6 +1860,8 @@ references:
     title: >-
       The Hippo signalling pathway coordinates organ growth and limits
       developmental variability by controlling dilp8 expression
+    meta:
+      label: '42'
   - type: Article
     id: pgen-1008133-ref043
     authors:
@@ -1818,6 +1902,8 @@ references:
     title: >-
       A brain circuit that synchronizes growth and maturation revealed through
       Dilp8 binding to Lgr3
+    meta:
+      label: '43'
   - type: Article
     id: pgen-1008133-ref044
     authors:
@@ -1857,6 +1943,8 @@ references:
     title: >-
       Inter-Organ Growth Coordination Is Mediated by the Xrp1-Dilp8 Axis in
       Drosophila
+    meta:
+      label: '44'
   - type: Article
     id: pgen-1008133-ref045
     authors:
@@ -1899,6 +1987,8 @@ references:
       The PERK pathway independently triggers apoptosis and a
       Rac1/Slpr/JNK/Dilp8 signaling favoring tissue homeostasis in a chronic ER
       stress Drosophila model
+    meta:
+      label: '45'
   - type: Article
     id: pgen-1008133-ref046
     authors:
@@ -1941,6 +2031,8 @@ references:
     title: >-
       During Drosophila disc regeneration, JAK/STAT coordinates cell
       proliferation with Dilp8-mediated developmental delay
+    meta:
+      label: '46'
   - type: Article
     id: pgen-1008133-ref047
     authors:
@@ -1968,6 +2060,8 @@ references:
     title: >-
       Keap1/Nrf2 signaling regulates oxidative stress tolerance and lifespan in
       Drosophila
+    meta:
+      label: '47'
   - type: Article
     id: pgen-1008133-ref048
     authors:
@@ -1991,6 +2085,8 @@ references:
         name: Curr Biol
       volumeNumber: 24
     title: ROS Function in Redox Signaling and Oxidative Stress
+    meta:
+      label: '48'
   - type: Article
     id: pgen-1008133-ref049
     authors:
@@ -2028,6 +2124,8 @@ references:
     title: >-
       A tissue-scale gradient of hydrogen peroxide mediates rapid wound
       detection in zebrafish
+    meta:
+      label: '49'
   - type: Article
     id: pgen-1008133-ref050
     authors:
@@ -2074,6 +2172,8 @@ references:
     title: >-
       Sustained production of ROS triggers compensatory proliferation and is
       required for regeneration to proceed
+    meta:
+      label: '50'
   - type: Article
     id: pgen-1008133-ref051
     authors:
@@ -2121,6 +2221,8 @@ references:
     title: >-
       ROS-Induced JNK and p38 Signaling Is Required for Unpaired Cytokine
       Activation during Drosophila Regeneration
+    meta:
+      label: '51'
   - type: Article
     id: pgen-1008133-ref052
     authors:
@@ -2148,6 +2250,8 @@ references:
     title: >-
       The Drosophila TNF ortholog Eiger: emerging physiological roles and
       evolution of the TNF system
+    meta:
+      label: '52'
   - type: Article
     id: pgen-1008133-ref053
     authors:
@@ -2168,6 +2272,8 @@ references:
     pageEnd: 584
     pageStart: 575
     title: Dissecting JNK signaling, one KKKinase at a time
+    meta:
+      label: '53'
   - type: Article
     id: pgen-1008133-ref054
     authors:
@@ -2210,6 +2316,8 @@ references:
     title: >-
       Intrinsic tumor suppression and epithelial maintenance by endocytic
       activation of Eiger/TNF signaling in Drosophila
+    meta:
+      label: '54'
   - type: Article
     id: pgen-1008133-ref055
     authors:
@@ -2257,6 +2365,8 @@ references:
     title: >-
       Drosophila Lgr3 Couples Organ Growth with Maturation and Ensures
       Developmental Stability
+    meta:
+      label: '55'
   - type: Article
     id: pgen-1008133-ref056
     authors:
@@ -2304,6 +2414,8 @@ references:
     title: >-
       Elimination of Oncogenic Neighbors by JNK-Mediated Engulfment in
       Drosophila
+    meta:
+      label: '56'
   - type: Article
     id: pgen-1008133-ref057
     authors:
@@ -2336,6 +2448,8 @@ references:
     title: >-
       Yorkie and JNK Control Tumorigenesis in Drosophila Cells with Cytokinesis
       Failure
+    meta:
+      label: '57'
   - type: Article
     id: pgen-1008133-ref058
     authors:
@@ -2382,6 +2496,8 @@ references:
     title: >-
       Dilp8 requires the neuronal relaxin receptor Lgr3 to couple growth to
       developmental timing
+    meta:
+      label: '58'
   - type: Article
     id: pgen-1008133-ref059
     authors:
@@ -2414,6 +2530,8 @@ references:
     title: >-
       The steroid hormone ecdysone controls systemic growth by repressing dMyc
       function in Drosophila fat cells
+    meta:
+      label: '59'
   - type: Article
     id: pgen-1008133-ref060
     authors:
@@ -2451,6 +2569,8 @@ references:
     title: >-
       Nitric oxide synthase regulates growth coordination during Drosophila
       melanogaster imaginal disc regeneration
+    meta:
+      label: '60'
   - type: Article
     id: pgen-1008133-ref061
     authors:
@@ -2479,6 +2599,8 @@ references:
       Ecdysteroid control of cell proliferation during optic lobe neurogenesis
       in the moth Manduca sexta
     url: http://www.ncbi.nlm.nih.gov/pubmed/9486800
+    meta:
+      label: '61'
   - type: Article
     id: pgen-1008133-ref062
     authors:
@@ -2525,6 +2647,8 @@ references:
     title: >-
       Ecdysone promotes growth of imaginal discs through the regulation of Thor
       in D
+    meta:
+      label: '62'
   - type: Article
     id: pgen-1008133-ref063
     authors:
@@ -2545,6 +2669,8 @@ references:
     pageEnd: 15
     pageStart: 7
     title: Signal transduction by reactive oxygen species
+    meta:
+      label: '63'
   - type: Article
     id: pgen-1008133-ref064
     authors:
@@ -2575,6 +2701,8 @@ references:
     pageEnd: 4218
     pageStart: 4206
     title: Stem cells and the impact of ROS signaling
+    meta:
+      label: '64'
   - type: Article
     id: pgen-1008133-ref065
     authors:
@@ -2602,6 +2730,8 @@ references:
     title: >-
       Reactive oxygen species prime Drosophila haematopoietic progenitors for
       differentiation
+    meta:
+      label: '65'
   - type: Article
     id: pgen-1008133-ref066
     authors:
@@ -2627,6 +2757,8 @@ references:
     pageEnd: 78
     pageStart: 1669
     title: p53, oxidative stress, and aging
+    meta:
+      label: '66'
   - type: Article
     id: pgen-1008133-ref067
     authors:
@@ -2674,6 +2806,8 @@ references:
     title: >-
       Extracellular Reactive Oxygen Species Drive Apoptosis-Induced
       Proliferation via Drosophila Macrophages
+    meta:
+      label: '67'
   - type: Article
     id: pgen-1008133-ref068
     authors:
@@ -2706,6 +2840,8 @@ references:
     title: >-
       Cell cycling and patterned cell proliferation in the Drosophila wing
       during metamorphosis
+    meta:
+      label: '68'
   - type: Article
     id: pgen-1008133-ref069
     authors:
@@ -2751,6 +2887,8 @@ references:
     pageEnd: 682
     pageStart: 676
     title: 'Fiji: an open-source platform for biological-image analysis'
+    meta:
+      label: '69'
   - type: Article
     id: pgen-1008133-ref070
     authors:
@@ -2796,6 +2934,8 @@ references:
     pageEnd: 31
     pageStart: 1813
     title: ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia
+    meta:
+      label: '70'
   - type: Article
     id: pgen-1008133-ref071
     authors:
@@ -2843,6 +2983,8 @@ references:
     title: >-
       Gene Dosage Imbalance Contributes to Chromosomal Instability-Induced
       Tumorigenesis
+    meta:
+      label: '71'
 title:
   - >-
     Eiger/TNFα-mediated Dilp8 and ROS production coordinate intra-organ growth

@@ -210,6 +210,8 @@ references:
     pageEnd: 490
     pageStart: 481
     title: Hemp food products - A problem?
+    meta:
+      label: '1'
   - type: Article
     id: ref-2
     authors:
@@ -240,6 +242,8 @@ references:
     pageEnd: 372
     pageStart: 351
     title: Hemp food products - an update.
+    meta:
+      label: '2'
   - type: Article
     id: ref-3
     authors:
@@ -251,6 +255,8 @@ references:
     title: Cannabidiol (CBD) - Critical review report
     url: >-
       https://www.who.int/medicines/access/controlled-substances/CannabidiolCriticalReview.pdf
+    meta:
+      label: '3'
   - type: Article
     id: ref-4
     authors:
@@ -265,6 +271,8 @@ references:
     title: Researching safety and efficacy of CBD, hemp extracts
     url: >-
       https://www.naturalproductsinsider.com/ingredients/researching-safety-and-efficacy-cbd-hemp-extracts
+    meta:
+      label: '4'
   - type: Article
     id: ref-5
     authors:
@@ -292,6 +300,8 @@ references:
     title: >-
       Wirksamkeit von Cannabidiol: Klinische Studien mit Cannabidiol und
       Cannabidiol-haltigen Extrakten.
+    meta:
+      label: '5'
   - type: Article
     id: ref-6
     authors:
@@ -317,6 +327,8 @@ references:
     pageEnd: 72
     pageStart: 65
     title: The trouble with CBD oil.
+    meta:
+      label: '6'
   - type: Article
     id: ref-7
     authors:
@@ -336,6 +348,8 @@ references:
     title: Cannabis, hemp and CBDs.
     url: >-
       https://drjohnwilkinson.co.uk/wp-content/uploads/SDI_DrJohn-cannabis-Dec-Drinks-2015-1.pdf
+    meta:
+      label: '7'
   - type: Article
     id: ref-8
     authors:
@@ -377,6 +391,8 @@ references:
     title: >-
       Parental reporting of response to oral cannabis extracts for treatment of
       refractory epilepsy.
+    meta:
+      label: '8'
   - type: Article
     id: ref-9
     authors:
@@ -426,6 +442,8 @@ references:
       Long-term safety and treatment effects of cannabidiol in children and
       adults with treatment-resistant epilepsies: Expanded access program
       results.
+    meta:
+      label: '9'
   - type: Article
     id: ref-10
     authors:
@@ -470,6 +488,8 @@ references:
     title: >-
       Cannabidiol in patients with treatment-resistant epilepsy: an open-label
       interventional trial.
+    meta:
+      label: '10'
   - type: Article
     id: ref-11
     authors:
@@ -518,6 +538,8 @@ references:
     title: >-
       Identification of Psychoactive Degradants of Cannabidiol in Simulated
       Gastric and Physiological Fluid.
+    meta:
+      label: '11'
   - type: Article
     id: ref-12
     authors:
@@ -528,6 +550,8 @@ references:
       value: '2019'
     title: European Pharmacopoeia
     url: https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition
+    meta:
+      label: '12'
   - type: Article
     id: ref-13
     authors:
@@ -543,6 +567,8 @@ references:
       Dataset for “Are side effects of cannabidiol (CBD) products caused by
       delta9-tetrahydrocannabinol (THC) contamination
     url: http://www.doi.org/10.17605/OSF.IO/F7ZXY
+    meta:
+      label: '13'
   - type: Article
     id: ref-14
     authors:
@@ -556,6 +582,8 @@ references:
       Lebensmitteln
     url: >-
       https://www.bfr.bund.de/de/presseinformation/2000/07/bgvv_empfiehlt_richtwerte_fuer_thc__tetrahydrocannabinol__in_hanfhaltigen_lebensmitteln-884.html
+    meta:
+      label: '14'
   - type: Article
     id: ref-15
     authors:
@@ -582,6 +610,8 @@ references:
     title: >-
       Scientific Opinion on the risks for human health related to the presence
       of tetrahydrocannabinol (THC) in milk and other food of animal origin.
+    meta:
+      label: '15'
   - type: Article
     id: ref-16
     authors:
@@ -626,6 +656,8 @@ references:
     title: >-
       An Assessment of the Genotoxicity and Subchronic Toxicity of a
       Supercritical Fluid Extract of the Aerial Parts of Hemp.
+    meta:
+      label: '16'
   - type: Article
     id: ref-17
     authors:
@@ -667,6 +699,8 @@ references:
       Structure of cannabidiol. VI. Isomerization of cannabidiol to
       tetrahydrocannabinol, a physiologically active product. Conversion of
       cannabidiol to cannabinol.
+    meta:
+      label: '17'
   - type: Article
     id: ref-18
     authors:
@@ -705,6 +739,8 @@ references:
     pageEnd: 2213
     pageStart: 2209
     title: Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.
+    meta:
+      label: '18'
   - type: Article
     id: ref-19
     authors:
@@ -745,6 +781,8 @@ references:
     title: |-
       Conversion of cannabidiol to Δ
                               9-tetrahydrocannabinol and related cannabinoids in artificial gastric juice, and their pharmacological effects in mice.
+    meta:
+      label: '19'
   - type: Article
     id: ref-20
     authors:
@@ -778,6 +816,8 @@ references:
     pageEnd: 17
     pageStart: 5
     title: Current status of THC in German hemp food products.
+    meta:
+      label: '20'
   - type: Article
     id: ref-21
     authors:
@@ -810,6 +850,8 @@ references:
     title: >-
       Analysis and toxicological evaluation of cannabinoids in hemp food
       products - a review.
+    meta:
+      label: '21'
   - type: Article
     id: ref-22
     authors:
@@ -839,6 +881,8 @@ references:
     pageEnd: 96
     pageStart: 93
     title: 'Cannabis use in Europe: Current trends and public health concerns.'
+    meta:
+      label: '22'
   - type: Article
     id: ref-23
     authors:
@@ -887,6 +931,8 @@ references:
     title: >-
       A Conversion of Oral Cannabidiol to Delta9-Tetrahydrocannabinol Seems Not
       to Occur in Humans.
+    meta:
+      label: '23'
   - type: Article
     id: ref-24
     authors:
@@ -936,6 +982,8 @@ references:
       Even High Doses of Oral Cannabidol Do Not Cause THC-Like Effects in
       Humans: Comment on Merrick 
                               et al.Cannabis and Cannabinoid Research 2016;1(1):102-112; DOI: 10.1089/can.2015.0004.
+    meta:
+      label: '24'
   - type: Article
     id: ref-25
     authors:
@@ -957,6 +1005,8 @@ references:
       Regulation (EC) No 1852/2001.
     url: >-
       https://publications.europa.eu/en/publication-detail/-/publication/d2e5f917-9fd7-11e5-8781-01aa75ed71a1/language-en
+    meta:
+      label: '25'
   - type: Article
     id: ref-26
     authors:
@@ -979,6 +1029,8 @@ references:
       Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation
       (EC) No 608/2004.
     url: https://eur-lex.europa.eu/eli/reg/2011/1169/oj
+    meta:
+      label: '26'
   - type: Article
     id: ref-27
     authors:
@@ -997,6 +1049,8 @@ references:
       of 20 December 2006 on nutrition and health claims made on foods.
     url: >-
       https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:404:0009:0025:EN:PDF
+    meta:
+      label: '27'
   - type: Article
     id: ref-28
     authors:
@@ -1036,6 +1090,8 @@ references:
     title: >-
       Comparative risk assessment of alcohol, tobacco, cannabis and other
       illicit drugs using the margin of exposure approach.
+    meta:
+      label: '28'
   - type: Article
     id: ref-29
     authors:
@@ -1068,6 +1124,8 @@ references:
     pageEnd: 360
     pageStart: 327
     title: Pharmacokinetics and pharmacodynamics of cannabinoids.
+    meta:
+      label: '29'
   - type: Article
     id: ref-30
     authors:
@@ -1101,6 +1159,8 @@ references:
     pageEnd: 218
     pageStart: 214
     title: '[Cannabis poisoning after eating salad].'
+    meta:
+      label: '30'
   - type: Article
     id: ref-31
     authors:
@@ -1118,6 +1178,8 @@ references:
       Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu
       hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr.
       034/2018 des BfR vom 8. November 2018.
+    meta:
+      label: '31'
   - type: Article
     id: ref-32
     authors:
@@ -1164,6 +1226,8 @@ references:
     pageEnd: 1709
     pageStart: 1708
     title: Labeling Accuracy of Cannabidiol Extracts Sold Online.
+    meta:
+      label: '32'
 title: >-
   Are side effects of cannabidiol (CBD) products caused by tetrahydrocannabinol
   (THC) contamination?

@@ -281,6 +281,8 @@ references:
     pageEnd: 131
     pageStart: 7
     title: Severe Malaria
+    meta:
+      label: '1'
   - type: Article
     id: pmed-1002858-ref002
     authors:
@@ -332,6 +334,8 @@ references:
       Avoiding 40% of the premature deaths in each country, 2010–30: review of
       national mortality trends to help quantify the UN Sustainable Development
       Goal for health
+    meta:
+      label: '2'
   - type: Article
     id: pmed-1002858-ref003
     authors:
@@ -382,6 +386,8 @@ references:
     title: >-
       Pre-referral rectal artesunate to prevent death and disability in severe
       malaria: a placebo-controlled trial
+    meta:
+      label: '3'
   - type: Article
     id: pmed-1002858-ref004
     authors:
@@ -428,6 +434,8 @@ references:
       A Competing-Risk Approach for Modeling Length of Stay in Severe Malaria
       Patients in South-East Asia and the Implications for Planning of Hospital
       Services
+    meta:
+      label: '4'
   - type: Article
     id: pmed-1002858-ref005
     authors:
@@ -473,6 +481,8 @@ references:
     title: >-
       Artesunate versus quinine for treatment of severe falciparum malaria: a
       randomised trial
+    meta:
+      label: '5'
   - type: Article
     id: pmed-1002858-ref006
     authors:
@@ -523,6 +533,8 @@ references:
     title: >-
       The Relationship between Age and the Manifestations of and Mortality
       Associated with Severe Malaria
+    meta:
+      label: '6'
   - type: Article
     id: pmed-1002858-ref007
     authors:
@@ -574,6 +586,8 @@ references:
     title: >-
       Predicting the Clinical Outcome of Severe Falciparum Malaria in African
       Children: Findings From a Large Randomized Trial
+    meta:
+      label: '7'
   - type: Article
     id: pmed-1002858-ref008
     authors:
@@ -612,6 +626,8 @@ references:
     pageEnd: 198
     pageStart: 192
     title: 'Lethal malaria: Marchiafava and Bignami were right'
+    meta:
+      label: '8'
   - type: Article
     id: pmed-1002858-ref009
     authors:
@@ -659,6 +675,8 @@ references:
       issueNumber: 1
     pageStart: 47
     title: 'Adjunctive therapy for severe malaria: a review and critical appraisal'
+    meta:
+      label: '9'
   - type: Article
     id: pmed-1002858-ref010
     authors:
@@ -702,6 +720,8 @@ references:
     pageEnd: 15
     pageStart: 11
     title: The murine cerebral malaria phenomenon
+    meta:
+      label: '10'
   - type: Article
     id: pmed-1002858-ref011
     authors:
@@ -752,6 +772,8 @@ references:
     title: >-
       Hemofiltration and peritoneal dialysis in infection-associated acute renal
       failure in Vietnam
+    meta:
+      label: '11'
   - type: Article
     id: pmed-1002858-ref012
     authors:
@@ -797,6 +819,8 @@ references:
     title: >-
       Collider bias and the apparent protective effect of glucose-6-phosphate
       dehydrogenase deficiency on cerebral malaria
+    meta:
+      label: '12'
   - type: Article
     id: pmed-1002858-ref013
     authors:
@@ -815,6 +839,8 @@ references:
         addressLocality: Cambridge, UK
       name: Cambridge University Press
     title: 'Causality: Models, Reasoning and Inference'
+    meta:
+      label: '13'
   - type: Article
     id: pmed-1002858-ref014
     authors:
@@ -839,6 +865,8 @@ references:
     title: >-
       Estimating causal effects of treatments in randomized and nonrandomized
       studies
+    meta:
+      label: '14'
   - type: Article
     id: pmed-1002858-ref015
     authors:
@@ -874,6 +902,8 @@ references:
     title: >-
       Causality and causal inference in epidemiology: the need for a pluralistic
       approach
+    meta:
+      label: '15'
   - type: Article
     id: pmed-1002858-ref016
     authors:
@@ -905,6 +935,8 @@ references:
     title: >-
       The tale wagged by the DAG: broadening the scope of causal inference and
       explanation for epidemiology
+    meta:
+      label: '16'
   - type: Article
     id: pmed-1002858-ref017
     authors:
@@ -928,6 +960,8 @@ references:
     pageEnd: 960
     pageStart: 945
     title: Statistics and causal inference
+    meta:
+      label: '17'
   - type: Article
     id: pmed-1002858-ref018
     authors:
@@ -951,6 +985,8 @@ references:
         addressLocality: Boca Raton
       name: Chapman & Hall/CRC
     title: Causal Inference
+    meta:
+      label: '18'
   - type: Article
     id: pmed-1002858-ref019
     authors:
@@ -974,6 +1010,8 @@ references:
         addressLocality: London
       name: New Sydenham Society
     title: On Summer-Autumnal Fever
+    meta:
+      label: '19'
   - type: Article
     id: pmed-1002858-ref020
     authors:
@@ -1016,6 +1054,8 @@ references:
     title: >-
       N-acetylcysteine as adjunctive treatment in severe malaria: A randomized,
       double-blinded placebo-controlled clinical trial
+    meta:
+      label: '20'
   - type: Article
     id: pmed-1002858-ref021
     authors:
@@ -1066,6 +1106,8 @@ references:
     title: >-
       Randomized comparison of artesunate and quinine in the treatment of severe
       falciparum malaria
+    meta:
+      label: '21'
   - type: Article
     id: pmed-1002858-ref022
     authors:
@@ -1114,6 +1156,8 @@ references:
     title: >-
       Timing of enteral feeding in cerebral malaria in Resource-Poor settings: A
       randomized trial
+    meta:
+      label: '22'
   - type: Article
     id: pmed-1002858-ref023
     authors:
@@ -1165,6 +1209,8 @@ references:
     title: >-
       Randomized controlled trial of levamisole hydrochloride as adjunctive
       therapy in severe falciparum malaria with high parasitemia
+    meta:
+      label: '23'
   - type: Article
     id: pmed-1002858-ref024
     authors:
@@ -1216,6 +1262,8 @@ references:
       Acetaminophen as a Renoprotective Adjunctive Treatment in Patients With
       Severe and Moderately Severe Falciparum Malaria: A Randomized, Controlled,
       Open-Label Trial
+    meta:
+      label: '24'
   - type: Article
     id: pmed-1002858-ref025
     authors:
@@ -1266,6 +1314,8 @@ references:
     title: >-
       Open comparison of intramuscular chloroquine and quinine in children with
       severe chloroquine-sensitive falciparum malaria
+    meta:
+      label: '25'
   - type: Article
     id: pmed-1002858-ref026
     authors:
@@ -1315,6 +1365,8 @@ references:
     title: >-
       Randomized controlled trial of artesunate or artemether in Vietnamese
       adults with severe falciparum malaria
+    meta:
+      label: '26'
   - type: Article
     id: pmed-1002858-ref027
     authors:
@@ -1365,6 +1417,8 @@ references:
     title: >-
       A controlled trial of artemether or quinine in Vietnamese adults with
       severe falciparum malaria
+    meta:
+      label: '27'
   - type: Article
     id: pmed-1002858-ref028
     authors:
@@ -1415,6 +1469,8 @@ references:
     title: >-
       Artesunate versus quinine in the treatment of severe falciparum malaria in
       African children (AQUAMAT): an open-label, randomised trial
+    meta:
+      label: '28'
   - type: Article
     id: pmed-1002858-ref029
     authors:
@@ -1453,6 +1509,8 @@ references:
     pageEnd: 48
     pageStart: 1
     title: Fitting Linear Mixed-Effects Models Using lme4
+    meta:
+      label: '29'
   - type: Article
     id: pmed-1002858-ref030
     authors: []
@@ -1461,6 +1519,8 @@ references:
       Regression Models [software]. 2018 [cited 2018 Dec 12]. Available from:
       https://CRAN.R-project.org/package=merTools.
     url: https://CRAN.R-project.org/package=merTools
+    meta:
+      label: '30'
   - type: Article
     id: pmed-1002858-ref031
     authors:
@@ -1491,6 +1551,8 @@ references:
     pageEnd: 23
     pageStart: 1
     title: 'ipw: An R Package for Inverse Probability Weighting'
+    meta:
+      label: '31'
   - type: Article
     id: pmed-1002858-ref032
     authors:
@@ -1514,6 +1576,8 @@ references:
     pageEnd: 19
     pageStart: 1
     title: Analysis of Complex Survey Samples
+    meta:
+      label: '32'
   - type: Article
     id: pmed-1002858-ref033
     authors:
@@ -1545,6 +1609,8 @@ references:
       Moving towards best practice when using inverse probability of treatment
       weighting (IPTW) using the propensity score to estimate causal treatment
       effects in observational studies
+    meta:
+      label: '33'
   - type: Article
     id: pmed-1002858-ref034
     authors:
@@ -1568,6 +1634,8 @@ references:
     pageEnd: 3636
     pageStart: 3613
     title: G6PD deficiency
+    meta:
+      label: '34'
   - type: Article
     id: pmed-1002858-ref035
     authors:
@@ -1616,6 +1684,8 @@ references:
     title: >-
       Association of G6PD with lower haemoglobin concentration but not increased
       haemolysis in patients with sickle cell anaemia
+    meta:
+      label: '35'
   - type: Article
     id: pmed-1002858-ref036
     authors:
@@ -1666,6 +1736,8 @@ references:
     title: >-
       Genetic association analysis highlights new loci that modulate
       hematological trait variation in Caucasians and African Americans
+    meta:
+      label: '36'
   - type: Article
     id: pmed-1002858-ref037
     authors:
@@ -1714,6 +1786,8 @@ references:
     title: >-
       Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
       other diseases in children in Kenya: a case-control and a cohort study
+    meta:
+      label: '37'
   - type: Article
     id: pmed-1002858-ref038
     authors:
@@ -1764,6 +1838,8 @@ references:
     title: >-
       Relation between falciparum malaria and bacteraemia in Kenyan children: a
       population-based, case-control study and a longitudinal study
+    meta:
+      label: '38'
   - type: Article
     id: pmed-1002858-ref039
     authors:
@@ -1793,6 +1869,8 @@ references:
     title: >-
       Invasive bacterial co-infection in African children with Plasmodium
       falciparum malaria: a systematic review
+    meta:
+      label: '39'
   - type: Article
     id: pmed-1002858-ref040
     authors:
@@ -1841,6 +1919,8 @@ references:
     pageEnd: 420
     pageStart: 417
     title: Illustrating bias due to conditioning on a collider
+    meta:
+      label: '40'
   - type: Article
     id: pmed-1002858-ref041
     authors:
@@ -1890,6 +1970,8 @@ references:
     title: >-
       Anaemia and blood transfusion in African children presenting to hospital
       with severe febrile illness
+    meta:
+      label: '41'
   - type: Article
     id: pmed-1002858-ref042
     authors:
@@ -1912,6 +1994,8 @@ references:
       issueNumber: 1
     pageStart: 371
     title: Anaemia and malaria
+    meta:
+      label: '42'
   - type: Article
     id: pmed-1002858-ref043
     authors:
@@ -1940,6 +2024,8 @@ references:
     pageEnd: 274
     pageStart: 268
     title: 'Sensitivity analysis in observational research: introducing the E-value'
+    meta:
+      label: '43'
   - type: Article
     id: pmed-1002858-ref044
     authors:
@@ -1990,6 +2076,8 @@ references:
     title: >-
       Effects of dopamine and epinephrine infusions on renal hemodynamics in
       severe malaria and severe sepsis
+    meta:
+      label: '44'
   - type: Article
     id: pmed-1002858-ref045
     authors:
@@ -2025,6 +2113,8 @@ references:
     title: >-
       Reduced microcirculatory flow in severe falciparum malaria:
       pathophysiology and electron-microscopic pathology
+    meta:
+      label: '45'
   - type: Article
     id: pmed-1002858-ref046
     authors:
@@ -2076,6 +2166,8 @@ references:
     title: >-
       Direct In Vivo Assessment of Microcirculatory Dysfunction in Severe
       Falciparum Malaria
+    meta:
+      label: '46'
   - type: Article
     id: pmed-1002858-ref047
     authors:
@@ -2126,6 +2218,8 @@ references:
     title: >-
       Impaired nitric oxide bioavailability and l-arginine–reversible
       endothelial dysfunction in adults with falciparum malaria
+    meta:
+      label: '47'
   - type: Article
     id: pmed-1002858-ref048
     authors:
@@ -2171,6 +2265,8 @@ references:
     title: >-
       Attenuation of cytoadherence of Plasmodium falciparum to microvascular
       endothelium under flow by hemodilution
+    meta:
+      label: '48'
   - type: Article
     id: pmed-1002858-ref049
     authors:
@@ -2209,6 +2305,8 @@ references:
     pageEnd: 2266
     pageStart: 2257
     title: Optimal hematocrit in an artificial microvascular network
+    meta:
+      label: '49'
   - type: Article
     id: pmed-1002858-ref050
     authors:
@@ -2253,6 +2351,8 @@ references:
       issueNumber: 11
     pageStart: 1197
     title: Reappraisal of known malaria resistance loci in a large multicenter study
+    meta:
+      label: '50'
   - type: Article
     id: pmed-1002858-ref051
     authors:
@@ -2302,6 +2402,8 @@ references:
     title: >-
       Transfusion and Treatment of severe anaemia in African children (TRACT): a
       study protocol for a randomised controlled trial
+    meta:
+      label: '51'
   - type: Article
     id: pmed-1002858-ref052
     authors:
@@ -2351,6 +2453,8 @@ references:
     title: >-
       Diagnosing Severe Falciparum Malaria in Parasitaemic African Children: A
       Prospective Evaluation of Plasma PfHRP2 Measurement
+    meta:
+      label: '52'
 title: >-
   Investigating causal pathways in severe falciparum malaria: A pooled
   retrospective analysis of clinical studies

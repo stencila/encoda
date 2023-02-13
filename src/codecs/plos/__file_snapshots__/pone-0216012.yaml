@@ -222,6 +222,8 @@ references:
       Spaceflight Associated Neuro-ocular Syndrome (SANS). Nov 30; 2017.
       https://humanresearchroadmap.nasa.gov/evidence/reports/SANS.pdf.
     url: https://humanresearchroadmap.nasa.gov/evidence/reports/SANS.pdf
+    meta:
+      label: '1'
   - type: Article
     id: pone-0216012-ref002
     authors:
@@ -255,6 +257,8 @@ references:
     pageEnd: 665
     pageStart: 621
     title: Microgravity-induced fluid shift and ophthalmic changes
+    meta:
+      label: '2'
   - type: Article
     id: pone-0216012-ref003
     authors:
@@ -270,6 +274,8 @@ references:
       type: Organization
       name: Springer International Publishing
     title: Microgravity and vision impairments in astronauts
+    meta:
+      label: '3'
   - type: Article
     id: pone-0216012-ref004
     authors:
@@ -375,6 +381,8 @@ references:
     title: >-
       Optic disc edema, globe flattening, choroidal folds, and hyperopic shifts
       observed in astronauts after long-duration space flight
+    meta:
+      label: '4'
   - type: Article
     id: pone-0216012-ref005
     authors:
@@ -416,6 +424,8 @@ references:
     title: >-
       Early cardiovascular adaptation to zero gravity simulated by head-down
       tilt
+    meta:
+      label: '5'
   - type: Article
     id: pone-0216012-ref006
     authors:
@@ -466,6 +476,8 @@ references:
     title: >-
       Transcapillary fluid shifts in tissues of the head and neck during and
       after simulated microgravity
+    meta:
+      label: '6'
   - type: Article
     id: pone-0216012-ref007
     authors:
@@ -519,6 +531,8 @@ references:
     pageEnd: 501
     pageStart: 495
     title: Ocular outcomes comparison between 14-and 70-day head-down-tilt bed rest
+    meta:
+      label: '7'
   - type: Article
     id: pone-0216012-ref008
     authors:
@@ -572,6 +586,8 @@ references:
     pageEnd: 468
     pageStart: 467
     title: Optic disc edema after 30 days of strict head-down tilt bed rest
+    meta:
+      label: '8'
   - type: Article
     id: pone-0216012-ref009
     authors:
@@ -627,6 +643,8 @@ references:
     title: >-
       The impact of ocular hemodynamics and intracranial pressure on intraocular
       pressure during acute gravitational changes
+    meta:
+      label: '9'
   - type: Article
     id: pone-0216012-ref010
     authors:
@@ -677,6 +695,8 @@ references:
       type: CreativeWork
       name: NASA Human Research Program Investigators Workshop
     title: Lumped parameter models of the central nervous system for VIIP research
+    meta:
+      label: '10'
   - type: Article
     id: pone-0216012-ref011
     authors: []
@@ -685,6 +705,8 @@ references:
       Salerni F. Design and development of a mathematical model to analyse
       visual impairment in astronauts. Master Thesis, Universitá degli Studi di
       Genova (Italy) 2016.
+    meta:
+      label: '11'
   - type: Article
     id: pone-0216012-ref012
     authors:
@@ -740,6 +762,8 @@ references:
     title: >-
       Mathematical modeling of ocular and cerebral hemo-fluid dynamics:
       application to VIIP
+    meta:
+      label: '12'
   - type: Article
     id: pone-0216012-ref013
     authors:
@@ -784,6 +808,8 @@ references:
     title: >-
       Relationship between intraocular pressure, blood pressure and
       cerebrospinal fluid pressure: a theoretical approach
+    meta:
+      label: '13'
   - type: Article
     id: pone-0216012-ref014
     authors:
@@ -821,6 +847,8 @@ references:
     title: >-
       Relationship between intraocular pressure, blood pressure and
       cerebrospinal fluid pressure: a theoretical approach
+    meta:
+      label: '14'
   - type: Article
     id: pone-0216012-ref015
     authors:
@@ -844,6 +872,8 @@ references:
       type: Organization
       name: Kugler Publications
     title: Ocular blood flow in glaucoma
+    meta:
+      label: '15'
   - type: Article
     id: pone-0216012-ref016
     authors:
@@ -904,6 +934,8 @@ references:
     title: >-
       Relationship of cerebral blood flow and central visual function in primary
       open-angle glaucoma
+    meta:
+      label: '16'
   - type: Article
     id: pone-0216012-ref017
     authors:
@@ -932,6 +964,8 @@ references:
         name: J Glaucoma
       volumeNumber: 22
     title: Cerebral blood flow in glaucoma patients
+    meta:
+      label: '17'
   - type: Article
     id: pone-0216012-ref018
     authors:
@@ -960,6 +994,8 @@ references:
     pageEnd: 712
     pageStart: 704
     title: Blood pressure, perfusion pressure, and glaucoma
+    meta:
+      label: '18'
   - type: Article
     id: pone-0216012-ref019
     authors:
@@ -983,6 +1019,8 @@ references:
     pageEnd: 172
     pageStart: 166
     title: Open-angle glaucoma—an epidemiologic overview
+    meta:
+      label: '19'
   - type: Article
     id: pone-0216012-ref020
     authors:
@@ -1008,6 +1046,8 @@ references:
     title: >-
       A biomechanical paradigm for axonal insult within the optic nerve head in
       aging and glaucoma
+    meta:
+      label: '20'
   - type: Article
     id: pone-0216012-ref021
     authors:
@@ -1055,6 +1095,8 @@ references:
       issueNumber: 2
     pageEnd: 148
     title: Cerebrospinal fluid pressure in ocular hypertension
+    meta:
+      label: '21'
   - type: Article
     id: pone-0216012-ref022
     authors:
@@ -1132,6 +1174,8 @@ references:
       issueNumber: 4
     pageEnd: 266
     title: Ocular perfusion pressure in glaucoma
+    meta:
+      label: '22'
   - type: Article
     id: pone-0216012-ref023
     authors:
@@ -1182,6 +1226,8 @@ references:
     title: >-
       Mathematical modeling for novel treatment approaches to open-angle
       glaucoma
+    meta:
+      label: '23'
   - type: Article
     id: pone-0216012-ref024
     authors:
@@ -1219,6 +1265,8 @@ references:
     title: >-
       Modelling the response of intracranial pressure to microgravity
       environments
+    meta:
+      label: '24'
   - type: Article
     id: pone-0216012-ref025
     authors:
@@ -1290,6 +1338,8 @@ references:
       Intraocular pressure, blood pressure, and retinal blood flow
       autoregulation: a mathematical model to clarify their relationship and
       clinical relevance
+    meta:
+      label: '25'
   - type: Article
     id: pone-0216012-ref026
     authors:
@@ -1345,6 +1395,8 @@ references:
     title: >-
       Mathematical modeling of aqueous humor flow and intraocular pressure under
       uncertainty: towards individualized glaucoma management
+    meta:
+      label: '26'
   - type: Article
     id: pone-0216012-ref027
     authors:
@@ -1388,6 +1440,8 @@ references:
     pageEnd: 17
     pageStart: 1
     title: Ciliary blood flow and aqueous humor production
+    meta:
+      label: '27'
   - type: Article
     id: pone-0216012-ref028
     authors:
@@ -1426,6 +1480,8 @@ references:
     pageEnd: 383
     pageStart: 347
     title: A whole-body mathematical model for intracranial pressure dynamics
+    meta:
+      label: '28'
   - type: Article
     id: pone-0216012-ref029
     authors:
@@ -1495,6 +1551,8 @@ references:
     pageEnd: 965
     pageStart: 931
     title: 'Mechanics of the brain: perspectives, challenges, and opportunities'
+    meta:
+      label: '29'
   - type: Article
     id: pone-0216012-ref030
     authors:
@@ -1543,6 +1601,8 @@ references:
     pageEnd: 759
     pageStart: 729
     title: A mathematical model of blood, cerebrospinal fluid and brain dynamics
+    meta:
+      label: '30'
   - type: Article
     id: pone-0216012-ref031
     authors:
@@ -1573,6 +1633,8 @@ references:
     title: >-
       Computational fluid dynamics for the assessment of cerebrospinal fluid
       flow and its coupling with cerebral blood flow
+    meta:
+      label: '31'
   - type: Article
     id: pone-0216012-ref032
     authors:
@@ -1608,6 +1670,8 @@ references:
     title: >-
       A computational model of cerebrospinal fluid production and reabsorption
       driven by Starling forces
+    meta:
+      label: '32'
   - type: Article
     id: pone-0216012-ref033
     authors:
@@ -1643,6 +1707,8 @@ references:
     pageEnd: 257
     pageStart: 219
     title: Cerebrospinal fluid mechanics and its coupling to cerebrovascular dynamics
+    meta:
+      label: '33'
   - type: Article
     id: pone-0216012-ref034
     authors:
@@ -1681,6 +1747,8 @@ references:
     pageEnd: 1503
     pageStart: 1496
     title: A Starling resistor regulates cerebral venous outflow in dogs
+    meta:
+      label: '34'
   - type: Article
     id: pone-0216012-ref035
     authors:
@@ -1719,6 +1787,8 @@ references:
     pageEnd: 131
     pageStart: 125
     title: A Starling resistor regulates cerebral venous outflow in dogs
+    meta:
+      label: '35'
   - type: Article
     id: pone-0216012-ref036
     authors:
@@ -1768,6 +1838,8 @@ references:
     title: >-
       Human cerebral venous outflow pathway depends on posture and central
       venous pressure
+    meta:
+      label: '36'
   - type: Article
     id: pone-0216012-ref037
     authors:
@@ -1821,6 +1893,8 @@ references:
     title: >-
       Dural sinus collapsibility, idiopathic intracranial hypertension, and the
       pathogenesis of chronic migraine
+    meta:
+      label: '37'
   - type: Article
     id: pone-0216012-ref038
     authors:
@@ -1871,6 +1945,8 @@ references:
     title: >-
       Understanding the functions and relationships of the glymphatic system and
       meningeal lymphatics
+    meta:
+      label: '38'
   - type: Article
     id: pone-0216012-ref039
     authors:
@@ -1898,6 +1974,8 @@ references:
     title: >-
       The glymphatic system in central nervous system health and disease: past,
       present, and future
+    meta:
+      label: '39'
   - type: Article
     id: pone-0216012-ref040
     authors:
@@ -1953,6 +2031,8 @@ references:
     title: >-
       The correlation between cerebrospinal fluid pressure and retrolaminar
       tissue pressure
+    meta:
+      label: '40'
   - type: Article
     id: pone-0216012-ref041
     authors:
@@ -1998,6 +2078,8 @@ references:
     title: >-
       Effect of intraocular pressure on the hemodynamics of the central retinal
       artery: a mathematical model
+    meta:
+      label: '41'
   - type: Article
     id: pone-0216012-ref042
     authors:
@@ -2070,6 +2152,8 @@ references:
     title: >-
       Effect of intraocular pressure and cerebrospinal fluid pressure on the
       blood flow in the central retinal vessels
+    meta:
+      label: '42'
   - type: Article
     id: pone-0216012-ref043
     authors:
@@ -2085,6 +2169,8 @@ references:
       type: Organization
       name: Cambridge University Press
     title: The fluid mechanics of large blood vessels
+    meta:
+      label: '43'
   - type: Article
     id: pone-0216012-ref044
     authors:
@@ -2119,6 +2205,8 @@ references:
     title: >-
       Theoretical model of blood flow autoregulation: roles of myogenic,
       shear-dependent, and metabolic responses
+    meta:
+      label: '44'
   - type: Article
     id: pone-0216012-ref045
     authors:
@@ -2153,6 +2241,8 @@ references:
     title: >-
       Theoretical model of metabolic blood flow regulation: roles of ATP release
       by red blood cells and conducted responses
+    meta:
+      label: '45'
   - type: Article
     id: pone-0216012-ref046
     authors:
@@ -2208,6 +2298,8 @@ references:
     title: >-
       Theoretical analysis of vascular regulatory mechanisms contributing to
       retinal blood flow autoregulation
+    meta:
+      label: '46'
   - type: Article
     id: pone-0216012-ref047
     authors:
@@ -2256,6 +2348,8 @@ references:
     pageEnd: 186
     pageStart: 164
     title: Autoregulation and neurovascular coupling in the optic nerve head
+    meta:
+      label: '47'
   - type: Article
     id: pone-0216012-ref048
     authors:
@@ -2281,6 +2375,8 @@ references:
     pageEnd: 325
     pageStart: 319
     title: Control of retinal and choroidal blood flow
+    meta:
+      label: '48'
   - type: Article
     id: pone-0216012-ref049
     authors:
@@ -2309,6 +2405,8 @@ references:
     pageEnd: 2410
     pageStart: 2399
     title: Autoregulation of choroidal blood flow in the rabbit
+    meta:
+      label: '49'
   - type: Article
     id: pone-0216012-ref050
     authors:
@@ -2342,6 +2440,8 @@ references:
     pageEnd: 130
     pageStart: 96
     title: Neural control of choroidal blood flow
+    meta:
+      label: '50'
   - type: Article
     id: pone-0216012-ref051
     authors:
@@ -2412,6 +2512,8 @@ references:
     title: >-
       Persistent asymmetric optic disc swelling after long-duration space
       flight: implications for pathogenesis
+    meta:
+      label: '51'
   - type: Article
     id: pone-0216012-ref052
     authors:
@@ -2447,6 +2549,8 @@ references:
     title: >-
       Dynamics of the intraocular fluid: Mathematical model and its main
       consequences
+    meta:
+      label: '52'
   - type: Article
     id: pone-0216012-ref053
     authors:
@@ -2472,6 +2576,8 @@ references:
     title: >-
       The effect of intraocular pressure on conventional outflow resistance in
       the enucleated human eye
+    meta:
+      label: '53'
   - type: Article
     id: pone-0216012-ref054
     authors:
@@ -2519,6 +2625,8 @@ references:
       issueNumber: 1
     pageEnd: 185
     title: Increased intracranial pressure in humans during simulated microgravity
+    meta:
+      label: '54'
   - type: Article
     id: pone-0216012-ref055
     authors:
@@ -2582,6 +2690,8 @@ references:
     pageEnd: 2127
     pageStart: 2115
     title: Effect of gravity and microgravity on intracranial pressure
+    meta:
+      label: '55'
   - type: Article
     id: pone-0216012-ref056
     authors: []
@@ -2591,6 +2701,8 @@ references:
       D. The OpenModelica modeling, simulation, and development environment.
       46th Conference on Simulation and Modelling of the Scandinavian Simulation
       Society (SIMS2005), Trondheim, Norway, October 13-14; 2005.
+    meta:
+      label: '56'
   - type: Article
     id: pone-0216012-ref057
     authors:
@@ -2634,6 +2746,8 @@ references:
     pageEnd: 2650
     pageStart: 2645
     title: Age-related ocular blood flow changes
+    meta:
+      label: '57'
   - type: Article
     id: pone-0216012-ref058
     authors:
@@ -2667,6 +2781,8 @@ references:
     pageEnd: 154
     pageStart: 150
     title: Effect of aging on foveolar choroidal circulation
+    meta:
+      label: '58'
   - type: Article
     id: pone-0216012-ref059
     authors:
@@ -2697,6 +2813,8 @@ references:
     title: >-
       Cerebral blood flow in normal aging adults: cardiovascular determinants,
       clinical implications, and aerobic fitness
+    meta:
+      label: '59'
   - type: Article
     id: pone-0216012-ref060
     authors:
@@ -2735,6 +2853,8 @@ references:
     pageEnd: 212
     pageStart: 201
     title: Gender differences in ocular blood flow
+    meta:
+      label: '60'
   - type: Article
     id: pone-0216012-ref061
     authors:
@@ -2760,6 +2880,8 @@ references:
     title: >-
       The diurnal variation of intraocular pressure in non-glaucomatous
       subjects: relevance in a clinical context
+    meta:
+      label: '61'
   - type: Article
     id: pone-0216012-ref062
     authors:
@@ -2798,6 +2920,8 @@ references:
     pageEnd: 789
     pageStart: 783
     title: Sex differences in regional cerebral blood flow
+    meta:
+      label: '62'
   - type: Article
     id: pone-0216012-ref063
     authors:
@@ -2861,6 +2985,8 @@ references:
     pageEnd: 276
     pageStart: 269
     title: The pressure difference between eye and brain changes with posture
+    meta:
+      label: '63'
   - type: Article
     id: pone-0216012-ref064
     authors:
@@ -2906,6 +3032,8 @@ references:
     title: >-
       Glaucoma patients demonstrate faulty autoregulation of ocular blood flow
       during posture change
+    meta:
+      label: '64'
   - type: Article
     id: pone-0216012-ref065
     authors:
@@ -2939,6 +3067,8 @@ references:
     pageEnd: 551
     pageStart: 546
     title: Posture changes and subfoveal choroidal blood flow
+    meta:
+      label: '65'
   - type: Article
     id: pone-0216012-ref066
     authors:
@@ -2981,6 +3111,8 @@ references:
     title: >-
       MRI study of cerebral blood flow and CSF flow dynamics in an upright
       posture: the effect of posture on the intracranial compliance and pressure
+    meta:
+      label: '66'
   - type: Article
     id: pone-0216012-ref067
     authors:
@@ -3026,6 +3158,8 @@ references:
     title: >-
       The circadian variations in systemic blood pressure, ocular perfusion
       pressure, and ocular blood flow: risk factors for glaucoma?
+    meta:
+      label: '67'
   - type: Article
     id: pone-0216012-ref068
     authors:
@@ -3058,6 +3192,8 @@ references:
       issueNumber: 1
     pageStart: 3
     title: Daily rhythm of cerebral blood flow velocity
+    meta:
+      label: '68'
   - type: Article
     id: pone-0216012-ref069
     authors:
@@ -3108,6 +3244,8 @@ references:
     title: >-
       Effect of corneal thickness on intraocular pressure measurements with the
       pneumotonometer, Goldmann applanation tonometer, and Tono-Pen
+    meta:
+      label: '69'
   - type: Article
     id: pone-0216012-ref070
     authors:
@@ -3158,6 +3296,8 @@ references:
     title: >-
       Update in intracranial pressure evaluation methods and translaminar
       pressure gradient role in glaucoma
+    meta:
+      label: '70'
   - type: Article
     id: pone-0216012-ref071
     authors:
@@ -3208,6 +3348,8 @@ references:
     title: >-
       Calculation of the diameter of the central retinal artery from noninvasive
       measurements in humans
+    meta:
+      label: '71'
   - type: Article
     id: pone-0216012-ref072
     authors:
@@ -3249,6 +3391,8 @@ references:
       Autoregulation in the human retinal circulation: assessment using
       isometric exercise, laser Doppler velocimetry, and computer-assisted image
       analysis
+    meta:
+      label: '72'
   - type: Article
     id: pone-0216012-ref073
     authors:
@@ -3279,6 +3423,8 @@ references:
     title: >-
       Retinal blood flow response to posture change in glaucoma patients
       compared with healthy subjects
+    meta:
+      label: '73'
   - type: Article
     id: pone-0216012-ref074
     authors:
@@ -3319,6 +3465,8 @@ references:
     title: >-
       Effect of brimonidine on retinal blood flow autoregulation in primary
       open-angle glaucoma
+    meta:
+      label: '74'
   - type: Article
     id: pone-0216012-ref075
     authors:
@@ -3352,6 +3500,8 @@ references:
     pageEnd: 331
     pageStart: 327
     title: Retinal haemodynamics in patients with early diabetes mellitus
+    meta:
+      label: '75'
   - type: Article
     id: pone-0216012-ref076
     authors:
@@ -3380,6 +3530,8 @@ references:
         addressLocality: Budapest
       name: Academoiai Kiado
     title: Physiology of the intraocular pressure
+    meta:
+      label: '76'
   - type: Article
     id: pone-0216012-ref077
     authors:
@@ -3405,6 +3557,8 @@ references:
     title: >-
       A method for determining the rate of plasma flow through the secretory
       part of the ciliary body
+    meta:
+      label: '77'
   - type: Article
     id: pone-0216012-ref078
     authors:
@@ -3432,6 +3586,8 @@ references:
       rate of plasma flow through the ciliary processes. I. The effect of
       unilateral ligation of the common carotid artery in rabbits on the
       ascorbic acid content of the aqueous humour at varying plasma levels
+    meta:
+      label: '78'
   - type: Article
     id: pone-0216012-ref079
     authors:
@@ -3501,6 +3657,8 @@ references:
     pageEnd: 1067
     pageStart: 1059
     title: 'Choroidal blood flow decreases with age: an MRI study'
+    meta:
+      label: '79'
   - type: Article
     id: pone-0216012-ref080
     authors:
@@ -3531,6 +3689,8 @@ references:
     title: >-
       Experiences with a new procedure for the measurement of the ophthalmic
       artery pressure: ophthalmomanometry-Doppler
+    meta:
+      label: '80'
   - type: Article
     id: pone-0216012-ref081
     authors:
@@ -3559,6 +3719,8 @@ references:
     pageEnd: 298
     pageStart: 291
     title: Measurement of episcleral venous pressure
+    meta:
+      label: '81'
   - type: Article
     id: pone-0216012-ref082
     authors:
@@ -3582,6 +3744,8 @@ references:
     pageEnd: 837
     pageStart: 823
     title: A mathematical model of transmural transport of oxygen to the retina
+    meta:
+      label: '82'
   - type: Article
     id: pone-0216012-ref083
     authors:
@@ -3615,6 +3779,8 @@ references:
     pageEnd: 49
     pageStart: 1
     title: A mathematical analysis of capillary-tissue fluid exchange
+    meta:
+      label: '83'
   - type: Article
     id: pone-0216012-ref084
     authors:
@@ -3642,6 +3808,8 @@ references:
     pageEnd: 326
     pageStart: 313
     title: Analysis of small vessel function
+    meta:
+      label: '84'
   - type: Article
     id: pone-0216012-ref085
     authors:
@@ -3665,6 +3833,8 @@ references:
     pageEnd: 82
     pageStart: 48
     title: 'Dynamics of capillary fluid exchange: a nonlinear computer simulation'
+    meta:
+      label: '85'
   - type: Article
     id: pone-0216012-ref086
     authors:
@@ -3725,6 +3895,8 @@ references:
     title: >-
       A mathematical model for the distribution of hemodynamic parameters in the
       human retinal microvascular network
+    meta:
+      label: '86'
   - type: Article
     id: pone-0216012-ref087
     authors:
@@ -3776,6 +3948,8 @@ references:
     title: >-
       Primary open-angle glaucoma, intraocular pressure, and systemic blood
       pressure in the general elderly population. The Rotterdam Study
+    meta:
+      label: '87'
   - type: Article
     id: pone-0216012-ref088
     authors:
@@ -3816,6 +3990,8 @@ references:
     title: >-
       Intraocular pressure over the clinical range of blood pressure: Blue
       Mountains eye study findings
+    meta:
+      label: '88'
   - type: Article
     id: pone-0216012-ref089
     authors:
@@ -3856,6 +4032,8 @@ references:
     title: >-
       Intraocular pressure correlated with arterial blood pressure: the Beijing
       eye study
+    meta:
+      label: '89'
   - type: Article
     id: pone-0216012-ref090
     authors:
@@ -3924,6 +4102,8 @@ references:
     pageEnd: 266
     pageStart: 259
     title: 'Cerebrospinal fluid pressure in glaucoma: a prospective study'
+    meta:
+      label: '90'
   - type: Article
     id: pone-0216012-ref091
     authors:
@@ -3944,6 +4124,8 @@ references:
     pageEnd: 782
     pageStart: 780
     title: The uveal venous pressure
+    meta:
+      label: '91'
   - type: Article
     id: pone-0216012-ref092
     authors:
@@ -3997,6 +4179,8 @@ references:
     pageEnd: 992
     pageStart: 983
     title: Ocular outcomes evaluation in a 14-day head-down bed rest study
+    meta:
+      label: '92'
 title: >-
   Biofluid modeling of the coupled eye-brain system and insights into simulated
   microgravity conditions

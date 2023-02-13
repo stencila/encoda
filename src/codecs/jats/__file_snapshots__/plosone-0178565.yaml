@@ -195,6 +195,8 @@ references:
     pageEnd: 27
     pageStart: 213
     title: Estimates of global cyanobacterial biomass and its distribution
+    meta:
+      label: '1'
   - type: Article
     id: pone-0178565-ref002
     authors:
@@ -210,6 +212,8 @@ references:
       type: Organization
       name: Springer Netherlands
     title: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
+    meta:
+      label: '2'
   - type: Article
     id: pone-0178565-ref003
     authors:
@@ -258,6 +262,8 @@ references:
     pageEnd: 8
     pageStart: 635
     title: Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean
+    meta:
+      label: '3'
   - type: Article
     id: pone-0178565-ref004
     authors:
@@ -303,6 +309,8 @@ references:
     title: >-
       Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under
       turbulent and highly aerobic conditions
+    meta:
+      label: '4'
   - type: Article
     id: pone-0178565-ref005
     authors:
@@ -353,6 +361,8 @@ references:
     title: >-
       Improving the coverage of the cyanobacterial phylum using diversity-driven
       genome sequencing
+    meta:
+      label: '5'
   - type: Article
     id: pone-0178565-ref006
     authors:
@@ -398,6 +408,8 @@ references:
     title: >-
       Generic assignments, strain histories and properties of pure cultures of
       cyanobacteria
+    meta:
+      label: '6'
   - type: Article
     id: pone-0178565-ref007
     authors:
@@ -426,6 +438,8 @@ references:
     pageEnd: 5
     pageStart: 2510
     title: 'Genome evolution in cyanobacteria: the stable core and the variable shell'
+    meta:
+      label: '7'
   - type: Article
     id: pone-0178565-ref008
     authors:
@@ -465,6 +479,8 @@ references:
     title: >-
       The diversity of cyanobacterial metabolism: genome analysis of multiple
       phototrophic microorganisms
+    meta:
+      label: '8'
   - type: Article
     id: pone-0178565-ref009
     authors:
@@ -503,6 +519,8 @@ references:
     pageEnd: 54
     pageStart: 1249
     title: Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol
+    meta:
+      label: '9'
   - type: Article
     id: pone-0178565-ref010
     authors:
@@ -532,6 +550,8 @@ references:
       volumeNumber: 1
     pageStart: 7
     title: Cyanobacteria as a platform for biofuel production
+    meta:
+      label: '10'
   - type: Article
     id: pone-0178565-ref011
     authors:
@@ -555,6 +575,8 @@ references:
     pageEnd: 11
     pageStart: 1
     title: Metabolic fluxes and metabolic engineering
+    meta:
+      label: '11'
   - type: Article
     id: pone-0178565-ref012
     authors:
@@ -605,6 +627,8 @@ references:
     title: >-
       Experimental and computational assessment of conditionally essential genes
       in Escherichia coli
+    meta:
+      label: '12'
   - type: Article
     id: pone-0178565-ref013
     authors:
@@ -655,6 +679,8 @@ references:
     title: >-
       A postgenomic method for predicting essential genes at subsaturation
       levels of mutagenesis: application to Mycobacterium tuberculosis
+    meta:
+      label: '13'
   - type: Article
     id: pone-0178565-ref014
     authors:
@@ -684,6 +710,8 @@ references:
     title: >-
       Genome-scale reconstruction of the metabolic network in Staphylococcus
       aureus N315: an initial draft to the two-dimensional annotation
+    meta:
+      label: '14'
   - type: Article
     id: pone-0178565-ref015
     authors:
@@ -707,6 +735,8 @@ references:
     pageEnd: 6
     pageStart: 10004
     title: The minimal cell genome:" on being the right size"
+    meta:
+      label: '15'
   - type: Article
     id: pone-0178565-ref016
     authors:
@@ -755,6 +785,8 @@ references:
     pageEnd: 91
     pageStart: 387
     title: Functional profiling of the Saccharomyces cerevisiae genome
+    meta:
+      label: '16'
   - type: Article
     id: pone-0178565-ref017
     authors:
@@ -783,6 +815,8 @@ references:
     pageEnd: 23
     pageStart: 217
     title: Genome-wide screening for gene function using RNAi in mammalian cells
+    meta:
+      label: '17'
   - type: Article
     id: pone-0178565-ref018
     authors:
@@ -829,6 +863,8 @@ references:
         volumeNumber: 112
       issueNumber: 48
     title: The essential gene set of a photosynthetic organism
+    meta:
+      label: '18'
   - type: Article
     id: pone-0178565-ref019
     authors:
@@ -867,6 +903,8 @@ references:
     pageEnd: 2
     pageStart: 41
     title: Lethality and centrality in protein networks
+    meta:
+      label: '19'
   - type: Article
     id: pone-0178565-ref020
     authors:
@@ -907,6 +945,8 @@ references:
     title: >-
       Gene co-expression network topology provides a framework for molecular
       characterization of cellular state
+    meta:
+      label: '20'
   - type: Article
     id: pone-0178565-ref021
     authors:
@@ -926,6 +966,8 @@ references:
     title: >-
       Computational prediction of essential metabolic genes using
       constraint-based approaches
+    meta:
+      label: '21'
   - type: Article
     id: pone-0178565-ref022
     authors:
@@ -958,6 +1000,8 @@ references:
       issueNumber: 1
     pageStart: 301
     title: Genome‐scale gene/reaction essentiality and synthetic lethality analysis
+    meta:
+      label: '22'
   - type: Article
     id: pone-0178565-ref023
     authors:
@@ -995,6 +1039,8 @@ references:
     title: >-
       Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux
       distribution and network modification for enhanced biofuel production
+    meta:
+      label: '23'
   - type: Article
     id: pone-0178565-ref024
     authors:
@@ -1035,6 +1081,8 @@ references:
     title: >-
       Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic
       conditions
+    meta:
+      label: '24'
   - type: Article
     id: pone-0178565-ref025
     authors:
@@ -1078,6 +1126,8 @@ references:
     pageEnd: 20
     pageStart: 1616
     title: Whole-genome analysis of photosynthetic prokaryotes
+    meta:
+      label: '25'
   - type: Article
     id: pone-0178565-ref026
     authors:
@@ -1112,6 +1162,8 @@ references:
     title: >-
       Genome fluctuations in cyanobacteria reflect evolutionary, developmental
       and adaptive traits
+    meta:
+      label: '26'
   - type: Article
     id: pone-0178565-ref027
     authors:
@@ -1157,6 +1209,8 @@ references:
     title: >-
       Assigning protein functions by comparative genome analysis: protein
       phylogenetic profiles
+    meta:
+      label: '27'
   - type: Article
     id: pone-0178565-ref028
     authors:
@@ -1200,6 +1254,8 @@ references:
     pageEnd: 2
     pageStart: 3150
     title: 'CD-HIT: accelerated for clustering the next-generation sequencing data'
+    meta:
+      label: '28'
   - type: Article
     id: pone-0178565-ref029
     authors:
@@ -1238,6 +1294,8 @@ references:
     pageEnd: 46
     pageStart: 331
     title: A global analysis of adaptive evolution of operons in cyanobacteria
+    meta:
+      label: '29'
   - type: Article
     id: pone-0178565-ref030
     authors:
@@ -1284,6 +1342,8 @@ references:
       Phosphopantothenoylcysteine synthetase from Escherichia coli
       Identification and characterization of the last unidentified coenzyme A
       biosynthetic enzyme in bacteria
+    meta:
+      label: '30'
   - type: Article
     id: pone-0178565-ref031
     authors:
@@ -1334,6 +1394,8 @@ references:
     title: >-
       Structure and function of the phenazine biosynthesis protein PhzF from
       Pseudomonas fluorescens 2–79
+    meta:
+      label: '31'
   - type: Article
     id: pone-0178565-ref032
     authors:
@@ -1386,6 +1448,8 @@ references:
     title: >-
       Structure and function of the phenazine biosynthetic protein PhzF from
       Pseudomonas fluorescens
+    meta:
+      label: '32'
   - type: Article
     id: pone-0178565-ref033
     authors:
@@ -1414,6 +1478,8 @@ references:
     pageEnd: 85
     pageStart: 373
     title: Circadian rhythms in cyanobacteria
+    meta:
+      label: '33'
   - type: Article
     id: pone-0178565-ref034
     authors:
@@ -1460,6 +1526,8 @@ references:
     title: >-
       Rhythmic and sustained oscillations in metabolism and gene expression of
       Cyanothece sp. ATCC 51142 under constant light
+    meta:
+      label: '34'
   - type: Article
     id: pone-0178565-ref035
     authors:
@@ -1508,6 +1576,8 @@ references:
     pageEnd: 21
     pageStart: 211
     title: Cyanobacterial signature genes
+    meta:
+      label: '35'
   - type: Article
     id: pone-0178565-ref036
     authors:
@@ -1549,6 +1619,8 @@ references:
     title: >-
       Photosystem II proteins PsbL and PsbJ regulate electron flow to the
       plastoquinone pool
+    meta:
+      label: '36'
   - type: Article
     id: pone-0178565-ref037
     authors:
@@ -1599,6 +1671,8 @@ references:
     title: >-
       Protein assembly of photosystem II and accumulation of subcomplexes in the
       absence of low molecular mass subunits PsbL and PsbJ
+    meta:
+      label: '37'
   - type: Article
     id: pone-0178565-ref038
     authors:
@@ -1650,6 +1724,8 @@ references:
       Mössbauer studies of the non‐heme iron and cytochrome b 559 in a
       Chlamydomonas reinhardtii PSI− mutant and their interactions with
       α‐tocopherol quinone
+    meta:
+      label: '38'
   - type: Article
     id: pone-0178565-ref039
     authors:
@@ -1691,6 +1767,8 @@ references:
       Overexpression, purification and characterization of isochorismate
       synthase (EntC), the first enzyme involved in the biosynthesis of
       enterobactin from chorismate
+    meta:
+      label: '39'
   - type: Article
     id: pone-0178565-ref040
     authors:
@@ -1729,6 +1807,8 @@ references:
     pageEnd: 81
     pageStart: 374
     title: Amino acid sequence homology among fructose-1, 6-bisphosphatases
+    meta:
+      label: '40'
   - type: Article
     id: pone-0178565-ref041
     authors:
@@ -1759,6 +1839,8 @@ references:
     title: >-
       Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain
       PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase
+    meta:
+      label: '41'
   - type: Article
     id: pone-0178565-ref042
     authors:
@@ -1786,6 +1868,8 @@ references:
       issueNumber: 2
     pageStart: 313
     title: Gas vesicle proteins
+    meta:
+      label: '42'
   - type: Article
     id: pone-0178565-ref043
     authors:
@@ -1821,6 +1905,8 @@ references:
     title: >-
       Structure and organization of the gas vesicle gene cluster on the
       Halobacterium halobium plasmid pNRC100
+    meta:
+      label: '43'
   - type: Article
     id: pone-0178565-ref044
     authors:
@@ -1846,6 +1932,8 @@ references:
     title: >-
       The plasmid-encoded arsenical resistance pump: an anion-translocating
       ATPase
+    meta:
+      label: '44'
   - type: Article
     id: pone-0178565-ref045
     authors:
@@ -1886,6 +1974,8 @@ references:
     title: >-
       Structure of the ArsA ATPase: the catalytic subunit of a heavy metal
       resistance pump
+    meta:
+      label: '45'
   - type: Article
     id: pone-0178565-ref046
     authors:
@@ -1907,6 +1997,8 @@ references:
       name: International journal of microbiology
     pageStart: 2010
     title: Functional promiscuity of homologues of the bacterial ArsA ATPases
+    meta:
+      label: '46'
   - type: Article
     id: pone-0178565-ref047
     authors:
@@ -1952,6 +2044,8 @@ references:
       A putative RNA-interference-based immune system in prokaryotes:
       computational analysis of the predicted enzymatic machinery, functional
       analogies with eukaryotic RNAi, and hypothetical mechanisms of action
+    meta:
+      label: '47'
   - type: Article
     id: pone-0178565-ref048
     authors:
@@ -1992,6 +2086,8 @@ references:
     title: >-
       Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli
       Cas3 protein
+    meta:
+      label: '48'
 title: >-
   Gene essentiality, conservation index and co-evolution of genes in
   cyanobacteria

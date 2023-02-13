@@ -237,6 +237,8 @@ references:
     pageEnd: 167
     pageStart: 157
     title: Sequence assembly demystified
+    meta:
+      label: '1'
   - type: Article
     id: pcbi-1007273-ref002
     authors:
@@ -270,6 +272,8 @@ references:
     pageEnd: 327
     pageStart: 315
     title: Assembly algorithms for next-generation sequencing data
+    meta:
+      label: '2'
   - type: Article
     id: pcbi-1007273-ref003
     authors:
@@ -303,6 +307,8 @@ references:
     pageEnd: 9753
     pageStart: 9748
     title: An Eulerian path approach to DNA fragment assembly
+    meta:
+      label: '3'
   - type: Article
     id: pcbi-1007273-ref004
     authors:
@@ -321,6 +327,8 @@ references:
         name: Bioinformatics
       volumeNumber: 21
     title: The fragment assembly string graph
+    meta:
+      label: '4'
   - type: Article
     id: pcbi-1007273-ref005
     authors:
@@ -351,6 +359,8 @@ references:
     title: >-
       Parametric complexity of sequence assembly: theory and applications to
       next generation sequencing
+    meta:
+      label: '5'
   - type: Article
     id: pcbi-1007273-ref006
     authors:
@@ -383,6 +393,8 @@ references:
       issueNumber: 6581
     pageStart: 364
     title: A new strategy for genome sequencing
+    meta:
+      label: '6'
   - type: Article
     id: pcbi-1007273-ref007
     authors:
@@ -433,6 +445,8 @@ references:
     title: >-
       High-quality draft assemblies of mammalian genomes from massively parallel
       sequence data
+    meta:
+      label: '7'
   - type: Article
     id: pcbi-1007273-ref008
     authors:
@@ -483,6 +497,8 @@ references:
     title: >-
       Ordered restriction maps of Saccharomyces cerevisiae chromosomes
       constructed by optical mapping
+    meta:
+      label: '8'
   - type: Article
     id: pcbi-1007273-ref009
     authors:
@@ -533,6 +549,8 @@ references:
     title: >-
       Sequencing and automated whole-genome optical mapping of the genome of a
       domestic goat (Capra hircus)
+    meta:
+      label: '9'
   - type: Article
     id: pcbi-1007273-ref010
     authors:
@@ -582,6 +600,8 @@ references:
     title: >-
       Tools and pipelines for BioNano data: molecule assembly pipeline and FASTA
       super scaffolding tool
+    meta:
+      label: '10'
   - type: Article
     id: pcbi-1007273-ref011
     authors:
@@ -624,6 +644,8 @@ references:
     title: >-
       Haplotyping germline and cancer genomes with high-throughput linked-read
       sequencing
+    meta:
+      label: '11'
   - type: Article
     id: pcbi-1007273-ref012
     authors:
@@ -667,6 +689,8 @@ references:
     pageEnd: 767
     pageStart: 757
     title: Direct determination of diploid genome sequences
+    meta:
+      label: '12'
   - type: Article
     id: pcbi-1007273-ref013
     authors:
@@ -702,6 +726,8 @@ references:
       type: Periodical
       name: Bioinformatics
     title: 'Arcs: Scaffolding genome drafts with linked reads'
+    meta:
+      label: '13'
   - type: Article
     id: pcbi-1007273-ref014
     authors:
@@ -753,6 +779,8 @@ references:
     title: >-
       Nuclear organization of active and inactive chromatin domains uncovered by
       chromosome conformation capture–on-chip (4C)
+    meta:
+      label: '14'
   - type: Article
     id: pcbi-1007273-ref015
     authors:
@@ -804,6 +832,8 @@ references:
     title: >-
       prehensive mapping of long-range interactions reveals folding principles
       of the human genome
+    meta:
+      label: '15'
   - type: Article
     id: pcbi-1007273-ref016
     authors:
@@ -834,6 +864,8 @@ references:
     title: >-
       Chromosome-scale scaffolding of de novo genome assemblies based on
       chromatin interactions
+    meta:
+      label: '16'
   - type: Article
     id: pcbi-1007273-ref017
     authors:
@@ -862,6 +894,8 @@ references:
     pageEnd: 1147
     pageStart: 1143
     title: High-throughput genome scaffolding from in vivo DNA interaction frequency
+    meta:
+      label: '17'
   - type: Article
     id: pcbi-1007273-ref018
     authors:
@@ -905,6 +939,8 @@ references:
         name: Nature communications
       volumeNumber: 5
     title: High-quality genome (re) assembly using chromosomal contact data
+    meta:
+      label: '18'
   - type: Article
     id: pcbi-1007273-ref019
     authors:
@@ -940,6 +976,8 @@ references:
     title: >-
       Single-molecule sequencing and chromatin conformation capture enable de
       novo reference assembly of the domestic goat genome
+    meta:
+      label: '19'
   - type: Article
     id: pcbi-1007273-ref020
     authors:
@@ -975,6 +1013,8 @@ references:
     title: >-
       De novo assembly of the Aedes aegypti genome using Hi-C yields
       chromosome-length scaffolds
+    meta:
+      label: '20'
   - type: Article
     id: pcbi-1007273-ref021
     authors:
@@ -1017,6 +1057,8 @@ references:
       issueNumber: 1
     pageStart: 527
     title: Scaffolding of long read assemblies using long range contact information
+    meta:
+      label: '21'
   - type: Article
     id: pcbi-1007273-ref022
     authors:
@@ -1067,6 +1109,8 @@ references:
     title: >-
       Topological domains in mammalian genomes identified by analysis of
       chromatin interactions
+    meta:
+      label: '22'
   - type: Article
     id: pcbi-1007273-ref023
     authors:
@@ -1115,6 +1159,8 @@ references:
     pageEnd: 138
     pageStart: 133
     title: Real-time DNA sequencing from single polymerase molecules
+    meta:
+      label: '23'
   - type: Article
     id: pcbi-1007273-ref024
     authors:
@@ -1154,6 +1200,8 @@ references:
     title: >-
       The Oxford Nanopore MinION: delivery of nanopore sequencing to the
       genomics community
+    meta:
+      label: '24'
   - type: Article
     id: pcbi-1007273-ref025
     authors:
@@ -1179,6 +1227,8 @@ references:
     title: >-
       Minimap and miniasm: fast mapping and de novo assembly for noisy long
       sequences
+    meta:
+      label: '25'
   - type: Article
     id: pcbi-1007273-ref026
     authors:
@@ -1207,10 +1257,14 @@ references:
     pageEnd: 1760
     pageStart: 1754
     title: Fast and accurate short read alignment with Burrows–Wheeler transform
+    meta:
+      label: '26'
   - type: Article
     id: pcbi-1007273-ref027
     authors: []
     title: Wysoker A, Tibbetts K, Fennell T. Picard tools version 1.90; 2013.
+    meta:
+      label: '27'
   - type: Article
     id: pcbi-1007273-ref028
     authors:
@@ -1246,6 +1300,8 @@ references:
     title: >-
       Canu: scalable and accurate long-read assembly via adaptive k-mer
       weighting and repeat separation
+    meta:
+      label: '28'
   - type: Article
     id: pcbi-1007273-ref029
     authors:
@@ -1286,6 +1342,8 @@ references:
       type: Periodical
       name: bioRxiv
     title: Phased Diploid Genome Assembly with Single Molecule Real-Time Sequencing
+    meta:
+      label: '29'
   - type: Article
     id: pcbi-1007273-ref030
     authors:
@@ -1323,6 +1381,8 @@ references:
       issueNumber: 5
     pageStart: 540
     title: Assembly of long, error-prone reads using repeat graphs
+    meta:
+      label: '30'
   - type: Article
     id: pcbi-1007273-ref031
     authors:
@@ -1346,6 +1406,8 @@ references:
     pageEnd: 467
     pageStart: 449
     title: Paths, trees, and flowers
+    meta:
+      label: '31'
   - type: Article
     id: pcbi-1007273-ref032
     authors: []
@@ -1353,6 +1415,8 @@ references:
       Poloczek M, Szegedy M. Randomized greedy algorithms for the maximum
       matching problem with new analysis. In: Foundations of Computer Science
       (FOCS), 2012 IEEE 53rd Annual Symposium on. IEEE; 2012. p. 708–717.
+    meta:
+      label: '32'
   - type: Article
     id: pcbi-1007273-ref033
     authors:
@@ -1403,6 +1467,8 @@ references:
     title: >-
       Evaluation of GRCh38 and de novo haploid genome assemblies demonstrates
       the enduring quality of the reference assembly
+    meta:
+      label: '33'
   - type: Article
     id: pcbi-1007273-ref034
     authors:
@@ -1434,6 +1500,8 @@ references:
       name: bioRxiv
     pageStart: 128835
     title: Nanopore sequencing and assembly of a human genome with ultra-long reads
+    meta:
+      label: '34'
   - type: Article
     id: pcbi-1007273-ref035
     authors:
@@ -1464,6 +1532,8 @@ references:
     title: >-
       Juicer provides a one-click system for analyzing loop-resolution Hi-C
       experiments
+    meta:
+      label: '35'
   - type: Article
     id: pcbi-1007273-ref036
     authors:
@@ -1510,6 +1580,8 @@ references:
         volumeNumber: 5
       issueNumber: 2
     title: Versatile and open software for comparing large genomes
+    meta:
+      label: '36'
   - type: Article
     id: pcbi-1007273-ref037
     authors:
@@ -1537,6 +1609,8 @@ references:
     title: >-
       Assembly and diploid architecture of an individual human genome via
       single-molecule technologies
+    meta:
+      label: '37'
   - type: Article
     id: pcbi-1007273-ref038
     authors:
@@ -1585,6 +1659,8 @@ references:
     pageEnd: 567
     pageStart: 557
     title: 'GAGE: A critical evaluation of genome assemblies and assembly algorithms'
+    meta:
+      label: '38'
   - type: Article
     id: pcbi-1007273-ref039
     authors:
@@ -1625,6 +1701,8 @@ references:
     pageEnd: 61
     pageStart: 51
     title: A software package for drawing ideograms automatically
+    meta:
+      label: '39'
   - type: Article
     id: pcbi-1007273-ref040
     authors:
@@ -1656,6 +1734,8 @@ references:
         volumeNumber: 7
       issueNumber: 2
     title: Feature-by-feature–evaluating de novo sequence assembly
+    meta:
+      label: '40'
   - type: Article
     id: pcbi-1007273-ref041
     authors:
@@ -1691,6 +1771,8 @@ references:
     title: >-
       Juicebox provides a visualization system for Hi-C contact maps with
       unlimited zoom
+    meta:
+      label: '41'
   - type: Article
     id: pcbi-1007273-ref042
     authors:
@@ -1724,6 +1806,8 @@ references:
     pageEnd: 953
     pageStart: 948
     title: Organization of the mitotic chromosome
+    meta:
+      label: '42'
   - type: Article
     id: pcbi-1007273-ref043
     authors:
@@ -1764,6 +1848,8 @@ references:
     title: >-
       Chromosome-scale shotgun assembly using an in vitro method for long-range
       linkage
+    meta:
+      label: '43'
   - type: Article
     id: pcbi-1007273-ref044
     authors:
@@ -1807,6 +1893,8 @@ references:
     title: >-
       A chromosome-scale assembly of the major African malaria vector Anopheles
       funestus
+    meta:
+      label: '44'
   - type: Article
     id: pcbi-1007273-ref045
     authors:
@@ -1841,6 +1929,8 @@ references:
     title: >-
       Purge Haplotigs: allelic contig reassignment for third-gen diploid genome
       assemblies
+    meta:
+      label: '45'
   - type: Article
     id: pcbi-1007273-ref046
     authors:
@@ -1890,6 +1980,8 @@ references:
     title: >-
       Allele-defined genome of the autopolyploid sugarcane Saccharum spontaneum
       L
+    meta:
+      label: '46'
   - type: Article
     id: pcbi-1007273-ref047
     authors:
@@ -1940,6 +2032,8 @@ references:
     title: >-
       HaploMerger: reconstructing allelic relationships for polymorphic diploid
       genome assemblies
+    meta:
+      label: '47'
   - type: Article
     id: pcbi-1007273-ref048
     authors:
@@ -1975,6 +2069,8 @@ references:
       type: Periodical
       name: bioRxiv
     title: Removing unwanted variation between samples in Hi-C experiments
+    meta:
+      label: '48'
   - type: Article
     id: pcbi-1007273-ref049
     authors:
@@ -2018,6 +2114,8 @@ references:
     title: >-
       Improved Aedes aegypti mosquito reference genome assembly enables
       biological discovery and vector control
+    meta:
+      label: '49'
   - type: Article
     id: pcbi-1007273-ref050
     authors:
@@ -2053,6 +2151,8 @@ references:
     pageEnd: 111
     pageStart: 57
     title: 'The Genome 10K Project: a way forward'
+    meta:
+      label: '50'
 title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
 meta:
   authorNotes:

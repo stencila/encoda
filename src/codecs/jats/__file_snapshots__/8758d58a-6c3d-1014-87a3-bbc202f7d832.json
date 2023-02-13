@@ -563,7 +563,10 @@
         "type": "Periodical",
         "name": "bioRxiv"
       },
-      "title": "Genesis of the αβ T-cell receptor"
+      "title": "Genesis of the αβ T-cell receptor",
+      "meta": {
+        "label": "1."
+      }
     },
     {
       "type": "Article",
@@ -602,7 +605,10 @@
       },
       "pageEnd": 267,
       "pageStart": 266,
-      "title": "Janeway’s immunobiology. Garland Science.(2016)"
+      "title": "Janeway’s immunobiology. Garland Science.(2016)",
+      "meta": {
+        "label": "2."
+      }
     },
     {
       "type": "Article",
@@ -661,7 +667,10 @@
       },
       "pageEnd": 16166,
       "pageStart": 16161,
-      "title": "Statistical inference of the generation probability of T-cell receptors from sequence repertoires"
+      "title": "Statistical inference of the generation probability of T-cell receptors from sequence repertoires",
+      "meta": {
+        "label": "3."
+      }
     },
     {
       "type": "Article",
@@ -701,7 +710,10 @@
       },
       "pageEnd": 570,
       "pageStart": 547,
-      "title": "Using T Cell Receptor Repertoires to Understand the Principles of Adaptive Immune Recognition"
+      "title": "Using T Cell Receptor Repertoires to Understand the Principles of Adaptive Immune Recognition",
+      "meta": {
+        "label": "4."
+      }
     },
     {
       "type": "Article",
@@ -760,7 +772,10 @@
       },
       "pageEnd": 391,
       "pageStart": 377,
-      "title": "Positive and negative selection of the T cell repertoire: what thymocytes see (and don’t see)"
+      "title": "Positive and negative selection of the T cell repertoire: what thymocytes see (and don’t see)",
+      "meta": {
+        "label": "5."
+      }
     },
     {
       "type": "Article",
@@ -816,7 +831,10 @@
         },
         "volumeNumber": 110
       },
-      "title": "Asymmetric thymocyte death underlies the CD4:CD8 T-cell ratio in the adaptive immune system"
+      "title": "Asymmetric thymocyte death underlies the CD4:CD8 T-cell ratio in the adaptive immune system",
+      "meta": {
+        "label": "6."
+      }
     },
     {
       "type": "Article",
@@ -876,7 +894,10 @@
       },
       "pageEnd": 190,
       "pageStart": 181,
-      "title": "Revisiting Thymic Positive Selection and the Mature T Cell Repertoire for Antigen"
+      "title": "Revisiting Thymic Positive Selection and the Mature T Cell Repertoire for Antigen",
+      "meta": {
+        "label": "7."
+      }
     },
     {
       "type": "Article",
@@ -991,7 +1012,10 @@
       },
       "pageEnd": 13144,
       "pageStart": 13139,
-      "title": "Diversity and clonal selection in the human T-cell repertoire"
+      "title": "Diversity and clonal selection in the human T-cell repertoire",
+      "meta": {
+        "label": "8."
+      }
     },
     {
       "type": "Article",
@@ -1012,7 +1036,10 @@
         "type": "Date",
         "value": "1988"
       },
-      "title": "T-cell antigen receptor genes and T-cell recognition"
+      "title": "T-cell antigen receptor genes and T-cell recognition",
+      "meta": {
+        "label": "9."
+      }
     },
     {
       "type": "Article",
@@ -1073,7 +1100,10 @@
       },
       "pageEnd": 294,
       "pageStart": 275,
-      "title": "On the Composition of the Preimmune Repertoire of T Cells Specific for Peptide–Major Histocompatibility Complex Ligands"
+      "title": "On the Composition of the Preimmune Repertoire of T Cells Specific for Peptide–Major Histocompatibility Complex Ligands",
+      "meta": {
+        "label": "10."
+      }
     },
     {
       "type": "Article",
@@ -1196,7 +1226,10 @@
       },
       "pageEnd": 278,
       "pageStart": 274,
-      "title": "Diversity, functionality, and stability of the T cell repertoire derived in vivo from a single human T cell precursor"
+      "title": "Diversity, functionality, and stability of the T cell repertoire derived in vivo from a single human T cell precursor",
+      "meta": {
+        "label": "11."
+      }
     },
     {
       "type": "Article",
@@ -1307,7 +1340,10 @@
       },
       "pageEnd": 547,
       "pageStart": 540,
-      "title": "BCG vaccination scar associated with better childhood survival in Guinea-Bissau"
+      "title": "BCG vaccination scar associated with better childhood survival in Guinea-Bissau",
+      "meta": {
+        "label": "12."
+      }
     },
     {
       "type": "Article",
@@ -1393,7 +1429,10 @@
       },
       "pageEnd": 1210,
       "pageStart": 1206,
-      "title": "Unique influenza A cross-reactive memory CD8 T-cell receptor repertoire has a potential to protect against EBV seroconversion"
+      "title": "Unique influenza A cross-reactive memory CD8 T-cell receptor repertoire has a potential to protect against EBV seroconversion",
+      "meta": {
+        "label": "13."
+      }
     },
     {
       "type": "Article",
@@ -1434,7 +1473,10 @@
       },
       "pageEnd": 426,
       "pageStart": 417,
-      "title": "No one is naive: the significance of heterologous T-cell immunity"
+      "title": "No one is naive: the significance of heterologous T-cell immunity",
+      "meta": {
+        "label": "14."
+      }
     },
     {
       "type": "Article",
@@ -1484,7 +1526,10 @@
       },
       "pageEnd": 114,
       "pageStart": 99,
-      "title": "Heterogeneous Memory T Cells in Antiviral Immunity and Immunopathology"
+      "title": "Heterogeneous Memory T Cells in Antiviral Immunity and Immunopathology",
+      "meta": {
+        "label": "15."
+      }
     },
     {
       "type": "Article",
@@ -1554,7 +1599,10 @@
       },
       "pageEnd": 383,
       "pageStart": 373,
-      "title": "Virus-Specific CD4+ Memory-Phenotype T Cells Are Abundant in Unexposed Adults"
+      "title": "Virus-Specific CD4+ Memory-Phenotype T Cells Are Abundant in Unexposed Adults",
+      "meta": {
+        "label": "16."
+      }
     },
     {
       "type": "Article",
@@ -1691,7 +1739,10 @@
       },
       "pageEnd": 281,
       "pageStart": 281,
-      "title": "Cytomegalovirus infection enhances the immune response to influenza"
+      "title": "Cytomegalovirus infection enhances the immune response to influenza",
+      "meta": {
+        "label": "17."
+      }
     },
     {
       "type": "Article",
@@ -1953,7 +2004,10 @@
       },
       "pageEnd": 1840,
       "pageStart": 1825,
-      "title": "Non-terminally exhausted tumor-resident memory HBV-specific T cell responses correlate with relapse-free survival in hepatocellular carcinoma"
+      "title": "Non-terminally exhausted tumor-resident memory HBV-specific T cell responses correlate with relapse-free survival in hepatocellular carcinoma",
+      "meta": {
+        "label": "18."
+      }
     },
     {
       "type": "Article",
@@ -2031,7 +2085,10 @@
       },
       "pageEnd": 200,
       "pageStart": 169,
-      "title": "T Cell Antigen Receptor Recognition of Antigen-Presenting Molecules"
+      "title": "T Cell Antigen Receptor Recognition of Antigen-Presenting Molecules",
+      "meta": {
+        "label": "19."
+      }
     },
     {
       "type": "Article",
@@ -2178,7 +2235,10 @@
       },
       "pageEnd": 93,
       "pageStart": 89,
-      "title": "Quantifiable predictive features define epitope-specific T cell receptor repertoires"
+      "title": "Quantifiable predictive features define epitope-specific T cell receptor repertoires",
+      "meta": {
+        "label": "20."
+      }
     },
     {
       "type": "Article",
@@ -2269,7 +2329,10 @@
         },
         "volumeNumber": 10
       },
-      "title": "Multiplex Identification of Antigen-Specific T Cell Receptors Using a Combination of Immune Assays and Immune Receptor Sequencing"
+      "title": "Multiplex Identification of Antigen-Specific T Cell Receptors Using a Combination of Immune Assays and Immune Receptor Sequencing",
+      "meta": {
+        "label": "21."
+      }
     },
     {
       "type": "Article",
@@ -2416,7 +2479,10 @@
         },
         "volumeNumber": 6
       },
-      "title": "T cell receptor repertoires of mice and humans are clustered in similarity networks around conserved public CDR3 sequences"
+      "title": "T cell receptor repertoires of mice and humans are clustered in similarity networks around conserved public CDR3 sequences",
+      "meta": {
+        "label": "22."
+      }
     },
     {
       "type": "Article",
@@ -2519,7 +2585,10 @@
       },
       "pageEnd": 583,
       "pageStart": 569,
-      "title": "Sequence and Structural Analyses Reveal Distinct and Highly Diverse Human CD8 + TCR Repertoires to Immunodominant Viral Antigens"
+      "title": "Sequence and Structural Analyses Reveal Distinct and Highly Diverse Human CD8 + TCR Repertoires to Immunodominant Viral Antigens",
+      "meta": {
+        "label": "23."
+      }
     },
     {
       "type": "Article",
@@ -2701,7 +2770,10 @@
       },
       "pageEnd": 98,
       "pageStart": 94,
-      "title": "Identifying specificity groups in the T cell receptor repertoire"
+      "title": "Identifying specificity groups in the T cell receptor repertoire",
+      "meta": {
+        "label": "24."
+      }
     },
     {
       "type": "Article",
@@ -2815,7 +2887,10 @@
       },
       "pageEnd": 332,
       "pageStart": 332,
-      "title": "Diversification of the antigen-specific T cell receptor repertoire after varicella zoster vaccination"
+      "title": "Diversification of the antigen-specific T cell receptor repertoire after varicella zoster vaccination",
+      "meta": {
+        "label": "25."
+      }
     },
     {
       "type": "Article",
@@ -2892,7 +2967,10 @@
       },
       "pageEnd": 1468,
       "pageStart": 1461,
-      "title": "On the viability of unsupervised T-cell receptor sequence clustering for epitope preference"
+      "title": "On the viability of unsupervised T-cell receptor sequence clustering for epitope preference",
+      "meta": {
+        "label": "26."
+      }
     },
     {
       "type": "Article",
@@ -2958,7 +3036,10 @@
       },
       "pageEnd": 2929,
       "pageStart": 2924,
-      "title": "McPAS-TCR: a manually curated catalogue of pathology-associated T cell receptor sequences"
+      "title": "McPAS-TCR: a manually curated catalogue of pathology-associated T cell receptor sequences",
+      "meta": {
+        "label": "27."
+      }
     },
     {
       "type": "Article",
@@ -3248,7 +3329,10 @@
         },
         "volumeNumber": 46
       },
-      "title": "VDJdb: a curated database of T-cell receptor sequences with known antigen specificity"
+      "title": "VDJdb: a curated database of T-cell receptor sequences with known antigen specificity",
+      "meta": {
+        "label": "28."
+      }
     },
     {
       "type": "Article",
@@ -3428,7 +3512,10 @@
         },
         "volumeNumber": 17
       },
-      "title": "Comparison of peptidemajor histocompatibility complex tetramers and dextramers for the identification of antigenspecific T cells"
+      "title": "Comparison of peptidemajor histocompatibility complex tetramers and dextramers for the identification of antigenspecific T cells",
+      "meta": {
+        "label": "29."
+      }
     },
     {
       "type": "Article",
@@ -3552,7 +3639,10 @@
         "volumeNumber": 11
       },
       "pageStart": 17,
-      "title": "Multiplex T Cell Stimulation Assay Utilizing a T Cell Activation Reporter-Based Detection System"
+      "title": "Multiplex T Cell Stimulation Assay Utilizing a T Cell Activation Reporter-Based Detection System",
+      "meta": {
+        "label": "30."
+      }
     },
     {
       "type": "Article",
@@ -3831,7 +3921,10 @@
         },
         "volumeNumber": 3
       },
-      "title": "Islet-reactive CD8 + T cell frequencies in the pancreas, but not in blood, distinguish type 1 diabetic patients from healthy donors"
+      "title": "Islet-reactive CD8 + T cell frequencies in the pancreas, but not in blood, distinguish type 1 diabetic patients from healthy donors",
+      "meta": {
+        "label": "31."
+      }
     },
     {
       "type": "Article",
@@ -3951,7 +4044,10 @@
       },
       "pageEnd": 94,
       "pageStart": 87,
-      "title": "Structural interplay between germline interactions and adaptive recognition determines the bandwidth of TCR-peptide-MHC cross-reactivity"
+      "title": "Structural interplay between germline interactions and adaptive recognition determines the bandwidth of TCR-peptide-MHC cross-reactivity",
+      "meta": {
+        "label": "32."
+      }
     },
     {
       "type": "Article",
@@ -4068,7 +4164,10 @@
       },
       "pageEnd": 1087,
       "pageStart": 1073,
-      "title": "Deconstructing the Peptide-MHC Specificity of T Cell Recognition"
+      "title": "Deconstructing the Peptide-MHC Specificity of T Cell Recognition",
+      "meta": {
+        "label": "33."
+      }
     },
     {
       "type": "Article",
@@ -4098,7 +4197,10 @@
       },
       "pageEnd": 404,
       "pageStart": 395,
-      "title": "A very high level of crossreactivity is an essential feature of the T-cell receptor"
+      "title": "A very high level of crossreactivity is an essential feature of the T-cell receptor",
+      "meta": {
+        "label": "34."
+      }
     },
     {
       "type": "Article",
@@ -4234,7 +4336,10 @@
       },
       "pageEnd": 1177,
       "pageStart": 1168,
-      "title": "A Single Autoimmune T Cell Receptor Recognizes More Than a Million Different Peptides"
+      "title": "A Single Autoimmune T Cell Receptor Recognizes More Than a Million Different Peptides",
+      "meta": {
+        "label": "35."
+      }
     },
     {
       "type": "Article",
@@ -4381,7 +4486,10 @@
       },
       "pageEnd": 107,
       "pageStart": 95,
-      "title": "T Cell Receptor Cross-Reactivity between Similar Foreign and Self Peptides Influences Naive Cell Population Size and Autoimmunity"
+      "title": "T Cell Receptor Cross-Reactivity between Similar Foreign and Self Peptides Influences Naive Cell Population Size and Autoimmunity",
+      "meta": {
+        "label": "36."
+      }
     },
     {
       "type": "Article",
@@ -4422,7 +4530,10 @@
       },
       "pageEnd": 705,
       "pageStart": 695,
-      "title": "Molecular mimicry in T cell-mediated autoimmunity: Viral peptides activate human T cell clones specific for myelin basic protein"
+      "title": "Molecular mimicry in T cell-mediated autoimmunity: Viral peptides activate human T cell clones specific for myelin basic protein",
+      "meta": {
+        "label": "37."
+      }
     },
     {
       "type": "Article",
@@ -4479,7 +4590,10 @@
       },
       "pageEnd": 657,
       "pageStart": 643,
-      "title": "Mucosal-associated invariant T cells and disease"
+      "title": "Mucosal-associated invariant T cells and disease",
+      "meta": {
+        "label": "38."
+      }
     },
     {
       "type": "Article",
@@ -4528,7 +4642,10 @@
       },
       "pageEnd": 510,
       "pageStart": 479,
-      "title": "The Immunology of CD1- and MR1-Restricted T Cells"
+      "title": "The Immunology of CD1- and MR1-Restricted T Cells",
+      "meta": {
+        "label": "39."
+      }
     },
     {
       "type": "Article",
@@ -4559,7 +4676,10 @@
       },
       "pageEnd": 247,
       "pageStart": 229,
-      "title": "Neonatal T Cells: A Reinterpretation"
+      "title": "Neonatal T Cells: A Reinterpretation",
+      "meta": {
+        "label": "40."
+      }
     },
     {
       "type": "Article",
@@ -4610,7 +4730,10 @@
       },
       "pageEnd": 506,
       "pageStart": 499,
-      "title": "Building a T cell compartment: how immune cell development shapes function"
+      "title": "Building a T cell compartment: how immune cell development shapes function",
+      "meta": {
+        "label": "41."
+      }
     },
     {
       "type": "Article",
@@ -5013,7 +5136,10 @@
       },
       "pageEnd": 602,
       "pageStart": 586,
-      "title": "Global analysis of shared T cell specificities in human non-small cell lung cancer enables HLA inference and antigen discovery"
+      "title": "Global analysis of shared T cell specificities in human non-small cell lung cancer enables HLA inference and antigen discovery",
+      "meta": {
+        "label": "42."
+      }
     },
     {
       "type": "Article",
@@ -5264,7 +5390,10 @@
       },
       "pageEnd": 1281,
       "pageStart": 1264,
-      "title": "HLA-DR15 Molecules Jointly Shape an Autoreactive T Cell Repertoire in Multiple Sclerosis"
+      "title": "HLA-DR15 Molecules Jointly Shape an Autoreactive T Cell Repertoire in Multiple Sclerosis",
+      "meta": {
+        "label": "43."
+      }
     },
     {
       "type": "Article",
@@ -5364,7 +5493,10 @@
       },
       "pageEnd": 1028,
       "pageStart": 1016,
-      "title": "T-Scan: A Genome-wide Method for the Systematic Discovery of T Cell Epitopes"
+      "title": "T-Scan: A Genome-wide Method for the Systematic Discovery of T Cell Epitopes",
+      "meta": {
+        "label": "44."
+      }
     },
     {
       "type": "Article",
@@ -5433,7 +5565,10 @@
       },
       "pageEnd": 1123,
       "pageStart": 1114,
-      "title": "The burgeoning family of unconventional T cells"
+      "title": "The burgeoning family of unconventional T cells",
+      "meta": {
+        "label": "45."
+      }
     },
     {
       "type": "Article",
@@ -5471,7 +5606,10 @@
         "type": "Periodical",
         "name": "Annu. Rev. Immunol."
       },
-      "title": "A. C.Hayday, P.Vantourout, Annu. Rev. Immunol., in press, doi:10.1146/annurev-immunol-102819-023144."
+      "title": "A. C.Hayday, P.Vantourout, Annu. Rev. Immunol., in press, doi:10.1146/annurev-immunol-102819-023144.",
+      "meta": {
+        "label": "46."
+      }
     },
     {
       "type": "Article",
@@ -5511,7 +5649,10 @@
       },
       "pageEnd": 20,
       "pageStart": 13,
-      "title": "Natural Antibodies Bridge Innate and Adaptive Immunity"
+      "title": "Natural Antibodies Bridge Innate and Adaptive Immunity",
+      "meta": {
+        "label": "47."
+      }
     },
     {
       "type": "Article",
@@ -5587,7 +5728,10 @@
       },
       "pageEnd": 115,
       "pageStart": 106,
-      "title": "The survival benefit of measles immunization may not be explained entirely by the prevention of measles disease: a community study from rural Bangladesh"
+      "title": "The survival benefit of measles immunization may not be explained entirely by the prevention of measles disease: a community study from rural Bangladesh",
+      "meta": {
+        "label": "48."
+      }
     },
     {
       "type": "Article",
@@ -5700,7 +5844,10 @@
         },
         "volumeNumber": 341
       },
-      "title": "Non-specific effects of standard measles vaccine at 4.5 and 9 months of age on childhood mortality: randomised controlled trial"
+      "title": "Non-specific effects of standard measles vaccine at 4.5 and 9 months of age on childhood mortality: randomised controlled trial",
+      "meta": {
+        "label": "49."
+      }
     },
     {
       "type": "Article",
@@ -5741,7 +5888,10 @@
       },
       "pageEnd": 426,
       "pageStart": 417,
-      "title": "No one is naive: the significance of heterologous T-cell immunity"
+      "title": "No one is naive: the significance of heterologous T-cell immunity",
+      "meta": {
+        "label": "50."
+      }
     },
     {
       "type": "Article",
@@ -5772,7 +5922,10 @@
       },
       "pageEnd": 677,
       "pageStart": 669,
-      "title": "Why must T cells be cross-reactive?"
+      "title": "Why must T cells be cross-reactive?",
+      "meta": {
+        "label": "51."
+      }
     },
     {
       "type": "Article",
@@ -5820,7 +5973,10 @@
       },
       "pageEnd": 500,
       "pageStart": 487,
-      "title": "Human Influenza Virus Infections"
+      "title": "Human Influenza Virus Infections",
+      "meta": {
+        "label": "52."
+      }
     },
     {
       "type": "Article",
@@ -5857,7 +6013,10 @@
         },
         "volumeNumber": 64
       },
-      "title": "Adaptive immunity in HBV infection"
+      "title": "Adaptive immunity in HBV infection",
+      "meta": {
+        "label": "53."
+      }
     },
     {
       "type": "Article",
@@ -5930,7 +6089,10 @@
         "type": "Periodical",
         "name": "Nat Rev Immunol"
       },
-      "title": "The trinity of COVID-19: immunity, inflammation and intervention"
+      "title": "The trinity of COVID-19: immunity, inflammation and intervention",
+      "meta": {
+        "label": "54."
+      }
     },
     {
       "type": "Article",
@@ -6120,7 +6282,10 @@
         "type": "Periodical",
         "name": "Nat Biotechnol"
       },
-      "title": "Benchmarking of T cell receptor repertoire profiling methods reveals large systematic biases"
+      "title": "Benchmarking of T cell receptor repertoire profiling methods reveals large systematic biases",
+      "meta": {
+        "label": "55."
+      }
     },
     {
       "type": "Article",
@@ -6208,7 +6373,10 @@
       },
       "pageEnd": 381,
       "pageStart": 380,
-      "title": "MiXCR: software for comprehensive adaptive immunity profiling"
+      "title": "MiXCR: software for comprehensive adaptive immunity profiling",
+      "meta": {
+        "label": "56."
+      }
     },
     {
       "type": "Article",
@@ -6242,7 +6410,10 @@
       },
       "pageEnd": 122,
       "pageStart": 111,
-      "title": "The stringdist package for approximate string matching"
+      "title": "The stringdist package for approximate string matching",
+      "meta": {
+        "label": "57."
+      }
     },
     {
       "type": "Article",
@@ -6267,7 +6438,10 @@
           ]
         }
       ],
-      "title": "The igraph software package for complex network research"
+      "title": "The igraph software package for complex network research",
+      "meta": {
+        "label": "58."
+      }
     },
     {
       "type": "Article",
@@ -6295,7 +6469,10 @@
         },
         "name": "Springer"
       },
-      "title": "ggplot2: elegant graphics for data analysis"
+      "title": "ggplot2: elegant graphics for data analysis",
+      "meta": {
+        "label": "59."
+      }
     },
     {
       "type": "Article",
@@ -6325,7 +6502,10 @@
       },
       "pageEnd": 2504,
       "pageStart": 2498,
-      "title": "Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks"
+      "title": "Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks",
+      "meta": {
+        "label": "60."
+      }
     },
     {
       "type": "Article",
@@ -6347,7 +6527,10 @@
         "value": "2015"
       },
       "title": "Rtsne: T-distributed stochastic neighbor embedding using Barnes-Hut implementation",
-      "url": "https://github.com/jkrijthe/Rtsne"
+      "url": "https://github.com/jkrijthe/Rtsne",
+      "meta": {
+        "label": "61."
+      }
     },
     {
       "type": "Article",
@@ -6381,7 +6564,10 @@
           ]
         }
       ],
-      "title": "OLGA: fast computation of generation probabilities of B- and T-cell receptor amino acid sequences and motifs"
+      "title": "OLGA: fast computation of generation probabilities of B- and T-cell receptor amino acid sequences and motifs",
+      "meta": {
+        "label": "62."
+      }
     },
     {
       "type": "Article",
@@ -6436,7 +6622,10 @@
         },
         "volumeNumber": 9
       },
-      "title": "High-throughput immune repertoire analysis with IGoR"
+      "title": "High-throughput immune repertoire analysis with IGoR",
+      "meta": {
+        "label": "63."
+      }
     }
   ],
   "title": [
