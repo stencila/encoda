@@ -1,3 +1,15 @@
+# [0.121.0](https://github.com/stencila/encoda/compare/v0.120.0...v0.121.0) (2023-02-13)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update dependencies ([b9a8079](https://github.com/stencila/encoda/commit/b9a8079e3678333ef924f4fb361ddbfe510b0741))
+
+
+### Features
+
+* **JATS:** Extract `<ref><label>` elements into the `meta.label` property of the reference. ([931cbb1](https://github.com/stencila/encoda/commit/931cbb1a26e30938b5bafec10f5db3e804d95b80))
+
 # [0.120.0](https://github.com/stencila/encoda/compare/v0.119.7...v0.120.0) (2023-01-30)
 
 
