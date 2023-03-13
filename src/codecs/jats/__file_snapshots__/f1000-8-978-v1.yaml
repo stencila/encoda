@@ -1420,6 +1420,9 @@ references:
       value: '2007'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e563
+      - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
         value: '17622339'
@@ -1544,6 +1547,9 @@ references:
       type: Date
       value: '2010'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e13724
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid
@@ -1768,6 +1774,9 @@ references:
       type: Date
       value: '2014'
     identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e87895
       - type: PropertyValue
         name: pmid
         propertyID: https://registry.identifiers.org/registry/pmid

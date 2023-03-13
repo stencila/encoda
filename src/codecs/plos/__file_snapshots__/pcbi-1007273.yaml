@@ -1724,6 +1724,10 @@ references:
     datePublished:
       type: Date
       value: '2012'
+    identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e31002
     isPartOf:
       type: PublicationIssue
       isPartOf:

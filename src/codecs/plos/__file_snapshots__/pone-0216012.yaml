@@ -1084,6 +1084,10 @@ references:
     datePublished:
       type: Date
       value: '2011'
+    identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e142
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1163,6 +1167,10 @@ references:
     datePublished:
       type: Date
       value: '2014'
+    identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e252
     isPartOf:
       type: PublicationIssue
       isPartOf:

@@ -1198,6 +1198,9 @@ references:
       value: '2015'
     identifiers:
       - type: PropertyValue
+        name: elocation-id
+        value: e437
+      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1016/S2352-3026(15)00152-0

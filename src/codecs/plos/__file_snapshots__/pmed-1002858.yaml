@@ -810,6 +810,10 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e43154
     isPartOf:
       type: PublicationVolume
       isPartOf:
@@ -1774,6 +1778,10 @@ references:
     datePublished:
       type: Date
       value: '2015'
+    identifiers:
+      - type: PropertyValue
+        name: elocation-id
+        value: e437
     isPartOf:
       type: PublicationIssue
       isPartOf:

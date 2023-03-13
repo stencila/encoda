@@ -1287,7 +1287,7 @@ function encodeReferences(
  * Decode a JATS `<element-citation>` or `<mixed-citation>` element
  * into a `CreativeWork` node.
  */
-function decodeReference(
+export function decodeReference(
   elem: xml.Element,
   ident: string | null,
   label: string | undefined
@@ -1387,6 +1387,20 @@ function decodeReference(
     })
     .filter(isDefined)
 
+  // The `elocation-id` tag is a replacement for `fpage` but some XML still uses
+  // `fpage` to store the eLocation. https://jats.nlm.nih.gov/publishing/tag-library/1.3/element/fpage.html
+  const eLocationFpage = all(elem, 'fpage')
+    .map((elem) => {
+      const value = text(elem)
+      return value.startsWith('e')
+        ? stencila.propertyValue({
+            name: 'elocation-id',
+            value,
+          })
+        : undefined
+    })
+    .filter(isDefined)
+
   const pubIds = all(elem, 'pub-id')
     .map((elem) => {
       const name = attr(elem, 'pub-id-type') ?? undefined
@@ -1404,6 +1418,7 @@ function decodeReference(
 
   let identifiers: stencila.CreativeWork['identifiers'] = [
     ...eLocation,
+    ...eLocationFpage,
     ...pubIds,
   ]
   if (identifiers.length === 0) identifiers = undefined

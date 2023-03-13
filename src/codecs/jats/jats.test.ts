@@ -1,5 +1,5 @@
 import path from 'path'
-import { decodeAff, decodeFigure, DecodeState, JatsCodec } from '.'
+import { decodeAff, decodeFigure, decodeReference, DecodeState, JatsCodec } from '.'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import {
   asciimathFragment,

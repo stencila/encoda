@@ -3051,6 +3051,11 @@
       "identifiers": [
         {
           "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "e105895"
+        },
+        {
+          "type": "PropertyValue",
           "name": "doi",
           "propertyID": "https://registry.identifiers.org/registry/doi",
           "value": "10.1371/journal.pone.0105895"
@@ -4432,6 +4437,11 @@
         "value": "2018"
       },
       "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "e0196791"
+        },
         {
           "type": "PropertyValue",
           "name": "doi",
