@@ -58,18 +58,20 @@ datePublished:
   type: Date
   value: '2019-08-29'
 description:
-  - >-
-    As a result of migrations and globalization, people may face a possible
-    increase in the incidence of central nervous system rickettsial infections
-    (CNS R). These diseases, caused by 
-  - type: Emphasis
+  - type: Paragraph
     content:
-      - Rickettsia
-  - ' species and transmitted to humans by arthropod bites, are putatively lethal. However, the diagnosis of CNS R is challenging and often delayed due to their nonspecific clinical presentation and the strict intracellular nature of rickettsiae. Furthermore, transfer of rickettsiae to the brain parenchyma is not yet understood. The aim of this review is to analyze and summarize the features and correlated findings of CNS R in order to focus attention on these intriguing but frequently neglected illnesses. We also incorporated data on CNS infections caused by '
-  - type: Emphasis
-    content:
-      - Rickettsia-
-  - related microorganisms.
+      - >-
+        As a result of migrations and globalization, people may face a possible
+        increase in the incidence of central nervous system rickettsial
+        infections (CNS R). These diseases, caused by 
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species and transmitted to humans by arthropod bites, are putatively lethal. However, the diagnosis of CNS R is challenging and often delayed due to their nonspecific clinical presentation and the strict intracellular nature of rickettsiae. Furthermore, transfer of rickettsiae to the brain parenchyma is not yet understood. The aim of this review is to analyze and summarize the features and correlated findings of CNS R in order to focus attention on these intriguing but frequently neglected illnesses. We also incorporated data on CNS infections caused by '
+      - type: Emphasis
+        content:
+          - Rickettsia-
+      - related microorganisms.
 editors:
   - type: Person
     affiliations:

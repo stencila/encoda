@@ -437,28 +437,33 @@
     "value": "2020-07-27"
   },
   "description": [
-    "T cell receptors (TCRs) are formed by stochastic gene rearrangements, theoretically generating >10",
     {
-      "type": "Superscript",
+      "type": "Paragraph",
       "content": [
-        "19"
+        "T cell receptors (TCRs) are formed by stochastic gene rearrangements, theoretically generating >10",
+        {
+          "type": "Superscript",
+          "content": [
+            "19"
+          ]
+        },
+        " sequences. They are selected during thymopoiesis, which releases a repertoire of about 10",
+        {
+          "type": "Superscript",
+          "content": [
+            "8"
+          ]
+        },
+        " unique TCRs per individual. How evolution shaped a process that produces TCRs that can effectively handle a countless and evolving set of infectious agents is a central question of immunology. The paradigm is that a diverse enough repertoire of TCRs should always provide a proper, though rare, specificity for any given need. Expansion of such rare T cells would provide enough fighters for an effective immune response and enough antigen-experienced cells for memory. We show here that human thymopoiesis releases a large population of CD8",
+        {
+          "type": "Superscript",
+          "content": [
+            "+"
+          ]
+        },
+        " T cells harboring α/β paired TCRs that (i) have high generation probabilities and (ii) a preferential usage of some V and J genes, (iii) are shared between individuals and (iv) can each recognize and be activated by multiple unrelated viral peptides, notably from EBV, CMV and influenza. These polyspecific T cells may represent a first line of defense that is mobilized in response to infections before a more specific response subsequently ensures viral elimination. Our results support an evolutionary selection of polyspecific α/β TCRs for broad antiviral responses and heterologous immunity."
       ]
-    },
-    " sequences. They are selected during thymopoiesis, which releases a repertoire of about 10",
-    {
-      "type": "Superscript",
-      "content": [
-        "8"
-      ]
-    },
-    " unique TCRs per individual. How evolution shaped a process that produces TCRs that can effectively handle a countless and evolving set of infectious agents is a central question of immunology. The paradigm is that a diverse enough repertoire of TCRs should always provide a proper, though rare, specificity for any given need. Expansion of such rare T cells would provide enough fighters for an effective immune response and enough antigen-experienced cells for memory. We show here that human thymopoiesis releases a large population of CD8",
-    {
-      "type": "Superscript",
-      "content": [
-        "+"
-      ]
-    },
-    " T cells harboring α/β paired TCRs that (i) have high generation probabilities and (ii) a preferential usage of some V and J genes, (iii) are shared between individuals and (iv) can each recognize and be activated by multiple unrelated viral peptides, notably from EBV, CMV and influenza. These polyspecific T cells may represent a first line of defense that is mobilized in response to infections before a more specific response subsequently ensures viral elimination. Our results support an evolutionary selection of polyspecific α/β TCRs for broad antiviral responses and heterologous immunity."
+    }
   ],
   "identifiers": [
     {

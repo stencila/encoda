@@ -544,21 +544,24 @@ function decodePageEnd(front: xml.Element | null): stencila.Article['pageEnd'] {
 
 /**
  * Decode a JATS `<abstract>` element to a Stencila `Article.description`.
+ *
+ * Removes any 'Abstract' heading.
  */
-function decodeAbstract(
+export function decodeAbstract(
   elem: xml.Element | null,
   state: DecodeState
 ): stencila.Article['description'] {
   if (elem === null) return undefined
-  const ps = all(elem, 'p')
-  if (ps.length === 0) return undefined
-  if (ps.length === 1) {
-    const content = decodeInlineContent(ps, state)
-    return content.length === 1 && typeof content[0] === 'string'
-      ? content[0]
-      : content
-  }
-  return ensureBlockContentArray(decodeElements(ps, state))
+
+  let nodes = decodeElements(elem.elements ?? [], state)
+  return ensureBlockContentArray(nodes).filter(
+    (block) =>
+      !(
+        block.type === 'Heading' &&
+        block.content.length === 1 &&
+        block.content[0] === 'Abstract'
+      )
+  )
 }
 
 /**
@@ -568,11 +571,13 @@ export function encodeAbstract(
   description?: stencila.Article['description']
 ): xml.Element | null {
   if (description === undefined) return null
-  const paras =
+
+  const elems =
     typeof description === 'string'
-      ? elem('p', description)
-      : elem('p', ...encodeNodes(description, initialEncodeState()))
-  return elem('abstract', paras)
+      ? [elem('p', description)]
+      : encodeNodes(description, initialEncodeState())
+
+  return elem('abstract', ...elems)
 }
 
 /**
@@ -1798,11 +1803,17 @@ function decodeHeading(
   state: DecodeState
 ): [stencila.Heading] {
   const { ancestorElem, sectionDepth, sectionId } = state
-  const [depth, id] =
-    ancestorElem.name === 'sec'
+
+  let [depth, id] =
+    ancestorElem?.name === 'sec'
       ? [sectionDepth, sectionId]
       : [sectionDepth + 1, undefined]
   let content = decodeInlineContent(elem.elements ?? [], state)
+
+  if (depth === undefined || Number.isNaN(depth)) {
+    depth = 1
+  }
+
   if (
     content.length === 1 &&
     typeof content[0] === 'string' &&
@@ -1810,6 +1821,7 @@ function decodeHeading(
   ) {
     content = [sentenceCase(content[0])]
   }
+
   return [
     stencila.heading({
       content,

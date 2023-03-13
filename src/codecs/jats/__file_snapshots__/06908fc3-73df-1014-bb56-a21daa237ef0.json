@@ -75,14 +75,25 @@
     "value": "2022-05-28"
   },
   "description": [
-    "Predicting phenotypic evolution on the short-term of tens to hundreds of generations, particularly in changing environments and under finite population sizes, is an important theoretical goal. Because organisms are not simply collections of independent traits, making headway into this goal requires understanding if the phenotypic plasticity of ancestral populations aligns with the phenotypic dimensions that contain more genetic variation for selection to be effective and eventually feedback on the maintenance of genetic variation and promote adaptation or rescue from extinction. By performing 50 generations of experimental evolution in a changing environment we show that ancestral phenotypic plasticity for locomotion behavior in the partially-outcrossing nematode ",
     {
-      "type": "Emphasis",
+      "type": "Paragraph",
       "content": [
-        "Caenorhabditis elegans"
+        "1"
       ]
     },
-    " is nonadaptive because it does not align with the phenotypic dimension encompassing most genetic variance in the ancestral population and is of no consequence to future phenotypic divergence. Despite evolution of the genetic structure of locomotion behavior we are able to predict the direction of phenotypic divergence, but not the magnitude, based on the genetic covariances between the component traits of locomotion behavior and fitness of the ancestral population. We further demonstrate that indirect selection on the component traits of locomotion behavior with unobserved trait(s) is responsible for the observed phenotypic divergence on them. Our findings indicate that selection theory can predict the direction of short-term adaptive phenotypic evolution."
+    {
+      "type": "Paragraph",
+      "content": [
+        "Predicting phenotypic evolution on the short-term of tens to hundreds of generations, particularly in changing environments and under finite population sizes, is an important theoretical goal. Because organisms are not simply collections of independent traits, making headway into this goal requires understanding if the phenotypic plasticity of ancestral populations aligns with the phenotypic dimensions that contain more genetic variation for selection to be effective and eventually feedback on the maintenance of genetic variation and promote adaptation or rescue from extinction. By performing 50 generations of experimental evolution in a changing environment we show that ancestral phenotypic plasticity for locomotion behavior in the partially-outcrossing nematode ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Caenorhabditis elegans"
+          ]
+        },
+        " is nonadaptive because it does not align with the phenotypic dimension encompassing most genetic variance in the ancestral population and is of no consequence to future phenotypic divergence. Despite evolution of the genetic structure of locomotion behavior we are able to predict the direction of phenotypic divergence, but not the magnitude, based on the genetic covariances between the component traits of locomotion behavior and fitness of the ancestral population. We further demonstrate that indirect selection on the component traits of locomotion behavior with unobserved trait(s) is responsible for the observed phenotypic divergence on them. Our findings indicate that selection theory can predict the direction of short-term adaptive phenotypic evolution."
+      ]
+    }
   ],
   "identifiers": [
     {

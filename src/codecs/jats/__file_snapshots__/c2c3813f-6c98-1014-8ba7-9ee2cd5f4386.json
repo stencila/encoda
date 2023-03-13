@@ -439,98 +439,103 @@
     "value": "2022-07-21"
   },
   "description": [
-    "The voltage-gated sodium Na",
     {
-      "type": "Subscript",
+      "type": "Paragraph",
       "content": [
-        "V"
+        "The voltage-gated sodium Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 channel plays a key role as a mediator of action potential propagation in C-fiber nociceptors and is an established molecular target for pain therapy. ProTx-II is a potent and moderately selective peptide toxin from tarantula venom that inhibits human Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 activation. Here we used available structural and experimental data to guide Rosetta design of potent and selective ProTx-II-based peptide inhibitors of human Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 channels. Functional testing of designed peptides using electrophysiology identified the PTx2-3127 and PTx2-3258 peptides with IC",
+        {
+          "type": "Subscript",
+          "content": [
+            "50"
+          ]
+        },
+        "s of 7 nM and 4 nM for hNa",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 and more than 1,000-fold selectivity over human Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.1, Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.3, Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.4, Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.5, Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.8, and Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.9 channels. PTx2-3127 inhibits Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 currents in mouse and human sensory neurons and shows efficacy in rat models of chronic and thermal pain when administered intrathecally. Rationally-designed peptide inhibitors of human Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 channels have transformative potential to define a new class of biologics to treat pain."
       ]
-    },
-    "1.7 channel plays a key role as a mediator of action potential propagation in C-fiber nociceptors and is an established molecular target for pain therapy. ProTx-II is a potent and moderately selective peptide toxin from tarantula venom that inhibits human Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.7 activation. Here we used available structural and experimental data to guide Rosetta design of potent and selective ProTx-II-based peptide inhibitors of human Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.7 channels. Functional testing of designed peptides using electrophysiology identified the PTx2-3127 and PTx2-3258 peptides with IC",
-    {
-      "type": "Subscript",
-      "content": [
-        "50"
-      ]
-    },
-    "s of 7 nM and 4 nM for hNa",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.7 and more than 1,000-fold selectivity over human Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.1, Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.3, Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.4, Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.5, Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.8, and Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.9 channels. PTx2-3127 inhibits Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.7 currents in mouse and human sensory neurons and shows efficacy in rat models of chronic and thermal pain when administered intrathecally. Rationally-designed peptide inhibitors of human Na",
-    {
-      "type": "Subscript",
-      "content": [
-        "V"
-      ]
-    },
-    "1.7 channels have transformative potential to define a new class of biologics to treat pain."
+    }
   ],
   "identifiers": [
     {

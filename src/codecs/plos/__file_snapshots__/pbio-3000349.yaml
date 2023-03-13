@@ -119,23 +119,28 @@ datePublished:
 dateReceived:
   type: Date
   value: '2018-11-12'
-description: >-
-  Psychological and personality factors, socioeconomic status, and brain
-  properties all contribute to chronic pain but have essentially been studied
-  independently. Here, we administered a broad battery of questionnaires to
-  patients with chronic back pain (CBP) and collected repeated sessions of
-  resting-state functional magnetic resonance imaging (fMRI) brain scans.
-  Clustering and network analyses applied on the questionnaire data revealed
-  four orthogonal dimensions accounting for 56% of the variance and defining
-  chronic pain traits. Two of these traits—Pain-trait and Emote-trait—were
-  associated with back pain characteristics and could be related to distinct
-  distributed functional networks in a cross-validation procedure, identifying
-  neurotraits. These neurotraits showed good reliability across four fMRI
-  sessions acquired over five weeks. Further, traits and neurotraits all related
-  to the income, emphasizing the importance of socioeconomic status within the
-  personality space of chronic pain. Our approach is a first step in providing
-  metrics aimed at unifying the psychology and the neurophysiology of chronic
-  pain applicable across diverse clinical conditions.
+description:
+  - type: Paragraph
+    content:
+      - >-
+        Psychological and personality factors, socioeconomic status, and brain
+        properties all contribute to chronic pain but have essentially been
+        studied independently. Here, we administered a broad battery of
+        questionnaires to patients with chronic back pain (CBP) and collected
+        repeated sessions of resting-state functional magnetic resonance imaging
+        (fMRI) brain scans. Clustering and network analyses applied on the
+        questionnaire data revealed four orthogonal dimensions accounting for
+        56% of the variance and defining chronic pain traits. Two of these
+        traits—Pain-trait and Emote-trait—were associated with back pain
+        characteristics and could be related to distinct distributed functional
+        networks in a cross-validation procedure, identifying neurotraits. These
+        neurotraits showed good reliability across four fMRI sessions acquired
+        over five weeks. Further, traits and neurotraits all related to the
+        income, emphasizing the importance of socioeconomic status within the
+        personality space of chronic pain. Our approach is a first step in
+        providing metrics aimed at unifying the psychology and the
+        neurophysiology of chronic pain applicable across diverse clinical
+        conditions.
 editors:
   - type: Person
     affiliations:

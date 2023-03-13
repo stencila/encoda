@@ -1,5 +1,6 @@
 import path from 'path'
 import {
+  decodeAbstract,
   decodeAff,
   decodeFigure,
   DecodeState,
@@ -190,6 +191,77 @@ test('decode: <table-wrap> element that has more than one <graphic>', () => {
       },
     ],
   })
+})
+
+test('decode: extract headings and lists in abstract', () => {
+  const fig = xml.load(`
+  <abstract>
+    <title>Abstract</title>
+    <p>Datasets collected in neuroscientific studies are of ever-growing complexity, often combining high dimensional time series data from multiple data acquisition modalities. Handling and manipulating these various data streams in an adequate programming environment is crucial to ensure reliable analysis, and to facilitate sharing of reproducible analysis pipelines. Here, we present Pynapple, a lightweight python package designed to process a broad range of time-resolved data in systems neuroscience. The core feature of this package is a small number of versatile objects that support the manipulation of any data streams and task parameters. The package includes a set of methods to read common data formats and allows users to easily write their own. The resulting code is easy to read and write, avoids low-level data processing and other error-prone steps, and is fully open source. Libraries for higher-level analyses are developed within the Pynapple framework but are contained within in a collaborative repository of specialized and continuously updated analysis routines. This provides flexibility while ensuring long-term stability of the core package. In conclusion, Pynapple provides a common framework for data analysis in neuroscience.</p>
+    <sec>
+      <title>Highlights</title>
+      <list list-type="bullet">
+        <list-item><p>An open-source framework for data analysis in systems neuroscience.</p></list-item>
+        <list-item><p>Easy-to-use object-oriented programming for data manipulation.</p></list-item>
+        <list-item><p>A lightweight and standalone package ensuring long-term backward compatibility.</p></list-item>
+      </list>
+    </sec>
+  </abstract>
+`).elements?.[0]!
+
+  expect(decodeAbstract(fig, {} as DecodeState)).toEqual([
+    {
+      type: 'Paragraph',
+      content: [
+        'Datasets collected in neuroscientific studies are of ever-growing complexity, often combining high dimensional time series data from multiple data acquisition modalities. Handling and manipulating these various data streams in an adequate programming environment is crucial to ensure reliable analysis, and to facilitate sharing of reproducible analysis pipelines. Here, we present Pynapple, a lightweight python package designed to process a broad range of time-resolved data in systems neuroscience. The core feature of this package is a small number of versatile objects that support the manipulation of any data streams and task parameters. The package includes a set of methods to read common data formats and allows users to easily write their own. The resulting code is easy to read and write, avoids low-level data processing and other error-prone steps, and is fully open source. Libraries for higher-level analyses are developed within the Pynapple framework but are contained within in a collaborative repository of specialized and continuously updated analysis routines. This provides flexibility while ensuring long-term stability of the core package. In conclusion, Pynapple provides a common framework for data analysis in neuroscience.',
+      ],
+    },
+    {
+      type: 'Heading',
+      content: ['Highlights'],
+      depth: 1,
+      id: ''
+    },
+    {
+      type: 'List',
+      order: 'Unordered',
+      items: [
+        {
+          type: 'ListItem',
+          content: [
+            {
+              type: 'Paragraph',
+              content: [
+                'An open-source framework for data analysis in systems neuroscience.',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'ListItem',
+          content: [
+            {
+              type: 'Paragraph',
+              content: [
+                'Easy-to-use object-oriented programming for data manipulation.',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'ListItem',
+          content: [
+            {
+              type: 'Paragraph',
+              content: [
+                'A lightweight and standalone package ensuring long-term backward compatibility.',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ])
 })
 
 test.each([

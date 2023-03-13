@@ -151,21 +151,26 @@ datePublished:
 dateReceived:
   type: Date
   value: '2019-10-19'
-description: >-
-  Bridging brain-scale circuit dynamics and organism-scale behavior is a central
-  challenge in neuroscience. It requires the concurrent development of minimal
-  behavioral and neural circuit models that can quantitatively capture basic
-  sensorimotor operations. Here, we focus on light-seeking navigation in
-  zebrafish larvae. Using a virtual reality assay, we first characterize how
-  motor and visual stimulation sequences govern the selection of discrete
-  swim-bout events that subserve the fish navigation in the presence of a
-  distant light source. These mechanisms are combined into a comprehensive
-  Markov-chain model of navigation that quantitatively predicts the stationary
-  distribution of the fish’s body orientation under any given illumination
-  profile. We then map this behavioral description onto a neuronal model of the
-  ARTR, a small neural circuit involved in the orientation-selection of swim
-  bouts. We demonstrate that this visually-biased decision-making circuit can
-  capture the statistics of both spontaneous and contrast-driven navigation.
+description:
+  - type: Paragraph
+    content:
+      - >-
+        Bridging brain-scale circuit dynamics and organism-scale behavior is a
+        central challenge in neuroscience. It requires the concurrent
+        development of minimal behavioral and neural circuit models that can
+        quantitatively capture basic sensorimotor operations. Here, we focus on
+        light-seeking navigation in zebrafish larvae. Using a virtual reality
+        assay, we first characterize how motor and visual stimulation sequences
+        govern the selection of discrete swim-bout events that subserve the fish
+        navigation in the presence of a distant light source. These mechanisms
+        are combined into a comprehensive Markov-chain model of navigation that
+        quantitatively predicts the stationary distribution of the fish’s body
+        orientation under any given illumination profile. We then map this
+        behavioral description onto a neuronal model of the ARTR, a small neural
+        circuit involved in the orientation-selection of swim bouts. We
+        demonstrate that this visually-biased decision-making circuit can
+        capture the statistics of both spontaneous and contrast-driven
+        navigation.
 editors:
   - type: Person
     affiliations:

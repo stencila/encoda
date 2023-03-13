@@ -217,26 +217,28 @@ dateReceived:
   type: Date
   value: '2019-01-30'
 description:
-  - >-
-    The causative mutation responsible for limb girdle muscular dystrophy 1F
-    (LGMD1F) is one heterozygous single nucleotide deletion in the stop codon of
-    the nuclear import factor Transportin 3 gene 
-  - type: Emphasis
+  - type: Paragraph
     content:
-      - (TNPO3
-  - >-
-    ). This mutation causes a carboxy-terminal extension of 15 amino acids,
-    producing a protein of unknown function (TNPO3_mut) that is co-expressed
-    with wild-type TNPO3 (TNPO3_wt). TNPO3 has been involved in the nuclear
-    transport of serine/arginine-rich proteins such as splicing factors and also
-    in HIV-1 infection through interaction with the viral integrase and capsid.
-    We analyzed the effect of TNPO3_mut on HIV-1 infection using PBMCs from
-    patients with LGMD1F infected ex vivo. HIV-1 infection was drastically
-    impaired in these cells and viral integration was reduced 16-fold. No
-    significant effects on viral reverse transcription and episomal 2-LTR
-    circles were observed suggesting that the integration of HIV-1 genome was
-    restricted. This is the second genetic defect described after CCR5Δ32 that
-    shows strong resistance against HIV-1 infection.
+      - >-
+        The causative mutation responsible for limb girdle muscular dystrophy 1F
+        (LGMD1F) is one heterozygous single nucleotide deletion in the stop
+        codon of the nuclear import factor Transportin 3 gene 
+      - type: Emphasis
+        content:
+          - (TNPO3
+      - >-
+        ). This mutation causes a carboxy-terminal extension of 15 amino acids,
+        producing a protein of unknown function (TNPO3_mut) that is co-expressed
+        with wild-type TNPO3 (TNPO3_wt). TNPO3 has been involved in the nuclear
+        transport of serine/arginine-rich proteins such as splicing factors and
+        also in HIV-1 infection through interaction with the viral integrase and
+        capsid. We analyzed the effect of TNPO3_mut on HIV-1 infection using
+        PBMCs from patients with LGMD1F infected ex vivo. HIV-1 infection was
+        drastically impaired in these cells and viral integration was reduced
+        16-fold. No significant effects on viral reverse transcription and
+        episomal 2-LTR circles were observed suggesting that the integration of
+        HIV-1 genome was restricted. This is the second genetic defect described
+        after CCR5Δ32 that shows strong resistance against HIV-1 infection.
 editors:
   - type: Person
     affiliations:

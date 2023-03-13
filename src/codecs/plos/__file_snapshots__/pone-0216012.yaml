@@ -91,26 +91,28 @@ dateReceived:
   type: Date
   value: '2019-04-01'
 description:
-  - >-
-    This work aims at investigating the interactions between the flow of fluids
-    in the eyes and the brain and their potential implications in structural and
-    functional changes in the eyes of astronauts, a condition also known as
-    spaceflight associated neuro-ocular syndrome (SANS). To this end, we propose
-    a reduced (0-dimensional) mathematical model of fluid flow in the eyes and
-    brain, which is embedded into a simplified whole-body circulation model. In
-    particular, the model accounts for: 
-  - type: Emphasis
+  - type: Paragraph
     content:
-      - (i)
-  - ' the flows of blood and aqueous humor in the eyes; '
-  - type: Emphasis
-    content:
-      - (ii)
-  - ' the flows of blood, cerebrospinal fluid and interstitial fluid in the brain; and '
-  - type: Emphasis
-    content:
-      - (iii)
-  - ' their interactions. The model is used to simulate variations in intraocular pressure, intracranial pressure and blood flow due to microgravity conditions, which are thought to be critical factors in SANS. Specifically, the model predicts that both intracranial and intraocular pressures increase in microgravity, even though their respective trends may be different. In such conditions, ocular blood flow is predicted to decrease in the choroid and ciliary body circulations, whereas retinal circulation is found to be less susceptible to microgravity-induced alterations, owing to a purely mechanical component in perfusion control associated with the venous segments. These findings indicate that the particular anatomical architecture of venous drainage in the retina may be one of the reasons why most of the SANS alterations are not observed in the retina but, rather, in other vascular beds, particularly the choroid. Thus, clinical assessment of ocular venous function may be considered as a determinant SANS factor, for which astronauts could be screened on earth and in-flight.'
+      - >-
+        This work aims at investigating the interactions between the flow of
+        fluids in the eyes and the brain and their potential implications in
+        structural and functional changes in the eyes of astronauts, a condition
+        also known as spaceflight associated neuro-ocular syndrome (SANS). To
+        this end, we propose a reduced (0-dimensional) mathematical model of
+        fluid flow in the eyes and brain, which is embedded into a simplified
+        whole-body circulation model. In particular, the model accounts for: 
+      - type: Emphasis
+        content:
+          - (i)
+      - ' the flows of blood and aqueous humor in the eyes; '
+      - type: Emphasis
+        content:
+          - (ii)
+      - ' the flows of blood, cerebrospinal fluid and interstitial fluid in the brain; and '
+      - type: Emphasis
+        content:
+          - (iii)
+      - ' their interactions. The model is used to simulate variations in intraocular pressure, intracranial pressure and blood flow due to microgravity conditions, which are thought to be critical factors in SANS. Specifically, the model predicts that both intracranial and intraocular pressures increase in microgravity, even though their respective trends may be different. In such conditions, ocular blood flow is predicted to decrease in the choroid and ciliary body circulations, whereas retinal circulation is found to be less susceptible to microgravity-induced alterations, owing to a purely mechanical component in perfusion control associated with the venous segments. These findings indicate that the particular anatomical architecture of venous drainage in the retina may be one of the reasons why most of the SANS alterations are not observed in the retina but, rather, in other vascular beds, particularly the choroid. Thus, clinical assessment of ocular venous function may be considered as a determinant SANS factor, for which astronauts could be screened on earth and in-flight.'
 editors:
   - type: Person
     affiliations:

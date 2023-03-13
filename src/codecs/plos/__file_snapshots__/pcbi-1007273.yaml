@@ -128,20 +128,22 @@ dateReceived:
   type: Date
   value: '2019-01-11'
 description:
-  - 'Long-read sequencing and novel long-range assays have revolutionized '
-  - type: Emphasis
+  - type: Paragraph
     content:
-      - de novo
-  - ' genome assembly by automating the reconstruction of reference-quality genomes. In particular, Hi-C sequencing is becoming an economical method for generating chromosome-scale scaffolds. Despite its increasing popularity, there are limited open-source tools available. Errors, particularly inversions and fusions across chromosomes, remain higher than alternate scaffolding technologies. We present a novel open-source Hi-C scaffolder that does not require an '
-  - type: Emphasis
-    content:
-      - a priori
-  - ' estimate of chromosome number and minimizes errors by scaffolding with the assistance of an assembly graph. We demonstrate higher accuracy than the state-of-the-art methods across a variety of Hi-C library preparations and input assembly sizes. The Python and C++ code for our method is openly available at '
-  - type: Link
-    target: https://github.com/machinegun/SALSA
-    content:
-      - https://github.com/machinegun/SALSA
-  - .
+      - 'Long-read sequencing and novel long-range assays have revolutionized '
+      - type: Emphasis
+        content:
+          - de novo
+      - ' genome assembly by automating the reconstruction of reference-quality genomes. In particular, Hi-C sequencing is becoming an economical method for generating chromosome-scale scaffolds. Despite its increasing popularity, there are limited open-source tools available. Errors, particularly inversions and fusions across chromosomes, remain higher than alternate scaffolding technologies. We present a novel open-source Hi-C scaffolder that does not require an '
+      - type: Emphasis
+        content:
+          - a priori
+      - ' estimate of chromosome number and minimizes errors by scaffolding with the assistance of an assembly graph. We demonstrate higher accuracy than the state-of-the-art methods across a variety of Hi-C library preparations and input assembly sizes. The Python and C++ code for our method is openly available at '
+      - type: Link
+        target: https://github.com/machinegun/SALSA
+        content:
+          - https://github.com/machinegun/SALSA
+      - .
 editors:
   - type: Person
     affiliations:

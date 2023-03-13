@@ -163,6 +163,11 @@ dateReceived:
   type: Date
   value: '2019-01-18'
 description:
+  - type: Heading
+    id: sec001
+    depth: 1
+    content:
+      - Background
   - type: Paragraph
     content:
       - >-
@@ -174,6 +179,11 @@ description:
         Understanding the causal contributions of clinical and laboratory
         abnormalities to mortality is essential for the design and evaluation of
         novel therapeutic interventions.
+  - type: Heading
+    id: sec002
+    depth: 1
+    content:
+      - Methods and findings
   - type: Paragraph
     content:
       - >-
@@ -191,6 +201,11 @@ description:
         content:
           - 'n'
       - ' = 3,405, 12–87 years) with severe falciparum malaria from 15 countries in Africa and Asia who were studied prospectively over the past 35 years. On admission, patient covariates associated with increased in-hospital mortality were severity of acidosis (odds ratio [OR] 2.10 for a 7-mEq/L increase in base deficit [95% CI 1.93–2.28]), renal impairment (OR 1.71 for a 2-fold increase in blood urea nitrogen [95% CI 1.58, 1.86]), coma (OR 3.59 [95% CI 3.07–4.21]), seizures (OR 1.40 [95% CI 1.16–1.68]), shock (OR 1.51 [95% CI 1.14–1.99]), and presumed pulmonary oedema (OR 1.58 [95% CI 1.04–2.39]). Lower in-hospital mortality was associated with moderate anaemia (OR 0.87 for a decrease of 10 percentage points in haematocrit [95% CI 0.80–0.95]). Circulating parasite density was not associated with mortality (OR 1.02 for a 6-fold increase [95% CI 0.94–1.11]), so the pathological effects of parasitaemia appear to be mediated entirely by the downstream effects of sequestration. Treatment with an artemisinin derivative decreased mortality compared with quinine (OR 0.64 [95% CI 0.56–0.74]). These estimates were consistent across children and adults (mainly representing African and Asian patients, respectively). Using inverse probability weighting, transfusion was not estimated to be beneficial in children with admission haematocrit values between 15% and 25% (OR 0.99 [95% CI 0.97–1.02]). Except for the effects of artemisinin treatment and transfusion, causal interpretations of these estimates could be biased by unmeasured confounding from severe bacterial sepsis, immunity, and duration of illness.'
+  - type: Heading
+    id: sec003
+    depth: 1
+    content:
+      - Conclusion
   - type: Paragraph
     content:
       - >-

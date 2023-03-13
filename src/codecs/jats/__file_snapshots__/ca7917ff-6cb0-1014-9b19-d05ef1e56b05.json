@@ -143,14 +143,26 @@
     "value": "2021-11-12"
   },
   "description": [
-    "Tastes are typically thought to evoke innate appetitive or aversive behaviours, prompting food acceptance or rejection. However, research in ",
     {
-      "type": "Emphasis",
+      "type": "Heading",
+      "depth": 1,
       "content": [
-        "Drosophila melanogaster"
+        "Summary"
       ]
     },
-    " indicates that taste responses can be modified through experience-dependent changes in mushroom body circuits. In this study, we develop a novel taste learning paradigm using closed-loop optogenetics. We find that appetitive and aversive taste memories can be formed by pairing gustatory stimuli with optogenetic activation of sensory or dopaminergic neurons associated with reward or punishment. As with olfactory memories, distinct dopaminergic subpopulations drive the parallel formation of short- and long-term appetitive memories. Long-term memories are protein synthesis-dependent and have energetic requirements that are satisfied by a variety of caloric food sources or by direct stimulation of MB-MP1 dopaminergic neurons. Our paradigm affords new opportunities to probe plasticity mechanisms within the taste system and understand the extent to which taste responses depend on experience."
+    {
+      "type": "Paragraph",
+      "content": [
+        "Tastes are typically thought to evoke innate appetitive or aversive behaviours, prompting food acceptance or rejection. However, research in ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "Drosophila melanogaster"
+          ]
+        },
+        " indicates that taste responses can be modified through experience-dependent changes in mushroom body circuits. In this study, we develop a novel taste learning paradigm using closed-loop optogenetics. We find that appetitive and aversive taste memories can be formed by pairing gustatory stimuli with optogenetic activation of sensory or dopaminergic neurons associated with reward or punishment. As with olfactory memories, distinct dopaminergic subpopulations drive the parallel formation of short- and long-term appetitive memories. Long-term memories are protein synthesis-dependent and have energetic requirements that are satisfied by a variety of caloric food sources or by direct stimulation of MB-MP1 dopaminergic neurons. Our paradigm affords new opportunities to probe plasticity mechanisms within the taste system and understand the extent to which taste responses depend on experience."
+      ]
+    }
   ],
   "identifiers": [
     {

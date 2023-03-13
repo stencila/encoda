@@ -280,7 +280,14 @@
     "type": "Date",
     "value": "2022-07-26"
   },
-  "description": "During severe or chronic hepatic injury, biliary epithelial cells (BECs), also known as cholangiocytes, undergo rapid reprogramming and proliferation, a process known as ductular reaction (DR), and allow liver regeneration by differentiating into both functional cholangiocytes and hepatocytes. While DR is a hallmark of chronic liver diseases, including advanced stages of non-alcoholic fatty liver disease (NAFLD), the early events underlying BEC activation are largely unknown. Here, we demonstrate that BECs readily accumulate lipids upon fatty acid (FA) treatment in BEC-derived organoids, and during high-fat diet feeding in mice. Lipid overload induces a metabolic rewiring to support the conversion of adult cholangiocytes into active BECs. Mechanistically, we found that lipid overload unleashes the activation of the E2F transcription factors in BECs, which drives cell cycle progression while promoting glycolytic metabolism. These findings demonstrate that fat overload is sufficient to initiate a DR, without epithelial damage, and provide new insights into the mechanistic basis of BEC activation, revealing unexpected connections between lipid metabolism, stemness, and regeneration.",
+  "description": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "During severe or chronic hepatic injury, biliary epithelial cells (BECs), also known as cholangiocytes, undergo rapid reprogramming and proliferation, a process known as ductular reaction (DR), and allow liver regeneration by differentiating into both functional cholangiocytes and hepatocytes. While DR is a hallmark of chronic liver diseases, including advanced stages of non-alcoholic fatty liver disease (NAFLD), the early events underlying BEC activation are largely unknown. Here, we demonstrate that BECs readily accumulate lipids upon fatty acid (FA) treatment in BEC-derived organoids, and during high-fat diet feeding in mice. Lipid overload induces a metabolic rewiring to support the conversion of adult cholangiocytes into active BECs. Mechanistically, we found that lipid overload unleashes the activation of the E2F transcription factors in BECs, which drives cell cycle progression while promoting glycolytic metabolism. These findings demonstrate that fat overload is sufficient to initiate a DR, without epithelial damage, and provide new insights into the mechanistic basis of BEC activation, revealing unexpected connections between lipid metabolism, stemness, and regeneration."
+      ]
+    }
+  ],
   "identifiers": [
     {
       "type": "PropertyValue",
