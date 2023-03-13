@@ -4522,6 +4522,8 @@ content:
                 cerebral tissue and interstitial fluid (1 compartment: brain
                 (B));
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - in each of the two eyes
@@ -4563,6 +4565,8 @@ content:
                   - ah
               - ') (1 compartment: anterior and posterior chamber);'
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - and in the eye-brain coupling
@@ -4579,6 +4583,8 @@ content:
                 the subarachnoid space in the optic nerve posterior to the
                 lamina cribrosa).
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -8963,6 +8969,8 @@ content:
                 nerve, here assumed to be equal to the extraventricular CSFp
                 (grey arrow).
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -13355,6 +13363,8 @@ content:
             content:
               - blue for ciliary body circulation.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - 'Thus, for example, black vertical lines in '

@@ -3640,6 +3640,8 @@ content:
                 , missing data/empty cells correspond to values outside
                 calibration (CBD) or not measured)
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - |-

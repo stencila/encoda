@@ -477,6 +477,8 @@ content:
             content:
               - Editor decision letters
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -592,6 +594,8 @@ content:
                 “commentaries” in their own right that link bidirectionally to
                 the main article.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Heading
     id: ''
     depth: 1
@@ -676,6 +680,8 @@ content:
                     content:
                       - Arbitration processes for conflicting reviews
             order: Unordered
+            meta:
+              listType: bullet
       - type: ListItem
         content:
           - type: Paragraph
@@ -697,6 +703,8 @@ content:
             content:
               - Arbitration processes for conflicting reviews
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -802,6 +810,8 @@ content:
             content:
               - enhanced-version-of-record
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -879,6 +889,8 @@ content:
                 judgment on; and Author Replies MUST link to each
                 Review/Decision Letter it is addressing)
     order: Unordered
+    meta:
+      listType: bullet
   - type: Heading
     id: ''
     depth: 2
@@ -1048,6 +1060,8 @@ content:
             content:
               - For Author Reply, use @contrib-type=“author”
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -1183,6 +1197,8 @@ content:
                 version of the manuscript, the peer review is a new published
                 object.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Heading
     id: ''
     depth: 1

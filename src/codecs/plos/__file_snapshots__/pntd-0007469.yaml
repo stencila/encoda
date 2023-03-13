@@ -9155,6 +9155,8 @@ content:
                 case reports and a literature review. J Clin Microbiol, 40,
                 3874–3876.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Heading
     id: sec026
     depth: 2
@@ -9191,3 +9193,5 @@ content:
                 Rickettsial CNS infections range from meningitis to lethal
                 encephalomyelitis.
     order: Unordered
+    meta:
+      listType: bullet

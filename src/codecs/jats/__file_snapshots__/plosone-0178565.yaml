@@ -2510,6 +2510,8 @@ content:
                   - '2'
               - ' = Profile of gene 2.'
     order: Unordered
+    meta:
+      listType: simple
   - type: Heading
     id: sec006
     depth: 1
@@ -2798,6 +2800,8 @@ content:
             content:
               - Unique; with a GCI score of < 10%.
     order: Ascending
+    meta:
+      listType: order
   - type: Figure
     id: pone-0178565-g004
     caption:

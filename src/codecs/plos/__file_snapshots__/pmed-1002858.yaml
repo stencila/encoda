@@ -2880,6 +2880,8 @@ content:
                 can be estimated with adjustments required for AKI, acidosis,
                 anaemia, coma, hypoglycaemia, pulmonary oedema, and shock.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -3106,6 +3108,8 @@ content:
                   - '28'
               - '].'
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -3516,6 +3520,8 @@ content:
                 Missing parasitaemia values were imputed from age on the log
                 scale with Gaussian error.
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - >-
@@ -3679,6 +3685,8 @@ content:
             content:
               - country
     order: Unordered
+    meta:
+      listType: bullet
   - type: Paragraph
     content:
       - 'This model fit estimates the set of parameters '

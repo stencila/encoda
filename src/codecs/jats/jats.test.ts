@@ -220,11 +220,14 @@ test('decode: extract headings and lists in abstract', () => {
       type: 'Heading',
       content: ['Highlights'],
       depth: 1,
-      id: ''
+      id: '',
     },
     {
       type: 'List',
       order: 'Unordered',
+      meta: {
+        listType: 'bullet',
+      },
       items: [
         {
           type: 'ListItem',

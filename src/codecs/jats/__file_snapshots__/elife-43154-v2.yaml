@@ -2033,6 +2033,8 @@ content:
             content:
               - CM and SMA occur independently.
     order: Ascending
+    meta:
+      listType: order
   - type: Paragraph
     content:
       - 'From the data in '

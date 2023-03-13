@@ -2081,7 +2081,7 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
       ),
     })
   })
-  return [stencila.list({ items, order })]
+  return [stencila.list({ items, order, meta: { listType: type } })]
 }
 
 /**
