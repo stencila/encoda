@@ -1,5 +1,11 @@
 import path from 'path'
-import { decodeAff, decodeFigure, decodeReference, DecodeState, JatsCodec } from '.'
+import {
+  decodeAff,
+  decodeFigure,
+  DecodeState,
+  decodeTableWrap,
+  JatsCodec,
+} from '.'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import {
   asciimathFragment,
@@ -136,6 +142,53 @@ test('decode: <fig> element that is actually a table', () => {
       },
     ],
     rows: [],
+  })
+})
+
+test('decode: <table-wrap> element that has more than one <graphic>', () => {
+  const fig = xml.load(`
+  <table-wrap id="tblS1" orientation="portrait" position="float">
+    <label>Table S1.</label>
+    <caption><p>All statistical information.</p></caption>
+    <graphic xlink:href="515698v2_tblS1a.tif"/>
+    <graphic xlink:href="515698v2_tblS1b.tif"/>
+    <graphic xlink:href="515698v2_tblS1c.tif"/>
+  </table-wrap>
+`).elements?.[0]!
+
+  expect(decodeTableWrap(fig, {} as DecodeState)[0]).toEqual({
+    type: 'Figure',
+    id: 'tblS1',
+    label: 'Table S1.',
+    caption: [
+      {
+        type: 'Paragraph',
+        content: ['All statistical information.'],
+      },
+    ],
+    content: [
+      {
+        type: 'ImageObject',
+        contentUrl: '515698v2_tblS1a.tif',
+        meta: {
+          inline: false,
+        },
+      },
+      {
+        type: 'ImageObject',
+        contentUrl: '515698v2_tblS1b.tif',
+        meta: {
+          inline: false,
+        },
+      },
+      {
+        type: 'ImageObject',
+        contentUrl: '515698v2_tblS1c.tif',
+        meta: {
+          inline: false,
+        },
+      },
+    ],
   })
 })
 

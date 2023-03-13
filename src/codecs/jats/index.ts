@@ -2089,11 +2089,11 @@ function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
 /**
  * Decode a JATS `<table-wrap>` element to a Stencila `Table` node.
  *
- * In some JATS, there is no actual table but rather and image of the table.
+ * In some JATS, there is no actual table but rather image/s of the table.
  * For those we return a `Figure` but one which usually has a label begginning
  * with 'Table'.
  */
-function decodeTableWrap(
+export function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
 ): (stencila.Table | stencila.Figure)[] {
@@ -2199,14 +2199,14 @@ function decodeTableWrap(
       }),
     ]
 
-  const graphic = first(elem, 'graphic')
-  if (graphic) {
+  const graphics = all(elem, 'graphic')
+  if (graphics.length > 0) {
     return [
       stencila.figure({
         id,
         label,
         caption,
-        content: decodeGraphic(graphic, false),
+        content: graphics.flatMap((graphic) => decodeGraphic(graphic, false)),
       }),
     ]
   }
