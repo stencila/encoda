@@ -1,3 +1,14 @@
+## [0.121.1](https://github.com/stencila/encoda/compare/v0.121.0...v0.121.1) (2023-03-13)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update dependencies ([f404d16](https://github.com/stencila/encoda/commit/f404d16bd40347293084dd63dcfa51fe23a8fdb6))
+* **JATS:** Decode all content form abstract ([c0bfc2b](https://github.com/stencila/encoda/commit/c0bfc2b67f5ccc75d1c919ba248b546dc65c9b8d))
+* **JATS:** Extract all images in `<table-wrap>` element that has more than one `<graphic>` ([ffe5253](https://github.com/stencila/encoda/commit/ffe5253db43a516d57fac5ebf1d2cfc9fff80351))
+* **JATS:** Extract elocation when in `<fpage>` element ([d6c8a08](https://github.com/stencila/encoda/commit/d6c8a08ac2ccf252377dd70a5fbb53a0eb38d208))
+* **JATS:** Store list type to `meta.listType` ([2e6971c](https://github.com/stencila/encoda/commit/2e6971c8b3005933d2d3b54054a90635b838b038))
+
 # [0.121.0](https://github.com/stencila/encoda/compare/v0.120.0...v0.121.0) (2023-02-13)
 
 
