@@ -810,11 +810,32 @@ function decodeHistory(
 /**
  * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
  */
-function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
+export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   // Simply extract all footnotes within the <author-notes> element as plain text
   const authorNotes = all(first(front, 'author-notes'), 'fn')
-    .map(textOrUndefined)
-    .filter(isDefined)
+    .map((fn) => {
+      // Extract the text from each child of the `fn` element making sure that if it is
+      // a `label` there is space between it and the content of the next element
+      let text = ''
+      let previousWasLabel = false
+      for (const elem of fn.elements ?? []) {
+        if (elem.name == 'label') {
+          text += textOrUndefined(elem)
+          previousWasLabel = true
+        } else {
+          const content = textOrUndefined(elem) ?? ''
+          if (
+            previousWasLabel &&
+            !(text.endsWith(' ') || content.startsWith(' '))
+          ) {
+            text += ' '
+          }
+          text += content
+        }
+      }
+      return text
+    })
+    .filter((text) => text.length > 0)
 
   return {
     authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
