@@ -2350,7 +2350,12 @@ export function decodeFigure(
   // Get any `caption`
   const captionEl = child(elem, 'caption')
   const caption = captionEl?.elements?.length
-    ? ensureBlockContentArray(decodeElements(captionEl.elements, state))
+    ? ensureBlockContentArray(
+        // Reset the section depth so that any headings within the figure caption
+        // have a depth that is is not dependendent upon the depth of section the figure is in.
+        // See https://github.com/elifesciences/enhanced-preprints-issues/issues/126
+        decodeElements(captionEl.elements, { ...state, sectionDepth: 0 })
+      )
     : undefined
 
   // Get the `content`, ignoring certain elements that have already been

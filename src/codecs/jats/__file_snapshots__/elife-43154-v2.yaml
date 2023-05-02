@@ -1689,7 +1689,7 @@ content:
     id: fig1
     caption:
       - type: Heading
-        depth: 2
+        depth: 1
         content:
           - 'Causal diagram highlighting collider bias in '
           - type: Cite
@@ -1770,7 +1770,7 @@ content:
     id: fig2
     caption:
       - type: Heading
-        depth: 2
+        depth: 1
         content:
           - >-
             Results of the simulation based sensitivity analysis showing how

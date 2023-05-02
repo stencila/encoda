@@ -3894,7 +3894,7 @@ content:
     id: pmed-1002858-g001
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Scatterplots of observed associations between key patient covariates
@@ -3965,7 +3965,7 @@ content:
     id: pmed-1002858-g002
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             The unadjusted associations between in-hospital mortality from
@@ -4117,7 +4117,7 @@ content:
     id: pmed-1002858-g003
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             The DAG used to model the determinants of mortality in severe
@@ -4217,7 +4217,7 @@ content:
     id: pmed-1002858-g004
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Estimated causal effects on mortality of main patient
@@ -4321,7 +4321,7 @@ content:
     id: pmed-1002858-g005
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Mediation analysis and possible confounders for the protective

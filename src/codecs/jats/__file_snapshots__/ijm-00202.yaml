@@ -1935,7 +1935,7 @@ content:
     id: fig1
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - Personal Income Tax burden by income for selected individual types.
     label: Figure 1.
@@ -2007,7 +2007,7 @@ content:
     id: fig2
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Personal Income Tax-to-income ratio for selected couples by
@@ -2779,7 +2779,7 @@ content:
     id: fig3
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - Per capita income of households by source.
       - type: Paragraph
@@ -2995,7 +2995,7 @@ content:
     id: fig4
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - Average PIT burden and proportion of non-taxpayers by household type
       - type: Paragraph
@@ -3599,7 +3599,7 @@ content:
     id: fig5
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Predicted PIT across percentiles of per capita income distribution
@@ -4275,7 +4275,7 @@ content:
     id: fig6
     caption:
       - type: Heading
-        depth: 3
+        depth: 1
         content:
           - >-
             Predicted PIT across percentiles of per capita income distribution
