@@ -1,3 +1,11 @@
+## [0.121.2](https://github.com/stencila/encoda/compare/v0.121.1...v0.121.2) (2023-05-09)
+
+
+### Bug Fixes
+
+* **JATS:** Ensure a space after labels in author notes ([66d93f9](https://github.com/stencila/encoda/commit/66d93f9b1b9e90c187e38b0871cfb50f473a9865))
+* **JATS:** Reset section depth when decoding figure caption ([976e127](https://github.com/stencila/encoda/commit/976e1270297de5f563e35e31f6c9d835f1180ba7))
+
 ## [0.121.1](https://github.com/stencila/encoda/compare/v0.121.0...v0.121.1) (2023-03-13)
 
 
