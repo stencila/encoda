@@ -1,3 +1,10 @@
+## [0.121.4](https://github.com/stencila/encoda/compare/v0.121.3...v0.121.4) (2023-05-22)
+
+
+### Bug Fixes
+
+* **JATS:** Do not duplicate `ListItems` when decoding nested lists ([abb3a18](https://github.com/stencila/encoda/commit/abb3a18afa8c88f6415ea141112c3da1db88e98e))
+
 ## [0.121.3](https://github.com/stencila/encoda/compare/v0.121.2...v0.121.3) (2023-05-22)
 
 
