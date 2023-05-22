@@ -1,3 +1,11 @@
+## [0.121.3](https://github.com/stencila/encoda/compare/v0.121.2...v0.121.3) (2023-05-22)
+
+
+### Bug Fixes
+
+* **Deps:** Run `npm audit fix` ([8620dff](https://github.com/stencila/encoda/commit/8620dff19ed2c399417bcdbd79735fa64a7bc402))
+* **Deps:** Upgrade various dependencies ([a08cfb7](https://github.com/stencila/encoda/commit/a08cfb75745673623bf87a94b6fe3aa74c382df2))
+
 ## [0.121.2](https://github.com/stencila/encoda/compare/v0.121.1...v0.121.2) (2023-05-09)
 
 
