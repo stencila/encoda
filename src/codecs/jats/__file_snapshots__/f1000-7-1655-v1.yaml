@@ -682,26 +682,6 @@ content:
             order: Unordered
             meta:
               listType: bullet
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
-              - >-
-                Reviewing the content for sensitive information, e.g.,
-                unpublished data additions and confidentiality leaks, as well
-                ensuring the tone of the report is appropriate
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
-              - >-
-                Removing author responses that contain data the author wants to
-                publish in a subsequent paper
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
-              - Arbitration processes for conflicting reviews
     order: Unordered
     meta:
       listType: bullet

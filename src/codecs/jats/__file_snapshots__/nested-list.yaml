@@ -1,0 +1,79 @@
+type: Article
+identifiers: []
+title: Untitled
+meta: {}
+content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - A
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - |-
+                B
+                                
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - B1
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - B2
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - B3
+            order: Unordered
+            meta:
+              listType: bullet
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - C
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - |-
+                D
+                                
+          - type: List
+            items:
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - D1
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - D2
+              - type: ListItem
+                content:
+                  - type: Paragraph
+                    content:
+                      - D3
+            order: Unordered
+            meta:
+              listType: bullet
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - E
+    order: Unordered
+    meta:
+      listType: bullet

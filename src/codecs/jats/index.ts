@@ -2095,7 +2095,7 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const type = attr(elem, 'list-type')
   const order =
     type === 'bullet' || type === 'simple' ? 'Unordered' : 'Ascending'
-  const items = all(elem, 'list-item').map((item): stencila.ListItem => {
+  const items = children(elem, 'list-item').map((item): stencila.ListItem => {
     return stencila.listItem({
       content: ensureBlockContentArray(
         decodeElements(item.elements ?? [], state)

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<article>
+    <front>
+        <article-meta>
+            <contrib-group />
+        </article-meta>
+    </front>
+    <body>
+        <list list-type="bullet">
+            <list-item><p>A</p></list-item>
+            <list-item><p>B
+                <list list-type="bullet">
+                    <list-item><p>B1</p></list-item>
+                    <list-item><p>B2</p></list-item>
+                    <list-item><p>B3</p></list-item>
+                </list>
+            </p></list-item>
+            <list-item><p>C</p></list-item>
+            <list-item><p>D
+                <list list-type="bullet">
+                    <list-item><p>D1</p></list-item>
+                    <list-item><p>D2</p></list-item>
+                    <list-item><p>D3</p></list-item>
+                </list>
+                </p></list-item>
+            <list-item><p>E</p></list-item>
+        </list>
+    </body>
+    <back>
+        <app-group />
+    </back>
+</article>
