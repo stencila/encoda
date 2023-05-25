@@ -1055,6 +1055,8 @@
         },
         "issueNumber": 5
       },
+      "pageEnd": "S20",
+      "pageStart": "S15",
       "title": "Identifying opportunities for cancer prevention during preadolescence and adolescence: Puberty as a window of susceptibility. Journal of Adole",
       "url": "https://doi.org/10.1016/j.jadohealth.2012.09.019"
     },
@@ -1782,6 +1784,13 @@
         "type": "Date",
         "value": "2013"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "R115"
+        }
+      ],
       "isPartOf": {
         "type": "PublicationVolume",
         "isPartOf": {

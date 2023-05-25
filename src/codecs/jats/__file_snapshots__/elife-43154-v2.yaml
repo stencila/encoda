@@ -1205,9 +1205,6 @@ references:
       value: '2015'
     identifiers:
       - type: PropertyValue
-        name: elocation-id
-        value: e437
-      - type: PropertyValue
         name: doi
         propertyID: https://registry.identifiers.org/registry/doi
         value: 10.1016/S2352-3026(15)00152-0
@@ -1221,6 +1218,8 @@ references:
         type: Periodical
         name: The Lancet Haematology
       volumeNumber: 2
+    pageEnd: e444
+    pageStart: e437
     title: >-
       Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
       other diseases in children in Kenya: a case-control and a cohort study

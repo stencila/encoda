@@ -2655,6 +2655,8 @@
         },
         "issueNumber": 52
       },
+      "pageEnd": "E8452",
+      "pageStart": "E8443",
       "title": "Hierarchical CRMP2 posttranslational modifications control NaV1.7 function"
     },
     {
@@ -4220,6 +4222,7 @@
         "volumeNumber": 12
       },
       "pageEnd": 99,
+      "pageStart": "S93",
       "title": "The roles of sodium channels in nociception: implications for mechanisms of neuropathic pain"
     },
     {
@@ -6409,6 +6412,11 @@
       "identifiers": [
         {
           "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "CD006044"
+        },
+        {
+          "type": "PropertyValue",
           "name": "doi",
           "propertyID": "https://registry.identifiers.org/registry/doi",
           "value": "10.1002/14651858.CD006044.pub3"
@@ -6473,6 +6481,11 @@
         "value": "2014"
       },
       "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "CD005451"
+        },
         {
           "type": "PropertyValue",
           "name": "doi",

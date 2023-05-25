@@ -1729,6 +1729,7 @@
         "issueNumber": 6
       },
       "pageEnd": 29,
+      "pageStart": "E218",
       "title": "Demographic and genetic constraints on evolution"
     },
     {
@@ -2694,6 +2695,13 @@
         "type": "Date",
         "value": "2022"
       },
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "elocation-id",
+          "value": "XXXX"
+        }
+      ],
       "title": "Variation in mutational (co)variances"
     },
     {
@@ -3752,6 +3760,8 @@
         },
         "issueNumber": 6
       },
+      "pageEnd": "E000",
+      "pageStart": "E000",
       "title": "What kind of maternal effects are selected for in fluctuating environments?"
     },
     {
@@ -4772,6 +4782,8 @@
         },
         "issueNumber": 4
       },
+      "pageEnd": "E128",
+      "pageStart": "E108",
       "title": "Evolution of genetic variance during adaptive radiation"
     },
     {

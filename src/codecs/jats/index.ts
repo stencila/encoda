@@ -1387,10 +1387,6 @@ export function decodeReference(
     title = textOrUndefined(elem)
   }
 
-  const pageStart = intOrUndefined(child(elem, 'fpage'))
-  const pageEnd = intOrUndefined(child(elem, 'lpage'))
-  const url = attrOrUndefined(child(elem, 'ext-link'), 'xlink:href')
-
   let publisher: stencila.Organization | undefined
   const publisherName = textOrUndefined(child(elem, 'publisher-name'))
   if (publisherName !== undefined) {
@@ -1402,30 +1398,60 @@ export function decodeReference(
     publisher = stencila.organization({ name: publisherName, address })
   }
 
-  const eLocation = all(elem, 'elocation-id')
-    .map((elem) => {
-      const name = 'elocation-id'
-      const value = text(elem)
-      return stencila.propertyValue({
-        name,
-        value,
-      })
-    })
-    .filter(isDefined)
+  const url = attrOrUndefined(child(elem, 'ext-link'), 'xlink:href')
 
-  // The `elocation-id` tag is a replacement for `fpage` but some XML still uses
-  // `fpage` to store the eLocation. https://jats.nlm.nih.gov/publishing/tag-library/1.3/element/fpage.html
-  const eLocationFpage = all(elem, 'fpage')
-    .map((elem) => {
-      const value = text(elem)
-      return value.startsWith('e')
-        ? stencila.propertyValue({
-          name: 'elocation-id',
-          value,
-        })
-        : undefined
+  // Attempt to coerce pageStart and pageEnd to integers because they are more
+  // semantically meaningful than strings and also help disambiguate an
+  // fpage that is actually an eLocation below
+  let pageStart
+  const fpage = textOrUndefined(child(elem, 'fpage'))
+  if (fpage !== undefined) {
+    try {
+      pageStart = parseInt(fpage)
+      if (Number.isNaN(pageStart)) {
+        pageStart = fpage
+      }
+    } catch {
+      pageStart = fpage
+    }
+  }
+  let pageEnd
+  const lpage = textOrUndefined(child(elem, 'lpage'))
+  if (lpage !== undefined) {
+    try {
+      pageEnd = parseInt(lpage)
+      if (Number.isNaN(pageEnd)) {
+        pageEnd = lpage
+      }
+    } catch {
+      pageEnd = lpage
+    }
+  }
+
+  let eLocation
+  const eLocationElem = child(elem, 'elocation-id')
+  if (eLocationElem) {
+    eLocation = stencila.propertyValue({
+      name: 'elocation-id',
+      value: text(eLocationElem),
     })
-    .filter(isDefined)
+  }
+
+  // The `elocation-id` tag is a replacement for `fpage` for digital only journals. However, some some XML still uses
+  // `fpage` to store the eLocation. This "swaps" the two if there is a `pageStart` (which is not an integer)
+  // but no `pageEnd` or `eLocation`. See https://jats.nlm.nih.gov/publishing/tag-library/1.3/element/fpage.html
+  if (
+    eLocation === undefined &&
+    pageStart !== undefined &&
+    typeof pageStart === 'string' &&
+    pageEnd === undefined
+  ) {
+    eLocation = stencila.propertyValue({
+          name: 'elocation-id',
+      value: pageStart,
+        })
+    pageStart = undefined
+  }
 
   const pubIds = all(elem, 'pub-id')
     .map((elem) => {
@@ -1443,8 +1469,7 @@ export function decodeReference(
     .filter(isDefined)
 
   let identifiers: stencila.CreativeWork['identifiers'] = [
-    ...eLocation,
-    ...eLocationFpage,
+    ...(eLocation ? [eLocation] : []),
     ...pubIds,
   ]
   if (identifiers.length === 0) identifiers = undefined
