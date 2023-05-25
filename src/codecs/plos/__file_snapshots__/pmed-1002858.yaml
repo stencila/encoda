@@ -1793,10 +1793,6 @@ references:
     datePublished:
       type: Date
       value: '2015'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e437
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1806,6 +1802,8 @@ references:
           name: The Lancet Haematology
         volumeNumber: 2
       issueNumber: 10
+    pageEnd: e444
+    pageStart: e437
     title: >-
       Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
       other diseases in children in Kenya: a case-control and a cohort study
@@ -4699,33 +4697,73 @@ content:
     depth: 1
     content:
       - Supporting information
-  - >-
-    Comparison between Asian and African data.Green diamonds (lines): point
-    estimates (95% CI) using data from only Asian patients. Blue diamonds
-    (lines): point estimates (95% CI) using data from only African patients.
-    Black diamonds (lines): point estimates (95% CI) using the whole pooled
-    database, as shown in Fig 4.(TIF)
-  - >-
-    Mediation analysis looking at the effect of transfusion on survival.The
-    forest plot shows the estimated effects on survival of main patient
-    characteristics and treatment drug used, stratified by time to death and
-    adjusted for transfusion.(TIF)
-  - >-
-    Standardised differences for the major clinical variables between the
-    transfused and not-transfused children in the AQUAMAT study with baseline
-    haematocrits between 15% and 25%.The black circles show the standardised
-    differences for the original population, and the red triangles show the
-    standardised differences for the IPW population. Standardised differences
-    greater than 0 indicate higher values of that covariate in the transfused
-    group (e.g., base deficit), whereas standardised differences less than 0
-    indicate higher values in the not-transfused group (e.g., coma). The
-    vertical dashed lines show ±10% standardised difference. AQUAMAT, Africa
-    multinational quinine versus artesunate in severe-malaria trial; IPW,
-    inverse probability weighting.(TIF)
-  - >-
-    Inclusion criteria for the studies used in the pooled data analysis.HCT,
-    haematocrit; SB, serum bilirubin; SBP, systolic blood pressure; SC, serum
-    creatinine; UO, urine output.(XLSX)
+  - type: Paragraph
+    content:
+      - type: Link
+        id: pmed-1002858-s001
+        target: info:doi/10.1371/journal.pmed.1002858.s001
+        title: S1 Fig
+        content:
+          - Comparison between Asian and African data.
+          - >-
+            Green diamonds (lines): point estimates (95% CI) using data from
+            only Asian patients. Blue diamonds (lines): point estimates (95% CI)
+            using data from only African patients. Black diamonds (lines): point
+            estimates (95% CI) using the whole pooled database, as shown in 
+          - type: Link
+            relation: fig
+            target: '#pmed-1002858-g004'
+            content:
+              - Fig 4
+          - .
+          - (TIF)
+  - type: Paragraph
+    content:
+      - type: Link
+        id: pmed-1002858-s002
+        target: info:doi/10.1371/journal.pmed.1002858.s002
+        title: S2 Fig
+        content:
+          - Mediation analysis looking at the effect of transfusion on survival.
+          - >-
+            The forest plot shows the estimated effects on survival of main
+            patient characteristics and treatment drug used, stratified by time
+            to death and adjusted for transfusion.
+          - (TIF)
+  - type: Paragraph
+    content:
+      - type: Link
+        id: pmed-1002858-s003
+        target: info:doi/10.1371/journal.pmed.1002858.s003
+        title: S3 Fig
+        content:
+          - >-
+            Standardised differences for the major clinical variables between
+            the transfused and not-transfused children in the AQUAMAT study with
+            baseline haematocrits between 15% and 25%.
+          - >-
+            The black circles show the standardised differences for the original
+            population, and the red triangles show the standardised differences
+            for the IPW population. Standardised differences greater than 0
+            indicate higher values of that covariate in the transfused group
+            (e.g., base deficit), whereas standardised differences less than 0
+            indicate higher values in the not-transfused group (e.g., coma). The
+            vertical dashed lines show ±10% standardised difference. AQUAMAT,
+            Africa multinational quinine versus artesunate in severe-malaria
+            trial; IPW, inverse probability weighting.
+          - (TIF)
+  - type: Paragraph
+    content:
+      - type: Link
+        id: pmed-1002858-s004
+        target: info:doi/10.1371/journal.pmed.1002858.s004
+        title: S1 Table
+        content:
+          - Inclusion criteria for the studies used in the pooled data analysis.
+          - >-
+            HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood pressure;
+            SC, serum creatinine; UO, urine output.
+          - (XLSX)
   - type: ThematicBreak
   - type: Heading
     depth: 1

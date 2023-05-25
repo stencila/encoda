@@ -965,6 +965,8 @@ references:
         type: Periodical
         name: J Glaucoma
       volumeNumber: 22
+    pageEnd: S48
+    pageStart: S46
     title: Cerebral blood flow in glaucoma patients
     meta:
       label: '17'
@@ -1086,10 +1088,6 @@ references:
     datePublished:
       type: Date
       value: '2011'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e142
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1100,6 +1098,7 @@ references:
         volumeNumber: 89
       issueNumber: 2
     pageEnd: 148
+    pageStart: e142
     title: Cerebrospinal fluid pressure in ocular hypertension
     meta:
       label: '21'
@@ -1169,10 +1168,6 @@ references:
     datePublished:
       type: Date
       value: '2014'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e252
     isPartOf:
       type: PublicationIssue
       isPartOf:
@@ -1183,6 +1178,7 @@ references:
         volumeNumber: 92
       issueNumber: 4
     pageEnd: 266
+    pageStart: e252
     title: Ocular perfusion pressure in glaucoma
     meta:
       label: '22'
@@ -2212,6 +2208,7 @@ references:
         volumeNumber: 295
       issueNumber: 4
     pageEnd: 1579
+    pageStart: H1572
     title: >-
       Theoretical model of blood flow autoregulation: roles of myogenic,
       shear-dependent, and metabolic responses
@@ -2248,6 +2245,7 @@ references:
         volumeNumber: 295
       issueNumber: 4
     pageEnd: 15671
+    pageStart: H1562
     title: >-
       Theoretical model of metabolic blood flow regulation: roles of ATP release
       by red blood cells and conducted responses
@@ -2634,6 +2632,7 @@ references:
         volumeNumber: 35
       issueNumber: 1
     pageEnd: 185
+    pageStart: S184
     title: Increased intracranial pressure in humans during simulated microgravity
     meta:
       label: '54'

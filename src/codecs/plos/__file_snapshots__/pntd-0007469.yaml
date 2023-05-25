@@ -326,16 +326,14 @@ references:
     datePublished:
       type: Date
       value: '2015'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e67
     isPartOf:
       type: PublicationVolume
       isPartOf:
         type: Periodical
         name: Lancet Glob Health
       volumeNumber: 3
+    pageEnd: e68
+    pageStart: e67
     title: Rickettsioses as causes of CNS infection in southeast Asia
     meta:
       label: '5'
@@ -687,6 +685,8 @@ references:
         type: Periodical
         name: Clin Infect Dis
       volumeNumber: 45
+    pageEnd: S55
+    pageStart: S52
     title: Pathogenic rickettsiae as bioterrorism agents
     meta:
       label: '13'
@@ -1123,16 +1123,14 @@ references:
     datePublished:
       type: Date
       value: '2017'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e92
     isPartOf:
       type: PublicationVolume
       isPartOf:
         type: Periodical
         name: Neurology
       volumeNumber: 88
+    pageEnd: e95
+    pageStart: e92
     title: 'Child Neurology: Rocky Mountain spotted fever encephalitis'
     meta:
       label: '25'
@@ -4747,16 +4745,14 @@ references:
     datePublished:
       type: Date
       value: '2012'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e221
     isPartOf:
       type: PublicationVolume
       isPartOf:
         type: Periodical
         name: Int J Infect Dis
       volumeNumber: 16
+    pageEnd: e222
+    pageStart: e221
     title: A case of rickettsialpox in Northern Europe
     meta:
       label: '113'
@@ -5343,16 +5339,14 @@ references:
     datePublished:
       type: Date
       value: '2015'
-    identifiers:
-      - type: PropertyValue
-        name: elocation-id
-        value: e104
     isPartOf:
       type: PublicationVolume
       isPartOf:
         type: Periodical
         name: Lancet Glob Health
       volumeNumber: 3
+    pageEnd: e112
+    pageStart: e104
     title: >-
       Orientia, rickettsia, and leptospira pathogens as causes of CNS infections
       in Laos: a prospective study
