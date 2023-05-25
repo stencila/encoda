@@ -1,7 +1,12 @@
 {
   /* See https://www.typescriptlang.org/docs/handbook/compiler-options.html */
   "extends": "./tsconfig.json",
-  "exclude": ["**/*.test.ts", "**/__tests__", "**/__mocks__", "**/__fixtures__"],
+  "exclude": [
+    "**/*.test.ts",
+    "**/__tests__",
+    "**/__mocks__",
+    "**/__fixtures__"
+  ],
   "compilerOptions": {
     // This seems to be necessary to avoid the following error when running `node install.js`:
     //    node_modules/jest-file-snapshot/index.d.ts:9:6 - error TS2304: Cannot find name 'CustomMatcherResult'.
