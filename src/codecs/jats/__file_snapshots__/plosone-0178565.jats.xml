@@ -1081,7 +1081,63 @@ where,
             <p>We present systematic analysis of phylogenetic profiles of cyanobacterial genes. Clustering of the organisms helps prepare a reduced dataset of genomes, which is an important step in the entire analysis. Further, we propose gene conservation index (GCI) as a ready measure to predict gene essentiality in the cyanobacterial phylum. A large majority of the conserved genes (this study) have been found to be essential (Rubin et al, 2015). The CCG, obtained upon clustering of the semi-conserved genes, provide useful clues on the function of unannotated genes. We also present useful ways of visualization of the data in the form of heatmap and principal component analysis (PCA). We believe that the data presented here would serve as a useful resource to the scientific community.</p>
         </sec>
         <sec>
-            <title>Supporting information</title>Histogram of gene conservation index (GCI) for the essential and non-essential genes of S. elongatus PCC 7942.Essentiality is obtained from the experimental studies of Rubin et al, 2015 [18].(TIF)List of the 120 cyanobacterial genomes used in the analysis.(XLSX)List of query organisms used while constructing the profiles.Columns C and D describe the number of proteins used to construct the profiles and number of proteins present in the genome, respectively. The organisms are listed in sequential order in which they were used to form the profiles.(XLSX)Phylogenetic profiles of 23,643 query proteins drawn from twenty genetically diverse cyanobacterial genomes.Columns A-D describe the various identifiers and attributes of the query proteins. Column E depicts the presence or absence of the query protein in the genome of while column F provides the best hit. Likewise, presence of the query proteins in 120 cyanobacterial genomes and the respective best hits are presented in columns G to IJ.(XLSX)Clusters of 120 cyanobacterial strains.Column A denotes the name of the cyanobacteria and the thick borders represents a cluster. Column B describe the cluster number. The cyanobacterial strains are arranged in the order shown in Fig 2 from top to bottom.(XLSX)Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse cyanobacterial genomes across 73 clusters of cyanobacteria.Columns A-D describe the various identifiers and attributes of the query proteins. Columns E to BY depicts the presence or absence of the query protein in the respective cluster of organisms. Column BZ denotes the gene conservation index (GCI) for the profile. Columns CA to CD depict if the gene is conserved in clades A to D.(XLSX)List of genes used for PCA plot and heatmap generation to check for mutually exclusive and diverse genes.Column A to C describes about various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the Fig 3. (XLSX)List of conserved genes in our analysis and their gene ontology classification.(XLSX)Conservation level of the genes from Synechococcus elongatus PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [18] and database of core proteins by Shi and Falkowski [7].Column A describe the Protein UniProt IDs of query genes used in the study, Column B to D describe the genes of S. elongatus PCC 7942.(XLSX)Conservation level of enzymes in key metabolic pathways based on reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [18], database of core proteins by Shi and Falkowski [7] and structural genes by Martin et al. [35].(XLSX)List of genes used for PCA plot and heatmap generation to check the group of co-evolving genes.Column A to C describes various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the Fig 6.(XLSX)List of co-evolving genes.Column A describes the cluster number. Column B to D describes various identifiers and attributes of the genes used. Column E denotes the GCI.(XLSX)
+            <title>Supporting information</title>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s001">Histogram of gene conservation index (GCI) for the essential and non-essential genes of 
+                    <italic>S</italic>. 
+                    <italic>elongatus</italic> PCC 7942.Essentiality is obtained from the experimental studies of Rubin et al, 2015 (
+                    <xref rid="pone-0178565-ref018" ref-type="bibr">Rubin et al., 2015</xref>).(TIF)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s002">List of the 120 cyanobacterial genomes used in the analysis.(XLSX)</ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s003">List of query organisms used while constructing the profiles.Columns C and D describe the number of proteins used to construct the profiles and number of proteins present in the genome, respectively. The organisms are listed in sequential order in which they were used to form the profiles.(XLSX)</ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s004">Phylogenetic profiles of 23,643 query proteins drawn from twenty genetically diverse cyanobacterial genomes.Columns A-D describe the various identifiers and attributes of the query proteins. Column E depicts the presence or absence of the query protein in the genome of while column F provides the best hit. Likewise, presence of the query proteins in 120 cyanobacterial genomes and the respective best hits are presented in columns G to IJ.(XLSX)</ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s005">Clusters of 120 cyanobacterial strains.Column A denotes the name of the cyanobacteria and the thick borders represents a cluster. Column B describe the cluster number. The cyanobacterial strains are arranged in the order shown in 
+                    <ext-link ext-link-type="uri" xlink:href="#pone-0178565-g002">Fig 2</ext-link> from top to bottom.(XLSX)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s006">Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse cyanobacterial genomes across 73 clusters of cyanobacteria.Columns A-D describe the various identifiers and attributes of the query proteins. Columns E to BY depicts the presence or absence of the query protein in the respective cluster of organisms. Column BZ denotes the gene conservation index (GCI) for the profile. Columns CA to CD depict if the gene is conserved in clades A to D.(XLSX)</ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s007">List of genes used for PCA plot and heatmap generation to check for mutually exclusive and diverse genes.Column A to C describes about various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the 
+                    <ext-link ext-link-type="uri" xlink:href="#pone-0178565-g003">Fig 3</ext-link>. (XLSX)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s008">List of conserved genes in our analysis and their gene ontology classification.(XLSX)</ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s009">Conservation level of the genes from 
+                    <italic>Synechococcus elongatus</italic> PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. (
+                    <xref rid="pone-0178565-ref018" ref-type="bibr">Rubin et al., 2015</xref>) and database of core proteins by Shi and Falkowski (
+                    <xref rid="pone-0178565-ref007" ref-type="bibr">Shi and Falkowski, 2008</xref>).Column A describe the Protein UniProt IDs of query genes used in the study, Column B to D describe the genes of 
+                    <italic>S</italic>. 
+                    <italic>elongatus</italic> PCC 7942.(XLSX)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s010">Conservation level of enzymes in key metabolic pathways based on reduced dataset and compared with experimental results on gene essentiality by Rubin et al. (
+                    <xref rid="pone-0178565-ref018" ref-type="bibr">Rubin et al., 2015</xref>), database of core proteins by Shi and Falkowski (
+                    <xref rid="pone-0178565-ref007" ref-type="bibr">Shi and Falkowski, 2008</xref>) and structural genes by Martin et al. (
+                    <xref rid="pone-0178565-ref035" ref-type="bibr">Martin et al., 2003</xref>).(XLSX)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s011">List of genes used for PCA plot and heatmap generation to check the group of co-evolving genes.Column A to C describes various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the 
+                    <ext-link ext-link-type="uri" xlink:href="#pone-0178565-g006">Fig 6</ext-link>.(XLSX)
+                </ext-link>
+            </p>
+            <p>
+                <ext-link ext-link-type="uri" xlink:href="info:doi/10.1371/journal.pone.0178565.s012">List of co-evolving genes.Column A describes the cluster number. Column B to D describes various identifiers and attributes of the genes used. Column E denotes the GCI.(XLSX)</ext-link>
+            </p>
         </sec>
         <sec>
             <title>Acknowledgements</title>

@@ -6162,101 +6162,125 @@ content:
     depth: 1
     content:
       - Competing interests
-  - type: Note
-    id: conf1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: conf1
+        noteType: Footnote
         content:
-          - No competing interests declared
+          - type: Paragraph
+            content:
+              - No competing interests declared
   - type: Heading
     id: s5
     depth: 1
     content:
       - Author contributions
-  - type: Note
-    id: con1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con1
+        noteType: Footnote
         content:
-          - Conceptualization, Data curation, Formal analysis, Investigation
-  - type: Note
-    id: con2
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Conceptualization, Data curation, Formal analysis, Investigation
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con2
+        noteType: Footnote
         content:
-          - Formal analysis, Investigation
-  - type: Note
-    id: con3
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Formal analysis, Investigation
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con3
+        noteType: Footnote
         content:
-          - Data curation, Investigation
-  - type: Note
-    id: con4
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Data curation, Investigation
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con4
+        noteType: Footnote
         content:
-          - Data curation, Methodology
-  - type: Note
-    id: con5
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Data curation, Methodology
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con5
+        noteType: Footnote
         content:
-          - Investigation, Methodology
-  - type: Note
-    id: con6
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Investigation, Methodology
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con6
+        noteType: Footnote
         content:
-          - Conceptualization, Supervision, Methodology
-  - type: Note
-    id: con7
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Conceptualization, Supervision, Methodology
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con7
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Supervision, Visualization,
-            Methodology
-  - type: Note
-    id: con8
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Supervision, Visualization,
+                Methodology
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con8
+        noteType: Footnote
         content:
-          - Conceptualization, Formal analysis, Supervision
+          - type: Paragraph
+            content:
+              - Conceptualization, Formal analysis, Supervision
   - type: Heading
     id: s5
     depth: 1
     content:
       - Ethics
-  - type: Note
-    id: fn1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: fn1
+        noteType: Footnote
         content:
-          - >-
-            Animal experimentation: All experiments were approved by Le Comité
-            d'Éthique pour l'Expérimentation Animale Charles Darwin C2EA-05
-            (02601.01).
+          - type: Paragraph
+            content:
+              - >-
+                Animal experimentation: All experiments were approved by Le
+                Comité d'Éthique pour l'Expérimentation Animale Charles Darwin
+                C2EA-05 (02601.01).
   - type: ThematicBreak
   - type: Heading
     id: s6
     depth: 1
     content:
       - Additional files
-  - type: MediaObject
-    id: transrepform
-    contentUrl: ''
-    text: Transparent reporting form
+  - type: Paragraph
+    content:
+      - type: Link
+        id: transrepform
+        target: elife-52882-transrepform-v2.docx
+        title: Transparent reporting form
+        content:
+          - elife-52882-transrepform-v2.docx
   - type: ThematicBreak
   - type: Heading
     id: s7

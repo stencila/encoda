@@ -10841,11 +10841,30 @@ content:
                   - '3'
               - .
           - type: Paragraph
-            content: []
-          - >-
-            Source files for western blots.(A) Full length western blots and (B)
-            capillary traces obtained from Compass Software (Simple Western) for
-            results shown in Figure 8A.
+            content:
+              - type: Link
+                id: fig8sdata1
+                target: elife-46793-fig8-data1-v1.pdf
+                title: Figure 8—source data 1.
+                content:
+                  - Source files for western blots.
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig8'
+                    content:
+                      - Figure 8A
+                  - .
         label: Figure 8.
         content:
           - type: ImageObject
@@ -11010,11 +11029,30 @@ content:
                   - J
               - ) GAR1.
           - type: Paragraph
-            content: []
-          - >-
-            Source files for western blots.(A) Full length western blots and (B)
-            capillary traces obtained from Compass Software (Simple Western) for
-            results shown in Figure 8—figure supplement 3A.
+            content:
+              - type: Link
+                id: fig8s3sdata1
+                target: elife-46793-fig8-figsupp3-data1-v1.pdf
+                title: Figure 8—figure supplement 3—source data 1.
+                content:
+                  - Source files for western blots.
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig8s3'
+                    content:
+                      - Figure 8—figure supplement 3A
+                  - .
         label: Figure 8—figure supplement 3.
         content:
           - type: ImageObject
@@ -11543,11 +11581,30 @@ content:
                   - d
               - ' is calculated from five replicates (values are indicative as the model assumes saturation kinetics).'
           - type: Paragraph
-            content: []
-          - >-
-            Source files for western blots.(A) Full-length western blots and (B)
-            capillary traces obtained from Compass Software (Simple Western) for
-            results shown in Figure 10A.
+            content:
+              - type: Link
+                id: fig10sdata1
+                target: elife-46793-fig10-data1-v1.pdf
+                title: Figure 10—source data 1.
+                content:
+                  - Source files for western blots.
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full-length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig10'
+                    content:
+                      - Figure 10A
+                  - .
         label: Figure 10.
         content:
           - type: ImageObject
@@ -15079,145 +15136,169 @@ content:
     depth: 1
     content:
       - Competing interests
-  - type: Note
-    id: conf1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: conf1
+        noteType: Footnote
         content:
-          - No competing interests declared
-  - type: Note
-    id: conf2
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - No competing interests declared
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: conf2
+        noteType: Footnote
         content:
-          - >-
-            Is associated with transOMIC Technologies, who have commercialised
-            libraries constructed using the shERWOOD and ultramiR design
-            strategies.
-  - type: Note
-    id: conf3
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Is associated with transOMIC Technologies, who have
+                commercialised libraries constructed using the shERWOOD and
+                ultramiR design strategies.
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: conf3
+        noteType: Footnote
         content:
-          - Is founder, adviser and shareholder of Cambridge Epigenetix Ltd.
+          - type: Paragraph
+            content:
+              - Is founder, adviser and shareholder of Cambridge Epigenetix Ltd.
   - type: Heading
     id: s5
     depth: 1
     content:
       - Author contributions
-  - type: Note
-    id: con1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con1
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Formal analysis, Supervision,
-            Validation, Investigation, Visualization, Methodology,
-            Writing—original draft, Writing—review and editing, Designed and
-            performed the genome-wide shRNA screen, library preparation and
-            sequencing, Designed the focused RNAi screens, Performed the GO and
-            Cytoscape analyses, Designed and performed the clonogenic assays and
-            DDX42 binding experiments
-  - type: Note
-    id: con2
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Formal analysis, Supervision,
+                Validation, Investigation, Visualization, Methodology,
+                Writing—original draft, Writing—review and editing, Designed and
+                performed the genome-wide shRNA screen, library preparation and
+                sequencing, Designed the focused RNAi screens, Performed the GO
+                and Cytoscape analyses, Designed and performed the clonogenic
+                assays and DDX42 binding experiments
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con2
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Formal analysis, Validation,
-            Investigation, Visualization, Methodology, Writing—original draft,
-            Writing—review and editing, Designed and performed the genome-wide
-            shRNA screen, library preparation and sequencing, Designed and
-            performed the focused RNAi screens, Performed the GO and Cytoscape
-            analyses, Designed and performed the drug synergy and DDX42 binding
-            experiments
-  - type: Note
-    id: con3
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Formal analysis, Validation,
+                Investigation, Visualization, Methodology, Writing—original
+                draft, Writing—review and editing, Designed and performed the
+                genome-wide shRNA screen, library preparation and sequencing,
+                Designed and performed the focused RNAi screens, Performed the
+                GO and Cytoscape analyses, Designed and performed the drug
+                synergy and DDX42 binding experiments
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con3
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Formal analysis, Validation,
-            Investigation, Visualization, Methodology, Writing—original draft,
-            Writing—review and editing, Designed and performed the drug synergy
-            experiments
-  - type: Note
-    id: con4
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Formal analysis, Validation,
+                Investigation, Visualization, Methodology, Writing—original
+                draft, Writing—review and editing, Designed and performed the
+                drug synergy experiments
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con4
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Software, Formal analysis,
-            Validation, Methodology, Writing—original draft, Writing—review and
-            editing, Performed the computational analyses on all RNAi screens
-  - type: Note
-    id: con5
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Software, Formal analysis,
+                Validation, Methodology, Writing—original draft, Writing—review
+                and editing, Performed the computational analyses on all RNAi
+                screens
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con5
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Data curation, Formal analysis,
-            Methodology, Writing—original draft, Writing—review and editing,
-            Synthesised all the G4 ligands
-  - type: Note
-    id: con6
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Data curation, Formal analysis,
+                Methodology, Writing—original draft, Writing—review and editing,
+                Synthesised all the G4 ligands
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con6
+        noteType: Footnote
         content:
-          - >-
-            Resources, Software, Formal analysis, Methodology, Writing—review
-            and editing
-  - type: Note
-    id: con7
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Resources, Software, Formal analysis, Methodology,
+                Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con7
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Supervision, Methodology,
-            Writing—original draft, Writing—review and editing
-  - type: Note
-    id: con8
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Supervision, Methodology,
+                Writing—original draft, Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con8
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Software, Formal analysis,
-            Supervision, Methodology, Writing—original draft, Project
-            administration, Writing—review and editing
-  - type: Note
-    id: con9
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Software, Formal analysis,
+                Supervision, Methodology, Writing—original draft, Project
+                administration, Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con9
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Formal analysis, Supervision, Funding
-            acquisition, Methodology, Writing—original draft, Project
-            administration, Writing—review and editing
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Formal analysis, Supervision, Funding
+                acquisition, Methodology, Writing—original draft, Project
+                administration, Writing—review and editing
   - type: ThematicBreak
   - type: Heading
     id: s6
     depth: 1
     content:
       - Additional files
-  - type: MediaObject
-    id: supp1
-    contentUrl: ''
-    text: Supplementary file 1.
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: Link
+        id: supp1
+        target: elife-46793-supp1-v1.xlsx
+        title: Supplementary file 1.
         content:
           - 'Supporting data for '
           - type: Link
@@ -15232,8 +15313,6 @@ content:
             content:
               - '7'
           - .
-      - type: Paragraph
-        content:
           - >-
             List of shRNAs/genes from venn diagrams and table statistics for
             KEGG, GO, DGIDb and Protein Domains analyses from 
@@ -15251,13 +15330,12 @@ content:
           - >-
             . Each data tab is labelled with its corresponding originating
             figure.
-  - type: MediaObject
-    id: supp2
-    contentUrl: ''
-    text: Supplementary file 2.
+  - type: Paragraph
     content:
-      - type: Heading
-        depth: 2
+      - type: Link
+        id: supp2
+        target: elife-46793-supp2-v1.xlsx
+        title: Supplementary file 2.
         content:
           - 'Supporting data for '
           - type: Link
@@ -15272,8 +15350,6 @@ content:
             content:
               - Figure 7—figure supplement 1
           - .
-      - type: Paragraph
-        content:
           - >-
             List of shRNAs/genes from venn diagrams and table statistics for GO
             analyses from 
@@ -15291,10 +15367,14 @@ content:
           - >-
             . Each data tab is labelled with its corresponding originating
             figure.
-  - type: MediaObject
-    id: transrepform
-    contentUrl: ''
-    text: Transparent reporting form
+  - type: Paragraph
+    content:
+      - type: Link
+        id: transrepform
+        target: elife-46793-transrepform-v1.docx
+        title: Transparent reporting form
+        content:
+          - elife-46793-transrepform-v1.docx
   - type: ThematicBreak
   - type: Heading
     id: s7

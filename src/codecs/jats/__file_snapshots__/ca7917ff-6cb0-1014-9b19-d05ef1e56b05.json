@@ -6741,7 +6741,19 @@
         "Supporting information"
       ]
     },
-    "supplements/468444_file02.pdf Supplemental figures",
+    {
+      "type": "Paragraph",
+      "content": [
+        {
+          "type": "Link",
+          "target": "supplements/468444_file02.pdf",
+          "title": "Supplemental figures",
+          "content": [
+            "supplements/468444_file02.pdf"
+          ]
+        }
+      ]
+    },
     {
       "type": "ThematicBreak"
     },

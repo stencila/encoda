@@ -4997,11 +4997,29 @@ content:
               - Figure 1—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data for
-        male and female, control MAHDR-Taar1m1J/m1J and knock-in MAHDR-Taar1+/+
-        mice.
+        content:
+          - type: Link
+            id: fig1sdata1
+            target: elife-46472-fig1-data1-v3.xlsx
+            title: Figure 1—source data 1.
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female, control MAHDR-
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - m1J/m1J
+              - ' and knock-in MAHDR-'
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - +/+
+              - ' mice.'
     label: Figure 1.
     content:
       - type: ImageObject
@@ -5183,11 +5201,29 @@ content:
               - Figure 2—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        Core body temperature (°C) data across time for saline and 2 mg/kg
-        MA-treated male and female, control MAHDR-Taar1m1J/m1J and knock-in
-        MAHDR-Taar1+/+ mice.
+        content:
+          - type: Link
+            id: fig2sdata1
+            target: elife-46472-fig2-data1-v3.xlsx
+            title: Figure 2—source data 1.
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, control MAHDR-
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - m1J/m1J
+              - ' and knock-in MAHDR-'
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - +/+
+              - ' mice.'
     label: Figure 2.
     content:
       - type: ImageObject
@@ -5362,10 +5398,23 @@ content:
               - Figure 3—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data for
-        male and female, BXD mice, according to Taar1 and Oprm1 genotype.
+        content:
+          - type: Link
+            id: fig3sdata1
+            target: elife-46472-fig3-data1-v3.xlsx
+            title: Figure 3—source data 1.
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 3.
     content:
       - type: ImageObject
@@ -5722,10 +5771,23 @@ content:
               - Figure 4—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data for
-        male and female BXD mice, according to Taar1 and Oprm1 genotype.
+        content:
+          - type: Link
+            id: fig4sdata1
+            target: elife-46472-fig4-data1-v3.xlsx
+            title: Figure 4—source data 1.
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 4.
     content:
       - type: ImageObject
@@ -6293,11 +6355,23 @@ content:
               - Figure 5—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        Core body temperature (°C) data across time for saline and 2 mg/kg
-        MA-treated male and female, BXD mice, according to Taar1 and Oprm1
-        genotype.
+        content:
+          - type: Link
+            id: fig5sdata1
+            target: elife-46472-fig5-data1-v3.xlsx
+            title: Figure 5—source data 1.
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 5.
     content:
       - type: ImageObject
@@ -6618,11 +6692,23 @@ content:
               - Figure 6—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        Core body temperature (°C) data across time for saline and 2 mg/kg
-        MA-treated male and female, BXD mice, according to Taar1 and Oprm1
-        genotype.
+        content:
+          - type: Link
+            id: fig6sdata1
+            target: elife-46472-fig6-data1-v3.xlsx
+            title: Figure 6—source data 1.
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 6.
     content:
       - type: ImageObject
@@ -6742,11 +6828,16 @@ content:
               - Figure 7—source data 1
           - .
       - type: Paragraph
-        content: []
-      - >-
-        BXD means for QTL mapping of MA consumption (mg/kg/18h) from the 40 mg/l
-        concentration and for QTL mapping of 2 mg/kg MA-induced body temperature
-        change.
+        content:
+          - type: Link
+            id: fig7sdata1
+            target: elife-46472-fig7-data1-v3.xlsx
+            title: Figure 7—source data 1.
+            content:
+              - >-
+                BXD means for QTL mapping of MA consumption (mg/kg/18h) from the
+                40 mg/l concentration and for QTL mapping of 2 mg/kg MA-induced
+                body temperature change.
     label: Figure 7.
     content:
       - type: ImageObject
@@ -9551,133 +9642,168 @@ content:
     depth: 1
     content:
       - Competing interests
-  - type: Note
-    id: conf1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: conf1
+        noteType: Footnote
         content:
-          - No competing interests declared
+          - type: Paragraph
+            content:
+              - No competing interests declared
   - type: Heading
     id: s5
     depth: 1
     content:
       - Author contributions
-  - type: Note
-    id: con1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con1
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Data curation, Formal analysis, Investigation,
-            Writing—original draft, Writing—review and editing
-  - type: Note
-    id: con2
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Data curation, Formal analysis,
+                Investigation, Writing—original draft, Writing—review and
+                editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con2
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Data curation, Formal analysis,
-            Supervision, Funding acquisition, Investigation, Methodology,
-            Writing—original draft, Project administration, Writing—review and
-            editing
-  - type: Note
-    id: con3
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Data curation, Formal analysis,
+                Supervision, Funding acquisition, Investigation, Methodology,
+                Writing—original draft, Project administration, Writing—review
+                and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con3
+        noteType: Footnote
         content:
-          - Data curation, Validation, Investigation, Visualization, Methodology
-  - type: Note
-    id: con4
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Data curation, Validation, Investigation, Visualization,
+                Methodology
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con4
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Validation, Investigation, Visualization,
-            Methodology, Writing—review and editing
-  - type: Note
-    id: con5
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Validation, Investigation, Visualization,
+                Methodology, Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con5
+        noteType: Footnote
         content:
-          - Data curation, Formal analysis, Investigation, Visualization
-  - type: Note
-    id: con6
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - Data curation, Formal analysis, Investigation, Visualization
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con6
+        noteType: Footnote
         content:
-          - >-
-            Resources, Data curation, Formal analysis, Funding acquisition,
-            Validation, Visualization, Methodology, Writing—review and editing
-  - type: Note
-    id: con7
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Resources, Data curation, Formal analysis, Funding acquisition,
+                Validation, Visualization, Methodology, Writing—review and
+                editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con7
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Funding acquisition, Methodology, Project
-            administration, Writing—review and editing
-  - type: Note
-    id: con8
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Funding acquisition, Methodology, Project
+                administration, Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con8
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Supervision, Visualization,
-            Methodology, Project administration, Writing—review and editing
-  - type: Note
-    id: con9
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Supervision, Visualization,
+                Methodology, Project administration, Writing—review and editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con9
+        noteType: Footnote
         content:
-          - Conceptualization, Funding acquisition, Writing—review and editing
-  - type: Note
-    id: con10
-    noteType: Footnote
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Funding acquisition, Writing—review and
+                editing
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: con10
+        noteType: Footnote
         content:
-          - >-
-            Conceptualization, Resources, Formal analysis, Supervision, Funding
-            acquisition, Validation, Investigation, Visualization, Methodology,
-            Writing—original draft, Project administration, Writing—review and
-            editing
+          - type: Paragraph
+            content:
+              - >-
+                Conceptualization, Resources, Formal analysis, Supervision,
+                Funding acquisition, Validation, Investigation, Visualization,
+                Methodology, Writing—original draft, Project administration,
+                Writing—review and editing
   - type: Heading
     id: s5
     depth: 1
     content:
       - Ethics
-  - type: Note
-    id: fn1
-    noteType: Footnote
+  - type: Paragraph
     content:
-      - type: Paragraph
+      - type: Note
+        id: fn1
+        noteType: Footnote
         content:
-          - >-
-            Animal experimentation: All experiments were performed in accordance
-            with the National Institutes of Health Guidelines for the Care and
-            Use of Laboratory Animals and were approved by the Institutional
-            Animal Care and Use Committee of the VA Portland Health Care System
-            (VAPORHCS), protocol numbers 3169-14, 3169-16 and 3140-17.
+          - type: Paragraph
+            content:
+              - >-
+                Animal experimentation: All experiments were performed in
+                accordance with the National Institutes of Health Guidelines for
+                the Care and Use of Laboratory Animals and were approved by the
+                Institutional Animal Care and Use Committee of the VA Portland
+                Health Care System (VAPORHCS), protocol numbers 3169-14, 3169-16
+                and 3140-17.
   - type: ThematicBreak
   - type: Heading
     id: s6
     depth: 1
     content:
       - Additional files
-  - type: MediaObject
-    id: transrepform
-    contentUrl: ''
-    text: Transparent reporting form
+  - type: Paragraph
+    content:
+      - type: Link
+        id: transrepform
+        target: elife-46472-transrepform-v3.pdf
+        title: Transparent reporting form
+        content:
+          - elife-46472-transrepform-v3.pdf
   - type: ThematicBreak
   - type: Heading
     id: s7

@@ -9530,7 +9530,12 @@
     {
       "type": "ThematicBreak"
     },
-    "7",
+    {
+      "type": "Paragraph",
+      "content": [
+        "7"
+      ]
+    },
     {
       "type": "Heading",
       "id": "s5",
@@ -9548,7 +9553,12 @@
     {
       "type": "ThematicBreak"
     },
-    "9",
+    {
+      "type": "Paragraph",
+      "content": [
+        "9"
+      ]
+    },
     {
       "type": "Heading",
       "id": "s6",

@@ -6781,7 +6781,19 @@
         "Supporting information"
       ]
     },
-    "supplements/275761_file03.docx Supplementary material",
+    {
+      "type": "Paragraph",
+      "content": [
+        {
+          "type": "Link",
+          "target": "supplements/275761_file03.docx",
+          "title": "Supplementary material",
+          "content": [
+            "supplements/275761_file03.docx"
+          ]
+        }
+      ]
+    },
     {
       "type": "ThematicBreak"
     },
