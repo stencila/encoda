@@ -1,3 +1,13 @@
+## [0.121.5](https://github.com/stencila/encoda/compare/v0.121.4...v0.121.5) (2023-05-26)
+
+
+### Bug Fixes
+
+* **JATS:** Decode `<supplementary-material>` to a `Link`;  ensure `BlockContent` from `<back>` sections ([32e1ce5](https://github.com/stencila/encoda/commit/32e1ce5d4e3a81dd153c8c657314e15cbe08a816))
+* **JATS:** Only add email from `<corresp>` if no emails for author in `<contrib>` ([e51dd01](https://github.com/stencila/encoda/commit/e51dd010adada30ba5611e4f69833de2ca0d8e6f))
+* **JATS:** Prepend `<list-item><label>` to first paragraph ([7afe909](https://github.com/stencila/encoda/commit/7afe90918efe4d21c03311037bd7c1aac9278d34))
+* **JATS:** Refine rules around using `<fpage>` for `eLocation`; do not require `pageStart` and `pageEnd` to be ints ([0c3236c](https://github.com/stencila/encoda/commit/0c3236c42bcc3d0d70e1eccc4069b4971b9d698f))
+
 ## [0.121.4](https://github.com/stencila/encoda/compare/v0.121.3...v0.121.4) (2023-05-22)
 
 
