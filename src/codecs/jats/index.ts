@@ -2131,9 +2131,8 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
     ) {
       const label = text(children.shift()!)
       // Note: now former child [0] is child [1]
-      children[0].elements![0].text = label.endsWith(' ')
-        ? label
-        : label + ' ' + text(children[0])
+      children[0].elements![0].text =
+        (label.endsWith(' ') ? label : label + ' ') + text(children[0])
     }
     return stencila.listItem({
       content: ensureBlockContentArray(decodeElements(children, state)),
