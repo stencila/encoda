@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<article>
+    <body>
+        <p>Test that list-item labels do not create a new paragraph but are instead prepended to paragraph</p>
+        <list list-type="simple">
+            <list-item><label>1)</label><p>We showed that ...</p></list-item>
+            <list-item><label>2)</label><p>We exploited an ...</p></list-item>
+            <list-item><label>3)</label><p>We followed the ...</p></list-item>
+        </list>
+    </body>
+</article>

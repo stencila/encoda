@@ -2121,10 +2121,22 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const order =
     type === 'bullet' || type === 'simple' ? 'Unordered' : 'Ascending'
   const items = children(elem, 'list-item').map((item): stencila.ListItem => {
+    // If the list-item's first child is a label then prepend that to the next
+    // node (usually a paragraph) to avoid it getting wrapped its own paragraph
+    const children = item.elements ?? []
+    if (
+      children.length > 1 &&
+      children[0].name === 'label' &&
+      children[1].elements
+    ) {
+      const label = text(children.shift()!)
+      // Note: now former child [0] is child [1]
+      children[0].elements![0].text = label.endsWith(' ')
+        ? label
+        : label + ' ' + text(children[0])
+    }
     return stencila.listItem({
-      content: ensureBlockContentArray(
-        decodeElements(item.elements ?? [], state)
-      ),
+      content: ensureBlockContentArray(decodeElements(children, state)),
     })
   })
   return [stencila.list({ items, order, meta: { listType: type } })]

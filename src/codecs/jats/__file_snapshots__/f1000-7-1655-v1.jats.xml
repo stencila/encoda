@@ -223,15 +223,12 @@
             <list list-type="bullet">
                 <list-item>
                     <p>○ </p>
-                    <p>Peer review reports, anonymized or with report author names</p>
                 </list-item>
                 <list-item>
                     <p>○ </p>
-                    <p>Author responses/Rebuttals</p>
                 </list-item>
                 <list-item>
                     <p>○ </p>
-                    <p>Editor decision letters</p>
                 </list-item>
             </list>
             <p>Some journals also provide appeal and resubmission information (including previous versions of the article, dates, and actors involved).</p>
@@ -252,15 +249,12 @@
             <list list-type="bullet">
                 <list-item>
                     <p>1. </p>
-                    <p>Peer review materials are attached to the article as a single or numerous PDFs. Whether these materials are pulled together into one document or attached as separate documents, there should be some defined mechanism in the JATS XML tagging that would support the capture of any available metadata and identify these files in a machine-readable and interoperable way for publishers to tag this content appropriately.</p>
                 </list-item>
                 <list-item>
                     <p>2. </p>
-                    <p>Peer review materials are appended to the article within the full text (so all is machine readable) as a sub-article component of the XML.</p>
                 </list-item>
                 <list-item>
                     <p>3. </p>
-                    <p>Peer review materials are full-text XML “articles” or “commentaries” in their own right that link bidirectionally to the main article.</p>
                 </list-item>
             </list>
         </sec>
@@ -346,11 +340,9 @@
             <list list-type="bullet">
                 <list-item>
                     <p>1. </p>
-                    <p>sub-articles &lt;sub-article&gt; to the article being reviewed (sub-articles may be full-text XML or XML metadata plus a link to the PDF)</p>
                 </list-item>
                 <list-item>
                     <p>2. </p>
-                    <p>independent articles &lt;article&gt; (with the appropriate &lt;related-article&gt; links – Peer Reviews MUST link to the version of the article they are reviewing and Author Replies; Decision Letters MUST link to the version of the article they are passing judgment on; and Author Replies MUST link to each Review/Decision Letter it is addressing)</p>
                 </list-item>
             </list>
         </sec>
@@ -413,15 +405,12 @@
             <list list-type="bullet">
                 <list-item>
                     <p>○ </p>
-                    <p>For Peer Reviews, use @contrib-type=“reviewer”</p>
                 </list-item>
                 <list-item>
                     <p>○ </p>
-                    <p>For Decision Letters, use @contrib-type=“editor”</p>
                 </list-item>
                 <list-item>
                     <p>○ </p>
-                    <p>For Author Reply, use @contrib-type=“author”</p>
                 </list-item>
             </list>
             <p>We intend that the @contrib-type attribute value reflects the contributor’s relationship to the peer review process and not the relationship with the document.</p>
@@ -459,23 +448,18 @@
             <list list-type="bullet">
                 <list-item>
                     <p>a. </p>
-                    <p>&lt;funding-group&gt;</p>
                 </list-item>
                 <list-item>
                     <p>b. </p>
-                    <p>&lt;app&gt;, &lt;app-group&gt;, &lt;ack&gt;, &lt;glossary&gt;, &lt;back&gt;/&lt;sec&gt;</p>
                 </list-item>
                 <list-item>
                     <p>c. </p>
-                    <p>&lt;supplementary-material&gt;, &lt;inline-supplementary-material&gt;</p>
                 </list-item>
                 <list-item>
                     <p>d. </p>
-                    <p>&lt;bio&gt;</p>
                 </list-item>
                 <list-item>
                     <p>e. </p>
-                    <p>&lt;article-version&gt; Once published, review documents will not be “versioned”. If the reviewer(s) write a review on an updated version of the manuscript, the peer review is a new published object.</p>
                 </list-item>
             </list>
         </sec>

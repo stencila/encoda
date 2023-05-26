@@ -1,0 +1,27 @@
+type: Article
+content:
+  - type: Paragraph
+    content:
+      - >-
+        Test that list-item labels do not create a new paragraph but are instead
+        prepended to paragraph
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - 1) We showed that ...
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - 2) We exploited an ...
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - 3) We followed the ...
+    order: Unordered
+    meta:
+      listType: simple
