@@ -1,3 +1,10 @@
+## [0.121.6](https://github.com/stencila/encoda/compare/v0.121.5...v0.121.6) (2023-05-26)
+
+
+### Bug Fixes
+
+* **JATS:** Fix loss of content when `<list-item><label>` has trailing space ([7599817](https://github.com/stencila/encoda/commit/75998173e37e8f9e996a354b4b4fe0af272d760b))
+
 ## [0.121.5](https://github.com/stencila/encoda/compare/v0.121.4...v0.121.5) (2023-05-26)
 
 
