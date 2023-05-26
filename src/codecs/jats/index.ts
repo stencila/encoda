@@ -933,11 +933,11 @@ function decodeContrib(
 
     const emails = all(contrib, 'email').map(text)
 
-    // If the author is a corresponding author then attempt to get their email
+    // If no email was found and the author is a corresponding author then attempt to get their email
     // from the linked <corresp> element with the id in the <xref>
     const correspId = first(contrib, 'xref', { 'ref-type': 'corresp' })
       ?.attributes?.rid
-    if (correspId) {
+    if (emails.length == 0 && correspId) {
       const correspEmails = all(
         first(state.article, 'corresp', { id: correspId }),
         'email'

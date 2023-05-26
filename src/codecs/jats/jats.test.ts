@@ -330,6 +330,7 @@ test.each([
   ['ca7917ff-6cb0-1014-9b19-d05ef1e56b05', '468444.xml'],
   ['d6f14042-6db3-1014-b228-f9da7cb8e4cc', '22275761.xml'],
   ['e9291f49-6d06-1014-9500-e156797df82e', '501569.xml'],
+  ['87253', '87253.xml']
 ])('decode + encode : %s', async (meca, file) => {
   const node = unlinkFiles(await jats.read(fixture(`${meca}/content/${file}`)))
   expect(await json.dump(node)).toMatchFile(snapshot(`${meca}.json`))
