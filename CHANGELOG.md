@@ -1,3 +1,16 @@
+# [1.0.0](https://github.com/stencila/encoda/compare/v0.121.6...v1.0.0) (2023-05-29)
+
+
+### Bug Fixes
+
+* **Reshape citations:** Turn off grouping of `Cite`s into `CiteGroup` nodes ([95cdde4](https://github.com/stencila/encoda/commit/95cdde4e45de5fbbea28ff883da30e0a18cd4b52))
+
+
+### BREAKING CHANGES
+
+* **Reshape citations:** Will break display of citations for renderers that expect citations to be
+without punctuation (and which add that using CSS).
+
 ## [0.121.6](https://github.com/stencila/encoda/compare/v0.121.5...v0.121.6) (2023-05-26)
 
 
