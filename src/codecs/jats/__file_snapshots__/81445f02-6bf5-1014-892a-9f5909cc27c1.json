@@ -3949,7 +3949,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Atherosclerosis (AS) is the leading cause of cardiovascular disease-associated death worldwide ",
+        "Atherosclerosis (AS) is the leading cause of cardiovascular disease-associated death worldwide (",
         {
           "type": "Cite",
           "target": "c25",
@@ -3964,7 +3964,7 @@
             ", 2019"
           ]
         },
-        ". It has been well recognized that postmenopausal women confront an increasing risk of AS owing to estrogen deficiency and disturbance of the estrogen receptor (ER) regulatory network ",
+        "). It has been well recognized that postmenopausal women confront an increasing risk of AS owing to estrogen deficiency and disturbance of the estrogen receptor (ER) regulatory network (",
         {
           "type": "Cite",
           "target": "c25",
@@ -3979,55 +3979,52 @@
             "., 2019"
           ]
         },
-        ". Nevertheless, the therapeutic effect of hormone replacement therapy (HRT) remains controversial. Women’s Health Initiative and the Heart and Estrogen/Progestin Replacement Study reported that the atheroprotective effect of HRT in the late postmenopausal women (commonly ages over 65) is lost or even worsened ",
+        "). Nevertheless, the therapeutic effect of hormone replacement therapy (HRT) remains controversial. Women’s Health Initiative and the Heart and Estrogen/Progestin Replacement Study reported that the atheroprotective effect of HRT in the late postmenopausal women (commonly ages over 65) is lost or even worsened (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Hlatky ",
             {
-              "type": "Cite",
-              "target": "c13",
+              "type": "Emphasis",
               "content": [
-                "Hlatky ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2002"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c31",
-              "content": [
-                "Rocca ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c32",
-              "content": [
-                "Rossouw ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2002"
-              ]
-            }
+            ", 2002"
           ]
         },
-        ". The underlying mechanism may be triggered by aging, which reduces the protection afforded by estrogen, particularly estradiol (E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Rocca ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2014"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c32",
+          "content": [
+            "Rossouw ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2002"
+          ]
+        },
+        "). The underlying mechanism may be triggered by aging, which reduces the protection afforded by estrogen, particularly estradiol (E",
         {
           "type": "Subscript",
           "content": [
@@ -4040,7 +4037,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "In general, the atheroprotective effect of estrogen is attributed to its interaction with estrogen receptor α (ERα), which participates in foam cell formation and vascular remodeling ",
+        "In general, the atheroprotective effect of estrogen is attributed to its interaction with estrogen receptor α (ERα), which participates in foam cell formation and vascular remodeling (",
         {
           "type": "Cite",
           "target": "c26",
@@ -4048,7 +4045,7 @@
             "Murphy, 2011"
           ]
         },
-        ". ERα deletion is reported to induce adiposity and increase atherosclerotic lesion size since the promoters of lipid metabolism-related genes, such as ",
+        "). ERα deletion is reported to induce adiposity and increase atherosclerotic lesion size since the promoters of lipid metabolism-related genes, such as ",
         {
           "type": "Emphasis",
           "content": [
@@ -4069,7 +4066,7 @@
             "Abca1"
           ]
         },
-        ", contain ERα binding sites ",
+        ", contain ERα binding sites (",
         {
           "type": "Cite",
           "target": "c30",
@@ -4084,48 +4081,44 @@
             ", 2011"
           ]
         },
-        ". In addition, estrogen binds to ERα tethered to the plasma membrane, which can stimulate vasodilatation via an endothelial nitric oxide synthase (eNOS)-dependent pathway",
+        "). In addition, estrogen binds to ERα tethered to the plasma membrane, which can stimulate vasodilatation via an endothelial nitric oxide synthase (eNOS)-dependent pathway(",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Gavin ",
             {
-              "type": "Cite",
-              "target": "c11",
+              "type": "Emphasis",
               "content": [
-                "Gavin ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2009"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c37",
-              "content": [
-                "Teoh ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
-              ]
-            }
+            ", 2009"
           ]
         },
-        ". Moreover, VEGF promotes angiogenesis and is transcriptionally regulated by the E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c37",
+          "content": [
+            "Teoh ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        "). Moreover, VEGF promotes angiogenesis and is transcriptionally regulated by the E",
         {
           "type": "Subscript",
           "content": [
             "2"
           ]
         },
-        "-ERα complex ",
+        "-ERα complex (",
         {
           "type": "Cite",
           "target": "c12",
@@ -4140,47 +4133,43 @@
             ", 2018"
           ]
         },
-        ". ERα expression decreases after menopause ",
+        "). ERα expression decreases after menopause (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Gavin ",
             {
-              "type": "Cite",
-              "target": "c11",
+              "type": "Emphasis",
               "content": [
-                "Gavin ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2009"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Zhang ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2019"
-              ]
-            }
+            "., 2009"
           ]
         },
-        ", suggesting the critical role of ERα in blood vessel function in healthy pre- and postmenopausal women. Despite the above, few studies have focused on the regulation of ERα in postmenopausal women on HRT."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Zhang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2019"
+          ]
+        },
+        "), suggesting the critical role of ERα in blood vessel function in healthy pre- and postmenopausal women. Despite the above, few studies have focused on the regulation of ERα in postmenopausal women on HRT."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Upon binding, estrogen functions as an ERα activator ",
+        "Upon binding, estrogen functions as an ERα activator (",
         {
           "type": "Cite",
           "target": "c21",
@@ -4195,7 +4184,7 @@
             ", 2020"
           ]
         },
-        " and initiates ERα dimerization and translocation into the nucleus. Estrogen treatment ",
+        ") and initiates ERα dimerization and translocation into the nucleus. Estrogen treatment ",
         {
           "type": "Emphasis",
           "content": [
@@ -4223,7 +4212,7 @@
             "Esr1"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c28",
@@ -4238,7 +4227,7 @@
             ", 2004"
           ]
         },
-        ". Estrogen binding to ERα also rapidly stimulates ubiquitination and proteasomal degradation of ERα ",
+        "). Estrogen binding to ERα also rapidly stimulates ubiquitination and proteasomal degradation of ERα (",
         {
           "type": "Cite",
           "target": "c28",
@@ -4253,7 +4242,7 @@
             "., 2004"
           ]
         },
-        ". Ubiquitination-dependent ERα cycling on and off the ERE promoter sites to activate or prevent target gene transcription depends on the presence of estrogen at an adequate concentration ",
+        "). Ubiquitination-dependent ERα cycling on and off the ERE promoter sites to activate or prevent target gene transcription depends on the presence of estrogen at an adequate concentration (",
         {
           "type": "Cite",
           "target": "c48",
@@ -4261,14 +4250,14 @@
             "Zhou & Slingerland, 2014"
           ]
         },
-        ". Ubiquitin ligases that have been implicated in ERα regulation include BRCA1, MDM2, SKP1–CUL1–F-box S-phase kinase-associated protein 2 (SCF",
+        "). Ubiquitin ligases that have been implicated in ERα regulation include BRCA1, MDM2, SKP1–CUL1–F-box S-phase kinase-associated protein 2 (SCF",
         {
           "type": "Superscript",
           "content": [
             "SKP2"
           ]
         },
-        "), and E6-associated protein (E6AP), all of which promote estrogen-induced transcriptional activity with cell-type selectivity ",
+        "), and E6-associated protein (E6AP), all of which promote estrogen-induced transcriptional activity with cell-type selectivity (",
         {
           "type": "Cite",
           "target": "c48",
@@ -4276,7 +4265,7 @@
             "Zhou & Slingerland, 2014"
           ]
         },
-        ". Of these, MDM2 is a single-subunit RING finger E3 protein, which does not always inversely correlate with ERα levels in cancer cells ",
+        "). Of these, MDM2 is a single-subunit RING finger E3 protein, which does not always inversely correlate with ERα levels in cancer cells (",
         {
           "type": "Cite",
           "target": "c9",
@@ -4291,13 +4280,13 @@
             ", 2007"
           ]
         },
-        ". The relationship between MDM2 and ERα in other contexts and cell types remains elusive."
+        "). The relationship between MDM2 and ERα in other contexts and cell types remains elusive."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Estrogen also regulates systemic iron homeostasis through hepcidin, an antimicrobial peptide of 25 amino acids that mediates endocytosis and degradation of the ferrous iron exporter ferroportin 1 (Fpn1) ",
+        "Estrogen also regulates systemic iron homeostasis through hepcidin, an antimicrobial peptide of 25 amino acids that mediates endocytosis and degradation of the ferrous iron exporter ferroportin 1 (Fpn1) (",
         {
           "type": "Cite",
           "target": "c27",
@@ -4312,7 +4301,7 @@
             ", 2004"
           ]
         },
-        ". The dimeric E",
+        "). The dimeric E",
         {
           "type": "Subscript",
           "content": [
@@ -4326,7 +4315,7 @@
             "Hamp"
           ]
         },
-        ") to inhibit its expression ",
+        ") to inhibit its expression (",
         {
           "type": "Cite",
           "target": "c15",
@@ -4341,14 +4330,14 @@
             ", 2012"
           ]
         },
-        ". Hence, E",
+        "). Hence, E",
         {
           "type": "Subscript",
           "content": [
             "2"
           ]
         },
-        " elevates circulating iron to compensate for blood loss during menstruation ",
+        " elevates circulating iron to compensate for blood loss during menstruation (",
         {
           "type": "Cite",
           "target": "c2",
@@ -4363,14 +4352,14 @@
             ", 2021"
           ]
         },
-        ". However, E",
+        "). However, E",
         {
           "type": "Subscript",
           "content": [
             "2"
           ]
         },
-        " declines by over 90% after menopause, while systemic iron content increases slowly by steady iron uptake over the years. Serum ferritin in postmenopausal women increased by 2-3 times compared with premenopausal women ",
+        " declines by over 90% after menopause, while systemic iron content increases slowly by steady iron uptake over the years. Serum ferritin in postmenopausal women increased by 2-3 times compared with premenopausal women (",
         {
           "type": "Cite",
           "target": "c16",
@@ -4385,54 +4374,7 @@
             ", 2013"
           ]
         },
-        ". We and others have previously reported that iron overload is a risk factor for atherosclerosis ",
-        {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "Cai ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Vinchi ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
-              ]
-            }
-          ]
-        },
-        ". Our study relied on using the proatherogenic ",
-        {
-          "type": "Emphasis",
-          "content": [
-            "ApoE",
-            {
-              "type": "Superscript",
-              "content": [
-                "-/-"
-              ]
-            }
-          ]
-        },
-        "mouse model, which we can manipulate genetically to cause iron overload ",
+        "). We and others have previously reported that iron overload is a risk factor for atherosclerosis (",
         {
           "type": "Cite",
           "target": "c5",
@@ -4447,7 +4389,50 @@
             ", 2020"
           ]
         },
-        ". We aimed to investigate the impact of aging-related iron accumulation on the therapeutic effect of HRT on AS and explore the underlying mechanisms. First, we corroborated on a new cohort of postmenopausal AS patients that a negative correlation between high concentrations of serum-iron and -ferritin and low expression of ERα exists. We hypothesized that gradual iron accumulation in postmenopausal women could explain poor HRT efficacy when applied at a late stage."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Vinchi ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        "). Our study relied on using the proatherogenic ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ApoE",
+            {
+              "type": "Superscript",
+              "content": [
+                "-/-"
+              ]
+            }
+          ]
+        },
+        "mouse model, which we can manipulate genetically to cause iron overload (",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Cai ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        "). We aimed to investigate the impact of aging-related iron accumulation on the therapeutic effect of HRT on AS and explore the underlying mechanisms. First, we corroborated on a new cohort of postmenopausal AS patients that a negative correlation between high concentrations of serum-iron and -ferritin and low expression of ERα exists. We hypothesized that gradual iron accumulation in postmenopausal women could explain poor HRT efficacy when applied at a late stage."
       ]
     },
     {
@@ -4554,7 +4539,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Participants in this study included 20 postmenopausal (at least one year since menopause, without HRT) AS patients aged 54-84 years, recruited from the Vascular Surgery Department, The Affiliated Drum Tower Hospital, Nanjing University Medical School. Patients were divided into early (55-65 years old) and late (>65 years old) groups since menopause for over ten years was defined as late post-menopause. Twenty fasting serum samples were collected at the outpatient service. Of them, eight patients, undergoing carotid endarterectomy, were recruited, and plaque samples were collected immediately after separation. Exclusion criteria included the current use of oral contraceptives or other medications. Further details on the exclusion criteria were referenced ",
+        "Participants in this study included 20 postmenopausal (at least one year since menopause, without HRT) AS patients aged 54-84 years, recruited from the Vascular Surgery Department, The Affiliated Drum Tower Hospital, Nanjing University Medical School. Patients were divided into early (55-65 years old) and late (>65 years old) groups since menopause for over ten years was defined as late post-menopause. Twenty fasting serum samples were collected at the outpatient service. Of them, eight patients, undergoing carotid endarterectomy, were recruited, and plaque samples were collected immediately after separation. Exclusion criteria included the current use of oral contraceptives or other medications. Further details on the exclusion criteria were referenced (",
         {
           "type": "Cite",
           "target": "c39",
@@ -4569,7 +4554,7 @@
             ", 2009"
           ]
         },
-        ". This study complies with the Declaration of Helsinki, and the Institutional Review Board of Nanjing Drum Tower Hospital, the Affiliated Hospital of Nanjing University Medical School, approved the study. All patients provided written informed consent."
+        "). This study complies with the Declaration of Helsinki, and the Institutional Review Board of Nanjing Drum Tower Hospital, the Affiliated Hospital of Nanjing University Medical School, approved the study. All patients provided written informed consent."
       ]
     },
     {
@@ -4621,7 +4606,7 @@
             }
           ]
         },
-        " mice on the C57BL/6J background were generated in our previous study ",
+        " mice on the C57BL/6J background were generated in our previous study (",
         {
           "type": "Cite",
           "target": "c5",
@@ -4636,7 +4621,7 @@
             "., 2020"
           ]
         },
-        ". For the control experiments included in Results 2 and 6, female ",
+        "). For the control experiments included in Results 2 and 6, female ",
         {
           "type": "Emphasis",
           "content": [
@@ -4855,7 +4840,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Deparaffinized tissue sections were stained with Prussian blue staining for nonheme iron as previously described ",
+        "Deparaffinized tissue sections were stained with Prussian blue staining for nonheme iron as previously described (",
         {
           "type": "Cite",
           "target": "c41",
@@ -4870,7 +4855,7 @@
             ", 2016"
           ]
         },
-        ". Serum iron was measured by the clinical laboratory of Nanjing Drum Tower Hospital using an autochemical analyser (Beckman Coulter AU5421, CA). Total nonheme iron in the tissues was measured by colorimetric ferrozine-based assays as previously described ",
+        "). Serum iron was measured by the clinical laboratory of Nanjing Drum Tower Hospital using an autochemical analyser (Beckman Coulter AU5421, CA). Total nonheme iron in the tissues was measured by colorimetric ferrozine-based assays as previously described (",
         {
           "type": "Cite",
           "target": "c19",
@@ -4885,7 +4870,7 @@
             ", 2018"
           ]
         },
-        ". Briefly, 22 μl concentrated HCl (11.6 M) was added to 100 μl of homogenized tissue samples (approximately 500 μg total protein). The sample was then heated at 95°C for 20 min, followed by centrifugation at 12000 g for 10 min. The supernatant was transferred into a clean tube. Ascorbate was added to reduce the Fe3",
+        "). Briefly, 22 μl concentrated HCl (11.6 M) was added to 100 μl of homogenized tissue samples (approximately 500 μg total protein). The sample was then heated at 95°C for 20 min, followed by centrifugation at 12000 g for 10 min. The supernatant was transferred into a clean tube. Ascorbate was added to reduce the Fe3",
         {
           "type": "Superscript",
           "content": [
@@ -4939,7 +4924,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Protein lysates were run in gels and transferred to membranes as previously reported ",
+        "Protein lysates were run in gels and transferred to membranes as previously reported (",
         {
           "type": "Cite",
           "target": "c4",
@@ -4954,7 +4939,7 @@
             ", 2018"
           ]
         },
-        ". The membranes were probed using antibodies directed against ERα, eNOS and VEGF purchased from Servicebio (Wuhan, China), ABCA1, BRCA1, AHR, and SOD2 from Abcam, TfR1 from ProteinTech Group Inc. (Chicago, IL), GAPDH from Bioworld Tech. (St. Louis Park, MN), ferritin L (Ft-L) made by using purified human ferritin L subunit as antigen by GenScript (Nanjing, China)."
+        "). The membranes were probed using antibodies directed against ERα, eNOS and VEGF purchased from Servicebio (Wuhan, China), ABCA1, BRCA1, AHR, and SOD2 from Abcam, TfR1 from ProteinTech Group Inc. (Chicago, IL), GAPDH from Bioworld Tech. (St. Louis Park, MN), ferritin L (Ft-L) made by using purified human ferritin L subunit as antigen by GenScript (Nanjing, China)."
       ]
     },
     {
@@ -5316,41 +5301,37 @@
             "2C"
           ]
         },
-        "), exactly as observed in humans ",
+        "), exactly as observed in humans (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Hlatky ",
             {
-              "type": "Cite",
-              "target": "c13",
+              "type": "Emphasis",
               "content": [
-                "Hlatky ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2002"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c32",
-              "content": [
-                "Rossouw ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2002"
-              ]
-            }
+            "., 2002"
           ]
         },
-        ". We then detected aortic ERα expression to evaluate whether ERα was responsive to E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c32",
+          "content": [
+            "Rossouw ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2002"
+          ]
+        },
+        "). We then detected aortic ERα expression to evaluate whether ERα was responsive to E",
         {
           "type": "Subscript",
           "content": [
@@ -5382,41 +5363,37 @@
             "Figure 2D"
           ]
         },
-        "). It has been reported that ERα protects against atherosclerosis by promoting lipid efflux and endothelial homeostasis ",
+        "). It has been reported that ERα protects against atherosclerosis by promoting lipid efflux and endothelial homeostasis (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c40",
+          "content": [
+            "Wang ",
             {
-              "type": "Cite",
-              "target": "c40",
+              "type": "Emphasis",
               "content": [
-                "Wang ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2021"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Zhao ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2021"
-              ]
-            }
+            ", 2021"
           ]
         },
-        ". Hence, we assessed three ERα downstream proteins, ABCA1, a lipid exporter whose gene promoter is predicted to have ERE, VEGF, an activator of angiogenesis, and eNOS, a modulator of vasoconstriction and vascular repair. They were all positively correlated with ERα expression (",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Zhao ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2021"
+          ]
+        },
+        "). Hence, we assessed three ERα downstream proteins, ABCA1, a lipid exporter whose gene promoter is predicted to have ERE, VEGF, an activator of angiogenesis, and eNOS, a modulator of vasoconstriction and vascular repair. They were all positively correlated with ERα expression (",
         {
           "type": "Link",
           "relation": "fig",
@@ -5425,7 +5402,7 @@
             "Figure 2D"
           ]
         },
-        "). Macrophage-derived foam cell formation is crucial in the development of atherogenesis ",
+        "). Macrophage-derived foam cell formation is crucial in the development of atherogenesis (",
         {
           "type": "Cite",
           "target": "c42",
@@ -5440,7 +5417,7 @@
             ", 2021"
           ]
         },
-        ". We therefore isolated peritoneal macrophages from early and late OVX mice after E2 treatment and surprisingly found that the expression of ERα, ABCA1, and VEGF responded to E",
+        "). We therefore isolated peritoneal macrophages from early and late OVX mice after E2 treatment and surprisingly found that the expression of ERα, ABCA1, and VEGF responded to E",
         {
           "type": "Subscript",
           "content": [
@@ -5465,7 +5442,7 @@
             "Figure 2F"
           ]
         },
-        "). Our previous data have demonstrated that macrophage iron plays a critical role in the development of AS ",
+        "). Our previous data have demonstrated that macrophage iron plays a critical role in the development of AS (",
         {
           "type": "Cite",
           "target": "c5",
@@ -5480,7 +5457,7 @@
             "., 2020"
           ]
         },
-        "; therefore, iron-related proteins were monitored."
+        "); therefore, iron-related proteins were monitored."
       ]
     },
     {
@@ -5749,7 +5726,7 @@
             "Figure 2E"
           ]
         },
-        ") and confirming that estrogen modulates iron homeostasis as previously suggested ",
+        ") and confirming that estrogen modulates iron homeostasis as previously suggested (",
         {
           "type": "Cite",
           "target": "c43",
@@ -5764,7 +5741,7 @@
             ", 2012"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -5831,7 +5808,7 @@
             }
           ]
         },
-        " background ",
+        " background (",
         {
           "type": "Cite",
           "target": "c5",
@@ -5846,7 +5823,7 @@
             "., 2020"
           ]
         },
-        ". This double knockout (KO) model is considered relevant for AS studies due to the accumulation of a large number of macrophages in plaques, which contributes to the progression of atherosclerosis ",
+        "). This double knockout (KO) model is considered relevant for AS studies due to the accumulation of a large number of macrophages in plaques, which contributes to the progression of atherosclerosis (",
         {
           "type": "Cite",
           "target": "c24",
@@ -5861,7 +5838,7 @@
             ", 2013"
           ]
         },
-        ". OVX was performed in female mice fed standard chow at 16 weeks or 40 weeks of age, and E",
+        "). OVX was performed in female mice fed standard chow at 16 weeks or 40 weeks of age, and E",
         {
           "type": "Subscript",
           "content": [
@@ -5961,7 +5938,7 @@
             "Figure 3C"
           ]
         },
-        ", lower panel), reproducing previous observations ",
+        ", lower panel), reproducing previous observations (",
         {
           "type": "Cite",
           "target": "c5",
@@ -5976,7 +5953,7 @@
             "., 2020"
           ]
         },
-        ". We then examined the iron status in tissues and serum. Iron levels in tissues (aorta/liver) were higher in ",
+        "). We then examined the iron status in tissues and serum. Iron levels in tissues (aorta/liver) were higher in ",
         {
           "type": "Emphasis",
           "content": [
@@ -6676,34 +6653,30 @@
             "Figure 4H"
           ]
         },
-        "), which has been demonstrated to increase the risk of macrophage adhesion and intraplaque hemorrhage ",
+        "), which has been demonstrated to increase the risk of macrophage adhesion and intraplaque hemorrhage (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c7",
-              "content": [
-                "Chang & Nguyen, 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c22",
-              "content": [
-                "Mao ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
-              ]
-            }
+          "type": "Cite",
+          "target": "c7",
+          "content": [
+            "Chang & Nguyen, 2021"
           ]
         },
-        ". The reduced levels of eNOS were also revealed by ELISA in HUVECs treated with E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c22",
+          "content": [
+            "Mao ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        "). The reduced levels of eNOS were also revealed by ELISA in HUVECs treated with E",
         {
           "type": "Subscript",
           "content": [
@@ -6760,7 +6733,7 @@
             "2"
           ]
         },
-        " together downregulated ERα expression. To elucidate the underlying mechanism, we first searched for what regulates ERα expression. It was reported that the downregulation of ERα could be attributed to methylation of its promoter region, which could be induced by oxidative stress ",
+        " together downregulated ERα expression. To elucidate the underlying mechanism, we first searched for what regulates ERα expression. It was reported that the downregulation of ERα could be attributed to methylation of its promoter region, which could be induced by oxidative stress (",
         {
           "type": "Cite",
           "target": "c21",
@@ -6775,7 +6748,7 @@
             "., 2020"
           ]
         },
-        ". Because iron overload has been massively correlated with oxidative stress, two relevant antioxidative enzymes, catalase (CAT) and superoxide dismutase (SOD) 2, were evaluated. The results did not show a significant difference between the control and E",
+        "). Because iron overload has been massively correlated with oxidative stress, two relevant antioxidative enzymes, catalase (CAT) and superoxide dismutase (SOD) 2, were evaluated. The results did not show a significant difference between the control and E",
         {
           "type": "Subscript",
           "content": [
@@ -6868,7 +6841,7 @@
             "2"
           ]
         },
-        " plus excess iron, verifying the activation of ERα proteasome degradation pathway ",
+        " plus excess iron, verifying the activation of ERα proteasome degradation pathway (",
         {
           "type": "Cite",
           "target": "c48",
@@ -6876,7 +6849,7 @@
             "Zhou & Slingerland, 2014"
           ]
         },
-        ". We then detected the ubiquitination levels of ERα by immunoprecipitation and immunoblotting. The results showed much more ubiquitinated and degraded ERα in the presence of E",
+        "). We then detected the ubiquitination levels of ERα by immunoprecipitation and immunoblotting. The results showed much more ubiquitinated and degraded ERα in the presence of E",
         {
           "type": "Subscript",
           "content": [
@@ -6892,55 +6865,52 @@
             "Figure 5C"
           ]
         },
-        "), further supporting the proteolysis-dependent pathway for ERα degradation. We then tested a few E3 ligases (BRCA1, AHR, and Mdm2) in J774a.1, which were supposed to regulate ERα ",
+        "), further supporting the proteolysis-dependent pathway for ERα degradation. We then tested a few E3 ligases (BRCA1, AHR, and Mdm2) in J774a.1, which were supposed to regulate ERα (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Fan ",
             {
-              "type": "Cite",
-              "target": "c10",
+              "type": "Emphasis",
               "content": [
-                "Fan ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2001"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c18",
-              "content": [
-                "Khan ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2006"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c33",
-              "content": [
-                "Saji ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2001"
-              ]
-            }
+            ", 2001"
           ]
         },
-        ", and did not find a negative correlation between BRCA1/AHR and ERα in response to FAC or E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c18",
+          "content": [
+            "Khan ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2006"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c33",
+          "content": [
+            "Saji ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2001"
+          ]
+        },
+        "), and did not find a negative correlation between BRCA1/AHR and ERα in response to FAC or E",
         {
           "type": "Subscript",
           "content": [
@@ -7500,34 +7470,30 @@
     {
       "type": "Paragraph",
       "content": [
-        "Estrogen has long been considered atheroprotective and responsible for the low morbidity of cardiovascular diseases in premenopausal women ",
+        "Estrogen has long been considered atheroprotective and responsible for the low morbidity of cardiovascular diseases in premenopausal women (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c20",
-              "content": [
-                "Lobo, 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c25",
-              "content": [
-                "Moss ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Lobo, 2017"
           ]
         },
-        ". However, epidemiological studies of the Women’s Health Initiative question the beneficial effects of late postmenopausal HRT ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Moss ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2019"
+          ]
+        },
+        "). However, epidemiological studies of the Women’s Health Initiative question the beneficial effects of late postmenopausal HRT (",
         {
           "type": "Cite",
           "target": "c13",
@@ -7542,27 +7508,23 @@
             "., 2002"
           ]
         },
-        ". Although one hypothesis to explain this observation may be that iron potentiates the adverse effects of estrogen in AS ",
+        "). Although one hypothesis to explain this observation may be that iron potentiates the adverse effects of estrogen in AS (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c34",
-              "content": [
-                "Sullivan, 1981"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c35",
-              "content": [
-                "Sullivan, 2003"
-              ]
-            }
+          "type": "Cite",
+          "target": "c34",
+          "content": [
+            "Sullivan, 1981"
           ]
         },
-        ", a comprehensive ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Sullivan, 2003"
+          ]
+        },
+        "), a comprehensive ",
         {
           "type": "Emphasis",
           "content": [
@@ -7602,7 +7564,7 @@
             }
           ]
         },
-        "",
+        "(",
         {
           "type": "Cite",
           "target": "c5",
@@ -7617,7 +7579,7 @@
             "., 2020"
           ]
         },
-        ". Our present study provides the first experimental evidence that iron overload facilitates ERα proteolysis, which is potentiated in the presence of E",
+        "). Our present study provides the first experimental evidence that iron overload facilitates ERα proteolysis, which is potentiated in the presence of E",
         {
           "type": "Subscript",
           "content": [
@@ -7682,7 +7644,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "The controversy of whether or not to proceed with HRT in postmenopausal women is fueled by an increased, although small, risk of breast cancer and from the potentially harmful effect on cardiovascular outcomes ",
+        "The controversy of whether or not to proceed with HRT in postmenopausal women is fueled by an increased, although small, risk of breast cancer and from the potentially harmful effect on cardiovascular outcomes (",
         {
           "type": "Cite",
           "target": "c20",
@@ -7690,7 +7652,7 @@
             "Lobo, 2017"
           ]
         },
-        ". Previous randomized trials did not consider the ages sorting out EPM from LPM and have not excluded subjects with iron depletion or loss in the recruited post-menopausal subjects ",
+        "). Previous randomized trials did not consider the ages sorting out EPM from LPM and have not excluded subjects with iron depletion or loss in the recruited post-menopausal subjects (",
         {
           "type": "Cite",
           "target": "c35",
@@ -7698,7 +7660,7 @@
             "Sullivan, 2003"
           ]
         },
-        ". We sorted the recruited female AS volunteers from the Department of Vascular Surgery of Nanjing Drum Tower Hospital as EPM and LPM groups to reveal whether aging-associated iron deposition correlates with ERα expression. The negative correlation between systemic iron status and intraplaque ERα expression was validated, which prompted us to address the role of iron in ERα expression."
+        "). We sorted the recruited female AS volunteers from the Department of Vascular Surgery of Nanjing Drum Tower Hospital as EPM and LPM groups to reveal whether aging-associated iron deposition correlates with ERα expression. The negative correlation between systemic iron status and intraplaque ERα expression was validated, which prompted us to address the role of iron in ERα expression."
       ]
     },
     {
@@ -7711,117 +7673,111 @@
             "vice versa"
           ]
         },
-        " ",
+        " (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Hou ",
             {
-              "type": "Cite",
-              "target": "c15",
+              "type": "Emphasis",
               "content": [
-                "Hou ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "Ikeda ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c43",
-              "content": [
-                "Yang ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
-              ]
-            }
+            "., 2012"
           ]
         },
-        ". Both genes encoding hepcidin and Fpn are inhibited by E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Ikeda ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c43",
+          "content": [
+            "Yang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2012"
+          ]
+        },
+        "). Both genes encoding hepcidin and Fpn are inhibited by E",
         {
           "type": "Subscript",
           "content": [
             "2"
           ]
         },
-        " treatment through an estrogen-responsive element (ERE) ",
+        " treatment through an estrogen-responsive element (ERE) (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Hou ",
             {
-              "type": "Cite",
-              "target": "c15",
+              "type": "Emphasis",
               "content": [
-                "Hou ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c29",
-              "content": [
-                "Qian ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c43",
-              "content": [
-                "Yang ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
-              ]
-            }
+            "., 2012"
           ]
         },
-        ". However, it was also reported that hepcidin expression decreased in the livers of OVX mice through a GPR30-BMP6-dependent mechanism, independent of the ERE-mediated E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c29",
+          "content": [
+            "Qian ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c43",
+          "content": [
+            "Yang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2012"
+          ]
+        },
+        "). However, it was also reported that hepcidin expression decreased in the livers of OVX mice through a GPR30-BMP6-dependent mechanism, independent of the ERE-mediated E",
         {
           "type": "Subscript",
           "content": [
             "2"
           ]
         },
-        "-ERα pathway ",
+        "-ERα pathway (",
         {
           "type": "Cite",
           "target": "c17",
@@ -7836,76 +7792,22 @@
             "., 2012"
           ]
         },
-        ". Though the difference in hepcidin expression in OVX mice ",
+        "). Though the difference in hepcidin expression in OVX mice (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c3",
-              "content": [
-                "Bowling ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c11",
-              "content": [
-                "Gavin ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c15",
-              "content": [
-                "Hou ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "Ikeda ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                "., 2012"
-              ]
-            }
-          ]
-        },
-        ", the consistent with this study here is that aging, OVX, and genetic manipulation of Fpn induced progressive iron retention in tissues, accompanied by reduced ERα expression. E",
-        {
-          "type": "Subscript",
+          "type": "Cite",
+          "target": "c3",
           "content": [
-            "2"
+            "Bowling ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2014"
           ]
         },
-        " administration further enhanced this reduction in ERα levels under the above-mentioned conditions. Overall, high ERα levels are found in reproductive women, despite fluctuations caused by the periodic estrogen wave and blood loss in reproductive women ",
+        "; ",
         {
           "type": "Cite",
           "target": "c11",
@@ -7920,7 +7822,59 @@
             "., 2009"
           ]
         },
-        ". The aging process, particularly in late postmenopausal women, progressively elevates iron levels which we show, downregulates ERα, resulting in insufficient ERα to respond to E",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Hou ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Ikeda ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2012"
+          ]
+        },
+        "), the consistent with this study here is that aging, OVX, and genetic manipulation of Fpn induced progressive iron retention in tissues, accompanied by reduced ERα expression. E",
+        {
+          "type": "Subscript",
+          "content": [
+            "2"
+          ]
+        },
+        " administration further enhanced this reduction in ERα levels under the above-mentioned conditions. Overall, high ERα levels are found in reproductive women, despite fluctuations caused by the periodic estrogen wave and blood loss in reproductive women (",
+        {
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Gavin ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            "., 2009"
+          ]
+        },
+        "). The aging process, particularly in late postmenopausal women, progressively elevates iron levels which we show, downregulates ERα, resulting in insufficient ERα to respond to E",
         {
           "type": "Subscript",
           "content": [
@@ -7933,48 +7887,44 @@
     {
       "type": "Paragraph",
       "content": [
-        "ERα is the main effector of estrogen on cardiovascular function ",
+        "ERα is the main effector of estrogen on cardiovascular function (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c1",
+          "content": [
+            "Aryan ",
             {
-              "type": "Cite",
-              "target": "c1",
+              "type": "Emphasis",
               "content": [
-                "Aryan ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Meng ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2021"
-              ]
-            }
+            ", 2020"
           ]
         },
-        ". We wondered how iron downregulated ERα. Since several E3 ubiquitin ligases (",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Meng ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2021"
+          ]
+        },
+        "). We wondered how iron downregulated ERα. Since several E3 ubiquitin ligases (",
         {
           "type": "Emphasis",
           "content": [
             "i.e"
           ]
         },
-        "., CHIP, E6AP, BRCA1, BARD1, SKP2, and Mdm2) have been found to catalyze the covalent binding of ubiquitin to lysine residues of ERα (reviewed in ",
+        "., CHIP, E6AP, BRCA1, BARD1, SKP2, and Mdm2) have been found to catalyze the covalent binding of ubiquitin to lysine residues of ERα (reviewed in (",
         {
           "type": "Cite",
           "target": "c36",
@@ -7982,47 +7932,43 @@
             "Tecalco-Cruz & Ramirez-Jarquin, 2017"
           ]
         },
-        ", we tested them and found that Mdm2 is responsive to iron treatment in cells and mice and negatively correlated with ERα, particularly under high iron conditions. Furthermore, we showed that Mdm2 is a negative regulator of ERα."
+        "), we tested them and found that Mdm2 is responsive to iron treatment in cells and mice and negatively correlated with ERα, particularly under high iron conditions. Furthermore, we showed that Mdm2 is a negative regulator of ERα."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Our findings may be context specific, as some differences are noted in its studied roles in some cancer cell types ",
+        "Our findings may be context specific, as some differences are noted in its studied roles in some cancer cell types (",
         {
-          "type": "CiteGroup",
-          "items": [
+          "type": "Cite",
+          "target": "c8",
+          "content": [
+            "Dongiovanni ",
             {
-              "type": "Cite",
-              "target": "c8",
+              "type": "Emphasis",
               "content": [
-                "Dongiovanni ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2010"
+                "et al"
               ]
             },
-            {
-              "type": "Cite",
-              "target": "c45",
-              "content": [
-                "Zhang ",
-                {
-                  "type": "Emphasis",
-                  "content": [
-                    "et al"
-                  ]
-                },
-                ", 2020"
-              ]
-            }
+            ", 2010"
           ]
         },
-        ". Mdm2 acts as a ubiquitin ligase E3 to p53 in SV40 hepatocytes ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c45",
+          "content": [
+            "Zhang ",
+            {
+              "type": "Emphasis",
+              "content": [
+                "et al"
+              ]
+            },
+            ", 2020"
+          ]
+        },
+        "). Mdm2 acts as a ubiquitin ligase E3 to p53 in SV40 hepatocytes (",
         {
           "type": "Cite",
           "target": "c14",
@@ -8037,7 +7983,7 @@
             ", 1997"
           ]
         },
-        " and has been shown to act as a direct coactivator of ERα function in ERα-positive breast cancer ",
+        ") and has been shown to act as a direct coactivator of ERα function in ERα-positive breast cancer (",
         {
           "type": "Cite",
           "target": "c33",
@@ -8052,7 +7998,7 @@
             "., 2001"
           ]
         },
-        ". Nevertheless, iron-dependent downregulation was revealed in leukemia cell lines and primary human cells derived from acute myeloid leukemia patients ",
+        "). Nevertheless, iron-dependent downregulation was revealed in leukemia cell lines and primary human cells derived from acute myeloid leukemia patients (",
         {
           "type": "Cite",
           "target": "c6",
@@ -8067,7 +8013,7 @@
             ", 2020"
           ]
         },
-        ", suggesting a cell-type-specific regulation of Mdm2 by iron. In our study, the downregulation of Mdm2 by E",
+        "), suggesting a cell-type-specific regulation of Mdm2 by iron. In our study, the downregulation of Mdm2 by E",
         {
           "type": "Subscript",
           "content": [
@@ -8101,7 +8047,7 @@
             "2"
           ]
         },
-        "-mediated ERα proteolysis and its critical consequence on the outcome of HRT. With the efficacy of HRT challenged by “the window of opportunity” theory ",
+        "-mediated ERα proteolysis and its critical consequence on the outcome of HRT. With the efficacy of HRT challenged by “the window of opportunity” theory (",
         {
           "type": "Cite",
           "target": "c44",
@@ -8116,7 +8062,7 @@
             ", 2007"
           ]
         },
-        ", it is vital to explore therapies that maintain ERα expression mediating the protective effects of estrogen. Although further work is needed to determine whether iron restriction therapy is clinically relevant in combination with HRT for the intervention of postmenopausal atherosclerosis as a long-term strategy, this paper provides guidance for optimizing the timing HRT intervention and supportive nutrient management."
+        "), it is vital to explore therapies that maintain ERα expression mediating the protective effects of estrogen. Although further work is needed to determine whether iron restriction therapy is clinically relevant in combination with HRT for the intervention of postmenopausal atherosclerosis as a long-term strategy, this paper provides guidance for optimizing the timing HRT intervention and supportive nutrient management."
       ]
     },
     {

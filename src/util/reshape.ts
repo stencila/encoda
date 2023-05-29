@@ -18,9 +18,14 @@ export function reshape(node: schema.Node): Promise<schema.Node> {
 
 /**
  * Reshapes a `CreativeWork` node.
+ * 
+ * Previously `reshapeCites` was implicitly `true` but led to changes/loss of
+ * punctuation that was unexpected for some users. This may be made into a
+ * configuration option in the future.
  */
 async function reshapeCreativeWork(
-  work: schema.CreativeWork
+  work: schema.CreativeWork,
+  reshapeCites = false
 ): Promise<schema.CreativeWork> {
   const { content = [] } = work
   const newContent: schema.BlockContent[] = []
@@ -407,20 +412,22 @@ async function reshapeCreativeWork(
 
   work.content = newContent.length > 0 ? newContent : undefined
 
-  const { references } = work
-  if (references !== undefined) {
-    transformSync(work, (node): schema.Node => {
-      if (
-        schema.isEntity(node) &&
-        hasContent(node) &&
-        isInlineContentArray(node.content)
-      ) {
-        const content = node.content
-        node.content = decodeNumericCites(content, references)
-        node.content = groupCitesIntoGiteGroup(content)
-      }
-      return node
-    })
+  if (reshapeCites) {
+    const { references } = work
+    if (references !== undefined) {
+      transformSync(work, (node): schema.Node => {
+        if (
+          schema.isEntity(node) &&
+          hasContent(node) &&
+          isInlineContentArray(node.content)
+        ) {
+          const content = node.content
+          node.content = decodeNumericCites(content, references)
+          node.content = groupCitesIntoCiteGroup(content)
+        }
+        return node
+      })
+    }
   }
 
   return work
@@ -586,7 +593,7 @@ function decodeNumericCites(
  *
  * @param para The paragraph to reshape
  */
-export function groupCitesIntoGiteGroup(
+export function groupCitesIntoCiteGroup(
   content: schema.InlineContent[]
 ): schema.InlineContent[] {
   content = [...content]

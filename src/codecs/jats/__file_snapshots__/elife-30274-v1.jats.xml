@@ -86,28 +86,28 @@
             <p>The 
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link> (RP:CB) is a collaboration between the 
                 <ext-link ext-link-type="uri" xlink:href="https://centerforopenscience.org/">Center for Open Science</ext-link> and 
-                <ext-link ext-link-type="uri" xlink:href="https://www.scienceexchange.com/">Science Exchange</ext-link> that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology (
-                <xref rid="bib6" ref-type="bibr">Errington et al., 2014</xref>). For each of these papers a Registered Report detailing the proposed experimental designs and protocols for the replications was peer reviewed and published prior to data collection. The present paper is a Replication Study that reports the results of the replication experiments detailed in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>) for a 2012 paper by Lin et al., and uses a number of approaches to compare the outcomes of the original experiments and the replications.
+                <ext-link ext-link-type="uri" xlink:href="https://www.scienceexchange.com/">Science Exchange</ext-link> that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology ((
+                <xref rid="bib6" ref-type="bibr">Errington et al., 2014</xref>)). For each of these papers a Registered Report detailing the proposed experimental designs and protocols for the replications was peer reviewed and published prior to data collection. The present paper is a Replication Study that reports the results of the replication experiments detailed in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)) for a 2012 paper by Lin et al., and uses a number of approaches to compare the outcomes of the original experiments and the replications.
             </p>
             <p>In 2012, Lin et al. reported results that the c-Myc transcription factor, a potent oncogene that is frequently overexpressed in a large percentage of cancers, globally amplifies the expression of actively transcribed genes, opposed to regulating specific target genes. Using the P493-6 cell line, a model for 
                 <italic>MYC</italic> activation in Burkitt’s lymphoma, total levels of RNA per cell were reported to increase when c-Myc was highly expressed compared to conditions where c-Myc expression was low. Additionally, active genes in cells with low c-Myc levels were reported to increase in expression upon c-Myc induction, in contrast to genes that were silent under low c-Myc conditions that did not change.
             </p>
-            <p>The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated (Figure 1B and 3E–F), and summarized the current evidence for these findings (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Since that publication there have been additional studies investigating the ability c-Myc to influence the global gene expression output of cells. Similar to Lin et al. other studies have reported c-Myc dependent amplification of cellular RNA (
-                <xref rid="bib9" ref-type="bibr">Hart et al., 2014</xref>; 
-                <xref rid="bib12" ref-type="bibr">Hsu et al., 2015</xref>; 
-                <xref rid="bib19" ref-type="bibr">Nie et al., 2012</xref>; 
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>), although this observation was not reported in all biological systems (
-                <xref rid="bib7" ref-type="bibr">Fagnocchi et al., 2016</xref>; 
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
-                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification (
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
-                <xref rid="bib26" ref-type="bibr">Sabò and Amati, 2014</xref>; 
-                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). This has also been suggested of MYCN (
-                <xref rid="bib5" ref-type="bibr">Duffy et al., 2015</xref>). The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome (
-                <xref rid="bib32" ref-type="bibr">Trakhtenberg et al., 2016</xref>). Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels (
-                <xref rid="bib18" ref-type="bibr">Lorenzin et al., 2016</xref>).
+            <p>The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated (Figure 1B and 3E–F), and summarized the current evidence for these findings ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Since that publication there have been additional studies investigating the ability c-Myc to influence the global gene expression output of cells. Similar to Lin et al. other studies have reported c-Myc dependent amplification of cellular RNA ((
+                <xref rid="bib9" ref-type="bibr">Hart et al., 2014</xref>); (
+                <xref rid="bib12" ref-type="bibr">Hsu et al., 2015</xref>); (
+                <xref rid="bib19" ref-type="bibr">Nie et al., 2012</xref>); (
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>)), although this observation was not reported in all biological systems ((
+                <xref rid="bib7" ref-type="bibr">Fagnocchi et al., 2016</xref>); (
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>); (
+                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>)). It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification ((
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>); (
+                <xref rid="bib26" ref-type="bibr">Sabò and Amati, 2014</xref>); (
+                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>)). This has also been suggested of MYCN ((
+                <xref rid="bib5" ref-type="bibr">Duffy et al., 2015</xref>)). The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome ((
+                <xref rid="bib32" ref-type="bibr">Trakhtenberg et al., 2016</xref>)). Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels ((
+                <xref rid="bib18" ref-type="bibr">Lorenzin et al., 2016</xref>)).
             </p>
             <p>The outcome measures reported in this Replication Study will be aggregated with those from the other Replication Studies to create a dataset that will be examined to provide evidence about reproducibility of cancer biology research, and to identify factors that influence reproducibility more generally.</p>
         </sec>
@@ -117,14 +117,14 @@
         <sec>
             <title>Conditional expression of c-Myc in the B-cell line P493-6</title>
             <p>To test the effects of increased levels of c-Myc on gene expression we used the same human P493-6 B cell line of Burkitt’s lymphoma that contains a conditional tetracycline-repressive 
-                <italic>MYC</italic> transgene (
-                <xref rid="bib23" ref-type="bibr">Pajic et al., 2000</xref>; 
-                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>) as the original study. We performed Western blot analysis to confirm c-Myc expression could be reduced to very low levels and then reactivated after removal of tetracycline. This is comparable to what was reported in Figure 1B of (
-                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and described in Protocol 1 in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Since proliferation of P493-6 cells depend on c-Myc expression and the presence of serum (
-                <xref rid="bib23" ref-type="bibr">Pajic et al., 2000</xref>; 
-                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>), with serum reported to stimulate a majority of genes independent of c-Myc (
-                <xref rid="bib28" ref-type="bibr">Schlosser et al., 2005</xref>), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (
+                <italic>MYC</italic> transgene ((
+                <xref rid="bib23" ref-type="bibr">Pajic et al., 2000</xref>); (
+                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>)) as the original study. We performed Western blot analysis to confirm c-Myc expression could be reduced to very low levels and then reactivated after removal of tetracycline. This is comparable to what was reported in Figure 1B of (
+                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and described in Protocol 1 in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Since proliferation of P493-6 cells depend on c-Myc expression and the presence of serum ((
+                <xref rid="bib23" ref-type="bibr">Pajic et al., 2000</xref>); (
+                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>)), with serum reported to stimulate a majority of genes independent of c-Myc ((
+                <xref rid="bib28" ref-type="bibr">Schlosser et al., 2005</xref>)), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1A</ext-link>). After removal of tetracycline, c-Myc levels increased over time approaching the levels observed in tetracycline-free conditions.
             </p>
             <fig>
@@ -153,8 +153,8 @@
         <sec>
             <title>Total RNA levels following c-Myc overexpression</title>
             <p>We sought to independently replicate whether increased levels of c-Myc resulted in increased absolute levels of RNA. This experiment is similar to what was reported in Figure 3E of (
-                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after tetracycline release and the amount of RNA per 1,000 cells was quantified (
+                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after tetracycline release and the amount of RNA per 1,000 cells was quantified (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1B</ext-link>). We found that under conditions where c-Myc expression was low (0 hr), there was a mean of 1.55 ng total RNA per 1,000 cells (ng/1 k cells) [n = 3, 
                 <italic>SD</italic> = 0.20], which increased to 1.77 ng/1 k cells [n = 3, 
                 <italic>SD</italic> = 0.31] when c-Myc expression was high (24 hr), a 1.14 times increase, for serum lot one, which was not statistically significant (
@@ -163,18 +163,18 @@
                 <italic>SD</italic> = 0.21] at 0 hr to 2.25 ng/1 k cells [n = 3, 
                 <italic>SD</italic> = 0.19] at 24 hr, a 1.43 times increase, which was statistically significant (
                 <italic>t</italic>(6 = 5.03, 
-                <italic>p</italic>=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression (
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>). There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage (
-                <xref rid="bib11" ref-type="bibr">Hiorns et al., 2004</xref>), low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer (
-                <xref rid="bib2" ref-type="bibr">Biggs and Macmillan, 1948</xref>; 
-                <xref rid="bib20" ref-type="bibr">Nielson et al., 1991</xref>). To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two.
+                <italic>p</italic>=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression ((
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>)). There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage ((
+                <xref rid="bib11" ref-type="bibr">Hiorns et al., 2004</xref>)), low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer ((
+                <xref rid="bib2" ref-type="bibr">Biggs and Macmillan, 1948</xref>); (
+                <xref rid="bib20" ref-type="bibr">Nielson et al., 1991</xref>)). To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two.
             </p>
         </sec>
         <sec>
             <title>Digital gene expression following c-Myc overexpression</title>
             <p>To test whether c-Myc expression amplifies the existing gene expression program, digital gene expression analysis using the NanoString nCounter platform was performed on a set of genes from multiple functional categories. This experiment is similar to what was reported in Figure 3F and Table S1 of (
-                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and described in Protocols 3–4 in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the same genes as the 1338 genes interrogated in the original study. We used the same criteria as the original study to classify a gene as silent (expression was less than 0.5 transcript/cell at time 0 hr) or active (more than one transcript/cell at time 0 hr). In cells with low levels of c-Myc (0 hr) there were 708 active genes with a median expression of 4.70, and 580 silent genes with a median expression of 0.032, for serum lot one. For active genes, 75% of the genes increased from 0 hr to 1 hr, 68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times increase in median expression, respectively (
+                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>) and described in Protocols 3–4 in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the same genes as the 1338 genes interrogated in the original study. We used the same criteria as the original study to classify a gene as silent (expression was less than 0.5 transcript/cell at time 0 hr) or active (more than one transcript/cell at time 0 hr). In cells with low levels of c-Myc (0 hr) there were 708 active genes with a median expression of 4.70, and 580 silent genes with a median expression of 0.032, for serum lot one. For active genes, 75% of the genes increased from 0 hr to 1 hr, 68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times increase in median expression, respectively (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#fig2s1">Figure 2—figure supplement 1</ext-link>). For silent genes, 74% of the genes increased from 0 hr to 1 hr, 66% increased from 0 hr to 24 hr, and 50% increased from 1 hr to 24 hr, corresponding to a 1.19 and 1.13 times increase, and a 0.05 times decrease in median expression, respectively (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>, 
@@ -235,9 +235,9 @@
                     <graphic xlink:href="" mimetype="application" mime-subtype="postscript"/>
                 </fig>
             </fig-group>
-            <p>To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (
+            <p>To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (
                 <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link>). The same comparisons were performed on silent genes, which were also statistically significant, with the exception of the silent gene comparison of 1 hr to 24 hr for serum lot one. Considering this was not the test reported in the original study, we conducted these paired analyses on the original data to provide a direct comparison. For both active and silent genes c-Myc induction resulted in statistically significant increases in expression, with the exception of the silent gene comparison from 0 hr to 1 hr (
                 <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link>). This is in contrast to the results of the unpaired tests that were reported in the original study where active genes were reported to have a statistically significant increase in expression and silent genes were reported as not statistically significant for all comparisons. We conducted an exploratory unpaired analysis on the replication data for comparison, which resulted in statistically significant differences among the active gene comparisons as well as half of the silent gene comparisons (
                 <ext-link ext-link-type="uri" xlink:href="#table2">Table 2</ext-link>).
@@ -594,9 +594,9 @@
                     </tbody>
                 </table>
             </table-wrap>
-            <p>Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference (
-                <xref rid="bib8" ref-type="bibr">Gelman and Stern, 2006</xref>; 
-                <xref rid="bib21" ref-type="bibr">Nieuwenhuis et al., 2011</xref>). To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (
+            <p>Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference ((
+                <xref rid="bib8" ref-type="bibr">Gelman and Stern, 2006</xref>); (
+                <xref rid="bib21" ref-type="bibr">Nieuwenhuis et al., 2011</xref>)). To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (
                 <ext-link ext-link-type="uri" xlink:href="#table3">Table 3</ext-link>). This suggests that active genes and silent genes do not have similar rates of expression upon c-Myc induction. To summarize, for this experiment we found results that were in the same direction as the original study and suggest that while both active and silent genes increased in expression upon c-Myc induction, the rate of increase was different.
             </p>
             <table-wrap id="table3">
@@ -687,28 +687,28 @@
                     </tbody>
                 </table>
             </table-wrap>
-            <p>The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set (
-                <xref rid="bib1" ref-type="bibr">Altman and Royston, 2006</xref>; 
-                <xref rid="bib4" ref-type="bibr">Cohen, 1983</xref>). Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification (
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>; 
-                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>). Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction (
-                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>). However, instead of dichotomizing genes as active or silent, gene expression data was presented as continuous. Similarly, we presented the digital gene expression data generated during this replication attempt as continuous, which illustrates a general pattern of overall increased gene expression following c-Myc induction (
+            <p>The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set ((
+                <xref rid="bib1" ref-type="bibr">Altman and Royston, 2006</xref>); (
+                <xref rid="bib4" ref-type="bibr">Cohen, 1983</xref>)). Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification ((
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>); (
+                <xref rid="bib35" ref-type="bibr">Walz et al., 2014</xref>)). Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction ((
+                <xref rid="bib27" ref-type="bibr">Sabò et al., 2014</xref>)). However, instead of dichotomizing genes as active or silent, gene expression data was presented as continuous. Similarly, we presented the digital gene expression data generated during this replication attempt as continuous, which illustrates a general pattern of overall increased gene expression following c-Myc induction (
                 <ext-link ext-link-type="uri" xlink:href="#fig2s2">Figure 2—figure supplement 2</ext-link>). Importantly, though, these results are limited to the 1369 genes interrogated in this study and may or may not reflect how the entire transcriptome of P493-6 cells respond to c-Myc induction.
             </p>
         </sec>
         <sec>
             <title>Meta-analyses of original and replicated effects</title>
-            <p>We performed a meta-analysis using a random-effects model to combine each of the effects described above as pre-specified in the confirmatory analysis plan (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). To provide a standardized measure of the effect, a common effect size was calculated for each effect from the original and replication studies. Cohen’s 
+            <p>We performed a meta-analysis using a random-effects model to combine each of the effects described above as pre-specified in the confirmatory analysis plan ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). To provide a standardized measure of the effect, a common effect size was calculated for each effect from the original and replication studies. Cohen’s 
                 <italic>d</italic> is the standardized difference between two means using the pooled sample standard deviation. The effect size 
-                <italic>r</italic> is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results (
-                <xref rid="bib6" ref-type="bibr">Errington et al., 2014</xref>; 
-                <xref rid="bib33" ref-type="bibr">Valentine et al., 2011</xref>). Importantly, the width of the confidence interval for each study is a reflection of not only the confidence level (e.g. 95%), but also variability of the sample (e.g. 
+                <italic>r</italic> is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results ((
+                <xref rid="bib6" ref-type="bibr">Errington et al., 2014</xref>); (
+                <xref rid="bib33" ref-type="bibr">Valentine et al., 2011</xref>)). Importantly, the width of the confidence interval for each study is a reflection of not only the confidence level (e.g. 95%), but also variability of the sample (e.g. 
                 <italic>SD</italic>) and sample size.
             </p>
             <p>The comparison of total RNA levels at low levels of c-Myc (0 hr) compared to high levels of c-Myc (24 hr) resulted in 
-                <italic>d</italic> = 4.19, 95% CI [0.94, 7.37] for the data reported in Figure 3E of the original study (
-                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>). This compares to 
+                <italic>d</italic> = 4.19, 95% CI [0.94, 7.37] for the data reported in Figure 3E of the original study ((
+                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>)). This compares to 
                 <italic>d</italic> = 0.83, 95% CI [−0.91, 2.48] for serum lot one and 
                 <italic>d</italic> = 4.11, 95% CI [0.90, 7.23] for serum lot two reported in this study. A meta-analysis (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3A</ext-link>) of these effects resulted in 
@@ -742,8 +742,8 @@
                 <graphic xlink:href="" mimetype="application" mime-subtype="postscript"/>
             </fig>
             <p>There were six comparisons of the gene expression data, three for active genes and three for silent genes (
-                <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3B</ext-link>). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (
+                <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3B</ext-link>). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (
                 <italic>p</italic>=1.12×10
                 <sup>−7</sup>, 
                 <italic>p</italic>=7.01×10
@@ -756,27 +756,27 @@
                 <italic>p</italic>=7.10×10
                 <sup>−17</sup>). The point estimate of the original study was not within the confidence intervals of the replication studies; however both replication studies with different serum lots were within the confidence intervals of the original study and each other. Overall, the gene expression analysis indicates that the effect sizes observed from the two serum lots tested in this replication attempt, although not identical, were more similar to each other than to the original study.
             </p>
-            <p>This direct replication provides an opportunity to understand the present evidence of these effects. Any known differences, including reagents and protocol differences, were identified prior to conducting the experimental work and described in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). However, this is limited to what was obtainable from the original paper and through communication with the original authors, which means there might be particular features of the original experimental protocol that could be critical, but unidentified. So while some aspects, such as the cell line, induction time course, and the method used to measure gene expression were maintained, others were changed at the time of study design (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>) that could affect results, such as the analytical approach (
-                <xref rid="bib31" ref-type="bibr">Silberzahn et al., 2017</xref>) and serum lot (
-                <xref rid="bib15" ref-type="bibr">Leek et al., 2010</xref>). Furthermore, other aspects were unknown or not easily controlled for. These include variables such as cell line genetic drift (
-                <xref rid="bib13" ref-type="bibr">Hughes et al., 2007</xref>; 
-                <xref rid="bib14" ref-type="bibr">Kleensang et al., 2016</xref>) or changes in cellular volume that can impact overall transcript abundance (
-                <xref rid="bib22" ref-type="bibr">Padovan-Merhar et al., 2015</xref>). Whether these or other factors influence the outcomes of this study is open to hypothesizing and further investigation, which is facilitated by direct replications and transparent reporting.
+            <p>This direct replication provides an opportunity to understand the present evidence of these effects. Any known differences, including reagents and protocol differences, were identified prior to conducting the experimental work and described in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). However, this is limited to what was obtainable from the original paper and through communication with the original authors, which means there might be particular features of the original experimental protocol that could be critical, but unidentified. So while some aspects, such as the cell line, induction time course, and the method used to measure gene expression were maintained, others were changed at the time of study design ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)) that could affect results, such as the analytical approach ((
+                <xref rid="bib31" ref-type="bibr">Silberzahn et al., 2017</xref>)) and serum lot ((
+                <xref rid="bib15" ref-type="bibr">Leek et al., 2010</xref>)). Furthermore, other aspects were unknown or not easily controlled for. These include variables such as cell line genetic drift ((
+                <xref rid="bib13" ref-type="bibr">Hughes et al., 2007</xref>); (
+                <xref rid="bib14" ref-type="bibr">Kleensang et al., 2016</xref>)) or changes in cellular volume that can impact overall transcript abundance ((
+                <xref rid="bib22" ref-type="bibr">Padovan-Merhar et al., 2015</xref>)). Whether these or other factors influence the outcomes of this study is open to hypothesizing and further investigation, which is facilitated by direct replications and transparent reporting.
             </p>
         </sec>
         <sec>
             <title>Materials and methods</title>
-            <p>As described in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>), we attempted a replication of the experiments reported in Figures 1B and 3E-F of (
-                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>). A detailed description of all protocols can be found in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Additional detailed experimental notes, data, and analysis are available on the Open Science Framework (OSF) (RRID:
+            <p>As described in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)), we attempted a replication of the experiments reported in Figures 1B and 3E-F of (
+                <xref rid="bib17" ref-type="bibr">Lin et al., 2012</xref>). A detailed description of all protocols can be found in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Additional detailed experimental notes, data, and analysis are available on the Open Science Framework (OSF) (RRID:
                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_003238">SCR_003238</ext-link>) (
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/mokeb/">https://osf.io/mokeb/</ext-link>; (
                 <xref rid="bib16" ref-type="bibr">Lewis et al., 2017</xref>)). This includes the R Markdown file (
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/vdrsh/">https://osf.io/vdrsh/</ext-link>) that was used to compose this manuscript, which is a reproducible document linking the results in the article directly to the data and code that produced them (
-                <xref rid="bib10" ref-type="bibr">Hartgerink, 2017</xref>).
+                <ext-link ext-link-type="uri" xlink:href="https://osf.io/vdrsh/">https://osf.io/vdrsh/</ext-link>) that was used to compose this manuscript, which is a reproducible document linking the results in the article directly to the data and code that produced them ((
+                <xref rid="bib10" ref-type="bibr">Hartgerink, 2017</xref>)).
             </p>
         </sec>
         <sec>
@@ -788,21 +788,21 @@
             </p>
             <p>For repression of the conditional p
                 <italic>myc</italic>-tet construct in P493-6 cells, 0.1 µg/ml tetracycline (Sigma-Aldrich, St. Louis, MO, cat# T7660) was added to the culture medium and cells were incubated for 72 hr. Under these conditions, P493-6 cells did not proliferate due to a dependency on the expression of 
-                <italic>MYC</italic> (
-                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>). For 
+                <italic>MYC</italic> ((
+                <xref rid="bib30" ref-type="bibr">Schuhmacher et al., 1999</xref>)). For 
                 <italic>MYC</italic> re-induction, cells were washed three times with growth medium and grown in tetracycline-free culture conditions.
             </p>
         </sec>
         <sec>
             <title>Western blot</title>
             <p>P493-6 cells were harvested at the indicated times and total cell lysates were prepared by pelleting ~1×10
-                <sup>7</sup> cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury, NY, model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics, Burlingame, CA, cat# 1472–1; RRID:
+                <sup>7</sup> cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury, NY, model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics, Burlingame, CA, cat# 1472–1; RRID:
                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_731658">AB_731658</ext-link>); 1:5000 dilution in 5% w/v nonfat dry milk/TBST and mouse anti-ß-actin [clone AC-15] (Sigma-Aldrich, cat# A5441; RRID:
                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_476744">AB_476744</ext-link>); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Each incubation was followed by washes with TBST and the appropriate secondary antibody: HRP-conjugated donkey anti-rabbit (Sigma-Aldrich, cat# GERPN2124); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST or HRP-conjugated sheep anti-mouse (Sigma-Aldrich, cat# GERPN2124); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Membranes were washed with TBST and incubated with ECL Prime Chemiluminescent reagent (Sigma-Aldrich, cat# GERPN2232) according to the manufacturer’s instructions. Western blot images were acquired with G:BOX iChem XT and GeneSnap software (RRID:
                 <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_014249">SCR_014249</ext-link>), version 7.12.02 (Syngene, Frederick, Maryland) and quantified using ImageJ software (RRID:
-                <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_003070">SCR_003070</ext-link>), version 1.50i (
-                <xref rid="bib29" ref-type="bibr">Schneider et al., 2012</xref>). All images taken are available at 
+                <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_003070">SCR_003070</ext-link>), version 1.50i ((
+                <xref rid="bib29" ref-type="bibr">Schneider et al., 2012</xref>)). All images taken are available at 
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/ujg7t/.">https://osf.io/ujg7t/.</ext-link>
             </p>
         </sec>
@@ -817,8 +817,8 @@
         <sec>
             <title>RNA extraction and NanoString nCounter digital gene expression assay</title>
             <p>P493-6 cells were harvested at the indicated times and 1 × 10
-                <sup>6</sup> cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden, Germany, cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit, nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369 genes across multiple functional categories were used. Following hybridization, samples were immediately processed with the nCounter Analysis System (NanoString Technologies, NCT-PREP-120). The count data was collected using the nCounter RCC Collector Worksheet (NanoString Technologies), version 1.6.0 and then positive-, negative-, and housekeeping gene-normalized per nCounter guidelines. Expression for each gene was averaged across the four independent replicate samples. Additionally, for genes that appeared on multiple CodeSets, expression values were averaged together to generate a single value for each gene. A gene was defined as transcriptionally active if its average expression was above one transcript/cell at 0 hr and transcriptionally silent if below 0.5 transcript/cell. A list of all Reporter CodeSets and their expression values (transcripts/cell) are available at 
+                <sup>6</sup> cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden, Germany, cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit, nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369 genes across multiple functional categories were used. Following hybridization, samples were immediately processed with the nCounter Analysis System (NanoString Technologies, NCT-PREP-120). The count data was collected using the nCounter RCC Collector Worksheet (NanoString Technologies), version 1.6.0 and then positive-, negative-, and housekeeping gene-normalized per nCounter guidelines. Expression for each gene was averaged across the four independent replicate samples. Additionally, for genes that appeared on multiple CodeSets, expression values were averaged together to generate a single value for each gene. A gene was defined as transcriptionally active if its average expression was above one transcript/cell at 0 hr and transcriptionally silent if below 0.5 transcript/cell. A list of all Reporter CodeSets and their expression values (transcripts/cell) are available at 
                 <ext-link ext-link-type="uri" xlink:href="#fig2sdata1">Figure 2—source data 1</ext-link>. Additional files and analysis scripts are available at 
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/.</ext-link>
             </p>
@@ -826,20 +826,20 @@
         <sec>
             <title>Statistical analysis</title>
             <p>Statistical analysis was performed with R software (RRID:
-                <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_001905">SCR_001905</ext-link>), version 3.3.2 (
-                <xref rid="bib25" ref-type="bibr">R Core Team, 2017</xref>). All data, csv files, and analysis scripts are available on the OSF (
+                <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_001905">SCR_001905</ext-link>), version 3.3.2 ((
+                <xref rid="bib25" ref-type="bibr">R Core Team, 2017</xref>)). All data, csv files, and analysis scripts are available on the OSF (
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/mokeb/">https://osf.io/mokeb/</ext-link>). Confirmatory statistical analysis was pre-registered (
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/nj8wb/">https://osf.io/nj8wb/</ext-link>) before the experimental work began as outlined in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>). Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences (
-                <xref rid="bib24" ref-type="bibr">Pratt, 1959</xref>), with additional exploratory analysis performed using the Wilcoxon rank sum test as reported in the original study and a Wilcoxon rank sum test on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Data were checked to ensure assumptions of statistical tests were met. When described in the results, the Bonferroni correction, to account for multiple testings, was applied to the alpha error by dividing the uncorrected value (.05) by the number of tests performed. Although the Bonferroni method is conservative, it was accounted for in the power calculations to ensure sample size was sufficient. In cases where the number of groups were three and the sample sizes were evenly distributed among the groups, Fisher's LSD test was performed resulting in an 
+                <ext-link ext-link-type="uri" xlink:href="https://osf.io/nj8wb/">https://osf.io/nj8wb/</ext-link>) before the experimental work began as outlined in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)). Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences ((
+                <xref rid="bib24" ref-type="bibr">Pratt, 1959</xref>)), with additional exploratory analysis performed using the Wilcoxon rank sum test as reported in the original study and a Wilcoxon rank sum test on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Data were checked to ensure assumptions of statistical tests were met. When described in the results, the Bonferroni correction, to account for multiple testings, was applied to the alpha error by dividing the uncorrected value (.05) by the number of tests performed. Although the Bonferroni method is conservative, it was accounted for in the power calculations to ensure sample size was sufficient. In cases where the number of groups were three and the sample sizes were evenly distributed among the groups, Fisher's LSD test was performed resulting in an 
                 <italic>a priori</italic> significance threshold of. 05. A meta-analysis of a common original and replication effect size was performed with a random effects model and the 
-                <italic>metafor</italic> package (
-                <xref rid="bib34" ref-type="bibr">Viechtbauer, 2010</xref>) (available at: 
+                <italic>metafor</italic> package ((
+                <xref rid="bib34" ref-type="bibr">Viechtbauer, 2010</xref>)) (available at: 
                 <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>). The sample sizes reported in 
                 <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link> and 
-                <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3</ext-link> for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking (
-                <xref rid="bib24" ref-type="bibr">Pratt, 1959</xref>). The raw original study data were shared by the original authors with the summary data published in the Registered Report (
-                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>) and was used in the power calculations to determine the sample size for this study.
+                <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3</ext-link> for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking ((
+                <xref rid="bib24" ref-type="bibr">Pratt, 1959</xref>)). The raw original study data were shared by the original authors with the summary data published in the Registered Report ((
+                <xref rid="bib3" ref-type="bibr">Blum et al., 2015</xref>)) and was used in the power calculations to determine the sample size for this study.
             </p>
         </sec>
         <sec>

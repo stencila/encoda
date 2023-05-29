@@ -22,7 +22,6 @@ keywords:
   - reshaping
 references:
   - type: Article
-    id: ref1
     authors:
       - type: Person
         familyNames:
@@ -55,7 +54,6 @@ references:
       the astronomical optics.
     url: http://dx.doi.org/10.21105/joss.02693
   - type: Article
-    id: ref2
     authors:
       - type: Person
         familyNames:
@@ -229,51 +227,56 @@ content:
     content:
       - >-
         Remove unnecessary parentheses and brackets around singular
-        parenthetical citations 
+        parenthetical citations (
       - type: Cite
         target: ref
-      - ' and '
+      - ) and [
       - type: Cite
         target: ref
-      - ' and citation groups '
+      - '] and citation groups ('
       - type: CiteGroup
         items:
           - type: Cite
             target: ref1
           - type: Cite
             target: ref2
-      - ' and '
+      - ) and [
       - type: CiteGroup
         items:
           - type: Cite
             target: ref1
           - type: Cite
             target: ref2
-      - ' (these can cause duplication if left). '
+      - '] (these can cause duplication if left). '
   - type: Paragraph
     content:
       - >-
         Group together citations surrounded by parentheses to avoid them being
-        treated as narrative 
+        treated as narrative (
       - type: Cite
+        citationMode: Narrative
         target: ref
-      - ' and '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref1
-          - type: Cite
-            target: ref2
-      - ' and '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: ref1
-          - type: Cite
-            target: ref2
-          - type: Cite
-            target: ref3
-      - '. Note that true narrative citations e.g. '
+      - ) and (
+      - type: Cite
+        citationMode: Narrative
+        target: ref1
+      - ', '
+      - type: Cite
+        citationMode: Narrative
+        target: ref2
+      - ) and (
+      - type: Cite
+        citationMode: Narrative
+        target: ref1
+      - '; '
+      - type: Cite
+        citationMode: Narrative
+        target: ref2
+      - ', '
+      - type: Cite
+        citationMode: Narrative
+        target: ref3
+      - '). Note that true narrative citations e.g. '
       - type: Cite
         citationMode: Narrative
         target: ref
@@ -308,10 +311,11 @@ content:
               - Column 1
           - type: TableCell
             content:
-              - 'Column 2 '
+              - Column 2 (
               - type: Cite
+                citationMode: Narrative
                 target: ref1
-              - ''
+              - )
         rowType: Header
       - type: TableRow
         cells:
@@ -325,7 +329,8 @@ content:
               - type: Cite
                 citationMode: Narrative
                 target: ref3
-              - ' '
+              - ' ('
               - type: Cite
+                citationMode: Narrative
                 target: ref4
-              - ''
+              - )

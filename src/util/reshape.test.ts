@@ -3,7 +3,7 @@ import schema from '@stencila/schema'
 import { MdCodec } from '../codecs/md'
 import { YamlCodec } from '../codecs/yaml'
 import { fixture, nockRecord, snapshot } from '../__tests__/helpers'
-import { groupCitesIntoGiteGroup } from './reshape'
+import { groupCitesIntoCiteGroup } from './reshape'
 
 const mdCodec = new MdCodec()
 const yamlCodec = new YamlCodec()
@@ -41,7 +41,7 @@ describe('groupCitesIntoGiteGroup', () => {
       ' is not.',
     ]
 
-    expect(groupCitesIntoGiteGroup(before)).toEqual(after)
+    expect(groupCitesIntoCiteGroup(before)).toEqual(after)
   })
 
   test('two CiteGroups with two and three Cites each', () => {
@@ -74,6 +74,6 @@ describe('groupCitesIntoGiteGroup', () => {
       '.',
     ]
 
-    expect(groupCitesIntoGiteGroup(before)).toEqual(after)
+    expect(groupCitesIntoCiteGroup(before)).toEqual(after)
   })
 })

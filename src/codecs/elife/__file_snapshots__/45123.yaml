@@ -888,29 +888,29 @@ content:
         produce RNA products that have a role in development. Some of these
         molecules are called long non-coding RNAs (lncRNAs) because they contain
         more than 200 base pairs: these transcripts fine-tune gene expression by
-        interacting with chromatin and the transcription machinery inside cells 
+        interacting with chromatin and the transcription machinery inside cells
+        (
       - type: Cite
         target: bib7
         content:
           - Ponting et al., 2009
-      - '. The brain expresses more lncRNAs than any other part of the body '
+      - ). The brain expresses more lncRNAs than any other part of the body (
       - type: Cite
         target: bib5
         content:
           - Derrien et al., 2012
-      - ", but we know relatively little about the roles these molecules play in this\_organ "
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib4
-            content:
-              - D'haene et al., 2016
-          - type: Cite
-            target: bib2
-            content:
-              - Aprea et al., 2013
+      - "), but we know relatively little about the roles these molecules play in this\_organ ("
+      - type: Cite
+        target: bib4
+        content:
+          - D'haene et al., 2016
+      - '; '
+      - type: Cite
+        target: bib2
+        content:
+          - Aprea et al., 2013
       - >-
-        . Learning more about lncRNAs will be essential if we are to understand
+        ). Learning more about lncRNAs will be essential if we are to understand
         both the typical and the atypical brain.
   - type: Paragraph
     content:
@@ -919,13 +919,13 @@ content:
         cognitive abilities, such as social interaction and communication, can
         appear early in development and persist into adulthood. These
         neurodevelopmental disorders involve abnormal changes in the way genetic
-        information is expressed 
+        information is expressed (
       - type: Cite
         target: bib8
         content:
           - Rennert and Ziats, 2017
       - >-
-        . Several lncRNAs are associated with these conditions, sometimes being
+        ). Several lncRNAs are associated with these conditions, sometimes being
         transcribed atypically (reviewed in 
       - type: Cite
         target: bib9
@@ -933,12 +933,12 @@ content:
           - van de Vondervoort et al., 2013
       - >-
         ). For instance, certain lncRNAs are expressed differently in patients
-        on the autism spectrum 
+        on the autism spectrum (
       - type: Cite
         target: bib10
         content:
           - Ziats and Rennert, 2013
-      - .
+      - ).
   - type: Paragraph
     content:
       - >-
@@ -947,12 +947,12 @@ content:
         Stanford University, as joint first authors – report that several
         lncRNAs that are involved in the formation of neurons are mutated or
         disrupted in children with autism spectrum disorder and intellectual
-        disabilities 
+        disabilities (
       - type: Cite
         target: bib1
         content:
           - Ang et al., 2019
-      - .
+      - ).
   - type: Paragraph
     content:
       - >-
@@ -976,12 +976,12 @@ content:
           - NR2F
       - >-
         , a gene which encodes a transcription factor that helps neurons form
-        and wire together 
+        and wire together (
       - type: Cite
         target: bib3
         content:
           - Borello et al., 2014
-      - .
+      - ).
   - type: Paragraph
     content:
       - >-
@@ -996,12 +996,12 @@ content:
       - type: Emphasis
         content:
           - lnc-NR2F1
-      - ' gene. Most of the brain lncRNAs are located near genes that code for proteins, and it is believed that both lncRNAs and protein-coding genes are expressed at the same time '
+      - ' gene. Most of the brain lncRNAs are located near genes that code for proteins, and it is believed that both lncRNAs and protein-coding genes are expressed at the same time ('
       - type: Cite
         target: bib6
         content:
           - Ponjavic et al., 2009
-      - '. However, the work by Ang et al. potentially indicates that '
+      - '). However, the work by Ang et al. potentially indicates that '
       - type: Emphasis
         content:
           - lnc-NR2F1

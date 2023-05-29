@@ -1016,43 +1016,43 @@ content:
       - >-
         Many of the empirical studies focus on the presence of implicit bias
         when the tax is assessed on the combined income of the couple, through
-        joint filing 
+        joint filing (
       - type: Cite
         target: bib34
         content:
           - Andrienko et al., 2015
       - >-
-        . Under this rule, the second earner (typically women) effectively pays
+        ). Under this rule, the second earner (typically women) effectively pays
         a higher tax (on her income) than if she was taxed individually, because
         of increasing marginal rates. This pattern is criticized for different
         reasons. For example, it is at odds with policy recommendations derived
         from the optimal taxation perspective, in which individuals with higher
         labour supply elasticity should be less taxed. As married women have a
         more elastic labour supply than their spouses, tax rates on labour
-        income should be lower for women than for men 
+        income should be lower for women than for men (
       - type: Cite
         target: bib1
         content:
           - Alesina et al., 2011
       - >-
-        . Also, from a gender equity perspective, joint taxation discourages the
-        participation of married women in the labour market and men’s
-        participation in unpaid domestic work, creating gender biases 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib5
-            content:
-              - Apps and Rees, 2010
-          - type: Cite
-            target: bib6
-            content:
-              - Bach et al., 2013
-          - type: Cite
-            target: bib21
-            content:
-              - Guner et al., 2012
-      - .
+        ). Also, from a gender equity perspective, joint taxation discourages
+        the participation of married women in the labour market and men’s
+        participation in unpaid domestic work, creating gender biases (
+      - type: Cite
+        target: bib5
+        content:
+          - Apps and Rees, 2010
+      - '; '
+      - type: Cite
+        target: bib6
+        content:
+          - Bach et al., 2013
+      - '; '
+      - type: Cite
+        target: bib21
+        content:
+          - Guner et al., 2012
+      - ).
   - type: Paragraph
     content:
       - >-
@@ -1062,12 +1062,12 @@ content:
         target: bib23
         content:
           - Nelson (1991)
-      - ' claims that ignoring home production for the purpose of taxing personal income, not only discourages female participation in the labour market but has a negative effect on horizontal equity. Indeed, a dual earner couple has to purchase household services in the market or forgo leisure time compared with the traditional male breadwinner couple. Thus, a similar welfare level of a household may lead to a higher burden PIT for a dual than one earner couple. A similar argument holds when comparing male breadwinner and lone parent families. However, not all who advocate gender equity give support to taxes on home production because of distributive concerns, on the understanding that it would increase more the tax burden of low than high income households '
+      - ' claims that ignoring home production for the purpose of taxing personal income, not only discourages female participation in the labour market but has a negative effect on horizontal equity. Indeed, a dual earner couple has to purchase household services in the market or forgo leisure time compared with the traditional male breadwinner couple. Thus, a similar welfare level of a household may lead to a higher burden PIT for a dual than one earner couple. A similar argument holds when comparing male breadwinner and lone parent families. However, not all who advocate gender equity give support to taxes on home production because of distributive concerns, on the understanding that it would increase more the tax burden of low than high income households ('
       - type: Cite
         target: bib19
         content:
           - Grown and Valodia, 2010
-      - .
+      - ).
   - type: Paragraph
     content:
       - 'Another interesting point raised by '
@@ -1109,16 +1109,16 @@ content:
       - >-
         In recent decades, there has been a trend in developed countries to
         reform their PIT systems to dual regimes (capital and labour taxed
-        separately) with individual filing 
+        separately) with individual filing (
       - type: Cite
         target: bib17
         content:
           - Genser and Reutter, 2007
       - >-
-        . It is expected that these reforms would diminish gender bias. However,
-        gender tax burden differences may be observed even under individual
-        filing and a schedular system as reported in several empirical studies
-        (see 
+        ). It is expected that these reforms would diminish gender bias.
+        However, gender tax burden differences may be observed even under
+        individual filing and a schedular system as reported in several
+        empirical studies (see 
       - type: Cite
         target: bib19
         content:
@@ -1715,40 +1715,41 @@ content:
     content:
       - >-
         The average labour income is lower for men than women. Between 2006 and
-        2013, the gender gap ranged between 47% and 56% of male labour income 
+        2013, the gender gap ranged between 47% and 56% of male labour income (
       - type: Cite
         target: bib8
         content:
           - Bucheli and Lara, 2018
       - >-
-        . Part of it is due to gender differences in time spent in labour
+        ). Part of it is due to gender differences in time spent in labour
         market: working hours per week were on average 32 for women and more
         than 40 for men. Other portion is related to gender differences in
         labour income per hour: in 2006–2013, the average value of (post-tax)
         per hour labour income gender gap oscillated around 6% of male labour
         income. Previous studies for Uruguay show that the gender gap subsists
         after controlling individual observable characteristics and that the
-        discrimination measures have been stable in the last two decades 
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib3
-            content:
-              - Amarante et al., 2004
-          - type: Cite
-            target: bib9
-            content:
-              - Bucheli and Sanromán, 2005
-          - type: Cite
-            target: bib14
-            content:
-              - Espino, 2013
-          - type: Cite
-            target: bib15
-            content:
-              - Espino et al., 2014
+        discrimination measures have been stable in the last two decades (
+      - type: Cite
+        target: bib3
+        content:
+          - Amarante et al., 2004
+      - '; '
+      - type: Cite
+        target: bib9
+        content:
+          - Bucheli and Sanromán, 2005
+      - '; '
+      - type: Cite
+        target: bib14
+        content:
+          - Espino, 2013
+      - '; '
+      - type: Cite
+        target: bib15
+        content:
+          - Espino et al., 2014
       - >-
-        . These works find that the portion of the gender gap that is not
+        ). These works find that the portion of the gender gap that is not
         explained by observable productive attributes (which is usually
         interpreted as a measure of discrimination) is on average more than 100%
         of the wage gap, and that there is evidence of a glass ceiling phenomena
@@ -1845,13 +1846,13 @@ content:
         specific to them. In this study we refer to the PIT, including on
         pensions. The government justified the dual income tax because of the
         difficulties of tracing non-domestic sources of income, the prevention
-        of lobbying activities and the high risk of evasion 
+        of lobbying activities and the high risk of evasion (
       - type: Cite
         target: bib7
         content:
           - Barreix and Roca, 2007
       - >-
-        . At the same time, it facilitates tax administration relating to
+        ). At the same time, it facilitates tax administration relating to
         ownership and splitting treatments (for pros and cons of dual income
         taxes, see 
       - type: Cite
@@ -2833,22 +2834,26 @@ content:
       - ' proposed the zero-one inflated beta model (ZOIB) which properly addresses the issue related to the inflation process in the data.'
   - type: Paragraph
     content:
-      - 'Several authors '
-      - type: CiteGroup
-        items:
-          - type: Cite
-            target: bib26
-            content:
-              - Paolino, 2001
-          - type: Cite
-            target: bib22
-            content:
-              - Kieschnick and McCullough, 2003
-          - type: Cite
-            target: bib29
-            content:
-              - Smithson and Verkuilen, 2006
-      - ' argue that the beta regression model is the most suitable for distributional asymmetries and can be adjusted for data in the interval (0, 1) since the density function takes different shapes depending on the function parameters. '
+      - Several authors (
+      - type: Cite
+        target: bib26
+        content:
+          - Paolino, 2001
+      - '; '
+      - type: Cite
+        target: bib22
+        content:
+          - Kieschnick and McCullough, 2003
+      - '; '
+      - type: Cite
+        target: bib29
+        content:
+          - Smithson and Verkuilen, 2006
+      - >-
+        ) argue that the beta regression model is the most suitable for
+        distributional asymmetries and can be adjusted for data in the interval
+        (0, 1) since the density function takes different shapes depending on
+        the function parameters. 
       - type: Cite
         target: bib16
         content:
@@ -4378,13 +4383,13 @@ content:
           - ', 2018'
       - >-
         ) and eight countries (Argentina, United Kingdom, Ghana, Uganda,
-        Morocco, South Africa, Mexico and India) 
+        Morocco, South Africa, Mexico and India) (
       - type: Cite
         target: bib19
         content:
           - Grown and Valodia, 2010
       - >-
-        . When we control by different potential explanatory factors, a gap
+        ). When we control by different potential explanatory factors, a gap
         remains. One of the factors that explain the gap is the lower number of
         earners of male breadwinner households which is consequence of the
         individual filing design. But even in the analysis of the joint filing

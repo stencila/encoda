@@ -4901,7 +4901,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Phenotypic evolution should be considered in the context of the whole organism, as organisms are not just collections of independent traits ",
+        "Phenotypic evolution should be considered in the context of the whole organism, as organisms are not just collections of independent traits (",
         {
           "type": "Cite",
           "target": "c27",
@@ -4909,7 +4909,7 @@
             "Gould and Lewontin, 1979"
           ]
         },
-        ". Theory indicates that stabilizing and disruptive selection on each trait, and correlated selection between trait combinations, which together define the individual “selection surface” ",
+        "). Theory indicates that stabilizing and disruptive selection on each trait, and correlated selection between trait combinations, which together define the individual “selection surface” (",
         {
           "type": "Cite",
           "target": "c59",
@@ -4917,298 +4917,273 @@
             "Phillips and Arnold, 1989"
           ]
         },
-        ", will shape standing additive genetic variances of traits and covariances between traits ",
+        "), will shape standing additive genetic variances of traits and covariances between traits (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c3",
-              "content": [
-                "Arnold et al., 2001"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c34",
-              "content": [
-                "Jones et al., 2004"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c40",
-              "content": [
-                "Lande, 1980"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c76",
-              "content": [
-                "Svensson et al., 2021"
-              ]
-            }
+          "type": "Cite",
+          "target": "c3",
+          "content": [
+            "Arnold et al., 2001"
           ]
         },
-        ", as summarized by the ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c34",
+          "content": [
+            "Jones et al., 2004"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c40",
+          "content": [
+            "Lande, 1980"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c76",
+          "content": [
+            "Svensson et al., 2021"
+          ]
+        },
+        "), as summarized by the ",
         {
           "type": "Strong",
           "content": [
             "G"
           ]
         },
-        " matrix describing the traits’ genetic structure that is inherited between parents and offspring. This is because the phenotypic dimensions with greater additive genetic variation allow less constrained responses to directional selection and thus more rapid adaptation to novel environments or rescue from extinction ",
+        " matrix describing the traits’ genetic structure that is inherited between parents and offspring. This is because the phenotypic dimensions with greater additive genetic variation allow less constrained responses to directional selection and thus more rapid adaptation to novel environments or rescue from extinction (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c7",
-              "content": [
-                "Blows and McGuigan, 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c14",
-              "content": [
-                "Chevin et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c41",
-              "content": [
-                "Lande, 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c68",
-              "content": [
-                "Schluter, 1996"
-              ]
-            }
+          "type": "Cite",
+          "target": "c7",
+          "content": [
+            "Blows and McGuigan, 2015"
           ]
         },
-        ". Theory also suggests that ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "Chevin et al., 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Lande, 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c68",
+          "content": [
+            "Schluter, 1996"
+          ]
+        },
+        "). Theory also suggests that ",
         {
           "type": "Emphasis",
           "content": [
             "de novo"
           ]
         },
-        " input of genetic covariances by pleiotropic mutations, if variable, could in the long-term of mutation-selection balance (time being scaled by the effective population size), be aligned with the orientations of the selection surface and eventually explain phenotypic divergence between populations and species ",
+        " input of genetic covariances by pleiotropic mutations, if variable, could in the long-term of mutation-selection balance (time being scaled by the effective population size), be aligned with the orientations of the selection surface and eventually explain phenotypic divergence between populations and species (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c35",
-              "content": [
-                "Jones et al., 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Jones et al., 2007"
           ]
         },
-        ". However, many studies of natural populations find more standing genetic variation than that expected at mutation-selection balance ",
+        ", ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c69",
-              "content": [
-                "Sella and Barton, 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Walsh and Lynch, 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "2014"
           ]
         },
-        ", and it is not entirely clear that the ",
+        "). However, many studies of natural populations find more standing genetic variation than that expected at mutation-selection balance (",
+        {
+          "type": "Cite",
+          "target": "c69",
+          "content": [
+            "Sella and Barton, 2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Walsh and Lynch, 2018"
+          ]
+        },
+        "), and it is not entirely clear that the ",
         {
           "type": "Strong",
           "content": [
             "G"
           ]
         },
-        " matrix can evolve to align with the selection surface ",
+        " matrix can evolve to align with the selection surface (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Arnold et al., 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c73",
-              "content": [
-                "Steppan et al., 2002"
-              ]
-            }
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Arnold et al., 2008"
           ]
         },
-        ", in part because selection might not be constant or uniform when populations are faced with changing environments ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c9",
-              "content": [
-                "Careau et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c13",
-              "content": [
-                "Chevin and Haller, 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Gomulkiewicz and Houle, 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Guzella et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c73",
+          "content": [
+            "Steppan et al., 2002"
           ]
         },
-        ", in part because all populations are finite, mutations rare, founder effects common, and drift on the ",
+        "), in part because selection might not be constant or uniform when populations are faced with changing environments (",
+        {
+          "type": "Cite",
+          "target": "c9",
+          "content": [
+            "Careau et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Chevin and Haller, 2014"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Gomulkiewicz and Houle, 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Guzella et al., 2018"
+          ]
+        },
+        "), in part because all populations are finite, mutations rare, founder effects common, and drift on the ",
         {
           "type": "Strong",
           "content": [
             "G"
           ]
         },
-        " matrix likely to alter phenotypic evolution on the short-term of tens to hundreds of generations, before mutation-selection balance is reached ",
+        " matrix likely to alter phenotypic evolution on the short-term of tens to hundreds of generations, before mutation-selection balance is reached (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Mallard et al., 2022"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c49",
-              "content": [
-                "Matuszewski et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c58",
-              "content": [
-                "Phillips et al., 2001"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c84",
-              "content": [
-                "Whitlock et al., 2002"
-              ]
-            }
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Mallard et al., 2022"
           ]
         },
-        "."
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c49",
+          "content": [
+            "Matuszewski et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c58",
+          "content": [
+            "Phillips et al., 2001"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c84",
+          "content": [
+            "Whitlock et al., 2002"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "When populations are challenged in a novel environment it is possible that phenotypic plasticity, the ability of a genotypes to express alternative trait values under environmental variation, aids immediate population persistence ",
+        "When populations are challenged in a novel environment it is possible that phenotypic plasticity, the ability of a genotypes to express alternative trait values under environmental variation, aids immediate population persistence (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Ghalambor et al., 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c56",
-              "content": [
-                "Pfennig et al., 2010"
-              ]
-            }
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Ghalambor et al., 2007"
           ]
         },
-        ", but for adaptive phenotypic divergence to then occur the plastic phenotypic dimension should align with the dimension where most genetic variation is found ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c19",
-              "content": [
-                "Draghi and Whitlock, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c25",
-              "content": [
-                "Gomulkiewicz and Holt, 1995"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c62",
-              "content": [
-                "Price et al., 2003"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Via and Lande, 1985"
-              ]
-            }
+          "type": "Cite",
+          "target": "c56",
+          "content": [
+            "Pfennig et al., 2010"
           ]
         },
-        ". Adaptation or rescue from extinction can be hampered if less genetic variation is available for selection in the relevant phenotypic dimensions. A recent meta-analysis of natural populations has found that phenotypic dimensions of plasticity and genetic variation are aligned ",
+        "), but for adaptive phenotypic divergence to then occur the plastic phenotypic dimension should align with the dimension where most genetic variation is found (",
+        {
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Draghi and Whitlock, 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Gomulkiewicz and Holt, 1995"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c62",
+          "content": [
+            "Price et al., 2003"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Via and Lande, 1985"
+          ]
+        },
+        "). Adaptation or rescue from extinction can be hampered if less genetic variation is available for selection in the relevant phenotypic dimensions. A recent meta-analysis of natural populations has found that phenotypic dimensions of plasticity and genetic variation are aligned (",
         {
           "type": "Cite",
           "target": "c54",
@@ -5216,108 +5191,101 @@
             "Noble et al., 2019"
           ]
         },
-        ", despite great heterogeneity among the studies surveyed, suggesting that the development and physiology responsible for the traits’ expression under environmental variation reflect the distribution of pleiotropic mutational effects due to past correlated selection ",
+        "), despite great heterogeneity among the studies surveyed, suggesting that the development and physiology responsible for the traits’ expression under environmental variation reflect the distribution of pleiotropic mutational effects due to past correlated selection (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c19",
-              "content": [
-                "Draghi and Whitlock, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Jones et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Morrissey, 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Draghi and Whitlock, 2012"
           ]
         },
-        ". Yet, several studies found that the phenotypic plasticity of ancestral populations does not always match the phenotypic directions of adaptation ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Ghalambor et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c31",
-              "content": [
-                "Ho and Zhang, 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c37",
-              "content": [
-                "Koch and Guillaume, 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c48",
-              "content": [
-                "Mallard et al., 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c71",
-              "content": [
-                "Sikkink et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Jones et al., 2014"
           ]
         },
-        ", indicating that selection is often misunderstood."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Morrissey, 2015"
+          ]
+        },
+        "). Yet, several studies found that the phenotypic plasticity of ancestral populations does not always match the phenotypic directions of adaptation (",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Ghalambor et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Ho and Zhang, 2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c37",
+          "content": [
+            "Koch and Guillaume, 2020"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Mallard et al., 2020"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c71",
+          "content": [
+            "Sikkink et al., 2019"
+          ]
+        },
+        "), indicating that selection is often misunderstood."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "While accounting for phenotypic plasticity is relatively straightforward in lab populations, or natural populations that can be transplanted between environments, the same cannot be said about understanding selection. Estimates of selection will be biased in strength or kind if unobserved traits impacting fitness are genetically correlated with the observed traits or there is correlated selection because of environmental covariances between observed and unobserved traits with fitness, both instances of “indirect” selection on the observed traits ",
+        "While accounting for phenotypic plasticity is relatively straightforward in lab populations, or natural populations that can be transplanted between environments, the same cannot be said about understanding selection. Estimates of selection will be biased in strength or kind if unobserved traits impacting fitness are genetically correlated with the observed traits or there is correlated selection because of environmental covariances between observed and unobserved traits with fitness, both instances of “indirect” selection on the observed traits (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c52",
-              "content": [
-                "Morrissey et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c65",
-              "content": [
-                "Rausher, 1992"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Walsh and Lynch, 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c52",
+          "content": [
+            "Morrissey et al., 2010"
           ]
         },
-        ". Lande’s equation ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c65",
+          "content": [
+            "Rausher, 1992"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Walsh and Lynch, 2018"
+          ]
+        },
+        "). Lande’s equation (",
         {
           "type": "Cite",
           "target": "c39",
@@ -5325,7 +5293,7 @@
             "Lande, 1979"
           ]
         },
-        ", ",
+        "), ",
         {
           "type": "ImageObject",
           "contentUrl": "",
@@ -5355,7 +5323,7 @@
             "β"
           ]
         },
-        "), while explicitly considering potential correlated selection between the observed traits and stabilizing/disruptive selection on each one of them ",
+        "), while explicitly considering potential correlated selection between the observed traits and stabilizing/disruptive selection on each one of them (",
         {
           "type": "Cite",
           "target": "c42",
@@ -5363,27 +5331,23 @@
             "Lande and Arnold, 1983"
           ]
         },
-        ", but might fail when unobserved traits are important. Using the Robertson secondary theorem of natural selection ",
+        "), but might fail when unobserved traits are important. Using the Robertson secondary theorem of natural selection (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c66",
-              "content": [
-                "Robertson, 1968"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Walsh and Lynch, 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c66",
+          "content": [
+            "Robertson, 1968"
           ]
         },
-        ", ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Walsh and Lynch, 2018"
+          ]
+        },
+        "), ",
         {
           "type": "ImageObject",
           "contentUrl": "",
@@ -5391,47 +5355,39 @@
             "inline": true
           }
         },
-        ", however, observed mean trait changes over one generation are accurately predicted because the responses due to selection, i.e., the selection differentials, equal the breeding value change of the trait affecting fitness and thus the additive genetic covariance of the trait with relative fitness (w), independently of unobserved traits ",
+        ", however, observed mean trait changes over one generation are accurately predicted because the responses due to selection, i.e., the selection differentials, equal the breeding value change of the trait affecting fitness and thus the additive genetic covariance of the trait with relative fitness (w), independently of unobserved traits (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c51",
-              "content": [
-                "Morrissey and Bonnet, 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c52",
-              "content": [
-                "Morrissey et al., 2010"
-              ]
-            }
+          "type": "Cite",
+          "target": "c51",
+          "content": [
+            "Morrissey and Bonnet, 2019"
           ]
         },
-        ". However, distinguishing direct from indirect selection on each trait is not possible with the Robertson equation, and further the parental trait breeding values must have no transmission bias, due for example to non-Mendelian segregation or to transgenerational environmental effects, and be fully mapped onto offspring trait breeding values ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c61",
-              "content": [
-                "Price, 1972"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Walsh and Lynch, 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c52",
+          "content": [
+            "Morrissey et al., 2010"
           ]
         },
-        "."
+        "). However, distinguishing direct from indirect selection on each trait is not possible with the Robertson equation, and further the parental trait breeding values must have no transmission bias, due for example to non-Mendelian segregation or to transgenerational environmental effects, and be fully mapped onto offspring trait breeding values (",
+        {
+          "type": "Cite",
+          "target": "c61",
+          "content": [
+            "Price, 1972"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Walsh and Lynch, 2018"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -5531,68 +5487,63 @@
             "G"
           ]
         },
-        " matrix evolves by selection, drift or mutation, the prediction of phenotypic divergence from the Robertson equation and the inference of selection with Lande’s equation likely becomes inaccurate ",
+        " matrix evolves by selection, drift or mutation, the prediction of phenotypic divergence from the Robertson equation and the inference of selection with Lande’s equation likely becomes inaccurate (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c57",
-              "content": [
-                "Phillips and McGuigan, 2006"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c70",
-              "content": [
-                "Shaw et al., 1995"
-              ]
-            }
+          "type": "Cite",
+          "target": "c57",
+          "content": [
+            "Phillips and McGuigan, 2006"
           ]
         },
-        ", though we lack expectations of when they become so, except for models at mutation-selection balance that notably disregard drift, strong selection or reduced effective recombination between fitness loci ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c3",
-              "content": [
-                "Arnold et al., 2001"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c40",
-              "content": [
-                "Lande, 1980"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Mallard et al., 2022"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c69",
-              "content": [
-                "Sella and Barton, 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c70",
+          "content": [
+            "Shaw et al., 1995"
           ]
         },
-        "."
+        "), though we lack expectations of when they become so, except for models at mutation-selection balance that notably disregard drift, strong selection or reduced effective recombination between fitness loci (",
+        {
+          "type": "Cite",
+          "target": "c3",
+          "content": [
+            "Arnold et al., 2001"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c40",
+          "content": [
+            "Lande, 1980"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Mallard et al., 2022"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c69",
+          "content": [
+            "Sella and Barton, 2019"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -5613,7 +5564,7 @@
             "Caenorhabditis elegans"
           ]
         },
-        " and following as a phenotype the worms’ locomotion behaviour. Locomotion behavior is described by six statistically independent traits of transition rates between movement state and direction ",
+        " and following as a phenotype the worms’ locomotion behaviour. Locomotion behavior is described by six statistically independent traits of transition rates between movement state and direction (",
         {
           "type": "Cite",
           "target": "c47",
@@ -5621,7 +5572,7 @@
             "Mallard et al., 2019"
           ]
         },
-        ", measured in a common scale with no need for transformation to apply selection theory ",
+        "), measured in a common scale with no need for transformation to apply selection theory (",
         {
           "type": "Cite",
           "target": "c32",
@@ -5629,41 +5580,38 @@
             "Houle et al., 2011"
           ]
         },
-        ". We started by characterizing the broad-sense ",
+        "). We started by characterizing the broad-sense ",
         {
           "type": "Strong",
           "content": [
             "G"
           ]
         },
-        " matrices of a lab population in the low salt concentration environment where it had adapted to for 140 generations ",
+        " matrices of a lab population in the low salt concentration environment where it had adapted to for 140 generations (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c12",
-              "content": [
-                "Chelo and Teotónio, 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Noble et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c78",
-              "content": [
-                "Teotónio et al., 2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c12",
+          "content": [
+            "Chelo and Teotónio, 2013"
           ]
         },
-        ", as well as in a novel high salt concentration environment, by measuring locomotion differences between inbred lines derived from the outbreeding population. We have previously shown that the broad-sense ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Noble et al., 2017"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c78",
+          "content": [
+            "Teotónio et al., 2012"
+          ]
+        },
+        "), as well as in a novel high salt concentration environment, by measuring locomotion differences between inbred lines derived from the outbreeding population. We have previously shown that the broad-sense ",
         {
           "type": "Strong",
           "content": [
@@ -5677,7 +5625,7 @@
             "G"
           ]
         },
-        " matrix of experimental outbreeding populations ",
+        " matrix of experimental outbreeding populations (",
         {
           "type": "Cite",
           "target": "c47",
@@ -5685,7 +5633,7 @@
             "Mallard et al., 2019"
           ]
         },
-        ", but see ",
+        "), but see (",
         {
           "type": "Cite",
           "target": "c11",
@@ -5693,7 +5641,7 @@
             "Chelo et al., 2019"
           ]
         },
-        " and Discussion. We then challenged the lab adapted population to a gradually increasing salt concentration environment for 35 generations, followed by 15 generations in constant high salt and measured locomotion behavior in three derived replicate populations. We also before showed that derived populations adapted to the high salt conditions ",
+        ") and Discussion. We then challenged the lab adapted population to a gradually increasing salt concentration environment for 35 generations, followed by 15 generations in constant high salt and measured locomotion behavior in three derived replicate populations. We also before showed that derived populations adapted to the high salt conditions (",
         {
           "type": "Cite",
           "target": "c80",
@@ -5701,7 +5649,7 @@
             "Theologidis et al., 2014"
           ]
         },
-        ", and thus here ask if the Robertson equation, when applied to the ancestral lab adapted population, predicts 50 generations of locomotion behavior evolution in the novel high and ancestral low salt environments, and whether direct and indirect selection have a bearing on the observed transition rate divergence in the target high salt environment, using Lande’s equation."
+        "), and thus here ask if the Robertson equation, when applied to the ancestral lab adapted population, predicts 50 generations of locomotion behavior evolution in the novel high and ancestral low salt environments, and whether direct and indirect selection have a bearing on the observed transition rate divergence in the target high salt environment, using Lande’s equation."
       ]
     },
     {
@@ -5784,34 +5732,31 @@
     {
       "type": "Paragraph",
       "content": [
-        "Three replicate populations were derived from an outbreeding population (named A6140; “A” for androdioecious, “6” for replicate six, “140” for generations of lab evolution), previously adapted to standard lab conditions ",
+        "Three replicate populations were derived from an outbreeding population (named A6140; “A” for androdioecious, “6” for replicate six, “140” for generations of lab evolution), previously adapted to standard lab conditions (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Noble et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c78",
-              "content": [
-                "Teotónio et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c80",
-              "content": [
-                "Theologidis et al., 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Noble et al., 2017"
           ]
         },
-        ". A6140 in turn resulted from the hybridization of 16 founder strains during 33 generations followed by 140 4-day discrete and non-overlapping life-cycles at ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c78",
+          "content": [
+            "Teotónio et al., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c80",
+          "content": [
+            "Theologidis et al., 2014"
+          ]
+        },
+        "). A6140 in turn resulted from the hybridization of 16 founder strains during 33 generations followed by 140 4-day discrete and non-overlapping life-cycles at ",
         {
           "type": "Emphasis",
           "content": [
@@ -5825,7 +5770,7 @@
             "4"
           ]
         },
-        " census sizes at the time of reproduction ",
+        " census sizes at the time of reproduction (",
         {
           "type": "Cite",
           "target": "c78",
@@ -5833,7 +5778,7 @@
             "Teotónio et al., 2012"
           ]
         },
-        ", and ",
+        "), and ",
         {
           "type": "Emphasis",
           "content": [
@@ -5858,7 +5803,7 @@
             "3"
           ]
         },
-        " effective population sizes ",
+        " effective population sizes (",
         {
           "type": "Cite",
           "target": "c12",
@@ -5866,61 +5811,53 @@
             "Chelo and Teotónio, 2013"
           ]
         },
-        ". ",
+        "). ",
         {
           "type": "Emphasis",
           "content": [
             "C. elegans"
           ]
         },
-        " is an androdioecious roundworm, where hermaphrodites can self but only outcross when mated with males. Natural populations are depauperate of genetic diversity and males are rare due to a long history of selfing, selective sweeps and background selection ",
+        " is an androdioecious roundworm, where hermaphrodites can self but only outcross when mated with males. Natural populations are depauperate of genetic diversity and males are rare due to a long history of selfing, selective sweeps and background selection (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c2",
-              "content": [
-                "Andersen et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c67",
-              "content": [
-                "Rockman et al., 2010"
-              ]
-            }
+          "type": "Cite",
+          "target": "c2",
+          "content": [
+            "Andersen et al., 2012"
           ]
         },
-        ". Under our lab conditions, however, partial-outcrossing is readily maintained at frequencies between 60%-80% ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Mallard et al., 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c78",
-              "content": [
-                "Teotónio et al., 2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c67",
+          "content": [
+            "Rockman et al., 2010"
           ]
         },
-        ". During domestication populations were maintained in 10x 9cm Petri dishes NGM-lite agar media containing 25mM NaCl and a lawn of ",
+        "). Under our lab conditions, however, partial-outcrossing is readily maintained at frequencies between 60%-80% (",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Mallard et al., 2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c78",
+          "content": [
+            "Teotónio et al., 2012"
+          ]
+        },
+        "). During domestication populations were maintained in 10x 9cm Petri dishes NGM-lite agar media containing 25mM NaCl and a lawn of ",
         {
           "type": "Emphasis",
           "content": [
             "E. coli"
           ]
         },
-        " HT115 that served as food from the L1 larval stage until reproduction. Periodic population samples were cryogenetically stored ",
+        " HT115 that served as food from the L1 larval stage until reproduction. Periodic population samples were cryogenetically stored (",
         {
           "type": "Cite",
           "target": "c74",
@@ -5928,7 +5865,7 @@
             "Stiernagle, 1999"
           ]
         },
-        ", allowing for contemporaneous comparisons between ancestral and derived populations after revival of samples ",
+        "), allowing for contemporaneous comparisons between ancestral and derived populations after revival of samples (",
         {
           "type": "Cite",
           "target": "c79",
@@ -5936,7 +5873,7 @@
             "Teotónio et al., 2017"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -5966,7 +5903,7 @@
             "Chelo et al. (2019)"
           ]
         },
-        " that there was maintenance of partial-outcrossing and heterozygosity of about 0.25 for 1 single nucleotide variant per kbp by the end of the 50 generations of evolution. Control populations were also kept in the domestication environment and the evolution of locomotion behavior in these populations is described in a ",
+        " that there was maintenance of partial-outcrossing and heterozygosity of about 0.25 for 1 single nucleotide variant per kbp by the end of the 50 generations of evolution. Control populations were also kept in the domestication environment and the evolution of locomotion behavior in these populations is described in a (",
         {
           "type": "Cite",
           "target": "c47",
@@ -5974,7 +5911,7 @@
             "Mallard et al., 2019"
           ]
         },
-        ". Throughout we refer to the NGM-lite 305mM NaCl environment as the “high” salt target environment, while the domestication 25mM NaCl environment as the “low” salt environment."
+        "). Throughout we refer to the NGM-lite 305mM NaCl environment as the “high” salt target environment, while the domestication 25mM NaCl environment as the “low” salt environment."
       ]
     },
     {
@@ -5994,7 +5931,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We derived inbred lines by selfing single hermaphrodites from the ancestor (A6140) and the three replicate populations at generation 50 (GA[1,2,4]50) for at minimum of 10 generations ",
+        "We derived inbred lines by selfing single hermaphrodites from the ancestor (A6140) and the three replicate populations at generation 50 (GA[1,2,4]50) for at minimum of 10 generations (",
         {
           "type": "Cite",
           "target": "c11",
@@ -6002,7 +5939,7 @@
             "Chelo et al., 2019"
           ]
         },
-        ". The total number of lines obtained and phenotyped for locomotion behavior can be found in ",
+        "). The total number of lines obtained and phenotyped for locomotion behavior can be found in ",
         {
           "type": "Link",
           "relation": "table",
@@ -6469,7 +6406,7 @@
             "emmeans"
           ]
         },
-        " package ",
+        " package (",
         {
           "type": "Cite",
           "target": "c43",
@@ -6477,7 +6414,7 @@
             "Lenth, 2021"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -6746,7 +6683,7 @@
             }
           ]
         },
-        "), as we have measured inbred lines we twice count genetic effects. We have elsewhere showed that selection is significant during inbreeding ",
+        "), as we have measured inbred lines we twice count genetic effects. We have elsewhere showed that selection is significant during inbreeding (",
         {
           "type": "Cite",
           "target": "c11",
@@ -6754,7 +6691,7 @@
             "Chelo et al., 2019"
           ]
         },
-        ", but we have also shown that it does not on average change the mean transition rate values in low salt ",
+        "), but we have also shown that it does not on average change the mean transition rate values in low salt (",
         {
           "type": "Cite",
           "target": "c47",
@@ -6762,7 +6699,7 @@
             "Mallard et al., 2019"
           ]
         },
-        ". The broad-sense ",
+        "). The broad-sense ",
         {
           "type": "Strong",
           "content": [
@@ -6776,7 +6713,7 @@
             "G"
           ]
         },
-        " matrix ",
+        " matrix (",
         {
           "type": "Cite",
           "target": "c45",
@@ -6784,7 +6721,7 @@
             "Lynch and Walsh, 1998"
           ]
         },
-        ", and see Discussion."
+        "), and see Discussion."
       ]
     },
     {
@@ -6797,7 +6734,7 @@
             "MCMCglmm"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c29",
@@ -6805,7 +6742,7 @@
             "Hadfield, 2010"
           ]
         },
-        ". We constructed priors as the matrix of phenotypic variances for each trait. Model convergence was verified by visual inspection of the posterior distributions and an autocorrelation below 0.05. 100,000 burn-in iterations were done with a thinning interval of 2,000 and a total of over 2 million MCMC iterations."
+        "). We constructed priors as the matrix of phenotypic variances for each trait. Model convergence was verified by visual inspection of the posterior distributions and an autocorrelation below 0.05. 100,000 burn-in iterations were done with a thinning interval of 2,000 and a total of over 2 million MCMC iterations."
       ]
     },
     {
@@ -6926,7 +6863,7 @@
             "Walter et al. (2018)"
           ]
         },
-        ", the significance of the posterior mean variance-covariance estimate is based on the overlap between the posterior null distribution of the posterior mean with the observed posterior mean. We consider that differences between the estimated empirical distributions can be inferred when their 80% credible intervals (strickly 83%) do not overlap ",
+        ", the significance of the posterior mean variance-covariance estimate is based on the overlap between the posterior null distribution of the posterior mean with the observed posterior mean. We consider that differences between the estimated empirical distributions can be inferred when their 80% credible intervals (strickly 83%) do not overlap (",
         {
           "type": "Cite",
           "target": "c5",
@@ -6934,7 +6871,7 @@
             "Austin and Hux, 2002"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -7023,27 +6960,23 @@
             }
           ]
         },
-        " we estimate the (broad-sense) genetic covariance between transition rates and relative fertility. According to Robertson’s secondary theorem of natural selection ",
+        " we estimate the (broad-sense) genetic covariance between transition rates and relative fertility. According to Robertson’s secondary theorem of natural selection (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c66",
-              "content": [
-                "Robertson, 1968"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Walsh and Lynch, 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c66",
+          "content": [
+            "Robertson, 1968"
           ]
         },
-        " if the broad-sense genetic covariance is the same as the narrow-sense additive genetic covariance between traits and fitness, then it will be equal to the selection differentials on each transition rate, ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Walsh and Lynch, 2018"
+          ]
+        },
+        ") if the broad-sense genetic covariance is the same as the narrow-sense additive genetic covariance between traits and fitness, then it will be equal to the selection differentials on each transition rate, ",
         {
           "type": "Emphasis",
           "content": [
@@ -8765,7 +8698,7 @@
             "Figure 6A"
           ]
         },
-        "). Fitness variance in the ancestral population at the high salt environment is high, unlike in the low salt environment ",
+        "). Fitness variance in the ancestral population at the high salt environment is high, unlike in the low salt environment (",
         {
           "type": "Cite",
           "target": "c47",
@@ -8773,7 +8706,7 @@
             "Mallard et al., 2019"
           ]
         },
-        ", confirming that the domestication to the low salt environment and that the high salt environment is a “stressful” environment (",
+        "), confirming that the domestication to the low salt environment and that the high salt environment is a “stressful” environment (",
         {
           "type": "Link",
           "relation": "fig",
@@ -9063,7 +8996,7 @@
             "C. elegans"
           ]
         },
-        " populations harboring standing genetic variation in a gradually increasing salt environment for 35 generations followed by 15 generations in constant high salt. We have previously shown that these partial-outcrossing populations exposed to changing salt environments purged deleterious recessives alleles while maintaining genetic diversity during the 50 generations of evolution, either due to associative overdominance or true overdominance ",
+        " populations harboring standing genetic variation in a gradually increasing salt environment for 35 generations followed by 15 generations in constant high salt. We have previously shown that these partial-outcrossing populations exposed to changing salt environments purged deleterious recessives alleles while maintaining genetic diversity during the 50 generations of evolution, either due to associative overdominance or true overdominance (",
         {
           "type": "Cite",
           "target": "c11",
@@ -9071,7 +9004,7 @@
             "Chelo et al., 2019"
           ]
         },
-        ". The derived populations adapted to the high salt conditions ",
+        "). The derived populations adapted to the high salt conditions (",
         {
           "type": "Cite",
           "target": "c80",
@@ -9079,7 +9012,7 @@
             "Theologidis et al., 2014"
           ]
         },
-        ", and thus here we could ask: 1) if plasticity in the transition rates between movement and direction of locomotion behavior were aligned with the phenotypic dimension where more genetic variation is found in the ancestral population and, as a consequence, help explain adaptive phenotypic divergence in high salt; 2) whether or not 50 generations of phenotypic divergence could be predicted from the ancestral genetic covariances of transition rates with fitness in high salt, using Robertson’s secondary theorem of natural selection; and 3) if direct and/or indirect selection on transitions was responsible for phenotypic divergence, using Lande’s equation with Robertson’s selection differentials. For an analysis of selection on locomotion behavior, and the evolution of the ",
+        "), and thus here we could ask: 1) if plasticity in the transition rates between movement and direction of locomotion behavior were aligned with the phenotypic dimension where more genetic variation is found in the ancestral population and, as a consequence, help explain adaptive phenotypic divergence in high salt; 2) whether or not 50 generations of phenotypic divergence could be predicted from the ancestral genetic covariances of transition rates with fitness in high salt, using Robertson’s secondary theorem of natural selection; and 3) if direct and/or indirect selection on transitions was responsible for phenotypic divergence, using Lande’s equation with Robertson’s selection differentials. For an analysis of selection on locomotion behavior, and the evolution of the ",
         {
           "type": "Strong",
           "content": [
@@ -9100,27 +9033,23 @@
     {
       "type": "Paragraph",
       "content": [
-        "Fifty generations of experimental evolution in changing salt conditions led to phenotypic divergence in the target high salt environment for at least 5 out of the 6 transition rates, and in the low salt environment for 3 out of the 6 transitions rates, although there was heterogeneity between replicate populations. In the ancestral population, and in both salt environments, transition rates between still and forward (SF) and still and backwards (SB) form different behavioral modules as these traits show positive genetic covariances with each other, and negative genetic covariances with all other transition rates. Gene expression in our populations is restricted to being active (leaving the still state) and not the direction of movement. In itself this observation is interesting because it explains why phenotypic divergence in SF and SB is of different sign than that of the other 4 transition rates, and because it also explains why the phenotypic dimension encompassing most genetic variation of the ancestral population aligns well with the main dimensions of both phenotypic divergence and genetic divergence among all populations in high salt. However, many studies of neuronal, muscular or metabolic function using mutants have suggested that engaging in activity can be decoupled from the direction of movement ",
+        "Fifty generations of experimental evolution in changing salt conditions led to phenotypic divergence in the target high salt environment for at least 5 out of the 6 transition rates, and in the low salt environment for 3 out of the 6 transitions rates, although there was heterogeneity between replicate populations. In the ancestral population, and in both salt environments, transition rates between still and forward (SF) and still and backwards (SB) form different behavioral modules as these traits show positive genetic covariances with each other, and negative genetic covariances with all other transition rates. Gene expression in our populations is restricted to being active (leaving the still state) and not the direction of movement. In itself this observation is interesting because it explains why phenotypic divergence in SF and SB is of different sign than that of the other 4 transition rates, and because it also explains why the phenotypic dimension encompassing most genetic variation of the ancestral population aligns well with the main dimensions of both phenotypic divergence and genetic divergence among all populations in high salt. However, many studies of neuronal, muscular or metabolic function using mutants have suggested that engaging in activity can be decoupled from the direction of movement (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "De Bono and Maricq, 2005"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c85",
-              "content": [
-                "Zhen and Samuel, 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "De Bono and Maricq, 2005"
           ]
         },
-        " and elsewhere we have described little mutational pleiotropy for transition rates for two strains founders of our populations ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c85",
+          "content": [
+            "Zhen and Samuel, 2015"
+          ]
+        },
+        ") and elsewhere we have described little mutational pleiotropy for transition rates for two strains founders of our populations (",
         {
           "type": "Cite",
           "target": "c46",
@@ -9128,27 +9057,23 @@
             "Mallard et al., 2022"
           ]
         },
-        ". The evolution of genetic covariances between transition rates in our populations should therefore result mostly from the frequency dynamics of relevant alleles in linkage disequilibrium ",
+        "). The evolution of genetic covariances between transition rates in our populations should therefore result mostly from the frequency dynamics of relevant alleles in linkage disequilibrium (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c40",
-              "content": [
-                "Lande, 1980"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c57",
-              "content": [
-                "Phillips and McGuigan, 2006"
-              ]
-            }
+          "type": "Cite",
+          "target": "c40",
+          "content": [
+            "Lande, 1980"
           ]
         },
-        ". See ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c57",
+          "content": [
+            "Phillips and McGuigan, 2006"
+          ]
+        },
+        "). See ",
         {
           "type": "Cite",
           "target": "c46",
@@ -9162,41 +9087,39 @@
     {
       "type": "Paragraph",
       "content": [
-        "Several authors have suggested that ancestral phenotypic plasticity will be aligned with the phenotypic dimensions with more standing genetic variation, or mutational input, and thus facilitate adaptation if past correlated selection between traits led to the evolution of plasticity in particular dimensions of trait combinations ",
+        "Several authors have suggested that ancestral phenotypic plasticity will be aligned with the phenotypic dimensions with more standing genetic variation, or mutational input, and thus facilitate adaptation if past correlated selection between traits led to the evolution of plasticity in particular dimensions of trait combinations (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Arnold et al., 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c19",
-              "content": [
-                "Draghi and Whitlock, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c35",
-              "content": [
-                "Jones et al., 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Arnold et al., 2008"
           ]
         },
-        ". Empirical tests of this idea are few. In a meta-analysis of several studies in natural populations phenotypic plasticity generally matched phenotypic dimensions with more genetic variation but did not depend on the degree of environmental stress and thus, presumably, on selection ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Draghi and Whitlock, 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Jones et al., 2007"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "2014"
+          ]
+        },
+        "). Empirical tests of this idea are few. In a meta-analysis of several studies in natural populations phenotypic plasticity generally matched phenotypic dimensions with more genetic variation but did not depend on the degree of environmental stress and thus, presumably, on selection (",
         {
           "type": "Cite",
           "target": "c54",
@@ -9204,7 +9127,7 @@
             "Noble et al., 2019"
           ]
         },
-        ". More explicitly, ",
+        "). More explicitly, ",
         {
           "type": "Cite",
           "target": "c33",
@@ -9232,7 +9155,7 @@
             "G"
           ]
         },
-        " matrix in high salt evolved during the 50 generations, by drift and selection, cf. ",
+        " matrix in high salt evolved during the 50 generations, by drift and selection, cf. (",
         {
           "type": "Cite",
           "target": "c28",
@@ -9240,27 +9163,23 @@
             "Guzella et al., 2018"
           ]
         },
-        ", mostly through a reduction in genetic variance across all phenotypic dimensions. The selection surface probably changed during evolution but only in strength, because only one environmental factor was employed and the nature of change across generations was linear on the mean environmental value, not the variance ",
+        "), mostly through a reduction in genetic variance across all phenotypic dimensions. The selection surface probably changed during evolution but only in strength, because only one environmental factor was employed and the nature of change across generations was linear on the mean environmental value, not the variance (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c15",
-              "content": [
-                "Chevin et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c64",
-              "content": [
-                "Proulx and Teotónio, 2017"
-              ]
-            }
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Chevin et al., 2015"
           ]
         },
-        ". That the Robertson equation predicts phenotypic divergence is also remarkable because fertility is only a component of fitness. Indeed, we previously were unable to measure increased fertility in high salt ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c64",
+          "content": [
+            "Proulx and Teotónio, 2017"
+          ]
+        },
+        "). That the Robertson equation predicts phenotypic divergence is also remarkable because fertility is only a component of fitness. Indeed, we previously were unable to measure increased fertility in high salt (",
         {
           "type": "Cite",
           "target": "c11",
@@ -9268,7 +9187,7 @@
             "Chelo et al., 2019"
           ]
         },
-        ", despite obvious adaptation – as measured with competition assays between ancestral and derived populations ",
+        "), despite obvious adaptation – as measured with competition assays between ancestral and derived populations (",
         {
           "type": "Cite",
           "target": "c79",
@@ -9276,7 +9195,7 @@
             "Teotónio et al., 2017"
           ]
         },
-        ", see ",
+        "), see ",
         {
           "type": "Link",
           "relation": "fig",
@@ -9307,7 +9226,7 @@
             "Mallard et al. (2019)"
           ]
         },
-        " we have described that phenotypic stasis of locomotion behaviour in populations facing constant low salt results from effective stabilizing selection over a large phenotypic space after adaptation, cf. ",
+        " we have described that phenotypic stasis of locomotion behaviour in populations facing constant low salt results from effective stabilizing selection over a large phenotypic space after adaptation, cf. (",
         {
           "type": "Cite",
           "target": "c30",
@@ -9315,7 +9234,7 @@
             "Haller and Hendry, 2014"
           ]
         },
-        ", and that after adaptation, Robertson’s equation of little use to predict evolution over local phenotypic space because in this local space genetic covariances between transition rates and fitness are small and mostly evolve by drift ",
+        "), and that after adaptation, Robertson’s equation of little use to predict evolution over local phenotypic space because in this local space genetic covariances between transition rates and fitness are small and mostly evolve by drift (",
         {
           "type": "Cite",
           "target": "c47",
@@ -9323,7 +9242,7 @@
             "Mallard et al., 2019"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -9351,7 +9270,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "A second major finding of our study is that we were unable to infer direct selection on transition rates, despite phenotypic divergence in a majority of them, as directional selection gradient estimates were not obviously different from zero. There are two explanations for this result: either unobserved traits under direct selection are genetically correlated with observed ones or there is correlated selection between observed and unobserved traits because of unknown environmental covariances of them with fitness. A recent study in wild salmon as shown that selection due to human harvesting of a prey species (for feeding cultured salmon) explained divergence for early maturity and small body sizes, despite selection for increased body size at maturity because of fishing ",
+        "A second major finding of our study is that we were unable to infer direct selection on transition rates, despite phenotypic divergence in a majority of them, as directional selection gradient estimates were not obviously different from zero. There are two explanations for this result: either unobserved traits under direct selection are genetically correlated with observed ones or there is correlated selection between observed and unobserved traits because of unknown environmental covariances of them with fitness. A recent study in wild salmon as shown that selection due to human harvesting of a prey species (for feeding cultured salmon) explained divergence for early maturity and small body sizes, despite selection for increased body size at maturity because of fishing (",
         {
           "type": "Cite",
           "target": "c16",
@@ -9359,7 +9278,7 @@
             "Czorlich et al., 2022"
           ]
         },
-        ". In an example privileging the second explanation, ",
+        "). In an example privileging the second explanation, ",
         {
           "type": "Cite",
           "target": "c38",
@@ -9375,7 +9294,7 @@
             "Kruuk et al. (2002)"
           ]
         },
-        " explains our results. This is because worms’ locomotion behaviour were measured in ancestral and derived populations in “common garden” assays, after reviving population samples from storage and culturing them under similar environmental conditions for 4-6 generations. Perhaps more importantly, we have also reported that transgenerational environmental effects on the viability of individuals exposed to high salt do not carry over for more than three generations, and are in any case small when compared to the fitness effects of within-generation high salt exposure ",
+        " explains our results. This is because worms’ locomotion behaviour were measured in ancestral and derived populations in “common garden” assays, after reviving population samples from storage and culturing them under similar environmental conditions for 4-6 generations. Perhaps more importantly, we have also reported that transgenerational environmental effects on the viability of individuals exposed to high salt do not carry over for more than three generations, and are in any case small when compared to the fitness effects of within-generation high salt exposure (",
         {
           "type": "Cite",
           "target": "c63",
@@ -9383,27 +9302,23 @@
             "Proulx et al., 2019"
           ]
         },
-        ". Expression of trait values specific to changing salt environments could be at play, but this would require a genetic basis for individuals to detect and anticipate the higher salt levels of future generations, despite they themselves developing and growing under lower and constant salt levels as was the case during experimental evolution ",
+        "). Expression of trait values specific to changing salt environments could be at play, but this would require a genetic basis for individuals to detect and anticipate the higher salt levels of future generations, despite they themselves developing and growing under lower and constant salt levels as was the case during experimental evolution (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c18",
-              "content": [
-                "Dey et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c64",
-              "content": [
-                "Proulx and Teotónio, 2017"
-              ]
-            }
+          "type": "Cite",
+          "target": "c18",
+          "content": [
+            "Dey et al., 2016"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c64",
+          "content": [
+            "Proulx and Teotónio, 2017"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -9416,47 +9331,39 @@
             "C. elegans"
           ]
         },
-        " are further known to be physiologically regulated in concert not only by the amount of food eaten, and how much energy is spent by growing, foraging, mating or reproducing, but also by the perception of stressful environments ",
+        " are further known to be physiologically regulated in concert not only by the amount of food eaten, and how much energy is spent by growing, foraging, mating or reproducing, but also by the perception of stressful environments (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c21",
-              "content": [
-                "Fujiwara et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c22",
-              "content": [
-                "2002"
-              ]
-            }
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Fujiwara et al., 2015"
           ]
         },
-        ". The software tracker that we used to obtain locomotion behavior data also contains information about body size ",
+        ", ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Noble et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c77",
-              "content": [
-                "Swierczek et al., 2011"
-              ]
-            }
+          "type": "Cite",
+          "target": "c22",
+          "content": [
+            "2002"
           ]
         },
-        ". Estimates of the genetic covariance between body size and fertility in the ancestral population suggest an expected response to selection in high salt of 0.2, which is similar to the observed body size change after 50 generations of evolution and, coincidentally, a selection gradient of ",
+        "). The software tracker that we used to obtain locomotion behavior data also contains information about body size (",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Noble et al., 2017"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c77",
+          "content": [
+            "Swierczek et al., 2011"
+          ]
+        },
+        "). Estimates of the genetic covariance between body size and fertility in the ancestral population suggest an expected response to selection in high salt of 0.2, which is similar to the observed body size change after 50 generations of evolution and, coincidentally, a selection gradient of ",
         {
           "type": "Emphasis",
           "content": [
@@ -9474,47 +9381,39 @@
             }
           ]
         },
-        " = 0.2 (−0.03-0.46, 95% CI). We also find significant genetic covariances between all transition rates and body size (not shown). Many other traits can be implicated, however, for example developmental time, because hermaphrodites engaged in selfing tend to more rapidly resume activity when harassed by males than when self-sperm depleted ",
+        " = 0.2 (−0.03-0.46, 95% CI). We also find significant genetic covariances between all transition rates and body size (not shown). Many other traits can be implicated, however, for example developmental time, because hermaphrodites engaged in selfing tend to more rapidly resume activity when harassed by males than when self-sperm depleted (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Chasnov et al., 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c44",
-              "content": [
-                "Lipton et al., 2004"
-              ]
-            }
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Chasnov et al., 2007"
           ]
         },
-        " and delayed maturity favors selfing in this protandrous nematode ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c60",
-              "content": [
-                "Poullet et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c80",
-              "content": [
-                "Theologidis et al., 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c44",
+          "content": [
+            "Lipton et al., 2004"
           ]
         },
-        ". Only a more detailed investigation can shed light on the complexity of the selection surface in the high salt environment. Our analysis suggests, however, that indirect selection led to the divergence of locomotion behavior in part because of important genetic covariances between body size and transition rates."
+        ") and delayed maturity favors selfing in this protandrous nematode (",
+        {
+          "type": "Cite",
+          "target": "c60",
+          "content": [
+            "Poullet et al., 2016"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c80",
+          "content": [
+            "Theologidis et al., 2014"
+          ]
+        },
+        "). Only a more detailed investigation can shed light on the complexity of the selection surface in the high salt environment. Our analysis suggests, however, that indirect selection led to the divergence of locomotion behavior in part because of important genetic covariances between body size and transition rates."
       ]
     },
     {

@@ -7552,7 +7552,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "More than 25 million Americans suffer from chronic pain ",
+        "More than 25 million Americans suffer from chronic pain (",
         {
           "type": "Cite",
           "target": "c53",
@@ -7560,7 +7560,7 @@
             "Nahin, 2015"
           ]
         },
-        ". Chronic pain originates from tissue or nervous system damage and persists longer than three months ",
+        "). Chronic pain originates from tissue or nervous system damage and persists longer than three months (",
         {
           "type": "Cite",
           "target": "c72",
@@ -7568,7 +7568,7 @@
             "Treede et al., 2015"
           ]
         },
-        ". The many causes of chronic pain include surgery, chemotherapy, complex regional pain syndrome, and back pain. People with chronic pain experience higher anxiety, depression, sleep disturbances, and gain weight due to decreased physical activity. Non-opioid treatment options for chronic pain are limited ",
+        "). The many causes of chronic pain include surgery, chemotherapy, complex regional pain syndrome, and back pain. People with chronic pain experience higher anxiety, depression, sleep disturbances, and gain weight due to decreased physical activity. Non-opioid treatment options for chronic pain are limited (",
         {
           "type": "Cite",
           "target": "c65",
@@ -7576,109 +7576,84 @@
             "Seal, Becker, Tighe, Li, & Rife, 2017"
           ]
         },
-        ". Inhibitors of neuronal ion channels are important alternatives that have not demonstrated addiction liability. Non-selective Na",
+        "). Inhibitors of neuronal ion channels are important alternatives that have not demonstrated addiction liability. Non-selective Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channel inhibitors, including carbamazepine, lacosamide, and lamotrigine are used among initial options to treat patients with chronic pain ",
+        " channel inhibitors, including carbamazepine, lacosamide, and lamotrigine are used among initial options to treat patients with chronic pain (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c9",
-              "content": [
-                "Beyreuther et al., 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c76",
-              "content": [
-                "Wiffen, Derry, & Moore, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c77",
-              "content": [
-                "Wiffen, Derry, Moore, & Kalso, 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c9",
+          "content": [
+            "Beyreuther et al., 2007"
           ]
         },
-        ". For example, intravenous infusion of the local anesthetic lidocaine, a non-specific Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c76",
+          "content": [
+            "Wiffen, Derry, & Moore, 2011"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c77",
+          "content": [
+            "Wiffen, Derry, Moore, & Kalso, 2014"
+          ]
+        },
+        "). For example, intravenous infusion of the local anesthetic lidocaine, a non-specific Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channel inhibitor, reduces chronic pain in some patients ",
+        " channel inhibitor, reduces chronic pain in some patients (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c37",
-              "content": [
-                "Hutson, Backonja, & Knurr, 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Iacob et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c42",
-              "content": [
-                "Kandil, Melikman, & Adinoff, 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c73",
-              "content": [
-                "van der Wal et al., 2016"
-              ]
-            }
+          "type": "Cite",
+          "target": "c37",
+          "content": [
+            "Hutson, Backonja, & Knurr, 2015"
           ]
         },
-        ". However, lidocaine treatments have serious side effects including cardiac arrest, abnormal heartbeat, and seizures. Patients with chronic pain who are not responding to Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Iacob et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c42",
+          "content": [
+            "Kandil, Melikman, & Adinoff, 2017"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c73",
+          "content": [
+            "van der Wal et al., 2016"
+          ]
+        },
+        "). However, lidocaine treatments have serious side effects including cardiac arrest, abnormal heartbeat, and seizures. Patients with chronic pain who are not responding to Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channel inhibitors can be prescribed opioids, but the severe side effects of opioids such as constipation, respiratory depression, and addiction limit their utility. Intrathecal infusion of the voltage-gated calcium channel inhibitor ziconotide is also effective against chronic pain ",
-        {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Backryd, 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c21",
-              "content": [
-                "Deer et al., 2018"
-              ]
-            }
-          ]
-        },
-        " but accompanied by serious psychiatric side effects ",
+        " channel inhibitors can be prescribed opioids, but the severe side effects of opioids such as constipation, respiratory depression, and addiction limit their utility. Intrathecal infusion of the voltage-gated calcium channel inhibitor ziconotide is also effective against chronic pain (",
         {
           "type": "Cite",
           "target": "c4",
@@ -7686,102 +7661,116 @@
             "Backryd, 2018"
           ]
         },
-        ". Consequently, the treatment of chronic pain remains a major unmet medical need. Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Deer et al., 2018"
+          ]
+        },
+        ") but accompanied by serious psychiatric side effects (",
+        {
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Backryd, 2018"
+          ]
+        },
+        "). Consequently, the treatment of chronic pain remains a major unmet medical need. Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channels have been thoroughly clinically validated as pharmacological targets for pain treatment, but currently available therapies are limited by incomplete efficacy and significant side effects ",
+        " channels have been thoroughly clinically validated as pharmacological targets for pain treatment, but currently available therapies are limited by incomplete efficacy and significant side effects (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Bhattacharya, Wickenden, & Chaplan, 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Dib-Hajj, Cummins, Black, & Waxman, 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c41",
-              "content": [
-                "Kaczorowski, McManus, Priest, & Garcia, 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Liu & Wood, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c51",
-              "content": [
-                "Mulroy, 2002"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c74",
-              "content": [
-                "Walia, Khan, Ko, Raza, & Khan, 2004"
-              ]
-            }
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Bhattacharya, Wickenden, & Chaplan, 2009"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Dib-Hajj, Cummins, Black, & Waxman, 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Kaczorowski, McManus, Priest, & Garcia, 2008"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Liu & Wood, 2011"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c51",
+          "content": [
+            "Mulroy, 2002"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c74",
+          "content": [
+            "Walia, Khan, Ko, Raza, & Khan, 2004"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Nociceptive signals originate in peripheral nerve fibers that transduce chemical, mechanical, or thermal stimuli into action potentials that propagate along their axons to the synaptic nerve terminals in the spinal dorsal horn ",
+        "Nociceptive signals originate in peripheral nerve fibers that transduce chemical, mechanical, or thermal stimuli into action potentials that propagate along their axons to the synaptic nerve terminals in the spinal dorsal horn (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "Basbaum, Bautista, Scherrer, & Julius, 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Dib-Hajj et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Dib-Hajj, Yang, Black, & Waxman, 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c75",
-              "content": [
-                "Waxman & Zamponi, 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Basbaum, Bautista, Scherrer, & Julius, 2009"
           ]
         },
-        ". Voltage-gated sodium (Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Dib-Hajj et al., 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Dib-Hajj, Yang, Black, & Waxman, 2013"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c75",
+          "content": [
+            "Waxman & Zamponi, 2014"
+          ]
+        },
+        "). Voltage-gated sodium (Na",
         {
           "type": "Subscript",
           "content": [
@@ -7802,7 +7791,7 @@
             "V"
           ]
         },
-        ") channel subtypes ",
+        ") channel subtypes (",
         {
           "type": "Cite",
           "target": "c16",
@@ -7810,7 +7799,7 @@
             "Catterall, Goldin, & Waxman, 2005"
           ]
         },
-        ", genetic and functional studies identified three subtypes as important for pain signaling: Na",
+        "), genetic and functional studies identified three subtypes as important for pain signaling: Na",
         {
           "type": "Subscript",
           "content": [
@@ -7831,153 +7820,23 @@
             "V"
           ]
         },
-        "1.9, which are predominantly expressed in peripheral neurons ",
-        {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c8",
-              "content": [
-                "Bennett, Clark, Huang, Waxman, & Dib-Hajj, 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c12",
-              "content": [
-                "Black, Nikolajsen, Kroner, Jensen, & Waxman, 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c19",
-              "content": [
-                "Cox et al., 2006"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c20",
-              "content": [
-                "Cummins, Dib-Hajj, & Waxman, 2004"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Dib-Hajj et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Dib-Hajj et al., 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Estacion et al., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c29",
-              "content": [
-                "Fertleman et al., 2006"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c33",
-              "content": [
-                "Goldberg et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c54",
-              "content": [
-                "Nassar et al., 2004"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c61",
-              "content": [
-                "Reimann et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c69",
-              "content": [
-                "Shields et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c82",
-              "content": [
-                "Yang et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c83",
-              "content": [
-                "Yang et al., 2004"
-              ]
-            }
-          ]
-        },
-        ". Na",
-        {
-          "type": "Subscript",
-          "content": [
-            "V"
-          ]
-        },
-        "1.7 possesses a slow closed-state inactivation compared to other channels ",
+        "1.9, which are predominantly expressed in peripheral neurons (",
         {
           "type": "Cite",
-          "target": "c35",
+          "target": "c8",
           "content": [
-            "Herzog, Cummins, Ghassemi, Dib-Hajj, & Waxman, 2003"
+            "Bennett, Clark, Huang, Waxman, & Dib-Hajj, 2019"
           ]
         },
-        ", making it uniquely important for setting the threshold for action potential firing, and thus the gain in pain signaling neurons ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c22",
-              "content": [
-                "Dib-Hajj, Cummins, Black, & Waxman, 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c62",
-              "content": [
-                "Rush, Cummins, & Waxman, 2007"
-              ]
-            }
-          ]
-        },
-        ". In accordance with this, loss-of-function mutations in hNa",
-        {
-          "type": "Subscript",
+          "type": "Cite",
+          "target": "c12",
           "content": [
-            "V"
+            "Black, Nikolajsen, Kroner, Jensen, & Waxman, 2008"
           ]
         },
-        "1.7 have been identified in families with congenital insensitivity to pain ",
+        "; ",
         {
           "type": "Cite",
           "target": "c19",
@@ -7985,7 +7844,141 @@
             "Cox et al., 2006"
           ]
         },
-        ". Gain-of-function mutations in hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Cummins, Dib-Hajj, & Waxman, 2004"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Dib-Hajj et al., 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Dib-Hajj et al., 2013"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Estacion et al., 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c29",
+          "content": [
+            "Fertleman et al., 2006"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c33",
+          "content": [
+            "Goldberg et al., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c54",
+          "content": [
+            "Nassar et al., 2004"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c61",
+          "content": [
+            "Reimann et al., 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c69",
+          "content": [
+            "Shields et al., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c82",
+          "content": [
+            "Yang et al., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c83",
+          "content": [
+            "Yang et al., 2004"
+          ]
+        },
+        "). Na",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 possesses a slow closed-state inactivation compared to other channels (",
+        {
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Herzog, Cummins, Ghassemi, Dib-Hajj, & Waxman, 2003"
+          ]
+        },
+        "), making it uniquely important for setting the threshold for action potential firing, and thus the gain in pain signaling neurons (",
+        {
+          "type": "Cite",
+          "target": "c22",
+          "content": [
+            "Dib-Hajj, Cummins, Black, & Waxman, 2007"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c62",
+          "content": [
+            "Rush, Cummins, & Waxman, 2007"
+          ]
+        },
+        "). In accordance with this, loss-of-function mutations in hNa",
+        {
+          "type": "Subscript",
+          "content": [
+            "V"
+          ]
+        },
+        "1.7 have been identified in families with congenital insensitivity to pain (",
+        {
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Cox et al., 2006"
+          ]
+        },
+        "). Gain-of-function mutations in hNa",
         {
           "type": "Subscript",
           "content": [
@@ -7999,34 +7992,30 @@
             "V"
           ]
         },
-        "1.7 mutations that shift its voltage-dependence of activation to hyperpolarized voltages, leading to hyperexcitability in dorsal root ganglion (DRG) neurons and chronic neuropathic pain ",
+        "1.7 mutations that shift its voltage-dependence of activation to hyperpolarized voltages, leading to hyperexcitability in dorsal root ganglion (DRG) neurons and chronic neuropathic pain (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c20",
-              "content": [
-                "Cummins et al., 2004"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c83",
-              "content": [
-                "Yang et al., 2004"
-              ]
-            }
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Cummins et al., 2004"
           ]
         },
-        "; patients with paroxysmal extreme pain disorder have defects in hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c83",
+          "content": [
+            "Yang et al., 2004"
+          ]
+        },
+        "); patients with paroxysmal extreme pain disorder have defects in hNa",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 fast inactivation resulting in persistent sodium currents and episodic burning pain ",
+        "1.7 fast inactivation resulting in persistent sodium currents and episodic burning pain (",
         {
           "type": "Cite",
           "target": "c29",
@@ -8034,41 +8023,38 @@
             "Fertleman et al., 2006"
           ]
         },
-        ". These and other studies have validated hNa",
+        "). These and other studies have validated hNa",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 as a prime target for the treatment of pain ",
+        "1.7 as a prime target for the treatment of pain (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Dib-Hajj et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Dib-Hajj et al., 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c75",
-              "content": [
-                "Waxman & Zamponi, 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Dib-Hajj et al., 2010"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Dib-Hajj et al., 2013"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c75",
+          "content": [
+            "Waxman & Zamponi, 2014"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -8081,75 +8067,70 @@
             "V"
           ]
         },
-        " channels are composed of four homologous domains (I through IV), each containing six transmembrane segments (S1 through S6), with segments S1-S4 of the channel forming the voltage-sensing domain (VSD) and segments S5 and S6 forming the pore ",
+        " channels are composed of four homologous domains (I through IV), each containing six transmembrane segments (S1 through S6), with segments S1-S4 of the channel forming the voltage-sensing domain (VSD) and segments S5 and S6 forming the pore (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c2",
-              "content": [
-                "Ahern, Payandeh, Bosmans, & Chanda, 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c59",
-              "content": [
-                "Payandeh, Scheuer, Zheng, & Catterall, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c66",
-              "content": [
-                "Shen, Liu, Wu, Lei, & Yan, 2019a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c68",
-              "content": [
-                "Shen et al., 2017"
-              ]
-            }
+          "type": "Cite",
+          "target": "c2",
+          "content": [
+            "Ahern, Payandeh, Bosmans, & Chanda, 2016"
           ]
         },
-        ". The binding of local anesthetics to a receptor site formed within the pore inner cavity can directly block ion conduction through the Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c59",
+          "content": [
+            "Payandeh, Scheuer, Zheng, & Catterall, 2011"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c66",
+          "content": [
+            "Shen, Liu, Wu, Lei, & Yan, 2019a"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c68",
+          "content": [
+            "Shen et al., 2017"
+          ]
+        },
+        "). The binding of local anesthetics to a receptor site formed within the pore inner cavity can directly block ion conduction through the Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channels ",
+        " channels (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c60",
-              "content": [
-                "Ragsdale, McPhee, Scheuer, & Catterall, 1994"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c84",
-              "content": [
-                "Yarov-Yarovoy et al., 2001"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c85",
-              "content": [
-                "Yarov-Yarovoy et al., 2002"
-              ]
-            }
+          "type": "Cite",
+          "target": "c60",
+          "content": [
+            "Ragsdale, McPhee, Scheuer, & Catterall, 1994"
           ]
         },
-        ". However, because of the high conservation of residues forming this local anesthetic receptor site among the different isoforms, all currently available therapeutic drugs targeting Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c84",
+          "content": [
+            "Yarov-Yarovoy et al., 2001"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c85",
+          "content": [
+            "Yarov-Yarovoy et al., 2002"
+          ]
+        },
+        "). However, because of the high conservation of residues forming this local anesthetic receptor site among the different isoforms, all currently available therapeutic drugs targeting Na",
         {
           "type": "Subscript",
           "content": [
@@ -8162,41 +8143,39 @@
     {
       "type": "Paragraph",
       "content": [
-        "There is a growing trend in industry and academia to target ion channels with biologics ",
+        "There is a growing trend in industry and academia to target ion channels with biologics (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c13",
-              "content": [
-                "Bosmans & Swartz, 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Neff & Wickenden, 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c58",
-              "content": [
-                "Payandeh & Hackos, 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c79",
-              "content": [
-                "Wulff, Christophersen, Colussi, Chandy, & Yarov-Yarovoy, 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Bosmans & Swartz, 2010"
           ]
         },
-        ". More than ten years ago scientists at Merck demonstrated that a peptide from the venom of the Peruvian green velvet tarantula ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Neff & Wickenden, 2021"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c58",
+          "content": [
+            "Payandeh & Hackos, 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c79",
+          "content": [
+            "Wulff, Christophersen, Colussi, Chandy, & Yarov-Yarovoy, 2019"
+          ]
+        },
+        "). More than ten years ago scientists at Merck demonstrated that a peptide from the venom of the Peruvian green velvet tarantula ",
         {
           "type": "Emphasis",
           "content": [
@@ -8210,7 +8189,7 @@
             "V"
           ]
         },
-        "1.7 channel subtype and blocked action potential propagation in nociceptors ",
+        "1.7 channel subtype and blocked action potential propagation in nociceptors (",
         {
           "type": "Cite",
           "target": "c64",
@@ -8218,7 +8197,7 @@
             "Schmalhofer et al., 2008"
           ]
         },
-        ". Amgen also developed peptide inhibitors of Na",
+        "). Amgen also developed peptide inhibitors of Na",
         {
           "type": "Subscript",
           "content": [
@@ -8253,7 +8232,7 @@
             "V"
           ]
         },
-        "1.5 (predominantly expressed in the heart) ",
+        "1.5 (predominantly expressed in the heart) (",
         {
           "type": "Cite",
           "target": "c52",
@@ -8261,7 +8240,7 @@
             "Murray et al., 2015"
           ]
         },
-        ". Using the GpTx-1 NMR structure as a guide, Amgen scientists created a variant with improved potency and selectivity compared to the wild-type toxin, concluding that GpTx-1 variants can potentially be further developed as peptide therapeutics ",
+        "). Using the GpTx-1 NMR structure as a guide, Amgen scientists created a variant with improved potency and selectivity compared to the wild-type toxin, concluding that GpTx-1 variants can potentially be further developed as peptide therapeutics (",
         {
           "type": "Cite",
           "target": "c52",
@@ -8269,7 +8248,7 @@
             "Murray et al., 2015"
           ]
         },
-        ". The most advanced reported preclinical development of Na",
+        "). The most advanced reported preclinical development of Na",
         {
           "type": "Subscript",
           "content": [
@@ -8297,7 +8276,7 @@
             "V"
           ]
         },
-        "1.6) ",
+        "1.6) (",
         {
           "type": "Cite",
           "target": "c31",
@@ -8305,7 +8284,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". Janssen Biotech pursued resource-intensive optimization of ProTx-II, but without a structure to guide optimization. This blind optimization process produced 1,500 ProTx-II variants, including a peptide, named JNJ63955918, with at least 100-fold selectivity for Na",
+        "). Janssen Biotech pursued resource-intensive optimization of ProTx-II, but without a structure to guide optimization. This blind optimization process produced 1,500 ProTx-II variants, including a peptide, named JNJ63955918, with at least 100-fold selectivity for Na",
         {
           "type": "Subscript",
           "content": [
@@ -8326,7 +8305,7 @@
             "V"
           ]
         },
-        "1.7 ",
+        "1.7 (",
         {
           "type": "Cite",
           "target": "c31",
@@ -8334,14 +8313,14 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". The in vivo safety window for JNJ63955918 was 7-16-fold, limited by motor deficits and muscle weakness, consistent with insufficient selectivity against off-target Na",
+        "). The in vivo safety window for JNJ63955918 was 7-16-fold, limited by motor deficits and muscle weakness, consistent with insufficient selectivity against off-target Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channels ",
+        " channels (",
         {
           "type": "Cite",
           "target": "c31",
@@ -8349,14 +8328,14 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". More recently, Merck developed ProTx-II analogues with improved selectivity for Na",
+        "). More recently, Merck developed ProTx-II analogues with improved selectivity for Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7, reduced ability to cause mast cell degranulation, and enhanced in vivo profile ",
+        "1.7, reduced ability to cause mast cell degranulation, and enhanced in vivo profile (",
         {
           "type": "Cite",
           "target": "c1",
@@ -8364,7 +8343,7 @@
             "Adams et al., 2022"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -8377,7 +8356,7 @@
             "V"
           ]
         },
-        " channel blocking peptide affinity and selectivity could be further optimized remains valid ",
+        " channel blocking peptide affinity and selectivity could be further optimized remains valid (",
         {
           "type": "Cite",
           "target": "c58",
@@ -8385,75 +8364,69 @@
             "Payandeh & Hackos, 2018"
           ]
         },
-        ". Furthermore, several high-resolution structures of peptide toxins complexes with human Na",
+        "). Furthermore, several high-resolution structures of peptide toxins complexes with human Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channels were solved recently ",
+        " channels were solved recently (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c18",
-              "content": [
-                "Clairfeuille et al., 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c56",
-              "content": [
-                "Pan et al., 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c67",
-              "content": [
-                "Shen, Liu, Wu, Lei, & Yan, 2019b"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Xu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c18",
+          "content": [
+            "Clairfeuille et al., 2019"
           ]
         },
-        ", providing essential templates for the structure-guided design of novel therapeutics. These structures revealed key molecular determinants of ProTx-II interaction with the hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c56",
+          "content": [
+            "Pan et al., 2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c67",
+          "content": [
+            "Shen, Liu, Wu, Lei, & Yan, 2019b"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Xu et al., 2019"
+          ]
+        },
+        "), providing essential templates for the structure-guided design of novel therapeutics. These structures revealed key molecular determinants of ProTx-II interaction with the hNa",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 channel in both deactivated and activated states ",
+        "1.7 channel in both deactivated and activated states (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c67",
-              "content": [
-                "Shen et al., 2019b"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Xu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c67",
+          "content": [
+            "Shen et al., 2019b"
           ]
         },
-        ". To overcome past issues with peptide optimization, we used the Rosetta computational protein redesign approach, available experimental data, and functional testing of designed peptides using electrophysiological assays, mouse and human sensory neurons, stability assays, and efficacy testing in animal models of pain to generate high-affinity, selective inhibitors of human Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Xu et al., 2019"
+          ]
+        },
+        "). To overcome past issues with peptide optimization, we used the Rosetta computational protein redesign approach, available experimental data, and functional testing of designed peptides using electrophysiological assays, mouse and human sensory neurons, stability assays, and efficacy testing in animal models of pain to generate high-affinity, selective inhibitors of human Na",
         {
           "type": "Subscript",
           "content": [
@@ -8503,109 +8476,101 @@
             "V"
           ]
         },
-        "1.7 complexes ",
+        "1.7 complexes (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c66",
-              "content": [
-                "Shen et al., 2019a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Xu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c66",
+          "content": [
+            "Shen et al., 2019a"
           ]
         },
-        ", explored available experimental data on hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Xu et al., 2019"
+          ]
+        },
+        "), explored available experimental data on hNa",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 interactions with ProTx-II and its homologs ",
+        "1.7 interactions with ProTx-II and its homologs (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Moyer et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c52",
-              "content": [
-                "Murray et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c57",
-              "content": [
-                "Park et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c78",
-              "content": [
-                "Wu et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Xu et al., 2019"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c86",
-              "content": [
-                "Zeng et al., 2007"
-              ]
-            }
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Moyer et al., 2018"
           ]
         },
-        ", modeled specific interactions of ProTx-II substitutions with hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c52",
+          "content": [
+            "Murray et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c57",
+          "content": [
+            "Park et al., 2014"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c78",
+          "content": [
+            "Wu et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Xu et al., 2019"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c86",
+          "content": [
+            "Zeng et al., 2007"
+          ]
+        },
+        "), modeled specific interactions of ProTx-II substitutions with hNa",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7, and designed new ProTx-II variants using Rosetta ",
+        "1.7, and designed new ProTx-II variants using Rosetta (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c7",
-              "content": [
-                "Bender et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c44",
-              "content": [
-                "Kuhlman et al., 2003"
-              ]
-            }
+          "type": "Cite",
+          "target": "c7",
+          "content": [
+            "Bender et al., 2016"
           ]
         },
-        ". Our interdisciplinary and iterative peptide optimization approach is described below and outlined in ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c44",
+          "content": [
+            "Kuhlman et al., 2003"
+          ]
+        },
+        "). Our interdisciplinary and iterative peptide optimization approach is described below and outlined in ",
         {
           "type": "Strong",
           "content": [
@@ -8634,7 +8599,7 @@
         {
           "type": "Paragraph",
           "content": [
-            "The ProTx-II based peptide optimization approach. Top, transmembrane (left) and extracellular (right) views of the wild-type ProTx-II – hNav1.7 structure in a deactivated state ",
+            "The ProTx-II based peptide optimization approach. Top, transmembrane (left) and extracellular (right) views of the wild-type ProTx-II – hNav1.7 structure in a deactivated state (",
             {
               "type": "Cite",
               "target": "c81",
@@ -8642,7 +8607,7 @@
                 "Xu et al., 2019"
               ]
             },
-            " Key residues on the wild-type ProTx-II are shown in stick representation and labeled. Bottom, interdisciplinary peptide optimization approach involving Rosetta design, molecular dynamics (MD) simulations, peptide synthesis and folding, electrophysiological testing, peptide stability testing, efficacy in mouse and human DRG neurons, and efficacy in animal models of pain."
+            ") Key residues on the wild-type ProTx-II are shown in stick representation and labeled. Bottom, interdisciplinary peptide optimization approach involving Rosetta design, molecular dynamics (MD) simulations, peptide synthesis and folding, electrophysiological testing, peptide stability testing, efficacy in mouse and human DRG neurons, and efficacy in animal models of pain."
           ]
         }
       ],
@@ -8682,7 +8647,7 @@
             "V"
           ]
         },
-        "1.7 chimera complex in a deactivated state (PDB: 6N4R) ",
+        "1.7 chimera complex in a deactivated state (PDB: 6N4R) (",
         {
           "type": "Cite",
           "target": "c81",
@@ -8690,7 +8655,7 @@
             "Xu et al., 2019"
           ]
         },
-        ". To improve potency in all of our ProTx-II based peptides, we used the C-terminal amidation based on previously published data ",
+        "). To improve potency in all of our ProTx-II based peptides, we used the C-terminal amidation based on previously published data (",
         {
           "type": "Cite",
           "target": "c57",
@@ -8698,7 +8663,7 @@
             "Park et al., 2014"
           ]
         },
-        ". The ProTx-II – Na",
+        "). The ProTx-II – Na",
         {
           "type": "Subscript",
           "content": [
@@ -8733,7 +8698,7 @@
             "V"
           ]
         },
-        "1.7 structure) ",
+        "1.7 structure) (",
         {
           "type": "Cite",
           "target": "c81",
@@ -8741,7 +8706,7 @@
             "Xu et al., 2019"
           ]
         },
-        " (",
+        ") (",
         {
           "type": "Strong",
           "content": [
@@ -8783,7 +8748,7 @@
             "V"
           ]
         },
-        "1.4 ",
+        "1.4 (",
         {
           "type": "Cite",
           "target": "c52",
@@ -8791,7 +8756,7 @@
             "Murray et al., 2015"
           ]
         },
-        " and reasoning that optimized interactions with F813 may improve ProTx-II based peptide selectivity. In addition, the ProTx-II – Na",
+        ") and reasoning that optimized interactions with F813 may improve ProTx-II based peptide selectivity. In addition, the ProTx-II – Na",
         {
           "type": "Subscript",
           "content": [
@@ -8894,27 +8859,23 @@
             "50"
           ]
         },
-        " = 0.6 nM) has Arginine ",
+        " = 0.6 nM) has Arginine (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c15",
-              "content": [
-                "Cardoso et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Moyer et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c15",
+          "content": [
+            "Cardoso et al., 2015"
           ]
         },
-        " at the position equivalent to the V20 in ProTx-II. Rosetta modeling of the ProTx-II V20R mutant suggested that arginine could form a salt bridge with D816 on the hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Moyer et al., 2018"
+          ]
+        },
+        ") at the position equivalent to the V20 in ProTx-II. Rosetta modeling of the ProTx-II V20R mutant suggested that arginine could form a salt bridge with D816 on the hNa",
         {
           "type": "Subscript",
           "content": [
@@ -9010,7 +8971,7 @@
             "V"
           ]
         },
-        "1.7 ",
+        "1.7 (",
         {
           "type": "Cite",
           "target": "c81",
@@ -9018,7 +8979,7 @@
             "Xu et al., 2019"
           ]
         },
-        ". Amgen’s study demonstrated that substituting K28 with glutamate improves the selectivity of JzTx-V for hNa",
+        "). Amgen’s study demonstrated that substituting K28 with glutamate improves the selectivity of JzTx-V for hNa",
         {
           "type": "Subscript",
           "content": [
@@ -9039,7 +9000,7 @@
             "V"
           ]
         },
-        "1.5 ",
+        "1.5 (",
         {
           "type": "Cite",
           "target": "c50",
@@ -9047,7 +9008,7 @@
             "Moyer et al., 2018"
           ]
         },
-        ". Based on these data, we substituted ProTx-II R22 with norR, K26 with arginine, and K28 with glutamate (",
+        "). Based on these data, we substituted ProTx-II R22 with norR, K26 with arginine, and K28 with glutamate (",
         {
           "type": "Strong",
           "content": [
@@ -9459,7 +9420,7 @@
             "V"
           ]
         },
-        "1.7 ",
+        "1.7 (",
         {
           "type": "Cite",
           "target": "c57",
@@ -9467,7 +9428,7 @@
             "Park et al., 2014"
           ]
         },
-        ". Notably, in the presence of R26, Norarginine at position 22 does not form a salt bridge with D816 on VSD-II despite being in proximity based on the PTx2-2955 model (",
+        "). Notably, in the presence of R26, Norarginine at position 22 does not form a salt bridge with D816 on VSD-II despite being in proximity based on the PTx2-2955 model (",
         {
           "type": "Strong",
           "content": [
@@ -9524,7 +9485,7 @@
             }
           ]
         },
-        "). We further used Rosetta computational design to explore sequence variants at the non-interface positions of ProTx-II, explicitly looking for substitutions that can stabilize the ProTx-II scaffold or the interface hydrogen bond network while taking into account potential favorable interactions with lipids (see Methods). We also changed the double mutants W5A/M6F back to the wild-type residues in the design process due to the lack of superior engagement with F813 (VSD-II) shown in the PTx2-2955 model. We used Rosetta FastDesign ",
+        "). We further used Rosetta computational design to explore sequence variants at the non-interface positions of ProTx-II, explicitly looking for substitutions that can stabilize the ProTx-II scaffold or the interface hydrogen bond network while taking into account potential favorable interactions with lipids (see Methods). We also changed the double mutants W5A/M6F back to the wild-type residues in the design process due to the lack of superior engagement with F813 (VSD-II) shown in the PTx2-2955 model. We used Rosetta FastDesign (",
         {
           "type": "Cite",
           "target": "c48",
@@ -9532,7 +9493,7 @@
             "Maguire et al., 2021"
           ]
         },
-        " to introduce ProTx-II substitutions and design new peptide variants as described in Methods. Among the ProTx-II based peptide consensus sequences designed by Rosetta (",
+        ") to introduce ProTx-II substitutions and design new peptide variants as described in Methods. Among the ProTx-II based peptide consensus sequences designed by Rosetta (",
         {
           "type": "Strong",
           "content": [
@@ -10144,41 +10105,39 @@
             }
           ]
         },
-        "), suggesting that it retains a similar mechanism of action as ProTx-II and other published ProTx-II derivatives ",
+        "), suggesting that it retains a similar mechanism of action as ProTx-II and other published ProTx-II derivatives (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c31",
-              "content": [
-                "Flinspach et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c64",
-              "content": [
-                "Schmalhofer et al., 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c71",
-              "content": [
-                "Smith, Cummins, Alphy, & Blumenthal, 2007"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c80",
-              "content": [
-                "Xiao, Blumenthal, Jackson, Liang, & Cummins, 2010"
-              ]
-            }
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Flinspach et al., 2017"
           ]
         },
-        ". However, further improvement is needed for the optimized peptide selectivity for hNa",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c64",
+          "content": [
+            "Schmalhofer et al., 2008"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c71",
+          "content": [
+            "Smith, Cummins, Alphy, & Blumenthal, 2007"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c80",
+          "content": [
+            "Xiao, Blumenthal, Jackson, Liang, & Cummins, 2010"
+          ]
+        },
+        "). However, further improvement is needed for the optimized peptide selectivity for hNa",
         {
           "type": "Subscript",
           "content": [
@@ -10412,7 +10371,7 @@
             }
           ]
         },
-        ") could create an additional stabilizing effect. We selected the third most frequently observed amino acid at this position, Leu based on an experimental design protocol with the membrane scoring function ",
+        ") could create an additional stabilizing effect. We selected the third most frequently observed amino acid at this position, Leu based on an experimental design protocol with the membrane scoring function (",
         {
           "type": "Cite",
           "target": "c3",
@@ -10420,7 +10379,7 @@
             "Alford, Fleming, Fleming, & Gray, 2020"
           ]
         },
-        ". Lastly, we attempted to explore non-canonical amino acids at positions 27 and 29 to examine whether the selectivity of PTx2-3258 can be improved further given that these positions are near F813 (VSD-II). This resulted in the design of PTx2-3260 with 2,4-dimethyl-phenylalanine and tert-butyl-cysteine at positions 27 and 29, respectively."
+        "). Lastly, we attempted to explore non-canonical amino acids at positions 27 and 29 to examine whether the selectivity of PTx2-3258 can be improved further given that these positions are near F813 (VSD-II). This resulted in the design of PTx2-3260 with 2,4-dimethyl-phenylalanine and tert-butyl-cysteine at positions 27 and 29, respectively."
       ]
     },
     {
@@ -10689,54 +10648,46 @@
             "V"
           ]
         },
-        "1.7 is important for pain signaling in mice ",
+        "1.7 is important for pain signaling in mice (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c32",
-              "content": [
-                "Gingras et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c54",
-              "content": [
-                "Nassar et al., 2004"
-              ]
-            }
+          "type": "Cite",
+          "target": "c32",
+          "content": [
+            "Gingras et al., 2014"
           ]
         },
-        ". As mice are valuable preclinical models for therapeutic development it is important to know whether mouse endogenous Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c54",
+          "content": [
+            "Nassar et al., 2004"
+          ]
+        },
+        "). As mice are valuable preclinical models for therapeutic development it is important to know whether mouse endogenous Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 is responsive to any therapeutic candidate ",
+        "1.7 is responsive to any therapeutic candidate (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c6",
-              "content": [
-                "Beckley et al., 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c70",
-              "content": [
-                "Shiers, Klein, & Price, 2020"
-              ]
-            }
+          "type": "Cite",
+          "target": "c6",
+          "content": [
+            "Beckley et al., 2021"
           ]
         },
-        ". We studied the effects of PTx2-3127 on Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c70",
+          "content": [
+            "Shiers, Klein, & Price, 2020"
+          ]
+        },
+        "). We studied the effects of PTx2-3127 on Na",
         {
           "type": "Subscript",
           "content": [
@@ -10763,7 +10714,7 @@
             }
           ]
         },
-        " mice ",
+        " mice (",
         {
           "type": "Cite",
           "target": "c89",
@@ -10771,7 +10722,7 @@
             "Zylka, Rice, & Anderson, 2005"
           ]
         },
-        ". ",
+        "). ",
         {
           "type": "Emphasis",
           "content": [
@@ -10847,7 +10798,7 @@
             "V"
           ]
         },
-        "1.1) ",
+        "1.1) (",
         {
           "type": "Cite",
           "target": "c88",
@@ -10855,7 +10806,7 @@
             "Zheng et al., 2019"
           ]
         },
-        ". Presence of Na",
+        "). Presence of Na",
         {
           "type": "Subscript",
           "content": [
@@ -10921,7 +10872,7 @@
             "V"
           ]
         },
-        "1.7 localization to small, unmyelinated neurons ",
+        "1.7 localization to small, unmyelinated neurons (",
         {
           "type": "Cite",
           "target": "c11",
@@ -10929,7 +10880,7 @@
             "Black, Frezel, Dib-Hajj, & Waxman, 2012"
           ]
         },
-        ". Anti-Na",
+        "). Anti-Na",
         {
           "type": "Subscript",
           "content": [
@@ -11268,7 +11219,7 @@
             }
           ]
         },
-        " neurons ",
+        " neurons (",
         {
           "type": "Cite",
           "target": "c26",
@@ -11276,7 +11227,7 @@
             "Dussor, Zylka, Anderson, & McCleskey, 2008"
           ]
         },
-        ". Overall, the similar effects of either PTx2-3127 or TTX on Na",
+        "). Overall, the similar effects of either PTx2-3127 or TTX on Na",
         {
           "type": "Subscript",
           "content": [
@@ -11316,7 +11267,7 @@
             "V"
           ]
         },
-        "1.7, which is TTX-sensitive ",
+        "1.7, which is TTX-sensitive (",
         {
           "type": "Cite",
           "target": "c43",
@@ -11324,14 +11275,14 @@
             "Klugbauer, Lacinova, Flockerzi, & Hofmann, 1995"
           ]
         },
-        ", and have much lower transcript abundances of the other TTX-sensitive channels, Na",
+        "), and have much lower transcript abundances of the other TTX-sensitive channels, Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.1, 1.2, 1.3, 1.4, 1.6 ",
+        "1.1, 1.2, 1.3, 1.4, 1.6 (",
         {
           "type": "Cite",
           "target": "c88",
@@ -11339,7 +11290,7 @@
             "Zheng et al., 2019"
           ]
         },
-        ", we conclude that PTx2-3127 inhibits Na",
+        "), we conclude that PTx2-3127 inhibits Na",
         {
           "type": "Subscript",
           "content": [
@@ -11468,68 +11419,62 @@
     {
       "type": "Paragraph",
       "content": [
-        "We studied the effects of PTx2-3127 on the inhibition of single and multiple action potentials properties generated in adult human DRG neurons isolated from a human organ donor. The DRG neurons in culture were treated for 24 hrs with 50 μM oxaliplatin to model chemotherapy-induced neuropathy ",
+        "We studied the effects of PTx2-3127 on the inhibition of single and multiple action potentials properties generated in adult human DRG neurons isolated from a human organ donor. The DRG neurons in culture were treated for 24 hrs with 50 μM oxaliplatin to model chemotherapy-induced neuropathy (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c14",
-              "content": [
-                "Braden, Stratton, Salvemini, & Khanna, 2022"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "Chang et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Li et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "Braden, Stratton, Salvemini, & Khanna, 2022"
           ]
         },
-        ". We chose this model as it has been previously shown that pharmacological targeting of Na",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Chang et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Li et al., 2018"
+          ]
+        },
+        "). We chose this model as it has been previously shown that pharmacological targeting of Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        "1.7 reduces neuropathic pain in this model ",
+        "1.7 reduces neuropathic pain in this model (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "Chang et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c27",
-              "content": [
-                "Dustrude et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Li et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Chang et al., 2018"
           ]
         },
-        ". We found that rheobase increased with increasing concentrations of PTx2-3127 (",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c27",
+          "content": [
+            "Dustrude et al., 2016"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Li et al., 2018"
+          ]
+        },
+        "). We found that rheobase increased with increasing concentrations of PTx2-3127 (",
         {
           "type": "Strong",
           "content": [
@@ -11665,7 +11610,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "To study the efficacy of PTx2-3127 in animal models of pain, we tested it initially in naïve female and male rats to assess the thermal nociceptive responses and monitor open field activity. Whereas mouse sensory neurons are a useful model in vitro due to their genetic tractability, rats have been proposed to provide more reliable behavioral responses in pain models ",
+        "To study the efficacy of PTx2-3127 in animal models of pain, we tested it initially in naïve female and male rats to assess the thermal nociceptive responses and monitor open field activity. Whereas mouse sensory neurons are a useful model in vitro due to their genetic tractability, rats have been proposed to provide more reliable behavioral responses in pain models (",
         {
           "type": "Cite",
           "target": "c49",
@@ -11673,7 +11618,7 @@
             "Mogil, 2009"
           ]
         },
-        ". Doses were selected referencing the in vivo data available for ProTx-II. Merck’s study found that ProTx-II had a laming effect via intrathecal administration at 2.4 µg but no effect on nociceptive assays at 0.24 µg i.t. ",
+        "). Doses were selected referencing the in vivo data available for ProTx-II. Merck’s study found that ProTx-II had a laming effect via intrathecal administration at 2.4 µg but no effect on nociceptive assays at 0.24 µg i.t. (",
         {
           "type": "Cite",
           "target": "c64",
@@ -11681,7 +11626,7 @@
             "Schmalhofer et al., 2008"
           ]
         },
-        ". Janssen’s study reported that 2 µg of ProTx-II in 10 µL was the maximum tolerated dose in rats ",
+        "). Janssen’s study reported that 2 µg of ProTx-II in 10 µL was the maximum tolerated dose in rats (",
         {
           "type": "Cite",
           "target": "c31",
@@ -11689,7 +11634,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". Based on this information we chose a conservative dose of 1.2 and 1.6 µg in 10 µL for intrathecal administration to naïve rats. Intrathecal administration was performed via implanted cannulas which were surgically placed in the subarachnoid space of the spinal cord between L4 and L5. After recovery from surgery (∼7 days) the rats were assessed for gait and mobility prior to peptide dosing."
+        "). Based on this information we chose a conservative dose of 1.2 and 1.6 µg in 10 µL for intrathecal administration to naïve rats. Intrathecal administration was performed via implanted cannulas which were surgically placed in the subarachnoid space of the spinal cord between L4 and L5. After recovery from surgery (∼7 days) the rats were assessed for gait and mobility prior to peptide dosing."
       ]
     },
     {
@@ -11805,7 +11750,7 @@
             "V"
           ]
         },
-        "Ab chimera ",
+        "Ab chimera (",
         {
           "type": "Cite",
           "target": "c81",
@@ -11813,61 +11758,54 @@
             "Xu et al., 2019"
           ]
         },
-        ", and available experimental data on peptide – protein receptor interactions, such as studies by Amgen, Genentech, and Janssen in the case of ProTx-II ",
+        "), and available experimental data on peptide – protein receptor interactions, such as studies by Amgen, Genentech, and Janssen in the case of ProTx-II (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c31",
-              "content": [
-                "Flinspach et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Moyer et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c81",
-              "content": [
-                "Xu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Flinspach et al., 2017"
           ]
         },
-        ", provide essential data for the rational design of peptide-based therapeutics. Third, computational structural biology-based protein design using Rosetta allows rational exploration of peptide substitutions ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Moyer et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c81",
+          "content": [
+            "Xu et al., 2019"
+          ]
+        },
+        "), provide essential data for the rational design of peptide-based therapeutics. Third, computational structural biology-based protein design using Rosetta allows rational exploration of peptide substitutions ",
         {
           "type": "Emphasis",
           "content": [
             "in silico"
           ]
         },
-        " guided by high-resolution structures of peptide – protein receptor complexes ",
+        " guided by high-resolution structures of peptide – protein receptor complexes (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c7",
-              "content": [
-                "Bender et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c45",
-              "content": [
-                "Leman et al., 2020"
-              ]
-            }
+          "type": "Cite",
+          "target": "c7",
+          "content": [
+            "Bender et al., 2016"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c45",
+          "content": [
+            "Leman et al., 2020"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -11901,7 +11839,7 @@
             "V"
           ]
         },
-        "1.5) ",
+        "1.5) (",
         {
           "type": "Cite",
           "target": "c31",
@@ -11909,7 +11847,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". However, the in vivo safety window for JNJ63955018 peptide was only 7-16 fold ",
+        "). However, the in vivo safety window for JNJ63955018 peptide was only 7-16 fold (",
         {
           "type": "Cite",
           "target": "c31",
@@ -11917,7 +11855,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". Therefore, further improvement of in vitro selectivity for hNa",
+        "). Therefore, further improvement of in vitro selectivity for hNa",
         {
           "type": "Subscript",
           "content": [
@@ -11931,7 +11869,7 @@
             "V"
           ]
         },
-        " channels to achieve >1,000-fold is necessary to expand the in vivo safety window to at least 100-fold ",
+        " channels to achieve >1,000-fold is necessary to expand the in vivo safety window to at least 100-fold (",
         {
           "type": "Cite",
           "target": "c64",
@@ -11939,7 +11877,7 @@
             "Schmalhofer et al., 2008"
           ]
         },
-        ". Our structure-guided peptide optimization facilitated efficient identification of promising combinations of substitutions and tested only dozens of top candidates compared to the previous comprehensive mutagenesis efforts which synthesized and screened up to 1,500 peptide variants (Flinspach M et al., 2015; ",
+        "). Our structure-guided peptide optimization facilitated efficient identification of promising combinations of substitutions and tested only dozens of top candidates compared to the previous comprehensive mutagenesis efforts which synthesized and screened up to 1,500 peptide variants (Flinspach M et al., 2015; ",
         {
           "type": "Cite",
           "target": "c31",
@@ -11969,7 +11907,7 @@
             "V"
           ]
         },
-        " channels while preserving low nanomolar potency. Rosetta introduced substitutions of ProTx-II residues facing the membrane environment (Y1H), facing the protein-protein interface environment (M6norLeu), and facing the water-soluble environment (S11K and E12D). Rosetta also confirmed previously reported ProTx-II substitutions facing the membrane environment (Y1Q and W7Q, reported by Janssen ",
+        " channels while preserving low nanomolar potency. Rosetta introduced substitutions of ProTx-II residues facing the membrane environment (Y1H), facing the protein-protein interface environment (M6norLeu), and facing the water-soluble environment (S11K and E12D). Rosetta also confirmed previously reported ProTx-II substitutions facing the membrane environment (Y1Q and W7Q, reported by Janssen (",
         {
           "type": "Cite",
           "target": "c31",
@@ -11977,7 +11915,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        "), facing the protein core environment (M19L, reported by Janssen (Flinspach M et al., 2015; ",
+        ")), facing the protein core environment (M19L, reported by Janssen (Flinspach M et al., 2015; ",
         {
           "type": "Cite",
           "target": "c55",
@@ -11985,7 +11923,7 @@
             "Neff & Wickenden, 2021"
           ]
         },
-        ")), and facing the protein-protein interface environment (K28E, reported by Amgen ",
+        ")), and facing the protein-protein interface environment (K28E, reported by Amgen (",
         {
           "type": "Cite",
           "target": "c50",
@@ -11993,7 +11931,7 @@
             "Moyer et al., 2018"
           ]
         },
-        "). We designed a novel and extensive hydrogen-bonding network at the ProTx-II – hNa",
+        ")). We designed a novel and extensive hydrogen-bonding network at the ProTx-II – hNa",
         {
           "type": "Subscript",
           "content": [
@@ -12124,7 +12062,7 @@
             "V"
           ]
         },
-        "1.5, respectively. However, the potency and selectivity of our top peptides, PTx2-3127 and PTx2-3258, are superior to Janssen’s JNJ63955918 peptide ",
+        "1.5, respectively. However, the potency and selectivity of our top peptides, PTx2-3127 and PTx2-3258, are superior to Janssen’s JNJ63955918 peptide (",
         {
           "type": "Cite",
           "target": "c31",
@@ -12132,7 +12070,7 @@
             "Flinspach et al., 2017"
           ]
         },
-        ", underscoring the power of our structure-guided optimization approach."
+        "), underscoring the power of our structure-guided optimization approach."
       ]
     },
     {
@@ -12145,7 +12083,7 @@
             "V"
           ]
         },
-        " channels do not always share the same pharmacology as recombinantly expressed channels, which could result from differences due to endogenous auxiliary subunits, interacting partners, or posttranslational modifications in native cells absent in heterologous systems ",
+        " channels do not always share the same pharmacology as recombinantly expressed channels, which could result from differences due to endogenous auxiliary subunits, interacting partners, or posttranslational modifications in native cells absent in heterologous systems (",
         {
           "type": "Cite",
           "target": "c87",
@@ -12153,7 +12091,7 @@
             "Zhang et al., 2013"
           ]
         },
-        ". Here, we demonstrate the efficacy of PTx2-3127 in targeting endogenous Na",
+        "). Here, we demonstrate the efficacy of PTx2-3127 in targeting endogenous Na",
         {
           "type": "Subscript",
           "content": [
@@ -12205,7 +12143,7 @@
             "V"
           ]
         },
-        "1.7. PTx2-3127 also inhibits excitability and action potential firing in these neurons. These results suggest that mice have value as a preclinical model for developing PTx2 derivatives as pain therapeutics. Furthermore, in human DRG neurons treated with the chemotherapeutic oxaliplatin, PTx2-3127 also reduced neuronal excitability. Oxaliplatin is a chemotherapeutic agent commonly used to treat colorectal cancers ",
+        "1.7. PTx2-3127 also inhibits excitability and action potential firing in these neurons. These results suggest that mice have value as a preclinical model for developing PTx2 derivatives as pain therapeutics. Furthermore, in human DRG neurons treated with the chemotherapeutic oxaliplatin, PTx2-3127 also reduced neuronal excitability. Oxaliplatin is a chemotherapeutic agent commonly used to treat colorectal cancers (",
         {
           "type": "Cite",
           "target": "c34",
@@ -12213,7 +12151,7 @@
             "Graham, Mushin, & Kirkpatrick, 2004"
           ]
         },
-        " and is known to increase sensory neuron excitability to induce both neuropathic mechanical and cold allodynia. However, there is a debate regarding the mechanisms and Na",
+        ") and is known to increase sensory neuron excitability to induce both neuropathic mechanical and cold allodynia. However, there is a debate regarding the mechanisms and Na",
         {
           "type": "Subscript",
           "content": [
@@ -12241,7 +12179,7 @@
             "V"
           ]
         },
-        "1.7 channels and suggests engineered PTx2 variants have potential to suppress human nociception in the clinic. The dual efficacy of PTx2-3127 in murine and human DRG neurons also demonstrates the value of combining the genetic power of mouse models with the translational relevance of in vitro experiments on human DRG neurons to validate future PTx2 variants during the preclinical optimization ",
+        "1.7 channels and suggests engineered PTx2 variants have potential to suppress human nociception in the clinic. The dual efficacy of PTx2-3127 in murine and human DRG neurons also demonstrates the value of combining the genetic power of mouse models with the translational relevance of in vitro experiments on human DRG neurons to validate future PTx2 variants during the preclinical optimization (",
         {
           "type": "Cite",
           "target": "c70",
@@ -12249,7 +12187,7 @@
             "Shiers et al., 2020"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -12269,7 +12207,7 @@
             "V"
           ]
         },
-        "1.7 blocking approaches ",
+        "1.7 blocking approaches (",
         {
           "type": "Cite",
           "target": "c31",
@@ -12277,14 +12215,14 @@
             "Flinspach et al., 2017"
           ]
         },
-        ". Intrathecal administration of the peptide to otherwise naïve rats blocked pain sensitivity in the suprathreshold hotplate assay over a duration of several hours. After this hotplate assay rats were placed into an open field apparatus where the animals were ambulatory and explorative despite reaching a latency cutoff on the hotplate. The open field was not quantified in this setting because of the supra-stimulation of the hotplate assay directly preceding it. However, our observations correlate with published reports that Na",
+        "). Intrathecal administration of the peptide to otherwise naïve rats blocked pain sensitivity in the suprathreshold hotplate assay over a duration of several hours. After this hotplate assay rats were placed into an open field apparatus where the animals were ambulatory and explorative despite reaching a latency cutoff on the hotplate. The open field was not quantified in this setting because of the supra-stimulation of the hotplate assay directly preceding it. However, our observations correlate with published reports that Na",
         {
           "type": "Subscript",
           "content": [
             "V"
           ]
         },
-        " channel blockade in preclinical models parallels the human genetic mutant phenotype of pain insensitivity without motor function decrements ",
+        " channel blockade in preclinical models parallels the human genetic mutant phenotype of pain insensitivity without motor function decrements (",
         {
           "type": "Cite",
           "target": "c32",
@@ -12292,7 +12230,7 @@
             "Gingras et al., 2014"
           ]
         },
-        ". Importantly PTx2-3127 was also effective against CIPN-induced neuropathy with intrathecal administration (",
+        "). Importantly PTx2-3127 was also effective against CIPN-induced neuropathy with intrathecal administration (",
         {
           "type": "Strong",
           "content": [
@@ -12366,7 +12304,7 @@
             "V"
           ]
         },
-        "1.6 is needed to avoid affecting the function of motor neurons within a therapeutic concentration range ",
+        "1.6 is needed to avoid affecting the function of motor neurons within a therapeutic concentration range (",
         {
           "type": "Cite",
           "target": "c64",
@@ -12374,7 +12312,7 @@
             "Schmalhofer et al., 2008"
           ]
         },
-        ". Second, optimization of the duration of peptide efficacy in vivo beyond several hours will be necessary to prolong the therapeutic effect in the clinic, either through increasing stability or continuous administration via an intrathecal pump. Third, the development of peptide formulations will be useful to potentially enable peptide bioavailability through subcutaneous, intranasal or oral administration routes as are already in clinical use for GLP-1 (Glucagon-Like Peptide 1) receptor agonists ",
+        "). Second, optimization of the duration of peptide efficacy in vivo beyond several hours will be necessary to prolong the therapeutic effect in the clinic, either through increasing stability or continuous administration via an intrathecal pump. Third, the development of peptide formulations will be useful to potentially enable peptide bioavailability through subcutaneous, intranasal or oral administration routes as are already in clinical use for GLP-1 (Glucagon-Like Peptide 1) receptor agonists (",
         {
           "type": "Cite",
           "target": "c25",
@@ -12382,7 +12320,7 @@
             "Drucker, 2020"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -12433,7 +12371,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We ran a molecular dynamics simulation of the cryo-EM structure of NavAb/Nav1.7 in a complex with ProTx-II in a deactivated state (PDB ID: 6N4R) ",
+        "We ran a molecular dynamics simulation of the cryo-EM structure of NavAb/Nav1.7 in a complex with ProTx-II in a deactivated state (PDB ID: 6N4R) (",
         {
           "type": "Cite",
           "target": "c81",
@@ -12441,7 +12379,7 @@
             "Xu et al., 2019"
           ]
         },
-        " to obtain a closer look at the interaction of ProTx-II with lipid membrane at the residue level. CHARMM-GUI ",
+        ") to obtain a closer look at the interaction of ProTx-II with lipid membrane at the residue level. CHARMM-GUI (",
         {
           "type": "Cite",
           "target": "c40",
@@ -12449,7 +12387,7 @@
             "Jo, Kim, Iyer, & Im, 2008"
           ]
         },
-        " was used to embed the structure in a lipid bilayer of POPC with explicit TIP3P water molecules at a concentration of 150 mM NaCl. The system contained approximately 90,000 atoms and was parametrized with the CHARMM36 forcefield ",
+        ") was used to embed the structure in a lipid bilayer of POPC with explicit TIP3P water molecules at a concentration of 150 mM NaCl. The system contained approximately 90,000 atoms and was parametrized with the CHARMM36 forcefield (",
         {
           "type": "Cite",
           "target": "c36",
@@ -12457,7 +12395,7 @@
             "Huang & MacKerell, 2013"
           ]
         },
-        ". Neutral pH was used to assign the protonation state as default, and the C-terminal of ProTx-II is in the amidated form. The simulation was run on our local GPU cluster using NAMD version 2.12 ",
+        "). Neutral pH was used to assign the protonation state as default, and the C-terminal of ProTx-II is in the amidated form. The simulation was run on our local GPU cluster using NAMD version 2.12 (",
         {
           "type": "Cite",
           "target": "c39",
@@ -12465,7 +12403,7 @@
             "Jiang et al., 2011"
           ]
         },
-        ". After 10,000 steps of steepest descent minimization, 1 fs timestep equilibrations were started with harmonic restraints initially applied to protein-heavy atoms and lipid tail dihedral angles as suggested by CHARMM-GUI ",
+        "). After 10,000 steps of steepest descent minimization, 1 fs timestep equilibrations were started with harmonic restraints initially applied to protein-heavy atoms and lipid tail dihedral angles as suggested by CHARMM-GUI (",
         {
           "type": "Cite",
           "target": "c40",
@@ -12473,14 +12411,14 @@
             "Jo et al., 2008"
           ]
         },
-        ". These restraints were gradually released over 2 ns. Harmonic restraints (0.1 kcal/mol/Å",
+        "). These restraints were gradually released over 2 ns. Harmonic restraints (0.1 kcal/mol/Å",
         {
           "type": "Superscript",
           "content": [
             "2"
           ]
         },
-        ") were applied only to protein backbone heavy atoms. The systems were equilibrated further for 20 ns using 2 fs timestep with all bonds to hydrogen atoms constrained by the SHAKE algorithm ",
+        ") were applied only to protein backbone heavy atoms. The systems were equilibrated further for 20 ns using 2 fs timestep with all bonds to hydrogen atoms constrained by the SHAKE algorithm (",
         {
           "type": "Cite",
           "target": "c63",
@@ -12488,13 +12426,13 @@
             "Ryckaert, Ciccotti, & Berendsen, 1977"
           ]
         },
-        ". The equilibrations were performed in NPT ensemble with semi-isotropic pressure coupling to maintain the correct area per lipid, and a constant temperature of 303.15 K. Particle Mesh Ewald (PME) method was used to compute electrostatic interactions. Non-bonded pair lists were updated every 10 steps with a list cutoff distance of 16 Å and a real space cutoff of 12 Å with energy switching starting at 10 Å. The production run was conducted for 100 ns without applied protein backbone restraints."
+        "). The equilibrations were performed in NPT ensemble with semi-isotropic pressure coupling to maintain the correct area per lipid, and a constant temperature of 303.15 K. Particle Mesh Ewald (PME) method was used to compute electrostatic interactions. Non-bonded pair lists were updated every 10 steps with a list cutoff distance of 16 Å and a real space cutoff of 12 Å with energy switching starting at 10 Å. The production run was conducted for 100 ns without applied protein backbone restraints."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "We analyzed the 100 ns simulation for interactions of ProTx-II residues with the surrounding environment, categorized into different groups: lipid head, lipid tail, water and VSDII (hNav1.7/NavAb chimera structure (PDB ID: 6N4R) ",
+        "We analyzed the 100 ns simulation for interactions of ProTx-II residues with the surrounding environment, categorized into different groups: lipid head, lipid tail, water and VSDII (hNav1.7/NavAb chimera structure (PDB ID: 6N4R) (",
         {
           "type": "Cite",
           "target": "c81",
@@ -12502,7 +12440,7 @@
             "Xu et al., 2019"
           ]
         },
-        "). Fractional contact is defined as the frequency of forming contact (3.5 Å as a cutoff) of heavy atoms belonging to the associated groups normalized over the course of simulation and across interacting chains, A-E, B-F, C-G, D-H of the structure."
+        ")). Fractional contact is defined as the frequency of forming contact (3.5 Å as a cutoff) of heavy atoms belonging to the associated groups normalized over the course of simulation and across interacting chains, A-E, B-F, C-G, D-H of the structure."
       ]
     },
     {
@@ -12516,7 +12454,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "First, the cryo-EM structure of ProTx-II in complex with hNav1.7/NavAb in a deactivated state (PDB ID: 6N4R) was further refined in Rosetta ",
+        "First, the cryo-EM structure of ProTx-II in complex with hNav1.7/NavAb in a deactivated state (PDB ID: 6N4R) was further refined in Rosetta (",
         {
           "type": "Cite",
           "target": "c45",
@@ -12524,13 +12462,13 @@
             "Leman et al., 2020"
           ]
         },
-        " using Rosetta cryo-EM refinement protocol (Wang et al., 2016) (see the Methods section below entitled “Rosetta Scripts for refinement of ProTx-II - hNav1.7/NavAb complex”). We generated 1,000 refined models and extracted the top 10 scoring models for visual inspection. We carefully examined how well ProTx-II fits into the electron density across multiple interacting chains A-E, B-F, C-G, and D-H of the top models and eventually selected chain A-E for the subsequent modeling."
+        ") using Rosetta cryo-EM refinement protocol (Wang et al., 2016) (see the Methods section below entitled “Rosetta Scripts for refinement of ProTx-II - hNav1.7/NavAb complex”). We generated 1,000 refined models and extracted the top 10 scoring models for visual inspection. We carefully examined how well ProTx-II fits into the electron density across multiple interacting chains A-E, B-F, C-G, and D-H of the top models and eventually selected chain A-E for the subsequent modeling."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Rosetta FastDesign ",
+        "Rosetta FastDesign (",
         {
           "type": "Cite",
           "target": "c48",
@@ -12538,7 +12476,7 @@
             "Maguire et al., 2021"
           ]
         },
-        " was used to introduce ProTx-II substitutions and design new peptide variants. A small deviation of backbone conformation is inherently sampled in FastDesign by ramping cycles of reduced repulsive forces. We seek to sample higher degrees of backbone flexibility during the design process by further incorporating Rosetta Small mover and Roll mover. Small mover performs small random changes in the backbone torsional space while Roll mover invokes small rigid body perturbation between ProTx-II and VSD-II. Both movers were implemented in Rosetta XML scripts prior to the FastDesign mover (see XML scripts in the Methods section below entitled “Rosetta Scripts for refinement of ProTx-II - hNav1.7/NavAb complex”)."
+        ") was used to introduce ProTx-II substitutions and design new peptide variants. A small deviation of backbone conformation is inherently sampled in FastDesign by ramping cycles of reduced repulsive forces. We seek to sample higher degrees of backbone flexibility during the design process by further incorporating Rosetta Small mover and Roll mover. Small mover performs small random changes in the backbone torsional space while Roll mover invokes small rigid body perturbation between ProTx-II and VSD-II. Both movers were implemented in Rosetta XML scripts prior to the FastDesign mover (see XML scripts in the Methods section below entitled “Rosetta Scripts for refinement of ProTx-II - hNav1.7/NavAb complex”)."
       ]
     },
     {

@@ -104,59 +104,59 @@
     <body>
         <sec>
             <title>Introduction</title>
-            <p>Animal behaviors are both stereotyped and variable: they are constrained at short time scale to a finite motor repertoire while the long-term sequence of successive motor actions displays apparent stochasticity. This dual characteristic is immediately visible in the locomotion of small animals such as Nematodes (
-                <xref rid="bib49" ref-type="bibr">Stephens et al., 2008</xref>), Zebrafish (
-                <xref rid="bib22" ref-type="bibr">Girdhar et al., 2015</xref>) or 
-                <italic>Drosophila</italic> larvae (
-                <xref rid="bib24" ref-type="bibr">Gomez-Marin and Louis, 2012</xref>), which consists of just a few stereotyped maneuvers executed in a sequential way. In this case, behavior is best described as a set of statistical rules that defines how these elemental motor actions are chained. In the presence of sensory cues, two types of behavioral responses can be distinguished. If they signal an immediate threat or reward (e.g. the presence of a predator or a prey), they may elicit a discrete behavioral switch as the animal engages in a specialized motor program (e.g. escape or hunt, (
+            <p>Animal behaviors are both stereotyped and variable: they are constrained at short time scale to a finite motor repertoire while the long-term sequence of successive motor actions displays apparent stochasticity. This dual characteristic is immediately visible in the locomotion of small animals such as Nematodes ((
+                <xref rid="bib49" ref-type="bibr">Stephens et al., 2008</xref>)), Zebrafish ((
+                <xref rid="bib22" ref-type="bibr">Girdhar et al., 2015</xref>)) or 
+                <italic>Drosophila</italic> larvae ((
+                <xref rid="bib24" ref-type="bibr">Gomez-Marin and Louis, 2012</xref>)), which consists of just a few stereotyped maneuvers executed in a sequential way. In this case, behavior is best described as a set of statistical rules that defines how these elemental motor actions are chained. In the presence of sensory cues, two types of behavioral responses can be distinguished. If they signal an immediate threat or reward (e.g. the presence of a predator or a prey), they may elicit a discrete behavioral switch as the animal engages in a specialized motor program (e.g. escape or hunt, (
                 <xref rid="bib8" ref-type="bibr">Budick and O’Malley, 2000</xref>); (
                 <xref rid="bib19" ref-type="bibr">Fiser et al., 2004</xref>); (
                 <xref rid="bib5" ref-type="bibr">Bianco et al., 2011</xref>); (
                 <xref rid="bib38" ref-type="bibr">McClenahan et al., 2012</xref>); (
-                <xref rid="bib6" ref-type="bibr">Bianco and Engert, 2015</xref>)). However, most of the time, sensory cues merely reflect changes in external factors as the animal navigates through a complex environment. These weak motor-related cues interfere with the innate motor program to cumulatively promote the exploration of regions that are more favorable for the animal (
-                <xref rid="bib51" ref-type="bibr">Tsodyks et al., 1999</xref>; 
-                <xref rid="bib19" ref-type="bibr">Fiser et al., 2004</xref>).
+                <xref rid="bib6" ref-type="bibr">Bianco and Engert, 2015</xref>)). However, most of the time, sensory cues merely reflect changes in external factors as the animal navigates through a complex environment. These weak motor-related cues interfere with the innate motor program to cumulatively promote the exploration of regions that are more favorable for the animal ((
+                <xref rid="bib51" ref-type="bibr">Tsodyks et al., 1999</xref>); (
+                <xref rid="bib19" ref-type="bibr">Fiser et al., 2004</xref>)).
             </p>
             <p>A quantification of sensory-biased locomotion thus requires to first categorize the possible movements, and then to evaluate the statistical rules that relate the selection of these different actions to the sensory and motor history. Although the probabilistic nature of these rules generally precludes a deterministic prediction of the animal’s trajectory, they may still provide a quantification of the probability distribution of presence within a given environment after a given exploration time.</p>
-            <p>In physics terms, the animal can thus be described as a random walker, whose transition probabilities are a function of the sensory inputs. This statistical approach was originally introduced to analyze bacteria chemotaxis (
-                <xref rid="bib32" ref-type="bibr">Lovely and Dahlquist, 1975</xref>). Motile bacteria navigate by alternating straight swimming and turning phases, so-called runs and tumbles, resulting in trajectories akin to random walks (
-                <xref rid="bib4" ref-type="bibr">Berg and Brown, 1972</xref>). Chemotaxis originates from a chemical-driven modulation of the transition probability from run to tumble: the transition rate is governed by the time-history of chemical sensing. How this dependency is optimized to enhance gradient-climbing has been the subject of extensive literature (
-                <xref rid="bib33" ref-type="bibr">Macnab and Koshland, 1972</xref>; 
-                <xref rid="bib1" ref-type="bibr">Adler and Tso, 1974</xref>; 
-                <xref rid="bib39" ref-type="bibr">Mello and Tu, 2007</xref>; 
-                <xref rid="bib59" ref-type="bibr">Yuan et al., 2010</xref>; 
-                <xref rid="bib11" ref-type="bibr">Celani and Vergassola, 2010</xref>). More recently, similar descriptions have been successfully used to quantify chemotaxis and phototaxis in multicellular organisms such as 
-                <italic>Caenorhabditis elegans</italic> (
-                <xref rid="bib56" ref-type="bibr">Ward, 1973</xref>; 
-                <xref rid="bib40" ref-type="bibr">Miller et al., 2005</xref>; 
-                <xref rid="bib57" ref-type="bibr">Ward et al., 2008</xref>), Drosophila larva (
-                <xref rid="bib45" ref-type="bibr">Sawin et al., 1994</xref>; 
-                <xref rid="bib28" ref-type="bibr">Kane et al., 2013</xref>; 
-                <xref rid="bib23" ref-type="bibr">Gomez-Marin et al., 2011</xref>; 
-                <xref rid="bib50" ref-type="bibr">Tastekin et al., 2018</xref>) or different types of slugs (
-                <xref rid="bib36" ref-type="bibr">Matsuo et al., 2014</xref>; 
-                <xref rid="bib34" ref-type="bibr">Marée et al., 1999</xref>). Although the sensorimotor apparatus of these animals are very different, the taxis strategies at play appear to be convergent and can be classified based on the gradient-sensing methods (
-                <xref rid="bib20" ref-type="bibr">Fraenkel and Gunn, 1961</xref>; 
-                <xref rid="bib24" ref-type="bibr">Gomez-Marin and Louis, 2012</xref>). Tropotaxis refers to strategies in which the organism directly and instantaneously infers the stimulus direction by comparison between two spatially distinct sensory receptors. In contrast, during klinotaxis, the sensory gradient is inferred from successive samplings at different spatial positions. This second strategy is particularly adapted when the organism has only one receptor, or if the sensory gradient across the animal’s body is too small to be detected (
-                <xref rid="bib26" ref-type="bibr">Humberg et al., 2018</xref>). It requires at least a basic form of memory, since the sensory information needs to be retained for some finite period of time.
+            <p>In physics terms, the animal can thus be described as a random walker, whose transition probabilities are a function of the sensory inputs. This statistical approach was originally introduced to analyze bacteria chemotaxis ((
+                <xref rid="bib32" ref-type="bibr">Lovely and Dahlquist, 1975</xref>)). Motile bacteria navigate by alternating straight swimming and turning phases, so-called runs and tumbles, resulting in trajectories akin to random walks ((
+                <xref rid="bib4" ref-type="bibr">Berg and Brown, 1972</xref>)). Chemotaxis originates from a chemical-driven modulation of the transition probability from run to tumble: the transition rate is governed by the time-history of chemical sensing. How this dependency is optimized to enhance gradient-climbing has been the subject of extensive literature ((
+                <xref rid="bib33" ref-type="bibr">Macnab and Koshland, 1972</xref>); (
+                <xref rid="bib1" ref-type="bibr">Adler and Tso, 1974</xref>); (
+                <xref rid="bib39" ref-type="bibr">Mello and Tu, 2007</xref>); (
+                <xref rid="bib59" ref-type="bibr">Yuan et al., 2010</xref>); (
+                <xref rid="bib11" ref-type="bibr">Celani and Vergassola, 2010</xref>)). More recently, similar descriptions have been successfully used to quantify chemotaxis and phototaxis in multicellular organisms such as 
+                <italic>Caenorhabditis elegans</italic> ((
+                <xref rid="bib56" ref-type="bibr">Ward, 1973</xref>); (
+                <xref rid="bib40" ref-type="bibr">Miller et al., 2005</xref>); (
+                <xref rid="bib57" ref-type="bibr">Ward et al., 2008</xref>)), Drosophila larva ((
+                <xref rid="bib45" ref-type="bibr">Sawin et al., 1994</xref>); (
+                <xref rid="bib28" ref-type="bibr">Kane et al., 2013</xref>); (
+                <xref rid="bib23" ref-type="bibr">Gomez-Marin et al., 2011</xref>); (
+                <xref rid="bib50" ref-type="bibr">Tastekin et al., 2018</xref>)) or different types of slugs ((
+                <xref rid="bib36" ref-type="bibr">Matsuo et al., 2014</xref>); (
+                <xref rid="bib34" ref-type="bibr">Marée et al., 1999</xref>)). Although the sensorimotor apparatus of these animals are very different, the taxis strategies at play appear to be convergent and can be classified based on the gradient-sensing methods ((
+                <xref rid="bib20" ref-type="bibr">Fraenkel and Gunn, 1961</xref>); (
+                <xref rid="bib24" ref-type="bibr">Gomez-Marin and Louis, 2012</xref>)). Tropotaxis refers to strategies in which the organism directly and instantaneously infers the stimulus direction by comparison between two spatially distinct sensory receptors. In contrast, during klinotaxis, the sensory gradient is inferred from successive samplings at different spatial positions. This second strategy is particularly adapted when the organism has only one receptor, or if the sensory gradient across the animal’s body is too small to be detected ((
+                <xref rid="bib26" ref-type="bibr">Humberg et al., 2018</xref>)). It requires at least a basic form of memory, since the sensory information needs to be retained for some finite period of time.
             </p>
-            <p>In the present work, we implement such a framework to produce a comprehensive statistical model of phototaxis in zebrafish larvae. Zebrafish larva is currently the only vertebrate system that allows in vivo whole-brain functional imaging at cellular resolution (
-                <xref rid="bib43" ref-type="bibr">Panier et al., 2013</xref>; 
-                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>). It thus provides a unique opportunity to study how sensorimotor tasks, such as sensory-driven locomotion, are implemented at the brain-scale level.
+            <p>In the present work, we implement such a framework to produce a comprehensive statistical model of phototaxis in zebrafish larvae. Zebrafish larva is currently the only vertebrate system that allows in vivo whole-brain functional imaging at cellular resolution ((
+                <xref rid="bib43" ref-type="bibr">Panier et al., 2013</xref>); (
+                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>)). It thus provides a unique opportunity to study how sensorimotor tasks, such as sensory-driven locomotion, are implemented at the brain-scale level.
             </p>
             <p>Although adult zebrafish are generally photophobic (or scototactic, (
                 <xref rid="bib46" ref-type="bibr">Serra et al., 1999</xref>); (
-                <xref rid="bib37" ref-type="bibr">Maximino et al., 2007</xref>)), they display positive phototaxis at the larval stage, from 5 days post-fertilization (dpf) on (
-                <xref rid="bib42" ref-type="bibr">Orger and Baier, 2005</xref>). At this early stage, their locomotion consists of a series of discrete swimming events interspersed by ~1 s long periods of inactivity (
-                <xref rid="bib22" ref-type="bibr">Girdhar et al., 2015</xref>). Previous studies have shown that, when exposed to a distant light source, the first bouts executed by the fish tend to be orientated in the direction of the source (tropotaxis) (
-                <xref rid="bib9" ref-type="bibr">Burgess et al., 2010</xref>). Furthermore, (
+                <xref rid="bib37" ref-type="bibr">Maximino et al., 2007</xref>)), they display positive phototaxis at the larval stage, from 5 days post-fertilization (dpf) on ((
+                <xref rid="bib42" ref-type="bibr">Orger and Baier, 2005</xref>)). At this early stage, their locomotion consists of a series of discrete swimming events interspersed by ~1 s long periods of inactivity ((
+                <xref rid="bib22" ref-type="bibr">Girdhar et al., 2015</xref>)). Previous studies have shown that, when exposed to a distant light source, the first bouts executed by the fish tend to be orientated in the direction of the source (tropotaxis) ((
+                <xref rid="bib9" ref-type="bibr">Burgess et al., 2010</xref>)). Furthermore, (
                 <xref rid="bib12" ref-type="bibr">Chen and Engert, 2014</xref>) have shown, using a virtual reality assay, that zebrafish are able to confine their navigation within a bright region in an otherwise dark environment even when deprived from stereovisual contrast information. This latter study thus established that their phototactic behavior also involves a spatio-temporal integration mechanism (klinotaxis).
             </p>
-            <p>From a neuronal viewpoint, recent calcium imaging experiments identified a small circuit in the rostral hindbrain that plays a key role in phototaxis (
-                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>; 
-                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>; 
-                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>). This region, called ARTR (anterior rhombencephalic turning region) or HBO (hindbrain oscillator), displays pseudo-periodic antiphasic oscillations, such that the activity of the left and right subpopulations alternate with a ~20 s period. This alternation was shown to set the coordinated direction of the gaze and tail bout orientation, thus effectively organizing the temporal sequence of the successive reorientations. It was further shown that this circuit oscillation could be driven by whole-field illumination of the ipsilateral eye, such as to favor the animal’s orientation towards a light source (
-                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>).
+            <p>From a neuronal viewpoint, recent calcium imaging experiments identified a small circuit in the rostral hindbrain that plays a key role in phototaxis ((
+                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>); (
+                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>); (
+                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>)). This region, called ARTR (anterior rhombencephalic turning region) or HBO (hindbrain oscillator), displays pseudo-periodic antiphasic oscillations, such that the activity of the left and right subpopulations alternate with a ~20 s period. This alternation was shown to set the coordinated direction of the gaze and tail bout orientation, thus effectively organizing the temporal sequence of the successive reorientations. It was further shown that this circuit oscillation could be driven by whole-field illumination of the ipsilateral eye, such as to favor the animal’s orientation towards a light source ((
+                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>)).
             </p>
             <p>In the present study, we aim at quantifying the statistical rules that control the larva’s reorientation dynamics in the presence of a continuous angular gradient of illumination (orientational phototaxis). Using a virtual-reality closed-loop assay, we quantify how swim bouts selection is statistically controlled by the light intensity received on both eyes prior to the bout initiation, or the change in illumination elicited by the previous swim bout. Our experimental configuration allows us to disentangle the contribution of the two aforementioned strategies: tropotaxis and klinotaxis. From the analysis of this short-term behavior, we built a minimal Markov model of phototaxis, from which we compute the long-term distribution of orientations for any angular profile of illumination. This model offers explicit predictions of the statistics of the fish orientation that quantitatively compare with the experimental observations. We further expand on a recent rate model of the ARTR circuit to propose a functional neuronal model of spontaneous navigation and contrast-biased orientation selection. We demonstrate that the statistics of turn orientation can be fully understood by assuming that this self-oscillating circuitry, that selects the orientation of turning bouts, integrates stereovisual contrast in the form of incoming currents proportional to the visual stimulus.</p>
         </sec>
@@ -446,8 +446,8 @@
                             </mml:mrow>
                         </mml:mrow>
                     </mml:math>
-                </inline-formula>. Such pre-conditioning phases were used to promote light-seeking behavior (
-                <xref rid="bib10" ref-type="bibr">Burgess and Granato, 2007</xref>), while enabling the quantification of the basal exploratory kinematics for each fish.
+                </inline-formula>. Such pre-conditioning phases were used to promote light-seeking behavior ((
+                <xref rid="bib10" ref-type="bibr">Burgess and Granato, 2007</xref>)), while enabling the quantification of the basal exploratory kinematics for each fish.
             </p>
             <p>Larval zebrafish navigation is comprised of discrete swim bouts lasting 
                 <inline-formula>
@@ -472,8 +472,8 @@
                             <mml:mi>n</mml:mi>
                         </mml:msub>
                     </mml:math>
-                </inline-formula>) during which the fish remains still (
-                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>). Each bout results in a translational motion of the animal and/or a change in its body axis orientation, and can thus be automatically detected from kinematic parameters. As we are mostly interested in the orientational dynamics, we extracted a discrete sequence of orientations 
+                </inline-formula>) during which the fish remains still ((
+                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>)). Each bout results in a translational motion of the animal and/or a change in its body axis orientation, and can thus be automatically detected from kinematic parameters. As we are mostly interested in the orientational dynamics, we extracted a discrete sequence of orientations 
                 <inline-formula>
                     <mml:math id="inf26">
                         <mml:msub>
@@ -519,8 +519,8 @@
                     </mml:math>
                 </inline-formula>.
             </p>
-            <p>Although the complete swim bouts repertoire of zebrafish larvae is rich and complex (
-                <xref rid="bib27" ref-type="bibr">Johnson et al., 2019</xref>), the statistical distribution of the reorientation angles 
+            <p>Although the complete swim bouts repertoire of zebrafish larvae is rich and complex ((
+                <xref rid="bib27" ref-type="bibr">Johnson et al., 2019</xref>)), the statistical distribution of the reorientation angles 
                 <inline-formula>
                     <mml:math id="inf29">
                         <mml:mrow>
@@ -846,9 +846,9 @@
                     </mml:math>
                 </inline-formula>. We checked, using numerical simulations, that this simplifying assumption has no significant impact on the long-term navigational dynamics: the results presented in the following, notably the diffusion coefficient, remain essentially unchanged when this small correlation in bout type selection is taken into account.
             </p>
-            <p>In line with previous observations (
-                <xref rid="bib12" ref-type="bibr">Chen and Engert, 2014</xref>; 
-                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>), we also noticed that successive turning bouts tended to be oriented in the same (left or right) direction (
+            <p>In line with previous observations ((
+                <xref rid="bib12" ref-type="bibr">Chen and Engert, 2014</xref>); (
+                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>)), we also noticed that successive turning bouts tended to be oriented in the same (left or right) direction (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1G</ext-link>). This orientational motor persistence was accounted for by a second Markov chain that set the orientation of turning bouts, and was controlled by the rate of flipping direction noted 
                 <inline-formula>
                     <mml:math id="inf39">
@@ -2238,8 +2238,8 @@
                         </mml:mrow>
                     </mml:math>
                 </inline-formula>, all curves collapse (
-                <ext-link ext-link-type="uri" xlink:href="#fig3s1">Figure 3—figure supplement 1</ext-link>). This observation is in line with the Weber-Fechner law (
-                <xref rid="bib17" ref-type="bibr">Fechner, 1860</xref>), which states that the perceived change scales with the relative change in the physical stimulus. One noticeable feature of this process is that the modulation of the turning amplitude is limited to illumination 
+                <ext-link ext-link-type="uri" xlink:href="#fig3s1">Figure 3—figure supplement 1</ext-link>). This observation is in line with the Weber-Fechner law ((
+                <xref rid="bib17" ref-type="bibr">Fechner, 1860</xref>)), which states that the perceived change scales with the relative change in the physical stimulus. One noticeable feature of this process is that the modulation of the turning amplitude is limited to illumination 
                 <italic>decrement</italic> (i.e. negative values of 
                 <inline-formula>
                     <mml:math id="inf124">
@@ -2253,8 +2253,8 @@
                             <mml:mi>I</mml:mi>
                         </mml:mrow>
                     </mml:math>
-                </inline-formula>). In the terminology of bacterial chemotaxis (
-                <xref rid="bib41" ref-type="bibr">Oliveira et al., 2016</xref>), the zebrafish larva can thus be considered as a 'pessimistic’ phototactic animal: the orientational diffusivity increases in response to a decrease in illumination (corresponding to a negative subjective value), whereas its exploratory kinematics remain unchanged upon an increase of illumination (positive subjective value).
+                </inline-formula>). In the terminology of bacterial chemotaxis ((
+                <xref rid="bib41" ref-type="bibr">Oliveira et al., 2016</xref>)), the zebrafish larva can thus be considered as a 'pessimistic’ phototactic animal: the orientational diffusivity increases in response to a decrease in illumination (corresponding to a negative subjective value), whereas its exploratory kinematics remain unchanged upon an increase of illumination (positive subjective value).
             </p>
             <p>Two kinematic parameters can possibly impact the orientational diffusivity: the fraction of turning bouts 
                 <inline-formula>
@@ -2304,8 +2304,8 @@
                 </inline-formula> (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3H–I</ext-link>). They appear to equally contribute to the observed modulation.
             </p>
-            <p>To test whether this uniform phototactic process has a retinal origin, or whether it might be mediated by non-visual deep-brain phototreceptors (
-                <xref rid="bib18" ref-type="bibr">Fernandes et al., 2012</xref>), we ran similar assays on bi-enucleated fish. In this condition, no orientational bias was observed, which indicates that the retinal pathway is involved in orientational klinotaxis 
+            <p>To test whether this uniform phototactic process has a retinal origin, or whether it might be mediated by non-visual deep-brain phototreceptors ((
+                <xref rid="bib18" ref-type="bibr">Fernandes et al., 2012</xref>)), we ran similar assays on bi-enucleated fish. In this condition, no orientational bias was observed, which indicates that the retinal pathway is involved in orientational klinotaxis 
                 <ext-link ext-link-type="uri" xlink:href="#fig3s2">Figure 3—figure supplement 2</ext-link>, all p-values &gt; 0.14, pairwise 
                 <inline-formula>
                     <mml:math id="inf128">
@@ -2673,10 +2673,10 @@
                 <italic>vs</italic> turning events, while a second one selects the left 
                 <italic>vs</italic> right orientation of the turning bouts. These two processes are independently modulated by two distinct features of the visual stimulus, namely the global intensity changes and the stereo-visual contrast, leading to the two phototactic strategies.
             </p>
-            <p>This in turn suggests that, at the neuronal level, two independent circuits may control these characteristics of the executed swim bouts. As mentioned in the introduction, the ARTR is a natural candidate for the neuronal selection of bouts orientation. This small bilaterally-distributed circuit located in the anterior hindbrain displays antiphasic activity oscillation with ~ 20s period (
-                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>). The currently active region (left or right) constitutes a strong predictor of the orientation of turning bouts (
-                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>). This circuit further integrates visual inputs as each ARTR subpopulation responds to the stimulation of the ipsilateral eye (
-                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>).
+            <p>This in turn suggests that, at the neuronal level, two independent circuits may control these characteristics of the executed swim bouts. As mentioned in the introduction, the ARTR is a natural candidate for the neuronal selection of bouts orientation. This small bilaterally-distributed circuit located in the anterior hindbrain displays antiphasic activity oscillation with ~ 20s period ((
+                <xref rid="bib2" ref-type="bibr">Ahrens et al., 2013</xref>)). The currently active region (left or right) constitutes a strong predictor of the orientation of turning bouts ((
+                <xref rid="bib13" ref-type="bibr">Dunn et al., 2016</xref>)). This circuit further integrates visual inputs as each ARTR subpopulation responds to the stimulation of the ipsilateral eye ((
+                <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>)).
             </p>
             <p>Here, we adapted a minimal neuronal model of the ARTR, introduced in (
                 <xref rid="bib58" ref-type="bibr">Wolf et al., 2017</xref>) to interpret the calcium recordings, and tested whether it could explain the observed statistics of exploration in both spontaneous and phototactic conditions. The architecture of the model is depicted in 
@@ -2945,18 +2945,18 @@
         <sec>
             <title>Discussion</title>
             <p>Sensorimotor transformation can be viewed as an operation of massive dimensionality reduction, in which a continuous stream of sensory and motor-related signals is converted into a discrete series of stereotyped motor actions. The challenge in understanding this process is (i) to correctly categorize the motor events, that is to reveal the correct parametrization of the motor repertoire, and (ii) to unveil the statistical rules for action selection. Testing the validity of such description can be done by building a minimal model based on these rules. If the model is correct, the motor variability unaccounted for by the model should be entirely random, that is independent of the sensorimotor history.</p>
-            <p>Here, we implemented a minimal model approach in order to unveil the basic rules underlying phototaxis. We showed that zebrafish light-driven orientational navigation can be quantitatively described by a stochastic model consisting of two independent Markov chains: one that selects forward scoots vs turning bouts and a second one that sets the orientation of the latter. We established that the stereo-visual contrast and global intensity modulation act separately on each of these selection processes. The contrast induces a directed bias of turning bouts toward the illuminated side, but does not impact the prevalence of turning bouts vs forward scoots. Reversely, a global decrement in illumination increases the ratio of turning bouts but does not favor any particular direction. For the contrast-driven configuration (tropotaxis), the minimal model corresponds to an Ornstein-Uhlenbeck process (
-                <xref rid="bib52" ref-type="bibr">Uhlenbeck and Ornstein, 1930</xref>), which describes the dynamics of a diffusive brownian particle in a quadratic trap. In the klinotaxis configuration (in the absence of stereo-visual contrast), the orientational bias solely results from a light-dependent modulation of the diffusivity, a mechanism reminiscent of bacterial chemotaxis.
+            <p>Here, we implemented a minimal model approach in order to unveil the basic rules underlying phototaxis. We showed that zebrafish light-driven orientational navigation can be quantitatively described by a stochastic model consisting of two independent Markov chains: one that selects forward scoots vs turning bouts and a second one that sets the orientation of the latter. We established that the stereo-visual contrast and global intensity modulation act separately on each of these selection processes. The contrast induces a directed bias of turning bouts toward the illuminated side, but does not impact the prevalence of turning bouts vs forward scoots. Reversely, a global decrement in illumination increases the ratio of turning bouts but does not favor any particular direction. For the contrast-driven configuration (tropotaxis), the minimal model corresponds to an Ornstein-Uhlenbeck process ((
+                <xref rid="bib52" ref-type="bibr">Uhlenbeck and Ornstein, 1930</xref>)), which describes the dynamics of a diffusive brownian particle in a quadratic trap. In the klinotaxis configuration (in the absence of stereo-visual contrast), the orientational bias solely results from a light-dependent modulation of the diffusivity, a mechanism reminiscent of bacterial chemotaxis.
             </p>
             <p>This stochastic minimal model is built on a simple decision tree (
                 <ext-link ext-link-type="uri" xlink:href="#fig4">Figure 4A</ext-link>) with a set of binary choices. However, to fully capture the orientational dynamics, we had to incorporate the continuous increase in turning bout amplitude with the light decrement in an ad-hoc way. It is currently unclear whether all turn bouts in our experiments can be assigned to a single class of swim maneuvers that are modulated in amplitude, or whether these encompass distinct motor programs executed with varying frequencies. In the latter case, it might be possible to represent this amplitude modulation through an extension of the decision tree that would select between distinct turn bout categories.
             </p>
-            <p>Compared to previous studies on phototaxis, for example (
-                <xref rid="bib9" ref-type="bibr">Burgess et al., 2010</xref>), our approach allowed us to clearly disentangle the contributions of spatial (stereovisual contrast) and time-dependent (motion-induced change in global illumination) visual cues. Hence, the contrast-driven assays were performed under constant overall illumination intensity (the sum of left and right intensities). This allowed us to establish that, rather surprisingly, the probability of triggering a turn (vs a forward swim) is insensitive to the imposed contrast. This possibility constitutes an important asset with respect to standard experimental configurations, such as the one examined by (
+            <p>Compared to previous studies on phototaxis, for example ((
+                <xref rid="bib9" ref-type="bibr">Burgess et al., 2010</xref>)), our approach allowed us to clearly disentangle the contributions of spatial (stereovisual contrast) and time-dependent (motion-induced change in global illumination) visual cues. Hence, the contrast-driven assays were performed under constant overall illumination intensity (the sum of left and right intensities). This allowed us to establish that, rather surprisingly, the probability of triggering a turn (vs a forward swim) is insensitive to the imposed contrast. This possibility constitutes an important asset with respect to standard experimental configurations, such as the one examined by (
                 <xref rid="bib9" ref-type="bibr">Burgess et al., 2010</xref>), in which the animal is submitted to an actual light source. Although these configurations provide a more realistic context, the visual stimulus effectively perceived by each eye can not be quantitatively assessed, which precludes the design of predictive models. Conversely, once adjusted on well-controlled virtual assays, our model could be numerically implemented in realistic environments, and the trajectories could then be directly confronted with behavioral data. This would require to first infer how the intensity impinging on each eye depends on the source distance and orientation relative to the animal body axis.
             </p>
-            <p>Another critical and distinct aspect of the present work is its focus on the steady-state dynamics. Our aim was to mimic the continuous exploration of an environment in which the brightness level displayed slowly varying angular modulations. The luminosity profiles were thus chosen to ensure that individual bouts elicited relatively mild changes in illumination. By doing so, we tried to mitigate visual startle responses that are known to be elicited upon sudden darkening (
-                <xref rid="bib14" ref-type="bibr">Easter and Nicola, 1996</xref>). Although we could not avoid the initial large drop in illumination at the onset of each trial, the associated short-term response (i.e. the first bout) was excluded from the analysis. In this respect, our experiment differs from the study of (
+            <p>Another critical and distinct aspect of the present work is its focus on the steady-state dynamics. Our aim was to mimic the continuous exploration of an environment in which the brightness level displayed slowly varying angular modulations. The luminosity profiles were thus chosen to ensure that individual bouts elicited relatively mild changes in illumination. By doing so, we tried to mitigate visual startle responses that are known to be elicited upon sudden darkening ((
+                <xref rid="bib14" ref-type="bibr">Easter and Nicola, 1996</xref>)). Although we could not avoid the initial large drop in illumination at the onset of each trial, the associated short-term response (i.e. the first bout) was excluded from the analysis. In this respect, our experiment differs from the study of (
                 <xref rid="bib12" ref-type="bibr">Chen and Engert, 2014</xref>) in which a similar closed-loop setup was used to demonstrate the ability of larvae to confine their navigation within bright regions. This behavior was entirely controlled by the animal’s response to light-on or light-off stimuli as it crossed the virtual border between a bright central disk and the dark outer area. These sharp transitions resulted in clear-cut behavioral changes that lasted for a few bouts. In comparison, our experiment addresses a different regime in which subtle light-driven biases in the spontaneous exploration cumulatively drive the animal toward brightest regions.
             </p>
             <p>As we aimed to obtain a simple and tractable kinematic description, we ignored some other aspects of the navigation characteristics. First, we focused on the orientation of the animal and thus did not systematically investigate how the forward components of the swim bouts were impacted by visual stimuli. However, in the context of angle-dependent intensity profiles, this effect should not impact the observed orientational dynamics. More importantly, we ran most of our analysis using the bout number as a time-scale, and thus ignored possible light-driven modulations of the inter-bout intervals (
@@ -2995,23 +2995,23 @@
                             <mml:mi>n</mml:mi>
                         </mml:msub>
                     </mml:math>
-                </inline-formula> is sufficient to predict the forthcoming bout. However, one should be aware that such observation is only valid provided that the sensory context remains relatively stable. Hence for instance, a prolonged uniform drop in luminosity is known to enhance the overall motor activity (generally estimated by the average displacement over a period of time) for up to several tens of minutes (
-                <xref rid="bib44" ref-type="bibr">Prober et al., 2006</xref>; 
-                <xref rid="bib15" ref-type="bibr">Emran et al., 2007</xref>; 
-                <xref rid="bib16" ref-type="bibr">Emran et al., 2010</xref>; 
-                <xref rid="bib31" ref-type="bibr">Liu et al., 2015</xref>). This long-term behavioral change, so-called photokinesis, might be regulated by deep brain photoreceptors (
-                <xref rid="bib18" ref-type="bibr">Fernandes et al., 2012</xref>; 
-                <xref rid="bib25" ref-type="bibr">Horstick et al., 2017</xref>) and thus constitutes a distinct mechanism. One particularly exciting prospect will be to understand how such behavioral plasticity may not only modulate the spontaneous activity (
-                <xref rid="bib27" ref-type="bibr">Johnson et al., 2019</xref>) but also affects the phototactic dynamics.
+                </inline-formula> is sufficient to predict the forthcoming bout. However, one should be aware that such observation is only valid provided that the sensory context remains relatively stable. Hence for instance, a prolonged uniform drop in luminosity is known to enhance the overall motor activity (generally estimated by the average displacement over a period of time) for up to several tens of minutes ((
+                <xref rid="bib44" ref-type="bibr">Prober et al., 2006</xref>); (
+                <xref rid="bib15" ref-type="bibr">Emran et al., 2007</xref>); (
+                <xref rid="bib16" ref-type="bibr">Emran et al., 2010</xref>); (
+                <xref rid="bib31" ref-type="bibr">Liu et al., 2015</xref>)). This long-term behavioral change, so-called photokinesis, might be regulated by deep brain photoreceptors ((
+                <xref rid="bib18" ref-type="bibr">Fernandes et al., 2012</xref>); (
+                <xref rid="bib25" ref-type="bibr">Horstick et al., 2017</xref>)) and thus constitutes a distinct mechanism. One particularly exciting prospect will be to understand how such behavioral plasticity may not only modulate the spontaneous activity ((
+                <xref rid="bib27" ref-type="bibr">Johnson et al., 2019</xref>)) but also affects the phototactic dynamics.
             </p>
             <p>One of the motivations of minimal behavioral models is to facilitate the functional identification and modeling of neural circuits that implement the identified sensorimotor operations in the brain. Here, we used the behavioral results to propose a neuronal model of the ARTR that quantitatively reproduces non-trivial aspects of the bout selection process. This recurrent neural circuit is a simplified version of working memory models developed by (
                 <xref rid="bib7" ref-type="bibr">Brunel and Wang, 2001</xref>); (
                 <xref rid="bib53" ref-type="bibr">Wang, 2001</xref>); (
                 <xref rid="bib54" ref-type="bibr">Wang, 2002</xref>); (
                 <xref rid="bib55" ref-type="bibr">Wang, 2008</xref>) and adapted in (
-                <xref rid="bib54" ref-type="bibr">Wang, 2002</xref>) for a decision task executed in the parietal cortex (
-                <xref rid="bib47" ref-type="bibr">Shadlen and Newsome, 1996</xref>; 
-                <xref rid="bib48" ref-type="bibr">Shadlen and Newsome, 2001</xref>). In this class of models, the binary decision process reflects the competition between two cross-inhibitory neural populations. The circuit is endowed with two major functional capacities: (1) it can maintain mnemonic persistent activity over long periods of time, thanks to recurrent excitatory inputs; (2) it can integrate sensory signals in a graded fashion to continuously bias the statistics of the decision. This model thus naturally recapitulates the major functional features of the sensory-biased Markov side-chain - motor persistence and contrast-driven continuous bias - that organizes the orientation selection.
+                <xref rid="bib54" ref-type="bibr">Wang, 2002</xref>) for a decision task executed in the parietal cortex ((
+                <xref rid="bib47" ref-type="bibr">Shadlen and Newsome, 1996</xref>); (
+                <xref rid="bib48" ref-type="bibr">Shadlen and Newsome, 2001</xref>)). In this class of models, the binary decision process reflects the competition between two cross-inhibitory neural populations. The circuit is endowed with two major functional capacities: (1) it can maintain mnemonic persistent activity over long periods of time, thanks to recurrent excitatory inputs; (2) it can integrate sensory signals in a graded fashion to continuously bias the statistics of the decision. This model thus naturally recapitulates the major functional features of the sensory-biased Markov side-chain - motor persistence and contrast-driven continuous bias - that organizes the orientation selection.
             </p>
             <p>It is tempting to generalize about this behavior-to-circuit approach, at least in small animals such as Zebrafish or 
                 <italic>Drosophila</italic>, by representing any behavior as a coordinated sequence of competing elemental actions biased by sensory feedback and organized within a hierarchical decision tree. The identification of such decision trees through quantitative behavioral analysis may provide a blueprint of the brain functional organization and significantly ease the development of circuit models of brain-scale sensorimotor computation.
@@ -3320,8 +3320,8 @@
             <p>Data analysis was performed using a custom-written code in Matlab. All analysis programs and data are available at (
                 <xref rid="bib29" ref-type="bibr">Karpenko, 2019</xref>).
             </p>
-            <p>When representing the mean of one variable against another, bin edges were chosen such that each bin would encompass the same number of data points. Circular statistics analyses (mean, variance, uniformity) and circular statistics tests, namely the circular V-test of non-uniformity of data and the one-sample test for the mean angle of a circular distribution (tested on the orientation of the light virtual light source) were performed using CircStat toolbox for Matlab (
-                <xref rid="bib3" ref-type="bibr">Berens, 2009</xref>).
+            <p>When representing the mean of one variable against another, bin edges were chosen such that each bin would encompass the same number of data points. Circular statistics analyses (mean, variance, uniformity) and circular statistics tests, namely the circular V-test of non-uniformity of data and the one-sample test for the mean angle of a circular distribution (tested on the orientation of the light virtual light source) were performed using CircStat toolbox for Matlab ((
+                <xref rid="bib3" ref-type="bibr">Berens, 2009</xref>)).
             </p>
             <p>Individual fish often exhibit a small yet consistent bias toward one direction (either leftward or rightward). This bias was subtracted before performing the different analyses, in order to guarantee that 
                 <inline-formula>
@@ -4066,8 +4066,8 @@
         </sec>
         <sec>
             <title>Numerical simulations</title>
-            <p>The Markov-chain model simulations were performed using a custom-written code in MATLAB (
-                <xref rid="bib30" ref-type="bibr">Karpenko, 2019</xref>). Initial orientations and positions within the ROI were randomly sampled from, respectively, a uniform distribution and a normal distribution centered on a circle of radius 20 mm from the center of the ROI with a standard deviation of 1.3 mm (mimicking the starting points of experimental data).
+            <p>The Markov-chain model simulations were performed using a custom-written code in MATLAB ((
+                <xref rid="bib30" ref-type="bibr">Karpenko, 2019</xref>)). Initial orientations and positions within the ROI were randomly sampled from, respectively, a uniform distribution and a normal distribution centered on a circle of radius 20 mm from the center of the ROI with a standard deviation of 1.3 mm (mimicking the starting points of experimental data).
             </p>
             <p>At each step, an angular step-size is drawn from the data: either from the turning distribution with a probability 
                 <inline-formula>

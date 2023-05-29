@@ -5012,7 +5012,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Epidemiological studies of life course have indicated that exposures during early life has long-term effects on later health ",
+        "Epidemiological studies of life course have indicated that exposures during early life has long-term effects on later health (",
         {
           "type": "Cite",
           "target": "c19",
@@ -5020,7 +5020,7 @@
             "Kuh et al., 2003"
           ]
         },
-        ". Unhealthy environments and lifestyle habits during rapid cell division can affect the structure or functions of organs, tissues or body systems, and these changes can subsequently affect health and disease in later life ",
+        "). Unhealthy environments and lifestyle habits during rapid cell division can affect the structure or functions of organs, tissues or body systems, and these changes can subsequently affect health and disease in later life (",
         {
           "type": "Cite",
           "target": "c39",
@@ -5028,7 +5028,7 @@
             "Power et al., 2013"
           ]
         },
-        ". For example, lower birth weight and fast growth during childhood predispose individuals to coronary heart disease and increased blood pressure in adulthood ",
+        "). For example, lower birth weight and fast growth during childhood predispose individuals to coronary heart disease and increased blood pressure in adulthood (",
         {
           "type": "Cite",
           "target": "c36",
@@ -5036,13 +5036,13 @@
             "Osmond & Barker, 2000"
           ]
         },
-        ". In addition to infancy and childhood, adolescence is also a critical period of growth."
+        "). In addition to infancy and childhood, adolescence is also a critical period of growth."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Adolescence is characterised by pubertal maturation and growth spurts. Early pubertal development is linked to worse health conditions, such as obesity and cardiometabolic risk factors in adulthood ",
+        "Adolescence is characterised by pubertal maturation and growth spurts. Early pubertal development is linked to worse health conditions, such as obesity and cardiometabolic risk factors in adulthood (",
         {
           "type": "Cite",
           "target": "c40",
@@ -5050,47 +5050,31 @@
             "Prentice & Viner, 2013"
           ]
         },
-        ". However, childhood obesity can lead to early onset of puberty, especially among girls ",
+        "). However, childhood obesity can lead to early onset of puberty, especially among girls (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Li et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c44",
-              "content": [
-                "Richardson et al., 2020"
-              ]
-            }
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Li et al., 2017"
           ]
         },
-        " and, therefore, can confound the observed associations between early pubertal development and worse later health. Moreover, early pubertal development is linked to substance use and other risky behaviors in adolescence ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c13",
-              "content": [
-                "Hartman et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c48",
-              "content": [
-                "Savage et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c44",
+          "content": [
+            "Richardson et al., 2020"
           ]
         },
-        ", but the associations are partly explained by familial factors ",
+        ") and, therefore, can confound the observed associations between early pubertal development and worse later health. Moreover, early pubertal development is linked to substance use and other risky behaviors in adolescence (",
+        {
+          "type": "Cite",
+          "target": "c13",
+          "content": [
+            "Hartman et al., 2017"
+          ]
+        },
+        "; ",
         {
           "type": "Cite",
           "target": "c48",
@@ -5098,13 +5082,21 @@
             "Savage et al., 2018"
           ]
         },
-        "."
+        "), but the associations are partly explained by familial factors (",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Savage et al., 2018"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Many unhealthy lifestyle choices, such as smoking initiation, alcohol use and a physically inactive lifestyle, are already made in adolescence and increase the risk of developing several non-communicable diseases over the following decades ",
+        "Many unhealthy lifestyle choices, such as smoking initiation, alcohol use and a physically inactive lifestyle, are already made in adolescence and increase the risk of developing several non-communicable diseases over the following decades (",
         {
           "type": "Cite",
           "target": "c27",
@@ -5112,41 +5104,39 @@
             "Lopez et al., 2006"
           ]
         },
-        ". Once initiated, unhealthy habits are likely to persist into adulthood ",
+        "). Once initiated, unhealthy habits are likely to persist into adulthood (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c20",
-              "content": [
-                "Latvala et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c31",
-              "content": [
-                "Maggs & Schulenberg, 2005"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c46",
-              "content": [
-                "Rovio et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Salin et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Latvala et al., 2014"
           ]
         },
-        ". A recent systematic review showed that healthy habits tend to cluster during childhood and adolescence ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c31",
+          "content": [
+            "Maggs & Schulenberg, 2005"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c46",
+          "content": [
+            "Rovio et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Salin et al., 2019"
+          ]
+        },
+        "). A recent systematic review showed that healthy habits tend to cluster during childhood and adolescence (",
         {
           "type": "Cite",
           "target": "c53",
@@ -5154,13 +5144,13 @@
             "Whitaker et al., 2021"
           ]
         },
-        ". Typically, about half of the adolescents fall into subgroups characterised by healthy lifestyle habits. However, small minorities of adolescents are classified as heavy substance users or as having multiple other risk behaviors. The long-term consequences of the accumulation of unhealthy adolescent behaviors on health in later life have been rarely studied."
+        "). Typically, about half of the adolescents fall into subgroups characterised by healthy lifestyle habits. However, small minorities of adolescents are classified as heavy substance users or as having multiple other risk behaviors. The long-term consequences of the accumulation of unhealthy adolescent behaviors on health in later life have been rarely studied."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "An unhealthy lifestyle in adolescence can affect biological mechanisms of aging at the molecular level and, subsequently, morbidity. Epigenetic alterations, including age-related changes in DNA methylation (DNAm), constitute a primary hallmark of biological aging ",
+        "An unhealthy lifestyle in adolescence can affect biological mechanisms of aging at the molecular level and, subsequently, morbidity. Epigenetic alterations, including age-related changes in DNA methylation (DNAm), constitute a primary hallmark of biological aging (",
         {
           "type": "Cite",
           "target": "c26",
@@ -5168,47 +5158,39 @@
             "López-Otín et al., 2013"
           ]
         },
-        ". Epigenetic clocks are algorithms that aim to quantify biological aging using DNAm levels within specific CpG sites. The first-generation clocks, Horvath’s and Hannum’s clocks, were trained to predict chronological age ",
+        "). Epigenetic clocks are algorithms that aim to quantify biological aging using DNAm levels within specific CpG sites. The first-generation clocks, Horvath’s and Hannum’s clocks, were trained to predict chronological age (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c12",
-              "content": [
-                "Hannum et al., 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c14",
-              "content": [
-                "Horvath, 2013"
-              ]
-            }
+          "type": "Cite",
+          "target": "c12",
+          "content": [
+            "Hannum et al., 2013"
           ]
         },
-        ", whereas the second-generation clocks, such as DNAm PhenoAge and GrimAge, are better predictors of health span and lifespan ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c21",
-              "content": [
-                "Levine et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Lu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "Horvath, 2013"
           ]
         },
-        ". For epigenetic clocks, the difference between an individual’s epigenetic age estimate and chronological age provides a measure of age acceleration (AA). The DunedinPoAm estimator differs from its predecessors in that it has been developed to predict the pace of aging ",
+        "), whereas the second-generation clocks, such as DNAm PhenoAge and GrimAge, are better predictors of health span and lifespan (",
+        {
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Levine et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Lu et al., 2019"
+          ]
+        },
+        "). For epigenetic clocks, the difference between an individual’s epigenetic age estimate and chronological age provides a measure of age acceleration (AA). The DunedinPoAm estimator differs from its predecessors in that it has been developed to predict the pace of aging (",
         {
           "type": "Cite",
           "target": "c4",
@@ -5216,7 +5198,7 @@
             "Belsky et al., 2020"
           ]
         },
-        ". The pace of aging describes longitudinal changes over time in several biomarkers of organ-system integrity among same-aged individuals. Recently, the DunedinPACE estimator, which constitutes an advance on the original DunedinPoAm, was published ",
+        "). The pace of aging describes longitudinal changes over time in several biomarkers of organ-system integrity among same-aged individuals. Recently, the DunedinPACE estimator, which constitutes an advance on the original DunedinPoAm, was published (",
         {
           "type": "Cite",
           "target": "c5",
@@ -5224,13 +5206,13 @@
             "Belsky et al., 2022"
           ]
         },
-        ". DunedinPACE measures the pace of aging more precisely and has better test-retest reliability. From the life course perspective, epigenetic aging measures are useful tools to assess biological aging at all ages and detect changes induced by lifetime exposures."
+        "). DunedinPACE measures the pace of aging more precisely and has better test-retest reliability. From the life course perspective, epigenetic aging measures are useful tools to assess biological aging at all ages and detect changes induced by lifetime exposures."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Previous studies have linked several lifestyle-related factors, such as higher body mass index (BMI), smoking, alcohol use and lower leisure-time physical activity (LTPA), with accelerated biological aging measured using epigenetic clocks ",
+        "Previous studies have linked several lifestyle-related factors, such as higher body mass index (BMI), smoking, alcohol use and lower leisure-time physical activity (LTPA), with accelerated biological aging measured using epigenetic clocks (",
         {
           "type": "Cite",
           "target": "c35",
@@ -5238,34 +5220,31 @@
             "Oblak et al., 2021"
           ]
         },
-        ". However, most of these studies were based on cross-sectional data on older adults. The first studies on the associations of adolescent lifestyle-related exposures with biological aging assessed with epigenetic aging measures indicated that advanced pubertal development, higher BMI and smoking are associated with accelerated biological aging in adolescence ",
+        "). However, most of these studies were based on cross-sectional data on older adults. The first studies on the associations of adolescent lifestyle-related exposures with biological aging assessed with epigenetic aging measures indicated that advanced pubertal development, higher BMI and smoking are associated with accelerated biological aging in adolescence (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Etzel et al., 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c41",
-              "content": [
-                "Raffington et al., 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Simpkin et al., 2017"
-              ]
-            }
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Etzel et al., 2021"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Raffington et al., 2021"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Simpkin et al., 2017"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -5291,27 +5270,23 @@
     {
       "type": "Paragraph",
       "content": [
-        "The participants were members of the longitudinal FinnTwin12 study (born during 1983–87) ",
+        "The participants were members of the longitudinal FinnTwin12 study (born during 1983–87) (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c16",
-              "content": [
-                "Kaprio, 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c45",
-              "content": [
-                "Rose et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c16",
+          "content": [
+            "Kaprio, 2013"
           ]
         },
-        ". A total of 5,600 twins and their families initially enrolled in the study. At the baseline, the twins filled out the questionnaires regarding their lifestyle-related habits at 11–12 years of age, and follow-up assessments were conducted at ages 14 and 17.5 years. The response rates were high for each assessment (85%–90%). In young adulthood, at an average age of 22 years, blood samples for DNA analyses (n = 824) were collected during in-person clinical studies after written informed consent was signed. The data on health-related behaviors were collected with questionnaires and interviews. A total of 1,295 twins of the FinnTwin12 cohort were examined and measured, either in-person or through telephonic interviews. Data collection was conducted in accordance with the Declaration of Helsinki. The Indiana University IRB and the ethics committees of the University of Helsinki and Helsinki University Central Hospital approved the study protocol."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c45",
+          "content": [
+            "Rose et al., 2019"
+          ]
+        },
+        "). A total of 5,600 twins and their families initially enrolled in the study. At the baseline, the twins filled out the questionnaires regarding their lifestyle-related habits at 11–12 years of age, and follow-up assessments were conducted at ages 14 and 17.5 years. The response rates were high for each assessment (85%–90%). In young adulthood, at an average age of 22 years, blood samples for DNA analyses (n = 824) were collected during in-person clinical studies after written informed consent was signed. The data on health-related behaviors were collected with questionnaires and interviews. A total of 1,295 twins of the FinnTwin12 cohort were examined and measured, either in-person or through telephonic interviews. Data collection was conducted in accordance with the Declaration of Helsinki. The Indiana University IRB and the ethics committees of the University of Helsinki and Helsinki University Central Hospital approved the study protocol."
       ]
     },
     {
@@ -5331,47 +5306,39 @@
     {
       "type": "Paragraph",
       "content": [
-        "We utilized six epigenetic clocks. The first four clocks, namely Horvath’s and Hannum’s epigenetic clocks ",
+        "We utilized six epigenetic clocks. The first four clocks, namely Horvath’s and Hannum’s epigenetic clocks (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c12",
-              "content": [
-                "Hannum et al., 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c14",
-              "content": [
-                "Horvath, 2013"
-              ]
-            }
+          "type": "Cite",
+          "target": "c12",
+          "content": [
+            "Hannum et al., 2013"
           ]
         },
-        " and DNAm PhenoAge and DNAm GrimAge estimators ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c21",
-              "content": [
-                "Levine et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Lu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c14",
+          "content": [
+            "Horvath, 2013"
           ]
         },
-        ", produced DNAm-based epigenetic age estimates in years by using a publicly available online calculator (",
+        ") and DNAm PhenoAge and DNAm GrimAge estimators (",
+        {
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "Levine et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Lu et al., 2019"
+          ]
+        },
+        "), produced DNAm-based epigenetic age estimates in years by using a publicly available online calculator (",
         {
           "type": "Link",
           "target": "https://dnamage.genetics.ucla.edu/new",
@@ -5407,27 +5374,23 @@
             "Grim"
           ]
         },
-        ", respectively). The fifth and sixth clocks, namely DunedinPoAm and DunedinPACE estimators, provided an estimate for the pace of biological aging in years per calendar year ",
+        ", respectively). The fifth and sixth clocks, namely DunedinPoAm and DunedinPACE estimators, provided an estimate for the pace of biological aging in years per calendar year (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Belsky et al., 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "2022"
-              ]
-            }
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Belsky et al., 2020"
           ]
         },
-        ". DunedinPoAm and DunedinPACE were calculated using publicly available R packages (",
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "2022"
+          ]
+        },
+        "). DunedinPoAm and DunedinPACE were calculated using publicly available R packages (",
         {
           "type": "Link",
           "target": "https://github.com/danbelsky/DunedinPoAm38",
@@ -5534,7 +5497,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Baseline pubertal development was assessed using a five-item Pubertal Development Scale (PDS) questionnaire ",
+        "Baseline pubertal development was assessed using a five-item Pubertal Development Scale (PDS) questionnaire (",
         {
           "type": "Cite",
           "target": "c38",
@@ -5542,7 +5505,7 @@
             "Petersen et al., 1988"
           ]
         },
-        ". Both sexes answered three questions each concerning growth in height, body hair and skin changes."
+        "). Both sexes answered three questions each concerning growth in height, body hair and skin changes."
       ]
     },
     {
@@ -5591,7 +5554,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "was assessed using the Baecke questionnaire ",
+        "was assessed using the Baecke questionnaire (",
         {
           "type": "Cite",
           "target": "c2",
@@ -5599,7 +5562,7 @@
             "Baecke et al., 1982"
           ]
         },
-        ". A sport index was based on the mean scores of four questions on sports activity described by ",
+        "). A sport index was based on the mean scores of four questions on sports activity described by ",
         {
           "type": "Cite",
           "target": "c2",
@@ -5607,7 +5570,7 @@
             "Baecke et al. (1982)"
           ]
         },
-        " and Mustelin et al. (2012) for the FinnTwin12 study. The sport index is a reliable and valid instrument to measure high-intensity physical activity ",
+        " and Mustelin et al. (2012) for the FinnTwin12 study. The sport index is a reliable and valid instrument to measure high-intensity physical activity (",
         {
           "type": "Cite",
           "target": "c43",
@@ -5615,7 +5578,7 @@
             "Richardson et al., 1995"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -5643,7 +5606,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "(100% alcohol grams/day) was derived from the Semi-Structured Assessment for the Genetics of Alcoholism ",
+        "(100% alcohol grams/day) was derived from the Semi-Structured Assessment for the Genetics of Alcoholism (",
         {
           "type": "Cite",
           "target": "c7",
@@ -5651,7 +5614,7 @@
             "Bucholz et al., 1994"
           ]
         },
-        " and based on quantity and frequency of use and the content of alcoholic beverages, assessed by trained interviewers."
+        ") and based on quantity and frequency of use and the content of alcoholic beverages, assessed by trained interviewers."
       ]
     },
     {
@@ -5700,7 +5663,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "The mean differences in biological aging between the lifestyle behavior patterns were studied using the Bolck–Croon–Hagenaars approach ",
+        "The mean differences in biological aging between the lifestyle behavior patterns were studied using the Bolck–Croon–Hagenaars approach (",
         {
           "type": "Cite",
           "target": "c1",
@@ -5708,7 +5671,7 @@
             "Asparouhov & Muthén, 2021"
           ]
         },
-        ". The class-specific weights for each participant were computed and saved during the latent class model estimation. After that, a secondary model conditional on the latent lifestyle behavior patterns was specified using weights as training data: Epigenetic aging measures were treated as distal outcome one at a time, and the mean differences across classes were studied while adjusting for sex, age and baseline pubertal development. Similarly, the mean differences in the components of DNAm GrimAge and lifestyle-related factors in young adulthood were studied. The models of epigenetic aging measures were additionally adjusted for BMI in adulthood. To evaluate the effect sizes, standardised mean differences (SMDs) were calculated."
+        "). The class-specific weights for each participant were computed and saved during the latent class model estimation. After that, a secondary model conditional on the latent lifestyle behavior patterns was specified using weights as training data: Epigenetic aging measures were treated as distal outcome one at a time, and the mean differences across classes were studied while adjusting for sex, age and baseline pubertal development. Similarly, the mean differences in the components of DNAm GrimAge and lifestyle-related factors in young adulthood were studied. The models of epigenetic aging measures were additionally adjusted for BMI in adulthood. To evaluate the effect sizes, standardised mean differences (SMDs) were calculated."
       ]
     },
     {
@@ -5728,7 +5691,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We first carried out univariate modelling to study genetic and environmental influences on epigenetic aging measures (Supplementary text) ",
+        "We first carried out univariate modelling to study genetic and environmental influences on epigenetic aging measures (Supplementary text) (",
         {
           "type": "Cite",
           "target": "c34",
@@ -5736,7 +5699,7 @@
             "Neale & Cardon, 1992"
           ]
         },
-        ". On one hand, total variance in biological aging was decomposed in the components explained by genetic, unshared and shared environmental factors ",
+        "). On one hand, total variance in biological aging was decomposed in the components explained by genetic, unshared and shared environmental factors ",
         {
           "type": "ImageObject",
           "contentUrl": "",
@@ -5842,7 +5805,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Missing data were assumed to be missing at random (MAR). The model parameters were estimated using the full information maximum likelihood (FIML) method with robust standard errors. Under the MAR assumption, the FIML method produced unbiased parameter estimates. The standard errors of the latent class models and secondary models were corrected for nested sampling (TYPE = COMPLEX). Descriptive statistics were calculated using IBM SPSS Statistics for Windows, version 20.0 (IBM Corp, Armonk, NY), and further modeling was conducted using Mplus, version 8.2 ",
+        "Missing data were assumed to be missing at random (MAR). The model parameters were estimated using the full information maximum likelihood (FIML) method with robust standard errors. Under the MAR assumption, the FIML method produced unbiased parameter estimates. The standard errors of the latent class models and secondary models were corrected for nested sampling (TYPE = COMPLEX). Descriptive statistics were calculated using IBM SPSS Statistics for Windows, version 20.0 (IBM Corp, Armonk, NY), and further modeling was conducted using Mplus, version 8.2 (",
         {
           "type": "Cite",
           "target": "c33",
@@ -5850,7 +5813,7 @@
             "Muthén & Muthén, 1998-2018"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -5997,7 +5960,7 @@
             "Table 3"
           ]
         },
-        "). However, the VLMR and LMR tests indicated that even a solution with four classes would be sufficient. In the fifth step, a class of participants with high BMI was extracted. Previous studies have shown the role of being overweight or obese in biological aging ",
+        "). However, the VLMR and LMR tests indicated that even a solution with four classes would be sufficient. In the fifth step, a class of participants with high BMI was extracted. Previous studies have shown the role of being overweight or obese in biological aging (",
         {
           "type": "Cite",
           "target": "c29",
@@ -6005,7 +5968,7 @@
             "Lundgren et al., 2021"
           ]
         },
-        ". After including the sixth class, the information criteria still showed considerable improvement, but the AvePPs for several classes were below 0.8. For these reasons, and to have adequate statistical power for subsequent analyses, a five-class solution was considered optimal. The AvePPs ranged from 0.78 to 0.91 for the five-class solution, indicating reasonable classification quality."
+        "). After including the sixth class, the information criteria still showed considerable improvement, but the AvePPs for several classes were below 0.8. For these reasons, and to have adequate statistical power for subsequent analyses, a five-class solution was considered optimal. The AvePPs ranged from 0.78 to 0.91 for the five-class solution, indicating reasonable classification quality."
       ]
     },
     {
@@ -6042,7 +6005,7 @@
             "Figure 2"
           ]
         },
-        ", and the distributions of indicator variables according to the adolescent lifestyle behavior patterns in Supplemental Table S1). They had normal weight, on average, and were more likely to engage in regular LTPA compared to the other groups; most of them were non-smokers and did not use alcohol regularly. Every fifth (19.9%) participant belonged to the second class (C2), characterized by the low mean level of BMI in the range of normal weight for children (low-normal BMI) ",
+        ", and the distributions of indicator variables according to the adolescent lifestyle behavior patterns in Supplemental Table S1). They had normal weight, on average, and were more likely to engage in regular LTPA compared to the other groups; most of them were non-smokers and did not use alcohol regularly. Every fifth (19.9%) participant belonged to the second class (C2), characterized by the low mean level of BMI in the range of normal weight for children (low-normal BMI) (",
         {
           "type": "Cite",
           "target": "c8",
@@ -6050,7 +6013,7 @@
             "Cole et al., 2007"
           ]
         },
-        ". They also had healthy lifestyle habits, but they were not as physically active as the participants in class C1. The participants placed in the third class (C3, 22.8%) had lifestyle habits similar to those of the participants in class C1; however, they had a higher level of BMI in the range of normal weight for children (high-normal BMI). About every tenth (9.5%) of the participants belonged to the fourth class (C4), with the highest level of BMI (high BMI). At each measurement point, the mean BMI level exceeded the cut-off points for overweight in children (Cole et al., 2000). The prevalence of daily smoking was slightly higher in C4 compared to classes C1, C2 and C3. Of the participants, 15.9% were classified in the subgroup characterised by the unhealthiest lifestyle behaviors (C5). Most of them were daily smokers and used alcohol regularly at the age of 17. They also had a lower probability of engaging in regular LTPA compared to the other groups; however, they were of normal weight, on average."
+        "). They also had healthy lifestyle habits, but they were not as physically active as the participants in class C1. The participants placed in the third class (C3, 22.8%) had lifestyle habits similar to those of the participants in class C1; however, they had a higher level of BMI in the range of normal weight for children (high-normal BMI). About every tenth (9.5%) of the participants belonged to the fourth class (C4), with the highest level of BMI (high BMI). At each measurement point, the mean BMI level exceeded the cut-off points for overweight in children (Cole et al., 2000). The prevalence of daily smoking was slightly higher in C4 compared to classes C1, C2 and C3. Of the participants, 15.9% were classified in the subgroup characterised by the unhealthiest lifestyle behaviors (C5). Most of them were daily smokers and used alcohol regularly at the age of 17. They also had a lower probability of engaging in regular LTPA compared to the other groups; however, they were of normal weight, on average."
       ]
     },
     {
@@ -6393,34 +6356,31 @@
             "Grim"
           ]
         },
-        ") and had 2– 3 weeks/calendar year faster pace of biological aging (DunedinPoAm and DundeinPACE) than the classes with healthier patterns. These measures can predict mortality and morbidity, especially cardiometabolic and lung diseases ",
+        ") and had 2– 3 weeks/calendar year faster pace of biological aging (DunedinPoAm and DundeinPACE) than the classes with healthier patterns. These measures can predict mortality and morbidity, especially cardiometabolic and lung diseases (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Belsky et al., 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "2022"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Lu et al., 2019"
-              ]
-            }
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Belsky et al., 2020"
           ]
         },
-        ". A previous meta-analysis showed that the number of healthy lifestyle behaviors is inversely associated with all-cause mortality risk ",
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "2022"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Lu et al., 2019"
+          ]
+        },
+        "). A previous meta-analysis showed that the number of healthy lifestyle behaviors is inversely associated with all-cause mortality risk (",
         {
           "type": "Cite",
           "target": "c24",
@@ -6428,7 +6388,7 @@
             "Loef & Walach, 2012"
           ]
         },
-        ". The mortality risk was up to 66% lower for individuals having multiple healthy behaviors compared to those adhering to an unhealthy lifestyle (smoking, low or high levels of alcohol use, unhealthy diet, no physical activity and overweight). Our results suggested that the accumulation of multiple unhealthy lifestyle habits in adolescence has a more detrimental effect on biological aging than any single lifestyle habit. The unhealthy lifestyle-induced changes in biological aging begin to accumulate in early life and might predispose individuals to premature death in later life."
+        "). The mortality risk was up to 66% lower for individuals having multiple healthy behaviors compared to those adhering to an unhealthy lifestyle (smoking, low or high levels of alcohol use, unhealthy diet, no physical activity and overweight). Our results suggested that the accumulation of multiple unhealthy lifestyle habits in adolescence has a more detrimental effect on biological aging than any single lifestyle habit. The unhealthy lifestyle-induced changes in biological aging begin to accumulate in early life and might predispose individuals to premature death in later life."
       ]
     },
     {
@@ -6469,27 +6429,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "To the best of our knowledge, this is also the first study reporting the association between adolescent BMI (relative weight) and biological aging in later life. Previous systematic reviews have concluded that being overweight or obese in childhood and adolescence has a consistent impact on mortality and morbidity in later life ",
-        {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c37",
-              "content": [
-                "Park et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c42",
-              "content": [
-                "Reilly & Kelly, 2011"
-              ]
-            }
-          ]
-        },
-        ". In particular, the associations with cardiometabolic morbidity are well-established, but the results of the studies investigating the associations independent of adult BMI are inconclusive ",
+        "To the best of our knowledge, this is also the first study reporting the association between adolescent BMI (relative weight) and biological aging in later life. Previous systematic reviews have concluded that being overweight or obese in childhood and adolescence has a consistent impact on mortality and morbidity in later life (",
         {
           "type": "Cite",
           "target": "c37",
@@ -6497,7 +6437,23 @@
             "Park et al., 2012"
           ]
         },
-        ". A more recent study showed that early-life body size indirectly predisposes coronary artery disease and type 2 diabetes through body size in adulthood rather than having a direct effect ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c42",
+          "content": [
+            "Reilly & Kelly, 2011"
+          ]
+        },
+        "). In particular, the associations with cardiometabolic morbidity are well-established, but the results of the studies investigating the associations independent of adult BMI are inconclusive (",
+        {
+          "type": "Cite",
+          "target": "c37",
+          "content": [
+            "Park et al., 2012"
+          ]
+        },
+        "). A more recent study showed that early-life body size indirectly predisposes coronary artery disease and type 2 diabetes through body size in adulthood rather than having a direct effect (",
         {
           "type": "Cite",
           "target": "c44",
@@ -6505,7 +6461,7 @@
             "Richardson et al., 2020"
           ]
         },
-        ". Our results considering biological aging are in line with the existing literature but depend on the epigenetic clock utilized. In our study, the participants assigned to the class that was, on average, overweight in adolescence were biologically older (based on AA",
+        "). Our results considering biological aging are in line with the existing literature but depend on the epigenetic clock utilized. In our study, the participants assigned to the class that was, on average, overweight in adolescence were biologically older (based on AA",
         {
           "type": "Subscript",
           "content": [
@@ -6546,47 +6502,39 @@
     {
       "type": "Paragraph",
       "content": [
-        "LTPA is associated with a lower risk of mortality and cardiovascular diseases ",
+        "LTPA is associated with a lower risk of mortality and cardiovascular diseases (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c22",
-              "content": [
-                "Li et al., 2013"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c25",
-              "content": [
-                "Löllgen et al., 2009"
-              ]
-            }
+          "type": "Cite",
+          "target": "c22",
+          "content": [
+            "Li et al., 2013"
           ]
         },
-        ". Twin studies and genetically informed studies have suggested that genetic pleiotropy can partly explain these frequently observed associations ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c18",
-              "content": [
-                "Karvinen et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c49",
-              "content": [
-                "Sillanpää et al., 2022"
-              ]
-            }
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Löllgen et al., 2009"
           ]
         },
-        ". Previous studies have shown that LTPA is also associated with slower biological aging ",
+        "). Twin studies and genetically informed studies have suggested that genetic pleiotropy can partly explain these frequently observed associations (",
+        {
+          "type": "Cite",
+          "target": "c18",
+          "content": [
+            "Karvinen et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c49",
+          "content": [
+            "Sillanpää et al., 2022"
+          ]
+        },
+        "). Previous studies have shown that LTPA is also associated with slower biological aging (",
         {
           "type": "Cite",
           "target": "c15",
@@ -6594,13 +6542,13 @@
             "Kankaanpää et al., 2020"
           ]
         },
-        ". In the present study, lower levels of physical activity in adolescence were closely intertwined with other unhealthy behaviors. To fully understand the role of adolescence physical activity in later biological aging would require a more comprehensive analysis of activity patterns, intensities and modes, as well as subgroup analyses that account for other lifestyle factors, such as diet."
+        "). In the present study, lower levels of physical activity in adolescence were closely intertwined with other unhealthy behaviors. To fully understand the role of adolescence physical activity in later biological aging would require a more comprehensive analysis of activity patterns, intensities and modes, as well as subgroup analyses that account for other lifestyle factors, such as diet."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Adolescent smoking behavior and alcohol use appeared to be strongly clustered, in line with the findings of a recent systematic review ",
+        "Adolescent smoking behavior and alcohol use appeared to be strongly clustered, in line with the findings of a recent systematic review (",
         {
           "type": "Cite",
           "target": "c53",
@@ -6608,7 +6556,7 @@
             "Whitaker et al., 2021"
           ]
         },
-        ". For this reason, the associations of smoking and alcohol use with biological aging might be difficult to disentangle. Smoking is the most detrimental lifestyle factor, and its’ association with accelerated biological aging has been frequently reported ",
+        "). For this reason, the associations of smoking and alcohol use with biological aging might be difficult to disentangle. Smoking is the most detrimental lifestyle factor, and its’ association with accelerated biological aging has been frequently reported (",
         {
           "type": "Cite",
           "target": "c35",
@@ -6616,7 +6564,7 @@
             "Oblak et al., 2021"
           ]
         },
-        ". However, the results obtained for the association between alcohol use and biological aging remain unclear ",
+        "). However, the results obtained for the association between alcohol use and biological aging remain unclear (",
         {
           "type": "Cite",
           "target": "c35",
@@ -6624,14 +6572,14 @@
             "Oblak et al., 2021"
           ]
         },
-        ". A recent study showed that smoking has a causal effect on AA",
+        "). A recent study showed that smoking has a causal effect on AA",
         {
           "type": "Subscript",
           "content": [
             "Grim"
           ]
         },
-        ", whereas alcohol use did not exhibit such effect ",
+        ", whereas alcohol use did not exhibit such effect (",
         {
           "type": "Cite",
           "target": "c32",
@@ -6639,7 +6587,7 @@
             "McCartney et al., 2021"
           ]
         },
-        ". Epigenetic methylation changes due to alcohol seem to be much fewer in number and magnitude compared to smoking exposure ",
+        "). Epigenetic methylation changes due to alcohol seem to be much fewer in number and magnitude compared to smoking exposure (",
         {
           "type": "Cite",
           "target": "c51",
@@ -6647,41 +6595,7 @@
             "Stephenson et al., 2021"
           ]
         },
-        ". In our study, the unhealthiest lifestyle class, in which smoking and alcohol use co-occurred, exhibited accelerated biological aging, especially when GrimAge and DunedinPoAm were used. These epigenetic aging measures are highly sensitive to tobacco exposure ",
-        {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Belsky et al., 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Lu et al., 2019"
-              ]
-            }
-          ]
-        },
-        ". DNAm GrimAge is a composite biomarker comprising seven DNAm surrogates for plasma markers and smoking pack-years, which can predict the time to death ",
-        {
-          "type": "Cite",
-          "target": "c28",
-          "content": [
-            "Lu et al., 2019"
-          ]
-        },
-        "."
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        "DunedinPoAm utilizes a specific CpG site (located within the gene AHRR), the methylation of which is strongly affected by tobacco exposure ",
+        "). In our study, the unhealthiest lifestyle class, in which smoking and alcohol use co-occurred, exhibited accelerated biological aging, especially when GrimAge and DunedinPoAm were used. These epigenetic aging measures are highly sensitive to tobacco exposure (",
         {
           "type": "Cite",
           "target": "c4",
@@ -6689,13 +6603,7 @@
             "Belsky et al., 2020"
           ]
         },
-        ". For these reasons, most of the variation in biological aging, which is explained by environmental factors shared with adolescent lifestyle, is probably due to smoking exposure."
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        "To better understand the observed differences in biological aging, we also studied differences in DNAm-based surrogates included in the DNAm GrimAge estimator (Supplementary text and Figure S1). The class with the unhealthiest lifestyle pattern differed unfavourably from those with healthier habits only in DNAm-based smoking pack-years. The class with a high BMI had increased levels of several DNAm-based plasma markers, including DNAm PAI-1 an TIMP-1, which are associated with markers of inflammation and metabolic conditions ",
+        "; ",
         {
           "type": "Cite",
           "target": "c28",
@@ -6703,7 +6611,43 @@
             "Lu et al., 2019"
           ]
         },
-        ". These findings support the suggestions that AA",
+        "). DNAm GrimAge is a composite biomarker comprising seven DNAm surrogates for plasma markers and smoking pack-years, which can predict the time to death (",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Lu et al., 2019"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "DunedinPoAm utilizes a specific CpG site (located within the gene AHRR), the methylation of which is strongly affected by tobacco exposure (",
+        {
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Belsky et al., 2020"
+          ]
+        },
+        "). For these reasons, most of the variation in biological aging, which is explained by environmental factors shared with adolescent lifestyle, is probably due to smoking exposure."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "To better understand the observed differences in biological aging, we also studied differences in DNAm-based surrogates included in the DNAm GrimAge estimator (Supplementary text and Figure S1). The class with the unhealthiest lifestyle pattern differed unfavourably from those with healthier habits only in DNAm-based smoking pack-years. The class with a high BMI had increased levels of several DNAm-based plasma markers, including DNAm PAI-1 an TIMP-1, which are associated with markers of inflammation and metabolic conditions (",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Lu et al., 2019"
+          ]
+        },
+        "). These findings support the suggestions that AA",
         {
           "type": "Subscript",
           "content": [
@@ -6716,34 +6660,30 @@
     {
       "type": "Paragraph",
       "content": [
-        "Recent studies have yielded inconsistent results regarding the association between pubertal timing and biological aging ",
+        "Recent studies have yielded inconsistent results regarding the association between pubertal timing and biological aging (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c11",
-              "content": [
-                "Hamlat et al., 2021"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c30",
-              "content": [
-                "Maddock et al., 2021"
-              ]
-            }
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Hamlat et al., 2021"
           ]
         },
-        ". In our models studying the differences in biological aging across adolescent lifestyle patterns, pubertal development at the age of 12 was not associated with accelerated biological aging in young adulthood (except for AA",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "Maddock et al., 2021"
+          ]
+        },
+        "). In our models studying the differences in biological aging across adolescent lifestyle patterns, pubertal development at the age of 12 was not associated with accelerated biological aging in young adulthood (except for AA",
         {
           "type": "Subscript",
           "content": [
             "Hannum"
           ]
         },
-        "). Moreover, the class with a high BMI included participants with advanced pubertal development, which might reflect the common genetic background underlying BMI and age at menarche ",
+        "). Moreover, the class with a high BMI included participants with advanced pubertal development, which might reflect the common genetic background underlying BMI and age at menarche (",
         {
           "type": "Cite",
           "target": "c17",
@@ -6751,7 +6691,7 @@
             "Kaprio et al., 1995"
           ]
         },
-        ". All these findings support the studies showing that childhood obesity, which tracks forward into adulthood, explains the observed associations between advanced pubertal status and worse cardiovascular health ",
+        "). All these findings support the studies showing that childhood obesity, which tracks forward into adulthood, explains the observed associations between advanced pubertal status and worse cardiovascular health (",
         {
           "type": "Cite",
           "target": "c3",
@@ -6759,7 +6699,7 @@
             "Bell et al., 2018"
           ]
         },
-        " and can further reflect the genetic architecture underlying BMI, pubertal development and worse health ",
+        ") and can further reflect the genetic architecture underlying BMI, pubertal development and worse health (",
         {
           "type": "Cite",
           "target": "c9",
@@ -6767,7 +6707,7 @@
             "Day et al., 2015"
           ]
         },
-        "."
+        ")."
       ]
     },
     {

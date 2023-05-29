@@ -4309,7 +4309,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "In flies, taste detection is mediated by gustatory receptor neurons (GRNs) located on the proboscis, pharynx, legs, wing margins, and ovipositor ",
+        "In flies, taste detection is mediated by gustatory receptor neurons (GRNs) located on the proboscis, pharynx, legs, wing margins, and ovipositor (",
         {
           "type": "Cite",
           "target": "c46",
@@ -4317,7 +4317,7 @@
             "Stocker, 1994"
           ]
         },
-        ". GRNs express a range of chemosensory receptors for detecting sugars, bitters, salts, and other contact chemical cues ",
+        "). GRNs express a range of chemosensory receptors for detecting sugars, bitters, salts, and other contact chemical cues (",
         {
           "type": "Cite",
           "target": "c6",
@@ -4325,323 +4325,296 @@
             "Chen and Dahanukar, 2020"
           ]
         },
-        ". GRNs project to the subesophageal zone (SEZ) of the fly brain, where taste information is segregated based on modality, valence, and organ of detection ",
+        "). GRNs project to the subesophageal zone (SEZ) of the fly brain, where taste information is segregated based on modality, valence, and organ of detection (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c33",
-              "content": [
-                "Marella et al., 2006"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c49",
-              "content": [
-                "Thorne et al., 2004"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c54",
-              "content": [
-                "Wang et al., 2004"
-              ]
-            }
+          "type": "Cite",
+          "target": "c33",
+          "content": [
+            "Marella et al., 2006"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c49",
+          "content": [
+            "Thorne et al., 2004"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c54",
+          "content": [
+            "Wang et al., 2004"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Although the valence of a specific taste is generally set, the intensity of the response can vary according to a variety of factors, including internal state. For example, starvation increases a fly’s sensitivity to sweet tastes and blunts bitter responses through direct modulation of GRN activity ",
+        "Although the valence of a specific taste is generally set, the intensity of the response can vary according to a variety of factors, including internal state. For example, starvation increases a fly’s sensitivity to sweet tastes and blunts bitter responses through direct modulation of GRN activity (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c22",
-              "content": [
-                "Inagaki et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c21",
-              "content": [
-                "2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c29",
-              "content": [
-                "LeDue et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c34",
-              "content": [
-                "Marella et al., 2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c22",
+          "content": [
+            "Inagaki et al., 2014"
           ]
         },
-        ". Moreover, flies lacking essential nutrients such as amino acids and salts exhibit increased nutrient-specific preference towards protein and salt-rich foods ",
+        ", ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c11",
-              "content": [
-                "Corrales-Carvajal et al., 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Jaeger et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c45",
-              "content": [
-                "Steck et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c21",
+          "content": [
+            "2012"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c29",
+          "content": [
+            "LeDue et al., 2016"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c34",
+          "content": [
+            "Marella et al., 2012"
+          ]
+        },
+        "). Moreover, flies lacking essential nutrients such as amino acids and salts exhibit increased nutrient-specific preference towards protein and salt-rich foods (",
+        {
+          "type": "Cite",
+          "target": "c11",
+          "content": [
+            "Corrales-Carvajal et al., 2016"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Jaeger et al., 2018"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c45",
+          "content": [
+            "Steck et al., 2018"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "In addition to internal state-dependent changes in nutrient drive, fly taste responses can be altered by experience. Most notably, short-term taste-specific suppression of appetitive responses can be achieved through pairing with either bitter taste or noxious heat ",
+        "In addition to internal state-dependent changes in nutrient drive, fly taste responses can be altered by experience. Most notably, short-term taste-specific suppression of appetitive responses can be achieved through pairing with either bitter taste or noxious heat (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Keene and Masek, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Masek et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c48",
-              "content": [
-                "Tauber et al., 2017"
-              ]
-            }
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Keene and Masek, 2012"
           ]
         },
-        ". This plasticity requires an integrative memory association area called the mushroom body (MB), which is known to represent stimuli of different modalities, including taste ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Keene and Masek, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Masek et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015a"
           ]
         },
-        ". Thus, while taste responses are carried out by innate circuits, they also exhibit experience-dependent changes driven by the adaptable networks of the MB ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Colomb et al., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c28",
-              "content": [
-                "Krashes et al., 2009"
-              ]
-            }
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c48",
+          "content": [
+            "Tauber et al., 2017"
+          ]
+        },
+        "). This plasticity requires an integrative memory association area called the mushroom body (MB), which is known to represent stimuli of different modalities, including taste (",
+        {
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Keene and Masek, 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015a"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        "). Thus, while taste responses are carried out by innate circuits, they also exhibit experience-dependent changes driven by the adaptable networks of the MB (",
+        {
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Colomb et al., 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015a"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c28",
+          "content": [
+            "Krashes et al., 2009"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "The MB is composed of approximately ∼4,000 intrinsic Kenyon cells (KCs), whose dendrites receive inputs from different sensory systems ",
+        "The MB is composed of approximately ∼4,000 intrinsic Kenyon cells (KCs), whose dendrites receive inputs from different sensory systems (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015a"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c44",
-              "content": [
-                "Schwaerzel et al., 2003"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Tanaka et al., 2008"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c52",
-              "content": [
-                "Vogt et al., 2014"
-              ]
-            }
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015a"
           ]
         },
-        ". KCs form ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c44",
+          "content": [
+            "Schwaerzel et al., 2003"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Tanaka et al., 2008"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c52",
+          "content": [
+            "Vogt et al., 2014"
+          ]
+        },
+        "). KCs form ",
         {
           "type": "Emphasis",
           "content": [
             "en passant"
           ]
         },
-        " synapses with mushroom body output neurons (MBONs), and MBONS send projections to neuropils outside of the MB to modulate behavioural output ",
+        " synapses with mushroom body output neurons (MBONs), and MBONS send projections to neuropils outside of the MB to modulate behavioural output (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c12",
-              "content": [
-                "Crittenden et al., 1998"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c47",
-              "content": [
-                "Tanaka et al., 2008"
-              ]
-            }
+          "type": "Cite",
+          "target": "c12",
+          "content": [
+            "Crittenden et al., 1998"
           ]
         },
-        ". Heterogeneous dopaminergic neurons (DANs) project to specific MB compartments and are activated in response to rewarding or punishing stimuli ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "Burke and Waddell, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c19",
-              "content": [
-                "Gervasi et al., 2010"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c32",
-              "content": [
-                "Mao and Davis, 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c50",
-              "content": [
-                "Tomchik and Davis, 2009"
-              ]
-            }
+          "type": "Cite",
+          "target": "c47",
+          "content": [
+            "Tanaka et al., 2008"
           ]
         },
-        ". Coincident KC activation and release of dopamine results in the depression of corresponding KC-MBON synapses and skews the MB network towards approach or avoidance behaviours ",
+        "). Heterogeneous dopaminergic neurons (DANs) project to specific MB compartments and are activated in response to rewarding or punishing stimuli (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c3",
-              "content": [
-                "Aso et al., 2014"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c9",
-              "content": [
-                "Cohn et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c40",
-              "content": [
-                "Perisse et al., 2013"
-              ]
-            }
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Burke and Waddell, 2011"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c19",
+          "content": [
+            "Gervasi et al., 2010"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c32",
+          "content": [
+            "Mao and Davis, 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c50",
+          "content": [
+            "Tomchik and Davis, 2009"
+          ]
+        },
+        "). Coincident KC activation and release of dopamine results in the depression of corresponding KC-MBON synapses and skews the MB network towards approach or avoidance behaviours (",
+        {
+          "type": "Cite",
+          "target": "c3",
+          "content": [
+            "Aso et al., 2014"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c9",
+          "content": [
+            "Cohn et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c40",
+          "content": [
+            "Perisse et al., 2013"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -4654,61 +4627,55 @@
             "Drosophila"
           ]
         },
-        " associative learning paradigms ",
+        " associative learning paradigms (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c1",
-              "content": [
-                "Aso et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c8",
-              "content": [
-                "Claridge-Chang et al., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Colomb et al., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c30",
-              "content": [
-                "Liu et al., 2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c1",
+          "content": [
+            "Aso et al., 2012"
           ]
         },
-        ". Optogenetic or thermogenetic activation of the Protocerebral Anterior Medial (PAMs) neurons, a rewarding DAN subpopulation, following or in coincidence with an odor Conditioned Stimulus (CS) results in the formation of an appetitive memory, while activation of punishing PPL1 DANs leads to the formation of an aversive memory ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Masek et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Yamagata et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c8",
+          "content": [
+            "Claridge-Chang et al., 2009"
           ]
         },
-        ". Similarly, phasic optogenetic activation of specific dopaminergic subsets in the absence of a physical reward can lead to the formation of conditioned behaviours in mice ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Colomb et al., 2009"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "Liu et al., 2012"
+          ]
+        },
+        "). Optogenetic or thermogenetic activation of the Protocerebral Anterior Medial (PAMs) neurons, a rewarding DAN subpopulation, following or in coincidence with an odor Conditioned Stimulus (CS) results in the formation of an appetitive memory, while activation of punishing PPL1 DANs leads to the formation of an aversive memory (",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
+          ]
+        },
+        "). Similarly, phasic optogenetic activation of specific dopaminergic subsets in the absence of a physical reward can lead to the formation of conditioned behaviours in mice (",
         {
           "type": "Cite",
           "target": "c43",
@@ -4716,154 +4683,139 @@
             "Saunders et al., 2018"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Appetitive Short- and Long-Term Memories (STM; LTM) are formed by independent PAM subpopulations, with the nutritional value of the sugar reward and satiation state of the fly contributing to the strength of the association ",
+        "Appetitive Short- and Long-Term Memories (STM; LTM) are formed by independent PAM subpopulations, with the nutritional value of the sugar reward and satiation state of the fly contributing to the strength of the association (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "Burke and Waddell, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c10",
-              "content": [
-                "Colomb et al., 2009"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Yamagata et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Burke and Waddell, 2011"
           ]
         },
-        ". Whereas STM may be formed under more flexible conditions with a sweet tasting reward, the formation of LTM requires a nutritious sugar ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c5",
-              "content": [
-                "Burke and Waddell, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c10",
+          "content": [
+            "Colomb et al., 2009"
           ]
         },
-        ". Caloric sugars gate memory consolidation by promoting sustained rhythmic activity of MB-MP1 DANs ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c41",
-              "content": [
-                "Plaçais et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c30",
-              "content": [
-                "2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
           ]
         },
-        ". Interestingly, this signaling may occur up to 5 hours post-ingestion, suggesting that there is a critical time window for the formation of LTM ",
+        "; ",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c39",
-              "content": [
-                "Pavlowsky et al., 2018"
-              ]
-            }
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
           ]
         },
-        "."
+        "). Whereas STM may be formed under more flexible conditions with a sweet tasting reward, the formation of LTM requires a nutritious sugar (",
+        {
+          "type": "Cite",
+          "target": "c5",
+          "content": [
+            "Burke and Waddell, 2011"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        "). Caloric sugars gate memory consolidation by promoting sustained rhythmic activity of MB-MP1 DANs (",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Plaçais et al., 2017"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "2012"
+          ]
+        },
+        "). Interestingly, this signaling may occur up to 5 hours post-ingestion, suggesting that there is a critical time window for the formation of LTM (",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c39",
+          "content": [
+            "Pavlowsky et al., 2018"
+          ]
+        },
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Although flies are known to exhibit aversive short-term taste memories, where appetitive taste responses are diminished through punishment ",
+        "Although flies are known to exhibit aversive short-term taste memories, where appetitive taste responses are diminished through punishment (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c25",
-              "content": [
-                "Kim et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Masek et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c35",
-              "content": [
-                "Masek and Scott, 2010"
-              ]
-            }
+          "type": "Cite",
+          "target": "c25",
+          "content": [
+            "Kim et al., 2017"
           ]
         },
-        ", the full extent to which taste behaviours are modifiable by learning is unknown. Can taste responses be enhanced by appetitive conditioning? Can flies form long-term memories about taste? These are difficult questions to answer using traditional methods for several reasons. First, appetitive association paradigms generally rely on food as the US, which could interfere with the representation of a taste CS and also modify future taste behaviours through changes in satiety state. Second, repeated temporal pairing of a taste CS with a US is difficult to achieve in flies without immobilization, making long-lasting memories difficult to test. To circumvent these issues, we developed an optogenetic learning paradigm that facilitates rapid, repeated CS/US pairing while maintaining similar satiation states between groups. In this paradigm, we couple a taste (the CS) with optogenetic GRN or dopaminergic neuron stimulation (the US) in order to study conditioned taste responses or ‘taste memories’. For the purpose of our study, we will define a taste memory as a measurable change in a fly’s behavioural response to a previously encountered taste stimulus."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c35",
+          "content": [
+            "Masek and Scott, 2010"
+          ]
+        },
+        "), the full extent to which taste behaviours are modifiable by learning is unknown. Can taste responses be enhanced by appetitive conditioning? Can flies form long-term memories about taste? These are difficult questions to answer using traditional methods for several reasons. First, appetitive association paradigms generally rely on food as the US, which could interfere with the representation of a taste CS and also modify future taste behaviours through changes in satiety state. Second, repeated temporal pairing of a taste CS with a US is difficult to achieve in flies without immobilization, making long-lasting memories difficult to test. To circumvent these issues, we developed an optogenetic learning paradigm that facilitates rapid, repeated CS/US pairing while maintaining similar satiation states between groups. In this paradigm, we couple a taste (the CS) with optogenetic GRN or dopaminergic neuron stimulation (the US) in order to study conditioned taste responses or ‘taste memories’. For the purpose of our study, we will define a taste memory as a measurable change in a fly’s behavioural response to a previously encountered taste stimulus."
       ]
     },
     {
@@ -4898,7 +4850,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We previously developed a system called the sip-triggered optogenetic behavioural enclosure (STROBE), in which individual flies are placed in an arena with free access to two odorless food sources ",
+        "We previously developed a system called the sip-triggered optogenetic behavioural enclosure (STROBE), in which individual flies are placed in an arena with free access to two odorless food sources (",
         {
           "type": "Cite",
           "target": "c37",
@@ -4906,7 +4858,7 @@
             "Musso et al., 2019"
           ]
         },
-        ". Interactions (mostly sips) with one food source triggers nearly instantaneous activation of a red LED, which can be used for optogenetic stimulation of neurons expressing CsChrimson. We reasoned that, if sipping on a tastant (the CS",
+        "). Interactions (mostly sips) with one food source triggers nearly instantaneous activation of a red LED, which can be used for optogenetic stimulation of neurons expressing CsChrimson. We reasoned that, if sipping on a tastant (the CS",
         {
           "type": "Superscript",
           "content": [
@@ -5039,41 +4991,39 @@
             "Figure 1B"
           ]
         },
-        "). Bitter GRN stimulation is known to activate PPL1 DANs, while sweet GRNs activate PAMs ",
+        "). Bitter GRN stimulation is known to activate PPL1 DANs, while sweet GRNs activate PAMs (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Keene and Masek, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c26",
-              "content": [
-                "Kirkhart and Scott, 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c30",
-              "content": [
-                "Liu et al., 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c36",
-              "content": [
-                "Masek et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Keene and Masek, 2012"
           ]
         },
-        ". Moreover, bitter or sweet GRN activation with ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c26",
+          "content": [
+            "Kirkhart and Scott, 2015"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "Liu et al., 2012"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c36",
+          "content": [
+            "Masek et al., 2015"
+          ]
+        },
+        "). Moreover, bitter or sweet GRN activation with ",
         {
           "type": "Emphasis",
           "content": [
@@ -5087,27 +5037,23 @@
             "Gr43a-Gal4"
           ]
         },
-        " is sufficient for STM induction in taste and olfactory associative learning paradigms ",
+        " is sufficient for STM induction in taste and olfactory associative learning paradigms (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c24",
-              "content": [
-                "Keene and Masek, 2012"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Yamagata et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c24",
+          "content": [
+            "Keene and Masek, 2012"
           ]
         },
-        ". Therefore, we tested whether pairing GRN activation with feeding on a single taste modality could create an associative taste memory that altered subsequent behaviour to the taste."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
+          ]
+        },
+        "). Therefore, we tested whether pairing GRN activation with feeding on a single taste modality could create an associative taste memory that altered subsequent behaviour to the taste."
       ]
     },
     {
@@ -5227,7 +5173,7 @@
             "+"
           ]
         },
-        ", since flies show neither strong attraction nor aversion to this concentration of salt ",
+        ", since flies show neither strong attraction nor aversion to this concentration of salt (",
         {
           "type": "Cite",
           "target": "c56",
@@ -5235,7 +5181,7 @@
             "Zhang et al., 2013"
           ]
         },
-        ". Interactions with the CS",
+        "). Interactions with the CS",
         {
           "type": "Superscript",
           "content": [
@@ -5347,7 +5293,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We next asked whether direct activation of DANs during feeding could drive the formation of taste memories. Aversive short-term taste memory depends on multiple PPL1 DANs, including PPL1-α’2 α2 and PPL1-α3 ",
+        "We next asked whether direct activation of DANs during feeding could drive the formation of taste memories. Aversive short-term taste memory depends on multiple PPL1 DANs, including PPL1-α’2 α2 and PPL1-α3 (",
         {
           "type": "Cite",
           "target": "c36",
@@ -5355,7 +5301,7 @@
             "Masek et al., 2015"
           ]
         },
-        ", while appetitive short-term taste memories have not been previously reported. We first tested whether activating PPL1 DANs coincident with tastant interactions would lead to STM formation in the STROBE. Stimulation of PPL1 neurons reduced sucrose preference during training, and a reduced preference was also observed during short-term memory testing 10 minutes later (",
+        "), while appetitive short-term taste memories have not been previously reported. We first tested whether activating PPL1 DANs coincident with tastant interactions would lead to STM formation in the STROBE. Stimulation of PPL1 neurons reduced sucrose preference during training, and a reduced preference was also observed during short-term memory testing 10 minutes later (",
         {
           "type": "Link",
           "relation": "fig",
@@ -5591,7 +5537,7 @@
             "Figure 2G"
           ]
         },
-        ") ",
+        ") (",
         {
           "type": "Cite",
           "target": "c38",
@@ -5599,7 +5545,7 @@
             "Musso et al., 2015"
           ]
         },
-        ". Thus, the contingencies governing the formation and expression of taste memories in ",
+        "). Thus, the contingencies governing the formation and expression of taste memories in ",
         {
           "type": "Emphasis",
           "content": [
@@ -5620,7 +5566,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Prior research indicates that the intrinsic neurons of the MB are required for aversive taste memory formation ",
+        "Prior research indicates that the intrinsic neurons of the MB are required for aversive taste memory formation (",
         {
           "type": "Cite",
           "target": "c36",
@@ -5628,7 +5574,7 @@
             "Masek et al., 2015"
           ]
         },
-        ". To confirm that the MB is required for appetitive taste memory formation, we silenced this neuropil throughout both our short-term and long-lasting memory assays using tetanus toxin expressed under control of the pan-MB driver ",
+        "). To confirm that the MB is required for appetitive taste memory formation, we silenced this neuropil throughout both our short-term and long-lasting memory assays using tetanus toxin expressed under control of the pan-MB driver ",
         {
           "type": "Emphasis",
           "content": [
@@ -5753,7 +5699,7 @@
             "trans-"
           ]
         },
-        "retinal laced with the protein synthesis inhibitor cycloheximide (CXM) ",
+        "retinal laced with the protein synthesis inhibitor cycloheximide (CXM) (",
         {
           "type": "Cite",
           "target": "c10",
@@ -5761,7 +5707,7 @@
             "Colomb et al., 2009"
           ]
         },
-        ". As expected, flies fed CXM prior to training were unable to form long-term taste memories, in contrast to vehicle controls (",
+        "). As expected, flies fed CXM prior to training were unable to form long-term taste memories, in contrast to vehicle controls (",
         {
           "type": "Link",
           "relation": "fig",
@@ -5807,7 +5753,7 @@
             "R15A04-Gal4"
           ]
         },
-        ", mediate the formation of appetitive short- and long-term olfactory memories, respectively ",
+        ", mediate the formation of appetitive short- and long-term olfactory memories, respectively (",
         {
           "type": "Cite",
           "target": "c55",
@@ -5815,7 +5761,7 @@
             "Yamagata et al., 2015"
           ]
         },
-        ". Moreover, it has been hypothesized that two differential reinforcing effects of sugar reward – sweet taste and nutrition, are encoded by these segregated STM and LTM neural populations ",
+        "). Moreover, it has been hypothesized that two differential reinforcing effects of sugar reward – sweet taste and nutrition, are encoded by these segregated STM and LTM neural populations (",
         {
           "type": "Cite",
           "target": "c55",
@@ -5823,7 +5769,7 @@
             "Yamagata et al., 2015"
           ]
         },
-        ". We tested both populations in our appetitive STROBE memory assays to determine if the activation of these separate PAM clusters would support the formation of parallel short- and long-term taste memories. ",
+        "). We tested both populations in our appetitive STROBE memory assays to determine if the activation of these separate PAM clusters would support the formation of parallel short- and long-term taste memories. ",
         {
           "type": "Emphasis",
           "content": [
@@ -5939,27 +5885,23 @@
     {
       "type": "Paragraph",
       "content": [
-        "Next, we wondered whether activation of a single PAM cell subtype, PAM-α1, would be sufficient to induce taste memories. PAM-α1 neurons project to an MB compartment innervated by MBON-α1, which in turn feeds back onto PAM-α1 to form a recurrent reward loop necessary for the formation of appetitive olfactory LTM ",
+        "Next, we wondered whether activation of a single PAM cell subtype, PAM-α1, would be sufficient to induce taste memories. PAM-α1 neurons project to an MB compartment innervated by MBON-α1, which in turn feeds back onto PAM-α1 to form a recurrent reward loop necessary for the formation of appetitive olfactory LTM (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c2",
-              "content": [
-                "Aso and Rubin, 2016"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c20",
-              "content": [
-                "Ichinose et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c2",
+          "content": [
+            "Aso and Rubin, 2016"
           ]
         },
-        ". Consistent with its role in olfactory memory, activation of this PAM cell type in the STROBE with drivers ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c20",
+          "content": [
+            "Ichinose et al., 2015"
+          ]
+        },
+        "). Consistent with its role in olfactory memory, activation of this PAM cell type in the STROBE with drivers ",
         {
           "type": "Emphasis",
           "content": [
@@ -6045,27 +5987,23 @@
             "Figure 5B"
           ]
         },
-        "). Thus, similar to olfactory LTM, the formation of appetitive taste LTM is dependent on an energy source being readily available during the memory consolidation window ",
+        "). Thus, similar to olfactory LTM, the formation of appetitive taste LTM is dependent on an energy source being readily available during the memory consolidation window (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c18",
-              "content": [
-                "Fujita and Tanimura, 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c18",
+          "content": [
+            "Fujita and Tanimura, 2011"
           ]
         },
-        "."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
+          ]
+        },
+        ")."
       ]
     },
     {
@@ -6128,34 +6066,31 @@
     {
       "type": "Paragraph",
       "content": [
-        "Our findings concerning the formation and expression of appetitive taste LTM bear striking similarities to those of olfactory LTM in terms of MB circuitry, dependence on protein synthesis, and energetic requirements. This led us to wonder if the energy gating performed by MB-MP1 neurons, which signal onto the mushroom body and promote energy flux in MB neurons during LTM, perform a similar function in taste memory ",
+        "Our findings concerning the formation and expression of appetitive taste LTM bear striking similarities to those of olfactory LTM in terms of MB circuitry, dependence on protein synthesis, and energetic requirements. This led us to wonder if the energy gating performed by MB-MP1 neurons, which signal onto the mushroom body and promote energy flux in MB neurons during LTM, perform a similar function in taste memory (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c38",
-              "content": [
-                "Musso et al., 2015"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c41",
-              "content": [
-                "Plaçais et al., 2017"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c30",
-              "content": [
-                "2012"
-              ]
-            }
+          "type": "Cite",
+          "target": "c38",
+          "content": [
+            "Musso et al., 2015"
           ]
         },
-        ". To test this hypothesis, we activated MB-MP1 neurons directly after training using ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c41",
+          "content": [
+            "Plaçais et al., 2017"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "c30",
+          "content": [
+            "2012"
+          ]
+        },
+        "). To test this hypothesis, we activated MB-MP1 neurons directly after training using ",
         {
           "type": "Emphasis",
           "content": [
@@ -6257,7 +6192,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "We observed both positive and negative taste memories following optogenetic GRN stimulation concurrent with taste detection. The activation of bitter GRNs paired with sucrose led to the formation of STM, which agrees with previous research demonstrating that thermogenetic stimulation of bitter GRNs can act as a negative US, and lead to taste learning in short-term paradigms ",
+        "We observed both positive and negative taste memories following optogenetic GRN stimulation concurrent with taste detection. The activation of bitter GRNs paired with sucrose led to the formation of STM, which agrees with previous research demonstrating that thermogenetic stimulation of bitter GRNs can act as a negative US, and lead to taste learning in short-term paradigms (",
         {
           "type": "Cite",
           "target": "c24",
@@ -6265,73 +6200,67 @@
             "Keene and Masek, 2012"
           ]
         },
-        ". Notably, although activation of sweet GRNs prompted both STM and LTM formation, bitter GRN activation was not sufficient for the formation of LTM in our assay. One possible explanation is that because bitter GRN activation strongly inhibits feeding, the number of pairings between sugar taste and bitter activation was insufficient to induce LTM. Consistent with this idea, PPL1 activation, which induced LTM, is less aversive during training and therefore allows more associations."
+        "). Notably, although activation of sweet GRNs prompted both STM and LTM formation, bitter GRN activation was not sufficient for the formation of LTM in our assay. One possible explanation is that because bitter GRN activation strongly inhibits feeding, the number of pairings between sugar taste and bitter activation was insufficient to induce LTM. Consistent with this idea, PPL1 activation, which induced LTM, is less aversive during training and therefore allows more associations."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Although aversive taste memories have been established, evidence for appetitive taste memories has been sparse. Rats’ hedonic response to bitter compounds can be made more positive through pairing with sugar, and human studies suggest that children’s taste palates are malleable based on positive experiences with bitter vegetables ",
+        "Although aversive taste memories have been established, evidence for appetitive taste memories has been sparse. Rats’ hedonic response to bitter compounds can be made more positive through pairing with sugar, and human studies suggest that children’s taste palates are malleable based on positive experiences with bitter vegetables (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c4",
-              "content": [
-                "Breslin et al., 1990"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c16",
-              "content": [
-                "Figueroa et al., 2020"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c17",
-              "content": [
-                "Forestell and LoLordo, 2000"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c53",
-              "content": [
-                "Wadhera et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c4",
+          "content": [
+            "Breslin et al., 1990"
           ]
         },
-        ". Thus, despite the difficulties of measuring taste memories in the lab, appetitive taste plasticity is very likely an ethologically important process."
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c16",
+          "content": [
+            "Figueroa et al., 2020"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c17",
+          "content": [
+            "Forestell and LoLordo, 2000"
+          ]
+        },
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c53",
+          "content": [
+            "Wadhera et al., 2015"
+          ]
+        },
+        "). Thus, despite the difficulties of measuring taste memories in the lab, appetitive taste plasticity is very likely an ethologically important process."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "The enhancement of salt palatability following co-incident activation of sweet taste may be surprising, given that NaCl on its own activates sweet GRNs ",
+        "The enhancement of salt palatability following co-incident activation of sweet taste may be surprising, given that NaCl on its own activates sweet GRNs (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c23",
-              "content": [
-                "Jaeger et al., 2018"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c33",
-              "content": [
-                "Marella et al., 2006"
-              ]
-            }
+          "type": "Cite",
+          "target": "c23",
+          "content": [
+            "Jaeger et al., 2018"
           ]
         },
-        ". However, salt activates only about one third of sweet GRNs ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c33",
+          "content": [
+            "Marella et al., 2006"
+          ]
+        },
+        "). However, salt activates only about one third of sweet GRNs (",
         {
           "type": "Cite",
           "target": "c15",
@@ -6339,7 +6268,7 @@
             "Dweck et al., 2022"
           ]
         },
-        ", and thus appetitive memory formation may be driven by strong activation of the broader sweet neuron population. Nevertheless, directly stimulating DANs as the flies experienced taste inputs through feeding afforded us the ability to reduce this complication and also interrogate the roles of specific DAN populations. Taking a hypothesis driven approach, we confirmed that PAM neural subpopulations reinforce taste percepts much like olfactory inputs, and that short- and long-term memories are processed by distinct subpopulations. For example, activating β’2, γ4, and γ5 compartments with ",
+        "), and thus appetitive memory formation may be driven by strong activation of the broader sweet neuron population. Nevertheless, directly stimulating DANs as the flies experienced taste inputs through feeding afforded us the ability to reduce this complication and also interrogate the roles of specific DAN populations. Taking a hypothesis driven approach, we confirmed that PAM neural subpopulations reinforce taste percepts much like olfactory inputs, and that short- and long-term memories are processed by distinct subpopulations. For example, activating β’2, γ4, and γ5 compartments with ",
         {
           "type": "Emphasis",
           "content": [
@@ -6353,27 +6282,23 @@
             "R15A04-Gal4"
           ]
         },
-        " produces LTM in both. These results confirm that appetitive STM and LTM are processed in parallel in the MB ",
+        " produces LTM in both. These results confirm that appetitive STM and LTM are processed in parallel in the MB (",
         {
-          "type": "CiteGroup",
-          "items": [
-            {
-              "type": "Cite",
-              "target": "c51",
-              "content": [
-                "Trannoy et al., 2011"
-              ]
-            },
-            {
-              "type": "Cite",
-              "target": "c55",
-              "content": [
-                "Yamagata et al., 2015"
-              ]
-            }
+          "type": "Cite",
+          "target": "c51",
+          "content": [
+            "Trannoy et al., 2011"
           ]
         },
-        ". Given that tastes, like odours, activate the KC calyces ",
+        "; ",
+        {
+          "type": "Cite",
+          "target": "c55",
+          "content": [
+            "Yamagata et al., 2015"
+          ]
+        },
+        "). Given that tastes, like odours, activate the KC calyces (",
         {
           "type": "Cite",
           "target": "c26",
@@ -6381,7 +6306,7 @@
             "Kirkhart and Scott, 2015a"
           ]
         },
-        ", we speculate that optogenetic stimulation of PAM neurons during feeding modulates the strength of KC-MBON synaptic connections. Notably, activation of single PAM cell type produced different forms of memory in the STROBE. For example, stimulating PAM-α1 neurons during feeding drives appetitive taste LTM, while activation of PAM-β’1 was immediately rewarding."
+        "), we speculate that optogenetic stimulation of PAM neurons during feeding modulates the strength of KC-MBON synaptic connections. Notably, activation of single PAM cell type produced different forms of memory in the STROBE. For example, stimulating PAM-α1 neurons during feeding drives appetitive taste LTM, while activation of PAM-β’1 was immediately rewarding."
       ]
     },
     {
@@ -6394,7 +6319,7 @@
             "Drosophila"
           ]
         },
-        " requires the intake of caloric sugar. Here, we demonstrate that the caloric requirements of long-term memory formation can be quenched by food sources other than sucrose, including lactic acid and yeast extract. Moreover, it seems that at least one amino-acid, L-alanine, is able to provide adequate energy, while L-aspartic acid cannot. We theorize that these foods may provide flies readily accessible energy, as neurons are able to metabolize both lactic acid and L-alanine into pyruvate to fuel the production of ATP via oxidative phosphorylation ",
+        " requires the intake of caloric sugar. Here, we demonstrate that the caloric requirements of long-term memory formation can be quenched by food sources other than sucrose, including lactic acid and yeast extract. Moreover, it seems that at least one amino-acid, L-alanine, is able to provide adequate energy, while L-aspartic acid cannot. We theorize that these foods may provide flies readily accessible energy, as neurons are able to metabolize both lactic acid and L-alanine into pyruvate to fuel the production of ATP via oxidative phosphorylation (",
         {
           "type": "Cite",
           "target": "c14",
@@ -6402,13 +6327,13 @@
             "de Tredern et al., 2021"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Energy gating in the MB is thought to be regulated by the MB-MP1-DANs. MB-MP1 neuron oscillations activate increased mitochondrial energy flux within the KCs, which is both necessary and sufficient to support LTM ",
+        "Energy gating in the MB is thought to be regulated by the MB-MP1-DANs. MB-MP1 neuron oscillations activate increased mitochondrial energy flux within the KCs, which is both necessary and sufficient to support LTM (",
         {
           "type": "Cite",
           "target": "c41",
@@ -6416,7 +6341,7 @@
             "Plaçais et al., 2017"
           ]
         },
-        ". To demonstrate sufficiency in our assay, we activated MB-MP1 neurons with TRPA1 directly after fly training, which effectively substitutes for a caloric food source and allows LTM formation (",
+        "). To demonstrate sufficiency in our assay, we activated MB-MP1 neurons with TRPA1 directly after fly training, which effectively substitutes for a caloric food source and allows LTM formation (",
         {
           "type": "Link",
           "relation": "fig",
@@ -6474,7 +6399,7 @@
             "R58E02-GAL4"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c38",
@@ -6482,7 +6407,7 @@
             "Musso et al., 2015"
           ]
         },
-        "; ",
+        "); ",
         {
           "type": "Emphasis",
           "content": [
@@ -6503,7 +6428,7 @@
             "MB043B-GAL4, MB504B-GAL4, MB299B-GAL4, MB301B-GAL4"
           ]
         },
-        " from Janelia Research Campus ",
+        " from Janelia Research Campus (",
         {
           "type": "Cite",
           "target": "c3",
@@ -6511,14 +6436,14 @@
             "Aso et al., 2014"
           ]
         },
-        ". GRN expression was driven using ",
+        "). GRN expression was driven using ",
         {
           "type": "Emphasis",
           "content": [
             "Gr43a-GAL4, Gr64f-GAL4"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c13",
@@ -6526,14 +6451,14 @@
             "Dahanukar et al., 2007"
           ]
         },
-        ", ",
+        "), ",
         {
           "type": "Emphasis",
           "content": [
             "Gr66a-GAL4"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c54",
@@ -6541,7 +6466,7 @@
             "Wang et al., 2004"
           ]
         },
-        ", and ",
+        "), and ",
         {
           "type": "Emphasis",
           "content": [
@@ -6572,7 +6497,7 @@
             "PPK23-GAL4, Gr66a-LexA::VP16, LexAop-Gal80"
           ]
         },
-        " ",
+        " (",
         {
           "type": "Cite",
           "target": "c23",
@@ -6580,14 +6505,14 @@
             "Jaeger et al., 2018"
           ]
         },
-        ". ",
+        "). ",
         {
           "type": "Emphasis",
           "content": [
             "LexAop-tnt"
           ]
         },
-        " was previously described ",
+        " was previously described (",
         {
           "type": "Cite",
           "target": "c31",
@@ -6595,14 +6520,14 @@
             "Liu et al., 2016"
           ]
         },
-        ". For temperature activation experiments ",
+        "). For temperature activation experiments ",
         {
           "type": "Emphasis",
           "content": [
             "LexAop-TrpA1"
           ]
         },
-        " was used ",
+        " was used (",
         {
           "type": "Cite",
           "target": "c30",
@@ -6610,7 +6535,7 @@
             "Liu et al., 2012"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
@@ -6694,7 +6619,7 @@
     {
       "type": "Paragraph",
       "content": [
-        "Brain staining protocols were performed as previously described ",
+        "Brain staining protocols were performed as previously described (",
         {
           "type": "Cite",
           "target": "c7",
@@ -6702,13 +6627,13 @@
             "Chu et al., 2014"
           ]
         },
-        ". Briefly, brains were fixed for 1 hour in 4% paraformaldehyde and dissected in PBS + 0.1% TritonX. After dissection brains were blocked in 5% NGS diluted with PBST for 1 hour. Brains were probed overnight at 4°C using the following primary antibody dilutions: rabbit anti-GFP (1:1000, Invitrogen #A11122), and mouse anti-brp (1:50, DSHB #nc82). After a 1hour wash period secondary antibodies goat anti-rabbit Alexa-488 (1:200, Invitrogen #A11008) and goat anti-mouse Alexa-568 (1:200, Invitrogen #A11030) were applied and incubated for 1 hour at room temperature to detect primary antibody binding. Slowfade gold was used as an antifade mounting medium."
+        "). Briefly, brains were fixed for 1 hour in 4% paraformaldehyde and dissected in PBS + 0.1% TritonX. After dissection brains were blocked in 5% NGS diluted with PBST for 1 hour. Brains were probed overnight at 4°C using the following primary antibody dilutions: rabbit anti-GFP (1:1000, Invitrogen #A11122), and mouse anti-brp (1:50, DSHB #nc82). After a 1hour wash period secondary antibodies goat anti-rabbit Alexa-488 (1:200, Invitrogen #A11008) and goat anti-mouse Alexa-568 (1:200, Invitrogen #A11030) were applied and incubated for 1 hour at room temperature to detect primary antibody binding. Slowfade gold was used as an antifade mounting medium."
       ]
     },
     {
       "type": "Paragraph",
       "content": [
-        "Slides were imaged under a 25x water immersion objective using a Leica SP5 II Confocal microscope. All images were taken sequentially with a z-stack step size at 1 µm, a line average of 2, speed of 200 Hz, and a resolution of 1024 × 1024 pixels. Image J was used to compile slices into a maximum intensity projection",
+        "Slides were imaged under a 25x water immersion objective using a Leica SP5 II Confocal microscope. All images were taken sequentially with a z-stack step size at 1 µm, a line average of 2, speed of 200 Hz, and a resolution of 1024 × 1024 pixels. Image J was used to compile slices into a maximum intensity projection(",
         {
           "type": "Cite",
           "target": "c23",
@@ -6716,7 +6641,7 @@
             "Jaeger et al., 2018"
           ]
         },
-        "."
+        ")."
       ]
     },
     {
