@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/stencila/encoda/compare/v1.0.0...v1.0.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* **JATS:** Workaround for `xml-js` dropping spaces between elements ([a34678c](https://github.com/stencila/encoda/commit/a34678cfb4ac54a55443d2c5f4a7680b532d9f6c))
+
 # [1.0.0](https://github.com/stencila/encoda/compare/v0.121.6...v1.0.0) (2023-05-29)
 
 
