@@ -4497,7 +4497,9 @@ content:
       - '):'
   - type: Paragraph
     content:
-      - in the brain
+      - type: NontextualAnnotation
+        content:
+          - in the brain
       - ':'
   - type: List
     items:
@@ -4525,7 +4527,9 @@ content:
       listType: bullet
   - type: Paragraph
     content:
-      - in each of the two eyes
+      - type: NontextualAnnotation
+        content:
+          - in each of the two eyes
       - ':'
   - type: List
     items:
@@ -4568,7 +4572,9 @@ content:
       listType: bullet
   - type: Paragraph
     content:
-      - and in the eye-brain coupling
+      - type: NontextualAnnotation
+        content:
+          - and in the eye-brain coupling
       - ':'
   - type: List
     items:
