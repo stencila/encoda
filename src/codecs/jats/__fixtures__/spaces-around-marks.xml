@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<article>
+    <body>
+        <p>Test that spaces around marks are retained. A regression test based on a published example</p>
+        <list list-type="roman-lower">
+            <list-item>
+                <p><bold><italic>Space after</italic></bold> <italic>space before and after</italic> </p>
+            </list-item>
+        </list>
+    </body>
+</article>

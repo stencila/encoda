@@ -1,0 +1,26 @@
+type: Article
+content:
+  - type: Paragraph
+    content:
+      - >-
+        Test that spaces around marks are retained. A regression test based on a
+        published example
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
+              - type: Strong
+                content:
+                  - type: Emphasis
+                    content:
+                      - Space after
+              - ' '
+              - type: Emphasis
+                content:
+                  - space before and after
+              - ' '
+    order: Ascending
+    meta:
+      listType: roman-lower

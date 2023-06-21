@@ -61,6 +61,16 @@ type Content = stencila.InlineContent | stencila.BlockContent
 const DOCTYPE =
   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd"'
 
+/**
+ * The spacing character to use to workaround a bug
+ * in xml-js that strips whitespace between elements
+ * https://github.com/nashwaan/xml-js/issues/177
+ *
+ * This is an invisible character but xml-js does not treat as whitespace
+ * https://unicode-explorer.com/c/2800
+ */
+const SPACER = '\u2800'
+
 export class JatsCodec extends Codec implements Codec {
   /**
    * Media types that this codec will match.
@@ -110,8 +120,13 @@ export class JatsCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Article | Content[]> => {
-    const jats = await vfile.dump(file)
-    const doc = xml.load(jats)
+    let jats = await vfile.dump(file)
+
+    // See notes on SPACER for why this is needed
+    let fixed = jats.replaceAll('> <', `>${SPACER}<`)
+
+    const doc = xml.load(fixed)
+
     return decodeDocument(doc)
   }
 
@@ -1387,6 +1402,9 @@ export function decodeReference(
     title = textOrUndefined(elem)
   }
 
+  // Remove any space placeholders
+  title = title?.replaceAll(SPACER, ' ')
+
   let publisher: stencila.Organization | undefined
   const publisherName = textOrUndefined(child(elem, 'publisher-name'))
   if (publisherName !== undefined) {
@@ -1612,7 +1630,8 @@ function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
  * Decode a JATS element to an array of Stencila `Node`s
  */
 function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  if (elem.type === 'text') return [elem.text ?? '']
+  if (elem.type === 'text')
+    return [elem.text?.toString().replace(SPACER, ' ') ?? '']
   switch (elem.name) {
     case 'alternatives':
       return decodeAlternatives(elem, state)
@@ -1694,7 +1713,11 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
     case 'Strong':
       return encodeMark(node as stencila.Strong, state, 'bold')
     case 'NontextualAnnotation':
-      return encodeMark(node as stencila.NontextualAnnotation, state, 'underline')
+      return encodeMark(
+        node as stencila.NontextualAnnotation,
+        state,
+        'underline'
+      )
     case 'Superscript':
       return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':

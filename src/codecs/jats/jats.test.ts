@@ -294,6 +294,7 @@ test.each([
   'nested-list.xml',
   'supplementary-material.xml',
   'labelled-list-items.xml',
+  'spaces-around-marks.xml',
   'elife-30274-v1',
   'elife-43154-v2',
   'elife-46472-v3',
