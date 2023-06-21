@@ -4905,7 +4905,12 @@
               ]
             },
             "A) Diagram outlining STROBE memory paradigm. ",
-            "Training:",
+            {
+              "type": "NontextualAnnotation",
+              "content": [
+                "Training:"
+              ]
+            },
             " starved flies freely interact with a LED-activating tastant for 40 minutes. ",
             {
               "type": "Emphasis",
@@ -4914,7 +4919,12 @@
               ]
             },
             " induces bitter or sweet neuron stimulation upon LED-activation, pairing feeding with punishment or reward. ",
-            "Testing:",
+            {
+              "type": "NontextualAnnotation",
+              "content": [
+                "Testing:"
+              ]
+            },
             " associative memory is measured by assessing preference for the tastant compared to agar for a 1-hour time period. (B) Schematic of aversive and appetitive STM and LLM timelines and a diagram of activated bitter and sweet neurons in the SEZ. (C) Preference indices (left) and tastant interaction numbers (right) for ",
             {
               "type": "Emphasis",

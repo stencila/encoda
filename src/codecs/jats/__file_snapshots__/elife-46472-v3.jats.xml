@@ -1516,7 +1516,8 @@
                 </italic> sequence were designed and synthesized by ThermoFisher Scientific (Carlsbad, CA, USA) (
                 <ext-link ext-link-type="uri" xlink:href="#fig8">Figure 8a</ext-link>). During the development of the gRNA, in silico analysis with the basic local alignment search tool or BLAST was used to assure specificity of the sequence. The gRNA chosen for use was a perfect match for 
                 <italic>Taar1</italic>, with no mismatches, except at the SNP location. The gRNA sequence had similarity to nine additional regions on chromosomes 1, 3, 5, 9, 11 and 19, but with 2–3 mismatches in each case. This gRNA had the sequence tctgataatgAcctgcagcatgg. The location of the SNP is indicated by the capital A, encoding the mutant genotype present in the high line. The location of the SNP within the 
-                <italic>Taar1</italic> ossDNA sequence, which is the reference genotype, is indicated below by the capital C, with the gRNA sequence underlined. The gene editing replaces A with C: cFFctggctccttcactccatggccattgtcgactttctgctgggctgtctgataatgCcctgcagcatggtgagaactgttgagcgctgttggtatZZt. The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).
+                <italic>Taar1</italic> ossDNA sequence, which is the reference genotype, is indicated below by the capital C, with the gRNA sequence underlined. The gene editing replaces A with C: cFFctggctccttcactccatggccattgtcgactttctgctgggctg
+                <underline>tctgataatgCcctgcagcatgg</underline>tgagaactgttgagcgctgttggtatZZt. The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).
             </p>
             <fig>
                 <label>Figure 8.</label>

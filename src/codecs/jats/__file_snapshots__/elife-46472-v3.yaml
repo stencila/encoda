@@ -8848,7 +8848,9 @@ content:
           - Taar1
       - ' ossDNA sequence, which is the reference genotype, is indicated below by the capital C, with the gRNA sequence underlined. The gene editing replaces A with C: '
       - cFFctggctccttcactccatggccattgtcgactttctgctgggctg
-      - tctgataatgCcctgcagcatgg
+      - type: NontextualAnnotation
+        content:
+          - tctgataatgCcctgcagcatgg
       - tgagaactgttgagcgctgttggtatZZt.
       - ' The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).'
   - type: Figure

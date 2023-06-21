@@ -1640,6 +1640,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeMark(elem, state, 'Emphasis')
     case 'bold':
       return decodeMark(elem, state, 'Strong')
+    case 'underline':
+      return decodeMark(elem, state, 'NontextualAnnotation')
     case 'sup':
       return decodeMark(elem, state, 'Superscript')
     case 'sub':
@@ -1691,6 +1693,8 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(node as stencila.Emphasis, state, 'italic')
     case 'Strong':
       return encodeMark(node as stencila.Strong, state, 'bold')
+    case 'NontextualAnnotation':
+      return encodeMark(node as stencila.NontextualAnnotation, state, 'underline')
     case 'Superscript':
       return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':
