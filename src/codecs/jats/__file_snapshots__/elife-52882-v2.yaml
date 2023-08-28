@@ -6326,3 +6326,1549 @@ content:
         Zebrafish larvae
       - Dryad Digital Repository
       - 10.5061/dryad.v9s4mw6qx
+  - type: ThematicBreak
+  - type: Heading
+    depth: 1
+    content:
+      - Appendix 1
+  - type: Heading
+    id: s8
+    depth: 1
+    content:
+      - Modelling spontaneous navigation of zebrafish larvae
+  - type: Paragraph
+    content:
+      - >-
+        We model the discrete trajectories (sequences of bouts) as a stochastic
+        process using two independent Markov chains, depicted in 
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1E
+      - '. The '
+      - type: Emphasis
+        content:
+          - bout type
+      - ' chain (top) controls the alternation between forward and turning bouts, with possible states '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf208"><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf209"><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ' at time '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf210"><mml:mi>n</mml:mi></mml:math>
+      - ', while the '
+      - type: Emphasis
+        content:
+          - side
+      - ' chain (bottom) controls the left/right orientations of turning bouts, with possible states '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf211"><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf212"><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - >-
+        . All possible states are combinations of the states of the two chains,
+        namely 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf213"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ', '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf214"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ', '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf215"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ', and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf216"><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow></mml:math>
+      - '. The transition rates of the bout type chain are '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf217"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf218"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ', where '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf219"><mml:mrow><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+      - ' is the overall fraction of turning bouts. For the side chain, under constant uniform illumination, the right and left states are equiprobable, and the two transition probabilities are thus equal: '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf220"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>R</mml:mi><mml:mo>→</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>→</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+      - .
+  - type: Paragraph
+    content:
+      - >-
+        The two chains operate synchronously: at every time step transitions on
+        both chains are triggered simultaneously, and a reorientation value 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf221"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
+      - ' is drawn based on the resulting state. When the fish is in a turning state, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf222"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ' or '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf223"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - >-
+        , the reorientation angle is sampled from the positive and negative side
+        of a centered normal distribution with standard deviation 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf224"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ' for left and right turns, respectively. When the fish is in a forward state, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf225"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - ' or '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf226"><mml:msub><mml:mrow><mml:mo
+          stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+          stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub></mml:math>
+      - >-
+        , the reorientation angle is drawn from a normal distribution with
+        standard deviation 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf227"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
+      - '. Therefore, for forward bouts the resulting '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf228"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
+      - ' can be positive or negative, irrespective of the left/right state of the side chain. Altogether, the general statistical distribution of turning amplitudes '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf229"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
+      - ' used in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1F
+      - ' reads'
+  - type: MathBlock
+    id: equ5
+    label: (A1)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m5"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - with
+  - type: MathBlock
+    id: equ6
+    label: (A2)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m6"><mml:mrow><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi
+      class="ltx_font_mathcaligraphic">𝒩</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>0</mml:mn><mml:mo
+      rspace="4.2pt">,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo
+      mathvariant="italic"
+      separator="true"/><mml:mtext>and</mml:mtext></mml:mrow></mml:mrow><mml:mo
+      mathvariant="italic"
+      separator="true"/><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi
+      class="ltx_font_mathcaligraphic">𝒩</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>0</mml:mn><mml:mo
+      rspace="4.2pt">,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Heading
+    id: s9
+    depth: 1
+    content:
+      - 'Mean amplitude at '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf230"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - >-
+        Within this framework, one can analytically compute the mean square
+        angle at time 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf231"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+      - ', as detailed below:'
+  - type: MathBlock
+    id: equ7
+    label: (A3)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m7"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>F</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'The two probabilities read:'
+  - type: MathBlock
+    id: equ8
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m8"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>F</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ9
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m9"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - such that
+  - type: MathBlock
+    id: equ10
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m10"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'Using the functions defined in '
+      - type: Link
+        relation: disp-formula
+        target: '#equ6'
+        content:
+          - Equation A2
+      - ' we introduce the function '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf232"><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
+      - ':'
+  - type: MathBlock
+    id: equ11
+    label: (A4)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m11"><mml:mrow><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>ϕ</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'The mean square amplitude at time '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf233"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+      - ' can thus be written, as a function of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf234"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
+      - ' as:'
+  - type: MathBlock
+    id: equ12
+    label: (A5)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m12"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>|</mml:mo></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'This expression is used to fit the data in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1F
+      - " and estimate the two transition rates. These are found to be close to the ratio of turning and forward bouts, that\_is\_"
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf235"><mml:mrow><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mi>p</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>≈</mml:mo><mml:mn>0.8</mml:mn></mml:mrow></mml:math>
+      - '. In the following, we set '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf236"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf237"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>
+      - >-
+        , thus ignoring the weak memory component in the selection of turning vs
+        forward bouts.
+  - type: Heading
+    id: s9-1
+    depth: 2
+    content:
+      - 'Mean reorientation at '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf238"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - >-
+        Similarly, one can compute the theoretical expression of the mean
+        reorientation angle at time 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf239"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+      - ':'
+  - type: MathBlock
+    id: equ13
+    label: (A6)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m13"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - with
+  - type: MathBlock
+    id: equ14
+    label: (A7)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m14"><mml:mrow><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>0</mml:mn><mml:mo
+      mathvariant="italic"
+      separator="true"/><mml:mtext>and</mml:mtext></mml:mrow></mml:mrow><mml:mo
+      mathvariant="italic"
+      separator="true"/><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>-</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msqrt><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac></mml:msqrt><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'Then:'
+  - type: MathBlock
+    id: equ15
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m15"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ16
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m16"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - and
+  - type: MathBlock
+    id: equ17
+    label: (A8)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m17"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msqrt><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac></mml:msqrt><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'Without further assumption, this simply confirms '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf240"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
+      - '. Given the reorientation at time '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf241"><mml:mi>n</mml:mi></mml:math>
+      - ', this expression now writes:'
+  - type: MathBlock
+    id: equ18
+    label: (A9)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m18"><mml:mrow><mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo
+      fence="true"
+      stretchy="false">|</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msqrt><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac></mml:msqrt><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - Since
+  - type: MathBlock
+    id: equ19
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m19"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ20
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m20"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - and
+  - type: MathBlock
+    id: equ21
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m21"><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>F</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - we obtain
+  - type: MathBlock
+    id: equ22
+    label: (A10)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m22"><mml:mrow><mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo
+      fence="true"
+      stretchy="false">|</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mi>ℙ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+      lspace="2.5pt" rspace="2.5pt"
+      stretchy="false">|</mml:mo><mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msqrt><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac></mml:msqrt><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - Then, noting that
+  - type: MathBlock
+    id: equ23
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m23"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>&gt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>&gt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mstyle></mml:mtd></mml:mtr></mml:mtable><mml:mo
+      fence="true" stretchy="true" symmetric="true"/></mml:mrow><mml:mspace
+      width="2em"/><mml:mtext>and</mml:mtext><mml:mspace
+      width="2em"/><mml:mrow><mml:mo>{</mml:mo><mml:mtable columnalign="left
+      left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mstyle></mml:mtd></mml:mtr></mml:mtable><mml:mo
+      fence="true" stretchy="true"
+      symmetric="true"/></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'we finally obtain the formula used to fit the data in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1G
+      - ':'
+  - type: MathBlock
+    id: equ24
+    label: (A11)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m24"><mml:mrow><mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo
+      fence="true"
+      stretchy="false">|</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>g</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msqrt><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac></mml:msqrt><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Heading
+    id: s9-2
+    depth: 2
+    content:
+      - Autocorrelation of the reorientations
+  - type: Paragraph
+    content:
+      - >-
+        One can then compute the correlation of reorientation amplitudes,
+        defined for 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf242"><mml:mrow><mml:mi>q</mml:mi><mml:mo>∈</mml:mo><mml:msup><mml:mi>ℕ</mml:mi><mml:mo>*</mml:mo></mml:msup></mml:mrow></mml:math>
+      - ' as:'
+  - type: MathBlock
+    id: equ25
+    label: (A12)
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m25"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:msqrt><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:msqrt><mml:msqrt><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:msqrt></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - >-
+        with the normalization coefficient equal to the variance of
+        reorientations
+  - type: MathBlock
+    id: equ26
+    label: (A13)
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m26"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>+</mml:mo><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>w</mml:mi><mml:mi>d</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'The term '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf243"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+      - ' can be computed in a similar manner as for '
+      - type: Link
+        relation: disp-formula
+        target: '#equ13'
+        content:
+          - Equation A6
+      - >-
+        , but with more terms corresponding to the 16 possible combinations of
+        states:
+  - type: MathBlock
+    id: equ27
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m27"><mml:mrow><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ28
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m28"><mml:mrow><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ29
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m29"><mml:mrow><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+  - type: MathBlock
+    id: equ30
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m30"><mml:mrow><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>F</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      mathvariant="italic" separator="true"/><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mi>n</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mo
+      stretchy="false">{</mml:mo><mml:mrow><mml:mi>T</mml:mi><mml:mo>⁢</mml:mo><mml:mi>R</mml:mi></mml:mrow><mml:mo
+      stretchy="false">}</mml:mo></mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - >-
+        Only the four states in the bottom-right corner have a finite
+        contribution, since all the others terms are multiplied by 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf244"><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>f</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
+      - '. Thus:'
+  - type: MathBlock
+    id: equ31
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m31"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mtable columnalign="left left"
+      columnspacing="1em" rowspacing="4pt"><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo></mml:mstyle></mml:mtd><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:msubsup><mml:mi>μ</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:msubsup><mml:mi>μ</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mstyle></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'and, using '
+      - type: Link
+        relation: disp-formula
+        target: '#equ14'
+        content:
+          - Equation A7
+      - ' and'
+  - type: MathBlock
+    id: equ32
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m32"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mtable columnalign="left left"
+      columnspacing="1em" rowspacing="4pt"><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mn>2</mml:mn></mml:mfrac><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mn>2</mml:mn></mml:mfrac><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>L</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mn>2</mml:mn></mml:mfrac><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mo fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      fence="false"
+      stretchy="false">{</mml:mo><mml:mi>T</mml:mi><mml:mi>R</mml:mi><mml:msub><mml:mo
+      fence="false"
+      stretchy="false">}</mml:mo><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mn>2</mml:mn></mml:mfrac><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo></mml:mstyle></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - and noting that
+  - type: MathBlock
+    id: equ33
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m33"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mtable columnalign="left left"
+      columnspacing="1em" rowspacing="4pt"><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mi>i</mml:mi><mml:mtext/><mml:mrow/><mml:mtext>odd</mml:mtext></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mrow><mml:mo>(</mml:mo><mml:mtable
+      columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:mtd></mml:mtr></mml:mtable><mml:mo>)</mml:mo></mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msubsup><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mi
+      mathvariant="double-struck">P</mml:mi></mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:msub><mml:mi>L</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mi>i</mml:mi><mml:mtext/><mml:mrow/><mml:mtext>even</mml:mtext></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mrow><mml:mo>(</mml:mo><mml:mtable
+      columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:mtd></mml:mtr></mml:mtable><mml:mo>)</mml:mo></mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msubsup><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mstyle></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - one obtains
+  - type: MathBlock
+    id: equ34
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m34"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mo
+      stretchy="false">(</mml:mo><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:msup><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mrow><mml:mrow><mml:mo
+      maxsize="2.047em" minsize="2.047em">(</mml:mo></mml:mrow><mml:mfrac
+      linethickness="0pt"><mml:mi>q</mml:mi><mml:mi>i</mml:mi></mml:mfrac><mml:mrow><mml:mo
+      maxsize="2.047em"
+      minsize="2.047em">)</mml:mo></mml:mrow></mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msubsup><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:msubsup><mml:mi>μ</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>=</mml:mo><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>2</mml:mn><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:msup><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'and finally:'
+  - type: MathBlock
+    id: equ35
+    label: (A14)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m35"><mml:mrow><mml:msub><mml:mi>C</mml:mi><mml:mi>q</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mfrac><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mfrac><mml:mo>⁢</mml:mo><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mi>q</mml:mi></mml:msup></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - 'This is the equation used to fit the data in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1H
+      - .
+  - type: Paragraph
+    content:
+      - 'An estimate of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf245"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ' was calculated as follows. If only turns are considered :'
+  - type: MathBlock
+    id: equ36
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m36"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mtable columnalign="left left"
+      columnspacing="1em" rowspacing="4pt"><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>−</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo
+      stretchy="false">[</mml:mo><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>2</mml:mn><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo
+      stretchy="false">]</mml:mo></mml:mstyle></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'thus :'
+  - type: MathBlock
+    id: equ37
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m37"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mfrac><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mrow><mml:mo
+      stretchy="false">|</mml:mo></mml:mrow></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>2</mml:mn><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - And finally
+  - type: MathBlock
+    id: equ38
+    label: (A15)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m38"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mfrac><mml:msub><mml:mi>C</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mfrac></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Heading
+    id: s10
+    depth: 1
+    content:
+      - Mean square reorientation (MSR)
+  - type: Paragraph
+    content:
+      - 'The mean square reorientation for a lag '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf246"><mml:mrow><mml:mi>q</mml:mi><mml:mo>∈</mml:mo><mml:msup><mml:mi>ℕ</mml:mi><mml:mo>*</mml:mo></mml:msup></mml:mrow></mml:math>
+      - ' is defined by:'
+  - type: MathBlock
+    id: equ39
+    label: (A16)
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m39"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>⟩</mml:mo></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'and can be expressed as a sum of correlations as follows:'
+  - type: MathBlock
+    id: equ40
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m40"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mtable columnalign="left left"
+      columnspacing="1em" rowspacing="4pt"><mml:mtr><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:msub><mml:mi>M</mml:mi><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:msub></mml:mstyle></mml:mtd><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>j</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>j</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:mi>q</mml:mi><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mi>j</mml:mi><mml:mo>≠</mml:mo><mml:mi>i</mml:mi></mml:mtd></mml:mtr></mml:mtable></mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:munderover><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>j</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:mi>q</mml:mi><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mstyle
+      displaystyle="true"
+      scriptlevel="0"><mml:mo>=</mml:mo><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>q</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:msub><mml:mi>C</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:msubsup><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:mstyle></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'and using '
+      - type: Link
+        relation: disp-formula
+        target: '#equ26'
+        content:
+          - Equation A13
+      - ' we finally obtain the expression used in '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1I
+      - ':'
+  - type: MathBlock
+    id: equ41
+    label: (A17)
+    mathLanguage: mathml
+    text: >-
+      <mml:math
+      id="m41"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mi>q</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>+</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:mrow><mml:munderover><mml:mo
+      largeop="true" movablelimits="false"
+      symmetric="true">∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>q</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mi>q</mml:mi><mml:mo>-</mml:mo><mml:mi>i</mml:mi></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msub><mml:mi>C</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mrow><mml:mo
+      stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: ThematicBreak
+  - type: Heading
+    depth: 1
+    content:
+      - Appendix 2
+  - type: Heading
+    id: s11
+    depth: 1
+    content:
+      - Neuronal model of the ARTR
+  - type: Paragraph
+    content:
+      - 'The architecture of the ARTR neuronal model is shown in '
+      - type: Link
+        relation: fig
+        target: '#fig5'
+        content:
+          - Figure 5A
+      - >-
+        . The circuit consists of two modules selective to lefward or rightward
+        turning. Each module receives recurrent excitatory, cross-inhibitory and
+        sensory inputs. The firing rates of the left/right ARTR modules, noted 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf247"><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ', are governed by two differential equations:'
+  - type: MathBlock
+    id: equ42
+    label: (A18)
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m42"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:mi>τ</mml:mi><mml:msub><mml:mrow><mml:mover><mml:mi>r</mml:mi><mml:mo>˙</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mi>ϕ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>E</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>I</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mn>0</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>ϵ</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mi>τ</mml:mi><mml:msub><mml:mrow><mml:mover><mml:mi>r</mml:mi><mml:mo>˙</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mi>ϕ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>E</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>I</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mn>0</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>ϵ</mml:mi><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo></mml:mtd></mml:mtr></mml:mtable><mml:mo
+      fence="true" stretchy="true"
+      symmetric="true"/></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'where '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf248"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+      - ' is the recurrent excitatory current and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf249"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub><mml:mo>⁢</mml:mo><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
+      - ' is the cross-inhibitory current originating from the contralateral side of the network. '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf250"><mml:msub><mml:mi>I</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math>
+      - ' is a constant input current and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf251"><mml:mrow><mml:mi>ϵ</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
+      - ' is a white noise. The function '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf252"><mml:mi>ϕ</mml:mi></mml:math>
+      - ' is a non-negative spiking constraint such that '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf253"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>&gt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf254"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
+      - '. We fixed '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf255"><mml:mrow><mml:mi>τ</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mn>100</mml:mn><mml:mo>⁢</mml:mo><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:mrow></mml:math>
+      - ', a typical slow synaptic time constant, as in '
+      - type: Cite
+        target: bib54
+        content:
+          - Wang (2002)
+      - '. The constant input current is set to '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf256"><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>20</mml:mn><mml:mo>⁢</mml:mo><mml:msup><mml:mi>s</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
+      - ' and the standard deviation of the noise current '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf257"><mml:mi>ϵ</mml:mi></mml:math>
+      - ' is set at '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf258"><mml:mrow><mml:mn>500</mml:mn><mml:mo>⁢</mml:mo><mml:msup><mml:mi>s</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math>
+      - ' as in '
+      - type: Cite
+        target: bib58
+        content:
+          - Wolf et al. (2017)
+      - '. '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf259"><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:math>
+      - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf260"><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:math>
+      - ' are the visual input currents, proportional to the intensity impinging the right and left eyes, respectively.'
+  - type: Paragraph
+    content:
+      - 'In this dynamical system, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf261"><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub></mml:math>
+      - ' controls the anticorrelation between left and right module activities. We fixed '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf262"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math>
+      - ' such that the anticorrelation of the left and right signals (in the absence of visual inputs) was comparable to the value -0.4 measured through calcium imaging of the ARTR as reported in '
+      - type: Cite
+        target: bib58
+        content:
+          - Wolf et al. (2017)
+      - '. The parameter '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf263"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
+      - ' controls the ability for each side of the network to exhibit stable activity across time periods longer than '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf264"><mml:mi>τ</mml:mi></mml:math>
+      - '. The network exhibits three different dynamic regimes depending on '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf265"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
+      - '. One is characterized by an absence of stable activity (low '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf266"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
+      - '). For '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf267"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub><mml:mo>∼</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
+      - >-
+        , one module is constantly active while the other remains silent. At
+        intermediate values of 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf268"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
+      - ", the network displays stochastic slow alternations between both states. The fixation time, that\_is the characteristic decay time of the autocorrelation of "
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf269"><mml:msub><mml:mi>r</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ', is governed by '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf270"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
+      - '. We chose '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf271"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>0.925</mml:mn></mml:mrow></mml:math>
+      - ' such that the auto-correlation in orientation of turning bouts is similar to its experimental counterpart ('
+      - type: Link
+        relation: fig
+        target: '#fig5'
+        content:
+          - Figure 5C
+      - ' and '
+      - type: Link
+        relation: fig
+        target: '#fig1'
+        content:
+          - Figure 1J
+      - ).
+  - type: Paragraph
+    content:
+      - 'To examine the effect of a stereovisual contrast '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: <mml:math id="inf272"><mml:mi>c</mml:mi></mml:math>
+      - ' on the network dynamics, the sensory input currents were set such that:'
+  - type: MathBlock
+    id: equ43
+    label: (A19)
+    mathLanguage: mathml
+    text: >-
+      <mml:math id="m43"><mml:mstyle displaystyle="true"
+      scriptlevel="0"><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mtable
+      columnalign="left left" columnspacing="1em"
+      rowspacing="4pt"><mml:mtr><mml:mtd><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>g</mml:mi><mml:mi>h</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mi>c</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mi>t</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mi>i</mml:mi><mml:mi>g</mml:mi><mml:mi>h</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo
+      stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mi>c</mml:mi><mml:mo
+      stretchy="false">)</mml:mo><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:mtd></mml:mtr></mml:mtable><mml:mo
+      fence="true" stretchy="true"
+      symmetric="true"/></mml:mrow></mml:mrow></mml:mstyle></mml:math>
+  - type: Paragraph
+    content:
+      - 'The value of the maximum current '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf273"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>g</mml:mi><mml:mo>⁢</mml:mo><mml:mi>h</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:math>
+      - ' was set at '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf274"><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>g</mml:mi><mml:mo>⁢</mml:mo><mml:mi>h</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>1000</mml:mn><mml:mo>⁢</mml:mo><mml:msup><mml:mi>s</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
+      - ' in order to reproduce the contrast-dependent orientational bias ('
+      - type: Link
+        relation: fig
+        target: '#fig5'
+        content:
+          - Figure 5D
+      - ' and '
+      - type: Link
+        relation: fig
+        target: '#fig2'
+        content:
+          - Figure 2G
+      - ).

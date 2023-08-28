@@ -1214,13 +1214,7 @@ function decodeBack(
   if (elem === null) return {}
 
   const references = decodeReferences(first(elem, 'ref-list'))
-
-  const sections = decodeBackSecs(
-    elem.elements?.filter(
-      (elem) => elem.name === 'ack' || elem.name === 'sec'
-    ) ?? [],
-    state
-  )
+  const sections = decodeBackSecs(elem, state)
 
   return { references, content: sections }
 }
@@ -1240,9 +1234,24 @@ function decodeBack(
  * as the title (otherwise there can be duplication).
  */
 function decodeBackSecs(
-  elems: xml.Element[],
+  elem: xml.Element,
   state: DecodeState
 ): stencila.BlockContent[] {
+  // Get child elements of interest in the order they appear
+  // This does not use the `all()` function because `<sec>` elements
+  // can be nested
+  const elems = children(elem, ['ack', 'sec', 'app-group', 'app']).reduce(
+    (prev: xml.Element[], elem) => {
+      if (elem.name === 'app-group') {
+        // Flatten out <app-group> into
+        return [...prev, ...all(elem, 'app')]
+      } else {
+        return [...prev, elem]
+      }
+    },
+    []
+  )
+
   return elems.reduce((prev: stencila.BlockContent[], elem) => {
     if (elem.name == 'ack') {
       const filtered = (elem.elements ?? []).filter(
@@ -1257,7 +1266,7 @@ function decodeBackSecs(
         stencila.heading({ depth: 1, content: ['Acknowledgements'] }),
         ...blocks,
       ]
-    } else {
+    } else if (elem.name && ['sec', 'app'].includes(elem.name)) {
       const blocks = ensureBlockContentArray(decodeElement(elem, state))
 
       const node = blocks[0]
@@ -1274,6 +1283,8 @@ function decodeBackSecs(
       }
 
       return [...prev, stencila.thematicBreak(), ...blocks]
+    } else {
+      return prev
     }
   }, [])
 }
