@@ -7,33 +7,6 @@
 [![NPM](https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat)](https://www.npmjs.com/package/@stencila/encoda)
 [![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/encoda/)
 
-<!-- Automatically generated TOC. Don't edit, `make docs` instead>
-
-<!-- toc -->
-
-- [Encoda](#encoda) - [Codecs for structured, semantic, composable, and executable documents](#codecs-for-structured-semantic-composable-and-executable-documents)
-  - [Introduction](#introduction)
-  - [Formats](#formats)
-  - [Publishers](#publishers)
-  - [Install](#install)
-  - [Use](#use)
-    - [Converting files](#converting-files)
-    - [Converting folders](#converting-folders)
-    - [Converting command line input](#converting-command-line-input)
-    - [Using with Executa](#using-with-executa)
-  - [Documentation](#documentation)
-  - [Develop](#develop)
-  - [Testing](#testing)
-    - [Running tests locally](#running-tests-locally)
-    - [Running test in Docker](#running-test-in-docker)
-  - [Writing tests](#writing-tests)
-    - [Recording and using network fixtures](#recording-and-using-network-fixtures)
-  - [Contribute](#contribute)
-  - [Contributors](#contributors)
-  - [Acknowledgments](#acknowledgments)
-
-<!-- tocstop -->
-
 ## Introduction
 
 > "A codec is a device or computer program for encoding or decoding a digital data stream or signal. Codec is a portmanteau of coder-decoder. - [Wikipedia](https://en.wikipedia.org/wiki/Codec)
@@ -46,47 +19,47 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 
 > ⚡ Tip: If a codec for your favorite format is missing below, see if there is already an [issue](https://github.com/stencila/encoda/issues) for it and 👍 or comment. If there is no issue regarding the converter you need, feel free to [create one](https://github.com/stencila/encoda/issues/new).
 
-| Format                       | Codec         | Powered by             | Status | Coverage             |
-| ---------------------------- | ------------- | ---------------------- | ------ | -------------------- |
+| Format                       | Codec         | Powered by             | Status |
+| ---------------------------- | ------------- | ---------------------- | ------ |
 | **Text**                     |
-| Plain text                   | [txt]         | [`toString`][tostring] | ✔      | ![][txt-cov]         |
-| Markdown                     | [md]          | [Remark]               | ✔      | ![][md-cov]          |
-| LaTex                        | [latex]       | [Pandoc][pandoc-org]   | α      | ![][latex-cov]       |
-| Microsoft Word               | [docx]        | [Pandoc][pandoc-org]   | β      | ![][docx-cov]        |
-| Google Docs                  | [gdoc]        | [`JSON`][json-api]     | β      | ![][gdoc-cov]        |
-| Open Document Text           | [odt]         | [Pandoc][pandoc-org]   | α      | ![][odt-cov]         |
-| HTML                         | [html]        | [jsdom], [hyperscript] | ✔      | ![][html-cov]        |
-| JATS XML                     | [jats]        | [xml-js]               | ✔      | ![][jats-cov]        |
-|                              | [jats-pandoc] | [Pandoc][pandoc-org]   | β      | ![][jats-pandoc-cov] |
-| Portable Document Format     | [pdf]         | [pdf-lib], [Puppeteer] | β      | ![][pdf-cov]         |
+| Plain text                   | [txt]         | [`toString`][tostring] | ✔      |
+| Markdown                     | [md]          | [Remark]               | ✔      |
+| LaTex                        | [latex]       | [Pandoc][pandoc-org]   | α      |
+| Microsoft Word               | [docx]        | [Pandoc][pandoc-org]   | β      |
+| Google Docs                  | [gdoc]        | [`JSON`][json-api]     | β      |
+| Open Document Text           | [odt]         | [Pandoc][pandoc-org]   | α      |
+| HTML                         | [html]        | [jsdom], [hyperscript] | ✔      |
+| JATS XML                     | [jats]        | [xml-js]               | ✔      |
+|                              | [jats-pandoc] | [Pandoc][pandoc-org]   | β      |
+| Portable Document Format     | [pdf]         | [pdf-lib], [Puppeteer] | β      |
 | **Math**                     |
-| TeX                          | [tex]         | [mathconverter]        | ✔      | ![][tex-cov]         |
-| MathML                       | [mathml]      | [MathJax]              | ✔      | ![][mathml-cov]      |
+| TeX                          | [tex]         | [mathconverter]        | ✔      |
+| MathML                       | [mathml]      | [MathJax]              | ✔      |
 | **Visualization**            |
-| Plotly                       | [plotly]      | [Plotly.js]            | ✔      | ![][plotly-cov]      |
-| Vega / Vega-Lite             | [vega]        | [Vega][vega-io]        | ✔      | ![][vega-cov]        |
+| Plotly                       | [plotly]      | [Plotly.js]            | ✔      |
+| Vega / Vega-Lite             | [vega]        | [Vega][vega-io]        | ✔      |
 | **Bibliographic**            |
-| Citation Style Language JSON | [csl]         | [Citation.js]          | ✔      | ![][csl-cov]         |
-| BibTeX                       | [bib]         | [Citation.js]          | ✔      | ![][bib-cov]         |
+| Citation Style Language JSON | [csl]         | [Citation.js]          | ✔      |
+| BibTeX                       | [bib]         | [Citation.js]          | ✔      |
 | **Notebooks**                |
-| Jupyter                      | [ipynb]       | [`JSON`][json-api]     | ✔      | ![][ipynb-cov]       |
-| RMarkdown                    | [xmd]         | [Remark]               | ✔      | ![][xmd-cov]         |
+| Jupyter                      | [ipynb]       | [`JSON`][json-api]     | ✔      |
+| RMarkdown                    | [xmd]         | [Remark]               | ✔      |
 | **Spreadsheets**             |
-| Microsoft Excel              | [xlsx]        | [SheetJS]              | β      | ![][xlsx-cov]        |
-| Open Document Spreadsheet    | [ods]         | [SheetJS]              | β      | ![][ods-cov]         |
+| Microsoft Excel              | [xlsx]        | [SheetJS]              | β      |
+| Open Document Spreadsheet    | [ods]         | [SheetJS]              | β      |
 | **Tabular data**             |
-| CSV                          | [csv]         | [SheetJS]              | β      | ![][csv-cov]         |
-| Tabular Data Package         | [tdp]         | [datapackage-js]       | α      | ![][tdp-cov]         |
+| CSV                          | [csv]         | [SheetJS]              | β      |
+| Tabular Data Package         | [tdp]         | [datapackage-js]       | α      |
 | **Collections**              |
-| Filesystem Directory         | [dir]         | [`fs`][fs]             | β      | ![][dir-cov]         |
+| Filesystem Directory         | [dir]         | [`fs`][fs]             | β      |
 | **Data interchange, other**  |
-| JSON                         | [json]        | [`JSON`][json-api]     | ✔      | ![][json-cov]        |
-| JSON-LD                      | [jsonld]      | [jsonld.js]            | ✔      | ![][jsonld-cov]      |
-| JSON5                        | [json5]       | [json5][json5-org]     | ✔      | ![][json5-cov]       |
-| YAML                         | [yaml]        | [js-yaml]              | ✔      | ![][yaml-cov]        |
-| Pandoc                       | [pandoc]      | [Pandoc][pandoc-org]   | ✔      | ![][pandoc-cov]      |
-| Reproducible PNG             | [rpng]        | [Puppeteer]            | ✔      | ![][rpng-cov]        |
-| XML                          | [xml]         | [xml-js]               | ✔      | ![][xml-cov]         |
+| JSON                         | [json]        | [`JSON`][json-api]     | ✔      |
+| JSON-LD                      | [jsonld]      | [jsonld.js]            | ✔      |
+| JSON5                        | [json5]       | [json5][json5-org]     | ✔      |
+| YAML                         | [yaml]        | [js-yaml]              | ✔      |
+| Pandoc                       | [pandoc]      | [Pandoc][pandoc-org]   | ✔      |
+| Reproducible PNG             | [rpng]        | [Puppeteer]            | ✔      |
+| XML                          | [xml]         | [xml-js]               | ✔      |
 
 <!-- Codecs -->
 
@@ -151,50 +124,6 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 [tostring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
 [vega-io]: https://vega.github.io/vega/
 [xml-js]: https://github.com/nashwaan/xml-js#readme
-
-<!-- Coverage -->
-
-[bib-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/bib
-[crossref-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/crossref
-[csl-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csl
-[csv-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv
-[csvy-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csvy
-[dar-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar
-[dir-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir
-[dmagic-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic
-[docx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx
-[doi-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/doi
-[elife-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/elife
-[gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
-[gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
-[html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
-[http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
-[ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
-[jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
-[jats-pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc
-[json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
-[json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
-[jsonld-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld
-[latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
-[mathml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/mathml
-[md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
-[ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
-[odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
-[orcid-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/orcid
-[pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
-[pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
-[plos-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plos
-[plotly-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plotly
-[pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
-[rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
-[tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
-[tex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tex
-[txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
-[vega-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/vega
-[xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
-[xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
-[xml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml
-[yaml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml
 
 **Key**
 
