@@ -16,42 +16,6 @@
 <a href="https://codecov.io/gh/stencila/encoda"><img src="https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg" alt="Code coverage"></a>
 <a href="https://www.npmjs.com/package/@stencila/encoda"><img src="https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat" alt="NPM"></a>
 <a href="https://stencila.github.io/encoda/"><img src="https://img.shields.io/badge/docs-latest-blue.svg" alt="Docs"></a></p>
-<!-- Automatically generated TOC. Don't edit, `make docs` instead>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#encoda">Encoda</a> - <a href="#codecs-for-structured-semantic-composable-and-executable-documents">Codecs for structured, semantic, composable, and executable documents</a><ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#formats">Formats</a></li>
-<li><a href="#publishers">Publishers</a></li>
-<li><a href="#install">Install</a></li>
-<li><a href="#use">Use</a><ul>
-<li><a href="#converting-files">Converting files</a></li>
-<li><a href="#converting-folders">Converting folders</a></li>
-<li><a href="#converting-command-line-input">Converting command line input</a></li>
-<li><a href="#using-with-executa">Using with Executa</a></li>
-</ul>
-</li>
-<li><a href="#documentation">Documentation</a></li>
-<li><a href="#develop">Develop</a></li>
-<li><a href="#testing">Testing</a><ul>
-<li><a href="#running-tests-locally">Running tests locally</a></li>
-<li><a href="#running-test-in-docker">Running test in Docker</a></li>
-</ul>
-</li>
-<li><a href="#writing-tests">Writing tests</a><ul>
-<li><a href="#recording-and-using-network-fixtures">Recording and using network fixtures</a></li>
-</ul>
-</li>
-<li><a href="#contribute">Contribute</a></li>
-<li><a href="#contributors">Contributors</a></li>
-<li><a href="#acknowledgments">Acknowledgments</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
 <a id="md:introduction" class="tsd-anchor"></a><h2><a href="#md:introduction">Introduction</a></h2><blockquote>
 <p>&quot;A codec is a device or computer program for encoding or decoding a digital data stream or signal. Codec is a portmanteau of coder-decoder. - <a href="https://en.wikipedia.org/wiki/Codec">Wikipedia</a></p>
 </blockquote>
@@ -67,12 +31,10 @@
 <th>Codec</th>
 <th>Powered by</th>
 <th>Status</th>
-<th>Coverage</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Text</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -82,74 +44,63 @@
 <td><a href="src/codecs/txt">txt</a></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"><code>toString</code></a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt" alt=""></td>
 </tr>
 <tr>
 <td>Markdown</td>
 <td><a href="src/codecs/md">md</a></td>
 <td><a href="https://remark.js.org/">Remark</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md" alt=""></td>
 </tr>
 <tr>
 <td>LaTex</td>
 <td><a href="src/codecs/latex">latex</a></td>
 <td><a href="https://pandoc.org/">Pandoc</a></td>
 <td>α</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex" alt=""></td>
 </tr>
 <tr>
 <td>Microsoft Word</td>
 <td><a href="src/codecs/docx">docx</a></td>
 <td><a href="https://pandoc.org/">Pandoc</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx" alt=""></td>
 </tr>
 <tr>
 <td>Google Docs</td>
 <td><a href="src/codecs/gdoc">gdoc</a></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"><code>JSON</code></a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc" alt=""></td>
 </tr>
 <tr>
 <td>Open Document Text</td>
 <td><a href="src/codecs/odt">odt</a></td>
 <td><a href="https://pandoc.org/">Pandoc</a></td>
 <td>α</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt" alt=""></td>
 </tr>
 <tr>
 <td>HTML</td>
 <td><a href="src/codecs/html">html</a></td>
 <td><a href="https://github.com/jsdom/jsdom">jsdom</a>, <a href="https://github.com/hyperhype/hyperscript">hyperscript</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html" alt=""></td>
 </tr>
 <tr>
 <td>JATS XML</td>
 <td><a href="src/codecs/jats">jats</a></td>
 <td><a href="https://github.com/nashwaan/xml-js#readme">xml-js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats" alt=""></td>
 </tr>
 <tr>
 <td></td>
 <td><a href="src/codecs/jats-pandoc">jats-pandoc</a></td>
 <td><a href="https://pandoc.org/">Pandoc</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc" alt=""></td>
 </tr>
 <tr>
 <td>Portable Document Format</td>
 <td><a href="src/codecs/pdf">pdf</a></td>
 <td><a href="https://pdf-lib.js.org/">pdf-lib</a>, <a href="https://pptr.dev/">Puppeteer</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf" alt=""></td>
 </tr>
 <tr>
 <td><strong>Math</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -159,18 +110,15 @@
 <td><a href="src/codecs/tex">tex</a></td>
 <td><a href="https://github.com/oerpub/mathconverter">mathconverter</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tex" alt=""></td>
 </tr>
 <tr>
 <td>MathML</td>
 <td><a href="src/codecs/mathml">mathml</a></td>
 <td><a href="https://www.mathjax.org/">MathJax</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/mathml" alt=""></td>
 </tr>
 <tr>
 <td><strong>Visualization</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -180,18 +128,15 @@
 <td><a href="src/codecs/plotly">plotly</a></td>
 <td><a href="https://plotly.com/javascript/">Plotly.js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plotly" alt=""></td>
 </tr>
 <tr>
 <td>Vega / Vega-Lite</td>
 <td><a href="src/codecs/vega">vega</a></td>
 <td><a href="https://vega.github.io/vega/">Vega</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/vega" alt=""></td>
 </tr>
 <tr>
 <td><strong>Bibliographic</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -201,18 +146,15 @@
 <td><a href="src/codecs/csl">csl</a></td>
 <td><a href="https://citation.js.org/">Citation.js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csl" alt=""></td>
 </tr>
 <tr>
 <td>BibTeX</td>
 <td><a href="src/codecs/bib">bib</a></td>
 <td><a href="https://citation.js.org/">Citation.js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/bib" alt=""></td>
 </tr>
 <tr>
 <td><strong>Notebooks</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -222,18 +164,15 @@
 <td><a href="src/codecs/ipynb">ipynb</a></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"><code>JSON</code></a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb" alt=""></td>
 </tr>
 <tr>
 <td>RMarkdown</td>
 <td><a href="src/codecs/xmd">xmd</a></td>
 <td><a href="https://remark.js.org/">Remark</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd" alt=""></td>
 </tr>
 <tr>
 <td><strong>Spreadsheets</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -243,18 +182,15 @@
 <td><a href="src/codecs/xlsx">xlsx</a></td>
 <td><a href="https://sheetjs.com">SheetJS</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx" alt=""></td>
 </tr>
 <tr>
 <td>Open Document Spreadsheet</td>
 <td><a href="src/codecs/ods">ods</a></td>
 <td><a href="https://sheetjs.com">SheetJS</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods" alt=""></td>
 </tr>
 <tr>
 <td><strong>Tabular data</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -264,18 +200,15 @@
 <td><a href="src/codecs/csv">csv</a></td>
 <td><a href="https://sheetjs.com">SheetJS</a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv" alt=""></td>
 </tr>
 <tr>
 <td>Tabular Data Package</td>
 <td><a href="src/codecs/tdp">tdp</a></td>
 <td><a href="https://github.com/frictionlessdata/datapackage-js">datapackage-js</a></td>
 <td>α</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp" alt=""></td>
 </tr>
 <tr>
 <td><strong>Collections</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -285,11 +218,9 @@
 <td><a href="src/codecs/dir">dir</a></td>
 <td><a href="https://nodejs.org/api/fs.html"><code>fs</code></a></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir" alt=""></td>
 </tr>
 <tr>
 <td><strong>Data interchange, other</strong></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -299,56 +230,47 @@
 <td><a href="src/codecs/json">json</a></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"><code>JSON</code></a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json" alt=""></td>
 </tr>
 <tr>
 <td>JSON-LD</td>
 <td><a href="src/codecs/jsonld">jsonld</a></td>
 <td><a href="https://github.com/digitalbazaar/jsonld.js">jsonld.js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld" alt=""></td>
 </tr>
 <tr>
 <td>JSON5</td>
 <td><a href="src/codecs/json5">json5</a></td>
 <td><a href="https://json5.org/">json5</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5" alt=""></td>
 </tr>
 <tr>
 <td>YAML</td>
 <td><a href="src/codecs/yaml">yaml</a></td>
 <td><a href="https://github.com/nodeca/js-yaml#readme">js-yaml</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml" alt=""></td>
 </tr>
 <tr>
 <td>Pandoc</td>
 <td><a href="src/codecs/pandoc">pandoc</a></td>
 <td><a href="https://pandoc.org/">Pandoc</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc" alt=""></td>
 </tr>
 <tr>
 <td>Reproducible PNG</td>
 <td><a href="src/codecs/rpng">rpng</a></td>
 <td><a href="https://pptr.dev/">Puppeteer</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng" alt=""></td>
 </tr>
 <tr>
 <td>XML</td>
 <td><a href="src/codecs/xml">xml</a></td>
 <td><a href="https://github.com/nashwaan/xml-js#readme">xml-js</a></td>
 <td>✔</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml" alt=""></td>
 </tr>
 </tbody></table>
 <!-- Codecs -->
 
 <!-- Dependencies -->
-
-<!-- Coverage -->
 
 <p><strong>Key</strong></p>
 <ul>
@@ -387,7 +309,7 @@
 <td><a href="src/codecs/http">http</a></td>
 <td>Based on <code>Content-Type</code> or extension</td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http" alt=""></td>
+<td>![][http-cov]</td>
 </tr>
 <tr>
 <td><strong><code>Person</code></strong></td>
@@ -401,7 +323,7 @@
 <td><a href="src/codecs/orcid">orcid</a></td>
 <td><code>jsonld</code></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/orcid" alt=""></td>
+<td>![][orcid-cov]</td>
 </tr>
 <tr>
 <td><strong><code>Article</code> metadata</strong></td>
@@ -415,14 +337,14 @@
 <td><a href="src/codecs/doi">doi</a></td>
 <td><code>csl</code></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/doi" alt=""></td>
+<td>![][doi-cov]</td>
 </tr>
 <tr>
 <td>Crossref</td>
 <td><a href="src/codecs/crossref">crossref</a></td>
 <td><code>jsonld</code></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/crossref" alt=""></td>
+<td>![][crossref-cov]</td>
 </tr>
 <tr>
 <td><strong><code>Article</code> content</strong></td>
@@ -436,14 +358,14 @@
 <td><a href="src/codecs/elife">elife</a></td>
 <td><code>jats</code></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/elife" alt=""></td>
+<td>![][elife-cov]</td>
 </tr>
 <tr>
 <td>PLoS</td>
 <td><a href="src/codecs/plos">plos</a></td>
 <td><code>jats</code></td>
 <td>β</td>
-<td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/plos" alt=""></td>
+<td>![][plos-cov]</td>
 </tr>
 </tbody></table>
 <a id="md:install" class="tsd-anchor"></a><h2><a href="#md:install">Install</a></h2><p>The easiest way to use Encoda is to install the <a href="https://github.com/stencila/stencila"><code>stencila</code> command line tool</a>. Encoda powers <code>stencila convert</code>, and other commands, in that CLI. However, the version of Encoda in <code>stencila</code>, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:</p>
