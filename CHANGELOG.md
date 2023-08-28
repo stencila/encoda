@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/stencila/encoda/compare/v1.0.2...v1.0.3) (2023-08-28)
+
+
+### Bug Fixes
+
+* **JATS:** Decode `<app>` elements ([03779a0](https://github.com/stencila/encoda/commit/03779a00cac39a0501580fbbed01ad0c315dfe38)), closes [#400](https://github.com/stencila/encoda/issues/400)
+
 ## [1.0.2](https://github.com/stencila/encoda/compare/v1.0.1...v1.0.2) (2023-08-27)
 
 
