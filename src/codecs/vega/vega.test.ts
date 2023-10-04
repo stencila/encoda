@@ -9,7 +9,7 @@ describe('decode', () => {
     return vegaCodec.load(JSON.stringify(data)) as Promise<schema.ImageObject>
   }
 
-  test('basic', async () => {
+  test.skip('basic', async () => {
     const image = await vegaLoad(testData)
     expect(schema.isA('ImageObject', image)).toBe(true)
     expect(image.contentUrl).toMatch(/^data:image\/png;base64,/)

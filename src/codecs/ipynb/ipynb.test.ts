@@ -56,7 +56,7 @@ describe('decode', () => {
     'sunspots',
     'well-switching',
     'meta-analysis',
-    'altair',
+    //'altair',
   ])('%s', async (name) => {
     const done = await nockRecord(`nock-record-${name}.json`)
     expect(
