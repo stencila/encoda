@@ -7,7 +7,7 @@
 
 # Use `ubuntu`, rather than `node`, base image because that is what we generally
 # use as a base and so this tests that all necessary deps are installed
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
