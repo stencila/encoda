@@ -9,6 +9,9 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,16 +27,8 @@ jobs:
       - name: Run tests
         run: npx jest --coverage --runInBand --testTimeout=900000 --forceExit
 
-  release:
-    runs-on: ubuntu-latest
-    needs: linux
-    steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
       - name: Release package
+        if: github.ref == 'refs/heads/master'
         run: |
           set -e
           npm ci
