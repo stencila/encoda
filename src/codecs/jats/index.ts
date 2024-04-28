@@ -826,31 +826,22 @@ function decodeHistory(
  * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
  */
 export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
-  // Simply extract all footnotes within the <author-notes> element as plain text
+  // Extract all footnotes within the <author-notes> element as plain text
   const authorNotes = all(first(front, 'author-notes'), 'fn')
     .map((fn) => {
-      // Extract the text from each child of the `fn` element making sure that if it is
-      // a `label` there is space between it and the content of the next element
+      const id = attrOrUndefined(fn, 'id')
+      let label = undefined
       let text = ''
-      let previousWasLabel = false
       for (const elem of fn.elements ?? []) {
         if (elem.name == 'label') {
-          text += textOrUndefined(elem)
-          previousWasLabel = true
+          label = textOrUndefined(elem)
         } else {
-          const content = textOrUndefined(elem) ?? ''
-          if (
-            previousWasLabel &&
-            !(text.endsWith(' ') || content.startsWith(' '))
-          ) {
-            text += ' '
-          }
-          text += content
+          text += textOrUndefined(elem) ?? ''
         }
       }
-      return text
+      return { id, label, text }
     })
-    .filter((text) => text.length > 0)
+    .filter(({ text }) => text.length > 0)
 
   return {
     authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
@@ -1010,6 +1001,8 @@ function decodeContrib(
       ]
     }
 
+    // Get the author's affiliations
+
     let affiliations: stencila.Organization[] = []
 
     const affs = all(contrib, 'aff')
@@ -1040,6 +1033,27 @@ function decodeContrib(
     }
 
     if (affiliations.length) contributor.affiliations = affiliations
+
+    // Get the author's notes
+
+    let notes: { rid?: string; label?: string }[] | undefined
+
+    const fns = [
+      ...all(contrib, 'xref', { 'ref-type': 'fn' }),
+      ...all(contrib, 'xref', { 'ref-type': 'author-notes' }),
+    ]
+    if (fns.length > 0) {
+      notes = fns.map((xref) => ({
+        rid: attrOrUndefined(xref, 'rid'),
+        label: textOrUndefined(xref),
+      }))
+    }
+
+    if (notes) {
+      contributor.meta = contributor.meta
+        ? { ...contributor.meta, notes }
+        : { notes }
+    }
 
     return contributor
   }

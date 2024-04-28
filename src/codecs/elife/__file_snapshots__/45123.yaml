@@ -18,6 +18,9 @@ authors:
       - Lozano-Ureña
     givenNames:
       - Anna
+    meta:
+      notes:
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -49,6 +52,9 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: http://orcid.org/0000-0003-0854-8575
+    meta:
+      notes:
+        - rid: conf1
 dateAccepted:
   type: Date
   value: '2019-02-15'

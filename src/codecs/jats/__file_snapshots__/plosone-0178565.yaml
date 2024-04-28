@@ -2098,11 +2098,12 @@ title: >-
   cyanobacteria
 meta:
   authorNotes:
-    - The authors have declared that no competing interests exist.
-    - >-
-      Conceptualization: PPW.Data curation: GSST.Investigation: PPW
-      GSST.Methodology: GSST PPW.Supervision: PPW.Writing – original draft: PPW
-      GSST.
+    - id: coi001
+      text: The authors have declared that no competing interests exist.
+    - text: >-
+        Conceptualization: PPW.Data curation: GSST.Investigation: PPW
+        GSST.Methodology: GSST PPW.Supervision: PPW.Writing – original draft:
+        PPW GSST.
 content:
   - type: Heading
     id: sec001

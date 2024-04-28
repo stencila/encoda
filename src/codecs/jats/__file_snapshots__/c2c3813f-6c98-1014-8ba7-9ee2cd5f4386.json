@@ -46,7 +46,15 @@
       "givenNames": [
         "Phuong",
         "T."
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -66,7 +74,15 @@
       "givenNames": [
         "Hai",
         "M."
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -7537,7 +7553,11 @@
   ],
   "meta": {
     "authorNotes": [
-      "† These authors contributed equally to this work."
+      {
+        "id": "n1",
+        "label": "†",
+        "text": "These authors contributed equally to this work."
+      }
     ]
   },
   "content": [

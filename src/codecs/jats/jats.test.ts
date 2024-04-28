@@ -207,8 +207,16 @@ test('decode: content of <label> in a <author-notes> is followed by a space', ()
 
   expect(decodeMetaFront(front)).toEqual({
     authorNotes: [
-      '8 Present Institution: Parean biotechnologies, Saint-Malo, France',
-      '† These authors, listed in alphabetical order, have contributed equally',
+      {
+        id: 'n1',
+        label: '8',
+        text: 'Present Institution: Parean biotechnologies, Saint-Malo, France',
+      },
+      {
+        id: 'n2',
+        label: '†',
+        text: 'These authors, listed in alphabetical order, have contributed equally',
+      },
     ],
   })
 })

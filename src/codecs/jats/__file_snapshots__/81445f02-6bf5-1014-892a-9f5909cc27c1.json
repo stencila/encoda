@@ -45,7 +45,15 @@
       ],
       "givenNames": [
         "Tianze"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "*"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -64,7 +72,15 @@
       ],
       "givenNames": [
         "Jing"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "*"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -3928,7 +3944,11 @@
   "title": "Aging-related iron deposit prevents the benefits of HRT from late postmenopausal atherosclerosis",
   "meta": {
     "authorNotes": [
-      "* Tianze Xu and Jing Cai contributed equally to this work"
+      {
+        "id": "n1",
+        "label": "*",
+        "text": "Tianze Xu and Jing Cai contributed equally to this work"
+      }
     ]
   },
   "content": [

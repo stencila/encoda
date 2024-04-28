@@ -2481,9 +2481,10 @@ title: >-
   retrospective analysis of clinical studies
 meta:
   authorNotes:
-    - >-
-      NJW is a member of the Editorial Board of PLOS Medicine. All the other
-      authors have declared that no competing interests exist.
+    - id: coi001
+      text: >-
+        NJW is a member of the Editorial Board of PLOS Medicine. All the other
+        authors have declared that no competing interests exist.
 content:
   - type: Heading
     id: sec007

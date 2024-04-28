@@ -27,6 +27,12 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0003-4045-1888
+    meta:
+      notes:
+        - rid: equal-contrib1
+          label: †
+        - rid: con1
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -48,6 +54,12 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0002-8798-2347
+    meta:
+      notes:
+        - rid: equal-contrib1
+          label: †
+        - rid: con2
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -65,6 +77,10 @@ authors:
       - Baba
     givenNames:
       - Harue
+    meta:
+      notes:
+        - rid: con3
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -81,6 +97,10 @@ authors:
     givenNames:
       - Nicole
       - AR
+    meta:
+      notes:
+        - rid: con4
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -99,6 +119,10 @@ authors:
     givenNames:
       - John
       - RK
+    meta:
+      notes:
+        - rid: con5
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -115,6 +139,10 @@ authors:
     givenNames:
       - Robert
       - W
+    meta:
+      notes:
+        - rid: con6
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -143,6 +171,10 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: http://orcid.org/0000-0003-0109-7345
+    meta:
+      notes:
+        - rid: con7
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -159,6 +191,10 @@ authors:
     givenNames:
       - Lev
       - M
+    meta:
+      notes:
+        - rid: con8
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -192,6 +228,10 @@ authors:
     givenNames:
       - Aaron
       - J
+    meta:
+      notes:
+        - rid: con9
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -222,6 +262,10 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0002-7350-6323
+    meta:
+      notes:
+        - rid: con10
+        - rid: conf1
 dateAccepted:
   type: Date
   value: '2019-07-04'
@@ -4505,7 +4549,9 @@ title:
       - Oprm1
 meta:
   authorNotes:
-    - † These authors contributed equally to this work
+    - id: equal-contrib1
+      label: †
+      text: These authors contributed equally to this work
 content:
   - type: Heading
     id: s1

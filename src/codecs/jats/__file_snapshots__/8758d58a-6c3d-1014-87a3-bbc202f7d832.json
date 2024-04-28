@@ -53,7 +53,15 @@
       ],
       "givenNames": [
         "Valentin"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "8"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -99,7 +107,15 @@
       ],
       "givenNames": [
         "Vanessa"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n2",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -118,7 +134,15 @@
       ],
       "givenNames": [
         "Paul"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n2",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -145,7 +169,15 @@
       ],
       "givenNames": [
         "Hélène"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n2",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -164,7 +196,15 @@
       ],
       "givenNames": [
         "Zhicheng"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n2",
+            "label": "†"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -240,7 +280,15 @@
       ],
       "givenNames": [
         "Hang-Phuong"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "8"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -6667,8 +6715,16 @@
   ],
   "meta": {
     "authorNotes": [
-      "8 Present Institution: Parean biotechnologies, Saint-Malo, France",
-      "† These authors, listed in alphabetical order, have contributed equally"
+      {
+        "id": "n1",
+        "label": "8",
+        "text": "Present Institution: Parean biotechnologies, Saint-Malo, France"
+      },
+      {
+        "id": "n2",
+        "label": "†",
+        "text": "These authors, listed in alphabetical order, have contributed equally"
+      }
     ]
   },
   "content": [

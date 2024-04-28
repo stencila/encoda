@@ -25,6 +25,10 @@ authors:
       - Karpenko
     givenNames:
       - Sophia
+    meta:
+      notes:
+        - rid: con1
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -47,6 +51,10 @@ authors:
       - Wolf
     givenNames:
       - Sebastien
+    meta:
+      notes:
+        - rid: con2
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -61,6 +69,10 @@ authors:
       - Lafaye
     givenNames:
       - Julie
+    meta:
+      notes:
+        - rid: con3
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -76,6 +88,10 @@ authors:
       - Goc
     givenNames:
       - Guillaume
+    meta:
+      notes:
+        - rid: con4
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -90,6 +106,10 @@ authors:
       - Panier
     givenNames:
       - Thomas
+    meta:
+      notes:
+        - rid: con5
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -104,6 +124,10 @@ authors:
       - Bormuth
     givenNames:
       - Volker
+    meta:
+      notes:
+        - rid: con6
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -122,6 +146,10 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: http://orcid.org/0000-0002-1523-6249
+    meta:
+      notes:
+        - rid: con7
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -142,6 +170,10 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0003-3698-4497
+    meta:
+      notes:
+        - rid: con8
+        - rid: conf1
 dateAccepted:
   type: Date
   value: '2020-01-02'

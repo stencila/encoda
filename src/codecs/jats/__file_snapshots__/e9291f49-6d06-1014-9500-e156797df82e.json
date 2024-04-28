@@ -65,7 +65,15 @@
       "givenNames": [
         "Gaby",
         "El"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "7"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -84,7 +92,15 @@
       ],
       "givenNames": [
         "Alessia"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n1",
+            "label": "7"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -265,7 +281,15 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0003-1247-4265"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "rid": "n2",
+            "label": "8"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -7391,8 +7415,16 @@
   "title": "Hepatic lipid overload potentiates biliary epithelial cell activation via E2Fs",
   "meta": {
     "authorNotes": [
-      "7 These authors contributed equally",
-      "8 Lead contact"
+      {
+        "id": "n1",
+        "label": "7",
+        "text": "These authors contributed equally"
+      },
+      {
+        "id": "n2",
+        "label": "8",
+        "text": "Lead contact"
+      }
     ]
   },
   "content": [

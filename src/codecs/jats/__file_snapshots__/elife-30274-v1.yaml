@@ -16,6 +16,10 @@ authors:
     givenNames:
       - L
       - Michelle
+    meta:
+      notes:
+        - rid: con1
+        - rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -31,6 +35,10 @@ authors:
     givenNames:
       - Meredith
       - C
+    meta:
+      notes:
+        - rid: con2
+        - rid: conf2
   - type: Person
     affiliations:
       - type: Organization
@@ -46,6 +54,10 @@ authors:
     givenNames:
       - Zachary
       - R
+    meta:
+      notes:
+        - rid: con3
+        - rid: conf3
   - type: Person
     affiliations:
       - type: Organization
@@ -64,6 +76,10 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0002-3758-2425
+    meta:
+      notes:
+        - rid: con4
+        - rid: conf4
   - type: Person
     affiliations:
       - type: Organization
@@ -76,6 +92,10 @@ authors:
       - Hao
     givenNames:
       - Haiping
+    meta:
+      notes:
+        - rid: con5
+        - rid: conf5
   - type: Person
     affiliations:
       - type: Organization
@@ -90,6 +110,10 @@ authors:
       - Blum
     givenNames:
       - David
+    meta:
+      notes:
+        - rid: con6
+        - rid: conf6
   - type: Organization
     contactPoints:
       - type: ContactPoint

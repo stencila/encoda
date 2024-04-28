@@ -2168,11 +2168,12 @@ references:
 title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
 meta:
   authorNotes:
-    - >-
-      Sergey Koren has received travel and accommodation expenses to speak at
-      Oxford Nanopore Technologies conferences. Anthony Schmitt and Siddarth
-      Selvaraj are employees of Arima Genomics, a company commercializing Hi-C
-      DNA sequencing technologies.
+    - id: coi001
+      text: >-
+        Sergey Koren has received travel and accommodation expenses to speak at
+        Oxford Nanopore Technologies conferences. Anthony Schmitt and Siddarth
+        Selvaraj are employees of Arima Genomics, a company commercializing Hi-C
+        DNA sequencing technologies.
 content:
   - type: QuoteBlock
     content:
