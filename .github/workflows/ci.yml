@@ -29,7 +29,7 @@ jobs:
         env:
           # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb)
-          NODE_OPTIONS: --max_old_space_size=14000
+          NODE_OPTIONS: --max_old_space_size=16000
 
       - name: Release package
         if: github.ref == 'refs/heads/master'
