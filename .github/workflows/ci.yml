@@ -26,6 +26,10 @@ jobs:
       #   - Force exit to prevent hanging
       - name: Run tests
         run: npx jest --coverage --runInBand --testTimeout=900000 --forceExit
+        env:
+          # Tell Node.js how much un-garbage-collected-memory it can
+          # allow for to prevent it running out (in Mb)
+          NODE_OPTIONS: --max_old_space_size=16384
 
       - name: Release package
         if: github.ref == 'refs/heads/master'
