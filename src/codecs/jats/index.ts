@@ -1662,6 +1662,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeAlternatives(elem, state)
     case 'sec':
       return decodeSection(elem, state)
+    case 'app':
+      return decodeAppendix(elem, state)
     case 'title':
       return decodeHeading(elem, state)
     case 'p':
@@ -1885,6 +1887,27 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
 }
 
 /**
+ * Decode a JATS `<app>` element.
+ *
+ * This updates the `sectionId` and `sectionDepth` state variables
+ * so that they can be applied to heading nodes (decoded from `<title>` elements).
+ * It is necessary to retain `id` attributes so that any internal links are maintained.
+ */
+function decodeAppendix(
+  elem: xml.Element,
+  state: DecodeState
+): stencila.Node[] {
+  const sectionId = attr(elem, 'id') ?? ''
+  const { sectionDepth, ...rest } = state
+  return decodeDefault(elem, {
+    ...rest,
+    ancestorElem: elem,
+    sectionId,
+    sectionDepth: sectionDepth + 1,
+  })
+}
+
+/**
  * Decode a JATS section `<title>` to a Stencila `Heading`.
  *
  * Use `sectionId` and `sectionDepth` if a `<sec>` is the closest ancestor.
@@ -1903,7 +1926,7 @@ function decodeHeading(
   const { ancestorElem, sectionDepth, sectionId } = state
 
   let [depth, id] =
-    ancestorElem?.name === 'sec'
+    ancestorElem?.name === 'sec' || ancestorElem?.name === 'app'
       ? [sectionDepth, sectionId]
       : [sectionDepth + 1, undefined]
   let content = decodeInlineContent(elem.elements ?? [], state)

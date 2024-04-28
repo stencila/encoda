@@ -6360,12 +6360,13 @@ content:
       - 10.5061/dryad.v9s4mw6qx
   - type: ThematicBreak
   - type: Heading
+    id: appendix-1
     depth: 1
     content:
       - Appendix 1
   - type: Heading
     id: s8
-    depth: 1
+    depth: 2
     content:
       - Modelling spontaneous navigation of zebrafish larvae
   - type: Paragraph
@@ -6581,7 +6582,7 @@ content:
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>
   - type: Heading
     id: s9
-    depth: 1
+    depth: 2
     content:
       - 'Mean amplitude at '
       - type: MathFragment
@@ -6758,7 +6759,7 @@ content:
         forward bouts.
   - type: Heading
     id: s9-1
-    depth: 2
+    depth: 3
     content:
       - 'Mean reorientation at '
       - type: MathFragment
@@ -7063,7 +7064,7 @@ content:
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
   - type: Heading
     id: s9-2
-    depth: 2
+    depth: 3
     content:
       - Autocorrelation of the reorientations
   - type: Paragraph
@@ -7550,7 +7551,7 @@ content:
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
   - type: Heading
     id: s10
-    depth: 1
+    depth: 2
     content:
       - Mean square reorientation (MSR)
   - type: Paragraph
@@ -7629,12 +7630,13 @@ content:
       stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
   - type: ThematicBreak
   - type: Heading
+    id: appendix-2
     depth: 1
     content:
       - Appendix 2
   - type: Heading
     id: s11
-    depth: 1
+    depth: 2
     content:
       - Neuronal model of the ARTR
   - type: Paragraph

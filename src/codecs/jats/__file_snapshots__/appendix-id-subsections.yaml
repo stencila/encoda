@@ -1,0 +1,98 @@
+type: Article
+identifiers: []
+title: Test article
+meta: {}
+content:
+  - type: Heading
+    id: s1
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: s2
+    depth: 1
+    content:
+      - Results
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: s3
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: ThematicBreak
+  - type: Heading
+    id: app1
+    depth: 1
+    content:
+      - Appendix 1
+  - type: Heading
+    id: app1s1
+    depth: 2
+    content:
+      - Appendix 1 child section nest level 1
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: app1s1s1
+    depth: 3
+    content:
+      - Appendix 1 child section nest level 2
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: ThematicBreak
+  - type: Heading
+    id: app2
+    depth: 1
+    content:
+      - Appendix 2
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: app2s1
+    depth: 2
+    content:
+      - Appendix 2 child section nest level 1
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: app2s1s1
+    depth: 3
+    content:
+      - Appendix 2 child section nest level 2
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: ThematicBreak
+  - type: Heading
+    id: app3
+    depth: 1
+    content:
+      - Appendix 3 (captured as sec)
+  - type: Heading
+    id: app3s1
+    depth: 2
+    content:
+      - Appendix 3 child section nest level 1
+  - type: Paragraph
+    content:
+      - Mouse ...
+  - type: Heading
+    id: app3s1s1
+    depth: 3
+    content:
+      - Appendix 3 child section nest level 2
+  - type: Paragraph
+    content:
+      - Mouse ...
