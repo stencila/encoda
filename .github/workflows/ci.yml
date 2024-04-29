@@ -7,7 +7,7 @@ env:
 
 jobs:
   linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-m
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
         env:
           # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb)
-          NODE_OPTIONS: --max_old_space_size=16000
+          NODE_OPTIONS: --max_old_space_size=24000
 
       - name: Release package
         if: github.ref == 'refs/heads/master'
