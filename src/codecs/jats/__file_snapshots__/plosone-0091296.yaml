@@ -1924,8 +1924,10 @@ title: >-
   Aggregations to Fishing
 meta:
   authorNotes:
-    - text: The authors have declared that no competing interests exist.
-    - text: >-
+    - type: fn
+      text: The authors have declared that no competing interests exist.
+    - type: fn
+      text: >-
         Conceived and designed the experiments: JR JEC NAJG. Performed the
         experiments: JR. Analyzed the data: JR. Contributed
         reagents/materials/analysis tools: JR. Wrote the paper: JR JEC NAJG.
