@@ -18,8 +18,10 @@ authors:
       - Michelle
     meta:
       notes:
-        - rid: con1
-        - rid: conf1
+        - type: fn
+          rid: con1
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -37,8 +39,10 @@ authors:
       - C
     meta:
       notes:
-        - rid: con2
-        - rid: conf2
+        - type: fn
+          rid: con2
+        - type: fn
+          rid: conf2
   - type: Person
     affiliations:
       - type: Organization
@@ -56,8 +60,10 @@ authors:
       - R
     meta:
       notes:
-        - rid: con3
-        - rid: conf3
+        - type: fn
+          rid: con3
+        - type: fn
+          rid: conf3
   - type: Person
     affiliations:
       - type: Organization
@@ -78,8 +84,10 @@ authors:
         value: https://orcid.org/0000-0002-3758-2425
     meta:
       notes:
-        - rid: con4
-        - rid: conf4
+        - type: fn
+          rid: con4
+        - type: fn
+          rid: conf4
   - type: Person
     affiliations:
       - type: Organization
@@ -94,8 +102,10 @@ authors:
       - Haiping
     meta:
       notes:
-        - rid: con5
-        - rid: conf5
+        - type: fn
+          rid: con5
+        - type: fn
+          rid: conf5
   - type: Person
     affiliations:
       - type: Organization
@@ -112,8 +122,10 @@ authors:
       - David
     meta:
       notes:
-        - rid: con6
-        - rid: conf6
+        - type: fn
+          rid: con6
+        - type: fn
+          rid: conf6
   - type: Organization
     contactPoints:
       - type: ContactPoint

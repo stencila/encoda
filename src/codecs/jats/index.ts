@@ -1045,6 +1045,7 @@ function decodeContrib(
     ]
     if (fns.length > 0) {
       notes = fns.map((xref) => ({
+        type: 'fn',
         rid: attrOrUndefined(xref, 'rid'),
         label: textOrUndefined(xref),
       }))

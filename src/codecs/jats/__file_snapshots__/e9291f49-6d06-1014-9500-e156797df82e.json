@@ -69,8 +69,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "7"
+            "type": "fn",
+            "label": "7",
+            "rid": "n1"
           }
         ]
       }
@@ -96,8 +97,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "7"
+            "type": "fn",
+            "label": "7",
+            "rid": "n1"
           }
         ]
       }
@@ -285,8 +287,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "8"
+            "type": "fn",
+            "label": "8",
+            "rid": "n2"
           }
         ]
       }
