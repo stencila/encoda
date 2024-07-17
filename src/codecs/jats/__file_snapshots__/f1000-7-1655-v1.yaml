@@ -348,9 +348,11 @@ references:
 title: Publishing peer review materials
 meta:
   authorNotes:
-    - id: fn1
+    - type: fn
+      id: fn1
       text: '*Equal contribution'
-    - text: >-
+    - type: fn
+      text: >-
         Competing interests: Michael Evans is the Production Manager for F1000
         Platforms, but was not involved in the production of this manuscript.
 content:
