@@ -396,7 +396,16 @@
       ],
       "givenNames": [
         "Heike"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -441,7 +450,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0002-2325-4834"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -7560,6 +7578,12 @@
         "id": "n1",
         "label": "†",
         "text": "These authors contributed equally to this work."
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Corresponding authors. email: yarovoy@ucdavis.edu"
       }
     ]
   },

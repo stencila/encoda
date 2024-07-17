@@ -16,6 +16,11 @@ authors:
     givenNames:
       - Dirk
       - W.
+    meta:
+      notes:
+        - type: corresp
+          label: a
+          rid: c1
   - type: Person
     affiliations:
       - type: Organization
@@ -1239,6 +1244,10 @@ meta:
   authorNotes:
     - type: fn
       text: No competing interests were disclosed.
+    - type: corresp
+      id: c1
+      label: a
+      text: lachenmeier@web.de
 content:
   - type: Heading
     id: ''

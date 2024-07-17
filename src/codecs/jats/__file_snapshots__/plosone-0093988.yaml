@@ -35,6 +35,11 @@ authors:
       - Killingback
     givenNames:
       - Timothy
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
 dateAccepted:
   type: Date
   value: '2014-03-11'
@@ -1589,6 +1594,9 @@ meta:
       text: >-
         Conceived and designed the experiments: TK. Performed the experiments:
         SI JR TK. Analyzed the data: SI TK. Wrote the paper: SI JR TK.
+    - type: corresp
+      id: cor1
+      text: '* E-mail: timothy.killingback@umb.edu'
 content:
   - type: Heading
     id: s1

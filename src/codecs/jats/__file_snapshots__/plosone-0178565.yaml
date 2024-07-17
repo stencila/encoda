@@ -44,6 +44,11 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: http://orcid.org/0000-0003-0108-7585
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor001
 dateAccepted:
   type: Date
   value: '2017-05-15'
@@ -2106,6 +2111,9 @@ meta:
         Conceptualization: PPW.Data curation: GSST.Investigation: PPW
         GSST.Methodology: GSST PPW.Supervision: PPW.Writing – original draft:
         PPW GSST.
+    - type: corresp
+      id: cor001
+      text: '* E-mail: wangikar@iitb.ac.in'
 content:
   - type: Heading
     id: sec001

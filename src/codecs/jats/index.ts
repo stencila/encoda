@@ -827,22 +827,24 @@ function decodeHistory(
  */
 export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   // Extract all footnotes within the <author-notes> element as plain text
-  const authorNotes = all(first(front, 'author-notes'), 'fn')
-    .map((fn) => {
-      const id = attrOrUndefined(fn, 'id')
-      let label = undefined
-      let text = ''
-      for (const elem of fn.elements ?? []) {
-        if (elem.name == 'label') {
-          label = textOrUndefined(elem)
-        } else {
-          text += textOrUndefined(elem) ?? ''
-        }
+  const authorNotes = [
+    ...all(first(front, 'author-notes'), 'fn'),
+    ...all(first(front, 'author-notes'), 'corresp'),
+  ].map((fn) => {
+    const id = attrOrUndefined(fn, 'id')
+    let label = undefined
+    let text = ''
+    for (const elem of fn.elements ?? []) {
+      if (elem.name == 'label') {
+        label = textOrUndefined(elem)
+      } else {
+        text += textOrUndefined(elem) ?? ''
       }
-      const type = fn.name
-      return { id, label, text, type }
-    })
-    .filter(({ text }) => text.length > 0)
+    }
+    const type = fn.name
+    return { id, label, text, type }
+  })
+  .filter(({ text }) => text.length > 0)
 
   return {
     authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
@@ -1042,10 +1044,11 @@ function decodeContrib(
     const fns = [
       ...all(contrib, 'xref', { 'ref-type': 'fn' }),
       ...all(contrib, 'xref', { 'ref-type': 'author-notes' }),
+      ...all(contrib, 'xref', { 'ref-type': 'corresp' }),
     ]
     if (fns.length > 0) {
       notes = fns.map((xref) => ({
-        type: 'fn',
+        type: xref.attributes?.['ref-type'] === 'corresp' ? 'corresp' : 'fn',
         rid: attrOrUndefined(xref, 'rid'),
         label: textOrUndefined(xref),
       }))

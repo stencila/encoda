@@ -290,6 +290,11 @@
             "type": "fn",
             "label": "8",
             "rid": "n2"
+          },
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
           }
         ]
       }
@@ -7429,6 +7434,12 @@
         "id": "n2",
         "label": "8",
         "text": "Lead contact"
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Correspondence: kristina.schoonjans@epfl.ch"
       }
     ]
   },
