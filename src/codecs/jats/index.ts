@@ -839,7 +839,8 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
           text += textOrUndefined(elem) ?? ''
         }
       }
-      return { id, label, text }
+      const type = fn.name
+      return { id, label, text, type }
     })
     .filter(({ text }) => text.length > 0)
 
