@@ -33,63 +33,16 @@ export const STDIO_PATH = '-'
  * formats should go last. See the `match` function.
  */
 export const codecList: string[] = [
-  // Publishers of content
-  'elife',
-  'plos',
-
-  // Publishers of meta data
-  // DOI comes after publishers so that it does not match DOIs
-  // that are specific to a publisher e.g. 10.1371/journal.pone.0216012
-  'doi',
-  'orcid',
-
-  // HTTP. Comes after publishers so that it does not match urls
-  // that are specific to a publisher e.g. https://elifesciences.org
-  'http',
-
-  // Directories
-  'dir',
-  'dar',
-
-  // Tabular data, spreadsheets etc
-  'csv',
-  'ods',
-  'tdp',
-  'xlsx',
-
   // Articles, textual documents etc
-  'docx',
-  'gdoc',
-  'html',
-  'ipynb',
   'jats',
-  'jats-pandoc',
-  'latex',
-  'md',
-  'odt',
-  'pdf',
   'txt',
-  'xmd',
 
   // Math
   'mathml',
   'tex',
 
-  // Scripts
-  'dmagic',
-
-  // Images
-  'rpng',
-  'png',
-
-  // Plotting
-  'plotly',
-
   // Data interchange formats
   'yaml',
-  'pandoc',
-  'json5',
-  'jsonld',
   'json',
   'xml',
 ]
