@@ -11,7 +11,7 @@
   "scripts": {
     "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
-    "lint": "eslint 'src/**/*.{ts,js}' --fix",
+    "lint": "eslint 'src/**/*.{ts,js}'",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
     "test": "jest --maxWorkers=4 --testTimeout=120000",
     "test:wild": "NOCK_BACK_MODE=wild npm test",
@@ -108,6 +108,7 @@
     "@qiwi/semantic-release-gh-pages-plugin": "5.2.8",
     "@semantic-release/exec": "6.0.3",
     "@stencila/dev-config": "3.0.4",
+    "@stencila/eslint-config": "^3.0.4",
     "@stencila/semantic-release-config": "2.0.20",
     "@testing-library/jest-dom": "5.17.0",
     "@types/async-lock": "1.4.0",
