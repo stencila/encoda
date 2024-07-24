@@ -25,7 +25,7 @@ jobs:
       #   - Fifteen (!) minute test timeout
       #   - Force exit to prevent hanging
       - name: Run tests
-        run: npx jest jats --runInBand --testTimeout=900000 --forceExit
+        run: npx jest --runInBand --testTimeout=900000 --forceExit
         env:
           # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb)
