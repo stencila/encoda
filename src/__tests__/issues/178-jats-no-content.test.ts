@@ -18,7 +18,7 @@ test('issue 178: encoding should not fail if no article content', async () => {
             honorificSuffix: 'PhD',
           },
         ],
-      })
-    )
+      }),
+    ),
   ).toMatchFile(snapshot('178-jats-no-content.jats.xml'))
 })

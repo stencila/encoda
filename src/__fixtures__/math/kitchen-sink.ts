@@ -26,7 +26,7 @@ export const mathmlBlock = mathBlock({
 
 export const mathmlBlockString = mathmlString.replace(
   /^<math>/,
-  '<math display="block">'
+  '<math display="block">',
 )
 
 export const mathmlFragment = mathFragment({
@@ -36,7 +36,7 @@ export const mathmlFragment = mathFragment({
 
 export const mathmlInlineString = mathmlString.replace(
   /^<math>/,
-  '<math display="inline">'
+  '<math display="inline">',
 )
 
 // TeX

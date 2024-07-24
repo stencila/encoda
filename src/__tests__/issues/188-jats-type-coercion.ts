@@ -57,6 +57,6 @@ test('188-type-coercion-weirdness', async () => {
   expect(table?.rows?.[0].cells?.[1].content?.[0]).toBe('2')
 
   expect(await jatsCodec.dump(table)).toMatchFile(
-    snapshot('188-type-coercion.jats.xml')
+    snapshot('188-type-coercion.jats.xml'),
   )
 })

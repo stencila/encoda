@@ -2,7 +2,6 @@ import schema from '@stencila/schema'
 
 import { groupCitesIntoCiteGroup } from './reshape'
 
-
 describe('groupCitesIntoGiteGroup', () => {
   test('single parenthetical Cite has extraneous parentheses removed', () => {
     const before = [

@@ -15,8 +15,8 @@ test('issue 408: decoding / encoding of <code> within <p> elements in JATS', asy
 
   expect(
     await jats.load(
-      '<p>A paragraph with some <code>fancy computer code</code> in it.</p>'
-    )
+      '<p>A paragraph with some <code>fancy computer code</code> in it.</p>',
+    ),
   ).toEqual([
     schema.paragraph({ content: ['A paragraph with some '] }),
     schema.codeBlock({ text: 'fancy computer code' }),

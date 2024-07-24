@@ -33,7 +33,7 @@ describe('match', () => {
     expect(await match(undefined, 'application/json')).toBeInstanceOf(JsonCodec)
     expect(await match(undefined, 'text/yaml')).toBeInstanceOf(YamlCodec)
     expect(
-      await match(undefined, 'application/vnd.super-corp.super-special-file')
+      await match(undefined, 'application/vnd.super-corp.super-special-file'),
     ).toBeInstanceOf(ssf.SsfCodec)
   })
 

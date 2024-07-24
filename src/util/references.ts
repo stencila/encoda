@@ -9,19 +9,9 @@ import { array as A } from 'fp-ts'
  */
 export const encodeCiteNumeric = (
   work: CreativeWork | string,
-  references: CreativeWork['references']
+  references: CreativeWork['references'],
 ): string => {
   return `${(references?.indexOf(work) ?? -2) + 1}`
-}
-
-/**
- * Create string for "author-year" type citations within
- * a citation group e.g. `Smith et al., 1990`.
- */
-export const encodeCiteAuthorsYear = (work: CreativeWork): string => {
-  const authors = encodeCiteAuthors(work) ?? ''
-  const year = encodeCiteYear(work)
-  return year !== undefined ? `${authors}, ${year}` : authors
 }
 
 /**
@@ -48,17 +38,6 @@ export const encodeCiteAuthors = (work: CreativeWork): string | undefined => {
 }
 
 /**
- * Get the name of a person or organization to use in an in-text citation.
- */
-function getName(author: Person | Organization): string {
-  return isA('Person', author) &&
-    author.familyNames &&
-    author.familyNames.length > 0
-    ? author.familyNames.join(' ').trim()
-    : (author.name ?? '').trim()
-}
-
-/**
  * Create string for the year part on in-text citations.
  * e.g. the `1990` in `Smith et al. (1990)`.
  */
@@ -70,4 +49,25 @@ export const encodeCiteYear = (work: CreativeWork): string | undefined => {
   const date =
     typeof datePublished === 'string' ? datePublished : datePublished.value
   return date.split('-')[0]
+}
+
+/**
+ * Create string for "author-year" type citations within
+ * a citation group e.g. `Smith et al., 1990`.
+ */
+export const encodeCiteAuthorsYear = (work: CreativeWork): string => {
+  const authors = encodeCiteAuthors(work) ?? ''
+  const year = encodeCiteYear(work)
+  return year !== undefined ? `${authors}, ${year}` : authors
+}
+
+/**
+ * Get the name of a person or organization to use in an in-text citation.
+ */
+function getName(author: Person | Organization): string {
+  return isA('Person', author) &&
+    author.familyNames &&
+    author.familyNames.length > 0
+    ? author.familyNames.join(' ').trim()
+    : (author.name ?? '').trim()
 }

@@ -12,6 +12,7 @@
     "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}'",
+    "lint:fix": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
     "test": "jest --maxWorkers=4 --testTimeout=120000",
     "test:wild": "NOCK_BACK_MODE=wild npm test",

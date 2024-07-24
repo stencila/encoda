@@ -50,7 +50,7 @@ describe('normalize', () => {
 <mml:mspace width="negativethickmathspace"/>
 <mml:mspace width="negativeverythickmathspace"/>
 <mml:mspace width="negativeveryverythickmathspace"/>
-`)
+`),
     ).toBe(`
 <mml:mspace width="0.0555em"/>
 <mml:mspace width="0.1111em"/>
@@ -76,19 +76,19 @@ describe('decode', () => {
 
   test('success', async () => {
     expect(await decode(mathmlString)).toEqual(
-      schema.mathFragment({ mathLanguage: 'mathml', text: mathmlString })
+      schema.mathFragment({ mathLanguage: 'mathml', text: mathmlString }),
     )
     expect(await decode(mathmlInlineString)).toEqual(
-      schema.mathFragment({ mathLanguage: 'mathml', text: mathmlInlineString })
+      schema.mathFragment({ mathLanguage: 'mathml', text: mathmlInlineString }),
     )
     expect(await decode(mathmlBlockString)).toEqual(
-      schema.mathBlock({ mathLanguage: 'mathml', text: mathmlBlockString })
+      schema.mathBlock({ mathLanguage: 'mathml', text: mathmlBlockString }),
     )
   })
 
   test('failure', async () => {
     expect(await decode('')).toEqual(
-      schema.mathFragment({ mathLanguage: 'mathml', text: '' })
+      schema.mathFragment({ mathLanguage: 'mathml', text: '' }),
     )
   })
 })
@@ -118,12 +118,12 @@ describe('encode', () => {
     expect(
       await encode(
         // @ts-ignore
-        schema.article()
-      )
+        schema.article(),
+      ),
     ).toMatch('')
 
     expect(
-      await encode(schema.mathFragment({ mathLanguage: 'foo', text: '' }))
+      await encode(schema.mathFragment({ mathLanguage: 'foo', text: '' })),
     ).toMatch('')
   })
 })

@@ -9,7 +9,7 @@ import { TxtCodec } from '../../codecs/txt'
  * if necessary.
  */
 export const ensureBlockContentArray = (
-  nodes: schema.Node | schema.Node[]
+  nodes: schema.Node | schema.Node[],
 ): schema.BlockContent[] => {
   nodes = Array.isArray(nodes) ? nodes : [nodes]
 
@@ -21,8 +21,8 @@ export const ensureBlockContentArray = (
     return schema.isBlockContent(node)
       ? [...prev, node]
       : schema.isInlineContent(node)
-      ? [...prev, schema.paragraph({ content: [node] })]
-      : [...prev, TxtCodec.stringify(node)]
+        ? [...prev, schema.paragraph({ content: [node] })]
+        : [...prev, TxtCodec.stringify(node)]
   }, [])
 }
 
@@ -31,7 +31,7 @@ export const ensureBlockContentArray = (
  * return `undefined`.
  */
 export const ensureBlockContentArrayOrUndefined = (
-  nodes: schema.Node[]
+  nodes: schema.Node[],
 ): schema.BlockContent[] | undefined => {
   return nodes.length === 0 ? undefined : ensureBlockContentArray(nodes)
 }
