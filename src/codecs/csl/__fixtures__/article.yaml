@@ -1,0 +1,14 @@
+type: Article
+title: The title of the article
+id: articleId
+authors:
+  - type: Person
+    familyNames:
+      - Smith
+    givenNames:
+      - Jane
+  - type: Person
+    familyNames:
+      - Jones
+    givenNames:
+      - Jim
