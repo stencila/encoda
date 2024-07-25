@@ -15,7 +15,7 @@ import { Codec } from '../codecs/types'
  *
  * @param codec The codec (passed by expect)
  * @param node The node to attempt to invert
- * @param name: The file name for any output files
+ * @param fileName The file name for any output files
  */
 async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
   if (!fileName) {
