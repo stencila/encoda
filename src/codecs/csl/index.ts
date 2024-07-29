@@ -91,6 +91,46 @@ export class CSLCodec extends Codec implements Codec {
 }
 
 /**
+ * Encode a `Person` as a `Csl.Person`
+ */
+const encodePerson = (person: schema.Person): Csl.Person => {
+  const { givenNames = [], familyNames = [], honorificSuffix, ...rest } = person
+  logWarnLossIfAny('csl', 'encode', person, rest)
+
+  return {
+    given: givenNames.join(' '),
+    family: familyNames.join(' '),
+    suffix: honorificSuffix,
+  }
+}
+
+/**
+ * Encode an `Organization` as a `Csl.Person`
+ *
+ * CSL-JSON does not allow for an org author so we use the `literal` property
+ * to encode the org name.
+ */
+const encodeOrganization = (
+  org: schema.Organization,
+  _format: string,
+): Csl.Person => {
+  const { name = 'Anonymous' } = org
+  return { literal: name }
+}
+
+/**
+ * Encode an author as a `Csl.Person`
+ */
+const encodeAuthor = (
+  author: schema.Person | schema.Organization,
+  format: string,
+): Csl.Person => {
+  return schema.isA('Person', author)
+    ? encodePerson(author)
+    : encodeOrganization(author, format)
+}
+
+/**
  * Encode a `CreativeWork` as `Csl.Data`.
  *
  * This function is intended as a base for other functions that encode particular
@@ -342,46 +382,6 @@ const decodeAuthor = (
           honorificSuffix: suffix,
         }),
   )
-}
-
-/**
- * Encode an author as a `Csl.Person`
- */
-const encodeAuthor = (
-  author: schema.Person | schema.Organization,
-  format: string,
-): Csl.Person => {
-  return schema.isA('Person', author)
-    ? encodePerson(author)
-    : encodeOrganization(author, format)
-}
-
-/**
- * Encode a `Person` as a `Csl.Person`
- */
-const encodePerson = (person: schema.Person): Csl.Person => {
-  const { givenNames = [], familyNames = [], honorificSuffix, ...rest } = person
-  logWarnLossIfAny('csl', 'encode', person, rest)
-
-  return {
-    given: givenNames.join(' '),
-    family: familyNames.join(' '),
-    suffix: honorificSuffix,
-  }
-}
-
-/**
- * Encode an `Organization` as a `Csl.Person`
- *
- * CSL-JSON does not allow for an org author so we use the `literal` property
- * to encode the org name.
- */
-const encodeOrganization = (
-  org: schema.Organization,
-  _format: string,
-): Csl.Person => {
-  const { name = 'Anonymous' } = org
-  return { literal: name }
 }
 
 /**
