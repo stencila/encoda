@@ -57,7 +57,7 @@ export class CrossrefCodec extends Codec implements Codec {
     }
 
     const data = JSON.parse(response.body)
-    const csl = data.message.items[0]
+    const csl = data.message.items[0] as CSL.Data & { [key: string]: any }
 
     // This min score should be an option. This value was determined
     // through experimentation, leaning to avoiding false matches.
