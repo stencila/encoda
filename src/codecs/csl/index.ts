@@ -91,6 +91,86 @@ export class CSLCodec extends Codec implements Codec {
 }
 
 /**
+ * Encode a `CreativeWork` as `Csl.Data`.
+ *
+ * This function is intended as a base for other functions that encode particular
+ * types of creative works e.g. `Book`, or as a fallback.
+ */
+export const encodeCreativeWork = (
+  work: schema.CreativeWork,
+  type: Csl.ItemType,
+  format: string,
+): Csl.Data => {
+  const {
+    id = crypto.randomBytes(16).toString('hex'),
+    title = 'Untitled',
+    authors = [],
+    datePublished,
+    dateCreated,
+    dateModified,
+    isPartOf,
+    publisher,
+    url,
+    ...lost
+  } = work
+  logWarnLossIfAny('csl', 'encode', work, lost)
+
+  const date = datePublished ?? dateModified ?? dateCreated ?? undefined
+
+  return {
+    type,
+    id,
+    'citation-label': id,
+    title: TxtCodec.stringify(title),
+    author: authors.map((author) => encodeAuthor(author, format)),
+    issued: date !== undefined ? encodeDate(date) : undefined,
+    URL: url,
+    ...encodePublisher(publisher),
+    ...encodeIsPartOf(isPartOf),
+  }
+}
+
+/**
+ * Encode an `Article` as `Csl.Data`
+ */
+export const encodeArticle = (
+  article: schema.Article,
+  format: string,
+): Csl.Data => {
+  const { pageStart, pageEnd, pagination, ...rest } = article
+
+  let page
+  if (pagination !== undefined) page = pagination
+  else if (pageStart !== undefined) {
+    page = `${pageStart}`
+    if (pageEnd !== undefined) page += `-${pageEnd}`
+  }
+
+  return {
+    ...encodeCreativeWork(rest, 'article-journal', format),
+    page,
+  }
+}
+
+/**
+ * Encode a `CreativeWork` as `Csl.Data`
+ */
+export const encodeCsl = (
+  work: schema.CreativeWork,
+  format: string,
+): Csl.Data => {
+  if (schema.isA('Article', work)) return encodeArticle(work, format)
+  else {
+    logWarnLoss(
+      'csl',
+      'encode',
+      `Unhandled creative work type ${schema.nodeType(work)}`,
+    )
+    return encodeCreativeWork(work, 'article', format)
+  }
+}
+
+/**
  * Encode a `Node` to a string of given `format`.
  */
 function encodeNode(node: schema.Node, format: string): string {
@@ -231,86 +311,6 @@ export async function decodeCsl(
       `Unhandled citation type "${csl.type}", using CreativeWork.`,
     )
     return schema.creativeWork(common)
-  }
-}
-
-/**
- * Encode a `CreativeWork` as `Csl.Data`
- */
-export const encodeCsl = (
-  work: schema.CreativeWork,
-  format: string,
-): Csl.Data => {
-  if (schema.isA('Article', work)) return encodeArticle(work, format)
-  else {
-    logWarnLoss(
-      'csl',
-      'encode',
-      `Unhandled creative work type ${schema.nodeType(work)}`,
-    )
-    return encodeCreativeWork(work, 'article', format)
-  }
-}
-
-/**
- * Encode a `CreativeWork` as `Csl.Data`.
- *
- * This function is intended as a base for other functions that encode particular
- * types of creative works e.g. `Book`, or as a fallback.
- */
-export const encodeCreativeWork = (
-  work: schema.CreativeWork,
-  type: Csl.ItemType,
-  format: string,
-): Csl.Data => {
-  const {
-    id = crypto.randomBytes(16).toString('hex'),
-    title = 'Untitled',
-    authors = [],
-    datePublished,
-    dateCreated,
-    dateModified,
-    isPartOf,
-    publisher,
-    url,
-    ...lost
-  } = work
-  logWarnLossIfAny('csl', 'encode', work, lost)
-
-  const date = datePublished ?? dateModified ?? dateCreated ?? undefined
-
-  return {
-    type,
-    id,
-    'citation-label': id,
-    title: TxtCodec.stringify(title),
-    author: authors.map((author) => encodeAuthor(author, format)),
-    issued: date !== undefined ? encodeDate(date) : undefined,
-    URL: url,
-    ...encodePublisher(publisher),
-    ...encodeIsPartOf(isPartOf),
-  }
-}
-
-/**
- * Encode an `Article` as `Csl.Data`
- */
-export const encodeArticle = (
-  article: schema.Article,
-  format: string,
-): Csl.Data => {
-  const { pageStart, pageEnd, pagination, ...rest } = article
-
-  let page
-  if (pagination !== undefined) page = pagination
-  else if (pageStart !== undefined) {
-    page = `${pageStart}`
-    if (pageEnd !== undefined) page += `-${pageEnd}`
-  }
-
-  return {
-    ...encodeCreativeWork(rest, 'article-journal', format),
-    page,
   }
 }
 
