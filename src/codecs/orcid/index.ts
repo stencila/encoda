@@ -29,7 +29,7 @@ export class OrcidCodec extends Codec implements Codec {
   }
 
   public readonly decode = async (
-    file: vfile.VFile | string
+    file: vfile.VFile | string,
   ): Promise<schema.Node> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
     const match = OrcidCodec.regex.exec(content)
@@ -40,13 +40,13 @@ export class OrcidCodec extends Codec implements Codec {
           `https://pub.orcid.org/${OrcidCodec.apiVersion}/${orcid}`,
           {
             headers: { Accept: 'application/ld+json' },
-          }
+          },
         )
         if (response.statusCode === 200 && response.body.length > 0)
           return load(response.body, 'jsonld')
       } catch (error) {
         log.error(
-          `Error fetching or decoding JSON-LD: ${getErrorMessage(error)}`
+          `Error fetching or decoding JSON-LD: ${getErrorMessage(error)}`,
         )
       }
     } else {
