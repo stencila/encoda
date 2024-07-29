@@ -35,7 +35,7 @@ export class CSLCodec extends Codec implements Codec {
    */
   public readonly decode = async (
     file: vfile.VFile,
-    options: CommonDecodeOptions = this.commonDecodeDefaults
+    options: CommonDecodeOptions = this.commonDecodeDefaults,
   ): Promise<schema.Node> => {
     const { format = '@csl/object' } = {
       ...this.commonDecodeDefaults,
@@ -50,8 +50,8 @@ export class CSLCodec extends Codec implements Codec {
     } catch (error) {
       throw new Error(
         `Error when parsing content of format ${format}: ${getErrorMessage(
-          error
-        )}`
+          error,
+        )}`,
       )
     }
 
@@ -72,7 +72,7 @@ export class CSLCodec extends Codec implements Codec {
    */
   public readonly encode = (
     node: schema.Node,
-    options: CommonEncodeOptions = this.commonEncodeDefaults
+    options: CommonEncodeOptions = this.commonEncodeDefaults,
   ): Promise<vfile.VFile> => {
     const { format = 'json' } = options
 
@@ -80,7 +80,7 @@ export class CSLCodec extends Codec implements Codec {
     if (Array.isArray(node)) {
       content = (node as Node[]).reduce(
         (ns: string, n: schema.Node) => ns + encodeNode(n, format),
-        ''
+        '',
       )
     } else {
       content = encodeNode(node, format)
@@ -120,7 +120,7 @@ function encodeNode(node: schema.Node, format: string): string {
  * Decode `Csl.Data` to a `CreativeWork` or derived type.
  */
 export async function decodeCsl(
-  csl: Csl.Data
+  csl: Csl.Data,
 ): Promise<schema.CreativeWork | schema.Article> {
   const {
     type,
@@ -228,7 +228,7 @@ export async function decodeCsl(
     logWarnLoss(
       'csl',
       'decode',
-      `Unhandled citation type "${csl.type}", using CreativeWork.`
+      `Unhandled citation type "${csl.type}", using CreativeWork.`,
     )
     return schema.creativeWork(common)
   }
@@ -239,14 +239,14 @@ export async function decodeCsl(
  */
 export const encodeCsl = (
   work: schema.CreativeWork,
-  format: string
+  format: string,
 ): Csl.Data => {
   if (schema.isA('Article', work)) return encodeArticle(work, format)
   else {
     logWarnLoss(
       'csl',
       'encode',
-      `Unhandled creative work type ${schema.nodeType(work)}`
+      `Unhandled creative work type ${schema.nodeType(work)}`,
     )
     return encodeCreativeWork(work, 'article', format)
   }
@@ -261,7 +261,7 @@ export const encodeCsl = (
 export const encodeCreativeWork = (
   work: schema.CreativeWork,
   type: Csl.ItemType,
-  format: string
+  format: string,
 ): Csl.Data => {
   const {
     id = crypto.randomBytes(16).toString('hex'),
@@ -297,7 +297,7 @@ export const encodeCreativeWork = (
  */
 export const encodeArticle = (
   article: schema.Article,
-  format: string
+  format: string,
 ): Csl.Data => {
   const { pageStart, pageEnd, pagination, ...rest } = article
 
@@ -327,7 +327,7 @@ export const encodeArticle = (
  * and `ORCID` are currently ignored.
  */
 const decodeAuthor = (
-  author: Csl.Person
+  author: Csl.Person,
 ): Promise<schema.Person | schema.Organization> => {
   const { family, given, suffix } = author
 
@@ -340,7 +340,7 @@ const decodeAuthor = (
           familyNames: family !== undefined ? [family] : undefined,
           givenNames: given !== undefined ? [given] : undefined,
           honorificSuffix: suffix,
-        })
+        }),
   )
 }
 
@@ -349,7 +349,7 @@ const decodeAuthor = (
  */
 const encodeAuthor = (
   author: schema.Person | schema.Organization,
-  format: string
+  format: string,
 ): Csl.Person => {
   return schema.isA('Person', author)
     ? encodePerson(author)
@@ -378,7 +378,7 @@ const encodePerson = (person: schema.Person): Csl.Person => {
  */
 const encodeOrganization = (
   org: schema.Organization,
-  _format: string
+  _format: string,
 ): Csl.Person => {
   const { name = 'Anonymous' } = org
   return { literal: name }
@@ -388,7 +388,7 @@ const encodeOrganization = (
  * Encode an `Organization` as a `string` for use as the `publisher` property
  */
 const encodePublisher = (
-  org?: schema.Organization | schema.Person
+  org?: schema.Organization | schema.Person,
 ): { publisher?: string; 'publisher-place'?: string } | undefined => {
   if (org === undefined) return undefined
   const { name, address } = org
@@ -451,7 +451,7 @@ const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
  * a `Csl.Data` object.
  */
 const encodeIsPartOf = (
-  work: schema.CreativeWork['isPartOf']
+  work: schema.CreativeWork['isPartOf'],
 ): Omit<Csl.Data, 'type' | 'id'> => {
   if (work === undefined) return {}
 
@@ -487,7 +487,7 @@ const encodeIsPartOf = (
     logWarnLoss(
       'csl',
       'encode',
-      `Unhandled isPartOf type: ${schema.nodeType(work)}`
+      `Unhandled isPartOf type: ${schema.nodeType(work)}`,
     )
     return {}
   }
@@ -498,12 +498,12 @@ const encodeIsPartOf = (
  */
 const encodeContainerTitle = (
   name: schema.CreativeWork['name'],
-  title: schema.CreativeWork['title']
+  title: schema.CreativeWork['title'],
 ): Pick<Csl.Data, 'container-title'> => ({
   'container-title':
     name !== undefined
       ? name
       : title !== undefined
-      ? TxtCodec.stringify(title)
-      : 'Untitled',
+        ? TxtCodec.stringify(title)
+        : 'Untitled',
 })
