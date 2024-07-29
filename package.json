@@ -27,7 +27,8 @@
     "$comment": "The build script builds everything required to publish a release, including binaries and docs",
     "build": "npm run build:codemeta && npm run build:dist && npm run build:docs",
     "build:codemeta": "ts-node src manifest > codemeta.json",
-    "build:dist": "tsc -p tsconfig.prod.json",
+    "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets",
+    "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/codecs/csl/styles/",
     "build:docs": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
     "prepublishOnly": "npm run build"
