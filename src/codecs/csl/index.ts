@@ -131,6 +131,110 @@ const encodeAuthor = (
 }
 
 /**
+ * Encode a Stencila `Date` as a `Csl.Date`.
+ *
+ * If the date is 1 January then only encode the year (not
+ * the month and day).
+ */
+const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
+  if (!(date instanceof Date)) {
+    const iso = schema.isA('Date', date) ? date.value : date
+    date = new Date(iso + ' UTC')
+  }
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  return {
+    'date-parts': month === 1 && day === 1 ? [[year]] : [[year, month, day]],
+  }
+}
+
+/**
+ * Encode an `Organization` as a `string` for use as the `publisher` property
+ */
+const encodePublisher = (
+  org?: schema.Organization | schema.Person,
+): { publisher?: string; 'publisher-place'?: string } | undefined => {
+  if (org === undefined) return undefined
+  const { name, address } = org
+  let place: string | undefined
+  if (address !== undefined) {
+    if (typeof address === 'string') place = address
+    else {
+      place = [
+        address.addressLocality,
+        address.addressRegion,
+        address.addressCountry,
+      ]
+        .filter((item) => item !== undefined)
+        .join(', ')
+    }
+  }
+  return {
+    publisher: name,
+    'publisher-place': place,
+  }
+}
+
+/**
+ * Encode a CSL `container-title` property from the `name` or `title` of a `CreativeWork`.
+ */
+const encodeContainerTitle = (
+  name: schema.CreativeWork['name'],
+  title: schema.CreativeWork['title'],
+): Pick<Csl.Data, 'container-title'> => ({
+  'container-title':
+    name ?? (title !== undefined ? TxtCodec.stringify(title) : 'Untitled'),
+})
+
+/**
+ * Encode the `isPartOf` property of a `CreativeWork` into properties of
+ * a `Csl.Data` object.
+ */
+const encodeIsPartOf = (
+  work: schema.CreativeWork['isPartOf'],
+): Omit<Csl.Data, 'type' | 'id'> => {
+  if (work === undefined) return {}
+
+  if (schema.isA('PublicationIssue', work)) {
+    const { name, title, issueNumber, isPartOf, ...lost } = work
+    logWarnLossIfAny('csl', 'encode', work, lost)
+
+    return {
+      ...(isPartOf !== undefined
+        ? encodeIsPartOf(isPartOf)
+        : encodeContainerTitle(name, title)),
+      issue: issueNumber,
+    }
+  } else if (schema.isA('PublicationVolume', work)) {
+    const { name, title, volumeNumber, isPartOf, ...lost } = work
+    logWarnLossIfAny('csl', 'encode', work, lost)
+
+    return {
+      ...(isPartOf !== undefined
+        ? encodeIsPartOf(isPartOf)
+        : encodeContainerTitle(name, title)),
+      volume: volumeNumber,
+    }
+  } else if (
+    schema.isA('Periodical', work) ||
+    schema.isA('CreativeWork', work)
+  ) {
+    const { name, title, ...lost } = work
+    logWarnLossIfAny('csl', 'encode', work, lost)
+
+    return encodeContainerTitle(name, title)
+  } else {
+    logWarnLoss(
+      'csl',
+      'encode',
+      `Unhandled isPartOf type: ${schema.nodeType(work)}`,
+    )
+    return {}
+  }
+}
+
+/**
  * Encode a `CreativeWork` as `Csl.Data`.
  *
  * This function is intended as a base for other functions that encode particular
@@ -234,6 +338,52 @@ function encodeNode(node: schema.Node, format: string): string {
     logErrorNodeType('csl', 'encode', 'CreativeWork', node)
   }
   return content
+}
+
+/**
+ * Decode a CSL `Person` to a `Person` or `Organization` node.
+ *
+ * If only `family` is defined then assumes an organizational author.
+ * (Citation.js seems to put `literal` names into `family`).
+ *
+ * CSL-JSON's `non-dropping-particle` and `dropping-particle`
+ * are not currently supported in `Person`.
+ *
+ * Other data that may be provided e.g. `sequence` ("first", "additional")
+ * and `ORCID` are currently ignored.
+ */
+const decodeAuthor = (
+  author: Csl.Person,
+): Promise<schema.Person | schema.Organization> => {
+  const { family, given, suffix } = author
+
+  // logWarnLossIfAny('csl', 'decode', author, lost)
+
+  return Promise.resolve(
+    family !== undefined && given === undefined
+      ? schema.organization({ name: family })
+      : schema.person({
+          familyNames: family !== undefined ? [family] : undefined,
+          givenNames: given !== undefined ? [given] : undefined,
+          honorificSuffix: suffix,
+        }),
+  )
+}
+
+/**
+ * Decode a `Csl.Date` to a Stencila `Date`
+ */
+const decodeDate = (date: Csl.Date): schema.Date | undefined => {
+  const { 'date-parts': dateParts, raw, literal, ...lost } = date
+  logWarnLossIfAny('csl', 'decode', date, lost)
+
+  if (dateParts !== undefined)
+    return schema.date({ value: dateParts.join('-') })
+  if (raw !== undefined)
+    return schema.date({ value: new Date(raw).toISOString() })
+  if (literal !== undefined) return schema.date({ value: literal })
+
+  return undefined
 }
 
 /**
@@ -353,153 +503,3 @@ export async function decodeCsl(
     return schema.creativeWork(common)
   }
 }
-
-/**
- * Decode a CSL `Person` to a `Person` or `Organization` node.
- *
- * If only `family` is defined then assumes an organizational author.
- * (Citation.js seems to put `literal` names into `family`).
- *
- * CSL-JSON's `non-dropping-particle` and `dropping-particle`
- * are not currently supported in `Person`.
- *
- * Other data that may be provided e.g. `sequence` ("first", "additional")
- * and `ORCID` are currently ignored.
- */
-const decodeAuthor = (
-  author: Csl.Person,
-): Promise<schema.Person | schema.Organization> => {
-  const { family, given, suffix } = author
-
-  // logWarnLossIfAny('csl', 'decode', author, lost)
-
-  return Promise.resolve(
-    family !== undefined && given === undefined
-      ? schema.organization({ name: family })
-      : schema.person({
-          familyNames: family !== undefined ? [family] : undefined,
-          givenNames: given !== undefined ? [given] : undefined,
-          honorificSuffix: suffix,
-        }),
-  )
-}
-
-/**
- * Encode an `Organization` as a `string` for use as the `publisher` property
- */
-const encodePublisher = (
-  org?: schema.Organization | schema.Person,
-): { publisher?: string; 'publisher-place'?: string } | undefined => {
-  if (org === undefined) return undefined
-  const { name, address } = org
-  let place: string | undefined
-  if (address !== undefined) {
-    if (typeof address === 'string') place = address
-    else {
-      place = [
-        address.addressLocality,
-        address.addressRegion,
-        address.addressCountry,
-      ]
-        .filter((item) => item !== undefined)
-        .join(', ')
-    }
-  }
-  return {
-    publisher: name,
-    'publisher-place': place,
-  }
-}
-
-/**
- * Decode a `Csl.Date` to a Stencila `Date`
- */
-const decodeDate = (date: Csl.Date): schema.Date | undefined => {
-  const { 'date-parts': dateParts, raw, literal, ...lost } = date
-  logWarnLossIfAny('csl', 'decode', date, lost)
-
-  if (dateParts !== undefined)
-    return schema.date({ value: dateParts.join('-') })
-  if (raw !== undefined)
-    return schema.date({ value: new Date(raw).toISOString() })
-  if (literal !== undefined) return schema.date({ value: literal })
-
-  return undefined
-}
-
-/**
- * Encode a Stencila `Date` as a `Csl.Date`.
- *
- * If the date is 1 January then only encode the year (not
- * the month and day).
- */
-const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
-  if (!(date instanceof Date)) {
-    const iso = schema.isA('Date', date) ? date.value : date
-    date = new Date(iso + ' UTC')
-  }
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  return {
-    'date-parts': month === 1 && day === 1 ? [[year]] : [[year, month, day]],
-  }
-}
-
-/**
- * Encode the `isPartOf` property of a `CreativeWork` into properties of
- * a `Csl.Data` object.
- */
-const encodeIsPartOf = (
-  work: schema.CreativeWork['isPartOf'],
-): Omit<Csl.Data, 'type' | 'id'> => {
-  if (work === undefined) return {}
-
-  if (schema.isA('PublicationIssue', work)) {
-    const { name, title, issueNumber, isPartOf, ...lost } = work
-    logWarnLossIfAny('csl', 'encode', work, lost)
-
-    return {
-      ...(isPartOf !== undefined
-        ? encodeIsPartOf(isPartOf)
-        : encodeContainerTitle(name, title)),
-      issue: issueNumber,
-    }
-  } else if (schema.isA('PublicationVolume', work)) {
-    const { name, title, volumeNumber, isPartOf, ...lost } = work
-    logWarnLossIfAny('csl', 'encode', work, lost)
-
-    return {
-      ...(isPartOf !== undefined
-        ? encodeIsPartOf(isPartOf)
-        : encodeContainerTitle(name, title)),
-      volume: volumeNumber,
-    }
-  } else if (
-    schema.isA('Periodical', work) ||
-    schema.isA('CreativeWork', work)
-  ) {
-    const { name, title, ...lost } = work
-    logWarnLossIfAny('csl', 'encode', work, lost)
-
-    return encodeContainerTitle(name, title)
-  } else {
-    logWarnLoss(
-      'csl',
-      'encode',
-      `Unhandled isPartOf type: ${schema.nodeType(work)}`,
-    )
-    return {}
-  }
-}
-
-/**
- * Encode a CSL `container-title` property from the `name` or `title` of a `CreativeWork`.
- */
-const encodeContainerTitle = (
-  name: schema.CreativeWork['name'],
-  title: schema.CreativeWork['title'],
-): Pick<Csl.Data, 'container-title'> => ({
-  'container-title':
-    name ?? (title !== undefined ? TxtCodec.stringify(title) : 'Untitled'),
-})
