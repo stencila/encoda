@@ -29,13 +29,13 @@ test('decode', async () => {
 
   const done = await nockRecord('nock-record-decode.json')
   expect(await doi2yaml('10.5334/jors.182')).toMatchFile(
-    snapshot('10.5334-jors-182.yaml')
+    snapshot('10.5334-jors-182.yaml'),
   )
   done()
 })
 
 test('encode', async () => {
   expect(() => doiCodec.encode()).toThrow(
-    /Encoding to DOI is not yet implemented/
+    /Encoding to DOI is not yet implemented/,
   )
 })

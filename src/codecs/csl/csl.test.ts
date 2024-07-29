@@ -10,7 +10,7 @@ test('decode', async () => {
     yamlCodec.dump(await cslCodec.read(fixture(name)))
 
   expect(await csl2yaml('10.5334-jors-182.csl.json')).toMatchFile(
-    snapshot('10.5334-jors-182.yaml')
+    snapshot('10.5334-jors-182.yaml'),
   )
 })
 
@@ -19,6 +19,6 @@ test('encode', async () => {
     cslCodec.dump(await yamlCodec.read(fixture(name)))
 
   expect(await yaml2csl('article.yaml')).toMatchFile(
-    snapshot('article.csl.json')
+    snapshot('article.csl.json'),
   )
 })

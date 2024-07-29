@@ -16,13 +16,13 @@ const yaml = new YamlCodec()
 describe('decode', () => {
   const query2yaml = async (query: string) =>
     vfile.dump(
-      await yaml.encode(await crossref.decode(await vfile.load(query)))
+      await yaml.encode(await crossref.decode(await vfile.load(query))),
     )
 
   test('Carlsson and Ekre', async () => {
     const done = await nockRecord('nock-record-carlsson-and-ekre.json')
     expect(
-      await query2yaml('Carlsson and Ekre, Tensor Computations in Julia')
+      await query2yaml('Carlsson and Ekre, Tensor Computations in Julia'),
     ).toMatchFile(snapshot('carlsson-and-ekre-2019.yaml'))
     done()
   })
@@ -34,7 +34,7 @@ describe('encode', () => {
       await crossref.dump(elife50356, {
         doi: '10.5555/12345',
         url: 'https://example.org',
-      })
+      }),
     ).toMatchFile(snapshot('article-elife-50356.xml'))
   })
 
@@ -43,7 +43,7 @@ describe('encode', () => {
       await crossref.dump(plosone0229075, {
         doi: '10.5555/12345',
         url: 'https://example.org',
-      })
+      }),
     ).toMatchFile(snapshot('article-plosone-0229075.xml'))
   })
 
@@ -62,7 +62,7 @@ describe('encode', () => {
       await crossref.dump(review, {
         doi: '10.5555/12345',
         url: 'https://example.org',
-      })
+      }),
     ).toMatchFile(snapshot('review-elife-50356.xml'))
   })
 })
