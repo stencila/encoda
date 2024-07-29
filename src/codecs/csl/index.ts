@@ -501,9 +501,5 @@ const encodeContainerTitle = (
   title: schema.CreativeWork['title'],
 ): Pick<Csl.Data, 'container-title'> => ({
   'container-title':
-    name !== undefined
-      ? name
-      : title !== undefined
-        ? TxtCodec.stringify(title)
-        : 'Untitled',
+    name ?? (title !== undefined ? TxtCodec.stringify(title) : 'Untitled'),
 })
