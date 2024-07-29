@@ -1,0 +1,32 @@
+type: Person
+id: http://orcid.org/0000-0002-1825-0097
+affiliations:
+  - type: Organization
+    alternateNames: Psychoceramics
+    identifiers:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '5468'
+    name: Wesleyan University
+  - type: Organization
+    alternateNames: Psychoceramics
+    identifiers:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '6752'
+    name: Brown University
+alternateNames:
+  - Josiah Stinkney Carberry
+  - J. Carberry
+  - J. S. Carberry
+familyNames: Carberry
+givenNames: Josiah
+identifiers:
+  type: PropertyValue
+  propertyID: Scopus Author ID
+  value: '7007156898'
+schema:mainEntityOfPage:
+  id: http://orcid.org/0000-0002-1825-0097
+url:
+  - id: http://library.brown.edu/about/hay/carberry.php
+  - id: http://en.wikipedia.org/wiki/Josiah_Carberry
