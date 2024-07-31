@@ -23,7 +23,7 @@ describe('transform', () => {
 
   test('returns parse errors', async () => {
     expect(await transform('<foo>', stylesheet1)).toMatch(
-      /Opening and ending tag mismatch: foo/
+      /Opening and ending tag mismatch: foo/,
     )
   })
 })

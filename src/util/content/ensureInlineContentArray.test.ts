@@ -26,7 +26,7 @@ describe('Ensures an array of inline content', () => {
       ensureInlineContentArray([
         schema.thematicBreak(),
         schema.codeBlock({ text: 'Some code' }),
-      ])
+      ]),
     ).toEqual(['', 'Some code'])
   })
 })

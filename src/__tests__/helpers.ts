@@ -36,7 +36,7 @@ export const fixtureToJson =
     JSON.stringify(
       await decode(await vfile.read(fixture(filename, 3))),
       null,
-      '  '
+      '  ',
     )
 
 /**

@@ -49,12 +49,12 @@ export function elem(
   const attributes = (notAttrs ? {} : attrs) as Attributes
   const elements = [...(attrs && notAttrs ? [attrs] : []), ...children]
     .map((elem) =>
-      typeof elem === 'string' ? { type: 'text', text: elem } : elem
+      typeof elem === 'string' ? { type: 'text', text: elem } : elem,
     )
     .reduce((prev: Element[], curr) => (curr ? [...prev, curr] : prev), [])
   return {
     type: 'element',
-    name: name,
+    name,
     attributes,
     elements,
   }
@@ -84,7 +84,7 @@ export function textOrUndefined(elem: Element | null): string | undefined {
  */
 export function splitTextOrUndefined(
   elem: Element | null,
-  separator: string | RegExp
+  separator: string | RegExp,
 ): string[] | undefined {
   const t = textOrUndefined(elem)
   if (t === undefined) return t
@@ -114,10 +114,10 @@ export function attr(elem: Element | null, name: string): string | null {
  */
 export function attrOrUndefined(
   elem: Element | null,
-  name: string
+  name: string,
 ): string | undefined {
   const value = attr(elem, name)
-  return value === null ? undefined : value
+  return value ?? undefined
 }
 
 /**
@@ -126,7 +126,7 @@ export function attrOrUndefined(
 export function matches(
   elem: Element,
   name: string | string[],
-  attributes: Attributes = {}
+  attributes: Attributes = {},
 ): boolean {
   if (!elem.name) return false
   if (typeof name === 'string' && elem.name !== name) return false
@@ -144,7 +144,7 @@ export function matches(
 export function child(
   elem: Element | null,
   name: string | string[],
-  attributes: Attributes = {}
+  attributes: Attributes = {},
 ): Element | null {
   if (elem === null) return null
   if (elem.elements) {
@@ -161,7 +161,7 @@ export function child(
 export function children(
   elem: Element | null,
   name: string | string[],
-  attributes: Attributes = {}
+  attributes: Attributes = {},
 ): Element[] {
   return elem?.elements
     ? elem.elements.filter((child) => matches(child, name, attributes))
@@ -174,7 +174,7 @@ export function children(
 export function first(
   elem: Element | null,
   name: string | string[],
-  attributes: Attributes = {}
+  attributes: Attributes = {},
 ): Element | null {
   if (elem === null) return null
   if (elem.elements) {
@@ -194,7 +194,7 @@ export function first(
  */
 export function firstByType(
   elem: Element | null,
-  type: string | null
+  type: string | null,
 ): Element | null {
   if (!elem || !type || !elem.elements) return null
   if (elem.type === type) return elem
@@ -217,7 +217,7 @@ export function firstByType(
 export function all(
   elem: Element | null,
   name: string | string[],
-  attributes: Attributes = {}
+  attributes: Attributes = {},
 ): Element[] {
   if (elem?.elements) {
     return [

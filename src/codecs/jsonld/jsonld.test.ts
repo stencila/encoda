@@ -36,19 +36,19 @@ afterAll(async () => {
 describe('decode', () => {
   test('orcid', async () => {
     expect(await jsonld2yaml('orcid.jsonld')).toMatchFile(
-      snapshot('orcid.yaml')
+      snapshot('orcid.yaml'),
     )
   })
 
   test('datacite', async () => {
     expect(await jsonld2yaml('datacite.jsonld')).toMatchFile(
-      snapshot('datacite.yaml')
+      snapshot('datacite.yaml'),
     )
   })
 
   test.skip('image', async () => {
     expect(await jsonld2yaml('image.jsonld')).toMatchFile(
-      snapshot('image.yaml')
+      snapshot('image.yaml'),
     )
   })
 })
@@ -56,7 +56,7 @@ describe('decode', () => {
 describe('encode', () => {
   test('article', async () => {
     expect(await yaml2jsonld('article.yaml')).toMatchFile(
-      snapshot('article.jsonld')
+      snapshot('article.jsonld'),
     )
   })
 })

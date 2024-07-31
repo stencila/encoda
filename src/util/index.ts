@@ -19,6 +19,6 @@ export const compactObj = <O extends object>(o: O): O => {
     (compacted: O, [k, v]) => {
       return v !== undefined ? { ...compacted, [k]: v } : compacted
     },
-    {} as O // eslint-disable-line
+    {} as O, // eslint-disable-line
   )
 }

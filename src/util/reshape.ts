@@ -18,14 +18,14 @@ export function reshape(node: schema.Node): Promise<schema.Node> {
 
 /**
  * Reshapes a `CreativeWork` node.
- * 
+ *
  * Previously `reshapeCites` was implicitly `true` but led to changes/loss of
  * punctuation that was unexpected for some users. This may be made into a
  * configuration option in the future.
  */
 async function reshapeCreativeWork(
   work: schema.CreativeWork,
-  reshapeCites = false
+  reshapeCites = false,
 ): Promise<schema.CreativeWork> {
   const { content = [] } = work
   const newContent: schema.BlockContent[] = []
@@ -91,11 +91,11 @@ async function reshapeCreativeWork(
           const { ...person } = await decodePerson(authorText)
           if (orgId !== undefined) affiliations.set(person, [orgId])
           return person
-        })
+        }),
       )
 
       const authors = parsed.filter(
-        (person) => person.familyNames !== undefined
+        (person) => person.familyNames !== undefined,
       )
 
       if (authors.length > 0) {
@@ -358,7 +358,7 @@ async function reshapeCreativeWork(
           // Look for a DOI
           const match =
             /\b((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)/i.exec(
-              text
+              text,
             )
           if (match) {
             // Remove trailing punctuation (if any)
@@ -376,7 +376,7 @@ async function reshapeCreativeWork(
         // Avoids this warning https://github.com/sindresorhus/got/issues/1523
         if (promises.length >= 10) {
           references.push(
-            ...((await Promise.all(promises)) as schema.CreativeWork[])
+            ...((await Promise.all(promises)) as schema.CreativeWork[]),
           )
           promises = []
         }
@@ -384,7 +384,7 @@ async function reshapeCreativeWork(
 
       // Resolve remaining promises
       references.push(
-        ...((await Promise.all(promises)) as schema.CreativeWork[])
+        ...((await Promise.all(promises)) as schema.CreativeWork[]),
       )
 
       // Give references an id if they do not already have one
@@ -456,6 +456,7 @@ function textContent(node: schema.Node): string {
       if ('items' in node && Array.isArray(node.items))
         return node.items.map(getTextContent).join(' ')
     }
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     return node.toString()
   }
   return getTextContent(node).trim()
@@ -507,7 +508,7 @@ function removeMark(content: schema.InlineContent[]): schema.InlineContent[] {
  */
 function separateLabelCaption(
   caption: schema.Paragraph | undefined,
-  type = 'Figure|Table'
+  type = 'Figure|Table',
 ): [string | undefined, [schema.Paragraph] | undefined] {
   if (caption === undefined) return [undefined, undefined]
 
@@ -519,7 +520,7 @@ function separateLabelCaption(
   const first = content[0]
   if (typeof first === 'string') {
     const match = new RegExp(
-      '^\\s*(' + type + '\\s*\\d+)\\s*[.:;]?\\s(.*)'
+      '^\\s*(' + type + '\\s*\\d+)\\s*[.:;]?\\s(.*)',
     ).exec(first)
     if (match) {
       label = match[1]
@@ -542,7 +543,7 @@ function separateLabelCaption(
  */
 function decodeNumericCites(
   content: schema.InlineContent[],
-  references: Exclude<schema.CreativeWork['references'], undefined>
+  references: Exclude<schema.CreativeWork['references'], undefined>,
 ): schema.InlineContent[] {
   return content.reduce(
     (prev: schema.InlineContent[], curr): schema.InlineContent[] => {
@@ -580,7 +581,7 @@ function decodeNumericCites(
         return [...prev, ...parts]
       } else return [...prev, curr]
     },
-    []
+    [],
   )
 }
 
@@ -594,7 +595,7 @@ function decodeNumericCites(
  * @param para The paragraph to reshape
  */
 export function groupCitesIntoCiteGroup(
-  content: schema.InlineContent[]
+  content: schema.InlineContent[],
 ): schema.InlineContent[] {
   content = [...content]
 
@@ -633,7 +634,7 @@ export function groupCitesIntoCiteGroup(
                 group ??
                   (items.length === 1
                     ? items[0] // only cite
-                    : schema.citeGroup({ items })) // group cites together
+                    : schema.citeGroup({ items })), // group cites together
               )
 
               // Skip ahead one so we don't bother looking at the
@@ -686,7 +687,7 @@ function decodePerson(text: string): Promise<schema.Person> {
  */
 function decodeDoi(
   doi: string,
-  text: string
+  text: string,
 ): Promise<schema.CreativeWork | string> {
   if (doiCodec === undefined) {
     const { DoiCodec } = require('../codecs/doi')

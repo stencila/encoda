@@ -17,7 +17,7 @@ import { copyFile } from './media/copyFile'
  */
 export async function toFile(
   uri: string,
-  filePath?: string
+  filePath?: string,
 ): Promise<{ mediaType: string; filePath: string }> {
   const extension = path.extname(uri)
   const mediaType = mime.getType(extension) ?? ''

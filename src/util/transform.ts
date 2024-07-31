@@ -27,13 +27,13 @@ export default async function transform(
   rootNode: schema.Node,
   transformer: (
     node: schema.Node,
-    parent?: schema.Node
+    parent?: schema.Node,
   ) => Promise<schema.Node>,
-  recurse = false
+  recurse = false,
 ): Promise<schema.Node> {
   async function walk(
     node: schema.Node,
-    parent?: schema.Node
+    parent?: schema.Node,
   ): Promise<schema.Node> {
     const transformed = await transformer(node, parent)
 
@@ -50,15 +50,16 @@ export default async function transform(
           ...(await prev),
           await walk(child, transformed),
         ],
-        Promise.resolve([])
+        Promise.resolve([]),
       )
 
     return Object.entries(transformed).reduce(
       async (prev, [key, child]) => ({
         ...(await prev),
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         [key]: await walk(child, transformed),
       }),
-      Promise.resolve({})
+      Promise.resolve({}),
     )
   }
   return walk(rootNode)
@@ -69,7 +70,7 @@ export default async function transform(
  */
 export function transformSync(
   node: schema.Node,
-  transformer: (node: schema.Node) => schema.Node | undefined
+  transformer: (node: schema.Node) => schema.Node | undefined,
 ): schema.Node {
   function walk(node: schema.Node): schema.Node | undefined {
     const transformed = transformer(node)
@@ -85,6 +86,7 @@ export function transformSync(
     }
 
     return Object.entries(transformed).reduce((prev, [key, child]) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       const trans = walk(child)
       return trans !== undefined
         ? {

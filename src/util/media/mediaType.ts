@@ -39,7 +39,7 @@ const videoExts = [
  */
 export function mediaType(
   mediaUrl: string,
-  fallback: MediaType = 'image'
+  fallback: MediaType = 'image',
 ): MediaType {
   let pathname
   try {

@@ -68,14 +68,14 @@ describe('decode', () => {
 
     person.emails = ['jane@example.com']
     expect(await decode('Dr Jane Jill Jones PhD <jane@example.com>')).toEqual(
-      person
+      person,
     )
 
     person.url = 'http://example.com/jane'
     expect(
       await decode(
-        'Dr Jane Jill Jones PhD <jane@example.com> (http://example.com/jane)'
-      )
+        'Dr Jane Jill Jones PhD <jane@example.com> (http://example.com/jane)',
+      ),
     ).toEqual(person)
   })
 
@@ -89,7 +89,7 @@ describe('decode', () => {
     const done = await nockRecord('nock-record-orcid.json')
 
     expect(
-      await decode('https://orcid.org/0000-0002-1825-0097')
+      await decode('https://orcid.org/0000-0002-1825-0097'),
     ).toMatchSnapshot()
 
     done()

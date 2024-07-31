@@ -38,8 +38,8 @@ export const executablePath = isPackaged
           path.dirname(process.execPath),
           'node_modules',
           'puppeteer',
-          '.local-chromium'
-        )
+          '.local-chromium',
+        ),
       )
   : puppeteer.executablePath()
 

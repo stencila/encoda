@@ -45,10 +45,10 @@ describe('Resolve theme arguments', () => {
     const theme = await getThemeAssets(themes.elife)
 
     expect(theme.scripts[0]).toMatch(
-      `https://unpkg.com/@stencila/thema@2/dist/themes/${themes.elife}/index.js`
+      `https://unpkg.com/@stencila/thema@2/dist/themes/${themes.elife}/index.js`,
     )
     expect(theme.styles[0]).toMatch(
-      `https://unpkg.com/@stencila/thema@2/dist/themes/${themes.elife}/styles.css`
+      `https://unpkg.com/@stencila/thema@2/dist/themes/${themes.elife}/styles.css`,
     )
   })
 
@@ -60,7 +60,7 @@ describe('Resolve theme arguments', () => {
 
       expect(theme.scripts[0]).toMatch('!function')
       expect(theme.styles[0]).toMatch(/\[itemprop~=.*\]{/)
-    }
+    },
   )
 
   test('Bundle theme contents from URL', async () => {

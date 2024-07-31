@@ -39,18 +39,18 @@ jest.mock('crypto')
 test('sniff', async () => {
   expect(
     await sniff(
-      '<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
-    )
+      '<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"',
+    ),
   ).toBe(true)
   expect(
     await sniff(
-      '<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN"'
-    )
+      '<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN"',
+    ),
   ).toBe(true)
   expect(
     await sniff(
-      '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE article\n\tPUBLIC\n  "-//NLM//DTD JATS (Z39.96) Blah blah'
-    )
+      '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE article\n\tPUBLIC\n  "-//NLM//DTD JATS (Z39.96) Blah blah',
+    ),
   ).toBe(true)
 
   expect(await sniff(fixture('elife-46793-v1/main.jats.xml'))).toBe(true)
@@ -65,22 +65,22 @@ test('sniff', async () => {
 describe('encode: Math', () => {
   it('encodes TeX nodes using <tex-math>', async () => {
     expect(await jats.dump(texFragment, { isStandalone: false })).toMatchFile(
-      snapshot('math-tex-fragment.jats.xml')
+      snapshot('math-tex-fragment.jats.xml'),
     )
   })
   it('encodes AsciiMath using <mml:math>', async () => {
     expect(
-      await jats.dump(asciimathFragment, { isStandalone: false })
+      await jats.dump(asciimathFragment, { isStandalone: false }),
     ).toMatchFile(snapshot('math-asciimath-fragment.jats.xml'))
   })
   it('encodes MathML using <mml:math>', async () => {
     expect(
-      await jats.dump(mathmlFragment, { isStandalone: false })
+      await jats.dump(mathmlFragment, { isStandalone: false }),
     ).toMatchFile(snapshot('math-mathml-fragment.jats.xml'))
   })
   it('encodes MathBlocks using <display-formula>', async () => {
     expect(await jats.dump(texBlock, { isStandalone: false })).toMatchFile(
-      snapshot('math-tex-block.jats.xml')
+      snapshot('math-tex-block.jats.xml'),
     )
   })
 })
@@ -327,7 +327,7 @@ test.each([
   expect(
     await jats.dump(node, {
       isStandalone: true,
-    })
+    }),
   ).toMatchFile(snapshot(`${name}.jats.xml`))
 })
 
@@ -350,7 +350,7 @@ test.each([
 describe('authors', () => {
   test('decode collaborators', async () => {
     const { authors } = unlinkFiles(
-      await jats.read(fixture('elife-30274-v1/main.jats.xml'))
+      await jats.read(fixture('elife-30274-v1/main.jats.xml')),
     ) as Article
 
     expect(authors).toEqual(
@@ -366,9 +366,9 @@ describe('authors', () => {
                 emails: ['nicole@scienceexchange.com'],
               }),
             ],
-          })
+          }),
         ),
-      ])
+      ]),
     )
 
     const { members } = authors?.[authors.length - 1] as Organization
@@ -387,9 +387,9 @@ describe('authors', () => {
                 }),
               }),
             ],
-          })
+          }),
         ),
-      ])
+      ]),
     )
   })
 })

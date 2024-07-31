@@ -32,7 +32,7 @@ export type VFile = vfile.VFile
  */
 export function create(
   contents?: string,
-  options: vfile.VFileOptions = {}
+  options: vfile.VFileOptions = {},
 ): VFile {
   if (contents) {
     if (isPath(contents)) options = { ...options, path: contents }
@@ -48,7 +48,7 @@ export function create(
  */
 export function load(
   contents: VFileContents,
-  options: vfile.VFileOptions = {}
+  options: vfile.VFileOptions = {},
 ): VFile {
   return vfile({ ...options, contents })
 }
@@ -70,7 +70,7 @@ export async function dump(vfile: VFile, mode?: 'buffer'): Promise<Buffer>
 // eslint-disable-next-line
 export async function dump(
   vfile: VFile,
-  mode: 'string' | 'buffer' = 'string'
+  mode: 'string' | 'buffer' = 'string',
 ): Promise<string | Buffer> {
   if (vfile.contents) {
     if (mode === 'string') return vfile.toString()

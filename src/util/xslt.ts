@@ -55,7 +55,7 @@ export class Processor {
    */
   static async create(
     stylesheet: string,
-    xmlns: Record<string, string> = {}
+    xmlns: Record<string, string> = {},
   ): Promise<Processor> {
     const processor = new Processor(xmlns)
 
@@ -73,7 +73,7 @@ export class Processor {
       // @ts-ignore properties set on window inside Puppeteer page context
       const { xsltProcessor, domParser } = window
       xsltProcessor.importStylesheet(
-        domParser.parseFromString(stylesheet, 'text/xml')
+        domParser.parseFromString(stylesheet, 'text/xml'),
       )
     }, stylesheet)
 
@@ -97,6 +97,7 @@ export class Processor {
         const { xsltProcessor, domParser, xmlSerializer } = window
 
         // Set the XML namespaces on wrapper
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         const attrs = Object.entries(xmlns)
           .map(([key, value]) => {
             return `xmlns${key === '' ? '' : ':' + key}="${value}"`
@@ -107,7 +108,7 @@ export class Processor {
         // Parse the input document and send back any errors
         const input = domParser.parseFromString(
           wrap,
-          'text/xml'
+          'text/xml',
         ).firstElementChild
         if (input === null) return `Error parsing XML: ${xml}`
         const error = input.querySelector('parsererror')
@@ -125,7 +126,7 @@ export class Processor {
           : xmlSerializer.serializeToString(output)
       },
       xml,
-      this.xmlns
+      this.xmlns,
     )
   }
 }
@@ -138,7 +139,7 @@ export class Processor {
  */
 export async function transform(
   xml: string,
-  stylesheet: string
+  stylesheet: string,
 ): Promise<string> {
   const processor = await Processor.create(stylesheet)
   return processor.transform(xml)

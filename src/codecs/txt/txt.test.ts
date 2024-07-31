@@ -19,13 +19,13 @@ describe('decode', () => {
 
   it('can decode a plain ASCII text file', async () => {
     expect(await txt.read(fixture('ascii.txt'))).toBe(
-      'Just some plain ASCII text.\n'
+      'Just some plain ASCII text.\n',
     )
   })
 
   it('can decode a UTF8 text file', async () => {
     expect(await txt.read(fixture('utf8.txt'))).toBe(
-      'ეს არის ქართულ ენაზე დაწერილი უნიკოდში.\n'
+      'ეს არის ქართულ ენაზე დაწერილი უნიკოდში.\n',
     )
   })
 })
@@ -52,7 +52,7 @@ describe('encode', () => {
     expect(await e({})).toBe('')
     expect(await e({ a: 1 })).toBe('1')
     expect(await e({ a: null, b: true, c: 42, d: 'str', e: 3.14 })).toBe(
-      'null true 42 str 3.14'
+      'null true 42 str 3.14',
     )
   })
 
@@ -66,7 +66,7 @@ describe('stringify', () => {
 
   test('it stringifies primitives', () => {
     expect(s([null, true, false, NaN, 2, 'string'])).toEqual(
-      'null true false NaN 2 string'
+      'null true false NaN 2 string',
     )
   })
 
@@ -81,7 +81,7 @@ describe('stringify', () => {
         stencila.strong({ content: ['strong'] }),
         stencila.subscript({ content: ['sub'] }),
         stencila.superscript({ content: ['sup'] }),
-      ])
+      ]),
     ).toEqual('emphasis strong sub sup')
   })
 
@@ -97,8 +97,8 @@ describe('stringify', () => {
               content: [stencila.superscript({ content: ['super strong'] })],
             }),
           ],
-        })
-      )
+        }),
+      ),
     ).toEqual('A paragraph with strong and super strong')
   })
 })

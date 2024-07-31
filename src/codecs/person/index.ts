@@ -43,7 +43,7 @@ export class PersonCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `Node`
    */
   public readonly decode = async (
-    file: vfile.VFile | string
+    file: vfile.VFile | string,
   ): Promise<schema.Person> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
 
@@ -78,7 +78,7 @@ export class PersonCodec extends Codec implements Codec {
       honorificPrefix: title.length > 0 ? title : undefined,
       honorificSuffix: suffix.length > 0 ? suffix : undefined,
       emails: email !== undefined ? [email] : undefined,
-      url: url,
+      url,
     })
   }
 
@@ -102,8 +102,8 @@ export class PersonCodec extends Codec implements Codec {
     } else {
       log.warn(
         `Expected a node of type "Person", got a node of type "${schema.nodeType(
-          node
-        )}"`
+          node,
+        )}"`,
       )
     }
 

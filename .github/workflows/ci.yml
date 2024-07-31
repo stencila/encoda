@@ -1,6 +1,8 @@
 on:
   push:
     branches: ['master']
+  pull_request:
+    branches: [ 'master' ]
 
 env:
   NODE_VERSION: '20.x'
@@ -20,12 +22,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint
+        run: npm run lint
+
       # Run tests with
       #   - Run in band because appears to run more smoothly (avoids memory issues when running in parallel?)
       #   - Fifteen (!) minute test timeout
       #   - Force exit to prevent hanging
       - name: Run tests
-        run: npx jest jats --runInBand --testTimeout=900000 --forceExit
+        run: npx jest --runInBand --testTimeout=900000 --forceExit
         env:
           # Tell Node.js how much un-garbage-collected-memory it can
           # allow for to prevent it running out (in Mb)

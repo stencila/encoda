@@ -61,6 +61,19 @@ type Content = stencila.InlineContent | stencila.BlockContent
 const DOCTYPE =
   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd"'
 
+const initialEncodeState = (): EncodeState => ({
+  tables: 0,
+  citations: {},
+  references: {},
+})
+
+const initialDecodeState = (article: xml.Element): DecodeState => ({
+  article,
+  ancestorElem: article,
+  sectionId: '',
+  sectionDepth: 0,
+})
+
 /**
  * The spacing character to use to workaround a bug
  * in xml-js that strips whitespace between elements
@@ -118,12 +131,12 @@ export class JatsCodec extends Codec implements Codec {
    * @returns A promise that resolves to a Stencila `Node`
    */
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile,
   ): Promise<stencila.Article | Content[]> => {
-    let jats = await vfile.dump(file)
+    const jats = await vfile.dump(file)
 
     // See notes on SPACER for why this is needed
-    let fixed = jats.replaceAll('> <', `>${SPACER}<`)
+    const fixed = jats.replaceAll('> <', `>${SPACER}<`)
 
     const doc = xml.load(fixed)
 
@@ -138,7 +151,7 @@ export class JatsCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.commonEncodeDefaults
+    options: CommonEncodeOptions = this.commonEncodeDefaults,
   ): Promise<vfile.VFile> => {
     const { isStandalone } = { ...this.commonEncodeDefaults, ...options }
     const doc = isStandalone
@@ -155,7 +168,7 @@ export class JatsCodec extends Codec implements Codec {
               doctype: DOCTYPE,
             },
             encodeArticle(
-              (await encodePrepare(ensureArticle(node))) as stencila.Article
+              (await encodePrepare(ensureArticle(node))) as stencila.Article,
             ),
           ],
         }
@@ -247,13 +260,6 @@ export interface DecodeState {
   sectionDepth: number
 }
 
-const initialDecodeState = (article: xml.Element): DecodeState => ({
-  article,
-  ancestorElem: article,
-  sectionId: '',
-  sectionDepth: 0,
-})
-
 /**
  * It is necessary to maintain some state during encoding.
  * This interface defines that state; an instance
@@ -287,18 +293,12 @@ interface EncodeState {
   references: { [rid: string]: string }
 }
 
-const initialEncodeState = (): EncodeState => ({
-  tables: 0,
-  citations: {},
-  references: {},
-})
-
 /**
  * Decode an XML element if it is defined.
  */
 function decodeMaybe<Type extends stencila.Node>(
   elem: xml.Element | null | undefined,
-  func: (defined: xml.Element) => Type | undefined
+  func: (defined: xml.Element) => Type | undefined,
 ): Type | undefined {
   return isDefined(elem) ? func(elem) : undefined
 }
@@ -314,14 +314,14 @@ function decodeArticle(article: xml.Element): stencila.Article {
 
   const { meta: frontMeta, ...frontProps } = decodeFront(
     child(article, 'front'),
-    state
+    state,
   )
 
   const body = decodeBody(child(article, 'body'), state)
 
   const { references, content: backContent } = decodeBack(
     child(article, 'back'),
-    state
+    state,
   )
 
   const content = [...(body ?? []), ...(backContent ?? [])]
@@ -350,8 +350,8 @@ function encodeArticle(article: stencila.Article): xml.Element {
       'article-meta',
       encodeTitle(title),
       encodeAuthors(authors),
-      encodeAbstract(description)
-    )
+      encodeAbstract(description),
+    ),
   )
 
   const state: EncodeState = initialEncodeState()
@@ -367,7 +367,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
     },
     front,
     body,
-    back
+    back,
   )
 }
 
@@ -378,7 +378,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
  */
 function decodeFront(
   front: xml.Element | null,
-  state: DecodeState
+  state: DecodeState,
 ): Pick<
   stencila.Article,
   | 'authors'
@@ -399,7 +399,7 @@ function decodeFront(
 > {
   const subjGroups = all(front, 'subj-group')
   const notes = all(first(front, 'notes'), 'notes')
-  let about = [
+  const about = [
     ...decodeAbout(subjGroups),
     ...decodeNotes(notes, state),
   ] as ThingTypes[]
@@ -452,7 +452,7 @@ function decodeAbout(subjectGroups: xml.Element[]): stencila.DefinedTerm[] {
       const type = attr(elem, 'subj-group-type') ?? ''
       const subject = child(elem, ['subject'])
       const name = emptySafeString(
-        textOrUndefined(xml.firstByType(subject, 'text'))
+        textOrUndefined(xml.firstByType(subject, 'text')),
       )
       return name && ABOUT_TYPES.includes(type)
         ? stencila.definedTerm({ name })
@@ -466,7 +466,7 @@ function decodeAbout(subjectGroups: xml.Element[]): stencila.DefinedTerm[] {
  */
 function decodeNotes(
   notes: xml.Element[],
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Note[] {
   return notes
     .map((elem) => {
@@ -497,7 +497,7 @@ function decodeGenres(subjectGroups: xml.Element[]): stencila.Article['genre'] {
       const type = attr(elem, 'subj-group-type') ?? ''
       const subject = child(elem, ['subject'])
       const value = emptySafeString(
-        textOrUndefined(xml.firstByType(subject, 'text'))
+        textOrUndefined(xml.firstByType(subject, 'text')),
       )
       return GENRES_TYPES.includes(type) ? value : undefined
     })
@@ -510,9 +510,9 @@ function decodeGenres(subjectGroups: xml.Element[]): stencila.Article['genre'] {
  */
 function decodeTitle(
   title: xml.Element | null,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['title'] {
-  if (title === null || title.elements === undefined) return 'Untitled'
+  if (title?.elements === undefined) return 'Untitled'
   if (title.elements.length === 1 && title.elements[0].type === 'text')
     return text(title)
   else return decodeInlineContent(title.elements, state)
@@ -528,7 +528,7 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
       ? elem('article-title', title)
       : elem(
           'article-title',
-          ...encodeNodes(title ?? 'Untitled', initialEncodeState())
+          ...encodeNodes(title ?? 'Untitled', initialEncodeState()),
         )
   return elem('title-group', articleTitle)
 }
@@ -537,11 +537,11 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
  * Decode a JATS `<fpage>` element to a Stencila `Article.pageStart`.
  */
 function decodePageStart(
-  front: xml.Element | null
+  front: xml.Element | null,
 ): stencila.Article['pageStart'] {
   const pageStart = first(front, 'fpage')
 
-  if (pageStart === null || pageStart.elements === undefined) return
+  if (pageStart?.elements === undefined) return
   if (pageStart.elements.length === 1 && pageStart.elements[0].type === 'text')
     return text(pageStart)
 }
@@ -552,7 +552,7 @@ function decodePageStart(
 function decodePageEnd(front: xml.Element | null): stencila.Article['pageEnd'] {
   const pageEnd = first(front, 'lpage')
 
-  if (pageEnd === null || pageEnd.elements === undefined) return
+  if (pageEnd?.elements === undefined) return
   if (pageEnd.elements.length === 1 && pageEnd.elements[0].type === 'text')
     return text(pageEnd)
 }
@@ -564,18 +564,18 @@ function decodePageEnd(front: xml.Element | null): stencila.Article['pageEnd'] {
  */
 export function decodeAbstract(
   elem: xml.Element | null,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['description'] {
   if (elem === null) return undefined
 
-  let nodes = decodeElements(elem.elements ?? [], state)
+  const nodes = decodeElements(elem.elements ?? [], state)
   return ensureBlockContentArray(nodes).filter(
     (block) =>
       !(
         block.type === 'Heading' &&
         block.content.length === 1 &&
         block.content[0] === 'Abstract'
-      )
+      ),
   )
 }
 
@@ -583,7 +583,7 @@ export function decodeAbstract(
  * Encode a Stencila `Article.description` to a JATS `<abstract>` element.
  */
 export function encodeAbstract(
-  description?: stencila.Article['description']
+  description?: stencila.Article['description'],
 ): xml.Element | null {
   if (description === undefined) return null
 
@@ -602,7 +602,7 @@ export function encodeAbstract(
  * the first date if none of those exist.
  */
 function decodeDatePublished(
-  front: xml.Element
+  front: xml.Element,
 ): stencila.Article['datePublished'] {
   const dates = all(front, 'pub-date')
   if (dates.length === 0) return undefined
@@ -687,7 +687,7 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
  */
 function decodeLicenses(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['licenses'] {
   const permissions = first(elem, 'permissions')
   const licenses = all(permissions, 'license')
@@ -707,7 +707,7 @@ function decodeLicenses(
  */
 function decodeKeywords(
   front: xml.Element,
-  subjectGroups: xml.Element[]
+  subjectGroups: xml.Element[],
 ): stencila.Article['keywords'] {
   const kwds = all(front, 'kwd')
   const kwdsArray = kwds
@@ -719,7 +719,7 @@ function decodeKeywords(
       const KEYWORDS_TYPES = ['keywords', 'kwd']
       const subject = child(elem, ['subject'])
       const value = emptySafeString(
-        textOrUndefined(xml.firstByType(subject, 'text'))
+        textOrUndefined(xml.firstByType(subject, 'text')),
       )
       return KEYWORDS_TYPES.includes(type) ? value : undefined
     })
@@ -733,7 +733,7 @@ function decodeKeywords(
  * a Stencila `Article.identifiers` property.
  */
 function decodeIdentifiers(
-  front: xml.Element
+  front: xml.Element,
 ): stencila.Article['identifiers'] {
   return [
     ...all(front, 'article-id').map((elem) => {
@@ -793,7 +793,7 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
         }
         return [...orgs, stencila.organization({ name })]
       },
-      []
+      [],
     )
 
     return stencila.monetaryGrant({
@@ -807,17 +807,17 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
  * Decode dates from the `<history>` of a JATS article into an `Article.date*` properties.
  */
 function decodeHistory(
-  front: xml.Element
+  front: xml.Element,
 ): Pick<stencila.Article, 'dateReceived' | 'dateAccepted'> {
   const history = first(front, 'history')
   return {
     dateReceived: decodeMaybe<stencila.Date>(
       child(history, 'date', { 'date-type': 'received' }),
-      decodeDate
+      decodeDate,
     ),
     dateAccepted: decodeMaybe<stencila.Date>(
       child(history, 'date', { 'date-type': 'accepted' }),
-      decodeDate
+      decodeDate,
     ),
   }
 }
@@ -830,10 +830,10 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   const authorNotes = all(first(front, 'author-notes'), 'fn')
     .map((fn) => {
       const id = attrOrUndefined(fn, 'id')
-      let label = undefined
+      let label
       let text = ''
       for (const elem of fn.elements ?? []) {
-        if (elem.name == 'label') {
+        if (elem.name === 'label') {
           label = textOrUndefined(elem)
         } else {
           text += textOrUndefined(elem) ?? ''
@@ -854,7 +854,7 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
  */
 function decodeAuthors(
   front: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['authors'] {
   const contribGroup = first(front, 'contrib-group')
   const authors = children(contribGroup, 'contrib', {
@@ -880,7 +880,7 @@ function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
         auths: [...prev.auths, curr.auth],
         affs: [...prev.affs, ...curr.affs],
       }),
-      init
+      init,
     ) ?? init
   return elem('contrib-group', ...auths, ...affs)
 }
@@ -891,7 +891,7 @@ function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
  */
 function decodeEditors(
   front: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['editors'] {
   const editors = all(front, 'contrib', { 'contrib-type': 'editor' })
   return editors.length > 0
@@ -910,7 +910,7 @@ function decodeEditors(
  */
 function decodeContrib(
   contrib: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Person | stencila.Organization {
   const collab = child(contrib, 'collab')
   if (collab) {
@@ -925,7 +925,7 @@ function decodeContrib(
       name: text(xml.firstByType(collab, 'text')),
       contactPoints: emails.length
         ? emails.map((email) =>
-            stencila.contactPoint({ emails: [text(email)] })
+            stencila.contactPoint({ emails: [text(email)] }),
           )
         : undefined,
       members: subContribs.length
@@ -943,12 +943,12 @@ function decodeContrib(
     // from the linked <corresp> element with the id in the <xref>
     const correspId = first(contrib, 'xref', { 'ref-type': 'corresp' })
       ?.attributes?.rid
-    if (emails.length == 0 && correspId) {
+    if (emails.length === 0 && correspId) {
       const correspEmails = all(
         first(state.article, 'corresp', { id: correspId }),
-        'email'
+        'email',
       )
-      if (correspEmails.length == 1) {
+      if (correspEmails.length === 1) {
         // If there is only one <email> element then use that
         emails.push(text(correspEmails[0]))
       } else if (correspEmails.length > 1) {
@@ -960,19 +960,19 @@ function decodeContrib(
         // of names with diacritics).
 
         const addresses = correspEmails.map((email) =>
-          text(email).toLowerCase()
+          text(email).toLowerCase(),
         )
         const names = addresses.map((email) => email.split('@')[0])
         const givenName = `${contributor.givenNames?.[0]}`.toLowerCase()
         const familyName = `${contributor.familyNames?.[0]}`.toLowerCase()
 
         let index = names.findIndex(
-          (email) => email.includes(givenName) && email.includes(familyName)
+          (email) => email.includes(givenName) && email.includes(familyName),
         )
         if (index < 0) {
           index = names.findIndex(
             (email) =>
-              email.includes(givenName[0]) && email.includes(familyName)
+              email.includes(givenName[0]) && email.includes(familyName),
           )
         }
         if (index < 0) {
@@ -1017,7 +1017,7 @@ function decodeContrib(
         ...affRefs
           .map((ref) => {
             const id = ref.attributes?.rid
-            const aff = first(state.article, 'aff', { id: id })
+            const aff = first(state.article, 'aff', { id })
             if (!aff) {
               log.warn(`Could not find <aff id=${id}>`)
               return null
@@ -1027,7 +1027,7 @@ function decodeContrib(
           .reduce(
             (prev: stencila.Organization[], curr) =>
               curr ? [...prev, curr] : prev,
-            []
+            [],
           ),
       ]
     }
@@ -1077,8 +1077,8 @@ function encodeAuthor(author: stencila.Person | stencila.Organization): {
         elem(
           'aff',
           { id: crypto.randomBytes(16).toString('hex') },
-          elem('institution', org.name ?? '')
-        )
+          elem('institution', org.name ?? ''),
+        ),
       )
     }
   } else {
@@ -1089,7 +1089,7 @@ function encodeAuthor(author: stencila.Person | stencila.Organization): {
     elem('xref', {
       'ref-type': 'aff',
       rid: aff.attributes?.id,
-    })
+    }),
   )
   const auth = elem('contrib', { 'contrib-type': 'author' }, name, ...affRefs)
 
@@ -1113,7 +1113,7 @@ function decodeName(name: xml.Element): stencila.Person {
  * or `<string-name>` element.
  */
 function encodeName(person: stencila.Person): xml.Element {
-  if (person.familyNames || person.givenNames) {
+  if (person.familyNames ?? person.givenNames) {
     return elem(
       'name',
       person.familyNames ? elem('surname', person.familyNames.join(' ')) : null,
@@ -1121,7 +1121,7 @@ function encodeName(person: stencila.Person): xml.Element {
         ? elem('given-names', person.givenNames.join(' '))
         : null,
       person.honorificPrefix ? elem('prefix', person.honorificPrefix) : null,
-      person.honorificSuffix ? elem('suffix', person.honorificSuffix) : null
+      person.honorificSuffix ? elem('suffix', person.honorificSuffix) : null,
     )
   } else {
     return elem('string-name', person.name ?? '')
@@ -1176,23 +1176,31 @@ export function decodeAff(aff: xml.Element): stencila.Organization {
   const parentOrganization =
     institutions.length <= 1
       ? undefined
-      : institutions.slice(1).reduce((prev, curr) => {
-          const parent = stencila.organization({ name: textOrUndefined(curr) })
-          prev.parentOrganization = parent
-          return parent
-        }, stencila.organization({ name: textOrUndefined(institutions[1]) }))
+      : institutions.slice(1).reduce(
+          (prev, curr) => {
+            const parent = stencila.organization({
+              name: textOrUndefined(curr),
+            })
+            prev.parentOrganization = parent
+            return parent
+          },
+          stencila.organization({ name: textOrUndefined(institutions[1]) }),
+        )
 
-  const addressProperties = addressComponents.reduce((prev, curr) => {
-    const mapping: Record<string, string> = {
-      'addr-line': 'streetAddress',
-      city: 'addressLocality',
-      state: 'addressRegion',
-      country: 'addressCountry',
-      'postal-code': 'postalCode',
-    }
-    const property = mapping[curr.name ?? '']
-    return { ...prev, [property]: textOrUndefined(curr) }
-  }, {} as Record<string, string | undefined>)
+  const addressProperties = addressComponents.reduce(
+    (prev, curr) => {
+      const mapping: Record<string, string> = {
+        'addr-line': 'streetAddress',
+        city: 'addressLocality',
+        state: 'addressRegion',
+        country: 'addressCountry',
+        'postal-code': 'postalCode',
+      }
+      const property = mapping[curr.name ?? '']
+      return { ...prev, [property]: textOrUndefined(curr) }
+    },
+    {} as Record<string, string | undefined>,
+  )
 
   const { streetAddress, addressLocality } = addressProperties
   if (streetAddress !== undefined && addressLocality === undefined) {
@@ -1220,7 +1228,7 @@ export function decodeAff(aff: xml.Element): stencila.Organization {
  */
 function decodeBack(
   elem: xml.Element | null,
-  state: DecodeState
+  state: DecodeState,
 ): {
   references?: stencila.Article['references']
   content?: stencila.BlockContent[]
@@ -1249,7 +1257,7 @@ function decodeBack(
  */
 function decodeBackSecs(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.BlockContent[] {
   // Get child elements of interest in the order they appear
   // This does not use the `all()` function because `<sec>` elements
@@ -1263,13 +1271,13 @@ function decodeBackSecs(
         return [...prev, elem]
       }
     },
-    []
+    [],
   )
 
   return elems.reduce((prev: stencila.BlockContent[], elem) => {
-    if (elem.name == 'ack') {
+    if (elem.name === 'ack') {
       const filtered = (elem.elements ?? []).filter(
-        (elem) => elem.name !== 'title' && elem.name !== 'label'
+        (elem) => elem.name !== 'title' && elem.name !== 'label',
       )
 
       const blocks = ensureBlockContentArray(decodeElements(filtered, state))
@@ -1289,7 +1297,7 @@ function decodeBackSecs(
           prev.findIndex(
             (existing) =>
               existing.type === 'Heading' &&
-              existing.content[0] === node.content[0]
+              existing.content[0] === node.content[0],
           ) >= 0
         if (alreadyExists) {
           return prev
@@ -1308,7 +1316,7 @@ function decodeBackSecs(
  * property.
  */
 function decodeReferences(
-  elem: xml.Element | null
+  elem: xml.Element | null,
 ): stencila.Article['references'] {
   if (elem === null) return undefined
 
@@ -1320,7 +1328,7 @@ function decodeReferences(
           decodeReference(
             citation,
             attr(ref, 'id'),
-            textOrUndefined(child(ref, 'label'))
+            textOrUndefined(child(ref, 'label')),
           ),
         ]
       : prev
@@ -1336,7 +1344,7 @@ function decodeReferences(
  */
 function encodeReferences(
   references: stencila.Article['references'],
-  state: EncodeState
+  state: EncodeState,
 ): xml.Element[] {
   return references === undefined
     ? []
@@ -1344,7 +1352,7 @@ function encodeReferences(
         elem(
           'ref-list',
           elem('title', 'References'),
-          ...references.map((ref) => encodeReference(ref, state))
+          ...references.map((ref) => encodeReference(ref, state)),
         ),
       ]
 }
@@ -1356,7 +1364,7 @@ function encodeReferences(
 export function decodeReference(
   elem: xml.Element,
   ident: string | null,
-  label: string | undefined
+  label: string | undefined,
 ): stencila.CreativeWork {
   const publicationType = attr(elem, 'publication-type')
   const id = decodeInternalId(ident)
@@ -1416,7 +1424,7 @@ export function decodeReference(
   } else {
     // e.g. publicationType: 'software', 'web', 'patent'
     title = textOrUndefined(
-      child(elem, ['article-title', 'chapter-title', 'data-title'])
+      child(elem, ['article-title', 'chapter-title', 'data-title']),
     )
   }
 
@@ -1540,7 +1548,7 @@ export function decodeReference(
  */
 function encodeReference(
   work: stencila.CreativeWork | string,
-  state: EncodeState
+  state: EncodeState,
 ): xml.Element {
   let rid
   if (typeof work === 'string') {
@@ -1559,7 +1567,7 @@ function encodeReference(
       const personGroup = elem(
         'person-group',
         { 'person-group-type': 'author' },
-        ...people
+        ...people,
       )
 
       if (rid && state.references[rid] === undefined) {
@@ -1579,8 +1587,8 @@ function encodeReference(
           {
             'iso-8601-date': dateString,
           },
-          dateString
-        )
+          dateString,
+        ),
       )
     }
 
@@ -1623,7 +1631,7 @@ function encodeReference(
  */
 function decodeBody(
   body: xml.Element | null,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Article['content'] {
   return body === null
     ? undefined
@@ -1743,7 +1751,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(
         node as stencila.NontextualAnnotation,
         state,
-        'underline'
+        'underline',
       )
     case 'Superscript':
       return encodeMark(node as stencila.Superscript, state, 'sup')
@@ -1783,7 +1791,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
   }
 
   log.warn(
-    `Unhandled node type when encoding to JATS: "${stencila.nodeType(node)}"`
+    `Unhandled node type when encoding to JATS: "${stencila.nodeType(node)}"`,
   )
   return []
 }
@@ -1802,7 +1810,7 @@ function decodeDefault(elem: xml.Element, state: DecodeState): stencila.Node[] {
 function encodeDefault(
   name: string,
   nodes: stencila.Node[],
-  state: EncodeState
+  state: EncodeState,
 ): xml.Element {
   return elem(name, ...encodeNodes(nodes, state))
 }
@@ -1812,7 +1820,7 @@ function encodeDefault(
  */
 function decodeElements(
   elems: xml.Element[],
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Node[] {
   return elems
     .map((child) => decodeElement(child, state))
@@ -1824,14 +1832,14 @@ function decodeElements(
  */
 function encodeNodes(
   nodes: stencila.Node | stencila.Node[],
-  state: EncodeState = initialEncodeState()
+  state: EncodeState = initialEncodeState(),
 ): xml.Element[] {
   if (!Array.isArray(nodes)) nodes = [nodes]
   return nodes
     .map((node: stencila.Node) => encodeNode(node, state))
     .reduce(
       (prev: xml.Element[], curr: xml.Element[]) => [...prev, ...curr],
-      []
+      [],
     )
 }
 
@@ -1841,7 +1849,7 @@ function encodeNodes(
  */
 function decodeInlineContent(
   elems: xml.Element[],
-  state: DecodeState
+  state: DecodeState,
 ): stencila.InlineContent[] {
   return ensureInlineContentArray(decodeElements(elems, state))
 }
@@ -1863,7 +1871,7 @@ function decodeInlineContent(
  */
 function decodeAlternatives(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Node[] {
   return elem.elements?.[0] ? decodeElement(elem.elements[0], state) : []
 }
@@ -1895,7 +1903,7 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
  */
 function decodeAppendix(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Node[] {
   const sectionId = attr(elem, 'id') ?? ''
   const { sectionDepth, ...rest } = state
@@ -1921,7 +1929,7 @@ function decodeAppendix(
  */
 function decodeHeading(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Heading] {
   const { ancestorElem, sectionDepth, sectionId } = state
 
@@ -1938,7 +1946,7 @@ function decodeHeading(
   if (
     content.length === 1 &&
     typeof content[0] === 'string' &&
-    content[0].toUpperCase() == content[0]
+    content[0].toUpperCase() === content[0]
   ) {
     content = [sentenceCase(content[0])]
   }
@@ -1957,7 +1965,7 @@ function decodeHeading(
  */
 function encodeHeading(
   node: stencila.Heading,
-  state: EncodeState
+  state: EncodeState,
 ): [xml.Element] {
   return [encodeDefault('title', node.content, state)]
 }
@@ -1971,7 +1979,7 @@ function encodeHeading(
  */
 function decodeParagraph(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): stencila.Node[] {
   const id = attrOrUndefined(elem, 'id')
   const nodes = decodeElements(elem.elements ?? [], state)
@@ -2004,7 +2012,7 @@ function decodeParagraph(
  */
 function encodeParagraph(
   node: stencila.Paragraph,
-  state: EncodeState
+  state: EncodeState,
 ): [xml.Element] {
   return [encodeDefault('p', node.content, state)]
 }
@@ -2032,7 +2040,7 @@ function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {
         'ext-link-type': 'uri',
         'xlink:href': node.target,
       },
-      ...encodeNodes(node.content, state)
+      ...encodeNodes(node.content, state),
     ),
   ]
 }
@@ -2048,7 +2056,7 @@ function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {
  */
 function decodeXRef(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Link | stencila.Cite] {
   return attr(elem, 'ref-type') === 'bibr'
     ? decodeBibr(elem, state)
@@ -2103,7 +2111,7 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
  */
 function encodeCiteGroup(
   citeGroup: stencila.CiteGroup,
-  state: EncodeState
+  state: EncodeState,
 ): xml.Element[] {
   const { items } = citeGroup
   return [
@@ -2125,7 +2133,7 @@ function encodeCiteGroup(
 function encodeCite(
   cite: stencila.Cite,
   state: EncodeState,
-  orphan = true
+  orphan = true,
 ): xml.Element[] {
   const { target: rid, citationMode = 'Parenthetical' } = cite
 
@@ -2167,11 +2175,11 @@ function populateBibrContent(rid: string, state: EncodeState): void {
 function decodeMark(
   elem: xml.Element,
   state: DecodeState,
-  type: stencila.Mark['type']
+  type: stencila.Mark['type'],
 ): stencila.Mark[] {
   return [
     {
-      type: type,
+      type,
       content: decodeInlineContent(elem.elements ?? [], state),
     },
   ]
@@ -2183,7 +2191,7 @@ function decodeMark(
 function encodeMark(
   node: stencila.Mark,
   state: EncodeState,
-  name: string
+  name: string,
 ): [xml.Element] {
   return [elem(name, ...encodeNodes(node.content, state))]
 }
@@ -2239,7 +2247,7 @@ function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
  */
 export function decodeTableWrap(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): (stencila.Table | stencila.Figure)[] {
   state = { ...state, ancestorElem: elem }
 
@@ -2275,7 +2283,7 @@ export function decodeTableWrap(
     block = {
       ...block,
       ...(id && { id }),
-      ...(footnoteType && { meta: { footnoteType: footnoteType } }),
+      ...(footnoteType && { meta: { footnoteType } }),
     }
 
     return block
@@ -2367,7 +2375,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
   const { id, label, caption, rows } = table
 
   const headerRows = takeLeftWhile(
-    (row: stencila.TableRow) => row.rowType === 'Header'
+    (row: stencila.TableRow) => row.rowType === 'Header',
   )(rows)
 
   const bodyRows = dropLeft(headerRows.length)(rows)
@@ -2387,9 +2395,9 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
               'th',
               ...row.cells.map((cell) => {
                 return encodeDefault('th', cell.content ?? [], state)
-              })
+              }),
             )
-          })
+          }),
         ),
         elem(
           'tbody',
@@ -2398,11 +2406,11 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
               'tr',
               ...row.cells.map((cell) => {
                 return encodeDefault('td', cell.content ?? [], state)
-              })
+              }),
             )
-          })
-        )
-      )
+          }),
+        ),
+      ),
     ),
   ]
 }
@@ -2412,7 +2420,7 @@ function encodeTable(table: stencila.Table, state: EncodeState): [xml.Element] {
  */
 function decodeFigGroup(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Collection] {
   return [
     stencila.collection({
@@ -2429,14 +2437,14 @@ function decodeFigGroup(
  */
 function encodeFigGroup(
   figGroup: stencila.Collection,
-  state: EncodeState
+  state: EncodeState,
 ): [xml.Element] {
   return [
     elem(
       'fig-group',
       ...figGroup.parts
         .filter(stencila.isType('Figure'))
-        .map((figure) => encodeFigure(figure, state)[0])
+        .map((figure) => encodeFigure(figure, state)[0]),
     ),
   ]
 }
@@ -2450,7 +2458,7 @@ function encodeFigGroup(
  */
 export function decodeFigure(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Figure | stencila.Table] {
   state = { ...state, ancestorElem: elem }
 
@@ -2465,7 +2473,7 @@ export function decodeFigure(
         // Reset the section depth so that any headings within the figure caption
         // have a depth that is is not dependendent upon the depth of section the figure is in.
         // See https://github.com/elifesciences/enhanced-preprints-issues/issues/126
-        decodeElements(captionEl.elements, { ...state, sectionDepth: 0 })
+        decodeElements(captionEl.elements, { ...state, sectionDepth: 0 }),
       )
     : undefined
 
@@ -2506,7 +2514,7 @@ export function decodeFigure(
  */
 function encodeFigure(
   figure: stencila.Figure,
-  state: EncodeState
+  state: EncodeState,
 ): [xml.Element] {
   const { label, caption, content = [] } = figure
   const children = encodeNodes(content)
@@ -2520,8 +2528,8 @@ function encodeFigure(
       children.length === 0
         ? null
         : children.length === 1
-        ? children[0]
-        : elem('alternatives', ...children)
+          ? children[0]
+          : elem('alternatives', ...children),
     ),
   ]
 }
@@ -2534,7 +2542,7 @@ function encodeFigure(
  */
 function decodeSupplementaryMaterial(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Link] {
   state = { ...state, ancestorElem: elem }
 
@@ -2568,7 +2576,7 @@ function decodeSupplementaryMaterial(
  * in a paragraph for display formulas).
  */
 function decodeMath(
-  formula: xml.Element
+  formula: xml.Element,
 ): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
   const mathml = first(formula, 'mml:math') ?? first(formula, 'm:math')
@@ -2620,7 +2628,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
   return [
     elem(
       math.type === 'MathFragment' ? 'inline-formula' : 'disp-formula',
-      inner
+      inner,
     ),
   ]
 }
@@ -2696,7 +2704,7 @@ function splitMimetype(mimetype: string): JatsContentType {
  */
 function decodeGraphic(
   elem: xml.Element,
-  inline: boolean
+  inline: boolean,
 ): [stencila.ImageObject] {
   const contentUrl = attr(elem, 'xlink:href') ?? ''
   const mediaType = extractMimetype(elem)
@@ -2728,7 +2736,7 @@ function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
  */
 function encodeMedia(
   media: stencila.MediaObject,
-  elementName: string
+  elementName: string,
 ): [xml.Element] {
   const attrs: Attributes = {
     'xlink:href': media.contentUrl,
@@ -2768,7 +2776,7 @@ function decodeNote(elem: xml.Element, state: DecodeState): [stencila.Note] {
     stencila.note({
       id,
       content: ensureBlockContentArray(
-        decodeElements(elem.elements ?? [], state)
+        decodeElements(elem.elements ?? [], state),
       ),
       noteType: 'Footnote',
     }),
@@ -2780,7 +2788,7 @@ function decodeNote(elem: xml.Element, state: DecodeState): [stencila.Note] {
  */
 function decodeStatement(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.Claim] {
   const id = attrOrUndefined(elem, 'id')
   const label = textOrUndefined(child(elem, ['label', 'title']))
@@ -2789,7 +2797,7 @@ function decodeStatement(
   if (label !== undefined) {
     const match =
       /\b(Statement|Theorem|Lemma|Proof|Postulate|Hypothesis|Proposition|Corollary)\b/i.exec(
-        label
+        label,
       )
     if (match) {
       const type = match[0]
@@ -2808,7 +2816,7 @@ function decodeStatement(
           title = nodes.length === 1 && nodes[0] === 'string' ? nodes[0] : nodes
         } else if (
           !['label', 'title', 'kwd-group', 'attrib', 'permission'].includes(
-            item.name
+            item.name,
           )
         ) {
           content.push(...decodeElement(item, state))
@@ -2833,14 +2841,14 @@ function decodeStatement(
  */
 function decodeDispQuote(
   elem: xml.Element,
-  state: DecodeState
+  state: DecodeState,
 ): [stencila.QuoteBlock] {
   const id = attrOrUndefined(elem, 'id')
   return [
     stencila.quoteBlock({
       id,
       content: ensureBlockContentArray(
-        decodeElements(elem.elements ?? [], state)
+        decodeElements(elem.elements ?? [], state),
       ),
     }),
   ]

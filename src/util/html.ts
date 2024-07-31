@@ -59,7 +59,7 @@ export const text = (elem: Node | null): string | null => {
  */
 export const first = (
   elem: HTMLElement | null,
-  selector = '*'
+  selector = '*',
 ): HTMLElement | null => {
   if (elem === null) return null
   return elem.querySelector(selector)
@@ -70,7 +70,7 @@ export const first = (
  */
 export const all = (
   elem: HTMLElement | null,
-  selector = '*'
+  selector = '*',
 ): HTMLElement[] => {
   if (elem === null) return []
   return Array.from(elem.querySelectorAll(selector))
@@ -111,8 +111,8 @@ const themeNotFound = (themeName: string): ThemaAssets => {
 const fetchAssets = async (assets: string[]): Promise<string[]> =>
   Promise.all(
     assets.map((asset) =>
-      toFile(asset).then((file) => fs.readFileSync(file.filePath).toString())
-    )
+      toFile(asset).then((file) => fs.readFileSync(file.filePath).toString()),
+    ),
   )
 
 /**
@@ -124,7 +124,7 @@ const fetchAssets = async (assets: string[]): Promise<string[]> =>
  */
 export const getThemeAssets = async (
   theme: string,
-  isBundle = false
+  isBundle = false,
 ): Promise<ThemaAssets> => {
   let resolvedTheme = getTheme(theme, !isBundle)
 

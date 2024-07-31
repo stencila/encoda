@@ -52,12 +52,12 @@ export class CrossrefCodec extends Codec implements Codec {
 
     if (!(response.statusCode === 200 && response.body.length > 0)) {
       throw new Error(
-        `Crossref request failed: ${response.statusCode}: ${response.body}`
+        `Crossref request failed: ${response.statusCode}: ${response.body}`,
       )
     }
 
     const data = JSON.parse(response.body)
-    const csl = data.message.items[0]
+    const csl = data.message.items[0] as CSL.Data & { [key: string]: any }
 
     // This min score should be an option. This value was determined
     // through experimentation, leaning to avoiding false matches.
@@ -75,7 +75,7 @@ export class CrossrefCodec extends Codec implements Codec {
    */
   public readonly encode = (
     node: schema.Node,
-    options: EncodeOptions = this.commonEncodeDefaults
+    options: EncodeOptions = this.commonEncodeDefaults,
   ): Promise<vfile.VFile> => {
     // The following "options" are actually required so throw an error
     // if not supplied
@@ -115,11 +115,11 @@ export class CrossrefCodec extends Codec implements Codec {
             xml.elem(
               'depositor',
               xml.elem('depositor_name', depositorName),
-              xml.elem('email_address', depositorEmail)
+              xml.elem('email_address', depositorEmail),
             ),
-            xml.elem('registrant', registrantName)
+            xml.elem('registrant', registrantName),
           ),
-          xml.elem('body', encodeNode(node, doi, url))
+          xml.elem('body', encodeNode(node, doi, url)),
         ),
       ],
     }
@@ -133,7 +133,7 @@ export class CrossrefCodec extends Codec implements Codec {
  * See  https://github.com/CrossRef/rest-api-doc/issues/222 for more.
  */
 export function decodeCrossrefCsl(
-  csl: CSL.Data & { [key: string]: any }
+  csl: CSL.Data & { [key: string]: any },
 ): Promise<schema.CreativeWork> {
   // Props `container-title`, `title`, and `ISSN` should be a string, not an array.
   for (const prop of ['container-title', 'title', 'ISSN']) {
@@ -160,7 +160,7 @@ export function decodeCrossrefCsl(
 function encodeNode(
   node: schema.Node,
   doi: string,
-  url: string
+  url: string,
 ): xml.Element | undefined {
   if (schema.isA('Review', node)) {
     return encodePeerReview(node, doi, url)
@@ -185,7 +185,7 @@ function encodeNode(
 function encodePeerReview(
   review: schema.Review,
   doi: string,
-  url: string
+  url: string,
 ): xml.Element {
   const {
     authors = [],
@@ -204,8 +204,8 @@ function encodePeerReview(
   if (!schema.isIn('CreativeWorkTypes', itemReviewed))
     throw new Error(
       `Item reviewed must be a CreativeWork, got a ${schema.nodeType(
-        itemReviewed
-      )}`
+        itemReviewed,
+      )}`,
     )
 
   let itemReviewedDoi
@@ -219,7 +219,7 @@ function encodePeerReview(
   }
   if (itemReviewedDoi === undefined) {
     throw new Error(
-      `Item reviewed must have a DOI in it's identifiers property`
+      `Item reviewed must have a DOI in it's identifiers property`,
     )
   }
 
@@ -234,10 +234,10 @@ function encodePeerReview(
         dateReceived ??
         dateModified ??
         dateCreated ??
-        new Date()
+        new Date(),
     ),
     encodeProgramRelatedItem(itemReviewedDoi),
-    encodeDoiData(doi, url)
+    encodeDoiData(doi, url),
   )
 }
 
@@ -249,7 +249,7 @@ function encodePeerReview(
 function encodePostedContent(
   work: schema.CreativeWork,
   doi: string,
-  url: string
+  url: string,
 ): xml.Element {
   const {
     authors = [],
@@ -283,20 +283,20 @@ function encodePostedContent(
         dateReceived ??
         dateModified ??
         dateCreated ??
-        new Date()
+        new Date(),
     ),
     dateAccepted !== undefined
       ? encodeDate('acceptance_date', dateAccepted)
       : null,
     abstract,
     encodeDoiData(doi, url),
-    encodeCitationList(references)
+    encodeCitationList(references),
   )
 }
 
 function encodeContributors(
   authors: (schema.Person | schema.Organization)[],
-  contributorRole: ContributorRole
+  contributorRole: ContributorRole,
 ): xml.Element {
   return xml.elem(
     'contributors',
@@ -305,24 +305,24 @@ function encodeContributors(
         ? encodePersonName(
             author,
             contributorRole,
-            index === 0 ? 'first' : 'additional'
+            index === 0 ? 'first' : 'additional',
           )
-        : encodeOrganization(author)
-    )
+        : encodeOrganization(author),
+    ),
   )
 }
 
 function encodeTitle(title: schema.CreativeWork['title']): xml.Element {
   return xml.elem(
     'titles',
-    xml.elem('title', TxtCodec.stringify(title ?? 'Untitled'))
+    xml.elem('title', TxtCodec.stringify(title ?? 'Untitled')),
   )
 }
 
 function encodePersonName(
   person: schema.Person,
   contributorRole: ContributorRole,
-  sequence: 'first' | 'additional'
+  sequence: 'first' | 'additional',
 ): xml.Element {
   return xml.elem(
     'person_name',
@@ -331,7 +331,7 @@ function encodePersonName(
       sequence,
     },
     xml.elem('given_name', person.givenNames?.join(' ')),
-    xml.elem('surname', person.familyNames?.join(' '))
+    xml.elem('surname', person.familyNames?.join(' ')),
   )
 }
 
@@ -341,7 +341,7 @@ function encodeOrganization(organization: schema.Organization): xml.Element {
 
 function encodeDate(
   tag: string,
-  date: string | Date | schema.Date
+  date: string | Date | schema.Date,
 ): xml.Element {
   if (!(date instanceof Date)) {
     const iso = schema.isA('Date', date) ? date.value : date
@@ -351,13 +351,13 @@ function encodeDate(
     tag,
     xml.elem('month', (date.getMonth() + 1).toString().padStart(2, '0')),
     xml.elem('day', date.getDate().toString().padStart(2, '0')),
-    xml.elem('year', date.getFullYear().toString())
+    xml.elem('year', date.getFullYear().toString()),
   )
 }
 
 function encodeProgramRelatedItem(
   doi: string,
-  relation = 'isReviewOf'
+  relation = 'isReviewOf',
 ): xml.Element {
   return xml.elem(
     'program',
@@ -370,9 +370,9 @@ function encodeProgramRelatedItem(
           'relationship-type': relation,
           'identifier-type': 'doi',
         },
-        doi
-      )
-    )
+        doi,
+      ),
+    ),
   )
 }
 
@@ -381,7 +381,7 @@ function encodeDoiData(doi: string, url: string): xml.Element {
 }
 
 function encodeCitationList(
-  references: schema.CreativeWork['references']
+  references: schema.CreativeWork['references'],
 ): xml.Element | null {
   if (references === undefined) return null
   return xml.elem(
@@ -391,7 +391,7 @@ function encodeCitationList(
         return xml.elem(
           'citation',
           { key: `ref${index + 1}` },
-          xml.elem('unstructured_citation', work)
+          xml.elem('unstructured_citation', work),
         )
       }
 
@@ -404,9 +404,9 @@ function encodeCitationList(
         encodeIssue(work),
         encodeCYear(work),
         encodeDoi(work),
-        encodeArticleTitle(work)
+        encodeArticleTitle(work),
       )
-    })
+    }),
   )
 }
 
@@ -416,7 +416,7 @@ function encodeJournalTitle(work: schema.CreativeWork): xml.Element | null {
     if (schema.isA('Periodical', isPartOf))
       return xml.elem(
         'journal_title',
-        TxtCodec.stringify(isPartOf.title ?? isPartOf.name ?? 'Unknown')
+        TxtCodec.stringify(isPartOf.title ?? isPartOf.name ?? 'Unknown'),
       )
     isPartOf = isPartOf.isPartOf
   }
@@ -426,7 +426,7 @@ function encodeJournalTitle(work: schema.CreativeWork): xml.Element | null {
 function encodeAuthor(work: schema.CreativeWork): xml.Element | null {
   const firstAuthor = work.authors?.[0]
   const firstAuthorName = schema.isA('Person', firstAuthor)
-    ? firstAuthor.familyNames?.[0] ?? firstAuthor.name
+    ? (firstAuthor.familyNames?.[0] ?? firstAuthor.name)
     : firstAuthor?.name
   return firstAuthorName !== undefined
     ? xml.elem('author', firstAuthorName)
