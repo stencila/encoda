@@ -1,5 +1,13 @@
 # Encoda
 
+## Announcement
+
+For some time our main focus has been a rewrite of [our Stencila platform](https://github.com/stencila/stencila) (`v2`). We are porting over codecs and other functionality from this repo to the `v2` of our Stencila platform.
+
+This means that we are unable to be so active with contributions to this project. eLife have volunteered to continue development on this repository until such a time as the `v2` of Stencila can meet their needs. They only have need of the codecs to convert from JATS to JSON.
+
+From `v2.0.0` of this project we will only continue to support the conversion from JATS to JSON. If you want to use any other formats then please see if they are available in Stencila or use the [v1.0.3](https://github.com/stencila/encoda/releases/tag/v1.0.3) release.
+
 ##### Codecs for structured, semantic, composable, and executable documents
 
 [![Build status](https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master)](https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&branchName=master)
@@ -63,43 +71,18 @@ As far as possible, Encoda piggybacks on top of existing tools for parsing and s
 
 <!-- Codecs -->
 
-[bib]: src/codecs/bib
-[crossref]: src/codecs/crossref
 [csl]: src/codecs/csl
-[csv]: src/codecs/csv
 [dar]: src/codecs/dar
 [dir]: src/codecs/dir
-[dmagic]: src/codecs/dmagic
-[docx]: src/codecs/docx
 [doi]: src/codecs/doi
-[elife]: src/codecs/elife
-[gdoc]: src/codecs/gdoc
-[html]: src/codecs/html
-[http]: src/codecs/http
-[ipynb]: src/codecs/ipynb
-[jats-pandoc]: src/codecs/jats-pandoc
 [jats]: src/codecs/jats
 [json]: src/codecs/json
-[json5]: src/codecs/json5
 [jsonld]: src/codecs/jsonld
-[latex]: src/codecs/latex
 [mathml]: src/codecs/mathml
-[md]: src/codecs/md
-[ods]: src/codecs/ods
-[odt]: src/codecs/odt
 [orcid]: src/codecs/orcid
 [pandoc]: src/codecs/pandoc
 [pdf]: src/codecs/pdf
-[plos]: src/codecs/plos
-[plotly]: src/codecs/plotly
-[rpng]: src/codecs/rpng
-[tdp]: src/codecs/tdp
-[tex]: src/codecs/tex
 [txt]: src/codecs/txt
-[vega]: src/codecs/vega
-[xlsx]: src/codecs/xlsx
-[xmd]: src/codecs/xmd
-[xml]: src/codecs/xml
 [yaml]: src/codecs/yaml
 
 <!-- Dependencies -->
