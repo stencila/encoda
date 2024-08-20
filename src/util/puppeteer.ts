@@ -13,6 +13,7 @@ export { Page, Browser }
 
 // For unknown reasons it seems necessary to import like this
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const puppeteer = require('puppeteer')
 
 const log = getLogger('encoda:puppeteer')
