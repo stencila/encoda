@@ -6,7 +6,7 @@
 
 import { getLogger } from '@stencila/logga'
 import { schema, http } from '@stencila/jesta'
-import jsonld from 'jsonld'
+import jsonld, { JsonLdDocument } from 'jsonld'
 
 import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
@@ -72,7 +72,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
-    const data = JSON.parse(content)
+    const data = JSON.parse(content) as JsonLdDocument
 
     // Expand the data (thereby removing it's context) and then compact it
     // using the Stencila `@context` (thereby changing property names
@@ -138,7 +138,7 @@ export class JsonLdCodec extends Codec implements Codec {
         ...content,
       },
       null,
-      '  '
+      '  ',
     )
 
     return Promise.resolve(vfile.load(jsonld))

@@ -121,8 +121,10 @@ export const commonDecodeDefaults: CommonDecodeDefaults = {
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
 export abstract class Codec<
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   EncodeOptions extends CommonEncodeOptions = {},
-  DecodeOptions extends CommonDecodeOptions = {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  DecodeOptions extends CommonDecodeOptions = {},
 > {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
@@ -171,7 +173,7 @@ export abstract class Codec<
    */
   public abstract readonly decode: (
     file: vfile.VFile,
-    options?: DecodeOptions
+    options?: DecodeOptions,
   ) => Promise<schema.Node>
 
   /**
@@ -183,7 +185,7 @@ export abstract class Codec<
    */
   public abstract readonly encode: (
     node: schema.Node,
-    options?: EncodeOptions
+    options?: EncodeOptions,
   ) => Promise<vfile.VFile>
 
   /**
@@ -199,7 +201,7 @@ export abstract class Codec<
    */
   public async load(
     content: string,
-    options?: DecodeOptions
+    options?: DecodeOptions,
   ): Promise<schema.Node> {
     const { shouldCoerce = false, shouldReshape = true } = options ?? {}
 
@@ -226,7 +228,7 @@ export abstract class Codec<
    */
   public preDump(
     node: schema.Node,
-    options?: EncodeOptions
+    options?: EncodeOptions,
   ): Promise<schema.Node> {
     const { isBundle = true } = { ...options }
     return isBundle ? fromFiles(node) : Promise.resolve(node)
@@ -244,10 +246,10 @@ export abstract class Codec<
    */
   public async dump(
     node: schema.Node,
-    options?: EncodeOptions
+    options?: EncodeOptions,
   ): Promise<string> {
     return vfile.dump(
-      await this.encode(await this.preDump(node, options), options)
+      await this.encode(await this.preDump(node, options), options),
     )
   }
 
@@ -264,7 +266,7 @@ export abstract class Codec<
    */
   public async read(
     filePath: string,
-    options?: DecodeOptions
+    options?: DecodeOptions,
   ): Promise<schema.Node> {
     const { shouldCoerce = false, shouldReshape = true } = options ?? {}
 
@@ -292,7 +294,7 @@ export abstract class Codec<
   public preWrite(
     node: schema.Node,
     filePath: string,
-    options?: EncodeOptions
+    options?: EncodeOptions,
   ): Promise<schema.Node> {
     const { isBundle = false } = { ...options }
     return isBundle
@@ -313,14 +315,14 @@ export abstract class Codec<
   public async write(
     node: schema.Node,
     filePath: string,
-    options?: EncodeOptions
+    options?: EncodeOptions,
   ): Promise<void> {
     return vfile.write(
       await this.encode(await this.preWrite(node, filePath, options), {
         filePath,
         ...options,
       } as EncodeOptions),
-      filePath
+      filePath,
     )
   }
 }

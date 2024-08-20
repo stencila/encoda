@@ -44,7 +44,7 @@ type CodecOperation = 'decode' | 'encode'
 export const logWarnLoss = (
   codec: string,
   op: CodecOperation,
-  message: string
+  message: string,
 ): void => {
   log.warn(`${codec}:${op} ${message}`)
 }
@@ -69,15 +69,15 @@ export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
   node: schema.Node,
-  lost: object
+  lost: object,
 ): void => {
   const rest = deleteAt('type')(lost)
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(
       `${codec}:${op} Properties of \`${schema.nodeType(
-        node
-      )}\` not supported: ${properties.map((prop) => `\`${prop}\``).join(', ')}`
+        node,
+      )}\` not supported: ${properties.map((prop) => `\`${prop}\``).join(', ')}`,
     )
   }
 }
@@ -94,11 +94,11 @@ export const logErrorNodeType = (
   codec: string,
   op: CodecOperation,
   types: string,
-  node: schema.Node
+  node: schema.Node,
 ): void => {
   log.error(
     `${codec}:${op} Expecting node of type ${types} but got node of type ${schema.nodeType(
-      node
-    )}`
+      node,
+    )}`,
   )
 }

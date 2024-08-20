@@ -35,9 +35,3 @@ async function load(modulePath) {
     return require(modulePath)
   }
 }
-
-;(async () => {
-  // Install Pandoc binary
-  const pandoc = await load('./dist/codecs/pandoc/binary')
-  await pandoc.install()
-})()

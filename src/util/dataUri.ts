@@ -29,7 +29,7 @@ export function match(str: string): boolean {
  */
 export async function toFile(
   dataUri: string,
-  filePath?: string
+  filePath?: string,
 ): Promise<{ mediaType: string; filePath: string }> {
   const match = DATA_URI_REGEX.exec(dataUri)
   if (match === null) return { mediaType: '', filePath: '' }
@@ -55,7 +55,7 @@ export async function toFile(
  */
 export async function fromFile(
   filePath: string,
-  mediaType?: string
+  mediaType?: string,
 ): Promise<{ mediaType: string; dataUri: string }> {
   if (mediaType === undefined) mediaType = mime.getType(filePath) ?? 'image/png'
 

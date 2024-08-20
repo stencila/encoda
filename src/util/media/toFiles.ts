@@ -23,7 +23,7 @@ import { toFile } from '../uri'
 export async function toFiles(
   node: schema.Node,
   docPath: string,
-  protocols: string[] = ['data', 'http', 'file']
+  protocols: string[] = ['data', 'http', 'file'],
 ): Promise<schema.Node> {
   const docDir = path.dirname(path.resolve(docPath))
   const mediaDir = path.resolve(docPath + '.media')
@@ -40,7 +40,9 @@ export async function toFiles(
 
       const filePath = path.join(
         mediaDir,
-        contentUrl.startsWith('data') ? `${count++}` : path.basename(contentUrl)
+        contentUrl.startsWith('data')
+          ? `${count++}`
+          : path.basename(contentUrl),
       )
 
       await toFile(contentUrl, filePath)

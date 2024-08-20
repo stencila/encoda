@@ -41,7 +41,7 @@ export class DoiCodec extends Codec implements Codec {
     const doi = match[4]
 
     const [json] = await encoda.read(`https://api.crossref.org/works/${doi}`)
-    const csl = JSON.parse(json).message
+    const csl = JSON.parse(json).message as CSL.Data & { [key: string]: any }
 
     return csl !== undefined ? decodeCrossrefCsl(csl) : null
   }

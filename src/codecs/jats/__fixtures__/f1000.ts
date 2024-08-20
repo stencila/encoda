@@ -25,7 +25,7 @@ const create = async (id: string, version: number = 1) => {
   await fs.writeFile(
     path.join(dir, `main.pretty.xml`),
     xml.dump(doc, { spaces: 2 }),
-    'utf8'
+    'utf8',
   )
 }
 

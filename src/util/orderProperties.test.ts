@@ -23,8 +23,8 @@ describe('orderProperties', () => {
           id: 'some-id',
           depth: 1,
           type: 'Heading',
-        }) as object
-      )
+        }) as object,
+      ),
     ).toEqual(['type', 'id', 'depth', 'meta', 'content'])
   })
 

@@ -5,5 +5,5 @@ import schema from '@stencila/schema'
  * (by wrapping non-arrays into an array).
  */
 export const ensureNodeArray = (
-  nodes: schema.Node | schema.Node[]
+  nodes: schema.Node | schema.Node[],
 ): schema.Node[] => (Array.isArray(nodes) ? nodes : [nodes])

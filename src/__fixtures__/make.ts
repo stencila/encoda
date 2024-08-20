@@ -39,5 +39,5 @@ Promise.all(
   fixtures.map(async ({ src, dest }) => {
     const node = await read(src)
     await write(node, path.join(__dirname, ...dest))
-  })
+  }),
 ).catch(console.log)

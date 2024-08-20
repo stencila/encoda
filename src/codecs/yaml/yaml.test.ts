@@ -11,14 +11,14 @@ describe('encode', () => {
         content: ['Heading number one'],
         type: 'Heading',
         id: 'heading-1',
-      })
+      }),
     ).toEqual(
       `type: Heading
 id: heading-1
 depth: 1
 content:
   - Heading number one
-`
+`,
     ))
 })
 

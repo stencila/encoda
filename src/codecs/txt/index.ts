@@ -26,7 +26,7 @@ export class TxtCodec extends Codec implements Codec {
    * @returns A promise that resolves to a Stencila `Node`
    */
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile,
   ): Promise<null | boolean | number | string> => {
     const content = await vfile.dump(file)
     if (content === 'null') return null
@@ -61,12 +61,12 @@ export class TxtCodec extends Codec implements Codec {
         if ('content' in node && Array.isArray(node.content))
           return node.content.map(stringify).join('')
         else
-          return Object.entries(node).reduce(
+          return Object.entries(node as Record<string, Node>).reduce(
             (prev, [key, value]) =>
               key !== 'type'
                 ? prev + (prev !== '' ? ' ' : '') + stringify(value)
                 : prev,
-            ''
+            '',
           )
       }
       return node.toString()

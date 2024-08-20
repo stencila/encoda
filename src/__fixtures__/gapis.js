@@ -53,7 +53,7 @@ async function authorize() {
         const oAuth2Client = new google.auth.OAuth2(
           client_id,
           client_secret,
-          redirect_uris[0]
+          redirect_uris[0],
         )
 
         // Check if we have previously stored a token.
@@ -87,7 +87,7 @@ async function authorize() {
             resolve(oAuth2Client)
           }
         })
-      }
+      },
     )
   })
 }

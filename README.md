@@ -1,5 +1,15 @@
 # Encoda
 
+## Announcement
+
+For some time our main focus has been a rewrite of [our Stencila platform](https://github.com/stencila/stencila) (`v2`). We are porting over codecs and other functionality from this repo to the `v2` of our Stencila platform.
+
+This means that we are unable to be so active with contributions to this project. eLife have volunteered to continue development on this repository until such a time as the `v2` of Stencila can meet their needs. They only have need of the codecs to convert from JATS to JSON.
+
+From `v2.0.0` of this project we will only continue to support the conversion from JATS to JSON. If you want to use any other formats then please see if they are available in Stencila or use the [v1.0.3](https://github.com/stencila/encoda/releases/tag/v1.0.3) release.
+
+We have chosen at this time to leave the rest of the README.md as it was before the removal of much of the code. This does mean that the README.md is out of date. We may prioritise updating it in future.
+
 ##### Codecs for structured, semantic, composable, and executable documents
 
 [![Build status](https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master)](https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&branchName=master)

@@ -15,7 +15,7 @@ import { Codec } from '../codecs/types'
  *
  * @param codec The codec (passed by expect)
  * @param node The node to attempt to invert
- * @param name: The file name for any output files
+ * @param fileName The file name for any output files
  */
 async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
   if (!fileName) {
@@ -42,7 +42,7 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
         if (file.path)
           extra = `\n\nthe generated file was: ${path.relative(
             path.dirname(path.dirname(__dirname)),
-            file.path
+            file.path,
           )}`
         else extra = `\n\nthe generated content was: ${file.contents}`
         // @ts-expect-error because error is of unknown type
@@ -73,7 +73,7 @@ const stripWhitespace = (s: string) =>
 const toEqualStringContent = (
   received: string,
   expected: string,
-  printOriginalValues?: boolean
+  printOriginalValues?: boolean,
 ) => {
   const compressedExpected = stripWhitespace(expected)
   const compressedReceived = stripWhitespace(received)

@@ -33,63 +33,16 @@ export const STDIO_PATH = '-'
  * formats should go last. See the `match` function.
  */
 export const codecList: string[] = [
-  // Publishers of content
-  'elife',
-  'plos',
-
-  // Publishers of meta data
-  // DOI comes after publishers so that it does not match DOIs
-  // that are specific to a publisher e.g. 10.1371/journal.pone.0216012
-  'doi',
-  'orcid',
-
-  // HTTP. Comes after publishers so that it does not match urls
-  // that are specific to a publisher e.g. https://elifesciences.org
-  'http',
-
-  // Directories
-  'dir',
-  'dar',
-
-  // Tabular data, spreadsheets etc
-  'csv',
-  'ods',
-  'tdp',
-  'xlsx',
-
   // Articles, textual documents etc
-  'docx',
-  'gdoc',
-  'html',
-  'ipynb',
   'jats',
-  'jats-pandoc',
-  'latex',
-  'md',
-  'odt',
-  'pdf',
   'txt',
-  'xmd',
 
   // Math
   'mathml',
   'tex',
 
-  // Scripts
-  'dmagic',
-
-  // Images
-  'rpng',
-  'png',
-
-  // Plotting
-  'plotly',
-
   // Data interchange formats
   'yaml',
-  'pandoc',
-  'json5',
-  'jsonld',
   'json',
   'xml',
 ]
@@ -114,7 +67,7 @@ export const codecList: string[] = [
 export async function match(
   content?: string,
   format?: string,
-  isOutput = false
+  isOutput = false,
 ): Promise<Codec> {
   // Resolve variables used to match a codec...
   let fileName: string | undefined
@@ -225,7 +178,7 @@ export async function match(
  */
 export async function handled(
   content?: string,
-  format?: string
+  format?: string,
 ): Promise<boolean> {
   try {
     await match(content, format)
@@ -244,7 +197,7 @@ export async function handled(
 export async function load<Options extends CommonDecodeOptions>(
   content: string,
   format: string,
-  options: Options = commonDecodeDefaults as Options
+  options: Options = commonDecodeDefaults as Options,
 ): Promise<schema.Node> {
   const codec = await match(content, format)
   return codec.load(content, { format, ...options })
@@ -260,7 +213,7 @@ export async function load<Options extends CommonDecodeOptions>(
 export async function dump<Options extends CommonEncodeOptions>(
   node: schema.Node,
   format: string,
-  options: Options = commonEncodeDefaults as Options
+  options: Options = commonEncodeDefaults as Options,
 ): Promise<string> {
   const codec = await match(undefined, format, true)
   return codec.dump(node, { format, ...options })
@@ -277,7 +230,7 @@ export async function dump<Options extends CommonEncodeOptions>(
 export async function read<Options extends CommonDecodeOptions>(
   source: string,
   format?: string,
-  options: Options = commonDecodeDefaults as Options
+  options: Options = commonDecodeDefaults as Options,
 ): Promise<schema.Node> {
   const codec = await match(source, format)
   return codec.read(source, { format, ...options })
@@ -294,7 +247,7 @@ export async function read<Options extends CommonDecodeOptions>(
 export async function write<Options extends CommonEncodeOptions>(
   node: schema.Node,
   filePath: string,
-  options: Options = commonEncodeDefaults as Options
+  options: Options = commonEncodeDefaults as Options,
 ): Promise<void> {
   const { format } = { ...commonEncodeDefaults, ...options }
   const codec = await match(filePath, format, true)
@@ -319,13 +272,13 @@ interface ConvertOptions {
 export async function convert(
   input: string,
   outputPaths?: string | string[],
-  options: ConvertOptions = {}
+  options: ConvertOptions = {},
 ): Promise<string | undefined> {
   let { from, decodeOptions, to, encodeOptions } = options
 
   const node = await read(input, from, decodeOptions)
 
-  if (outputPaths === undefined || outputPaths.length == 0) {
+  if (outputPaths === undefined || outputPaths.length === 0) {
     return await dump(node, to ?? 'txt', encodeOptions)
   } else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
@@ -398,7 +351,7 @@ const formats = [...codecList, 'rmd']
 export async function decode(
   this: Encoda,
   content: string,
-  format: string | undefined
+  format: string | undefined,
 ): Promise<schema.Node> {
   const codec = await match(content, format)
   return codec.decode(vfile.load(content))
@@ -418,7 +371,7 @@ decode.schema.properties.format.enum = formats
 export async function encode(
   this: Encoda,
   node: schema.Node,
-  format: string
+  format: string,
 ): Promise<string> {
   const codec = await match(undefined, format)
   return vfile.dump(await codec.encode(node))

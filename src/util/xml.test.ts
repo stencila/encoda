@@ -52,7 +52,7 @@ test('dump', () => {
   expect(frag(elem('tag', { foo: 'bar' }))).toEqual(`<tag foo="bar"/>`)
 
   expect(frag(elem('parent', { foo: 'bar' }, elem('child')))).toEqual(
-    `<parent foo="bar"><child/></parent>`
+    `<parent foo="bar"><child/></parent>`,
   )
 })
 

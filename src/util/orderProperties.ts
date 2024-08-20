@@ -22,6 +22,7 @@ export default function orderProperties(node: schema.Node): schema.Node {
       type,
       ...(id === undefined ? {} : { id }),
       // Other attributes in alphabetical order
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       ...Object.keys(rest)
         .sort()
         .reduce((prev, curr) => ({ ...prev, ...{ [curr]: rest[curr] } }), {}),

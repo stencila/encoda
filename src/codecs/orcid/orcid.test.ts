@@ -27,10 +27,10 @@ test('decode', async () => {
   const done = await nockRecord('nock-record-decode.json')
 
   expect(await orcid2yaml('0000-0002-1825-0097')).toMatchFile(
-    snapshot('josiah.yaml')
+    snapshot('josiah.yaml'),
   )
   expect(await orcid2yaml('https://orcid.org/0000-0002-9079-593X')).toMatchFile(
-    snapshot('stephen.yaml')
+    snapshot('stephen.yaml'),
   )
 
   done()

@@ -11,6 +11,7 @@ import { getLogger } from '@stencila/logga'
 // @ts-ignore
 import MathJax from 'mathjax-node'
 import fs from 'fs-extra'
+import { VFileContents } from 'vfile'
 
 const log = getLogger('encoda:mathml')
 
@@ -96,7 +97,7 @@ export class MathMLCodec extends Codec implements Codec {
       log.warn(`Unable to translate math language to MathML: ${mathLanguage}`)
       mathml = ''
     }
-    return vfile.load(mathml)
+    return vfile.load(mathml as VFileContents)
   }
 }
 
