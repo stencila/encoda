@@ -221,6 +221,41 @@ test('decode: content of <label> in a <author-notes> is followed by a space', ()
   })
 })
 
+test('decode: content of <corresp> is added to the author notes', () => {
+  const front = xml.load(`
+<front>
+  <author-notes>
+    <fn id="n1" fn-type="present-address"><label>8</label><p>Present Institution: Parean biotechnologies, Saint-Malo, France</p></fn>
+    <fn id="n2" fn-type="equal"><label>&#x2020;</label><p>These authors, listed in alphabetical order, have contributed equally</p></fn>
+    <corresp id="cor1"><label>&#x002A;</label>Corresponding author: David Klatzmann, H&#x00F4;pital Piti&#x00E9;-Salp&#x00EA;tri&#x00E8;re, 83 bd de l&#x2019;H&#x00F4;pital, 75651 Paris, France. Phone: &#x002B;33 1 42 17 74 61, Email: <email>david.klatzmann@sorbonne-universite.fr</email></corresp>
+  </author-notes>
+<front>
+`).elements?.[0]!
+
+  expect(decodeMetaFront(front)).toEqual({
+    authorNotes: [
+      {
+        type: 'fn',
+        id: 'n1',
+        label: '8',
+        text: 'Present Institution: Parean biotechnologies, Saint-Malo, France',
+      },
+      {
+        type: 'fn',
+        id: 'n2',
+        label: '†',
+        text: 'These authors, listed in alphabetical order, have contributed equally',
+      },
+      {
+        type: 'corresp',
+        id: 'cor1',
+        label: '*',
+        text: 'Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr',
+      }
+    ],
+  })
+})
+
 test('decode: extract headings and lists in abstract', () => {
   const fig = xml.load(`
   <abstract>
