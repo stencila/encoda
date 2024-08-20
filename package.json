@@ -1,6 +1,6 @@
 {
   "name": "@stencila/encoda",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Codecs for executable document formats",
   "files": [
     "install.js",
@@ -104,11 +104,12 @@
     "xml-js": "^1.6.11"
   },
   "peerDependencies": {
-    "@stencila/schema": "^1.9.0"
+    "@stencila/schema": "1.9.0"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "5.2.8",
     "@semantic-release/exec": "6.0.3",
+    "@semantic-release/npm": "12.0.1",
     "@stencila/dev-config": "3.0.4",
     "@stencila/eslint-config": "^3.0.4",
     "@stencila/semantic-release-config": "2.0.20",
@@ -147,6 +148,7 @@
     "markdown-toc": "1.2.0",
     "nock": "13.3.3",
     "pa11y": "6.2.3",
+    "semantic-release": "24.1.0",
     "structured-data-testing-tool": "4.5.0",
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",

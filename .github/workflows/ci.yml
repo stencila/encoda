@@ -36,17 +36,19 @@ jobs:
           # allow for to prevent it running out (in Mb)
           NODE_OPTIONS: --max_old_space_size=14000
 
-      - name: Release package
-        if: github.ref == 'refs/heads/master'
-        run: |
-          set -e
-          npm ci
-          mkdir -p docs
-          npx semantic-release
-        env:
-          GIT_AUTHOR_NAME: Stencila CI Bot
-          GIT_AUTHOR_EMAIL: ci@stenci.la
-          GIT_COMMITTER_NAME: Stencila CI Bot
-          GIT_COMMITTER_EMAIL: ci@stenci.la
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-          NPM_TOKEN: $(NPM_TOKEN)
+      # Temporarily skipped
+      # See https://github.com/stencila/encoda/issues/1080
+      #- name: Release package
+      #  if: github.ref == 'refs/heads/master'
+      #  run: |
+      #    set -e
+      #    npm ci
+      #    mkdir -p docs
+      #    npx semantic-release
+      #  env:
+      #    GIT_AUTHOR_NAME: Stencila CI Bot
+      #    GIT_AUTHOR_EMAIL: ci@stenci.la
+      #    GIT_COMMITTER_NAME: Stencila CI Bot
+      #    GIT_COMMITTER_EMAIL: ci@stenci.la
+      #    GITHUB_TOKEN: $(GITHUB_TOKEN)
+      #    NPM_TOKEN: $(NPM_TOKEN)
