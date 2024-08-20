@@ -121,7 +121,9 @@ export const commonDecodeDefaults: CommonDecodeDefaults = {
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
 export abstract class Codec<
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   EncodeOptions extends CommonEncodeOptions = {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   DecodeOptions extends CommonDecodeOptions = {},
 > {
   /**
