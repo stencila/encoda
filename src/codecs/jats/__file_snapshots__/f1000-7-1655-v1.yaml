@@ -355,6 +355,22 @@ meta:
       text: >-
         Competing interests: Michael Evans is the Production Manager for F1000
         Platforms, but was not involved in the production of this manuscript.
+    - type: corresp
+      id: c1
+      label: a
+      text: beck@ncbi.nlm.nih.gov
+    - type: corresp
+      id: c2
+      label: b
+      text: kathryn.funk@nih.gov
+    - type: corresp
+      id: c3
+      label: c
+      text: m.harrison@elifesciences.org
+    - type: corresp
+      id: c4
+      label: d
+      text: mcentyre@ebi.ac.uk
 content:
   - type: Heading
     id: ''

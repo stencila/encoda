@@ -219,6 +219,12 @@ test('decode: content of <label> in a <author-notes> is followed by a space', ()
         label: '†',
         text: 'These authors, listed in alphabetical order, have contributed equally',
       },
+      {
+        type: 'corresp',
+        id: 'cor1',
+        label: '*',
+        text: 'Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr'
+      }
     ],
   })
 })
