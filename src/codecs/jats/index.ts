@@ -830,6 +830,7 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   const authorNotes = all(first(front, 'author-notes'), 'fn')
     .map((fn) => {
       const id = attrOrUndefined(fn, 'id')
+      let type = 'fn'
       let label
       let text = ''
       for (const elem of fn.elements ?? []) {
@@ -839,7 +840,7 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
           text += textOrUndefined(elem) ?? ''
         }
       }
-      return { id, label, text }
+      return { type, id, label, text }
     })
     .filter(({ text }) => text.length > 0)
 
