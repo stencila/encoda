@@ -872,7 +872,7 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
  * Decode JATS `<contrib contrib-type = "author">` elements
  * to a Stencila `Article.authors` property.
  */
-function decodeAuthors(
+export function decodeAuthors(
   front: xml.Element,
   state: DecodeState,
 ): stencila.Article['authors'] {

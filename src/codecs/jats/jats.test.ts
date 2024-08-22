@@ -2,6 +2,7 @@ import path from 'path'
 import {
   decodeAbstract,
   decodeAff,
+  decodeAuthors,
   decodeFigure,
   decodeMetaFront,
   DecodeState,
@@ -262,6 +263,48 @@ test('decode: content of <corresp> is added to the author notes', () => {
       }
     ],
   })
+})
+
+test.failing('decode: corresp ref-type is added to author meta', () => {
+  const front = xml.load(`
+<front>
+  <contrib-group>
+    <contrib contrib-type="author">
+      <name><surname>Bloggs</surname><given-names>Joe</given-names></name>
+      <xref ref-type="corresp" rid="cor1">&#x002A;</xref>
+    </contrib>
+  </contrib-group>
+  <author-notes>
+    <corresp id="cor1"><label>&#x002A;</label>Corresponding author: Joe Bloggs, Email: <email>joe.bloggs@example.com</email></corresp>
+  </author-notes>
+<front>
+`).elements?.[0]!
+  const decoded = decodeAuthors(front, {
+    article: front,
+    ancestorElem: front,
+    sectionId: '',
+    sectionDepth: 0,
+  });
+  expect(decoded).toEqual([
+    {
+      "type": "Person",
+      "familyNames": [
+        "Bloggs"
+      ],
+      "givenNames": [
+        "Joe"
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "rid": "cor1",
+            "label": "+"
+          }
+        ]
+      }
+    },
+  ])
 })
 
 test('decode: extract headings and lists in abstract', () => {
