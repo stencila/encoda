@@ -827,10 +827,12 @@ function decodeHistory(
  */
 export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   // Extract all footnotes within the <author-notes> element as plain text
-  const authorNotes = all(first(front, 'author-notes'), 'fn')
+  const authorNotes = [
+      ...all(first(front, 'author-notes'), 'fn'),
+      ...all(first(front, 'author-notes'), 'corresp'),
+    ]
     .map((fn) => {
       const id = attrOrUndefined(fn, 'id')
-      const type = 'fn'
       let label
       let text = ''
       for (const elem of fn.elements ?? []) {
@@ -840,28 +842,10 @@ export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
           text += textOrUndefined(elem) ?? ''
         }
       }
-      return { type, id, label, text }
+      const type = fn.name
+      return { id, label, text, type }
     })
     .filter(({ text }) => text.length > 0)
-
-  const contrib = all(first(front, 'author-notes'), 'corresp')
-    .map((foo) => {
-      const id = attrOrUndefined(foo, 'id')
-      const type = 'corresp'
-      let label
-      let text = ''
-      for (const elem of foo.elements ?? []) {
-        if (elem.name === 'label') {
-          label = textOrUndefined(elem)
-        } else {
-          text += textOrUndefined(elem) ?? ''
-        }
-      }
-      return { type, id, label, text }
-    })
-    .filter(({ text }) => text.length > 0)
-
-  authorNotes.push(...contrib)
 
   return {
     authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
