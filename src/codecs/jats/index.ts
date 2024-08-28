@@ -828,9 +828,9 @@ function decodeHistory(
 export function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
   // Extract all footnotes within the <author-notes> element as plain text
   const authorNotes = [
-      ...all(first(front, 'author-notes'), 'fn'),
-      ...all(first(front, 'author-notes'), 'corresp'),
-    ]
+    ...all(first(front, 'author-notes'), 'fn'),
+    ...all(first(front, 'author-notes'), 'corresp'),
+  ]
     .map((fn) => {
       const id = attrOrUndefined(fn, 'id')
       let label
