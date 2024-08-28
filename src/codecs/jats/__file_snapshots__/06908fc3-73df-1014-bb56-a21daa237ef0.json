@@ -35,7 +35,16 @@
       ],
       "givenNames": [
         "François"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -53,7 +62,16 @@
       ],
       "givenNames": [
         "Henrique"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {

@@ -134,7 +134,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0002-6973-5385"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",

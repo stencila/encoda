@@ -41,7 +41,16 @@
       ],
       "givenNames": [
         "Roberta"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -121,7 +130,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0003-3554-2574"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {

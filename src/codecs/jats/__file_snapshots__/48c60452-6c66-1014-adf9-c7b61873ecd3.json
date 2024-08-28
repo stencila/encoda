@@ -135,7 +135,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0001-6813-6682"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
