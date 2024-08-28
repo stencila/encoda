@@ -299,7 +299,7 @@ test('decode: corresp ref-type is added to author meta', () => {
           {
             "type": "corresp",
             "rid": "cor1",
-            "label": "+"
+            "label": "*"
           }
         ]
       }
