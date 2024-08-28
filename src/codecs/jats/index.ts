@@ -957,60 +957,6 @@ function decodeContrib(
     const name = child(contrib, ['name', 'string-name'])
     const contributor = name ? decodeName(name) : stencila.person()
 
-    const emails = all(contrib, 'email').map(text)
-
-    // If no email was found and the author is a corresponding author then attempt to get their email
-    // from the linked <corresp> element with the id in the <xref>
-    const correspId = first(contrib, 'xref', { 'ref-type': 'corresp' })
-      ?.attributes?.rid
-    if (emails.length === 0 && correspId) {
-      const correspEmails = all(
-        first(state.article, 'corresp', { id: correspId }),
-        'email',
-      )
-      if (correspEmails.length === 1) {
-        // If there is only one <email> element then use that
-        emails.push(text(correspEmails[0]))
-      } else if (correspEmails.length > 1) {
-        // Sometimes the same <corresp> element is used for multiple authors
-        // so find the first email that has both the authors first and last name,
-        // first initial and last name, or last name (try all these in case there are authors with
-        // the same last name). Fallback to using the email address which is closest
-        // to the last name (e.g. truncated names in emails or emails that are ascii versions
-        // of names with diacritics).
-
-        const addresses = correspEmails.map((email) =>
-          text(email).toLowerCase(),
-        )
-        const names = addresses.map((email) => email.split('@')[0])
-        const givenName = `${contributor.givenNames?.[0]}`.toLowerCase()
-        const familyName = `${contributor.familyNames?.[0]}`.toLowerCase()
-
-        let index = names.findIndex(
-          (email) => email.includes(givenName) && email.includes(familyName),
-        )
-        if (index < 0) {
-          index = names.findIndex(
-            (email) =>
-              email.includes(givenName[0]) && email.includes(familyName),
-          )
-        }
-        if (index < 0) {
-          index = names.findIndex((email) => email.includes(familyName))
-        }
-        if (index < 0) {
-          const name = closest(familyName, names)
-          index = names.indexOf(name)
-        }
-
-        if (index >= 0) {
-          emails.push(addresses[index])
-        }
-      }
-    }
-
-    if (emails.length > 0) contributor.emails = emails
-
     const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
     if (orcid) {
       contributor.identifiers = [

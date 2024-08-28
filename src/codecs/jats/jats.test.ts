@@ -265,7 +265,7 @@ test('decode: content of <corresp> is added to the author notes', () => {
   })
 })
 
-test.failing('decode: corresp ref-type is added to author meta', () => {
+test('decode: corresp ref-type is added to author meta', () => {
   const front = xml.load(`
 <front>
   <contrib-group>
