@@ -991,9 +991,11 @@ function decodeContrib(
     const fns = [
       ...all(contrib, 'xref', { 'ref-type': 'fn' }),
       ...all(contrib, 'xref', { 'ref-type': 'author-notes' }),
+      ...all(contrib, 'xref', { 'ref-type': 'corresp' }),
     ]
     if (fns.length > 0) {
       notes = fns.map((xref) => ({
+        type: xref.attributes?.['ref-type'] === 'corresp' ? 'corresp' : 'fn',
         rid: attrOrUndefined(xref, 'rid'),
         label: textOrUndefined(xref),
       }))
