@@ -42,6 +42,11 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: http://orcid.org/0000-0003-0108-7585
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor001
 dateAccepted:
   type: Date
   value: '2017-05-15'

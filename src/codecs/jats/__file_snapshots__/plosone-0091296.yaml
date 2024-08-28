@@ -13,6 +13,11 @@ authors:
       - Robinson
     givenNames:
       - Jan
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
   - type: Person
     affiliations:
       - type: Organization

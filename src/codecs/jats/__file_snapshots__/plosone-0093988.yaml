@@ -33,6 +33,11 @@ authors:
       - Killingback
     givenNames:
       - Timothy
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
 dateAccepted:
   type: Date
   value: '2014-03-11'

@@ -14,6 +14,11 @@ authors:
     givenNames:
       - Dirk
       - W.
+    meta:
+      notes:
+        - type: corresp
+          label: a
+          rid: c1
   - type: Person
     affiliations:
       - type: Organization
