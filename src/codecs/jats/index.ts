@@ -940,6 +940,9 @@ function decodeContrib(
     // Create a Person contributor with organizational affiliations
     const name = child(contrib, ['name', 'string-name'])
     const contributor = name ? decodeName(name) : stencila.person()
+    
+    const emails = all(contrib, 'email').map(text)
+    if (emails.length > 0) contributor.emails = emails
 
     const orcid = child(contrib, 'contrib-id', { 'contrib-id-type': 'orcid' })
     if (orcid) {
