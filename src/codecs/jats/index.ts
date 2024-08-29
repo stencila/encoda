@@ -17,7 +17,6 @@
 import { getLogger } from '@stencila/logga'
 import stencila, { isA, ThingTypes } from '@stencila/schema'
 import crypto from 'crypto'
-import { closest } from 'fastest-levenshtein'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import { sentenceCase } from 'sentence-case'
