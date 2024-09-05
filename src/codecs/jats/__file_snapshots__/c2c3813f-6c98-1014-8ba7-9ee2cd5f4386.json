@@ -50,8 +50,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n1"
           }
         ]
       }
@@ -78,8 +79,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n1"
           }
         ]
       }
@@ -386,15 +388,21 @@
           "name": "Department of Pharmacology, University of California Davis, Davis, CA 95616"
         }
       ],
-      "emails": [
-        "yarovoy@ucdavis.edu"
-      ],
       "familyNames": [
         "Wulff"
       ],
       "givenNames": [
         "Heike"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -424,9 +432,6 @@
           "name": "Biophysics Graduate Group, University of California Davis, Davis, CA 95616"
         }
       ],
-      "emails": [
-        "yarovoy@ucdavis.edu"
-      ],
       "familyNames": [
         "Yarov-Yarovoy"
       ],
@@ -439,7 +444,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0002-2325-4834"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -7554,9 +7568,16 @@
   "meta": {
     "authorNotes": [
       {
+        "type": "fn",
         "id": "n1",
         "label": "†",
         "text": "These authors contributed equally to this work."
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Corresponding authors. email: yarovoy@ucdavis.edu"
       }
     ]
   },

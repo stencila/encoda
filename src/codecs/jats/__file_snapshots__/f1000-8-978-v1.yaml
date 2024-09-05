@@ -9,13 +9,16 @@ authors:
         name: >-
           Department of Biology, United Arab Emirates University, Al Ain, Abu
           Dhabi, United Arab Emirates
-    emails:
-      - tksiksi@uaeu.ac.ae
     familyNames:
       - Ksiksi
     givenNames:
       - Taoufik
       - Saleh
+    meta:
+      notes:
+        - type: corresp
+          label: a
+          rid: c1
   - type: Person
     affiliations:
       - type: Organization
@@ -1933,7 +1936,12 @@ references:
 title: Climate change-induced species distribution modeling in hyper-arid ecosystems
 meta:
   authorNotes:
-    - text: No competing interests were disclosed.
+    - type: fn
+      text: No competing interests were disclosed.
+    - type: corresp
+      id: c1
+      label: a
+      text: tksiksi@uaeu.ac.ae
 content:
   - type: Heading
     id: ''

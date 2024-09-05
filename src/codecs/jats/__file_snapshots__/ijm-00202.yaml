@@ -23,6 +23,11 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0003-0159-4712
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
   - type: Person
     affiliations:
       - type: Organization
@@ -41,6 +46,11 @@ authors:
       - type: PropertyValue
         propertyID: https://registry.identifiers.org/registry/orcid
         value: https://orcid.org/0000-0003-3388-0828
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
 datePublished:
   type: Date
   value: '2020-07-17'
@@ -992,7 +1002,8 @@ title: >-
   with individual filing in Uruguay
 meta:
   authorNotes:
-    - id: cor1
+    - type: fn
+      id: cor1
       text: >-
         *For correspondence: marisa.bucheli@cienciassociales.edu.uy;
         cecilia.olivieri@cienciassociales.edu.uy

@@ -69,8 +69,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "7"
+            "type": "fn",
+            "label": "7",
+            "rid": "n1"
           }
         ]
       }
@@ -96,8 +97,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "7"
+            "type": "fn",
+            "label": "7",
+            "rid": "n1"
           }
         ]
       }
@@ -266,9 +268,6 @@
           "name": "Laboratory of Metabolic Signaling, Institute of Bioengineering, Ecole Polytechnique Fédérale de Lausanne, Lausanne"
         }
       ],
-      "emails": [
-        "kristina.schoonjans@epfl.ch"
-      ],
       "familyNames": [
         "Schoonjans"
       ],
@@ -285,8 +284,14 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "8"
+            "type": "fn",
+            "label": "8",
+            "rid": "n2"
+          },
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
           }
         ]
       }
@@ -7416,14 +7421,22 @@
   "meta": {
     "authorNotes": [
       {
+        "type": "fn",
         "id": "n1",
         "label": "7",
         "text": "These authors contributed equally"
       },
       {
+        "type": "fn",
         "id": "n2",
         "label": "8",
         "text": "Lead contact"
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Correspondence: kristina.schoonjans@epfl.ch"
       }
     ]
   },

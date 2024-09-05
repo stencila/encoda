@@ -36,15 +36,21 @@
           "name": "Department of Pharmacology, University of Cambridge, Cambridge, CB2 1PD, UK"
         }
       ],
-      "emails": [
-        "acl34@cam.ac.uk"
-      ],
       "familyNames": [
         "Cacioppo"
       ],
       "givenNames": [
         "Roberta"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -112,9 +118,6 @@
           "name": "Department of Pharmacology, University of Cambridge, Cambridge, CB2 1PD, UK"
         }
       ],
-      "emails": [
-        "rc781@cam.ac.uk"
-      ],
       "familyNames": [
         "Lindon"
       ],
@@ -127,7 +130,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0003-3554-2574"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -7159,7 +7171,16 @@
     }
   ],
   "title": "Differential translation of mRNA isoforms underlies oncogenic activation of cell cycle kinase Aurora A",
-  "meta": {},
+  "meta": {
+    "authorNotes": [
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "To whom correspondence should be addressed. Email: Roberta Cacioppo rc781@cam.ac.uk or Catherine Lindon acl34@cam.ac.uk."
+      }
+    ]
+  },
   "content": [
     {
       "type": "Heading",

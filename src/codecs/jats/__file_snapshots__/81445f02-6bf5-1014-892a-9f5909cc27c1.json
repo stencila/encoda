@@ -49,8 +49,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "*"
+            "type": "fn",
+            "label": "*",
+            "rid": "n1"
           }
         ]
       }
@@ -76,8 +77,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "*"
+            "type": "fn",
+            "label": "*",
+            "rid": "n1"
           }
         ]
       }
@@ -215,15 +217,21 @@
           "name": "State Key Laboratory of Pharmaceutical Biotechnology, Department of Vascular Surgery, The Affiliated Drum Tower Hospital of Nanjing University Medical School, Nanjing, 210008"
         }
       ],
-      "emails": [
-        "qiaotong@nju.edu.cn"
-      ],
       "familyNames": [
         "Qiao"
       ],
       "givenNames": [
         "Tong"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "#",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -245,9 +253,6 @@
           "name": "Jiangsu Key Laboratory of Molecular Medicine, Medical School of Nanjing University, Nanjing, 210093"
         }
       ],
-      "emails": [
-        "likuanyu@nju.edu.cn"
-      ],
       "familyNames": [
         "Li"
       ],
@@ -260,7 +265,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0001-9738-049X"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "#",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -3945,9 +3959,16 @@
   "meta": {
     "authorNotes": [
       {
+        "type": "fn",
         "id": "n1",
         "label": "*",
         "text": "Tianze Xu and Jing Cai contributed equally to this work"
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "#",
+        "text": "Corresponding authors: Dr. Kuanyu Li, Jiangsu Key Laboratory of Molecular Medicine, Medical School of Nanjing University, Nanjing, 210093, P. R. China. Email: likuanyu@nju.edu.cn; Dr. Tong Qiao. Email: qiaotong@nju.edu.cn"
       }
     ]
   },

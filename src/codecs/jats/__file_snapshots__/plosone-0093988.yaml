@@ -29,12 +29,15 @@ authors:
         name: >-
           Mathematics Department, University of Massachusetts, Boston,
           Massachusetts, United States of America
-    emails:
-      - timothy.killingback@umb.edu
     familyNames:
       - Killingback
     givenNames:
       - Timothy
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
 dateAccepted:
   type: Date
   value: '2014-03-11'
@@ -1583,10 +1586,15 @@ title: >-
   Dilemma and the Minimum Effort Coordination Game
 meta:
   authorNotes:
-    - text: The authors have declared that no competing interests exist.
-    - text: >-
+    - type: fn
+      text: The authors have declared that no competing interests exist.
+    - type: fn
+      text: >-
         Conceived and designed the experiments: TK. Performed the experiments:
         SI JR TK. Analyzed the data: SI TK. Wrote the paper: SI JR TK.
+    - type: corresp
+      id: cor1
+      text: '* E-mail: timothy.killingback@umb.edu'
 content:
   - type: Heading
     id: s1

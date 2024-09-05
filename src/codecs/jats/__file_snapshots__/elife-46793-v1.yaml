@@ -24,10 +24,13 @@ authors:
         value: https://orcid.org/0000-0002-4997-0150
     meta:
       notes:
-        - rid: equal-contrib1
+        - type: fn
           label: †
-        - rid: con1
-        - rid: conf1
+          rid: equal-contrib1
+        - type: fn
+          rid: con1
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -43,10 +46,13 @@ authors:
       - S
     meta:
       notes:
-        - rid: equal-contrib1
+        - type: fn
           label: †
-        - rid: con2
-        - rid: conf1
+          rid: equal-contrib1
+        - type: fn
+          rid: con2
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -68,8 +74,10 @@ authors:
         value: https://orcid.org/0000-0002-1501-2106
     meta:
       notes:
-        - rid: con3
-        - rid: conf1
+        - type: fn
+          rid: con3
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -89,8 +97,10 @@ authors:
         value: https://orcid.org/0000-0001-9806-2805
     meta:
       notes:
-        - rid: con4
-        - rid: conf1
+        - type: fn
+          rid: con4
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -113,8 +123,10 @@ authors:
         value: https://orcid.org/0000-0002-7321-1867
     meta:
       notes:
-        - rid: con5
-        - rid: conf1
+        - type: fn
+          rid: con5
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -129,8 +141,10 @@ authors:
       - Nicolas
     meta:
       notes:
-        - rid: con6
-        - rid: conf1
+        - type: fn
+          rid: con6
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -150,8 +164,10 @@ authors:
         value: https://orcid.org/0000-0003-4021-3898
     meta:
       notes:
-        - rid: con7
-        - rid: conf2
+        - type: fn
+          rid: con7
+        - type: fn
+          rid: conf2
   - type: Person
     affiliations:
       - type: Organization
@@ -170,8 +186,10 @@ authors:
         value: https://orcid.org/0000-0002-3811-6864
     meta:
       notes:
-        - rid: con8
-        - rid: conf1
+        - type: fn
+          rid: con8
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -210,8 +228,10 @@ authors:
         value: https://orcid.org/0000-0002-0281-5815
     meta:
       notes:
-        - rid: con9
-        - rid: conf3
+        - type: fn
+          rid: con9
+        - type: fn
+          rid: conf3
 dateAccepted:
   type: Date
   value: '2019-06-17'
@@ -9180,7 +9200,8 @@ references:
 title: Genetic interactions of G-quadruplexes in humans
 meta:
   authorNotes:
-    - id: equal-contrib1
+    - type: fn
+      id: equal-contrib1
       label: †
       text: These authors contributed equally to this work
 content:

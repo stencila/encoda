@@ -40,10 +40,13 @@ authors:
         value: http://orcid.org/0000-0001-5524-0325
     meta:
       notes:
-        - rid: equal-contrib1
+        - type: fn
           label: †
-        - rid: con1
-        - rid: conf1
+          rid: equal-contrib1
+        - type: fn
+          rid: con1
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -81,10 +84,13 @@ authors:
         value: https://orcid.org/0000-0002-0482-5689
     meta:
       notes:
-        - rid: equal-contrib1
+        - type: fn
           label: †
-        - rid: con2
-        - rid: conf1
+          rid: equal-contrib1
+        - type: fn
+          rid: con2
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -109,8 +115,10 @@ authors:
         value: http://orcid.org/0000-0002-2660-2013
     meta:
       notes:
-        - rid: con3
-        - rid: conf1
+        - type: fn
+          rid: con3
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -142,8 +150,10 @@ authors:
       - PJ
     meta:
       notes:
-        - rid: con4
-        - rid: conf1
+        - type: fn
+          rid: con4
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -168,8 +178,10 @@ authors:
         value: http://orcid.org/0000-0001-5190-2395
     meta:
       notes:
-        - rid: con5
-        - rid: conf1
+        - type: fn
+          rid: con5
+        - type: fn
+          rid: conf1
   - type: Person
     affiliations:
       - type: Organization
@@ -196,8 +208,10 @@ authors:
         value: http://orcid.org/0000-0002-1897-1978
     meta:
       notes:
-        - rid: con6
-        - rid: conf1
+        - type: fn
+          rid: con6
+        - type: fn
+          rid: conf1
 dateAccepted:
   type: Date
   value: '2019-01-22'
@@ -1460,7 +1474,8 @@ title: >-
   dehydrogenase deficiency on cerebral malaria
 meta:
   authorNotes:
-    - id: equal-contrib1
+    - type: fn
+      id: equal-contrib1
       label: †
       text: These authors contributed equally to this work
 content:

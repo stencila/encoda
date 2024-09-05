@@ -122,9 +122,6 @@
           "name": "Department of Plant Biology, University of California, One Shields Avenue, Davis, CA 95616"
         }
       ],
-      "emails": [
-        "slharmer@ucdavis.edu"
-      ],
       "familyNames": [
         "Harmer"
       ],
@@ -138,7 +135,16 @@
           "propertyID": "https://registry.identifiers.org/registry/orcid",
           "value": "http://orcid.org/0000-0001-6813-6682"
         }
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -4246,7 +4252,16 @@
     }
   ],
   "title": "The circadian clock controls temporal and spatial patterns of floral development in sunflower",
-  "meta": {},
+  "meta": {
+    "authorNotes": [
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Correspondence to slharmer@ucdavis.edu"
+      }
+    ]
+  },
   "content": [
     {
       "type": "Heading",

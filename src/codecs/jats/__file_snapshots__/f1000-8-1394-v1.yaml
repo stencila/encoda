@@ -9,13 +9,16 @@ authors:
         name: >-
           Chemisches und Veterinäruntersuchungsamt (CVUA) Karlsruhe, Karlsruhe,
           76189, Germany
-    emails:
-      - lachenmeier@web.de
     familyNames:
       - Lachenmeier
     givenNames:
       - Dirk
       - W.
+    meta:
+      notes:
+        - type: corresp
+          label: a
+          rid: c1
   - type: Person
     affiliations:
       - type: Organization
@@ -1237,7 +1240,12 @@ title: >-
   (THC) contamination?
 meta:
   authorNotes:
-    - text: No competing interests were disclosed.
+    - type: fn
+      text: No competing interests were disclosed.
+    - type: corresp
+      id: c1
+      label: a
+      text: lachenmeier@web.de
 content:
   - type: Heading
     id: ''

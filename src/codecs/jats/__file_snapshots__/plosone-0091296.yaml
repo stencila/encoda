@@ -9,12 +9,15 @@ authors:
         name: >-
           ARC Center of Excellence for Coral Reef Studies, James Cook
           University, Townsville, Queensland, Australia
-    emails:
-      - jan.robinson@my.jcu.edu.au
     familyNames:
       - Robinson
     givenNames:
       - Jan
+    meta:
+      notes:
+        - type: corresp
+          label: '*'
+          rid: cor1
   - type: Person
     affiliations:
       - type: Organization
@@ -1924,11 +1927,16 @@ title: >-
   Aggregations to Fishing
 meta:
   authorNotes:
-    - text: The authors have declared that no competing interests exist.
-    - text: >-
+    - type: fn
+      text: The authors have declared that no competing interests exist.
+    - type: fn
+      text: >-
         Conceived and designed the experiments: JR JEC NAJG. Performed the
         experiments: JR. Analyzed the data: JR. Contributed
         reagents/materials/analysis tools: JR. Wrote the paper: JR JEC NAJG.
+    - type: corresp
+      id: cor1
+      text: '* E-mail: jan.robinson@my.jcu.edu.au'
 content:
   - type: Heading
     id: s1

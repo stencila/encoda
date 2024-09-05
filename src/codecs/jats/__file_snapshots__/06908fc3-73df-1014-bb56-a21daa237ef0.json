@@ -30,15 +30,21 @@
   "authors": [
     {
       "type": "Person",
-      "emails": [
-        "mallard@bio.ens.psl.eu"
-      ],
       "familyNames": [
         "Mallard"
       ],
       "givenNames": [
         "François"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     },
     {
       "type": "Person",
@@ -51,15 +57,21 @@
     },
     {
       "type": "Person",
-      "emails": [
-        "teotonio@bio.ens.psl.eu"
-      ],
       "familyNames": [
         "Teotónio"
       ],
       "givenNames": [
         "Henrique"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -4882,7 +4894,16 @@
     }
   ],
   "title": "Selection and the direction of phenotypic evolution",
-  "meta": {},
+  "meta": {
+    "authorNotes": [
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": " Corresponding authors: mallard@bio.ens.psl.eu; teotonio@bio.ens.psl.eu."
+      }
+    ]
+  },
   "content": [
     {
       "type": "Paragraph",

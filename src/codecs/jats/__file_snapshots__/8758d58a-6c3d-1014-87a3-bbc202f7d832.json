@@ -57,8 +57,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "8"
+            "type": "fn",
+            "label": "8",
+            "rid": "n1"
           }
         ]
       }
@@ -111,8 +112,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n2"
           }
         ]
       }
@@ -138,8 +140,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n2"
           }
         ]
       }
@@ -173,8 +176,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n2"
           }
         ]
       }
@@ -200,8 +204,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n2",
-            "label": "†"
+            "type": "fn",
+            "label": "†",
+            "rid": "n2"
           }
         ]
       }
@@ -284,8 +289,9 @@
       "meta": {
         "notes": [
           {
-            "rid": "n1",
-            "label": "8"
+            "type": "fn",
+            "label": "8",
+            "rid": "n1"
           }
         ]
       }
@@ -461,15 +467,21 @@
           "name": "AP-HP, Hôpital Pitié-Salpêtrière, Clinical Investigation Center for Biotherapies (CIC-BTi) and Immunology-Inflammation-Infectiology and Dermatology Department (3iD), Paris"
         }
       ],
-      "emails": [
-        "david.klatzmann@sorbonne-universite.fr"
-      ],
       "familyNames": [
         "Klatzmann"
       ],
       "givenNames": [
         "David"
-      ]
+      ],
+      "meta": {
+        "notes": [
+          {
+            "type": "corresp",
+            "label": "*",
+            "rid": "cor1"
+          }
+        ]
+      }
     }
   ],
   "dateAccepted": {
@@ -6716,14 +6728,22 @@
   "meta": {
     "authorNotes": [
       {
+        "type": "fn",
         "id": "n1",
         "label": "8",
         "text": "Present Institution: Parean biotechnologies, Saint-Malo, France"
       },
       {
+        "type": "fn",
         "id": "n2",
         "label": "†",
         "text": "These authors, listed in alphabetical order, have contributed equally"
+      },
+      {
+        "type": "corresp",
+        "id": "cor1",
+        "label": "*",
+        "text": "Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr"
       }
     ]
   },
