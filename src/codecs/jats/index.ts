@@ -573,7 +573,8 @@ export function decodeAbstract(
       !(
         block.type === 'Heading' &&
         block.content.length === 1 &&
-        block.content[0] === 'Abstract'
+        typeof block.content[0] === 'string' && 
+        block.content[0].toUpperCase() === 'ABSTRACT'
       ),
   )
 }
@@ -1877,9 +1878,6 @@ function decodeAppendix(
  * implies a nested section. This is more likely to ensure conformance with
  * the following rule if the document is encoded to HTML:
  * https://dequeuniversity.com/rules/axe/3.5/heading-order
- *
- * For consistency, across documents all caps titles are converted to
- * sentence case.
  */
 function decodeHeading(
   elem: xml.Element,
@@ -1895,14 +1893,6 @@ function decodeHeading(
 
   if (depth === undefined || Number.isNaN(depth)) {
     depth = 1
-  }
-
-  if (
-    content.length === 1 &&
-    typeof content[0] === 'string' &&
-    content[0].toUpperCase() === content[0]
-  ) {
-    content = [sentenceCase(content[0])]
   }
 
   return [
