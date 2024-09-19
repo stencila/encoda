@@ -19,7 +19,6 @@ import stencila, { isA, ThingTypes } from '@stencila/schema'
 import crypto from 'crypto'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
-import { sentenceCase } from 'sentence-case'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
@@ -573,7 +572,7 @@ export function decodeAbstract(
       !(
         block.type === 'Heading' &&
         block.content.length === 1 &&
-        typeof block.content[0] === 'string' && 
+        typeof block.content[0] === 'string' &&
         block.content[0].toUpperCase() === 'ABSTRACT'
       ),
   )
@@ -1889,7 +1888,7 @@ function decodeHeading(
     ancestorElem?.name === 'sec' || ancestorElem?.name === 'app'
       ? [sectionDepth, sectionId]
       : [sectionDepth + 1, undefined]
-  let content = decodeInlineContent(elem.elements ?? [], state)
+  const content = decodeInlineContent(elem.elements ?? [], state)
 
   if (depth === undefined || Number.isNaN(depth)) {
     depth = 1
