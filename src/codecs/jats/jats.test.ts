@@ -484,14 +484,18 @@ describe('authors', () => {
 describe('decode: Math', () => {
   test.only('does not pull preceding paragraph into caption', () => {
     const fragment = xml.load(`
-      <p><italic>In silico</italic> predictions were compared to matched phenotype data and the following accuracy metrics were calculated:</p>
-      <disp-formula id="ueqn1">
-        <graphic xlink:href="530115v2_ueqn1.gif"/>
-      </disp-formula>
-      <disp-formula id="ueqn2">
-        <graphic xlink:href="530115v2_ueqn2.gif"/>
-      </disp-formula>
-      <p>Model metabolite and reaction ... </p>
+      <body>
+        <sec>
+          <p><italic>In silico</italic> predictions were compared to matched phenotype data and the following accuracy metrics were calculated:</p>
+          <disp-formula id="ueqn1">
+            <graphic xlink:href="530115v2_ueqn1.gif"/>
+          </disp-formula>
+          <disp-formula id="ueqn2">
+            <graphic xlink:href="530115v2_ueqn2.gif"/>
+          </disp-formula>
+          <p>Model metabolite and reaction ... </p>
+        </sec>
+      </body>
     `).elements?.[0]!
 
     expect(decodeElements([fragment], {} as DecodeState) ).toEqual({
