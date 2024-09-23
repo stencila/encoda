@@ -1772,7 +1772,7 @@ function encodeDefault(
 /**
  * Decode an array of JATS elements to an array of Stencila nodes.
  */
-function decodeElements(
+export function decodeElements(
   elems: xml.Element[],
   state: DecodeState,
 ): stencila.Node[] {
