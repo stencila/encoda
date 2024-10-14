@@ -1330,6 +1330,7 @@ export function decodeReference(
   ]).map((authorElem) => {
     if (authorElem.name === 'name' || authorElem.name === 'string-name')
       return decodeName(authorElem)
+      
     else return stencila.organization({ name: textOrUndefined(authorElem) })
   })
   // If no authors identified using `<name>` elements

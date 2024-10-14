@@ -5,6 +5,7 @@ import {
   decodeAuthors,
   decodeFigure,
   decodeMetaFront,
+  decodeReference,
   DecodeState,
   decodeTableWrap,
   JatsCodec,
@@ -146,6 +147,53 @@ test('decode: <fig> element that is actually a table', () => {
     ],
     rows: [],
   })
+})
+
+test.each([
+  [
+    `
+      <mixed-citation publication-type="journal">
+        <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>2020</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
+      </mixed-citation>
+    `,
+    {
+      authors: [
+        {
+          familyNames: [
+            'Calabrese',
+          ],
+          givenNames: [
+            'C',
+          ],
+          type: 'Person',
+        },
+        {
+          familyNames: [
+            'Panuzzo',
+          ],
+          givenNames: [
+            'C',
+          ],
+          type: 'Person',
+        },
+      ],
+      datePublished: {
+        type: 'Date',
+        value: '2020',
+      },
+      isPartOf: {
+        name: 'International journal of molecular sciences',
+        type: 'Periodical',
+      },
+      pageStart: 21,
+      title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
+      type: 'Article',
+    },
+  ],
+])('decode: <element-citation> or <mixed-citation> element', (input, expected) => {
+  const citation = xml.load(input).elements?.[0]!
+  
+  expect(decodeReference(citation, null, undefined)).toEqual(expected)
 })
 
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
