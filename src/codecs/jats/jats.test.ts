@@ -4,6 +4,7 @@ import {
   decodeAff,
   decodeAuthors,
   decodeFigure,
+  decodeMath,
   decodeMetaFront,
   decodeReference,
   DecodeState,
@@ -527,3 +528,18 @@ describe('authors', () => {
     )
   })
 })
+
+describe('decode: MathML', () => {
+  test('adds the id to the alternative graphic', () => {
+    const formula = xml.load(`
+     <disp-formula id="eqn6">
+      <alternatives>
+        <graphic xlink:href="528254v1_eqn6.gif"/>
+      </alternatives>
+    </disp-formula>
+    `).elements?.[0]!
+  
+    expect(decodeMath(formula)).toEqual([{"content": [{"contentUrl": "528254v1_eqn6.gif", "meta": {"inline": false}, "type": "ImageObject", "id": "eqn6"}], "type": "Paragraph"}]);
+  });
+});
+

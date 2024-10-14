@@ -2518,7 +2518,7 @@ function decodeSupplementaryMaterial(
  * that is not available, uses an image as an alternative (which is wrapped
  * in a paragraph for display formulas).
  */
-function decodeMath(
+export function decodeMath(
   formula: xml.Element,
 ): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
