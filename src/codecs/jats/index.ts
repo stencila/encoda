@@ -2528,9 +2528,7 @@ export function decodeMath(
   if (mathml === null) {
     const graphic = first(formula, ['graphic', 'inline-graphic'])
     if (graphic === null) return []
-
-    const temp = decodeGraphic(graphic, inline)
-    const image = [{ id, ...temp[0] }]
+    const image = [{ id, ...decodeGraphic(graphic, inline)[0] }]
     return inline ? image : [stencila.paragraph({ content: image })]
   }
 
