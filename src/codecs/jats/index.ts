@@ -2523,15 +2523,17 @@ export function decodeMath(
 ): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
   const mathml = first(formula, 'mml:math') ?? first(formula, 'm:math')
+  const id = attrOrUndefined(formula, 'id')
 
   if (mathml === null) {
     const graphic = first(formula, ['graphic', 'inline-graphic'])
     if (graphic === null) return []
-    const image = decodeGraphic(graphic, inline)
+
+    const temp = decodeGraphic(graphic, inline)
+    const image = [{ id, ...temp[0] }]
     return inline ? image : [stencila.paragraph({ content: image })]
   }
 
-  const id = attrOrUndefined(formula, 'id')
   const label = textOrUndefined(child(formula, 'label'))
   const altText = attrOrUndefined(mathml, 'alttext')
   const meta = altText !== undefined ? { altText } : undefined
