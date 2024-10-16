@@ -1,12 +1,9 @@
-import { Jesta } from '@stencila/jesta'
 import schema from '@stencila/schema'
 import { fromFiles } from '../util/media/fromFiles'
 import { resolveFiles } from '../util/media/resolveFiles'
 import { toFiles } from '../util/media/toFiles'
 import { reshape } from '../util/reshape'
 import * as vfile from '../util/vfile'
-
-const jesta = new Jesta()
 
 /**
  * Encoding options that are common to all codecs.
@@ -83,11 +80,6 @@ export interface CommonDecodeOptions {
   asType?: keyof schema.Types
 
   /**
-   * Should the decoded node have the `coerce` function applied to it?
-   */
-  shouldCoerce?: boolean
-
-  /**
    * Should the decoded node have the `reshape` function applied to it?
    */
   shouldReshape?: boolean
@@ -99,15 +91,12 @@ export interface CommonDecodeOptions {
  * See notes for `commonEncodeDefaults` for why these exist.
  */
 type CommonDecodeDefaults = Required<
-  Pick<CommonDecodeOptions, 'isStandalone' | 'shouldCoerce' | 'shouldReshape'>
+  Pick<CommonDecodeOptions, 'isStandalone' | 'shouldReshape'>
 >
 export const commonDecodeDefaults: CommonDecodeDefaults = {
   // To avoid breaking changes this is true, but may be changed to
   // false for consistency with default for encoding (false)
   isStandalone: true,
-
-  // Coerce by default
-  shouldCoerce: false,
 
   // Reshape by default
   shouldReshape: true,
@@ -203,10 +192,9 @@ export abstract class Codec<
     content: string,
     options?: DecodeOptions,
   ): Promise<schema.Node> {
-    const { shouldCoerce = false, shouldReshape = true } = options ?? {}
+    const { shouldReshape = true } = options ?? {}
 
     let node = await this.decode(vfile.load(content), options)
-    if (shouldCoerce) node = await jesta.validate(node, true)
     if (shouldReshape) node = await reshape(node)
     return node
   }
@@ -268,10 +256,9 @@ export abstract class Codec<
     filePath: string,
     options?: DecodeOptions,
   ): Promise<schema.Node> {
-    const { shouldCoerce = false, shouldReshape = true } = options ?? {}
+    const { shouldReshape = true } = options ?? {}
 
     let node = await this.decode(await vfile.read(filePath), options)
-    if (shouldCoerce) node = await jesta.validate(node)
     if (shouldReshape) node = await reshape(node)
     return resolveFiles(node, filePath)
   }
