@@ -1,4 +1,3 @@
-import { getLogger } from '@stencila/logga'
 import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
@@ -12,8 +11,6 @@ import {
 } from './codecs/types'
 import { getErrorMessage } from './util/errors'
 import * as vfile from './util/vfile'
-
-const log = getLogger('encoda')
 
 /**
  * To read or write from the STDIO a special `filePath` value of `-` can
@@ -111,7 +108,7 @@ export async function match(
           getErrorMessage(error).includes(name) === true
         )
       )
-        log.warn(error as Error)
+        console.warn(error as Error)
     }
   }
 
@@ -157,7 +154,7 @@ export async function match(
   if (content !== undefined) message += ` for source "${content}"`
   if (format !== undefined) message += ` for format "${format}"`
   message += '. Falling back to plain text codec.'
-  log.warn(message)
+  console.warn(message)
 
   // @ts-ignore
   return getCodec('txt')
