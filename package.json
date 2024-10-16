@@ -25,10 +25,8 @@
     "start": "ts-node --files src",
     "convert-jats": "ts-node ./src/convertJats.ts",
     "debug": "node --require ./ts-node-register.js --inspect=9229 src --debug=1",
-    "$comment": "The build script builds everything required to publish a release, including binaries and docs",
     "build": "npm run build:dist && npm run build:docs",
-    "build:dist": "tsc -p tsconfig.prod.json && npm run build:csl-assets",
-    "build:csl-assets": "cp -r src/codecs/csl/styles/. dist/codecs/csl/styles/",
+    "build:dist": "tsc -p tsconfig.prod.json",
     "build:docs": "typedoc --options typedoc.js ./src",
     "clean": "rm -rf bin coverage dist docs tests/**/*.to.*",
     "prepublishOnly": "npm run build"
