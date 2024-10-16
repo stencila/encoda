@@ -39,7 +39,6 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
-    "@stencila/logga": "^4.0.0",
     "fp-ts": "^2.16.5",
     "fs-extra": "^11.2.0",
     "get-stdin": "^8.0.0",
@@ -122,7 +121,6 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "<rootDir>/src/__tests__/setup.ts",
       "<rootDir>/src/__tests__/matchers.ts"
     ],
     "testMatch": [
@@ -134,7 +132,6 @@
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/dist/",
-      "__tests__/setup.ts",
       "__tests__/matchers.ts",
       "__tests__/teardown.ts",
       "__tests__/helpers.ts"
