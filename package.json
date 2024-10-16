@@ -6,7 +6,6 @@
     "install.js",
     "dist"
   ],
-  "bin": "dist/index.js",
   "main": "dist/index.js",
   "scripts": {
     "install": "node install.js",
@@ -40,7 +39,6 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
-    "@stencila/jesta": "^1.10.5",
     "@stencila/logga": "^4.0.0",
     "fp-ts": "^2.16.5",
     "fs-extra": "^11.2.0",
