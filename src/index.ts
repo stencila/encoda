@@ -15,7 +15,6 @@ import {
   CommonEncodeOptions,
 } from './codecs/types'
 import { getErrorMessage } from './util/errors'
-import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
 
 const log = getLogger('encoda')
@@ -317,17 +316,6 @@ export async function convert(
       return outputPath
     }
   }
-}
-
-/**
- * Shutdown Encoda.
- *
- * Some modules need to be explicitly shutdown to prevent
- * node from hanging. This functions collects those in one
- * place.
- */
-export async function shutdown(): Promise<void> {
-  await puppeteer.shutdown()
 }
 
 /// ////////////////////////////////////////////////////////////////////////////
