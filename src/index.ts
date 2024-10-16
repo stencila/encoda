@@ -39,12 +39,10 @@ export const codecList: string[] = [
 
   // Math
   'mathml',
-  'tex',
 
   // Data interchange formats
   'yaml',
   'json',
-  'xml',
 ]
 
 /**
