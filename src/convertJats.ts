@@ -14,7 +14,7 @@ convert('-', undefined, {
   },
 })
   .then((conversion) => conversion ?? '{}')
-  .then((conversion) => conversion.replaceAll(process.cwd(), ''))
+  .then((conversion) => conversion.replaceAll(`${process.cwd()}/`, ''))
   .then((conversion) => console.log(conversion))
   .catch((error) => {
     console.error('Error during conversion:', error)
