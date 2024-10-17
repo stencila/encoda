@@ -366,6 +366,12 @@ If you are using VSCode, you can use the [Auto Attach feature](https://code.visu
 npm run debug -- convert simple.gdoc simple.ipynb
 ```
 
+A simple script to convert JATS to JSON:
+
+```bash
+cat simple-jats.xml | npm run convert-jats --silent > simple.json
+```
+
 ## Testing
 
 ### Running tests locally
