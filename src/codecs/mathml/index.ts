@@ -7,13 +7,10 @@ import schema from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { Codec } from '../types'
-import { getLogger } from '@stencila/logga'
 // @ts-ignore
 import MathJax from 'mathjax-node'
 import fs from 'fs-extra'
 import { VFileContents } from 'vfile'
-
-const log = getLogger('encoda:mathml')
 
 export class MathMLCodec extends Codec implements Codec {
   /**
@@ -77,7 +74,7 @@ export class MathMLCodec extends Codec implements Codec {
    */
   public readonly encode = async (node: schema.Node): Promise<vfile.VFile> => {
     if (!schema.isIn('MathTypes', node)) {
-      log.error(`Node is not a math node`)
+      console.error(`Node is not a math node`)
       return vfile.create()
     }
 
@@ -94,7 +91,9 @@ export class MathMLCodec extends Codec implements Codec {
       })
       mathml = result.mml
     } else {
-      log.warn(`Unable to translate math language to MathML: ${mathLanguage}`)
+      console.warn(
+        `Unable to translate math language to MathML: ${mathLanguage}`,
+      )
       mathml = ''
     }
     return vfile.load(mathml as VFileContents)

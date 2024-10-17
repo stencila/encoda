@@ -1,8 +1,3 @@
-#!/usr/bin/env node
-
-import { Jesta } from '@stencila/jesta'
-import { Manifest, manifest } from '@stencila/jesta/dist/manifest'
-import { getLogger } from '@stencila/logga'
 import schema from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
@@ -15,10 +10,7 @@ import {
   CommonEncodeOptions,
 } from './codecs/types'
 import { getErrorMessage } from './util/errors'
-import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
-
-const log = getLogger('encoda')
 
 /**
  * To read or write from the STDIO a special `filePath` value of `-` can
@@ -39,12 +31,10 @@ export const codecList: string[] = [
 
   // Math
   'mathml',
-  'tex',
 
   // Data interchange formats
   'yaml',
   'json',
-  'xml',
 ]
 
 /**
@@ -118,7 +108,7 @@ export async function match(
           getErrorMessage(error).includes(name) === true
         )
       )
-        log.warn(error as Error)
+        console.warn(error as Error)
     }
   }
 
@@ -164,7 +154,7 @@ export async function match(
   if (content !== undefined) message += ` for source "${content}"`
   if (format !== undefined) message += ` for format "${format}"`
   message += '. Falling back to plain text codec.'
-  log.warn(message)
+  console.warn(message)
 
   // @ts-ignore
   return getCodec('txt')
@@ -319,103 +309,4 @@ export async function convert(
       return outputPath
     }
   }
-}
-
-/**
- * Shutdown Encoda.
- *
- * Some modules need to be explicitly shutdown to prevent
- * node from hanging. This functions collects those in one
- * place.
- */
-export async function shutdown(): Promise<void> {
-  await puppeteer.shutdown()
-}
-
-/// ////////////////////////////////////////////////////////////////////////////
-// Implementation of plugin interface by extending Jesta
-
-const jesta = new Jesta()
-
-// Extend codecs list with some other aliases
-const formats = [...codecList, 'rmd']
-
-/**
- * Implementation of Stencila plugin method `decode`.
- *
- * Delegates to the codec that matches the input format
- * with the content loaded into a `VFile`.
- * Extends Jesta's method schema with all the formats
- * supported by Encoda.
- */
-export async function decode(
-  this: Encoda,
-  content: string,
-  format: string | undefined,
-): Promise<schema.Node> {
-  const codec = await match(content, format)
-  return codec.decode(vfile.load(content))
-}
-decode.schema = jesta.decode.schema
-// @ts-ignore
-decode.schema.properties.format.enum = formats
-
-/**
- * Implementation of Stencila plugin method `encode`.
- *
- * Delegates to the codec that matches the output format
- * and dumps the `VFile` content to a string.
- * Extends Jesta's method schema with all the formats
- * supported by Encoda.
- */
-export async function encode(
-  this: Encoda,
-  node: schema.Node,
-  format: string,
-): Promise<string> {
-  const codec = await match(undefined, format)
-  return vfile.dump(await codec.encode(node))
-}
-encode.schema = jesta.encode.schema
-// @ts-ignore
-encode.schema.properties.format.enum = formats
-
-/**
- * Implementation of Stencila plugin method `convert`.
- *
- * Override necessary for binary formats such as `docx` to allow
- * codecs to do reading and writing of files (via a `Vfile`)
- * rather than always using Jesta's implementations of `read` and `write`.
- *
- * Extends Jesta's method schema with all the formats supported by Encoda.
- */
-const convert_ = jesta.convert
-// @ts-ignore
-convert_.schema.properties.from.enum = formats
-// @ts-ignore
-convert_.schema.properties.to.enum = formats
-
-export class Encoda extends Jesta {
-  manifest(): Manifest {
-    return manifest.call(this, {
-      name: 'encoda',
-      softwareVersion: '0.117.0',
-      description: 'Stencila plugin for document format conversion',
-      installUrl: [
-        'https://www.npmjs.com/package/@stencila/encoda',
-        'https://github.com/stencila/encoda/releases',
-      ],
-      featureList: [],
-    })
-  }
-
-  decode = decode
-  encode = encode
-  convert = convert_
-}
-
-export const encoda = new Encoda()
-
-if (require.main === module) {
-  encoda.cli()
 }
