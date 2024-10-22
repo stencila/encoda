@@ -1352,6 +1352,8 @@ export function decodeReference(
   let title: string | undefined
   let isPartOf: stencila.CreativeWork | undefined
   let chapterTitle: string | undefined
+
+  // Assign the title based upon the publicationType
   if (['journal', 'preprint'].includes(publicationType ?? '')) {
     title = textOrUndefined(child(elem, 'article-title'))
   } else if (['book', 'report'].includes(publicationType ?? '')) {
@@ -1365,6 +1367,7 @@ export function decodeReference(
     )
   }
 
+  // Assign isPartOf based upon the publicationType
   if (['book', 'report'].includes(publicationType ?? '')) {
     if (chapterTitle !== undefined) {
       // Book or report chapter so try to create a `isPartOf` property
