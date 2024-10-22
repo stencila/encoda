@@ -1362,17 +1362,7 @@ export function decodeReference(
     )
   }
 
-  if (['journal', 'preprint', 'other'].includes(publicationType ?? '')) {
-    const periodicalName = textOrUndefined(child(elem, 'source'))
-    const volumeNumber = intOrUndefined(child(elem, 'volume'))
-    const issueNumber = intOrUndefined(child(elem, 'issue'))
-    if (periodicalName !== undefined)
-      isPartOf = stencila.periodical({ name: periodicalName })
-    if (volumeNumber !== undefined)
-      isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
-    if (issueNumber !== undefined)
-      isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
-  } else if (['book', 'report'].includes(publicationType ?? '')) {
+  if (['book', 'report'].includes(publicationType ?? '')) {
     if (title !== undefined) {
       // Book or report chapter so try to create a `isPartOf` property
       const book = textOrUndefined(child(elem, 'source'))
@@ -1383,6 +1373,16 @@ export function decodeReference(
       // Not a chapter so title is <source>
       title = textOrUndefined(child(elem, 'source'))
     }
+  } else {
+    const periodicalName = textOrUndefined(child(elem, 'source'))
+    const volumeNumber = intOrUndefined(child(elem, 'volume'))
+    const issueNumber = intOrUndefined(child(elem, 'issue'))
+    if (periodicalName !== undefined)
+      isPartOf = stencila.periodical({ name: periodicalName })
+    if (volumeNumber !== undefined)
+      isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
+    if (issueNumber !== undefined)
+      isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
   }
 
   // If title is still undefined and elem is a <mixed-citation> then use
