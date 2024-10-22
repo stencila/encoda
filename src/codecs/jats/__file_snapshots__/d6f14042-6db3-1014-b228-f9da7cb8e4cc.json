@@ -1466,6 +1466,10 @@
         "type": "Date",
         "value": "2021"
       },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "MedRxiv"
+      },
       "title": "Obesity and accelerated epigenetic aging in a high-risk cohort of children",
       "url": "https://doi.org/10.1101/2021.11.03.21265865"
     },
@@ -3090,6 +3094,10 @@
       "datePublished": {
         "type": "Date",
         "value": "2021"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "MedRxiv"
       },
       "title": "BMI is positively associated with accelerated epigenetic aging in twin pairs discordant for BMI",
       "url": "https://doi.org/10.1101/2021.03.11.21253271"

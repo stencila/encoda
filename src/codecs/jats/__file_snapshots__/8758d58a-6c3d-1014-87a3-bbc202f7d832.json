@@ -1103,6 +1103,10 @@
         "type": "Date",
         "value": "1988"
       },
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "volumeNumber": 8
+      },
       "title": "T-cell antigen receptor genes and T-cell recognition",
       "meta": {
         "label": "9."
@@ -5685,11 +5689,7 @@
           "value": "10.1146/annurev-immunol-102819-023144"
         }
       ],
-      "isPartOf": {
-        "type": "Periodical",
-        "name": "Annu. Rev. Immunol."
-      },
-      "title": "A. C. Hayday, P. Vantourout, Annu. Rev. Immunol., in press, doi:10.1146/annurev-immunol-102819-023144.",
+      "title": "Annu. Rev. Immunol.",
       "meta": {
         "label": "46."
       }
@@ -6651,6 +6651,10 @@
           ]
         }
       ],
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "volumeNumber": 8
+      },
       "title": "OLGA: fast computation of generation probabilities of B- and T-cell receptor amino acid sequences and motifs",
       "meta": {
         "label": "62."

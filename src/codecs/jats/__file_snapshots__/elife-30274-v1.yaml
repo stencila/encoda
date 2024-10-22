@@ -1837,6 +1837,9 @@ references:
     datePublished:
       type: Date
       value: '2017'
+    isPartOf:
+      type: Periodical
+      name: R Foundation for Statistical Computing
     title: 'R: A language and environment for statistical computing'
   - type: Article
     id: bib26

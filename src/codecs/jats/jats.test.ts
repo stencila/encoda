@@ -188,10 +188,7 @@ test.each([
       },
       pageStart: 21,
       title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
-      type: 'Article',
-      meta: {
-        type: "journal"
-      }
+      type: 'Article'
     },
   ],
   [
@@ -228,11 +225,7 @@ test.each([
         value: "2019"
       },
       title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
-      type: "Article",
-      meta: {
-        type: "other",
-        label: "6."
-      }
+      type: "Article"
     },
   ],
 ])('decode: <element-citation> or <mixed-citation> element', (input, expected) => {
