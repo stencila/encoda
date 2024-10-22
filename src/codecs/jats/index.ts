@@ -1502,14 +1502,7 @@ export function decodeReference(
     publisher,
     identifiers,
     url,
-    meta: {
-      ...meta,
-      ...(publicationType
-        ? {
-            type: publicationType,
-          }
-        : {}),
-    },
+    meta,
   })
 }
 
