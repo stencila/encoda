@@ -1351,10 +1351,13 @@ export function decodeReference(
 
   let title: string | undefined
   let isPartOf: stencila.CreativeWork | undefined
-  if (publicationType === 'journal' || publicationType === 'preprint') {
+  let chapterTitle: string | undefined
+  if (['journal', 'preprint'].includes(publicationType ?? '')) {
     title = textOrUndefined(child(elem, 'article-title'))
-  } else if (publicationType === 'book' || publicationType === 'report') {
-    title = textOrUndefined(child(elem, 'chapter-title'))
+  } else if (['book', 'report'].includes(publicationType ?? '')) {
+    chapterTitle = textOrUndefined(child(elem, 'chapter-title'))
+    // Not a chapter so title is <source>
+    title = chapterTitle ?? textOrUndefined(child(elem, 'source'))
   } else {
     // e.g. publicationType: 'software', 'web', 'patent'
     title = textOrUndefined(
@@ -1363,17 +1366,15 @@ export function decodeReference(
   }
 
   if (['book', 'report'].includes(publicationType ?? '')) {
-    if (title !== undefined) {
+    if (chapterTitle !== undefined) {
       // Book or report chapter so try to create a `isPartOf` property
       const book = textOrUndefined(child(elem, 'source'))
       if (book !== undefined) {
         isPartOf = stencila.creativeWork({ name: book })
       }
-    } else {
-      // Not a chapter so title is <source>
-      title = textOrUndefined(child(elem, 'source'))
     }
   } else {
+    // e.g. publicationType: 'journal', 'preprint', 'software', 'web', 'patent', 'other'
     if (title !== undefined) {
       const periodicalName = textOrUndefined(child(elem, 'source'))
       if (periodicalName !== undefined)
