@@ -1374,11 +1374,15 @@ export function decodeReference(
       title = textOrUndefined(child(elem, 'source'))
     }
   } else {
-    const periodicalName = textOrUndefined(child(elem, 'source'))
+    if (title !== undefined) {
+      const periodicalName = textOrUndefined(child(elem, 'source'))
+      if (periodicalName !== undefined)
+        isPartOf = stencila.periodical({ name: periodicalName })
+    } else {
+      title = textOrUndefined(child(elem, 'source'))
+    }
     const volumeNumber = intOrUndefined(child(elem, 'volume'))
     const issueNumber = intOrUndefined(child(elem, 'issue'))
-    if (periodicalName !== undefined)
-      isPartOf = stencila.periodical({ name: periodicalName })
     if (volumeNumber !== undefined)
       isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
     if (issueNumber !== undefined)
@@ -1390,6 +1394,9 @@ export function decodeReference(
   //    <mixed-citation publication-type="other" xlink:type="simple">Maynard Smith J (1982) Evolution and the Theory of Games. Cambridge University Press.</mixed-citation>
   if (title === undefined && elem.name === 'mixed-citation') {
     title = textOrUndefined(elem)
+    // Removing authors and isPartOf to reduce duplication
+    authors = []
+    isPartOf = undefined
   }
 
   // Remove any space placeholders

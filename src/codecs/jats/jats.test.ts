@@ -189,6 +189,50 @@ test.each([
       pageStart: 21,
       title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
       type: 'Article',
+      meta: {
+        type: "journal"
+      }
+    },
+  ],
+  [
+    `
+      <mixed-citation publication-type="other">
+        <string-name><surname>Carabetta</surname> <given-names>VJ</given-names></string-name>, <string-name><surname>Greco</surname> <given-names>TM</given-names></string-name>, <string-name><surname>Cristea</surname> <given-names>IM</given-names></string-name>, and <string-name><surname>Dubnau</surname> <given-names>D</given-names></string-name> (<year>2019</year>). <source>YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in <italic>Bacillus Subtilis</italic></source>.
+      </mixed-citation>
+    `,
+    {
+      authors: [
+        {
+          type: "Person",
+          familyNames: ["Carabetta"],
+          givenNames: ["VJ"]
+        },
+        {
+          type: "Person",
+          familyNames: ["Greco"],
+          givenNames: ["TM"]
+        },
+        {
+          type: "Person",
+          familyNames: ["Cristea"],
+          givenNames: ["IM"]
+        },
+        {
+          type: "Person",
+          familyNames: ["Dubnau"],
+          givenNames: ["D"]
+        }
+      ],
+      datePublished: {
+        type: "Date",
+        value: "2019"
+      },
+      title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
+      type: "Article",
+      meta: {
+        type: "other",
+        label: "6."
+      }
     },
   ],
 ])('decode: <element-citation> or <mixed-citation> element', (input, expected) => {
