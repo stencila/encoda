@@ -372,6 +372,8 @@ references:
     title: >-
       A novel locus of resistance to severe malaria in a region of ancient
       balancing selection
+    meta:
+      publicationType: journal
   - type: Article
     id: bib2
     authors:
@@ -473,6 +475,8 @@ references:
     title: >-
       Impaired cytoadherence of plasmodium falciparum-infected erythrocytes
       containing sickle hemoglobin
+    meta:
+      publicationType: journal
   - type: Article
     id: bib3
     authors:
@@ -887,6 +891,8 @@ references:
     title: >-
       Characterisation of the opposing effects of G6PD deficiency on cerebral
       malaria and severe malarial anaemia
+    meta:
+      publicationType: journal
   - type: Article
     id: bib4
     authors:
@@ -913,6 +919,8 @@ references:
       The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem,
       Even When There Is No 'Fishing Expedition' or 'P-Hacking' and the Research
       Hypothesis Was Posited Ahead of Time
+    meta:
+      publicationType: book
   - type: Article
     id: bib5
     authors:
@@ -995,6 +1003,8 @@ references:
     title: >-
       G6PD deficiency prevalence and estimates of affected populations in
       malaria endemic countries: a geostatistical model-based map
+    meta:
+      publicationType: journal
   - type: Article
     id: bib6
     authors:
@@ -1029,6 +1039,8 @@ references:
     pageEnd: 71
     pageStart: 60
     title: Favism and Glucose-6-Phosphate dehydrogenase deficiency
+    meta:
+      publicationType: journal
   - type: Article
     id: bib7
     authors:
@@ -1100,6 +1112,8 @@ references:
     pageEnd: 1204
     pageStart: 1197
     title: Reappraisal of known malaria resistance loci in a large multicenter study
+    meta:
+      publicationType: journal
   - type: Article
     id: bib8
     authors:
@@ -1136,6 +1150,8 @@ references:
     title: >-
       Commentary: three worlds collide: berkson's bias, selection bias and
       collider bias
+    meta:
+      publicationType: journal
   - type: Article
     id: bib9
     authors:
@@ -1187,6 +1203,8 @@ references:
     title: >-
       Commentary: a structural approach to Berkson's fallacy and a guide to a
       history of opinions about it
+    meta:
+      publicationType: journal
   - type: Article
     id: bib10
     authors:
@@ -1265,6 +1283,8 @@ references:
     title: >-
       Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
       other diseases in children in Kenya: a case-control and a cohort study
+    meta:
+      publicationType: journal
   - type: Article
     id: bib11
     authors:
@@ -1283,6 +1303,8 @@ references:
       value: '2019'
     title: Severe Malaria
     url: https://github.com/Stije/SevereMalariaAnalysis
+    meta:
+      publicationType: software
   - type: Article
     id: bib12
     authors:
@@ -1314,6 +1336,8 @@ references:
     title: >-
       Genetic variation and susceptibility to infection: the red cell and
       malaria
+    meta:
+      publicationType: journal
   - type: Article
     id: bib13
     authors:
@@ -1364,6 +1388,8 @@ references:
     pageEnd: 735
     pageStart: 723
     title: Malaria
+    meta:
+      publicationType: journal
   - type: Article
     id: bib14
     authors:
@@ -1390,6 +1416,8 @@ references:
     pageEnd: 131
     pageStart: 7
     title: Severe malaria
+    meta:
+      publicationType: journal
   - type: Article
     id: bib15
     authors:
@@ -1405,6 +1433,8 @@ references:
       type: Organization
       name: WHO Press
     title: World Health Organization
+    meta:
+      publicationType: book
   - type: Article
     id: bib16
     authors:
@@ -1434,6 +1464,8 @@ references:
     pageEnd: 358
     pageStart: 343
     title: Sickle cell disease in Sub-Saharan africa
+    meta:
+      publicationType: journal
   - type: Article
     id: bib17
     authors:
@@ -1469,6 +1501,8 @@ references:
     pageEnd: 253
     pageStart: 243
     title: Human glucose-6-phosphate dehydrogenase variants
+    meta:
+      publicationType: journal
 title: >-
   Collider bias and the apparent protective effect of glucose-6-phosphate
   dehydrogenase deficiency on cerebral malaria

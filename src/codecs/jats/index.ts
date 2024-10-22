@@ -1496,7 +1496,7 @@ export function decodeReference(
       ...meta,
       ...(publicationType
         ? {
-            type: publicationType,
+            publicationType,
           }
         : {}),
     },

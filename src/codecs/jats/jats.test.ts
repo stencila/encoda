@@ -186,6 +186,9 @@ test.each([
         name: 'International journal of molecular sciences',
         type: 'Periodical',
       },
+      meta: {
+        publicationType: 'journal',
+      },
       pageStart: 21,
       title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
       type: 'Article',

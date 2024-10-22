@@ -361,6 +361,8 @@ references:
         name: BMJ
       volumeNumber: 332
     title: The cost of dichotomising continuous variables
+    meta:
+      publicationType: journal
   - type: Article
     id: bib2
     authors:
@@ -395,6 +397,8 @@ references:
     pageEnd: 291
     pageStart: 288
     title: The error of the red cell count
+    meta:
+      publicationType: journal
   - type: Article
     id: bib3
     authors:
@@ -435,6 +439,8 @@ references:
     title: >-
       Registered report: Transcriptional amplification in tumor cells with
       elevated c-Myc
+    meta:
+      publicationType: journal
   - type: Article
     id: bib4
     authors:
@@ -460,6 +466,8 @@ references:
     pageEnd: 253
     pageStart: 249
     title: The cost of dichotomization
+    meta:
+      publicationType: journal
   - type: Article
     id: bib5
     authors:
@@ -573,6 +581,8 @@ references:
       Integrative omics reveals MYCN as a global suppressor of cellular
       signalling and enables network-based therapeutic target discovery in
       neuroblastoma
+    meta:
+      publicationType: journal
   - type: Article
     id: bib6
     authors:
@@ -624,6 +634,8 @@ references:
         name: eLife
       volumeNumber: 3
     title: An open investigation of the reproducibility of cancer biology research
+    meta:
+      publicationType: journal
   - type: Article
     id: bib7
     authors:
@@ -731,6 +743,8 @@ references:
     title: >-
       A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
       stem cell identity
+    meta:
+      publicationType: journal
   - type: Article
     id: bib8
     authors:
@@ -763,6 +777,8 @@ references:
     title: >-
       The difference between “significant” and “not significant” is not itself
       statistically significant
+    meta:
+      publicationType: journal
   - type: Article
     id: bib9
     authors:
@@ -808,6 +824,8 @@ references:
     pageEnd: 12554
     pageStart: 12543
     title: MYC regulates the non-coding transcriptome
+    meta:
+      publicationType: journal
   - type: Article
     id: bib10
     authors:
@@ -825,6 +843,8 @@ references:
     title: Composing reproducible manuscripts using R Markdown
     url: >-
       https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown
+    meta:
+      publicationType: journal
   - type: Article
     id: bib11
     authors:
@@ -881,6 +901,8 @@ references:
     title: >-
       Variation in RNA expression and genomic DNA content acquired during cell
       culture
+    meta:
+      publicationType: journal
   - type: Article
     id: bib12
     authors:
@@ -1050,6 +1072,8 @@ references:
     pageEnd: 388
     pageStart: 384
     title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib13
     authors:
@@ -1095,6 +1119,8 @@ references:
     pageEnd: 586
     pageStart: 575
     title: The costs of using unauthenticated
+    meta:
+      publicationType: journal
   - type: Article
     id: bib14
     authors:
@@ -1197,6 +1223,8 @@ references:
     title: >-
       Genetic variability in a frozen batch of MCF-7 cells invisible in routine
       authentication affecting cell function
+    meta:
+      publicationType: journal
   - type: Article
     id: bib15
     authors:
@@ -1268,6 +1296,8 @@ references:
     title: >-
       Tackling the widespread and critical impact of batch effects in
       high-throughput data
+    meta:
+      publicationType: journal
   - type: Article
     id: bib16
     authors:
@@ -1338,6 +1368,8 @@ references:
       type: Periodical
       name: Open Science Framework
     title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib17
     authors:
@@ -1402,6 +1434,8 @@ references:
     pageEnd: 67
     pageStart: 56
     title: Transcriptional amplification in tumor cells with elevated c-Myc
+    meta:
+      publicationType: journal
   - type: Article
     id: bib18
     authors:
@@ -1480,6 +1514,8 @@ references:
     title: >-
       Different promoter affinities account for specificity in MYC-dependent
       gene regulation
+    meta:
+      publicationType: journal
   - type: Article
     id: bib19
     authors:
@@ -1566,6 +1602,8 @@ references:
     title: >-
       c-Myc is a universal amplifier of expressed genes in lymphocytes and
       embryonic stem cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib20
     authors:
@@ -1603,6 +1641,8 @@ references:
     title: >-
       Hemacytometer Cell Count Distributions: Implications of Non-Poisson
       Behavior
+    meta:
+      publicationType: journal
   - type: Article
     id: bib21
     authors:
@@ -1644,6 +1684,8 @@ references:
     title: >-
       Erroneous analyses of interactions in neuroscience: a problem of
       significance
+    meta:
+      publicationType: journal
   - type: Article
     id: bib22
     authors:
@@ -1720,6 +1762,8 @@ references:
     title: >-
       Single mammalian cells compensate for differences in cellular volume and
       DNA copy number through independent global transcriptional mechanisms
+    meta:
+      publicationType: journal
   - type: Article
     id: bib23
     authors:
@@ -1804,6 +1848,8 @@ references:
     pageEnd: 793
     pageStart: 787
     title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
+    meta:
+      publicationType: journal
   - type: Article
     id: bib24
     authors:
@@ -1829,6 +1875,8 @@ references:
     pageEnd: 667
     pageStart: 655
     title: Remarks on zeros and ties in the wilcoxon signed rank procedures
+    meta:
+      publicationType: journal
   - type: Article
     id: bib25
     authors:
@@ -1838,6 +1886,8 @@ references:
       type: Date
       value: '2017'
     title: 'R: A language and environment for statistical computing'
+    meta:
+      publicationType: software
   - type: Article
     id: bib26
     authors:
@@ -1873,6 +1923,8 @@ references:
         name: Cold Spring Harbor Perspectives in Medicine
       volumeNumber: 4
     title: Genome recognition by MYC
+    meta:
+      publicationType: journal
   - type: Article
     id: bib27
     authors:
@@ -1995,6 +2047,8 @@ references:
     title: >-
       Selective transcriptional regulation by Myc in cellular growth control and
       lymphomagenesis
+    meta:
+      publicationType: journal
   - type: Article
     id: bib28
     authors:
@@ -2066,6 +2120,8 @@ references:
     title: >-
       Dissection of transcriptional programmes in response to serum and c-Myc in
       a human B-cell line
+    meta:
+      publicationType: journal
   - type: Article
     id: bib29
     authors:
@@ -2105,6 +2161,8 @@ references:
     pageEnd: 675
     pageStart: 671
     title: 'NIH Image to ImageJ: 25 years of image analysis'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib30
     authors:
@@ -2169,6 +2227,8 @@ references:
     pageEnd: 1258
     pageStart: 1255
     title: Control of cell growth by c-Myc in the absence of cell division
+    meta:
+      publicationType: journal
   - type: Article
     id: bib31
     authors:
@@ -2509,6 +2569,8 @@ references:
       Many analysts, one dataset: Making transparent how variations in
       analytical choices affect results
     url: https://psyarxiv.com/qkwst/
+    meta:
+      publicationType: preprint
   - type: Article
     id: bib32
     authors:
@@ -2564,6 +2626,8 @@ references:
     title: >-
       Cell types differ in global coordination of splicing and proportion of
       highly expressed genes
+    meta:
+      publicationType: journal
   - type: Article
     id: bib33
     authors:
@@ -2633,6 +2697,8 @@ references:
     pageEnd: 117
     pageStart: 103
     title: Replication in prevention science
+    meta:
+      publicationType: journal
   - type: Article
     id: bib34
     authors:
@@ -2658,6 +2724,8 @@ references:
     pageEnd: 48
     pageStart: 1
     title: Conducting Meta-Analyses in R with the metafor Package
+    meta:
+      publicationType: journal
   - type: Article
     id: bib35
     authors:
@@ -2780,6 +2848,8 @@ references:
     title: >-
       Activation and repression by oncogenic MYC shape tumour-specific gene
       expression profiles
+    meta:
+      publicationType: journal
 title: >-
   Replication Study: Transcriptional amplification in tumor cells with elevated
   c-Myc
