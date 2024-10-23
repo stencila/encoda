@@ -281,6 +281,8 @@ references:
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
     url: https://groups.niso.org/publications/rp/RP-8-2008.pdf
+    meta:
+      publicationType: journal
   - type: Article
     id: ref-2
     authors:
@@ -323,6 +325,8 @@ references:
     pageEnd: 547
     pageStart: 545
     title: Publish peer reviews.
+    meta:
+      publicationType: journal
   - type: Article
     id: ref-3
     authors:
@@ -357,6 +361,8 @@ references:
     title: >-
       What is open peer review? A systematic review [version 2; referees: 4
       approved].
+    meta:
+      publicationType: journal
 title: Publishing peer review materials
 meta:
   authorNotes:

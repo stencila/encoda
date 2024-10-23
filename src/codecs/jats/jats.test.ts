@@ -186,6 +186,9 @@ test.each([
         name: 'International journal of molecular sciences',
         type: 'Periodical',
       },
+      meta: {
+        publicationType: 'journal',
+      },
       pageStart: 21,
       title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
       type: 'Article'
@@ -223,6 +226,9 @@ test.each([
       datePublished: {
         type: "Date",
         value: "2019"
+      },
+      meta: {
+        publicationType: "other"
       },
       title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
       type: "Article"
