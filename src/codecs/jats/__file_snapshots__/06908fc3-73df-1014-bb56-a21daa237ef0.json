@@ -1661,6 +1661,10 @@
         "type": "Date",
         "value": "2015"
       },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Nature"
+      },
       "title": "Non-adaptive plasticity potentiates rapid adaptive evolution of gene expression in nature",
       "meta": {
         "publicationType": "other"
@@ -2678,6 +2682,10 @@
         "type": "Date",
         "value": "2021"
       },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "R package version 1.7.1-1"
+      },
       "title": "emmeans: Estimated Marginal Means, aka Least-Squares Means",
       "meta": {
         "publicationType": "other"
@@ -2849,6 +2857,10 @@
           "value": "XXXX"
         }
       ],
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "bioRxiv"
+      },
       "title": "Variation in mutational (co)variances",
       "meta": {
         "publicationType": "other"
@@ -2917,6 +2929,10 @@
       "datePublished": {
         "type": "Date",
         "value": "2019"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "bioRxiv"
       },
       "pageStart": 778282,
       "title": "Phenotypic stasis with genetic divergence",
@@ -3917,6 +3933,10 @@
           "value": "10.1101/506865"
         }
       ],
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Ecology Letters, page"
+      },
       "title": "How differing modes of non-genetic inheritance affect population viability in fluctuating environments",
       "meta": {
         "publicationType": "other"
@@ -4326,6 +4346,10 @@
       "datePublished": {
         "type": "Date",
         "value": "2018"
+      },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "R package version 2.18.2"
       },
       "title": "RStan: the R interface to Stan",
       "meta": {

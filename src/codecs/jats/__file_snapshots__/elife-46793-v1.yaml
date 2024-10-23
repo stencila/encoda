@@ -3332,6 +3332,7 @@ references:
     datePublished:
       type: Date
       value: '2010'
+    title: "\_FASTQ/A Short-Reads Pre-Processing Tools"
     url: http://hannonlab.cshl.edu/fastx_toolkit/download.html
     meta:
       publicationType: software
@@ -5143,6 +5144,9 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    isPartOf:
+      type: Periodical
+      name: GitHub
     title: GWscreen_G4sensitivity
     url: https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
     meta:
