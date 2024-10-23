@@ -1482,6 +1482,9 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    isPartOf:
+      type: Periodical
+      name: GitLab
     title: Programs closed-loop phototaxis
     url: https://gitlab.com/Phiasso/programs_closed-loop_phototaxis.git
   - type: Article
@@ -1495,6 +1498,9 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    isPartOf:
+      type: Periodical
+      name: GitLab
     title: Analysis behavioral phototaxis
     url: https://gitlab.com/Phiasso/analysis.git
   - type: Article
