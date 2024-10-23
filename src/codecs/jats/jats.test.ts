@@ -227,6 +227,9 @@ test.each([
         type: "Date",
         value: "2019"
       },
+      meta: {
+        publicationType: "other"
+      },
       title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
       type: "Article"
     },
