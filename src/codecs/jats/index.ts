@@ -1494,7 +1494,7 @@ export function decodeReference(
   if (identifiers.length === 0) identifiers = undefined
 
   let metaEntries: Record<string,string> = {};
-  if (datePublishedString !== undefined) {
+  if (datePublishedString !== undefined && datePublishedString.length > 4) {
     metaEntries.yearPublished = datePublishedString;
   }
   if(typeof label === 'string') {
