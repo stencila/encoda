@@ -1493,12 +1493,12 @@ export function decodeReference(
   ]
   if (identifiers.length === 0) identifiers = undefined
 
-  let metaEntries: Record<string,string> = {};
+  const metaEntries: Record<string, string> = {}
   if (datePublishedString !== undefined && datePublishedString.length > 4) {
-    metaEntries.yearPublished = datePublishedString;
+    metaEntries.yearPublished = datePublishedString
   }
-  if(typeof label === 'string') {
-    metaEntries.label = label;
+  if (typeof label === 'string') {
+    metaEntries.label = label
   }
 
   return stencila.article({
@@ -1513,9 +1513,7 @@ export function decodeReference(
     identifiers,
     url,
     meta: {
-      ...(metaEntries
-        ? { ...metaEntries }
-        : {}),
+      ...(metaEntries ? { ...metaEntries } : {}),
       ...(publicationType
         ? {
             publicationType,
