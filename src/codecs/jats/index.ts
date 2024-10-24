@@ -1351,30 +1351,15 @@ export function decodeReference(
 
   let title: string | undefined
   let isPartOf: stencila.CreativeWork | undefined
-  if (publicationType === 'journal' || publicationType === 'preprint') {
-    title = textOrUndefined(child(elem, 'article-title'))
+  let chapterTitle: string | undefined
 
-    const periodicalName = textOrUndefined(child(elem, 'source'))
-    const volumeNumber = intOrUndefined(child(elem, 'volume'))
-    const issueNumber = intOrUndefined(child(elem, 'issue'))
-    if (periodicalName !== undefined)
-      isPartOf = stencila.periodical({ name: periodicalName })
-    if (volumeNumber !== undefined)
-      isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
-    if (issueNumber !== undefined)
-      isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
-  } else if (publicationType === 'book' || publicationType === 'report') {
-    title = textOrUndefined(child(elem, 'chapter-title'))
-    if (title !== undefined) {
-      // Book or report chapter so try to create a `isPartOf` property
-      const book = textOrUndefined(child(elem, 'source'))
-      if (book !== undefined) {
-        isPartOf = stencila.creativeWork({ name: book })
-      }
-    } else {
-      // Not a chapter so title is <source>
-      title = textOrUndefined(child(elem, 'source'))
-    }
+  // Assign the title based upon the publicationType
+  if (['journal', 'preprint'].includes(publicationType ?? '')) {
+    title = textOrUndefined(child(elem, 'article-title'))
+  } else if (['book', 'report'].includes(publicationType ?? '')) {
+    chapterTitle = textOrUndefined(child(elem, 'chapter-title'))
+    // Not a chapter so title is <source>
+    title = chapterTitle ?? textOrUndefined(child(elem, 'source'))
   } else {
     // e.g. publicationType: 'software', 'web', 'patent'
     title = textOrUndefined(
@@ -1382,11 +1367,40 @@ export function decodeReference(
     )
   }
 
+  // Assign isPartOf based upon the publicationType
+  if (['book', 'report'].includes(publicationType ?? '')) {
+    if (chapterTitle !== undefined) {
+      // Book or report chapter so try to create a `isPartOf` property
+      const book = textOrUndefined(child(elem, 'source'))
+      if (book !== undefined) {
+        isPartOf = stencila.creativeWork({ name: book })
+      }
+    }
+  } else {
+    // e.g. publicationType: 'journal', 'preprint', 'software', 'web', 'patent', 'other'
+    if (title !== undefined) {
+      const periodicalName = textOrUndefined(child(elem, 'source'))
+      if (periodicalName !== undefined)
+        isPartOf = stencila.periodical({ name: periodicalName })
+    } else {
+      title = textOrUndefined(child(elem, 'source'))
+    }
+    const volumeNumber = intOrUndefined(child(elem, 'volume'))
+    const issueNumber = intOrUndefined(child(elem, 'issue'))
+    if (volumeNumber !== undefined)
+      isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
+    if (issueNumber !== undefined)
+      isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
+  }
+
   // If title is still undefined and elem is a <mixed-citation> then use
   // its text content e.g.
   //    <mixed-citation publication-type="other" xlink:type="simple">Maynard Smith J (1982) Evolution and the Theory of Games. Cambridge University Press.</mixed-citation>
   if (title === undefined && elem.name === 'mixed-citation') {
     title = textOrUndefined(elem)
+    // Removing authors and isPartOf to reduce duplication
+    authors = []
+    isPartOf = undefined
   }
 
   // Remove any space placeholders
@@ -1487,11 +1501,6 @@ export function decodeReference(
     metaEntries.label = label;
   }
 
-  let metaContainer: { meta?: Record<string, string>} = {};
-  if (Object.keys(metaEntries)) {
-    metaContainer = { meta: {...metaEntries}};
-  }
-
   return stencila.article({
     id,
     authors,
@@ -1503,7 +1512,16 @@ export function decodeReference(
     publisher,
     identifiers,
     url,
-    ...metaContainer,
+    meta: {
+      ...(metaEntries
+        ? { ...metaEntries }
+        : {}),
+      ...(publicationType
+        ? {
+            publicationType,
+          }
+        : {}),
+    },
   })
 }
 

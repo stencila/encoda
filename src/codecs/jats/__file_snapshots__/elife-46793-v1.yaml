@@ -428,6 +428,8 @@ references:
     title: >-
       Discovery of direct inhibitors of Keap1-Nrf2 protein-protein interaction
       as potential therapeutic and preventive agents
+    meta:
+      publicationType: journal
   - type: Article
     id: bib2
     authors:
@@ -444,6 +446,8 @@ references:
       name: Bioinformatics
     title: FastQC
     url: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+    meta:
+      publicationType: software
   - type: Article
     id: bib3
     authors:
@@ -570,6 +574,8 @@ references:
     title: >-
       Gene ontology: tool for the unification of biology. The Gene Ontology
       Consortium
+    meta:
+      publicationType: journal
   - type: Article
     id: bib4
     authors:
@@ -653,6 +659,8 @@ references:
     title: >-
       Synthetic lethal RNAi screening identifies sensitizing targets for
       gemcitabine therapy in pancreatic cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib5
     authors:
@@ -739,6 +747,8 @@ references:
     title: >-
       Differential gene expression in colon carcinoma cells and tissues detected
       with a cDNA array
+    meta:
+      publicationType: journal
   - type: Article
     id: bib6
     authors:
@@ -850,6 +860,8 @@ references:
     title: >-
       Genome-wide profiling of genetic synthetic lethality identifies CDK12 as a
       novel determinant of PARP1/2 inhibitor sensitivity
+    meta:
+      publicationType: journal
   - type: Article
     id: bib7
     authors:
@@ -889,6 +901,8 @@ references:
     pageEnd: 275
     pageStart: 261
     title: 'Targeting G-quadruplexes in gene promoters: a novel anticancer strategy?'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib8
     authors:
@@ -990,6 +1004,8 @@ references:
     title: >-
       Chromatid cohesion defects may underlie chromosome instability in human
       colorectal cancers
+    meta:
+      publicationType: journal
   - type: Article
     id: bib9
     authors:
@@ -1037,6 +1053,8 @@ references:
     title: >-
       The role of nuclear Receptor-Binding SET domain family histone lysine
       methyltransferases in cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib10
     authors:
@@ -1103,6 +1121,8 @@ references:
     title: >-
       Unraveling cell type-specific and reprogrammable human replication origin
       signatures associated with G-quadruplex consensus motifs
+    meta:
+      publicationType: journal
   - type: Article
     id: bib11
     authors:
@@ -1147,6 +1167,8 @@ references:
     pageEnd: 186
     pageStart: 182
     title: Quantitative visualization of DNA G-quadruplex structures in human cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib12
     authors:
@@ -1199,6 +1221,8 @@ references:
     title: >-
       Elevated levels of G-quadruplex formation in human stomach and liver
       cancer tissues
+    meta:
+      publicationType: journal
   - type: Article
     id: bib13
     authors:
@@ -1275,6 +1299,8 @@ references:
     title: >-
       ClueGO: a cytoscape plug-in to decipher functionally grouped gene ontology
       and pathway annotation networks
+    meta:
+      publicationType: journal
   - type: Article
     id: bib14
     authors:
@@ -1316,6 +1342,8 @@ references:
     title: >-
       CluePedia cytoscape plugin: pathway insights using integrated experimental
       and in silico data
+    meta:
+      publicationType: journal
   - type: Article
     id: bib15
     authors:
@@ -1353,6 +1381,8 @@ references:
     title: >-
       DNA secondary structures: stability and function of G-quadruplex
       structures
+    meta:
+      publicationType: journal
   - type: Article
     id: bib16
     authors:
@@ -1397,6 +1427,8 @@ references:
     pageEnd: 17517
     pageStart: 17493
     title: DNA and RNA quadruplex-binding proteins
+    meta:
+      publicationType: journal
   - type: Article
     id: bib17
     authors:
@@ -1426,6 +1458,8 @@ references:
     pageEnd: 558
     pageStart: 542
     title: DNA helicases involved in DNA repair and their roles in cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib18
     authors:
@@ -1502,6 +1536,8 @@ references:
     title: >-
       Specific killing of BRCA2-deficient tumours with inhibitors of
       poly(ADP-ribose) polymerase
+    meta:
+      publicationType: journal
   - type: Article
     id: bib19
     authors:
@@ -1536,6 +1572,8 @@ references:
     pageEnd: 4741
     pageStart: 4727
     title: '5''-UTR RNA G-quadruplexes: translation regulation and targeting'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib20
     authors:
@@ -1567,6 +1605,8 @@ references:
         name: Nucleic Acids Research
       volumeNumber: 9
     title: 'RNA G-quadruplexes: emerging mechanisms in disease'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib21
     authors:
@@ -1621,6 +1661,8 @@ references:
     pageEnd: 159
     pageStart: 153
     title: BAP1 and cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib22
     authors:
@@ -1657,6 +1699,8 @@ references:
     title: >-
       Human DHX9 helicase preferentially unwinds RNA-containing displacement
       loops (R-loops) and G-quadruplexes
+    meta:
+      publicationType: journal
   - type: Article
     id: bib23
     authors:
@@ -1714,6 +1758,8 @@ references:
     title: >-
       High-throughput sequencing of DNA G-quadruplex structures in the human
       genome
+    meta:
+      publicationType: journal
   - type: Article
     id: bib24
     authors:
@@ -1748,6 +1794,8 @@ references:
     pageEnd: 364
     pageStart: 351
     title: Harnessing synthetic lethal interactions in anticancer drug discovery
+    meta:
+      publicationType: journal
   - type: Article
     id: bib25
     authors:
@@ -1799,6 +1847,8 @@ references:
     title: >-
       Bortezomib as the first proteasome inhibitor anticancer drug: current
       status and future perspectives
+    meta:
+      publicationType: journal
   - type: Article
     id: bib26
     authors:
@@ -1875,6 +1925,8 @@ references:
     title: >-
       Selective and cell-active inhibitors of the USP1/ UAF1 deubiquitinase
       complex reverse cisplatin resistance in non-small cell lung cancer cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib27
     authors:
@@ -1934,6 +1986,8 @@ references:
     pageEnd: 469
     pageStart: 465
     title: Structural basis of G-quadruplex unfolding by the DEAH/RHA helicase DHX36
+    meta:
+      publicationType: journal
   - type: Article
     id: bib28
     authors:
@@ -2016,6 +2070,8 @@ references:
       A parallel synthesis approach to the identification of novel
       Diheteroarylamide-Based compounds blocking HIV replication: potential
       inhibitors of HIV-1 Pre-mRNA alternative splicing
+    meta:
+      publicationType: journal
   - type: Article
     id: bib29
     authors:
@@ -2069,6 +2125,8 @@ references:
       Small molecule inhibitors of the human histone lysine methyltransferase
       NSD2 / WHSC1 / MMSET identified from a quantitative High-Throughput screen
       with nucleosome substrate
+    meta:
+      publicationType: preprint
   - type: Article
     id: bib30
     authors:
@@ -2126,6 +2184,8 @@ references:
       G4 resolvase 1 binds both DNA and RNA tetramolecular quadruplex with high
       affinity and is the major source of tetramolecular quadruplex G4-DNA and
       G4-RNA resolving activity in HeLa cell lysates
+    meta:
+      publicationType: journal
   - type: Article
     id: bib31
     authors:
@@ -2170,6 +2230,8 @@ references:
     pageEnd: 644
     pageStart: 640
     title: Fusion of CHOP to a novel RNA-binding protein in human myxoid liposarcoma
+    meta:
+      publicationType: journal
   - type: Article
     id: bib32
     authors:
@@ -2250,6 +2312,8 @@ references:
     title: >-
       edgeR: a versatile tool for the analysis of shRNA-seq and CRISPR-Cas9
       genetic screens
+    meta:
+      publicationType: journal
   - type: Article
     id: bib33
     authors:
@@ -2306,6 +2370,8 @@ references:
     title: >-
       Werner syndrome protein suppresses the formation of large deletions during
       the replication of human telomeric sequences
+    meta:
+      publicationType: journal
   - type: Article
     id: bib34
     authors:
@@ -2384,6 +2450,8 @@ references:
     title: >-
       Reevaluation of telomerase inhibition by quadruplex ligands and their
       mechanisms of action
+    meta:
+      publicationType: journal
   - type: Article
     id: bib35
     authors:
@@ -2434,6 +2502,8 @@ references:
     pageEnd: 1857
     pageStart: 1856
     title: Highly efficient G-quadruplex recognition by bisquinolinium compounds
+    meta:
+      publicationType: journal
   - type: Article
     id: bib36
     authors:
@@ -2472,6 +2542,8 @@ references:
     title: >-
       Point mutations in the tumor suppressor Smad4/DPC4 enhance its
       phosphorylation by GSK3 and reversibly inactivate TGF-β signaling
+    meta:
+      publicationType: journal
   - type: Article
     id: bib37
     authors:
@@ -2534,6 +2606,8 @@ references:
     title: >-
       Combenefit: an interactive platform for the analysis and visualization of
       drug combinations
+    meta:
+      publicationType: journal
   - type: Article
     id: bib38
     authors:
@@ -2598,6 +2672,8 @@ references:
     title: >-
       Dysregulation of H/ACA ribonucleoprotein components in chronic lymphocytic
       leukemia
+    meta:
+      publicationType: journal
   - type: Article
     id: bib39
     authors:
@@ -2642,6 +2718,8 @@ references:
     pageEnd: 430
     pageStart: 413
     title: RNA splicing factors as oncoproteins and tumour suppressors
+    meta:
+      publicationType: journal
   - type: Article
     id: bib40
     authors:
@@ -2684,6 +2762,8 @@ references:
     title: >-
       Pharmacological targets in the ubiquitin system offer new ways of treating
       cancer, neurodegenerative disorders and infectious diseases
+    meta:
+      publicationType: journal
   - type: Article
     id: bib41
     authors:
@@ -2780,6 +2860,8 @@ references:
     title: >-
       Targeting the DNA repair defect in BRCA mutant cells as a therapeutic
       strategy
+    meta:
+      publicationType: journal
   - type: Article
     id: bib42
     authors:
@@ -2869,6 +2951,8 @@ references:
     pageEnd: D285
     pageStart: D279
     title: 'The pfam protein families database: towards a more sustainable future'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib43
     authors:
@@ -2980,6 +3064,8 @@ references:
     title: >-
       COSMIC: exploring the world's knowledge of somatic mutations in human
       cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib44
     authors:
@@ -3019,6 +3105,8 @@ references:
     pageEnd: 342
     pageStart: 337
     title: Histone H3 lysine 4 methyltransferase KMT2D
+    meta:
+      publicationType: journal
   - type: Article
     id: bib45
     authors:
@@ -3065,6 +3153,8 @@ references:
     title: >-
       Decreased expression of Nedd4L correlates with poor prognosis in gastric
       cancer patient
+    meta:
+      publicationType: journal
   - type: Article
     id: bib46
     authors:
@@ -3112,6 +3202,8 @@ references:
     title: >-
       USP1 deubiquitinase: cellular functions, regulatory mechanisms and
       emerging potential as target in cancer therapy
+    meta:
+      publicationType: journal
   - type: Article
     id: bib47
     authors:
@@ -3186,6 +3278,8 @@ references:
     pageEnd: 7178
     pageStart: 7161
     title: G4 resolvase 1 tightly binds and unwinds unimolecular G4-DNA
+    meta:
+      publicationType: journal
   - type: Article
     id: bib48
     authors:
@@ -3220,6 +3314,8 @@ references:
     pageEnd: 129
     pageStart: 111
     title: 'The c-MYC NHE III(1): function and regulation'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib49
     authors:
@@ -3236,7 +3332,10 @@ references:
     datePublished:
       type: Date
       value: '2010'
+    title: "\_FASTQ/A Short-Reads Pre-Processing Tools"
     url: http://hannonlab.cshl.edu/fastx_toolkit/download.html
+    meta:
+      publicationType: software
   - type: Article
     id: bib50
     authors:
@@ -3376,6 +3475,8 @@ references:
     pageEnd: 1210
     pageStart: 1209
     title: 'DGIdb: mining the druggable genome'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib51
     authors:
@@ -3428,6 +3529,8 @@ references:
     title: >-
       ColonyArea: an ImageJ plugin to automatically quantify colony formation in
       clonogenic assays
+    meta:
+      publicationType: journal
   - type: Article
     id: bib52
     authors:
@@ -3508,6 +3611,8 @@ references:
     pageEnd: 353
     pageStart: 350
     title: DPC4, a candidate tumor suppressor gene at human chromosome 18q21.1
+    meta:
+      publicationType: journal
   - type: Article
     id: bib53
     authors:
@@ -3560,6 +3665,8 @@ references:
     title: >-
       Bisquinolinium compounds induce quadruplex-specific transcriptome changes
       in HeLa S3 cell lines
+    meta:
+      publicationType: journal
   - type: Article
     id: bib54
     authors:
@@ -3645,6 +3752,8 @@ references:
     pageEnd: 1272
     pageStart: 1267
     title: G-quadruplex structures mark human regulatory chromatin
+    meta:
+      publicationType: journal
   - type: Article
     id: bib55
     authors:
@@ -3689,6 +3798,8 @@ references:
     pageEnd: 78
     pageStart: 57
     title: 'Deubiquitylating enzymes and drug discovery: emerging opportunities'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib56
     authors:
@@ -3758,6 +3869,8 @@ references:
     pageEnd: 869
     pageStart: 860
     title: Detection of G-quadruplex DNA in mammalian cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib57
     authors:
@@ -3829,6 +3942,8 @@ references:
     title: >-
       Analysis of NRAS RNA G-quadruplex binding proteins reveals DDX3X as a
       novel interactor of cellular G-quadruplex containing transcripts
+    meta:
+      publicationType: journal
   - type: Article
     id: bib58
     authors:
@@ -3899,6 +4014,8 @@ references:
     pageEnd: 347
     pageStart: 341
     title: Regulation of monoubiquitinated PCNA by DUB autocleavage
+    meta:
+      publicationType: journal
   - type: Article
     id: bib59
     authors:
@@ -3940,6 +4057,8 @@ references:
     title: >-
       Systematic and integrative analysis of large gene lists using DAVID
       bioinformatics resources
+    meta:
+      publicationType: journal
   - type: Article
     id: bib60
     authors:
@@ -3981,6 +4100,8 @@ references:
     title: >-
       Bioinformatics enrichment tools: paths toward the comprehensive functional
       analysis of large gene lists
+    meta:
+      publicationType: journal
   - type: Article
     id: bib61
     authors:
@@ -4017,6 +4138,8 @@ references:
     title: >-
       Drugging the undruggables: exploring the ubiquitin system for drug
       development
+    meta:
+      publicationType: journal
   - type: Article
     id: bib62
     authors:
@@ -4045,6 +4168,8 @@ references:
     title: >-
       Four-stranded nucleic acids: structure, function and targeting of
       G-quadruplexes
+    meta:
+      publicationType: journal
   - type: Article
     id: bib63
     authors:
@@ -4075,6 +4200,8 @@ references:
     pageEnd: 413
     pageStart: 406
     title: G-quadruplexes in promoters throughout the human genome
+    meta:
+      publicationType: journal
   - type: Article
     id: bib64
     authors:
@@ -4132,6 +4259,8 @@ references:
     title: >-
       Proteomic and bioinformatic analysis of mammalian SWI/SNF complexes
       identifies extensive roles in human malignancy
+    meta:
+      publicationType: journal
   - type: Article
     id: bib65
     authors:
@@ -4198,6 +4327,8 @@ references:
     title: >-
       Dbp9p, a member of the DEAD box protein family, exhibits DNA helicase
       activity
+    meta:
+      publicationType: journal
   - type: Article
     id: bib66
     authors:
@@ -4282,6 +4413,8 @@ references:
     pageEnd: 807
     pageStart: 796
     title: A computational algorithm to predict shRNA potency
+    meta:
+      publicationType: journal
   - type: Article
     id: bib67
     authors:
@@ -4353,6 +4486,8 @@ references:
     title: >-
       Splicing factor SF3b as a target of the antitumor natural product
       pladienolide
+    meta:
+      publicationType: journal
   - type: Article
     id: bib68
     authors:
@@ -4399,6 +4534,8 @@ references:
     title: >-
       An RNA G-quadruplex in the 5' UTR of the NRAS proto-oncogene modulates
       translation
+    meta:
+      publicationType: journal
   - type: Article
     id: bib69
     authors:
@@ -4450,6 +4587,8 @@ references:
     title: >-
       rG4-seq reveals widespread formation of G-quadruplex structures in the
       human transcriptome
+    meta:
+      publicationType: journal
   - type: Article
     id: bib70
     authors:
@@ -4484,6 +4623,8 @@ references:
     pageEnd: 359
     pageStart: 357
     title: Fast gapped-read alignment with bowtie 2
+    meta:
+      publicationType: journal
   - type: Article
     id: bib71
     authors:
@@ -4525,6 +4666,8 @@ references:
     pageEnd: 8050
     pageStart: 8048
     title: G-quadruplex ligands exhibit differential G-tetrad selectivity
+    meta:
+      publicationType: journal
   - type: Article
     id: bib72
     authors:
@@ -4564,6 +4707,8 @@ references:
     pageEnd: 40
     pageStart: 32
     title: PARP inhibitors for BRCA1/2 mutation-associated and BRCA-like malignancies
+    meta:
+      publicationType: journal
   - type: Article
     id: bib73
     authors:
@@ -4633,6 +4778,8 @@ references:
     pageEnd: 3309
     pageStart: 3300
     title: Specific-site methylation of tumour suppressor ANKRD11 in breast Cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib74
     authors:
@@ -4688,6 +4835,8 @@ references:
     pageEnd: 60
     pageStart: 50
     title: Targeting the ubiquitin pathway for cancer treatment
+    meta:
+      publicationType: journal
   - type: Article
     id: bib75
     authors:
@@ -4730,6 +4879,8 @@ references:
       PolySearch2: a significantly improved text-mining system for discovering
       associations between human diseases, genes, drugs, metabolites, toxins and
       more
+    meta:
+      publicationType: journal
   - type: Article
     id: bib76
     authors:
@@ -4836,6 +4987,8 @@ references:
     title: >-
       Conformation selective antibody enables genome profiling and leads to
       discovery of parallel G-Quadruplex in human telomeres
+    meta:
+      publicationType: journal
   - type: Article
     id: bib77
     authors:
@@ -4898,6 +5051,8 @@ references:
     title: >-
       An inhibitor of the Keap1-Nrf2 protein-protein interaction protects NCM460
       colonic cells and alleviates experimental colitis
+    meta:
+      publicationType: journal
   - type: Article
     id: bib78
     authors:
@@ -4975,6 +5130,8 @@ references:
     title: >-
       The FA/BRCA pathway identified as the major predictor of cisplatin
       response in head and neck cancer by functional genomics
+    meta:
+      publicationType: journal
   - type: Article
     id: bib79
     authors:
@@ -4987,8 +5144,13 @@ references:
     datePublished:
       type: Date
       value: '2019'
+    isPartOf:
+      type: Periodical
+      name: GitHub
     title: GWscreen_G4sensitivity
     url: https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity
+    meta:
+      publicationType: software
   - type: Article
     id: bib80
     authors:
@@ -5028,6 +5190,8 @@ references:
     pageEnd: 881
     pageStart: 872
     title: Targeting WEE1 kinase in cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib81
     authors:
@@ -5065,6 +5229,8 @@ references:
     title: >-
       Ubiquitin-based anticancer therapy: carpet bombing with proteasome
       inhibitors vs surgical strikes with E1, E2, E3, or DUB inhibitors
+    meta:
+      publicationType: journal
   - type: Article
     id: bib82
     authors:
@@ -5179,6 +5345,8 @@ references:
     pageEnd: 2911
     pageStart: 2881
     title: GSK-3 as potential target for therapeutic intervention in cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib83
     authors:
@@ -5251,6 +5419,8 @@ references:
     title: >-
       G-quadruplex DNA as a molecular target for induced synthetic lethality in
       cancer cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib84
     authors:
@@ -5300,6 +5470,8 @@ references:
     pageEnd: 2006
     pageStart: 1989
     title: G-quadruplexes and helicases
+    meta:
+      publicationType: journal
   - type: Article
     id: bib85
     authors:
@@ -5347,6 +5519,8 @@ references:
     title: >-
       G4IPDB: a database for G-quadruplex structure forming nucleic acid
       interacting proteins
+    meta:
+      publicationType: journal
   - type: Article
     id: bib86
     authors:
@@ -5466,6 +5640,8 @@ references:
     pageEnd: 2157
     pageStart: 2146
     title: New therapeutic perspectives in CCDC6 deficient lung cancer cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib87
     authors:
@@ -5603,6 +5779,8 @@ references:
     title: >-
       Requirement of ATM-dependent monoubiquitylation of histone H2B for timely
       repair of DNA double-strand breaks
+    meta:
+      publicationType: journal
   - type: Article
     id: bib88
     authors:
@@ -5634,6 +5812,8 @@ references:
     title: >-
       Human telomeric G-quadruplex: the current status of telomeric
       G-quadruplexes as therapeutic targets in human cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib89
     authors:
@@ -5660,6 +5840,8 @@ references:
         name: Nature Reviews Chemistry
       volumeNumber: 1
     title: Quadruplex nucleic acids as targets for anticancer therapeutics
+    meta:
+      publicationType: journal
   - type: Article
     id: bib90
     authors:
@@ -5729,6 +5911,8 @@ references:
     pageEnd: 3552
     pageStart: 3541
     title: Identification of ANKRD11 as a p53 coactivator
+    meta:
+      publicationType: journal
   - type: Article
     id: bib91
     authors:
@@ -5780,6 +5964,8 @@ references:
       volumeNumber: 18
     pageStart: 1886
     title: The role of PALB2 in the DNA damage response and Cancer predisposition
+    meta:
+      publicationType: journal
   - type: Article
     id: bib92
     authors:
@@ -5839,6 +6025,8 @@ references:
     pageEnd: 339
     pageStart: 331
     title: The deubiquitinating enzyme USP1 regulates the fanconi anemia pathway
+    meta:
+      publicationType: journal
   - type: Article
     id: bib93
     authors:
@@ -5870,6 +6058,8 @@ references:
     title: >-
       Synthetic lethality: general principles, utility and detection using
       genetic screens in human cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib94
     authors:
@@ -5931,6 +6121,8 @@ references:
     title: >-
       Mutant p53 drives multinucleation and invasion through a process that is
       suppressed by ANKRD11
+    meta:
+      publicationType: journal
   - type: Article
     id: bib95
     authors:
@@ -6025,6 +6217,8 @@ references:
     pageEnd: 3967
     pageStart: 3957
     title: USP37 directly deubiquitinates and stabilizes c-Myc in lung cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib96
     authors:
@@ -6141,6 +6335,8 @@ references:
     title: >-
       Dinaciclib (SCH 727965), a novel and potent cyclin-dependent kinase
       inhibitor
+    meta:
+      publicationType: journal
   - type: Article
     id: bib97
     authors:
@@ -6194,6 +6390,8 @@ references:
       Characterization of novel non-clonal intrachromosomal rearrangements
       between the H4 and PTEN genes (H4/PTEN) in human thyroid cell lines and
       papillary thyroid cancer specimens
+    meta:
+      publicationType: journal
   - type: Article
     id: bib98
     authors:
@@ -6228,6 +6426,8 @@ references:
     pageEnd: 346
     pageStart: 334
     title: 'Hijacked in Cancer: the KMT2 (MLL) family of methyltransferases'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib99
     authors:
@@ -6262,6 +6462,8 @@ references:
     pageEnd: 8637
     pageStart: 8627
     title: G-quadruplexes and their regulatory roles in biology
+    meta:
+      publicationType: journal
   - type: Article
     id: bib100
     authors:
@@ -6318,6 +6520,8 @@ references:
     title: >-
       WEE1 kinase inhibitor AZD1775 has preclinical efficacy in LKB1-Deficient
       Non-Small cell lung cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib101
     authors:
@@ -6359,6 +6563,8 @@ references:
     title: >-
       edgeR: a bioconductor package for differential expression analysis of
       digital gene expression data
+    meta:
+      publicationType: journal
   - type: Article
     id: bib102
     authors:
@@ -6415,6 +6621,8 @@ references:
     title: >-
       A novel small molecule that alters shelterin integrity and triggers a
       DNA-damage response at telomeres
+    meta:
+      publicationType: journal
   - type: Article
     id: bib103
     authors:
@@ -6491,6 +6699,8 @@ references:
     title: >-
       Small-molecule-induced DNA damage identifies alternative DNA structures in
       human genes
+    meta:
+      publicationType: journal
   - type: Article
     id: bib104
     authors:
@@ -6788,6 +6998,8 @@ references:
     pageEnd: 337
     pageStart: 321
     title: Oncogenic signaling pathways in the cancer genome atlas
+    meta:
+      publicationType: journal
   - type: Article
     id: bib105
     authors:
@@ -6844,6 +7056,8 @@ references:
     title: >-
       In vitro generated antibodies specific for telomeric guanine-quadruplex
       DNA react with stylonychia lemnae macronuclei
+    meta:
+      publicationType: journal
   - type: Article
     id: bib106
     authors:
@@ -6939,6 +7153,8 @@ references:
     pageEnd: 2530
     pageStart: 2527
     title: DPC4 gene in various tumor types
+    meta:
+      publicationType: journal
   - type: Article
     id: bib107
     authors:
@@ -6978,6 +7194,8 @@ references:
     pageEnd: 88
     pageStart: 69
     title: Ubiquitin ligases in oncogenic transformation and cancer therapy
+    meta:
+      publicationType: journal
   - type: Article
     id: bib108
     authors:
@@ -7013,6 +7231,8 @@ references:
         name: PLOS ONE
       volumeNumber: 8
     title: The spectrum of SWI/SNF mutations, ubiquitous in human cancers
+    meta:
+      publicationType: journal
   - type: Article
     id: bib109
     authors:
@@ -7084,6 +7304,8 @@ references:
     title: >-
       Cytoscape: a software environment for integrated models of biomolecular
       interaction networks
+    meta:
+      publicationType: journal
   - type: Article
     id: bib110
     authors:
@@ -7205,6 +7427,8 @@ references:
     title: >-
       The histone H2B-specific ubiquitin ligase RNF20/hBRE1 acts as a putative
       tumor suppressor through selective regulation of gene expression
+    meta:
+      publicationType: journal
   - type: Article
     id: bib111
     authors:
@@ -7291,6 +7515,8 @@ references:
     title: >-
       Modulation of the splicing regulatory function of SRSF10 by a novel
       compound that impairs HIV-1 replication
+    meta:
+      publicationType: journal
   - type: Article
     id: bib112
     authors:
@@ -7394,6 +7620,8 @@ references:
     title: >-
       High-throughput RNA interference screening using pooled shRNA libraries
       and next generation sequencing
+    meta:
+      publicationType: journal
   - type: Article
     id: bib113
     authors:
@@ -7593,6 +7821,8 @@ references:
     pageEnd: 736
     pageStart: 732
     title: An inhibitor of NEDD8-activating enzyme as a new approach to treat cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib114
     authors:
@@ -7648,6 +7878,8 @@ references:
     pageEnd: 2123
     pageStart: 2119
     title: Redundancy of DNA helicases in p53-mediated apoptosis
+    meta:
+      publicationType: journal
   - type: Article
     id: bib115
     authors:
@@ -7731,6 +7963,8 @@ references:
     title: >-
       The STRING database in 2017: quality-controlled protein–protein
       association networks, made broadly accessible
+    meta:
+      publicationType: journal
   - type: Article
     id: bib116
     authors:
@@ -7792,6 +8026,8 @@ references:
     title: >-
       Regulation of telomere length by G-quadruplex telomere DNA- and
       TERRA-binding protein TLS/FUS
+    meta:
+      publicationType: journal
   - type: Article
     id: bib117
     authors:
@@ -7818,6 +8054,8 @@ references:
     pageEnd: D169
     pageStart: D158
     title: 'UniProt: the universal protein knowledgebase'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib118
     authors:
@@ -7857,6 +8095,8 @@ references:
     pageEnd: 22
     pageStart: 10
     title: Ddx42p--a human DEAD box protein with RNA chaperone activities
+    meta:
+      publicationType: journal
   - type: Article
     id: bib119
     authors:
@@ -7891,6 +8131,8 @@ references:
     pageEnd: 706
     pageStart: 697
     title: 'G-Quadruplexes in DNA replication: a problem or a necessity?'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib120
     authors:
@@ -7957,6 +8199,8 @@ references:
     title: >-
       The DEXH protein product of the DHX36 gene is the major source of
       tetramolecular quadruplex G4-DNA resolving activity in HeLa cell lysates
+    meta:
+      publicationType: journal
   - type: Article
     id: bib121
     authors:
@@ -7986,6 +8230,8 @@ references:
     pageEnd: 440
     pageStart: 430
     title: 'Cellular roles of DNA topoisomerases: a molecular perspective'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib122
     authors:
@@ -8037,6 +8283,8 @@ references:
     title: >-
       Bardoxolone methyl (CDDO-Me) as a therapeutic agent: an update on its
       pharmacokinetic and pharmacodynamic properties
+    meta:
+      publicationType: journal
   - type: Article
     id: bib123
     authors:
@@ -8117,6 +8365,8 @@ references:
     title: >-
       G-quadruplex DNA drives genomic instability and represents a targetable
       molecular abnormality in ATRX-deficient malignant glioma
+    meta:
+      publicationType: journal
   - type: Article
     id: bib124
     authors:
@@ -8183,6 +8433,8 @@ references:
     title: >-
       Atrx deficiency induces telomere dysfunction, endocrine defects, and
       reduced life span
+    meta:
+      publicationType: journal
   - type: Article
     id: bib125
     authors:
@@ -8220,6 +8472,8 @@ references:
     title: >-
       The key role of ubiquitination and sumoylation in signaling and cancer: a
       research topic
+    meta:
+      publicationType: journal
   - type: Article
     id: bib126
     authors:
@@ -8276,6 +8530,8 @@ references:
     title: >-
       Characterization of novel SF3b and 17S U2 snRNP proteins, including a
       human Prp5p homologue and an SF3b DEAD-box protein
+    meta:
+      publicationType: journal
   - type: Article
     id: bib127
     authors:
@@ -8413,6 +8669,8 @@ references:
     pageEnd: 70
     pageStart: 65
     title: RNA G-quadruplexes cause eIF4A-dependent oncogene translation in cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib128
     authors:
@@ -8504,6 +8762,8 @@ references:
     title: >-
       HERC2 facilitates BLM and WRN helicase complex interaction with RPA to
       suppress G-Quadruplex DNA
+    meta:
+      publicationType: journal
   - type: Article
     id: bib129
     authors:
@@ -8538,6 +8798,8 @@ references:
     pageEnd: 3488
     pageStart: 3470
     title: G-quadruplex nucleic acids and human disease
+    meta:
+      publicationType: journal
   - type: Article
     id: bib130
     authors:
@@ -8761,6 +9023,8 @@ references:
     title: >-
       CX-5461 is a DNA G-quadruplex stabilizer with selective lethality in
       BRCA1/2 deficient tumours
+    meta:
+      publicationType: journal
   - type: Article
     id: bib131
     authors:
@@ -8818,6 +9082,8 @@ references:
     title: >-
       Topoisomerase I plays a critical role in suppressing genome instability at
       a highly transcribed G-quadruplex-forming sequence
+    meta:
+      publicationType: journal
   - type: Article
     id: bib132
     authors:
@@ -8848,6 +9114,8 @@ references:
     pageEnd: 968
     pageStart: 951
     title: Structure of the biologically relevant G-Quadruplex in the c-MYC promoter
+    meta:
+      publicationType: journal
   - type: Article
     id: bib133
     authors:
@@ -8907,6 +9175,8 @@ references:
     pageEnd: D284
     pageStart: D281
     title: 'Gene3D: modelling protein structure, function and evolution'
+    meta:
+      publicationType: journal
   - type: Article
     id: bib134
     authors:
@@ -8958,6 +9228,8 @@ references:
     title: >-
       The clinical significance of cyclin B1 and Wee1 expression in
       non-small-cell lung cancer
+    meta:
+      publicationType: journal
   - type: Article
     id: bib135
     authors:
@@ -9014,6 +9286,8 @@ references:
     title: >-
       Downregulation of Nedd4L predicts poor prognosis, promotes tumor growth
       and inhibits MAPK/ERK signal pathway in hepatocellular carcinoma
+    meta:
+      publicationType: journal
   - type: Article
     id: bib136
     authors:
@@ -9091,6 +9365,8 @@ references:
     title: >-
       BCLAF1 and its splicing regulator SRSF10 regulate the tumorigenic
       potential of colon cancer cells
+    meta:
+      publicationType: journal
   - type: Article
     id: bib137
     authors:
@@ -9197,6 +9473,8 @@ references:
     title: >-
       Targeting BRCA1 and BRCA2 deficiencies with G-Quadruplex-Interacting
       compounds
+    meta:
+      publicationType: journal
 title: Genetic interactions of G-quadruplexes in humans
 meta:
   authorNotes:

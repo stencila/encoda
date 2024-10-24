@@ -399,7 +399,10 @@
       },
       "pageEnd": 27,
       "pageStart": 1,
-      "title": "Auxiliary Variables in Mixture Modeling: Using the BCH Method in Mplus to Estimate a Distal Outcome Model and an Arbitrary Second Model"
+      "title": "Auxiliary Variables in Mixture Modeling: Using the BCH Method in Mplus to Estimate a Distal Outcome Model and an Arbitrary Second Model",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -456,7 +459,10 @@
       "pageEnd": 942,
       "pageStart": 932,
       "title": "A short questionnaire for the measurement of habitual physical activity in epidemiological studies",
-      "url": "https://doi.org/10.1093/ajcn/36.5.936"
+      "url": "https://doi.org/10.1093/ajcn/36.5.936",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -571,7 +577,10 @@
       "pageEnd": 25,
       "pageStart": 1,
       "title": "Influence of puberty timing on adiposity and cardiometabolic traits: A Mendelian randomisation study",
-      "url": "https://doi.org/10.1371/journal.pmed.1002641"
+      "url": "https://doi.org/10.1371/journal.pmed.1002641",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -785,7 +794,10 @@
         "volumeNumber": 9
       },
       "title": "Quantification of the pace of biological aging in humans through a blood test, the DunedinPoAm DNA methylation algorithm",
-      "url": "https://doi.org/10.7554/eLife.54870"
+      "url": "https://doi.org/10.7554/eLife.54870",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -996,7 +1008,10 @@
         "volumeNumber": 11
       },
       "title": "DunedinPACE, A DNA methylation biomarker of the Pace of Aging",
-      "url": "https://doi.org/10.7554/eLife.73420"
+      "url": "https://doi.org/10.7554/eLife.73420",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1064,7 +1079,10 @@
       "pageEnd": "S20",
       "pageStart": "S15",
       "title": "Identifying opportunities for cancer prevention during preadolescence and adolescence: Puberty as a window of susceptibility. Journal of Adole",
-      "url": "https://doi.org/10.1016/j.jadohealth.2012.09.019"
+      "url": "https://doi.org/10.1016/j.jadohealth.2012.09.019",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1172,7 +1190,10 @@
       },
       "pageEnd": 158,
       "pageStart": 149,
-      "title": "A New, Semi-Structured Psychiatric Interview for Use in Genetic Linkage Studies: A Report on the Reliability of the SSAGA"
+      "title": "A New, Semi-Structured Psychiatric Interview for Use in Genetic Linkage Studies: A Report on the Reliability of the SSAGA",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1237,7 +1258,10 @@
       "pageEnd": 197,
       "pageStart": 194,
       "title": "Body mass index cut offs to define thinness in children and adolescents: International survey",
-      "url": "https://doi.org/10.1136/bmj.39238.399444.55"
+      "url": "https://doi.org/10.1136/bmj.39238.399444.55",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1339,7 +1363,10 @@
       "pageEnd": 6,
       "pageStart": 1,
       "title": "Shared genetic aetiology of puberty timing between sexes and with health-related outcomes",
-      "url": "https://doi.org/10.1038/ncomms9842"
+      "url": "https://doi.org/10.1038/ncomms9842",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1466,8 +1493,15 @@
         "type": "Date",
         "value": "2021"
       },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "MedRxiv"
+      },
       "title": "Obesity and accelerated epigenetic aging in a high-risk cohort of children",
-      "url": "https://doi.org/10.1101/2021.11.03.21265865"
+      "url": "https://doi.org/10.1101/2021.11.03.21265865",
+      "meta": {
+        "publicationType": "website"
+      }
     },
     {
       "type": "Article",
@@ -1537,7 +1571,10 @@
       "pageEnd": 13,
       "pageStart": 1,
       "title": "Early life adversity, pubertal timing, and epigenetic age acceleration in adulthood",
-      "url": "https://doi.org/10.1002/dev.22085"
+      "url": "https://doi.org/10.1002/dev.22085",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1709,7 +1746,10 @@
       "pageEnd": 367,
       "pageStart": 359,
       "title": "Genome-wide Methylation Profiles Reveal Quantitative Views of Human Aging Rates",
-      "url": "https://doi.org/10.1016/j.molcel.2012.10.016"
+      "url": "https://doi.org/10.1016/j.molcel.2012.10.016",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1770,7 +1810,10 @@
       },
       "pageEnd": 1849,
       "pageStart": 1839,
-      "title": "External-environmental and internal-health early life predictors of adolescent development"
+      "title": "External-environmental and internal-health early life predictors of adolescent development",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1806,7 +1849,10 @@
         "volumeNumber": 14
       },
       "title": "DNA methylation age of human tissues and cell types",
-      "url": "https://doi.org/10.1186/gb-2013-14-10-r115"
+      "url": "https://doi.org/10.1186/gb-2013-14-10-r115",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1905,7 +1951,10 @@
       "pageEnd": 495,
       "pageStart": 487,
       "title": "Leisure-Time and Occupational Physical Activity Associates Differently with Epigenetic Aging",
-      "url": "https://doi.org/10.1249/mss.0000000000002498"
+      "url": "https://doi.org/10.1249/mss.0000000000002498",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -1940,7 +1989,10 @@
       "pageEnd": 162,
       "pageStart": 157,
       "title": "The Finnish Twin Cohort Study: an update",
-      "url": "https://doi.org/10.1017/thg.2012.142"
+      "url": "https://doi.org/10.1017/thg.2012.142",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2002,7 +2054,10 @@
       },
       "pageEnd": 753,
       "pageStart": 739,
-      "title": "Common Genetic Influences on BMI and Age at Menarche"
+      "title": "Common Genetic Influences on BMI and Age at Menarche",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2098,7 +2153,10 @@
       },
       "pageStart": 18259,
       "title": "Physical activity in adulthood: Genes and mortality",
-      "url": "https://doi.org/10.1038/srep18259"
+      "url": "https://doi.org/10.1038/srep18259",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2165,7 +2223,10 @@
       "pageEnd": 783,
       "pageStart": 778,
       "title": "Life Course Epidemiology",
-      "url": "https://doi.org/10.1136/jech.57.10.778"
+      "url": "https://doi.org/10.1136/jech.57.10.778",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2247,7 +2308,10 @@
       "pageEnd": 113,
       "pageStart": 106,
       "title": "Drinking, smoking, and educational achievement: Cross-lagged associations from adolescence to adulthood",
-      "url": "https://doi.org/10.1016/j.drugalcdep.2014.01.016"
+      "url": "https://doi.org/10.1016/j.drugalcdep.2014.01.016",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2444,7 +2508,10 @@
       "pageEnd": 591,
       "pageStart": 573,
       "title": "An epigenetic biomarker of aging for lifespan and healthspan",
-      "url": "https://doi.org/10.18632/aging.101414"
+      "url": "https://doi.org/10.18632/aging.101414",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2497,7 +2564,10 @@
       "pageEnd": 583,
       "pageStart": 575,
       "title": "Physical activity and risk of cardiovascular disease: What does the new epidemiological evidence show?",
-      "url": "https://doi.org/10.1097/HCO.0b013e328364289c"
+      "url": "https://doi.org/10.1097/HCO.0b013e328364289c",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2577,7 +2647,10 @@
       "pageEnd": 583,
       "pageStart": 575,
       "title": "Association between obesity and puberty timing: A systematic review and meta-analysis",
-      "url": "https://doi.org/10.3390/ijerph14101266"
+      "url": "https://doi.org/10.3390/ijerph14101266",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2621,7 +2694,10 @@
       "pageEnd": 170,
       "pageStart": 163,
       "title": "The combined effects of healthy lifestyle behaviors on all cause mortality: A systematic review and meta-analysis",
-      "url": "https://doi.org/10.1016/j.ypmed.2012.06.017"
+      "url": "https://doi.org/10.1016/j.ypmed.2012.06.017",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2674,7 +2750,10 @@
       "pageEnd": 224,
       "pageStart": 213,
       "title": "Physical activity and all-cause mortality: An updated meta-analysis with different intensity categories",
-      "url": "https://doi.org/10.1055/s-0028-1128150"
+      "url": "https://doi.org/10.1055/s-0028-1128150",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2746,7 +2825,10 @@
       "pageEnd": 1217,
       "pageStart": 1194,
       "title": "The Hallmarks of Aging",
-      "url": "https://doi.org/10.1016/j.cell.2013.05.039"
+      "url": "https://doi.org/10.1016/j.cell.2013.05.039",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2821,7 +2903,10 @@
       "pageEnd": 1757,
       "pageStart": 1747,
       "title": "Global and regional burden of disease and risk factors, 2001: systematic analysis of population health data",
-      "url": "https://doi.org/10.1016/S0140-6736(06)68770-9"
+      "url": "https://doi.org/10.1016/S0140-6736(06)68770-9",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -2980,7 +3065,10 @@
       "pageEnd": 327,
       "pageStart": 303,
       "title": "DNA methylation GrimAge strongly predicts lifespan and healthspan",
-      "url": "https://doi.org/10.18632/aging.101684"
+      "url": "https://doi.org/10.18632/aging.101684",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3091,8 +3179,15 @@
         "type": "Date",
         "value": "2021"
       },
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "MedRxiv"
+      },
       "title": "BMI is positively associated with accelerated epigenetic aging in twin pairs discordant for BMI",
-      "url": "https://doi.org/10.1101/2021.03.11.21253271"
+      "url": "https://doi.org/10.1101/2021.03.11.21253271",
+      "meta": {
+        "publicationType": "website"
+      }
     },
     {
       "type": "Article",
@@ -3183,7 +3278,10 @@
       "pageEnd": 13,
       "pageStart": 1,
       "title": "Childhood growth and development and DNA methylation age in mid-life",
-      "url": "https://doi.org/10.1186/s13148-021-01138-x"
+      "url": "https://doi.org/10.1186/s13148-021-01138-x",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3228,7 +3326,10 @@
       },
       "pageEnd": 201,
       "pageStart": 195,
-      "title": "Trajectories of Alcohol Use during the Transition to Adulthood"
+      "title": "Trajectories of Alcohol Use during the Transition to Adulthood",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3308,7 +3409,10 @@
       "pageEnd": 25,
       "pageStart": 1,
       "title": "Genome-wide association studies identify 137 loci for DNA methylation biomarkers of ageing",
-      "url": "https://doi.org/10.1186/s13059-021-02398-9"
+      "url": "https://doi.org/10.1186/s13059-021-02398-9",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3348,7 +3452,10 @@
         "name": "Muthén & Muthén"
       },
       "title": "Mplus User’s Guide. Eight Edition",
-      "url": "https://www.statmodel.com"
+      "url": "https://www.statmodel.com",
+      "meta": {
+        "publicationType": "book"
+      }
     },
     {
       "type": "Article",
@@ -3387,7 +3494,10 @@
         },
         "name": "Kluver Academic Publisher"
       },
-      "title": "Methodology for Genetic Studies of Twins and Families"
+      "title": "Methodology for Genetic Studies of Twins and Families",
+      "meta": {
+        "publicationType": "book"
+      }
     },
     {
       "type": "Article",
@@ -3458,7 +3568,10 @@
       },
       "pageStart": 101348,
       "title": "A systematic review of biological, social and environmental factors associated with epigenetic clock acceleration",
-      "url": "https://doi.org/10.1016/j.arr.2021.101348"
+      "url": "https://doi.org/10.1016/j.arr.2021.101348",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3499,7 +3612,10 @@
       },
       "pageEnd": 553,
       "pageStart": 545,
-      "title": "Fetal, Infant, and Childhood Growth Are Predictors of Coronary Heart Disease, Diabetes, and Hypertension in Adult Men and Women"
+      "title": "Fetal, Infant, and Childhood Growth Are Predictors of Coronary Heart Disease, Diabetes, and Hypertension in Adult Men and Women",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3563,7 +3679,10 @@
       "pageEnd": 1000,
       "pageStart": 985,
       "title": "The impact of childhood obesity on morbidity and mortality in adulthood: A systematic review",
-      "url": "https://doi.org/10.1111/j.1467-789X.2012.01015.x"
+      "url": "https://doi.org/10.1111/j.1467-789X.2012.01015.x",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3621,7 +3740,10 @@
       },
       "pageEnd": 133,
       "pageStart": 117,
-      "title": "A self-report measure of pubertal status: Reliability, validity, and initial norms"
+      "title": "A self-report measure of pubertal status: Reliability, validity, and initial norms",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3670,7 +3792,10 @@
       "pageEnd": 28,
       "pageStart": 7,
       "title": "From Developmental Origins of Adult Disease to Life Course Research on Adult Disease and Aging: Insights from Birth Cohort Studies",
-      "url": "https://doi.org/10.1146/annurev-publhealth-031912-114423"
+      "url": "https://doi.org/10.1146/annurev-publhealth-031912-114423",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3715,7 +3840,10 @@
       "pageEnd": 1043,
       "pageStart": 1036,
       "title": "Pubertal timing and adult obesity and cardiometabolic risk in women and men: A systematic review and meta-analysis",
-      "url": "https://doi.org/10.1038/ijo.2012.177"
+      "url": "https://doi.org/10.1038/ijo.2012.177",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3803,7 +3931,10 @@
         "issueNumber": 6
       },
       "title": "Socioeconomic disadvantage and the pace of biological aging in children",
-      "url": "https://doi.org/10.1542/peds.2020-024406"
+      "url": "https://doi.org/10.1542/peds.2020-024406",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3848,7 +3979,10 @@
       "pageEnd": 898,
       "pageStart": 891,
       "title": "Long-term impact of overweight and obesity in childhood and adolescence on morbidity and premature mortality in adulthood: Systematic review",
-      "url": "https://doi.org/10.1038/ijo.2010.222"
+      "url": "https://doi.org/10.1038/ijo.2010.222",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3924,7 +4058,10 @@
       "pageEnd": 693,
       "pageStart": 685,
       "title": "Ability of the atherosclerosis risk in communities (ARIC)/baecke questionnaire to assess leisure-time physical activity",
-      "url": "https://doi.org/10.1093/ije/24.4.685"
+      "url": "https://doi.org/10.1093/ije/24.4.685",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -3993,7 +4130,10 @@
       "pageEnd": 12,
       "pageStart": 1,
       "title": "Use of genetic variation to separate the effects of early and later life adiposity on disease risk: Mendelian randomisation study",
-      "url": "https://doi.org/10.1136/bmj.m1203"
+      "url": "https://doi.org/10.1136/bmj.m1203",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4161,7 +4301,10 @@
       "pageEnd": 311,
       "pageStart": 302,
       "title": "FinnTwin12 Cohort: An Updated Review",
-      "url": "https://doi.org/10.1017/thg.2019.83"
+      "url": "https://doi.org/10.1017/thg.2019.83",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4291,7 +4434,10 @@
       "pageEnd": 1083,
       "pageStart": 1073,
       "title": "Longitudinal physical activity trajectories from childhood to adulthood and their determinants: The Young Finns Study",
-      "url": "https://doi.org/10.1111/sms.12988"
+      "url": "https://doi.org/10.1111/sms.12988",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4417,7 +4563,10 @@
         "issueNumber": 6
       },
       "title": "Smoking and physical activity trajectories from childhood to midlife",
-      "url": "https://doi.org/10.3390/ijerph16060974"
+      "url": "https://doi.org/10.3390/ijerph16060974",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4518,7 +4667,10 @@
       "pageEnd": 92,
       "pageStart": 79,
       "title": "Early maturation and substance use across adolescence and young adulthood: A longitudinal study of Finnish twins",
-      "url": "https://doi.org/10.1017/S0954579417000487"
+      "url": "https://doi.org/10.1017/S0954579417000487",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4590,7 +4742,10 @@
       "pageEnd": 287,
       "pageStart": 280,
       "title": "Polygenic Score for Physical Activity Is Associated with Multiple Common Diseases",
-      "url": "https://doi.org/10.1249/mss.0000000000002788"
+      "url": "https://doi.org/10.1249/mss.0000000000002788",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4713,7 +4868,10 @@
       "pageEnd": 558,
       "pageStart": 549,
       "title": "The epigenetic clock and physical development during childhood and adolescence: longitudinal analysis from a UK birth cohort",
-      "url": "https://doi.org/10.1093/ije/dyw307"
+      "url": "https://doi.org/10.1093/ije/dyw307",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4821,7 +4979,10 @@
       },
       "pageEnd": 328,
       "pageStart": 318,
-      "title": "Associations of Alcohol Consumption With EpigenomelWide DNA Methylation and Epigenetic Age Acceleration: Individual-Level and Co-twin Comparison Analyses"
+      "title": "Associations of Alcohol Consumption With EpigenomelWide DNA Methylation and Epigenetic Age Acceleration: Individual-Level and Co-twin Comparison Analyses",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -4912,7 +5073,10 @@
       "pageEnd": 423,
       "pageStart": 417,
       "title": "Genetic and environmental influences on pubertal timing assessed by height growth",
-      "url": "https://doi.org/10.1002/ajhb.20748"
+      "url": "https://doi.org/10.1002/ajhb.20748",
+      "meta": {
+        "publicationType": "journal"
+      }
     },
     {
       "type": "Article",
@@ -5001,7 +5165,10 @@
       "pageEnd": 12,
       "pageStart": 1,
       "title": "Clustering of health-related behaviours within children aged 11–16: a systematic review",
-      "url": "https://doi.org/10.1186/s12889-020-10140-6"
+      "url": "https://doi.org/10.1186/s12889-020-10140-6",
+      "meta": {
+        "publicationType": "journal"
+      }
     }
   ],
   "title": "The role of adolescent lifestyle habits in biological aging: A prospective twin study",
