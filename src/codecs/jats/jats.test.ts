@@ -252,6 +252,18 @@ test('decode: reference datePublished is added to meta.yearPublished to preserve
   expect(result.meta?.yearPublished).toEqual('2020a');
 });
 
+test('decode: reference n.d. is parsed out of date published', () => {
+  const reference = `
+    <mixed-citation publication-type="journal">
+      <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>n.d.</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
+    </mixed-citation>
+  `  
+  const citation = xml.load(reference).elements?.[0]!
+  
+  const result = decodeReference(citation, null, undefined);
+  expect(result.meta?.yearPublished).toEqual('n.d.');
+});
+
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
   const fig = xml.load(`
   <table-wrap id="tblS1" orientation="portrait" position="float">
