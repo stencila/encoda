@@ -14,7 +14,6 @@
  */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
-import { getLogger } from '@stencila/logga'
 import stencila, { isA, ThingTypes } from '@stencila/schema'
 import crypto from 'crypto'
 import { dropLeft, takeLeftWhile } from 'fp-ts/lib/Array'
@@ -48,7 +47,6 @@ import {
 import { MathMLCodec } from '../mathml'
 import { Codec, CommonEncodeOptions } from '../types'
 
-const log = getLogger('encoda:jats')
 const mathml = new MathMLCodec()
 
 type Content = stencila.InlineContent | stencila.BlockContent
@@ -194,7 +192,7 @@ function decodeDocument(doc: xml.Element): stencila.Article | Content[] {
 
   const { elements } = doc
   if (elements === undefined) {
-    log.error('No elements in XML document')
+    console.error('No elements in XML document')
     return []
   }
 
@@ -971,7 +969,7 @@ function decodeContrib(
             const id = ref.attributes?.rid
             const aff = first(state.article, 'aff', { id })
             if (!aff) {
-              log.warn(`Could not find <aff id=${id}>`)
+              console.warn(`Could not find <aff id=${id}>`)
               return null
             }
             return decodeAff(aff)
@@ -1695,7 +1693,9 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
     case 'disp-quote':
       return decodeDispQuote(elem, state)
     default:
-      log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
+      console.warn(
+        `Using default decoding for JATS element name: "${elem.name}"`,
+      )
       return decodeDefault(elem, state)
   }
 }
@@ -1765,7 +1765,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return [{ type: 'text', text: node as string }]
   }
 
-  log.warn(
+  console.warn(
     `Unhandled node type when encoding to JATS: "${stencila.nodeType(node)}"`,
   )
   return []
@@ -2585,7 +2585,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
       const root = xml.load(text)
       if (root?.elements?.length) inner = root.elements[0]
     } catch (error) {
-      log.error(`Error parsing MathML:\n${getErrorMessage(error)}\n${text}`)
+      console.error(`Error parsing MathML:\n${getErrorMessage(error)}\n${text}`)
     }
   }
 

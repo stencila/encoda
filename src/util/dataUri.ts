@@ -2,13 +2,10 @@
  * @module util/dataUri
  */
 
-import { getLogger, LogEvent } from '@stencila/logga'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
 import tempy from 'tempy'
-
-const log = getLogger('encoda:util')
 
 const DATA_URI_REGEX = /^data:([\w/+]+);(charset=[\w-]+|base64).*,(.*)/
 
@@ -63,11 +60,11 @@ export async function fromFile(
   try {
     data = await fs.readFile(filePath, 'base64')
   } catch (err) {
-    const error = err as LogEvent & { code: string }
+    const error = err as Error & { code: string }
     if (error.code === 'ENOENT') {
-      log.warn(`Image file does not exist, ignoring: ${filePath}`)
+      console.warn(`Image file does not exist, ignoring: ${filePath}`)
     } else {
-      log.error(error)
+      console.error(error)
     }
   }
   const dataUri = `data:${mediaType};base64,${data}`
