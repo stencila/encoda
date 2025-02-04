@@ -78,7 +78,7 @@ export async function startup(): Promise<Browser> {
               // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
               // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
               '--disable-dev-shm-usage',
-              '--single-process',
+              '--disable-gpu',
             ]
           : [],
       })
