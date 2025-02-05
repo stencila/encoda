@@ -188,6 +188,7 @@ test.each([
       },
       meta: {
         publicationType: 'journal',
+        yearPublished: '2020',
       },
       pageStart: 21,
       title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
@@ -228,7 +229,8 @@ test.each([
         value: "2019"
       },
       meta: {
-        publicationType: "other"
+        publicationType: "other",
+        yearPublished: '2019',
       },
       title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
       type: "Article"
@@ -239,6 +241,30 @@ test.each([
   
   expect(decodeReference(citation, null, undefined)).toEqual(expected)
 })
+
+test('decode: reference datePublished is added to meta.yearPublished to preserve suffixes', () => {
+  const reference = `
+    <mixed-citation publication-type="journal">
+      <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>2020a</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
+    </mixed-citation>
+  `  
+  const citation = xml.load(reference).elements?.[0]!
+  
+  const result = decodeReference(citation, null, undefined);
+  expect(result.meta?.yearPublished).toEqual('2020a');
+});
+
+test('decode: reference n.d. is parsed out of date published', () => {
+  const reference = `
+    <mixed-citation publication-type="journal">
+      <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>n.d.</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
+    </mixed-citation>
+  `  
+  const citation = xml.load(reference).elements?.[0]!
+  
+  const result = decodeReference(citation, null, undefined);
+  expect(result.meta?.yearPublished).toEqual('n.d.');
+});
 
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
   const fig = xml.load(`
