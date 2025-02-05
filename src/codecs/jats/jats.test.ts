@@ -160,21 +160,13 @@ test.each([
     {
       authors: [
         {
-          familyNames: [
-            'Calabrese',
-          ],
-          givenNames: [
-            'C',
-          ],
+          familyNames: ['Calabrese'],
+          givenNames: ['C'],
           type: 'Person',
         },
         {
-          familyNames: [
-            'Panuzzo',
-          ],
-          givenNames: [
-            'C',
-          ],
+          familyNames: ['Panuzzo'],
+          givenNames: ['C'],
           type: 'Person',
         },
       ],
@@ -191,8 +183,9 @@ test.each([
         yearPublished: '2020',
       },
       pageStart: 21,
-      title: 'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
-      type: 'Article'
+      title:
+        'Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells',
+      type: 'Article',
     },
   ],
   [
@@ -204,67 +197,71 @@ test.each([
     {
       authors: [
         {
-          type: "Person",
-          familyNames: ["Carabetta"],
-          givenNames: ["VJ"]
+          type: 'Person',
+          familyNames: ['Carabetta'],
+          givenNames: ['VJ'],
         },
         {
-          type: "Person",
-          familyNames: ["Greco"],
-          givenNames: ["TM"]
+          type: 'Person',
+          familyNames: ['Greco'],
+          givenNames: ['TM'],
         },
         {
-          type: "Person",
-          familyNames: ["Cristea"],
-          givenNames: ["IM"]
+          type: 'Person',
+          familyNames: ['Cristea'],
+          givenNames: ['IM'],
         },
         {
-          type: "Person",
-          familyNames: ["Dubnau"],
-          givenNames: ["D"]
-        }
+          type: 'Person',
+          familyNames: ['Dubnau'],
+          givenNames: ['D'],
+        },
       ],
       datePublished: {
-        type: "Date",
-        value: "2019"
+        type: 'Date',
+        value: '2019',
       },
       meta: {
-        publicationType: "other",
+        publicationType: 'other',
         yearPublished: '2019',
       },
-      title: "YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis",
-      type: "Article"
+      title:
+        'YfmK is a Novel Nε-lysine Acetyltransferase that Directly Acetylates the Histone-like Protein HBsu in Bacillus Subtilis',
+      type: 'Article',
     },
   ],
-])('decode: <element-citation> or <mixed-citation> element', (input, expected) => {
-  const citation = xml.load(input).elements?.[0]!
-  
-  expect(decodeReference(citation, null, undefined)).toEqual(expected)
-})
+])(
+  'decode: <element-citation> or <mixed-citation> element',
+  (input, expected) => {
+    const citation = xml.load(input).elements?.[0]!
+
+    expect(decodeReference(citation, null, undefined)).toEqual(expected)
+  },
+)
 
 test('decode: reference datePublished is added to meta.yearPublished to preserve suffixes', () => {
   const reference = `
     <mixed-citation publication-type="journal">
       <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>2020a</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
     </mixed-citation>
-  `  
+  `
   const citation = xml.load(reference).elements?.[0]!
-  
-  const result = decodeReference(citation, null, undefined);
-  expect(result.meta?.yearPublished).toEqual('2020a');
-});
+
+  const result = decodeReference(citation, null, undefined)
+  expect(result.meta?.yearPublished).toEqual('2020a')
+})
 
 test('decode: reference n.d. is parsed out of date published', () => {
   const reference = `
     <mixed-citation publication-type="journal">
       <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>n.d.</year>) <article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
     </mixed-citation>
-  `  
+  `
   const citation = xml.load(reference).elements?.[0]!
-  
-  const result = decodeReference(citation, null, undefined);
-  expect(result.meta?.yearPublished).toEqual('n.d.');
-});
+
+  const result = decodeReference(citation, null, undefined)
+  expect(result.meta?.yearPublished).toEqual('n.d.')
+})
 
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
   const fig = xml.load(`
@@ -342,8 +339,8 @@ test('decode: content of <label> in a <author-notes> is followed by a space', ()
         type: 'corresp',
         id: 'cor1',
         label: '*',
-        text: 'Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr'
-      }
+        text: 'Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr',
+      },
     ],
   })
 })
@@ -378,7 +375,7 @@ test('decode: content of <corresp> is added to the author notes', () => {
         id: 'cor1',
         label: '*',
         text: 'Corresponding author: David Klatzmann, Hôpital Pitié-Salpêtrière, 83 bd de l’Hôpital, 75651 Paris, France. Phone: +33 1 42 17 74 61, Email: david.klatzmann@sorbonne-universite.fr',
-      }
+      },
     ],
   })
 })
@@ -402,25 +399,21 @@ test('decode: corresp ref-type is added to author meta', () => {
     ancestorElem: front,
     sectionId: '',
     sectionDepth: 0,
-  });
+  })
   expect(decoded).toEqual([
     {
-      "type": "Person",
-      "familyNames": [
-        "Bloggs"
-      ],
-      "givenNames": [
-        "Joe"
-      ],
-      "meta": {
-        "notes": [
+      type: 'Person',
+      familyNames: ['Bloggs'],
+      givenNames: ['Joe'],
+      meta: {
+        notes: [
           {
-            "type": "corresp",
-            "rid": "cor1",
-            "label": "*"
-          }
-        ]
-      }
+            type: 'corresp',
+            rid: 'cor1',
+            label: '*',
+          },
+        ],
+      },
     },
   ])
 })
@@ -607,8 +600,19 @@ describe('decode: MathML', () => {
       </alternatives>
     </disp-formula>
     `).elements?.[0]!
-  
-    expect(decodeMath(formula)).toEqual([{"content": [{"contentUrl": "528254v1_eqn6.gif", "meta": {"inline": false}, "type": "ImageObject", "id": "eqn6"}], "type": "Paragraph"}]);
-  });
-});
 
+    expect(decodeMath(formula)).toEqual([
+      {
+        content: [
+          {
+            contentUrl: '528254v1_eqn6.gif',
+            meta: { inline: false },
+            type: 'ImageObject',
+            id: 'eqn6',
+          },
+        ],
+        type: 'Paragraph',
+      },
+    ])
+  })
+})
