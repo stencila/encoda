@@ -213,7 +213,7 @@ references:
       isPartOf:
         type: Periodical
         name: Deut Lebensm Rundsch.
-      volumeNumber: 100
+      volumeNumber: '100'
     pageEnd: 490
     pageStart: 481
     title: Hemp food products - A problem?
@@ -247,7 +247,7 @@ references:
       isPartOf:
         type: Periodical
         name: Deut Lebensm Rundsch.
-      volumeNumber: 115
+      volumeNumber: '115'
     pageEnd: 372
     pageStart: 351
     title: Hemp food products - an update.
@@ -309,7 +309,7 @@ references:
       isPartOf:
         type: Periodical
         name: Schweiz Z Ganzheitsmed.
-      volumeNumber: 29
+      volumeNumber: '29'
     pageEnd: 371
     pageStart: 367
     title: >-
@@ -340,7 +340,7 @@ references:
       isPartOf:
         type: Periodical
         name: Med Cannabis Cannabinoids.
-      volumeNumber: 1
+      volumeNumber: '1'
     pageEnd: 72
     pageStart: 65
     title: The trouble with CBD oil.
@@ -406,7 +406,7 @@ references:
       isPartOf:
         type: Periodical
         name: Epilepsy Behav.
-      volumeNumber: 45
+      volumeNumber: '45'
     pageEnd: 52
     pageStart: 49
     title: >-
@@ -457,7 +457,7 @@ references:
         isPartOf:
           type: Periodical
           name: Epilepsia.
-        volumeNumber: 59
+        volumeNumber: '59'
       issueNumber: 8
     pageEnd: 1548
     pageStart: 1540
@@ -506,7 +506,7 @@ references:
         isPartOf:
           type: Periodical
           name: Lancet Neurol.
-        volumeNumber: 15
+        volumeNumber: '15'
       issueNumber: 3
     pageEnd: 278
     pageStart: 270
@@ -558,7 +558,7 @@ references:
         isPartOf:
           type: Periodical
           name: Cannabis Cannabinoid Res.
-        volumeNumber: 1
+        volumeNumber: '1'
       issueNumber: 1
     pageEnd: 112
     pageStart: 102
@@ -639,7 +639,7 @@ references:
         isPartOf:
           type: Periodical
           name: EFSA J.
-        volumeNumber: 13
+        volumeNumber: '13'
       issueNumber: 6
     pageStart: 4141
     title: >-
@@ -688,7 +688,7 @@ references:
       isPartOf:
         type: Periodical
         name: J Toxicol.
-      volumeNumber: 2018
+      volumeNumber: '2018'
     pageStart: 8143582
     title: >-
       An Assessment of the Genotoxicity and Subchronic Toxicity of a
@@ -730,7 +730,7 @@ references:
         isPartOf:
           type: Periodical
           name: J Am Chem Soc.
-        volumeNumber: 62
+        volumeNumber: '62'
       issueNumber: 9
     pageEnd: 2405
     pageStart: 2402
@@ -775,7 +775,7 @@ references:
         isPartOf:
           type: Periodical
           name: J Am Chem Soc.
-        volumeNumber: 63
+        volumeNumber: '63'
       issueNumber: 8
     pageEnd: 2213
     pageStart: 2209
@@ -817,7 +817,7 @@ references:
         isPartOf:
           type: Periodical
           name: Forensic Toxicol.
-        volumeNumber: 25
+        volumeNumber: '25'
       issueNumber: 1
     pageEnd: 21
     pageStart: 16
@@ -856,7 +856,7 @@ references:
         isPartOf:
           type: Periodical
           name: J Ind Hemp.
-        volumeNumber: 10
+        volumeNumber: '10'
       issueNumber: 2
     pageEnd: 17
     pageStart: 5
@@ -891,7 +891,7 @@ references:
       isPartOf:
         type: Periodical
         name: Electron J Environ Agric Food Chem.
-      volumeNumber: 4
+      volumeNumber: '4'
     pageEnd: 826
     pageStart: 812
     title: >-
@@ -926,7 +926,7 @@ references:
       isPartOf:
         type: Periodical
         name: Int J Drug Policy.
-      volumeNumber: 68
+      volumeNumber: '68'
     pageEnd: 96
     pageStart: 93
     title: 'Cannabis use in Europe: Current trends and public health concerns.'
@@ -975,7 +975,7 @@ references:
         isPartOf:
           type: Periodical
           name: Cannabis Cannabinoid Res.
-        volumeNumber: 2
+        volumeNumber: '2'
       issueNumber: 1
     pageEnd: 86
     pageStart: 81
@@ -1027,7 +1027,7 @@ references:
         isPartOf:
           type: Periodical
           name: Cannabis Cannabinoid Res.
-        volumeNumber: 2
+        volumeNumber: '2'
       issueNumber: 1
     pageEnd: 4
     pageStart: 1
@@ -1048,8 +1048,11 @@ references:
       type: Date
       value: '2015'
     isPartOf:
-      type: Periodical
-      name: Off J Europ Union.
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Off J Europ Union.
+      volumeNumber: L327
     pageEnd: 22
     pageStart: 1
     title: >-
@@ -1073,8 +1076,11 @@ references:
       type: Date
       value: '2011'
     isPartOf:
-      type: Periodical
-      name: Off J Europ Union.
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Off J Europ Union.
+      volumeNumber: L304
     pageStart: 63
     title: >-
       Regulation (EU) No 1169/2011 of the European Parliament and of the Council
@@ -1099,8 +1105,11 @@ references:
       type: Date
       value: '2006'
     isPartOf:
-      type: Periodical
-      name: Off J Europ Union.
+      type: PublicationVolume
+      isPartOf:
+        type: Periodical
+        name: Off J Europ Union.
+      volumeNumber: L404
     pageEnd: 25
     pageStart: 9
     title: >-
@@ -1146,7 +1155,7 @@ references:
       isPartOf:
         type: Periodical
         name: Sci Rep.
-      volumeNumber: 5
+      volumeNumber: '5'
     pageStart: 8126
     title: >-
       Comparative risk assessment of alcohol, tobacco, cannabis and other
@@ -1182,7 +1191,7 @@ references:
         isPartOf:
           type: Periodical
           name: Clin Pharmacokinet.
-        volumeNumber: 42
+        volumeNumber: '42'
       issueNumber: 4
     pageEnd: 360
     pageStart: 327
@@ -1219,7 +1228,7 @@ references:
         isPartOf:
           type: Periodical
           name: Schweiz Med Wochenschr.
-        volumeNumber: 127
+        volumeNumber: '127'
       issueNumber: 6
     pageEnd: 218
     pageStart: 214
@@ -1290,7 +1299,7 @@ references:
         isPartOf:
           type: Periodical
           name: JAMA.
-        volumeNumber: 318
+        volumeNumber: '318'
       issueNumber: 17
     pageEnd: 1709
     pageStart: 1708
