@@ -360,8 +360,11 @@ references:
       type: Date
       value: '2015'
     isPartOf:
-      type: Periodical
-      name: Soft Drinks Int.
+      type: PublicationIssue
+      isPartOf:
+        type: Periodical
+        name: Soft Drinks Int.
+      issueNumber: Nov/Dec
     pageEnd: 44
     pageStart: 42
     title: Cannabis, hemp and CBDs.
@@ -458,7 +461,7 @@ references:
           type: Periodical
           name: Epilepsia.
         volumeNumber: '59'
-      issueNumber: 8
+      issueNumber: '8'
     pageEnd: 1548
     pageStart: 1540
     title: >-
@@ -507,7 +510,7 @@ references:
           type: Periodical
           name: Lancet Neurol.
         volumeNumber: '15'
-      issueNumber: 3
+      issueNumber: '3'
     pageEnd: 278
     pageStart: 270
     title: >-
@@ -559,7 +562,7 @@ references:
           type: Periodical
           name: Cannabis Cannabinoid Res.
         volumeNumber: '1'
-      issueNumber: 1
+      issueNumber: '1'
     pageEnd: 112
     pageStart: 102
     title: >-
@@ -640,7 +643,7 @@ references:
           type: Periodical
           name: EFSA J.
         volumeNumber: '13'
-      issueNumber: 6
+      issueNumber: '6'
     pageStart: 4141
     title: >-
       Scientific Opinion on the risks for human health related to the presence
@@ -731,7 +734,7 @@ references:
           type: Periodical
           name: J Am Chem Soc.
         volumeNumber: '62'
-      issueNumber: 9
+      issueNumber: '9'
     pageEnd: 2405
     pageStart: 2402
     title: >-
@@ -776,7 +779,7 @@ references:
           type: Periodical
           name: J Am Chem Soc.
         volumeNumber: '63'
-      issueNumber: 8
+      issueNumber: '8'
     pageEnd: 2213
     pageStart: 2209
     title: Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.
@@ -818,7 +821,7 @@ references:
           type: Periodical
           name: Forensic Toxicol.
         volumeNumber: '25'
-      issueNumber: 1
+      issueNumber: '1'
     pageEnd: 21
     pageStart: 16
     title: |-
@@ -857,7 +860,7 @@ references:
           type: Periodical
           name: J Ind Hemp.
         volumeNumber: '10'
-      issueNumber: 2
+      issueNumber: '2'
     pageEnd: 17
     pageStart: 5
     title: Current status of THC in German hemp food products.
@@ -976,7 +979,7 @@ references:
           type: Periodical
           name: Cannabis Cannabinoid Res.
         volumeNumber: '2'
-      issueNumber: 1
+      issueNumber: '1'
     pageEnd: 86
     pageStart: 81
     title: >-
@@ -1028,7 +1031,7 @@ references:
           type: Periodical
           name: Cannabis Cannabinoid Res.
         volumeNumber: '2'
-      issueNumber: 1
+      issueNumber: '1'
     pageEnd: 4
     pageStart: 1
     title: >-
@@ -1192,7 +1195,7 @@ references:
           type: Periodical
           name: Clin Pharmacokinet.
         volumeNumber: '42'
-      issueNumber: 4
+      issueNumber: '4'
     pageEnd: 360
     pageStart: 327
     title: Pharmacokinetics and pharmacodynamics of cannabinoids.
@@ -1229,7 +1232,7 @@ references:
           type: Periodical
           name: Schweiz Med Wochenschr.
         volumeNumber: '127'
-      issueNumber: 6
+      issueNumber: '6'
     pageEnd: 218
     pageStart: 214
     title: '[Cannabis poisoning after eating salad].'
@@ -1300,7 +1303,7 @@ references:
           type: Periodical
           name: JAMA.
         volumeNumber: '318'
-      issueNumber: 17
+      issueNumber: '17'
     pageEnd: 1709
     pageStart: 1708
     title: Labeling Accuracy of Cannabidiol Extracts Sold Online.

@@ -1384,7 +1384,7 @@ export function decodeReference(
       title = textOrUndefined(child(elem, 'source'))
     }
     const volumeNumber = textOrUndefined(child(elem, 'volume'))
-    const issueNumber = intOrUndefined(child(elem, 'issue'))
+    const issueNumber = textOrUndefined(child(elem, 'issue'))
     if (volumeNumber !== undefined)
       isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
     if (issueNumber !== undefined)

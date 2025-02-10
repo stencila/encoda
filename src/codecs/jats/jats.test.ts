@@ -26,7 +26,7 @@ import {
   contactPoint,
   person,
   postalAddress,
-  Organization, PublicationVolume,
+  Organization, PublicationVolume, PublicationIssue,
 } from '@stencila/schema'
 import { JsonCodec } from '../json'
 import * as xml from '../../util/xml'
@@ -273,6 +273,18 @@ test('decode: reference volume number parsed as a string', () => {
 
   const result = decodeReference(citation, null, undefined)
   expect((result.isPartOf as PublicationVolume)?.volumeNumber).toEqual('58-59')
+})
+
+test('decode: reference issue number parsed as a string', () => {
+  const reference = `
+    <mixed-citation publication-type="journal">
+      <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>n.d.</year>) <issue>The Issue</issue><article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source> <fpage>21</fpage>
+    </mixed-citation>
+  `
+  const citation = xml.load(reference).elements?.[0]!
+
+  const result = decodeReference(citation, null, undefined)
+  expect((result.isPartOf as PublicationIssue)?.issueNumber).toEqual('The Issue')
 })
 
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
