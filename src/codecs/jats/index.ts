@@ -1499,13 +1499,15 @@ export function decodeReference(
     metaEntries.label = label
   }
 
-  const comment = textOrUndefined(child(elem, 'comment'));
-  const comments: stencila.CreativeWork['comments'] = comment ? [
-    {
-      type: 'Comment',
-      commentAspect: comment,
-    },
-  ] : [];
+  const comment = textOrUndefined(child(elem, 'comment'))
+  const comments: stencila.CreativeWork['comments'] = comment
+    ? [
+        {
+          type: 'Comment',
+          commentAspect: comment,
+        },
+      ]
+    : []
 
   return stencila.article({
     id,
