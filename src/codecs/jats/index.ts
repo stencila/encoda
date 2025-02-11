@@ -1499,6 +1499,16 @@ export function decodeReference(
     metaEntries.label = label
   }
 
+  const comment = textOrUndefined(child(elem, 'comment'))
+  const comments: stencila.CreativeWork['comments'] = comment
+    ? [
+        {
+          type: 'Comment',
+          commentAspect: comment,
+        },
+      ]
+    : []
+
   return stencila.article({
     id,
     authors,
@@ -1510,6 +1520,7 @@ export function decodeReference(
     publisher,
     identifiers,
     url,
+    ...(comments.length ? { comments } : {}),
     meta: {
       ...(metaEntries ? { ...metaEntries } : {}),
       ...(publicationType
