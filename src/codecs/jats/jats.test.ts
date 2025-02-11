@@ -287,6 +287,21 @@ test('decode: reference issue number parsed as a string', () => {
   expect((result.isPartOf as PublicationIssue)?.issueNumber).toEqual('The Issue')
 })
 
+test('decode: reference comment is parsed out', () => {
+  const reference = `
+    <mixed-citation publication-type="journal">
+      <string-name><surname>Calabrese</surname> <given-names>C</given-names></string-name>, <string-name><surname>Panuzzo</surname> <given-names>C</given-names></string-name> <etal>et al</etal> (<year>n.d.</year>)<comment>This is a comment</comment><article-title>Deferasirox-Dependent Iron Chelation Enhances Mitochondrial Dysfunction and Restores p53 Signaling by Stabilization of p53 Family Members in Leukemic Cells</article-title>. <source>International journal of molecular sciences</source>
+    </mixed-citation>
+  `
+  const citation = xml.load(reference).elements?.[0]!
+
+  const result = decodeReference(citation, null, undefined)
+  expect(result?.comments).toEqual([{
+    type: 'Comment',
+    commentAspect: 'This is a comment',
+  }]);
+})
+
 test('decode: <table-wrap> element that has more than one <graphic>', () => {
   const fig = xml.load(`
   <table-wrap id="tblS1" orientation="portrait" position="float">
