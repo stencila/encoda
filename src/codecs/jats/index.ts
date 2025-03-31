@@ -1320,16 +1320,42 @@ export function decodeReference(
 ): stencila.CreativeWork {
   const publicationType = attr(elem, 'publication-type')
   const id = decodeInternalId(ident)
+  const personGroups = all(elem, 'person-group')
+  let authors: (stencila.Organization | stencila.Person)[] = []
+  
+  const decodeAuthor = (authorElem: xml.Element, meta: Record<string, string> = {}) => {
+    return {
+      ...(authorElem.name === 'name' || authorElem.name === 'string-name') ?
+        decodeName(authorElem) :
+        stencila.organization({ name: textOrUndefined(authorElem) }),
+      ...Object.keys(meta).length > 0 ? { meta } : {},
+    }
+  }
 
-  let authors: stencila.CreativeWork['authors'] = all(elem, [
+  if (personGroups.length > 0) {
+    personGroups.map((personGroupElem) => {
+      const personGroupType = attr(personGroupElem, 'person-group-type')
+      const meta: Record<string, string> = (personGroupType && personGroupType !== 'author') ? { personGroupType } : {}
+      all(personGroupElem, [
+        'name',
+        'string-name',
+        'collab',
+      ]).map((authorElem) => {
+        authors.push(decodeAuthor(authorElem, meta))
+      })
+    })
+  }
+  
+  const authorElems = all(elem, [
     'name',
     'string-name',
     'collab',
-  ]).map((authorElem) => {
-    if (authorElem.name === 'name' || authorElem.name === 'string-name')
-      return decodeName(authorElem)
-    else return stencila.organization({ name: textOrUndefined(authorElem) })
-  })
+  ]);
+  
+  if (authorElems.length > authors.length) {
+    authors = authorElems.map((authorElem) => decodeAuthor(authorElem))
+  }
+
   // If no authors identified using `<name>` elements
   // then use the text of `<person-group>`
   if (authors.length === 0) {

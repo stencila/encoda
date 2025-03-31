@@ -242,17 +242,11 @@ test.each([
           familyNames: ['Peterchev'],
           givenNames: ['AV'],
           type: 'Person',
-          meta: {
-            personGroupType: 'author',
-          },
         },
         {
           familyNames: ['Riehl'],
           givenNames: ['ME'],
           type: 'Person',
-          meta: {
-            personGroupType: 'author',
-          },
         },
         {
           familyNames: ['Wassermann'],
