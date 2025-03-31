@@ -1323,12 +1323,12 @@ export function decodeReference(
   const personGroups = all(elem, 'person-group')
   let authors: (stencila.Organization | stencila.Person)[] = []
   
-  const decodeAuthor = (authorElem: xml.Element, meta: Record<string, string> = {}) => {
+  const decodeAuthor = (authorElem: xml.Element, meta?: Record<string, string>) => {
     return {
       ...(authorElem.name === 'name' || authorElem.name === 'string-name') ?
         decodeName(authorElem) :
         stencila.organization({ name: textOrUndefined(authorElem) }),
-      ...Object.keys(meta).length > 0 ? { meta } : {},
+      ...meta && Object.keys(meta).length > 0 ? { meta } : {},
     }
   }
 
