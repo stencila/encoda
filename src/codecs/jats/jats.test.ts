@@ -230,6 +230,109 @@ test.each([
       type: 'Article',
     },
   ],
+  [
+    `
+      <mixed-citation publication-type="book">
+        <person-group person-group-type="author"><string-name><surname>Peterchev</surname> <given-names>AV</given-names></string-name>, <string-name><surname>Riehl</surname> <given-names>ME</given-names></string-name></person-group>. <chapter-title>Transcranial Magnetic Stimulators</chapter-title>. <person-group person-group-type="editor"><string-name><surname>Wassermann</surname> <given-names>EM</given-names></string-name>, <string-name><surname>Peterchev</surname> <given-names>AV</given-names></string-name>, <string-name><surname>Ziemann</surname> <given-names>U</given-names></string-name>, <string-name><surname>Lisanby</surname> <given-names>SH</given-names></string-name>, <string-name><surname>Siebner</surname> <given-names>HR</given-names></string-name>, <string-name><surname>Walsh</surname> <given-names>V</given-names></string-name></person-group>. <source>The Oxford Handbook of Transcranial Stimulation</source><publisher-name>, Oxford University Press</publisher-name> <fpage>75</fpage>–<lpage>101</lpage>. <pub-id pub-id-type="doi">10.1093/oxfordhb/9780198832256.013.3</pub-id>. <year>2022</year>
+      </mixed-citation>
+    `,
+    {
+      authors: [
+        {
+          familyNames: ['Peterchev'],
+          givenNames: ['AV'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'author',
+          },
+        },
+        {
+          familyNames: ['Riehl'],
+          givenNames: ['ME'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'author',
+          },
+        },
+        {
+          familyNames: ['Wassermann'],
+          givenNames: ['EM'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        },
+        {
+          familyNames: ['Peterchev'],
+          givenNames: ['AV'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        },
+        {
+          familyNames: ['Ziemann'],
+          givenNames: ['U'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        },
+        {
+          familyNames: ['Lisanby'],
+          givenNames: ['SH'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        },
+        {
+          familyNames: ['Siebner'],
+          givenNames: ['HR'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        },
+        {
+          familyNames: ['Walsh'],
+          givenNames: ['V'],
+          type: 'Person',
+          meta: {
+            personGroupType: 'editor',
+          },
+        }
+      ],
+      datePublished: {
+        type: 'Date',
+        value: '2022'
+      },
+      meta: {
+        publicationType: 'book',
+        yearPublished: '2022'
+      },
+      pageStart: 75,
+      pageEnd: 101,
+      title: 'Transcranial Magnetic Stimulators',
+      isPartOf: {
+        name: 'The Oxford Handbook of Transcranial Stimulation',
+        type: 'CreativeWork'
+      },
+      publisher: {
+        name: ', Oxford University Press',
+        type: 'Organization'
+      },
+      identifiers: [
+        {
+          type: 'PropertyValue',
+          name: 'doi',
+          propertyID: 'https://registry.identifiers.org/registry/doi',
+          value: '10.1093/oxfordhb/9780198832256.013.3'
+        }
+      ],
+      type: 'Article'
+    },
+  ],
 ])(
   'decode: <element-citation> or <mixed-citation> element',
   (input, expected) => {
