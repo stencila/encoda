@@ -706,6 +706,8 @@ references:
           - Grown
         givenNames:
           - Valodia
+        meta:
+          personGroupType: editor
     comments:
       - type: Comment
         commentAspect: Chapter 1
@@ -758,11 +760,15 @@ references:
           - Grown
         givenNames:
           - C
+        meta:
+          personGroupType: editor
       - type: Person
         familyNames:
           - Valodia
         givenNames:
           - I
+        meta:
+          personGroupType: editor
     datePublished:
       type: Date
       value: '2010'
@@ -999,6 +1005,8 @@ references:
           - Grown
         givenNames:
           - Valodia
+        meta:
+          personGroupType: editor
     comments:
       - type: Comment
         commentAspect: Chapter 3
