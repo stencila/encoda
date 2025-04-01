@@ -1323,34 +1323,36 @@ export function decodeReference(
   const personGroups = all(elem, 'person-group')
   let authors: (stencila.Organization | stencila.Person)[] = []
 
-  const decodeAuthor = (authorElem: xml.Element, meta?: Record<string, string>): stencila.Organization | stencila.Person => {
+  const decodeAuthor = (
+    authorElem: xml.Element,
+    meta?: Record<string, string>,
+  ): stencila.Organization | stencila.Person => {
     return {
-      ...(authorElem.name === 'name' || authorElem.name === 'string-name') ?
-        decodeName(authorElem) :
-        stencila.organization({ name: textOrUndefined(authorElem) }),
-      ...meta && Object.keys(meta).length > 0 ? { meta } : {},
+      ...(authorElem.name === 'name' || authorElem.name === 'string-name'
+        ? decodeName(authorElem)
+        : stencila.organization({ name: textOrUndefined(authorElem) })),
+      ...(meta && Object.keys(meta).length > 0 ? { meta } : {}),
     }
   }
 
   if (personGroups.length > 0) {
     personGroups.map((personGroupElem) => {
       const personGroupType = attr(personGroupElem, 'person-group-type')
-      const meta: Record<string, string> = (personGroupType && personGroupType !== 'author') ? { personGroupType } : {}
-      authors.push(...all(personGroupElem, [
-        'name',
-        'string-name',
-        'collab',
-      ]).map((authorElem) => {
-        return decodeAuthor(authorElem, meta)
-      }))
+      const meta: Record<string, string> =
+        personGroupType && personGroupType !== 'author'
+          ? { personGroupType }
+          : {}
+      authors.push(
+        ...all(personGroupElem, ['name', 'string-name', 'collab']).map(
+          (authorElem) => {
+            return decodeAuthor(authorElem, meta)
+          },
+        ),
+      )
     })
   }
 
-  const authorElems = all(elem, [
-    'name',
-    'string-name',
-    'collab',
-  ]);
+  const authorElems = all(elem, ['name', 'string-name', 'collab'])
 
   // If some authors are found outside of `<person-group>`
   // we do not attempt to gather personGroupType
