@@ -1336,7 +1336,7 @@ export function decodeReference(
   }
 
   if (personGroups.length > 0) {
-    personGroups.map((personGroupElem) => {
+    personGroups.forEach((personGroupElem) => {
       const personGroupType = attr(personGroupElem, 'person-group-type')
       const meta: Record<string, string> =
         personGroupType && personGroupType !== 'author'
