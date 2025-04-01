@@ -1323,7 +1323,7 @@ export function decodeReference(
   const personGroups = all(elem, 'person-group')
   let authors: (stencila.Organization | stencila.Person)[] = []
 
-  const decodeAuthor = (authorElem: xml.Element, meta?: Record<string, string>) => {
+  const decodeAuthor = (authorElem: xml.Element, meta?: Record<string, string>): stencila.Organization | stencila.Person => {
     return {
       ...(authorElem.name === 'name' || authorElem.name === 'string-name') ?
         decodeName(authorElem) :
@@ -1336,13 +1336,13 @@ export function decodeReference(
     personGroups.map((personGroupElem) => {
       const personGroupType = attr(personGroupElem, 'person-group-type')
       const meta: Record<string, string> = (personGroupType && personGroupType !== 'author') ? { personGroupType } : {}
-      all(personGroupElem, [
+      authors.push(...all(personGroupElem, [
         'name',
         'string-name',
         'collab',
       ]).map((authorElem) => {
-        authors.push(decodeAuthor(authorElem, meta))
-      })
+        return decodeAuthor(authorElem, meta)
+      }))
     })
   }
 
@@ -1355,7 +1355,9 @@ export function decodeReference(
   // If some authors are found outside of `<person-group>`
   // we do not attempt to gather personGroupType
   if (authorElems.length > authors.length) {
-    authors = authorElems.map((authorElem) => decodeAuthor(authorElem))
+    authors = authorElems.map((authorElem) => {
+      return decodeAuthor(authorElem)
+    })
   }
 
   // If no authors identified using `<name>` elements
