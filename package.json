@@ -51,7 +51,7 @@
     "xml-js": "^1.6.11"
   },
   "peerDependencies": {
-    "@stencila/schema": "1.9.0"
+    "@stencila/schema": "1.18.0"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "5.2.8",
